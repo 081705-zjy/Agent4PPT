@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_46",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.08",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 46,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏训练的三阶段算子分解",
+  "核心论断": "稀疏训练由 SpMM/SpMM-T/SDDMM 三算子构成",
+  "本页讲什么": "本页把稀疏训练拆解为三个阶段算子:前向 SpMM、反向传播 SpMM-T、权重更新 SDDMM。这一分解界定了后续两个 Tech 要支撑的算子对象,是承接 N:M 背景、引出 TB-STC 与算子设计的关键结构页。",
+  "关键文字": [
+    "稀疏训练包含三阶段算子",
+    "前向 forward pass(SpMM)",
+    "反向 backward propagation(SpMM-T)",
+    "权重更新 weight update(SDDMM)"
+  ],
+  "视觉骨架": [
+    "三阶段训练流程图",
+    "SpMM/SpMM-T/SDDMM 算子标注"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_46.asset.01"
+  ],
+  "适合复用场景": [
+    "稀疏训练流程分解页",
+    "算子三阶段结构介绍"
+  ],
+  "不适合复用场景": [
+    "单一 benchmark 数字页",
+    "概念愿景 opener 页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

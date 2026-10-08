@@ -1,0 +1,635 @@
+{
+  "batch_index": 7,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+      "目录名": "SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+      "标题": "SG-Filter:相似文本检索的层次摘要语义索引",
+      "总页数": 26,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与内容大纲",
+        "section_02_检索背景与相似文本检索",
+        "section_03_核心洞察-利用摘要信息",
+        "section_04_层次索引与检索方案",
+        "section_05_数据集与实验评估",
+        "section_06_总结与致谢"
+      ],
+      "主题标签": [
+        "文本检索",
+        "相似检索",
+        "摘要索引",
+        "语义索引",
+        "自适应过滤",
+        "向量检索",
+        "RAG"
+      ],
+      "目标受众": "信息检索/RAG 方向学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "会议/组会分享检索类论文方法与实验",
+      "论述总结": "面向相似文本检索(STR)任务,指出主流向量检索范式难以有效建模摘要信息导致召回受限;提出 SG-Filter,通过层次摘要-语义索引与自适应过滤(评分排序+共现)提升召回,并在 Financial/Medical/Qasper/Scifact 等数据集上验证其召回提升与低参数鲁棒性。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "洞察",
+        "方案",
+        "实验"
+      ],
+      "slides_by_role": {
+        "cover_candidate": [
+          {
+            "页序号": 1,
+            "页面角色": "cover_candidate",
+            "标题": "SG-Filter 论文封面:标题/作者/会议",
+            "核心论断": "SG-Filter 用层次摘要语义索引与自适应过滤增强相似文本检索",
+            "本页讲什么": "全篇封面页。居中大标题「SG-Filter: Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering」下方依次列出多机构作者(上交、清华、字节、Infinigence AI、上海创智学院)、通讯作者邮箱、会议 CIKM 2025 及日期 2025.11.13,亮明工作身份与出处。",
+            "关键文字": [
+              "SG-Filter: Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering",
+              "Jiancai Ye, Jun Liu, Haoyu Zhang, Maojia Sheng, Tao Yang 等 (vision)",
+              "Shanghai Jiao Tong University, Tsinghua University, ByteDance, Infinigence AI, Shanghai Innovation Institute",
+              "Corresponding to: daiguohao@sjtu.edu.cn (vision)",
+              "CIKM 2025 / 2025.11.13 (vision)"
+            ],
+            "视觉骨架": [
+              "居中多行大标题",
+              "作者姓名带机构上标",
+              "机构脚注列表",
+              "会议与日期署名"
+            ],
+            "上页角色": null,
+            "下页角色": "toc_candidate",
+            "section_role": "opening"
+          }
+        ],
+        "toc_candidate": [
+          {
+            "页序号": 2,
+            "页面角色": "toc_candidate",
+            "标题": "内容大纲:四章路线图(高亮第1章)",
+            "核心论断": "全篇按 Background→Insight→Solution→Evaluation 四章推进,当前进入第1章",
+            "本页讲什么": "目录页。标题「contents」下用编号 1-4 列出四章路线:1 Background: Retrieval、2 Insight: By Summarized Information、3 Solution: Index and Search、4 Evaluation。第1条加黑高亮为当前章,其余灰色待展开,交代全篇结构与进度。",
+            "关键文字": [
+              "1 Background: Retrieval",
+              "2 Insight: By Summarized Information (vision)",
+              "3 Solution: Index and Search (vision)",
+              "4 Evaluation (vision)"
+            ],
+            "视觉骨架": [
+              "蓝色 contents 标题",
+              "编号纵向列表",
+              "当前章加黑高亮/其余灰化"
+            ],
+            "上页角色": "cover_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          },
+          {
+            "页序号": 7,
+            "页面角色": "toc_candidate",
+            "标题": "目录:定位到「Insight:利用摘要信息」章",
+            "核心论断": "全篇四段式结构,本页高亮进入第 2 章核心洞察",
+            "本页讲什么": "这是一张过渡目录页,列出全篇四个部分(1 Background、2 Insight、3 Solution、4 Evaluation),其中第 2 项「Insight: By Summarized Information」以黑色加粗高亮,其余灰化,标明演讲即将进入核心洞察章节。讲者据此宣布从背景转入洞察部分。",
+            "关键文字": [
+              "contents",
+              "1 Background: Retrieval and AI",
+              "2 Insight: By Summarized Information",
+              "3 Solution: Index and Search",
+              "4 Evaluation"
+            ],
+            "视觉骨架": [
+              "居中标题 contents",
+              "4 行编号目录列表",
+              "当前章高亮/其余灰化"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 13,
+            "页面角色": "toc_candidate",
+            "标题": "目录:进入第3章 Solution 索引与检索",
+            "核心论断": "全篇四章推进至第3章 Solution: Index and Search",
+            "本页讲什么": "四项目录(1 Background、2 Insight、3 Solution: Index and Search、4 Evaluation)中高亮第3项,标示演讲进入方法核心章。其余三项灰显,仅第3项黑色加粗,起章节导航与过渡作用。",
+            "关键文字": [
+              "contents",
+              "1 Background: Retrieval and AI",
+              "2 Insight: By Summarized Information",
+              "3 Solution: Index and Search",
+              "4 Evaluation"
+            ],
+            "视觉骨架": [
+              "居中标题 contents",
+              "4 项编号目录列表",
+              "当前项加粗高亮/余项灰显"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 19,
+            "页面角色": "toc_candidate",
+            "标题": "目录:进入第 4 部分 Evaluation",
+            "核心论断": "全篇进入第 4 部分 Evaluation,前三部分已完成",
+            "本页讲什么": "四段式目录页,列出 Background/Insight/Solution/Evaluation 四大板块,前三项灰显、第 4 项 Evaluation 加粗高亮,表明演讲推进到实验评估章节。是本 section 的导航开场页。",
+            "关键文字": [
+              "Background: Retrieval and AI",
+              "Insight: By Summarized Information",
+              "Solution: Index and Search",
+              "4 Evaluation (高亮)"
+            ],
+            "视觉骨架": [
+              "居中 contents 标题",
+              "4 行编号目录条",
+              "当前项加粗高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "result"
+          },
+          {
+            "页序号": 25,
+            "页面角色": "toc_candidate",
+            "标题": "目录回扣:四段主线总览",
+            "核心论断": "全文循 Background→Insight→Solution→Evaluation 四段主线展开",
+            "本页讲什么": "收尾目录页,以极简排版列出全 deck 四条主线:1 Background 检索与 AI、2 Insight 借助摘要信息、3 Solution 索引与检索、4 Evaluation。用于收束前回扣全篇脉络,让听众重温论文的问题—洞见—方案—评估逻辑闭环。",
+            "关键文字": [
+              "contents",
+              "1 Background: Retrieval and AI",
+              "2 Insight: By Summarized Information",
+              "3 Solution: Index and Search",
+              "4 Evaluation"
+            ],
+            "视觉骨架": [
+              "居中 contents 标题",
+              "编号 1-4 纵向列表",
+              "淡灰弱化条目文字"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "ending_candidate",
+            "section_role": "closing"
+          }
+        ],
+        "content_candidate": [
+          {
+            "页序号": 3,
+            "页面角色": "content_candidate",
+            "标题": "主流文本检索范式:向量检索",
+            "核心论断": "向量检索凭高召回率成为当今主流文本检索范式",
+            "本页讲什么": "提出当今主流文本检索范式是向量检索,因其在多数场景召回率高;左侧以召回率定义与柱状示意说明「高召回率」,右侧用文档切块→Embedding→查询Q在向量空间取top-k最近邻的流程图讲清向量检索完整过程。",
+            "关键文字": [
+              "The mainstream text retrieval paradigm today is vector retrieval",
+              "High recall rate",
+              "The process of vector retrieval",
+              "For documents D={d1,d2,...,d3}, split D into chunks",
+              "Given query text Q, search in V to get top-k nearest",
+              "Embedding is the term for the vectorization process"
+            ],
+            "视觉骨架": [
+              "左侧召回率柱状示意",
+              "右侧向量检索流程图",
+              "Index 蓝色标签块",
+              "两列并列版式"
+            ],
+            "上页角色": "toc_candidate",
+            "下页角色": "ending_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 5,
+            "页面角色": "content_candidate",
+            "标题": "STR 特征一:相似文本表达高度接近",
+            "核心论断": "STR 文本在表达风格/词汇/内容域上彼此高度相似",
+            "本页讲什么": "定义 STR 为从大规模语料识别抽取表达风格、词汇、内容域相似的文本块,展开特征一「彼此接近」:以仅个别词不同的近似句(quick/fast brown fox)为例,经 Embedding 与 Global pooling 后向量距离 Dis.2−Dis.1≈0,说明相似文本嵌入向量非常接近。",
+            "关键文字": [
+              "STR refers to identifying and extracting relevant chunks from a large corpus",
+              "expression styles, vocabulary, and content domains are similar",
+              "Feature1: Close to each other",
+              "Fixed expression templates / Proprietary expression",
+              "Global pooling",
+              "Dis.2 − Dis.1 ≈ 0"
+            ],
+            "视觉骨架": [
+              "近似文本块对照示意",
+              "Embedding 向量距离标注",
+              "Global pooling 计算示意",
+              "相似词高亮标注"
+            ],
+            "上页角色": "ending_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 6,
+            "页面角色": "content_candidate",
+            "标题": "STR 双特征致向量检索召回不达标",
+            "核心论断": "受 STR 两大特征影响,向量检索召回率无法满足 0.72 需求",
+            "本页讲什么": "承接特征说明,论证向量检索在 STR 下的核心痛点:相似文本嵌入距离几乎相同(0.342 vs 0.331,Dis.2−Dis.1≈0),难以区分正确块;对比 Non-STR 与 STR 平均召回,STR 明显低于 0.72 需求线,得出向量检索召回不达标的结论。",
+            "关键文字": [
+              "Due to two characteristics of STR, the recall rate of vector retrieval cannot meet demands",
+              "meet demands in this context",
+              "Dis.2 − Dis.1 ≈ 0",
+              "Non-STR",
+              "Average recall in Non-STR & STR",
+              "Requirement = 0.72"
+            ],
+            "视觉骨架": [
+              "近似文本块对照",
+              "嵌入距离数值标注(0.342/0.331)",
+              "Non-STR vs STR 召回柱图",
+              "0.72 需求线标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "toc_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 8,
+            "页面角色": "content_candidate",
+            "标题": "相关工作分类:语义类 vs 结构化类",
+            "核心论断": "现有相关工作可归为增强语义信息与增强结构化信息两类",
+            "本页讲什么": "本页把提升细粒度检索的相关工作分为两类:Type1 增强语义信息(①先进 embedding 模型、②文本改写),Type2 增强结构化信息(③混合检索、④标签过滤、⑤知识图谱)。左侧用 Documents 及 similar/different text 示意,右侧文字说明两类各自的改进思路(如让 words→vectors 映射更准、建立 chunk 间关系),为下一页对比召回做铺垫。",
+            "关键文字": [
+              "Related work: Fine-grained information",
+              "Type1: Enhancing Semantic Information (① Advanced Embedding Model ② Text Rewrite)",
+              "Type2: Enhancing Structured Information (③ Hybrid Search ④ Label Filter ⑤ Knowledge Graph)",
+              "Make the mapping from words to vectors more accurate",
+              "⑤ Build relationship between chunks [2-3]"
+            ],
+            "视觉骨架": [
+              "Related Work 主标题",
+              "上下两分区 Type1/Type2",
+              "文档色块示意图",
+              "Type2 红框强调区"
+            ],
+            "上页角色": "toc_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 9,
+            "页面角色": "content_candidate",
+            "标题": "两类方法的召回率对比",
+            "核心论断": "结构化类召回优于语义类:Type1 低、Type2 中到高",
+            "本页讲什么": "承接上页两类划分,本页给出二者在召回上的定性对比表:Type1 对应 Low、Type2 对应 Middle/High,并用红色高亮 Low、High 突出差距。同时保留 Type1/Type2 的映射说明(chunks→vectors 更准、chunk 间建关系),用文档色块 Doc.1/Doc. 示意相似/不同文本,说明两条路线在召回表现上的高下。",
+            "关键文字": [
+              "Related work: Fine-grained information",
+              "Type1 → Low",
+              "Type2 → Middle / High",
+              "Make the mapping from chunks to vectors more accurate",
+              "⑤ Build relationship between chunks [2-3]"
+            ],
+            "视觉骨架": [
+              "Related Work 主标题",
+              "Type1/Type2 × 召回等级对照",
+              "Low/Middle/High 定性标签",
+              "文档色块示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 10,
+            "页面角色": "content_candidate",
+            "标题": "现有 embedding 范式无法抽取摘要信息",
+            "核心论断": "摘要信息对提升召回关键,但现有 embedding 范式无法有效抽取致低召回",
+            "本页讲什么": "本页点破核心痛点:摘要信息(summarized information)对提升召回很重要,但现有 embedding 范式无法有效抽取摘要信息,导致 low recall。页面用「Intuitive improvement idea」灰块、Summarized chunk 自身含义及其关系说明、以及右下 0.9/0.6/0.3/0 的相似度示意图,论证 global pooling 后的向量仍无法建模摘要信息,从而承接下一页给出解决洞察。",
+            "关键文字": [
+              "Summarized information is important for recall improve",
+              "However existing embedding paradigm cannot effectively extract summarized information",
+              "Existing embedding paradigm cannot directly support the idea, causing low recall",
+              "Summarized chunk meaning itself and Summarized chunk meaning's relation",
+              "Global pooling",
+              "low recall"
+            ],
+            "视觉骨架": [
+              "Challenges 主标题",
+              "灰底强调说明块",
+              "文档色块 + global pooling 向量条",
+              "相似度数值 0.9/0.6/0.3/0 示意图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 11,
+            "页面角色": "content_candidate",
+            "标题": "核心洞察:补充粗粒度摘要信息",
+            "核心论断": "本方案通过 embedding 与共现两条信息源补充粗粒度摘要信息",
+            "本页讲什么": "本页给出核心洞察(Ours: Adding Coarse-grained information):在 chunk 级向量之外补充粗粒度摘要信息,来源有两条——①信息源为 embedding(global pooling 得到 n1),②信息源为 co-occurrence 共现(weight*v,i 得到 n2)。页面用红框圈出的向量条、Summarized extraction、A fast brown…/leaps above… 等 chunk 示意展示如何从摘要中抽取节点 n_i,说明该洞察「Easy to」实现,承接上一页痛点给出解法方向。",
+            "关键文字": [
+              "Ours: Adding Coarse-grained information",
+              "① information source: embedding",
+              "② information source: co-occurrence",
+              "Summarized extraction",
+              "Global pooling → n1",
+              "weight * v,i → n2"
+            ],
+            "视觉骨架": [
+              "Key Insight 主标题",
+              "红框向量条",
+              "Summarized extraction chunk 示意",
+              "n_i 节点框图",
+              "①/② 双信息源标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 12,
+            "页面角色": "content_candidate",
+            "标题": "摘要信息可行性:唯一 token 远少于原文 (M<<N)",
+            "核心论断": "STR 中唯一 token 数 M 远小于原文总 token 数 N,支撑摘要抽取可行",
+            "本页讲什么": "本页延续 Key Insight,给出补充摘要信息可行的量化依据:N》M,其中 N 是原文总 token 长度,M 是唯一 token 长度;在相似文本检索(STR)场景中唯一 token 数很少,即 M<<N(记为 M2)。配合 Summarized 箭头指向 A fast brown… 摘要片段、cat/fox 等重复 token 与 n_i 节点示意,说明正因唯一 token 少,才能低成本地抽取并索引粗粒度摘要信息。",
+            "关键文字": [
+              "Ours: Adding Coarse-grained information",
+              "N》M, where N is the original total token length",
+              "M is the length of unique tokens",
+              "In STR, there are a small number of unique tokens",
+              "M2 (M<<N)",
+              "Summarized extraction"
+            ],
+            "视觉骨架": [
+              "Key Insight 主标题",
+              "Summarized 箭头指向摘要片段",
+              "重复 token(cat/fox)示意",
+              "M<<N 公式标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "toc_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 14,
+            "页面角色": "content_candidate",
+            "标题": "Solution Overview:两问驱动完整检索流程",
+            "核心论断": "SG-Filter 用 Q1 获取与 Q2 利用两问统领完整检索流程",
+            "本页讲什么": "以 The complete retrieval process 为纲,左右两列并列提出核心两问:左列 Q1 如何获取摘要信息,右列 Q2 如何利用摘要信息(标注 Tech2+Tech3)。为本章三项技术的展开搭建问题框架。",
+            "关键文字": [
+              "The complete retrieval process",
+              "Q1: How to obtain summarized information?",
+              "Q2: How to utilize summarized information?",
+              "Tech2 + Tech3"
+            ],
+            "视觉骨架": [
+              "居中大标题",
+              "左右 2 列 Q1/Q2 并列",
+              "Tech2+Tech3 红色标注"
+            ],
+            "上页角色": "toc_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 15,
+            "页面角色": "content_candidate",
+            "标题": "Tech1:摘要图节点构建(Step1)",
+            "核心论断": "用 LLM 做摘要抽取而非传统关键词抽取来构建图节点",
+            "本页讲什么": "Tech1 分层摘要语义索引的第一步:如何高效获取摘要信息——通过设计摘要图。以 LLM(GPT-4 与 GPT-3.5-turbo)对候选文档做摘要抽取,把摘要信息作为图的节点(Nodes),强调是 summary extraction 而非 traditional keyword extraction,抽取对象为高信息量内容。",
+            "关键文字": [
+              "How to efficiently obtain summarized information? — through the design of summarized graph",
+              "Step1: Node of summarized graph",
+              "Summary extraction, not traditional keyword extraction",
+              "Note: GPT-4 & GPT-3.5-turbo as LLM API"
+            ],
+            "视觉骨架": [
+              "左侧节点示意方块",
+              "LLM 摘要抽取流程",
+              "prompt 文本框",
+              "红色对比标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 16,
+            "页面角色": "content_candidate",
+            "标题": "Tech1:摘要图的边与层次(Step2-3)",
+            "核心论断": "同文档共现连边、按从属关系表达层次构成语义索引",
+            "本页讲什么": "Tech1 的第二、三步:Step2 当两个摘要词出现在同一文档时(co-occurrence)连边;Step3 通过 owner 从属关系表达层次结构。以多文档共现示例(fox、doc1/doc2 等)构建出具层次的 Semantic Index,承接上页节点定义完成图结构。",
+            "关键文字": [
+              "Step2: Edge of summarized graph",
+              "Step3: Hierarchical",
+              "Connect edges when two summarized words appear in the same document",
+              "Co-occurrence",
+              "Express the hierarchy by owner relationship",
+              "Semantic Index"
+            ],
+            "视觉骨架": [
+              "多文档共现文本示例",
+              "词节点连边示意",
+              "doc1/doc2 层次归属图",
+              "Semantic Index 标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 17,
+            "页面角色": "content_candidate",
+            "标题": "Tech2:重要节点评分排序自适应过滤",
+            "核心论断": "融合层次/共现/相似度的评分排序按分值大小过滤对象",
+            "本页讲什么": "Tech2 自适应过滤:如何有效利用摘要信息——设计重要节点的评分排序。初始分为相似度(Initial score = similarity),最终分由 Score ranking 融合 Hierarchy + Co-occurrence + Similarity 得到(Final score),再依据分值大小 determine the filtered objects,实现对摘要索引与语义索引中节点的自适应筛选。",
+            "关键文字": [
+              "How to effectively utilize summarized information? — the design of score ranking of important nodes",
+              "Initial score = similarity",
+              "Final score",
+              "Score ranking: Hierarchy + Co-occurrence + Similarity",
+              "Determine the filtered objects based on the score magnitude"
+            ],
+            "视觉骨架": [
+              "Summarized/Semantic 双索引散点",
+              "score 数值标注",
+              "Final score 评分融合框",
+              "初始分→最终分对比"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 18,
+            "页面角色": "content_candidate",
+            "标题": "Tech3:多路融合召回与三技术关系",
+            "核心论断": "不同过滤率召回的正样本具互补性,多路融合提升召回",
+            "本页讲什么": "Tech3 多路融合召回:如何最大化利用摘要信息——通过对不同过滤率结果做多路融合。不同 filtering ratio(如 Filter Rate=1%、10%)召回的正样本具有互补性(complementarity),融合后 Recall 由 50% 提升至 100%。末尾以 Relationship between three technologies 图串起 Tech1-3,收束本章。",
+            "关键文字": [
+              "How to maximize the utilization of summarized information? — through multi-result fusion about different filter rate",
+              "The positive samples recalled under different filtering ratios have complementarity",
+              "Recall=50% / Recall=100%",
+              "Filter Rate=1% / Filter Rate=10%",
+              "Relationship between three technologies"
+            ],
+            "视觉骨架": [
+              "不同过滤率召回对比",
+              "Word similarity rank 列表",
+              "Recall 百分比标注",
+              "三技术关系示意图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "toc_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 20,
+            "页面角色": "content_candidate",
+            "标题": "实验设置:数据集、指标与基线",
+            "核心论断": "实验覆盖相似/非相似文本数据集,以 Recall@k 等指标对比多类基线",
+            "本页讲什么": "实验设置页,分三块:数据集(Similar Text 的 Medical-qa/Financial-qa/Qasper 与 Non-Similar 的 Scifact)、评价指标(Recall@k、Precision@k、Acc@k)、基线(语义增强类 Bge/M3e/InteR 与结构增强类 Milvus/LightRAG),为后续召回/延迟结果铺底。",
+            "关键文字": [
+              "Similar Text: Medical-qa, Financial-qa, Qasper",
+              "Non Similar Text: Scifact",
+              "Accuracy: Recall@k, Precision@k, Acc@k",
+              "Semantic: Bge, M3e, InteR",
+              "Structural: Milvus, LightRAG"
+            ],
+            "视觉骨架": [
+              "三级缩进 bullet 结构",
+              "底部引用文献列表"
+            ],
+            "上页角色": "toc_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "result"
+          },
+          {
+            "页序号": 21,
+            "页面角色": "content_candidate",
+            "标题": "召回结果:SG-Filter 全面达 SOTA",
+            "核心论断": "SG-Filter 在 STR 上 Recall@15 平均提升 10.53%–22.92%,达 SOTA",
+            "本页讲什么": "主召回结果页,承接前页设置。左块:相比基线,SG-Filter 在 STR 上 Recall@15 平均提升 10.53%–22.92%,达 SOTA;右块:即使在 Non-STR 场景,SG-Filter 搭配 Bge-m3 仍能取得 SOTA,论证方法在两类数据上的召回优势。",
+            "关键文字": [
+              "Recall@15 of SG-Filter increases by 10.53% —— 22.92% on average",
+              "achieving SOTA on STR",
+              "Even in Non-STR, SG-Filter on Bge-m3 still achieves SOTA"
+            ],
+            "视觉骨架": [
+              "左右双栏论断",
+              "红色数字/关键词强调"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "result"
+          },
+          {
+            "页序号": 22,
+            "页面角色": "content_candidate",
+            "标题": "延迟评估:端到端 33.93ms 达标",
+            "核心论断": "借 HNSW 等高效索引,端到端延迟仅 33.93ms 并满足召回要求",
+            "本页讲什么": "延迟结果页,承接召回结论回答效率问题:方案适配 HNSW 等高效索引,端到端检索延迟为 33.93ms,在满足召回要求前提下取得最低延迟,论证 SG-Filter 兼顾精度与速度。",
+            "关键文字": [
+              "adaptations for efficient indexes such as HNSW",
+              "end-to-end retrieval latency is 33.93ms",
+              "The lowest latency while meeting the recall requirement"
+            ],
+            "视觉骨架": [
+              "单栏论断文字",
+              "红色数字 33.93ms 强调"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "result"
+          },
+          {
+            "页序号": 23,
+            "页面角色": "content_candidate",
+            "标题": "消融实验:摘要图与结果融合有效",
+            "核心论断": "去掉摘要图或结果融合均使召回下降,证明两模块有效",
+            "本页讲什么": "消融结果页,设两组:Ablation1 去掉 Summarized Graph、Ablation2 去掉 Result Fusion。两组均在 Medical-qa、Qasper 等数据集上用 Recall 曲线对比 SG-Filter 与去模块版本,结论显示两模块缺一都会降低召回,证明其有效性。",
+            "关键文字": [
+              "Ablation1: Without Summarized Graph",
+              "Ablation2: Without Result Fusion",
+              "Conclusion: Demonstrates the effectiveness of adding …",
+              "Label vs SG-Filter (Medical-qa, Qasper)"
+            ],
+            "视觉骨架": [
+              "左右两组消融图区",
+              "多数据集 Recall 折线",
+              "红底结论横条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "result"
+          },
+          {
+            "页序号": 24,
+            "页面角色": "content_candidate",
+            "标题": "参数鲁棒性:低参数强鲁棒",
+            "核心论断": "SG-Filter 对 filter rate 与实体数等参数强鲁棒且参数量低",
+            "本页讲什么": "参数鲁棒性收尾页,用四组曲线图论证 SG-Filter 强鲁棒、低参数:召回率 vs filter rate、召回率 vs 初始命中实体数(Entity Num)、正样本覆盖率关系等,覆盖 Medical-qa/Financial-qa/Qasper/Scifact 多数据集,表明性能对关键参数不敏感。",
+            "关键文字": [
+              "SG-Filter has strong robustness and low parameter",
+              "Relationship between recall rate and filter rate",
+              "Relationship between recall rate and the number of initially hit",
+              "Relationship between positive sample coverage and Filter Rate"
+            ],
+            "视觉骨架": [
+              "2×2 多子图网格",
+              "Recall vs 参数曲线",
+              "多数据集散点/折线"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "toc_candidate",
+            "section_role": "result"
+          }
+        ],
+        "ending_candidate": [
+          {
+            "页序号": 4,
+            "页面角色": "ending_candidate",
+            "标题": "相似文本检索(STR)是高占比重要场景",
+            "核心论断": "STR 是文本检索中占比最大、AI 时代应用广泛的重要场景",
+            "本页讲什么": "论证 STR 是文本检索中重要且 AI 时代应用广泛的场景;左「Important scenario」用增长柱图(105→624百万美元)及相似文本/开放域QA/软件工程/对话列表说明其占比最大;右「Widely used」以客服等实际应用佐证广泛使用。",
+            "关键文字": [
+              "Similar Text Retrieval (STR) is an important scenario in text retrieval",
+              "widely used in practical applications in AI era",
+              "Important scenario",
+              "Widely used in practical applications",
+              "The scenario with the large proportion",
+              "Open-domain QA / Software Engineering / Dialogue"
+            ],
+            "视觉骨架": [
+              "市场规模增长柱图",
+              "应用领域列表",
+              "左右两列 panel",
+              "Customer Service 应用标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 26,
+            "页面角色": "ending_candidate",
+            "标题": "SG-Filter 方法重述与致谢",
+            "核心论断": "SG-Filter 以摘要语义索引提升语义/结构检索并致谢收尾",
+            "本页讲什么": "全 deck 末页,左上重述工作标题,中部致谢并给出联系邮箱、GitHub 代码与主页链接;下半区用方法示意图浓缩 SG-Filter 核心:doc 抽取摘要与嵌入,拆分 Semantic/Structured/Summarized 信息,借共现连接提升召回,经 Dense 与混合检索、标签过滤,分别增强语义信息(1)与结构信息(2)。形成回顾脉络→浓缩贡献→致谢的收束。",
+            "关键文字": [
+              "Summary",
+              "Thank you for your attention!",
+              "e-mail: yejiancai@sjtu.edu.cn",
+              "Code: https://github.com/strong-leaf/SG-Filter",
+              "Co-occurrence connection to improve recall rate",
+              "Hybrid retrieval / Label filtering"
+            ],
+            "视觉骨架": [
+              "顶部 Summary + 致谢文字",
+              "邮箱/代码/主页链接行",
+              "SG-Filter 方法示意图",
+              "增强语义/结构 双输出标注"
+            ],
+            "上页角色": "toc_candidate",
+            "下页角色": null,
+            "section_role": "closing"
+          }
+        ]
+      }
+    }
+  ],
+  "previous_batches_rules": []
+}

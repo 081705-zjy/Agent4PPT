@@ -1,0 +1,472 @@
+{
+  "batch_index": 13,
+  "rules": [
+    {
+      "id": "toc_navigation_layout_numbered_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录/章节导航版式·编号列表+当前项高亮",
+      "description": "全篇多次复用同一版式的 Contents 目录页承担章节切换职能:蓝框容器、①-④编号圆标竖列、当前项蓝色竖条/加粗高亮、其余项灰化淡出,左侧带竖向进度条。同一版式在 deck 内多次出现以标示进度推进。",
+      "evidence_signals": [
+        "关键文字 含 'Contents'",
+        "视觉骨架 含 '编号圆标' 或 '编号目录' 且含 '高亮' + '灰化' 组合",
+        "视觉骨架 含 '竖向进度条' 或 '蓝色竖条'",
+        "标题 含 '目录' 或 '章节导航' 或 '进入'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 2,
+          "评价": "首个 Contents 页,第 1 项高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 10,
+          "评价": "同版式,高亮切至第 2 项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 16,
+          "评价": "同版式,高亮切至第 3 项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 22,
+          "评价": "同版式,高亮切至第 4 项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "复用同版式+高亮切换让听众在长报告中始终感知当前所处章节与总进度,减少认知负担",
+      "fix_hint": "把章节切换页统一为 Contents 编号列表,当前章加蓝竖条+加粗,其余灰化",
+      "exceptions": [
+        "总页数 <10 的短 deck 不必设 TOC",
+        "非线性/汇报卡片型 deck"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_with_author_and_lab_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面版式·居中长标题+作者列表+底部实验室署名",
+      "description": "学术封面居中呈现完整长标题(常含主副标题冒号结构),下方细横分隔线,再列作者姓名(可英文列表)、日期、投稿venue标注,底部固定实验室/机构落款条,无任何正文 bullet 或数据图。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中' + '主标题' 或 '长标题块'",
+        "关键文字 含 作者姓名(2 人及以上)或英文 Authors 前缀",
+        "关键文字 含 具体日期(YYYY.M.D)",
+        "视觉骨架 含 '底部落款条' 或 '底部实验室署名'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 1,
+          "评价": "长标题居中+四位作者+2024.5.16+ICCAD'24 投稿标+CCC Lab 落款"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "居中长标题+作者+机构落款让听众开场瞬间锁定研究身份与所属团队,建立学术汇报的正式基调",
+      "fix_hint": "cover 只保留居中主标题、作者行、日期/venue、底部机构落款,移除任何 body 元素",
+      "exceptions": [
+        "品牌宣传型 deck (讲者身份让位于品牌 logo)",
+        "空白占位模板"
+      ]
+    },
+    {
+      "id": "ending_layout_thanks_with_speaker_and_lab_signature",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢版式·大字 Thanks+汇报人+机构落款",
+      "description": "全 deck 收尾页以大字号 'Thanks for your attention!' 居中偏上,下方浅色分隔线,再列汇报人+日期,底部保留实验室/机构落款,无正文,预留提问余白。与封面署名呼应形成开合结构。",
+      "evidence_signals": [
+        "关键文字 含 'Thanks' 或 '感谢' 大字标语",
+        "视觉骨架 含 '大字号' + '分隔线'",
+        "关键文字 含 汇报人姓名 + 日期",
+        "视觉骨架 含 '底部实验室署名' 或 '落款'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 26,
+          "评价": "Thanks 大字+分隔线+丁立/日期+Li Ding @ CCC Lab 底部署名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "大字感谢+身份落款既完成礼仪收束又与封面形成对称,给观众留出安静的提问间隙",
+      "fix_hint": "closing 页只放 Thanks 大字+分隔线+汇报人日期+机构落款,不塞总结/联系方式",
+      "exceptions": [
+        "汇报要求带 QA 联系方式或二维码时可在分隔线下加一行"
+      ]
+    },
+    {
+      "id": "content_layout_left_text_bullets_right_diagram",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容版式·左侧编号 bullet+右侧结构框图",
+      "description": "算法/架构类内容页普遍采用左文右图布局:左侧为①②③编号bullet 或论断文本,右侧为结构框图/数据流图/柱图,并用红色虚线框或色标锚定要点。文字与图形一一对应,不出现纯文本页。",
+      "evidence_signals": [
+        "视觉骨架 含 '左侧' + 'bullet' 或 '编号'",
+        "视觉骨架 含 '右侧' + '框图' 或 '结构示意' 或 '数据流'",
+        "视觉骨架 含 '红色虚线框' 或 '色标' 或 '编号锚点'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 5,
+          "评价": "DiT 三要素:左三 bullet+右红虚线框结构图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 8,
+          "评价": "T2V 改动:左编号 bullet+右密集注意力数据流框图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 15,
+          "评价": "OI 差异:左 Act-W/Act-Act 文本块+右 Spatial-Attention 结构图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 21,
+          "评价": "自适应架构:左文+右 PE/ME/routing 框图+甘特对比图"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 4,
+          "原因": "Diffusion 加噪去噪原理页采用双向箭头轴对称版式,不走左文右图"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "左文右图让听众读文本时视线可自然扫至图形对应模块,减少解释性文字负担",
+      "fix_hint": "把 content 页组织为左编号 bullet+右结构框图,并用红框/编号在两侧建立锚点",
+      "exceptions": [
+        "示意原理页(如加噪-去噪轴)用对称/中心构图更清晰",
+        "纯柱图/表格页(如加速比对比)可占据主区"
+      ]
+    },
+    {
+      "id": "progressive_disclosure_via_grayscale_reveal",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "渐进披露·灰化+高亮跨页递进",
+      "description": "复杂概念(如 DiT 三要素)用连续多页渐进呈现:同一版式下,前页只显示当前重点(其余灰化),后续页逐步点亮 ②③ 或引入新元素,过渡页可仅保留结构骨架不带正文。",
+      "evidence_signals": [
+        "相邻页视觉骨架高度重合(同框图/同编号锚点)",
+        "关键文字量在相邻页递增(bullet 从 1 条→多条)",
+        "视觉骨架 含 '大面积留白' 或 '动画过渡帧'",
+        "同一编号锚点 ①②③ 在多页共享"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 5,
+          "评价": "第 1 步:仅点亮 Patchify,②③灰化"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 6,
+          "评价": "过渡帧,仅保留结构+编号锚点,正文文字未出现"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 7,
+          "评价": "三要素全貌帧,红字强调计算复杂度句"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "复杂框架一次性抛出会让听众目光失焦,分帧披露让讲者节奏与观众注意力对齐",
+      "fix_hint": "复杂多要素框架分 2-4 页呈现,前页灰化未讲部分,后续页递进点亮并加红字强调",
+      "exceptions": [
+        "简单单要素概念不必分帧",
+        "面向读者的书面 deck(非演讲)可省渐进"
+      ]
+    },
+    {
+      "id": "red_emphasis_for_pain_points_and_key_conclusions",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "红色标注·痛点/关键结论/受限项",
+      "description": "红字、红框、红柱固定用于三类语义:(1)量化痛点(如 Large computations),(2)关键结论(如 2.74× speedup),(3)现有工作局限(如 Previous Work: only Act-W)。其他颜色不承担这类语义。",
+      "evidence_signals": [
+        "视觉骨架 含 '红字' 或 '红色' 或 '红柱' 或 '红色虚线框'",
+        "关键文字对应句含定量倍率/limitation 表述/Large 字样",
+        "同一 slide 存在稠密文字块中仅 1-2 处用红色"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 7,
+          "评价": "红字强调计算复杂度句"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 11,
+          "评价": "红柱 Large computations + 200× 强调"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 14,
+          "评价": "红字点题 Previous Work 局限"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 23,
+          "评价": "顶部红色主结论框标注 2.74× 加速"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "红色语义收敛让听众在密集图文中一眼定位痛点与结论,避免颜色噪声干扰逻辑主线",
+      "fix_hint": "红色只留给量化痛点/关键结论/局限声明三类,其他强调改用蓝/加粗",
+      "exceptions": [
+        "全 deck 品牌色本身为红时需另择强调色",
+        "已用红色区分算子色标的图不重复施加"
+      ]
+    },
+    {
+      "id": "title_uses_colon_topic_subtopic_structure",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·冒号分隔的主题:副主题",
+      "description": "slide 标题倾向 '主概念:具体切入' 或 '章节:要点' 的冒号/破折号结构,把定位(主题)与本页看点(副主题)一次交代清楚,避免'介绍 XX'类完整句 title。",
+      "evidence_signals": [
+        "标题含 ':' 或 '·' 或 '——' 分隔符",
+        "标题以名词短语开头,分隔符后再接名词短语",
+        "标题不以 '介绍' '本节' '我们将' '如何' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 4,
+          "评价": "'Background:Diffusion Model 加噪与去噪'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 5,
+          "评价": "'Backbone model:DiT 三要素(聚焦 Patchify)'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 17,
+          "评价": "'全注意力差分计算:非线性算子线性化'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 23,
+          "评价": "'加速效果:vs A100 的加速比与面效'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "冒号让 title 既承担定位又携带看点,比动宾长句更快锚定听众注意力,也不与 claim 语义重叠",
+      "fix_hint": "把'介绍 X'类动宾句改成'X:<本页看点>'冒号结构,或用'·'分隔",
+      "exceptions": [
+        "封面/致谢/纯目录页可用完整短语(如 'Thanks for your attention!')"
+      ]
+    },
+    {
+      "id": "claim_must_carry_quantitative_metric_when_result",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论断·结果/痛点页强制携带定量指标",
+      "description": "问题章与结果章的核心论断必须带具体数字(倍率/百分比/条数),而非'性能显著提升''差距很大'。数字优先出现在句尾或 claim 前半,便于听众记忆。",
+      "evidence_signals": [
+        "核心论断句含 '×' 或 '%' 或阿拉伯数字",
+        "section_role 为 problem/result 的 slide",
+        "关键文字含具体数值倍率(2.74×/200×/1.56× 等)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 11,
+          "评价": "'计算量达文本 200×、图像 10×'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 18,
+          "评价": "'能效提升 1.73×–3.18×'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 21,
+          "评价": "'平均提速 1.56×'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 23,
+          "评价": "'平均 2.74× 加速、2.29× 面效'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "定量指标让论断可复述可比较,'显著提升'类模糊描述在同行汇报里等同于无内容",
+      "fix_hint": "problem/result 页 claim 里补一条具体数字(× 或 %),没数据的段暂缓做结论页",
+      "exceptions": [
+        "背景/概念性 slide 可不带数字",
+        "未来工作/开放问题页允许无定量"
+      ]
+    },
+    {
+      "id": "bullets_use_numbered_circle_markers_not_dots",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "列表·用①②③编号圆标而非圆点",
+      "description": "多要素列表统一使用①②③④编号圆标,并在旁边结构图上放同样的编号锚点做左右呼应。避免使用无序圆点/dash,以支持渐进披露与图文对齐。",
+      "evidence_signals": [
+        "关键文字或视觉骨架含 '①' '②' '③' 或 '编号圆标'",
+        "视觉骨架含 '编号锚点' 且分布于两个视觉区块",
+        "同 slide 内 bullet 数量 ≤5"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 5,
+          "评价": "①Patchify/②Condition Embedding/③DiT Block 编号 bullet"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 9,
+          "评价": "①②③ 编号锚点分布 Latte/Flag-DiT 双架构图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 25,
+          "评价": "3 条开放问题编号列表"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "编号圆标便于讲者以'第①点'口述指引,并与图上锚点一一对应,减少'左边这个'类模糊指代",
+      "fix_hint": "把 bullet 前的圆点替换为 ①②③,并在结构图对应模块添加同编号锚点",
+      "exceptions": [
+        "无对应图形的纯文本页可用普通 bullet",
+        "并列同权重词条(如标签云)不必编号"
+      ]
+    },
+    {
+      "id": "english_technical_terms_kept_within_chinese_prose",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "术语·中文行文中保留英文技术词",
+      "description": "中文叙述中的核心技术术语(DiT/attention/patchify/KV cache/CSC 等)统一保留英文原词,不做全中文翻译;首次出现可括注中文含义。首字母缩写与库名(cublas/dgsparse/HBM)一律小写或大写英文。",
+      "evidence_signals": [
+        "标题或关键文字含中英混排(汉字紧接英文单词)",
+        "关键文字含 'DiT' 'attention' 'FFN' 'CSC' 'HBM' 等专有术语的英文原词",
+        "同一术语在多张 slide 保持英文一致拼写"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 5,
+          "评价": "'DiT 本质是 Text-to-Image model' 混排"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 11,
+          "评价": "'LLM decode phase' 与 'KV cache' 保留英文"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 20,
+          "评价": "'Turn Compressed Sparse Column(CSC) format to Reduced CSC'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "学术同行对英文术语的检索/回忆比中译词更强,强译反而增加认知摩擦并可能与文献失联",
+      "fix_hint": "把技术术语(模型/库/算子/格式名)从中译词改回英文原词,首次出现可括注中文",
+      "exceptions": [
+        "面向非专业受众的科普型 deck 可用中译",
+        "已有权威中译标准的通用词(如'注意力')可保留中文"
+      ]
+    },
+    {
+      "id": "background_chapter_narrows_from_field_to_target",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "背景章·从大领域逐层聚焦到本工作靶点",
+      "description": "背景章 slide 序列遵循 field→backbone→variant→靶点 的漏斗式递进:先讲领域现状(视频生成),再讲通用架构(Diffusion→DiT),再讲变体(Video DiT),最后以红字标注本工作要打的具体靶点(token 增加/计算复杂度)。",
+      "evidence_signals": [
+        "section_role 为 background 的连续 slide 中,标题词从宽到窄",
+        "首页含领域现状类词(生成模型/最新工作示例)",
+        "末页含红字或强调 '为后文...立靶' 类语义",
+        "background 段 slide 数 ≥3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 3,
+          "评价": "领域现状:Sora/Vidu 等 10s+ 视频生成"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 4,
+          "评价": "通用架构:Diffusion 加噪-去噪原理"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 7,
+          "评价": "靶点收束:红字点明 token 增加→计算复杂度"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "slide_index": 9,
+          "评价": "变体收束:Latte/Flag-DiT 两种 Video DiT"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "漏斗式背景把'领域→骨干→靶点'串成因果链,避免听众在背景章就丢失后续 problem/method 的锚点",
+      "fix_hint": "把 background 段按 '领域现状→通用骨干→本工作相关变体→红字靶点' 排序,末页明确点靶",
+      "exceptions": [
+        "受众已熟悉领域时可跳过领域现状页",
+        "重心在实验的短汇报可压缩背景到 1-2 页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck(VGAcc paper_share),抽出 visual 6 条 + authoring 5 条,共 11 条。visual 覆盖 TOC 导航版式、封面/致谢署名对称、左文右图、渐进披露、红色语义;authoring 覆盖冒号 title、定量 claim、编号 bullet、英文术语保留、背景漏斗。",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 6,
+      "authoring": 5
+    }
+  }
+}

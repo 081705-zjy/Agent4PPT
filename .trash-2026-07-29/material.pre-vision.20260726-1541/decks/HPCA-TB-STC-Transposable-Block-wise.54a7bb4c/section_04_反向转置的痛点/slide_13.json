@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_13",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 13,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "矩阵乘 W×Input=Output 结构示意",
+  "核心论断": "权重与输入相乘产出激活，构成稀疏加速的基本算子",
+  "本页讲什么": "本页用矩阵乘示意图拆解神经网络的核心算子：权重 W 与 Input 相乘得到 Output（激活 Act）。直观呈现稀疏施加于权重矩阵的位置，为下一页区分 Forward/Backward 的转置问题奠定视觉基础。",
+  "关键文字": [
+    "W × Input = Output",
+    "Act"
+  ],
+  "视觉骨架": [
+    "矩阵乘法示意图",
+    "W/Input/Output 三矩阵块",
+    "乘号等号连接"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_13.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_13.asset.02",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_13.asset.03",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_13.asset.04"
+  ],
+  "适合复用场景": [
+    "矩阵乘算子结构讲解页",
+    "稀疏施加位置示意页"
+  ],
+  "不适合复用场景": [
+    "性能数据对比页",
+    "章节目录导航页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

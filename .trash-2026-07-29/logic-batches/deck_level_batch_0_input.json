@@ -1,0 +1,1769 @@
+{
+  "batch_index": 0,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+      "目录名": "AI-Infra与国智院建设思考.70b8b70e",
+      "标题": "AI Infra与国智院建设思考",
+      "总页数": 65,
+      "章节数": 8,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_算力差距与中美背景",
+        "section_03_系统优化与软硬件协同",
+        "section_04_推理芯片趋势与端侧算力",
+        "section_05_异构集群与十万卡训练",
+        "section_06_国智院展望与团队组成",
+        "section_07_研究方向与具身智能",
+        "section_08_算力底座落地与代表工作"
+      ],
+      "主题标签": [
+        "AI Infra",
+        "智能算力",
+        "大模型",
+        "软硬件协同",
+        "推理芯片",
+        "异构集群",
+        "国智院",
+        "具身智能"
+      ],
+      "目标受众": "政府与学术产业决策方",
+      "报告类型": "research_report",
+      "适用场景": "AI算力基础设施战略汇报与研究院建设规划",
+      "论述总结": "从中美算力差距与出口禁令背景切入,分析提升智能算力的途径;讲解大模型软硬件协同优化与推理芯片趋势;再到异构算力集群、十万卡训练的关键问题;最后落到国智院研究方向、团队组成与建设展望。",
+      "论述弧线": [
+        "背景差距",
+        "算力芯片",
+        "算力集群",
+        "国智院",
+        "展望"
+      ],
+      "适合复用场景": [
+        "AI算力基础设施战略汇报",
+        "研究院/实验室建设规划汇报",
+        "大模型软硬件协同优化专题",
+        "中美算力差距背景分析章节",
+        "异构集群与训练挑战介绍"
+      ],
+      "不适合复用场景": [
+        "单一算法论文分享(叙事偏宏观)",
+        "面向投资方商业BP(缺财务)",
+        "纯技术教程教学(细节不足)",
+        "消费级产品demo展示",
+        "非算力主题汇报(话题偏离)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "全 deck 开场:封面亮明「AI Infra与国智院」主题+讲者署名,目录页用高亮当前章的进度式菜单铺开 00-04 五段论述骨架,为后续背景→优化→集群→国智院展开定调。",
+          "页间关系": [
+            "slide 1 → slide 2: 由极简封面(标题/讲者/日期)切入蓝条目录,首次列出 00-04 全 deck 章节骨架"
+          ],
+          "适合复用场景": [
+            "学术/技术报告开场:封面+进度式高亮目录成套复用",
+            "需要「当前章高亮、余章灰显」进度菜单的多章 deck",
+            "校方/机构署名(讲者+邮箱+单位 footer)的正式汇报",
+            "章节数 4-6 的线性论述型 deck 开场"
+          ],
+          "在deck中的位置": "第 1 章,整个 65 页 deck 的最前端,封面+总目录"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "算力差距与中美背景",
+          "页码范围": [
+            3,
+            7
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07"
+          ],
+          "章节叙事": "作为deck背景动机层:先以AI Infra框图连接模型与硬件,论证算力供需矛盾+美国出口禁令双重压力,再借总书记重视升华,末页以「三途径提升智能算力」总纲引出后续方法章节。",
+          "页间关系": [
+            "slide 3 → slide 4: 由AI Infra连接基座模型与算力硬件的框图,过渡到模型规模vs算力供需的量级对比",
+            "slide 4 → slide 5: 由需求增4量级远超供应的供需缺口,引出美国NV卡出口禁令进一步收紧供给",
+            "slide 5 → slide 6: 由外部禁令的卡脖子压力,升华到总书记重视人工智能与高质量发展的政策动机",
+            "slide 6 → slide 7: 由政策号召落到「三种途径提升智能算力」的方法总纲,开启后文"
+          ],
+          "适合复用场景": [
+            "需论证「算力供需矛盾」的背景动机章节",
+            "需叠加「出口管制/卡脖子」外部约束的段落",
+            "以政策/总书记讲话为技术议题背书的场景",
+            "用「N种途径」总纲收束背景并引出方法的过渡结构"
+          ],
+          "在deck中的位置": "第2章背景层,承接封面进入正题,为后续软硬件优化与集群章节铺垫"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.03",
+          "章节序号": 3,
+          "章节角色": "method",
+          "标题": "系统优化与软硬件协同",
+          "页码范围": [
+            8,
+            19
+          ],
+          "页数": 12,
+          "页ID列表": [
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18",
+            "slide_19"
+          ],
+          "章节叙事": "deck 方法核心章。先论证单层系统优化已趋平缓,据此引出软硬件协同;以 AI1.0(能效提升6万倍)对比 AI2.0(FP8训练实例),最终收敛到全栈协同10²-10³x与精度-速度定位。",
+          "页间关系": [
+            "slide 8 → slide 9: 目录高亮本章,引出AI1.0到AI2.0范式变化",
+            "slide 9 → slide 10: 由范式变化切入单层系统优化现状",
+            "slide 10 → slide 11: 由优化趋于平缓盘点典型系统优化技术",
+            "slide 11 → slide 12: 由软件层技术转向软硬件协同(AI1.0)",
+            "slide 12 → slide 13: 由能效提升数字引出AI1.0协同优化方法",
+            "slide 13 → slide 14: 由AI1.0协同过渡到AI2.0实例FP8训练",
+            "slide 14 → slide 15: FP8标题页展开算法/系统/硬件三层协同",
+            "slide 15 → slide 16: 由三层方法到FP8实测GPU利用率提升",
+            "slide 16 → slide 17: 由单点FP8实例上升到全栈协同架构",
+            "slide 17 → slide 18: 由全栈架构到全栈协同收益量化(10²-10³x)",
+            "slide 18 → slide 19: 由收益量化到精度-速度综合定位(Better)"
+          ],
+          "适合复用场景": [
+            "论证「单层优化见顶、需全栈软硬件协同」的方法章",
+            "需用趋势时间线铺垫再落到协同优化的论证结构",
+            "AI1.0与AI2.0两代技术对照式的方法叙事",
+            "以FP8等单点实例支撑全栈协同收益的章节",
+            "需精度-速度散点收尾定位自身方案优越性的场合"
+          ],
+          "在deck中的位置": "第3章(章节序号01),承背景章、启异构算力集群章"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "推理芯片趋势与端侧算力",
+          "页码范围": [
+            20,
+            31
+          ],
+          "页数": 12,
+          "页ID列表": [
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24",
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29",
+            "slide_30",
+            "slide_31"
+          ],
+          "章节叙事": "承接“提升智能算力途径”,论证推理时代芯片是端侧/具身落地关键:由o1范式变化引出推理算力暴涨,盘点五类芯片与~150款能力,再以具身需求对标CPU/GPU/FPGA/ASIC差距,收于系统优化+定制化提升路径。",
+          "页间关系": [
+            "slide 20 → slide 21: 目录翻至02章,由OpenAI o1范式变化切入推理算力话题",
+            "slide 21 → slide 22: 由推理算力暴涨,引出承载推理的五类典型芯片全景",
+            "slide 22 → slide 23: 由芯片分类表,深入推理芯片能效公式与代表产品",
+            "slide 23 → slide 24: 由单芯片能效,汇总~150款芯片能力散点与指标表",
+            "slide 24 → slide 25: 由整体汇总,聚焦端侧LLM推理芯片举例",
+            "slide 25 → slide 26: 由端侧现状,提出具身智能实际算力需求指标",
+            "slide 26 → slide 27: 由需求指标,对标CPU平台现状差距",
+            "slide 27 → slide 28: 由CPU差距,转入GPU平台差距对比",
+            "slide 28 → slide 29: 由GPU差距,转入FPGA平台差距对比",
+            "slide 29 → slide 30: 由FPGA差距,转入ASIC平台差距对比",
+            "slide 30 → slide 31: 由各平台差距,收束到系统优化+定制化提升路径"
+          ],
+          "适合复用场景": [
+            "论证“推理时代算力需求暴涨”的动机章节",
+            "横向对比CPU/GPU/FPGA/ASIC/PIM多类芯片的评测章节",
+            "端侧/具身算力“需求vs现状差距”的分析章节",
+            "用tokens/s、tokens/J统一指标量化能效的章节",
+            "以“系统优化+定制化”提升路径收尾的方案章节"
+          ],
+          "在deck中的位置": "第4章(页面标为02),紧接算力途径章,为后续国智院研究方向做技术铺垫"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.05",
+          "章节序号": 5,
+          "章节角色": "method",
+          "标题": "异构集群与十万卡训练",
+          "页码范围": [
+            32,
+            42
+          ],
+          "页数": 11,
+          "页ID列表": [
+            "slide_32",
+            "slide_33",
+            "slide_34",
+            "slide_35",
+            "slide_36",
+            "slide_37",
+            "slide_38",
+            "slide_39",
+            "slide_40",
+            "slide_41",
+            "slide_42"
+          ],
+          "章节叙事": "本章为method核心：先立「芯片决定模型上限」的动机，再用十万卡案例与Scaling Law论证集群规模化必然，落到国产异构集群三大关键问题，最后以Google/无问芯穹实践与国智院算力底座展望收束。",
+          "页间关系": [
+            "slide 32 → slide 33: 由本章目录页切入，进入中美芯片/模型依赖关系",
+            "slide 33 → slide 34: 由「芯片决定模型上限」动机引出十万卡集群案例（Meta）",
+            "slide 34 → slide 35: 承Meta案例，并列xAI Colossus十万卡案例",
+            "slide 35 → slide 36: 由具体案例上升到Scaling Law驱动的集群规模需求",
+            "slide 36 → slide 37: 由规模化需求引出关键问题1：国产GPU性能低、故障率高",
+            "slide 37 → slide 38: 关键问题递进2：异构GPU接口与通信库不统一",
+            "slide 38 → slide 39: 关键问题递进3：异构集群开发与训练难度大",
+            "slide 39 → slide 40: 由问题转向解法，Google跨数据中心训练实践",
+            "slide 40 → slide 41: 再举无问芯穹昇腾910B训练优化实践",
+            "slide 41 → slide 42: 由具体实践升华到国智院算力底座研究展望"
+          ],
+          "适合复用场景": [
+            "论证「国产算力须自建异构集群」的method章节",
+            "需罗列十万卡GPU集群标杆案例（Meta/xAI）",
+            "拆解国产/异构集群三大关键问题的技术章节",
+            "以「动机→案例→问题→实践→展望」组织算力议题"
+          ],
+          "在deck中的位置": "第5章（TOC列为03），承接推理芯片趋势，为国智院研究方向铺垫算力底座"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.06",
+          "章节序号": 6,
+          "章节角色": "discussion",
+          "标题": "国智院展望与团队组成",
+          "页码范围": [
+            43,
+            46
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_43",
+            "slide_44",
+            "slide_45",
+            "slide_46"
+          ],
+          "章节叙事": "全 deck 收尾章。由 agenda 分隔页切入国智院板块，先用愿景分叉图展开软硬件双支撑的研究方向全景，再文字罗列具体研究课题，末页落到清华/交大/无问芯穹/国智院四方团队组成。",
+          "页间关系": [
+            "slide 43 → slide 44: 由 agenda 分隔页高亮『04.国智院展望』进入正题，展开未来工作全景图",
+            "slide 44 → slide 45: 由愿景分叉架构图(软/硬双支撑)下钻到文字罗列的具体研究课题清单",
+            "slide 45 → slide 46: 由研究课题清单转到承接这些工作的四方团队组成"
+          ],
+          "适合复用场景": [
+            "研究院/实验室展望+团队介绍的收尾章节",
+            "架构图→课题清单→团队三段式收束结构",
+            "用愿景分叉图展现双支撑研究布局",
+            "多机构联合团队的组成介绍页",
+            "以 agenda 分隔页切入末章的结构"
+          ],
+          "在deck中的位置": "第 6 章(末章)，紧跟前面技术章节，收束为研究院展望与团队。"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.07",
+          "章节序号": 7,
+          "章节角色": "method",
+          "标题": "研究方向与具身智能",
+          "页码范围": [
+            47,
+            56
+          ],
+          "页数": 10,
+          "页ID列表": [
+            "slide_47",
+            "slide_48",
+            "slide_49",
+            "slide_50",
+            "slide_51",
+            "slide_52",
+            "slide_53",
+            "slide_54",
+            "slide_55",
+            "slide_56"
+          ],
+          "章节叙事": "展示国智院具体研究布局:先用「单体/协同×软硬件」框架与AI1.0/2.0双定律铺陈路线,再逐层落到多智能体强化学习、具身智能的成果论文矩阵,最后以千平米智能测试场平台收束。",
+          "页间关系": [
+            "slide 47 → slide 48: 由研究方向二维坐标(单体/协同×软硬件)过渡到AGI能力构成公式与两大定律",
+            "slide 48 → slide 49: 由AGI能力框架切入AI 1.0(Moore's Law)阶段的研究内容矩阵",
+            "slide 49 → slide 50: 由AI 1.0平行推进到AI 2.0(Scaling Law)研究内容",
+            "slide 50 → slide 51: 从AI阶段划分收束回单体智能与协同智能的能效对比",
+            "slide 51 → slide 52: 由单体/协同能效总览聚焦到「多智能体强化学习算法」具体方向",
+            "slide 52 → slide 53: 由研究目标(泛化/高效)展开为强化学习算法的成果论文矩阵",
+            "slide 53 → slide 54: 由强化学习成果延伸到具身智能(大模型推理/AI Agent)突破成果",
+            "slide 54 → slide 55: 由算法论文成果转向协同智能的实物平台与联合研究中心",
+            "slide 55 → slide 56: 由协同智能方向落到支撑它的智能测试场(超千平米动捕)平台"
+          ],
+          "适合复用场景": [
+            "展示科研团队/机构完整研究布局的「研究方向」章节",
+            "用二维坐标(软硬件×单体协同)组织多条研究主线时",
+            "需从抽象框架逐层落到具体论文成果的方法章节",
+            "算法成果矩阵+实物平台/测试场并陈的科研汇报"
+          ],
+          "在deck中的位置": "第7章方法,承接算力与训练难题,落到研究方向与支撑平台"
+        },
+        {
+          "章节标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.08",
+          "章节序号": 8,
+          "章节角色": "case_study",
+          "标题": "算力底座落地与代表工作",
+          "页码范围": [
+            57,
+            65
+          ],
+          "页数": 9,
+          "页ID列表": [
+            "slide_57",
+            "slide_58",
+            "slide_59",
+            "slide_60",
+            "slide_61",
+            "slide_62",
+            "slide_63",
+            "slide_64",
+            "slide_65"
+          ],
+          "章节叙事": "case_study 章，展示国智院算力底座落地成果与两大研究方向代表作：先总览三大支撑平台，再以异构千卡到十万卡训练+调度系统证明工程能力，最后用电路与算法两方向代表工作坐实科研实力。",
+          "页间关系": [
+            "slide 57 → slide 58: 由三大算力底座总览聚焦到异构混合训练平台的 4+2 芯片混训",
+            "slide 58 → slide 59: 由芯片混训能力引出无问芯穹异构集群调度系统四项优势",
+            "slide 59 → slide 60: 由千卡级调度指标升级到万卡至十万卡更大规模联合训练",
+            "slide 60 → slide 61: 由训练平台工程能力转入科研方向 1（领域专用高能效电路与系统）",
+            "slide 61 → slide 62: 由方向 1 软硬件协同框架展开其多款 FPGA/芯片代表性工作",
+            "slide 62 → slide 63: 由电路系统代表作切换到科研方向 2（高效 AI 算法模型设计与优化）",
+            "slide 63 → slide 64: 由方向 2 算法/模型级框架展开 LLM 与扩散模型加速代表性工作",
+            "slide 64 → slide 65: 由算法代表作收束到大模型训练容错系统性能优势"
+          ],
+          "适合复用场景": [
+            "机构/团队展示算力平台落地成果的收尾章",
+            "需以千卡到十万卡训练能力佐证工程实力时",
+            "科研方向按『框架页+代表作页』成对铺陈的章节",
+            "软硬件协同、算法-系统双方向并列展示时"
+          ],
+          "在deck中的位置": "末章（第 8 章），承接前文方法论述，用落地成果与代表作收尾。"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "AI Infra与国智院建设思考（封面）",
+          "核心论断": "以「AI Infra与国智院建设」为主题开场并署名讲者",
+          "本页讲什么": "全 deck 封面页：巨型主标题「AI Infra与国智院建设思考」横贯页面中部，一条浅色分隔线穿过标题，下方居中给出报告日期 2024-10-14、地点 @上海、讲者戴国浩及其邮箱 daiguohao@sjtu.edu.cn。整页极简、大量留白，仅承担亮明主题与署名的开场功能。",
+          "关键文字": [
+            "AI Infra与国智院建设思考",
+            "戴国浩",
+            "2024-10-14 @上海",
+            "daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "超大主标题居中",
+            "浅色横向分隔线",
+            "下方日期/地点/署名区"
+          ],
+          "上页角色": null,
+          "下页角色": "toc_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "toc_candidate",
+          "标题": "目录：00-04 五段论述骨架",
+          "核心论断": "全报告按背景→系统优化→集群→国智院→展望五段展开",
+          "本页讲什么": "目录页用进度式菜单铺开全 deck 骨架：顶部「目录」标题下压一条蓝色粗分隔线，正文以 00-04 编号列出五个章节，当前章「00. 背景：算力差距与中美差异」以黑色高亮，其余 01-04 灰化表示未展开。页脚署名 Guohao Dai @ Shanghai JiaoTong University。整页为导航型进度菜单。",
+          "关键文字": [
+            "目录",
+            "00. 背景：算力差距与中美差异",
+            "01. 系统优化发展现状与进展",
+            "02.",
+            "03.",
+            "04.",
+            "Guohao Dai @ Shanghai JiaoTong University"
+          ],
+          "视觉骨架": [
+            "蓝色粗分隔线",
+            "00-04 编号章节列表",
+            "当前章高亮/其余灰化",
+            "页脚署名条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "toc_candidate",
+          "标题": "目录：进入 01 系统优化与软硬件协同",
+          "核心论断": "报告进入第 01 章——系统优化与软硬件协同",
+          "本页讲什么": "全局目录页，列出 00 背景/01 系统优化与软硬件协同/02/03/04 五个章节，当前高亮 01 项，作为进入本方法核心章的过渡分隔页。其余条目灰显，仅 01 用黑色强调，指示后续内容聚焦系统与软硬件协同优化。",
+          "关键文字": [
+            "00. 背景：大模型技术引领 AGI 发展",
+            "01. 系统优化与软硬件协同",
+            "02/03/04 其余章节"
+          ],
+          "视觉骨架": [
+            "蓝色分隔横条",
+            "5 项编号目录列表",
+            "当前项黑色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "toc_candidate",
+          "标题": "目录：进入第 02 章推理芯片",
+          "核心论断": "报告推进到第 02 章,聚焦推理时代芯片与端侧算力",
+          "本页讲什么": "全篇五级目录页,高亮第 02 章(推理芯片趋势与端侧算力),其余 00 背景/01/03/04 结束语以浅灰列出。作为本 section 的入口分隔页,提示听众叙事从算力途径切换到推理芯片主题。",
+          "关键文字": [
+            "00. 背景:大模型技术引领 AGI 发展",
+            "02.(高亮当前章)",
+            "04. 结束语"
+          ],
+          "视觉骨架": [
+            "五行编号目录列表",
+            "顶部蓝色分隔条",
+            "当前章高亮其余置灰"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 32,
+          "页面角色": "toc_candidate",
+          "标题": "目录：第03章 异构集群与十万卡训练",
+          "核心论断": "报告进入第三部分——聚焦AI Infra的异构集群与十万卡训练",
+          "本页讲什么": "全局五段式目录页，当前高亮第03项「异构集群与十万卡训练」，其余四项(00背景引领AGI、01/02、04)灰显。用于从上一部分过渡到本章method核心，标示讲述进度。",
+          "关键文字": [
+            "00. 背景：大模型技术引领AGI发展",
+            "03. 异构集群与十万卡训练(高亮)"
+          ],
+          "视觉骨架": [
+            "顶部标题+蓝色分隔线",
+            "5行编号目录列表",
+            "当前项黑色高亮其余灰显"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 43,
+          "页面角色": "toc_candidate",
+          "标题": "目录：进入第 04 板块国智院展望",
+          "核心论断": "报告进入第 04 板块——国智院展望与团队",
+          "本页讲什么": "全 deck 目录分隔页，列出 00 背景到 04 五个板块，其中 04「国智院展望」以黑色高亮、其余灰化，标示报告正式进入国智院收尾章节。讲者借此过渡到国智院愿景与团队部分。",
+          "关键文字": [
+            "00. 背景：大模型技术引领 AGI 发展",
+            "04. 国智院展望"
+          ],
+          "视觉骨架": [
+            "00-04 目录条目列表",
+            "当前项黑色高亮其余灰化",
+            "顶部蓝色分隔横条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+      "目录名": "ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+      "标题": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+      "总页数": 93,
+      "章节数": 11,
+      "章节列表": [
+        "section_01_封面与开场目录",
+        "section_02_AI增长趋势与稀疏动机",
+        "section_03_稀疏计算流程与思想",
+        "section_04_开源框架dgSPARSE与算子",
+        "section_05_点云稀疏卷积加速",
+        "section_06_超图神经网络加速",
+        "section_07_AI时代稀疏性背景",
+        "section_08_LLM稀疏方法与编译硬件",
+        "section_09_FlightLLM(FPGA推理)",
+        "section_10_其他工作FlashDecoding++",
+        "section_11_合作与致谢"
+      ],
+      "主题标签": [
+        "稀疏计算",
+        "大模型推理",
+        "硬件加速",
+        "点云",
+        "GNN",
+        "FPGA",
+        "算子优化",
+        "软硬协同"
+      ],
+      "目标受众": "体系结构与AI加速方向学术及工业研究者",
+      "报告类型": "tutorial",
+      "适用场景": "学术会议tutorial或组内稀疏计算/AI加速方向综述串讲",
+      "论述总结": "从AI在数据、算力、任务上的增长趋势切入,论证稀疏计算是提升等效算力与能效的新路径;讲清稀疏计算流程与思想,展示开源框架dgSPARSE;再用点云稀疏卷积、超图神经网络、LLM稀疏方法、FlightLLM(FPGA)、FlashDecoding++等本组成果落地,最后收束到合作与致谢。",
+      "论述弧线": [
+        "趋势动机",
+        "稀疏思想",
+        "开源框架",
+        "应用案例",
+        "合作致谢"
+      ],
+      "适合复用场景": [
+        "稀疏计算/AI加速主题tutorial",
+        "AI趋势引出问题的motivation章节",
+        "多篇体系结构成果串讲汇报",
+        "软硬件协同优化技术分享",
+        "开源框架介绍章节"
+      ],
+      "不适合复用场景": [
+        "稠密训练/通用ML入门(话题偏离)",
+        "面向投资方的商业demo(叙事不符)",
+        "单篇论文深度精讲(本deck偏综述)",
+        "非硬件向的AI应用汇报",
+        "偏产品化落地路演"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与开场目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "全 deck 的门面章:封面亮出标题/双讲者身份,目录页用高亮 1 与灰化 2-4 建立「Opening→dgSparse→Case study→Other works」四段主线,给听众全局地图。",
+          "页间关系": [
+            "slide 1 → slide 2: 由封面标题与讲者信息切入,翻到 Contents 目录页,用高亮「1 Opening」定位当前进度并预告四段主线"
+          ],
+          "适合复用场景": [
+            "学术 tutorial/报告需「封面+四段式目录」开场的场景",
+            "多讲者联合报告需并列展示双方身份的封面",
+            "目录用编号高亮当前章、灰化后续章的进度导航式开场"
+          ],
+          "在deck中的位置": "第 1 章,位于 deck 最前,统领后续三大内容章节"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.02",
+          "章节序号": 2,
+          "章节角色": "motivation",
+          "标题": "AI增长趋势与稀疏动机",
+          "页码范围": [
+            3,
+            9
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09"
+          ],
+          "章节叙事": "紧接封面/大纲的动机章:先用AI三时代路标+数据/算力/任务三轴铺陈趋势,层层论证模型10×增长带来算力供需鸿沟,顺势引出稀疏计算作为提效新路,为后续稀疏方法与成果章节奠定前提。",
+          "页间关系": [
+            "slide 3 → slide 4: 由AI三时代/三轴总路标聚焦到第一条趋势『数据与任务』的三分栏",
+            "slide 4 → slide 5: 由空栏三分类框(大数据/多模态/复杂任务)填入自动驾驶等具体量级数据",
+            "slide 5 → slide 6: 由数据任务增长转到模型侧,引出LLM摩尔定律参数5个数量级暴涨",
+            "slide 6 → slide 7: 由模型每年10×增长过渡到算力需求激增、供需存在巨大鸿沟",
+            "slide 7 → slide 8: 由算力鸿沟这一痛点引出稀疏计算作为提升等效算力的新思路",
+            "slide 8 → slide 9: 由『稀疏成为新路』的结论下探到稀疏计算定义与2×提速原理"
+          ],
+          "适合复用场景": [
+            "需论证『AI规模爆炸→算力鸿沟→需新提效路径』的动机章",
+            "为稀疏/低功耗/高能效硬件方案做背景铺垫",
+            "以数据/模型/任务三轴展开AI趋势的开场",
+            "自动驾驶等场景说明多模态大数据的引子"
+          ],
+          "在deck中的位置": "第2章motivation,承封面大纲,启后续稀疏流程与成果章"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.03",
+          "章节序号": 3,
+          "章节角色": "framework",
+          "标题": "稀疏计算流程与思想",
+          "页码范围": [
+            10,
+            24
+          ],
+          "页数": 15,
+          "页ID列表": [
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "全deck方法论内核章：先用逐步build的三段流程图(稀疏化-编译-架构)与等效算力公式讲清稀疏计算原理，再以LLM+结构化知识为创新点，回顾2022并展示2022→2024进展，末尾预告本组方法，承接后续成果章。",
+          "页间关系": [
+            "slide 10 → slide 11: 在GEMM→SpMM稀疏化两步上增补Compilation(内积/行/外积)阶段",
+            "slide 11 → slide 12: 再补Architecture阶段，流程图集齐三段(标题转Computation Flow)",
+            "slide 12 → slide 13: 由完整流程图切入稀疏思想，拆解等效算力公式第一项Sparsification",
+            "slide 13 → slide 14: 由等效算力比推进到Compilation，用runtime时序讲利用率",
+            "slide 14 → slide 15: 由利用率推进到Architecture support，展示多种稀疏模式",
+            "slide 15 → slide 16: 三项因子汇总为algorithm-compilation-architecture多层设计",
+            "slide 16 → slide 17: 由稀疏思想总结转到AI趋势2:模型(LLM+专用模型)",
+            "slide 17 → slide 18: 由模型趋势引出创新点LLM+结构化知识(GFLOPs→KFLOPs)",
+            "slide 18 → slide 19: 由算力对比深入到复杂度O(N²)→O(1)论证",
+            "slide 19 → slide 20: 由创新点收束，转入Review ASP-DAC 2022 Tutorial",
+            "slide 20 → slide 21: 由2022回顾展开2022→2024进展:更多应用+更高性能",
+            "slide 21 → slide 22: 由技术进展升华到产业视角(工业革命时间轴)",
+            "slide 22 → slide 23: 时间轴聚焦到第4次工业革命Now",
+            "slide 23 → slide 24: 由工业革命定位收束到LLM基础设施+本组方法路线图，承接成果章"
+          ],
+          "适合复用场景": [
+            "需逐帧build流程图讲清多阶段技术管线的方法章",
+            "需用一个公式拆多因子论证性能来源的原理章",
+            "tutorial中回顾旧版+展示N年进展的过渡章",
+            "从技术原理平滑过渡到自研成果预告的framework章"
+          ],
+          "在deck中的位置": "第3章framework，承前趋势铺垫、启后续本组成果落地，是全deck方法论内核"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.04",
+          "章节序号": 4,
+          "章节角色": "framework",
+          "标题": "开源框架dgSPARSE与算子",
+          "页码范围": [
+            25,
+            34
+          ],
+          "页数": 10,
+          "页ID列表": [
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29",
+            "slide_30",
+            "slide_31",
+            "slide_32",
+            "slide_33",
+            "slide_34"
+          ],
+          "章节叙事": "承接稀疏计算思想,落地为开源框架 dgSPARSE:先立框架(开源生态+算子/GNN 加速),经 2022→2024 路线图过渡到代表算子工作 SpMM 启发式自适应(DAC'22)的『挑战→方案→模型→性能』闭环",
+          "页间关系": [
+            "slide 25 → slide 26: 由 agenda 高亮 dgSPARSE 章过渡到框架总览首页(Innovation 定义)",
+            "slide 26 → slide 27: 由框架定义与开源角色过渡到框架性能优势(算子/GNN 加速数字)",
+            "slide 27 → slide 28: 由性能数字上升到开源生态集成(CogDL 等上层框架)",
+            "slide 28 → slide 29: 由框架生态拉出 2022→2024 全景路线图(算子+LLM 两条主线)",
+            "slide 29 → slide 30: 由路线图定位代表算子工作,切入论文标题页(DAC'22 SpMM)",
+            "slide 30 → slide 31: 由论文标题抛出问题:单算法无法应对输入动态",
+            "slide 31 → slide 32: 由挑战给出方案:启发式自适应,构建 SpMM 算法空间",
+            "slide 32 → slide 33: 由算法空间设计具体化为动态选择算法的启发式模型",
+            "slide 33 → slide 34: 由方法过渡到性能验证(1.26x–1.37x over cuSPARSE)"
+          ],
+          "适合复用场景": [
+            "展示自研开源框架/工具链落地成果的 framework 章节",
+            "论证自研算子/系统优于商业库(cuSPARSE/NVIDIA)的对比章",
+            "从框架总览过渡到单篇代表作深挖的叙事结构",
+            "GNN/稀疏计算方向的开源生态介绍章",
+            "需『挑战→方案→模型→性能』闭环讲一个算子的场景"
+          ],
+          "在deck中的位置": "第 4 章,承接稀疏计算思想,为后续点云/超图/LLM 案例提供框架与算子基座"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.05",
+          "章节序号": 5,
+          "章节角色": "case_study",
+          "标题": "点云稀疏卷积加速",
+          "页码范围": [
+            35,
+            48
+          ],
+          "页数": 14,
+          "页ID列表": [
+            "slide_35",
+            "slide_36",
+            "slide_37",
+            "slide_38",
+            "slide_39",
+            "slide_40",
+            "slide_41",
+            "slide_42",
+            "slide_43",
+            "slide_44",
+            "slide_45",
+            "slide_46",
+            "slide_47",
+            "slide_48"
+          ],
+          "章节叙事": "作为 deck 首个落地成果案例,深度拆解点云稀疏卷积加速论文:由「实时需求 vs SOTA 精度」缺口切入,以三组 Observation→Solution 递进(冗余加载/低利用率/静态数据流),末尾端到端加速比与消融收束。",
+          "页间关系": [
+            "slide 35 → slide 36: 由论文标题作者页过渡到点云实时性需求 vs SOTA 精度缺口",
+            "slide 36 → slide 37: 由实时性缺口引出稀疏卷积的稠密计算四阶段流程",
+            "slide 37 → slide 38: 由稠密流程拆解聚焦到 Observation 1—无效映射冗余加载",
+            "slide 38 → slide 39: 由冗余加载现象深入到 column/value 数组可进一步压缩",
+            "slide 39 → slide 40: 由可压缩观察引出 Solution 1—Coded-CSR 格式存储",
+            "slide 40 → slide 41: 由存储优化转向 Observation 2—FGMS 顺序计算利用率低",
+            "slide 41 → slide 42: 由低利用率深入到 segmented FGMS 可并行但仍有冗余",
+            "slide 42 → slide 43: 由并行化观察引出 Solution 2—Indicator 辅助 FGMS 融合",
+            "slide 43 → slide 44: 由计算融合转向 Observation 3—静态数据流带来性能损失",
+            "slide 44 → slide 45: 由静态数据流缺陷深入到映射模式差异引发额外搜索",
+            "slide 45 → slide 46: 由额外搜索问题引出 Solution 3—启发式自适应数据流选择",
+            "slide 46 → slide 47: 由三大解决方案收束到端到端实验加速比",
+            "slide 47 → slide 48: 由端到端加速转向消融与附加实验验证各方案贡献"
+          ],
+          "适合复用场景": [
+            "系统/体系结构论文的单篇深度讲解章节",
+            "需用「Observation→Solution」多组递进论证的方法章",
+            "以「实时需求 vs SOTA 精度」缺口开场的加速工作",
+            "需先铺垫计算流程再逐点定位瓶颈的技术叙事",
+            "以端到端加速比+消融实验收尾的成果展示"
+          ],
+          "在deck中的位置": "第 5 章,紧接 dgSPARSE 框架,为后续超图/LLM 等成果树立单论文叙事模板"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+          "章节序号": 6,
+          "章节角色": "case_study",
+          "标题": "超图神经网络加速",
+          "页码范围": [
+            49,
+            56
+          ],
+          "页数": 8,
+          "页ID列表": [
+            "slide_49",
+            "slide_50",
+            "slide_51",
+            "slide_52",
+            "slide_53",
+            "slide_54",
+            "slide_55",
+            "slide_56"
+          ],
+          "章节叙事": "本组第二个 case study,承接稀疏计算主线,以 HyperGef 为例展示「三挑战→三解法→性能验证」的完整研究闭环,论证超图神经网络在 GPU 上可高效 fusion 加速。",
+          "页间关系": [
+            "slide 49 → slide 50: 由 HyperGef 论文封面切入,进入第一个挑战——低效 partition 的冗余与不均衡",
+            "slide 50 → slide 51: 由 partition 挑战递进到 Challenge 2/3——workload-agnostic 格式与写冲突",
+            "slide 51 → slide 52: 三挑战陈述完毕,转入对应 Solution 1 边分割负载均衡 partition",
+            "slide 52 → slide 53: 由 Solution 1 partition 顺接 Solution 2 workload-aware 数据格式",
+            "slide 53 → slide 54: 由数据格式递进到 Solution 3 共享内存感知的 grouping,三解法收齐",
+            "slide 54 → slide 55: 方法讲完,转入 Performance 端到端与 kernel 级加速数据",
+            "slide 55 → slide 56: 由主性能数据延伸到 Ablation 消融与内存节省附加实验"
+          ],
+          "适合复用场景": [
+            "论证一项系统/算子加速工作的 challenge→solution→performance 骨架",
+            "多挑战与多解法一一配对呈现的方法章节",
+            "GPU 算子 fusion / 图神经网络加速类研究成果展示",
+            "需要用消融实验佐证各设计模块贡献的性能章节"
+          ],
+          "在deck中的位置": "第 6 章 case_study,紧接点云稀疏卷积,延续本组成果落地展示"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.07",
+          "章节序号": 7,
+          "章节角色": "background",
+          "标题": "AI时代稀疏性背景",
+          "页码范围": [
+            57,
+            61
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_57",
+            "slide_58",
+            "slide_59",
+            "slide_60",
+            "slide_61"
+          ],
+          "章节叙事": "为「LLM 稀疏计算」案例章开场:先用 AI1.0→2.0 定调,再对照两代稀疏性表格,凸显 Transformer 注意力稀疏这一新维度,收束到本组 LLM 方法路线图。",
+          "页间关系": [
+            "slide 57 → slide 58: 由 agenda 高亮「Case study: LLM 稀疏计算」切入 AI1.0→2.0 时代背景",
+            "slide 58 → slide 59: 由两代范式对比落到 AI1.0 era 的稀疏性来源表格",
+            "slide 59 → slide 60: 同一张表新增 Transformer 行,从 1.0 递进到 2.0 的注意力稀疏",
+            "slide 60 → slide 61: 由 2.0 稀疏性新维度收束到本组 2022-2024 LLM 方法路线图"
+          ],
+          "适合复用场景": [
+            "需从「上一代算子工作」过渡到「新场景 LLM 方法」的承接章",
+            "论证 AI1.0→2.0 范式转变引出新研究维度的背景章",
+            "用同构表格逐行递进对比两代技术属性的章节",
+            "为后续多个 case study 铺路的路线图收束页"
+          ],
+          "在deck中的位置": "case study 大章的开篇过渡段,承接 dgSparse 框架,引出后续 LLM 方法"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08",
+          "章节序号": 8,
+          "章节角色": "method",
+          "标题": "LLM稀疏方法与编译硬件",
+          "页码范围": [
+            62,
+            77
+          ],
+          "页数": 16,
+          "页ID列表": [
+            "slide_62",
+            "slide_63",
+            "slide_64",
+            "slide_65",
+            "slide_66",
+            "slide_67",
+            "slide_68",
+            "slide_69",
+            "slide_70",
+            "slide_71",
+            "slide_72",
+            "slide_73",
+            "slide_74",
+            "slide_75",
+            "slide_76",
+            "slide_77"
+          ],
+          "章节叙事": "展示本组LLM稀疏成果,沿「稀疏化→编译映射→硬件架构」三层递进,每层以挑战-创新-实验闭环,论证稀疏可近乎无精度损失地降算力并提速2×",
+          "页间关系": [
+            "slide 62 → slide 63: 由LLM结构(attention+linear)引出训练成本远高于小模型的痛点",
+            "slide 63 → slide 64: 由重训昂贵引出统计生成稀疏attention mask免重训的方法",
+            "slide 64 → slide 65: 由自动生成稀疏mask过渡到用微调替代重训、密度降至15.6%",
+            "slide 65 → slide 66: 由方法收敛快过渡到实验验证精度损失<0.14%可接受",
+            "slide 66 → slide 67: 由稀疏化实验切入编译层:attention访存受限、单一映射不优",
+            "slide 67 → slide 68: 由单一编译映射不优引出算子融合并非总带来收益",
+            "slide 68 → slide 69: 由访存量与分块大小关系过渡到融合/非融合10×vs13×实例",
+            "slide 69 → slide 70: 由融合权衡引出M3多矩阵乘模型自适应选择最优数据流",
+            "slide 70 → slide 71: 由自适应数据流过渡到稀疏线性层等多算子组合建模实例",
+            "slide 71 → slide 72: 由编译层切入硬件层:多稀疏算子并存、离散设计昂贵",
+            "slide 72 → slide 73: 由离散设计高开销引出可配置复用器阵列+规约的硬件单元",
+            "slide 73 → slide 74: 由可配置单元总览过渡到输入路径:可配置复用器阵列",
+            "slide 74 → slide 75: 由输入路径过渡到输出路径:块重要性驱动的可配置规约",
+            "slide 75 → slide 76: 由硬件设计过渡到实验:BERT/OPT-6.7B最高2×加速",
+            "slide 76 → slide 77: 由实验结果收束到「稀疏化-编译-架构」三层总结"
+          ],
+          "适合复用场景": [
+            "论证LLM稀疏「免重训降密度」的方法章节",
+            "需按「稀疏化→编译→硬件」三层递进展开的系统工作",
+            "软硬件协同(算法/编译/架构)成果的技术汇报",
+            "强调算子融合权衡与自适应数据流的编译主题",
+            "每小节走「挑战-创新-实验」闭环的技术叙事"
+          ],
+          "在deck中的位置": "第8章method,处本组成果系列中段,承点云/超图,启FlightLLM等后续"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.09",
+          "章节序号": 9,
+          "章节角色": "case_study",
+          "标题": "FlightLLM(FPGA推理)",
+          "页码范围": [
+            78,
+            87
+          ],
+          "页数": 10,
+          "页ID列表": [
+            "slide_78",
+            "slide_79",
+            "slide_80",
+            "slide_81",
+            "slide_82",
+            "slide_83",
+            "slide_84",
+            "slide_85",
+            "slide_86",
+            "slide_87"
+          ],
+          "章节叙事": "作为第四个本组成果 case,论证 FPGA(可配置+低成本)是稀疏 LLM 推理的新载体;从背景/动机切入,经三大 Solution(稀疏 DSP 链、片上解码、长度自适应编译)递进,收束到 6.0× 能效/1.8× 成本增益。",
+          "页间关系": [
+            "slide 78 → slide 79: 由 FlightLLM 论文封面进入灵活 N:M 稀疏的技术背景",
+            "slide 79 → slide 80: 由稀疏格式背景过渡到 FPGA 可配置低成本的动机",
+            "slide 80 → slide 81: 由动机引出 Challenges 章节分隔页",
+            "slide 81 → slide 82: 由挑战承接 Solution 1 稀疏 DSP 链",
+            "slide 82 → slide 83: 同为 Solution 1,由 DSP 链概述深入 N:M/块稀疏支持",
+            "slide 83 → slide 84: 由 Solution 1 稀疏计算过渡到 Solution 2 片上解码方案",
+            "slide 84 → slide 85: 由 Solution 2 带宽优化过渡到 Solution 3 长度自适应编译",
+            "slide 85 → slide 86: 由三大方案收束到 U280 加速比/能效实验结果",
+            "slide 86 → slide 87: 由分模型逐配置结果图升华为 GPU vs FPGA 总账对比"
+          ],
+          "适合复用场景": [
+            "需完整呈现『背景→动机→多 Solution→结果』硬件案例的章节",
+            "论证 FPGA/专用芯片相较 GPU 能效与成本优势的案例",
+            "含多条并列技术方案(DSP 链/解码/编译)递进的成果章节",
+            "以 Solution 编号页组织硬件优化点的展开结构",
+            "结尾需 6.0×/1.8× 量化收益收束的 case study"
+          ],
+          "在deck中的位置": "第 9 章,承点云/超图/LLM 稀疏后,进入 FPGA 硬件落地案例"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.10",
+          "章节序号": 10,
+          "章节角色": "case_study",
+          "标题": "其他工作FlashDecoding++",
+          "页码范围": [
+            88,
+            91
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_88",
+            "slide_89",
+            "slide_90",
+            "slide_91"
+          ],
+          "章节叙事": "作为 case study 收尾的补充成果章，先用 agenda 页切入「Other works」，再引出 FlashDecoding++ 论文，最后用 NVIDIA、AMD 两组跨平台加速数据佐证方法的通用性。",
+          "页间关系": [
+            "slide 88 → slide 89: 由 agenda 高亮「Other works」过渡到 FlashDecoding++ 论文封面",
+            "slide 89 → slide 90: 由论文标题/作者引出 NVIDIA A100/RTX3090 上 1.12× 加速结果",
+            "slide 90 → slide 91: 由 NVIDIA 平台结果延伸到 AMD MI210/RX7900XTX 上 2.01× 加速"
+          ],
+          "适合复用场景": [
+            "需展示 LLM 推理加速跨 GPU 平台通用性的成果章",
+            "以「agenda→论文→多平台 benchmark」结构收尾的补充工作章",
+            "需对比 vLLM/TensorRT-LLM 等 SOTA 加速比的论证章"
+          ],
+          "在deck中的位置": "第 10 章（末段），紧接前面本组成果案例，为致谢合作页做铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.11",
+          "章节序号": 11,
+          "章节角色": "closing",
+          "标题": "合作与致谢",
+          "页码范围": [
+            92,
+            93
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_92",
+            "slide_93"
+          ],
+          "章节叙事": "全 deck 收尾章。先以合作机构墙致谢学术伙伴,再落到 THANKS 封底:团队成员、赞助方、主题回顾与联系方式,完成从成果展示到人际收束的闭环。",
+          "页间关系": [
+            "slide 92 → slide 93: 由高校合作机构墙过渡到 THANKS 封底,从机构致谢收窄为团队成员+赞助方致谢并附联系方式"
+          ],
+          "适合复用场景": [
+            "学术 tutorial/report 需展示多机构合作墙的致谢章",
+            "报告收尾需团队成员+赞助方双重致谢",
+            "封底需回顾主题并给出讲者联系方式",
+            "科研成果 deck 的标准 closing 收束"
+          ],
+          "在deck中的位置": "末章(第 11 章),紧接本组成果落地之后,作为致谢封底"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "Sparse Acceleration for AI: 进展与趋势",
+          "核心论断": "稀疏加速是驱动 AI 进展与趋势的核心技术方向",
+          "本页讲什么": "全 deck 封面页,顶部为主标题「Sparse Acceleration for Artificial Intelligence Progress and Trends」,一条浅色分隔线下方列出双讲者身份:Prof. Xiaoming Chen(中科院计算所)与 Prof. Mingyu Gao(清华交叉信息研究院),底部标注清源研究院/上海交大及日期 2024/01/24 与联系邮箱。",
+          "关键文字": [
+            "Sparse Acceleration for Artificial Intelligence Progress and Trends",
+            "Prof. Xiaoming Chen, Institute of Computing Technology, Chinese Academy of Sciences",
+            "Prof. Mingyu Gao, Institute for Interdisciplinary Information",
+            "Qingyuan Research Institute Shanghai Jiao Tong University",
+            "2024/01/24 daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "顶部主标题条",
+            "浅色分隔线",
+            "双讲者署名块",
+            "底部机构与日期署名"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Contents: 四段主线目录",
+          "核心论断": "本报告按 Opening→dgSparse→Case study→Other works 四段推进",
+          "本页讲什么": "目录页,蓝框内标题「Contents」,下列四个编号条目:①Opening(高亮为黑色当前项),②dgSparse:——Open-source sparse system framework,③Case study:——An exploration of sparse computing for LLMs,④Other works and collaborations(②③④灰化)。用高亮 1 与灰化 2-4 建立全局四段路线图。",
+          "关键文字": [
+            "Contents",
+            "1 Opening",
+            "2 dgSparse: ——Open-source sparse system framework",
+            "3 Case study: ——An exploration of sparse computing for LLMs",
+            "4 Other works and collaborations"
+          ],
+          "视觉骨架": [
+            "蓝色外框",
+            "圆形编号标记 1-4",
+            "高亮/灰化条目对比",
+            "左侧蓝色进度竖条"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "Contents:进入 dgSPARSE 开源框架章节",
+          "核心论断": "议程推进到第二部分——dgSPARSE 开源稀疏系统框架",
+          "本页讲什么": "四项目录(Opening / dgSparse 开源框架 / Case study 稀疏计算 for LM / Other works)中高亮第 2 项 dgSparse:Open-source sparse system framework,表明演讲正式进入开源框架主题,其余项灰显。",
+          "关键文字": [
+            "dgSparse:Open-source sparse system framework",
+            "Opening",
+            "Case study——An exploration of sparse computing for LMs",
+            "Other works and collaborations"
+          ],
+          "视觉骨架": [
+            "蓝框 Contents 容器",
+            "四项编号圆标列表",
+            "当前项蓝色高亮条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 57,
+          "页面角色": "content_candidate",
+          "标题": "Contents:高亮案例研究 (LLM 稀疏计算)",
+          "核心论断": "报告进入第 3 部分——面向 LLM 的稀疏计算案例探索",
+          "本页讲什么": "四段式目录页,依次为 Opening、dgSparse 开源稀疏系统框架、Case study(LLM 稀疏计算探索)、Other works and collaborations,当前高亮第 3 项 Case study,标志报告进入 LLM 稀疏计算案例章。其余三项以灰色淡出。",
+          "关键文字": [
+            "Contents",
+            "Opening",
+            "dgSparse: Open-source sparse system framework",
+            "Case study: An exploration of sparse computing for LLMs",
+            "Other works and collaborations"
+          ],
+          "视觉骨架": [
+            "四项编号目录列表",
+            "当前项高亮竖条",
+            "灰色淡出未选项"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 81,
+          "页面角色": "chapter_candidate",
+          "标题": "Challenges(章节过渡分隔页)",
+          "核心论断": "承接动机,引出 FlightLLM 需解决的三大挑战",
+          "本页讲什么": "内容留白的章节过渡分隔页,仅有标题「Challenges」和一个空的正文外框,起到从 Background/Motivation 过渡到后续三大 Solution 的分节作用,实际挑战内容需讲者口述或在后续页展开。",
+          "关键文字": [
+            "Challenges"
+          ],
+          "视觉骨架": [
+            "标题+蓝色分隔条",
+            "空正文外框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 88,
+          "页面角色": "content_candidate",
+          "标题": "目录：进入「Other works and collaborations」章节",
+          "核心论断": "教程收尾切入第 4 部分——其他工作与合作成果",
+          "本页讲什么": "这是一张 Contents 导航页，列出教程四大部分：①Opening ②dgSparse 开源稀疏系统框架 ③Case study（面向 LLM 的稀疏计算探索）④Other works and collaborations。前三项灰显，第 4 项高亮，表示演讲正式进入其他工作与合作成果章节，作为整篇 tutorial 的补充收尾。",
+          "关键文字": [
+            "Contents",
+            "Opening",
+            "dgSparse: Open-source sparse system framework",
+            "Case study: An exploration of sparse computing for LLMs",
+            "Other works and collaborations"
+          ],
+          "视觉骨架": [
+            "蓝色外框目录卡",
+            "四项编号圆标列表",
+            "当前项高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 93,
+          "页面角色": "ending_candidate",
+          "标题": "THANKS 封底:团队致谢与联系方式",
+          "核心论断": "报告收尾致谢团队成员与赞助方并回落至主题与联系方式",
+          "本页讲什么": "全 deck 封底致谢页。左侧青色竖排 THANKS banner;上方为清华、NICS-EFC Lab、Infinigence 等机构 logo 框;中部红色 Sponsors 标签 + 赞助方 logo 网格;右上文字块致谢 SJTU 与清华团队成员(Zhenhua Zhu、Shulin Zeng、Jun Liu、Kai Zhong、Ke Hong、Tianyu Fu、Jiaming Xu、Jinhao Li 等);中部回顾主题 Sparse Acceleration for Artificial Intelligence Progress and Trends;下方给出联系人 Guohao Dai 及邮箱 daiguohao@sjtu.edu.cn,日期 2023/11/03。",
+          "关键文字": [
+            "THANKS / Sponsors",
+            "Thanks to members from SJTU and Tsinghua University",
+            "Zhenhua Zhu, Shulin Zeng, Jun Liu, Kai Zhong, Ke Hong, Tianyu Fu, Jiaming Xu, Jinhao Li",
+            "Sparse Acceleration for Artificial Intelligence Progress and Trends",
+            "Guohao Dai  daiguohao@sjtu.edu.cn",
+            "Infinigence Co., LTD / NICS-EFC Lab"
+          ],
+          "视觉骨架": [
+            "左侧青色竖排 THANKS banner",
+            "机构 + 赞助方 logo 网格",
+            "团队成员致谢文字块",
+            "主题回顾大字 + 联系方式"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+      "目录名": "DAI-实验室PPT模版.2777835f",
+      "标题": "DAI 实验室 PPT 模板",
+      "总页数": 7,
+      "章节数": 4,
+      "章节列表": [
+        "section_01_封面",
+        "section_02_个人介绍",
+        "section_03_核心内容版式",
+        "section_04_结尾页"
+      ],
+      "主题标签": [
+        "学术模板",
+        "实验室",
+        "人工智能",
+        "集成电路",
+        "EDA",
+        "个人介绍",
+        "创新思路"
+      ],
+      "目标受众": "学术同行、科研团队",
+      "报告类型": "research_report",
+      "适用场景": "实验室学术汇报、课题进展、个人介绍空白模板",
+      "论述总结": "上海交大戴国浩实验室通用学术模板,以蓝色为主色。含封面、个人介绍(教育/工作时间线)、创新思路、问题、双栏对比、结尾等空白版式骨架,供搭建实验室课题汇报或个人介绍。多数页为占位版式,无实质内容。",
+      "论述弧线": [
+        "封面",
+        "个人介绍",
+        "创新思路",
+        "问题",
+        "对比",
+        "结尾"
+      ],
+      "适合复用场景": [
+        "实验室学术汇报版式复用",
+        "个人介绍/履历时间线页",
+        "创新思路阐述页",
+        "问题分析双栏对比页"
+      ],
+      "不适合复用场景": [
+        "数据密集型图表汇报",
+        "商业提案(风格偏学术)",
+        "面向大众科普演讲",
+        "需成品内容(本模板多空白)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面",
+          "页码范围": [
+            1,
+            1
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_01"
+          ],
+          "章节叙事": "deck 的开场封面,单页,承担整套模板的门面与标题承载功能。作为空白骨架,仅提供封面版式与配色,等待填入课题/个人介绍标题与作者信息。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术课题汇报或实验室介绍的开场封面",
+            "个人介绍类 PPT 的标题页",
+            "需蓝色学术风格封面骨架时"
+          ],
+          "在deck中的位置": "第 1 章,全 deck 起始封面页,后接个人介绍与正文章节。"
+        },
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.02",
+          "章节序号": 2,
+          "章节角色": "self_intro",
+          "标题": "个人介绍",
+          "页码范围": [
+            2,
+            2
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_02"
+          ],
+          "章节叙事": "deck 中的自我介绍章节,单页承载「主要研究领域+工作经历+教育经历」双时间线,横向罗列起止时间/单位/职务,勾勒个人学术履历全貌。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术汇报开场的个人/团队负责人介绍",
+            "需要工作+教育双时间线并列的履历页",
+            "研究领域标签+经历表格组合的自我介绍"
+          ],
+          "在deck中的位置": "第 2 章,紧跟封面,作为汇报人身份铺垫"
+        },
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.03",
+          "章节序号": 3,
+          "章节角色": "method",
+          "标题": "核心内容版式",
+          "页码范围": [
+            3,
+            6
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06"
+          ],
+          "章节叙事": "deck 的核心内容区,提供一组左右双栏版式骨架:从「创新思路」总述到「问题1」编号页,再到纯配色双栏,逐步剥离标签、留纯结构供自由填充课题内容。",
+          "页间关系": [
+            "slide 3 → slide 4: 由紫标签「创新思路」双栏,过渡到红标签「问题1」带蓝色栏头的编号双栏,引入可递增的问题序列",
+            "slide 4 → slide 5: 由带文字标签+栏头的双栏,简化为仅剩紫/蓝渐变标题条的无标签双栏骨架",
+            "slide 5 → slide 6: 进一步抽象为纯蓝色横条双栏,去掉底色与标签,留最简对比结构"
+          ],
+          "适合复用场景": [
+            "需要左右双栏对比/并列陈述的 method 或问题分析页",
+            "可编号递进的「问题1/2/3」式论点铺陈",
+            "创新思路总述配双栏支撑论据的版式",
+            "需自定义填充、少约束的空白内容页"
+          ],
+          "在deck中的位置": "第 3 章,占 deck 主体(7 页中 4 页),承接封面/个人介绍"
+        },
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.04",
+          "章节序号": 4,
+          "章节角色": "closing",
+          "标题": "结尾页",
+          "页码范围": [
+            7,
+            7
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_07"
+          ],
+          "章节叙事": "deck 最后一页,充当收尾/致谢版式。顶部蓝色横条 + 底部「Guohao Dai @ Shanghai JiaoTong University」页脚,主体全空,供填 Thanks/Q&A 或联系方式。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术汇报/个人介绍的 Thanks 或 Q&A 结尾页",
+            "需保留 DAI 实验室署名页脚的收尾版式",
+            "留白待填联系方式/致谢语的空白结尾骨架"
+          ],
+          "在deck中的位置": "第 4 章(末章),紧接双栏对比等正文页之后收尾"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "DAI 实验室 PPT 模板封面",
+          "核心论断": "空白封面版式承载整套模板的标题与作者信息",
+          "本页讲什么": "这是一张空白封面骨架页,通体留白,中部有一条极浅的粉色水平分隔线作为唯一视觉元素。页面提供标题占位与作者/副标题占位,等待填入课题名称或个人介绍标题及作者信息。承担整套模板的门面与配色定调功能,不含任何实质内容。",
+          "关键文字": [],
+          "视觉骨架": [
+            "居中标题占位区",
+            "淡粉水平分隔线",
+            "下方作者/副标题占位区",
+            "极简留白背景"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "chapter_candidate",
+          "标题": "创新思路 · 左右双栏总述版式",
+          "核心论断": "以「创新思路」标签统领上方概述框 + 下方左右双栏结构",
+          "本页讲什么": "一张空的内容版式骨架:顶部蓝色分隔条下,左上角为紫色渐变圆角方块标签「创新思路」,右侧接一条通栏概述框(填标题或总述);下半部为等宽左右两个空白描边框,供并列填充两块创新点内容。整页无正文,是可自由填充的双栏模板。",
+          "关键文字": [
+            "创新思路"
+          ],
+          "视觉骨架": [
+            "紫色渐变标签方块",
+            "顶部通栏概述框",
+            "左右等宽双栏空框",
+            "顶部蓝色分隔条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "chapter_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "chapter_candidate",
+          "标题": "问题 1 · 编号标签双栏版式",
+          "核心论断": "以红色「问题 1」编号标签引出带蓝色标题条的左右双栏",
+          "本页讲什么": "一张空的编号内容版式:左上角为红色渐变圆角方块标签「问题 1」,右侧接通栏概述框;下半部左右两栏各带一条深蓝实心标题条(小标题区),条下为空白描边内容框。相较创新思路页,本页多了双栏小标题带,适合把一个「问题」拆成两个带子标题的并列面板。整页无正文。",
+          "关键文字": [
+            "问题 1"
+          ],
+          "视觉骨架": [
+            "红色渐变编号标签方块",
+            "顶部通栏概述框",
+            "左右双栏各带蓝色标题条",
+            "双栏空白内容框"
+          ],
+          "上页角色": "chapter_candidate",
+          "下页角色": "chapter_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "chapter_candidate",
+          "标题": "无标签 · 紫蓝配色双栏版式",
+          "核心论断": "去除编号标签,仅留紫/蓝双色标题条区分左右两栏",
+          "本页讲什么": "一张剥离了角标标签的纯配色双栏骨架:顶部蓝色分隔条下,左栏为紫色渐变标题条 + 浅紫底填充区,右栏为蓝色渐变标题条 + 空白区,左右以冷暖配色区分。无正文、无编号,靠色彩自然分组,适合把两类内容(如方案A/方案B、优/劣)做配色对照填充。",
+          "关键文字": [],
+          "视觉骨架": [
+            "左栏紫色渐变标题条",
+            "右栏蓝色渐变标题条",
+            "左栏浅紫底填充区",
+            "左右等宽双栏"
+          ],
+          "上页角色": "chapter_candidate",
+          "下页角色": "chapter_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "chapter_candidate",
+          "标题": "极简 · 纯结构双栏骨架",
+          "核心论断": "剥离所有标签与配色,仅留双蓝标题条的最简双栏结构",
+          "本页讲什么": "本 section 最精简的版式骨架:顶部一条蓝色分隔条,下方左右两个深蓝实心标题条,标题条以下全为空白。无标签、无填充底色、无正文,只保留最基本的左右双栏标题结构,供完全自由填充任意课题内容,是这组版式逐步剥离后的裸骨架。",
+          "关键文字": [],
+          "视觉骨架": [
+            "顶部蓝色分隔条",
+            "左右两个蓝色实心标题条",
+            "大面积空白填充区",
+            "左右等宽双栏"
+          ],
+          "上页角色": "chapter_candidate",
+          "下页角色": "ending_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "ending_candidate",
+          "标题": "结尾/致谢空白版式页",
+          "核心论断": "空白收尾版式,顶部蓝条+底部署名页脚,留白主体供填 Thanks/Q&A",
+          "本页讲什么": "deck 收尾页,整页几乎全空。顶部一条蓝色横线作为视觉封口,主体大面积留白,不含任何标题或正文;底部页脚固定为『Guohao Dai @ Shanghai JiaoTong University』并带页码。作为致谢/结束模板使用,讲者可在主体区自行填入『Thanks』『Q&A』或联系方式。",
+          "关键文字": [
+            "Guohao Dai @ Shanghai JiaoTong University"
+          ],
+          "视觉骨架": [
+            "顶部蓝色横条",
+            "大面积空白主体",
+            "底部署名页脚+页码"
+          ],
+          "上页角色": "chapter_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+      "目录名": "DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+      "标题": "Endor: 挖掘近解码型机会加速大模型推理",
+      "总页数": 24,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面",
+        "section_02_大模型推理背景与解码演进",
+        "section_03_复用NMP近存架构的挑战",
+        "section_04_Endor算法与近存协同设计",
+        "section_05_评测设置与加速结果",
+        "section_06_总结"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "近存计算",
+        "软硬件协同",
+        "KV缓存",
+        "过程奖励模型",
+        "推理加速",
+        "算法优化",
+        "存内架构"
+      ],
+      "目标受众": "计算机体系结构与系统方向学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "会议/组会分享 LLM 推理加速软硬件协同论文",
+      "论述总结": "该 deck 分享 DATE26 论文 Endor。先讲大模型自回归解码从 token 级转向 action 级推理带来的高延迟背景,指出复用 NMP 近存架构时频繁 KV Cache 访存与直接映射的挑战,进而提出计算精简算法与近存硬件协同设计,通过交互缓存复用加速 LLM reasoning,最后用多基线评测证明平均 2.97x/4.54x/2.61x 加速。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "方案",
+        "评测",
+        "总结"
+      ],
+      "适合复用场景": [
+        "大模型推理加速软硬件协同论文分享",
+        "近存/存内计算体系结构学术报告",
+        "含背景-挑战-方案-评测弧线的顶会 deck",
+        "KV Cache/推理树优化 motivation 章节",
+        "英文学术论文型 research report"
+      ],
+      "不适合复用场景": [
+        "中文汇报(全英文叙事)",
+        "工业产品 demo(叙事节奏不同)",
+        "算法软件方向(强硬件架构耦合)",
+        "投资/商业提案(无商业化内容)",
+        "教学入门 tutorial(密度过高)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面",
+          "页码范围": [
+            1,
+            1
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_01"
+          ],
+          "章节叙事": "全 deck 门面页,单页承担身份声明:亮出论文标题 Endor、作者团队与五家机构,为后续背景/方法/评测建立学术署名与主题锚点。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术论文/会议报告的开场封面章节",
+            "需左对齐大标题+多作者多机构署名的技术分享",
+            "系统/硬件加速类论文的极简白底封面"
+          ],
+          "在deck中的位置": "第 1 章封面,位于全 deck 最前,后接背景动机章节"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "大模型推理背景与解码演进",
+          "页码范围": [
+            2,
+            6
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_02",
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06"
+          ],
+          "章节叙事": "Background 章,为全 deck 铺垫:先论证 LLM reasoning 提升能力的价值,再揭示解码由 token 级转向 action 级带来 10× 延迟,末尾拆出 Prefill/Decode/PRM 三类算子,为后续 NMP 挑战埋伏笔",
+          "页间关系": [
+            "slide 2 → slide 3: agenda 高亮定位 Background,进入正文论证 LLM reasoning 的重要性",
+            "slide 3 → slide 4: 由『reasoning 提升能力』转到解码范式变化——token 级转 action 级并带来 10× 延迟",
+            "slide 4 → slide 5: 由 action-level 宏观代价切入其内部 MCTS 推理流程(生成子答案+PRM 打分建子节点)",
+            "slide 5 → slide 6: 由 MCTS 流程细化到 LLM-P/LLM-D/PRM 三类算子拆解,为后续硬件挑战铺垫"
+          ],
+          "适合复用场景": [
+            "需论证『LLM reasoning 价值 + 解码范式演进』的 background 章",
+            "要从宏观动机逐步下钻到算子级流程的技术铺垫章",
+            "介绍 action-level / MCTS 推理并引出延迟瓶颈的开场章",
+            "以 agenda 页导航五段式技术报告的开篇章"
+          ],
+          "在deck中的位置": "第 1 章 Background,紧跟 cover,slide 2 为五段式 agenda,后接 Challenge/Solution"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "章节序号": 3,
+          "章节角色": "problem",
+          "标题": "复用NMP近存架构的挑战",
+          "页码范围": [
+            7,
+            11
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_07",
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11"
+          ],
+          "章节叙事": "承接 Background,先综述三类 NMP/SCF 近存工作,再拆出算力利用率低与并行性丧失两大障碍,为下一章 Endor 算法-硬件协同设计立靶。",
+          "页间关系": [
+            "slide 7 → slide 8: 由 TOC 高亮 Challenge 进入现有 NMP 方案综述",
+            "slide 8 → slide 9: 由三类 NMP/SCF 工作综述聚焦到挑战1——算法算力利用率低",
+            "slide 9 → slide 10: 由 <4% GPU 利用率转到挑战2——硬件固有并行性无法发挥",
+            "slide 10 → slide 11: 由两大挑战收束,引出 Endor 协同设计方案"
+          ],
+          "适合复用场景": [
+            "先综述已有工作再拆解其局限的 problem 章节",
+            "论证『直接复用现有硬件/方案不可行』的挑战章节",
+            "用挑战1/挑战2并列立靶的 motivation-to-solution 过渡",
+            "近存/存算一体方向的瓶颈分析章节"
+          ],
+          "在deck中的位置": "第 2 章 Challenge,紧跟 Background,以双挑战引出 Solution"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "Endor算法与近存协同设计",
+          "页码范围": [
+            12,
+            16
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16"
+          ],
+          "章节叙事": "deck 方法核心(Solution):先给交互缓存复用+打分算法与预测流水线,再落到 Endor-NMP 两级近存硬件,论证算法-硬件协同加速 reasoning。",
+          "页间关系": [
+            "slide 12 → slide 13: 由 Solution 章节封面进入交互缓存复用算法与打分公式",
+            "slide 13 → slide 14: 由缓存复用时间轴过渡到基于预测的流水线优化(被 decode 覆盖)",
+            "slide 14 → slide 15: 由算法层转入 Endor-NMP 两级近存硬件架构总览",
+            "slide 15 → slide 16: 由两级 NMP 总览下钻到 CMU 内部三张表设计"
+          ],
+          "适合复用场景": [
+            "需算法+硬件协同设计的 method 章节",
+            "论证 KV cache 复用与调度优化的方案章",
+            "用时间轴对比 baseline vs 优化的加速叙事",
+            "介绍多级 NMP/近存加速器架构分解",
+            "先算法后硬件、逐层下钻的技术展开"
+          ],
+          "在deck中的位置": "第3章 Solution,紧接 Challenge,为 Evaluation 铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "章节序号": 5,
+          "章节角色": "experiment",
+          "标题": "评测设置与加速结果",
+          "页码范围": [
+            17,
+            22
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_17",
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22"
+          ],
+          "章节叙事": "验证章节,承接 Solution:先立评测设置(模型/数据集/NMP 基线),再抛 2.97x/4.54x/2.61x 主结果,最后用消融拆解算法+近存各组件贡献,证明协同设计有效。",
+          "页间关系": [
+            "slide 17 → slide 18: 由 Evaluation 章节 TOC 分隔页进入评测设置,列出模型与数据集",
+            "slide 18 → slide 19: 由模型/数据集设定过渡到 NMP 硬件架构与对比基线(A100/DFX/FlightLLM)",
+            "slide 19 → slide 20: 由基线设定引出加框主结果 2.97x/4.54x/2.61x 平均加速",
+            "slide 20 → slide 21: 由整体加速转入消融,聚焦仅算法优化的 2.29x 贡献",
+            "slide 21 → slide 22: 由算法消融延伸到算法+硬件各组件拆解(1.29x/1.89x→3.69x)"
+          ],
+          "适合复用场景": [
+            "需「设置→主结果→消融」三段式验证章节",
+            "需多基线(GPU/ASIC/FPGA)横向对比加速比",
+            "需消融拆解「算法+硬件协同」贡献",
+            "主结果需加框单句醒目强调的场合"
+          ],
+          "在deck中的位置": "第 4 章 Evaluation,紧接 Solution 之后,为全 deck 收尾提供实证"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.06",
+          "章节序号": 6,
+          "章节角色": "closing",
+          "标题": "总结",
+          "页码范围": [
+            23,
+            24
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "全 deck 收尾。先用回归目录页把四段脉络(Background/Challenge/Solution/Evaluation)重新点亮,再落到一句「We propose Endor」总述本文算法+近存协同贡献,并附联系方式收束。",
+          "页间关系": [
+            "slide 23 → slide 24: 由回归四段目录页收拢全篇脉络,过渡到一句话总述核心贡献 + 实验室主页/邮箱的结束页"
+          ],
+          "适合复用场景": [
+            "论文/技术汇报需「回顾目录+一句话总结贡献」式收尾",
+            "结尾页要放实验室主页与联系邮箱的学术分享",
+            "以「We propose X」句式凝练一句核心贡献的收束"
+          ],
+          "在deck中的位置": "末章(第 6 章),紧跟 Evaluation 之后,收束全篇"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "Endor: Exploit Nearly-Decode-Only Opportunities",
+          "核心论断": "Endor 论文正式署名亮相,由五校机构联合出品",
+          "本页讲什么": "全 deck 封面页,居左排布论文标题「Endor: Exploit Nearly-Decode-Only Opportunities」,下方列出以 Jun Liu、Guohao Dai 为通讯的多位作者,再列上海交大、无问芯穹、SII、清华、港科大五家署名机构,为后续背景/方法/评测建立学术身份与主题锚点。",
+          "关键文字": [
+            "Endor: Exploit Nearly-Decode-Only Opportunities",
+            "Jun Liu, Tianlang Zhao, Shiyi Liu, Jiancai Ye 等作者",
+            "Guohao Dai (通讯)",
+            "Shanghai Jiao Tong University, Infinigence AI, SII",
+            "Tsinghua University, Hong Kong University of Science and Technology"
+          ],
+          "视觉骨架": [
+            "左对齐大标题块",
+            "作者姓名多行列表",
+            "机构脚注编号标注"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "全 deck 五段式 agenda(Background 高亮)",
+          "核心论断": "全 deck 分五段推进,当前进入 Background 章",
+          "本页讲什么": "纵向编号导航页,列出全 deck 五个章节:1 Background(当前高亮为黑)、2 Challenge、3 Solution、4 Evaluation、5 Summary,均以蓝色圆圈+序号呈现。作为 Background 章开场,告诉听众整体叙事骨架并定位当前所处位置。",
+          "关键文字": [
+            "1 Background",
+            "2 Challenge",
+            "3 Solution",
+            "4 Evaluation",
+            "5 Summary"
+          ],
+          "视觉骨架": [
+            "纵向编号圆圈导航",
+            "5 项章节列表",
+            "当前项高亮对比"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "toc_candidate",
+          "标题": "章节导航:进入 Challenge",
+          "核心论断": "本章由 Background 承接,聚焦 Challenge 挑战环节",
+          "本页讲什么": "竖排四段式目录导航页,依次列出 Background、Challenge、Solution、Evaluation 四个环节,并高亮第 2 项 Challenge,标示演讲进入本章挑战部分,起分隔与定位作用。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点导航",
+            "四段目录列表",
+            "当前项高亮加粗"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "toc_candidate",
+          "标题": "章节导航:进入 Solution 部分",
+          "核心论断": "四段式汇报推进到第 3 部分 Solution",
+          "本页讲什么": "这是 section 的过渡导航页。竖排 1-4 圆点时间线列出 Background / Challenge / Solution / Evaluation 四个板块,当前高亮加粗第 3 项 Solution,其余灰化,标示汇报正式进入 Endor 算法与硬件的解决方案部分。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排 4 圆点进度时间线",
+            "当前项高亮其余灰化",
+            "右侧板块名文字列"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "toc_candidate",
+          "标题": "Content 目录:进入第 4 章 Evaluation",
+          "核心论断": "汇报进入第四部分 Evaluation,前三章已铺垫完毕",
+          "本页讲什么": "章节过渡目录页,竖排编号 1-4 对应 Background / Challenge / Solution / Evaluation,第 4 项 Evaluation 加粗高亮,其余灰显,提示听众演讲进入评测与结果环节。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排 4 个圆点编号",
+            "当前章高亮 tag",
+            "灰显未激活项"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "toc_candidate",
+          "标题": "回归目录:四段脉络重点亮",
+          "核心论断": "Background/Challenge/Solution/Evaluation 四板块构成全 deck 主线",
+          "本页讲什么": "收尾章的回归目录页,用竖排数字圆点串起 Background、Challenge、Solution、Evaluation 四个板块,把全 deck 走过的四段脉络重新点亮,为下一页的总述做铺垫。仅列框架标题、无正文细节。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点串",
+            "四板块标题右列",
+            "留白极简版式"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "细分角色": "toc_main"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "ending_candidate",
+          "标题": "总述:We propose Endor 并附联系方式",
+          "核心论断": "Endor 以计算精简算法+近存协同加速大模型推理",
+          "本页讲什么": "全 deck 收束页,顶部蓝框一句话总述本文贡献——提出 Endor,一种计算精简算法并结合近存(memory-)协同设计,再于下方给出实验室主页与联系邮箱收尾。典型的论文结论+联系方式 ending 页。",
+          "关键文字": [
+            "We propose Endor, a computation-reduced algorithm and memory-",
+            "Lab homepage",
+            "Email: liu-"
+          ],
+          "视觉骨架": [
+            "顶部蓝框总述句",
+            "下方联系方式双栏",
+            "极简收尾版式"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    }
+  ],
+  "previous_batches_patterns": []
+}

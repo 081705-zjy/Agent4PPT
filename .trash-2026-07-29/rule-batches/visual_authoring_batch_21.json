@@ -1,0 +1,490 @@
+{
+  "batch_index": 21,
+  "rules": [
+    {
+      "id": "toc_layout_numbered_three_section_with_progress_bar",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页布局·蓝色外框+带圈序号+左侧进度竖条",
+      "description": "TOC/章节切换页统一模板: 蓝色矩形外框内含'Contents'英文标题, 内部三段带圈序号(①②③)纵向列表, 左侧一道蓝色进度竖条, 底部作者/单位页脚条, 当前章节实心高亮其余灰化.",
+      "evidence_signals": [
+        "视觉骨架 含 'Contents 边框' 或 '外层蓝色矩形边框'",
+        "视觉骨架 含 '带圈序号' / '编号圆圈' / '进度竖条'",
+        "关键文字 首行为 'Contents' 且含三个编号章节名",
+        "当前项标注 '高亮' 或 '实心编号圈'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 2,
+          "评价": "首个 TOC 页, 蓝框+带圈序号+左侧进度条完整齐全"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 3,
+          "评价": "同款模板, 高亮①个人基本情况定位章节切换"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 5,
+          "评价": "同款模板, 高亮②研究介绍"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 22,
+          "评价": "同款模板, 高亮③产业结合"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "统一目录模板让听众每次切章都能在同一坐标系里定位当前进度, 高亮实心+灰化对比让'我们讲到哪儿了'的信号一眼可读, 减少认知负载",
+      "fix_hint": "把 TOC 页统一为蓝框+Contents 标题+3 项带圈序号列表, 当前章节实心其余灰化, 加左侧进度竖条",
+      "exceptions": [
+        "单章节 deck 或线性汇报无需目录导航时可省略"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_with_author_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中大标题+分隔线+作者署名",
+      "description": "封面页上半居中呈现大字主标题, 中间一条水平分隔线, 下半依次列作者姓名、单位与职称、联系邮箱, 无正文内容元素.",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大标题' + '水平分隔线'",
+        "关键文字 含 作者姓名 + 单位职称 + 邮箱地址(含 @)",
+        "视觉骨架 不含 'bullet 列表' / '正文段落'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 1,
+          "评价": "标准封面: 主标题居中, 分隔线, 作者+单位+邮箱三行署名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "居中大字标题+分隔线+作者块是学术汇报的通用身份识别版式, 开场瞬间锁定主题与讲者身份, 不让其他信息抢焦点",
+      "fix_hint": "cover slide 主标题居中放大, 加水平分隔线, 下方 3 行放作者/单位/邮箱, 移除其他内容元素",
+      "exceptions": [
+        "品牌宣传型 deck 可用 logo/slogan 替代作者块"
+      ]
+    },
+    {
+      "id": "ending_thanks_layout_big_thanks_plus_author_reprise",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页布局·超大「谢谢」+作者信息重现",
+      "description": "汇报收尾致谢页: 页面上部超大字号'谢谢!', 下方水平分隔细线, 线下居中重现演讲者姓名+单位职称+邮箱, 整页大面积留白, 不承载论证.",
+      "evidence_signals": [
+        "关键文字 首项为 '谢谢' 或 'Thank you' 类致谢词",
+        "视觉骨架 含 '超大标题' + '水平分隔线' + '演讲者信息块'",
+        "视觉骨架 含 '大面积留白'",
+        "关键文字 含 邮箱 (与 cover 邮箱一致)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 31,
+          "评价": "标准致谢: 左上超大'谢谢!' + 分隔线 + 居中演讲者信息, 邮箱与 cover 一致"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 32,
+          "原因": "内容型 appendix 页, 承载全域算力协同网络架构而非致谢"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "礼节性收束+联系方式回显让听众明确报告结束且有渠道后续联络, 首尾呼应 cover 的作者块也强化身份记忆",
+      "fix_hint": "ending slide 顶部放超大'谢谢!', 下加分隔线, 再放与 cover 一致的作者/单位/邮箱三行, 其余留白",
+      "exceptions": [
+        "附录/彩蛋/延展页不需要致谢",
+        "多个 ending 页共存时仅其一为致谢"
+      ]
+    },
+    {
+      "id": "content_top_claim_banner_bar",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页顶部·蓝色论断 banner 条",
+      "description": "重要内容/成果/背景页顶部用一条蓝色横向 banner 条呈现本页核心论断或章节导语, 与下方主体内容明显分区.",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部蓝色/蓝条 banner' 或 '主论断蓝框'",
+        "视觉骨架 中 banner 位置为顶部/居上",
+        "banner 内文字即本页 claim 或主张句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 7,
+          "评价": "顶部蓝条'模拟人类智能的算法模型'点明本页论断"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 15,
+          "评价": "顶部主论断蓝框抛出三条主线, 承接后续三栏"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 20,
+          "评价": "顶部主论断蓝框'获EDA/FPGA旗舰会议最佳论文奖'总括本页奖项"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 25,
+          "原因": "创业史时间轴页无 banner, 整页横向时间线布局"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "顶部 banner 让 claim 先于图表/数据映入眼帘, 保证听众在解读复杂视觉前已抓住论断, 也让抓拍幻灯的读者无需读完全页即得要点",
+      "fix_hint": "把本页 claim 提到顶部, 用蓝色横条 banner 呈现, 主体内容下移到 banner 之下",
+      "exceptions": [
+        "纯时间轴/大图/logo 墙类页面可省略 banner",
+        "cover/致谢/目录页不需 claim banner"
+      ]
+    },
+    {
+      "id": "results_three_column_parallel_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "成果/问题页·三列对称并列构图",
+      "description": "承载并列子命题的页面(如三项成果、三层科学问题、三层方案)采用三列 panel 对称并列, 每列结构同构(小标题+数据+图), 顶部或底部有横向收束条串联.",
+      "evidence_signals": [
+        "视觉骨架 含 '3列并列 panel' 或 '3列对称'",
+        "关键文字 含 3 个平行子命题(如 '成果1/2/3' 或 '①②③')",
+        "顶部或底部有主论断收束框"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 10,
+          "评价": "三层收益放大三列并列 panel"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 14,
+          "评价": "算子/应用/模型三层科学问题三列并列"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 15,
+          "评价": "先验/机器学习/细粒度三项工作三列, 顶蓝框收束"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 21,
+          "评价": "三位国际专家评价三栏并列卡片"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.25,
+      "enforcement_level": "soft",
+      "rationale": "三列同构布局把'并列关系'翻译成视觉对齐, 让听众一眼判断三项子命题是同层等价的, 避免层级混淆; 顶/底收束条又提供综合视图",
+      "fix_hint": "把三项并列子命题排成三列同结构 panel(标题→图→数据), 加顶部或底部收束条统一论断",
+      "exceptions": [
+        "并列超过 4 项时改用 2×2 或矩阵",
+        "并列 2 项时用左右双栏"
+      ]
+    },
+    {
+      "id": "result_page_layered_framework_left_details_right",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "成果页·左侧分层框架+右侧红降/蓝加详情",
+      "description": "分层成果展示页(算法/编译/架构层)采用左侧①②③分层框架图(当前层高亮), 右侧红条说明降幅或方法, 下方蓝条给出方法编号+实测加速倍数.",
+      "evidence_signals": [
+        "视觉骨架 含 '左侧①②③分层框架图' 或 '分层框架图'",
+        "视觉骨架 含 '红降幅箭头' + '蓝条方法结果 panel'",
+        "关键文字 含 '方法X.X 加速N×' 类量化实测",
+        "关键文字 含 '成果1/2/3' 顺序编号"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 16,
+          "评价": "算法层成果, 左侧①高亮 + 红条 4%-30% 降幅 + 蓝条方法 1.1/1.2"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 17,
+          "评价": "编译层成果, ②高亮 + 红条 20% 降幅 + 蓝条方法 2.1/2.2"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 18,
+          "评价": "架构层成果, ③高亮 + 红条 30% 降幅 + 蓝条方法 3.1/3.2"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "三张成果页共用一模板+仅切换高亮层, 让听众每次'翻页'瞬间意识到'又下钻到下一层', 极大降低跨页跟随成本",
+      "fix_hint": "把系列分层成果统一为'左侧分层图(切高亮)+右上红降+右下蓝加' 三段式, 每张仅切高亮位置",
+      "exceptions": [
+        "单层成果无需分层框架",
+        "非并列成果不适用此三段式"
+      ]
+    },
+    {
+      "id": "title_uses_colon_to_pair_topic_with_claim",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题写作·主题冒号论断双段式",
+      "description": "内容页标题倾向 '<主题>:<论断/子命题>' 双段式(中文冒号或半角冒号), 主题定位章节位置, 冒号后一句短论断预告本页要讲的具体主张.",
+      "evidence_signals": [
+        "标题含 ':' 或 '：'",
+        "冒号前为名词短语章节定位(如 '研究背景'/'成果1'/'获奖情况')",
+        "冒号后为一句 ≤20 字论断"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 6,
+          "评价": "'研究背景:智能革命类比历次技术革命' 定位+论断"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 16,
+          "评价": "'成果1:先验知识驱动的结构化稀疏（算法层）' 编号+方法+层级"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 20,
+          "评价": "'获奖情况:EDA与FPGA旗舰会议最佳论文奖' 类别+具体奖"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 23,
+          "评价": "'产业化思路:扩大大模型可用算力池' 主题+方向"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 4,
+          "原因": "'个人介绍(研究方向+教育与工作履历)' 用括号补语而非冒号双段"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "'主题:论断' 让 title 既能定位章节位置又能剧透本页 claim, 单一 title 就能承担'我是谁/我要讲什么' 双职能, 提高抓拍与索引效率",
+      "fix_hint": "把 title 改成 '<章节定位名词短语>:<一句论断>' 双段, 冒号前 ≤6 字, 冒号后 ≤20 字",
+      "exceptions": [
+        "cover/致谢/纯 TOC 页 title 不用双段",
+        "单纯章节封面不需 claim 部分"
+      ]
+    },
+    {
+      "id": "claim_uses_quantified_judgment_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·带量化的判断句",
+      "description": "slide.核心论断 倾向写成一句判断句, 且优先夹带具体数字(倍数/百分比/数量级/参数量), 避免仅写方向性描述(如'显著提升'不带数值).",
+      "evidence_signals": [
+        "核心论断 含数字 + 单位(如 '×'/'%'/'TOPS'/'数量级'/'GB'/'nm')",
+        "核心论断 是完整主谓结构的判断句",
+        "含具体比较对象(如 'vs GPT3.5' / 'Gap>11×')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 8,
+          "评价": "'大模型算力 5 年增 4-5 数量级, 端侧存在 3 数量级差距' 双数据点"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 16,
+          "评价": "'先验知识驱动结构化稀疏在算法层实现1.7×-4.5×加速' 明确倍数区间"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 19,
+          "评价": "'端侧3B模型性能超GPT-3.5约300%' 参数+比较+百分比"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 6,
+          "原因": "'人工智能如蒸汽机般是通用目的技术' 只做类比判断, 无量化"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.65,
+      "enforcement_level": "soft",
+      "rationale": "量化判断把'厉害'翻译成可验证事实, 让听众记忆锚点从形容词变数字, 也让报告在评审场景更耐挑战",
+      "fix_hint": "把 claim 里的形容词('显著'/'大幅')替换为具体倍数/百分比, 加对照对象(vs 基线/竞品)",
+      "exceptions": [
+        "理念/类比/motivation 页允许非量化",
+        "封面/致谢无 claim 不适用"
+      ]
+    },
+    {
+      "id": "accelerate_notation_uses_multiplier_x_symbol",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "加速倍数记号·统一 N× 格式",
+      "description": "涉及性能加速/内存收益的表述统一用 'N×' 或 'N.NNx' 记号(全角×或半角x), 不用 'N倍' 中文长格式, 便于图表标注与文字统一.",
+      "evidence_signals": [
+        "关键文字 含 数字+'×' 或数字+'x'",
+        "同一 deck 内加速表述统一使用同一符号族",
+        "常见格式如 '2.7×'/'14.01x'/'1.7×-4.5×'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 13,
+          "评价": "'SDDMM 14.01x, GCN 5.59x, GraphSAGE 5.27x' 系列加速倍数"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 15,
+          "评价": "'1.7×-4.5×/1.3×-3.8×/1.6×-3.6×' 三项区间统一 × 记号"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 19,
+          "评价": "'稀疏优化13×/27×, Gap>11×/21×' 多项 × 记号一致"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 11,
+          "原因": "'稀疏矩阵乘约2.7x加速' 与'2.7倍'混用一次"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "N× 是硬件/编译领域的国际通用记号, 统一符号让跨页对照(bar 图-数据-正文)不用切换语义, 也便于英文 poster/paper 迁移",
+      "fix_hint": "把 'N倍' 全部替换为 'N×', 小数保留 2 位如 '14.01×', 区间用 '1.7×-4.5×'",
+      "exceptions": [
+        "纯中文非技术受众 deck 可用'倍'",
+        "非加速语义(如'翻N倍'口语)不适用"
+      ]
+    },
+    {
+      "id": "venue_year_citation_in_result_pages",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "会议引用·会议名+两位年份",
+      "description": "成果/获奖/评价页引用发表出处统一用'会议名 + 两位年份'紧凑格式(如 'ASP-DAC 25'/'DATE 24'/'FPGA 20'/'ISCA 22'), 不用完整年份或长会议全称.",
+      "evidence_signals": [
+        "关键文字 含 会议缩写(ASP-DAC/DATE/FPGA/ISCA/ISLPED/ASPLOS/DAC/HotChips) + 2 位数字年份",
+        "同一 deck 内引用格式一致",
+        "多个引用并列时形成'CONF YY'序列"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 17,
+          "评价": "'IEEE TCAD 24、DAC 25、DATE 24' 三会议一致格式"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 18,
+          "评价": "'ISCA 22、ASP-DAC 19、FPGA 25/24' 序列"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 20,
+          "评价": "'ASP-DAC 25/19、DATE 24、FPGA 25' 最佳论文列表"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 21,
+          "评价": "'FPGA 2020/ASPLOS 2023/ISLPED 2024' 出处标注(此处用四位年份为异例)"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 21,
+          "原因": "专家评价页混用四位年份'FPGA 2020', 与主流两位年份不一致"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "'CONF YY' 是硬件/EDA/系统领域社区自然共识记号, 圈内人一眼识别会议等级, 也让'成果 vs 顶会数量'的密度可视",
+      "fix_hint": "把发表引用统一为 '<会议缩写> <YY>' 双段格式, 舍去 'IEEE/ACM' 前缀和四位年份, 多篇同会议用'/'并列",
+      "exceptions": [
+        "面向非领域外行受众时保留全名与四位年份",
+        "期刊(TCAD/TCAS)可保留 IEEE 前缀"
+      ]
+    },
+    {
+      "id": "chapter_progress_uses_current_highlight_pattern",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节切换·当前项圈号实心其余灰化",
+      "description": "TOC 章节切换页文本采用'当前章节实心序号+其余灰显'配对写作, 关键文字段中明确标注哪项为'当前高亮', 支持视觉一致性.",
+      "evidence_signals": [
+        "关键文字 含 '(当前高亮)' 或 '当前项高亮' 标注",
+        "章节列表中一项独立标识, 其余保持默认",
+        "同一 deck 中每次切章重复此结构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 3,
+          "评价": "①个人基本情况高亮, ②③灰显, 切入首章"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 5,
+          "评价": "②研究介绍高亮, 切入第二章"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "slide_index": 22,
+          "评价": "③产业结合明确标注'(当前高亮)'字样"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节切换页只改高亮位置而不改整体布局, 让听众每次切章都能通过'哪个圈变实心' 一眼获知进度, 是最省认知的进度信号",
+      "fix_hint": "TOC 切章页保持三项固定, 只把当前项圈号改实心, 其余保持灰化默认, 不要重排列表顺序",
+      "exceptions": [
+        "首次出现的总目录(未进入任何章)可全部实心",
+        "非章节切换的通用 TOC 页不适用"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (32 slides, 8 章节, 简历型汇报). visual: 6 rules 覆盖 cover/TOC/content-banner/three-column/layered-framework/ending; authoring: 5 rules 覆盖 title 双段/claim 量化/×记号/会议引用/切章高亮. 无 previous_batches_rules 需 dedup.",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 6,
+      "authoring": 5
+    }
+  }
+}

@@ -1,0 +1,51 @@
+---
+页标识: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07"
+所属章节: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02"
+所属deck: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274"
+页序号: 7
+源文件: "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx"
+页面角色: "content_candidate"
+标题: "静态量化与动态量化对比"
+核心论断: "静态与动态量化各有取舍，动态量化精度更优但开销更高"
+本页讲什么: "本页在量化路线内进一步对比静态量化（Static Quantization）与动态量化（Dynamic Quantization）。通过量化权重与量化参数的并列示意，展示两种策略在离线固定与运行时自适应间的取舍，深化对量化局限的评述。"
+关键文字: "[Static Quantization, Quantized Weight, Quantized Param., Dynamic Quantization]"
+视觉骨架: "[静态vs动态量化并列图, 量化参数对比示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.01, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.02, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.03, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.04, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.05, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.06, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.07, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_07.asset.08]"
+适合复用场景: "[静态/动态量化对比页, 量化策略取舍分析页]"
+不适合复用场景: "[概念 opener 页, 参考文献页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "左侧", "内容": "Static Quantization: Quantized Weight + Quantized Param."}
+  - {"位置": "右侧", "内容": "Dynamic Quantization: 运行时自适应量化参数"}
+alternate_claims:
+  - "静态量化离线固定参数，部署开销低但精度受限"
+  - "动态量化运行时调整参数，精度更优但计算开销更高"
+layout_tag: "block_diagram"
+---
+# slide 7: 静态量化与动态量化对比
+
+**核心论断**: 静态与动态量化各有取舍，动态量化精度更优但开销更高
+
+## 本页讲什么
+本页在量化路线内进一步对比静态量化（Static Quantization）与动态量化（Dynamic Quantization）。通过量化权重与量化参数的并列示意，展示两种策略在离线固定与运行时自适应间的取舍，深化对量化局限的评述。
+
+## 关键文字片段
+- Static Quantization
+- Quantized Weight
+- Quantized Param.
+- Dynamic Quantization
+
+## 视觉骨架
+- 静态vs动态量化并列图
+- 量化参数对比示意
+
+## 可复用到
+- 静态/动态量化对比页
+- 量化策略取舍分析页
+
+## 不适合复用的场景
+- 概念 opener 页
+- 参考文献页

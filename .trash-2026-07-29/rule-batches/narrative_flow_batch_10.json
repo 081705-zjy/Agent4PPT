@@ -1,0 +1,379 @@
+{
+  "batch_index": 10,
+  "rules": [
+    {
+      "id": "motivation_question_answered_in_method",
+      "category": "callback",
+      "applicable_when": "paper_share deck with motivation section posing open questions before method section",
+      "title": "动机章末抛出的问题需在方法章正面回扣",
+      "description": "motivation 章末出现的开放式设问 (含 '?' 或 'How to' 'What to' 等疑问结构) 必须在后续 method 章有明确、可追溯的回答页,形成 setup→payoff 闭环.",
+      "what_to_check": [
+        "扫 motivation 章各 slide.关键文字 / 核心论断 中的问句 (含 '?' 或 疑问词 how/what/why)",
+        "对每条问句在 method 章 slides 中查找语义匹配的回答 (可以是公式、图或结论页)",
+        "算命中率 = 已回答问句 / 问句总数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "motivation slide 17 抛 'How to use speculation results to judge...', method slide 19 抛 'What future information to use?' 并在 20-24 页依次给出 attention 突变→投机 attention→打分公式→CF/CR→多级分类的完整答案链"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "疑问是听众注意力锚点,悬而未答会让 motivation 沦为空谈;回扣才把 setup 转成 payoff,论证 method 是为动机而生",
+      "fix_hint": "把 motivation 末页问句抄到 method 章首页并追加一张明确回答页,页脚回指来源 slide",
+      "exceptions": [
+        "综述/教学型 deck 允许留开放问题不完全回答"
+      ]
+    },
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any paper_share or product deck with dedicated cover and closing sections",
+      "title": "封面主标题/主 anchor 需在 closing 页再次出现",
+      "description": "cover 的核心 anchor (工作名/主标题关键短语) 必须在 closing 页 verbatim 或 paraphrased 出现,把单张成果收束回研究主线.",
+      "what_to_check": [
+        "从 slide 1 (页面角色=cover_candidate) 提取主 anchor (通常是标题首个专有名词)",
+        "在 ending_candidate 页 slide.关键文字 / 核心论断 中查找该 anchor 是否复现",
+        "verbatim 或 明显 paraphrased 均算命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "cover slide 1 主 anchor 'SpecDiff'; closing slide 30 关键文字 '总结致谢与课题组投机系列工作' + 核心论断 'SpecDiff 是课题组投机加速研究主线中的一环' 显式回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "首末呼应形成心理闭环,听众记忆锚点在结尾被强化;缺失则 30 分钟报告像散落的碎片",
+      "fix_hint": "closing 页首句加一行 '本工作 <cover_anchor> 完成/推进了...' 显式绑回主标题",
+      "exceptions": []
+    },
+    {
+      "id": "result_number_recap_in_experiment_summary",
+      "category": "callback",
+      "applicable_when": "experiment section with ≥2 result slides each carrying distinct quantitative claims",
+      "title": "实验章尾需集中回扣各 result 页的关键数字",
+      "description": "experiment 章内若分模型/分数据集给出多组关键数字 (e.g. 2.80× / 2.74× / 3.17×), 章末总结页需一句话把所有数字集中列出,便于听众带走.",
+      "what_to_check": [
+        "扫 experiment 章各 slide.关键文字, 抽出所有 '×加速' '% 提升' 等量化 claim",
+        "在该章末页 (最后一张 experiment slide) 查找是否同时列出所有 claim",
+        "命中 = 章末页数字集覆盖前置 result 页的 ≥80%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 27 单独给 2.80×/2.74×, slide 28 单独给 3.17×; slide 29 章末总结页一句话汇集三模型 2.80×/2.74×/3.17× 加速并强调 Pareto 前沿"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "听众看完 2-3 张 result 图后数字会记混,章末统一收束是唯一确保 take-away 数字被带走的机制",
+      "fix_hint": "experiment 章末补一张单段落文字页,顺序列出各 result 页的 headline 数字并加粗",
+      "exceptions": [
+        "只有单一 result 数字时不需要单独收束页"
+      ]
+    },
+    {
+      "id": "result_holdback_until_experiment_section",
+      "category": "suspense_reveal",
+      "applicable_when": "paper_share deck with dedicated experiment/evaluation section",
+      "title": "关键 speedup/精度数字应压到实验章才首次揭示",
+      "description": "全 deck 的核心量化 claim (加速倍数、精度提升) 不应在 background/motivation/method 中提前出现,首次揭示留给 experiment 章,以维持 setup→payoff 张力.",
+      "what_to_check": [
+        "提取 experiment 章 slide 中所有 '×' '%' 量化 headline 数字",
+        "回扫 experiment 章之前的所有 slide.关键文字, 检查这些数字是否已提前出现",
+        "命中 = 数字首现页均落在 experiment 章内"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "2.80× / 2.74× / 3.17× 首次出现均在 slide 27/28, 均属 experiment 章 (sec.06); 前 26 页无任何具体加速倍数, motivation/method 章仅描述机制"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "过早剧透关键数字会消解 experiment 章的存在意义,让听众在 method 阶段就注意力散失",
+      "fix_hint": "把 method 章中出现的具体倍数删掉或改成 '实验章将展示', 保持 experiment 章首次揭示地位",
+      "exceptions": [
+        "1 页速览型 deck 可直接在 cover 亮数字"
+      ]
+    },
+    {
+      "id": "teaser_question_at_related_work_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck with related_work section preceding own method",
+      "title": "相关工作章末应埋 '?' 悬念指向本方法",
+      "description": "related_work 章末页 (对比表、总结页) 应留一个明显的悬念占位 (对比表填 '?'、开放性问句、'如何超越 X' 类结论), 把注意力自然过渡到本工作方法.",
+      "what_to_check": [
+        "定位 related_work 章最后一张 slide",
+        "检查 slide.关键文字 / 视觉骨架 是否含 '?' 占位、疑问句、或 'How to' 悬念标注",
+        "命中 = 存在明确悬念指示"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 13 related_work 章末用 4 行 baseline + 第 5 行 '?' 占位 + 结论条 'More information results higher performance', 悬念显式指向 SpecDiff 将用更多信息"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "related_work 直接结束会让听众带着 'OK 都这样' 疲态进入 method; 埋悬念可把注意力钉在'你怎么不一样'上",
+      "fix_hint": "related_work 末页加一行 '?' 占位或红框 open question, 显式点出未解决之处",
+      "exceptions": [
+        "综述型 deck 无自有方法, 不需要此悬念"
+      ]
+    },
+    {
+      "id": "mini_agenda_at_each_chapter_start",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥20 pages with ≥4 content chapters",
+      "title": "每章开头需一张导航页高亮当前章节",
+      "description": "content 章节 (background/related_work/motivation/method/experiment) 首页应是复用同一模板的 mini-agenda, 显式高亮当前所在章节,给听众持续的进度感.",
+      "what_to_check": [
+        "列出所有 section_role ∈ {background, related_work, motivation, method, experiment} 的 section 首页 slide",
+        "检查该 slide 视觉骨架是否含 'Contents' / '目录' / 编号列表 + 当前项高亮标记",
+        "命中率 = 有 mini-agenda 的章数 / 内容章总数, 应 ≥80%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 2 (Background 高亮) / slide 8 (Related Work) / slide 14 (Motivation) / slide 18 (Techniques) / slide 25 (Evaluation) 均为同一 6 项目录卡, 蓝色竖条高亮当前项, 5/5 内容章命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 听众易迷失章节位置; 复用同一模板的 mini-agenda 每 5-8 页复位一次,是最低成本的定位机制",
+      "fix_hint": "复制 opening 章的目录 slide, 在每个 content 章 section 首页插入一张并把当前项高亮",
+      "exceptions": [
+        "<20 页短 deck 或章节 <4 无需重复导航"
+      ]
+    },
+    {
+      "id": "consistent_agenda_template_reuse",
+      "category": "chapter_transitions",
+      "applicable_when": "deck with ≥3 mini-agenda pages across chapters",
+      "title": "多张 mini-agenda 必须复用同一视觉模板",
+      "description": "所有 mini-agenda 页应共享统一的边框、编号样式、字号、高亮方式,仅切换 '当前项' 高亮位置; 不同章间视觉风格漂移会破坏导航语义.",
+      "what_to_check": [
+        "定位所有含 'Contents' / '目录' 的 slide",
+        "对比 slide.视觉骨架 描述, 检查是否使用相同基本元素 (外框/编号形式/竖条高亮)",
+        "命中 = 所有 agenda 页视觉骨架描述互相高度重合"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 2/8/14/18/25 视觉骨架统一为 '蓝色矩形外边框 + 蓝色编号圆点竖排列表 + 左侧蓝色进度竖条 + 当前项高亮', 5 张 agenda 模板完全一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "视觉一致性是听众建立 '这是导航页' 心智映射的唯一线索; 换模板 = 强迫大脑重新解析",
+      "fix_hint": "把第一张 agenda 页做成 slide master, 后续 agenda 只改高亮项",
+      "exceptions": []
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "repetition_emphasis",
+      "applicable_when": "any paper_share or product deck with a named work/product",
+      "title": "主 anchor 首次出现应在 cover 页",
+      "description": "全 deck 主 anchor (工作名/产品名) 应在 slide 1 (cover) 首次亮相, 避免延迟到中段才引入,让听众从第一秒就锚定研究对象.",
+      "what_to_check": [
+        "从 deck 标题 / 论述总结 提取主 anchor",
+        "扫 slide 1 的 关键文字 / 核心论断 是否包含该 anchor",
+        "命中 = anchor 出现在 slide 1"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "主 anchor 'SpecDiff' 首次出现即 slide 1 通栏标题 'SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "cover 是听众心智唯一的 'clean slate' 时机, 错过则 anchor 需要更多 slide 才能被记住",
+      "fix_hint": "把工作名放到 cover 大标题第一行,不放副标题或作者行",
+      "exceptions": [
+        "综述型 deck 无自有 anchor 可豁免"
+      ]
+    },
+    {
+      "id": "key_speedup_number_repeat_across_result_slides",
+      "category": "repetition_emphasis",
+      "applicable_when": "experiment section reporting ≥2 headline quantitative claims",
+      "title": "关键量化数字应在实验章 ≥3 次重复出现",
+      "description": "全 deck 最想让听众记住的量化数字 (headline speedup/accuracy) 应在 experiment 章内至少 3 次出现: 单模型 result 页、章末总结、closing 或整体结论,以确保记忆留存.",
+      "what_to_check": [
+        "提取 experiment 章的 headline 数字集 (最大 speedup 或核心 metric)",
+        "在整个 deck 中扫描该数字/等价表述的出现次数",
+        "命中 = 每个 headline 数字出现 ≥3 次"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "3.17× 出现在 slide 28 (单页 headline) 和 slide 29 (章末总结); 2.80×/2.74× 出现在 slide 27 (单页) 和 slide 29 (总结); 加上 closing 可强化"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "单次出现的数字次日测回忆率 <20%; 3 次以上重复能提升到 60%+, 是最简单的记忆强化机制",
+      "fix_hint": "章末总结页显式列出所有 headline 数字, closing 页也顺带回扣一次",
+      "exceptions": [
+        "定性型 deck 无核心数字可豁免"
+      ]
+    },
+    {
+      "id": "baseline_listed_before_result_slides",
+      "category": "comparison_evidence",
+      "applicable_when": "experiment section reporting comparative results against baselines",
+      "title": "baseline 名单必须在 result 页之前明确列出",
+      "description": "experiment 章内应有一张独立的 '实验设置' 页显式列出 baseline 名字 (方法/框架/数据集), 且位于任何 result 图表页之前, 否则 result 图中的对照曲线无锚点.",
+      "what_to_check": [
+        "定位 experiment 章第一张含 'baseline' / '基线' / '对比' 关键文字的 slide",
+        "定位 experiment 章第一张含具体数字对比图/表的 result slide",
+        "命中 = baseline 页 slide_index < result 页 slide_index"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 26 显式列出 Baseline: Diffusers 框架 / Feature caching: RAS / Taylorseer; slide 27-28 才展示对比 result 图, 顺序正确"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "不预先介绍 baseline, 听众看到 result 图中的曲线名会陷入 'A/B/C 是啥' 的解析噪声, 数据被稀释",
+      "fix_hint": "result 图前插一张 bullet 页, 顺序列 hardware/models/baselines/dataset 四组配置",
+      "exceptions": [
+        "ablation-only 或 no-baseline 的定性 case study"
+      ]
+    },
+    {
+      "id": "table_placeholder_for_own_work_in_related_work",
+      "category": "comparison_evidence",
+      "applicable_when": "related_work section using a tabular comparison of prior methods",
+      "title": "相关工作对比表应留 '?' 行给本工作",
+      "description": "related_work 章的方法对比表应在最后一行留 '?' 或本工作名占位, 让听众直觉感到 '主角还没登场', 强化后续 method 章的登场感.",
+      "what_to_check": [
+        "定位 related_work 章含表格类视觉骨架 (含 '对比表' / '5 行 x 列') 的 slide",
+        "检查表格最后一行标注是否为 '?' 或本工作 anchor 占位",
+        "命中 = 存在明确占位行"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 13 '5 行 4 列对比表', 前 4 行为 FORA/ToCa/RAS/TaylorSeer, 第 5 行显式留 '?' 占位, 指向 SpecDiff 将取更优结果"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "对比表在 related_work 收尾具双重功能: 综述前人 + 悬念铺垫; 留 '?' 是把两个功能合并的最省 slide 手法",
+      "fix_hint": "把 related_work 对比表末行改为 '?' 或本工作名 + 空白 metric 列",
+      "exceptions": [
+        "无表格对比的 related_work (纯 bullet 综述型)"
+      ]
+    },
+    {
+      "id": "abbreviation_defined_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck introducing custom abbreviations (2-4 letter acronyms) not in common domain vocabulary",
+      "title": "自定义缩写首次使用时必须括号定义",
+      "description": "本 deck 引入的非通用缩写 (CF/CR/CV/L 等) 首次出现时须以 '全称 (缩写)' 形式定义, 后续可直接用缩写.",
+      "what_to_check": [
+        "扫全 deck 所有 slide.关键文字, 识别 2-4 字母全大写缩写",
+        "对每个缩写找首次出现页, 检查是否伴随全称括号形式 (e.g. 'Cached Frequence (CF)')",
+        "命中率 = 有定义的缩写数 / 缩写总数, 应 ≥90%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "slide 6 定义 'L = height * width * frame + length'; slide 23 定义 'Cached Frequence (CF) / Cached Ratio (CR)'; slide 24 定义 'coefficient of variation (CV)', 全部随首次使用给出全称"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "缩写是听众解析瓶颈; 首次不定义会让后续每次出现都被误解或跳过, 复合损失指数增长",
+      "fix_hint": "在缩写首次出现的 slide.关键文字 里改为 '全称 (缩写)', 后续保持缩写不变",
+      "exceptions": [
+        "领域通用缩写 (LLM/GPU/FLOPS 等) 可省略定义"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match_actual_sections",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an explicit agenda/contents page",
+      "title": "agenda 列出的章节应与实际章节顺序、命名一致",
+      "description": "opening 章 agenda 页列出的章节名和顺序应与 sections_outline 实际结构一致 (允许 closing/致谢不在 agenda 中), 命中率 ≥90%.",
+      "what_to_check": [
+        "从 opening 章 agenda 页 slide.关键文字 提取 agenda 章节名列表",
+        "对比 sections_outline 中 section_role ∈ {background, related_work, motivation, method, experiment} 的章节名",
+        "命中 = agenda 顺序 = 实际顺序, 命名匹配 ≥90%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "agenda 列 Background/Related Work/Motivation/Techniques/Evaluation/Summary 6 项; sections_outline 实际章节顺序完全对应, 命名 verbatim 匹配 6/6"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是对听众的显式承诺; agenda 章节与实际不匹配 = 违约, 听众信任崩塌",
+      "fix_hint": "更新 agenda 页文字与实际章节 outline 对齐, 或反向调整章节顺序",
+      "exceptions": [
+        "无 agenda 页的短 deck 可豁免"
+      ]
+    },
+    {
+      "id": "structural_page_ratio_15_25pct",
+      "category": "pacing",
+      "applicable_when": "decks ≥15 pages with distinct cover/agenda/divider/closing pages",
+      "title": "结构性 slide 占比应控制在 15-25%",
+      "description": "cover + agenda 页 + 章节导航页 + closing 合计的 '结构 slide' 占总页数比例应落在 15-25%: 低于 15% 导航不足, 高于 25% 内容稀释.",
+      "what_to_check": [
+        "统计所有 页面角色=cover_candidate/ending_candidate 或 关键文字 含 'Contents'/'目录' 的 slide 数",
+        "除以总页数得比例",
+        "命中 = 0.15 ≤ 比例 ≤ 0.25"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "evidence": "cover(1) + 5 张 mini-agenda(2/8/14/18/25) + closing(30) = 7 结构页 / 30 总页 = 23.3%, 落在 15-25% 上限区"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页过少听众迷路,过多则每 3-4 张内容夹一张目录, 内容密度被稀释影响信息传递效率",
+      "fix_hint": "若比例 >25%, 合并相邻 agenda 页; 若 <15%, 在长章节 (>8页) 内加中段进度提示",
+      "exceptions": [
+        "<15 页短 deck 或纯 pitch deck 不需要中段导航"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SpecDiff paper_share, 30 页 7 章), 因此所有 rule 均基于单一 hit_carrier. 覆盖 8 类中的 8 类 (callback=3, suspense_reveal=2, chapter_transitions=2, repetition_emphasis=2, comparison_evidence=2, anchor_trajectory=1, structural_promise=1, pacing=1). 该 deck 呈现极强的结构化范式 (每章 mini-agenda 高亮 + 问题-回答链 + 章末数字集中回扣 + 对比表 '?' 占位), 是 paper_share 类的教科书式样本. 单 deck 样本 hit_rate=1.0 但不足以支撑 hard 判定, 因此除 cover_anchor / baseline 先于 result / 缩写定义 / agenda-匹配 4 条最刚性规则设为 hard, 其余多为 soft, 待后续 batch 累计证据后升降级. previous_batches_rules 为空,全部为首次 id.",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

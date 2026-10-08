@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_79"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.09"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 79
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "Background：灵活的 N:M 稀疏模式"
+核心论断: "粗粒度任意稀疏为算法灵活性提供支撑"
+本页讲什么: "本页交代技术背景：介绍灵活的 N:M 稀疏与粗粒度任意稀疏，说明这种稀疏形式如何兼顾算法灵活性，为后续硬件需支持多种稀疏模式的挑战埋下伏笔。"
+关键文字: "[\"Flexible N:M Sparsity\", Coarse-grained arbitrary sparsity for algorithm flexibility]"
+视觉骨架: "[\"N:M 稀疏矩阵示意\", 粗粒度稀疏模式图解]"
+资源ID列表:
+适合复用场景: "[稀疏模式的算法背景介绍页, \"N:M 稀疏概念讲解页\"]"
+不适合复用场景: "[能效数据对比页, 论文封面页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Background：灵活的 N:M 稀疏模式"}
+  - {"位置": "下方主体", "内容": "N:M 稀疏矩阵与粗粒度任意稀疏示意图"}
+alternate_claims:
+  - "N:M 稀疏形式支持多样化的算法结构"
+layout_tag: "block_diagram"
+---
+# slide 79: Background：灵活的 N:M 稀疏模式
+
+**核心论断**: 粗粒度任意稀疏为算法灵活性提供支撑
+
+## 本页讲什么
+本页交代技术背景：介绍灵活的 N:M 稀疏与粗粒度任意稀疏，说明这种稀疏形式如何兼顾算法灵活性，为后续硬件需支持多种稀疏模式的挑战埋下伏笔。
+
+## 关键文字片段
+- Flexible N:M Sparsity
+- Coarse-grained arbitrary sparsity for algorithm flexibility
+
+## 视觉骨架
+- N:M 稀疏矩阵示意
+- 粗粒度稀疏模式图解
+
+## 可复用到
+- 稀疏模式的算法背景介绍页
+- N:M 稀疏概念讲解页
+
+## 不适合复用的场景
+- 能效数据对比页
+- 论文封面页

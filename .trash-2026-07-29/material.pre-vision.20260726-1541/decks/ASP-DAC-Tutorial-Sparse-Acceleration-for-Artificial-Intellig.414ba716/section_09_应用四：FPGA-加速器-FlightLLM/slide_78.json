@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_78",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.09",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 78,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "FlightLLM：FPGA 上的完整 LLM 推理映射流",
+  "核心论断": "FlightLLM 在 FPGA 上实现端到端稀疏 LLM 高效推理",
+  "本页讲什么": "本页作为第四个案例的封面，引出 FlightLLM 这项工作：一套面向 FPGA 的完整映射流，支持大语言模型的高效推理。标注作者 Shulin Zeng 及论文编号，为后续背景、动机、挑战与双方案叙事开篇。",
+  "关键文字": [
+    "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+    "Shulin Zeng"
+  ],
+  "视觉骨架": [
+    "论文封面式标题版式",
+    "作者与配图缩略图",
+    "工作序号标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_78.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_78.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_78.asset.03",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_78.asset.04"
+  ],
+  "适合复用场景": [
+    "FPGA 加速器工作案例开篇页",
+    "稀疏 LLM 推理论文引入页"
+  ],
+  "不适合复用场景": [
+    "数据结果对比页",
+    "纯方法架构展开页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

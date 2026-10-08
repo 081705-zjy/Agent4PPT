@@ -1,0 +1,51 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_11"
+所属章节: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04"
+所属deck: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738"
+页序号: 11
+源文件: "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx"
+页面角色: "content_candidate"
+标题: "早退层搜索过程与核心问题"
+核心论断: "逐层搜索早退点开销大，需回答何处退、如何退"
+本页讲什么: "本页把早退定位刻画为一个搜索过程，提出「在哪一层退出（where）」与「如何降低搜索代价（how）」两个核心问题，为下一页用投机模型缩减搜索空间做直接铺垫。"
+关键文字: "[A Search Process, where do, How to]"
+视觉骨架: "[逐层搜索过程示意, where/how 问题标注]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_11.asset.01, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_11.asset.02]"
+适合复用场景: "[早退搜索问题定义页, 推理加速方法问题提出页]"
+不适合复用场景: "[最终能效对比页, 训练流程详解页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "早退层搜索过程与核心问题"}
+  - {"位置": "中间主体", "内容": "逐层搜索过程示意图"}
+  - {"位置": "下方问题标注", "内容": "where do / How to 两个核心问题"}
+alternate_claims:
+  - "早退定位本质是一个逐层搜索过程"
+  - "需回答 where 与 how 两个核心问题"
+layout_tag: "flowchart"
+---
+# slide 11: 早退层搜索过程与核心问题
+
+**核心论断**: 逐层搜索早退点开销大，需回答何处退、如何退
+
+## 本页讲什么
+本页把早退定位刻画为一个搜索过程，提出「在哪一层退出（where）」与「如何降低搜索代价（how）」两个核心问题，为下一页用投机模型缩减搜索空间做直接铺垫。
+
+## 关键文字片段
+- A Search Process
+- where do
+- How to
+
+## 视觉骨架
+- 逐层搜索过程示意
+- where/how 问题标注
+
+## 可复用到
+- 早退搜索问题定义页
+- 推理加速方法问题提出页
+
+## 不适合复用的场景
+- 最终能效对比页
+- 训练流程详解页

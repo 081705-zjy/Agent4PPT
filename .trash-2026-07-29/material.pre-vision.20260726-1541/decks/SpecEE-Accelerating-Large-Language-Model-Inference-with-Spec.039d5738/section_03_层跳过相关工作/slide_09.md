@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_09"
+所属章节: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03"
+所属deck: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738"
+页序号: 9
+源文件: "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx"
+页面角色: "content_candidate"
+标题: "方法三：词表映射早退"
+核心论断: "词表映射借中间层输出直接投影词表实现提前退出"
+本页讲什么: "本页展开第三类方法——词表映射（Vocabulary）。以 Llama 为例，把某一中间层的隐状态直接投影到词表空间预测输出，从而在不跑完全部层的情况下提前退出。图示层-词表映射与预测器的对应关系，收束本章对已有方法的梳理。"
+关键文字: "[Vocabulary, Llama Layer, Predictor]"
+视觉骨架: "[层到词表投影映射图, 中间层早退结构示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_09.asset.01, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_09.asset.02, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_09.asset.03, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_09.asset.04]"
+适合复用场景: "[词表映射早退方法介绍页, 早退方案的算法层展开页]"
+不适合复用场景: "[能效/吞吐数据结果页, 章节开篇分类页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "方法三：词表映射早退"}
+  - {"位置": "下方主体", "内容": "Llama 中间层到词表投影的早退结构示意"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 9: 方法三：词表映射早退
+
+**核心论断**: 词表映射借中间层输出直接投影词表实现提前退出
+
+## 本页讲什么
+本页展开第三类方法——词表映射（Vocabulary）。以 Llama 为例，把某一中间层的隐状态直接投影到词表空间预测输出，从而在不跑完全部层的情况下提前退出。图示层-词表映射与预测器的对应关系，收束本章对已有方法的梳理。
+
+## 关键文字片段
+- Vocabulary
+- Llama Layer
+- Predictor
+
+## 视觉骨架
+- 层到词表投影映射图
+- 中间层早退结构示意
+
+## 可复用到
+- 词表映射早退方法介绍页
+- 早退方案的算法层展开页
+
+## 不适合复用的场景
+- 能效/吞吐数据结果页
+- 章节开篇分类页

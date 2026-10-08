@@ -1,0 +1,1156 @@
+{
+  "batch_index": 7,
+  "patterns": [
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "论文",
+          "机构",
+          "作者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中大字论文标题+多机构作者名单+通讯标注+会议出处"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号目录列出全 deck 章节骨架 (背景/洞察/方案/评估), 高亮当前章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多家机构作者+通讯标注+会议出处)接一页编号进度式目录, 为后续 Background→Insight→Solution→Evaluation 四段主线定调",
+      "anti_patterns": [
+        "单页封面无目录 (直接进背景) — 用 opening_paper_cover_multi_author_multi_institution",
+        "封面+无进度高亮的纯目录 — 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.01",
+          "section_title": "封面与内容大纲",
+          "section_role": "opening",
+          "section_narrative": "论文汇报开场章节:slide 1 亮明标题/作者/会议身份,slide 2 用 4 项 contents(Background/Insight/Solution/Evaluation)交代全篇路线,当前高亮第 1 章,为后续展开定框架。",
+          "section_topic_tags": [
+            "论文封面",
+            "CIKM 2025",
+            "多机构署名",
+            "四段式目录",
+            "开场路线图"
+          ],
+          "match_evidence": "2 页节奏: 大字标题+多机构作者(single_paper_title_authors_only) + 4 项编号目录当前章加黑高亮(toc_progress_highlight)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SG-Filter 论文封面:标题/作者/会议",
+              "slide_claim": "SG-Filter 用层次摘要语义索引与自适应过滤增强相似文本检索",
+              "slide_key_text": [
+                "SG-Filter: Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering",
+                "Jiancai Ye, Jun Liu, Haoyu Zhang, Maojia Sheng, Tao Yang 等 (vision)",
+                "Shanghai Jiao Tong University, Tsinghua University, ByteDance, Infinigence AI, Shanghai Innovation Institute",
+                "Corresponding to: daiguohao@sjtu.edu.cn (vision)",
+                "CIKM 2025 / 2025.11.13 (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "居中多行大标题",
+                "作者姓名带机构上标",
+                "机构脚注列表",
+                "会议与日期署名"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "内容大纲:四章路线图(高亮第1章)",
+              "slide_claim": "全篇按 Background→Insight→Solution→Evaluation 四章推进,当前进入第1章",
+              "slide_key_text": [
+                "1 Background: Retrieval",
+                "2 Insight: By Summarized Information (vision)",
+                "3 Solution: Index and Search (vision)",
+                "4 Evaluation (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色 contents 标题",
+                "编号纵向列表",
+                "当前章加黑高亮/其余灰化"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "background_paradigm_to_scenario_narrow_to_feature_to_recall_gap",
+      "title": "背景·主流范式→场景收窄→特征剖析→召回鸿沟",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "主流范式",
+          "场景收窄",
+          "特征",
+          "召回",
+          "痛点"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "mainstream_paradigm_flow_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "先立主流技术范式(如向量检索)的高召回定义与流程"
+        },
+        {
+          "archetype": "target_scenario_importance_dual_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "从通用范式收窄到目标场景(如 STR), 用增长柱图+应用列表论证其占比最大"
+        },
+        {
+          "archetype": "scenario_feature_embedding_illustration",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "定义场景并展开其关键特征(如相似文本表达接近), 用近似例+嵌入距离标注具象化"
+        },
+        {
+          "archetype": "recall_gap_quantitative_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "综合特征证主流范式在该场景下召回不达标(如低于 0.72 需求线), 立方法章之靶"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "mainstream_paradigm_flow_intro",
+          "to_archetype": "target_scenario_importance_dual_panel",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "target_scenario_importance_dual_panel",
+          "to_archetype": "scenario_feature_embedding_illustration",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "scenario_feature_embedding_illustration",
+          "to_archetype": "recall_gap_quantitative_headline",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型 background 章: 由通用检索范式(向量检索)收窄到 STR 这一高占比场景, 剖析其相似表达特征, 最终用嵌入距离几乎相同+召回柱图论证向量检索召回不达标, 为后续 SG-Filter 立靶",
+      "anti_patterns": [
+        "纯 macro 铺陈无场景收窄 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw",
+        "范式演进逐篇串讲代表工作 — 用 background_paradigm_evolution_related_works_survey_to_bottleneck"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.02",
+          "section_title": "检索背景与相似文本检索",
+          "section_role": "background",
+          "section_narrative": "为 SG-Filter 铺垫：先立主流向量检索，再引出 STR 这一高占比场景及其两大特征，最终论证向量检索在 STR 下召回不达标(0.72 需求)这一核心痛点",
+          "section_topic_tags": [
+            "向量检索",
+            "相似文本检索 STR",
+            "召回鸿沟",
+            "嵌入相似度",
+            "0.72 需求线"
+          ],
+          "match_evidence": "4 页节奏: 主流范式(向量检索) → 场景收窄(STR 高占比) → 特征剖析(近似句嵌入距离 Dis.2-Dis.1≈0) → 召回鸿沟(0.342/0.331, 低于 0.72)",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "mainstream_paradigm_flow_intro",
+              "archetype": "mainstream_paradigm_flow_intro",
+              "slide_title": "主流文本检索范式:向量检索",
+              "slide_claim": "向量检索凭高召回率成为当今主流文本检索范式",
+              "slide_key_text": [
+                "The mainstream text retrieval paradigm today is vector retrieval",
+                "High recall rate",
+                "The process of vector retrieval",
+                "For documents D={d1,d2,...,d3}, split D into chunks",
+                "Given query text Q, search in V to get top-k nearest",
+                "Embedding is the term for the vectorization process"
+              ],
+              "slide_visual_skeleton": [
+                "左侧召回率柱状示意",
+                "右侧向量检索流程图",
+                "Index 蓝色标签块",
+                "两列并列版式"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "target_scenario_importance_dual_panel",
+              "archetype": "target_scenario_importance_dual_panel",
+              "slide_title": "相似文本检索(STR)是高占比重要场景",
+              "slide_claim": "STR 是文本检索中占比最大、AI 时代应用广泛的重要场景",
+              "slide_key_text": [
+                "Similar Text Retrieval (STR) is an important scenario in text retrieval",
+                "widely used in practical applications in AI era",
+                "Important scenario",
+                "Widely used in practical applications",
+                "The scenario with the large proportion",
+                "Open-domain QA / Software Engineering / Dialogue"
+              ],
+              "slide_visual_skeleton": [
+                "市场规模增长柱图",
+                "应用领域列表",
+                "左右两列 panel",
+                "Customer Service 应用标注"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "scenario_feature_embedding_illustration",
+              "archetype": "scenario_feature_embedding_illustration",
+              "slide_title": "STR 特征一:相似文本表达高度接近",
+              "slide_claim": "STR 文本在表达风格/词汇/内容域上彼此高度相似",
+              "slide_key_text": [
+                "STR refers to identifying and extracting relevant chunks from a large corpus",
+                "expression styles, vocabulary, and content domains are similar",
+                "Feature1: Close to each other",
+                "Fixed expression templates / Proprietary expression",
+                "Global pooling",
+                "Dis.2 − Dis.1 ≈ 0"
+              ],
+              "slide_visual_skeleton": [
+                "近似文本块对照示意",
+                "Embedding 向量距离标注",
+                "Global pooling 计算示意",
+                "相似词高亮标注"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "recall_gap_quantitative_headline",
+              "archetype": "recall_gap_quantitative_headline",
+              "slide_title": "STR 双特征致向量检索召回不达标",
+              "slide_claim": "受 STR 两大特征影响,向量检索召回率无法满足 0.72 需求",
+              "slide_key_text": [
+                "Due to two characteristics of STR, the recall rate of vector retrieval cannot meet demands",
+                "meet demands in this context",
+                "Dis.2 − Dis.1 ≈ 0",
+                "Non-STR",
+                "Average recall in Non-STR & STR",
+                "Requirement = 0.72"
+              ],
+              "slide_visual_skeleton": [
+                "近似文本块对照",
+                "嵌入距离数值标注(0.342/0.331)",
+                "Non-STR vs STR 召回柱图",
+                "0.72 需求线标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "motivation_related_work_taxonomy_paradigm_flaw_to_key_insight",
+      "title": "动机·相关工作分类→范式痛点→双源核心洞察",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "分类",
+          "痛点",
+          "洞察",
+          "可行性"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮进入 Insight 章"
+        },
+        {
+          "archetype": "related_work_two_type_taxonomy",
+          "count": 1,
+          "position": "start",
+          "purpose": "把已有工作分为语义/结构化两类, 列出各自代表方法"
+        },
+        {
+          "archetype": "two_type_recall_qualitative_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "对两类方法给定性召回等级(Low/Middle/High)对照, 引出高下"
+        },
+        {
+          "archetype": "existing_paradigm_flaw_illustration",
+          "count": 1,
+          "position": "middle",
+          "purpose": "点破共性痛点: 现有 embedding 范式无法抽取摘要信息导致低召回"
+        },
+        {
+          "archetype": "key_insight_dual_source_supplement",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以红框圈出核心洞察: 补充粗粒度摘要信息, 来源为 embedding+co-occurrence 双源"
+        },
+        {
+          "archetype": "insight_feasibility_quantitative_evidence",
+          "count": 1,
+          "position": "end",
+          "purpose": "以 M<<N (唯一 token 稀疏) 量化论证补充摘要信息的可行性"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "related_work_two_type_taxonomy",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "related_work_two_type_taxonomy",
+          "to_archetype": "two_type_recall_qualitative_compare",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "two_type_recall_qualitative_compare",
+          "to_archetype": "existing_paradigm_flaw_illustration",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "existing_paradigm_flaw_illustration",
+          "to_archetype": "key_insight_dual_source_supplement",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "key_insight_dual_source_supplement",
+          "to_archetype": "insight_feasibility_quantitative_evidence",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "论文分享型 insight 章: 目录切入→相关工作二分类(语义/结构)→定性召回对照→点破 embedding 范式无法抽取摘要信息的共性痛点→给出补充粗粒度摘要信息的双源洞察(embedding+共现)→以 M<<N 论证可行性收束",
+      "anti_patterns": [
+        "两路线对比+机制揭示三拍收束 — 用 motivation_paradigm_compare_then_transpose_key_idea",
+        "领域类比→双硬件挑战→相关工作缺口 — 用 motivation_domain_analogy_dual_challenge_related_work_gap"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.03",
+          "section_title": "核心洞察:利用摘要信息",
+          "section_role": "motivation",
+          "section_narrative": "承接背景章,先把相关工作归为语义/结构两类并对比其召回,再点破现有 embedding 范式无法抽取摘要信息导致低召回,最终引出「补充粗粒度摘要信息(embedding+共现)」这一核心洞察,为后续 SG-Filter 方案铺垫。",
+          "section_topic_tags": [
+            "相关工作二分类",
+            "召回定性对照",
+            "embedding 范式痛点",
+            "粗粒度摘要洞察",
+            "M<<N 稀疏可行性"
+          ],
+          "match_evidence": "6 页节奏: 目录 → Type1/Type2 二分类 → Low/Middle/High 召回对照 → 现有范式无法抽摘要 → 双源(embedding+共现)洞察 → M<<N 可行性佐证",
+          "slides": [
+            {
+              "slide_index": 7,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:定位到「Insight:利用摘要信息」章",
+              "slide_claim": "全篇四段式结构,本页高亮进入第 2 章核心洞察",
+              "slide_key_text": [
+                "contents",
+                "1 Background: Retrieval and AI",
+                "2 Insight: By Summarized Information",
+                "3 Solution: Index and Search",
+                "4 Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "居中标题 contents",
+                "4 行编号目录列表",
+                "当前章高亮/其余灰化"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "related_work_two_type_taxonomy",
+              "archetype": "related_work_two_type_taxonomy",
+              "slide_title": "相关工作分类:语义类 vs 结构化类",
+              "slide_claim": "现有相关工作可归为增强语义信息与增强结构化信息两类",
+              "slide_key_text": [
+                "Related work: Fine-grained information",
+                "Type1: Enhancing Semantic Information (① Advanced Embedding Model ② Text Rewrite)",
+                "Type2: Enhancing Structured Information (③ Hybrid Search ④ Label Filter ⑤ Knowledge Graph)",
+                "Make the mapping from words to vectors more accurate",
+                "⑤ Build relationship between chunks [2-3]"
+              ],
+              "slide_visual_skeleton": [
+                "Related Work 主标题",
+                "上下两分区 Type1/Type2",
+                "文档色块示意图",
+                "Type2 红框强调区"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "two_type_recall_qualitative_compare",
+              "archetype": "two_type_recall_qualitative_compare",
+              "slide_title": "两类方法的召回率对比",
+              "slide_claim": "结构化类召回优于语义类:Type1 低、Type2 中到高",
+              "slide_key_text": [
+                "Related work: Fine-grained information",
+                "Type1 → Low",
+                "Type2 → Middle / High",
+                "Make the mapping from chunks to vectors more accurate",
+                "⑤ Build relationship between chunks [2-3]"
+              ],
+              "slide_visual_skeleton": [
+                "Related Work 主标题",
+                "Type1/Type2 × 召回等级对照",
+                "Low/Middle/High 定性标签",
+                "文档色块示意"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "existing_paradigm_flaw_illustration",
+              "archetype": "existing_paradigm_flaw_illustration",
+              "slide_title": "现有 embedding 范式无法抽取摘要信息",
+              "slide_claim": "摘要信息对提升召回关键,但现有 embedding 范式无法有效抽取致低召回",
+              "slide_key_text": [
+                "Summarized information is important for recall improve",
+                "However existing embedding paradigm cannot effectively extract summarized information",
+                "Existing embedding paradigm cannot directly support the idea, causing low recall",
+                "Summarized chunk meaning itself and Summarized chunk meaning's relation",
+                "Global pooling",
+                "low recall"
+              ],
+              "slide_visual_skeleton": [
+                "Challenges 主标题",
+                "灰底强调说明块",
+                "文档色块 + global pooling 向量条",
+                "相似度数值 0.9/0.6/0.3/0 示意图"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "key_insight_dual_source_supplement",
+              "archetype": "key_insight_dual_source_supplement",
+              "slide_title": "核心洞察:补充粗粒度摘要信息",
+              "slide_claim": "本方案通过 embedding 与共现两条信息源补充粗粒度摘要信息",
+              "slide_key_text": [
+                "Ours: Adding Coarse-grained information",
+                "① information source: embedding",
+                "② information source: co-occurrence",
+                "Summarized extraction",
+                "Global pooling → n1",
+                "weight * v,i → n2"
+              ],
+              "slide_visual_skeleton": [
+                "Key Insight 主标题",
+                "红框向量条",
+                "Summarized extraction chunk 示意",
+                "n_i 节点框图",
+                "①/② 双信息源标注"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "insight_feasibility_quantitative_evidence",
+              "archetype": "insight_feasibility_quantitative_evidence",
+              "slide_title": "摘要信息可行性:唯一 token 远少于原文 (M<<N)",
+              "slide_claim": "STR 中唯一 token 数 M 远小于原文总 token 数 N,支撑摘要抽取可行",
+              "slide_key_text": [
+                "Ours: Adding Coarse-grained information",
+                "N》M, where N is the original total token length",
+                "M is the length of unique tokens",
+                "In STR, there are a small number of unique tokens",
+                "M2 (M<<N)",
+                "Summarized extraction"
+              ],
+              "slide_visual_skeleton": [
+                "Key Insight 主标题",
+                "Summarized 箭头指向摘要片段",
+                "重复 token(cat/fox)示意",
+                "M<<N 公式标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_two_question_frame_three_technique_sequence",
+      "title": "方法·两问框架驱动三技术顺序展开",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "两问框架",
+          "获取",
+          "利用",
+          "索引构建",
+          "过滤",
+          "融合"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮进入 Solution 章"
+        },
+        {
+          "archetype": "solution_overview_two_question_frame",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 Q1(如何获取)/Q2(如何利用) 两问并列, 统领本章技术展开"
+        },
+        {
+          "archetype": "tech1_index_node_construction",
+          "count": 1,
+          "position": "middle",
+          "purpose": "Tech1 第一步: 用 LLM 抽取摘要作为图节点(Node), 回答 Q1"
+        },
+        {
+          "archetype": "tech1_index_edge_hierarchy",
+          "count": 1,
+          "position": "middle",
+          "purpose": "Tech1 第二/三步: 同文档共现连边+从属层次, 构建语义索引"
+        },
+        {
+          "archetype": "tech2_adaptive_score_filter",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "Tech2 评分排序自适应过滤: 相似度初始分融合层次/共现得最终分, 按分值过滤, 回答 Q2 上半"
+        },
+        {
+          "archetype": "tech3_multi_ratio_fusion_recall",
+          "count": 1,
+          "position": "end",
+          "purpose": "Tech3 多路融合召回: 不同过滤率互补, 融合提升召回, 以三技术关系图收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "solution_overview_two_question_frame",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "solution_overview_two_question_frame",
+          "to_archetype": "tech1_index_node_construction",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "tech1_index_node_construction",
+          "to_archetype": "tech1_index_edge_hierarchy",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "tech1_index_edge_hierarchy",
+          "to_archetype": "tech2_adaptive_score_filter",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "tech2_adaptive_score_filter",
+          "to_archetype": "tech3_multi_ratio_fusion_recall",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型 method 章: 章首目录→Solution Overview 抛出 Q1获取/Q2利用两问→Tech1 分两页(节点+边/层次)构建层次摘要语义索引→Tech2 评分排序自适应过滤→Tech3 多过滤率融合召回, 用两问统领三技术顺序化展开",
+      "anti_patterns": [
+        "多并列技术每项独立三拍(意图-流程-硬件) — 用 method_multi_parallel_techniques_intro_flow_detail",
+        "算法层+硬件层双支柱下钻 — 用 method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+        "三设计各以引入-机制-结果三拍 — 用 method_three_design_intro_mechanism_result_triad"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.04",
+          "section_title": "层次索引与检索方案",
+          "section_role": "method",
+          "section_narrative": "deck 方法核心章,承接 Insight 落地为 SG-Filter 三项技术:先建层次摘要语义索引(Tech1),再评分排序自适应过滤(Tech2),最后多路融合召回(Tech3),回答 Q1获取/Q2利用摘要信息两问。",
+          "section_topic_tags": [
+            "Q1/Q2 两问框架",
+            "层次摘要语义索引",
+            "评分排序自适应过滤",
+            "多路融合召回",
+            "三技术协同"
+          ],
+          "match_evidence": "6 页节奏: 目录 → Q1/Q2 两问 Overview → Tech1 节点构建 → Tech1 边与层次 → Tech2 评分过滤 → Tech3 多路融合+三技术关系图收束",
+          "slides": [
+            {
+              "slide_index": 13,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:进入第3章 Solution 索引与检索",
+              "slide_claim": "全篇四章推进至第3章 Solution: Index and Search",
+              "slide_key_text": [
+                "contents",
+                "1 Background: Retrieval and AI",
+                "2 Insight: By Summarized Information",
+                "3 Solution: Index and Search",
+                "4 Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "居中标题 contents",
+                "4 项编号目录列表",
+                "当前项加粗高亮/余项灰显"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "solution_overview_two_question_frame",
+              "archetype": "solution_overview_two_question_frame",
+              "slide_title": "Solution Overview:两问驱动完整检索流程",
+              "slide_claim": "SG-Filter 用 Q1 获取与 Q2 利用两问统领完整检索流程",
+              "slide_key_text": [
+                "The complete retrieval process",
+                "Q1: How to obtain summarized information?",
+                "Q2: How to utilize summarized information?",
+                "Tech2 + Tech3"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题",
+                "左右 2 列 Q1/Q2 并列",
+                "Tech2+Tech3 红色标注"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "tech1_index_node_construction",
+              "archetype": "tech1_index_node_construction",
+              "slide_title": "Tech1:摘要图节点构建(Step1)",
+              "slide_claim": "用 LLM 做摘要抽取而非传统关键词抽取来构建图节点",
+              "slide_key_text": [
+                "How to efficiently obtain summarized information? — through the design of summarized graph",
+                "Step1: Node of summarized graph",
+                "Summary extraction, not traditional keyword extraction",
+                "Note: GPT-4 & GPT-3.5-turbo as LLM API"
+              ],
+              "slide_visual_skeleton": [
+                "左侧节点示意方块",
+                "LLM 摘要抽取流程",
+                "prompt 文本框",
+                "红色对比标注"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "tech1_index_edge_hierarchy",
+              "archetype": "tech1_index_edge_hierarchy",
+              "slide_title": "Tech1:摘要图的边与层次(Step2-3)",
+              "slide_claim": "同文档共现连边、按从属关系表达层次构成语义索引",
+              "slide_key_text": [
+                "Step2: Edge of summarized graph",
+                "Step3: Hierarchical",
+                "Connect edges when two summarized words appear in the same document",
+                "Co-occurrence",
+                "Express the hierarchy by owner relationship",
+                "Semantic Index"
+              ],
+              "slide_visual_skeleton": [
+                "多文档共现文本示例",
+                "词节点连边示意",
+                "doc1/doc2 层次归属图",
+                "Semantic Index 标注"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "tech2_adaptive_score_filter",
+              "archetype": "tech2_adaptive_score_filter",
+              "slide_title": "Tech2:重要节点评分排序自适应过滤",
+              "slide_claim": "融合层次/共现/相似度的评分排序按分值大小过滤对象",
+              "slide_key_text": [
+                "How to effectively utilize summarized information? — the design of score ranking of important nodes",
+                "Initial score = similarity",
+                "Final score",
+                "Score ranking: Hierarchy + Co-occurrence + Similarity",
+                "Determine the filtered objects based on the score magnitude"
+              ],
+              "slide_visual_skeleton": [
+                "Summarized/Semantic 双索引散点",
+                "score 数值标注",
+                "Final score 评分融合框",
+                "初始分→最终分对比"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "tech3_multi_ratio_fusion_recall",
+              "archetype": "tech3_multi_ratio_fusion_recall",
+              "slide_title": "Tech3:多路融合召回与三技术关系",
+              "slide_claim": "不同过滤率召回的正样本具互补性,多路融合提升召回",
+              "slide_key_text": [
+                "How to maximize the utilization of summarized information? — through multi-result fusion about different filter rate",
+                "The positive samples recalled under different filtering ratios have complementarity",
+                "Recall=50% / Recall=100%",
+                "Filter Rate=1% / Filter Rate=10%",
+                "Relationship between three technologies"
+              ],
+              "slide_visual_skeleton": [
+                "不同过滤率召回对比",
+                "Word similarity rank 列表",
+                "Recall 百分比标注",
+                "三技术关系示意图"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "result_setup_main_latency_ablation_param_robust_five_step",
+      "title": "结果·设置→主结果→延迟→消融→参数鲁棒五步",
+      "applicable_when": {
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "主结果",
+          "延迟",
+          "消融",
+          "参数鲁棒"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮进入 Evaluation 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三段 bullet 罗列数据集/评价指标/基线, 附引用底注"
+        },
+        {
+          "archetype": "main_recall_sota_dual_claim",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以左右双栏论断给主召回结果: STR 上 Recall@15 平均提升+Non-STR 上仍 SOTA"
+        },
+        {
+          "archetype": "latency_headline_single_number",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以单栏大数字(33.93ms)论断端到端延迟达标"
+        },
+        {
+          "archetype": "ablation_component_dual_group",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "分左右两组去掉核心组件后的召回下降曲线, 证组件有效"
+        },
+        {
+          "archetype": "parameter_robustness_multi_curve_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以 2×2 曲线网格论证方法对关键参数的强鲁棒性与低参数量"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "eval_setup_bulleted_with_refs",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_with_refs",
+          "to_archetype": "main_recall_sota_dual_claim",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "main_recall_sota_dual_claim",
+          "to_archetype": "latency_headline_single_number",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "latency_headline_single_number",
+          "to_archetype": "ablation_component_dual_group",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "ablation_component_dual_group",
+          "to_archetype": "parameter_robustness_multi_curve_grid",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "论文分享型 evaluation 章五步弧线: 目录→数据集/指标/基线设置→主召回 SOTA 双栏论断→端到端延迟大数字→双组件消融曲线→2×2 参数鲁棒性网格, 一次覆盖精度/延迟/组件/参数四维证据",
+      "anti_patterns": [
+        "设置→精度→面积→加速比→消融→EDP 六步(硬件加速)— 用 experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+        "设置双页→主结果头条→消融拆解双页 — 用 experiment_setup_dual_main_headline_ablation_pair",
+        "分层揭示 setup→精度→资源→双 speedup→demo — 用 experiment_layered_setup_accuracy_hardware_speedup_demo"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.05",
+          "section_title": "数据集与实验评估",
+          "section_role": "result",
+          "section_narrative": "作为 deck 第 4 部分 Evaluation,承接 Solution 章节,用数据集/指标铺垫→主召回结果→延迟→消融→参数鲁棒性五步,系统论证 SG-Filter 召回提升与低参数鲁棒的有效性。",
+          "section_topic_tags": [
+            "检索评测",
+            "Recall@15 SOTA",
+            "端到端延迟",
+            "组件消融",
+            "参数鲁棒性"
+          ],
+          "match_evidence": "6 页节奏: 目录 → 设置(4 数据集+3 指标+5 基线) → Recall@15 提升 10.53%–22.92% → 33.93ms 延迟 → 双组件消融(去 SG/去融合) → 2×2 参数鲁棒性网格",
+          "slides": [
+            {
+              "slide_index": 19,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:进入第 4 部分 Evaluation",
+              "slide_claim": "全篇进入第 4 部分 Evaluation,前三部分已完成",
+              "slide_key_text": [
+                "Background: Retrieval and AI",
+                "Insight: By Summarized Information",
+                "Solution: Index and Search",
+                "4 Evaluation (高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "居中 contents 标题",
+                "4 行编号目录条",
+                "当前项加粗高亮"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "eval_setup_bulleted_with_refs",
+              "archetype": "eval_setup_bulleted_with_refs",
+              "slide_title": "实验设置:数据集、指标与基线",
+              "slide_claim": "实验覆盖相似/非相似文本数据集,以 Recall@k 等指标对比多类基线",
+              "slide_key_text": [
+                "Similar Text: Medical-qa, Financial-qa, Qasper",
+                "Non Similar Text: Scifact",
+                "Accuracy: Recall@k, Precision@k, Acc@k",
+                "Semantic: Bge, M3e, InteR",
+                "Structural: Milvus, LightRAG"
+              ],
+              "slide_visual_skeleton": [
+                "三级缩进 bullet 结构",
+                "底部引用文献列表"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "main_recall_sota_dual_claim",
+              "archetype": "main_recall_sota_dual_claim",
+              "slide_title": "召回结果:SG-Filter 全面达 SOTA",
+              "slide_claim": "SG-Filter 在 STR 上 Recall@15 平均提升 10.53%–22.92%,达 SOTA",
+              "slide_key_text": [
+                "Recall@15 of SG-Filter increases by 10.53% —— 22.92% on average",
+                "achieving SOTA on STR",
+                "Even in Non-STR, SG-Filter on Bge-m3 still achieves SOTA"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏论断",
+                "红色数字/关键词强调"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "latency_headline_single_number",
+              "archetype": "latency_headline_single_number",
+              "slide_title": "延迟评估:端到端 33.93ms 达标",
+              "slide_claim": "借 HNSW 等高效索引,端到端延迟仅 33.93ms 并满足召回要求",
+              "slide_key_text": [
+                "adaptations for efficient indexes such as HNSW",
+                "end-to-end retrieval latency is 33.93ms",
+                "The lowest latency while meeting the recall requirement"
+              ],
+              "slide_visual_skeleton": [
+                "单栏论断文字",
+                "红色数字 33.93ms 强调"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "ablation_component_dual_group",
+              "archetype": "ablation_component_dual_group",
+              "slide_title": "消融实验:摘要图与结果融合有效",
+              "slide_claim": "去掉摘要图或结果融合均使召回下降,证明两模块有效",
+              "slide_key_text": [
+                "Ablation1: Without Summarized Graph",
+                "Ablation2: Without Result Fusion",
+                "Conclusion: Demonstrates the effectiveness of adding …",
+                "Label vs SG-Filter (Medical-qa, Qasper)"
+              ],
+              "slide_visual_skeleton": [
+                "左右两组消融图区",
+                "多数据集 Recall 折线",
+                "红底结论横条"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "parameter_robustness_multi_curve_grid",
+              "archetype": "parameter_robustness_multi_curve_grid",
+              "slide_title": "参数鲁棒性:低参数强鲁棒",
+              "slide_claim": "SG-Filter 对 filter rate 与实体数等参数强鲁棒且参数量低",
+              "slide_key_text": [
+                "SG-Filter has strong robustness and low parameter",
+                "Relationship between recall rate and filter rate",
+                "Relationship between recall rate and the number of initially hit",
+                "Relationship between positive sample coverage and Filter Rate"
+              ],
+              "slide_visual_skeleton": [
+                "2×2 多子图网格",
+                "Recall vs 参数曲线",
+                "多数据集散点/折线"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_toc_recap_plus_method_diagram_and_thanks_contact",
+      "title": "收尾·目录回扣+方法示意图重述与致谢联系方式",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "回顾",
+          "方法重述",
+          "致谢",
+          "联系方式",
+          "开源"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_recap_all_chapters",
+          "count": 1,
+          "position": "start",
+          "purpose": "回归目录页, 竖排编号点亮全部章节, 串起全 deck 脉络"
+        },
+        {
+          "archetype": "summary_method_diagram_with_thanks_contact",
+          "count": 1,
+          "position": "end",
+          "purpose": "顶部标题重述工作+致谢+邮箱/GitHub/主页链接+下半区方法示意图浓缩核心贡献"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_recap_all_chapters",
+          "to_archetype": "summary_method_diagram_with_thanks_contact",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型极简收尾双页: 先回归目录把四段主线重新点亮, 再一页以顶部标题重述工作+致谢+联系方式(邮箱/开源代码/主页)+下半区方法示意图浓缩 SG-Filter 核心贡献, 承担 recap/贡献/致谢/信息接口四重功能",
+      "anti_patterns": [
+        "顶部蓝框一句话贡献+纯联系方式无方法图 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "极简单页致谢无 recap — 用 closing_minimal_thanks_with_speaker_signature",
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.06",
+          "section_title": "总结与致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾。slide 25 用目录页回扣 Background→Insight→Solution→Evaluation 四段主线，slide 26 以方法示意图重述 SG-Filter 核心并致谢，形成「回顾脉络→浓缩贡献→致谢」的收束弧。",
+          "section_topic_tags": [
+            "四段主线回扣",
+            "方法示意图重述",
+            "致谢联系方式",
+            "GitHub 开源",
+            "SG-Filter 收束"
+          ],
+          "match_evidence": "2 页节奏: 四段目录回扣(toc_recap_all_chapters) → 方法示意图重述+致谢邮箱+GitHub 链接(summary_method_diagram_with_thanks_contact)",
+          "slides": [
+            {
+              "slide_index": 25,
+              "role_in_pattern": "toc_recap_all_chapters",
+              "archetype": "toc_recap_all_chapters",
+              "slide_title": "目录回扣:四段主线总览",
+              "slide_claim": "全文循 Background→Insight→Solution→Evaluation 四段主线展开",
+              "slide_key_text": [
+                "contents",
+                "1 Background: Retrieval and AI",
+                "2 Insight: By Summarized Information",
+                "3 Solution: Index and Search",
+                "4 Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "居中 contents 标题",
+                "编号 1-4 纵向列表",
+                "淡灰弱化条目文字"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "summary_method_diagram_with_thanks_contact",
+              "archetype": "summary_method_diagram_with_thanks_contact",
+              "slide_title": "SG-Filter 方法重述与致谢",
+              "slide_claim": "SG-Filter 以摘要语义索引提升语义/结构检索并致谢收尾",
+              "slide_key_text": [
+                "Summary",
+                "Thank you for your attention!",
+                "e-mail: yejiancai@sjtu.edu.cn",
+                "Code: https://github.com/strong-leaf/SG-Filter",
+                "Co-occurrence connection to improve recall rate",
+                "Hybrid retrieval / Label filtering"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Summary + 致谢文字",
+                "邮箱/代码/主页链接行",
+                "SG-Filter 方法示意图",
+                "增强语义/结构 双输出标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SG-Filter CIKM 2025 paper share), 共 6 section, 全部命中 6 个 pattern (逐 section 各 1 pattern). opening 复用 previous_batches 中 opening_paper_cover_multi_author_multi_institution_plus_toc; background/motivation/method/result 均新起 pattern (语义/工程差异较大, 未与 previous_batches 中同 role pattern 合并); closing 与 closing_toc_recap_plus_summary_contribution_with_contact 结构相近但增加了方法示意图版式, 另起新 id 以 method_diagram 区分. new_archetype: mainstream_paradigm_flow_intro — 主流技术范式的定义+流程一页(含召回率定义与端到端流程图). new_archetype: target_scenario_importance_dual_panel — 从通用范式收窄到目标场景的左右双栏(市场增长柱图+应用列表). new_archetype: scenario_feature_embedding_illustration — 场景关键特征的近似样例+嵌入距离标注. new_archetype: recall_gap_quantitative_headline — 用数字对比+需求线论证召回不达标的痛点断言. new_archetype: related_work_two_type_taxonomy — 相关工作二分类(语义/结构)+代表方法列举. new_archetype: two_type_recall_qualitative_compare — 两类方法在召回上的 Low/Middle/High 定性对照. new_archetype: existing_paradigm_flaw_illustration — 用向量条+相似度示意点破现有范式无法抽摘要的痛点. new_archetype: key_insight_dual_source_supplement — 核心洞察: 补充粗粒度信息+两条信息源(embedding+共现)红框标注. new_archetype: insight_feasibility_quantitative_evidence — M<<N 稀疏 token 论证洞察可行性. new_archetype: solution_overview_two_question_frame — 以 Q1获取/Q2利用两问统领方法章的双栏总览. new_archetype: tech1_index_node_construction — Tech1 索引第一步: LLM 摘要抽取为节点(区别于传统关键词). new_archetype: tech1_index_edge_hierarchy — Tech1 索引第二/三步: 共现连边+从属层次. new_archetype: tech2_adaptive_score_filter — Tech2 相似度初始分融合层次/共现的评分排序过滤. new_archetype: tech3_multi_ratio_fusion_recall — Tech3 多过滤率互补融合+三技术关系图收束. new_archetype: main_recall_sota_dual_claim — 左右双栏论断: STR 主 SOTA+Non-STR 仍 SOTA. new_archetype: latency_headline_single_number — 端到端延迟单栏大数字论断页. new_archetype: ablation_component_dual_group — 双组件消融的左右对照多曲线组. new_archetype: parameter_robustness_multi_curve_grid — 2×2 多参数曲线网格证鲁棒. new_archetype: toc_recap_all_chapters — 收尾时回归目录页, 竖排点亮全章节. new_archetype: summary_method_diagram_with_thanks_contact — 收尾单页: 顶部标题重述+致谢+邮箱/开源链接+下半区方法示意图.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}

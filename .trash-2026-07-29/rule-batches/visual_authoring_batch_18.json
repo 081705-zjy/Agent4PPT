@@ -1,0 +1,575 @@
+{
+  "batch_index": 18,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中大标题+身份署名+日期",
+      "description": "封面页居中横排放置大字主标题，下方分栏或分行列出答辩人/导师/学院等身份信息，底部标注日期，可选校徽 logo。不含正文段落或 bullet 列表。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中主标题' / '居中横排主标题' / '大字标题'",
+        "关键文字 含 答辩人/导师/学院 或 日期",
+        "无 '正文段落' / 'bullet 列表' / '数据图表' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 1,
+          "评价": "标准封面: 居中主题+答辩人/导师/学院+底部日期+右上校徽"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 39,
+          "评价": "备份池旧版封面, 同样为居中主题+身份栏+日期"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面第一眼要传递'主题+讲者身份+场合'三要素, 居中大标题最大化主题识别, 身份栏定位讲者, 底部日期锁场合",
+      "fix_hint": "封面主标题居中放大, 作者/机构信息压至底部或次行, 移除正文与图表元素",
+      "exceptions": [
+        "品牌宣传型 deck (讲者身份让位于品牌 logo)",
+        "空白占位模板 (无实际身份可展示)"
+      ]
+    },
+    {
+      "id": "toc_layout_current_item_highlighted",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录布局·当前章高亮+其余淡化",
+      "description": "重复出现的目录页采用同一版式(蓝色标题栏+竖排章节列表), 在进入不同章节时把当前项加深/加粗, 其余项灰化, 起进度导航作用。",
+      "evidence_signals": [
+        "视觉骨架 含 '目录列表' 且 '当前项高亮' / '灰淡未选项+黑色高亮'",
+        "标题 含 '目录' 或 '目录：定位到...'",
+        "关键文字 为章节名并列 (学习情况/研究背景/研究内容/总结 类)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 4,
+          "评价": "目录复现, '研究背景'高亮"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 18,
+          "评价": "目录复现, '研究内容'高亮"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 35,
+          "评价": "目录复现, '总结'高亮"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 2,
+          "原因": "首次目录, 未做高亮标注 (仅呈现骨架)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "重复目录 + 当前项高亮建立空间锚点, 让听众任意时刻知道'走到哪里', 减少长篇答辩的认知失位",
+      "fix_hint": "复用同一目录版式, 在每章切换时把当前章加深加粗、其余章降灰",
+      "exceptions": [
+        "首次呈现目录 (无需高亮, 仅展示骨架)",
+        "极短 deck (≤10页) 通常不需重复目录"
+      ]
+    },
+    {
+      "id": "content_top_conclusion_bar",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文顶部·蓝色结论横条压顶",
+      "description": "正文页顶部放一条蓝色/深色横向色带作为本页结论条, 内嵌一句判断句, 下方主区展开支撑图表/文本, 视觉上以'结论先行、证据在下'为主导。",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部结论横条' / '顶部蓝框结论' / '蓝色标题横栏'",
+        "标题或结论横条含判断句 (有主谓宾或数字论断)",
+        "下方为图表/两栏对比支撑元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 5,
+          "评价": "顶部结论横条+左右两栏支撑, AI能力趋势+下游应用"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 6,
+          "评价": "顶部结论横条'算力需求5年涨4-5数量级'+左右两栏证据"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 10,
+          "评价": "顶部蓝框结论+2列硬件对比"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 13,
+          "评价": "顶部结论+数据来源框+吞吐/能效表"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 48,
+          "原因": "备份材料矩阵页, 结构为纯表, 无顶部结论条"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.65,
+      "enforcement_level": "soft",
+      "rationale": "顶部结论条把'本页立场'一秒送达听众, 图表和文字变成'为结论服务', 而非让听众自己从图里推断",
+      "fix_hint": "把 slide 的核心判断句抽到顶部横条内, 图表/证据放在下方主区",
+      "exceptions": [
+        "过渡性 chapter/toc 页 (不承担论证)",
+        "纯表格/矩阵页 (结构本身即结论)"
+      ]
+    },
+    {
+      "id": "two_column_comparison_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文·左右两栏对比骨架",
+      "description": "论证类正文页大量采用左右两栏平行版式, 左栏承担一类证据(数据/曲线/示意图), 右栏承担另一类(表格/应用示例/对比方法), 顶部结论把两栏收束为一个判断。",
+      "evidence_signals": [
+        "视觉骨架 含 '左右两栏布局' / '2列...panel' / '左栏... 右栏...'",
+        "本页讲什么 显式描述'左栏XX、右栏YY' 对比结构",
+        "标题为背景/现状/挑战类判断句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 6,
+          "评价": "左栏 FLOPS曲线 vs 右栏 DeepSeek 能耗示意"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 7,
+          "评价": "左栏摩尔定律时间轴 vs 右栏性能增长曲线"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 11,
+          "评价": "左栏量化/剪枝矩阵示意 vs 右栏方法-加速比表"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 25,
+          "评价": "左栏数值范围表 vs 右栏量化方法精度损失对照"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 22,
+          "原因": "成果页采用三模型规模并列, 非二栏对比"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "左右两栏是最省认知的'A vs B'/'需求 vs 供给'对照结构, 视觉平衡且论证结构自明; 单栏堆叠容易失焦",
+      "fix_hint": "把两类证据(数据 vs 表/示意 vs 应用)拆到左右两栏, 顶部一句话把两栏收敛为判断",
+      "exceptions": [
+        "结果页 (通常按模型规模/条件多列并列, 非二栏)",
+        "整体框架图页 (纵向流程链)"
+      ]
+    },
+    {
+      "id": "recurring_anchor_chain_diagram",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "反复复用同一锚点链条示意图",
+      "description": "全 deck 反复出现同一条纵向或横向锚点链(如 电力→运算→Token→动作), 在核心思想/研究内容开篇/小结/总结等多个位置复用同一骨架, 每次在不同位置高亮, 用于定位当前论述在整体框架中的坐标。",
+      "evidence_signals": [
+        "多张 slide 视觉骨架 含 '电力→...' / '纵向转化链' / '四级纵向' 同一元素",
+        "关键文字 反复出现相同链条关键词 (Electricity/Operation/Token/Action)",
+        "本页讲什么 提及'承接' '收束' '定位' '同一框架'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 9,
+          "评价": "首次引入四级纵向转化链+右侧三个特点框"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 15,
+          "评价": "复用同一链条, 右侧改为三个研究问题"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 17,
+          "评价": "复用链条, 右侧为三条研究内容并列块"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 36,
+          "评价": "总结页再次复用链条+研究内容框架"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 37,
+          "评价": "承接页同一版式动画强调"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "长篇答辩需要一个稳定视觉锚点让听众每次回到全局坐标; 复用同一骨架把'开篇→方法→总结'串成一根视觉主线, 避免章节像松散拼贴",
+      "fix_hint": "识别 deck 的顶层框架图, 在开篇/每章入口/总结重复呈现, 每次高亮当前位置",
+      "exceptions": [
+        "无明确总纲的短 deck (<15页)",
+        "拼盘型汇报 (各章独立不共享主线)"
+      ]
+    },
+    {
+      "id": "chapter_wrap_up_lists_innovations_plus_paper",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节小结·创新点纵向罗列+论文引用条",
+      "description": "研究内容章节末尾用统一模板收束: 顶部标题'研究内容N: 小结', 主区纵向列出创新点1/2/3(标注类别如架构/方法/系统级), 底部或末尾追加对应发表论文引用条(红色或加粗)。",
+      "evidence_signals": [
+        "标题 含 '小结' 或 '研究内容N小结'",
+        "视觉骨架 含 '纵向创新点纲要列表' + '论文引用条目/引文条'",
+        "关键文字 出现 '[ICCAD YY]' '[ASP-DAC YY]' 等会议缩写"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 23,
+          "评价": "研究内容1小结: 创新点1/2/3 + ICCAD 24 MARCA 论文条"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 32,
+          "评价": "研究内容2小结: 三个子创新点 + ICCAD 24 2-bit LLM Inference 引文"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 34,
+          "评价": "研究内容3小结: 三创新点 + ASP-DAC 25 LLSM 引文"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.05,
+      "enforcement_level": "soft",
+      "rationale": "科研答辩每章末尾把'贡献点+发表'一起收束, 既完成本章弧线, 又用顶会论文为贡献背书, 强化学术可信度",
+      "fix_hint": "章节末补一页: 顶部'研究内容N小结', 中部创新点纵向列表, 底部对应论文引用条",
+      "exceptions": [
+        "非科研类 deck (无发表可挂)",
+        "章节内容不足以支撑独立小结页"
+      ]
+    },
+    {
+      "id": "title_uses_chapter_prefix_colon_structure",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "标题·章节前缀+冒号+分论点结构",
+      "description": "正文标题倾向用'<章节名>: <分论点>' 或 '<研究内容N>: <方法/挑战/成果>' 冒号结构, 让听众一眼定位当前 slide 在 deck 中的章节坐标与本页角色。",
+      "evidence_signals": [
+        "标题含'：' 且左侧为章节/研究内容名, 右侧为具体分论点",
+        "章节名出现在标题左侧 (研究背景/研究内容N/子内容N/总结)",
+        "非'介绍XX'/'本节讲XX'类动宾开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 5,
+          "评价": "'研究背景：AI能力接近人类并落地应用' 典型章节+分论点结构"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 19,
+          "评价": "'研究内容一：并行可重构硬件架构总览' 研究内容N+具体方法"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 25,
+          "评价": "'子内容1挑战：现有量化方法精度损失大' 子内容+角色标签+分论点"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 36,
+          "评价": "'总结：整体研究思路框架' 章节名+主题词"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 6,
+          "原因": "'AI算力需求近5年涨4-5数量级、推理耗电巨大' 未带章节前缀, 直接是数字论断"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "长篇分章答辩里, 章节前缀让每张 slide 自带'我在哪一章'元信息, 冒号后的分论点承担'本页讲什么', 消解只看单页时的定位失焦",
+      "fix_hint": "把标题改成'<章节>: <分论点>' 或'<研究内容N>·<挑战/创新/成果>' 结构",
+      "exceptions": [
+        "封面/目录/致谢等结构页",
+        "纯数字论断可作为独立标题 (如'AI算力5年涨4-5数量级')"
+      ]
+    },
+    {
+      "id": "claim_includes_quantitative_result",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "ending_candidate"
+      ],
+      "title": "核心论断·包含具体数量结果",
+      "description": "挑战/成果/结论类 slide 的核心论断倾向带具体数字或倍数(如 35×/5.5倍/1%精度损失/1 tokens/J), 而非泛化描述'性能显著提升'/'效果优秀', 让论断可验证、可对比。",
+      "evidence_signals": [
+        "核心论断含数字 + 单位 (×/倍/%/tokens per J)",
+        "关键文字含具体量化 baseline 对比 (如 vs RTX 3090)",
+        "视觉骨架含'X×标注' '大字指标'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 6,
+          "评价": "'算力需求5年涨4-5个数量级' 具体倍数量化"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 20,
+          "评价": "'现有GPU/TPU利用率骤降至1/16' 具体分数量化"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 22,
+          "评价": "'较RTX 3090能效提升35×' 带 baseline 的倍数论断"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 28,
+          "评价": "'线性层5.5倍压缩+2.53倍加速' 双指标量化"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 57,
+          "评价": "'面积/时延精度提升3.49%/6.80%, 推理提速1.37倍' 多指标量化"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 3,
+          "原因": "'已完成博士全部公共与专业基础课' 陈述式无数字, 但属过场页"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "科研答辩最需要'可证伪的量化贡献', 具体数字/倍数把'我做了X'变成'X 提升 Y 倍', 让评委在几秒内判断分量",
+      "fix_hint": "把'性能好'/'效果明显'类论断改成'相较 <baseline> 提升 <数字倍/%>' 具体量化句",
+      "exceptions": [
+        "过渡/章节导航页 (无实证内容)",
+        "定性框架页 (整体思路总览)"
+      ]
+    },
+    {
+      "id": "citation_format_bracketed_conference_year",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文/方法引用·方括号会议+年份+简称",
+      "description": "引用相关工作或列举己方成果时统一采用 '[会议缩写 年份] 简称/论文名' 格式 (如 [ICCAD 24] MARCA, [ASP-DAC 25] LLSM, GPTQ[1], Wanda[3]), 让引文可快速定位来源, 也节省 slide 空间。",
+      "evidence_signals": [
+        "关键文字含 '[ICCAD YY]' / '[ASP-DAC YY]' / '[DATE YY]' 类方括号缩写",
+        "或含 '方法名[序号]' 上标编号格式",
+        "同一 deck 引用格式一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 11,
+          "评价": "'GPTQ[1] 4x IST Austria / Wanda[3] 2x CMU' 方法+机构+加速比"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 23,
+          "评价": "'[ICCAD 24] MARCA' 方括号会议缩写"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 32,
+          "评价": "'[ICCAD 24] Fast and Efficient 2-bit LLM Inference on GPU'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 38,
+          "评价": "多篇 [ICCAD24]/[DATE 25]/[ASP-DAC 25] 一致格式列表"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "hard",
+      "rationale": "学术 slide 空间紧张, 方括号缩写是社区通行的最短引用形式, 评委扫一眼即识别会议档次与年份, 不必读全称",
+      "fix_hint": "把'某某发表在XXX会议'改成'[会议缩写 YY] 简称' 一行, 全 deck 统一格式",
+      "exceptions": [
+        "面向非学术观众的通俗汇报 (需展开会议全称)"
+      ]
+    },
+    {
+      "id": "english_technical_terms_kept_untranslated",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "术语·英文技术名保持不翻译或中英并列",
+      "description": "硬件/算法专有名词保留英文原文或采用'中文·英文'并列 (如 Tensor Core, Systolic Array, ELLPACK2, State Space Model SSM, 电力Electricity), 避免生造中译, 确保术语社区识别度。",
+      "evidence_signals": [
+        "关键文字含英文专有名词 (Tensor Core / Systolic Array / GPU / FP16→INT4)",
+        "或 '中文 英文' 并列 (如 '电力Electricity' / '状态空间模型 SSM')",
+        "缩写首次出现有全称配套"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 10,
+          "评价": "'英伟达GPU / Tensor Core' / '谷歌TPU / Systolic Array' 中英并列"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 20,
+          "评价": "'状态空间模型 SSM' 全称+缩写"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 21,
+          "评价": "'Memory Access Handler / Reconfigurable CU' 保持英文原文"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 55,
+          "评价": "'AIG (And-Inverter Graph)' 缩写+全称首次并列"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "计算机体系结构/AI 术语原文有社区共识, 强译反而制造歧义; 中英并列既照顾中文听众也保证术语可复用",
+      "fix_hint": "硬件/算法专有名词保留英文, 缩写首次使用配全称, 非首次可只用缩写",
+      "exceptions": [
+        "通俗普及型 slide (需中文强解释)",
+        "已在国内社区形成标准中译的术语 (如'注意力'不写 Attention)"
+      ]
+    },
+    {
+      "id": "chapter_opening_locates_in_global_framework",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节开篇·先在整体框架中定位当前研究内容",
+      "description": "每个研究内容/方法章节的第一页不直接进入细节, 而是先复用整体链条图 + 高亮当前研究内容, 用一句话点明本章要解决的框架层问题, 起到'从全局收到本章'的定位作用。",
+      "evidence_signals": [
+        "本页讲什么 出现'开篇' '总览' '定位' '承接' 等词",
+        "视觉骨架 含 '电力→行动 链条' + '当前研究内容高亮'",
+        "标题含'研究内容N: <方向>总览/定位' 类结构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 19,
+          "评价": "研究内容一开篇: 左链条+右芯片示意, 引出'可重构规约树架构'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 24,
+          "评价": "研究内容二总览: 左链条+中对比研究内容1(灰化)与2(高亮)"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 33,
+          "评价": "研究内容三定位: 四层能效栈+通专融合框图+当前内容标签"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "多研究内容并列时, 每章直接进细节会让听众丢失'为何这章紧接上章'的连贯性; 开篇先定位既承接全局又给本章立坐标",
+      "fix_hint": "每个研究章的第一页复用总纲图, 高亮当前章, 用一句话说明本章在总纲里的位置与要破的框架问题",
+      "exceptions": [
+        "只有单一研究内容的 deck (无需定位)",
+        "无稳定全局框架的拼盘 deck"
+      ]
+    },
+    {
+      "id": "method_chapter_follows_challenge_innovation_result_arc",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法章·严格走'挑战→创新→成果'三段式弧线",
+      "description": "每个方法子章节严格按'关键挑战页 → 创新思路页(可多张) → 研究成果页'固定弧线展开, 各页标题显式带'挑战/创新思路/研究成果'角色标签, 让听众预判本章下一页要看什么。",
+      "evidence_signals": [
+        "标题含 '关键挑战' / '创新思路' / '研究成果' 显式标签",
+        "章节内 slide 顺序按'挑战 → 创新 → 成果' 排列",
+        "本页讲什么 显式呼应'关键挑战页' / '创新方案页' / '成果页'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 20,
+          "评价": "研究内容一·关键挑战: SSM 利用率 1/16"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 21,
+          "评价": "研究内容一·创新思路: 可配置规约单元"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 22,
+          "评价": "研究成果: 较RTX 3090 提能效35×, 完成一轮弧线"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 25,
+          "评价": "子内容1挑战 → 26/27 创新 → 28 成果, 三段式"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "slide_index": 29,
+          "评价": "子内容2挑战 → 30 创新 → 31 成果, 同弧线"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.25,
+      "enforcement_level": "hard",
+      "rationale": "科研答辩每章不显式挂'挑战/创新/成果'标签, 听众会追问'你到底解决了什么、怎么解决、结果如何'; 三段式弧线把这三问显式排布, 一次答清",
+      "fix_hint": "每个方法子章节按'挑战→创新→成果'三页(或多页创新)展开, 标题显式带角色标签",
+      "exceptions": [
+        "非科研方法章 (综述/背景/规划页)",
+        "工作量不足以支撑三段的极短方法"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅含 1 deck (博士资格考试, 57页, 10章), visual: 6 rules, authoring: 6 rules. hit_rate 按 deck 内 slide 比例估算, 部分 rule 只覆盖特定 section 因此绝对比例低但 enforcement 强。",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 6,
+      "authoring": 6
+    }
+  }
+}

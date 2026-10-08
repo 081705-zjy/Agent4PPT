@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "template_id": "product",
+  "name": "Product Strategy",
+  "description": "Product and roadmap style for strategy, launch, and planning decks.",
+  "palette": {
+    "primary": "#164E63",
+    "secondary": "#0F766E",
+    "accent": "#F59E0B",
+    "neutral": "#F1F5F9",
+    "text": "#0F172A"
+  },
+  "typography": {
+    "heading": "Aptos Display",
+    "body": "Aptos",
+    "heading_size": 32,
+    "body_size": 18
+  },
+  "layouts": {
+    "title-image": "Product narrative cover with one crisp visual and editable copy.",
+    "title-and-body": "Message-led content slide with room for roadmap, metrics, or bullets.",
+    "closing": "Decision and next-step slide."
+  },
+  "render": {
+    "accent_bar_height": 0.22,
+    "picture_x": 6.35,
+    "picture_y": 1.15,
+    "picture_w": 3.15,
+    "picture_h": 1.8
+  }
+}

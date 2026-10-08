@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_18",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 18,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "TBS 相较其它 N:M 模式更灵活",
+  "核心论断": "TBS 比现有 N:M 稀疏模式具备更强灵活性",
+  "本页讲什么": "本页对比 TBS 与其它 N:M 稀疏模式，论证 TBS 在稀疏配置自由度上明显更优，承接前页变体枚举，收束为「更灵活」的结论，为引出存储格式挑战做铺垫。",
+  "关键文字": [
+    "Compared with other N:M sparsity patterns, TBS is much more flexible"
+  ],
+  "视觉骨架": [
+    "TBS 与其它模式对比示意",
+    "灵活性对照排布"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_18.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_18.asset.02"
+  ],
+  "适合复用场景": [
+    "稀疏模式优势对比页",
+    "新方法相较基线的定性论证页"
+  ],
+  "不适合复用场景": [
+    "硬件寄存器结构页",
+    "含大量 benchmark 数字的表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

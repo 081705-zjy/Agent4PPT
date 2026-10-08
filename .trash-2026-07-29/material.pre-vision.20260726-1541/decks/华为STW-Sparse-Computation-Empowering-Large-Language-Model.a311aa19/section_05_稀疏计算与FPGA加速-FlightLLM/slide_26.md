@@ -1,0 +1,49 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_26"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.05"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 26
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "摩尔定律放缓的算力困境"
+核心论断: "摩尔定律放缓使工艺红利见顶，倒逼算法层降本"
+本页讲什么: "以 Llama2-7B(batchsize=1)为例，展示摩尔定律放缓后工艺进步带来的算力增益趋缓，承接上页「工艺节点是终极限制」，论证不能再依赖制程升级，必须从计算模式(稀疏)入手。"
+关键文字: "[\"Moore's Law Slowdown\", Llama2-7B, batchsize=1]"
+视觉骨架: "[摩尔定律趋势曲线, Llama2 算力趋势图, 工艺节点标注]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_26.asset.01, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_26.asset.02, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_26.asset.03]"
+适合复用场景: "[摩尔定律放缓 motivation 页, 工艺红利见顶论证页]"
+不适合复用场景: "[具体稀疏算法细节页, FPGA 架构展开页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "摩尔定律放缓的算力困境"}
+  - {"位置": "下方主体", "内容": "Llama2-7B 算力趋势曲线与工艺节点标注"}
+alternate_claims:
+  - "以 Llama2-7B(batchsize=1) 为例说明工艺进步带来的算力增益已趋缓"
+layout_tag: "curve_chart_with_numbers"
+---
+# slide 26: 摩尔定律放缓的算力困境
+
+**核心论断**: 摩尔定律放缓使工艺红利见顶，倒逼算法层降本
+
+## 本页讲什么
+以 Llama2-7B(batchsize=1)为例，展示摩尔定律放缓后工艺进步带来的算力增益趋缓，承接上页「工艺节点是终极限制」，论证不能再依赖制程升级，必须从计算模式(稀疏)入手。
+
+## 关键文字片段
+- Moore's Law Slowdown
+- Llama2-7B, batchsize=1
+
+## 视觉骨架
+- 摩尔定律趋势曲线
+- Llama2 算力趋势图
+- 工艺节点标注
+
+## 可复用到
+- 摩尔定律放缓 motivation 页
+- 工艺红利见顶论证页
+
+## 不适合复用的场景
+- 具体稀疏算法细节页
+- FPGA 架构展开页

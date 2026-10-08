@@ -1,0 +1,48 @@
+---
+页标识: "tpl.主题学术报告.稀疏计算与大模型.0738f023.slide_38"
+所属章节: "tpl.主题学术报告.稀疏计算与大模型.0738f023.sec.05"
+所属deck: "tpl.主题学术报告.稀疏计算与大模型.0738f023"
+页序号: 38
+源文件: "templates/主题学术报告/稀疏计算与大模型.pptx"
+页面角色: "content_candidate"
+标题: "新的稀疏计算范式"
+核心论断: "LLM 与 GPU 间需经 GEMM 桥接算力与算法"
+本页讲什么: "承接软硬件协同话题，展开新的稀疏计算范式，用框图梳理 LLMs 与 GPUs（NVIDIA、AMD）之间以 GEMMs 为核心的算力映射关系，铺陈现有稠密算力栈的结构。"
+关键文字: "[新的稀疏计算范式, LLMs, GPUs (NVIDIA, AMD), GEMMs]"
+视觉骨架: "[LLM-GPU-GEMM 映射框图]"
+资源ID列表:
+适合复用场景: "[稀疏计算算力栈介绍页, 软硬件协同框架展开页]"
+不适合复用场景: "[成本背景开场页, 能效倍数结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "新的稀疏计算范式"}
+  - {"位置": "下方主体", "内容": "LLMs-GEMMs-GPUs 三层映射框图"}
+alternate_claims:
+layout_tag: "layer_hierarchy_diagram"
+---
+# slide 38: 新的稀疏计算范式
+
+**核心论断**: LLM 与 GPU 间需经 GEMM 桥接算力与算法
+
+## 本页讲什么
+承接软硬件协同话题，展开新的稀疏计算范式，用框图梳理 LLMs 与 GPUs（NVIDIA、AMD）之间以 GEMMs 为核心的算力映射关系，铺陈现有稠密算力栈的结构。
+
+## 关键文字片段
+- 新的稀疏计算范式
+- LLMs
+- GPUs (NVIDIA, AMD)
+- GEMMs
+
+## 视觉骨架
+- LLM-GPU-GEMM 映射框图
+
+## 可复用到
+- 稀疏计算算力栈介绍页
+- 软硬件协同框架展开页
+
+## 不适合复用的场景
+- 成本背景开场页
+- 能效倍数结果页

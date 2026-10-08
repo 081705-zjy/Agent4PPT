@@ -1,0 +1,52 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.02"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 6
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "研究背景：时-空分离的生成范式结构"
+核心论断: "时-空分离范式带来高注意力/KV 开销"
+本页讲什么: "本页用密集示意图（大量框图与多张配图）拆解视频生成模型的时-空分离结构与生成流程，把自回归+扩散范式落到具体架构上。它是本章的收束页：由此暴露注意力/KV 缓存的巨大开销这一核心痛点，直接引出后续加速技术。"
+关键文字: "[研究背景, 时-空分离, 内容]"
+视觉骨架: "[时-空分离结构框图, 多模块生成流程示意, 多图拼版说明]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.01, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.02, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.03, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.04, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.05, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.06, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.07, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.08, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.09, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.10, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_06.asset.11]"
+适合复用场景: "[视频生成 范式结构讲解页, 自回归+扩散 架构总览页]"
+不适合复用场景: "[单曲线加速比结果页, 简单 bullet 观点页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "研究背景：时-空分离的生成范式结构"}
+  - {"位置": "中间主体", "内容": "时-空分离结构框图与多模块生成流程示意"}
+  - {"位置": "底部结论", "内容": "暴露注意力/KV 缓存的巨大开销"}
+alternate_claims:
+  - "自回归+扩散范式落到具体架构上"
+  - "多模块生成流程结构复杂"
+layout_tag: "block_diagram"
+---
+# slide 6: 研究背景：时-空分离的生成范式结构
+
+**核心论断**: 时-空分离范式带来高注意力/KV 开销
+
+## 本页讲什么
+本页用密集示意图（大量框图与多张配图）拆解视频生成模型的时-空分离结构与生成流程，把自回归+扩散范式落到具体架构上。它是本章的收束页：由此暴露注意力/KV 缓存的巨大开销这一核心痛点，直接引出后续加速技术。
+
+## 关键文字片段
+- 研究背景
+- 时-空分离
+- 内容
+
+## 视觉骨架
+- 时-空分离结构框图
+- 多模块生成流程示意
+- 多图拼版说明
+
+## 可复用到
+- 视频生成 范式结构讲解页
+- 自回归+扩散 架构总览页
+
+## 不适合复用的场景
+- 单曲线加速比结果页
+- 简单 bullet 观点页

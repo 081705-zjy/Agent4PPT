@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_39",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 39,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Observation 1（续）：列/值数组可进一步压缩",
+  "核心论断": "映射的列数组与值数组存在可进一步压缩的冗余",
+  "本页讲什么": "本页延续 Observation 1，深入指出映射存储中的列数组（column array）与值数组（value array）仍可进一步压缩（further compressed），量化冗余来源。此页承接 slide 38 的问题、直接引出 slide 40 的 Coded-CSR 解决方案。",
+  "关键文字": [
+    "Observation 1: Redundant loadings of invalid mappings",
+    "Column array and value array can be further compressed"
+  ],
+  "视觉骨架": [
+    "列数组/值数组结构示意",
+    "可压缩冗余标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_39.asset.01"
+  ],
+  "适合复用场景": [
+    "稀疏格式压缩空间分析页",
+    "映射存储冗余细化剖析"
+  ],
+  "不适合复用场景": [
+    "整体应用背景页",
+    "实验结果对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

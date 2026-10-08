@@ -1,0 +1,8 @@
+=== v17 preprocess logic-synthesize ===
+
+=== Phase A: meta-pattern synthesis ===
+  loaded 186 concrete patterns (deck_level=6, section_level=180)
+  input size: 141 KB
+  meta call done in 625s ok=False
+  FAILED: cli rc=1: Decompression error: ZlibError
+

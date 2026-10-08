@@ -1,0 +1,486 @@
+{
+  "batch_index": 14,
+  "rules": [
+    {
+      "id": "toc_page_numbered_list_with_current_highlighted",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页·编号列表+当前章高亮",
+      "description": "Contents/目录页用带圈序号①②③④或数字1-4列出全 deck 章节,当前章以圆圈/加粗/深色高亮,其他章灰化,并配左侧竖向进度条或蓝色高亮条标示进度。",
+      "evidence_signals": [
+        "标题为 'Contents' 或 '目录'",
+        "关键文字含 ①②③④ 或 1234 编号序列",
+        "视觉骨架含 '编号列表' + '高亮'/'灰化'/'进度条'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 2,
+          "评价": "首个 TOC 页, ①分布式集群推理 高亮为黑色, 其余灰化, 左侧蓝色竖条"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 12,
+          "评价": "同版式, 第 2 项 FlashOverlap 蓝色高亮条"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 23,
+          "评价": "③号 Semi-PD 圆圈高亮"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 37,
+          "评价": "第 ④ 项工程实践圆圈高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节切换时用统一目录页做进度锚, 让听众随时定位到当前章; 高亮/灰化对比强化位置认知",
+      "fix_hint": "把每章开始处插入同一 Contents 版式, 仅修改当前项高亮色, 其余保持灰化",
+      "exceptions": [
+        "单章短 deck(总页数≤10)可省略章间目录"
+      ]
+    },
+    {
+      "id": "cover_layout_top_bar_centered_title_with_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面·顶部蓝条+居中大标题+底部署名",
+      "description": "封面页版式: 顶部蓝色横条, 居中大字主标题(关键词可用红/黄底色块高亮), 底部或次行给出讲者姓名+所属机构+邮箱, 无正文段落与列表元素。",
+      "evidence_signals": [
+        "视觉骨架含 '顶部蓝色横条' 或 '蓝色顶栏'",
+        "视觉骨架含 '居中大标题'",
+        "关键文字含 讲者姓名+机构+Email",
+        "无 'bullet 列表'/'正文段落' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 1,
+          "评价": "顶部蓝条+居中大标题(末尾红底色块高亮)+戴国浩/上海交大/邮箱底部署名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "居中大字标题+讲者署名是学术开场的身份锚, 让听众瞬间锁定主题与讲者, 顶部蓝条统一品牌视觉",
+      "fix_hint": "把封面主标题居中放大, 关键词加红/黄底色块, 讲者+单位+邮箱放底部或次行, 移除多余正文",
+      "exceptions": [
+        "空白模板(无实际身份可展示)",
+        "品牌宣传型 deck(logo 优先于讲者)"
+      ]
+    },
+    {
+      "id": "comparison_slide_uses_dual_column_with_check_cross",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "对比页·左右双列+✓/✗ 标记",
+      "description": "涉及方案/范式/优缺点对比时, 页面采用左右双列(或 2×N 矩阵)结构, 两侧共享维度轴, 关键结论以 ✓/✗ 或颜色标记直接盖章, 避免读者自行归纳。",
+      "evidence_signals": [
+        "视觉骨架含 '双栏对比' 或 '左右双框' 或 '2×2 对比矩阵'",
+        "关键文字含 ✓/✗ 或 '优点'/'缺点'",
+        "核心论断含 'A vs B' 或 '各有优劣'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 5,
+          "评价": "左右双栏对比 Ilya 与黄仁勋两方观点"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 29,
+          "评价": "2×2 优缺点矩阵, 计算/存储两维度配 ✓/✗ 标记"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 26,
+          "评价": "左右双框对照融合式 vs 分离式"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 38,
+          "评价": "昇腾 vs 英伟达紫色双列对比表"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "双列对齐+对勾/叉标记让读者一眼看出取舍, 减少认知负担并为下一页 '折中方案' 立起结构性铺垫",
+      "fix_hint": "把对比内容拆成左右双列, 共享同一维度行标签, 优缺点直接加 ✓/✗",
+      "exceptions": [
+        "单方案讲解页(不涉及对比)",
+        "多于 3 项并列的场景改用矩阵/表格"
+      ]
+    },
+    {
+      "id": "result_slide_has_config_box_chart_and_speedup_conclusion",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "实验结果页·配置框+图表+加速比结论条",
+      "description": "实验/性能结果页含三要素: 左侧或页首的配置说明框(硬件/模型/输入输出/dataset)、中央性能图表(散点/曲线/柱)、底部加速比或降幅结论条(用倍数或百分比明确盖章)。",
+      "evidence_signals": [
+        "视觉骨架含 '配置说明框' 或 '测试配置说明'",
+        "视觉骨架含 '性能对比图' 或 '曲线图'/'散点图'",
+        "关键文字含 具体加速比 'x倍'/'X%' 或 '提升/降低'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 22,
+          "评价": "测试配置框+多组对比图+底部 1.07-1.7x 加速条"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 33,
+          "评价": "DeepSeek-V3 FP8 TP8 配置框+吞吐散点+吞吐提升约 10% 结论"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 34,
+          "评价": "P99 TTFT/ITL 双曲线+降 78%/降 5.6 倍标注"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 36,
+          "评价": "8×A800 配置+2P6D vs 1P3D4S 时序曲线"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "配置+图表+结论三件套让审众可复现、可读图、可外带一句话结论, 缺任一件都削弱说服力",
+      "fix_hint": "把硬件/模型/数据集抽为独立配置框放左侧或页首, 图表居中, 底部加'x倍/百分比'结论条",
+      "exceptions": [
+        "定性演示/流程 demo 页(无量化对比)"
+      ]
+    },
+    {
+      "id": "technical_mechanism_uses_progressive_reveal_pages",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "机制页·多页逐步显现同一时间线",
+      "description": "复杂技术机制(如 FlashOverlap)用连续 3-5 页在同一底层时间线/框图上逐步添加元素(Reorder→Signal→多信号流水→算子融合→全景), 每页只揭示一个新组件, 保持视觉主骨架不变。",
+      "evidence_signals": [
+        "连续多页标题含相同项目名前缀(如 'FlashOverlap:...')",
+        "视觉骨架多页复用同一时间线/框图元素(如 'GEMM 三阶段时间线')",
+        "核心论断按阶段推进(第一步/第二步/多分块/融合)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 17,
+          "评价": "FlashOverlap 第一步 Reorder+Map Table"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 18,
+          "评价": "在同一时间线上加信号触发跨卡通信"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 19,
+          "评价": "推广到多分块信号流水"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 20,
+          "评价": "加算子融合与重映射"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 21,
+          "评价": "机制全景汇总"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "同一底图逐层叠加元素降低认知切换成本, 让听众跟随讲者聚焦'新增了什么'而不是重新解析整张图",
+      "fix_hint": "把复杂机制拆 3-5 页, 首页画出完整底图占位, 后续页每页只加/高亮一个新组件",
+      "exceptions": [
+        "单机制可一页讲完(元素≤5)",
+        "对比型/评估型页面(无渐进构建需求)"
+      ]
+    },
+    {
+      "id": "ending_slide_has_speaker_info_cta_and_lab_panels",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页·讲者信息+CTA 按钮+实验室 panel",
+      "description": "收尾页把技术分享转化为触点邀约: 顶部讲者信息(姓名/机构/日期/邮箱), 中部彩色 CTA 按钮(招聘/合作), 下方并列实验室/团队 panel, 底部署名页脚, 通常不放技术总结要点。",
+      "evidence_signals": [
+        "视觉骨架含 'CTA 按钮' 或 '两个按钮'",
+        "关键文字含 '招聘' 或 '合作' 或 '联系'",
+        "关键文字含 讲者+邮箱+机构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 42,
+          "评价": "顶部戴国浩/邮箱+青粉 CTA 按钮+NICS-EFC 实验室 panel+底部署名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结尾把注意力从内容转为讲者/团队, 把讲者的社会资本(招人/合作)当作 deck 的最终 CTA, 比 'Thanks' 空页有更强转化率",
+      "fix_hint": "在最后一页把讲者信息置顶, 加 1-2 个 CTA 彩色按钮, 下方放团队/实验室 panel",
+      "exceptions": [
+        "纯技术分享无招募/合作诉求(此时可用 Q&A 或 Thanks 版式)"
+      ]
+    },
+    {
+      "id": "title_uses_colon_structure_topic_then_specifics",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题·冒号结构'主题:具体点'",
+      "description": "content 页标题倾向 '<主题/项目名>:<本页具体点>' 冒号或破折号结构, 冒号前是章节/项目锚, 冒号后是本页 differentiator, 避免整题写成动宾长句或纯名词短句丢失定位。",
+      "evidence_signals": [
+        "标题含 ':' 或 '——' 或 '·' 分隔",
+        "冒号前为项目/章节名(如 'FlashOverlap'/'方案'/'背景'/'思路')",
+        "冒号后为本页具体点或结论"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 25,
+          "评价": "'背景:集群推理三大核心技术挑战'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 30,
+          "评价": "'方案:semi-PD 计算分离&存储融合'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 17,
+          "评价": "'FlashOverlap:Reorder+Map Table 机制'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 33,
+          "评价": "'实例推理结果:吞吐率提升约 10%'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 3,
+          "原因": "'尺度定律逐步转向推理规模扩展' 无冒号结构, 为纯陈述句"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "冒号结构让听众用左侧锚定章节位置、用右侧读到本页信息, 承担'导航+信息'双重任务, 优于单一名词短句或长动宾句",
+      "fix_hint": "把 title 改写为 '<章节/项目>:<本页要点>', 冒号前统一保持 4 字内锚点",
+      "exceptions": [
+        "cover/ending 页(不受此约束)",
+        "封面主标题句(整句表达报告主线)"
+      ]
+    },
+    {
+      "id": "result_title_carries_numeric_claim_directly",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "结果页标题·直接写倍数/百分比",
+      "description": "实验/结果页的标题里直接盖章具体数字(x 倍/x%/降低 x%), 让 title 本身成为 headline, 而不是把数字留给正文或图表 caption; 定性词如'大幅''显著'配合具体倍数使用。",
+      "evidence_signals": [
+        "标题含 'x倍' 或 'x%' 或 '降低 x' 或 '提升 x'",
+        "core_claim 与标题里的数字一致或更细化",
+        "视觉骨架含性能图表/曲线"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 22,
+          "评价": "'计算通信重叠效果:1.07-1.7x 加速'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 33,
+          "评价": "'实例推理结果:吞吐率提升约 10%'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 39,
+          "评价": "'优化 LLM 推理关键算子:GEMM 与 groupGEMM' 配核心论断 1.5/1.8 倍"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 40,
+          "评价": "'FlashOverlap 在昇腾上的高效优化适配' 配论断 35% 提升"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "标题是唯一保证被读到的元素, 数字写进 title 意味着即使听众忘了图表也能带走 headline; 定性词与倍数搭配避免空话",
+      "fix_hint": "把 result 页最亮眼的一个数字(倍数/百分比)直接搬到标题冒号后",
+      "exceptions": [
+        "定性演示/流程说明结果页(无量化指标)",
+        "多组数据无法用单一数字概括时"
+      ]
+    },
+    {
+      "id": "claim_uses_quantitative_judgment_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断·带数字的判断句",
+      "description": "slide.核心论断 为一句可被听众带走的判断句(SVO 完整), 若页面含实验/对比, 判断句里必带具体数字或明确取舍(x 倍/x%/取长补短), 而非'介绍了 X' 这类过程描述。",
+      "evidence_signals": [
+        "核心论断为完整句(含谓语)",
+        "含数字或明确取舍词(如 '更优'/'共享'/'各占一优一劣')",
+        "不以 '介绍' '本页讲' '概览' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 22,
+          "评价": "'FlashOverlap 在多卡多算子上实现 1.07-1.7x 端到端加速'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 28,
+          "评价": "'分离式可独立控制资源但利用率失衡(P23% vs D72%)'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 34,
+          "评价": "'semi-PD 使 P99 TTFT 降 78%、ITL 降 5.6 倍'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 30,
+          "评价": "'semi-PD 取两者之长:计算分离且存储融合'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "判断句 claim 逼迫作者把每页的 '所以呢' 明确出来, 数字/取舍词是可验证的证据抓手, 描述句 claim(如'介绍了 X') 无法被听众用一句话复述",
+      "fix_hint": "把 core_claim 改成 '主语+动词+具体结论(带数字或取舍)', 删除 '介绍'/'讲述'/'概览' 类过程词",
+      "exceptions": [
+        "cover/toc 页面(仅承担导航, 不需要判断)"
+      ]
+    },
+    {
+      "id": "external_reference_includes_source_citation",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "外部论断·附来源标注",
+      "description": "引用他人观点/工业趋势/相关工作时, 必须在关键文字或视觉骨架中给出可核查的来源标注(会议名/keynote/媒体报告/论文引用编号), 而非只用'据说'或匿名引用。",
+      "evidence_signals": [
+        "关键文字含 'Ref:'/'[1]'/'@会议名'/公司+媒体名",
+        "含具体日期或会议年份 (CES 2025/GTC 2025/NeurIPS 2024)",
+        "视觉骨架含 '引文来源标注'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 4,
+          "评价": "'Ref: NVIDIA CEO Jensen Huang Keynote at CES 2025'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 5,
+          "评价": "Ilya NeurIPS 2024 + 黄仁勋 GTC 2025 + QuestMobile 2025 三处引用"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 14,
+          "评价": "'[1] MegaScale: Scaling LLM training to more than 10,000 GPUs, NSDI'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 15,
+          "评价": "'[1] NVIDIA. cublasmp: high-performance cuda library for distributed dense linear algebra, 2025'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "学术分享的外部引用是可信度锚, 附来源让听众可核查、可复用; 缺来源的 '业界都在说' 属于弱证据",
+      "fix_hint": "凡引用第三方观点/数据/方法, 在页面底部或旁注给出会议/年份/论文编号或链接",
+      "exceptions": [
+        "讲者本人未发表的观察(可标 'our observation')",
+        "常识性事实(无需引用)"
+      ]
+    },
+    {
+      "id": "method_page_title_prefixes_project_name",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页标题·项目名前缀统一",
+      "description": "同一方法/项目的连续多页 title 统一以 <项目名> 开头(如 'FlashOverlap:xxx' 或 '方案:semi-PD xxx'), 让翻页时听众用左侧 4 字锚点跟住主线, 而不需要每页重新识别讲的是哪个方法。",
+      "evidence_signals": [
+        "连续 ≥3 页标题共享相同前缀 token",
+        "前缀为项目名/章节锚点(FlashOverlap/semi-PD/方案/背景/思路)",
+        "冒号或破折号后接本页 differentiator"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 17,
+          "评价": "'FlashOverlap:...' 前缀连续 5 页(17-21)"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 30,
+          "评价": "'方案:semi-PD ...' 前缀连续 3 页(30-32)"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 27,
+          "评价": "'思路:...' 前缀连续 2 页(27-28)"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "slide_index": 33,
+          "评价": "'实例推理...'/'集群推理...' 结果段前缀"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "统一前缀让听众翻页时用左侧文字'锚定同一主题继续深入', 减少'现在换新话题了吗'的认知打断",
+      "fix_hint": "同章连续页 title 前段固定同一 2-4 字前缀(项目名/章节名), 差异写在冒号右侧",
+      "exceptions": [
+        "单页短章节(≤2 页, 无需统一前缀)",
+        "跨方法过渡页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck(42 slides), visual: 6 rules, authoring: 5 rules. 因单 deck 语料, hit_rate 反映该 deck 内适用页面的命中率而非跨 deck 泛化.",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 6,
+      "authoring": 5
+    }
+  }
+}

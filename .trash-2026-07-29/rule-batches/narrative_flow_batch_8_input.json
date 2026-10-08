@@ -1,0 +1,656 @@
+{
+  "batch_index": 8,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+      "目录名": "SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+      "标题": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+      "总页数": 24,
+      "章节数": 5,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_研究背景与挑战",
+        "section_03_核心技术方案",
+        "section_04_实验评估结果",
+        "section_05_结尾页"
+      ],
+      "主题标签": [
+        "LLM Inference",
+        "Sparse Activation",
+        "NDP-GPU",
+        "Weight Mapping",
+        "Scheduling",
+        "Quantization",
+        "Pruning",
+        "Acceleration"
+      ],
+      "目标受众": "学术同行 / 体系结构与AI系统研究者",
+      "报告类型": "paper_share",
+      "适用场景": "学术会议或组会分享大模型推理加速硬件协同工作",
+      "论述总结": "面向大模型推理中动态稀疏激活带来的数据搬运与GPU利用率瓶颈,提出SpAct-NDP在NDP-GPU异构架构上的方案:含稀疏感知权重映射、两级启发式调度与请求-权重对解析机制,最终在A100/3090上实现最高2.17×加速。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "方法",
+        "调度",
+        "实验",
+        "总结"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "SpAct-NDP:稀疏激活高效 LLM 推理(论文封面)",
+          "核心论断": "SpAct-NDP 借稀疏激活在 NDP-GPU 异构架构上实现高效 LLM 推理",
+          "本页讲什么": "学术论文封面页:居中大标题给出题目「SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture」,下方分行列出作者(Jiaming Xu、Tongxin Xie 等,含 * 共一标注与 1-4 单位上标)、单位(Shanghai 交大、Infinigence-AI、SII)及通讯作者 Guohao Dai 邮箱,建立整篇工作的学术署名与出处。",
+          "关键文字": [
+            "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+            "Jiaming Xu*, Tongxin Xie*, Yongkang Zhou, Jinhao Li, Yao Lian",
+            "Zhenhua Zhu, Yu Wang, Guohao Dai",
+            "Infinigence-AI, SII",
+            "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+          ],
+          "视觉骨架": [
+            "居中大标题块",
+            "多行作者+上标署名",
+            "单位与通讯邮箱脚注"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Outline:背景挑战→技术方法→实验结果",
+          "核心论断": "全 deck 按背景挑战、四项核心技术、实验结果三段主线展开",
+          "本页讲什么": "目录页,蓝色大标题「Outline」下用三段列出全篇结构:一是 Background and Challenge(当前高亮);二是 Techniques,含 Overview、Sparse-aware Weight-Mapping Strategy、Two-level Heuristic Scheduling System、Request-weight Pair Parsing Mechanism 四个子项;三是 Experiment Results。为后续章节建立导航框架。",
+          "关键文字": [
+            "Outline",
+            "Background and Challenge",
+            "Techniques: Overview",
+            "Sparse-aware Weight-Mapping Strategy",
+            "Two-level Heuristic Scheduling System",
+            "Request-weight Pair Parsing Mechanism",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "蓝色居中大标题",
+            "三段式层级目录",
+            "子项 bullet 缩进列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "大语言模型时代(章节开场)",
+          "核心论断": "LLM 席卷学界与产业,开启大语言模型时代",
+          "本页讲什么": "背景章开场页,仅一条蓝色标题带 + 大标题「Era of Large Language Models」,正文文字未渲染出来。作用是把观众引入 LLM 大背景,为后续切入 LLM 推理的 FFN 瓶颈做铺垫,信息量极低,是纯过场式 opener。",
+          "关键文字": [
+            "Era of Large Language Models",
+            "LLMs have attracted much attention"
+          ],
+          "视觉骨架": [
+            "居中大标题",
+            "蓝色标题色带"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "LLM 推理:FFN 是延迟瓶颈",
+          "核心论断": "FFN 是日常 LLM 推理 Decode 阶段的主要延迟瓶颈",
+          "本页讲什么": "左侧用 Prefill / Decode 两阶段示意图讲 LLM 推理流程(Q/K/V、softmax、KV cache),右侧「Latency Breakdown in Decode Phase」饼图拆解各算子占比(Attn/WO/FFN1/FFN2,标注 15.6%、6.7%),红星与红字点明 FFN 占比最大、是日常推理的瓶颈。承接上页 LLM 背景,把矛头收敛到 FFN。",
+          "关键文字": [
+            "FFN is the bottleneck during the daily inference",
+            "Latency Breakdown in Decode Phase",
+            "Prefill Phase",
+            "Decode Phase",
+            "Attention softmax"
+          ],
+          "视觉骨架": [
+            "Prefill/Decode 两阶段算子示意图",
+            "延迟占比饼图",
+            "红星强调标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "面向 FFN 的多种优化:代价拆解",
+          "核心论断": "总代价=乘法次数×单次乘法代价,剪枝减次数、量化降单价",
+          "本页讲什么": "承接 FFN 瓶颈,提出优化总纲:Total Cost = Number of Multiplication × Cost of Single Multiplication。三列并列展示 Original(密集 MatMul,W1/W2)、Pruning(权重稀疏化,减少乘法次数)、Quantization(降低单次乘法精度代价)三种思路,用矩阵网格图对比,引出后续对剪枝/量化的细分。",
+          "关键文字": [
+            "Various techniques is proposed for FFN",
+            "Total Cost = Number of Multiplication × Cost of Single Multiplication",
+            "Original",
+            "Pruning",
+            "Quantization",
+            "MatMul"
+          ],
+          "视觉骨架": [
+            "3 列并列 panel",
+            "权重矩阵网格图",
+            "稀疏/量化着色对比",
+            "总代价公式"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "剪枝细分:静态剪枝 vs 动态剪枝",
+          "核心论断": "剪枝分为离线静态剪枝与在线依赖输入的动态剪枝",
+          "本页讲什么": "把剪枝进一步细分为两类并列对比:Static Pruning[1,2] 走 Offline 路线、剪枝模式固定;Dynamic Pruning[3,4] 走 Online 路线、随 Prompt 动态决定稀疏模式。用两个虚线框 panel + 稀疏矩阵网格图区分离线/在线,为后续锁定动态剪枝铺垫。",
+          "关键文字": [
+            "Pruning is divided into static pruning and dynamic pruning",
+            "Static Pruning[1,2]",
+            "Dynamic Pruning[3,4]",
+            "Offline",
+            "Online",
+            "Prompt"
+          ],
+          "视觉骨架": [
+            "左右 2 列虚线框 panel",
+            "稀疏权重矩阵网格图",
+            "Offline/Online 标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "量化细分:静态量化 vs 动态量化",
+          "核心论断": "量化分为离线静态量化与在线依赖输入的动态量化",
+          "本页讲什么": "与上页平行,把量化细分为两类:Static Quantization[1,2] 离线固定量化参数(Z1/S1);Dynamic Quantization[3,4] 在线随 Current Prompt 动态确定量化参数(Fixed vs Dynamic)。用两个虚线框 panel + 量化权重网格图对比离线/在线,补齐「剪枝×量化 × 静态×动态」的四象限技术版图。",
+          "关键文字": [
+            "Quantization is divided into static quantization and dynamic",
+            "Static Quantization[1,2]",
+            "Dynamic Quantization[3,4]",
+            "Offline",
+            "Online",
+            "Current Prompt"
+          ],
+          "视觉骨架": [
+            "左右 2 列虚线框 panel",
+            "量化权重矩阵网格图",
+            "Fixed/Dynamic 标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "四类方法对比:动态剪枝胜出",
+          "核心论断": "动态剪枝以 >90% 稀疏、<1% 精度损失、2x~10x 加速全面领先",
+          "本页讲什么": "用四列对比表把 Static/Dynamic Pruning 与 Static/Dynamic Quantization 放在 Sparsity、Precision、Accuracy Loss、Speedup 四行上横评。Dynamic Pruning 列以红字高亮:Sparsity >90%、Precision FP16、Accuracy Loss <1%、Speedup 2x~10x,明显优于其余方案,由此锁定动态剪枝为本工作的技术切入点。",
+          "关键文字": [
+            "Static/Dynamic Pruning",
+            "Static/Dynamic Quantization",
+            "Sparsity >90%",
+            "Accuracy Loss <1%",
+            "Speedup 2x~10x",
+            "Precision FP16/Int4/Int8"
+          ],
+          "视觉骨架": [
+            "4 列 × 4 行对比表",
+            "红字高亮胜出列",
+            "蓝色表头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "动态剪枝原理:ReLU 诱发动态稀疏",
+          "核心论断": "ReLU 激活带来输入相关的动态稀疏,需在线预测稀疏模式",
+          "本页讲什么": "深入动态剪枝机理:ReLU 激活导致动态稀疏,稀疏模式依赖当前输入(Online / Dependent / Dynamic Access)。分两步展示——Step1 用轻量 LM 在线 Predict Pattern 得到 Dynamic Mask Pattern,Step2 据此对 Wup/Wdown 做在线轻量稀疏计算,并从 DRAM 动态访问权重,揭示动态剪枝的在线开销来源。",
+          "关键文字": [
+            "ReLU activation results in dynamic sparse",
+            "Predict Pattern",
+            "Dynamic Mask Pattern",
+            "Online / Dependent / Dynamic Access",
+            "Step1 / Step2",
+            "Wup / Wdown / DRAM"
+          ],
+          "视觉骨架": [
+            "两步流程框图",
+            "预测模式示意",
+            "DRAM 动态访问箭头",
+            "权重矩阵示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "痛点:动态搬运致 GPU 利用率低",
+          "核心论断": "繁重且动态的数据搬运引发严重同步、拖垮 GPU 利用率",
+          "本页讲什么": "暴露动态剪枝在 GPU 上的核心痛点:LLM Pipeline with Sparse Activation 中,Data Loading 与 Compute 因动态稀疏难以 Overlap,产生大量 Synchronization。用流水线框图 + 时间线表格展示 Embed/Attn/Predict/FFN 各阶段的数据加载与计算错位,说明繁重且动态的数据搬运导致同步开销大、GPU 利用率低。",
+          "关键文字": [
+            "Heavy and dynamic data transfer leads to significant synchronization and poor GPU utilization",
+            "LLM Pipeline with Sparse Activation",
+            "Data Loading",
+            "Compute",
+            "Overlap",
+            "Synchronization"
+          ],
+          "视觉骨架": [
+            "稀疏激活流水线框图",
+            "阶段时间线表格",
+            "Data Loading/Compute 泳道",
+            "同步/重叠标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "content_candidate",
+          "标题": "洞见:引入近数据处理 NDP 架构",
+          "核心论断": "针对稀疏激活的数据搬运瓶颈,应引入近数据处理 NDP 架构",
+          "本页讲什么": "章末给出解法洞见:对比 Original LLM Pipeline 与 LLM with Sparse Activation Pipeline,后者因搬运瓶颈 GPU 利用率仅 59%/81%(Poor GPU utilization),并列举 ReLU-Llama-7B(28.39GB)、ReLU-13B(15.88GB)、ReLU-Mistral-7B(102GB)等庞大权重搬运量。据此提出应用近数据处理(NDP)架构,把计算搬到数据侧,过渡到下一章 NDP 方法。",
+          "关键文字": [
+            "Apply the near-data-processing(NDP) architecture",
+            "Poor GPU utilization",
+            "59% / 81%",
+            "ReLU-Llama-7B 28.39GB",
+            "ReLU-Mistral-7B 102GB",
+            "Original LLM Pipeline / Sparse Activation Pipeline"
+          ],
+          "视觉骨架": [
+            "两条流水线对比示意",
+            "GPU 利用率百分比标注",
+            "各模型权重量清单"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "本章大纲:核心技术三板块",
+          "核心论断": "核心技术章将依次展开权重映射、调度、解析三项技术",
+          "本页讲什么": "这是进入「核心技术方案」章的目录页,高亮 Techniques 分支,下含 Overview、Sparsity-aware Weight Mapping Strategy、Two-level Heuristic Scheduling System、Request-weight Pair Parsing Mechanism 四条,上下灰显 Background and Challenge 与 Experiment Results 两章,标示本章在全 deck 的位置。",
+          "关键文字": [
+            "Background and Challenge",
+            "Techniques: Overview",
+            "Sparsity-aware Weight Mapping Strategy",
+            "Two-level Heuristic Scheduling System",
+            "Request-weight Pair Parsing Mechanism",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "三级大纲缩进列表",
+            "当前章高亮/它章灰显",
+            "bullet 子条目"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "NDP-GPU 协同系统总览:挑战映射技术",
+          "核心论断": "三大挑战 C1/C2/C3 一一映射为三项核心技术方案",
+          "本页讲什么": "以 NDP-GPU 协同系统总览开篇,左侧画出 GPU/CPU/Global Memory/Bus/NDP Chip 的数据流架构,右侧把三大挑战对齐到三项技术:C1 DRAM 带宽欠利用→稀疏感知权重映射;C2 通道间负载不均→离线+在线启发式调度;C3(掩码解析)→请求-权重对解析,建立后续每技术两页的总纲。",
+          "关键文字": [
+            "NDP-GPU Collaboration System Overview",
+            "Challenge1(C1): Under-utilization of DRAM Bandwidth",
+            "Sparsity-aware weight mapping strategy",
+            "Challenge2(C2): Workload Imbalance across Channels",
+            "Offline and online heuristic scheduling system",
+            "Dataflow Mapping and System Overview"
+          ],
+          "视觉骨架": [
+            "NDP-GPU 数据流架构图",
+            "挑战→技术映射三行",
+            "GPU/CPU/NDP Chip 模块块图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "技术一 权重映射:带宽欠利用问题",
+          "核心论断": "现有映射策略致稀疏激活下 DRAM Bank 带宽严重欠利用",
+          "本页讲什么": "技术一「权重映射」的问题页,指出现有映射策略在稀疏激活时造成 bank 带宽欠利用:通过 Step1 Up/Gate(dense 输入)与 Step2 Down(sparse 输入)两步数据流,展示各 bank 利用率仅 100%/33%/33%,依赖动态 DRAM 访问,为下一页稀疏感知映射方案铺垫。",
+          "关键文字": [
+            "Existing mapping strategies cause bandwidth under-utilization for sparse activation",
+            "Dependent Dynamic DRAM Access",
+            "Step1 Up/Gate (dense) / Step2 Down (sparse)",
+            "Bank Under-utilization 100% 33% 33%",
+            "Wdown Wup",
+            "Sparse Activation"
+          ],
+          "视觉骨架": [
+            "两步数据流示意 (Up/Gate、Down)",
+            "Bank 利用率红框标注",
+            "DRAM 访问依赖图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "技术一 权重映射:稀疏感知方案",
+          "核心论断": "稀疏感知权重映射将带宽利用率提升至 100% 并均衡负载",
+          "本页讲什么": "技术一的方案页(Approach),提出稀疏感知权重映射策略:考虑稀疏激活重新排布权重,左侧为改造前 bank 欠利用(100%/33%/33%),右侧为改造后 workload balance、100% Utilized,直接回应上一页的带宽欠利用问题,以 before/after 对照证明方案有效。",
+          "关键文字": [
+            "Sparsity-aware weight mapping strategy considering sparse activation",
+            "improve bandwidth utilization",
+            "Bank Under-utilization 100% 33% 33%",
+            "Workload Balance 100% Utilized",
+            "Step1 Up/Gate / Step2 Down",
+            "Output1/Output2 (sparse/dense)"
+          ],
+          "视觉骨架": [
+            "before/after 双栏对照图",
+            "Approach 绿色标签",
+            "bank 利用率对比标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "技术二 调度:通道负载不均问题",
+          "核心论断": "FFN 激活频率高度偏斜引发通道间 workload imbalance",
+          "本页讲什么": "技术二「调度」的问题页,指出 FFN 激活频率高度偏斜导致通道负载不均:右侧 Weight Activated Frequency Distribution 显示 skew 分布(>90% 集中、<10% 稀少),底部示意部分 NDP 通道 Imbalance、Idle 空转,依赖 Predicted Mask 的动态 DRAM 访问,引出下一页调度方案。",
+          "关键文字": [
+            "Highly skewed activation frequency in FFN activation causes workload imbalance",
+            "Weight Activated Frequency Distribution",
+            "Skew Distribution >90% <10%",
+            "Dependent Predicted Mask DRAM Access",
+            "Imbalance / Idle",
+            "NDP Channel Processor Memory"
+          ],
+          "视觉骨架": [
+            "激活频率分布柱图",
+            "skew 比例标注",
+            "NDP 通道 Idle/Imbalance 示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "技术二 调度:离线+在线启发式方案",
+          "核心论断": "离线预排+在线调度协同实现通道级负载均衡",
+          "本页讲什么": "技术二的方案页(Approach),提出离线与在线两级启发式调度:离线阶段(Offline Scheduling)完成 Weight Loading 预排布,在线阶段(Online Scheduling)在 Inference 时按通道动态 Reorder、同时(simultaneously)执行以均衡各 CH 负载,回应上一页 FFN 激活偏斜导致的负载不均问题。",
+          "关键文字": [
+            "Offline and online heuristic scheduling",
+            "achieve the channel-wise",
+            "Offline Scheduling / Online Scheduling",
+            "Weight Loading",
+            "Reorder simultaneously",
+            "Inference"
+          ],
+          "视觉骨架": [
+            "离线/在线两阶段块图",
+            "Reorder 矩阵乘示意",
+            "通道 CH 负载排布图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "技术三 解析:掩码解析耗时问题",
+          "核心论断": "NDP 逐通道解析预测稀疏掩码,耗时约占推理 20%",
+          "本页讲什么": "技术三「解析」的问题页,指出预测出的稀疏 pattern 由 NDP 架构解析导致 time-consuming:展示 QKV Gen.& Attention & Mask Prediction 在 GPU 生成 Predicted Mask,再由 NDP 逐通道 Mask Parsing(约 0.6ms、约占总推理 20%)并经 Bus 传输,依赖动态访问,引出下一页配对解析方案。",
+          "关键文字": [
+            "The predicted sparse pattern is parsed by NDP architecture, resulting in time-consuming",
+            "Dependent Dynamic Access Predicted Mask",
+            "QKV Gen. & Attention & Mask Prediction",
+            "Channel-wise Mask Parsing (~0.6ms) ~20% of total",
+            "Transfer Mask via Bus",
+            "Single Request Step1"
+          ],
+          "视觉骨架": [
+            "GPU-NDP 掩码流水块图",
+            "Mask Parsing 耗时红字标注",
+            "通道级掩码传输示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "技术三 解析:请求-权重对解析机制",
+          "核心论断": "请求-权重对解析压缩掩码达 90%,提速 3x、省内存 9x",
+          "本页讲什么": "技术三的方案页(Approach),提出 Request-weight Pair 解析机制:将约 500KB 的 Predicted Mask 拆为 sub-mask 的 X-W Pair(如 2:[1]、3:[3]、Channel1),压缩最多 90% 稀疏度,右侧对照显示相比逐通道解析可达 3x Time、9x Mem. 收益,收束整个核心技术章。",
+          "关键文字": [
+            "Request-weight pair parsing mechanism aims to parse the predicted mask",
+            "compress up to 90% sparsity",
+            "Predicted Mask (~500KB)",
+            "Sub-mask X-W Pair 2:[1], 3:[3], Channel1",
+            "Channel-wise Mask Parsing (~0.6ms) ~20% of total inference",
+            "3x Time 9x Mem."
+          ],
+          "视觉骨架": [
+            "原掩码 vs 配对 sub-mask 对照",
+            "X-W Pair 拆解示意",
+            "3x/9x 收益标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "Outline:进入实验评估章节",
+          "核心论断": "讲完背景与技术,演讲正式切入实验评估结果",
+          "本页讲什么": "本页是全篇 Outline 导航页,灰显已讲的 Background and Challenge、Techniques(含 Overview/PQ-based MatMul/Unified Architecture/Extensible GFM-ISA Design)四个子项,用黑色高亮当前进入的 Experiment Results 章节,起承前启后的过渡作用,提示听众后续进入实验数据部分。",
+          "关键文字": [
+            "Background and Challenge",
+            "Techniques:Overview / PQ-based MatMul",
+            "Unified Architecture / Extensible GFM-ISA Design",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "居中大标题 Outline",
+            "灰显已讲条目列表",
+            "黑色高亮当前章节项"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04",
+          "section_role": "result"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "实验评估设置:平台/模型/baseline",
+          "核心论断": "实验建立在多模型、多硬件 baseline 与真实数据集之上",
+          "本页讲什么": "本页交代实验评估的全部前置设置:评估工具用 NVIDIA Nsight Tools 与 Samsung PIMSimulator;Benchmark 模型含 ReLU-Llama2-7B/13B、TurboSparse-Mistral-7B、TurboSparse-Mixtral-8x7B;GPU baseline 为 A100-80GB-SXM 与 RTX 3090 上的 Dejavu,NDP-GPU baseline 为 Hynix GDDR6-AiM 与 Samsung HBM-PIM,并对比最新 NDP 稀疏激活工作 Hermes;数据集为 ShareGPT。为后续加速与能效结果奠定可比基准。",
+          "关键文字": [
+            "Tools:GPU NVIDIA Nsight Tools、NDP Samsung PIMSimulator",
+            "Benchmark:ReLU-Llama2-7B/13B、TurboSparse-Mistral/Mixtral",
+            "GPU Baseline:Dejavu on A100-80GB-SXM 与 RTX 3090",
+            "NDP-GPU Baseline:Hynix GDDR6-AiM、Samsung HBM-PIM",
+            "Customized Baseline:Hermes(最新 NDP 稀疏激活工作)",
+            "Dataset:ShareGPT"
+          ],
+          "视觉骨架": [
+            "分级 bullet 列表",
+            "工具/模型/baseline/数据集分块",
+            "关键平台名加粗"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04",
+          "section_role": "result"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "加速评估:最高 2.17×/1.92× 加速",
+          "核心论断": "SpAct-NDP 相比 SOTA 软件框架最高获 2.17×、1.92× 加速",
+          "本页讲什么": "本页用多组柱状图对比 SpAct-NDP 在 Dejavu-A100、HBM-PIM-A100、AIM-A100 平台上、ReLU-Llama2-7B/13B 等模型不同 batch size 下的推理加速,横轴为请求数(1/8/32/Geo.Mean)。底部红框结论强调:相比 SOTA 软件框架,在 NVIDIA RTX 3090 与 Tesla A100 上分别取得最高 2.17× 和 1.92× 加速。承接上页评估设置,给出加速侧核心成果。",
+          "关键文字": [
+            "We achieve up to 2.17× and 1.92× speedup",
+            "compared with SOTA software frameworks",
+            "on NVIDIA RTX 3090 and NVIDIA Tesla A100",
+            "平台:Dejavu-A100 / HBM-PIM-A100 / AIM-A100",
+            "模型:ReLU-Llama2-7B / ReLU-Llama2-13B"
+          ],
+          "视觉骨架": [
+            "多组分平台加速柱状图",
+            "batch size 横轴分组",
+            "底部红框结论条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04",
+          "section_role": "result"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "能效评估:最高 1.53×/1.45× 能效",
+          "核心论断": "SpAct-NDP 相比 SOTA 软件框架最高获 1.53×、1.45× 能效",
+          "本页讲什么": "本页与上页加速评估对称,用多组柱状图展示 SpAct-NDP 在 Dejavu-A100、SpAct-NDP(AIM)-A100、SpAct-NDP(HBMPIM)-A100 上、R-Llama2-7B/13B、T-Mistral-7B 等模型不同 batch size(横轴请求数)下的能效表现。底部红框结论:相比 SOTA 软件框架,在 NVIDIA RTX 3090 与 Tesla A100 上分别取得最高 1.53× 和 1.45× 能效提升,完成 result 章加速+能效双成果论证。",
+          "关键文字": [
+            "We achieve up to 1.53× and 1.45× energy efficiency",
+            "compared with SOTA software frameworks",
+            "on NVIDIA RTX 3090 and NVIDIA Tesla A100",
+            "平台:SpAct-NDP(AIM)-A100 / SpAct-NDP(HBMPIM)-A100",
+            "模型:R-Llama2-7B/13B、T-Mistral-7B"
+          ],
+          "视觉骨架": [
+            "多组能效柱状图",
+            "Requests(Batch size)横轴",
+            "底部红框结论条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04",
+          "section_role": "result"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "ending_candidate",
+          "标题": "论文全称 + 作者署名结尾页",
+          "核心论断": "以论文全称与作者署名收束全篇，呼应封面",
+          "本页讲什么": "整页仅居中呈现论文完整标题「SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture」，其下附作者与导师署名「Jiaming Xu, supervised by Prof. Guohao Dai」。无任何要点总结或图表，作为纯视觉落幕页，把注意力重新聚回研究主题本身，与封面形成首尾闭环。",
+          "关键文字": [
+            "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+            "Jiaming Xu, supervised by Prof. Guohao Dai"
+          ],
+          "视觉骨架": [
+            "居中大号标题文字块",
+            "标题下方作者署名行",
+            "整体大量留白无图表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.05",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "background",
+          "标题": "研究背景与挑战",
+          "页码范围": [
+            3,
+            11
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "method",
+          "标题": "核心技术方案",
+          "页码范围": [
+            12,
+            19
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "result",
+          "标题": "实验评估结果",
+          "页码范围": [
+            20,
+            23
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "closing",
+          "标题": "结尾页",
+          "页码范围": [
+            24,
+            24
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.03"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 10
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "content_candidate"
+标题: "现有 embedding 范式的召回局限"
+核心论断: "现有 embedding 范式无法直接支撑该需求致低召回"
+本页讲什么: "本页是本章的论点落点：现有 embedding 检索范式无法直接支撑结构化信息的检索思路，直接导致 low recall（低召回）。承接前面的文本示例，用图示揭示范式失效的机理，为后续分层摘要索引方法的提出制造缺口。"
+关键文字: "[Existing embedding paradigm cannot directly support the idea, causing low recall]"
+视觉骨架: "[embedding 检索流程框图, 召回失效环节标注, 对比示意配图]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.08, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.09, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.10, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.11, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.12, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.13, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.14, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.15, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.16, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.17, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.18, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.19, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.20, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.21, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.22, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.23, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.24, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.25, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.26, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.27, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_10.asset.28]"
+适合复用场景: "[检索范式局限性的论证页, 低召回问题的机理剖析页]"
+不适合复用场景: "[方案总结收尾页, 纯目录导航页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方主体", "内容": "embedding 检索流程框图与召回失效环节标注"}
+  - {"位置": "下方结论", "内容": "范式局限断言：low recall"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 10: 现有 embedding 范式的召回局限
+
+**核心论断**: 现有 embedding 范式无法直接支撑该需求致低召回
+
+## 本页讲什么
+本页是本章的论点落点：现有 embedding 检索范式无法直接支撑结构化信息的检索思路，直接导致 low recall（低召回）。承接前面的文本示例，用图示揭示范式失效的机理，为后续分层摘要索引方法的提出制造缺口。
+
+## 关键文字片段
+- Existing embedding paradigm cannot directly support the idea
+- causing low recall
+
+## 视觉骨架
+- embedding 检索流程框图
+- 召回失效环节标注
+- 对比示意配图
+
+## 可复用到
+- 检索范式局限性的论证页
+- 低召回问题的机理剖析页
+
+## 不适合复用的场景
+- 方案总结收尾页
+- 纯目录导航页

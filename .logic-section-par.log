@@ -1,0 +1,108 @@
+>>> logic_extract start at 15:50:34
+  args: layer=section_level deck_batch_size=4 section_batch_size=1
+  loaded 28 deck dirs from /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks
+  deck_level: 7 batches (size=4): [4, 4, 4, 4, 4, 4, 4]
+  section_level: 28 batches (size=1): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+=== Phase 2: section_level layer (28 batches, size=1) ===
+  [section_level] found 7 existing outputs, reusing
+  [section_level] parallel mode: 4 workers × 21 batches (seed=48 patterns)
+  [section_level] START batch 7/27 (1 decks)
+  [section_level] START batch 8/27 (1 decks)
+  [section_level] START batch 9/27 (1 decks)
+  [section_level] START batch 10/27 (1 decks)
+    input: section_level_batch_7_input.json (68 KB)
+    input: section_level_batch_8_input.json (66 KB)
+    input: section_level_batch_10_input.json (70 KB)
+    input: section_level_batch_9_input.json (75 KB)
+    attempt 1: done in 163s, ok=True
+  [section_level] DONE batch 8: +5 patterns
+  [section_level] START batch 11/27 (1 decks)
+    input: section_level_batch_11_input.json (68 KB)
+    attempt 1: done in 179s, ok=True
+  [section_level] DONE batch 7: +6 patterns
+  [section_level] START batch 12/27 (1 decks)
+    input: section_level_batch_12_input.json (73 KB)
+    attempt 1: done in 211s, ok=True
+  [section_level] DONE batch 9: +7 patterns
+  [section_level] START batch 13/27 (1 decks)
+    input: section_level_batch_13_input.json (67 KB)
+    attempt 1: done in 233s, ok=True
+  [section_level] DONE batch 10: +7 patterns
+  [section_level] START batch 14/27 (1 decks)
+    input: section_level_batch_14_input.json (73 KB)
+    attempt 1: done in 250s, ok=True
+  [section_level] DONE batch 11: +6 patterns
+  [section_level] START batch 15/27 (1 decks)
+    input: section_level_batch_15_input.json (96 KB)
+    attempt 1: done in 302s, ok=True
+  [section_level] DONE batch 13: +6 patterns
+  [section_level] START batch 16/27 (1 decks)
+    input: section_level_batch_16_input.json (121 KB)
+    attempt 1: done in 374s, ok=True
+  [section_level] DONE batch 12: +8 patterns
+  [section_level] START batch 17/27 (1 decks)
+    input: section_level_batch_17_input.json (101 KB)
+    attempt 1: done in 343s, ok=True
+  [section_level] DONE batch 14: +6 patterns
+  [section_level] START batch 18/27 (1 decks)
+    input: section_level_batch_18_input.json (81 KB)
+    attempt 1: done in 498s, ok=True
+  [section_level] DONE batch 17: +9 patterns
+  [section_level] START batch 19/27 (1 decks)
+    input: section_level_batch_19_input.json (77 KB)
+    attempt 1: done in 524s, ok=True
+  [section_level] DONE batch 18: +10 patterns
+  [section_level] START batch 20/27 (1 decks)
+    input: section_level_batch_20_input.json (77 KB)
+    attempt 1: done in 984s, ok=True
+  [section_level] DONE batch 15: +10 patterns
+  [section_level] START batch 21/27 (1 decks)
+    input: section_level_batch_21_input.json (68 KB)
+    attempt 1: done in 429s, ok=True
+  [section_level] DONE batch 20: +7 patterns
+  [section_level] START batch 22/27 (1 decks)
+    input: section_level_batch_22_input.json (68 KB)
+    attempt 1: done in 507s, ok=False
+    FAILED (cli): cli rc=1: 
+    attempt 1: done in 163s, ok=False
+    FAILED (cli): cli rc=1: 
+    attempt 1: done in 1045s, ok=False
+    FAILED (cli): cli rc=1: 
+    attempt 1: done in 256s, ok=True
+  [section_level] DONE batch 22: +7 patterns
+  [section_level] START batch 23/27 (1 decks)
+    input: section_level_batch_23_input.json (87 KB)
+    attempt 2: done in 343s, ok=True
+  [section_level] DONE batch 21: +8 patterns
+  [section_level] START batch 24/27 (1 decks)
+    input: section_level_batch_24_input.json (66 KB)
+    attempt 2: done in 367s, ok=True
+  [section_level] DONE batch 19: +7 patterns
+  [section_level] START batch 25/27 (1 decks)
+    input: section_level_batch_25_input.json (75 KB)
+    attempt 2: done in 601s, ok=True
+  [section_level] DONE batch 16: +9 patterns
+  [section_level] START batch 26/27 (1 decks)
+    input: section_level_batch_26_input.json (77 KB)
+    attempt 1: done in 331s, ok=True
+  [section_level] DONE batch 24: +8 patterns
+  [section_level] START batch 27/27 (1 decks)
+    input: section_level_batch_27_input.json (91 KB)
+    attempt 1: done in 341s, ok=True
+  [section_level] DONE batch 25: +7 patterns
+    attempt 1: done in 118s, ok=True
+  [section_level] DONE batch 27: +7 patterns
+    attempt 1: done in 592s, ok=True
+  [section_level] DONE batch 23: +9 patterns
+    attempt 1: done in 410s, ok=True
+  [section_level] DONE batch 26: +6 patterns
+  section_level phase done in 2570s
+
+=== Phase 3: cross-batch carrier merge ===
+  deck_level: 0 unique patterns
+  section_level: 180 unique patterns
+
+=== Phase 4: write per-pattern .md + .json ===
+  wrote 180 pattern files
+  INDEX: /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/logic/INDEX.json

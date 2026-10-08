@@ -1,0 +1,46 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_29"
+所属章节: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06"
+所属deck: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4"
+页序号: 29
+源文件: "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx"
+页面角色: "content_candidate"
+标题: "加速评测汇总"
+核心论断: "SpecDiff 全平台达 2.7–3.17× 加速且质量近乎无损"
+本页讲什么: "汇总前几页逐模型结果，将 SD3、SD3.5、Flux.1 Dev 上的 2.80×、2.74×、3.17× 加速比集中呈现，强调 SpecDiff 在多种扩散模型上普适达到 2.7–3.17× 加速且质量损失极小，收束整个实验章的验证闭环。"
+关键文字: "[achieves 2.80×, 2.74× and 3.17× speedup on SD3, SD3.5 and Flux.1 Dev with minimal quality loss]"
+视觉骨架: "[多模型加速比汇总表/图, 质量损失标注]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_29.asset.01]"
+适合复用场景: "[多模型加速比的汇总总结页, 实验章收尾的结论汇总页]"
+不适合复用场景: "[单一模型的结果展开页, 实验设置页, 方法原理页]"
+上页角色: "content_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+alternate_claims:
+  - "质量损失极小，跨模型普适性得到验证"
+layout_tag: "benchmark_table"
+---
+# slide 29: 加速评测汇总
+
+**核心论断**: SpecDiff 全平台达 2.7–3.17× 加速且质量近乎无损
+
+## 本页讲什么
+汇总前几页逐模型结果，将 SD3、SD3.5、Flux.1 Dev 上的 2.80×、2.74×、3.17× 加速比集中呈现，强调 SpecDiff 在多种扩散模型上普适达到 2.7–3.17× 加速且质量损失极小，收束整个实验章的验证闭环。
+
+## 关键文字片段
+- achieves 2.80×, 2.74× and 3.17× speedup on SD3, SD3.5 and Flux.1 Dev with minimal quality loss
+
+## 视觉骨架
+- 多模型加速比汇总表/图
+- 质量损失标注
+
+## 可复用到
+- 多模型加速比的汇总总结页
+- 实验章收尾的结论汇总页
+
+## 不适合复用的场景
+- 单一模型的结果展开页
+- 实验设置页
+- 方法原理页

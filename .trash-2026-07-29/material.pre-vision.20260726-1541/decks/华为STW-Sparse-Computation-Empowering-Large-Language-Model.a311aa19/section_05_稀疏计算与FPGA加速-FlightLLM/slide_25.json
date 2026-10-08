@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_25",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.05",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 25,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "算力终极瓶颈：工艺节点",
+  "核心论断": "乘法器利用率上限 100%，算力终极瓶颈是工艺节点",
+  "本页讲什么": "指出即便乘法器利用率打满到 100%，硬件算力的终极上限仍由工艺节点(Technology Node)决定，说明单靠提升利用率无法突破算力天花板，引出必须换算力增长范式。",
+  "关键文字": [
+    "Technology Node",
+    "The limit of utilization of the multipliers is 100%",
+    "The ultimate limit is the technology node"
+  ],
+  "视觉骨架": [
+    "利用率与工艺上限示意",
+    "论点文字块"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "硬件算力瓶颈论证页",
+    "工艺极限 motivation 页"
+  ],
+  "不适合复用场景": [
+    "数据密集的性能对比页",
+    "系统架构展开页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

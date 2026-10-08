@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_33",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 33,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "启发式模型动态选择算法",
+  "核心论断": "启发式模型可动态为输入选择最优 SpMM 算法",
+  "本页讲什么": "方案核心页，说明在已构建的算法空间上，用一个启发式模型根据输入特征动态选择算法（select algorithms dynamically），实现对输入动态性的自适应，直接支撑下页的性能提升。",
+  "关键文字": [
+    "Solution: Heuristic adaptability",
+    "A heuristic model to select algorithms dynamically",
+    "Sparse Operators"
+  ],
+  "视觉骨架": [
+    "启发式选择流程示意图",
+    "动态决策框图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_33.asset.01"
+  ],
+  "适合复用场景": [
+    "动态算法选择方法页",
+    "启发式模型机制介绍页"
+  ],
+  "不适合复用场景": [
+    "性能数字结果页",
+    "现状痛点页",
+    "多工作全景页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

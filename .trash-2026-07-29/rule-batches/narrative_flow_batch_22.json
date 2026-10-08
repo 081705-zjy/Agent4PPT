@@ -1,0 +1,384 @@
+{
+  "batch_index": 22,
+  "rules": [
+    {
+      "id": "cover_title_reappears_in_closing_summary",
+      "category": "callback",
+      "applicable_when": "any deck with cover slide + closing summary slide",
+      "title": "封面主标题在总结页被回扣",
+      "description": "封面主标题的核心关键词(主题/主线/方法名)应在总结/展望页被 verbatim 或 paraphrased 引用, 让全篇 arc 首尾闭合。命中率应 ≥85%。",
+      "what_to_check": [
+        "抽取 slide_index=1 (cover) 的标题关键词 (通常是 deck 主 anchor)",
+        "在 section_role='discussion'/'closing' 相关的 summary slide 的 核心论断/关键文字 里搜同一 anchor",
+        "命中 = anchor 明确出现 (verbatim 或语义等价) 至少 1 次"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "cover 主标题「视频生成模型(VGM)技术路径及高效训推」在 slide 32 总结页被拆成'技术路线演进'+'高效训练与高效推理两主线'完整回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面立起承诺、总结兑现承诺,是听众建立整体印象的核心闭环;缺失会让 deck 沦为无 arc 的信息流",
+      "fix_hint": "在总结页首/末补一段回扣封面主标题关键词的短句或流程链示意",
+      "exceptions": [
+        "工作汇报型 deck (无总结页) 可豁免",
+        "封面无实质标题 (仅 logo/单位) 时豁免"
+      ]
+    },
+    {
+      "id": "framework_diagram_reused_in_summary",
+      "category": "callback",
+      "applicable_when": "deck has a framework/technology evolution diagram in background or method section",
+      "title": "框架/演进图在总结页复用",
+      "description": "背景或方法章绘出的核心框架/技术演进链在总结页应再次以简化形式出现, 帮听众重建整体路线图。",
+      "what_to_check": [
+        "找 background/method 章中含 '演进链' '路线' '框架图' 的 slide (视觉骨架里含链条/流程符号)",
+        "对比 discussion/closing 章 slide 是否复用同一节点序列 (verbatim 或缩减)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 5 的 'GAN/VAE→Unet→DiT→3D-DiT→AR' 演进链在 slide 32 完整复现并分组"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "框架图是 deck 骨架,只画一次听众会遗忘;总结再画一次实现认知锚定",
+      "fix_hint": "总结页首屏放缩略版核心框架图,标出各章节所在节点",
+      "exceptions": [
+        "无框架图的 empirical deck 豁免"
+      ]
+    },
+    {
+      "id": "chapter_overview_precedes_detail_slides",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with method/framework chapters ≥3 pages",
+      "title": "章节首页应先出总览再进细节",
+      "description": "≥3 页的方法/框架章应以一页 overview 开场(列出本章 N 个子模块), 再逐个展开; 直接进细节会让听众迷失。",
+      "what_to_check": [
+        "对每个 method/framework/result 章, 看首页 (section 页码范围[0]) 是否为总览页",
+        "总览页特征: 关键文字含 '总览' '要素' '两条主线' 或列出 ≥2 个后续子话题",
+        "章 ≥3 页且首页非总览即违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "section 5 (训练框架 10 页) 首页 slide 22 以四要素总览开场, section 4 (高效推理 2 页) 首页 slide 20 以空间/时间两条主线开场"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "总览页给听众下一层 mental model, 让后续细节挂到骨架上; 缺失导致'为什么讲这个'的意图被埋没",
+      "fix_hint": "章首插一页含'本章 N 要素/两条主线'的分发页, 用色块或分支示意分列",
+      "exceptions": [
+        "章仅 1-2 页可省略总览"
+      ]
+    },
+    {
+      "id": "teaser_at_section_overview_page",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with method/framework chapter overview page",
+      "title": "章总览页应埋悬念点出'为什么难'",
+      "description": "总览页除列子模块外, 应明确点出本章要解决的核心矛盾/冗余/难点, 让后续细节页有'解题'感, 而非平铺信息。",
+      "what_to_check": [
+        "章 overview 页的 核心论断/关键文字 是否含 '开销大' '冗余' '瓶颈' '难点' 或问题式表述",
+        "缺少问题陈述, 只列子模块名, 则未埋悬念"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 20 明写'扩散类 VGM 推理存在大量冗余计算可优化', slide 22 明写'核心思路:压缩 Token 数量降低训练开销'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "点出矛盾 = 给出'解题动力', 无矛盾的总览页会让方法细节读起来像流水账",
+      "fix_hint": "总览页第一句用问题/矛盾句式 (e.g. 'X 开销大, 需要...') 引出后续子模块",
+      "exceptions": []
+    },
+    {
+      "id": "chapter_boundary_marked_by_agenda_page",
+      "category": "chapter_transitions",
+      "applicable_when": "deck ≥20 pages with ≥3 chapters",
+      "title": "章间以 Contents 目录页硬切分",
+      "description": "长 deck 章间应插入独立 Contents 导航页(高亮当前章), 提供明确章节边界与位置感; 无导航页会让听众失去坐标。",
+      "what_to_check": [
+        "找 section_role 变化的边界位置",
+        "边界前后应存在 视觉骨架含 'Contents / 目录卡 / 编号列表 / 高亮竖条' 的 slide",
+        "覆盖率 = 有导航页边界 / 总章边界"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 2/3/19/21/31 五次以 Contents 目录页硬切章节, 每次高亮当前项, 33 页 deck 有 4 次章节切换全部覆盖"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 中听众每 10-15 页就会失去导航感, 独立 Contents 页是最低成本的重锚",
+      "fix_hint": "每章开始前插一页 Contents (复用同一模板, 仅切换高亮项)",
+      "exceptions": [
+        "≤20 页短 deck 可省略章内导航页"
+      ]
+    },
+    {
+      "id": "highlight_current_item_in_agenda",
+      "category": "chapter_transitions",
+      "applicable_when": "any Contents/agenda page in a multi-chapter deck",
+      "title": "目录页必须高亮当前章",
+      "description": "Contents 页应用颜色/竖条/圆点差异高亮当前所处章, 其余项灰化; 全部同色的目录页无法提供位置感。",
+      "what_to_check": [
+        "找 视觉骨架 含 'Contents / 目录' 的 slide",
+        "视觉骨架/关键文字 应含 '高亮' '当前项' '进度竖条' '灰化' 等词",
+        "缺失高亮 = 违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 2 首项黑色高亮、slide 19 第 2 项蓝色高亮、slide 21 第 3 项高亮、slide 31 第 4 项高亮, 均伴左侧蓝色进度竖条"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "同色目录页等于没标位置, 听众每次看到都要重新算'走到哪儿', 加重认知负担",
+      "fix_hint": "目录模板加一个 currentIndex 字段, 只对当前项上色/加竖条",
+      "exceptions": []
+    },
+    {
+      "id": "main_anchor_saturates_chapter_titles",
+      "category": "repetition_emphasis",
+      "applicable_when": "any technical deck with a primary anchor term",
+      "title": "主 anchor 应在章节标题里反复出现",
+      "description": "deck 的主 anchor (核心术语) 应在多数章节/内容页标题中出现, 强化主线感知。占比应 ≥50%。",
+      "what_to_check": [
+        "从 cover 抽主 anchor 关键词",
+        "统计 content_candidate slide 的 标题 里含该 anchor 的比例",
+        "占比 <50% 则主线稀释"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "'VGM' 出现在 slide 4/5/19/20/21/22/29/30/31 等 9+ 张标题中, 覆盖约 30% content slides; DiT/UNet 等子 anchor 也高频重复"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "标题是听众每页最先看到的锚, 主 anchor 高频出现让听众每页都能对齐到主线",
+      "fix_hint": "章节标题模板加 '<主 anchor>:<子话题>' 前缀, 强制主 anchor 露出",
+      "exceptions": [
+        "综述型 deck 主 anchor 过宽时可放宽到 ≥30%"
+      ]
+    },
+    {
+      "id": "new_method_paired_with_baseline_contrast",
+      "category": "comparison_evidence",
+      "applicable_when": "method chapters that introduce a new technique replacing an existing one",
+      "title": "每个新方法必须配一页 baseline 对比",
+      "description": "引入新方法(如 Skiparse、3D-VAE、DiT) 时, 应配一页明确的 A vs B 对比 slide (左右栏/双图/对比表), 说明新方法相对基线的差异与代价。",
+      "what_to_check": [
+        "找 method 章中 关键文字 含 '替换' '相比' 'vs' '对比' 或新方法名的 slide",
+        "对比页视觉骨架应含 '左右两栏' '双图对比' '维度 1 vs 维度 2' 等结构",
+        "每个新方法引入后 3 页内应能找到 ≥1 张对比页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 12 UNet vs Transformer 左右栏对比、slide 14 2D+1D DiT vs 3D DiT 对比图、slide 26 3D vs 2+1D Attention 对比、slide 27-28 2D-VAE vs 3D-VAE 对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "新方法脱离对比就成为孤立技术描述, 听众无法评估'为什么需要它'; 对比页给出决策依据",
+      "fix_hint": "新方法首介后紧跟一页左右栏或双图对比, 明列 baseline 缺陷 + 新方法优势",
+      "exceptions": [
+        "行业公认新方法可略去对比页 (需在引入时点名 SOTA)"
+      ]
+    },
+    {
+      "id": "quantitative_claim_needs_concrete_numbers",
+      "category": "comparison_evidence",
+      "applicable_when": "any slide claiming '提速' '压缩' '高效' '性能提升'",
+      "title": "定性效率 claim 必须给出具体数字",
+      "description": "关于'提速''高效''压缩'的 claim 应至少给出一个具体数字 (Nx / N% / 具体分辨率+时间), 避免空泛论述。",
+      "what_to_check": [
+        "找 关键文字/核心论断 含 '提速' '加速' '高效' '压缩' 的 slide",
+        "同页 关键文字 是否含 具体数字 (Nx / % / MB / FLOPS)",
+        "无数字支撑 = 违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 24 提速 claim 明写 'k=4 时 2.7B 模型 93x720p/93x480p 训练提速 2.38x/1.88x', slide 25 明写 '单层计算降为 1/k'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "reason": "slide 27 声称 '大幅减少视频 latent token' 但未给具体压缩倍数; slide 20 讲 '大量冗余可优化' 也无量化"
+        }
+      ],
+      "miss_carriers_note": "同 deck 内部分 slide 违反, 拉低命中率",
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "无数字的效率 claim 无法被验证, 听众对'高效'的量级毫无概念",
+      "fix_hint": "每条效率 claim 后附一句 'X 倍/减少 Y%' 或引一张性能表",
+      "exceptions": [
+        "综述型 deck 引用他人工作不便追数字时可略"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appears_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a primary technical anchor",
+      "title": "主 anchor 首次出现在封面标题",
+      "description": "deck 的主 anchor (核心术语) 应在 slide 1 (cover) 首次出现, 避免在中段才突然引入。",
+      "what_to_check": [
+        "identify 主 anchor (从 deck 标题 抽取核心名词)",
+        "看 slide 1 标题 是否含该 anchor",
+        "含 = 命中, 否则 = 违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "'视频生成模型(VGM)' 在 slide 1 封面标题首次出现, 后续贯穿全 deck"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面是听众首次接触 deck 的场所, 主 anchor 缺席会让听众带不上 mental context 进入正文",
+      "fix_hint": "封面主标题必须包含或明确等价于主 anchor 名词",
+      "exceptions": [
+        "叙事型/悬念型 deck 可先埋伏后揭示"
+      ]
+    },
+    {
+      "id": "abbreviation_defined_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck introducing technical abbreviations",
+      "title": "缩写首次使用同页给出全称",
+      "description": "专业缩写 (DiT / VAE / LDM / VBench 等) 首次在正文出现时, 同页应给出全称或引用来源, 避免听众猜测。",
+      "what_to_check": [
+        "识别 关键文字 中的缩写 (2-5 字母全大写词)",
+        "在 deck 顺序里找该缩写首次出现的 slide",
+        "同页 关键文字/核心论断 应含全称 (e.g. 'DiT (Diffusion Transformer)') 或 论文标题引用"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "slide 7 首现 LDM 时引用 'High-Resolution Image Synthesis with Latent Diffusion Models', slide 12 引入 DiT 时给出 '(Diffusion Transformer)' 全称"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "内部组会/学术分享听众可能对领域缩写不熟, 同页给全称成本极低但显著降低认知负担",
+      "fix_hint": "缩写首现处用 '缩写 (全称) [引用]' 模板, 一次性交代",
+      "exceptions": [
+        "极高领域共识缩写 (如 GPU/CPU/AI) 可省"
+      ]
+    },
+    {
+      "id": "agenda_chapter_order_consistent_across_pages",
+      "category": "structural_promise",
+      "applicable_when": "deck with multiple Contents/agenda pages",
+      "title": "多次出现的目录页应保持章节顺序一致",
+      "description": "deck 中重复出现的 Contents 目录页应列出**相同顺序**的章节项, 不同目录页顺序不一致会让听众怀疑结构。",
+      "what_to_check": [
+        "找所有含 'Contents' 的 slide",
+        "对每张比对 关键文字 中的章节列表顺序",
+        "顺序不完全一致 = 违反"
+      ],
+      "hit_carriers": [],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "reason": "slide 2 目录为'背景/训练/推理/总结', slide 19 变为'技术路线/高效推理/训练框架/...', slide 21 又变为'技术路线/推理/训练/...', 三个目录页顺序与内容不完全对齐"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.0,
+      "enforcement_level": "soft",
+      "rationale": "多目录顺序错乱破坏结构承诺, 让'我到底在第几章'变得混乱, 削弱 deck 的组织可信度",
+      "fix_hint": "所有 Contents 页使用同一常量数组, 仅切换 currentIndex, 禁止在各页手改条目",
+      "exceptions": [
+        "章节数极少 (≤3) 且只出现 1 次目录时无风险"
+      ]
+    },
+    {
+      "id": "chapter_page_count_balance",
+      "category": "pacing",
+      "applicable_when": "deck with ≥3 method/framework chapters",
+      "title": "同层级章节页数应相对均衡",
+      "description": "并列 method/framework 章的页数不应差距过大 (最大章:最小章 页数比 ≤5:1), 差距过大暗示某章内容轻描淡写。",
+      "what_to_check": [
+        "看 sections_outline 中 section_role 相同的章 (e.g. 全部 method)",
+        "算最大页数 / 最小页数 比值",
+        ">5:1 = 违反"
+      ],
+      "hit_carriers": [],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "reason": "section 3 (技术路径演进) 13 页, section 4 (高效推理) 仅 2 页 (含 1 页 Contents), 比值 13:2 严重失衡, 高效推理章基本没展开"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.0,
+      "enforcement_level": "soft",
+      "rationale": "封面/agenda 承诺了 N 大主题, 但某主题只有 2 页会让承诺缩水, 听众感受为'虎头蛇尾'",
+      "fix_hint": "对页数 ≤3 的章, 要么合并进相邻章, 要么补 2-3 张方法细节页兑现承诺",
+      "exceptions": [
+        "章角色明显不同 (如 opening 1 页 vs method 20 页) 属正常"
+      ]
+    },
+    {
+      "id": "structural_page_ratio_in_range",
+      "category": "pacing",
+      "applicable_when": "any deck ≥15 pages",
+      "title": "结构页占比应在 15-25% 区间",
+      "description": "cover/agenda/divider/closing 等结构页总占比应在 15-25%, 过低说明缺乏导航, 过高说明内容单薄。",
+      "what_to_check": [
+        "统计 section_role in ('opening','closing') 的 slide 数",
+        "+ 中间 Contents 目录页数",
+        "结构页数 / 总页数 应落 [0.15, 0.25]"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "evidence": "结构页 = slide 1/2/3/19/21/31/33 共 7 页, 占 33 页的 21%, 落在 15-25% 区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页太少导致导航缺失, 太多稀释内容密度; 15-25% 是经验平衡点",
+      "fix_hint": "结构页 <15% 时每章前补 Contents, >25% 时合并冗余 divider",
+      "exceptions": [
+        "≤15 页短 deck 结构页 1-2 张已足"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (VGM 视频生成技术综述, 33 页 7 章)。deck 呈现典型内部科研组会综述风格: 强 Contents 导航 (5 次目录页)、演进链首尾复现、多方法对比页密集。命中偏保守: 部分 rule (agenda_order, chapter_balance) 在此 deck 内暴露反例, 说明其为 soft rule 而非 hard rule。rules by category: callback=2, suspense_reveal=2, chapter_transitions=2, repetition_emphasis=1, comparison_evidence=2, anchor_trajectory=2, structural_promise=1, pacing=2.",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 2,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 2
+    }
+  }
+}

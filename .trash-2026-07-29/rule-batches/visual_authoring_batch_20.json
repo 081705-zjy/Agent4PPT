@@ -1,0 +1,558 @@
+{
+  "batch_index": 20,
+  "rules": [
+    {
+      "id": "cover_layout_vertical_title_with_speaker_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·竖排/大字主标题+讲者署名",
+      "description": "封面页以大字主标题(竖排或横向大字)占据主视觉,配一条细分隔线,讲者姓名+单位+身份+日期+邮箱作为署名块居右/居底,不含正文 bullet 或图表.",
+      "evidence_signals": [
+        "视觉骨架 含 '竖排主标题' 或 '大字标题' 或 '主标题'",
+        "关键文字 含 讲者姓名 + 单位 + 日期(如 2024-7-17)+ 邮箱",
+        "视觉骨架 含 '细分隔横线' 或 '分隔线'",
+        "无 'bullet 列表' / '正文段落' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 1,
+          "评价": "竖排大字主标题'稀疏计算与大模型'+右侧讲者身份块+日期邮箱,标准 cover 版式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "大字主标题+讲者署名让听众在开场瞬间锁定 deck 主题与讲者身份,细分隔线制造正式感,避免其他内容抢焦点",
+      "fix_hint": "把 cover 主标题放大居中或竖排,作者/单位/日期/邮箱聚合到底部或右侧署名块,移除多余正文与 bullet",
+      "exceptions": [
+        "空白模板/占位版式(无实际身份信息)",
+        "品牌宣传型 deck(讲者身份让位于品牌 logo)"
+      ]
+    },
+    {
+      "id": "toc_layout_numbered_circles_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录/章节导航·编号圆圈+当前项高亮",
+      "description": "目录(Contents)/章节切换页用 1-N 蓝色圆圈编号列出全部章节条目,当前章节以高亮竖条/圆点/彩色区别,其余灰显,承担章节导航过渡作用.",
+      "evidence_signals": [
+        "标题含 'Contents' 或 '目录' 或 '进入第X部分'",
+        "视觉骨架 含 '编号' + '圆圈/圆点/圆标' + 列表",
+        "视觉骨架 含 '高亮竖条' 或 '当前项高亮' 或 '蓝色高亮圆圈'",
+        "关键文字 通常为 3-5 项章节名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 3,
+          "评价": "'Contents'+1-5 蓝色圆圈编号+左侧竖向蓝色装饰条,五段主线导航"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 4,
+          "评价": "高亮第 1 章'背景',其余灰显,标准章节切换页"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 23,
+          "评价": "五项编号目录,第 3 项'研究内容与代表性成果'蓝色高亮竖条"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 32,
+          "评价": "五项编号列表+当前项高亮圆点+蓝色边框容器"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 43,
+          "评价": "5 项编号列表+第 5 项蓝色高亮圆圈+左侧蓝色进度竖条"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "编号圆圈+高亮当前项是章节导航最直接的视觉隐喻:听众看到'我在第几章'瞬间定位进度,避免章节切换时听众迷失",
+      "fix_hint": "目录页统一用 1-N 蓝色圆圈编号列出全部章节,进入某章前复用此版式并把当前项换成高亮竖条或彩色圆圈",
+      "exceptions": [
+        "单章 deck 或无章节结构的短 deck",
+        "封面/致谢等非导航页"
+      ]
+    },
+    {
+      "id": "claim_states_judgment_with_quantified_evidence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断用判断句并带量化证据",
+      "description": "slide.核心论断 用完整判断句形式(主-谓-宾)表达观点,尽量嵌入量化数字(倍数/比例/绝对量)作为论据支撑,避免纯描述性短语.",
+      "evidence_signals": [
+        "核心论断 含谓语动词 + 判断/结论表述",
+        "核心论断 常含数字(如 '5 万倍' '2.9 比特' '3.28×' '<1.5%' '6.0×')",
+        "核心论断 不以名词短语单独结句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 10,
+          "评价": "'模型计算量 5 年内暴涨约 5 万倍' 判断句+具体倍数"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 26,
+          "评价": "'16nm U280 FPGA 上 FlightLLM 较 12nm V100S GPU 提速约 6.0×' 完整判断句+量化"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 31,
+          "评价": "'平均 2.9 比特实现 5.5x 压缩并达 2.29x–2.53x 推理加速' 结论式判断句"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 40,
+          "评价": "'自研稀疏硬件仅 0.4% 面积开销即得 3.28×/2.46× 加速' 判断+关键数据"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 36,
+          "评价": "'MoE、MoD、块稀疏三类范式叠加形成 8-20 的联合稀疏度' 判断句嵌数字"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 47,
+          "原因": "'留白备份页,仅带日期抬头供演讲者按需插图' 描述版式而非表达论证,无量化证据"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "判断句迫使作者亮出立场而非罗列现象,量化证据把观点从'感觉'升到'可核验事实',听众更易被说服并记住",
+      "fix_hint": "把 claim 从名词短语改写为'主+谓+宾'判断句,并把 slide 内最关键的一个数字/比例/倍数嵌入",
+      "exceptions": [
+        "目录/致谢/版式参考/留白备份等非论证页",
+        "定义/概念铺垫页(尚无实验数据时)"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_not_full_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用名词短句·不用完整动宾句",
+      "description": "slide.标题 采用名词短句或'X:Y'/'X·Y' 结构,不用 '我们将 XX'/'本节讲 XX' 等完整动宾句,也不把 claim 直接当作 title.",
+      "evidence_signals": [
+        "title 不以 '我们将' '本节' '接下来' 开头",
+        "title 多为 '<主题>:<副题>' 或 '<主题>·<副题>' 结构",
+        "title 长度 ≤20 字,以名词或名词短语结尾"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 9,
+          "评价": "'大模型计算量急剧增加(Scaling Law 悖论)'名词短句+括号补充"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 13,
+          "评价": "'从摩尔定律到尺度定律:破局的三条路线' 名词短句冒号结构"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 22,
+          "评价": "'稀疏计算下的缩放定律:两大研究内容' 冒号名词短句"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 25,
+          "评价": "'FlightLLM 可配置稀疏 DSP 链方法' 纯名词短语"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 36,
+          "评价": "'稀疏驱动的新模型范式:统一为联合稀疏度' 名词短句"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.92,
+      "enforcement_level": "hard",
+      "rationale": "名词短句 title 让听众一眼抓到主题,动宾句 title 会与 claim 语义重叠、稀释信息密度,也让 title 变成'讲什么'描述而非'定位'",
+      "fix_hint": "把 title 里的动词+介词短语去掉,改为 '<X>:<Y>' 或 '<X>·<Y>' 名词短句,把动词句归入 claim",
+      "exceptions": [
+        "'重新思考 X' 之类命题式思考题目"
+      ]
+    },
+    {
+      "id": "content_layout_top_claim_bar_with_body",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页布局·顶部论点条+主体展开区",
+      "description": "内容页顶部固定一个论点/命题横条(蓝框/紫框/红框标题+分隔线)承担 claim 定位,下方为主体展开区(图表/双栏/流程),使听众先抓论断再看证据.",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部论点框' 或 '顶部命题横条' 或 '顶部标题+横线'",
+        "视觉骨架 主体区常为 '双栏' / '流程图' / '框图' / '图表'",
+        "关键文字 顶部含明确论断短语(而非概念定义或标签词)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 7,
+          "评价": "'顶部论点框' + 左右两栏对照(算力扩张 vs 电力供给)"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 19,
+          "评价": "'顶部命题横条' + 等效算力/存储公式框主体"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 37,
+          "评价": "'考虑稀疏下的软硬件协同设计' 顶部命题横条 + 左右对比框图"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 11,
+          "评价": "顶部论点框 '摩尔定律放缓' + 左右两栏图表位"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 10,
+          "评价": "顶部论点框 + 算力增长趋势图 + SORA 数据标注"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 47,
+          "原因": "仅日期抬头+整页留白,无论点条也无主体证据"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "论点先行让听众在第一秒抓到 claim,主体区变成'证据展开'而非'内容堆叠',每页信息层级由 claim→evidence 明确",
+      "fix_hint": "内容页顶部加一个含 claim 的横向标题框(带分隔线),把图表/双栏/流程收拢到下方主体区",
+      "exceptions": [
+        "目录/章节切换页(承担导航)",
+        "留白备份/版式参考页"
+      ]
+    },
+    {
+      "id": "framework_layout_left_right_or_multi_column_comparison",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "对比/框架布局·左右双栏或多列对照",
+      "description": "对比性内容页广泛使用左右双栏 (现在/未来、传统/新范式、稠密/稀疏、量化/剪枝)或 2-3 列并排,配对照箭头或对角映射,承担框架/对比论证.",
+      "evidence_signals": [
+        "视觉骨架 含 '左右两栏对照' 或 '左右双栏 panel' 或 '三列' 或 '双列'",
+        "关键文字 中出现成对二元词汇 (现在/未来、稠密/稀疏、传统/新、路线1/路线2)",
+        "视觉骨架 常含 '对照箭头' / '过渡箭头' / '虚线关联'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 13,
+          "评价": "左'现在'右'未来'双栏对照 + 三色路线箭头"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 17,
+          "评价": "Transformer/Mamba/Hybrid 三列并排架构对比"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 37,
+          "评价": "传统协同 vs 稀疏新范式 左右对比框图"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 39,
+          "评价": "现在/未来一/未来二 三阶段并列列 + Sp-X PU 蓝色高亮"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 14,
+          "评价": "'现有方案'vs'更好方案'左右双栏"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "对比布局把'差异'变成第一视觉信号:两栏并置迫使听众自动做减法,比连续段落更容易看出方案优势与演进方向",
+      "fix_hint": "凡遇 A/B 对照、before/after、多路线并列的 claim,把主体区改为左右双栏或多列并排,并加对比箭头",
+      "exceptions": [
+        "单一概念定义页/纯数据结果页",
+        "目录与致谢页"
+      ]
+    },
+    {
+      "id": "experiment_page_highlights_key_number",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "实验/结果页·关键数字红字或高亮突出",
+      "description": "呈现实验/结果的 slide 在 claim 与视觉骨架中把关键量化数字 (加速比 / 压缩比 / 精度 / 面积开销) 单独高亮,常见红字/独立数字框/百分比强调.",
+      "evidence_signals": [
+        "核心论断 含具体倍数或百分比 (如 '6.0×' '5.5x' '2.9 比特' '<1.5%' '0.4%')",
+        "视觉骨架 含 '关键数字论点框' 或 '红字' 或 '数字高亮'",
+        "section_role 为 experiment 或 framework 的结果页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 26,
+          "评价": "'6.0× 提速' 顶部红色对比论点框"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 31,
+          "评价": "顶部红色关键数字论点框 '2.9 比特 / 5.5x 压缩 / 2.29x-2.53x'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 42,
+          "评价": "训练 3.28×/1.90×、推理 2.46×/2.01× 加速比数字强调红字"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 40,
+          "评价": "'0.4% 面积开销 / 3.28×/2.46×' 加速比结果标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "实验结果页最值钱的是那一个数字:红字/独立框把它从背景中拉出,听众离场后能记住'哦这套方案 6× 加速',而非记住流程",
+      "fix_hint": "实验/结果 slide 里选一个最具冲击力的数字(倍数/压缩比/精度),用红字或独立框在顶部或主体区放大突出",
+      "exceptions": [
+        "实验设置/方法铺垫页(尚未出结果)",
+        "无实测数据的 motivation/framework 早期页"
+      ]
+    },
+    {
+      "id": "motivation_uses_scale_gap_pattern",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "Motivation·用数量级差距制造张力",
+      "description": "motivation 章节的 slide 用'X 年涨 N 万倍'/'投资 XXX 亿美元'/'X vs Y 数量级对比'这类跨数量级差距/供需缺口来制造紧迫感,而不是抽象描述.",
+      "evidence_signals": [
+        "section_role 为 motivation",
+        "核心论断/关键文字 含数量级差距 (10²¹→10²⁶、5 万倍、1150 亿美元、20 倍)",
+        "claim 常呈'A vs B 对比' 或 'A 涨 N 倍 而 B 跟不上' 结构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 7,
+          "评价": "'1150 亿美元'/'芯片规模 20 倍'/'438 万亿千瓦时' 供需对比"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 10,
+          "评价": "'5 年涨 5 万倍' + '10²¹→10²⁶ Flops' 数量级张力"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 11,
+          "评价": "'摩尔定律放缓,硬件供给跟不上' 需求-供给缺口"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 9,
+          "评价": "'Parameter↑ vs Goal↓' Contradiction 结构对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.65,
+      "enforcement_level": "soft",
+      "rationale": "motivation 需在几秒内让听众'感到不解决问题就痛':数量级差距 (万倍/亿元/供需缺口) 比抽象'很重要'冲击力大 10 倍",
+      "fix_hint": "motivation slide 找一组供需对比数据 (需求 X 涨 N 倍 / 供给只涨 M 倍) 或跨数量级数字,替换掉泛化描述句",
+      "exceptions": [
+        "纯概念定义 motivation 页 (Scaling Law 定义等)",
+        "应用广度罗列页(展示 use case 而非张力)"
+      ]
+    },
+    {
+      "id": "citation_footer_uses_author_venue_year",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引文标注·作者+会议+年份格式",
+      "description": "引用外部工作的 slide 在底部或对应段落用 '作者名 et al., 会议 年份' 格式或角标 [n] 标注,不用完整参考文献格式.",
+      "evidence_signals": [
+        "关键文字 或底部含 'XX et al., <会议缩写> <年份>' (如 'Jinhao Li et al., ICCAD 2024')",
+        "关键文字 中出现 '[1]' '[2]' 等角标",
+        "视觉骨架 含 '底部引文' 或 '论文角标'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 15,
+          "评价": "论文角标 [1]-[6] 标注 GPTQ/AWQ/SpQR 等方法出处"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 28,
+          "评价": "底部 'Jinhao Li et al., ICCAD 2024' 作者+会议+年份"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 30,
+          "评价": "底部引文 Jinhao Li et al., ICCAD 2024"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 17,
+          "评价": "'Mamba[1]' 'Hybrid[2]' 上标角标形式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "学术报告要求可追溯,但完整 BibTeX 会挤爆版面:'作者 et al., 会议 年份'是学术圈通用最简格式,兼顾权威与可读",
+      "fix_hint": "引用他人工作时,slide 底部或论断旁标注 '<第一作者> et al., <会议缩写> <年份>' 或上标 [n],不写完整期刊卷号",
+      "exceptions": [
+        "自研工作/项目内部数据 (不涉及外部引用)",
+        "目录/致谢/版式参考页"
+      ]
+    },
+    {
+      "id": "method_page_uses_label_tag_for_stage",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页阶段标签·研究动机/研究方法紫框",
+      "description": "方法性 slide 顶部用一个明显的彩色标签块 ('研究动机'/'研究方法'/'研究结果'等紫色标签) 明示当前论证阶段,而不是靠标题隐式表达.",
+      "evidence_signals": [
+        "视觉骨架 含 '紫色「研究动机」标签块' 或 '「研究方法」标签块' 或 '「研究结果」标签'",
+        "关键文字 含 '研究动机' / '研究方法' / '研究结果' 等阶段词",
+        "位于 experiment 或 framework section_role 的方法主体页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 24,
+          "评价": "紫色「研究动机」标签块 + FlightLLM 动机论点框"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 25,
+          "评价": "紫色「研究方法」标签块 + N:M 稀疏 DSP 链方法"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 28,
+          "评价": "紫色「研究动机」标签块 + 混合量化动机"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 29,
+          "评价": "紫色「研究方法」标签块 + 稀疏离群点方法"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 30,
+          "评价": "紫色「研究方法」标签块 + 异步反量化流程"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "学术报告一个工作通常拆多页 (动机→方法→结果),阶段标签让听众瞬间知道'现在讲到哪一步',避免在多页方法细节里迷失",
+      "fix_hint": "方法组 slide 顶部添加 '研究动机 / 研究方法 / 研究结果' 紫色标签块,与下方论点框上下并置",
+      "exceptions": [
+        "单页搞定的小方法/工程结果",
+        "目录/motivation/致谢等非方法页"
+      ]
+    },
+    {
+      "id": "appendix_backup_page_minimal_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "附录备份页·仅日期抬头+整页留白",
+      "description": "附录/备份页版式极简:顶部一条含日期的蓝色标题抬头,正文区完全留白,不承载论证内容,供演讲者临场按需补充.",
+      "evidence_signals": [
+        "视觉骨架 含 '蓝色标题抬头+分隔线' + '整页留白正文区'",
+        "关键文字 极简,通常仅含日期 (如 '2024 年3月31…' '2024 年7月4日')",
+        "section_role 为 appendix",
+        "核心论断 表述为 '留白备份页' 之类版式说明"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 47,
+          "评价": "'2024 年3月31…' 日期抬头 + 整页留白正文区"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 48,
+          "评价": "'2024 年7月4日' 日期抬头 + 整页留白"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.05,
+      "enforcement_level": "soft",
+      "rationale": "备份页存在的目的是应急,不是主论证:极简版式反而告诉演讲者'这里可以插任何图表',避免版式暗示锁死内容",
+      "fix_hint": "appendix 备份页保留统一的蓝色日期抬头+分隔线,主体区完全留空,不预置占位块",
+      "exceptions": [
+        "格式参考模板页 (需要显示图位占位块)",
+        "已填充实际内容的附录页"
+      ]
+    },
+    {
+      "id": "ending_layout_thanks_contact_qrcode",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页布局·Thanks 标签+讲者信息+二维码网格",
+      "description": "deck 收尾致谢页把 'Thanks'/'Support' 彩色标签、讲者姓名/单位/邮箱/日期联系信息块、以及右侧支持/合作二维码网格三部分拼合,承担收尾+召唤行动.",
+      "evidence_signals": [
+        "视觉骨架 含 'Thanks/Support 标签' + '讲者联系信息块' + '二维码网格'",
+        "关键文字 含 'Thanks' 'Email:' 讲者姓名 + 单位 + 日期",
+        "页脚常含 'Guohao Dai @ Shanghai Jiao Tong University' 类署名",
+        "section_role 为 appendix 或 closing"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "slide_index": 50,
+          "评价": "'Thanks/Support' 彩色标签 + 讲者信息 + 右侧支持二维码网格,标准致谢联系版式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结尾页要同时完成'致谢/记住讲者/建立联系'三件事:彩色标签暖场、联系块存档、二维码把线下听众引到团队/招募/项目页",
+      "fix_hint": "结尾页固定三区:左'Thanks'标签+中讲者联系信息+右二维码网格,页脚署名讲者+单位",
+      "exceptions": [
+        "无联系需求的纯商业保密演讲",
+        "仅 'Q&A' 或纯留白结尾页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(稀疏计算与大模型),50 slides;visual: 7 rules(cover/toc/content-topbar/comparison/method-tag/appendix/ending),authoring: 5 rules(title 名词短句/claim 判断句+量化/motivation 数量级张力/结果页红字数字/引文格式)",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

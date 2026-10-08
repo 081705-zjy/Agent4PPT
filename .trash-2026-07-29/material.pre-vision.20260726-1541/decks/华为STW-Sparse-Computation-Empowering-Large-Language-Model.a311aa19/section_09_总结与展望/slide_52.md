@@ -1,0 +1,53 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_52"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.09"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 52
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "总结：LLM Scaling Law 三层加速回收"
+核心论断: "利用率提升、负载削减、成本下降三层共同推动 LLM Scaling"
+本页讲什么: "全 deck 的技术总结页，用 Scaling Law 框架回收「算子-硬件-模型三层稀疏加速」主线：把 Utilization improvement（利用率提升）、Workload reduction（负载削减）、Cost reduction（成本下降）三个维度对齐到 Scaling 曲线上，并用「(now)」标注当前所处位置，说明稀疏加速如何持续推动大模型规模化。"
+关键文字: "[\"Summary: LLM Scaling Law\", Utilization improv., Workload reduction, Cost reduction, (now)]"
+视觉骨架: "[Scaling Law 趋势示意, 三层加速维度标注, 「now」当前位置标记]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_52.asset.01]"
+适合复用场景: "[大模型稀疏加速技术总结页, Scaling Law 视角的主线回收页]"
+不适合复用场景: "[单个具体工作方法页, 讲者身份/致谢页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Summary: LLM Scaling Law"}
+  - {"位置": "中间主体曲线", "内容": "Scaling Law 曲线 + 三层维度标注 (Utilization improv. / Workload reduction / Cost reduction)"}
+  - {"位置": "曲线上的位置标记", "内容": "(now) 当前所处位置"}
+alternate_claims:
+  - "稀疏加速通过算子-硬件-模型三层协同持续推动 LLM 规模化演进"
+layout_tag: "curve_chart_with_numbers"
+---
+# slide 52: 总结：LLM Scaling Law 三层加速回收
+
+**核心论断**: 利用率提升、负载削减、成本下降三层共同推动 LLM Scaling
+
+## 本页讲什么
+全 deck 的技术总结页，用 Scaling Law 框架回收「算子-硬件-模型三层稀疏加速」主线：把 Utilization improvement（利用率提升）、Workload reduction（负载削减）、Cost reduction（成本下降）三个维度对齐到 Scaling 曲线上，并用「(now)」标注当前所处位置，说明稀疏加速如何持续推动大模型规模化。
+
+## 关键文字片段
+- Summary: LLM Scaling Law
+- Utilization improv.
+- Workload reduction
+- Cost reduction
+- (now)
+
+## 视觉骨架
+- Scaling Law 趋势示意
+- 三层加速维度标注
+- 「now」当前位置标记
+
+## 可复用到
+- 大模型稀疏加速技术总结页
+- Scaling Law 视角的主线回收页
+
+## 不适合复用的场景
+- 单个具体工作方法页
+- 讲者身份/致谢页

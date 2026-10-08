@@ -1,0 +1,45 @@
+---
+页标识: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_69"
+所属章节: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.sec.09"
+所属deck: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018"
+页序号: 69
+源文件: "templates/个人学术考核/高效端侧大模型推理优化_开题.pptx"
+页面角色: "content_candidate"
+标题: "参考文献（二）"
+核心论断: "推理服务与显存优化工作构成技术方案文献基础"
+本页讲什么: "参考文献列表第二页，承接上页继续按引用顺序罗列文献，包含 Efficient memory management（Kwon W, Li Z, Zhuang S 等，vLLM/PagedAttention 相关）等显存与推理服务优化论文，纯溯源页，无论证弧线。"
+关键文字: "[Kwon W, Li Z, Zhuang S, et al., Efficient memory management]"
+视觉骨架: "[文献条目纵向列表, 顶部小节标记]"
+资源ID列表: "[tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_69.asset.01, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_69.asset.02]"
+适合复用场景: "[答辩 deck 参考文献续页, 长引用清单的中间承接页]"
+不适合复用场景: "[需要断言标题的观点页, 含 benchmark 表格的结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 69: 参考文献（二）
+
+**核心论断**: 推理服务与显存优化工作构成技术方案文献基础
+
+## 本页讲什么
+参考文献列表第二页，承接上页继续按引用顺序罗列文献，包含 Efficient memory management（Kwon W, Li Z, Zhuang S 等，vLLM/PagedAttention 相关）等显存与推理服务优化论文，纯溯源页，无论证弧线。
+
+## 关键文字片段
+- Kwon W, Li Z, Zhuang S, et al.
+- Efficient memory management
+
+## 视觉骨架
+- 文献条目纵向列表
+- 顶部小节标记
+
+## 可复用到
+- 答辩 deck 参考文献续页
+- 长引用清单的中间承接页
+
+## 不适合复用的场景
+- 需要断言标题的观点页
+- 含 benchmark 表格的结果页

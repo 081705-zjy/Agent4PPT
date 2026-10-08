@@ -1,0 +1,30 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_41",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.07",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 41,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "新范式之二：混合深度 MoD",
+  "核心论断": "MoD 以深度稀疏——按需跳过部分层——动态分配每 token 算力",
+  "本页讲什么": "紧接 MoE 之后引出第二条稀疏化路线：Mixture of Depths。与 MoE 的宽度稀疏对偶，MoD 在深度维度上稀疏——通过路由让每个 token 只经过部分 Transformer 层，跳过冗余计算，实现按需的动态深度与算力分配。",
+  "关键文字": [
+    "New Model Paradigm — Mixture of Depths"
+  ],
+  "视觉骨架": [
+    "逐层路由跳过示意图",
+    "深度稀疏 token 路径图"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "MoD 模型范式介绍页",
+    "深度稀疏动态跳层讲解页"
+  ],
+  "不适合复用场景": [
+    "MoE 宽度稀疏主题页",
+    "含具体数值的曲线页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,638 @@
+{
+  "batch_index": 1,
+  "rules": [
+    {
+      "id": "toc_layout_numbered_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页·编号列表+当前项高亮",
+      "description": "TOC/议程页用蓝色外框包裹 3-5 个编号(1/2/3/4)条目,当前推进到的章节以深色/高亮竖条突出,其余灰化,标识全局路线图与当前位置。",
+      "evidence_signals": [
+        "视觉骨架 含 '蓝色外框' + '编号圆标' 或 '编号目录列表'",
+        "关键文字 起始为 'Contents' / '目录'",
+        "关键文字 含 '灰化' 或 '高亮' 描述",
+        "标题 常为 'Contents:...' 或 '目录:...'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 2,
+          "评价": "首次亮相 Contents,4 项编号列表,第 1 项 Opening 高亮,2-4 灰显"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 25,
+          "评价": "进入 dgSparse 章,当前项 2 高亮,其余灰化"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 57,
+          "评价": "推进到 Case study,当前项 3 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 88,
+          "评价": "推进到 Other works,当前项 4 高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "编号+当前项高亮让听众在长篇 tutorial 每次回到 TOC 都能瞬间定位'走到哪儿了',避免大纲页沦为装饰",
+      "fix_hint": "TOC 页给条目加编号 1-N,把当前章条目改为深色/加粗,其他条目灰化 30-50%",
+      "exceptions": []
+    },
+    {
+      "id": "paper_intro_layout_title_authors_venue",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文引入页·大字标题+作者单位+会议标注",
+      "description": "每篇本组论文 case 前用一张纯引入页:居中大字英文论文标题,下列作者与所属机构,底部或角标标注 'Accepted by <会议>' 或 'Submitted to <会议>',无正文论证。",
+      "evidence_signals": [
+        "视觉骨架 含 '大字论文标题' 或 '大号论文标题'",
+        "关键文字 含 'Accepted by' / 'Submitted to' + 会议缩写(DAC/MLSys/FPGA/'..'.)",
+        "关键文字 含 作者名 + 机构名(Tsinghua/UC/清华等)",
+        "本页无 Observation/Solution/Performance 等分析标签"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 30,
+          "评价": "标准论文引入:'Heuristic Adaptability ...' + 作者 + 清华/UCSB + Accepted by DAC'22"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 35,
+          "评价": "MLSys'23 论文引入:大字标题+清华/UCSD/上交+会议标注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 49,
+          "评价": "HyperGef 论文引入:标题+五机构+Accepted by MLSys'23+实习备注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 78,
+          "评价": "FlightLLM 论文引入:大字标题+作者机构+Accepted by FPGA'24"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 89,
+          "评价": "FlashDecoding++ 引入:标题+作者+Submitted to MLSys'24"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "论文引入页给听众明确信号'一个新 case 开始了',同时用会议 tag 建立权威背书;若混入正文会稀释切换信号并削弱信誉",
+      "fix_hint": "每个 case 前插一张仅含大字论文标题+作者机构+会议接收标注的引入页,不放 Observation/Solution 等分析内容",
+      "exceptions": [
+        "非论文型 case (工具/开源框架 demo) 可省略"
+      ]
+    },
+    {
+      "id": "role_tagged_analysis_slide",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "分析页·彩色角标标注论证角色",
+      "description": "正文分析页在标题栏或角落用彩色标签(蓝色 Challenge/紫色 Innovation/Solution/Key Ideas、Observation N、Performance/Experiment)标注本页在论证链中的角色,让听众瞬间辨认'这是问题/方案/结果'。",
+      "evidence_signals": [
+        "视觉骨架 含 'xxx 蓝色 tag' / 'xxx 紫色 tag' / 'xxx 标题栏' / 'xxx 编号标题块'",
+        "关键文字 含 'Challenge' / 'Observation N' / 'Solution N' / 'Innovation' / 'Performance' / 'Key Ideas' / 'Experiment' / 'Motivation' 之一",
+        "标题 常以 '[角色标签]:...' 或 '[角色标签] N:...' 起始"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 38,
+          "评价": "Observation 1 编号标题块 + 冗余加载红框结论"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 40,
+          "评价": "Solution 1 编号标题块 + Coded-CSR 公式"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 26,
+          "评价": "Innovation 紫色标签引出 dgSPARSE 论断"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 67,
+          "评价": "Challenge 蓝色 tag 展开访存受限问题"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 34,
+          "评价": "Performance 标题栏 + 1.26x-1.37x 加速比"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 3,
+          "原因": "路线图型总起页,不承担 Challenge/Solution 论证角色"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "彩色角标把每页在论证链中的角色显性化,长 tutorial 里避免听众迷失于'这是要点还是结论'",
+      "fix_hint": "在承担 Challenge/Solution/Result/Innovation 角色的正文页顶部加一个统一色系的角标,与标题并列",
+      "exceptions": [
+        "路线图/背景/宏观叙事页无明确论证角色",
+        "TOC / 论文引入 / 章节分隔页不需要角色标签"
+      ]
+    },
+    {
+      "id": "multi_column_parallel_panel",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "多列并列 panel·同主题多维度并置",
+      "description": "把同一命题沿 2-3 个维度展开时,采用等宽多列并列 panel,每列一个维度,顶部共用主题横条,便于视觉上快速平行对读。",
+      "evidence_signals": [
+        "视觉骨架 含 '3 列并列 panel' / '左右双面板' / '左右两栏对照' / '并列 panel'",
+        "同页内出现 2-3 个平级子标题(如 Big Data/Multimodal/Complex Tasks;Dense/Sparse;GPU/FPGA)",
+        "视觉骨架 含 '顶部主题横条' 或类似统一顶栏"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 4,
+          "评价": "Big Data / Multimodal / Complex Tasks 三列并列 panel"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 5,
+          "评价": "自动驾驶三主题分栏,数字承接上页"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 7,
+          "评价": "Deep Learning 与 LLM 左右双趋势面板 + 中央红框结论"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 58,
+          "评价": "AI 1.0 vs 2.0 左右两栏对照三层分层图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 87,
+          "评价": "GPU vs FPGA 上下双卡对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.18,
+      "enforcement_level": "soft",
+      "rationale": "平行 panel 强制视觉对称,让'多维同题'的对比结构不必用文字说,读者一眼扫描即可比较维度差异",
+      "fix_hint": "同主题 2-3 维度展开时改用等宽 N 列 panel,每列共享 y 轴层级和顶栏,不要用长文本罗列",
+      "exceptions": [
+        "维度间存在时序/因果 (应改为流程图)",
+        "只有单一维度或非并列关系"
+      ]
+    },
+    {
+      "id": "framework_stepwise_reveal_with_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "流程图·逐步高亮+其他淡出",
+      "description": "多阶段流程(如 Sparsification→Compilation→Architecture)在连续多页复用同一整体框架图,每页高亮当前讨论的阶段(红框/彩色),其他阶段淡出灰化,视觉上形成'同一图逐步剥洋葱'。",
+      "evidence_signals": [
+        "相邻多页共享同一视觉骨架关键词 (如 '算法-编译-架构三层框')",
+        "视觉骨架 含 'xxx 高亮' + 'xxx 淡出' / '灰化回顾标题'",
+        "关键文字 在多页复用相同词汇但每页强调项不同"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 10,
+          "评价": "三段式稀疏计算流程第一幕,Sparsification 红框高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 11,
+          "评价": "承接上页,Sparsification 淡出、Compilation 红框高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 12,
+          "评价": "补齐第三段,Architecture 红圈高亮,前两段淡出"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 13,
+          "评价": "算法-编译-架构三层框中 Sparsification 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 39,
+          "评价": "Observation 1 灰化回顾标题,进一步深入压缩空间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.14,
+      "enforcement_level": "soft",
+      "rationale": "共享框架+焦点高亮让读者始终知道'当前在整体的哪个位置',避免每页从零解释上下文,是多段式框架讲解的关键手法",
+      "fix_hint": "连续多页讲同一多阶段流程时复用同一底图,每页只切换 focus 项高亮色和其他项透明度,不要重画",
+      "exceptions": [
+        "单页独立说明的流程",
+        "流程阶段之间无强顺序关系"
+      ]
+    },
+    {
+      "id": "assertion_banner_top_of_slide",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "顶部断言横幅·核心论断置于蓝框条",
+      "description": "关键论证页把本页的核心论断(判断句)独立成一条顶部蓝色/深色横幅,与下方图示/证据分离;下方留白或图区承担'为什么'的展开。",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部主张横幅框' / '顶部论断文本框' / '断言式蓝框标题' / '中央红框结论标语'",
+        "关键文字 首条为完整判断句(含系动词/结论词'is/becomes/是/成为/降至')",
+        "标题下方紧跟一个视觉突出的文本条,而非直接进入图表"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 8,
+          "评价": "红框结论 'Sparse computing becomes a new way to improve AI computility' 置顶"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 22,
+          "评价": "顶部主张横幅 'AI is the foundation of the productivity in the 4th Industrial Revolution'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 82,
+          "评价": "Solution 1 断言式蓝框标题独占顶部"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 84,
+          "评价": "Solution 2 断言式蓝框标题独占顶部"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 86,
+          "评价": "U280 FPGA 断言横幅 + 下方图表分区"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "把'该记住的一句话'从图表里剥离到顶部横幅,读者不需要在图里找结论,同时演讲者念稿也有清晰锚点",
+      "fix_hint": "承担关键论断的页把结论从图注/正文里抽出来,做成顶部横向色条,单独一行完整判断句",
+      "exceptions": [
+        "流程/框架图页 (论断由图本身承担)",
+        "论文引入/TOC/致谢页"
+      ]
+    },
+    {
+      "id": "ending_thanks_layout_with_sponsors",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "封底致谢·THANKS+机构+主题回顾+联系方式",
+      "description": "全 deck 封底页含四要素:大字 THANKS(常竖排或角标)、合作/赞助机构 logo 网格、团队成员致谢文字、报告主题回顾大字+讲者联系方式(邮箱/日期)。",
+      "evidence_signals": [
+        "视觉骨架 含 'THANKS banner' 或 'Sponsors'",
+        "关键文字 含 'Thanks' + 团队成员名列表",
+        "关键文字 含 讲者邮箱(@) + 日期",
+        "视觉骨架 含 'logo 网格' 或 '机构 + 赞助方 logo'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 93,
+          "评价": "青色 THANKS 竖排 banner + Sponsors logo + SJTU/清华成员致谢 + 主题回顾 + Guohao Dai 邮箱"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封底同时完成'情感收束(致谢)'和'商务收束(联系方式)',缺任一都会让长 tutorial 收尾突兀或让听众不知如何后续联络",
+      "fix_hint": "封底页加 THANKS 大字 + 合作/赞助 logo 网格 + 团队致谢文字块 + 讲者姓名邮箱与日期,四要素齐备",
+      "exceptions": [
+        "内部/小规模分享 (可省 Sponsors 网格)"
+      ]
+    },
+    {
+      "id": "chapter_divider_bare_title",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节分隔页·仅标题+空正文框",
+      "description": "章节切换处用一张仅含大字标题(如 Challenges / Solution N / Background)、其余留白或空外框的分隔页,内容由讲者口述或后续页展开。",
+      "evidence_signals": [
+        "视觉骨架 含 '空正文外框' 或 '标题+蓝色分隔条'",
+        "关键文字 只有 1-3 词(章节名),无判断句无数字",
+        "本页无 Observation/Solution 具体展开"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 81,
+          "评价": "仅标题 'Challenges' + 空正文外框,起过渡作用"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 82,
+          "评价": "Solution 1 断言式标题下正文外框留白,靠下一页展开"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "章节间的呼吸页给听众一个'切换心智'的时机,避免密度过高导致注意力耗尽;也为讲者留下现场口述的展开空间",
+      "fix_hint": "章节切换处插入仅含大字章节名的过渡页,不要在这页塞入子内容",
+      "exceptions": [
+        "deck 较短 (<20 页) 章节分隔可省"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_with_colon",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·主题+冒号/破折号补语,不用完整动宾句",
+      "description": "slide 标题倾向 '<主题>:<补语>' 或 '<主题>·<补语>' 或 '<主题>(一/二):<补语>' 名词短句结构,冒号前为定位、冒号后为具体主张,不用 '介绍 X' / '本节讲 X' 类动宾句。",
+      "evidence_signals": [
+        "title 含 ':' / '·' / '(一)' / '(二)' 等分隔符",
+        "title 不以 '介绍' / '本节' / '我们将' 起始",
+        "title 长度 ≤ 20 字/词, 由两部分组成"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 6,
+          "评价": "'LLM 摩尔定律:模型规模每年 10 倍' 前定位+后主张"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 10,
+          "评价": "'稀疏计算流程(一):稀疏化 GEMM→SpMM' 编号+补语"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 32,
+          "评价": "'方案:启发式自适应——为稀疏定制算法空间' 冒号分层"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 47,
+          "评价": "'端到端实验:相较 TorchSparse/SpConv 的加速' 主题+对象"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 86,
+          "评价": "'Result:U280 FPGA 能效 6.0×、成本 1.8×' 结论型补语"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 3,
+          "原因": "'AI 发展路线图:三时代与 Model/Data/Task' 虽有冒号但补语偏松散"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "冒号左定位、右主张的结构强制标题同时承担'导航'和'钩子'两重功能,读者扫标题即可预判本页要点,不需读到 claim 才知道",
+      "fix_hint": "把 title 改成 '<主题词>:<10 字以内主张>' 结构,主张部分尽量含数字或判断词",
+      "exceptions": [
+        "纯章节分隔页 (只需章节名)",
+        "论文引入页 (直接用论文原标题)",
+        "TOC 页 (标题为 Contents)"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_with_specific_numbers",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断·判断句+具体数字/倍数",
+      "description": "核心论断为完整判断句,并尽可能内嵌具体数字(百分比/倍数/量级/FPS),不用'性能提升明显'类模糊表述;数字承担'凭什么'的证据角色。",
+      "evidence_signals": [
+        "核心论断 含 数字 + 单位或 'x' 倍数 (如 '1.26x', '57%', 'GFLOPs', '30 FPS', 'billion')",
+        "核心论断 含 系动词或结论动词 ('是' / '成为' / '达' / '降至' / '提升到')",
+        "核心论断 不含 '较大' / '显著' / '大幅' 等无量词"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 6,
+          "评价": "'2018-2022 模型参数暴增 5 个数量级,每年约 10 倍增长'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 34,
+          "评价": "'启发式自适应较最佳 cuSPARSE 方案提速 1.26x–1.37x'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 38,
+          "评价": "'高达 79.97% 映射为空造成冗余加载' 具体百分比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 55,
+          "评价": "'HyperGef 端到端 2.25-3.39x、算子级 3.31x 加速'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 87,
+          "评价": "'FlightLLM(FPGA)对比 GPU 吞吐/成本 1.8×、吞吐/功耗 6.0×'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 62,
+          "原因": "'An LLM is mainly composed of attention layers and linear (Liner) layers' 纯背景描述,无数字"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.72,
+      "enforcement_level": "soft",
+      "rationale": "数字化的判断句是学术/工业报告的信任基础;模糊表述让论断退化为口号,尤其在需 baseline 对比的加速/能效话题上",
+      "fix_hint": "把每页 claim 改写成 '<方案> 在 <对象> 上 <降/提升> <具体数字> 至 <baseline>' 的模板",
+      "exceptions": [
+        "纯背景/概念介绍页 (数字未采集或无意义)",
+        "章节分隔/致谢/TOC 页"
+      ]
+    },
+    {
+      "id": "paper_reference_with_venue_tag",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文引用·带会议缩写+年份标签",
+      "description": "引用本组或他人论文时统一用 '<会议缩写>'YY' 格式 (DAC'22 / MLSys'23 / FPGA'24) 或 'Accepted by <venue>',不使用完整会议名或裸论文标题。",
+      "evidence_signals": [
+        "关键文字 含 类似 'DAC'22' / 'MLSys'23' / 'FPGA'24' / 'SC'20' 缩写",
+        "关键文字 含 'Accepted by' 或 'Submitted to'",
+        "会议名与年份间用单引号或空格"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 30,
+          "评价": "Accepted by DAC'22"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 35,
+          "评价": "Accepted by MLSys'23"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 49,
+          "评价": "Accepted by MLSys'23"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 78,
+          "评价": "Accepted by FPGA'24"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 89,
+          "评价": "Submitted to MLSys'24"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "统一的会议缩写+年份让同行瞬间校准论文档次与新旧,'DAC'22' 比全称更信息密集,且业内已是通行速记",
+      "fix_hint": "把会议全称替换为 '<缩写>'YY' 格式,不确定审稿状态时用 'Submitted to',已接收用 'Accepted by'",
+      "exceptions": [
+        "非顶会/工作坊/自我介绍页可用简称+全称一次"
+      ]
+    },
+    {
+      "id": "progressive_step_index_in_title",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "多步展开·标题带阶段编号(一/二/三 或 1/2/3)",
+      "description": "同一议题拆分多页展开时,标题统一用 '<主题>(一)' / '<主题>(二)' 或 'Observation 1/2/3','Solution 1/2/3' 标注阶段,让阅读者知道'这是第几步、还有几步'。",
+      "evidence_signals": [
+        "title 含 '(一)' / '(二)' / '(三)' / '1' / '2' / '3' 编号",
+        "相邻多页标题共享主题词, 仅编号递增",
+        "关键文字 含 'Observation N' / 'Solution N' / 'Challenge N' 的显式序号"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 10,
+          "评价": "'稀疏计算流程(一):稀疏化 GEMM→SpMM'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 13,
+          "评价": "'稀疏计算思想(一):算法层降低计算量'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 38,
+          "评价": "'Observation 1:无效映射的冗余加载'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 44,
+          "评价": "'Observation 3:静态数据流面对输入动态性损失性能'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 52,
+          "评价": "'Solution 1:Edge-split 负载均衡划分'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "显式编号让长展开的分析(如三个 Observation)可预期终点,减少'还有多少页要听'的疲劳感,也让讲者随时能返回上一步索引",
+      "fix_hint": "多页展开同议题时给每页 title 加 '(N)' 或 '<角色> N' 编号,并保持主题词一致",
+      "exceptions": [
+        "单页独立论证",
+        "非顺序展开的并列 case"
+      ]
+    },
+    {
+      "id": "structured_role_labels_across_deck",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "全 deck 复用一套论证角色词汇",
+      "description": "整篇 deck 在正文页统一沿用一套论证角色关键词 (Challenge / Observation / Solution / Innovation / Key Ideas / Performance / Experiment / Motivation / Background / Summary),角色词汇跨章节复用,不临时新造标签。",
+      "evidence_signals": [
+        "同 deck 内 ≥ 3 页出现同一角色词 (Challenge / Solution / Observation / Performance 等)",
+        "标题或关键文字首词落在有限词汇集里",
+        "无一次性/自造角色标签 (如 '本章亮点' / '重要发现')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 31,
+          "评价": "Challenge 首现,标准词汇"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 38,
+          "评价": "Observation 1,与后续 42/44 词汇一致"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 40,
+          "评价": "Solution 1,与 43/46/52/54/82/84 一致"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 47,
+          "评价": "Performance 词汇复用于 34/55/56/86/87"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "slide_index": 77,
+          "评价": "Summary 收尾复用 Sparsification/Compilation/Architecture 三词"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "一套稳定的角色词汇让长报告呈现出'结构骨架',跨 case 复用节奏,听众第 3 个 case 时已能预判'现在到 Observation 了'",
+      "fix_hint": "开篇约定一套 5-8 个论证角色词, 全 deck 只用这套词汇, 不临时造 '亮点' '发现' 等新标签",
+      "exceptions": [
+        "致谢/TOC/引入页 (不承担论证)",
+        "跨 deck 复用的通用图页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅含 1 个 tutorial 型 deck(93 页), visual: 8 rules, authoring: 5 rules; 因 deck 单一, hit_rate 均基于本 deck 内跨页复用估算; 章节分隔页型式与断言横幅型式仅覆盖少数页, enforcement_level 保守设 soft",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "visual": 8,
+      "authoring": 5
+    }
+  }
+}

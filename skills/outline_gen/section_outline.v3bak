@@ -1,0 +1,146 @@
+# Section Outline Skill — Stage 1: 章级 slide stubs
+
+你正在为 **单个 chapter** 设计页节奏 stub（不写每页详细 claim/key_points，那是 Stage 2 的事）。
+
+OUTLINE 分两阶段, 这是 Stage 1：把 brief.chapter_plan[i] 的 page_archetypes 节奏落到具体的
+slide 序列上，每页只填 `target_role / archetype / archetype_placement / target_title / page_purpose_hint`。
+Stage 2 会拿你输出的 stubs 再补 target_claim / key_points / needed_evidence / anchor_terms /
+source_resource_ids / gap_research_hint / claim_status_link。
+
+**为什么分两阶段**: brief 的 `chapter_plan[i].page_archetypes` 已经给了"该章 N 页是什么 archetype
+节奏"的设计。Stage 1 把这个节奏**忠实落地**（不允许偏离 archetype 节奏, 除非该 chapter
+`may_be_revised_by_outline=true` 且确有必要拆/合）；Stage 2 才进入每页细节填写。
+
+## Inputs
+
+```json
+{
+  "chapter": {
+    "section_index": 5,
+    "chapter": "代表成果一: LLM 推理加速 ...",
+    "section_role": "method",
+    "purpose": "...",
+    "expected_pages_indicative": 11,
+    "may_be_revised_by_outline": true,
+    "page_archetypes": [
+      {"archetype": "single_framework_recall_5layer_diagram", "count": 1, "placement": "章首单页回扣范式图"},
+      {"archetype": "single_paper_title_authors_only", "count": 4, "placement": "每代表作扉页"},
+      ...
+    ],
+    "delivery": {"must_start_with": "...", "must_end_with": "..."},
+    "key_outcome": "...",
+    "claims_to_make": ["SpeContext 24.89× 吞吐", ...],
+    "claims_to_setup_for_later": ["..."],
+    "matched_morphology_pattern": "method_works_panorama_paper_pair",
+    "materials": ["resource_id_1", ...],
+    "scope_out": ["..."],
+    "needs_gap_research": false
+  },
+  "materials_candidates": [
+    {"resource_id": "...", "priority": 0.95, "use_in_chapters": [5, 6], "role": "main_evidence"},
+    ...
+  ],
+  "logic_knowledge_for_this_chapter": "<.md body of matched_morphology_pattern, 用于 archetype 实例化参考>",
+  "reference_deck_chapter_samples": [
+    {
+      "deck_id": "...",
+      "lesson_taken": "method 章按 4 工作切分的节奏",
+      "section_overview": "<该 deck 对应章节的 section.md 摘要>"
+    }
+  ],
+  "global_position": {
+    "section_index": 5,
+    "is_first_chapter": false,
+    "is_last_chapter": false,
+    "chapter_offset_in_deck": 4  // 已有几章在它之前
+  }
+}
+```
+
+## Output: chapter stubs JSON
+
+```json
+{
+  "section_index": 5,
+  "chapter": "代表成果一: LLM 推理加速 ...",
+  "stub_count": 11,
+  "may_be_revised_by_outline": true,
+  "slide_stubs": [
+    {
+      "slide_index_within_chapter": 1,
+      "target_role": "method",
+      "archetype": "single_framework_recall_5layer_diagram",
+      "archetype_placement": "章首单页回扣范式图",
+      "target_title": "范式坐标 · LLM 推理簇",
+      "page_purpose_hint": "回扣 6 层框架并高亮本章覆盖的 LLM 推理簇"
+    },
+    {
+      "slide_index_within_chapter": 2,
+      "target_role": "method",
+      "archetype": "single_paper_title_authors_only",
+      "archetype_placement": "每代表作扉页",
+      "target_title": "SpeContext · 长上下文推理",
+      "page_purpose_hint": "代表作 1/4 扉页 — 立标题 + 一句话定位"
+    },
+    ...
+  ]
+}
+```
+
+## Field semantics
+
+- **`section_index`**: 与 brief.chapter_plan[i].section_index 一致 (Stage 2 据此匹配)
+- **`stub_count`**: = len(slide_stubs); 必须 ≤ expected_pages_indicative × (may_be_revised ? 1.3 : 1.0)
+  且 ≥ expected_pages_indicative × (may_be_revised ? 0.7 : 1.0)
+- **`slide_index_within_chapter`**: 该章内 1-based 序号 (Stage 2 后合并会重编为绝对 slide_index)
+- **`archetype`**: 必填, 必须取自 chapter.page_archetypes[].archetype set
+- **`archetype_placement`**: 必填, 从对应 archetype.placement 抄写 (不要改写)
+- **`target_role`**: 13 种 enum (cover/agenda/section_divider/motivation/problem/method/comparison/
+  result/engineering/future/closing/references/content); 由 archetype 推断
+- **`target_title`**: 短功能标题 (≤14 字 zh / ≤7 words en), **不能是 claim 句**
+- **`page_purpose_hint`**: ≤40 字, 描述该页在 archetype 节奏中的具体角色 (Stage 2 会展开成
+  完整 page_purpose)
+
+## Hard rules
+
+### archetype 节奏忠实落地
+- chapter.page_archetypes 给了每个 archetype 的 count, 你输出的 slide_stubs 里每个 archetype 出现
+  次数必须 = count (除非 may_be_revised=true 且确有必要合并/拆分)
+- archetype 的 placement 字段语义化提示了位置 ("章首单页" / "每代表作扉页" / "章末数字小结" 等),
+  你的 slide_stubs 顺序必须符合 placement 的相对位置
+- **禁止瞎编 archetype** — 只能用 chapter.page_archetypes 提供的, 不能引入其他
+
+### 页数硬约束
+- `may_be_revised_by_outline=false` 时: stub_count = expected_pages_indicative (严格相等)
+- `may_be_revised_by_outline=true` 时: stub_count ∈ [0.7×, 1.3×] expected_pages_indicative
+- 偏离时**优先合并相邻同 archetype**, 不要砍掉关键 archetype (如 章末数字小结 / 章首回扣)
+
+### target_title 不抢 claim
+- ✅ "SpeContext · 长上下文推理", "范式坐标 · LLM 推理簇"
+- ❌ "SpeContext 在 A100 上 24.89× 吞吐", "本章 4 个代表作均超 2× 加速"
+- claim 是 Stage 2 的事
+
+### delivery.must_start_with / must_end_with 在 page_purpose_hint 中体现
+- 首 stub 的 page_purpose_hint 应呼应 delivery.must_start_with
+- 末 stub 的 page_purpose_hint 应呼应 delivery.must_end_with
+- (Stage 2 会把这些翻译成具体 target_claim)
+
+### 不消费的字段（留给 Stage 2）
+你**不要**填: target_claim / key_points / needed_evidence / anchor_terms /
+source_resource_ids / gap_research_hint / claim_status_link
+这些是 Stage 2 (slide_detail.md) 的输出, 你填了反而干扰下游。
+
+## 参考输入字段使用指引
+
+- `logic_knowledge_for_this_chapter`: 该章 matched_morphology_pattern 对应的 narrative .md,
+  里面有 archetype 实例化的样板和反例。Stage 1 你只用它**校验 archetype 节奏是否合理**,
+  不写到输出
+- `reference_deck_chapter_samples`: top-3 参考 deck 中相似章节的 section overview, 对比它们的
+  archetype 节奏借鉴, **不要 verbatim 复制其 title**
+- `materials_candidates`: 这一章可用的资源池, Stage 2 才会真正分配到 slide; Stage 1 你不用碰
+
+## Output strict rules
+
+- Output strict JSON only — no markdown fences, no prose
+- 顶层只有 `section_index / chapter / stub_count / may_be_revised_by_outline / slide_stubs`
+- slide_stubs 数组顺序即页序

@@ -1,0 +1,47 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23",
+  "所属章节": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "页序号": 23,
+  "源文件": "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx",
+  "页面角色": "content_candidate",
+  "标题": "不同过滤率下的 K 值结果表",
+  "核心论断": "各过滤率档位下检索效果随 K 稳定表现",
+  "本页讲什么": "本页以数据表列出 0.1%、1.0%、10.0% 等过滤率档位与 K 值组合下的检索结果，用密集数据全面佐证有效性结论，让听众看到方法在不同过滤强度下均成立。",
+  "关键文字": [
+    "K",
+    "0.1%",
+    "1.0%",
+    "10.0%"
+  ],
+  "视觉骨架": [
+    "过滤率×K 值数据表",
+    "多档位结果矩阵"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.01",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.02",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.03",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.04",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.05",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.06",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.07",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.08",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.09",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.10",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.11",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.12",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_23.asset.13"
+  ],
+  "适合复用场景": [
+    "检索实验的多参数结果表页",
+    "过滤率消融数据页"
+  ],
+  "不适合复用场景": [
+    "单句结论断言页",
+    "概念示意图页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

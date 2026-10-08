@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_17",
+  "所属章节": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "页序号": 17,
+  "源文件": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "蒸馏 LM 架构（组件一）",
+  "核心论断": "蒸馏语言模型作为 SpeContext 第一组件承担轻量推理",
+  "本页讲什么": "本页展示 SpeContext 三大组件中第一个——蒸馏语言模型（Distilled LM）的架构骨架，用带 FFN、Layer、Output 的模块堆叠图刻画其网络结构，为后续头级检索与稀疏 KV 缓存建立轻量草稿模型基础。",
+  "关键文字": [
+    "Distilled LM Architecture",
+    "FFN / Layer / Output 模块堆叠"
+  ],
+  "视觉骨架": [
+    "蒸馏 LM 分层架构框图",
+    "FFN/Layer 模块堆叠示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_17.asset.01",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_17.asset.02"
+  ],
+  "适合复用场景": [
+    "长上下文推理蒸馏模型架构页",
+    "草稿模型 method 章节组件介绍"
+  ],
+  "不适合复用场景": [
+    "纯数据结果对比页",
+    "benchmark 表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

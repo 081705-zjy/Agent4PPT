@@ -1,0 +1,52 @@
+---
+章节标识: tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08
+所属deck: tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716
+章节序号: 8
+章节角色: case_study
+标题: 应用三：大模型稀疏推理
+页码范围: [58, 77]
+页数: 20
+页ID列表: [slide_58, slide_59, slide_60, slide_61, slide_62, slide_63, slide_64, slide_65, slide_66, slide_67, slide_68, slide_69, slide_70, slide_71, slide_72, slide_73, slide_74, slide_75, slide_76, slide_77]
+章节叙事: 作为第三个应用案例，把前述稀疏思想落到大模型推理：走「时代背景→LLM 访存痛点→稀疏方法→编译映射→硬件架构→实验」完整闭环，论证稀疏加速对 LLM 推理的价值
+页间关系: ["slide 58 → slide 59: 由「From AI 1.0」引子切入 AI 1.0 时代的稀疏性", "slide 59 → slide 60: 由 AI 1.0 稀疏性对照过渡到 AI 2.0 时代稀疏性", "slide 60 → slide 61: 由时代对比收敛到 2022-2024 稀疏计算进展脉络", "slide 61 → slide 62: 由整体进展聚焦到 LLM，引入 attention 计算流", "slide 62 → slide 63: 由 LLM 结构引出训练成本远高于小模型的痛点", "slide 63 → slide 64: 由成本痛点进入 LLM 稀疏方法首条", "slide 64 → slide 65: 稀疏方法逐条承接展开", "slide 65 → slide 66: 稀疏方法继续枚举展开", "slide 66 → slide 67: 由稀疏方法转入编译视角，点出 attention 访存受限", "slide 67 → slide 68: 由访存受限引出分块后访存量分析", "slide 68 → slide 69: 由分块访存过渡到算子融合 Fused", "slide 69 → slide 70: 由融合引出基于 M3 建模的自适应稀疏数据流", "slide 70 → slide 71: 由自适应数据流落到稀疏线性层实例", "slide 71 → slide 72: 由线性层实例归纳出 SpMM/SDDMM 主导算子", "slide 72 → slide 73: 由稀疏算子需求引出可配置多路复用器", "slide 73 → slide 74: 由可配置单元进入硬件架构行主序存储", "slide 74 → slide 75: 硬件架构继续展开到 Tensor 单元", "slide 75 → slide 76: 由硬件架构过渡到实验结果", "slide 76 → slide 77: 由实验结果收束到本章总结"]
+适合复用场景: [论证 LLM 稀疏推理价值的 case_study 章节, 需展示「痛点→方法→编译→硬件→实验」全链路, 面向 attention 访存受限优化的技术分享]
+不适合复用场景: [研究主题与大模型/attention 无关时, 只需概念科普、不涉编译硬件细节时, "2022-2024 进展数据已过时"]
+在deck中的位置: 第 8 章 case_study，前接点云/超图 GNN 应用，后接 FPGA 加速器工作
+分析状态: claude-opus-4-8
+---
+
+# section 8: 应用三：大模型稀疏推理
+
+## 在 deck 中的位置
+第 8 章 case_study，前接点云/超图 GNN 应用，后接 FPGA 加速器工作
+
+## 章内 slide 间的关系
+- slide 58 → slide 59: 由「From AI 1.0」引子切入 AI 1.0 时代的稀疏性
+- slide 59 → slide 60: 由 AI 1.0 稀疏性对照过渡到 AI 2.0 时代稀疏性
+- slide 60 → slide 61: 由时代对比收敛到 2022-2024 稀疏计算进展脉络
+- slide 61 → slide 62: 由整体进展聚焦到 LLM，引入 attention 计算流
+- slide 62 → slide 63: 由 LLM 结构引出训练成本远高于小模型的痛点
+- slide 63 → slide 64: 由成本痛点进入 LLM 稀疏方法首条
+- slide 64 → slide 65: 稀疏方法逐条承接展开
+- slide 65 → slide 66: 稀疏方法继续枚举展开
+- slide 66 → slide 67: 由稀疏方法转入编译视角，点出 attention 访存受限
+- slide 67 → slide 68: 由访存受限引出分块后访存量分析
+- slide 68 → slide 69: 由分块访存过渡到算子融合 Fused
+- slide 69 → slide 70: 由融合引出基于 M3 建模的自适应稀疏数据流
+- slide 70 → slide 71: 由自适应数据流落到稀疏线性层实例
+- slide 71 → slide 72: 由线性层实例归纳出 SpMM/SDDMM 主导算子
+- slide 72 → slide 73: 由稀疏算子需求引出可配置多路复用器
+- slide 73 → slide 74: 由可配置单元进入硬件架构行主序存储
+- slide 74 → slide 75: 硬件架构继续展开到 Tensor 单元
+- slide 75 → slide 76: 由硬件架构过渡到实验结果
+- slide 76 → slide 77: 由实验结果收束到本章总结
+
+## 整章可复用的场景
+- 论证 LLM 稀疏推理价值的 case_study 章节
+- 需展示「痛点→方法→编译→硬件→实验」全链路
+- 面向 attention 访存受限优化的技术分享
+
+## 不适合复用的场景
+- 研究主题与大模型/attention 无关时
+- 只需概念科普、不涉编译硬件细节时
+- 2022-2024 进展数据已过时

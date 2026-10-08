@@ -1,0 +1,454 @@
+{
+  "batch_index": 27,
+  "patterns": [
+    {
+      "id": "background_app_paradigm_essence_metric_gap_funnel",
+      "title": "背景·应用赋能→范式转变→本质定义→度量单位→供需差距漏斗",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究背景",
+          "端侧",
+          "算力瓶颈",
+          "推理",
+          "度量"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "chapter_transition_toc_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前研究背景章"
+        },
+        {
+          "archetype": "domain_application_landscape",
+          "count": 1,
+          "position": "start",
+          "purpose": "以云侧/端侧应用图标群铺陈大模型赋能下游应用"
+        },
+        {
+          "archetype": "paradigm_shift_with_quote_backing",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以红色标注+权威英文引言(如黄仁勋GTC)论证范式转向(Scaling Law→推理扩展)"
+        },
+        {
+          "archetype": "essence_definition_with_quote_backing",
+          "count": 1,
+          "position": "middle",
+          "purpose": "抛出技术本质命题(如AI本质=Token生成)+权威英文引言(如Ilya Sutskever)佐证"
+        },
+        {
+          "archetype": "metric_unit_analogy_bridge",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用跨领域类比(如通信2G→5G/dBm)引出度量单位(如Tokens/s),再以权威引言背书"
+        },
+        {
+          "archetype": "supply_demand_gap_multi_tier_devices",
+          "count": 1,
+          "position": "end",
+          "purpose": "章末以多档设备(手机/笔记本/单机/云侧)供给vs需求数字对比,坐实核心痛点(如1~2个数量级差距)"
+        }
+      ],
+      "applicable_summary": "开题/学术汇报型背景章的漏斗式论证: 目录→应用赋能场景→范式转变(配权威引言)→技术本质定义(配权威引言)→跨领域类比引出度量单位(配权威引言)→多档设备供需对比坐实瓶颈, 五步层层压强"
+    },
+    {
+      "id": "framework_capability_ladder_cross_layer_loop_challenge_mapping",
+      "title": "框架·能力阶梯→跨层次循环框图→三挑战映射研究方向",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "page_count_range": [
+          7,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "跨层次",
+          "研究思路",
+          "框架",
+          "挑战",
+          "研究方向"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "chapter_transition_toc_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前研究思路章"
+        },
+        {
+          "archetype": "capability_evolution_ladder",
+          "count": 1,
+          "position": "start",
+          "purpose": "以上升阶梯图铺陈领域(如AI)世代演进,逐级迈向终极目标(如AGI)"
+        },
+        {
+          "archetype": "cross_layer_loop_framework_diagram",
+          "count": "2-3",
+          "position": "middle",
+          "purpose": "同一「应用层/模型层/系统层」三层循环框架图,每页切换度量指标(Tokens/s、Tasks/s等)并映射不同研究编号"
+        },
+        {
+          "archetype": "challenge_evidence_with_research_tag",
+          "count": "3",
+          "position": "middle",
+          "purpose": "每挑战一页: 用时间线/对比表/流程图给量化证据,底部横幅标注「挑战N」并对应研究编号"
+        },
+        {
+          "archetype": "cross_layer_thesis_statement",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "正式提出「跨层次协同优化」核心论断, 统领后续方法章"
+        },
+        {
+          "archetype": "next_chapter_motivation_three_panel",
+          "count": 1,
+          "position": "end",
+          "purpose": "三栏并列量化引出下一研究内容的动机(实时性+延迟+开销数字)"
+        }
+      ],
+      "applicable_summary": "开题/科研汇报框架章: 目录→能力演进阶梯→跨层次循环框架图(同模板切换度量指标)→3个挑战逐一以量化证据映射到研究1/2/3→跨层次协同论断→下章动机三栏, 把方法章的多个研究内容统一到一个协同框架下"
+    },
+    {
+      "id": "method_shared_structure_map_progressive_highlight_focus",
+      "title": "方法·共享结构总览图+逐页高亮聚焦子挑战",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "Transformer",
+          "结构拆解",
+          "多挑战",
+          "优化点定位"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "chapter_transition_toc_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前研究内容章"
+        },
+        {
+          "archetype": "field_scale_explosion_timeline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以年份散点图铺陈模型规模/算力爆炸,底部抛出研究问题"
+        },
+        {
+          "archetype": "structural_overview_with_challenge_list",
+          "count": "1-3",
+          "position": "middle",
+          "purpose": "同一结构总览图(如Transformer单层)在多页重复出现,底部三挑战列表每页高亮不同项,视觉聚焦当前优化点"
+        },
+        {
+          "archetype": "operator_state_of_art_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以「引擎—机构—实现方式」三列表格盘点算子现状,红色高亮主流方案"
+        },
+        {
+          "archetype": "core_problem_side_by_side_comparison",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以传统方法vs新方法左右对照+公式示意,定位核心开销问题(如同步更新占15~40%)"
+        },
+        {
+          "archetype": "dual_method_side_by_side_with_validation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "并列展示方法一(去开销)+方法二(异步并行),配数值分布/流水示意验证精度无损"
+        },
+        {
+          "archetype": "speedup_stacked_bar_experiment",
+          "count": 1,
+          "position": "end",
+          "purpose": "以递增柱状图+基线对比给出加速比结果,附实验设置脚注"
+        }
+      ],
+      "applicable_summary": "系统/算子层优化方法章: 目录→规模爆炸背景→共享结构总览图逐页高亮不同挑战→算子现状表→核心问题左右对照→双方法并列+精度验证→加速比柱状图,以结构图复用+高亮切换承载多挑战叙事"
+    },
+    {
+      "id": "method_dual_subproblem_template_reuse_transition",
+      "title": "方法·双子问题递进+瓶颈模板复用过渡",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "双瓶颈",
+          "子问题",
+          "已完成",
+          "拟开展"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "long_output_token_scale_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以对比表引出长思维链/长输出的token量级问题(如4.7x膨胀)"
+        },
+        {
+          "archetype": "dual_bottleneck_complexity_split",
+          "count": "2",
+          "position": "start",
+          "purpose": "同一「计算+显存双瓶颈」模板重复2次(动画递进版),给复杂度公式并把研究拆为子问题1、子问题2"
+        },
+        {
+          "archetype": "subproblem_background_hardware_evidence",
+          "count": 1,
+          "position": "middle",
+          "purpose": "子问题1(已完成)背景: 以显存/计算量增长示意+具体硬件容量(如4090 24GB)证瓶颈"
+        },
+        {
+          "archetype": "innovation_method_flow_with_key_insight",
+          "count": "2",
+          "position": "middle",
+          "purpose": "已完成方法: 一页给创新方法流程图+核心洞察一句话结论,一页展开具体机制"
+        },
+        {
+          "archetype": "experiment_result_scenario_targeted",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以特定场景(如低端端侧GPU资源受限)+大加速数字给已完成方法实验结果"
+        },
+        {
+          "archetype": "bottleneck_template_reuse_switch_subproblem",
+          "count": 1,
+          "position": "middle",
+          "purpose": "复用双瓶颈模板作过渡, 把子问题1置灰、子问题2高亮, 标示切换到拟开展研究"
+        },
+        {
+          "archetype": "subproblem_key_question_short_bullet",
+          "count": 1,
+          "position": "middle",
+          "purpose": "子问题2(拟开展)关键问题: 极简bullet直陈缺失/瓶颈(如缺少因果链条)"
+        },
+        {
+          "archetype": "planned_method_diagram_with_adaptive_logic",
+          "count": 1,
+          "position": "middle",
+          "purpose": "拟开展方法: 以流程图展开自适应/级联判定机制"
+        },
+        {
+          "archetype": "before_after_end_to_end_metric_table",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "小结页: 优化前后端到端延迟/吞吐/循环次数对比表"
+        },
+        {
+          "archetype": "publication_list_with_venue_ccf_tag",
+          "count": 1,
+          "position": "end",
+          "purpose": "以「会议+CCF等级」标签列出已发表/在投论文清单"
+        }
+      ],
+      "applicable_summary": "含「已完成+拟开展」两条子线的研究内容章: 长输出问题引入→双瓶颈拆解模板→子问题1完整闭环(背景/方法/实验)→模板复用切换过渡→子问题2「关键问题+拟开展方法」双页→端到端小结→发表清单收尾"
+    },
+    {
+      "id": "method_agent_time_decomposition_triple_subproblem_pairs",
+      "title": "方法·公式驱动的三子问题拆解+问题/拟开展双页对",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "智能体",
+          "记忆",
+          "工具",
+          "规划",
+          "冗余",
+          "总耗时"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "workflow_redundancy_overview_with_paradigm_table",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首以工作流冗余占比结论+多范式对比表(CoT/ReAct/Reflexion/MemOS)引出优化空间"
+        },
+        {
+          "archetype": "time_decomposition_formula_with_timing_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以时序图+总耗时公式(调用次数×单次思考+…)把总问题拆为N个子问题"
+        },
+        {
+          "archetype": "subproblem_thought_highlight_switch",
+          "count": "3",
+          "position": "middle",
+          "purpose": "复用同一时序图+公式模板,每次高亮一条「拆解思路N」聚焦不同子问题,其余灰化"
+        },
+        {
+          "archetype": "subproblem_key_question_with_quantified_waste",
+          "count": "3",
+          "position": "middle",
+          "purpose": "每子问题「关键问题」页: 用示意图+数字(如25.9%浪费/60%冗余)量化痛点"
+        },
+        {
+          "archetype": "subproblem_planned_research_with_layered_design",
+          "count": "3",
+          "position": "middle",
+          "purpose": "每子问题「拟开展研究」页: 给分层/并行/解耦机制示意(如短/中/长期记忆库、异构工具、静态+动态规划)"
+        },
+        {
+          "archetype": "triple_synergy_metric_recap_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "章末以「优化前后」对比表逐项量化(如循环次数9→5、总耗时59.46s→10s)收束三优化协同收益"
+        }
+      ],
+      "applicable_summary": "智能体/多环节系统优化方法章: 冗余总览+范式表→耗时公式拆解→3子问题各走「时序高亮+关键问题+拟开展研究」三页组合(共9页)→末页量化对比表收束三线协同, 用公式驱动叙事,子问题严格并列"
+    },
+    {
+      "id": "discussion_toc_recap_bottleneck_replay_plan_results_publications",
+      "title": "总结·目录回顾→瓶颈复现→拟开展研究逐项加速结果→论文/专利收束",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "预期成果",
+          "论文",
+          "专利",
+          "拟开展"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_recap_all_chapters",
+          "count": 1,
+          "position": "start",
+          "purpose": "以目录页回到全局,重申全deck三大板块脉络"
+        },
+        {
+          "archetype": "three_bottleneck_replay_parallel_panels",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以3列并列panel复现全deck三大瓶颈(端侧算力/思维链/智能体),用具体数字锚定门槛与差距"
+        },
+        {
+          "archetype": "planned_research_before_after_result",
+          "count": "3",
+          "position": "middle",
+          "purpose": "每项拟开展研究一页: 左侧承接瓶颈图,右侧「优化后」数字/表格证接近门槛(如153→200tokens/s、6.3s→4.7s、59.46s→10s)"
+        },
+        {
+          "archetype": "publication_list_categorized_by_venue",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "论文成果页: 分类列出已发表一作/共一/在投一作(附会议+CCF/年份)"
+        },
+        {
+          "archetype": "patents_projects_outlook_multilevel_bullet",
+          "count": 1,
+          "position": "end",
+          "purpose": "成果收束页: 分类列出专利号/科研项目/学术服务/研究展望,多级bullet缩进"
+        }
+      ],
+      "applicable_summary": "开题/中期收尾章标准弧线: 目录回归→3列并列复现全deck瓶颈→3项拟开展研究各以「优化前后」数字给初步结果→论文清单页→专利+项目+展望页, 兼具recap/加速证据/成果盘点/展望四重功能"
+    },
+    {
+      "id": "appendix_method_supplement_detail_with_blank_transition",
+      "title": "附录·方法细节补充+空白过渡页",
+      "applicable_when": {
+        "chapter_role": [
+          "appendix"
+        ],
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "page_count_range": [
+          2,
+          4
+        ],
+        "must_have_in_chapter_purpose": [
+          "附录",
+          "方法补充",
+          "数据补充",
+          "技术细节"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "predictor_mechanism_with_decision_flow",
+          "count": 1,
+          "position": "start",
+          "purpose": "补充某核心方法的预测/判决机制: 流程图(菱形分支+阈值判据)+加速比数字支撑"
+        },
+        {
+          "archetype": "blank_transition_page_with_footer_only",
+          "count": "0-1",
+          "position": "middle",
+          "purpose": "视觉过渡: 主体空白,仅保留底部页脚署名与页码"
+        },
+        {
+          "archetype": "offline_online_scheduling_dual_stage_diagram",
+          "count": 1,
+          "position": "end",
+          "purpose": "补充调度/训练两阶段机制: 左侧token级示意+右侧「离线数据收集/训练→在线调度」双阶段框图+√×判定矩阵"
+        }
+      ],
+      "applicable_summary": "开题/答辩类deck的附录章: 补充某核心研究内容(如级联层提前退出)的方法与数据细节, 用判决流程图+离线/在线双阶段调度图佐证正文加速结论, 中间可含空白过渡页"
+    }
+  ]
+}

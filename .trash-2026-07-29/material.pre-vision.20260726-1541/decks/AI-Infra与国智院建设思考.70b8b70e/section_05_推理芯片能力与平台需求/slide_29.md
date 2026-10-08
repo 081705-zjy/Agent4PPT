@@ -1,0 +1,49 @@
+---
+页标识: "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_29"
+所属章节: "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.05"
+所属deck: "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e"
+页序号: 29
+源文件: "templates/主题学术报告/AI Infra与国智院建设思考.pptx"
+页面角色: "content_candidate"
+标题: "需求 vs FPGA 平台现状"
+核心论断: "FPGA 平台在需求指标下仍有明显短板"
+本页讲什么: "本页是 vs 四连第三环，将需求指标与 FPGA 平台现状对照，延续同一评判框架指出 FPGA 的不足，逐步排除通用/半定制平台，为最终转向 ASIC/定制化路线蓄势。"
+关键文字: "[vs FPGA 平台现状, \"100-1000 tokens/s\", < 20 W]"
+视觉骨架: "[需求 vs FPGA 对照图, 指标差距标注]"
+资源ID列表: "[tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_29.asset.01, tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_29.asset.02]"
+适合复用场景: "[FPGA 推理局限论证页, 需求-平台差距对比页]"
+不适合复用场景: "[芯片汇总全景页, 概念范式页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+  - {"位置": "左侧", "内容": "需求指标"}
+  - {"位置": "右侧", "内容": "FPGA 平台现状"}
+alternate_claims:
+  - "FPGA 在 tokens/s 与功耗指标上难以同时达标"
+layout_tag: "benchmark_table"
+---
+# slide 29: 需求 vs FPGA 平台现状
+
+**核心论断**: FPGA 平台在需求指标下仍有明显短板
+
+## 本页讲什么
+本页是 vs 四连第三环，将需求指标与 FPGA 平台现状对照，延续同一评判框架指出 FPGA 的不足，逐步排除通用/半定制平台，为最终转向 ASIC/定制化路线蓄势。
+
+## 关键文字片段
+- vs FPGA 平台现状
+- 100-1000 tokens/s
+- < 20 W
+
+## 视觉骨架
+- 需求 vs FPGA 对照图
+- 指标差距标注
+
+## 可复用到
+- FPGA 推理局限论证页
+- 需求-平台差距对比页
+
+## 不适合复用的场景
+- 芯片汇总全景页
+- 概念范式页

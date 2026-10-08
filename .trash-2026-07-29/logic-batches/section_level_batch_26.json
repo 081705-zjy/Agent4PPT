@@ -1,0 +1,1675 @@
+{
+  "batch_index": 26,
+  "patterns": [
+    {
+      "id": "method_layer_two_parallel_works_lineup_full_arc",
+      "title": "方法·层内两项并列工作各自完整弧线",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          12,
+          20
+        ],
+        "must_have_in_chapter_purpose": [
+          "方法层",
+          "两项工作",
+          "并列",
+          "完整弧线",
+          "论文封面"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "three_layer_framework_recall_current_layer_expand",
+          "count": 1,
+          "position": "start",
+          "purpose": "复盘三层框架并把当前层放大, 锁定本章范围"
+        },
+        {
+          "archetype": "shared_concept_intro_or_paper_cover",
+          "count": "0-1",
+          "position": "start",
+          "purpose": "两项工作共享的概念背景/理论类比页(可选, 若无则直接进入第一项工作)"
+        },
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 2,
+          "position": "middle",
+          "purpose": "两项工作各自的论文封面页, 作为子工作分隔"
+        },
+        {
+          "archetype": "work_background_or_scenario_context",
+          "count": "1-4",
+          "position": "middle",
+          "purpose": "单项工作的场景/结构/趋势铺陈, 视工作复杂度伸缩"
+        },
+        {
+          "archetype": "work_prior_work_or_challenge_survey",
+          "count": "2-3",
+          "position": "middle",
+          "purpose": "单项工作对已有方案的综述或对核心挑战的陈述"
+        },
+        {
+          "archetype": "work_key_observation_or_insight",
+          "count": "0-1",
+          "position": "middle",
+          "purpose": "单项工作独有的关键观察或核心动机 (视频冗余/编码-预测启发等)"
+        },
+        {
+          "archetype": "work_method_mechanism_detail",
+          "count": "2-4",
+          "position": "middle",
+          "purpose": "单项工作方法细节页, 覆盖 key idea + 算法机制 + 硬件/引擎优化"
+        },
+        {
+          "archetype": "work_experiment_setup",
+          "count": "0-1",
+          "position": "before_end",
+          "purpose": "单项工作的实验设置页(模型/数据集/基线/硬件)"
+        },
+        {
+          "archetype": "work_result_speedup_headline",
+          "count": 2,
+          "position": "end",
+          "purpose": "每项工作以平均加速比数字头条 + 精度/质量无损佐证收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "three_layer_framework_recall_current_layer_expand",
+          "to_archetype": "single_paper_title_authors_only",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "work_background_or_scenario_context",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "work_background_or_scenario_context",
+          "to_archetype": "work_prior_work_or_challenge_survey",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "work_prior_work_or_challenge_survey",
+          "to_archetype": "work_method_mechanism_detail",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "work_method_mechanism_detail",
+          "to_archetype": "work_experiment_setup",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "work_experiment_setup",
+          "to_archetype": "work_result_speedup_headline",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "work_result_speedup_headline",
+          "to_archetype": "single_paper_title_authors_only",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "方法框架下某一层落地两项并列的独立工作(如 SpecEE/SpecDiff 或 FlightLLM/FlightVGM), 每项工作以 论文封面→背景/场景→挑战/已有工作→方法机制→加速比结果 的完整弧线展开; 两项工作可能有共享背景或独立背景, 层级复盘置于章首",
+      "anti_patterns": [
+        "单项工作深度剖析的 method 章 → 用 case_study_multi_observation_solution_pairs_with_end_to_end",
+        "同层三项以上工作平铺 → 用 method_multi_parallel_techniques_intro_flow_detail",
+        "两项工作各只有 1-2 页 (未展开完整弧线) → 用 case_study_agenda_paper_multi_platform_benchmark"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.04",
+          "section_title": "低成本层：投机解码软件优化",
+          "section_role": "method",
+          "section_narrative": "作为低成本层的软件路线，并列呈现SpecEE(LLM)与SpecDiff(扩散)两项投机解码工作；每项均沿背景→问题→已有工作→方法→实测加速比的完整弧线展开，论证软件层可低成本换取推理加速",
+          "section_topic_tags": [
+            "投机解码",
+            "SpecEE早退",
+            "SpecDiff自投机",
+            "LLM加速",
+            "扩散模型加速"
+          ],
+          "match_evidence": "15 页节奏: 框架层放大(slide17) + 共享双系统概念(slide18) + SpecEE 完整弧线 7 页(19-25) + SpecDiff 完整弧线 6 页(26-31), 两工作以 paper cover 分隔并各自以加速比结果收束",
+          "slides": [
+            {
+              "slide_index": 17,
+              "role_in_pattern": "three_layer_framework_recall_current_layer_expand",
+              "archetype": "three_layer_framework_recall_current_layer_expand",
+              "slide_title": "端侧推理优化三层次拆解:定位软件层",
+              "slide_claim": "端侧推理优化可拆为三层,本章聚焦软件层投机解码",
+              "slide_key_text": [
+                "端侧大模型推理优化可拆解为3个设计层次",
+                "系统优化 [ISCA 25]",
+                "投机解码算法 [AAAI 26 oral]"
+              ],
+              "slide_visual_skeleton": [
+                "三层次纵向堆叠框",
+                "软件层放大分支",
+                "两条路线并列蓝框"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "shared_concept_intro_or_paper_cover",
+              "archetype": "shared_concept_intro_dual_system",
+              "slide_title": "背景:投机解码的快慢双系统协同",
+              "slide_claim": "投机解码以快系统起草、慢系统验证实现推理加速",
+              "slide_key_text": [
+                "推测解码[1]",
+                "快系统 / 慢系统",
+                "Fast Inference from Transformers via Speculative Decoding, 2022"
+              ],
+              "slide_visual_skeleton": [
+                "纯文字概念条列",
+                "快慢系统对照标注"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SpecEE 工作引入(ISCA 2025)",
+              "slide_claim": "SpecEE以投机式早退加速大语言模型推理",
+              "slide_key_text": [
+                "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+                "Shanghai Jiao Tong University, Infinigence-AI",
+                "ISCA2025"
+              ],
+              "slide_visual_skeleton": [
+                "论文标题大字",
+                "作者署名行",
+                "会议标注"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_scenario_pipeline_intro",
+              "slide_title": "场景1背景:LLM推理是大底库搜索分类",
+              "slide_claim": "大模型逐层计算本质是超大词表的搜索分类问题",
+              "slide_key_text": [
+                "大模型推理是底库很大的搜索分类问题",
+                "逐层计算",
+                "Attention / FFN / LM_head"
+              ],
+              "slide_visual_skeleton": [
+                "Prompt→Output竖向流程",
+                "Transformer逐层链式框",
+                "候选词云圆形示意"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "work_prior_work_or_challenge_survey",
+              "archetype": "work_prior_work_three_column_compare",
+              "slide_title": "场景1已有工作:三类早退/跳层方法对比",
+              "slide_claim": "RAEE、AdaInfer、MoD三类已有工作各有精度与开销权衡",
+              "slide_key_text": [
+                "RAEE[1]: Data Base 判断 When to Exit",
+                "AdaInfer[2]: 特征采样表判断早退",
+                "MoD[3]: Skip or Forward 逐token跳层"
+              ],
+              "slide_visual_skeleton": [
+                "3列并列方法panel",
+                "各列放大机制示意框",
+                "额外开销/部署代价对比条"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_key_idea_dual_gain",
+              "slide_title": "场景1方法:投机早退联合的加速思路",
+              "slide_claim": "用小参数LLM同时驱动投机采样与早退实现双重加速",
+              "slide_key_text": [
+                "利用小参数的LLM",
+                "投机采样 加速约3倍",
+                "早退 加速约3层",
+                "候选词投机采样"
+              ],
+              "slide_visual_skeleton": [
+                "Transformer逐层链框",
+                "早退虚线圈标注",
+                "投机采样候选词圆"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_cascaded_predictor",
+              "slide_title": "场景1方法:逐层预测器判断是否早退",
+              "slide_claim": "在级联各层引入轻量预测器动态判定早退时机",
+              "slide_key_text": [
+                "Cascaded Layer Computation",
+                "每层引入预测器判断是否早退",
+                "Predictor: Feature Process + Model",
+                "Yes / No"
+              ],
+              "slide_visual_skeleton": [
+                "逐层Attention链带P判定点",
+                "预测器放大流程框",
+                "Yes/No分支箭头"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_algo_engine_dual_optimization",
+              "slide_title": "场景1方法:预测器的算法与引擎双优化",
+              "slide_claim": "从算法与引擎两端优化级联计算的动态调整效率",
+              "slide_key_text": [
+                "如何高效动态调整级联计算?",
+                "预测器算法优化: Local Result / Global Result 校正",
+                "预测器引擎优化",
+                "pred>threshold / Correction Alg."
+              ],
+              "slide_visual_skeleton": [
+                "左右两栏对比",
+                "左栏Start→End流程图",
+                "右栏引擎调度示意图"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "work_result_speedup_headline",
+              "archetype": "work_result_speedup_headline",
+              "slide_title": "场景1结果:Y7000 PC平均2.43倍加速",
+              "slide_claim": "SpecEE在联想Y7000 PC上实现平均2.43倍推理加速",
+              "slide_key_text": [
+                "联想 Y7000 PC",
+                "平均2.43倍",
+                "精度无损",
+                "实测加速比"
+              ],
+              "slide_visual_skeleton": [
+                "加速比柱状/对比图",
+                "精度对照图",
+                "关键倍数红字标注"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SpecDiff 工作引入(AAAI 2026 Oral)",
+              "slide_claim": "SpecDiff以自投机加速扩散模型推理",
+              "slide_key_text": [
+                "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+                "Shanghai Jiao Tong University",
+                "To appear in AAAI 2026 (Oral)"
+              ],
+              "slide_visual_skeleton": [
+                "论文标题大字",
+                "作者署名行",
+                "会议标注(AAAI 2026 Oral)"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_scenario_pipeline_intro",
+              "slide_title": "场景2背景:DiT扩散逐迭代生成流程",
+              "slide_claim": "DiT图像生成需多次迭代逐步去噪,单迭代开销大",
+              "slide_key_text": [
+                "DiT 逐迭代生成",
+                "Prompt / Noise / VAE / Tokens",
+                "迭代X → 迭代X+1",
+                "完整迭代"
+              ],
+              "slide_visual_skeleton": [
+                "Prompt→Tokens竖向流程",
+                "Model内部分层框",
+                "迭代X/X+1对照块"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "work_prior_work_or_challenge_survey",
+              "archetype": "work_prior_work_dual_column_compare",
+              "slide_title": "场景2已有工作:缓存复用与采样两类方法",
+              "slide_claim": "已有扩散加速分缓存复用与采样两类,各有局限",
+              "slide_key_text": [
+                "缓存复用类方法 [1][3]",
+                "采样类 [2]",
+                "token-wise feature caching",
+                "Region-adaptive sampling"
+              ],
+              "slide_visual_skeleton": [
+                "左右两栏方法panel",
+                "各栏机制示意图",
+                "局限性说明条"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "work_key_observation_or_insight",
+              "archetype": "work_key_observation_similarity",
+              "slide_title": "场景2观察:相同时间步迭代结果高度相似",
+              "slide_claim": "少次与多次完整迭代在相同时间步结果高度一致",
+              "slide_key_text": [
+                "少次完整迭代和多次完整迭代在相同的时间步",
+                "结果高度相似",
+                "迭代冗余"
+              ],
+              "slide_visual_skeleton": [
+                "少次/多次迭代对照图",
+                "相同时间步结果比对",
+                "相似性标注"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_self_speculation_flow",
+              "slide_title": "场景2方法:推测迭代替代完整迭代的自投机",
+              "slide_claim": "以草稿模型做推测迭代、完整迭代验证实现自投机加速",
+              "slide_key_text": [
+                "推测迭代 / 完整迭代",
+                "草稿模型1 / 草稿模型2",
+                "验证 / 拒绝",
+                "Tokens 1/2/3"
+              ],
+              "slide_visual_skeleton": [
+                "推测迭代/完整迭代双行时间轴",
+                "草稿模型彩色块",
+                "验证接受分支箭头"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "work_result_speedup_headline",
+              "archetype": "work_result_speedup_headline",
+              "slide_title": "场景2结果:FLUX.1 Dev平均3.17倍加速",
+              "slide_claim": "SpecDiff在FLUX.1 Dev上实现平均3.17倍生成加速",
+              "slide_key_text": [
+                "FLUX.1 Dev",
+                "平均3.17倍",
+                "生成质量无损",
+                "实测加速比"
+              ],
+              "slide_visual_skeleton": [
+                "加速比对比图",
+                "生成样例图对照",
+                "关键倍数红字标注"
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.05",
+          "section_title": "高性能层：FPGA硬件加速",
+          "section_role": "method",
+          "section_narrative": "作为方法框架第三层(高性能层)的落地,以两项 FPGA 成果论证硬件侧加速:场景1(FlightLLM)加速 LLM、场景2(FlightVGM)加速视频生成,各按「论文-动机-架构-实验」展开。",
+          "section_topic_tags": [
+            "FPGA硬件加速",
+            "FlightLLM大模型",
+            "FlightVGM视频生成",
+            "N:M稀疏",
+            "混合精度DSP"
+          ],
+          "match_evidence": "17 页节奏: 框架层放大(slide32) + FlightLLM 完整弧线 6 页(33-38) + FlightVGM 完整弧线 10 页(39-48, 含 5 页视频生成背景铺陈), 两工作以 paper cover 分隔并各自以能效倍数结果收束",
+          "slides": [
+            {
+              "slide_index": 32,
+              "role_in_pattern": "three_layer_framework_recall_current_layer_expand",
+              "archetype": "three_layer_framework_recall_current_layer_expand",
+              "slide_title": "端侧推理优化三层次拆解回顾",
+              "slide_claim": "推理优化分三层，本章聚焦高性能层的两项FPGA落地",
+              "slide_key_text": [
+                "端侧大模型推理优化可拆解为3个设计层次",
+                "硬件加速+算子融合",
+                "FPGA 24",
+                "FPGA 25"
+              ],
+              "slide_visual_skeleton": [
+                "三层框架竖排示意",
+                "层→技术栈映射箭头",
+                "两个FPGA成果蓝框"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "FlightLLM 论文封面",
+              "slide_claim": "FlightLLM以完整映射流实现FPGA高效LLM推理",
+              "slide_key_text": [
+                "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+                "ISFPGA 2024 @ Monterey, CA"
+              ],
+              "slide_visual_skeleton": [
+                "论文大标题",
+                "作者与单位署名块",
+                "会议信息条"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_prior_work_metrics_evidence",
+              "slide_title": "场景1：大语言模型硬件优化研究背景",
+              "slide_claim": "已有FPGA加速器相较GPU已实现数倍能效提升",
+              "slide_key_text": [
+                "DFX [MICRO'22]：较V100 GPU 5.58×加速、3.99×能效",
+                "Understanding [FCCM'24]：基于HLS，较A100 1.9×性能、5.7×能效",
+                "FPGA加速大语言模型"
+              ],
+              "slide_visual_skeleton": [
+                "两项前作对比卡片",
+                "加速/能效数值标注",
+                "文献引用脚注"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_pattern": "work_prior_work_or_challenge_survey",
+              "archetype": "work_challenge_statement_pain",
+              "slide_title": "场景1：硬件优化的核心挑战",
+              "slide_claim": "稀疏计算不规则导致DSP闲置、计算效率低",
+              "slide_key_text": [
+                "已有加速器难以适配稀疏计算",
+                "稀疏计算不规则",
+                "计算效率低、DSP闲置"
+              ],
+              "slide_visual_skeleton": [
+                "红色挑战标签块",
+                "稀疏计算→效率低箭头流",
+                "问题指向DSP闲置"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_configurable_dsp_chain",
+              "slide_title": "场景1：可配置DSP链支持N:M稀疏",
+              "slide_claim": "可配置DSP链适配N:M稀疏化提升计算效率",
+              "slide_key_text": [
+                "N:M 稀疏",
+                "4:4(Dense)/2:4/1:4/0:4(skip)",
+                "可配置的DSP链"
+              ],
+              "slide_visual_skeleton": [
+                "N:M稀疏权重矩阵网格",
+                "稀疏度分类示意",
+                "DSP链阵列结构图"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_on_chip_memory_optimize",
+              "slide_title": "场景1：decode阶段片上访存优化",
+              "slide_claim": "片上化decode访存缓解带宽瓶颈提升效率",
+              "slide_key_text": [
+                "decode阶段访存",
+                "片上缓存+复用",
+                "减少访存开销"
+              ],
+              "slide_visual_skeleton": [
+                "优化前后两组访存框图",
+                "上下箭头访存连接示意",
+                "前后对比过渡箭头"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "work_result_speedup_headline",
+              "archetype": "work_result_speedup_headline",
+              "slide_title": "场景1：FlightLLM 实验能效结果",
+              "slide_claim": "FlightLLM相较V100S GPU能效提升约70%",
+              "slide_key_text": [
+                "16nm U280 FPGA vs 12nm V100S GPU",
+                "70% 能效提升、50% 性能",
+                "OPT-6.7B、LLaMA2-7B",
+                "3.5-bit vs 8-bit"
+              ],
+              "slide_visual_skeleton": [
+                "能效对比要点列表",
+                "硬件平台对照标注",
+                "量化位宽标注"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_domain_hype_showcase",
+              "slide_title": "场景2：视频生成研究背景",
+              "slide_claim": "Sora引爆视频生成，各大厂商密集入局",
+              "slide_key_text": [
+                "OpenAI 的 Sora 模型",
+                "Sora 被视为「世界模拟器」",
+                "Google、Kuaishou、ByteDance 布局"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏背景板",
+                "Sora示例区",
+                "厂商名称分布"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_architecture_evolution",
+              "slide_title": "场景2：视频生成模型基于扩散Transformer",
+              "slide_claim": "视频生成主流转向Diffusion Transformer(DiT)",
+              "slide_key_text": [
+                "视频生成模型主要基于扩散模型",
+                "Diffusion Transformer（DiT）",
+                "生成模型架构演进趋势"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏背景板",
+                "两条反向趋势箭头",
+                "DiT架构标注"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_computation_burden_compare",
+              "slide_title": "场景2：视频生成计算量巨大",
+              "slide_claim": "视频生成计算量比图像高2-3个数量级",
+              "slide_key_text": [
+                "图像生成 1-2个数量级",
+                "视频生成 2-3个数量级 [1]",
+                "训练与推理计算量对比"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏对比框",
+                "计算量数量级标注",
+                "时间维度增量箭头"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_pattern": "work_background_or_scenario_context",
+              "archetype": "work_analog_domain_timeline",
+              "slide_title": "场景2：传统视频处理利用时间冗余",
+              "slide_claim": "视频编码沿用帧间时间冗余压缩降低数据量",
+              "slide_key_text": [
+                "利用视频中存在的时间冗余",
+                "H.261/MPEG-2/H.264/H.265 演进",
+                "分辨率随标准提升"
+              ],
+              "slide_visual_skeleton": [
+                "编码标准时间线折线",
+                "各标准年份节点",
+                "分辨率数值标注"
+              ]
+            },
+            {
+              "slide_index": 43,
+              "role_in_pattern": "work_key_observation_or_insight",
+              "archetype": "work_key_idea_encode_predict_analogy",
+              "slide_title": "场景2：核心思想与动机",
+              "slide_claim": "借鉴视频编码「编码-预测」区分帧内帧间计算",
+              "slide_key_text": [
+                "受传统视频压缩「编码-预测」启发",
+                "区分帧内/帧间计算",
+                "对冗余计算做压缩"
+              ],
+              "slide_visual_skeleton": [
+                "帧内/帧间对比框",
+                "编码-预测范式类比示意",
+                "核心思想标题条"
+              ]
+            },
+            {
+              "slide_index": 44,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "FlightVGM 论文封面",
+              "slide_claim": "FlightVGM以在线稀疏化与混合精度加速视频生成",
+              "slide_key_text": [
+                "FlightVGM: Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs",
+                "ISFPGA 2025 @ Monterey, CA"
+              ],
+              "slide_visual_skeleton": [
+                "论文大标题",
+                "作者与单位署名块",
+                "会议信息条"
+              ]
+            },
+            {
+              "slide_index": 45,
+              "role_in_pattern": "work_prior_work_or_challenge_survey",
+              "archetype": "work_challenge_dual_pillar",
+              "slide_title": "场景2：硬件优化的核心挑战",
+              "slide_claim": "在线稀疏与混合精度是VGM硬件加速两大挑战",
+              "slide_key_text": [
+                "稀疏计算/在线稀疏化",
+                "混合精度",
+                "现有架构难以适配"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏挑战板",
+                "稀疏/精度两主线标题",
+                "过渡下箭头"
+              ]
+            },
+            {
+              "slide_index": 46,
+              "role_in_pattern": "work_method_mechanism_detail",
+              "archetype": "work_method_reconfigurable_dsp_ip",
+              "slide_title": "场景2：可重构IP DSP58支持混合精度",
+              "slide_claim": "复用FPGA DSP58构造可重构混合精度计算单元",
+              "slide_key_text": [
+                "复用FPGA DSP58",
+                "可重构 IP DSP",
+                "FP16=2个MAC / INT8=4个MAC"
+              ],
+              "slide_visual_skeleton": [
+                "DSP58可重构IP结构图",
+                "FP16/INT8模式对比",
+                "MAC数量标注"
+              ]
+            },
+            {
+              "slide_index": 47,
+              "role_in_pattern": "work_experiment_setup",
+              "archetype": "work_experiment_setup_bulleted",
+              "slide_title": "场景2：实验设置",
+              "slide_claim": "FlightVGM在多模型多指标下对比多类硬件基线",
+              "slide_key_text": [
+                "模型 Latte-1、Open-Sora 1.2；数据集 UCF-101",
+                "CLIPSIM、VBench 评价指标",
+                "GPU基线 NVIDIA 3090 GPU",
+                "对比 HiSpMV/FlightLLM、InterArch/CMC"
+              ],
+              "slide_visual_skeleton": [
+                "三级bullet列表",
+                "模型/指标/对象分组",
+                "基线加速器枚举"
+              ]
+            },
+            {
+              "slide_index": 48,
+              "role_in_pattern": "work_result_speedup_headline",
+              "archetype": "work_result_speedup_headline",
+              "slide_title": "场景2：FlightVGM 实验能效结果",
+              "slide_claim": "FlightVGM相较3090 GPU能效提升约1.30×",
+              "slide_key_text": [
+                "对比 NVIDIA 3090 GPU",
+                "1.30× 能效提升",
+                "4.49× 性能提升"
+              ],
+              "slide_visual_skeleton": [
+                "能效/性能对比要点",
+                "对比图表区",
+                "关键倍数高亮"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 2,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(含标题/作者/单位/邮箱/日期)接一张编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "纯论文封面无 TOC → 用 opening_paper_cover_multi_author_multi_institution",
+        "空白骨架模板封面 → 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.01",
+          "section_title": "封面与开场目录",
+          "section_role": "opening",
+          "section_narrative": "deck 的开场：封面亮明「端侧大模型推理优化」主题与交大/无问芯穹作者，随后用三段式目录（能效动机→跨层协同方法→总结）预告全篇论述骨架",
+          "section_topic_tags": [
+            "端侧大模型推理",
+            "封面署名",
+            "三段式目录",
+            "软硬件协同"
+          ],
+          "match_evidence": "2 页节奏: 大字居中封面(slide1) + Contents 三段式编号目录高亮(slide2), 与既有 opening_cover_plus_progress_highlighted_toc pattern 完全一致",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "高效端侧大模型推理优化(封面)",
+              "slide_claim": "端侧大模型推理优化是本次汇报的核心议题",
+              "slide_key_text": [
+                "高效端侧大模型推理优化",
+                "戴国浩、刘军",
+                "上海交通大学、上海创智学院、无问芯穹",
+                "daiguohao@sjtu.edu.cn",
+                "2025年11月22日"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题",
+                "标题下细分隔线",
+                "作者与单位署名块",
+                "邮箱/日期落款"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:Contents 三段式框架",
+              "slide_claim": "全篇按能效动机、跨层协同方法、总结三段展开",
+              "slide_key_text": [
+                "Contents",
+                "① 大模型推理需要更高能效",
+                "② 方法:软硬件跨层次协同优化",
+                "③ 总结"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框标题区",
+                "三条圈码议程列表",
+                "左侧蓝色高亮竖条",
+                "底部单位页脚"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "motivation_paradigm_shift_metric_shift_goal_gap_framework_split",
+      "title": "动机·范式换代→指标换代→目标定义→思路割裂→框架拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "动机",
+          "能效指标",
+          "范式演进",
+          "软硬件协同",
+          "框架拆解"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮进入动机章"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 AI 1.0/2.0 或旧新范式左右双栏对比引入核心生产要素变化"
+        },
+        {
+          "archetype": "metric_shift_headline_with_hardware_evidence",
+          "count": 1,
+          "position": "middle",
+          "purpose": "承接范式换代抛出能效指标变化(如 TOPs/J → Tokens/J), 并以多硬件方案气泡数值背书"
+        },
+        {
+          "archetype": "objective_2d_chart_with_levels",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以二维坐标(能效×能力)+等级跃迁曲线定义定量目标"
+        },
+        {
+          "archetype": "traditional_silo_gap_statement",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "指出传统割裂思路(算法与硬件分立)难以达成新目标"
+        },
+        {
+          "archetype": "framework_decomposition_intro",
+          "count": 1,
+          "position": "end",
+          "purpose": "将问题拆解为 N 个设计层次, 为后续方法章立框"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "paradigm_shift_dual_column_compare",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "paradigm_shift_dual_column_compare",
+          "to_archetype": "metric_shift_headline_with_hardware_evidence",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "metric_shift_headline_with_hardware_evidence",
+          "to_archetype": "objective_2d_chart_with_levels",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "objective_2d_chart_with_levels",
+          "to_archetype": "traditional_silo_gap_statement",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "traditional_silo_gap_statement",
+          "to_archetype": "framework_decomposition_intro",
+          "hook_type": "problem_to_solution"
+        }
+      ],
+      "applicable_summary": "汇报型动机章: 从范式(AI 1.0→2.0)代际切换到能效指标(TOPs/J→Tokens/J)代际切换, 定义 tokens/J vs IQ 目标, 再点出传统算法-硬件割裂思路的局限, 收束到 N 层设计框架拆解, 为后续方法章立框",
+      "anti_patterns": [
+        "纯宏观供需→政策→方法总纲(不涉及范式切换) → 用 background_macro_gap_to_policy_to_method_bridge",
+        "无指标换代的算力鸿沟型 → 用 motivation_trend_landscape_to_gap_to_solution_bridge",
+        "长范式演进逐篇串讲型 → 用 background_paradigm_evolution_related_works_survey_to_bottleneck"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.02",
+          "section_title": "端侧推理为何需要更高能效",
+          "section_role": "motivation",
+          "section_narrative": "方法框架前的动机章,层层递进:Token 是 AI 2.0 核心生产要素→能效指标由 TOPs/J 转向 Tokens/J→提升 tokens/J 势在必行→传统算法/硬件割裂思路受限→引出软硬件协同三层拆解。",
+          "section_topic_tags": [
+            "Token生产要素",
+            "Tokens/J能效指标",
+            "IQ等级跃迁",
+            "算法硬件割裂",
+            "三层设计框架"
+          ],
+          "match_evidence": "6 页节奏: agenda(slide3) + AI1.0/AI2.0 双栏(slide4) + TOPs/J→Tokens/J 转换 + 硬件气泡(slide5) + tokens/J–IQ 目标图(slide6) + 算法硬件割裂(slide7) + 三层框架拆解(slide8), 完整覆盖 pattern 六节奏",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "本章导航:大模型推理需要更高能效",
+              "slide_claim": "汇报进入第一部分——大模型推理为何需要更高能效",
+              "slide_key_text": [
+                "Contents",
+                "大模型推理需要更高能效",
+                "方法:软硬件跨层次协同优化",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框 Contents 目录",
+                "编号圆圈条目列表",
+                "当前项高亮/其余灰显"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "paradigm_shift_dual_column_compare",
+              "archetype": "paradigm_shift_dual_column_compare",
+              "slide_title": "AI 2.0 核心生产要素——Token",
+              "slide_claim": "AI 2.0 将异构模型统一为 Token 生成,Token 成为核心生产要素",
+              "slide_key_text": [
+                "AI 2.0 时代核心的生产要素——Token",
+                "AI 1.0 不同应用 不同模型 不同输入",
+                "AI 2.0 统一为 Token",
+                "Tokenize / Next Token Prediction / Detokenize (vision)",
+                "GAN / CNN / RNN (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "AI1.0/AI2.0 双栏对比框",
+                "token 处理流程箭头链",
+                "底部结论蓝条"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "metric_shift_headline_with_hardware_evidence",
+              "archetype": "metric_shift_headline_with_hardware_evidence",
+              "slide_title": "能效指标从 TOPs/J 转向 Tokens/J",
+              "slide_claim": "能效衡量标准由算力密度 TOPs/J 转向 token 生成效率 Tokens/J",
+              "slide_key_text": [
+                "能效指标变化:从 AI 1.0 到 AI 2.0",
+                "TOPs/J -> Tokens/J",
+                "ASIC WaferLLM 6.2 Tokens/J (vision)",
+                "PIM/NDP 清华 47 Tokens/J (vision)",
+                "GPU AWQ 0.8 Tokens/J (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "TOPs/J→Tokens/J 转换标题框",
+                "蓝/紫双指标漏斗对比",
+                "硬件方案 Tokens/J 标注气泡"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "objective_2d_chart_with_levels",
+              "archetype": "objective_2d_chart_with_levels",
+              "slide_title": "不损失能力下持续提升 tokens/J",
+              "slide_claim": "目标是在不牺牲模型能力(IQ)前提下持续提升 tokens/J",
+              "slide_key_text": [
+                "高质量 tokens/J 的持续演进",
+                "目标:不牺牲模型能力的同时提升 tokens/J (vision)",
+                "tokens/J vs IQ 坐标 (vision)",
+                "Level 1~Level 5 逐级提升 (vision)",
+                "MMLU>65% / Math Level5>50% (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "tokens/J–IQ 二维坐标",
+                "Level1-5 波浪跃迁示意",
+                "中部目标横幅"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "traditional_silo_gap_statement",
+              "archetype": "traditional_silo_gap_statement",
+              "slide_title": "传统算法与硬件割裂的开发思路",
+              "slide_claim": "传统算法修改、硬件被动支持的割裂思路限制能效提升",
+              "slide_key_text": [
+                "传统思路:算法修改,硬件被动支持",
+                "算法团队:设计算法→精度反馈",
+                "硬件团队:硬件性能→效率",
+                "算法与硬件割裂 (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "上部双方框+割裂红条",
+                "算法团队/硬件团队双泳道流程",
+                "反向/交叉箭头示意"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "framework_decomposition_intro",
+              "archetype": "framework_decomposition_intro",
+              "slide_title": "端侧推理优化拆解为三层设计",
+              "slide_claim": "端侧大模型推理优化可拆解为算法-系统-硬件三个设计层次",
+              "slide_key_text": [
+                "大模型推理优化拆解",
+                "端侧大模型推理优化可拆解为 3 个设计层次",
+                "1.算法层 DeepSeek (vision)",
+                "2.系统层 AWQ (vision)",
+                "3.硬件层 H100/910B (vision)",
+                "\"算法-系统-硬件\"协同 (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "三层竖向堆叠框",
+                "层间下行箭头",
+                "右侧代表技术标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_algo_layer_paper_backed_two_gen_model_lineup",
+      "title": "方法·算法层·论文背书+两代自研模型分代经验",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          7,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "算法模型层",
+          "自研模型",
+          "分代",
+          "痛点",
+          "设计经验"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮进入方法章"
+        },
+        {
+          "archetype": "three_layer_framework_recall_with_model_branch",
+          "count": 1,
+          "position": "start",
+          "purpose": "复盘三层框架并把算法模型层放大, 分叉指向本章两代自研模型"
+        },
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以技术报告封面为整章模型提供权威出处背书"
+        },
+        {
+          "archetype": "model_pain_point_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第一代模型的场景痛点陈述(端侧资源受限/生态碎片化)"
+        },
+        {
+          "archetype": "model_result_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第一代模型的成果头条(同尺寸最强+性能提升数字)"
+        },
+        {
+          "archetype": "model_motivation_scenario_tradeoff",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第二代模型的设计动因(现有方案的场景两难)"
+        },
+        {
+          "archetype": "model_design_experience_dual_panel",
+          "count": 2,
+          "position": "end",
+          "purpose": "第二代模型的两页双栏设计经验(结构/数据 + 架构/参数量)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "three_layer_framework_recall_with_model_branch",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "three_layer_framework_recall_with_model_branch",
+          "to_archetype": "single_paper_title_authors_only",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "model_pain_point_statement",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "model_pain_point_statement",
+          "to_archetype": "model_result_headline",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "model_result_headline",
+          "to_archetype": "model_motivation_scenario_tradeoff",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "model_motivation_scenario_tradeoff",
+          "to_archetype": "model_design_experience_dual_panel",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "model_design_experience_dual_panel",
+          "to_archetype": "model_design_experience_dual_panel",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "算法模型层的分代自研成果汇报章: 章首框架层锁定→技术报告封面统一背书→第一代模型痛点+成果双页→第二代模型场景动因+两页双栏设计经验(Dense/数据、MoE/参数量), 强调两代模型作为同一算法层的分阶段沉淀",
+      "anti_patterns": [
+        "单代模型深度剖析(挑战-方案-实验闭环) → 用 case_study_challenge_solution_performance_closed_loop",
+        "多个不同定位模型并列(非同系分代) → 用 method_multi_parallel_techniques_intro_flow_detail",
+        "无自研模型的算法路线综述 → 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.03",
+          "section_title": "高质量层：Megrez端侧模型",
+          "section_role": "method",
+          "section_narrative": "method 章第一层「高质量」。先复盘三层优化框架并锁定算法模型层，再以技术报告背书，依次展开 Megrez 1.0（端侧 3B 全模态）与 2.0（端侧 MoE）两代模型的痛点与设计经验",
+          "section_topic_tags": [
+            "Megrez自研模型",
+            "端侧全模态3B",
+            "端侧MoE小模型",
+            "Scaling Law设计",
+            "分代经验沉淀"
+          ],
+          "match_evidence": "8 页节奏: agenda(slide9) + 三层框架分叉两代模型(slide10) + 技术报告封面(slide11) + Megrez1.0痛点(slide12)+成果(slide13) + Megrez2.0场景动因(slide14) + 两页双栏设计经验(slide15/16), 完整覆盖 pattern 七节奏",
+          "slides": [
+            {
+              "slide_index": 9,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录导航：定位「软硬件跨层次协同优化」",
+              "slide_claim": "报告进入第二部分——软硬件跨层次协同优化方法",
+              "slide_key_text": [
+                "Contents",
+                "软硬件跨层次协同优化",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "带边框目录卡",
+                "①②④编号圆点列表",
+                "当前项蓝色高亮条"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "three_layer_framework_recall_with_model_branch",
+              "archetype": "three_layer_framework_recall_with_model_branch",
+              "slide_title": "端侧推理优化拆解为三设计层次",
+              "slide_claim": "端侧推理优化拆为三层，算法模型层落地为Megrez 1.0与2.0",
+              "slide_key_text": [
+                "端侧大模型推理优化可拆解为3个设计层次",
+                "算法模型",
+                "端侧3B全模态 Megrez 1.0",
+                "端侧MoE小模型 Megrez 2.0"
+              ],
+              "slide_visual_skeleton": [
+                "左侧三层竖排框架条",
+                "当前层高亮蓝框",
+                "右侧分叉箭头指向两代模型卡"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "Megrez-Omni 技术报告背书",
+              "slide_claim": "Megrez系列由交大与清华团队技术报告正式支撑",
+              "slide_key_text": [
+                "Megrez-Omni Technical Report",
+                "Corresponding authors: Guohao Dai, Yu Wang",
+                "Shanghai Jiao Tong University, Tsinghua University"
+              ],
+              "slide_visual_skeleton": [
+                "大号标题",
+                "细横向分隔线",
+                "居中作者与机构列表"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "model_pain_point_statement",
+              "archetype": "model_pain_point_statement",
+              "slide_title": "Megrez 1.0：端侧软硬件协同优化的痛点",
+              "slide_claim": "端侧资源受限且生态碎片化，比云侧更需软硬件协同",
+              "slide_key_text": [
+                "相比云侧：端侧更需要软硬协同",
+                "云侧内存1000GB算力000TOPS，端侧内存12GB算力50TOPS",
+                "硬件配置一般1-2年才升级",
+                "无法通过增配Scale Up/Scale Out",
+                "软硬件生态碎片化"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色痛点标签+主张框",
+                "左右双panel",
+                "云侧-端侧资源对比数字",
+                "向下收敛箭头"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "model_result_headline",
+              "archetype": "model_result_headline",
+              "slide_title": "Megrez-3B-Omni：端侧全模态轻量模型",
+              "slide_claim": "Megrez-3B-Omni为同尺寸最强全模态模型，性能提升超30%",
+              "slide_key_text": [
+                "Megrez 1.0成果：Megrez-3B-Omni",
+                "同尺寸-最强-全模态理解模型",
+                "端侧(Orin) 4GB~8GB / 手机 8GB~12GB / AIPC 16~32GB",
+                "性能提升>30%",
+                "300%"
+              ],
+              "slide_visual_skeleton": [
+                "左侧设备档位阶梯",
+                "中部彩色benchmark得分表",
+                "高亮领先分数单元",
+                "右侧提升箭头"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "model_motivation_scenario_tradeoff",
+              "archetype": "model_motivation_scenario_tradeoff",
+              "slide_title": "Megrez 2.0：围绕场景需求设计MoE小模型",
+              "slide_claim": "满血/大显存/蒸馏方案均难兼顾端侧，需按场景需求重设计",
+              "slide_key_text": [
+                "算法模型设计的核心是围绕场景需求",
+                "高性能：DeepSeek-R1满血 600W",
+                "高性价比：DeepSeek-R1 671GB，显存至少12GB无法端侧部署",
+                "低成本：DeepSeek-R1蒸馏3B，能力缩水受限"
+              ],
+              "slide_visual_skeleton": [
+                "左侧性能/成本/效率需求三角",
+                "右侧三张场景方案卡",
+                "各卡显存/功耗数字标注"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "model_design_experience_dual_panel",
+              "archetype": "model_design_experience_dual_panel",
+              "slide_title": "Megrez 2.0：Dense结构与数据设计经验",
+              "slide_claim": "MoE小模型沉淀Dense结构与数据配比两类设计经验",
+              "slide_key_text": [
+                "Dense模型设计经验",
+                "Scaling Law：深度/宽度/稀疏度",
+                "Attn heads/kv heads、Mamba线性RNN、MoE",
+                "数据设计经验：预训练3T、Qwen3、36T Tokens",
+                "数据配比&课程学习"
+              ],
+              "slide_visual_skeleton": [
+                "左右双panel",
+                "蓝色小标题条",
+                "bullet要点+向下箭头",
+                "底部黄色结论条"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "model_design_experience_dual_panel",
+              "archetype": "model_design_experience_dual_panel",
+              "slide_title": "Megrez 2.0：MoE架构与参数量设计经验",
+              "slide_claim": "MoE稀疏化将20B3A重构为3x7B3A，以端侧效率优先",
+              "slide_key_text": [
+                "MoE架构设计经验",
+                "MoE训练成本高，GPU H800 20-80G",
+                "稀疏化设计经验",
+                "参数量设计经验：20B3A → 3x7B3A",
+                "7B总参、3B激活，效率优先",
+                "[1] Megrez-omni technical report, arXiv:2502.15803, 2025"
+              ],
+              "slide_visual_skeleton": [
+                "左右双panel",
+                "MoE架构vs参数量小标题",
+                "20B3A→3x7B3A向下红箭头",
+                "底部引用脚注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_toc_recap_framework_summary_thanks_with_logos",
+      "title": "收尾·目录转场→框架三层回收→致谢与合作 logo 墙",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          3,
+          4
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "框架回收",
+          "致谢",
+          "合作单位"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入总结章"
+        },
+        {
+          "archetype": "framework_summary_with_output_lineup",
+          "count": 1,
+          "position": "middle",
+          "purpose": "把全篇 N 层协同框架一页收束回主线, 每层箭头挂接对应论文/成果标签"
+        },
+        {
+          "archetype": "thanks_with_logo_wall_and_contact",
+          "count": 1,
+          "position": "end",
+          "purpose": "致谢页: 汇报人信息+日期+邮箱+合作企业/高校 logo 墙"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "framework_summary_with_output_lineup",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "framework_summary_with_output_lineup",
+          "to_archetype": "thanks_with_logo_wall_and_contact",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "科研汇报的三页收官: agenda 转场→整幅 N 层协同框架图收束(左侧主线竖条+右侧对应论文/产出卡)→末页致谢与合作 logo 墙, 承担收束/回顾/致谢三重功能",
+      "anti_patterns": [
+        "无框架回收的极简致谢单页 → 用 closing_minimal_thanks_with_speaker_signature",
+        "多分支愿景+课题清单+团队组成的展望型 → 用 discussion_agenda_vision_topics_team_close",
+        "论文分享型 recap 三栏(Goals/Insight/Solution) → 用 discussion_toc_three_pillar_recap_plus_future_extension"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.06",
+          "section_title": "总结与致谢",
+          "section_role": "closing",
+          "section_narrative": "作为 deck 收尾，先以 agenda 转场标定进入「总结」，再用一页把全篇「软硬件跨层次协同优化」三层框架收束回主线，最后落到致谢与联系方式。",
+          "section_topic_tags": [
+            "三层框架回收",
+            "算法系统硬件协同",
+            "成果论文串联",
+            "合作 logo 墙致谢",
+            "汇报人联系方式"
+          ],
+          "match_evidence": "3 页节奏: agenda 高亮③总结(slide49) + 三层框架收束挂接成果标签(slide50) + 致谢与合作 logo 墙(slide51), 完整覆盖 pattern 三节奏",
+          "slides": [
+            {
+              "slide_index": 49,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents：转入「总结」章节",
+              "slide_claim": "全篇进入第三部分「总结」，前两部分已讲完",
+              "slide_key_text": [
+                "Contents",
+                "大模型推理需要更高能效",
+                "方法：软硬件跨层次协同优化",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "外框目录卡",
+                "①②③编号圆点",
+                "左侧蓝色进度竖条",
+                "已讲项灰化+当前项高亮"
+              ]
+            },
+            {
+              "slide_index": 50,
+              "role_in_pattern": "framework_summary_with_output_lineup",
+              "archetype": "framework_summary_with_output_lineup",
+              "slide_title": "总结：软硬件跨层次协同优化三层框架",
+              "slide_claim": "从算法/系统/硬件三层次协同优化，在提升智能的同时提升推理能效",
+              "slide_key_text": [
+                "我们从3个设计层次对端侧大模型推理展开协同优化",
+                "在提升大模型智能的基础上，提升推理能效",
+                "算法层 / 系统层 / 硬件层",
+                "Megrez 1.0 / Megrez 2.0",
+                "[ISCA 25] / [AAAI 26 oral] / [FPGA 24] / [FPGA 25]"
+              ],
+              "slide_visual_skeleton": [
+                "左侧协同主线竖条",
+                "三层设计层次纵向蓝框",
+                "各层小示意图",
+                "箭头指向右侧成果卡"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_pattern": "thanks_with_logo_wall_and_contact",
+              "archetype": "thanks_with_logo_wall_and_contact",
+              "slide_title": "致谢与联系方式",
+              "slide_claim": "致谢合作企业与高校，并给出汇报人联系方式",
+              "slide_key_text": [
+                "戴国浩 / 刘军",
+                "上海交通大学",
+                "2025-11-22",
+                "Email: daiguohao@sjtu.edu.cn",
+                "合作企业 / 合作高校"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔条",
+                "汇报人信息文本块",
+                "合作企业/高校标签框",
+                "两排 logo 墙"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "appendix_cognitive_analogy_plus_paradigm_timeline_backup",
+      "title": "备份·认知类比铺垫+范式演变时间线",
+      "applicable_when": {
+        "chapter_role": [
+          "appendix"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "备份",
+          "backup",
+          "类比",
+          "时间线",
+          "答辩素材"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cognitive_analogy_dual_node",
+          "count": 1,
+          "position": "start",
+          "purpose": "以经典认知理论(如 Kahneman 快慢双系统)作类比, 为主论技术提供直觉支撑"
+        },
+        {
+          "archetype": "paradigm_evolution_timeline",
+          "count": 1,
+          "position": "end",
+          "purpose": "以横向时间线展现该技术范式的多阶段演变+未来方向留白"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cognitive_analogy_dual_node",
+          "to_archetype": "paradigm_evolution_timeline",
+          "hook_type": "from_general_to_specific"
+        }
+      ],
+      "applicable_summary": "汇报末尾的 backup 双页: 一页借认知/理论类比为核心技术做直觉铺垫, 另一页以时间线梳理该技术的范式演变+未来延展, 两页互为技术补充论据, 供答辩追问时调用",
+      "anti_patterns": [
+        "带 recap 与主张回收的正文式收束 → 用 closing_toc_recap_framework_summary_thanks_with_logos",
+        "论文型 future work 初步实验表 → 用 discussion_toc_three_pillar_recap_plus_future_extension",
+        "多子领域展开的展望章 → 用 discussion_agenda_vision_topics_team_close"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "deck_title": "高效端侧大模型推理优化",
+          "deck_topic_tags": [
+            "端侧推理",
+            "大模型",
+            "软硬协同",
+            "投机解码",
+            "量化稀疏",
+            "FPGA加速",
+            "MoE",
+            "视频生成"
+          ],
+          "section_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.07",
+          "section_title": "备份：双系统与推测解码",
+          "section_role": "appendix",
+          "section_narrative": "全 deck 末尾的备份材料，非正文。slide 52 用 Kahneman 双系统理论为「投机解码」提供认知类比，slide 53 用时间线梳理推测解码范式演变，两页互为该技术的补充论据。",
+          "section_topic_tags": [
+            "Kahneman双系统类比",
+            "快慢系统协同",
+            "推测解码范式演变",
+            "多模态扩散扩展",
+            "backup答辩素材"
+          ],
+          "match_evidence": "2 页节奏: 快慢系统认知类比(slide52) + 推测解码演变横向时间线(slide53), 完整覆盖 pattern 两节奏",
+          "slides": [
+            {
+              "slide_index": 52,
+              "role_in_pattern": "cognitive_analogy_dual_node",
+              "archetype": "cognitive_analogy_dual_node",
+              "slide_title": "\"快系统\"与\"慢系统\"如何协同",
+              "slide_claim": "人类快慢双系统协同,为投机解码提供认知类比",
+              "slide_key_text": [
+                "第一类系统\"快速、自动、直观\"",
+                "第二类系统\"缓慢、审慎、逻辑\"",
+                "相互协同",
+                "Daniel Kahneman, \"Thinking, Fast and Slow\""
+              ],
+              "slide_visual_skeleton": [
+                "左右双椭圆节点",
+                "中间双向协同箭头",
+                "下方分支说明箭头",
+                "底部文献引用"
+              ]
+            },
+            {
+              "slide_index": 53,
+              "role_in_pattern": "paradigm_evolution_timeline",
+              "archetype": "paradigm_evolution_timeline",
+              "slide_title": "推测解码的演变",
+              "slide_claim": "推测解码沿时间线从LLM加速演进为通用\"先生成后验证\"范式",
+              "slide_key_text": [
+                "2022.11 大语言模型推测解码",
+                "\"先生成后验证\"的范式",
+                "2024.1 多模态大语言模型",
+                "2024.8 Diffusion 扩散模型图像生成",
+                "AI方向持续拓展"
+              ],
+              "slide_visual_skeleton": [
+                "横向时间轴带节点",
+                "三个并列时间节点卡片",
+                "省略号延展标记",
+                "未来方向文字块"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck 7 section, 抽出 6 patterns。opening 复用 previous_batches 的 opening_cover_plus_progress_highlighted_toc; motivation/method(algo)/method(dual works)/closing/appendix 均为新 pattern。method_layer_two_parallel_works_lineup_full_arc 在本 batch 同时匹配 sec.04(软件层 SpecEE+SpecDiff) 与 sec.05(硬件层 FlightLLM+FlightVGM), 二者均以「层内两项独立工作各自完整弧线」为共同结构原则。new_archetype: three_layer_framework_recall_current_layer_expand — 三层框架总览+当前层放大分叉的 recap 页; new_archetype: shared_concept_intro_dual_system — 两项工作共享的认知/概念铺垫页(如快慢双系统类比); new_archetype: work_paper_cover — 论文封面(采用标准词 single_paper_title_authors_only 时也适用); new_archetype: work_background_or_scenario_context — 单项工作的场景/结构/趋势铺陈页; new_archetype: work_prior_work_or_challenge_survey — 单项工作已有方案综述或核心挑战陈述页; new_archetype: work_key_observation_or_insight — 单项工作独有的关键观察/洞见页; new_archetype: work_method_mechanism_detail — 单项工作方法机制细节页; new_archetype: work_experiment_setup — 单项工作实验设置页; new_archetype: work_result_speedup_headline — 单项工作加速比数字头条页; new_archetype: metric_shift_headline_with_hardware_evidence — 承接范式抛出能效指标换代+硬件方案数值气泡背书页; new_archetype: objective_2d_chart_with_levels — 二维坐标(能效×能力)+等级跃迁曲线定义定量目标页; new_archetype: traditional_silo_gap_statement — 传统割裂思路(算法-硬件分立)导致优化受限的陈述页; new_archetype: framework_decomposition_intro — 把优化问题拆解为 N 层设计的动机末尾框架页; new_archetype: three_layer_framework_recall_with_model_branch — 三层框架回顾并从当前层分叉出两代自研模型的 recap 页; new_archetype: model_pain_point_statement — 自研模型的场景/资源痛点陈述页; new_archetype: model_result_headline — 自研模型的核心成果头条(同尺寸最强+性能提升数字); new_archetype: model_motivation_scenario_tradeoff — 新一代模型的场景两难动因页(现有方案的高性能/性价比/低成本三难); new_archetype: model_design_experience_dual_panel — 自研模型的双栏设计经验页(Dense/数据 或 MoE/参数量); new_archetype: framework_summary_with_output_lineup — 全篇 N 层协同框架收束页, 每层箭头挂接对应论文/成果卡; new_archetype: thanks_with_logo_wall_and_contact — 致谢页含汇报人信息+邮箱+合作企业/高校 logo 墙; new_archetype: cognitive_analogy_dual_node — 借认知理论(如 Kahneman 双系统)双椭圆节点做技术类比页; new_archetype: paradigm_evolution_timeline — 横向时间线梳理某技术范式多阶段演变+未来方向留白页",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 7,
+    "sections_unassigned_in_this_batch": []
+  }
+}

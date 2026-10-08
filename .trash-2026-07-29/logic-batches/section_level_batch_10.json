@@ -1,0 +1,1278 @@
+{
+  "batch_index": 10,
+  "patterns": [
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "论文",
+          "机构",
+          "作者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中大字论文标题+多作者列+多机构脚注+共一/通讯标注"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号目录列出全 deck 章节骨架 (背景/相关工作/动机/方法/实验/总结)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多作者+多机构+共一/通讯标注)接一页编号进度式目录, 为后续 background→related_work→motivation→techniques→evaluation→summary 六段主线定调",
+      "anti_patterns": [
+        "单页封面无 TOC — 用 opening_paper_cover_multi_author_multi_institution",
+        "封面+空白开场骨架 — 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "deck 的开场章：先以极简封面亮出 SpecDiff 标题、作者与 SJTU/SII/Infinigence 机构署名，再用六节目录（Background→Summary）为全篇学术汇报建立骨架，Background 高亮为起点。",
+          "section_topic_tags": [
+            "SpecDiff",
+            "论文封面署名",
+            "六节 agenda",
+            "SJTU/SII/Infinigence"
+          ],
+          "match_evidence": "2 页节奏: 大字论文标题+多机构署名封面 + 六节编号高亮目录",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SpecDiff：自投机加速扩散模型推理（封面）",
+              "slide_claim": "SpecDiff 以自投机机制加速扩散模型推理",
+              "slide_key_text": [
+                "SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation",
+                "Jiayi Pan, Jiaming Xu, Yongkang Zhou, Guohao Dai",
+                "1Shanghai Jiao Tong University / 2SII / 3Infinigence AI",
+                "Equal Contribution",
+                "*Corresponding to: jiamingxu@sjtu.edu.cn; daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "通栏大标题",
+                "浅粉水平分隔线",
+                "作者与机构署名块",
+                "通讯信息脚注"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "全篇六节目录（Background 高亮）",
+              "slide_claim": "全篇按六节展开，从 Background 起步",
+              "slide_key_text": [
+                "Contents",
+                "1 Background",
+                "2 Related Work",
+                "3 Motivation",
+                "4 Techniques",
+                "5 Evaluation / 6 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "矩形外边框",
+                "蓝色编号圆点竖排目录",
+                "左侧蓝色进度竖条",
+                "当前节高亮",
+                "页脚页码"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_domain_landscape_to_operator_bottleneck_funnel",
+      "title": "背景·多域普及→双轴算力爆炸→推理机制→算子成本→bottleneck定位",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "模型普及",
+          "算力开销",
+          "算子成本",
+          "瓶颈"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "domain_landscape_multi_field_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以一句主张+多域并列标签铺陈目标模型跨领域普及"
+        },
+        {
+          "archetype": "dual_axis_growth_scaling_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "左右双栏对照参数增长×输入规模增长, 论证算力需求双重爆炸"
+        },
+        {
+          "archetype": "inference_pipeline_multi_step_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "拆解目标模型的多步迭代推理机制, 明确 step 内子结构"
+        },
+        {
+          "archetype": "operator_cost_formula_derivation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以张量维度+矩阵乘图+复杂度公式, 将成本归到关键变量 L"
+        },
+        {
+          "archetype": "bottleneck_conclusion_speedup_direction",
+          "count": 1,
+          "position": "end",
+          "purpose": "用 Roofline+红色推导链得出 compute-bound + 降 L 加速的核心杠杆"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "domain_landscape_multi_field_intro",
+          "to_archetype": "dual_axis_growth_scaling_compare",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "dual_axis_growth_scaling_compare",
+          "to_archetype": "inference_pipeline_multi_step_diagram",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "inference_pipeline_multi_step_diagram",
+          "to_archetype": "operator_cost_formula_derivation",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "operator_cost_formula_derivation",
+          "to_archetype": "bottleneck_conclusion_speedup_direction",
+          "hook_type": "data_then_implication"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速背景章: 由模型多域普及 → 参数×输入双轴增长 → 多步推理机制 → 算子成本随 L 公式 → compute-bound + 降 L 加速结论, 层层漏斗把宏观趋势落到可操作的加速杠杆",
+      "anti_patterns": [
+        "含 GPU 代际演进时间线 — 用 background_ai_to_domain_to_hardware_evolution_funnel",
+        "以稀疏化分类立双靶 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.02",
+          "section_title": "扩散模型与推理计算成本",
+          "section_role": "background",
+          "section_narrative": "背景章,层层递进为方法铺垫:从扩散模型多域普及,到算力需求随参数(6500×)与输入规模(10⁴)爆炸,再拆解多步迭代推理中Attn/FFN随L的成本,最终落到二者compute-bound、降L即加速,锚定全deck核心杠杆。",
+          "section_topic_tags": [
+            "扩散模型推理",
+            "算力开销",
+            "Attention/FFN 成本",
+            "compute-bound",
+            "降输入长度 L"
+          ],
+          "match_evidence": "5 页节奏: 多域普及 + 参数×输入双爆炸 + 多步迭代机制 + Attn/FFN∝L 公式 + Roofline compute-bound 结论",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "domain_landscape_multi_field_intro",
+              "archetype": "single_claim_with_domain_tag_row",
+              "slide_title": "扩散模型:跨多域的基础架构",
+              "slide_claim": "扩散模型已成为文本/图像/视频/机器人多域的基础架构",
+              "slide_key_text": [
+                "Diffusion models have emerged as a foundational architecture across multiple domains",
+                "Text / Image / Video / Robotics"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔线标题",
+                "四域横向并列标签行"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "dual_axis_growth_scaling_compare",
+              "archetype": "dual_column_growth_evidence",
+              "slide_title": "扩散模型算力需求的双重爆炸",
+              "slide_claim": "参数量(6500×)与输入规模(10⁴×)双重增长推高算力需求",
+              "slide_key_text": [
+                "Higher Computational Demand",
+                "More Parameters: 6500×",
+                "DDPM / DDIM / DiT-XL/2 / Flux.1 Dev / HunyuanImage-3.0",
+                "Larger Input Scale: 10^4 ×",
+                "Low-Resolution Image → High-Resolution Video",
+                "VAE & Embedding → Tokens"
+              ],
+              "slide_visual_skeleton": [
+                "左右两列对比 panel",
+                "参数增长上升箭头图",
+                "输入放大流程(VAE&Embedding→Tokens)"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "inference_pipeline_multi_step_diagram",
+              "archetype": "inference_flow_step_series_diagram",
+              "slide_title": "扩散模型推理:多步迭代过程",
+              "slide_claim": "扩散模型推理是逐步去噪的多步迭代过程",
+              "slide_key_text": [
+                "Diffusion model inference is a multi-step iterative process",
+                "Prompt / Tokenize / Tokens / Noise / VAE",
+                "Model: Embedding / Attention / FFN / Projection",
+                "Step 1 … Step x … Step N"
+              ],
+              "slide_visual_skeleton": [
+                "左侧输入预处理链",
+                "多步 Model 模块横向串联",
+                "步内 Attn/FFN 堆叠子结构"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "operator_cost_formula_derivation",
+              "archetype": "operator_formula_with_tensor_diagram",
+              "slide_title": "Attention 与 FFN 成本随输入长度 L",
+              "slide_claim": "Attention∝L²·d_model、FFN∝L·d²_model,成本由 L 主导",
+              "slide_key_text": [
+                "The computational cost of Attention and FFN is influenced by input length(L)",
+                "L = height * width * frame + length",
+                "Attention ∝ L2 · d_model",
+                "FFN ∝ L · d_model 2"
+              ],
+              "slide_visual_skeleton": [
+                "输入维度张量方块图",
+                "Q/K/V→O 矩阵乘示意",
+                "复杂度公式标注"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "bottleneck_conclusion_speedup_direction",
+              "archetype": "roofline_arrow_chain_conclusion",
+              "slide_title": "Attention 与 FFN 均为 compute-bound",
+              "slide_claim": "Attn/FFN 属 compute-bound,降低 L 即可加速推理",
+              "slide_key_text": [
+                "Both Attention and FFN are compute-bound",
+                "Roofline Model on Nvidia A800 GPU",
+                "Memory Bound: Data transfer / Compute Bound: Busy computation",
+                "L >> 10^3",
+                "Latency(ATTN) ∝ L2 / Latency(FFN) ∝ L",
+                "Reduce input length(L) will speedup."
+              ],
+              "slide_visual_skeleton": [
+                "Roofline 瓶颈说明文本块",
+                "红色箭头推导链",
+                "延迟-L 关系公式"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "related_work_dual_route_mechanism_flaw_to_insight_table",
+      "title": "相关工作·双路线机制-缺陷→洞见→对比表引方案",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "related_work"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "两条路线",
+          "缺陷",
+          "洞见",
+          "对比表"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入相关工作"
+        },
+        {
+          "archetype": "route_one_mechanism_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第一路线机制铺陈, 尚不评价"
+        },
+        {
+          "archetype": "route_one_flaw_annotation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "叠加红色缺陷标注揭示第一路线三大问题"
+        },
+        {
+          "archetype": "route_two_mechanism_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "转向第二路线机制, 埋核心开放问题"
+        },
+        {
+          "archetype": "insight_headline_with_references",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以一句大字金句提炼章内核心洞见 + 底部参考文献"
+        },
+        {
+          "archetype": "comparison_table_with_placeholder_row",
+          "count": 1,
+          "position": "end",
+          "purpose": "以指标对比表+待填?行印证洞见并埋伏本文方案"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "route_one_mechanism_diagram",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "route_one_mechanism_diagram",
+          "to_archetype": "route_one_flaw_annotation",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "route_one_flaw_annotation",
+          "to_archetype": "route_two_mechanism_diagram",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "route_two_mechanism_diagram",
+          "to_archetype": "insight_headline_with_references",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "insight_headline_with_references",
+          "to_archetype": "comparison_table_with_placeholder_row",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "论文分享型相关工作章: 目录 → 第一路线机制 → 揭其缺陷 → 转向第二路线机制并抛开放问题 → 一句金句凝练核心洞见 → 指标对比表带?行引出本文方案, 双路线对照+洞见收束",
+      "anti_patterns": [
+        "以并列三条路线综述且不做单路线机制-缺陷对 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge",
+        "以断言+现有工作图逐条抛挑战 — 用 problem_three_challenges_prior_work_flaw_bulletin"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.03",
+          "section_title": "相关工作:降输入长度与特征缓存",
+          "section_role": "background",
+          "section_narrative": "综述两条加速路线：先展示Token Merging机制并揭其缺陷（<70%相似、同质化、<30%加速），再转向Feature Caching跨步复用，最终提炼「预测所用信息量决定性能」的洞见，为自投机方法埋伏笔。",
+          "section_topic_tags": [
+            "Token Merging",
+            "Feature Caching",
+            "扩散推理加速",
+            "预测信息量",
+            "相关工作对比"
+          ],
+          "match_evidence": "6 页节奏: TOC + Token Merging 机制 + 缺陷标注 + Feature Caching 机制 + 金句洞见 + 5×4 对比表",
+          "slides": [
+            {
+              "slide_index": 8,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:进入 Related Work 章节",
+              "slide_claim": "演讲推进至第 2 章 Related Work,承上启下",
+              "slide_key_text": [
+                "Contents",
+                "Background / Related Work / Motivation",
+                "Techniques / Evaluation / Summary"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框目录卡",
+                "6 项编号圆点列表",
+                "当前项蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "route_one_mechanism_diagram",
+              "archetype": "dual_column_token_flow_diagram",
+              "slide_title": "Token Merging 机制:分类归并降 token 长度",
+              "slide_claim": "Token Merging 通过分类相似 token 并归并来缩短输入长度",
+              "slide_key_text": [
+                "Related Work: Reduce Input Length (L)",
+                "Token Merging",
+                "Tokens → Classify → Merge → Merged Tokens",
+                "Module"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏 token 示意图",
+                "彩色方块 Merge 箭头",
+                "Classify 分类分块",
+                "Module 处理框"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "route_one_flaw_annotation",
+              "archetype": "mechanism_overlay_red_flaw_labels",
+              "slide_title": "Token Merging 的缺陷:低相似、同质化、加速有限",
+              "slide_claim": "Token Merging 因相似度<70%导致同质化,加速不足30%",
+              "slide_key_text": [
+                "Token Merge",
+                "Low similarity (<70%)",
+                "Severe homogenization",
+                "Less than 30% speedup."
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏 token 示意图",
+                "虚线框圈选待合并区",
+                "红色缺陷标注文字",
+                "Merge 箭头"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "route_two_mechanism_diagram",
+              "archetype": "two_step_predictor_reuse_diagram",
+              "slide_title": "Feature Caching 机制:跨步复用特征",
+              "slide_claim": "Feature Caching 跨步复用特征,相似度>90%但需预测重要token",
+              "slide_key_text": [
+                "Feature Caching",
+                "Step a / Step a+1",
+                "Predictor / Trivial / Important",
+                "Reuse / Compute",
+                "Higher similarity (>90%)",
+                "How to predict the important tokens?"
+              ],
+              "slide_visual_skeleton": [
+                "两步(Step a/a+1)流程图",
+                "Module-Feature-Reuse 箭头链",
+                "Predictor 分支框",
+                "红色提问标注"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "insight_headline_with_references",
+              "archetype": "single_sentence_insight_with_refs",
+              "slide_title": "核心洞见:预测所用信息量至关重要",
+              "slide_claim": "预测所用信息量决定加速方法性能",
+              "slide_key_text": [
+                "Related Work: Feature Caching",
+                "The quantity of information used in prediction is vital.",
+                "[1] FORA / [2] ToCa / [3] RAS / [4] TaylorSeer 文献"
+              ],
+              "slide_visual_skeleton": [
+                "居中单句金句",
+                "顶部蓝色分隔线",
+                "底部参考文献列表"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "comparison_table_with_placeholder_row",
+              "archetype": "metric_gradient_table_with_placeholder",
+              "slide_title": "Feature Caching 方法对比:信息量越多性能越高",
+              "slide_claim": "信息量越大精度越高、延迟越低,「?」指向更优新方法",
+              "slide_key_text": [
+                "FORA / ToCa / RAS / TaylorSeer / ?",
+                "Information / Accuracy / Latency",
+                "None→One-Step→Two-Step→N-Step→More",
+                "More information results higher performance."
+              ],
+              "slide_visual_skeleton": [
+                "5 行 4 列对比表",
+                "红绿色阶指标标注",
+                "红色虚线框结论条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "motivation_three_step_insight_chain_failure_hypothesis_answer",
+      "title": "动机·三步洞察链·失效→设问→新信号解答",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "动机",
+          "洞察链",
+          "失效",
+          "设问",
+          "解答"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入动机章"
+        },
+        {
+          "archetype": "insight_one_current_failure",
+          "count": 1,
+          "position": "middle",
+          "purpose": "洞察一: 在同一时间线示意图上揭示现象/朴素方案失效"
+        },
+        {
+          "archetype": "insight_two_conditional_setup",
+          "count": 1,
+          "position": "middle",
+          "purpose": "洞察二: 复用同一示意图, 用红色高亮块提设条件『若能预知…』"
+        },
+        {
+          "archetype": "insight_three_new_signal_answer",
+          "count": 1,
+          "position": "end",
+          "purpose": "洞察三: 引入新信号(如少步扩散作投机)回答如何预知, 附红色开放问题引方法"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "insight_one_current_failure",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "insight_one_current_failure",
+          "to_archetype": "insight_two_conditional_setup",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "insight_two_conditional_setup",
+          "to_archetype": "insight_three_new_signal_answer",
+          "hook_type": "problem_to_solution"
+        }
+      ],
+      "applicable_summary": "论文分享型动机章: 章首目录后, 用三张相互复用的时间线示意图递进三段洞察 (现象失效 → 条件设问 → 引入新信号作答), 每页在同一骨架上叠加红色标注, 末页抛开放问题桥接方法章",
+      "anti_patterns": [
+        "以后训练 vs 原生训练两条路线对比+转置公式 — 用 motivation_paradigm_compare_then_transpose_key_idea",
+        "以宏观 AI 路标→三轴增长→供需鸿沟漏斗 — 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.04",
+          "section_title": "关键洞察:相邻步特征可预知",
+          "section_role": "motivation",
+          "section_narrative": "承接Related Work的动机核。以三段递进论证:相邻步特征会突变致朴素缓存失效→若能预知突变即可计算特征→少步扩散作投机可提供未来信息,为后续自投机方法奠基。",
+          "section_topic_tags": [
+            "扩散推理",
+            "相邻步特征突变",
+            "投机步",
+            "未来信息",
+            "自投机洞察"
+          ],
+          "match_evidence": "4 页节奏: TOC + 三步时间线洞察(失效→预知设问→少步投机作答)",
+          "slides": [
+            {
+              "slide_index": 14,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:定位到 Motivation 章节",
+              "slide_claim": "演讲进入第 3 部分 Motivation,承接 Related Work 展开动机",
+              "slide_key_text": [
+                "Contents",
+                "Background / Related Work / Motivation",
+                "Techniques / Evaluation / Summary"
+              ],
+              "slide_visual_skeleton": [
+                "外框标题卡",
+                "6 项编号圆点竖排列表",
+                "左侧当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "insight_one_current_failure",
+              "archetype": "three_step_timeline_with_red_cross",
+              "slide_title": "关键洞察一:相邻步特征会突变",
+              "slide_claim": "相邻扩散步的图像/视频特征会突变,致朴素缓存复用失效",
+              "slide_key_text": [
+                "The image/video in adjacent step can mutate",
+                "Cache the feature / Reuse the feature",
+                "Unimportant vs Important Features",
+                "Chaotic → Chaotic → Ordered"
+              ],
+              "slide_visual_skeleton": [
+                "三步时间线示意",
+                "Mutate 红色突变箭头",
+                "缓存复用红叉标记",
+                "Chaotic/Ordered 状态标签"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "insight_two_conditional_setup",
+              "archetype": "three_step_timeline_with_hypothesis_highlight",
+              "slide_title": "关键洞察二:若能预知突变即可算特征",
+              "slide_claim": "若能提前预知突变,即可在突变步主动计算而非复用特征",
+              "slide_key_text": [
+                "If we can know the mutation in advance …",
+                "Calculate the feature",
+                "Unimportant vs Important Features",
+                "Chaotic → Chaotic → Ordered"
+              ],
+              "slide_visual_skeleton": [
+                "三步时间线示意",
+                "红色高亮预知/计算块",
+                "Chaotic/Ordered 状态标签"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "insight_three_new_signal_answer",
+              "archetype": "dual_axis_diffusion_speculation_diagram",
+              "slide_title": "关键洞察三:少步扩散提供未来信息",
+              "slide_claim": "少迭代扩散过程可作投机,为多步扩散提供未来信息",
+              "slide_key_text": [
+                "A diffusion process with few iterations will provide future information",
+                "Many Iterations vs Few Iterations",
+                "Speculation generated by same model",
+                "How to use speculation results to judge"
+              ],
+              "slide_visual_skeleton": [
+                "Many/Few Iterations 双向轴对照",
+                "Diffusion Process 渐变大箭头",
+                "Speculation 投机区块",
+                "红色虚线设问框"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_progressive_score_formula_derivation_plus_stability_taxonomy",
+      "title": "方法·核心思路+现象洞察对+打分公式逐级演进+稳定性分类",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "方法",
+          "打分公式",
+          "逐级演进",
+          "防饿死",
+          "多级分类"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入方法章"
+        },
+        {
+          "archetype": "method_core_idea_with_open_question",
+          "count": 1,
+          "position": "start",
+          "purpose": "抛出核心思路(如少步全推理作投机)并留开放问题(未来信息用什么)"
+        },
+        {
+          "archetype": "phenomenon_insight_page",
+          "count": 2,
+          "position": "middle",
+          "purpose": "两页现象对: 首先揭示问题(如 token 重要性突变、历史信息不够), 再证新信号可捕获"
+        },
+        {
+          "archetype": "formula_upgrade_add_new_term",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以前后两版公式+红色下箭头, 把新信号并入重要性/打分公式"
+        },
+        {
+          "archetype": "side_effect_patch_with_new_factors",
+          "count": 1,
+          "position": "middle",
+          "purpose": "揭示副作用(饿死/精度降), 逐级下箭头引入 CF/CR 等补丁因子"
+        },
+        {
+          "archetype": "taxonomy_extension_by_stability",
+          "count": 1,
+          "position": "end",
+          "purpose": "以稳定性/CV 分级扩展算法, Compute/Reuse/Approximate 三分流收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "method_core_idea_with_open_question",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "method_core_idea_with_open_question",
+          "to_archetype": "phenomenon_insight_page",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "phenomenon_insight_page",
+          "to_archetype": "phenomenon_insight_page",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "phenomenon_insight_page",
+          "to_archetype": "formula_upgrade_add_new_term",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "formula_upgrade_add_new_term",
+          "to_archetype": "side_effect_patch_with_new_factors",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "side_effect_patch_with_new_factors",
+          "to_archetype": "taxonomy_extension_by_stability",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享方法章: 目录 → 抛核心思路+开放问题 → 现象洞察对(揭示问题-证明可解) → 公式升级加新项 → 副作用补丁加因子 → 稳定性/CV 分级扩展多级分类; 全章以同一打分公式为主线, 每页加/改一个项, 视觉上形成递进演化",
+      "anti_patterns": [
+        "以算法/编译/硬件三子层挑战-创新-实验闭环 — 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "以三项并列技术意图-流程-硬件细节 — 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+          "section_title": "特征选择与多级分类算法",
+          "section_role": "method",
+          "section_narrative": "本章是方法核心。以投机步 attention 捕获 token 重要性突变为洞察,逐步推导重要性打分公式,加入防饿死的 CF/CR,再过渡到基于 CV 稳定性的多级特征分类算法。",
+          "section_topic_tags": [
+            "自投机机制",
+            "重要性打分公式",
+            "投机步 attention",
+            "防饿死 CF/CR",
+            "多级特征分类 CV"
+          ],
+          "match_evidence": "7 页节奏: TOC + 少步投机核心思路 + 两页现象对(突变-可捕获) + 公式升级 F(His,Spec) + CF/CR 补丁 + CV 多级分类",
+          "slides": [
+            {
+              "slide_index": 18,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:进入 Techniques 章节",
+              "slide_claim": "演讲进入第 4 部分 Techniques,方法核心即将展开",
+              "slide_key_text": [
+                "Background / Related Work / Motivation",
+                "Techniques(当前高亮)",
+                "Evaluation / Summary"
+              ],
+              "slide_visual_skeleton": [
+                "外框 Contents 标题",
+                "6 项编号圆点纵向列表",
+                "当前项蓝色竖条高亮"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "method_core_idea_with_open_question",
+              "archetype": "dual_row_timeline_with_open_question",
+              "slide_title": "以少迭代全推理作为投机步",
+              "slide_claim": "用少量迭代的完整推理作 speculation,提供未来信息",
+              "slide_key_text": [
+                "We use a full inference with few iterations as speculation",
+                "Future Information",
+                "What future information to use?"
+              ],
+              "slide_visual_skeleton": [
+                "Speculation 与 Step 双行时间轴",
+                "虚线框标注 Future Information",
+                "红块问号占位",
+                "底部红色虚线问题条"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "phenomenon_insight_page",
+              "archetype": "attention_score_split_mutation_diagram",
+              "slide_title": "token 重要性在扩散模型中会突变",
+              "slide_claim": "token 重要性会在步间突变,历史信息无法预知",
+              "slide_key_text": [
+                "The importance of token can mutate in diffusion model",
+                "Important Token / Trivial Token",
+                "Mutation",
+                "Unknown by historical information"
+              ],
+              "slide_visual_skeleton": [
+                "Attention Score 分叉箭头图",
+                "Step a-1/a/a+1 虚线框",
+                "Mutation 跳变标注",
+                "右侧红字结论"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "phenomenon_insight_page",
+              "archetype": "attention_score_with_spec_overlay",
+              "slide_title": "投机步 attention 可捕获突变",
+              "slide_claim": "投机步的 attention 能捕获突变,未来信息使其可知",
+              "slide_key_text": [
+                "Attention from speculation step can obtain mutation",
+                "Spec. Attention Score",
+                "Known by future information"
+              ],
+              "slide_visual_skeleton": [
+                "Step 纵向标签轴",
+                "重叠红块表示投机覆盖",
+                "Spec. Attention Score 标题",
+                "红字结论"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "formula_upgrade_add_new_term",
+              "archetype": "formula_before_after_with_red_arrow",
+              "slide_title": "重要性打分公式引入投机 attention",
+              "slide_claim": "重要性打分从仅用历史 attention 扩展为叠加投机 attention",
+              "slide_key_text": [
+                "Importance Score = F(His. Attn)",
+                "Importance Score = F(His. Attn, Spec. Attn)"
+              ],
+              "slide_visual_skeleton": [
+                "前后两版公式",
+                "红色向下箭头表示升级",
+                "Spec. Attn 红色高亮"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "side_effect_patch_with_new_factors",
+              "archetype": "formula_stepwise_derivation_with_factors",
+              "slide_title": "防饿死:引入 CF 与 CR",
+              "slide_claim": "从不计算的 token 会降质,需 CF/CR 做防饿死缓存",
+              "slide_key_text": [
+                "Tokens never computed will incur quality decrease",
+                "40% tokens will never be important",
+                "Starvation Prevention",
+                "Cached Frequence (CF) / Cached Ratio (CR)",
+                "Top x% tokens: Compute / Other tokens: Reuse"
+              ],
+              "slide_visual_skeleton": [
+                "公式逐级下箭头推导链",
+                "CF/CR 因子标注",
+                "Compute vs Reuse 分流",
+                "Starvation Prevention 红字"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "taxonomy_extension_by_stability",
+              "archetype": "stability_gradient_three_way_split",
+              "slide_title": "多级特征分类算法(按稳定性分级)",
+              "slide_claim": "不同重要性 token 稳定性各异,用 CV 做多级分类复用",
+              "slide_key_text": [
+                "Stability of tokens at different importance level varies",
+                "coefficient of variation (CV) correlates with importance score",
+                "CV↓ → Stability↑",
+                "Compute / Reuse / Approximate (other tokens)",
+                "Model (Top x% tokens)"
+              ],
+              "slide_visual_skeleton": [
+                "Token Score 高低渐变竖箭头",
+                "Low Stability 区间标注",
+                "Compute/Reuse/Approximate 三栏",
+                "CR 控制近似虚线框"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "experiment_setup_per_model_speedup_pareto_summary",
+      "title": "实验·设置→分模型加速比→Pareto总结",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "分模型评测",
+          "加速比",
+          "Pareto 总结"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入评测章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 1,
+          "position": "middle",
+          "purpose": "单页 bullet 列硬件/模型/baseline/数据集"
+        },
+        {
+          "archetype": "per_model_speedup_result",
+          "count": 2,
+          "position": "middle",
+          "purpose": "逐模型给一页加速比结果(图表+红色虚线结论框)"
+        },
+        {
+          "archetype": "pareto_frontier_summary_line",
+          "count": 1,
+          "position": "end",
+          "purpose": "以一句话汇总三模型加速比+Pareto 前沿收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "eval_setup_bulleted_with_refs",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_with_refs",
+          "to_archetype": "per_model_speedup_result",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "per_model_speedup_result",
+          "to_archetype": "per_model_speedup_result",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "per_model_speedup_result",
+          "to_archetype": "pareto_frontier_summary_line",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "论文分享型轻量实验章: 目录 → 单页设置(硬件/模型/baseline/数据) → 按模型家族逐页给加速比结果+红色结论框 → 一句话 Pareto 前沿总结收束; 与含消融/资源/demo 的重实验章形成对照, 适用于精度-速度定位为主论点的加速类工作",
+      "anti_patterns": [
+        "含消融+EDP Pareto 收束 — 用 experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+        "含视频 demo 徽章收尾 — 用 experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "含设置双页+主结果+两页消融 — 用 experiment_setup_dual_main_headline_ablation_pair"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06",
+          "section_title": "实验设置与加速评测",
+          "section_role": "experiment",
+          "section_narrative": "作为方法章之后的验证闭环:先交代硬件/模型/baseline/数据集,再分 SD3+3.5、Flux.1 Dev 两组给出 2.7-3.17× 加速结论,最后汇总为『质量近乎无损、推进精度-速度 Pareto 前沿』。",
+          "section_topic_tags": [
+            "SpecDiff 加速评测",
+            "SD3/SD3.5",
+            "Flux.1 Dev",
+            "2.7-3.17× 加速",
+            "精度-速度 Pareto"
+          ],
+          "match_evidence": "5 页节奏: TOC + 硬件/模型/baseline/数据设置 + SD3/SD3.5 2.80/2.74× + Flux.1 3.17× + Pareto 前沿总结",
+          "slides": [
+            {
+              "slide_index": 25,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:定位到第 4 章 Evaluation",
+              "slide_claim": "全篇进入第 4 部分 Evaluation,承接 Techniques 转入评测",
+              "slide_key_text": [
+                "Contents",
+                "1 Background",
+                "2 Related Work",
+                "3 Techniques",
+                "4 Evaluation",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框标题卡",
+                "5 项编号圆圈列表",
+                "左侧当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "eval_setup_bulleted_with_refs",
+              "archetype": "bulleted_setup_configuration_list",
+              "slide_title": "实验设置:硬件/模型/baseline/数据集",
+              "slide_claim": "实验在 A800 上覆盖 SD3、SD3.5、Flux.1 Dev 三模型,对齐主流缓存加速 baseline",
+              "slide_key_text": [
+                "Hardware: NVIDIA Tesla A800-80GB GPU",
+                "Models: SD3 Medium / SD3.5 Large / Flux.1 Dev",
+                "Baseline: Diffusers 框架",
+                "Feature caching: RAS 与 Taylorseer",
+                "Dataset: COCO 2014"
+              ],
+              "slide_visual_skeleton": [
+                "4 组分级 bullet 列表",
+                "蓝色标题分隔线"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "per_model_speedup_result",
+              "archetype": "single_chart_with_speedup_callout",
+              "slide_title": "SD3/SD3.5 评测:2.80×、2.74× 加速",
+              "slide_claim": "SpecDiff 在 SD3、SD3.5 上分别取得 2.80× 与 2.74× 加速",
+              "slide_key_text": [
+                "SpecDiff achieved 2.80× and 2.74× speedup on SD3 and SD3.5"
+              ],
+              "slide_visual_skeleton": [
+                "结果图表区(嵌图)",
+                "红色虚线结论强调框"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "per_model_speedup_result",
+              "archetype": "single_chart_with_speedup_callout",
+              "slide_title": "Flux.1 Dev 评测:3.17× 加速",
+              "slide_claim": "SpecDiff 在 Flux.1 Dev 上取得 3.17× 加速,超过 SD 系列",
+              "slide_key_text": [
+                "SpecDiff achieved 3.17× speedup on Flux.1 Dev"
+              ],
+              "slide_visual_skeleton": [
+                "结果图表区(嵌图)",
+                "红色虚线结论强调框"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "pareto_frontier_summary_line",
+              "archetype": "single_paragraph_summary_bold_headline",
+              "slide_title": "评测总结:推进精度-速度 Pareto 前沿",
+              "slide_claim": "SpecDiff 三模型 2.80×/2.74×/3.17× 加速且质量近乎无损,推进精度-速度 Pareto 前沿",
+              "slide_key_text": [
+                "SpecDiff achieves 2.80×, 2.74× and 3.17× speedup on SD3, SD3.5 and Flux.1 Dev with minimal quality loss",
+                "advancing the Pareto frontier between accuracy and inference speed"
+              ],
+              "slide_visual_skeleton": [
+                "单段落总结文本",
+                "加粗关键结论短语",
+                "蓝色标题分隔线"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_thanks_plus_lab_speculation_series_showcase",
+      "title": "收尾·致谢+课题组研究主线系列工作展台",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "联系方式",
+          "研究主线",
+          "系列工作",
+          "二维码"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "thanks_with_lab_series_showcase",
+          "count": 1,
+          "position": "start",
+          "purpose": "单页左区回扣本工作标题+致谢+邮箱, 右区并列展示课题组同主线多篇代表作+二维码, 把单篇成果升维为研究脉络"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "论文分享型单页收尾: 左侧回扣本文标题与致谢/联系方式, 右侧以『Our works on X』标题串起课题组同主线多篇代表作(会议+方向)并列展示, 附实验室主页/论文二维码, 一页同时完成 recap/致谢/成果扩展三重功能",
+      "anti_patterns": [
+        "纯极简 Thanks+签名 — 用 closing_minimal_thanks_with_speaker_signature",
+        "纯致谢+全作者名单 — 用 closing_thanks_single_page_with_full_author_institution_footer"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.07",
+          "section_title": "总结与致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾章,仅一页。左侧回扣 SpecDiff 标题与致谢/联系方式,右下用『Our works on speculation』将本工作延展为课题组投机系列(LLM Early Exit/Sparse Attention/VLA Pruning),把单篇成果升维为研究主线。",
+          "section_topic_tags": [
+            "SpecDiff 致谢",
+            "课题组投机系列",
+            "LLM Early Exit",
+            "Sparse Attention",
+            "VLA Pruning"
+          ],
+          "match_evidence": "1 页节奏: 左侧 SpecDiff 标题+致谢+邮箱 + 右侧课题组 3 篇投机系列并列 + Lab/Paper 二维码",
+          "slides": [
+            {
+              "slide_index": 30,
+              "role_in_pattern": "thanks_with_lab_series_showcase",
+              "archetype": "split_thanks_with_lab_series_grid",
+              "slide_title": "总结致谢与课题组投机系列工作",
+              "slide_claim": "SpecDiff 是课题组『投机加速』研究主线中的一环",
+              "slide_key_text": [
+                "Thanks for your attention !",
+                "Communication email: pan_jiayi@sjtu.edu.cn",
+                "Our works on speculation",
+                "Speculation for LLM Early Exit (ISCA 2025)",
+                "Speculation for Sparse Attention",
+                "Speculation for VLA Pruning (ASPLOS 2026)"
+              ],
+              "slide_visual_skeleton": [
+                "SpecDiff 标题框",
+                "致谢+邮箱文字块",
+                "Lab/Paper 二维码",
+                "投机系列 3 卡片并列"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck 共 7 sections, 抽出 7 patterns. 其中 opening 章匹配到前 batch 已有 pattern (opening_paper_cover_multi_author_multi_institution_plus_toc), 其余 6 章因单篇 deck 首次出现独立 pattern (background_domain_landscape_to_operator_bottleneck_funnel / related_work_dual_route_mechanism_flaw_to_insight_table / motivation_three_step_insight_chain_failure_hypothesis_answer / method_progressive_score_formula_derivation_plus_stability_taxonomy / experiment_setup_per_model_speedup_pareto_summary / closing_thanks_plus_lab_speculation_series_showcase), 全为 low confidence 单源, 供 driver 跨 batch 合并时判定是否与其他 paper_share deck 同类章合并. 全 7 section 皆被收录, 无 unassigned. new_archetype: domain_landscape_multi_field_intro — 一句主张+多域并列标签的领域普及页. new_archetype: dual_axis_growth_scaling_compare — 左右双栏对照两条独立增长维度. new_archetype: inference_pipeline_multi_step_diagram — 推理多步迭代流程图, 步内含子结构. new_archetype: operator_cost_formula_derivation — 张量维度+矩阵乘图+复杂度公式的算子成本推导. new_archetype: bottleneck_conclusion_speedup_direction — Roofline+红色箭头链得出瓶颈+加速方向. new_archetype: route_one_mechanism_diagram / route_one_flaw_annotation / route_two_mechanism_diagram — 两条相关工作路线机制与缺陷叠加. new_archetype: insight_headline_with_references — 单句金句洞见+底部文献. new_archetype: comparison_table_with_placeholder_row — 指标对比表带待填?行. new_archetype: insight_one_current_failure / insight_two_conditional_setup / insight_three_new_signal_answer — 三步洞察链页面(失效/条件/解答). new_archetype: method_core_idea_with_open_question — 抛出方法核心思路并留开放问题的引入页. new_archetype: phenomenon_insight_page — 现象洞察对页(问题/解答). new_archetype: formula_upgrade_add_new_term — 公式前后对比加新项+红色下箭头. new_archetype: side_effect_patch_with_new_factors — 揭示副作用并逐级下箭头引入补丁因子. new_archetype: taxonomy_extension_by_stability — 按稳定性/CV 分级的多级分类页. new_archetype: per_model_speedup_result — 单模型家族加速比图表+红色结论框. new_archetype: pareto_frontier_summary_line — 一句话汇总多模型加速+Pareto 前沿. new_archetype: thanks_with_lab_series_showcase — 单页左致谢右课题组系列工作+二维码.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 7,
+    "sections_unassigned_in_this_batch": []
+  }
+}

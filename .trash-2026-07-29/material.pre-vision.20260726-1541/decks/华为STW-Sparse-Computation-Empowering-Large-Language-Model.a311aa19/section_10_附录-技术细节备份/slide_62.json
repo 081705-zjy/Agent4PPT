@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_62",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.10",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 62,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Compilation Tuning 映射表提速 1.29x",
+  "核心论断": "构建映射表压缩负载变化空间,较静态实现提速 1.29x",
+  "本页讲什么": "承接上页,Compilation Tuning 通过构建 mapping table 缩减工作负载的变化空间,相较静态实现最高获得 1.29x 加速,给出该技术的量化收益。",
+  "关键文字": [
+    "Technique 3: Compilation Tuning",
+    "Reduce the workload variation space",
+    "Up to 1.29x speedup over the static implementation",
+    "Build the mapping table"
+  ],
+  "视觉骨架": [
+    "mapping table 构建示意",
+    "1.29x 加速对比标注"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_62.asset.01"
+  ],
+  "适合复用场景": [
+    "编译调优量化收益页",
+    "映射表加速结果展示"
+  ],
+  "不适合复用场景": [
+    "提出问题的引入页",
+    "概念 bullet 论证页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

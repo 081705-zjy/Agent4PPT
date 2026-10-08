@@ -1,0 +1,1107 @@
+{
+  "batch_index": 13,
+  "patterns": [
+    {
+      "id": "background_domain_intro_principle_backbone_reveal_to_video_extension",
+      "title": "背景·域引入→原理→骨干渐进揭示→视频扩展",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "模型原理",
+          "骨干结构",
+          "视频扩展"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "domain_intro_with_examples",
+          "count": 1,
+          "position": "start",
+          "purpose": "以领域应用样例(如 Sora/Vidu)引入并点出主流骨干"
+        },
+        {
+          "archetype": "foundational_principle_arrows",
+          "count": 1,
+          "position": "start",
+          "purpose": "用双向箭头图讲清底层原理(如 Diffusion 加噪/去噪)"
+        },
+        {
+          "archetype": "backbone_element_progressive_reveal",
+          "count": 3,
+          "position": "middle",
+          "purpose": "用连续 3 帧逐步揭示骨干模型的 N 个要素(聚焦→过渡帧→全貌+痛点强调)"
+        },
+        {
+          "archetype": "extension_change_key_diffs",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以编号 bullet 列出目标场景对基线骨干的 N 个关键改动"
+        },
+        {
+          "archetype": "extension_variants_dual_display",
+          "count": 1,
+          "position": "end",
+          "purpose": "以并列双架构图展示扩展变体, 收束背景章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "domain_intro_with_examples",
+          "to_archetype": "foundational_principle_arrows",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "foundational_principle_arrows",
+          "to_archetype": "backbone_element_progressive_reveal",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "backbone_element_progressive_reveal",
+          "to_archetype": "backbone_element_progressive_reveal",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "backbone_element_progressive_reveal",
+          "to_archetype": "extension_change_key_diffs",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "extension_change_key_diffs",
+          "to_archetype": "extension_variants_dual_display",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 由领域应用样例引入→底层原理→骨干模型要素连续 3 帧渐进揭示(聚焦要素①→过渡帧→全貌+痛点)→扩展到目标场景的关键改动→并列双变体架构图收束, 层层建立算法共识后为下章问题立靶",
+      "anti_patterns": [
+        "纯宏观趋势无骨干拆解 (用 background_ai_to_domain_to_hardware_evolution_funnel)",
+        "从范式对照切入无原理铺陈 (用 background_paradigm_evolution_related_works_survey_to_bottleneck)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.02",
+          "section_title": "Image DiT与Video DiT背景",
+          "section_role": "background",
+          "section_narrative": "为VGAcc铺垫技术前提:从视频生成应用引入,讲清Diffusion原理与Image DiT三要素,再扩展到Video DiT,为后文token爆炸与注意力差分计算立靶。",
+          "section_topic_tags": [
+            "视频生成",
+            "Diffusion Model",
+            "DiT 三要素",
+            "Video DiT",
+            "OpenSora"
+          ],
+          "match_evidence": "7 页节奏: 领域应用引入(Sora/Vidu)→Diffusion 加噪去噪原理→DiT 三要素 3 帧渐进揭示(Patchify聚焦→过渡帧→全貌+计算复杂度红字)→OpenSora 三处改动→Latte/Flag-DiT 双变体",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "domain_intro_with_examples",
+              "archetype": "domain_intro_with_examples",
+              "slide_title": "文本生成视频与主流 DiT 架构引入",
+              "slide_claim": "视频生成模型已能生成 10s+ 视频,主流架构统一为 DiT",
+              "slide_key_text": [
+                "视频生成模型已能生成超过 10s 的视频",
+                "Sora、Vidu、OpenSora、Lumia-T2X",
+                "主流架构是 Diffusion Transformer(DiT)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框主论断文本",
+                "下方 2 图并列示例区",
+                "Sora / Vidu 标注"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "foundational_principle_arrows",
+              "archetype": "foundational_principle_arrows",
+              "slide_title": "Background:Diffusion Model 加噪与去噪",
+              "slide_claim": "Diffusion 模型由前向加噪与反向去噪两个对称过程构成",
+              "slide_key_text": [
+                "加噪过程(前向)",
+                "去噪过程(反向)",
+                "Diffusion Model"
+              ],
+              "slide_visual_skeleton": [
+                "向右加噪箭头轴",
+                "向左去噪箭头轴",
+                "Diffusion Model 中心标注"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "backbone_element_progressive_reveal",
+              "archetype": "backbone_element_focus_first_step",
+              "slide_title": "Backbone model:DiT 三要素(聚焦 Patchify)",
+              "slide_claim": "DiT 本质是 Text-to-Image 模型,由 Patchify、Condition Embedding、DiT Block 三部分构成",
+              "slide_key_text": [
+                "DiT 本质是 Text-to-Image model",
+                "①Patchify:类似 Vision Transformer 切 patch 加 position 编码",
+                "②Condition Embedding:编码 diffusion 时间步 t 与条件 y",
+                "③DiT Block:Transformer 对 token 做 attention"
+              ],
+              "slide_visual_skeleton": [
+                "左侧三条编号 bullet 文本",
+                "右侧红色虚线框结构示意",
+                "①/②/③ 编号锚点"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "backbone_element_progressive_reveal",
+              "archetype": "backbone_element_transition_frame",
+              "slide_title": "Backbone model:DiT 结构位置示意(过渡页)",
+              "slide_claim": "DiT 三要素①②③在结构图中对应不同模块位置",
+              "slide_key_text": [
+                "①/②/③ 结构位置锚点"
+              ],
+              "slide_visual_skeleton": [
+                "红色虚线框结构示意",
+                "①/②/③ 编号锚点",
+                "大面积留白画布"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "backbone_element_progressive_reveal",
+              "archetype": "backbone_element_full_with_pain_highlight",
+              "slide_title": "Backbone model:DiT 三要素全貌(聚焦计算复杂度)",
+              "slide_claim": "相比 U-Net,DiT 全用 Transformer 使 token 数增加,计算复杂度随分辨率增长",
+              "slide_key_text": [
+                "②Condition Embedding:编码 diffusion 时间步 t 与条件 y",
+                "③DiT Block:Transformer 对 token 做 attention",
+                "相比 U-Net,token 数量增加→计算量增大",
+                "计算复杂度随分辨率增长"
+              ],
+              "slide_visual_skeleton": [
+                "左侧三条编号 bullet 全文",
+                "红字强调计算复杂度句",
+                "右侧红色虚线框结构示意"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "extension_change_key_diffs",
+              "archetype": "extension_change_key_diffs",
+              "slide_title": "DiT-based Text-to-Video 的关键改动",
+              "slide_claim": "文生视频相比文生图,DiT 需引入 3D 位置与 Temporal Attention 以建模时序",
+              "slide_key_text": [
+                "文本生成视频与文本生成图像的区别(以 OpenSora 为例)",
+                "Multi-frames→multi-batches",
+                "2d-position→3d-position",
+                "DiT Block 增加 Temporal Attention",
+                "Spatial / Temporal / Cross-Attention、FFN"
+              ],
+              "slide_visual_skeleton": [
+                "左侧改动编号 bullet",
+                "右侧密集注意力数据流框图",
+                "Act-W/Act-Act 算子标注",
+                "①②③ 结构锚点"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "extension_variants_dual_display",
+              "archetype": "extension_variants_dual_display",
+              "slide_title": "Video DiT 架构变体(Latte 与 Flag-DiT)",
+              "slide_claim": "Video DiT 在三要素上引入时序改动,Latte 与 Flag-DiT 是两类代表实现",
+              "slide_key_text": [
+                "Video DiT(以 OpenSora 为例)",
+                "Multi-frames→multi-batches",
+                "2d-position→3d-position",
+                "DiT Block 增加 Temporal Attention",
+                "Latte",
+                "Flag-DiT"
+              ],
+              "slide_visual_skeleton": [
+                "左侧改动编号 bullet",
+                "下方 Latte / Flag-DiT 双架构并列图",
+                "①②③ 编号锚点分布两图"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "problem_three_layered_bottlenecks_gap_redundancy_operator_heterogeneity",
+      "title": "问题·三层瓶颈(算力大+冗余高+算子异构)递进立靶",
+      "applicable_when": {
+        "chapter_role": [
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "计算量大",
+          "冗余",
+          "算子异构",
+          "立靶"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Problem 章"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三色归一化倍率柱图论证目标负载算力远超其他任务"
+        },
+        {
+          "archetype": "continued_chart_alternative_angle",
+          "count": 1,
+          "position": "middle",
+          "purpose": "沿用同一柱图, 用红框示意分析另一柱(如 Attention 堆叠)算力来源"
+        },
+        {
+          "archetype": "redundancy_opportunity_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以帧间/序列间高相似度示意抛出冗余可差分机会"
+        },
+        {
+          "archetype": "prior_work_limitation_dataflow",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以数据流框图揭示已有差分/压缩方法只能作用于部分算子"
+        },
+        {
+          "archetype": "operator_heterogeneity_oi_compare",
+          "count": 1,
+          "position": "end",
+          "purpose": "以 OI 对比+结构标注给出算子异构差距(10×),为下章可重构架构立靶"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "quantitative_gap_chart",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "quantitative_gap_chart",
+          "to_archetype": "continued_chart_alternative_angle",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "continued_chart_alternative_angle",
+          "to_archetype": "redundancy_opportunity_intro",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "redundancy_opportunity_intro",
+          "to_archetype": "prior_work_limitation_dataflow",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "prior_work_limitation_dataflow",
+          "to_archetype": "operator_heterogeneity_oi_compare",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 problem 章: 章首目录切入→归一化算力柱图证瓶颈一(200× 差距)→沿用同图剖析另一柱证瓶颈来源(Attention 堆叠)→冗余机会引出瓶颈二(90%+ 帧间相似)→已有方法仅限 Act-W 的局限暴露→算子 OI 差异 10× 引出瓶颈三, 三层递进为可重构架构立靶",
+      "anti_patterns": [
+        "顶部红色断言框+现有工作配图的挑战列表 (用 problem_three_challenges_prior_work_flaw_bulletin)",
+        "单页综述现有工作+两大数据挑战 (用 problem_related_works_survey_dual_challenge_to_solution_bridge)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.03",
+          "section_title": "计算量大与冗余问题",
+          "section_role": "problem",
+          "section_narrative": "problem 章,层层揭示视频生成三大痛点：计算量比文本高 200×、帧间 90%+ 冗余但旧差分计算仅限 Act-W、算子 OI 差异达 10×，为下章算法-硬件协同设计立靶。",
+          "section_topic_tags": [
+            "视频生成算力",
+            "帧间冗余",
+            "差分计算局限",
+            "算子 Operational Intensity",
+            "Act-W vs Act-Act"
+          ],
+          "match_evidence": "6 页节奏: agenda 高亮→200× 归一化柱图→同柱剖析 Attention 堆叠→90%+ 帧相似度→旧差分只作用于 Act-W→算子 OI 10× 差异",
+          "slides": [
+            {
+              "slide_index": 10,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "章节导航：进入 Large & Redundant Computation",
+              "slide_claim": "报告推进至第 2 部分——视频生成的计算量大与冗余问题",
+              "slide_key_text": [
+                "Contents",
+                "① Image DiT & Video DiT",
+                "② Large & Redundant Computation",
+                "③ Algorithm-Hardware Co-Design",
+                "④ 总结展望"
+              ],
+              "slide_visual_skeleton": [
+                "四行编号目录框",
+                "当前项蓝色竖条高亮",
+                "圆圈编号 ①②③④"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "quantitative_gap_chart",
+              "archetype": "quantitative_gap_chart",
+              "slide_title": "视频生成计算量远超文本与图像",
+              "slide_claim": "视频生成计算量达文本 200×、图像 10×,算力压力最大",
+              "slide_key_text": [
+                "Large Computation：视频生成的 tokens 数量远超其他任务",
+                "Text generation 比 Image Classfication 高 200×、10×",
+                "Text generation 处 decoding 阶段,仅算新 token attention",
+                "KV cache 可复用降低计算",
+                "LLM decode phase"
+              ],
+              "slide_visual_skeleton": [
+                "三色归一化计算量柱图",
+                "200×/10×/1× 倍率标注",
+                "红柱 Large computations 强调"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "continued_chart_alternative_angle",
+              "archetype": "continued_chart_alternative_angle",
+              "slide_title": "图像分类计算量大的原因：Attention 堆叠",
+              "slide_claim": "图像分类因 Transformer 多层 Attention 堆叠而计算量偏大",
+              "slide_key_text": [
+                "Large Computation：tokens 数量远超其他任务",
+                "Text generation 比 Image Classfication 高 200×、10×",
+                "Image classfication：Transformer 中的 Attention 计算量大",
+                "1 Attention block",
+                "3 Attention blocks"
+              ],
+              "slide_visual_skeleton": [
+                "三色归一化计算量柱图",
+                "Attention block 红色虚线示意框",
+                "1 vs 3 blocks 对比"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "redundancy_opportunity_intro",
+              "archetype": "redundancy_opportunity_intro",
+              "slide_title": "帧间 90%+ 冗余带来可差分计算机会",
+              "slide_claim": "视频相邻帧 90%+ 相似,feature 高度冗余可差分计算",
+              "slide_key_text": [
+                "Redundant Computation：相邻帧冗余,feature 可差分计算",
+                "1-st frame 到 10-th frame 90%+ similarity",
+                "Act-W operators / Act-Act operators",
+                "Spatial-Attention / Temporal-Attention / Cross-Attention / FFN",
+                "Redundant computations"
+              ],
+              "slide_visual_skeleton": [
+                "帧序列相似度示意",
+                "DiT 端到端数据流框图",
+                "Act-W/Act-Act 算子色标"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "prior_work_limitation_dataflow",
+              "archetype": "prior_work_limitation_dataflow",
+              "slide_title": "旧差分计算仅限 Act-W 算子",
+              "slide_claim": "以往差分计算只能作用于 Act-W 算子,覆盖受限",
+              "slide_key_text": [
+                "Redundant Computation：以往 Differential Computing 只对 Act-W 有效",
+                "Previous Work: Differential computing can only be performed on operator",
+                "Element-Wise Subtraction / Addition",
+                "dense computation"
+              ],
+              "slide_visual_skeleton": [
+                "差分计算数据流框图",
+                "稀疏矩阵格子示意",
+                "dense computation 色块图例"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "operator_heterogeneity_oi_compare",
+              "archetype": "operator_heterogeneity_oi_compare",
+              "slide_title": "算子 OI 差异巨大：Act-W 与 Act-Act 达 10×",
+              "slide_claim": "算子 Operational Intensity 随 batchsize 表现不同,差异达 10×",
+              "slide_key_text": [
+                "不同算子 Operational Intensity 差异大,与 feature、batchsize 相关",
+                "Act-W：Operational Intensity ~ Batchsize",
+                "Act-Act：Operational Intensity !~ Batchsize",
+                "OI of operators varying greatly",
+                "slight difference / 10× difference"
+              ],
+              "slide_visual_skeleton": [
+                "Spatial-Attention OI 结构图",
+                "Act-W/Act-Act OI 对比文字块",
+                "10× difference 红色标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_algorithm_linearization_to_hardware_pe_gpu_reconfig_stack",
+      "title": "方法·算法线性化→PE→GPU 验证→稀疏感知 PE→可重构架构叠加",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "算法-硬件协同",
+          "差分计算",
+          "PE",
+          "可重构",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Solution 章"
+        },
+        {
+          "archetype": "algorithm_linearization_dual_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "算法层核心:通过近似把非线性算子转为线性, 用 naive vs approx 双数据流图收束"
+        },
+        {
+          "archetype": "hardware_pe_with_energy_bar",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引入第一版硬件 PE(如 Column-Concentrated PE)并用能效柱图给出 1.7-3× 提升"
+        },
+        {
+          "archetype": "gpu_implementation_dual_core_speedup",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 Tensor+Cuda Core 并行的 GPU 落地作双路验证, 表格+柱图给 1.4-2.9× 加速"
+        },
+        {
+          "archetype": "sparsity_aware_pe_format_conversion",
+          "count": 1,
+          "position": "middle",
+          "purpose": "进一步细化 PE 内部结构+CSC→Reduced CSC 格式转换实现稀疏感知"
+        },
+        {
+          "archetype": "reconfigurable_dataflow_routing",
+          "count": 1,
+          "position": "end",
+          "purpose": "以路由控制器+计算/访存受限算子动态分配收束, 给整体 1.56× 平均提速"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "algorithm_linearization_dual_compare",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "algorithm_linearization_dual_compare",
+          "to_archetype": "hardware_pe_with_energy_bar",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "hardware_pe_with_energy_bar",
+          "to_archetype": "gpu_implementation_dual_core_speedup",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "gpu_implementation_dual_core_speedup",
+          "to_archetype": "sparsity_aware_pe_format_conversion",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "sparsity_aware_pe_format_conversion",
+          "to_archetype": "reconfigurable_dataflow_routing",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速的方法主体章: 目录切入→算法层双图对比证明非线性→线性近似降三次稀疏为一次→列集中 PE 给 1.73-3.18× 能效→GPU Tensor+Cuda 双核并行的落地验证→稀疏感知 PE 与 CSC→Reduced CSC 格式转换→路由控制器可重构架构 1.56× 收束, 每页都给量化收益, 算法与硬件层交替叠加",
+      "anti_patterns": [
+        "方法层只做算法不下硬件 (用 method_algorithm_layer_then_hardware_layer_codesign_drilldown 前半)",
+        "三项并列技术 key idea 首页起头 (用 method_multi_parallel_techniques_intro_flow_detail)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.04",
+          "section_title": "算法-硬件协同设计",
+          "section_role": "method",
+          "section_narrative": "全 deck 方法核心章。先以差分计算算法把非线性算子近似为线性、三次稀疏降为一次(软件层),再逐层落到硬件:列集中 PE→GPU 实现→稀疏感知 PE→强度自适应可重构架构,构成算法-硬件协同闭环。",
+          "section_topic_tags": [
+            "全注意力差分计算",
+            "列集中 PE",
+            "Tensor+Cuda 并行",
+            "CSC→Reduced CSC",
+            "强度自适应架构"
+          ],
+          "match_evidence": "6 页节奏: agenda→算法线性化(3→1 稀疏)→列集中 PE(1.73-3.18× 能效)→GPU 双核并行(2.86×/1.43×)→稀疏感知 PE+Reduced CSC→路由控制器可重构架构(1.56×)",
+          "slides": [
+            {
+              "slide_index": 16,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录页:高亮进入算法-硬件协同设计",
+              "slide_claim": "全篇进入第三部分 Algorithm-Hardware Co-Design",
+              "slide_key_text": [
+                "Contents",
+                "Algorithm-Hardware Co-Design",
+                "Image DiT & Video DiT",
+                "Large & Redundant Computation"
+              ],
+              "slide_visual_skeleton": [
+                "四项编号目录列表",
+                "当前项蓝色高亮标记",
+                "左侧竖条进度指示"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "algorithm_linearization_dual_compare",
+              "archetype": "algorithm_linearization_dual_compare",
+              "slide_title": "全注意力差分计算:非线性算子线性化",
+              "slide_claim": "差分近似把三次稀疏计算降为一次稀疏计算,精度损失可忽略",
+              "slide_key_text": [
+                "Turn the nonlinear operators into linear operators with negligible impact on accuracy",
+                "Three sparse computations → Only one sparse computation",
+                "quadric-free approximate",
+                "Naive vs Approximation Act-Act Differential Computing"
+              ],
+              "slide_visual_skeleton": [
+                "左右对比数据流框图",
+                "三稀疏块 vs 单稀疏块示意",
+                "quadric-free 近似箭头",
+                "红/黄计算量图例"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "hardware_pe_with_energy_bar",
+              "archetype": "hardware_pe_with_energy_bar",
+              "slide_title": "列集中处理单元(Column-Concentrated PE)",
+              "slide_claim": "列集中 PE 按列稀疏模式分配稠密/稀疏计算,能效提升 1.73×–3.18×",
+              "slide_key_text": [
+                "Based on the Column Sparse Pattern, Column-Concentrated PE allocates dense and sparse computing",
+                "1.73×-3.18× higher energy efficiency",
+                "compared with dense-only and sparse-only architectures"
+              ],
+              "slide_visual_skeleton": [
+                "Dense/Sparse/Ours 能效三柱图",
+                "列稀疏模式示意占位",
+                "上升趋势箭头标注"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "gpu_implementation_dual_core_speedup",
+              "archetype": "gpu_implementation_dual_core_speedup",
+              "slide_title": "VGAcc:GPU 实现(Tensor+Cuda Core 并行)",
+              "slide_claim": "Tensor Core 与 Cuda Core 并行处理稠密/稀疏块,获 2.86×/1.43× 加速",
+              "slide_key_text": [
+                "Compute sparse and dense blocks respectively through Tensor Core(cublas) and Cuda Core(dgsparse) parallelism",
+                "2.86×/1.43× speedup",
+                "compared with CC only(dgsparse) and TC only(cublas) computing"
+              ],
+              "slide_visual_skeleton": [
+                "Allocate-Tensor/Cuda-Merge 数据流框图",
+                "稀疏度对应耗时表格",
+                "加速比对比柱图"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "sparsity_aware_pe_format_conversion",
+              "archetype": "sparsity_aware_pe_format_conversion",
+              "slide_title": "稀疏感知处理单元(Sparsity-aware PE)",
+              "slide_claim": "将 CSC 转为 Reduced CSC,实现列集中 PE 的稀疏感知计算",
+              "slide_key_text": [
+                "Sparsity-aware Processing Element",
+                "Based on the Column Sparse Pattern, Column-Concentrated PE allocates dense and sparse computing",
+                "Turn Compressed Sparse Column(CSC) format to Reduced CSC",
+                "Sparse Comp. / Dense Comp.",
+                "CSC: pos / crd / val"
+              ],
+              "slide_visual_skeleton": [
+                "列集中 PE 内部模块框图",
+                "outer product 稠密/稀疏分区示意",
+                "CSC→Reduced CSC 树状格式图"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "reconfigurable_dataflow_routing",
+              "archetype": "reconfigurable_dataflow_routing",
+              "slide_title": "强度自适应可重构架构",
+              "slide_claim": "路由控制器按算子类型动态分配算存资源,平均提速 1.56×",
+              "slide_key_text": [
+                "Use the routing controller to dynamically allocate computing and storage resources for different types of operators",
+                "Compute-bound operators / Memory-bound operators",
+                "Naive dataflow vs Intensity adaptive dataflow",
+                "1.56× performance on average"
+              ],
+              "slide_visual_skeleton": [
+                "PE/ME/routing controller 架构框图",
+                "计算受限/访存受限算子分类",
+                "Naive vs 自适应 dataflow 甘特对比图",
+                "1.56× 提速标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "result_agenda_main_speedup_future_open_questions_close",
+      "title": "结果·agenda→主加速头条→未来工作→开放问题收尾",
+      "applicable_when": {
+        "chapter_role": [
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "加速效果",
+          "未来工作",
+          "开放问题",
+          "收尾"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入末章"
+        },
+        {
+          "archetype": "main_result_speedup_dual_bar_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 vs GPU 的加速比+归一化面效双柱图坐实主结果, 顶部红色主结论框强调"
+        },
+        {
+          "archetype": "future_work_bulleted_with_metric_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以带框条目列出 CUDA/FPGA 等未来方向, 附稀疏度-加速比数据表"
+        },
+        {
+          "archetype": "open_questions_numbered_list",
+          "count": 1,
+          "position": "end",
+          "purpose": "以编号列表抛出待探讨问题, 承接到独立致谢页"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "main_result_speedup_dual_bar_headline",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "main_result_speedup_dual_bar_headline",
+          "to_archetype": "future_work_bulleted_with_metric_table",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "future_work_bulleted_with_metric_table",
+          "to_archetype": "open_questions_numbered_list",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的收尾结果章: agenda 目录切入→双柱图 vs A100 主加速头条(如 2.74× / 2.29×)→带框列表未来工作+稀疏度-加速比表→开放问题编号列表, 完成实测收益+落地路线+开放讨论三重收尾, 独立留出致谢页",
+      "anti_patterns": [
+        "主结果+两页消融+EDP 收束的完整实验章 (用 experiment_setup_accuracy_area_speedup_ablation_edp_summary)",
+        "仅一页 divider 无内容 (用 experiment_single_page_chapter_divider_placeholder)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.05",
+          "section_title": "加速效果与未来工作",
+          "section_role": "result",
+          "section_narrative": "作为 deck 收尾章,先用 agenda 页切入「加速效果&未来工作」,再以 vs A100 实测坐实 2.74×加速与 2.29×面效,继而展望 CUDA/FPGA 落地,末以开放问题收束全篇。",
+          "section_topic_tags": [
+            "vs A100 加速比",
+            "归一化面积效率",
+            "CUDA 加速",
+            "FPGA 落地",
+            "开放问题"
+          ],
+          "match_evidence": "4 页节奏: agenda 高亮末章→双柱图 vs A100 2.74×/2.29× 主结果→CUDA/FPGA 未来工作+稀疏度-加速比表→关键帧生成等 3 条开放问题",
+          "slides": [
+            {
+              "slide_index": 22,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:进入「加速效果&未来工作」",
+              "slide_claim": "全篇进入第 4 章,收束于加速效果与未来工作",
+              "slide_key_text": [
+                "Contents",
+                "Image DiT & Video DiT",
+                "Large & Redundant Computation",
+                "Algorithm-Hardware Co-Design",
+                "加速效果&未来工作"
+              ],
+              "slide_visual_skeleton": [
+                "带框目录标题区",
+                "4 条编号圆点列表",
+                "第 4 项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "main_result_speedup_dual_bar_headline",
+              "archetype": "main_result_speedup_dual_bar_headline",
+              "slide_title": "加速效果:vs A100 的加速比与面效",
+              "slide_claim": "VGAcc 较 A100 GPU 达平均 2.74× 加速、2.29× 面效",
+              "slide_key_text": [
+                "Speedup and area efficiency",
+                "VGAcc achieves average 2.74× speedup and 2.29× efficiency",
+                "compared with NVIDIA A100 GPU",
+                "Speedup to GPU",
+                "Normalized area efficiency to GPU",
+                "O-Sora16 / Latte16 / VDT16 / Geomean"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色主结论框",
+                "加速比柱图",
+                "归一化面效柱图",
+                "多基准横轴 + Geomean 分隔线"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "future_work_bulleted_with_metric_table",
+              "archetype": "future_work_bulleted_with_metric_table",
+              "slide_title": "未来工作:CUDA 加速与 FPGA 落地",
+              "slide_claim": "拟经 CUDA/FPGA 落地并挖掘 T2V 算法特性拓展加速",
+              "slide_key_text": [
+                "Improve the calculation flow design and achieve acceleration on multiple video models with CUDA",
+                "Sparsity(1024,1152,1152): 0.8→1.18, 0.7→1.65, 0.6→2.06, 0.5→2.45",
+                "Form a complete architecture design and implement deployment on FPGA",
+                "Explore the algorithm features of large T2V models and propose new points"
+              ],
+              "slide_visual_skeleton": [
+                "带框条目列表",
+                "稀疏度-加速比数据表",
+                "CUDA/FPGA 未来方向条目"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "open_questions_numbered_list",
+              "archetype": "open_questions_numbered_list",
+              "slide_title": "开放问题:关键帧生成等三点",
+              "slide_claim": "以关键帧生成等三条开放问题收束全篇",
+              "slide_key_text": [
+                "问题",
+                "生成关键帧 + 补帧",
+                "DiT 相关问题"
+              ],
+              "slide_visual_skeleton": [
+                "带框编号问题列表",
+                "3 条开放问题"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(含标题/作者/日期署名)接一张编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "单页论文封面无 TOC (用 opening_paper_cover_multi_author_multi_institution)",
+        "单页空白封面骨架 (用 opening_blank_cover_skeleton_single_page)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "deck 开场：slide 1 亮明标题/作者/ICCAD'24 归属并建立学术加速器基调，slide 2 用四段式目录（背景→问题→方法→未来）预告全篇逻辑主线。",
+          "section_topic_tags": [
+            "VGAcc 论文封面",
+            "ICCAD'24 投稿",
+            "四段式目录",
+            "作者署名"
+          ],
+          "match_evidence": "2 页节奏: 大字论文封面(VGAcc+4 作者+2024.5.16+ICCAD'24 归属) → 四项编号目录(背景/问题/方法/未来) 当前项高亮",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "VGAcc:视频生成注意力差分计算与可重构加速",
+              "slide_claim": "VGAcc 以全注意力差分计算+可重构架构加速视频生成",
+              "slide_key_text": [
+                "VGAcc: Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture",
+                "2024.5.16",
+                "* This work was submitted to ICCAD'24",
+                "Authors: Li Ding, Jun Liu, Shan Huang, Guohao Dai."
+              ],
+              "slide_visual_skeleton": [
+                "居中长标题块",
+                "细横分隔线",
+                "作者/日期信息行",
+                "底部落款条"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:背景→问题→方法→未来四段主线",
+              "slide_claim": "全篇按背景、问题、方法、未来工作四段递进展开",
+              "slide_key_text": [
+                "Contents",
+                "背景:Image DiT & Video DiT",
+                "问题:Large & Redundant Computation",
+                "方法:Algorithm-Hardware Co-Design",
+                "未来工作"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外边框容器",
+                "编号圆标 1-4 竖列",
+                "当前项高亮+后续项灰化",
+                "左侧竖向进度条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_minimal_thanks_with_speaker_signature",
+      "title": "收尾·极简致谢+讲者署名单页",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share",
+          "topic_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "感谢聆听",
+          "署名",
+          "日期"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "minimal_thanks_with_signature_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "左上/居中大字『Thanks for your attention!』+淡色分隔线下的讲者姓名+日期+底部机构页脚, 极简礼节收束"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "组会/论文分享的极简单页致谢: 大字致谢主标题+淡色分隔线+讲者姓名+日期+底部实验室署名, 无 recap 无联系方式, 只承担礼节性收尾",
+      "anti_patterns": [
+        "顶部大字 Thanks+全体作者名单+机构脚注 (用 closing_thanks_single_page_with_full_author_institution_footer)",
+        "目录回顾+一句话贡献+联系方式 (用 closing_toc_recap_plus_summary_contribution_with_contact)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.06",
+          "section_title": "致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾页,承接前面加速器成果与未来展望后作礼节性致谢,无新内容,仅点明汇报人与日期,给听众留出提问余白",
+          "section_topic_tags": [
+            "Thanks for your attention",
+            "丁立署名",
+            "CCC Lab 落款"
+          ],
+          "match_evidence": "1 页节奏: 大字『Thanks for your attention!』+淡色分隔线+丁立/2024.5.16 署名+底部 Li Ding @ CCC Lab 落款",
+          "slides": [
+            {
+              "slide_index": 26,
+              "role_in_pattern": "minimal_thanks_with_signature_only",
+              "archetype": "minimal_thanks_with_signature_only",
+              "slide_title": "致谢页:Thanks for your attention",
+              "slide_claim": "汇报结束,礼节性致谢并留出提问余白",
+              "slide_key_text": [
+                "Thanks for your attention!",
+                "丁立",
+                "2024.5.16",
+                "Li Ding @ CCC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "大字号感谢标语",
+                "浅色横向分隔线",
+                "汇报人+日期落款",
+                "底部实验室署名"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "batch 13 单 deck(VGAcc 论文分享)共 6 section, 抽出 6 patterns; 复用 previous_batches 2 pattern(opening_cover_plus_progress_highlighted_toc, closing_minimal_thanks_with_speaker_signature), 新增 4 pattern(background/problem/method/result 各一) 反映硬件加速器论文的三层瓶颈立靶与算法-硬件叠加式方法章特色. new_archetype: domain_intro_with_examples — 用领域应用样例(如 Sora/Vidu)引入并点出主流骨干. new_archetype: foundational_principle_arrows — 用双向箭头图讲清底层原理(如加噪/去噪对称过程). new_archetype: backbone_element_progressive_reveal — 连续多帧渐进揭示骨干模型 N 个要素(聚焦→过渡帧→全貌+痛点强调). new_archetype: backbone_element_focus_first_step — 骨干渐进揭示的首帧, 高亮第一个要素其余灰化. new_archetype: backbone_element_transition_frame — 骨干渐进揭示的过渡帧, 仅保留结构示意与编号锚点. new_archetype: backbone_element_full_with_pain_highlight — 骨干渐进揭示的全貌帧, 补齐全部要素并以红字强调计算复杂度痛点. new_archetype: extension_change_key_diffs — 用编号 bullet 列出目标场景对基线骨干的关键改动. new_archetype: extension_variants_dual_display — 并列展示 N 个扩展变体架构图. new_archetype: continued_chart_alternative_angle — 沿用上页同一图表, 用红框示意从另一视角剖析. new_archetype: redundancy_opportunity_intro — 用序列相似度示意抛出冗余可差分机会. new_archetype: prior_work_limitation_dataflow — 用数据流框图揭示已有方法的算子/覆盖局限. new_archetype: operator_heterogeneity_oi_compare — 以 Operational Intensity 结构图+对比文字块给出算子异构差距. new_archetype: algorithm_linearization_dual_compare — 左右对比 naive vs approximation 数据流, 说明非线性算子近似为线性. new_archetype: hardware_pe_with_energy_bar — 硬件 PE 引入+Dense/Sparse/Ours 能效柱图. new_archetype: gpu_implementation_dual_core_speedup — GPU 落地验证: Tensor+Cuda Core 并行数据流+加速比柱图. new_archetype: sparsity_aware_pe_format_conversion — PE 内部结构框图+CSC→Reduced CSC 树状格式图. new_archetype: reconfigurable_dataflow_routing — 路由控制器+计算/访存受限算子分类+Naive vs 自适应 dataflow 甘特对比. new_archetype: main_result_speedup_dual_bar_headline — 顶部红色主结论框+加速比与面效双柱图, 多基准横轴含 Geomean. new_archetype: future_work_bulleted_with_metric_table — 带框未来方向条目+稀疏度-加速比数据表. new_archetype: open_questions_numbered_list — 带框编号开放问题列表.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}

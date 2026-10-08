@@ -1,0 +1,15 @@
+{
+  "batch_index": 6,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": ["opening"],
+        "report_type": ["paper_share", "research_report", "topic_share", "tutorial", "all"],
+        "page_count_range": [2, 3],
+        "must_have_in_chapter_purpose": ["封面", "目录", "开场"]
+      },
+      "abstract_node_sequence": [
+        {"archetype": "cover_title_signature", "count": 1, "position": "start", "purpose": "大字亮明主题+讲者/作者/机构署名"},
+        {"archetype": "toc_progress_highlight", "count": 

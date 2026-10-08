@@ -1,0 +1,50 @@
+---
+页标识: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04"
+所属章节: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.02"
+所属deck: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de"
+页序号: 4
+源文件: "templates/课题组全局汇报/高效端侧大模型推理优化_华为端侧AI.pptx"
+页面角色: "content_candidate"
+标题: "Token 是 AI 2.0 时代核心生产要素"
+核心论断: "Token 已成为 AI 2.0 时代的核心生产要素"
+本页讲什么: "论证从 AI 1.0 到 AI 2.0 的范式转变：AI 1.0 是不同应用、不同模型、不同输入的碎片化形态，而 AI 2.0 以 Token 为统一核心生产要素。为后续以 tokens/J 衡量能效埋下概念基础。"
+关键文字: "[AI 2.0 时代核心的生产要素——Token, AI 1.0：不同应用 不同模型 不同输入]"
+视觉骨架: "[AI1.0 vs AI2.0 对比示意, 多应用图标拼贴, Token 汇聚示意]"
+资源ID列表: "[tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.01, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.02, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.03, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.04, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.05, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.06, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.07, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.08, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.09, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.10, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.11, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.12, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.13, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.14, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_04.asset.15]"
+适合复用场景: "[大模型 Token 生产要素 motivation 页, AI 范式演进对比论证页]"
+不适合复用场景: "[具体算法方法细节页, benchmark 数据对比页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方对比区", "内容": "AI 1.0 vs AI 2.0 范式对比示意"}
+  - {"位置": "下方核心概念", "内容": "Token 作为 AI 2.0 核心生产要素"}
+alternate_claims:
+  - "AI 1.0 呈现应用/模型/输入碎片化形态"
+  - "Token 为后续 tokens/J 能效度量提供概念基础"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 4: Token 是 AI 2.0 时代核心生产要素
+
+**核心论断**: Token 已成为 AI 2.0 时代的核心生产要素
+
+## 本页讲什么
+论证从 AI 1.0 到 AI 2.0 的范式转变：AI 1.0 是不同应用、不同模型、不同输入的碎片化形态，而 AI 2.0 以 Token 为统一核心生产要素。为后续以 tokens/J 衡量能效埋下概念基础。
+
+## 关键文字片段
+- AI 2.0 时代核心的生产要素——Token
+- AI 1.0：不同应用 不同模型 不同输入
+
+## 视觉骨架
+- AI1.0 vs AI2.0 对比示意
+- 多应用图标拼贴
+- Token 汇聚示意
+
+## 可复用到
+- 大模型 Token 生产要素 motivation 页
+- AI 范式演进对比论证页
+
+## 不适合复用的场景
+- 具体算法方法细节页
+- benchmark 数据对比页

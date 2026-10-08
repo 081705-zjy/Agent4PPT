@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_19"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 19
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "帧间相似性的维度分解"
+核心论断: "帧相似性沿多维度呈现，可分维度加以利用"
+本页讲什么: "承接上页帧相似性洞察，将相似性沿不同维度（Frame、Dim.）拆解对比，展示相邻帧在各维度上的相似程度，进一步量化冗余分布，为稀疏化的粒度选择提供依据。"
+关键文字: "[Frame 2, Frame 3, Dim.]"
+视觉骨架: "[多帧对比示意, 维度坐标标注, 相似性分解图]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_19.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_19.asset.02]"
+适合复用场景: "[帧相似性维度分析页, 冗余分布量化展示页]"
+不适合复用场景: "[硬件 DSP 架构页, 调度编译流程页, 本章目录页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "帧间相似性的维度分解"}
+  - {"位置": "下方主体", "内容": "多帧对比示意与维度坐标标注"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 19: 帧间相似性的维度分解
+
+**核心论断**: 帧相似性沿多维度呈现，可分维度加以利用
+
+## 本页讲什么
+承接上页帧相似性洞察，将相似性沿不同维度（Frame、Dim.）拆解对比，展示相邻帧在各维度上的相似程度，进一步量化冗余分布，为稀疏化的粒度选择提供依据。
+
+## 关键文字片段
+- Frame 2
+- Frame 3
+- Dim.
+
+## 视觉骨架
+- 多帧对比示意
+- 维度坐标标注
+- 相似性分解图
+
+## 可复用到
+- 帧相似性维度分析页
+- 冗余分布量化展示页
+
+## 不适合复用的场景
+- 硬件 DSP 架构页
+- 调度编译流程页
+- 本章目录页

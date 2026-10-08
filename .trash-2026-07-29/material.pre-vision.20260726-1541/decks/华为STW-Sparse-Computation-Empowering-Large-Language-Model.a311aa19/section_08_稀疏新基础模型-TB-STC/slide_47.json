@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_47",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.08",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 47,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "TB-STC:可转置块状 N:M 稀疏",
+  "核心论断": "可转置块状 N:M 稀疏兼顾块级与维度级灵活性",
+  "本页讲什么": "本页抛出章节核心创新 TB-STC——可转置块状 N:M 稀疏模式。核心思想是在块级与维度级两个层面同时挖掘稀疏灵活性,使同一稀疏权重可高效支持前向与转置反向,承接上页三算子并为后续两个 Tech 算子设计奠基。",
+  "关键文字": [
+    "Transposable Block-wise N:M Sparsity Pattern",
+    "Key idea",
+    "同时探索块级与维度级的稀疏灵活性"
+  ],
+  "视觉骨架": [
+    "可转置块状稀疏结构图",
+    "块级/维度级双层示意"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_47.asset.01",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_47.asset.02"
+  ],
+  "适合复用场景": [
+    "核心稀疏模式创新介绍页",
+    "可转置块状稀疏 key idea 页"
+  ],
+  "不适合复用场景": [
+    "纯背景动机页",
+    "端到端实验数字页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

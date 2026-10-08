@@ -1,0 +1,510 @@
+{
+  "batch_index": 23,
+  "rules": [
+    {
+      "id": "title_uses_noun_phrase_or_colon_structure",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用名词短句或冒号结构",
+      "description": "slide.标题 倾向名词短句或 '主题：副题' / '主题·副题' 冒号结构 (≤22字), 不用完整动宾句, 不把 claim 塞到 title.",
+      "evidence_signals": [
+        "title 含冒号 '：' 或点号 '·' 分隔主副题",
+        "title 不以 '我们将' '本节讲' 等主语开头",
+        "title 多为名词短句而非完整主谓宾句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 10,
+          "评价": "'成果1·信息驱动稀疏方法：问题分析' 冒号+点号双层名词结构"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 21,
+          "评价": "'现有系统优化之一：注意力算子 Partial softmax' 标准冒号定位"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 34,
+          "评价": "'文生文与文生视频模型的算力特性差异' 纯名词短句"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 52,
+          "评价": "'核心思想：转置结构化稀疏' 主副题冒号"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 26,
+          "原因": "'如何进一步突破大模型计算瓶颈？' 用完整设问句而非名词短句"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.92,
+      "enforcement_level": "hard",
+      "rationale": "名词短句让听众一眼锁定本页主题, 完整句会使 title 与 claim 语义重叠, 冒号结构则显式给出'定位:细分'层级",
+      "fix_hint": "把动宾/主语去掉, 改为 '<主题>：<细分>' 或 '<X>·<Y>' 名词短句",
+      "exceptions": [
+        "设问型过渡页 (title 承担反问引出下文时可用完整问句)"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_sentence_with_data",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断为带数据的判断句",
+      "description": "slide.核心论断 采用完整判断/结论句, 常嵌入倍数/百分比/关键数字等量化证据, 而非描述性铺陈句.",
+      "evidence_signals": [
+        "核心论断含 '倍' / '%' / 'x' 等量化词",
+        "核心论断为主谓宾判断句而非名词短语",
+        "核心论断以数字或结论词收尾"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 4,
+          "评价": "'AI算力需求2.5年翻番，芯片算力3-4年翻番，缺口达6倍以上' 3个量化数据"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 11,
+          "评价": "'信息驱动稀疏化使计算量降低1.7~1.9倍'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 25,
+          "评价": "'FlashDecoding++ 较 HuggingFace 平均加速 1.88 倍，最高 4.86 倍'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 56,
+          "评价": "'TB-STC 在多种主流模型上平均加速 2.31 倍并优化能效'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 9,
+          "原因": "'报告推进到方法论章节，聚焦稀疏计算范式' 仅为导航描述, 无判断亦无数据"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "判断句+数字让 claim 独立可复述, 听众离开画面仍记住结论, 描述句会让本页失去可引用锚点",
+      "fix_hint": "给 claim 补一个量化词或倍数, 把描述句改写为 '<主体> <动作> <数据>' 判断句",
+      "exceptions": [
+        "纯导航/目录页 claim 可为章节推进描述句",
+        "开场设问页 claim 允许为问题式而非结论式"
+      ]
+    },
+    {
+      "id": "citation_uses_venue_year_shorthand",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "文献引用用会议缩写+年份短标签",
+      "description": "slide 引用外部工作时用 '[Ref: <作者>, <会议缩写> <年份>]' 或 '<会议缩写><年份>' 短标签形式, 不写完整论文标题.",
+      "evidence_signals": [
+        "关键文字含 'FPGA 24' / 'HPCA 25' / 'MLSys 23' 等会议缩写+两位年份",
+        "关键文字含 '[Ref: <作者名>, <会议> <年>]' 结构",
+        "不完整列出论文标题作为引用"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 10,
+          "评价": "'[Ref: S.Zeng, FPGA 24]' '[Ref: J.Liu, FPGA 25]' 标准双引用"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 13,
+          "评价": "'DAC 22 / CCF THPC / MLSys 23' 会议缩写串联"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 15,
+          "评价": "'FPGA24 / ICCAD23 / FPGA16 / FPGA17 / ISCA22 / ASP-DAC19'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 23,
+          "原因": "论文封面页反而列出完整英文标题, 属于封面页特殊角色而非违反"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "会议缩写+年份让学术受众瞬间识别 SOTA 权威度, 完整标题占版面且信息稀释",
+      "fix_hint": "引用改为 '[Ref: <首作>, <会议缩写><YY>]', 多引用时用斜杠串联",
+      "exceptions": [
+        "论文封面/标题页需给出完整题目以正式引出该工作"
+      ]
+    },
+    {
+      "id": "toc_navigation_page_highlights_current_chapter",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录导航页高亮当前章节",
+      "description": "deck 每次进入新章节前重复出现目录导航页, 保留全部章节编号但对当前章高亮 (加深/加彩), 其余灰化, 用于章节切换.",
+      "evidence_signals": [
+        "视觉骨架含 'Contents 蓝框' + '当前项高亮条'",
+        "关键文字为整个 deck 的顶层章节列表 (研究背景/方法论/研究成果/总结展望等)",
+        "本页讲什么 明确 '高亮第X项' / '定位第X板块'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 3,
+          "评价": "高亮①研究背景, 其余灰化"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 9,
+          "评价": "高亮第②项方法论"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 17,
+          "评价": "高亮第③项研究成果"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 57,
+          "评价": "高亮第④项研究总结"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长报告需在章节切换处重复目录锚点, 让听众实时定位当前进度, 缺失会造成迷路感",
+      "fix_hint": "章前插入目录页副本, 保留完整章节列表, 用颜色/描边高亮当前项, 其余灰化",
+      "exceptions": [
+        "deck 章节 ≤ 2 时可省略中间导航页"
+      ]
+    },
+    {
+      "id": "unit_case_uses_problem_then_method_pair",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "研究成果单元用问题分析+设计方法成对页",
+      "description": "每个研究成果/子工作以两张相邻页展开: '问题分析' 页 (红色标签, 展示痛点柱图与冗余数字) → '设计方法' 页 (蓝/紫标签, 展示解法与收益倍数柱图).",
+      "evidence_signals": [
+        "相邻两页 title 后缀分别为 '：问题分析' 和 '：设计方法'",
+        "问题页视觉骨架含 '红色问题分析标签' + '痛点柱图'",
+        "方法页视觉骨架含 '公式条' + '收益倍数柱图'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 10,
+          "评价": "成果1问题分析: 剪枝>6%损失, 冗余~65%"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 11,
+          "评价": "成果1设计方法: 计算量降1.7-1.9倍"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 12,
+          "评价": "成果2问题分析: 利用率40-80%"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 15,
+          "评价": "成果3设计方法: 能效提升1.6-8倍"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "'问题→方法' 成对结构提供强对比记忆点, 让听众先内化痛点再接受解法, 单页混合会削弱两侧张力",
+      "fix_hint": "把成果拆成两页, 前页放痛点柱图与红标签, 后页放公式条+收益柱图与解法标签",
+      "exceptions": [
+        "非研究性目录/导航/收束页无需成对展开"
+      ]
+    },
+    {
+      "id": "work_intro_uses_paper_cover_page",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引入具体工作用论文封面页",
+      "description": "deck 引入具体系统/成果 (FlightLLM/FlashDecoding++/TB-STC/FlightVGM) 时插入独立论文封面页, 展示完整英文标题+作者列表+机构+发表信息.",
+      "evidence_signals": [
+        "关键文字含完整英文论文标题 (含冒号副标题)",
+        "关键文字含 'Published in <会议>' / 'appear in <会议>'",
+        "关键文字含多作者列表与多机构署名",
+        "视觉骨架含 '论文标题' + '作者姓名列表' + '会议出处标注'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 23,
+          "评价": "FlashDecoding++ MLSys'24 封面"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 36,
+          "评价": "FlightLLM FPGA'24 封面"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 44,
+          "评价": "FlightVGM FPGA'25 封面"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 53,
+          "评价": "TB-STC HPCA'25 封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "论文封面页把口头介绍与正式发表信息绑定, 建立学术权威锚点, 让听众知道后续内容来自可查证工作",
+      "fix_hint": "具体成果单元前插入 1 页, 居中论文英文全称, 下排作者+机构+会议年份",
+      "exceptions": [
+        "未发表的初步工作或商用产品不适用, 可改为产品名标题页"
+      ]
+    },
+    {
+      "id": "cover_layout_left_title_with_signature_and_bg_keywords",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面·主副标题+署名+浅灰关键词底纹",
+      "description": "deck 封面布局: 左上大字主标题, 下方副标题, 粉/蓝色横线分隔, 底部署名(作者+单位+日期+邮箱), 背景铺浅灰关键词艺术字表征课题组研究方向.",
+      "evidence_signals": [
+        "视觉骨架含 '主副标题块' + '分隔横线' + '署名与日期信息区'",
+        "关键文字含 邮箱/日期/单位 三元组",
+        "视觉骨架含 '关键词艺术字底纹' 或类似背景装饰"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 1,
+          "评价": "标准布局: 主副标题+粉色分隔+署名+Design Automation等关键词艺术字底纹"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "关键词底纹让开场画面同时传达'主题+课题组身份', 学术受众可秒识研究方向",
+      "fix_hint": "主副标题左对齐加粗, 底部三行署名+邮箱, 背景铺浅灰研究方向关键词",
+      "exceptions": [
+        "非课题组类 deck (产品发布/商用汇报) 可省略背景关键词艺术字"
+      ]
+    },
+    {
+      "id": "chapter_transition_uses_downward_arrow_focus",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节过渡页用向下箭头聚焦子主题",
+      "description": "进入某个软硬件协同实例/子成果时, 用一张过渡页: 顶部横幅主题条 + 向下大箭头 + 下方单方框标注子实例名, 其余留白.",
+      "evidence_signals": [
+        "视觉骨架含 '顶部单方框' 或 '横幅' + '向下箭头' + '子主题方框'",
+        "本页讲什么 明确 '过渡开场' / '导航' / '聚焦第X项'",
+        "关键文字仅含 章节主题 + 子实例名 2-3 行"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 29,
+          "评价": "实例1 FP8训练过渡页"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 33,
+          "评价": "实例2 FlightLLM过渡页"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 40,
+          "评价": "实例3 FlightVGM过渡页"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 51,
+          "评价": "实例4 TB-STC过渡页"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "多实例并列时听众易迷失, 向下箭头+单一子主题的极简版式提供强视觉'呼吸点', 明确从总览下钻到单例",
+      "fix_hint": "实例前插入 1 页, 顶部保留章级横幅, 中央加大向下箭头, 下方单框写子实例名, 其余留白",
+      "exceptions": [
+        "单一成果 deck 无并列实例时无需过渡页"
+      ]
+    },
+    {
+      "id": "result_page_shows_speedup_multiplier_prominent",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "成果结果页突出加速倍数大字",
+      "description": "每个子工作的结果页用大字/红字/蓝字突出核心加速倍数 (X.XX倍 / X.XXx) 与对比基线, 配 baseline vs ours 柱图, 常在 title 与 claim 中都复现该数字.",
+      "evidence_signals": [
+        "关键文字含 'XX倍' / 'X.Xx' 加速表述",
+        "视觉骨架含 '加速倍数数字标注' 或 'baseline 对照柱图'",
+        "title 与 核心论断 都出现同一加速数字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 25,
+          "评价": "'1.88倍/4.86倍' 大红字, title/claim/关键文字三重复现"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 39,
+          "评价": "'吞吐 45→55 token/s, 6倍能效, 1.8倍性价比'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 47,
+          "评价": "'能效提升1.30倍, 性能提升4.49倍'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 56,
+          "评价": "'平均2.31倍加速' 顶部结论方框强调"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "加速倍数是学术工作最强的可复述锚点, 大字重复展示确保听众记住数字, 柱图提供视觉证据链",
+      "fix_hint": "结果页 title 与 claim 中都嵌入加速倍数, 页面主视觉留 baseline vs ours 柱图 + 数字标注",
+      "exceptions": [
+        "非量化成果 (概念性研究/框架性讨论) 无加速数字可用"
+      ]
+    },
+    {
+      "id": "claim_titles_avoid_bare_pointer_words",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题避免使用无信息量的指代词",
+      "description": "slide.标题 不用 '本页内容' / '此部分' / '如下所示' 等无信息指代, 而是用具体主题词/结论词直接指代本页要点.",
+      "evidence_signals": [
+        "title 不含 '本页' / '如下' / '这部分' / '如图'",
+        "title 含具体技术名/工作名/结论词",
+        "title 长度 ≥ 6 字 (避免 '介绍' 一类单词标题)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 37,
+          "评价": "'可重构的稀疏 DSP 链' 直接指代硬件设计"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 38,
+          "评价": "'FlightLLM 算子融合' 直接给出主体+技术点"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 42,
+          "评价": "'从传统视频处理到视频生成' 给出转折"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 58,
+          "评价": "'重新思考稀疏与未来：对标工业界稀疏加速' 主副题结构无水词"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "标题在幻灯片缩略图或 outline 中会被独立展示, 无信息指代词会让 outline 变成 '本页/此部分' 无意义列表",
+      "fix_hint": "把 '本页/如下/这部分' 删除, 换为具体技术名或结论关键词",
+      "exceptions": []
+    },
+    {
+      "id": "ending_layout_speaker_info_plus_partner_logo_wall",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "收尾页·讲者信息+合作/资助单位 logo 墙",
+      "description": "deck 末页布局: 顶部或中部居中给出讲者姓名+单位+日期+邮箱, 侧边或底部铺合作单位/资助单位分区 logo 墙, 常用双色标签分区.",
+      "evidence_signals": [
+        "视觉骨架含 '讲者信息文本块' + 'logo 墙' 或 '资助单位' 分区",
+        "关键文字含 邮箱/单位/日期",
+        "视觉骨架含 '合作单位' / '资助单位' 双色分区标签"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 67,
+          "评价": "戴国浩+上交大+邮箱+合作/资助单位双色分区+logo 墙"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "末页既需承担致谢又需留下联络入口, logo 墙同时向合作方/资助方回礼, 是学术汇报的仪式性收束",
+      "fix_hint": "末页居中放讲者三行信息+邮箱, 底部/侧边加合作与资助单位分区 logo 墙, 用双色标签划分",
+      "exceptions": [
+        "商用/产品发布类 deck 末页可仅留 Q&A 或纯 logo, 无需资助单位分区"
+      ]
+    },
+    {
+      "id": "formula_recap_uses_stacked_upgrade_boxes",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "公式升级用上下堆叠框+放大箭头",
+      "description": "deck 主线公式回归/升级时用上下两层公式框呈现: 浅色框放初版公式, 向下放大箭头连接, 深色框放完整版, 新增项用红框/红字强调.",
+      "evidence_signals": [
+        "视觉骨架含 '上下两层公式框' + '向下放大箭头'",
+        "关键文字含同一公式的两个版本 (递进关系)",
+        "视觉骨架含 '红框强调' 或 '精度项标红' 类新增项标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "slide_index": 61,
+          "评价": "'AI应用算力=芯片算力×稀疏' 升级为 '×精度', 精度项红框强调"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "公式是研究的收束锚点, 上下堆叠+放大箭头视觉化'从简到全'升级过程, 红字新增项引导听众关注最后加入的因子",
+      "fix_hint": "回归页放两层公式框, 上浅下深, 中间大箭头, 新加因子用红字或红框标注",
+      "exceptions": [
+        "公式只有单一版本时无需堆叠"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (67 slides), visual: 7 rules, authoring: 5 rules. 该 deck 为超长研究报告, 目录导航/工作封面/过渡箭头/问题-方法对页/结果数字大字五大版式非常鲜明, 因单 deck 内多次重复, hit rate 偏乐观, 需后续 batch 校验.",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_16",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 16,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "AI 稀疏计算的多层次思想",
+  "核心论断": "AI 稀疏计算在多个层次上协同削减冗余",
+  "本页讲什么": "收束稀疏计算核心思想子话题：把前几页的计算量、时延、稀疏模式统一到 AI Sparse Computing 的多层次 (multi-level) 框架中，说明稀疏化可在多个层次协同发挥作用。讲者可用此页做核心思想小结，并过渡到具体模型类型。",
+  "关键文字": [
+    "The Idea of Sparse Computing",
+    "AI Sparse Computing",
+    "multi-level"
+  ],
+  "视觉骨架": [
+    "多层次稀疏计算框架图",
+    "层次协同示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_16.asset.01"
+  ],
+  "适合复用场景": [
+    "稀疏计算核心思想小结页",
+    "多层次稀疏框架总览页"
+  ],
+  "不适合复用场景": [
+    "含实测 benchmark 的结果页",
+    "单一算子细节页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

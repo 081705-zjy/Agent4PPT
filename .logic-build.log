@@ -1,0 +1,58 @@
+=== v17 preprocess logic-build ===
+
+>>> logic_extract start at 12:24:36
+  args: layer=both batch_size=4
+  loaded 28 deck dirs from /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks
+  7 batches (size=4): [4, 4, 4, 4, 4, 4, 4]
+
+=== Phase 1: deck_level layer (7 batches) ===
+  [deck_level] batch 0/6 (4 decks)
+    input: deck_level_batch_0_input.json (40 KB)
+    done in 344s, ok=True
+    +3 patterns this batch (total in dedup pool: 3)
+  [deck_level] batch 1/6 (4 decks)
+    input: deck_level_batch_1_input.json (44 KB)
+    done in 305s, ok=True
+    +1 patterns this batch (total in dedup pool: 4)
+  [deck_level] batch 2/6 (4 decks)
+    input: deck_level_batch_2_input.json (42 KB)
+    done in 203s, ok=True
+    +1 patterns this batch (total in dedup pool: 5)
+  [deck_level] batch 3/6 (4 decks)
+    input: deck_level_batch_3_input.json (45 KB)
+    done in 362s, ok=True
+    +3 patterns this batch (total in dedup pool: 8)
+  [deck_level] batch 4/6 (4 decks)
+    input: deck_level_batch_4_input.json (64 KB)
+    done in 289s, ok=True
+    +2 patterns this batch (total in dedup pool: 10)
+  [deck_level] batch 5/6 (4 decks)
+    input: deck_level_batch_5_input.json (51 KB)
+    done in 651s, ok=False
+    FAILED: cli rc=1: Decompression error: ZlibError
+
+    ! batch 5 failed, continuing with what we have
+  [deck_level] batch 6/6 (4 decks)
+    input: deck_level_batch_6_input.json (48 KB)
+    done in 302s, ok=True
+    +3 patterns this batch (total in dedup pool: 13)
+  deck_level phase done in 2457s
+
+=== Phase 2: section_level layer (7 batches) ===
+  [section_level] batch 0/6 (4 decks)
+    input: section_level_batch_0_input.json (134 KB)
+    done in 1393s, ok=False
+    FAILED: cli rc=1: Decompression error: ZlibError
+
+    ! batch 0 failed, continuing with what we have
+  [section_level] batch 1/6 (4 decks)
+    input: section_level_batch_1_input.json (108 KB)
+    done in 794s, ok=True
+    +0 patterns this batch (total in dedup pool: 0)
+  [section_level] batch 2/6 (4 decks)
+    input: section_level_batch_2_input.json (95 KB)
+    done in 439s, ok=False
+    FAILED: cli rc=1: 
+    ! batch 2 failed, continuing with what we have
+  [section_level] batch 3/6 (4 decks)
+    input: section_level_batch_3_input.json (126 KB)

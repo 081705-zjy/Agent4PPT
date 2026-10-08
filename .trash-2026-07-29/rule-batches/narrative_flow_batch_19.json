@@ -1,0 +1,364 @@
+{
+  "batch_index": 19,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has both problem/motivation section listing challenges and method section proposing solutions",
+      "title": "问题章列出的核心矛盾在方法章需被逐一回扣",
+      "description": "problem/motivation 章列出的核心矛盾(如算力/延时/存储/能效)应在 method 章通过具体方案被逐一回应,命中率应≥80%。",
+      "what_to_check": [
+        "找 problem 章 slide.核心论断/关键文字中含'矛盾''挑战''不足''难以'的条目,枚举 N 项挑战",
+        "对每项挑战,在 method 章 slide 中找语义匹配(verbatim 或 paraphrased)的解决方案",
+        "算命中率 = 命中方案数 / 总挑战数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "problem 章列 3 挑战(算力矛盾p17/存储矛盾p18/1-2数量级差距p27),method 章逐一回应:成果1硬件算法协同稀疏p34-35/成果2编译映射p36-37/成果3可重构电路p38-39,命中 3/3"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记不住 problem 章所有挑战,method 章不逐一回扣就让前文承诺落空,'兑现挑战'是研究报告叙事的核心机制",
+      "fix_hint": "遍历 problem 章挑战列表,method 章为每项挑战新增或标注对应方案 slide,明示'X 挑战由 Y 方法解决'",
+      "exceptions": [
+        "综述型 deck(挑战覆盖整个领域,本工作只回应一部分是合理的)"
+      ]
+    },
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover slide and closing/thanks slide",
+      "title": "封面主标题需在致谢/收尾页被回扣",
+      "description": "cover 主标题或主 anchor 应在 closing/thanks 页 verbatim 或 paraphrased 重现,让听众'带走'主题记忆。",
+      "what_to_check": [
+        "取 slide_1(cover)的标题作为主 anchor",
+        "在 closing 章 slide 的关键文字/核心论断中查找该 anchor 是否重现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "cover slide 1 主标题'端侧AI大模型开发与应用实践',在致谢页 slide 50 中列作中列主标题重复出现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾呼应是听众离场时的记忆锚点,收尾不复述主题会让全篇沦为零散信息",
+      "fix_hint": "在 closing/thanks slide 中央或副标题区加入 cover 主标题的一次复述",
+      "exceptions": [
+        "极简 Thank You 页(纯致谢式,可放在倒数第二页配合前一页完成回扣)"
+      ]
+    },
+    {
+      "id": "problem_need_metric_callback_in_discussion",
+      "category": "callback",
+      "applicable_when": "deck states quantitative target/gap in problem section",
+      "title": "问题章给出的量化目标需在展望章被引用",
+      "description": "problem 章章末给出的量化差距或目标(如 tokens/s、功耗上限)应在 discussion/展望章被引用,形成'定标—达标'闭环。",
+      "what_to_check": [
+        "找 problem 章末 slide 中含数字+单位(tokens/s、W、tokens/J)的目标条",
+        "在 discussion 章 slide 关键文字中找到相同或范围重叠的量化目标"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "problem章末 slide 27 提'100-1000 tokens/s,<20W,>20 tokens/J',discussion 章 slide 49 用同一区间给出近期/远期两阶段目标,命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "问题章的量化诉求若在展望章没有兑现,前文'需求分析'会显得空谈,闭环缺失让听众质疑研究价值",
+      "fix_hint": "在 discussion 章加一张 slide,明示'针对前文 X tokens/s 目标,近期/远期分阶段达成'",
+      "exceptions": []
+    },
+    {
+      "id": "teaser_at_problem_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck has problem chapter followed by method chapter",
+      "title": "问题章末应埋方法钩子,不细讲",
+      "description": "problem 章末页应埋'即将展开方法'的钩子(如'需要软硬件协同''本文提出X'),但不细讲具体方案,为 method 章制造 build-up。",
+      "what_to_check": [
+        "取 problem 章末 slide 的核心论断/关键文字",
+        "判断是否含'需要/亟需/呼唤 X 方案''本文提出''将展开'等 setup 语义,同时不含具体数字或算法名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "problem章末 slide 27 结论'现状距需求差 1~2 个数量级,须软件&硬件协同优化',埋方法钩子但未细讲成果"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "从问题直接跳到方法首页会让听众失去'为什么用这条路径'的期待,章末钩子是提问-回应结构的粘合剂",
+      "fix_hint": "problem 章末追加一行'针对上述矛盾,我们提出 <方法关键词>',不给具体数字",
+      "exceptions": [
+        "方法章紧接问题章无分隔的一体化 deck"
+      ]
+    },
+    {
+      "id": "peak_result_at_method_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "method chapter contains system-level result slides",
+      "title": "方法章最炸的系统级结果应放在章末",
+      "description": "method 章最具冲击力的系统级 speedup/能效数字应放在章末页(而非章首/中),用于 build-up 后释放。",
+      "what_to_check": [
+        "扫描 method 章所有 slide 的关键文字中的倍数(×)/tokens/s 数字",
+        "判断最大数字出现在 method 章倒数 1~3 张 slide 内"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "method 章倒数两张 slide 40/41 分别给出 FlightLLM 6×speed/1.8×energy 和 F-VGM 1.3×speed/4.5×energy 作为系统级收束"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末释放峰值数字是节奏学的高潮设计,数字过早出现会让听众后半段失去期待",
+      "fix_hint": "把 method 章中最大 speedup/能效数字的 slide 移到章末位置",
+      "exceptions": [
+        "纯方法讲解 deck 无系统级实验"
+      ]
+    },
+    {
+      "id": "part_divider_before_each_content_chapter",
+      "category": "chapter_transitions",
+      "applicable_when": "deck ≥30 slides with ≥3 content chapters",
+      "title": "每个内容章前应有 PART 分隔页",
+      "description": "每个主要内容章(problem/method/discussion)前应插入极简 PART 分隔页(仅含章标题+编号),用于话题切换与演讲停顿。",
+      "what_to_check": [
+        "扫描 slide.页面角色 = chapter_candidate 的 slide",
+        "对照 sections_outline,判断每个 content section 首页是否为分隔页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "PART 01 slide 4 / PART 02 slide 16 / PART 03 slide 28 / PART 04 slide 42 四大章均有极简分隔页"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 缺章节分隔会让听众失去章间'呼吸',分隔页是长汇报节奏控制的基本单位",
+      "fix_hint": "在每个 content section 首位插入仅含'PART N + 章标题'的极简分隔页",
+      "exceptions": [
+        "短 deck(<20 slides)可省分隔,靠章末总结页过渡"
+      ]
+    },
+    {
+      "id": "chapter_end_summary_plus_hook",
+      "category": "chapter_transitions",
+      "applicable_when": "deck has multi-chapter narrative arc",
+      "title": "章末页应同时总结本章并预告下章",
+      "description": "章末 slide 应同时含'本章结论'与'下章预告'两层信息,而非仅罗列本章内容,让章间过渡有 momentum。",
+      "what_to_check": [
+        "取每个 content section 的末页 slide",
+        "判断其核心论断/关键文字是否同时含本章总结(数字/结论)与下章预告(需要/呼唤/展开)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "problem 章末 slide 27 既总结'距需求差 1-2 数量级',又预告'需软硬件协同优化';method 章末 slide 41 收束跨任务收益并留白引展望"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "章末只总结不预告会让下一章像重启,同时做两件事才能保持整篇 momentum",
+      "fix_hint": "章末页正文末追加一行下章 hook,与 PART 分隔页配合形成双层过渡",
+      "exceptions": [
+        "method 单章 deck 无下章可预告"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with clear central thesis",
+      "title": "主 thesis 应跨 3+ 章节重复出现",
+      "description": "deck 主 thesis(如'软硬件协同')应在 problem/method/discussion 至少 3 个章节的 slide 中重复出现,重复次数 6-15 次为佳。",
+      "what_to_check": [
+        "从 deck.论述总结/标题抽取主 thesis 关键词",
+        "统计该关键词在 slides_in_order 中出现的 slide 数与跨章节数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "主 thesis'软硬(件)协同'在 slides 27/28/30/31/33/40/41 出现 ≥7 次,跨 problem/method/discussion 3 章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众对主题的记忆强度与跨章重复次数正相关,单章内高频重复反而像堆砌,跨章分布才是主题清晰的信号",
+      "fix_hint": "在缺主 thesis 关键词的章节内,给至少一张 slide 的标题或结论条加入该关键词",
+      "exceptions": [
+        "综述型 deck 无单一 thesis"
+      ]
+    },
+    {
+      "id": "core_formula_reuse_in_method",
+      "category": "repetition_emphasis",
+      "applicable_when": "method chapter uses a governing formula/framework",
+      "title": "方法章统一公式应在多张 slide 复现",
+      "description": "method 章若引入统一公式/框架(如'AI应用算力=硬件算力×效率'),该公式应在≥3 张 slide 中作为顶栏或坐标,把不同成果挂到同一框架下。",
+      "what_to_check": [
+        "找 method 章首张公式/框架 slide",
+        "在后续 method slide 中查找该公式的 verbatim 或分解形式复现次数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "'AI应用算力=硬件算力×效率'在 method slide 30/31/33 顶栏均以蓝条形式复现,并在 slide 33 进一步分解为多系数"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "多成果 deck 若不用统一公式串起,听众会把 3 个成果记成 3 件孤立的事,复现的公式是把它们拧成一股的绳",
+      "fix_hint": "method 章前几张 slide 引入统一公式,并在每个成果首页保留公式顶栏作为坐标",
+      "exceptions": [
+        "单成果 method 章无需统一框架"
+      ]
+    },
+    {
+      "id": "each_result_paired_with_challenge_slide",
+      "category": "comparison_evidence",
+      "applicable_when": "method chapter presents multiple sub-results",
+      "title": "每项成果应有'挑战+方法'成对 slide",
+      "description": "method 章每项子成果应至少含 1 张挑战 slide + 1 张方法 slide 的成对结构,挑战 slide 给量化痛点,方法 slide 给量化收益+引用。",
+      "what_to_check": [
+        "扫描 method 章 slide,识别标题含'挑战''问题'的 slide 与相邻含'方法''方案'的 slide",
+        "判断每项成果是否有配对且各自含数字+citation"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "成果1挑战 slide 34 + 方法 slide 35;成果2挑战 slide 36 + 方法 slide 37;成果3挑战 slide 38 + 方法 slide 39,3/3 成对且各含数字+citation"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "缺挑战 slide 的方法读起来像自吹自擂,缺方法 slide 的挑战读起来像抱怨,成对结构是学术汇报'为什么该信'的最小单位",
+      "fix_hint": "为每项成果拆分挑战+方法两 slide,挑战给痛点数字,方法给收益倍数与 citation",
+      "exceptions": [
+        "综述型 deck 只列成果不展开机理"
+      ]
+    },
+    {
+      "id": "baseline_comparison_in_system_result_slides",
+      "category": "comparison_evidence",
+      "applicable_when": "method chapter contains system-level result slides",
+      "title": "系统级结果 slide 必须含明确 baseline 对比",
+      "description": "system-level 结果 slide 应明确标注 baseline 型号(如 V100S/3090)与倍数(speedup/energy efficiency),而非只给绝对数字。",
+      "what_to_check": [
+        "扫描 method 章末系统级 slide",
+        "判断关键文字是否含 baseline 具体型号 + × 倍数标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "slide 40 明示 vs V100S GPU 6×speed/1.8×energy;slide 41 明示 vs 3090 GPU 1.3×speed/4.5×energy,两 slide 均给型号+倍数"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结果 slide 只报绝对数字会让听众无法评估价值,baseline+倍数是学术界评估工作贡献度的通行标尺",
+      "fix_hint": "每张系统级结果 slide 补齐'vs <baseline 型号> N× speedup / M× energy'标注",
+      "exceptions": []
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with cover slide",
+      "title": "主 anchor 首次出现应在封面 slide",
+      "description": "deck 的主 anchor(核心概念/主题词)应在 slide_1(cover)首次出现,而非埋到中段才引入。",
+      "what_to_check": [
+        "从 deck.主题标签 / deck.标题 抽取主 anchor",
+        "找 anchor 首次出现的 slide_index,判断是否 ≤ slide_1 或 slide_2(自我介绍页可豁免)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "主 anchor'端侧AI大模型'即为 cover slide 1 主标题,首次出现位置在最早的可能位置"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 anchor 埋在中段会让前几张 slide 变成'铺垫过长',听众在建立心智地图前先失去注意力",
+      "fix_hint": "把主 anchor 关键词写入 cover 主标题或副标题",
+      "exceptions": []
+    },
+    {
+      "id": "agenda_lists_all_content_chapters_in_order",
+      "category": "structural_promise",
+      "applicable_when": "deck has agenda/PART navigation slide",
+      "title": "agenda 需按序列出全部内容章节",
+      "description": "deck 若有 agenda/PART 导航页,该页应完整、按序列出所有 content 章节,与实际 sections_outline 顺序完全一致。",
+      "what_to_check": [
+        "找 slide.页面角色 = chapter_candidate 且含 PART 列表的 agenda slide",
+        "对照 sections_outline 中 content 章的标题与顺序,判断是否完全对齐"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "slide 3 agenda 列 PART 01-04,与实际 problem/method/discussion 三大 content 章及后续 PART 分隔完全对齐"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 承诺什么章节,后文就必须按序 deliver 什么章节,乱序或缺项会让听众失去导航感",
+      "fix_hint": "把 agenda 页的 PART 列表与 sections_outline 严格对齐,重排或补齐缺项",
+      "exceptions": [
+        "短 deck(<15 slides)可省 agenda"
+      ]
+    },
+    {
+      "id": "structural_page_ratio_15_to_25_percent",
+      "category": "pacing",
+      "applicable_when": "deck ≥30 slides",
+      "title": "结构性页比例应控制在 15-25%",
+      "description": "cover/self_intro/agenda/PART 分隔/closing 等结构性 slide 总数应占 deck 15-25%,过低听众迷路,过高内容稀释。",
+      "what_to_check": [
+        "统计 slide.页面角色 in {cover_candidate, chapter_candidate, ending_candidate} 或 section_role in {opening, self_intro, closing} 的 slide 数",
+        "算比例 = 结构页数 / 总页数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "evidence": "51 页中结构页:cover 1+自我介绍 1+agenda 1+4 PART 分隔+致谢 2=9 页,比例约 17.6%,落在 15-25% 区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页太少让听众失去导航,太多让 deck 空洞,15-25% 是长汇报'呼吸/内容'配比的经验区间",
+      "fix_hint": "统计结构页占比,若<15% 补 PART 分隔或章末总结页,若>25% 合并冗余分隔",
+      "exceptions": [
+        "短 deck(<15 slides)无需按此比例"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(端侧大模型报告),完整覆盖 opening/self_intro/background/problem/method/discussion/closing 七类 section_role。抽取 15 条 rule,覆盖全部 8 类中的 7 类(pacing 类下 1 条聚焦结构页比例)。所有 rule 命中率 = 1.0 因单 deck batch,但每条均有明确的 what_to_check + fix_hint,可迁移到后续 batch 验证。",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

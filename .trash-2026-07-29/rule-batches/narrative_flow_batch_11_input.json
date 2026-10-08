@@ -1,0 +1,677 @@
+{
+  "batch_index": 11,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+      "目录名": "SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+      "标题": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+      "总页数": 25,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_研究背景与推理成本动机",
+        "section_03_相关工作-现有提前退出方法",
+        "section_04_SpecEE-挑战、关键洞察与技术设计",
+        "section_05_实验结果与性能评估",
+        "section_06_论文与代码链接"
+      ],
+      "主题标签": [
+        "LLM inference",
+        "early exit",
+        "speculative",
+        "predictor",
+        "edge",
+        "cloud",
+        "acceleration"
+      ],
+      "目标受众": "学术同行 + 系统/推理加速方向工业落地",
+      "报告类型": "paper_share",
+      "适用场景": "系统/推理加速方向论文分享或组会汇报",
+      "论述总结": "面向 LLM 推理提速,提出 SpecEE:用轻量投机预测器缩小候选词表搜索空间,判定并跳过冗余层实现提前退出。经背景动机、关键洞察、预测器设计与调度、编译优化,最终在 PC 与云端 GPU 上实现约 2.25x 提速且精度几乎无损。",
+      "论述弧线": [
+        "背景",
+        "相关工作",
+        "挑战",
+        "方法",
+        "实验"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "核心论断": "SpecEE 以投机式提前退出加速大模型推理",
+          "本页讲什么": "论文标题封面页,上半区居中大字亮明全称 SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting。下半区列出作者 Jiaming Xu、Yaoxiu Lian、Junyi Wu、Guohao Dai 及带上标机构,机构行为 Shanghai Jiao Tong University、Infinigence-AI、SII,末行给出通讯作者 Guohao Dai 邮箱。",
+          "关键文字": [
+            "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+            "Jiaming Xu, Yaoxiu Lian, Junyi Wu, Guohao Dai",
+            "Shanghai Jiao Tong University, Infinigence-AI, SII",
+            "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+          ],
+          "视觉骨架": [
+            "居中大字论文标题",
+            "作者姓名带机构上标",
+            "机构与通讯作者信息行"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Outline:全篇章节进度式目录",
+          "核心论断": "全篇分六段结构,当前高亮定位到 Background",
+          "本页讲什么": "目录页,顶部蓝色大字 Outline。以进度式列表铺陈全篇章节:Background 高亮为黑色当前项,Related Work、Challenges and Techniques(含子项 Key Insight、Attention Operator、Linear Operator、Compilation Tuning)、Experiment Results 灰化表示后续待展开,为全篇技术章节定锚导航。",
+          "关键文字": [
+            "Outline",
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "顶部蓝色 Outline 标题",
+            "高亮/灰化进度式章节列表",
+            "带缩进的子项 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "From Token to Action：Agent 时代 token 需求量级",
+          "核心论断": "从生成 token 到执行 action，单请求 token 消耗从 0.1k 级跃升至 10k 级",
+          "本页讲什么": "本页用「Token Generation → Action」两阶段对比引出 token 需求爆炸：过去 LLM 只需生成 0.1k~1k tokens/request 即可产出 answer，而进入 Agent 时代要完成一次 action 则需 1k~10k tokens，量级放大约 10 倍。以此立起后文推理算力/成本压力的动机，底部引用 GPT-4 technical report 作数据支撑。",
+          "关键文字": [
+            "Token Generation → Action",
+            "Agent: 0.1k~1k tokens/request",
+            "1k~10k [2]",
+            "Generate the answer",
+            "[1] Achiam et al. GPT-4 technical report, 2023"
+          ],
+          "视觉骨架": [
+            "左右两阶段横向对照",
+            "巨号量级数字(蓝/红)",
+            "底部引用脚注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.02",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "LLM 推理延迟需求 vs 现状的巨大鸿沟",
+          "核心论断": "端到云四类场景下推理吞吐现状远低于需求，存在数量级差距",
+          "本页讲什么": "本页横向并列 Edge 手机、笔记本、All-in-one Machine、Cloud 四类推理场景，每列给出「Requirement」与「Now」的吞吐对比：如边端需求 100-1000 token/s 但现状仅 1~10 / 5~15 token/s，云端需求 25-30k token/s 但现状约 8000 / 14.8k token/s/node，并标注各自的 Model/Hardware/Backend。用需求-现状鸿沟坐实推理加速的迫切性，承接上页 token 爆炸。",
+          "关键文字": [
+            "LLM Inference Latency Requirement",
+            "Requirement：100-1000 token/s",
+            "Now：1~10 / 5~15 token/s",
+            "Requirement：25-30k token/s",
+            "Now：8000 / 14.8k token/s/node",
+            "Model/Hardware/Backend 标注"
+          ],
+          "视觉骨架": [
+            "4 列设备图标并列 panel",
+            "Requirement/Now 双行数字对照",
+            "各列底部配置小字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.02",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "LLM 推理即逐层级联计算，如何减少层计算？",
+          "核心论断": "LLM 推理本质是逐层 Attention+FFN 级联，减少层计算是加速关键",
+          "本页讲什么": "本页点破推理成本根因：所有 LLM 推理都是级联的层计算——从 Prompt 输入，依次经过多层 Attention+FFN，最终产出 Output。用横向串联的层链示意这一级联结构，并在底部以红字抛出核心问题「How to reduce layer computation?」，从而由前两页的成本动机自然过渡到后文的早退(减少层计算)方案。",
+          "关键文字": [
+            "LLM Inference: Cascaded Layer Computation",
+            "All the LLM inference is the cascaded layer computation",
+            "Prompt → Attention FFN ×N → Output",
+            "How to reduce layer computation?"
+          ],
+          "视觉骨架": [
+            "横向级联层链示意",
+            "顶部蓝色强调条",
+            "底部红字设问"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.02",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "Outline:进入 Related Work 章节",
+          "核心论断": "演讲进入「Related Work」环节,承接 Background",
+          "本页讲什么": "全局目录页,列出 Background / Related Work / Challenges and Techniques(含 Key Insight、Attention/Linear Operator、Compilation Tuning 四子项)/ Experiment Results 五大板块,当前高亮黑色的「Related Work」表示正进入相关工作章节,其余为灰色未激活项。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "纵向目录列表",
+            "当前项高亮(黑)+ 其余灰",
+            "蓝色大标题 Outline"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "提前退出通用范式:每层部署 predictor",
+          "核心论断": "现有提前退出可抽象为「每层后接 predictor」,核心问题是如何设计 predictor",
+          "本页讲什么": "抽象出现有 early-exit 方法的通用范式:Prompt 逐层经过 Attention+FFN,每层后部署一个 predictor(输出 Y/N 判断是否退出),并做 Feature Process 特征处理,最终 Output。底部红字抛出全章核心问题「Key Problem: How to design the predictor?」,为后续横比三种方法与 SpecEE 铺垫。",
+          "关键文字": [
+            "Deploy a predictor after each layer",
+            "Key Problem: How to design the predictor?",
+            "Prompt / Attention FFN / Output",
+            "Feature Process",
+            "Not all layers of LLMs are necessary [1]"
+          ],
+          "视觉骨架": [
+            "逐层流水线框图(Prompt→层→Output)",
+            "每层下挂 predictor Y/N 分支",
+            "底部红色问题句"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "三种提前退出方法架构横比:RAEE/AdaInfer/MoD",
+          "核心论断": "RAEE、AdaInfer、MoD 三法并列展开,各自的 predictor 与搜索空间设计不同",
+          "本页讲什么": "三列并排展示三种现有方法的架构:左 RAEE(predictor + Llama Layer,在线检索 embeddings,搜索空间约 10^n),中 AdaInfer(predictor + Llama Layer,在线搜索退出层),右 Google MoD(predictor + New Model,含 QKV/MHA/FFN,搜索空间 2 状态、预测 skip/forward)。顶部图例区分 Trainable / Freezed 模块,凸显三者 predictor 设计与开销差异。",
+          "关键文字": [
+            "RAEE",
+            "AdaInfer [2]",
+            "Google MoD [3]",
+            "Trainable / Freezed",
+            "Predictor / Llama Layer / New Model",
+            "Search Space / Online Search / Embeddings"
+          ],
+          "视觉骨架": [
+            "3 列并列架构 panel",
+            "Trainable/Freezed 图例",
+            "每列 predictor+layer 框图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "三法开销对比:predictor 过重、搜索空间过大",
+          "核心论断": "RAEE/AdaInfer/MoD 的 predictor 普遍偏重、搜索空间偏大,暴露共性短板",
+          "本页讲什么": "以对比表横比 RAEE、AdaInfer、MoD 在三维度上的开销:When to Exit(退出时机搜索,RAEE High、AdaInfer/MoD Low)、Search Space(RAEE/AdaInfer Heavy、MoD Low)、Predict Latency 与 Training Cost(RAEE Light、AdaInfer/MoD 各有高低)。用红字 Heavy/High、绿字 Light/Low 直观暴露三者 predictor 过重或搜索空间过大的短板,为 SpecEE 轻量投机预测器作反衬。",
+          "关键文字": [
+            "When to Exit / Search Space / Predict Latency / Training Cost",
+            "RAEE / AdaInfer / MoD",
+            "Heavy / Light",
+            "High / Low",
+            "Skip or Forward",
+            "Layer ID / QKV / MHA / FFN"
+          ],
+          "视觉骨架": [
+            "方法×维度对比表",
+            "红字 Heavy/High vs 绿字 Light/Low",
+            "Predict Latency/Training Cost 底部标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "Outline:定位到 Challenges and Techniques",
+          "核心论断": "本章围绕四项技术展开:关键洞察、轻量预测器、启发调度、合并映射",
+          "本页讲什么": "Outline 目录页,高亮当前进入的 Challenges and Techniques 章节并展开其四个子部分:Key Insight、Lightweight Predictor Design、Heuristic Predictor Scheduling、Merged Mapping for Predictors;Backgrounds/Related Works 已讲(置灰),Experiment Results 待讲(置灰)。",
+          "关键文字": [
+            "Backgrounds / Related Works",
+            "Challenges and Techniques",
+            "Key Insight",
+            "Lightweight Predictor Design",
+            "Heuristic Predictor Scheduling",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "多级 agenda 列表",
+            "当前章高亮其余置灰",
+            "子条目缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "content_candidate",
+          "标题": "Key Insight:LLM 推理即搜索过程",
+          "核心论断": "LLM 自回归推理本质是在全词表上的搜索过程",
+          "本页讲什么": "以 Prompt→多层 Attention/FFN→Output 的流水线示意,把 LLM 推理刻画为一次搜索过程;搜索空间是全词表(~3×10^4 tokens),每步从中选一个 token。抛出第一问:如何缩小有效搜索空间?为后续投机缩空间做铺垫。",
+          "关键文字": [
+            "A Search Process",
+            "This is the search space",
+            "Full Vocabulary (~3×10^4 Tokens)",
+            "How to reduce the effective search space"
+          ],
+          "视觉骨架": [
+            "Prompt→Attention/FFN→Output 流水线",
+            "搜索空间标注气泡",
+            "全词表 token 示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "Key Insight:投机模型缩小搜索空间",
+          "核心论断": "投机模型把全词表搜索空间压缩到极少候选 token",
+          "本页讲什么": "承接上页的搜索空间问题,给出第一层答案:引入 Speculative Model(草稿模型),将 Full Vocabulary(~3×10^4 tokens)收窄为 Reduced Vocabulary(~3 tokens)。底部红框抛出下一问:如何基于缩小的空间进一步减少计算?导向逐层跳过。",
+          "关键文字": [
+            "A speculative model for search space reduction",
+            "Full Vocabulary (~3×10^4 Tokens)",
+            "Reduced Vocabulary (~3 Tokens)",
+            "Speculative Model",
+            "How to reduce the computation based on reduced space?"
+          ],
+          "视觉骨架": [
+            "Prompt→多层 decoder→LM_head 流水线",
+            "全词表 vs 缩减词表对比气泡",
+            "投机模型标注框",
+            "底部红框问题条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "Key Insight:逐层部署预测器跳冗余层",
+          "核心论断": "每层后部署预测器,基于缩小空间跳过冗余层实现早退",
+          "本页讲什么": "承接缩空间思路给出第二层答案:在每层 Attention/FFN 之后部署一个 predictor,判断是否可提前退出(Yes/No),从而跳过冗余层。引出核心问题 Key Problem: How to design the predictor?,直接导向后续三项技术。",
+          "关键文字": [
+            "Deploy a predictor after each layer",
+            "Feature Process Model",
+            "Yes / No",
+            "Key Problem: How to design the predictor?"
+          ],
+          "视觉骨架": [
+            "逐层流水线各层后挂 predictor",
+            "Yes/No 判定分支",
+            "早退跳层示意",
+            "底部红字关键问题"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "Technique 1 痛点:高维原始特征预测太慢",
+          "核心论断": "基于 >4×10^3 维原始特征的预测器约占 30% 耗时,拖慢推理",
+          "本页讲什么": "Technique 1 的痛点页。直接用预测器处理 raw high-dimensional features(>4×10^3 维)非常 time-consuming,Feature Process 约占 ~30% 的每层时间。抛出问题:如何设计一个轻量 predictor 模型?底部引用 [1] 支撑并非所有层都必要。",
+          "关键文字": [
+            "predictor based on raw high-dimensional (>4×10^3) features is time-consuming",
+            "Raw Features > 4×10^3 dimensions",
+            "~30%",
+            "How to design a lightweight predictor model?"
+          ],
+          "视觉骨架": [
+            "预测器特征处理框图",
+            "~30% 耗时占比标注",
+            "原始特征维度标注",
+            "底部引用脚注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "Technique 1 设计:概率漂移特征+校正算法",
+          "核心论断": "概率漂移特征降维约 10^3 倍,两步校正算法保精度",
+          "本页讲什么": "Technique 1 的解法页。① 用 probability shift feature 把 Raw Features(>4×10^3 维)压到 Extracted features(~3 维),实现 ~10^3 量级特征降维;② 再用基于 full vocabulary 的 correction algorithm 做两步预测(pred>threshold 判定 Early/Forward)保证精度。收益:轻量且准确。",
+          "关键文字": [
+            "probability shift feature for lightweight predictor design",
+            "correction algorithm to ensure accuracy",
+            "Extracted features ~3 dimensions",
+            "~10^3 features reduction",
+            "Correction Algorithm Based on full vocabulary",
+            "Two-step prediction to ensure accuracy"
+          ],
+          "视觉骨架": [
+            "概率漂移特征降维示意",
+            "两步预测判定流程",
+            "校正算法 Early/Forward 分支",
+            "底部收益标注条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "Technique 2 痛点:激活频率呈偏斜分布",
+          "核心论断": "逐层部署预测器使各层激活频率呈显著偏斜分布",
+          "本页讲什么": "Technique 2 的痛点页。逐层部署 predictor 后,统计 Llama2-7B 各层(Layer ID 0–30)的 activation frequency,发现分布高度 skewed(约 5%–15% 不均)。说明固定逐层部署低效,抛出问题:如何动态部署 predictor?",
+          "关键文字": [
+            "layer-wise predictor deployment introduces the skewed distribution on the activation frequency",
+            "Activation frequency",
+            "Skewed",
+            "Layer ID of Llama2-7B",
+            "How to deploy the predictor dynamically?"
+          ],
+          "视觉骨架": [
+            "顶部逐层流水线+Yes/No 判定",
+            "激活频率柱状图(5%–15%)",
+            "Llama2-7B 层号横轴",
+            "Skewed 红字标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "Technique 2 设计:在线+离线两级调度",
+          "核心论断": "两级(在线+离线)启发式调度实现预测器动态部署",
+          "本页讲什么": "Technique 2 的解法页,左右两栏。左栏 Online Scheduling:利用 exiting 的 context similarity(表盘示意 layer 8/19/20,Decoder/Predictor 逐层匹配)在线选层;右栏 Offline Scheduling:通过 Offline Data Collection 选出 high frequency 的 predictor 层。二者结合动态部署预测器。",
+          "关键文字": [
+            "Two-level (online and offline) heuristic predictor scheduling",
+            "Context similarity in exiting",
+            "Offline Data Collection",
+            "Select the predictor with high frequency",
+            "Online Scheduling / Offline Scheduling"
+          ],
+          "视觉骨架": [
+            "左右双栏在线/离线",
+            "在线:表盘+逐层 Decoder/Predictor 匹配",
+            "离线:数据采集→选高频层",
+            "顶部蓝色标题块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "Technique 3 痛点:早退映射复杂度指数级",
+          "核心论断": "投机解码中早退预测器的映射复杂度随 token 树指数级膨胀",
+          "本页讲什么": "Technique 3 的痛点页,上下两行对比。上:Autoregressive Decoding 每步 Single Token,预测下一 token,映射复杂度为 S;下:Speculative Decoding 用 Draft LLM 生成 Token Tree,早退需对树上多条路径映射,复杂度膨胀为 S、S₃…Sₙ。抛出映射复杂度过高的问题。",
+          "关键文字": [
+            "Exponential mapping complexity of early exiting predictor in speculative decoding",
+            "Autoregressive Decoding",
+            "Speculative Decoding",
+            "Single Token vs Token Tree",
+            "Mapping Complexity S … Sn"
+          ],
+          "视觉骨架": [
+            "上下两行解码范式对比",
+            "自回归单 token 流",
+            "投机解码 token 树+多路径",
+            "右侧 S→Sn 复杂度标注框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "Technique 3 设计:上下文感知合并映射",
+          "核心论断": "上下文感知的合并映射把映射复杂度从 Sⁿ 降到 S",
+          "本页讲什么": "Technique 3 的解法页。对 Token Tree 中的多条 token 路径(I / It / Thank …),将同一路径上的 token 合并为一个 Hyper token(context-aware merged mapping),对合并后的路径做一次映射。收益:映射复杂度从 Sⁿ 降为 S,消除指数膨胀。",
+          "关键文字": [
+            "Context-aware merged mapping for predictor to reduce mapping complexity",
+            "Merge as Hyper token",
+            "Token Tree",
+            "Merged mapping of the token path in token tree",
+            "Reduce the complexity from Sn to S"
+          ],
+          "视觉骨架": [
+            "token 树+多路径",
+            "Hyper token 合并示意",
+            "合并后路径单次映射",
+            "底部收益标注条 Sn→S"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "Outline:高亮进入 Experiment Results",
+          "核心论断": "演讲推进至 Experiment Results,正式进入实验章",
+          "本页讲什么": "Outline agenda 页,列出 Background、Related Work、Challenges and Techniques(含 Key Insight/Attention Operator/Linear Operator/Compilation Tuning)、Experiment Results 五大板块;前四项灰显,唯 Experiment Results 以黑色高亮,标示演讲正切入实验结果章节。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "Outline 蓝色大标题",
+            "灰显章节列表",
+            "当前章黑色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "Experiment Setup:平台/模型/基线/数据集",
+          "核心论断": "SpecEE 在 PC 与云端双平台、多模型多基线下接受检验",
+          "本页讲什么": "交代实验软硬件配置四大分区:Hardware Platforms(PC 场景 Lenovo Legion Y7000 + RTX 4060 Laptop 8GB + i7-13650HX;Cloud 场景 A100-80GB + RTX 4090 24GB)、Models(Llama2-7B/14B/70B)、LLM Engine Baselines(HuggingFace/vLLM/llama.cpp,skip layer 的 AdaInfer/RAEE,正交加速 AWQ/PowerInfer)、Datasets(MT-Bench、SUM 等)。",
+          "关键文字": [
+            "PC scenario: Lenovo Legion Y7000 + RTX 4060 8GB, i7-13650HX",
+            "Cloud scenario: A100-80GB GPU 与 RTX 4090 24GB",
+            "Models: Llama2-7B/14B/70B",
+            "Baselines: HuggingFace/vLLM/llama.cpp; AdaInfer/RAEE; AWQ/PowerInfer",
+            "Datasets: MT-Bench, SUM"
+          ],
+          "视觉骨架": [
+            "分组标题 + bullet 列表",
+            "平台/模型/基线/数据集四分区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "Accuracy Evaluation:精度损失 <1%",
+          "核心论断": "SpecEE 相比原模型精度损失 <1%,几乎无损",
+          "本页讲什么": "展示 SpecEE 与原始模型的精度对比,承接上页 setup 给出首条结论:精度损失可忽略(<1%);底部红框米黄 banner 强调「Negligible accuracy loss (<1%) compared with the original model」。截图主体对比区域近乎空白(表/图未完全渲染),但页面定位明确为精度无损论证。",
+          "关键文字": [
+            "Negligible accuracy loss (<1%)",
+            "compared with the original model"
+          ],
+          "视觉骨架": [
+            "精度对比表/图(主体)",
+            "底部米黄结论 banner",
+            "红框强调框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "PC 场景加速:最高 2.43x speedup",
+          "核心论断": "SpecEE 在 Lenovo Y7000 PC 上最高提速 2.43x",
+          "本页讲什么": "PC 场景(Lenovo Legion Y7000 + RTX 4060 Laptop 8GB,CUDA 12.1,i7-13650HX)下的 speedup 评测,展示 SpecEE 相较基线的加速图,承接精度无损后给出端侧提速收益;底部米黄 banner 结论「Up to 2.43x speedup on Lenovo Y7000 PC」。",
+          "关键文字": [
+            "Experiment Setup: Lenovo Legion Y7000 PC",
+            "NVIDIA RTX 4060 Laptop GPU(8GB), CUDA 12.1, i7-13650HX",
+            "Up to 2.43x speedup on Lenovo Y7000 PC"
+          ],
+          "视觉骨架": [
+            "speedup 柱/曲线图",
+            "实验配置说明块",
+            "底部米黄结论 banner"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "云端加速:2.25x/2.17x 并推进帕累托前沿",
+          "核心论断": "云端最高提速 2.25x(A100)/2.17x(RTX4090)并推进精度-速度帕累托前沿",
+          "本页讲什么": "云端场景(NVIDIA A100 SXM 80GB,CUDA 12.1;RTX 4090 24GB,CUDA 11.6)的 speedup 评测,SpecEE 在 A100-80GB 最高提速 2.25x、RTX 4090 提速 2.17x,并成功推进 accuracy 与 speedup 的 Pareto frontier,作为放大收益、收束全 deck 的收官论断。",
+          "关键文字": [
+            "NVIDIA A100 SXM 80GB, CUDA 12.1",
+            "NVIDIA RTX 4090 24GB, CUDA 11.6",
+            "Up to 2.25x speedup on A100-80GB and 2.17x speedup on RTX 4090",
+            "Successfully push the Pareto frontier of accuracy and speedup"
+          ],
+          "视觉骨架": [
+            "实验配置小表",
+            "speedup / Pareto frontier 图",
+            "底部米黄结论 banner"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "ending_candidate",
+          "标题": "SpecEE 收尾页:标题+作者+核心结论+论文/代码入口",
+          "核心论断": "SpecEE 实现 ~2.43x/~2.25x 加速并推动 speedup-accuracy Pareto 前沿",
+          "本页讲什么": "这是全篇 ending 页:居中复述论文标题「SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting」与作者署名(Jiaming Xu, supervised by Prof. Guohao Dai, 附 SJTU 邮箱),下方用两条蓝字结论收束——PC/云场景分别取得 ~2.43x 与 ~2.25x 更快的 LLM 推理,并成功推动 speedup 与 accuracy 的 Pareto 前沿;右侧配 Paper Link 与 Code Link 两个二维码入口,底部为 Powered by 署名条。",
+          "关键文字": [
+            "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+            "Jiaming Xu, supervised by Prof. Guohao Dai",
+            "~2.43x and ~2.25x faster LLM inference on PC and cloud scenarios",
+            "Successfully push the Pareto frontier of speedup and accuracy",
+            "Paper Link / Code Link"
+          ],
+          "视觉骨架": [
+            "居中论文标题+作者署名块",
+            "两条蓝字结论 bullet",
+            "右侧 Paper/Code 二维码入口",
+            "底部 Powered by 署名条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.06",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "motivation",
+          "标题": "研究背景与推理成本动机",
+          "页码范围": [
+            3,
+            5
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "background",
+          "标题": "相关工作:现有提前退出方法",
+          "页码范围": [
+            6,
+            9
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "method",
+          "标题": "SpecEE 挑战、关键洞察与技术设计",
+          "页码范围": [
+            10,
+            19
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "result",
+          "标题": "实验结果与性能评估",
+          "页码范围": [
+            20,
+            24
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "closing",
+          "标题": "论文与代码链接",
+          "页码范围": [
+            25,
+            25
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

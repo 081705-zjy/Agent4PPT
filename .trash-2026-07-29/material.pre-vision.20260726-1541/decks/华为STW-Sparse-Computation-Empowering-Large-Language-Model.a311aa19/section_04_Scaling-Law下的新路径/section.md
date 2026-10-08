@@ -1,0 +1,41 @@
+---
+章节标识: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.04
+所属deck: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19
+章节序号: 4
+章节角色: discussion
+标题: Scaling Law下的新路径
+页码范围: [17, 23]
+页数: 7
+页ID列表: [slide_17, slide_18, slide_19, slide_20, slide_21, slide_22, slide_23]
+章节叙事: "承接前三层加速工作,从Moore's Law转向Scaling Law视角,论证在延迟-精度权衡下有三条新路径(Scaling/高效模型/新基础模型),把前文技术上升为方法论收束。"
+页间关系: ["slide 17 → slide 18: 由背景铺垫过渡到对延迟-精度权衡的重新思考", "slide 18 → slide 19: 由延迟反思引出Scaling Law取代Moore's Law的新路径总览", "slide 19 → slide 20: 由三路径总览进入Way 1(Scaling Law)示例", "slide 20 → slide 21: 由Way 1过渡到Way 2高效模型(量化压缩)示例", "slide 21 → slide 22: 同属Way 2,由通用高效模型转到领域专用模型示例", "slide 22 → slide 23: 由Way 2收尾过渡到Way 3新基础模型示例"]
+适合复用场景: ["需从Moore's Law转向Scaling Law论证新范式的discussion章节", 需并列展示多条技术路线(路径1/2/3)的总结章节, 以延迟-精度权衡引出方法论升华的收束段落, 论证模型效率/量化/领域化多路径共存的场景]
+不适合复用场景: [主题与Scaling Law或大模型效率无关时, 只需单一技术路线、无需多路径并列时, 作为纯背景引入而非总结升华章节时, 量化/参数量数据已过时或不匹配时]
+在deck中的位置: 第4章discussion,位于三层加速技术之后,总结升华并前瞻新范式
+分析状态: claude-opus-4-8
+---
+
+# section 4: Scaling Law下的新路径
+
+## 在 deck 中的位置
+第4章discussion,位于三层加速技术之后,总结升华并前瞻新范式
+
+## 章内 slide 间的关系
+- slide 17 → slide 18: 由背景铺垫过渡到对延迟-精度权衡的重新思考
+- slide 18 → slide 19: 由延迟反思引出Scaling Law取代Moore's Law的新路径总览
+- slide 19 → slide 20: 由三路径总览进入Way 1(Scaling Law)示例
+- slide 20 → slide 21: 由Way 1过渡到Way 2高效模型(量化压缩)示例
+- slide 21 → slide 22: 同属Way 2,由通用高效模型转到领域专用模型示例
+- slide 22 → slide 23: 由Way 2收尾过渡到Way 3新基础模型示例
+
+## 整章可复用的场景
+- 需从Moore's Law转向Scaling Law论证新范式的discussion章节
+- 需并列展示多条技术路线(路径1/2/3)的总结章节
+- 以延迟-精度权衡引出方法论升华的收束段落
+- 论证模型效率/量化/领域化多路径共存的场景
+
+## 不适合复用的场景
+- 主题与Scaling Law或大模型效率无关时
+- 只需单一技术路线、无需多路径并列时
+- 作为纯背景引入而非总结升华章节时
+- 量化/参数量数据已过时或不匹配时

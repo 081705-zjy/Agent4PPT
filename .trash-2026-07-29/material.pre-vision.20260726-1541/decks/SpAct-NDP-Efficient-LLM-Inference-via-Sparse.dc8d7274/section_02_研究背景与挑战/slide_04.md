@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_04"
+所属章节: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02"
+所属deck: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274"
+页序号: 4
+源文件: "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx"
+页面角色: "content_candidate"
+标题: "Attention 与 softmax 的计算负担"
+核心论断: "Attention 与 softmax 运算构成大模型推理主要计算瓶颈"
+本页讲什么: "承接上页对 LLM 重要性的立论，本页拆解其计算负担来源，聚焦 Attention 与 softmax 运算的开销。用公式与示意（含 × 乘积、Ocean 规模比喻）说明这类运算量级庞大，导出后续需要压缩技术的必要性。"
+关键文字: "[Attention, softmax, Ocean]"
+视觉骨架: "[attention 运算公式示意, 计算量级比喻图]"
+资源ID列表: "[tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_04.asset.01, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_04.asset.02]"
+适合复用场景: "[attention 计算瓶颈分析页, 大模型推理开销拆解页]"
+不适合复用场景: "[压缩方法对比表格页, 参考文献页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方", "内容": "Attention 运算公式示意"}
+  - {"位置": "下方", "内容": "计算量级比喻图 (Ocean 规模)"}
+alternate_claims:
+  - "softmax 运算的量级可类比海洋规模, 凸显开销之大"
+layout_tag: "mixed"
+---
+# slide 4: Attention 与 softmax 的计算负担
+
+**核心论断**: Attention 与 softmax 运算构成大模型推理主要计算瓶颈
+
+## 本页讲什么
+承接上页对 LLM 重要性的立论，本页拆解其计算负担来源，聚焦 Attention 与 softmax 运算的开销。用公式与示意（含 × 乘积、Ocean 规模比喻）说明这类运算量级庞大，导出后续需要压缩技术的必要性。
+
+## 关键文字片段
+- Attention
+- softmax
+- Ocean
+
+## 视觉骨架
+- attention 运算公式示意
+- 计算量级比喻图
+
+## 可复用到
+- attention 计算瓶颈分析页
+- 大模型推理开销拆解页
+
+## 不适合复用的场景
+- 压缩方法对比表格页
+- 参考文献页

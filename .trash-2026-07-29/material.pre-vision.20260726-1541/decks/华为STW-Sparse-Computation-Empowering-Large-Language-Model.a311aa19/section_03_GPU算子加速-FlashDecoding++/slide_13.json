@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_13",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.03",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 13,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "LLM 推理的成本与延迟背景",
+  "核心论断": "LLM 推理高成本与高延迟是 GPU 算子优化的动因",
+  "本页讲什么": "作为算子层加速的背景铺垫页，先交代大语言模型推理面临的成本(Cost)与延迟(Latency)问题，作为 Preliminary 引出后续 FlashDecoding++ 算子优化的必要性。为 slide 14 的技术方案做问题铺垫。",
+  "关键文字": [
+    "Background: Cost and Latency of LLM",
+    "Preliminary"
+  ],
+  "视觉骨架": [
+    "成本/延迟示意图",
+    "背景概念配图"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_13.asset.01"
+  ],
+  "适合复用场景": [
+    "LLM 推理加速 motivation 页",
+    "GPU 算子优化背景铺垫"
+  ],
+  "不适合复用场景": [
+    "具体算法方法展开页",
+    "实验数据对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

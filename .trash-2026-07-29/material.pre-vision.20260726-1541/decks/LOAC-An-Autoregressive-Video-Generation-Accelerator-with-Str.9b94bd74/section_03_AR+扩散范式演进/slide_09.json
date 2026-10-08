@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_09",
+  "所属章节": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03",
+  "所属deck": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+  "页序号": 9,
+  "源文件": "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx",
+  "页面角色": "content_candidate",
+  "标题": "自回归生成的两大天然优势",
+  "核心论断": "自回归（AR）天然支持实时生成并具备长程记忆",
+  "本页讲什么": "本页给出上页问题的答案方向：当前视频模型转向自回归生成（AR），因为 AR 天然能逐帧实时生成，且具备长程记忆能力，正式引出后续 AR+扩散系列工作。",
+  "关键文字": [
+    "因此现在的视频模型都在探索自回归生成（AR）",
+    "自回归天然能实时生成，且具有长程记忆"
+  ],
+  "视觉骨架": [
+    "自回归逐帧生成示意图",
+    "AR 时间轴配图"
+  ],
+  "资源ID列表": [
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_09.asset.01"
+  ],
+  "适合复用场景": [
+    "自回归视频生成引入页",
+    "AR 优势论证 motivation 页"
+  ],
+  "不适合复用场景": [
+    "双向注意力对比表格页",
+    "能效数字结果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

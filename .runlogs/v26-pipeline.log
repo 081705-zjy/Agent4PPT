@@ -1,0 +1,103 @@
+
+=== RUN OUTLINE_GENERATION @ 15:41:30 ===
+[OUTLINE] loading global resources...
+[OUTLINE] archetypes=204, hard_rules=246, project_pdf_briefs=0, chapters=8
+[OUTLINE] v33: idea-analysis slide_stubs present, but Stage 1a will still regenerate/validate them with Claude
+[OUTLINE ch1] stage 1a OK (2 slides)
+[OUTLINE ch3] stage 1a OK (3 slides)
+[OUTLINE ch2] stage 1a OK (9 slides)
+[OUTLINE ch5] stage 1a OK (10 slides)
+[OUTLINE ch6] stage 1a OK (10 slides)
+[OUTLINE ch4] stage 1a OK (9 slides)
+[OUTLINE ch7] stage 1a OK (6 slides)
+[OUTLINE ch8] stage 1a OK (1 slides)
+[OUTLINE] C.1a done: 8/8 chapters
+[OUTLINE] C.1b rnd1: ok=False, issues=2 (crit/high=2)
+[OUTLINE] C.1b rnd1 → redo Stage 1a for chapters [8, 5]
+[OUTLINE ch8] stage 1a OK (2 slides)
+[OUTLINE ch5] stage 1a OK (10 slides)
+[OUTLINE] C.1b rnd2: ok=False, issues=13 (crit/high=10)
+[OUTLINE] C.1b rnd2 → redo Stage 1a for chapters [3, 4, 5, 6, 7]
+[OUTLINE ch3] stage 1a OK (4 slides)
+[OUTLINE ch4] stage 1a OK (10 slides)
+[OUTLINE ch5] stage 1a OK (10 slides)
+[OUTLINE ch6] stage 1a OK (10 slides)
+[OUTLINE ch7] stage 1a OK (9 slides)
+[OUTLINE] C.1b codex rnd3 cli failed: cli rc=1: OpenAI Codex v0.145.0
+--------
+workdir: /home/zjy/agent-application/ppt-agent/ppt-agent-v1
+model: gpt-5.5
+provider: infini
+approval: never
+sandbox: re
+[OUTLINE stage1b ch4] +178 slides from IDEA library pool (total tier1 pre-trim: 210)
+[OUTLINE stage1b ch3] +192 slides from IDEA library pool (total tier1 pre-trim: 195)
+[OUTLINE stage1b ch1] +195 slides from IDEA library pool (total tier1 pre-trim: 195)
+[OUTLINE stage1b ch2] +186 slides from IDEA library pool (total tier1 pre-trim: 195)
+[OUTLINE stage1b ch2] PASS-1 claim alignment: 11 high (≥0.5), 3 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch2] tier1 trimmed 15→10 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch4] PASS-1 claim alignment: 11 high (≥0.5), 0 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch4] tier1 trimmed 15→10 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch1] PASS-1 claim alignment: 4 high (≥0.5), 11 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch1] tier1 trimmed 15→10 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch3] PASS-1 claim alignment: 9 high (≥0.5), 0 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch3] tier1 trimmed 15→9 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch1] PASS-1: 2 slides, 0 gaps []
+[OUTLINE ch1] stage 1b OK (2 slides)
+[OUTLINE stage1b ch5] +183 slides from IDEA library pool (total tier1 pre-trim: 211)
+[OUTLINE stage1b ch3] PASS-1: 4 slides, 0 gaps []
+[OUTLINE ch3] stage 1b OK (4 slides)
+[OUTLINE stage1b ch6] +178 slides from IDEA library pool (total tier1 pre-trim: 210)
+[OUTLINE stage1b ch2] PASS-1: 9 slides, 0 gaps []
+[OUTLINE ch2] stage 1b OK (9 slides)
+[OUTLINE stage1b ch7] +195 slides from IDEA library pool (total tier1 pre-trim: 205)
+[OUTLINE stage1b ch4] PASS-1: 10 slides, 2 gaps [6, 10]
+[OUTLINE stage1b ch4] PASS-2 lib evidence: 20 concrete keywords from 5 decks
+[OUTLINE stage1b ch5] PASS-1 claim alignment: 10 high (≥0.5), 0 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch5] tier1 trimmed 15→10 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch6] PASS-1 claim alignment: 8 high (≥0.5), 4 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch6] tier1 trimmed 15→8 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch7] PASS-1 claim alignment: 7 high (≥0.5), 4 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch7] tier1 trimmed 15→7 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch6] PASS-1: 10 slides, 3 gaps [5, 8, 9]
+[OUTLINE stage1b ch6] PASS-2 lib evidence: 0 concrete keywords from 0 decks
+[OUTLINE stage1b ch4] PASS-2 OK: 10 slides
+[OUTLINE ch4] stage 1b OK (10 slides)
+[OUTLINE stage1b ch8] +195 slides from IDEA library pool (total tier1 pre-trim: 196)
+[OUTLINE stage1b ch8] PASS-1 claim alignment: 1 high (≥0.5), 13 low (<0.25) of 15 carriers
+[OUTLINE stage1b ch8] tier1 trimmed 15→10 (low-alignment carriers dropped to keep single-call payload manageable)
+[OUTLINE stage1b ch5] PASS-1: 10 slides, 6 gaps [5, 6, 7, 8, 9, 10]
+[OUTLINE stage1b ch5] PASS-2 lib evidence: 20 concrete keywords from 2 decks
+[OUTLINE stage1b ch7] PASS-1: 9 slides, 0 gaps []
+[OUTLINE ch7] stage 1b OK (9 slides)
+[OUTLINE stage1b ch8] PASS-1: 2 slides, 0 gaps []
+[OUTLINE ch8] stage 1b OK (2 slides)
+[OUTLINE stage1b ch6] PASS-2 OK: 10 slides
+[OUTLINE ch6] stage 1b OK (10 slides)
+[OUTLINE stage1b ch5] PASS-2 OK: 10 slides
+[OUTLINE ch5] stage 1b OK (10 slides)
+[OUTLINE] stage 1 done in 1650.6s, 8/8 chapters OK
+EXCEPTION: TypeError: 'in <string>' requires string as left operand, not NoneType
+Traceback (most recent call last):
+  File "/tmp/run_pipeline.py", line 11, in <module>
+    res = stage_runner.run_stage(project, {"stage": stage})
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/stage_runner.py", line 13018, in run_stage
+    result = _execute_stage(project_id, stage, payload)
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/eval/timing_hook.py", line 47, in _timed
+    result = original(project_id, stage, payload)
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/stage_runner.py", line 12871, in _execute_stage
+    return _finalize(_run_outline_generation(project_id))
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/stage_runner.py", line 3575, in _run_outline_generation
+    nlc_warnings = _check_outline_against_narrative(
+        slides=outline["slides"], narrative_block=nc)
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/stage_runner.py", line 4430, in _check_outline_against_narrative
+    present = any(
+        anchor in (s.get("anchor_terms") or [])
+    ...<3 lines>...
+        if isinstance(s, dict) and (s.get("chapter_index") == chap or s.get("section_index") == chap)
+    )
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/stage_runner.py", line 4432, in <genexpr>
+    or anchor in str(s.get("target_title") or "")
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not NoneType

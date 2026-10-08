@@ -1,0 +1,1164 @@
+{
+  "batch_index": 26,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+      "目录名": "高效端侧大模型推理优化_华为端侧AI.d36b30de",
+      "标题": "高效端侧大模型推理优化",
+      "总页数": 53,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与开场目录",
+        "section_02_端侧推理为何需要更高能效",
+        "section_03_高质量层：Megrez端侧模型",
+        "section_04_低成本层：投机解码软件优化",
+        "section_05_高性能层：FPGA硬件加速",
+        "section_06_总结与致谢",
+        "section_07_备份：双系统与推测解码"
+      ],
+      "主题标签": [
+        "端侧推理",
+        "大模型",
+        "软硬协同",
+        "投机解码",
+        "量化稀疏",
+        "FPGA加速",
+        "MoE",
+        "视频生成"
+      ],
+      "目标受众": "学术同行与工业合作方(华为端侧AI)",
+      "报告类型": "research_report",
+      "适用场景": "课题组端侧推理研究成果的整体汇报",
+      "论述总结": "围绕端侧大模型推理,提出\"软硬件跨层次协同优化\"框架,将问题拆解为高质量(Megrez系列模型)、低成本(投机解码/量化稀疏)、高性能(FPGA加速)三层,依次展示代表性模型与论文成果,最后总结课题组端到端技术布局并致谢合作方。",
+      "论述弧线": [
+        "背景动机",
+        "方法拆解",
+        "高质量",
+        "低成本",
+        "高性能",
+        "总结致谢"
+      ],
+      "slides_by_role": {
+        "cover_candidate": [
+          {
+            "页序号": 1,
+            "页面角色": "cover_candidate",
+            "标题": "高效端侧大模型推理优化(封面)",
+            "核心论断": "端侧大模型推理优化是本次汇报的核心议题",
+            "本页讲什么": "报告封面页:居中主标题「高效端侧大模型推理优化」下方一条细分隔线,再列出汇报人戴国浩、刘军,所属单位上海交通大学、上海创智学院、无问芯穹,联系邮箱 daiguohao@sjtu.edu.cn 及汇报日期 2025年11月22日。整体为极简白底、左对齐标题的学术汇报封面。",
+            "关键文字": [
+              "高效端侧大模型推理优化",
+              "戴国浩、刘军",
+              "上海交通大学、上海创智学院、无问芯穹",
+              "daiguohao@sjtu.edu.cn",
+              "2025年11月22日"
+            ],
+            "视觉骨架": [
+              "居中大标题",
+              "标题下细分隔线",
+              "作者与单位署名块",
+              "邮箱/日期落款"
+            ],
+            "上页角色": null,
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          }
+        ],
+        "content_candidate": [
+          {
+            "页序号": 2,
+            "页面角色": "content_candidate",
+            "标题": "目录:Contents 三段式框架",
+            "核心论断": "全篇按能效动机、跨层协同方法、总结三段展开",
+            "本页讲什么": "目录页,顶部蓝色边框内居中标题「Contents」,下方竖排三条带圈序号的议程:①大模型推理需要更高能效(能效动机),②方法:软硬件跨层次协同优化(核心方法),③总结。左侧一条蓝色竖条高亮当前所处章节,预告全篇论述骨架。",
+            "关键文字": [
+              "Contents",
+              "① 大模型推理需要更高能效",
+              "② 方法:软硬件跨层次协同优化",
+              "③ 总结"
+            ],
+            "视觉骨架": [
+              "蓝框标题区",
+              "三条圈码议程列表",
+              "左侧蓝色高亮竖条",
+              "底部单位页脚"
+            ],
+            "上页角色": "cover_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          },
+          {
+            "页序号": 3,
+            "页面角色": "content_candidate",
+            "标题": "本章导航:大模型推理需要更高能效",
+            "核心论断": "汇报进入第一部分——大模型推理为何需要更高能效",
+            "本页讲什么": "Contents 目录页,四项议程中高亮第 1 项「大模型推理需要更高能效」,其余(2 方法:软硬件跨层次协同优化、4 总结)灰显。用于从上一章切入本动机章,做章节定位。",
+            "关键文字": [
+              "Contents",
+              "大模型推理需要更高能效",
+              "方法:软硬件跨层次协同优化",
+              "总结"
+            ],
+            "视觉骨架": [
+              "蓝框 Contents 目录",
+              "编号圆圈条目列表",
+              "当前项高亮/其余灰显"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 4,
+            "页面角色": "content_candidate",
+            "标题": "AI 2.0 核心生产要素——Token",
+            "核心论断": "AI 2.0 将异构模型统一为 Token 生成,Token 成为核心生产要素",
+            "本页讲什么": "左右对比 AI 1.0 与 AI 2.0。AI 1.0 针对不同应用用 GAN/CNN/RNN 不同模型、不同输入;AI 2.0 通过 Tokenize→Next Token Prediction→Detokenize 把一切统一为 Token 流。底部蓝条结论:AI 1.0 不同应用不同模型不同输入,AI 2.0 统一为 Token。",
+            "关键文字": [
+              "AI 2.0 时代核心的生产要素——Token",
+              "AI 1.0 不同应用 不同模型 不同输入",
+              "AI 2.0 统一为 Token",
+              "Tokenize / Next Token Prediction / Detokenize (vision)",
+              "GAN / CNN / RNN (vision)"
+            ],
+            "视觉骨架": [
+              "AI1.0/AI2.0 双栏对比框",
+              "token 处理流程箭头链",
+              "底部结论蓝条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 5,
+            "页面角色": "content_candidate",
+            "标题": "能效指标从 TOPs/J 转向 Tokens/J",
+            "核心论断": "能效衡量标准由算力密度 TOPs/J 转向 token 生成效率 Tokens/J",
+            "本页讲什么": "承接上页 Token 生产要素,指出 AI 1.0→AI 2.0 能效指标发生根本变化:由 TOPs/J(算力密度)转为 Tokens/J(token 生成效率)。右侧以气泡列举多种硬件方案的 Tokens/J:ASIC WaferLLM 6.2、PIM/NDP 清华 47、FPGA TerEffic 6.3、GPU AWQ MIT 0.8 Tokens/J。",
+            "关键文字": [
+              "能效指标变化:从 AI 1.0 到 AI 2.0",
+              "TOPs/J -> Tokens/J",
+              "ASIC WaferLLM 6.2 Tokens/J (vision)",
+              "PIM/NDP 清华 47 Tokens/J (vision)",
+              "GPU AWQ 0.8 Tokens/J (vision)"
+            ],
+            "视觉骨架": [
+              "TOPs/J→Tokens/J 转换标题框",
+              "蓝/紫双指标漏斗对比",
+              "硬件方案 Tokens/J 标注气泡"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 6,
+            "页面角色": "content_candidate",
+            "标题": "不损失能力下持续提升 tokens/J",
+            "核心论断": "目标是在不牺牲模型能力(IQ)前提下持续提升 tokens/J",
+            "本页讲什么": "以 tokens/J 为纵轴、IQ(模型能力)为横轴,画出 Level1→Level5 逐级跃迁的波形。中部横幅点明核心目标:不牺牲模型能力的同时提升 tokens/J。横轴标注各能力等级门槛(如 MMLU>65%、Math Level5>50%),纵轴给出 ~5、20、>20 tokens/J 区间。",
+            "关键文字": [
+              "高质量 tokens/J 的持续演进",
+              "目标:不牺牲模型能力的同时提升 tokens/J (vision)",
+              "tokens/J vs IQ 坐标 (vision)",
+              "Level 1~Level 5 逐级提升 (vision)",
+              "MMLU>65% / Math Level5>50% (vision)"
+            ],
+            "视觉骨架": [
+              "tokens/J–IQ 二维坐标",
+              "Level1-5 波浪跃迁示意",
+              "中部目标横幅"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 7,
+            "页面角色": "content_candidate",
+            "标题": "传统算法与硬件割裂的开发思路",
+            "核心论断": "传统算法修改、硬件被动支持的割裂思路限制能效提升",
+            "本页讲什么": "指出传统开发思路的痛点:算法团队与硬件团队相互割裂——算法团队设计算法、关注精度反馈,硬件被动适配;硬件团队追求性能与效率,两者被一道红色壁垒隔开缺乏协同。由此为下一页引出软硬件协同优化做铺垫。",
+            "关键文字": [
+              "传统思路:算法修改,硬件被动支持",
+              "算法团队:设计算法→精度反馈",
+              "硬件团队:硬件性能→效率",
+              "算法与硬件割裂 (vision)"
+            ],
+            "视觉骨架": [
+              "上部双方框+割裂红条",
+              "算法团队/硬件团队双泳道流程",
+              "反向/交叉箭头示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 8,
+            "页面角色": "content_candidate",
+            "标题": "端侧推理优化拆解为三层设计",
+            "核心论断": "端侧大模型推理优化可拆解为算法-系统-硬件三个设计层次",
+            "本页讲什么": "收束本动机章并引出方法框架:端侧大模型推理优化可拆解为 3 个设计层次——1.算法层(如 DeepSeek)、2.系统层(如 AWQ)、3.硬件层(如 H100/910B),以「算法-系统-硬件」协同优化贯穿三层,过渡到下一方法章。",
+            "关键文字": [
+              "大模型推理优化拆解",
+              "端侧大模型推理优化可拆解为 3 个设计层次",
+              "1.算法层 DeepSeek (vision)",
+              "2.系统层 AWQ (vision)",
+              "3.硬件层 H100/910B (vision)",
+              "\"算法-系统-硬件\"协同 (vision)"
+            ],
+            "视觉骨架": [
+              "三层竖向堆叠框",
+              "层间下行箭头",
+              "右侧代表技术标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 9,
+            "页面角色": "content_candidate",
+            "标题": "目录导航：定位「软硬件跨层次协同优化」",
+            "核心论断": "报告进入第二部分——软硬件跨层次协同优化方法",
+            "本页讲什么": "全局目录页，蓝色高亮定位到第②项「软硬件跨层次协同优化」，其余条目（第①项背景、第④项总结）灰化。用于从背景章过渡进入本方法章，提示听众当前所处的报告位置。",
+            "关键文字": [
+              "Contents",
+              "软硬件跨层次协同优化",
+              "总结"
+            ],
+            "视觉骨架": [
+              "带边框目录卡",
+              "①②④编号圆点列表",
+              "当前项蓝色高亮条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 10,
+            "页面角色": "content_candidate",
+            "标题": "端侧推理优化拆解为三设计层次",
+            "核心论断": "端侧推理优化拆为三层，算法模型层落地为Megrez 1.0与2.0",
+            "本页讲什么": "复盘三层优化框架（算法模型/系统/硬件），高亮并展开「算法模型」层：由算法模型设计分叉出端侧3B全模态的Megrez 1.0 与 端侧MoE的Megrez 2.0 两代模型，为后续逐一展开锚定本章范围。",
+            "关键文字": [
+              "端侧大模型推理优化可拆解为3个设计层次",
+              "算法模型",
+              "端侧3B全模态 Megrez 1.0",
+              "端侧MoE小模型 Megrez 2.0"
+            ],
+            "视觉骨架": [
+              "左侧三层竖排框架条",
+              "当前层高亮蓝框",
+              "右侧分叉箭头指向两代模型卡"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 11,
+            "页面角色": "content_candidate",
+            "标题": "Megrez-Omni 技术报告背书",
+            "核心论断": "Megrez系列由交大与清华团队技术报告正式支撑",
+            "本页讲什么": "技术报告封面页，展示《Megrez-Omni Technical Report》标题、作者名单（Boxun Li 等，通讯作者 Guohao Dai、Yu Wang）及所属机构上海交大、清华。用于为后续Megrez 1.0/2.0内容提供权威出处背书。",
+            "关键文字": [
+              "Megrez-Omni Technical Report",
+              "Corresponding authors: Guohao Dai, Yu Wang",
+              "Shanghai Jiao Tong University, Tsinghua University"
+            ],
+            "视觉骨架": [
+              "大号标题",
+              "细横向分隔线",
+              "居中作者与机构列表"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 12,
+            "页面角色": "content_candidate",
+            "标题": "Megrez 1.0：端侧软硬件协同优化的痛点",
+            "核心论断": "端侧资源受限且生态碎片化，比云侧更需软硬件协同",
+            "本页讲什么": "以红色「痛点」标签统领，左栏对比云侧（内存1000GB、算力000TOPS）与端侧（内存12GB、算力50TOPS）的软硬件资源受限，指出优化空间小、硬件1-2年才升级、无法靠Scale Up/Scale Out增配；右栏点出软硬件生态碎片化。承接上页锁定的算法模型层，引出Megrez 1.0的设计动因。",
+            "关键文字": [
+              "相比云侧：端侧更需要软硬协同",
+              "云侧内存1000GB算力000TOPS，端侧内存12GB算力50TOPS",
+              "硬件配置一般1-2年才升级",
+              "无法通过增配Scale Up/Scale Out",
+              "软硬件生态碎片化"
+            ],
+            "视觉骨架": [
+              "顶部红色痛点标签+主张框",
+              "左右双panel",
+              "云侧-端侧资源对比数字",
+              "向下收敛箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 13,
+            "页面角色": "content_candidate",
+            "标题": "Megrez-3B-Omni：端侧全模态轻量模型",
+            "核心论断": "Megrez-3B-Omni为同尺寸最强全模态模型，性能提升超30%",
+            "本页讲什么": "展示Megrez 1.0成果Megrez-3B-Omni覆盖端侧Orin(4~8GB)、手机(8~12GB)、AIPC(16~32GB)多档设备；中部benchmark表以蓝/紫高亮其得分（如6.60、6.39）领先同尺寸模型，标注性能提升>30%、并在更高负载下提升达300%，突出「同尺寸-最强-全模态理解模型」定位。",
+            "关键文字": [
+              "Megrez 1.0成果：Megrez-3B-Omni",
+              "同尺寸-最强-全模态理解模型",
+              "端侧(Orin) 4GB~8GB / 手机 8GB~12GB / AIPC 16~32GB",
+              "性能提升>30%",
+              "300%"
+            ],
+            "视觉骨架": [
+              "左侧设备档位阶梯",
+              "中部彩色benchmark得分表",
+              "高亮领先分数单元",
+              "右侧提升箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 14,
+            "页面角色": "content_candidate",
+            "标题": "Megrez 2.0：围绕场景需求设计MoE小模型",
+            "核心论断": "满血/大显存/蒸馏方案均难兼顾端侧，需按场景需求重设计",
+            "本页讲什么": "指出算法模型设计核心是围绕场景需求。左侧三角关联性能/成本/效率需求；右侧三张卡呈现现有DeepSeek-R1方案的两难：高性能满血版600W不可及、高性价比671GB需≥12GB显存无法端侧部署、低成本蒸馏3B能力缩水受限。由此引出Megrez 2.0端侧MoE的设计动机。",
+            "关键文字": [
+              "算法模型设计的核心是围绕场景需求",
+              "高性能：DeepSeek-R1满血 600W",
+              "高性价比：DeepSeek-R1 671GB，显存至少12GB无法端侧部署",
+              "低成本：DeepSeek-R1蒸馏3B，能力缩水受限"
+            ],
+            "视觉骨架": [
+              "左侧性能/成本/效率需求三角",
+              "右侧三张场景方案卡",
+              "各卡显存/功耗数字标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 15,
+            "页面角色": "content_candidate",
+            "标题": "Megrez 2.0：Dense结构与数据设计经验",
+            "核心论断": "MoE小模型沉淀Dense结构与数据配比两类设计经验",
+            "本页讲什么": "双栏呈现Megrez 2.0的两类经验：左栏Dense模型设计经验，基于Scaling Law调控深度/宽度/稀疏度、Attn heads/kv heads，并涉及Mamba线性RNN、MoE稀疏结构等，指向合适的模型结构；右栏数据设计经验，参考Qwen3以约3T预训练、36T Tokens规模，强调数据配比与课程学习。",
+            "关键文字": [
+              "Dense模型设计经验",
+              "Scaling Law：深度/宽度/稀疏度",
+              "Attn heads/kv heads、Mamba线性RNN、MoE",
+              "数据设计经验：预训练3T、Qwen3、36T Tokens",
+              "数据配比&课程学习"
+            ],
+            "视觉骨架": [
+              "左右双panel",
+              "蓝色小标题条",
+              "bullet要点+向下箭头",
+              "底部黄色结论条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 16,
+            "页面角色": "content_candidate",
+            "标题": "Megrez 2.0：MoE架构与参数量设计经验",
+            "核心论断": "MoE稀疏化将20B3A重构为3x7B3A，以端侧效率优先",
+            "本页讲什么": "双栏总结Megrez 2.0的MoE经验：左栏MoE架构设计经验，指出MoE训练成本高（GPU H800 20-80G级）、需稀疏化设计经验；右栏参数量设计经验，将20B3A方案重构为3x7B3A（7B总参、3B激活），面向端侧效率优先。底部标注引用[1] Megrez-omni technical report。",
+            "关键文字": [
+              "MoE架构设计经验",
+              "MoE训练成本高，GPU H800 20-80G",
+              "稀疏化设计经验",
+              "参数量设计经验：20B3A → 3x7B3A",
+              "7B总参、3B激活，效率优先",
+              "[1] Megrez-omni technical report, arXiv:2502.15803, 2025"
+            ],
+            "视觉骨架": [
+              "左右双panel",
+              "MoE架构vs参数量小标题",
+              "20B3A→3x7B3A向下红箭头",
+              "底部引用脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 17,
+            "页面角色": "content_candidate",
+            "标题": "端侧推理优化三层次拆解:定位软件层",
+            "核心论断": "端侧推理优化可拆为三层,本章聚焦软件层投机解码",
+            "本页讲什么": "作为本章总起页,把端侧大模型推理优化拆解为三个设计层次,并放大定位到第二层「软件层」;软件层又分系统优化[ISCA25]与投机解码算法[AAAI26 oral]两条路线,为后续SpecEE/SpecDiff两项工作铺垫入口。",
+            "关键文字": [
+              "端侧大模型推理优化可拆解为3个设计层次",
+              "系统优化 [ISCA 25]",
+              "投机解码算法 [AAAI 26 oral]"
+            ],
+            "视觉骨架": [
+              "三层次纵向堆叠框",
+              "软件层放大分支",
+              "两条路线并列蓝框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 18,
+            "页面角色": "content_candidate",
+            "标题": "背景:投机解码的快慢双系统协同",
+            "核心论断": "投机解码以快系统起草、慢系统验证实现推理加速",
+            "本页讲什么": "引入投机解码的核心思想,借人工智能双系统协同类比:快系统(小模型)快速起草候选,慢系统(大模型)并行验证,二者协同在保证输出一致的前提下换取加速,为本章两项投机解码工作奠定概念基础。",
+            "关键文字": [
+              "推测解码[1]",
+              "快系统 / 慢系统",
+              "Fast Inference from Transformers via Speculative Decoding, 2022"
+            ],
+            "视觉骨架": [
+              "纯文字概念条列",
+              "快慢系统对照标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 19,
+            "页面角色": "content_candidate",
+            "标题": "SpecEE 工作引入(ISCA 2025)",
+            "核心论断": "SpecEE以投机式早退加速大语言模型推理",
+            "本页讲什么": "本章第一项具体工作SpecEE的论文标题页,展示题目「SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting」、作者团队(上海交大、Infinigence-AI)及发表信息ISCA2025,正式开启场景1(LLM软件优化)弧线。",
+            "关键文字": [
+              "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+              "Shanghai Jiao Tong University, Infinigence-AI",
+              "ISCA2025"
+            ],
+            "视觉骨架": [
+              "论文标题大字",
+              "作者署名行",
+              "会议标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 20,
+            "页面角色": "content_candidate",
+            "标题": "场景1背景:LLM推理是大底库搜索分类",
+            "核心论断": "大模型逐层计算本质是超大词表的搜索分类问题",
+            "本页讲什么": "SpecEE背景页,将LLM推理刻画为「底库很大的搜索分类问题」:Prompt经Tokenize后逐层(Attention+FFN)计算,最终由LM_head从庞大候选词表中挑出下一token;强调逐层计算开销大,约3层即产生显著代价,引出早退优化空间。",
+            "关键文字": [
+              "大模型推理是底库很大的搜索分类问题",
+              "逐层计算",
+              "Attention / FFN / LM_head"
+            ],
+            "视觉骨架": [
+              "Prompt→Output竖向流程",
+              "Transformer逐层链式框",
+              "候选词云圆形示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 21,
+            "页面角色": "content_candidate",
+            "标题": "场景1已有工作:三类早退/跳层方法对比",
+            "核心论断": "RAEE、AdaInfer、MoD三类已有工作各有精度与开销权衡",
+            "本页讲什么": "并列呈现三项已有工作:RAEE[1]用检索数据库判断何时退出(~10 tokens额外开销)、AdaInfer[2]用特征采样表判断早退(~3×10 tokens)、MoD[3]用新模型对token做跳过/前进(~2状态);三列对称对比其额外开销与部署代价,为SpecEE的改进立靶。",
+            "关键文字": [
+              "RAEE[1]: Data Base 判断 When to Exit",
+              "AdaInfer[2]: 特征采样表判断早退",
+              "MoD[3]: Skip or Forward 逐token跳层"
+            ],
+            "视觉骨架": [
+              "3列并列方法panel",
+              "各列放大机制示意框",
+              "额外开销/部署代价对比条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 22,
+            "页面角色": "content_candidate",
+            "标题": "场景1方法:投机早退联合的加速思路",
+            "核心论断": "用小参数LLM同时驱动投机采样与早退实现双重加速",
+            "本页讲什么": "SpecEE核心思路页,在逐层Transformer之上叠加两重机制:一是投机采样从候选词直接命中(加速约3倍),二是早退提前结束逐层计算(再加速约3倍);二者联合利用小参数LLM完成,将LLM软件优化的两条加速来源同时打通。",
+            "关键文字": [
+              "利用小参数的LLM",
+              "投机采样 加速约3倍",
+              "早退 加速约3层",
+              "候选词投机采样"
+            ],
+            "视觉骨架": [
+              "Transformer逐层链框",
+              "早退虚线圈标注",
+              "投机采样候选词圆"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 23,
+            "页面角色": "content_candidate",
+            "标题": "场景1方法:逐层预测器判断是否早退",
+            "核心论断": "在级联各层引入轻量预测器动态判定早退时机",
+            "本页讲什么": "承接上页,展开SpecEE的级联层计算(Cascaded Layer Computation):每层后接一个预测器(Predictor),经Feature Process与Model给出「是否早退」的Yes/No判定,从而在保证正确性的前提下让不同token在合适的层提前退出,减少逐层计算量。",
+            "关键文字": [
+              "Cascaded Layer Computation",
+              "每层引入预测器判断是否早退",
+              "Predictor: Feature Process + Model",
+              "Yes / No"
+            ],
+            "视觉骨架": [
+              "逐层Attention链带P判定点",
+              "预测器放大流程框",
+              "Yes/No分支箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 24,
+            "页面角色": "content_candidate",
+            "标题": "场景1方法:预测器的算法与引擎双优化",
+            "核心论断": "从算法与引擎两端优化级联计算的动态调整效率",
+            "本页讲什么": "回答「如何高效动态调整级联计算」:左侧预测器算法优化,用局部结果T'与全局结果T的校正算法(pred>threshold判定+Correction Alg.)保证早退准确;右侧预测器引擎优化,通过调度与流水将预测器嵌入推理引擎降低额外开销,两端协同支撑早退落地。",
+            "关键文字": [
+              "如何高效动态调整级联计算?",
+              "预测器算法优化: Local Result / Global Result 校正",
+              "预测器引擎优化",
+              "pred>threshold / Correction Alg."
+            ],
+            "视觉骨架": [
+              "左右两栏对比",
+              "左栏Start→End流程图",
+              "右栏引擎调度示意图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 25,
+            "页面角色": "content_candidate",
+            "标题": "场景1结果:Y7000 PC平均2.43倍加速",
+            "核心论断": "SpecEE在联想Y7000 PC上实现平均2.43倍推理加速",
+            "本页讲什么": "SpecEE的实测加速比结果页,在联想Y7000 PC端侧平台上,SpecEE相较基线取得平均2.43倍的推理加速,并配以精度基本无损的对照图表,收束场景1(LLM软件优化)完整弧线,印证软件层可低成本换取显著加速。",
+            "关键文字": [
+              "联想 Y7000 PC",
+              "平均2.43倍",
+              "精度无损",
+              "实测加速比"
+            ],
+            "视觉骨架": [
+              "加速比柱状/对比图",
+              "精度对照图",
+              "关键倍数红字标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 26,
+            "页面角色": "content_candidate",
+            "标题": "SpecDiff 工作引入(AAAI 2026 Oral)",
+            "核心论断": "SpecDiff以自投机加速扩散模型推理",
+            "本页讲什么": "本章第二项具体工作SpecDiff的论文标题页,展示题目「SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation」、作者团队(上海交大、Infinigence-AI)与发表信息AAAI 2026 (Oral),开启场景2(图像生成模型软件优化)弧线,与SpecEE形成LLM/扩散并列。",
+            "关键文字": [
+              "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+              "Shanghai Jiao Tong University",
+              "To appear in AAAI 2026 (Oral)"
+            ],
+            "视觉骨架": [
+              "论文标题大字",
+              "作者署名行",
+              "会议标注(AAAI 2026 Oral)"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 27,
+            "页面角色": "content_candidate",
+            "标题": "场景2背景:DiT扩散逐迭代生成流程",
+            "核心论断": "DiT图像生成需多次迭代逐步去噪,单迭代开销大",
+            "本页讲什么": "SpecDiff背景页,展示DiT扩散生成的完整流程:Prompt与Noise经Tokenize/VAE进入Model(Embedding+多层Attention/FFN+Projection)输出Tokens,并在迭代X→迭代X+1间反复进行完整迭代;强调DiT逐迭代计算量大,构成加速切入点。",
+            "关键文字": [
+              "DiT 逐迭代生成",
+              "Prompt / Noise / VAE / Tokens",
+              "迭代X → 迭代X+1",
+              "完整迭代"
+            ],
+            "视觉骨架": [
+              "Prompt→Tokens竖向流程",
+              "Model内部分层框",
+              "迭代X/X+1对照块"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 28,
+            "页面角色": "content_candidate",
+            "标题": "场景2已有工作:缓存复用与采样两类方法",
+            "核心论断": "已有扩散加速分缓存复用与采样两类,各有局限",
+            "本页讲什么": "并列呈现扩散加速的两类已有工作:左侧缓存复用类方法(token级特征缓存等,[1][3])复用历史特征减少计算,右侧采样类方法([2]区域自适应采样)调整采样步数;两栏对比其加速机制与「无法兼顾质量」等局限,为SpecDiff自投机方案立靶。",
+            "关键文字": [
+              "缓存复用类方法 [1][3]",
+              "采样类 [2]",
+              "token-wise feature caching",
+              "Region-adaptive sampling"
+            ],
+            "视觉骨架": [
+              "左右两栏方法panel",
+              "各栏机制示意图",
+              "局限性说明条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 29,
+            "页面角色": "content_candidate",
+            "标题": "场景2观察:相同时间步迭代结果高度相似",
+            "核心论断": "少次与多次完整迭代在相同时间步结果高度一致",
+            "本页讲什么": "SpecDiff的关键观察页:对比少次完整迭代与多次完整迭代,发现二者在相同时间步产生的中间结果高度相似;这一冗余性意味着无需每步都做完整迭代,为用轻量推测迭代替代部分完整迭代的自投机思路提供实证依据。",
+            "关键文字": [
+              "少次完整迭代和多次完整迭代在相同的时间步",
+              "结果高度相似",
+              "迭代冗余"
+            ],
+            "视觉骨架": [
+              "少次/多次迭代对照图",
+              "相同时间步结果比对",
+              "相似性标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 30,
+            "页面角色": "content_candidate",
+            "标题": "场景2方法:推测迭代替代完整迭代的自投机",
+            "核心论断": "以草稿模型做推测迭代、完整迭代验证实现自投机加速",
+            "本页讲什么": "SpecDiff方法页,展开自投机机制:用草稿模型1、草稿模型2快速产出多步推测迭代的Tokens,再由完整迭代对推测结果做并行验证与接受/回退;通过推测迭代替代大量完整迭代,在保证生成质量的前提下降低总迭代计算量。",
+            "关键文字": [
+              "推测迭代 / 完整迭代",
+              "草稿模型1 / 草稿模型2",
+              "验证 / 拒绝",
+              "Tokens 1/2/3"
+            ],
+            "视觉骨架": [
+              "推测迭代/完整迭代双行时间轴",
+              "草稿模型彩色块",
+              "验证接受分支箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 31,
+            "页面角色": "content_candidate",
+            "标题": "场景2结果:FLUX.1 Dev平均3.17倍加速",
+            "核心论断": "SpecDiff在FLUX.1 Dev上实现平均3.17倍生成加速",
+            "本页讲什么": "SpecDiff的实测加速比结果页,在FLUX.1 Dev扩散模型上取得平均3.17倍的生成加速,并配以生成质量基本无损的样例图对照,收束场景2(图像生成软件优化)完整弧线,与SpecEE的2.43倍共同论证软件层可低成本换取显著推理加速。",
+            "关键文字": [
+              "FLUX.1 Dev",
+              "平均3.17倍",
+              "生成质量无损",
+              "实测加速比"
+            ],
+            "视觉骨架": [
+              "加速比对比图",
+              "生成样例图对照",
+              "关键倍数红字标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 32,
+            "页面角色": "content_candidate",
+            "标题": "端侧推理优化三层次拆解回顾",
+            "核心论断": "推理优化分三层，本章聚焦高性能层的两项FPGA落地",
+            "本页讲什么": "承上启下页：复用「系统-引擎-高性能」三层框架示意图，把前两层（对应DeepSeek、vLLM/CANN）灰化，高亮第三层高性能层，指向硬件加速+算子融合两条路径，并引出后续两项FPGA成果[FPGA24]、[FPGA25]。",
+            "关键文字": [
+              "端侧大模型推理优化可拆解为3个设计层次",
+              "硬件加速+算子融合",
+              "FPGA 24",
+              "FPGA 25"
+            ],
+            "视觉骨架": [
+              "三层框架竖排示意",
+              "层→技术栈映射箭头",
+              "两个FPGA成果蓝框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 33,
+            "页面角色": "content_candidate",
+            "标题": "FlightLLM 论文封面",
+            "核心论断": "FlightLLM以完整映射流实现FPGA高效LLM推理",
+            "本页讲什么": "场景1第一项工作 FlightLLM 的论文封面页：给出论文全名、作者列表（Shulin Zeng、Jun Liu、Guohao Dai 等）与会议信息（ISFPGA 2024 @ Monterey），作为场景1「论文」环节的引入。",
+            "关键文字": [
+              "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+              "ISFPGA 2024 @ Monterey, CA"
+            ],
+            "视觉骨架": [
+              "论文大标题",
+              "作者与单位署名块",
+              "会议信息条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 34,
+            "页面角色": "content_candidate",
+            "标题": "场景1：大语言模型硬件优化研究背景",
+            "核心论断": "已有FPGA加速器相较GPU已实现数倍能效提升",
+            "本页讲什么": "场景1「动机」开篇：以研究背景形式列举两项前作——DFX[MICRO'22]相较V100 GPU取得约5.58×加速、3.99×能效，Understanding[FCCM'24]基于HLS相较A100取得约1.9×性能、5.7×能效，论证FPGA加速LLM的可行性与既有基础。",
+            "关键文字": [
+              "DFX [MICRO'22]：较V100 GPU 5.58×加速、3.99×能效",
+              "Understanding [FCCM'24]：基于HLS，较A100 1.9×性能、5.7×能效",
+              "FPGA加速大语言模型"
+            ],
+            "视觉骨架": [
+              "两项前作对比卡片",
+              "加速/能效数值标注",
+              "文献引用脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 35,
+            "页面角色": "content_candidate",
+            "标题": "场景1：硬件优化的核心挑战",
+            "核心论断": "稀疏计算不规则导致DSP闲置、计算效率低",
+            "本页讲什么": "场景1「动机」的挑战页：指出已有FPGA加速器面对LLM的稀疏计算时利用不充分，稀疏计算的不规则性导致DSP阵列大量闲置、计算效率低下，从而引出后续需要的稀疏计算适配设计（可配置DSP）。",
+            "关键文字": [
+              "已有加速器难以适配稀疏计算",
+              "稀疏计算不规则",
+              "计算效率低、DSP闲置"
+            ],
+            "视觉骨架": [
+              "红色挑战标签块",
+              "稀疏计算→效率低箭头流",
+              "问题指向DSP闲置"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 36,
+            "页面角色": "content_candidate",
+            "标题": "场景1：可配置DSP链支持N:M稀疏",
+            "核心论断": "可配置DSP链适配N:M稀疏化提升计算效率",
+            "本页讲什么": "场景1「架构」方法页之一：针对稀疏计算不规则的挑战，提出可配置DSP链，将不同稀疏度（4:4 Dense、2:4、1:4、0:4 skip）的权重块统一映射到DSP阵列，通过配置化互联在硬件上高效支持N:M稀疏，减少DSP闲置。",
+            "关键文字": [
+              "N:M 稀疏",
+              "4:4(Dense)/2:4/1:4/0:4(skip)",
+              "可配置的DSP链"
+            ],
+            "视觉骨架": [
+              "N:M稀疏权重矩阵网格",
+              "稀疏度分类示意",
+              "DSP链阵列结构图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 37,
+            "页面角色": "content_candidate",
+            "标题": "场景1：decode阶段片上访存优化",
+            "核心论断": "片上化decode访存缓解带宽瓶颈提升效率",
+            "本页讲什么": "场景1「架构」方法页之二：针对decode阶段访存密集的挑战（挑战二访存），将频繁的片外访存转为片上缓存+复用，减少访存开销，用左右前后对比框展示优化前后访存连接数的下降，从而缓解带宽瓶颈。",
+            "关键文字": [
+              "decode阶段访存",
+              "片上缓存+复用",
+              "减少访存开销"
+            ],
+            "视觉骨架": [
+              "优化前后两组访存框图",
+              "上下箭头访存连接示意",
+              "前后对比过渡箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 38,
+            "页面角色": "content_candidate",
+            "标题": "场景1：FlightLLM 实验能效结果",
+            "核心论断": "FlightLLM相较V100S GPU能效提升约70%",
+            "本页讲什么": "场景1「实验」结果页：16nm U280 FPGA上的FlightLLM对比12nm V100S GPU，取得约70%能效提升、约50%性能，覆盖OPT-6.7B、LLaMA2-7B模型，权重量化至3.5-bit（对比8-bit），论证FPGA方案的能效优势。",
+            "关键文字": [
+              "16nm U280 FPGA vs 12nm V100S GPU",
+              "70% 能效提升、50% 性能",
+              "OPT-6.7B、LLaMA2-7B",
+              "3.5-bit vs 8-bit"
+            ],
+            "视觉骨架": [
+              "能效对比要点列表",
+              "硬件平台对照标注",
+              "量化位宽标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 39,
+            "页面角色": "content_candidate",
+            "标题": "场景2：视频生成研究背景",
+            "核心论断": "Sora引爆视频生成，各大厂商密集入局",
+            "本页讲什么": "场景2「动机」开篇：以研究背景引入视频生成浪潮——OpenAI Sora被视为「世界模拟器」，随后Google、Kuaishou、ByteDance等厂商纷纷布局视频生成，论证该方向的研究热度与产业价值。",
+            "关键文字": [
+              "OpenAI 的 Sora 模型",
+              "Sora 被视为「世界模拟器」",
+              "Google、Kuaishou、ByteDance 布局"
+            ],
+            "视觉骨架": [
+              "左右双栏背景板",
+              "Sora示例区",
+              "厂商名称分布"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 40,
+            "页面角色": "content_candidate",
+            "标题": "场景2：视频生成模型基于扩散Transformer",
+            "核心论断": "视频生成主流转向Diffusion Transformer(DiT)",
+            "本页讲什么": "场景2「动机」背景页：说明视频生成模型主要基于扩散模型，且生成模型架构由传统卷积/U-Net演进到Diffusion Transformer（DiT），右栏用两条反向趋势箭头表达扩散模型逐步替代旧范式、Transformer骨干成为主流。",
+            "关键文字": [
+              "视频生成模型主要基于扩散模型",
+              "Diffusion Transformer（DiT）",
+              "生成模型架构演进趋势"
+            ],
+            "视觉骨架": [
+              "左右双栏背景板",
+              "两条反向趋势箭头",
+              "DiT架构标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 41,
+            "页面角色": "content_candidate",
+            "标题": "场景2：视频生成计算量巨大",
+            "核心论断": "视频生成计算量比图像高2-3个数量级",
+            "本页讲什么": "场景2「动机」挑战页：对比训练与推理的计算量，指出图像生成计算量约为传统任务的1-2个数量级，而视频生成因引入时间维度进一步增至2-3个数量级[1]，说明视频生成对算力/能效的严苛需求，是硬件优化的动机。",
+            "关键文字": [
+              "图像生成 1-2个数量级",
+              "视频生成 2-3个数量级 [1]",
+              "训练与推理计算量对比"
+            ],
+            "视觉骨架": [
+              "左右双栏对比框",
+              "计算量数量级标注",
+              "时间维度增量箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 42,
+            "页面角色": "content_candidate",
+            "标题": "场景2：传统视频处理利用时间冗余",
+            "核心论断": "视频编码沿用帧间时间冗余压缩降低数据量",
+            "本页讲什么": "场景2「动机」铺垫页：回顾传统视频处理方法主要利用视频中的时间冗余进行压缩，并用H.261→MPEG→H.264→H.265的编码标准时间线展示分辨率与压缩能力的持续演进，为下一页借鉴「编码-预测」思想做铺垫。",
+            "关键文字": [
+              "利用视频中存在的时间冗余",
+              "H.261/MPEG-2/H.264/H.265 演进",
+              "分辨率随标准提升"
+            ],
+            "视觉骨架": [
+              "编码标准时间线折线",
+              "各标准年份节点",
+              "分辨率数值标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 43,
+            "页面角色": "content_candidate",
+            "标题": "场景2：核心思想与动机",
+            "核心论断": "借鉴视频编码「编码-预测」区分帧内帧间计算",
+            "本页讲什么": "场景2「动机」核心页：受传统视频压缩「编码-预测」范式启发，提出对视频生成中不同帧/内容区分帧内、帧间计算，对冗余部分做稀疏/低精度处理，作为后续FlightVGM在线稀疏化与混合精度方案的核心动机。",
+            "关键文字": [
+              "受传统视频压缩「编码-预测」启发",
+              "区分帧内/帧间计算",
+              "对冗余计算做压缩"
+            ],
+            "视觉骨架": [
+              "帧内/帧间对比框",
+              "编码-预测范式类比示意",
+              "核心思想标题条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 44,
+            "页面角色": "content_candidate",
+            "标题": "FlightVGM 论文封面",
+            "核心论断": "FlightVGM以在线稀疏化与混合精度加速视频生成",
+            "本页讲什么": "场景2第二项工作 FlightVGM 的论文封面页：给出论文全名（Online Sparsification and Hybrid Precision on FPGAs）、作者列表（Jun Liu、Shulin Zeng 等）与会议信息（ISFPGA 2025 @ Monterey），作为场景2「论文」环节的引入。",
+            "关键文字": [
+              "FlightVGM: Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs",
+              "ISFPGA 2025 @ Monterey, CA"
+            ],
+            "视觉骨架": [
+              "论文大标题",
+              "作者与单位署名块",
+              "会议信息条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 45,
+            "页面角色": "content_candidate",
+            "标题": "场景2：硬件优化的核心挑战",
+            "核心论断": "在线稀疏与混合精度是VGM硬件加速两大挑战",
+            "本页讲什么": "场景2「架构」挑战页：将视频生成模型硬件优化拆为两条主线——左栏稀疏计算（在线稀疏化的不规则性）、右栏混合精度（FP16/INT8等多精度共存），指出二者对现有FPGA架构的适配困难，引出后续DSP级方案。",
+            "关键文字": [
+              "稀疏计算/在线稀疏化",
+              "混合精度",
+              "现有架构难以适配"
+            ],
+            "视觉骨架": [
+              "左右双栏挑战板",
+              "稀疏/精度两主线标题",
+              "过渡下箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 46,
+            "页面角色": "content_candidate",
+            "标题": "场景2：可重构IP DSP58支持混合精度",
+            "核心论断": "复用FPGA DSP58构造可重构混合精度计算单元",
+            "本页讲什么": "场景2「架构」方法页：针对混合精度挑战，基于FPGA的DSP（DSP58）设计可重构IP，使同一DSP在FP16模式下等效2个MAC、在INT8模式下等效4个MAC，从而在硬件上灵活支持混合精度并提升算力密度。",
+            "关键文字": [
+              "复用FPGA DSP58",
+              "可重构 IP DSP",
+              "FP16=2个MAC / INT8=4个MAC"
+            ],
+            "视觉骨架": [
+              "DSP58可重构IP结构图",
+              "FP16/INT8模式对比",
+              "MAC数量标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 47,
+            "页面角色": "content_candidate",
+            "标题": "场景2：实验设置",
+            "核心论断": "FlightVGM在多模型多指标下对比多类硬件基线",
+            "本页讲什么": "场景2「实验」设置页：以bullet列出模型（Latte-1、Open-Sora 1.2）、数据集（UCF-101）、评价指标（CLIPSIM文本一致性、VBench视频质量）及对比硬件——GPU基线NVIDIA 3090、Transformer FPGA加速器HiSpMV/FlightLLM、DiT ASIC加速器InterArch/CMC。",
+            "关键文字": [
+              "模型 Latte-1、Open-Sora 1.2；数据集 UCF-101",
+              "CLIPSIM、VBench 评价指标",
+              "GPU基线 NVIDIA 3090 GPU",
+              "对比 HiSpMV/FlightLLM、InterArch/CMC"
+            ],
+            "视觉骨架": [
+              "三级bullet列表",
+              "模型/指标/对象分组",
+              "基线加速器枚举"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 48,
+            "页面角色": "content_candidate",
+            "标题": "场景2：FlightVGM 实验能效结果",
+            "核心论断": "FlightVGM相较3090 GPU能效提升约1.30×",
+            "本页讲什么": "场景2「实验」结果页：FlightVGM对比NVIDIA 3090 GPU，取得约1.30×能效、约4.49×（性能/吞吐）提升，配合性能与质量图表论证在线稀疏化+混合精度方案在视频生成上的能效优势。",
+            "关键文字": [
+              "对比 NVIDIA 3090 GPU",
+              "1.30× 能效提升",
+              "4.49× 性能提升"
+            ],
+            "视觉骨架": [
+              "能效/性能对比要点",
+              "对比图表区",
+              "关键倍数高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 49,
+            "页面角色": "content_candidate",
+            "标题": "Contents：转入「总结」章节",
+            "核心论断": "全篇进入第三部分「总结」，前两部分已讲完",
+            "本页讲什么": "这是一页 agenda 转场页。目录框列出全篇三条主线：①大模型推理需要更高能效、②方法-软硬件跨层次协同优化，二者已灰化表示讲完；③总结高亮为黑色，表示现在进入收尾环节。用来在讲总结前做视觉标定。",
+            "关键文字": [
+              "Contents",
+              "大模型推理需要更高能效",
+              "方法：软硬件跨层次协同优化",
+              "总结"
+            ],
+            "视觉骨架": [
+              "外框目录卡",
+              "①②③编号圆点",
+              "左侧蓝色进度竖条",
+              "已讲项灰化+当前项高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 50,
+            "页面角色": "content_candidate",
+            "标题": "总结：软硬件跨层次协同优化三层框架",
+            "核心论断": "从算法/系统/硬件三层次协同优化，在提升智能的同时提升推理能效",
+            "本页讲什么": "全篇收束页。顶部横幅点明「我们从3个设计层次对端侧大模型推理展开协同优化，在提升大模型智能的基础上提升推理能效」。左侧红色竖条标注「软硬件协同」主线，中间三个蓝框自上而下为算法层、系统层、硬件层，每层配示意图并用箭头指向右侧对应成果：Megrez 1.0/2.0、[ISCA 25]、[AAAI 26 oral]、[FPGA 24]、[FPGA 25]，把三层方法收束回主线并挂接产出。",
+            "关键文字": [
+              "我们从3个设计层次对端侧大模型推理展开协同优化",
+              "在提升大模型智能的基础上，提升推理能效",
+              "算法层 / 系统层 / 硬件层",
+              "Megrez 1.0 / Megrez 2.0",
+              "[ISCA 25] / [AAAI 26 oral] / [FPGA 24] / [FPGA 25]"
+            ],
+            "视觉骨架": [
+              "左侧协同主线竖条",
+              "三层设计层次纵向蓝框",
+              "各层小示意图",
+              "箭头指向右侧成果卡"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 51,
+            "页面角色": "content_candidate",
+            "标题": "致谢与联系方式",
+            "核心论断": "致谢合作企业与高校，并给出汇报人联系方式",
+            "本页讲什么": "全篇末页，致谢与联系页。左上为大标题致谢，下方列汇报人戴国浩/刘军、上海交通大学、日期 2025-11-22 及 Email。右侧文本框标注合作企业、合作高校，页面下部以两排 logo 墙（含 JKW、NICS-EFC、X 等，末尾……）展示合作方与致谢对象。",
+            "关键文字": [
+              "戴国浩 / 刘军",
+              "上海交通大学",
+              "2025-11-22",
+              "Email: daiguohao@sjtu.edu.cn",
+              "合作企业 / 合作高校"
+            ],
+            "视觉骨架": [
+              "顶部蓝色分隔条",
+              "汇报人信息文本块",
+              "合作企业/高校标签框",
+              "两排 logo 墙"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 52,
+            "页面角色": "content_candidate",
+            "标题": "\"快系统\"与\"慢系统\"如何协同",
+            "核心论断": "人类快慢双系统协同,为投机解码提供认知类比",
+            "本页讲什么": "借 Kahneman《思考,快与慢》双系统理论:第一类系统快速、自动、直观(对应小模型快速草拟),第二类系统缓慢、审慎、逻辑(对应大模型验证);两系统相互协同,类比投机解码中草稿模型与验证模型的分工协作。",
+            "关键文字": [
+              "第一类系统\"快速、自动、直观\"",
+              "第二类系统\"缓慢、审慎、逻辑\"",
+              "相互协同",
+              "Daniel Kahneman, \"Thinking, Fast and Slow\""
+            ],
+            "视觉骨架": [
+              "左右双椭圆节点",
+              "中间双向协同箭头",
+              "下方分支说明箭头",
+              "底部文献引用"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "ending_candidate",
+            "section_role": "appendix"
+          }
+        ],
+        "ending_candidate": [
+          {
+            "页序号": 53,
+            "页面角色": "ending_candidate",
+            "标题": "推测解码的演变",
+            "核心论断": "推测解码沿时间线从LLM加速演进为通用\"先生成后验证\"范式",
+            "本页讲什么": "用横向时间线梳理推测解码范式演变:2022.11 大语言模型推测解码提出\"先生成后验证\";2024.1 扩展到多模态大语言模型;2024.8 应用于 Diffusion 扩散模型的图像生成;并以省略号指向未来更多领域(如具身智能等AI方向),展现该范式的通用化趋势。",
+            "关键文字": [
+              "2022.11 大语言模型推测解码",
+              "\"先生成后验证\"的范式",
+              "2024.1 多模态大语言模型",
+              "2024.8 Diffusion 扩散模型图像生成",
+              "AI方向持续拓展"
+            ],
+            "视觉骨架": [
+              "横向时间轴带节点",
+              "三个并列时间节点卡片",
+              "省略号延展标记",
+              "未来方向文字块"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": null,
+            "section_role": "appendix"
+          }
+        ]
+      }
+    }
+  ],
+  "previous_batches_rules": []
+}

@@ -1,0 +1,966 @@
+{
+  "batch_index": 5,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+      "目录名": "HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+      "标题": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+      "总页数": 39,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_AI与稀疏计算背景",
+        "section_03_训练需转置的核心洞察",
+        "section_04_可转置块状稀疏与编解码架构",
+        "section_05_精度性能与消融实验",
+        "section_06_总结与未来工作",
+        "section_07_致谢"
+      ],
+      "主题标签": [
+        "N:M sparsity",
+        "sparse tensor core",
+        "GPU",
+        "DNN training",
+        "hardware accel",
+        "structured sparsity",
+        "codec",
+        "TBS pattern"
+      ],
+      "目标受众": "计算机体系结构学术同行 (HPCA)",
+      "报告类型": "paper_share",
+      "适用场景": "顶会论文汇报,稀疏加速硬件/体系结构方向",
+      "论述总结": "该 deck 分享 HPCA 论文 TB-STC:先讲 AI 与稀疏计算背景及现有 N:M 结构化稀疏的局限,给出「训练需转置」的洞察,提出可转置块状稀疏模式 TBS 与片上自适应编解码架构两项技术,最后用 CNN/Transformer/LLM 实验与消融验证精度、性能与能效,并展望未来工作。",
+      "论述弧线": [
+        "背景",
+        "洞察",
+        "方法",
+        "实验",
+        "总结"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "TB-STC: Transposable Block-wise N:M 稀疏张量核心",
+          "核心论断": "本文提出 TB-STC——可转置的块级 N:M 结构化稀疏张量核心",
+          "本页讲什么": "学术汇报封面页。居中大标题亮出论文全称 TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core，下方列出上海交大、清华、Infinigence-AI 三家机构的多位作者，标注共同一作与通讯作者 Guohao Dai，并给出联系邮箱，为整场汇报确立主题与身份。",
+          "关键文字": [
+            "TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core",
+            "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+            "*Co-first author, +Corresponding author",
+            "Email: daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "居中双行大标题",
+            "多机构作者名单",
+            "机构与邮箱脚注块"
+          ],
+          "上页角色": null,
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "toc_candidate",
+          "标题": "目录:背景→洞察→方案→实验→总结",
+          "核心论断": "全文按背景、洞察、方案、实验、总结五段主线展开",
+          "本页讲什么": "目录页。蓝框内以「Contents」为题，用编号圆点列出五段汇报主线:1 背景(AI 与稀疏计算)、2 洞察(来自训练的转置信息)、3 方案(可转置块级稀疏)、4 实验、5 总结与未来工作，为听众锚定全 deck 的阅读路径。",
+          "关键文字": [
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝色边框容器",
+            "编号圆点竖列",
+            "五条目录条目"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "toc_candidate",
+          "标题": "Contents: 5-part agenda, Background highlighted",
+          "核心论断": "Deck unfolds in 5 parts, starting from the Background section",
+          "本页讲什么": "This is the table-of-contents / agenda page. It lists the deck's five parts — 1 Background: AI and Sparse Computing, 2 Insight: Transpose Information from Training, 3 Solution: Transposable Block-wise Sparsity, 4 Experiment, 5 Summary and Future Work — with part 1 (Background) highlighted in blue as the section currently entered.",
+          "关键文字": [
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "纵向 5 项 agenda 列表",
+            "编号圆点导航",
+            "当前项蓝色高亮"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "AI 算力需求 240×/年 vs 硬件 2×/年",
+          "核心论断": "AI 模型算力需求(240×/年)远超硬件供给(2×/年),形成巨大鸿沟",
+          "本页讲什么": "本页为全 deck 立靶:AI 模型的算力需求以约 240×/年增长,而硬件算力仅以约 2×/年增长,两者间存在巨大 gap。右侧散点图以参数量(对数轴)对年份展开,标注 GPT-3、OPT-175B、A100(80GB)、H100、H200(141GB)、Switch Transformer 等模型/硬件节点,直观呈现需求与供给的剪刀差。",
+          "关键文字": [
+            "There is a huge gap between the computing performance requirements of AI models and the computing performance provided by hardware",
+            "Model: 240x/year",
+            "Hardware: 2x/year",
+            "Nvidia H200 (141GB)",
+            "Generative AI (e.g., large language models, LLM)"
+          ],
+          "视觉骨架": [
+            "参数量-年份对数散点图",
+            "模型/硬件节点标注",
+            "240×/年 与 2×/年 对比标签"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "稀疏化:重要的模型压缩方法",
+          "核心论断": "稀疏化是重要的模型压缩手段,含组内 top-k 与块稀疏软硬协同两类思路",
+          "本页讲什么": "本页引出稀疏化(sparsification)作为重要的模型压缩方法,承接上页算力鸿沟,给出解决方向。页面下方以左右两个红框 panel 并列展示两类稀疏化思路:左侧为组稀疏与组内 top-k 稀疏(group sparsity and top-k sparsity within the group),右侧为基于块稀疏的软硬件协同优化(block sparsity and software-hardware co-optimization)。",
+          "关键文字": [
+            "The sparsification method is one of the important model compression",
+            "Group sparsity and top-k sparsity within the group",
+            "Based on block sparsity and software-hardware co-optimization"
+          ],
+          "视觉骨架": [
+            "左右 2 列红框 panel",
+            "上方蓝框主论断",
+            "组稀疏/块稀疏并列对照"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "稀疏+专用硬件架构:GPU 代际演进带来 2× 提升",
+          "核心论断": "稀疏与专用硬件架构结合,历代 GPU 演进带来约 2× 性能提升",
+          "本页讲什么": "本页讲稀疏性与专用硬件架构结合所带来的性能收益。以 NVIDIA GPU 代际时间线展开:Volta-2017、Turing-2018(Tensor Core、更多支持)、Ampere-2020、Hopper-2022(Transformer engine for generative AI)、Blackwell-2024(New FP4 format),说明专用硬件持续演进,最终带来约 2× 的性能提升。",
+          "关键文字": [
+            "The combination of sparsity and dedicated hardware architecture has",
+            "Volta-2017 / Turing-2018 / Ampere-2020 / Hopper-2022 / Blackwell-2024",
+            "Tensor Core",
+            "New FP4 format",
+            "2× performance improvement"
+          ],
+          "视觉骨架": [
+            "GPU 代际横向时间线",
+            "各代架构特性标注",
+            "2× 性能提升红色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "稀疏计算:16 MACs 降到 6 MACs",
+          "核心论断": "稀疏化跳过零值 MAC,把 16 次乘加降到 6 次,削减计算与访存开销",
+          "本页讲什么": "本页用一个矩阵×向量的具体例子说明稀疏化如何降低计算与访存开销。左侧 Dense manner:全稠密矩阵含 10 个零值 MAC + 6 个非零 MAC,共需 16 MACs;右侧 Sparse manner:跳过 10 个零值 MAC,仅算 6 个非零 MAC,即 6 MACs,直观证明稀疏化可减少约 62% 的乘加运算。",
+          "关键文字": [
+            "Sparsification can reduce the computational and memory overhead of the model, thereby improving the computing",
+            "Dense manner",
+            "Sparse manner",
+            "10 zero MACs + 6 non-zero MACs",
+            "16 MACs",
+            "6 MACs"
+          ],
+          "视觉骨架": [
+            "Dense/Sparse 左右对照",
+            "矩阵×向量数值示例",
+            "16 vs 6 MACs 对比标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "稀疏模式分两类:结构化 vs 非结构化",
+          "核心论断": "现有稀疏模式大致分为结构化(粗粒度规则)与非结构化(细粒度不规则)两类",
+          "本页讲什么": "本页把现有稀疏模式(sparsity patterns)大致分为两类,并用两个矩阵可视化对照。左侧结构化稀疏(structured sparsity):整列成块置零,粗粒度、规则(coarse-grained, regular);右侧非结构化稀疏(unstructured sparsity):非零元零散分布,细粒度、不规则(fine-grained, irregular)。二者以 VS. 并列,为后续分别揭示各自硬伤铺垫。",
+          "关键文字": [
+            "Existing sparsity patterns can be roughly classified into two categories: structured sparsity and unstructured sparsity",
+            "Structured sparsity: Coarse-grained, Regular",
+            "Unstructured sparsity: Fine-grained, Irregular"
+          ],
+          "视觉骨架": [
+            "左右 2 列稀疏矩阵可视化",
+            "VS. 对照分隔",
+            "结构化/非结构化标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "结构化稀疏的硬伤:掉精度",
+          "核心论断": "结构化稀疏限制模型精度,LLM 上精度掉点超 6%",
+          "本页讲什么": "本页揭示结构化稀疏的第一类硬伤:限制模型精度(limits the accuracy of the model),在大语言模型(LLMs)上尤其严重。以 NVIDIA Sparse Tensor 为例,在 OPT-6.7B 和 Llama 上出现 >6% 的精度掉点(accuracy loss),为后续 TBS 方案证明结构化路线不可取。",
+          "关键文字": [
+            "Structured sparsity limits the accuracy of the model, especially in the large language models (LLMs)",
+            "Accuracy loss![1]",
+            "NVIDIA Sparse Tensor",
+            ">6% accuracy drop on OPT-6.7B and Llama"
+          ],
+          "视觉骨架": [
+            "上方蓝框主论断",
+            "Accuracy loss 红色警示标注",
+            ">6% 掉点数值高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "非结构化稀疏的硬伤:硬件开销大",
+          "核心论断": "非结构化稀疏带来巨大额外硬件开销,如 MatRaptor 额外逻辑超 80%",
+          "本页讲什么": "本页揭示非结构化稀疏的第二类硬伤,与上页承接完成对两类方案的立靶:非结构化稀疏虽保精度,却带来巨大额外硬件开销(large additional hardware overhead)。列举三个代表工作:MatRaptor[3] 额外逻辑单元开销超 80%、Sextans[2] 需更大的片上缓冲(larger on-chip buffer)、DSTC[1],证明非结构化路线硬件代价过高,引出后续 TBS 方案。",
+          "关键文字": [
+            "Unstructured sparsity leads to large additional hardware overhead",
+            "MatRaptor [3]: Extra logic units overhead of over 80%",
+            "Sextans [2]: Larger on-chip buffer",
+            "DSTC [1]"
+          ],
+          "视觉骨架": [
+            "三个代表工作分点罗列",
+            "上方蓝框主论断",
+            "80% 额外开销红色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "toc_candidate",
+          "标题": "目录:定位到 Insight 章节",
+          "核心论断": "本页进入第 2 章「训练中的转置洞察」",
+          "本页讲什么": "全篇五章目录页,当前高亮第 2 章 Insight: Transpose Information from Training。其余章节(1 Background、3 Solution: Transposable Block-wise Sparsity、4 Experiment、5 Summary and Future Work)灰显,用蓝色圆点+数字标记当前进度,起章节导航过渡作用。",
+          "关键文字": [
+            "Contents",
+            "Insight: Transpose Information from Training",
+            "Background: AI and Sparse Computing",
+            "Solution: Transposable Block-wise Sparsity",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "纵向 5 项编号目录列表",
+            "蓝色高亮当前章圆点",
+            "灰显未激活章节"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "原生稀疏训练优于后训练微调",
+          "核心论断": "原生稀疏训练比后训练微调获得更优精度",
+          "本页讲什么": "对比两条稀疏化路线:上方后训练微调(Post-training fine-tuning)与原生稀疏训练,用两组 4×4 稀疏掩码矩阵示意其权重结构差异;右侧柱状图在 Ave/World/Code/Common 多任务上对比 Baseline(dense)、Fine-tuning sp=50%、sp=70% 的精度,纵轴 0–80。结论:Sparse training is superior to post-training,为原生稀疏方案铺垫。",
+          "关键文字": [
+            "Compared with the method of post-training fine-tuning, the native sparse training method can obtain a better result",
+            "Sparse training is superior to post-training",
+            "Baseline (dense)",
+            "Fine-tuning, sp=50%",
+            "Fine-tuning, sp=70%",
+            "Post-training fine-tuning"
+          ],
+          "视觉骨架": [
+            "两组 4×4 稀疏掩码矩阵示意",
+            "多任务精度柱状图",
+            "左图右表双栏布局"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "前向反向权重互为转置(引入)",
+          "核心论断": "前向与反向传播的权重矩阵互为转置",
+          "本页讲什么": "承接上页,揭示训练洞察:受模型训练过程启发,前向传播与反向传播所用的权重矩阵互为转置。页面用 Forward(W × Input = Output)与 Backward 两个乘法示意框并列对比,直观铺陈「forward/backward 权重互为转置」这一关系,为下页展开 Wᵀ 细节做引子。",
+          "关键文字": [
+            "Inspired by the model training process, the weight matrices of the forward and backward propagation are transpose of each other",
+            "Forward",
+            "Backward"
+          ],
+          "视觉骨架": [
+            "Forward/Backward 双栏乘法示意框",
+            "虚线分隔的前向区块",
+            "矩阵乘法 × = 符号"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "转置性质推出结构化稀疏关键思路",
+          "核心论断": "利用转置性质可同时获得结构化稀疏的 W 与 Wᵀ",
+          "本页讲什么": "在上页基础上补全细节:Forward 用 W×Input=Output,Backward 用 Wᵀ×Output gradient=Input gradient,中间以 Transposition 标注 Weight 与 Weightᵀ 的转置关系。落到 Key idea: 利用该 transpose property 有助于得到结构化(structured)稀疏,直接为下一章 TBS 转置块稀疏方案铺垫。",
+          "关键文字": [
+            "Inspired by the model training process, the weight matrices of the forward and backward propagation are transpose of each other",
+            "Forward",
+            "Backward",
+            "Wᵀ × Output gradient = Input gradient",
+            "Transposition: Weight ↔ WeightT",
+            "Key idea: Utilizing this transpose property helps to obtain a structured"
+          ],
+          "视觉骨架": [
+            "Forward/Backward 乘法示意",
+            "Weight↔WeightT 转置标注",
+            "底部 Key idea 结论条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "toc_candidate",
+          "标题": "Contents:进入第3章 Solution",
+          "核心论断": "目录切换到第3章「可转置块状稀疏」解决方案",
+          "本页讲什么": "五章目录页,高亮当前进入第3章 Solution: Transposable Block-wise Sparsity。其余四章(Background、Insight、Experiment、Summary)灰显。作为方法章开场,标示接下来讲解可转置块状稀疏方案。",
+          "关键文字": [
+            "Contents",
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "五项编号目录列表",
+            "当前章高亮圆点标记"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "Tech.1:TBS 稀疏模式定义",
+          "核心论断": "TBS 通过维度×比例双重灵活性探索稀疏空间",
+          "本页讲什么": "介绍第一项技术 TBS(Transposable Block-wise Structured Sparsity)。左侧说明 TBS 由 Diverse dimension(横/纵方向)× Diverse proportion(0:4/1:4/2:4)组合构成;右侧以 block0~block3 四个矩阵块示例(各自 2:4、0:4、1:4 等),给出 TBS(N={1,2,4}, M=4)的一个实例,强调稀疏灵活性。",
+          "关键文字": [
+            "The novel sparsity pattern (TBS) explores the sparsity flexibility",
+            "Diverse dimension × Diverse proportion",
+            "block0~block3: 2:4 / 0:4 / 1:4",
+            "TBS (N={1,2,4}, M=4)",
+            "Transposable Block-wise Structured Sparsity"
+          ],
+          "视觉骨架": [
+            "维度×比例组合示意框",
+            "四块矩阵稀疏示例网格",
+            "双向红色箭头标注"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "Tech.1:Mask-Space 与稀疏模式对比",
+          "核心论断": "以 Mask-Space 度量,TBS 表示空间大于现有模式",
+          "本页讲什么": "定义 Mask-Space(MS):对固定尺寸矩阵,可能 mask 布局的数目衡量表示空间。底部三列对比 (a) Tile-wise N:M、(b) Row-wise N:M(VEGETA: RS-V, HighLight: RS-H)、(c) Transposable(TBS, N={1,2,4}, M=4),说明 TBS 的表示空间更大。",
+          "关键文字": [
+            "Mask-Space (MS), the concept of the representation space[1]",
+            "Definition of MS: the number of possible mask granularity",
+            "(a) Tile-wise N:M sparsity",
+            "(b) Row-wise N:M sparsity (VEGETA: RS-V, HighLight: RS-H)",
+            "(c) Transposable (N={1,2,4}, M=4)"
+          ],
+          "视觉骨架": [
+            "3 列稀疏模式并列对比",
+            "Mask-Space 概念图例"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "Tech.1:TBS 逼近非结构化稀疏",
+          "核心论断": "更大表示空间使 TBS 更接近非结构化稀疏",
+          "本页讲什么": "承接前页对比,断言:与其它 N:M 稀疏模式相比,TBS 因更大的表示空间而更接近非结构化稀疏(unstructured sparsity),即精度潜力更高。本页为纯文字论断页,总结 TBS 稀疏模式的优势。",
+          "关键文字": [
+            "Compared with other N:M sparsity patterns, TBS is much similar to the unstructured sparsity",
+            "due to its larger representation space"
+          ],
+          "视觉骨架": [
+            "单条蓝框强调论断"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "Tech.2:现有存储格式的缺陷",
+          "核心论断": "现有存储格式非连续且只压缩行,存在冗余",
+          "本页讲什么": "转入第二项技术,先剖析现有稀疏存储格式的问题:非连续(Non-contiguous)、仅能压缩行(Only compress rows)、存在冗余。用矩阵与索引示意展示 CSR/SDC 等格式针对 TBS 双向稀疏时的低效,为后续自适应编解码格式做铺垫。",
+          "关键文字": [
+            "Existing storage format",
+            "Non-contiguous",
+            "Only compress rows",
+            "Redundant"
+          ],
+          "视觉骨架": [
+            "稀疏矩阵与索引存储示意",
+            "行压缩布局对比图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "Hardware Overview:TB-STC 硬件总览",
+          "核心论断": "TB-STC 在原 Tensor Core 上加轻量硬件单元",
+          "本页讲什么": "硬件总览页,对比 (a) 原始含 Tensor Core 的 GPU 架构与 (b) TB-STC 架构。TB-STC 基于原 Tensor Core,增补 Codec Unit、MBD 等轻量硬件单元(Register Files、Warp Scheduler、Operand Collector 等)。注明具体架构细节未公开,参考 Dual-side sparse tensor core (ISCA 2021)。",
+          "关键文字": [
+            "TB-STC is based on the original Tensor Core architecture with lightweight hardware units",
+            "(a) GPU architecture with Tensor Core",
+            "(b) TB-STC Architecture",
+            "Codec Unit / MBD",
+            "Dual-side sparse tensor core, ISCA 2021"
+          ],
+          "视觉骨架": [
+            "GPU 与 TB-STC 双架构对比框图",
+            "SM 内部单元标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "Challenges of TBS:三大挑战",
+          "核心论断": "TBS 面临存储、带宽、算力三方面挑战",
+          "本页讲什么": "汇总 TBS 落地的多重挑战:Challenge-2 刚性存储格式导致低带宽利用(非连续/冗余、大 gap);Challenge-3 块内稀疏度变化导致低算力利用;并预告对应方案(高效存储格式 + on-the-fly 转换、I/O-aware 可配置架构),串联后续三项技术。",
+          "关键文字": [
+            "Challenges of TBS",
+            "Challenge-2: The rigid storage format leads to low bandwidth utilization",
+            "Challenge-3: The varying sparsity leads to low computational",
+            "Non-contiguous / Redundant / Large gap",
+            "I/O-aware configurable architecture"
+          ],
+          "视觉骨架": [
+            "2×2 挑战-方案对照面板",
+            "红框问题标注 + 箭头指向方案"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "Tech.2:片上自适应格式转换",
+          "核心论断": "沿各稀疏维压缩以消除非连续内存访问",
+          "本页讲什么": "展开 on-the-fly 自适应格式:对比单维压缩 SDC[1](compress the rows)与 CSR(Compressed Sparse Row)。指出 CSR 沿行压缩后在 TBS 双向稀疏下产生非连续内存访问(Non-contiguous memory access),用 PE/Cycle 时序图说明访问不对齐问题,引出按各自稀疏维压缩的必要。",
+          "关键文字": [
+            "Challenge: Existing storage formats face non-contiguous, redundant memory accesses for TBS pattern",
+            "Single-dimensional Compression (SDC)[1]",
+            "Compressed Sparse Row (CSR)",
+            "Compress along the rows",
+            "Non-contiguous memory access!"
+          ],
+          "视觉骨架": [
+            "SDC 与 CSR 压缩流程对比",
+            "PE/Cycle 内存访问时序示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "Tech.2:双维压缩格式设计",
+          "核心论断": "按各自稀疏维压缩,得双维紧凑存储格式",
+          "本页讲什么": "给出自适应编解码的压缩格式:元素按各自稀疏维度(行/列)压缩存储。字段编码为 Sparsity dim.(1b)+ Sparsity ratio(3b)+ Element offset(12b),配合 Elements 表(如 a/b 偏移 0,2;g/h 偏移 2,3),实现双维紧凑表示。承接前页非连续问题,给出格式层解答。",
+          "关键文字": [
+            "Compressed format according to their respective sparsity dimension",
+            "Sparsity dim. (1b)",
+            "Sparsity ratio (3b)",
+            "Element offset (12b)",
+            "Elements"
+          ],
+          "视觉骨架": [
+            "位域编码字段拆解图",
+            "稀疏矩阵到元素表映射"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "Tech.2:Adaptive Codec 编解码单元",
+          "核心论断": "Codec 单元经队列与合并实现片上格式转换",
+          "本页讲什么": "展开自适应 Codec Unit 硬件:输入 Values(2×16b)、Rids/Iids/Sids(2×3b)、Sparsity 经 Threshold 判定进入 Queue group(Queue0/Queue2),再由 Merge M 单元与 MUX 合并输出 [flag, element]×4(20b/19b/38b),完成 on-the-fly 双维格式转换。含 (a) Codec、(b) Merge unit 两部分。",
+          "关键文字": [
+            "Values 2×16b / 2×3b",
+            "Rids, Iids/Sids 2×3b",
+            "Threshold, Queue group (Queue 0 / Queue 2)",
+            "Merge M, MUX",
+            "[flag, element] * 4, 20b / 19b / 38b"
+          ],
+          "视觉骨架": [
+            "Codec 数据通路框图",
+            "队列组 + 合并单元 + MUX 位宽标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "Tech.3:稀疏感知调度总览",
+          "核心论断": "块内外稀疏度差异致负载不均,压低算力利用",
+          "本页讲什么": "引入第三项技术:块内/块间稀疏度差异造成 workload imbalance,导致低算力利用。对比左侧低利用率与右侧 High utilization(I/O-aware 可配置架构 + 稀疏感知调度),用 #PE、#cycle 时序示意负载均衡效果,预告 inter/intra-block 两种调度。",
+          "关键文字": [
+            "Challenge: The sparsity degree differences within/between the blocks cause workload imbalance, leading to low utilization",
+            "High utilization",
+            "I/O-aware configurable architecture with sparsity-aware scheduling",
+            "#PE / #cycle"
+          ],
+          "视觉骨架": [
+            "低利用 vs 高利用时序对比",
+            "#PE-#cycle 负载分布示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "content_candidate",
+          "标题": "Tech.3:块间调度(Inter-block)",
+          "核心论断": "利用局部性均衡相邻块算力以降总开销",
+          "本页讲什么": "介绍稀疏感知调度的第一层——Inter-block scheduling。Key idea:利用局部性(locality)在相邻矩阵块之间均衡计算开销(balance the computational cost between consecutive matrix blocks),从而降低整体计算成本。本页为纯文字 key idea 说明页。",
+          "关键文字": [
+            "Inter-block scheduling",
+            "Key idea is to use locality to balance the computational cost between consecutive matrix blocks",
+            "to reduce the overall computational cost"
+          ],
+          "视觉骨架": [
+            "两级 bullet key idea 文字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 27,
+          "页面角色": "content_candidate",
+          "标题": "Tech.3:块内调度(Intra-block)思想",
+          "核心论断": "利用非零元总数为 M 整数倍的平衡性质",
+          "本页讲什么": "介绍调度第二层——Intra-block scheduling。Key idea:利用矩阵块内非零元总数的平衡性质(balance property for the total number of non-zero elements),即块内非零元总数恒为 M 的整数倍,以此优化块内调度。本页为纯文字 key idea 说明页,与下页架构展开承接。",
+          "关键文字": [
+            "Intra-block scheduling",
+            "Key idea is to exploit the balance property for the total number of non-zero elements in the matrix block",
+            "i.e., The total number is always an integer multiple of M"
+          ],
+          "视觉骨架": [
+            "两级 bullet key idea 文字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 28,
+          "页面角色": "content_candidate",
+          "标题": "Tech.3:I/O-aware 可配置调度架构",
+          "核心论断": "DVPE 与 MBD 单元支撑块内调度与双向存储",
+          "本页讲什么": "承接块内调度思想,展开 I/O-aware 可配置硬件:(a) Diverse VPE(DVPE)缓存剩余元素并合并(buffers the remaining elements and then merges);(b) MBD unit 支持行主/列主双向存储(supports both row-major and column-major storage),含 Sparse Indices、MUX、reorganizing 通路。以两单元框图落地稀疏感知调度。",
+          "关键文字": [
+            "Intra-block scheduling",
+            "(a) Diverse VPE",
+            "(b) MBD unit",
+            "DVPE buffers the remaining elements and then merges",
+            "MBD unit supports both row-major and column-major storage"
+          ],
+          "视觉骨架": [
+            "DVPE 与 MBD 两单元框图",
+            "Sparse Indices + MUX 通路 + reorganizing 标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "toc_candidate",
+          "标题": "Contents:进入第 4 章 Experiment",
+          "核心论断": "全篇进入第 4 部分实验验证章节",
+          "本页讲什么": "五段式目录导航页,高亮第 4 项 Experiment(实验),表示演讲进入实验验证章节。其余四项(Background、Insight、Solution、Summary and Future Work)灰显,仅第 4 项以黑色加粗与蓝色圆点标出当前进度。",
+          "关键文字": [
+            "Contents",
+            "Background: AI and Sparse Computing",
+            "Insight: Transpose Information from Training",
+            "Solution: Transposable Block-wise Sparsity",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝框内 5 项编号列表",
+            "当前项蓝色圆点高亮",
+            "灰显未激活条目"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 30,
+          "页面角色": "content_candidate",
+          "标题": "实验设置:Baselines、模型与数据集",
+          "核心论断": "实验覆盖三类基线与 CNN/Transformer/LLM 全谱模型",
+          "本页讲什么": "列出实验配置:三类基线(TS 的 STC、RS 的 VEGETA/HighLight、US 的 RM-STC),以及三类模型与数据集——CNN 用 ResNet50/ImageNet 等,Transformer 用 BERT-base/GLUE,LLM 用 OPT-6.7B、Llama2-7B 在 PIQA、ARC-e、WinoGrande、HellaSwag 上做 ZeroShot 精度评测。",
+          "关键文字": [
+            "Baselines: TS(STC), RS(VEGETA, HighLight), US(RM-STC)",
+            "CNN: ResNet50 on Cifar10, ResNet18 on ImageNet",
+            "Transformer: BERT-base on GLUE (MRPC, SST-2)",
+            "LLM: OPT-6.7B/Llama2-7B on PIQA, ARC-e, WinoGrande, HellaSwag (ZeroShot accuracy)"
+          ],
+          "视觉骨架": [
+            "两级缩进 bullet 列表",
+            "Baselines 与 Models 分组"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 31,
+          "页面角色": "content_candidate",
+          "标题": "精度评测:TB-STC 精度不掉反升",
+          "核心论断": "TB-STC 精度较基线高 0.85%~1.03% 且缩小 US 精度差",
+          "本页讲什么": "精度实验双表结果:左表(retrained 模型)TB-STC 较基线取得 0.85%~1.03% 更高精度;右表(one-shot pruning 模型)TBS 将 SS 与 US 模式间的精度差从 2.58%~3.24% 缩小到 0.66%。承接前章 TBS 模式,证明其精度优势。",
+          "关键文字": [
+            "For retrained models (left table): TB-STC achieves 0.85%~1.03% higher accuracy",
+            "For one-shot pruning models (right table): TBS narrows the accuracy gap between the SS and US pattern from 2.58%-3.24% down to 0.66%"
+          ],
+          "视觉骨架": [
+            "左右并列两张精度表",
+            "红色高亮关键百分比"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 32,
+          "页面角色": "content_candidate",
+          "标题": "硬件评测:面积开销仅 A100 的 1.57%",
+          "核心论断": "TB-STC 硬件开销极小,仅占 A100 面积 1.57%",
+          "本页讲什么": "硬件评测方法与面积开销:采用 RTL 实现加 cycle-level 性能模拟,用 Sparseloop 估功耗、Design Compiler 估编解码单元功耗、Ramulator/DRAMPower 估内存开销。DVPE 阵列是硬件开销主体(1GHz、7nm),826mm² 面积仅占 NVIDIA A100 GPU 的 1.57%。",
+          "关键文字": [
+            "RTL implementation + cycle-level performance simulator",
+            "Sparseloop for DVPE arrays, Design Compiler for codec unit, Ramulator/DRAMPower",
+            "DVPE array is main hardware overhead (1GHz, 7nm)",
+            "Only 1.57% for the 826mm² die area of NVIDIA A100 GPU"
+          ],
+          "视觉骨架": [
+            "方法学 bullet 列表",
+            "面积对比数字标注",
+            "底部来源引用"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 33,
+          "页面角色": "content_candidate",
+          "标题": "性能评测:平均 1.27× 加速",
+          "核心论断": "TB-STC 较四基线平均获 1.27× 推理加速",
+          "本页讲什么": "性能加速结果:TB-STC 相较 STC、VEGETA、HighLight、RM-STC 四个基线分别取得 1.55×、1.29×、1.21×、1.06× 加速,平均 1.27× speedup。承接精度不掉的结论,进一步证明其性能优势。",
+          "关键文字": [
+            "TB-STC achieves on average of 1.27x speedup",
+            "1.55x, 1.29x, 1.21x, 1.06x speedup compared with STC, VEGETA, HighLight, and RM-STC"
+          ],
+          "视觉骨架": [
+            "加速比柱状图",
+            "红色高亮平均加速数值"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 34,
+          "页面角色": "content_candidate",
+          "标题": "消融实验:自适应编解码架构",
+          "核心论断": "消融验证自适应编解码架构对性能的贡献",
+          "本页讲什么": "消融实验页,聚焦 Adaptive Codec Architecture 组件:对比 TBS pattern 有无自适应编解码架构的效果,验证该架构对整体性能/开销的独立贡献。页面以对比表格呈现自适应编解码带来的收益。",
+          "关键文字": [
+            "Ablation Studies",
+            "Adaptive Codec Architecture",
+            "TBS pattern"
+          ],
+          "视觉骨架": [
+            "消融对比表格",
+            "自适应编解码架构分组"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 35,
+          "页面角色": "content_candidate",
+          "标题": "整体评测:EDP 平均提升 3.82×",
+          "核心论断": "TB-STC 平均提升 EDP 3.82× 并优化精度-EDP 前沿",
+          "本页讲什么": "章节总结页,给出整体能效结论:TB-STC 将 EDP(Energy-Delay Product,能量-延迟积)平均提升 3.82×,并为多种深度学习模型提供更优的 accuracy-EDP Pareto frontier。以顶部蓝框强调核心结论,收束整个实验章。",
+          "关键文字": [
+            "EDP: Energy-Delay Product",
+            "TB-STC improves the EDP by an average of 3.82x",
+            "offers enhanced accuracy-EDP Pareto frontier for various DL models"
+          ],
+          "视觉骨架": [
+            "顶部蓝框结论横幅",
+            "accuracy-EDP Pareto 散点图",
+            "EDP 名词注释"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 36,
+          "页面角色": "toc_candidate",
+          "标题": "目录页：定位「总结与未来工作」章",
+          "核心论断": "五段式目录高亮第 5 章，正式进入总结收尾",
+          "本页讲什么": "全 deck 五章目录页，1 Background、2 Insight、3 Solution、4 Experiment、5 Summary and Future Work 竖排列出，前四章置灰、第 5 章加粗高亮，蓝色圆点指示当前进度，用于把听众从实验章过渡到收尾总结章。",
+          "关键文字": [
+            "Contents",
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点目录",
+            "当前章高亮圆点",
+            "五段章节列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 37,
+          "页面角色": "content_candidate",
+          "标题": "Summary：目标—洞察—方案三线闭环",
+          "核心论断": "TB-STC 以「目标—洞察—两项技术」三线回收全篇论证闭环",
+          "本页讲什么": "总结页横向分三栏回收全篇主线：左栏 Goals 提出为多种 DL 模型提供更优 accuracy-EDP Pareto 前沿的目标（TB-STC 用 64 MACs 对比 24 MACs）；中栏 Insight 指出前向与反向传播的权重矩阵互为转置这一关键洞察；右栏 Solution 给出两项技术——可转置块状稀疏结构与自适应 codec 架构。三栏并列构成整章总结骨架。",
+          "关键文字": [
+            "Our goal is to offer an enhanced accuracy-EDP Pareto frontier for various DL models",
+            "Key insight: The weight matrices of forward and backward pass are transposed",
+            "Transposable block-wise structure of sparsity",
+            "Adaptive codec architecture",
+            "I/O-aware configurable architecture"
+          ],
+          "视觉骨架": [
+            "三列并列 panel",
+            "前向反向传播示意图",
+            "accuracy-EDP 散点对比",
+            "codec 架构框图"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 38,
+          "页面角色": "content_candidate",
+          "标题": "Future Work：TBS 在 LLM 稀疏训练的初步验证",
+          "核心论断": "TBS 稀疏训练在多项 LLM benchmark 上初步验证其可扩展性",
+          "本页讲什么": "未来工作页给出基于 TBS 的 LLM 稀疏训练初步结果：模型 MAB-πNEO1 460M、50% 稀疏、Fineweb-edu2 350B tokens，在 PIQA、ARC-e/c、Lambada 等 benchmark 上对比 Dense/2:4/US/TBS 四种方案；表格显示 TBS 精度多列领先（如 0.688、0.628），初步证明 TBS 可扩展到 LLM 稀疏训练。",
+          "关键文字": [
+            "We have also conducted TBS-based sparse training on LLM, preliminarily verifying the scalability of TBS",
+            "Model Arch：MAB-πNEO1 460M, intermediate size 16384",
+            "Sparsity: 50%, Dataset：Fineweb-edu2 350B tokens",
+            "Benchmarks：PIQA, ARC-e/c, Lambada",
+            "The accuracy of TBS"
+          ],
+          "视觉骨架": [
+            "Dense/2:4/US/TBS 精度对比表",
+            "TBS 行高亮红框",
+            "左侧实验配置文字块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 39,
+          "页面角色": "ending_candidate",
+          "标题": "致谢页:Thanks for your listening",
+          "核心论断": "以致谢收束全篇并完整列出作者与三家单位署名",
+          "本页讲什么": "全 deck 结尾致谢页。页面上方居中大字「Thanks for your listening!」收束演讲;下方列出完整作者署名 Jun Liu、Shulin Zeng 等十余位,标注所属机构角标(1 上海交大、2 清华、3 Infinigence-AI),并用符号区分共同一作(*)与通讯作者(†,Guohao Dai,紫色高亮),底部图例说明星号与加号含义。",
+          "关键文字": [
+            "Thanks for your listening!",
+            "Jun Liu*1,3, Shulin Zeng*2,3, Junbo Zhao2 …",
+            "Xuefei Ning2, Chen Zhang1, Yu Wang2, Guohao Dai†1,3",
+            "1Shanghai Jiao Tong University, 2Tsinghua University, 3Infinigence-AI",
+            "*Co-first author, †Corresponding author"
+          ],
+          "视觉骨架": [
+            "居中致谢大标题",
+            "多行作者署名列表",
+            "机构归属与作者角标图例",
+            "通讯作者紫色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.07",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "background",
+          "标题": "AI与稀疏计算背景",
+          "页码范围": [
+            3,
+            10
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "motivation",
+          "标题": "训练需转置的核心洞察",
+          "页码范围": [
+            11,
+            14
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "method",
+          "标题": "可转置块状稀疏与编解码架构",
+          "页码范围": [
+            15,
+            28
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "experiment",
+          "标题": "精度性能与消融实验",
+          "页码范围": [
+            29,
+            35
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "discussion",
+          "标题": "总结与未来工作",
+          "页码范围": [
+            36,
+            38
+          ]
+        },
+        {
+          "section_index": 7,
+          "section_role": "closing",
+          "标题": "致谢",
+          "页码范围": [
+            39,
+            39
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

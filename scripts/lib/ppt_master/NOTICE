@@ -1,0 +1,9 @@
+Vendored from ppt-master (https://github.com/) — MIT License, Copyright (c) 2025-2026 Hugo He.
+See LICENSE in this directory.
+
+This is a curated, self-contained copy of ppt-master's template-import + SVG->DrawingML
+modules so ppt-agent reuses user .pptx templates with NO external dependency on a sibling
+ppt-master checkout. Entry points used by ppt-agent:
+  - pptx_template_import.py   (template package: manifest + layout SVG skeletons + assets)
+  - svg_to_pptx.py            (per-page SVG -> native editable DrawingML)
+Do not edit ad hoc; re-vendor from upstream ppt-master to update.

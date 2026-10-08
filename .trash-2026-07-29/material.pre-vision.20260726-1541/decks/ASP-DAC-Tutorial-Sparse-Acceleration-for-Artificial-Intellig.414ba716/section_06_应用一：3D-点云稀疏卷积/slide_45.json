@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_45",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 45,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Observation 3（续）：静态数据流损失的量化",
+  "核心论断": "静态数据流在动态输入下的性能损失可被量化呈现",
+  "本页讲什么": "本页延续 Observation 3，用更密集的图表进一步量化静态数据流面对输入动态性时的性能损失（shape 数较多、含数据图），坐实问题严重性，直接铺垫 slide 46 的启发式自适应数据流选择解法。",
+  "关键文字": [
+    "Observation 3: Static dataflow brings performance loss against input dynamics"
+  ],
+  "视觉骨架": [
+    "数据流性能损失量化图表",
+    "不同输入下损失对比"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_45.asset.01"
+  ],
+  "适合复用场景": [
+    "数据流性能损失量化分析页",
+    "动态输入瓶颈实证页"
+  ],
+  "不适合复用场景": [
+    "方案架构总览页",
+    "作者封面页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,43 @@
+>>> logic_extract start at 14:54:03
+  args: layer=section_level deck_batch_size=4 section_batch_size=1
+  loaded 28 deck dirs from /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks
+  deck_level: 7 batches (size=4): [4, 4, 4, 4, 4, 4, 4]
+  section_level: 28 batches (size=1): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+=== Phase 2: section_level layer (28 batches, size=1) ===
+  [section_level] batch 0/27 (1 decks)
+    input: section_level_batch_0_input.json (39 KB)
+    attempt 1: done in 467s, ok=True
+    +8 patterns this batch (total in dedup pool: 8)
+  [section_level] batch 1/27 (1 decks)
+    input: section_level_batch_1_input.json (80 KB)
+    attempt 1: done in 605s, ok=True
+    +11 patterns this batch (total in dedup pool: 19)
+  [section_level] batch 2/27 (1 decks)
+    input: section_level_batch_2_input.json (26 KB)
+    attempt 1: done in 77s, ok=True
+    +4 patterns this batch (total in dedup pool: 23)
+  [section_level] batch 3/27 (1 decks)
+    input: section_level_batch_3_input.json (42 KB)
+    attempt 1: done in 254s, ok=True
+    +6 patterns this batch (total in dedup pool: 29)
+  [section_level] batch 4/27 (1 decks)
+    input: section_level_batch_4_input.json (63 KB)
+    attempt 1: done in 436s, ok=False
+    FAILED (cli): cli rc=1: 
+    attempt 2: done in 372s, ok=True
+    +6 patterns this batch (total in dedup pool: 35)
+  [section_level] batch 5/27 (1 decks)
+    input: section_level_batch_5_input.json (65 KB)
+    attempt 1: done in 377s, ok=True
+    +7 patterns this batch (total in dedup pool: 42)
+  [section_level] batch 6/27 (1 decks)
+    input: section_level_batch_6_input.json (61 KB)
+    attempt 1: done in 75s, ok=False
+    FAILED (cli): empty stdout from claude
+    attempt 2: done in 141s, ok=False
+    FAILED (cli): json decode: Unterminated string starting at: line 175 column 78 (char 11185)
+    attempt 3: done in 221s, ok=True
+    +6 patterns this batch (total in dedup pool: 48)
+  [section_level] batch 7/27 (1 decks)
+    input: section_level_batch_7_input.json (68 KB)

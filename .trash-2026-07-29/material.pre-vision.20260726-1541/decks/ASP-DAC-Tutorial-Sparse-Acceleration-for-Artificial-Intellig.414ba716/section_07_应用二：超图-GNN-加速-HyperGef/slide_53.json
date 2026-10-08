@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_53",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.07",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 53,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "方案二：负载感知的数据格式",
+  "核心论断": "负载感知数据格式提升超图稀疏计算并行效率",
+  "本页讲什么": "介绍 HyperGef 的具体优化方案之一——Workload-aware data format（负载感知数据格式），针对超图不规则度分布重组存储，使 GPU 线程负载更均衡，提升稀疏聚合的并行效率，为后续分区重叠优化铺垫。",
+  "关键文字": [
+    "Application: HyperGNN",
+    "Solution 2: Workload-aware data format"
+  ],
+  "视觉骨架": [
+    "数据格式重组示意",
+    "负载均衡分块图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_53.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_53.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_53.asset.03"
+  ],
+  "适合复用场景": [
+    "稀疏计算数据格式优化页",
+    "GPU 负载均衡方案介绍页"
+  ],
+  "不适合复用场景": [
+    "最终性能柱图页",
+    "论文开题标题页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "chapter_candidate",
+  "分析状态": "claude-opus-4-8"
+}

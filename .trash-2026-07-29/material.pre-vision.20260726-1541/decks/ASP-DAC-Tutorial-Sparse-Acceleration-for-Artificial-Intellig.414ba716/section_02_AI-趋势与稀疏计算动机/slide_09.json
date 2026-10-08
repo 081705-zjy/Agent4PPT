@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_09",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 9,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏计算提升等效算力",
+  "核心论断": "跳过零值无效计算即可提升等效算力",
+  "本页讲什么": "本页是 section 的收尾与命题落地，解释稀疏计算如何通过避免对零值的无效计算，在完成相同任务的前提下提升等效算力。它把上页抛出的创新思路具体到机理层，正式确立后续章节展开稀疏思想与工作的立论基础。",
+  "关键文字": [
+    "Sparse computing can improve equivalent computility",
+    "By avoiding invalid calculations (zero value), complete the same task"
+  ],
+  "视觉骨架": [
+    "稀疏跳零机理示意图",
+    "等效算力对比示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_09.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_09.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_09.asset.03"
+  ],
+  "适合复用场景": [
+    "稀疏计算原理阐释页",
+    "等效算力提升命题落地页"
+  ],
+  "不适合复用场景": [
+    "宏观趋势铺陈页",
+    "多组 benchmark 表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

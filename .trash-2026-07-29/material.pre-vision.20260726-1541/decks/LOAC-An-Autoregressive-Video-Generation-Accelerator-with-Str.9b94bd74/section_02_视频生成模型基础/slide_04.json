@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_04",
+  "所属章节": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.02",
+  "所属deck": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+  "页序号": 4,
+  "源文件": "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx",
+  "页面角色": "content_candidate",
+  "标题": "研究背景：视频生成模型崛起（Sora）",
+  "核心论断": "Sora 等模型推动视频生成走向实用",
+  "本页讲什么": "本页进入研究背景正文，以 Sora（OpenAI）为代表案例，用生成效果配图展示视频生成模型的能力跃升。为全 deck 立住「视频生成模型」这一大前提，引出后续对其生成范式与算力开销的讨论。",
+  "关键文字": [
+    "研究背景",
+    "Sora",
+    "OpenAI 来源引用"
+  ],
+  "视觉骨架": [
+    "视频生成效果配图",
+    "来源引用脚注"
+  ],
+  "资源ID列表": [
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_04.asset.01",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_04.asset.02"
+  ],
+  "适合复用场景": [
+    "视频生成 motivation 背景页",
+    "AIGC 能力展示 案例页"
+  ],
+  "不适合复用场景": [
+    "算法细节推导页",
+    "纯数据对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

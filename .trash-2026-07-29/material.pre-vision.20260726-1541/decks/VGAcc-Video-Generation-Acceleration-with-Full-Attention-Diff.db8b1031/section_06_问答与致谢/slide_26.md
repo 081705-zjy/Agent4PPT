@@ -1,0 +1,52 @@
+---
+页标识: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_26"
+所属章节: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.06"
+所属deck: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031"
+页序号: 26
+源文件: "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx"
+页面角色: "ending_candidate"
+标题: "致谢结束页"
+核心论断: "致谢收束全场，礼貌结束不再引入新论点"
+本页讲什么: "全 deck 最后一页致谢页。以「Thanks for your attention!」为主标语，署名丁立与 CCC Lab，标注汇报日期 2024.5.16，礼貌收束整场汇报，承接上页问答后完成收尾。"
+关键文字: "[\"Thanks for your attention!\", 丁立, \"Li Ding @ CCC Lab\", \"2024.5.16\"]"
+视觉骨架: "[致谢主标语, 作者署名与日期条, 收尾配图]"
+资源ID列表: "[tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_26.asset.01]"
+适合复用场景: "[技术汇报致谢结束页, 学术答辩收尾致谢页, 架构类 deck 末页]"
+不适合复用场景: "[含论断的内容页, 数据结果页, 方法展开页]"
+上页角色: "content_candidate"
+下页角色: null
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "中央主体", "内容": "Thanks for your attention! 主标语"}
+  - {"位置": "下方署名条", "内容": "Li Ding @ CCC Lab · 2024.5.16"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 26: 致谢结束页
+
+**核心论断**: 致谢收束全场，礼貌结束不再引入新论点
+
+## 本页讲什么
+全 deck 最后一页致谢页。以「Thanks for your attention!」为主标语，署名丁立与 CCC Lab，标注汇报日期 2024.5.16，礼貌收束整场汇报，承接上页问答后完成收尾。
+
+## 关键文字片段
+- Thanks for your attention!
+- 丁立
+- Li Ding @ CCC Lab
+- 2024.5.16
+
+## 视觉骨架
+- 致谢主标语
+- 作者署名与日期条
+- 收尾配图
+
+## 可复用到
+- 技术汇报致谢结束页
+- 学术答辩收尾致谢页
+- 架构类 deck 末页
+
+## 不适合复用的场景
+- 含论断的内容页
+- 数据结果页
+- 方法展开页

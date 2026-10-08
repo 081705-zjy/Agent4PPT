@@ -1,0 +1,896 @@
+{
+  "batch_index": 9,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+      "目录名": "SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+      "标题": "SpeContext: 高效长上下文推理",
+      "总页数": 34,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_长上下文推理背景",
+        "section_03_相关工作",
+        "section_04_挑战与核心技术",
+        "section_05_实验结果",
+        "section_06_推理扩展与展望",
+        "section_07_总结页"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "长上下文",
+        "投机稀疏",
+        "KV Cache",
+        "稀疏注意力",
+        "检索头",
+        "推理加速",
+        "内存管理"
+      ],
+      "目标受众": "学术同行、系统方向研究者",
+      "报告类型": "paper_share",
+      "适用场景": "顶会/组会分享大模型长上下文推理加速工作",
+      "论述总结": "面向长上下文推理的显存与算力瓶颈,提出 SpeContext:用蒸馏小模型(DLM)作轻量检索头识别重要 KV,结合异步预取数据流与自适应内存管理实现投机式上下文稀疏,在云端多请求达 24.89x 吞吐提升、边缘端 10.06x 加速。",
+      "论述弧线": [
+        "背景",
+        "相关工作",
+        "洞察",
+        "方法",
+        "实验",
+        "扩展"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "SpeContext:高效长上下文推理(论文封面)",
+          "核心论断": "SpeContext 由 SJTU 等团队提出,面向高效长上下文推理",
+          "本页讲什么": "学术论文封面页:居中大字标题「SpeContext: Enabling Efficient Long-context Reasoning with...」,下方列出作者 Jiaming Xu、Jiayi Pan、Jiancai Ye、Yu Wang、Guohao Dai 等及所属机构上海交通大学、清华、SII、Infinigence-AI,并附通讯作者邮箱,用于建立论文的学术权威与身份归属。",
+          "关键文字": [
+            "SpeContext: Enabling Efficient Long-context Reasoning with",
+            "Jiaming Xu, Jiayi Pan, Jiancai Ye, Yu Wang, Guohao Dai",
+            "Shanghai Jiao Tong University, Tsinghua, SII, Infinigence-AI",
+            "jiamingxu@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "居中大字论文标题",
+            "作者姓名带机构上标",
+            "机构与邮箱脚注行"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Outline:六段主线目录",
+          "核心论断": "全文沿 Background 到 Extension 六段主线展开,技术含四项",
+          "本页讲什么": "目录页,以「Outline」为标题铺开六段主线:Background、Related Work、Challenges and Techniques(含 Key Insight、Lightweight Retrieval Head、Asynchronous Prefetch Dataflow、Adaptive Memory Management 四项技术子条目)、Experiment Results、Extension,当前 Background 高亮为黑色其余灰化,为后续章节定锚导航。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight",
+            "Lightweight Retrieval Head",
+            "Asynchronous Prefetch Dataflow",
+            "Adaptive Memory Management",
+            "Experiment Results",
+            "Extension"
+          ],
+          "视觉骨架": [
+            "居中蓝色 Outline 标题",
+            "六段目录纵向列表",
+            "当前章高亮其余灰化",
+            "缩进技术子条目 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "新兴LLM与应用:上下文与交互双增长",
+          "核心论断": "LLM上下文长度(10K→)与应用交互轮次(5→50)同步激增",
+          "本页讲什么": "左右两列并列:左列讲新兴LLM的上下文长度不断变长(Context Length Support: 10K→),右列讲新兴应用的交互轮次不断增多(Interaction rounds: 5 rounds→50)。共同立论——长上下文与多轮交互是大模型演进的两条主线,为后续KV Cache代价铺垫。底部标注H2EAL参考文献。",
+          "关键文字": [
+            "Emerging LLMs with increasing context length",
+            "Emerging applications with increasing interaction rounds",
+            "Context Length Support: 10K →",
+            "Interaction rounds: 5 rounds → 50"
+          ],
+          "视觉骨架": [
+            "左右2列并列panel",
+            "上标题+底部数据行",
+            "底部参考文献条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "追问:为何持续追求更长上下文",
+          "核心论断": "承接双增长趋势,反问为何要持续追求更长上下文",
+          "本页讲什么": "在上页两列趋势(此时被灰化为背景)之上,叠加一条醒目的红框问句『Why do we persistently pursue longer context?』。作用是承上启下——把前页的『上下文/交互在变长』现象转成一个动机性追问,引出下页对长上下文价值的解答。",
+          "关键文字": [
+            "Why do we persistently pursue longer context?",
+            "Emerging LLMs with increasing context length",
+            "Emerging applications with increasing interaction rounds"
+          ],
+          "视觉骨架": [
+            "灰化的双列背景",
+            "居中红框强调问句banner"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "长上下文的五层次价值",
+          "核心论断": "长上下文带来更多信息与更强能力,呈五层次递进",
+          "本页讲什么": "以『Long Context in Five Levels / Five Levels to AGI』为主题,三列并列展示长上下文的不同用法:数据库RAG(1K-10K→100K)、思维链CoT(深度x10)、多轮工具调用Prompt(100K→1M),每列下方对应更多知识/自我反思/工具使用及任务性能提升。右侧引Shannon信息论,并归纳『Longer Context means more information and greater capability』。",
+          "关键文字": [
+            "Long Context in Five Levels",
+            "Five Levels to AGI",
+            "Database RAG (1K-10K→100K)",
+            "Chain-of-thought (10x deeper)",
+            "Multi-turn Tool Prompt (100K→1M)",
+            "Longer Context means more information and greater capability"
+          ],
+          "视觉骨架": [
+            "3列并列panel",
+            "每列多层堆叠框",
+            "右侧Shannon公式+向下箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "KV Cache由来:注意力计算机制",
+          "核心论断": "KV Cache源自注意力中K、V的缓存复用",
+          "本页讲什么": "承接前文对长上下文价值的肯定,转入其代价。用一张注意力计算示意图拆解Transformer单层:QKV生成→QK^T得注意力权重→与V加权得输出O,经Attention与FFN。图中把K、V标红并标注为KV Cache,说明推理时缓存历史K/V以避免重算,这正是显存开销的来源。",
+          "关键文字": [
+            "KV Cache Dilemma",
+            "QKV Gen.",
+            "QK^T / Attn weight",
+            "K Cache / KV_heads",
+            "KV Cache"
+          ],
+          "视觉骨架": [
+            "注意力计算框图",
+            "QKV到O的流向",
+            "K/V标红标注块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "KV Cache显存爆炸的量化代价",
+          "核心论断": "KV Cache随长度线性膨胀,128K达36GB、256K达144GB",
+          "本页讲什么": "承上页机制,量化KV Cache的显存代价。左侧用K、V两块Len×D×Layers立方体示意,给出公式 KV Cache Memory Size = 2×Len×D×bsz×Layers;右侧表格在Qwen3-8B(bsz=64,D=4096,Layers=36)配置下,列出32K/128K/256K对应9GB/36GB/144GB的KV Cache显存,并标注端到端128K下占比高达70%。",
+          "关键文字": [
+            "KV Cache Memory Size = 2 × Len × D × bsz × Layers",
+            "Qwen3-8B, bsz=64, D=4096, Layers=36",
+            "Len 32K/128K/256K → 9GB/36GB/144GB",
+            "Up to 70% with 128K in end-to-end"
+          ],
+          "视觉骨架": [
+            "K/V立方体张量示意",
+            "显存公式",
+            "Len-显存对照表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "收束:如何压缩KV Cache",
+          "核心论断": "巨额KV Cache需通过稀疏选择加以压缩",
+          "本页讲什么": "章节收束页。在KV Cache机制/公式的背景元素之上,对比Full Attention与Selected KV Cache(稀疏选择),把前文的显存爆炸问题收敛为一句醒目红字追问『How to reduce the KV Cache』,为后续投机稀疏方法(SpeContext)埋下伏笔。",
+          "关键文字": [
+            "How to reduce the KV Cache",
+            "KV Cache Memory Size =",
+            "Full Attention",
+            "Selected KV Cache Select"
+          ],
+          "视觉骨架": [
+            "Full/Selected KV对比示意",
+            "居中红字大问句",
+            "公式残留背景"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "Outline:定位到 Related Work 章节",
+          "核心论断": "全篇分五章推进,当前进入 Related Work 相关工作",
+          "本页讲什么": "这是一张目录/导航页,列出全篇五大章节:Background、Related Work、Challenges and Techniques(含 Key Insight/Lightweight Retrieval Head/Asynchronous Prefetch Dataflow/Adaptive Memory Management 四个子点)、Experiment Results、Extension。本页高亮当前章节 Related Work,其余章节灰显,起承上启下的导航作用。",
+          "关键文字": [
+            "Outline",
+            "Background / Related Work / Challenges and Techniques",
+            "Key Insight, Lightweight Retrieval Head",
+            "Asynchronous Prefetch Dataflow",
+            "Adaptive Memory Management",
+            "Experiment Results / Extension"
+          ],
+          "视觉骨架": [
+            "居中大标题 Outline",
+            "章节纵向列表",
+            "当前章节高亮+其余灰显",
+            "子条目缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "稀疏 KV Cache 之永久驱逐路线",
+          "核心论断": "永久驱逐类方法以滑动窗口/Sink token 固定保留局部,丢弃远端信息",
+          "本页讲什么": "本页作为 Related Work 首个技术页,介绍稀疏 KV Cache 的第一条路线——永久驱逐(Permanent eviction)。用「What is the largest ocean ?」为例,左侧对比全量 KV 与被驱逐后的稀疏 KV;中间演示 Sliding window = 2 只保留最近 2 个 token,右侧演示 Sink token + Sliding window 额外保留起始 token。引用 Longformer[1],点明这类方法信息被永久丢弃的缺陷,为后续查询感知动态选择铺垫。",
+          "关键文字": [
+            "Related Works on Sparse KV Cache",
+            "Permanent eviction",
+            "Prompt: What is the largest ocean ?",
+            "Sliding window = 2",
+            "Sink token + Sliding window = 2",
+            "[1] Longformer: The long-document transformer, arXiv:2004.05150"
+          ],
+          "视觉骨架": [
+            "全量 vs 稀疏 KV 网格对比",
+            "两个带标题的示意方框",
+            "token 序列 + 虚线/彩色格子矩阵",
+            "底部文献引用条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "content_candidate",
+          "标题": "稀疏 KV Cache 之查询感知动态选择",
+          "核心论断": "Quest/ClusterKV 按查询动态选 KV,精度更高但引入检索开销",
+          "本页讲什么": "本页承接上页,展示稀疏 KV Cache 的第二条路线——查询感知的动态选择,不再永久丢弃而是每步按 Query 挑选相关 KV。左侧示意动态命中(√√)保留有用信息;三个方框依次展示 Quest(按 Page 分块、取 Max 代表、Select 选中)与 ClusterKV(语义 Cluster 分组后选择),右侧方框示意 Q 与选中块的匹配计算。引用 Quest[1] 与 ClusterKV[2],暴露其检索/选择开销与精度短板,为 SpeContext 的投机式稀疏做对照。",
+          "关键文字": [
+            "Related Works on Sparse KV Cache",
+            "Permanent eviction",
+            "Paging / Cluster",
+            "Max, Select",
+            "[1] Quest: Query-aware sparsity for efficient long-context llm inference, arXiv:2406.10774",
+            "[2] ClusterKV: Manipulating llm kv cache in semantic space, arXiv:2412.03213"
+          ],
+          "视觉骨架": [
+            "三个并列机制方框",
+            "KV 分块网格(粉/蓝/灰)",
+            "Paging 与 Cluster 分组示意",
+            "Max/Select 标注 + 匹配计算",
+            "底部双文献引用条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+          "section_role": "background"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "本节 Agenda:挑战与核心技术",
+          "核心论断": "本节聚焦三项核心技术:轻量检索、异步预取、自适应内存",
+          "本页讲什么": "这是全 deck 大纲页,高亮当前进入的「Challenges and Techniques」章节。该章展开四个子点:Key Insight、Lightweight Retrieval Head、Asynchronous Prefetch Dataflow、Adaptive Memory Management,其余章节(Backgrounds/Related Works/Experiment/Extension)灰显。用于向听众交代本节的技术路线结构。",
+          "关键文字": [
+            "Challenges and Techniques",
+            "Key Insight",
+            "Lightweight Retrieval Head",
+            "Asynchronous Prefetch Dataflow",
+            "Adaptive Memory Management"
+          ],
+          "视觉骨架": [
+            "章节大纲列表",
+            "当前章节高亮/其余灰显",
+            "多级 bullet 缩进"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "Insight 提问:检索算法的本质目标",
+          "核心论断": "检索算法的本质目标是对齐稀疏注意力与全注意力精度",
+          "本页讲什么": "本页以 Question-Answer 结构切入 Key Insight,抛出核心提问「What is the essential objective of retrieval algorithms?」。右侧概念示意用 Efficient Retrieve / Sparse Attention 对比 Original LLM Compute / Full Attention,点出 Objective: Align 模型精度。Answer 区留白,承接下一页给出信息论回答。",
+          "关键文字": [
+            "Question: What is the essential objective of retrieval algorithms?",
+            "Objective: Align Model Accuracy",
+            "Efficient Retrieve / Sparse Attention",
+            "Original LLM Compute / Full Attention"
+          ],
+          "视觉骨架": [
+            "Question/Answer 版式",
+            "右侧概念对比示意",
+            "关键词高亮标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "Insight 提问:为何检索需复杂预处理",
+          "核心论断": "现有检索算法依赖复杂耗时的预处理来降低计算开销",
+          "本页讲什么": "延续 Q&A 结构,提问「为何现有检索算法需要复杂耗时的 preprocessing?」并给出回答:预处理的首要目的是缓解解码期的计算开销。右侧用 Layers×K 张量示意 Len×D×bsz×Layers 规模,并列出 Paging(Quest, ICML 24)、Clustering(ClusterKV)等做 reduce 的代表方法,铺垫本工作免预处理的动机。",
+          "关键文字": [
+            "Question: Why do existing retrieval algorithms need complex and time-consuming preprocessing?",
+            "Answer: mitigate the computational overhead during decoding",
+            "Paging [Quest, ICML 24]",
+            "Clustering [ClusterKV]",
+            "Len × D × bsz × Layers"
+          ],
+          "视觉骨架": [
+            "Question/Answer 版式",
+            "KV 张量维度示意",
+            "reduce 方法标注块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "Insight 信息论:上下文与检索的高互信息",
+          "核心论断": "上下文与检索结果间存在高互信息 I(c,Rт)",
+          "本页讲什么": "从信息论视角论证 Key Insight。展示信息流 c→RM→P(Markov)与 Teacher Model c→Rт→Pт,指出上下文 c 与检索结果保持 High Mutual Information I(c,Rт)。通过 Distillation 最小化 D_KL(Pт‖Ps),使蒸馏模型获得 Similar Mutual Information I(c,Rs),I(c,Rт),并受 Data Processing Inequality 约束,为蒸馏小模型可作检索头提供理论支撑。",
+          "关键文字": [
+            "High Mutual Information I(c, Rт)",
+            "Information Flow c → RM → P (Markov)",
+            "Distillation: Minimize D_KL(Pт‖Ps)",
+            "Similar Mutual Information I(c, Rs), I(c, Rт)",
+            "Data Processing Inequality"
+          ],
+          "视觉骨架": [
+            "信息流箭头示意",
+            "Teacher/Distilled 双列对照",
+            "互信息公式标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "Insight 结论:蒸馏模型可作检索算法",
+          "核心论断": "蒸馏语言模型呈现相似信息聚焦,可直接充当检索算法",
+          "本页讲什么": "承接信息论推导给出 Key Insight 结论:Distilled LM 与 Original 在 token(What, largest, ocean, ?)上呈现相似的信息聚焦(similar information focus)。据此得出核心论断——We can leverage the DLM as the retrieval algorithm,把蒸馏小模型直接用作 KV 检索头,引出后续三项技术。",
+          "关键文字": [
+            "Distilled language model exhibits similar information focus",
+            "We can leverage the DLM as the retrieval algorithm",
+            "Key Insight",
+            "Original / Distilled LM"
+          ],
+          "视觉骨架": [
+            "Original vs Distilled 对照框",
+            "信息聚焦圈选示意",
+            "结论高亮红字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "Tech1 挑战:DLM 检索头架构",
+          "核心论断": "轻量检索头为完整 Transformer 解码层仅增约 10% 延迟",
+          "本页讲什么": "引入 Technique 1 轻量检索(Lightweight Retrieval),挑战是 DLM 检索本身耗时。展示 Distilled LM Architecture:Input_id→Embedding→Query/Key/Value→Attention Weights→Sample,逐层输出 KV Cache(Layer i)。指出该结构是一个完整 Transformer decoder layer + Embedding + Sampling,仅带来约 10% 延迟开销。",
+          "关键文字": [
+            "Challenge: Time-consuming DLM",
+            "Distilled LM Architecture",
+            "A full transformer decoder layer + Embedding + Sampling, ~10% latency overhead",
+            "Input_id → Embedding → Query/Key/Value → Attention Weights"
+          ],
+          "视觉骨架": [
+            "DLM 架构框图",
+            "逐层 KV Cache 示意",
+            "延迟开销红字标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "Tech1:剪枝去冗余仅取注意力结果",
+          "核心论断": "DLM 中大量运算冗余,只需注意力结果即可剪枝超 60% FLOPS",
+          "本页讲什么": "延续 Tech1 架构页,指出 DLM 架构中存在 Redundant Operation:检索只需 attention 结果(We only need the attention results),FFN、Sampling 等下游模块可剪除。据此对 Distilled LM Architecture 剪枝 >60% FLOPS,大幅降低检索头计算成本,回应上页 Time-consuming 挑战。",
+          "关键文字": [
+            "Challenge: Time-consuming DLM",
+            "Pruned >60% FLOPS",
+            "Redundant Operation",
+            "We only need the attention results",
+            "Distilled LM Architecture"
+          ],
+          "视觉骨架": [
+            "DLM 架构框图",
+            "冗余模块红字标注",
+            "剪枝比例高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "Tech1:Head-Level 与 Batch-Level 检索",
+          "核心论断": "按注意力权重累积在 Head 级与 Batch 级取 Top-K 稀疏检索",
+          "本页讲什么": "展开 Tech1 的检索粒度机制。上方示意各 Head(Head1…Headn)对注意力权重取 Max;下方两张对照图 Head-Level Retrieval 与 Batch-Level Retrieval,纵轴为注意力权重累积(0.0–1.0),按 K 值选出各 head/batch 的关键 KV。说明检索在 head 级与 batch 级两种粒度上按权重累积挑选 Top-K token。",
+          "关键文字": [
+            "Head-Level Retrieval",
+            "Batch-Level Retrieval",
+            "Attention weight accumulation",
+            "Head1 … Headn / Max",
+            "K="
+          ],
+          "视觉骨架": [
+            "多 head 权重条示意",
+            "Head/Batch 双柱状对照图",
+            "注意力累积纵轴刻度"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "Tech2 挑战:推理期内存传输瓶颈",
+          "核心论断": "稀疏 KV Cache 预取中内存传输是推理期主要瓶颈",
+          "本页讲什么": "引入 Technique 2 异步预取(Asynchronous Prefetch),挑战是 Heavy Data transfer。用 (b) Prefetch Sparse KV Cache 的时序示意展示 Attn / KV Prefetch / FFN 的串行排布,并配 KV Budget(32–1024)坐标,说明预取稀疏 KV 时内存传输成为推理期瓶颈(Memory transfer bottleneck during inference)。",
+          "关键文字": [
+            "Challenge: Heavy Data transfer",
+            "(b) Prefetch Sparse KV Cache",
+            "Memory transfer bottleneck during inference",
+            "Attn / KV Prefetch / FFN",
+            "KV Budget 32 64 128 256 512 1024"
+          ],
+          "视觉骨架": [
+            "预取时序条示意",
+            "KV Budget 坐标轴",
+            "瓶颈结论红字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "Tech2:相邻 token 上下文相似性预取",
+          "核心论断": "利用相邻 token 解码的上下文相似性实现异步稀疏预取",
+          "本页讲什么": "延续 Tech2,用四种预取方案时序对照(a)Prefetch Full KV Cache、(c)Prefetch Sparse KV Cache(如 InfiniGen)、(d)Prefetch Sparse V Cache(如 ShadowKV),展示各方案 Attn/FFN/Re./K Recons./V Fetch 的时间线排布差异。核心论断落在红字 Contextual Similarity in adjacent token decoding——借相邻 token 解码的上下文相似性把预取与计算异步重叠。",
+          "关键文字": [
+            "Contextual Similarity in adjacent token decoding",
+            "(a) Prefetch Full KV Cache",
+            "(c) Prefetch Sparse KV Cache (e.g., InfiniGen)",
+            "(d) Prefetch Sparse V Cache (e.g., ShadowKV)",
+            "Attn FFN Re. K Recons. V Fetch"
+          ],
+          "视觉骨架": [
+            "多方案时序条对照",
+            "阶段标签时间线",
+            "核心论断红字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "Tech3 挑战:序列微增引发性能骤降",
+          "核心论断": "序列长度微增(120K→128K)即引发解码速度显著退化",
+          "本页讲什么": "引入 Technique 3 自适应内存管理(Adaptive Memory Management),挑战是 Performance Degradation。左侧 Selected KV Cache 示意 Decided before(检索早已确定);右侧速度柱图对比 120K Len.(45.3 tokens/s)与 128K Len.,显示 Tiny length increase 就带来速度骤降,论证 Performance degradation with a tiny increase in sequence length。",
+          "关键文字": [
+            "Challenge: Performance Degradation",
+            "Speed (tokens/s) 45.3",
+            "120K Len. / 128K Len.",
+            "Tiny length increase",
+            "Performance degradation with a tiny increase in sequence length",
+            "Selected KV Cache / Decided before"
+          ],
+          "视觉骨架": [
+            "速度对比柱状图",
+            "Selected KV Cache 示意",
+            "退化结论红字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "Tech3:理论模型驱动的自适应内存",
+          "核心论断": "用理论内存模型预计算,在 GPU/HBM/CPU 间自适应调度 KV",
+          "本页讲什么": "展开 Tech3 自适应内存管理系统,由理论内存模型(Theoretical memory model)支撑,按 Decoding Steps(T₃、T₄…)Precompute by theoretical model 逐层规划。展示 GPU/HBM/CPU 三级存储中 KV Cache 随解码步 offload 的 Layer 1~L 分布变化(Layer 1~L-1、1~L-2 KV Cache),实现随序列增长的自适应 KV 内存调度。",
+          "关键文字": [
+            "Adaptive memory management system",
+            "Support Theoretical memory model",
+            "Precompute by theoretical model",
+            "GPU HBM CPU / offload",
+            "KV Cache Layer 1~L-1 / 1~L-2",
+            "Decoding Steps"
+          ],
+          "视觉骨架": [
+            "三级存储分层示意",
+            "解码步时间轴 T₃/T₄",
+            "逐层 KV offload 分布图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "Outline:定位到「实验结果」章节",
+          "核心论断": "全文六大板块中,进度推进到 Experiment Results 章",
+          "本页讲什么": "这是一张导航式 Outline 页,列出全文六大板块:Background、Related Work、Challenges and Techniques(含 Key Insight / Lightweight Retrieval Head / Asynchronous Prefetch Dataflow / Adaptive Memory Management 四个子点)、Experiment Results、Extension。其中「Experiment Results」用黑色高亮,其余为灰色,表示本页在提示听众已进入实验结果章节。",
+          "关键文字": [
+            "Background / Related Work / Challenges and Techniques",
+            "Key Insight、Lightweight Retrieval Head、Adaptive Memory Management",
+            "Experiment Results(高亮)",
+            "Extension"
+          ],
+          "视觉骨架": [
+            "单列纵向目录列表",
+            "当前章节黑色高亮其余灰化",
+            "两级缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "Experiment Setup:评测框架四要素",
+          "核心论断": "从硬件/模型/基线/数据集四维搭建覆盖云边的评测框架",
+          "本页讲什么": "本页交代整章实验的评测设置,分四组:硬件平台(边缘低端 GPU—Lenovo Legion Y7000P + RTX 4060 8GB + i7-13650HX;云端高端 GPU—NVIDIA A800-80GB 多请求);模型(Llama3.1-8B / DeepSeek-R1-Distill-Llama-8B / Qwen3-8B);LLM 引擎基线(全注意力 HuggingFace、FlashInfer;稀疏注意力 Quest、ClusterKV、ShadowKV);Benchmark(长输入 LongBench 含 2WikiMQA/TriviaQA/HotpotQA/Passage count,长输出 LongWriter)。为后续精度与加速评测立标尺。",
+          "关键文字": [
+            "边缘: Lenovo Legion Y7000P + RTX 4060(8GB) + i7-13650HX",
+            "云端: NVIDIA A800-80GB 多请求",
+            "模型: Llama3.1-8B / DeepSeek-R1-Distill / Qwen3-8B",
+            "基线: 全注意力 HuggingFace/FlashInfer;稀疏 Quest/ClusterKV/ShadowKV",
+            "长输入 LongBench;长输出 LongWriter"
+          ],
+          "视觉骨架": [
+            "四组分层 bullet 列表",
+            "硬件/模型/基线/数据集四小节标题"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "content_candidate",
+          "标题": "精度评测(长输入):KV 选择机制对比",
+          "核心论断": "本方法与 Quest 等采用不同 KV 选择,但保留同一份 KV 不掉点",
+          "本页讲什么": "本页承接评测框架,聚焦长输入精度(LongBench 数据集与指标)。用左右两组分层结构图对比 baseline(Quest/ClusterKV/ShadowKV)与 Ours:两者在 Layer1 QKV Gen、Retrieval、Attention、FFN 的逐层流程相似,差异在于「Different KV Selection」——但最终作用于「Same KV」,以此说明本方法的检索式稀疏选择不损失精度。页面同时预告下页的 Long Output(LongWriter,由 GPT-4o 评分)。",
+          "关键文字": [
+            "Long Input: LongBench datasets and metrics",
+            "Long Output: Longwriter dataset, scored by GPT-4o",
+            "Quest/ClusterKV/ShadowKV vs Ours",
+            "Different KV Selection / Same KV"
+          ],
+          "视觉骨架": [
+            "左右两列逐层流程框图",
+            "Layer1→Retrieval→Attention→FFN 纵向堆叠",
+            "Different/Same KV 红色对比标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 27,
+          "页面角色": "content_candidate",
+          "标题": "精度评测(长输出):完整保留新 KV",
+          "核心论断": "完整保留新生成 KV,使 LongWriter 长输出精度与全注意力相当",
+          "本页讲什么": "本页延续精度评测,转向长输出场景。用两组 token 块示意图(蓝色 Prompt + 黄色 New Token)对比 Quest/ClusterKV/ShadowKV 与本方法:上图为完整序列,下图用红色虚线框标出「Complete retention of new KV pairs(完整保留新 KV 对)」。结论落在右下角红字「Similar accuracy in longwriter」,即本方法在 LongWriter 长输出上精度与基线相近、不掉点。",
+          "关键文字": [
+            "Long Input: LongBench datasets and metrics",
+            "Prompt / New Token",
+            "Complete retention of new KV pairs",
+            "Similar accuracy in longwriter"
+          ],
+          "视觉骨架": [
+            "两行 token 方块序列图",
+            "蓝黄配色区分 Prompt 与 New Token",
+            "红色虚线框标注保留区",
+            "红字结论标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 28,
+          "页面角色": "content_candidate",
+          "标题": "加速评测:云端 24.89x、边缘 10.06x",
+          "核心论断": "云端多请求吞吐提升达 24.89x,边缘加速达 10.06x,并避免 OOM",
+          "本页讲什么": "本页是整章的核心卖点,展示加速评测(云端高端 GPU 多请求场景)。散点/柱图横轴为不同输入-输出长度配置([2k,16k]、[2k,32k]、[16k,2k]、[32k,2k]),标注基线在长序列下出现 OOM,而本方法可正常运行。右侧两行红字甩出核心数字:云端吞吐提升「Up to 24.89x」、边缘加速「Up to 10.06x」,论证稀疏方案在不掉点前提下显著更快、更省显存。",
+          "关键文字": [
+            "High-end GPU with multi-requests in cloud",
+            "Up to 24.89x throughput improvement in cloud",
+            "Up to 10.06x speedup in edge",
+            "OOM",
+            "[2k,16k] / [2k,32k] / [16k,2k] / [32k,2k]"
+          ],
+          "视觉骨架": [
+            "多长度配置的散点/柱状图",
+            "OOM 失败标注",
+            "两组红色大数字加速标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "section_role": "result"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "content_candidate",
+          "标题": "Outline:进入 Extension 展望章",
+          "核心论断": "讲解推进到 Extension 章,承接实验结果转向范式展望",
+          "本页讲什么": "全 deck 通用 Outline 导航页,列出 Background / Related Work / Challenges and Techniques(含 Key Insight、Lightweight Retrieval Head、Asynchronous Prefetch Dataflow、Adaptive Memory Management)/ Experiment Results / Extension 六大板块;其余条目置灰,仅 Extension 高亮为黑色,提示演讲已推进到最后的推理扩展与展望章。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Lightweight Retrieval Head",
+            "Experiment Results",
+            "Extension"
+          ],
+          "视觉骨架": [
+            "置灰目录列表",
+            "当前项高亮标黑",
+            "两级缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 30,
+          "页面角色": "content_candidate",
+          "标题": "Think Deep into:LLM 与 Diffusion 逐步生成",
+          "核心论断": "LLM 与 Diffusion 都以 Step by Step 方式逐步展开生成",
+          "本页讲什么": "类比页第一帧,左侧并列两个范式:Large Language Model 抛出提问「What is the biggest ocean?」,Diffusion Model 待生成,右侧红色「Step by Step」强调两者共同的逐步生成特性。为下一页揭示答案做铺垫,引出「投机式逐步推理」的类比动机。",
+          "关键文字": [
+            "Large Language Model: What is the biggest ocean?",
+            "Diffusion Model:",
+            "Step by Step"
+          ],
+          "视觉骨架": [
+            "上下双范式并列布局",
+            "红色 Step by Step 强调标注",
+            "留白待补的生成过程"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 31,
+          "页面角色": "content_candidate",
+          "标题": "Think Deep into:逐步生成揭示答案",
+          "核心论断": "LLM 逐步推出 Pacific Ocean,Diffusion 逐步画出绿鸟",
+          "本页讲什么": "承接上页类比的第二帧,同一模板补上生成结果:LLM 对「What is the biggest ocean?」逐步给出「The Pacific Ocean」,Diffusion Model 按「Draw a green bird.」逐步绘图,右侧「Step by Step」延续强调。用两个直观例子坐实「逐步展开=投机式推理」的类比,过渡到双系统认知。",
+          "关键文字": [
+            "What is the biggest ocean?",
+            "The Pacific Ocean",
+            "Diffusion Model: Draw a green bird.",
+            "Step by Step"
+          ],
+          "视觉骨架": [
+            "上下双范式并列布局",
+            "问答逐步展开",
+            "Step by Step 强调标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 32,
+          "页面角色": "content_candidate",
+          "标题": "人类双系统认知映射到 AI",
+          "核心论断": "人类 System1/System2 双系统可映射为 AI 小模型快推理/大模型慢推理",
+          "本页讲什么": "引 Kahneman《Thinking, Fast and Slow》,阐述人类智能含 System1(快速、自动、直觉)与 System2(缓慢、分析、需推理)两系统并协同;右侧对称映射到人工智能:System1 = Small Model 负责 Fast Inference,System2 = Large Model 负责 Slow Reasoning,由 System1 引导实现 Efficient AI。为下一页本组系列工作提供认知框架。",
+          "关键文字": [
+            "Human intelligence comprises two systems",
+            "System 1: fast, automatic, intuitive",
+            "System 2: slower, analytical, reasoning",
+            "Daniel Kahneman, Nobel Laureate",
+            "System1 Small Model / Fast Inference",
+            "System2 Large Model / Slow Reasoning → Efficient AI"
+          ],
+          "视觉骨架": [
+            "左右双栏 Human/AI 对照",
+            "两椭圆 System1/System2 节点",
+            "Cooperation/Guide 箭头关系"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 33,
+          "页面角色": "content_candidate",
+          "标题": "Our Series of Works:双系统映射本组工作",
+          "核心论断": "本组 LLM/多模态/VLA 系列工作沿 System1 投机引导 System2 慢推理范式展开",
+          "本页讲什么": "多板块总览页,以 System1/System2 双列为骨架,把本组系列工作纳入「投机式推理」范式:System1 侧 Small Model 做 Fast Speculation(大词表 ~30k),覆盖 Large Language Model[ISCA'25/ASPLOS'26]、Multimodal Model(Feature Caching)等;System2 侧 Large Model 做 Slow Reasoning,含 Vision-language-action[Under Review];由 System1 Speculation 引导 System2,消除跨步冗余(Redundant)。将 SpeContext 升华为贯穿 LLM/多模态/VLA 的系列范式。",
+          "关键文字": [
+            "System 1 / System 2",
+            "Small Model Fast Speculation",
+            "Large Language Model [ISCA'25/ASPLOS'26]",
+            "Multimodal Model / Feature Caching",
+            "Vision-language-action [Under Review]",
+            "System1 Speculation Guide System2"
+          ],
+          "视觉骨架": [
+            "System1/System2 双列骨架",
+            "多工作节点标注会议出处",
+            "Guide/Redundant 关系箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 34,
+          "页面角色": "ending_candidate",
+          "标题": "SpeContext 结尾页:论文标题+核心洞见回扣",
+          "核心论断": "蒸馏小模型(DLM)信息聚焦与原模型一致,可复用为检索算法",
+          "本页讲什么": "全文结尾页。上方居中大字给出完整论文标题 SpeContext: Enabling Efficient Long-context Reasoning with Speculative Context Sparsity in LLMs,并署名 Jiaming Xu, supervised by Prof. Guohao Dai。下方以「Key Insight」小标题回扣核心洞见:左侧 Original 与右侧 Distilled LM 对同一 query(What, largest, ocean, ?)呈现相似的信息聚焦,故绿框结论「Distilled language model exhibits similar information focus」,右侧红字点题「We can leverage the DLM as the retrieval algorithm」,呼应方法起点。",
+          "关键文字": [
+            "SpeContext: Enabling Efficient Long-context Reasoning with Speculative Context Sparsity in LLMs",
+            "Jiaming Xu, supervised by Prof. Guohao Dai",
+            "Key Insight",
+            "Distilled language model exhibits similar information focus",
+            "We can leverage the DLM as the retrieval algorithm"
+          ],
+          "视觉骨架": [
+            "居中大字论文标题+作者署名",
+            "Original vs Distilled LM 对比示意",
+            "绿框核心结论条",
+            "右侧红字点题句"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.07",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "background",
+          "标题": "长上下文推理背景",
+          "页码范围": [
+            3,
+            8
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "background",
+          "标题": "相关工作",
+          "页码范围": [
+            9,
+            11
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "method",
+          "标题": "挑战与核心技术",
+          "页码范围": [
+            12,
+            23
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "result",
+          "标题": "实验结果",
+          "页码范围": [
+            24,
+            28
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "discussion",
+          "标题": "推理扩展与展望",
+          "页码范围": [
+            29,
+            33
+          ]
+        },
+        {
+          "section_index": 7,
+          "section_role": "closing",
+          "标题": "总结页",
+          "页码范围": [
+            34,
+            34
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

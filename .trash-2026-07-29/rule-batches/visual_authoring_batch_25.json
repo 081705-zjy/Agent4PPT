@@ -1,0 +1,491 @@
+{
+  "batch_index": 25,
+  "rules": [
+    {
+      "id": "cover_layout_left_aligned_big_title_with_org_and_speaker",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·左对齐大标题+机构与讲者身份",
+      "description": "封面页采用极简白底+左对齐版式：主标题以两行大字置于页面左侧，顶部或左上标注机构名，讲者姓名与身份（职务/单位）以小字置于标题下方或页面角落，不含任何正文/bullet。",
+      "evidence_signals": [
+        "视觉骨架含'左对齐'/'两行大标题'/'居中大标题'",
+        "关键文字含机构名 (如 Infinigence AI) + 讲者名 + 身份",
+        "无正文段落/bullet 列表元素",
+        "视觉骨架含'极简白底'/'大量留白'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 1,
+          "评价": "典型左对齐两行大字标题'高效大模型推理／技术与应用'+ 顶部 Infinigence AI + 讲者身份小字"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场瞬间锁定 deck 主题与讲者身份, 大字标题承担识别焦点, 机构/讲者小字承担可信背书, 留白避免其他元素抢焦",
+      "fix_hint": "把主标题放大左对齐或居中, 机构名置顶, 讲者姓名+身份小字置底, 移除 bullet/正文块",
+      "exceptions": [
+        "空白模板/占位版式 (无实际身份)",
+        "品牌宣传型 deck (品牌 logo 让位于讲者)"
+      ]
+    },
+    {
+      "id": "chapter_divider_minimal_centered_big_title",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节封面·居中大标题极简留白版式",
+      "description": "章节过渡页采用极简版式：仅一句或两行居中大字主标题, 大面积留白, 可选少量配图/机构标识, 不含正文与 bullet, 用作 section 起始的视觉呼吸。",
+      "evidence_signals": [
+        "视觉骨架含'居中大标题'/'居中两行主标题'/'极简封面版式'",
+        "视觉骨架含'大面积留白'",
+        "关键文字仅 1-2 条主标题, 无正文条目"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 13,
+          "评价": "章节封面仅居中大标题'以弹性算力集群 驱动云侧智能升级'+ 配图, 无正文"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 27,
+          "评价": "极简留白封面, 仅'以有限算力架构 释放终端应用潜能'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 37,
+          "评价": "居中两行大字主标题, 大面积留白"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 44,
+          "原因": "整页留白无标题, 属过渡分隔页而非章节封面"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "hard",
+      "rationale": "章节封面通过极简留白与内容页形成视觉断句, 让听众在章节切换时获得注意力重置, 避免信息密度切换过硬",
+      "fix_hint": "把章节页只保留一句居中大标题+可选配图, 删除任何 bullet/正文/图表",
+      "exceptions": [
+        "纯过渡留白页 (仅作视觉呼吸, 无标题即可)",
+        "收尾愿景页 (承担强观点,可含数字对比)"
+      ]
+    },
+    {
+      "id": "content_dual_panel_left_right_contrast",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容布局·左右双 panel 对比",
+      "description": "当页论述涉及两方对立/对比 (端 vs 云、融合 vs 分离、算法 vs 系统) 时, 采用左右两大 panel 对置版式, 每 panel 顶部紫色主题条+下方灰色卡片+对向箭头, 保持视觉对称。",
+      "evidence_signals": [
+        "视觉骨架含'左右双 panel 对比'/'左右两列对比'/'左右双栏'",
+        "关键文字含两类对置关键词 (端/云, 融合/分离, 算法/系统)",
+        "视觉骨架含'紫色主题横条'/'灰色卡片'/'对向箭头'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 11,
+          "评价": "端侧低延迟 vs 云侧高吞吐左右双 panel"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 12,
+          "评价": "端云效率挑战左右对比+瓶颈灰底圆角卡片"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 34,
+          "评价": "SpecEE 算法/系统左右双栏对照"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 38,
+          "评价": "端设备/云平台紫色横条+灰色瓶颈卡片"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 41,
+          "评价": "端侧实时响应 vs 云侧弹性扩展协同"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.25,
+      "enforcement_level": "soft",
+      "rationale": "对置版式利用视觉对称让受众直接看到差异边界, 降低跨 panel 关联的认知开销",
+      "fix_hint": "两类对比对象各占一 panel, 顶部同色主题条统一, 关键差异用颜色/箭头对置强调",
+      "exceptions": [
+        "三方或以上对比 (需并列 3-4 列 panel)",
+        "单一主题深入 (不适用对比版式)"
+      ]
+    },
+    {
+      "id": "content_timeline_milestones_with_year_nodes",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容布局·时间线+里程碑年份节点",
+      "description": "当页涉及技术演进/历史阶段时, 采用横向时间线布局, 关键年份+里程碑节点+高亮框标注, 可用上下双行区分国内外或不同赛道。",
+      "evidence_signals": [
+        "视觉骨架含'时间线'/'时间轴'/'时间线三卡片'",
+        "关键文字含多个年份 (如 2017/2020/2022/2024, 或 2025.4.2/2025.4.15/2025.4.30)",
+        "视觉骨架含'紫色高亮里程碑框'/'年份标注块'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 2,
+          "评价": "1800→Future 四阶段工业革命时间轴"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 5,
+          "评价": "国内外双时间轴平行铺开生成模型里程碑"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 26,
+          "评价": "semi-PD 三卡片时间线 2025.4.2/4.10/4.30"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 30,
+          "评价": "上下双行技术时间线含 NeurIPS22/MLSys24 等"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 36,
+          "评价": "SpecEE 三卡片时间线+架构缩略图"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "时间线把'演进'这一抽象概念空间化, 让受众通过左→右扫视直接建立先后与加速感",
+      "fix_hint": "把演进内容改为水平轴, 关键年份做节点+短标签, 里程碑用统一颜色高亮框",
+      "exceptions": [
+        "非演进类内容 (对比/因果/流程不适用)",
+        "超过 10 个节点 (需分组或做双行)"
+      ]
+    },
+    {
+      "id": "content_quantified_number_highlight_in_claim",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容布局·关键量化数字大字突出",
+      "description": "当页核心论断涉及量化收益 (延时降低 %, 吞吐提升 x, 内存缩减 %) 时, 用超大数字/百分比作为视觉焦点, 配上下文小字说明。",
+      "evidence_signals": [
+        "视觉骨架含'突出数字'/'大字强调'/'倍数量级标注'/'差距标注'",
+        "关键文字含具体百分比 (70%, 78%, 25%+) 或倍数 (5.6×, 10x, 678x, 100x)",
+        "视觉骨架含'数字对比'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 7,
+          "评价": "678x 突出数字, 10x/60x/100x 量级标注"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 8,
+          "评价": "70%/百倍突出数字"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 24,
+          "评价": "78%/5.6× 差距标注左右延时曲线"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 40,
+          "评价": "70% 大字强调内存降低"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 43,
+          "评价": "1995/2025 超大字年份+10000 大号数字对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "量化数字是说服性最强的信号, 大字化把'多快/多省'从文字里拎出来, 让受众记住核心成果",
+      "fix_hint": "把 claim 中的关键百分比/倍数放大到主视觉尺寸, 单位小字置侧, 其他文字压缩",
+      "exceptions": [
+        "非结果页 (方法/背景页不必强调数字)",
+        "多数字并列 (需表格化而非单一大字)"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_or_claim_style",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·名词短句或论断式陈述, 不用动宾提示句",
+      "description": "slide.标题以名词短句 (如 'semi-PD 开源计划'), 或论断式陈述 ('SpecEE 结果:速度-精度帕累托前沿领先'), 或冒号分点式 ('挑战:云侧大模型推理') 为主, 不用'介绍 X'/'本节讲 X' 类动宾提示句。",
+      "evidence_signals": [
+        "标题不以'介绍'/'本节'/'我们将'开头",
+        "标题含冒号分主副 (X:Y) 或用'·'/顿号分隔的名词短句",
+        "标题为论断陈述式含结果动词 (如'提升'/'突破'/'领先'/'降至')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 2,
+          "评价": "'第四次工业革命:AI驱动生产力跃升' 冒号论断式"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 9,
+          "评价": "'大模型推理系统四形态吞吐总览' 名词短句"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 32,
+          "评价": "'SpecEE 核心思想:小 LLM 缩减搜索底库' 冒号+论断"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 35,
+          "评价": "'SpecEE 结果:速度-精度帕累托前沿领先' 结果论断式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "名词短句/论断式标题让听众一眼抓到本页立场, 动宾提示句只说'讲什么'不说'结论是什么', 会让 title 与 claim 语义空转",
+      "fix_hint": "把'介绍/讲/分析 X'改成'X:Y' 或 'X 与 Y' 名词短句, 有明确结果时把结论嵌入 title",
+      "exceptions": [
+        "纯章节封面 (可用'以 X 驱动/融合 Y'的动词式主张)"
+      ]
+    },
+    {
+      "id": "claim_must_be_judgment_sentence_not_topic_label",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断·必为可证判断句, 不作主题标签",
+      "description": "slide.核心论断必须写成含主谓结构的完整判断句 (X 是 Y / X 使 Y 提升 Z%), 不写成'关于 X'/'X 的介绍'类主题标签, 与 title 语义互补而非重复。",
+      "evidence_signals": [
+        "核心论断含谓语动词 (如'是'/'使'/'导致'/'带来'/'降低'/'实现')",
+        "核心论断具备可判真伪结构, 非名词化标签",
+        "核心论断与 title 分工:title 定位主题, claim 给出立场"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 6,
+          "评价": "'Scaling Law从预训练/后训练转向Test-Time推理规模扩展' 判断句"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 12,
+          "评价": "'端侧受访存/显存瓶颈制约,云侧受算力/KV cache瓶颈制约,各有效率短板' 完整判断"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 24,
+          "评价": "'semi-PD 使 P99 TTFT 降 78%、P99 ITL 缩短约 5.6 倍' 量化判断"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 33,
+          "评价": "'基于缩减底库动态调整级联计算,实现部分层早退' 主谓结构"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.93,
+      "enforcement_level": "hard",
+      "rationale": "claim 是本页要让听众记住的一句话, 判断句提供立场+可反驳空间, 主题标签则只做重复不推进论述",
+      "fix_hint": "把 claim 从'X 的介绍'改为'X 是/使/带来 Y', 尽量嵌入量化或结论方向",
+      "exceptions": [
+        "纯过渡/留白页 (无论述内容)"
+      ]
+    },
+    {
+      "id": "quantified_evidence_with_config_context",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键文字·量化结果必附实验/场景配置",
+      "description": "当关键文字给出量化收益 (延时降低 X%, 吞吐 Y tps) 时, 需并列配置上下文 (模型/精度/硬件/输入输出长度/请求速率), 不孤立列数字。",
+      "evidence_signals": [
+        "关键文字含数字+配置串 (如 'DeepSeek-V3, FP8, TP8, H200, 输入 2k/输出 256')",
+        "关键文字含请求速率/batch size 等实验参数",
+        "量化收益前后关联具体基线名 (如 vs SGLang, vs llama.cpp)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 23,
+          "评价": "吞吐提升 10% 配 DeepSeek-V3 FP8 TP8 H200 输入2k/输出256"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 24,
+          "评价": "78%/5.6× 配同一配置串"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 25,
+          "评价": "请求速率=4 req/s + H20 硬件配置"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 29,
+          "评价": "CPU 0.68s / GPU 0.15s 附 Llama2-7B 基线"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "hard",
+      "rationale": "没有配置上下文的量化数字无法复现也无法比较, 学术/产业听众会立刻质疑; 附配置串是可信度的最低门槛",
+      "fix_hint": "每条量化收益后补'模型/精度/硬件/输入输出长度'四要素, 或注明 vs 基线名",
+      "exceptions": [
+        "非实验页 (背景/愿景页可用无配置的宏观数字)"
+      ]
+    },
+    {
+      "id": "citation_with_venue_and_year_for_milestones",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键文字·里程碑技术需附会议/年份引用",
+      "description": "提及关键技术 (FlashAttention/AWQ/PowerInfer 等) 时, 用括号或后置注明来源会议+年份 (如 'NeurIPS 22'/'MLSys 24'/'SOSP 24'), 观点引用附出处 (如 'Ref: NVIDIA CEO Jensen Huang Keynote at CES 2025')。",
+      "evidence_signals": [
+        "关键文字含'(NeurIPS/MLSys/SOSP/EuroSys/PMLR/ICML/GitHub) + 两位年份'",
+        "关键文字含'Ref:'/'引用'/演讲/keynote 出处",
+        "观点/数据引用带来源出处 (QuestMobile/Nature/Tesla HW)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 6,
+          "评价": "Ref: NVIDIA CEO Jensen Huang Keynote at CES 2025"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 8,
+          "评价": "70% APP 数据附 QuestMobile 2025 出处"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 28,
+          "评价": "引用 Tesla HW3/Nature 2023/Jim Fan 佐证"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 30,
+          "评价": "FlashAttention(NeurIPS 22)/AWQ(MLSys 24)/PowerInfer(SOSP 24) 完整会议标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.12,
+      "enforcement_level": "soft",
+      "rationale": "学术报告的可信度依赖出处标注, 括号内会议+年份让同行能快速定位原文, 观点引用附来源避免'专家说'的空话",
+      "fix_hint": "每提及一项已有技术或论点, 在括号内补上'(会议名 年份)'或注明'Ref: <演讲/来源>'",
+      "exceptions": [
+        "讲者原创方法 (semi-PD/SpecEE 无需引用)"
+      ]
+    },
+    {
+      "id": "section_role_bridging_via_purpose_headline",
+      "category": "authoring",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节封面标题·用'以 X 驱动/融合/释放 Y'的目的式表达",
+      "description": "章节封面标题倾向使用'以 X 驱动/融合/释放 Y'类目的式表达, 把该章要用的技术/手段与要达成的目标绑定, 而不是仅名词式命名章节。",
+      "evidence_signals": [
+        "标题含'以 X'开头+动词 (驱动/释放/融合/破解)",
+        "标题两段式:方法在前, 目标在后, 无冒号只用空格分行",
+        "不含'第 N 章'/'章节 X'类编号提示"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 13,
+          "评价": "'以弹性算力集群 驱动云侧智能升级' 目的式"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 27,
+          "评价": "'以有限算力架构 释放终端应用潜能'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 37,
+          "评价": "'以大模型推理技术创新 融合人工智能产业创新'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 44,
+          "原因": "过渡留白页无标题"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "目的式表达在章节切换处就给出'为什么进入这章', 让受众带着期待往下听, 名词式命名只交代话题不交代动机",
+      "fix_hint": "把章节标题改成'以<本章方法> <动词> <本章目标>'两段式, 无编号无冒号",
+      "exceptions": [
+        "纯 TOC/目录 (需列表式命名)",
+        "过渡留白页 (无标题)"
+      ]
+    },
+    {
+      "id": "ending_uses_vision_synthesis_with_three_pillars",
+      "category": "authoring",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "收尾·愿景陈述+三支柱并列结构",
+      "description": "收尾页把前文技术升维为愿景陈述, 用'M x N'/'X 支柱'/'X+Y+Z'类结构把整份报告收束为 3 大主张, 每支柱配一个量化目标或具体指标。",
+      "evidence_signals": [
+        "关键文字含明确愿景句 ('推动 X 高质量可持续发展'/'普惠万千')",
+        "含 3 列并列 panel + 3 支柱标签",
+        "每支柱下含具体量化目标 (10000P/1000种组合/70%)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "slide_index": 45,
+          "评价": "M x N 大字标识 + 3 列 (算力规模/M×N 部署/端云一体) + 底部三支柱标签"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "三支柱结构在收官处给听众一个可记忆的'三合一'心智模型, 量化目标把愿景从口号变成路线图, 提升说服力",
+      "fix_hint": "把收尾改为一句愿景陈述+3 列并列的核心主张, 每列配 1 个量化目标或指标",
+      "exceptions": [
+        "情感收束型收尾 (仅一句普惠愿景+历史类比即可, 无需三列)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (共 45 slides), visual: 5 rules, authoring: 7 rules; 覆盖封面/章节封面/内容双 panel/时间线/量化数字/写作风格/引用/收尾结构",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 5,
+      "authoring": 7
+    }
+  }
+}

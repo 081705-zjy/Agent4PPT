@@ -1,0 +1,48 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_21"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.04"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 21
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "研究挑战：重要区间识别难点展开"
+核心论断: "稀疏注意力误判重要区间导致加速质量双损"
+本页讲什么: "延续第20页的挑战1，进一步用多张图示展开论证：动态与静态稀疏注意力在自回归视频生成中错判重要区间，既牺牲质量又难以获得预期加速，是识别机制本身的局限，强化本章第一个待解决问题。"
+关键文字: "[之前的动态或者静态稀疏注意力工作，无法有效识别注意力的重要区间]"
+视觉骨架: "[注意力分布对比图, 重要区间标注示意]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_21.asset.01, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_21.asset.02, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_21.asset.03, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_21.asset.04, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_21.asset.05]"
+适合复用场景: "[稀疏注意力局限论证页, 视频生成注意力分析页]"
+不适合复用场景: "[总结过渡页, benchmark数据表页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "研究挑战：重要区间识别难点展开"}
+  - {"位置": "下方主体", "内容": "注意力分布对比图与重要区间标注示意"}
+alternate_claims:
+  - "动态稀疏注意力在自回归视频生成中错判重要区间"
+  - "静态稀疏注意力难以获得预期加速效果"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 21: 研究挑战：重要区间识别难点展开
+
+**核心论断**: 稀疏注意力误判重要区间导致加速质量双损
+
+## 本页讲什么
+延续第20页的挑战1，进一步用多张图示展开论证：动态与静态稀疏注意力在自回归视频生成中错判重要区间，既牺牲质量又难以获得预期加速，是识别机制本身的局限，强化本章第一个待解决问题。
+
+## 关键文字片段
+- 之前的动态或者静态稀疏注意力工作，无法有效识别注意力的重要区间
+
+## 视觉骨架
+- 注意力分布对比图
+- 重要区间标注示意
+
+## 可复用到
+- 稀疏注意力局限论证页
+- 视频生成注意力分析页
+
+## 不适合复用的场景
+- 总结过渡页
+- benchmark数据表页

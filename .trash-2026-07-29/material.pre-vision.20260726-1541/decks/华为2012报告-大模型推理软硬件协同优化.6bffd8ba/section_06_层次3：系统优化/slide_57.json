@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_57",
+  "所属章节": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+  "所属deck": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+  "页序号": 57,
+  "源文件": "templates/课题组全局汇报/华为2012报告  大模型推理软硬件协同优化.pptx",
+  "页面角色": "content_candidate",
+  "标题": "FlashDecoding++ 论文引入",
+  "核心论断": "FlashDecoding++ 以异步与Flat GEMM优化加速GPU推理",
+  "本页讲什么": "引入算子优化方法的代表工作FlashDecoding++，展示论文标题与作者，说明其通过异步化、Flat GEMM优化与启发式方法加速GPU上大模型推理。",
+  "关键文字": [
+    "FlashDecoding++: Faster LLM Inference on GPUs",
+    "Asynchronization, Flat GEMM Optimization, and Heuristics"
+  ],
+  "视觉骨架": [
+    "论文标题卡",
+    "作者署名列表",
+    "论文首图缩略"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_57.asset.01"
+  ],
+  "适合复用场景": [
+    "算子优化代表论文引入页",
+    "系统优化方法的工作亮相页"
+  ],
+  "不适合复用场景": [
+    "方法细节推导页",
+    "多论文对比综述页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

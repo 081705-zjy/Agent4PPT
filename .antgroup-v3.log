@@ -1,0 +1,27 @@
+=== v17 preprocess build-all ===
+
+logic/ + rule/ are hand-curated + static, no rebuild.
+Building material/ via template_library...
+
+[brief] starting batch: 1 decks, concurrency=6, model=claude-opus-4-8
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 1/5: deck_brief
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 2/5: section_split
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 3/5: section_briefs (7 sections)
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.1 (1 slides) [vision]
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.2 (4 slides) [vision]
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.3 (4 slides) [vision]
+  [section_brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] attempt 1/3 CLI error: json decode: Expecting value: line 10 column 14 (char 360)
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.4 (5 slides) [vision]
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.5 (7 slides) [vision]
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.6 (8 slides) [vision]
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 4/5: slide_brief sec.7 (3 slides) [vision]
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 5/5: enhance (32 slides, pool=8)
+[brief/tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb] step 5/5: enhance ok=32/32
+[brief/OK] tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb: tree → /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks/蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb (7 sec, 32 slides)
+[brief/progress] 1/1 done (ok=1, failed=0)
+[brief] batch done in 1083.2s: ok=1 failed=0
+
+summary: ok=1 failed=0 elapsed=1083.2s
+  ✅ tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb
+
+✅ material/ done. Run 'status' to verify.

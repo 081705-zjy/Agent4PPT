@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_12",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 12,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "全注意力计算量大且高度冗余（二）",
+  "核心论断": "帧间高度相似使大部分注意力计算成为冗余",
+  "本页讲什么": "本页承接上页，进一步用图示论证全注意力的冗余性：视频相邻帧内容高度相似，注意力图在时序上重复度高，因此大量计算可被复用或跳过。为后续差分计算（只算变化部分）提供直接依据。",
+  "关键文字": [
+    "Large & Redundant Computation",
+    "帧间高度相似导致冗余"
+  ],
+  "视觉骨架": [
+    "帧间相似性对比图",
+    "注意力冗余示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_12.asset.01",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_12.asset.02",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_12.asset.03",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_12.asset.04"
+  ],
+  "适合复用场景": [
+    "视频帧间冗余分析页",
+    "注意力可复用性论证页"
+  ],
+  "不适合复用场景": [
+    "架构总览框图页",
+    "能效数字对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

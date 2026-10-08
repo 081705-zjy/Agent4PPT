@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_23",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 23,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "特征选择算法：跳过冗余 token 计算",
+  "核心论断": "低重要性 token 可永不计算以省算力",
+  "本页讲什么": "本页给出特征选择的落地效果：被判为不重要的 token「从不计算（never computed）」，即在推理中直接跳过，从而节省计算开销。这是前几页重要性度量的直接结论，也为下一页多级特征分类做过渡。",
+  "关键文字": [
+    "Feature Selection Algorithm",
+    "Tokens never computed"
+  ],
+  "视觉骨架": [
+    "token 跳过示意图",
+    "计算/跳过对比图",
+    "特征选择结果示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_23.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_23.asset.02",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_23.asset.03"
+  ],
+  "适合复用场景": [
+    "token 剪枝/跳过计算的效果说明",
+    "扩散模型加速的算力节省论证"
+  ],
+  "不适合复用场景": [
+    "章节目录页",
+    "纯概念定义 bullet 页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

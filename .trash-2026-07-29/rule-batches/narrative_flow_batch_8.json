@@ -1,0 +1,386 @@
+{
+  "batch_index": 8,
+  "rules": [
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with distinct cover and closing pages",
+      "title": "封面主标题需在结尾页回扣",
+      "description": "cover 页的完整主标题(题目)必须在 closing 页 verbatim 或高度 paraphrased 再次出现,形成首尾闭环;若结尾仅道谢或结论列表而无主题回扣,则丧失记忆锚点。",
+      "what_to_check": [
+        "取 sections_outline 中 section_role='opening' 的 first slide 的 标题 与 关键文字[0]",
+        "取 sections_outline 中 section_role='closing' 的 last slide 的 标题 与 关键文字",
+        "判断二者是否 verbatim 相同或含 ≥70% 关键词重合",
+        "命中条件:closing 页含 cover 主标题的核心 anchor 短语"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "封面 p1 与结尾 p24 均居中呈现完整题目 'SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture',verbatim 重复,首尾闭环"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾同名是最省成本的记忆锚——听众离场时脑中最后一帧文字应是研究主题本身,而非致谢或空白",
+      "fix_hint": "在 closing 页顶层文字块复用 cover 主标题(可缩写)+ 作者/导师署名一行",
+      "exceptions": [
+        "含明确 Q&A/联系方式页作为收束的 deck 可豁免(题目已在正文重复出现)"
+      ]
+    },
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "any deck with background/motivation section explicitly enumerating N challenges and a subsequent method section",
+      "title": "背景章列出的挑战需在方法章逐一回扣",
+      "description": "background/motivation 章枚举的 N 个 challenge(C1/C2/C3 或问题清单),必须在 method 章通过 overview slide 或分技术段落 verbatim/paraphrased 逐一回应;命中率 ≥80% 才算兑现承诺。",
+      "what_to_check": [
+        "在 section_role='background' 的 slides 中扫描 '挑战/challenge/C1-C2-C3/问题/bottleneck' 关键词,提取 challenge 清单",
+        "在 section_role='method' 首个 overview slide 或每个技术 slide 的 核心论断/关键文字 中匹配 challenge 名称或含义",
+        "命中率 = 命中 challenge 数 / 总 challenge 数,应 ≥0.8"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "method overview p13 明确列出 C1 DRAM 带宽欠利用→技术一映射、C2 通道负载不均→技术二映射、C3 掩码解析→技术三映射,3/3 全部回扣;后续 p14-19 每技术 problem+approach 双页复述"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景章提出挑战即向听众承诺'我会解决它们';method 章不逐一回应等于毁约,让 motivation 沦为无用铺陈",
+      "fix_hint": "method 章首页强制放 'challenge→technique' 映射表(C1→T1、C2→T2、C3→T3);每技术 slide 首句复述其对应 challenge",
+      "exceptions": [
+        "综述类 deck(挑战覆盖全领域,本工作仅解决子集)",
+        "多工作并列 deck(每工作覆盖部分挑战,整章合计 ≥80% 即可)"
+      ]
+    },
+    {
+      "id": "framework_overview_slide_maps_challenge_to_technique",
+      "category": "callback",
+      "applicable_when": "method section containing multiple parallel techniques (≥2)",
+      "title": "方法章需有 overview slide 显式给出挑战→技术映射",
+      "description": "当 method 章包含 2 个以上并列技术时,应在章首放一张 overview slide,同图内同时呈现 challenge 列(C1/C2/C3)与 technique 列并连线,给听众'全景地图'避免章内迷路。",
+      "what_to_check": [
+        "定位 section_role='method' 的第 1-2 张 content slide",
+        "检查其 视觉骨架 或 关键文字 是否同时含 '挑战/challenge/C1-C3' 与 '技术/technique/映射' 类词",
+        "命中条件:一张 slide 同时列出挑战集合与技术集合"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "method 章 p13 'NDP-GPU Collaboration System Overview' 单页内并列 C1/C2/C3 与对应三项技术方案,构成显式映射三行"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众听 3+ 项技术时会失去主线;overview 地图页把认知负荷从 O(N) 降到 O(1),后续每技术只需局部注意",
+      "fix_hint": "method 章插入一张 'system overview + challenge-technique 三行映射' 页,作为该章第 1 张 content slide",
+      "exceptions": [
+        "单一技术 deck(只有 1 项 method 无需 overview)"
+      ]
+    },
+    {
+      "id": "teaser_at_background_end",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with distinct background and method sections",
+      "title": "背景章末页需埋下方法揭示钩子",
+      "description": "background 章最后一张 slide 应显式点出'我们即将用 X 架构/方法解决',而不细讲实现,为下一章 method 揭示制造 build-up;裸切到 method overview 会失去悬念张力。",
+      "what_to_check": [
+        "取 section_role='background' 的 last slide",
+        "在其 核心论断/关键文字 中查找 '本工作/we propose/apply/引入/引出' 类前瞻词 + 方法名/架构名",
+        "命中条件:含'解法方向+架构关键词'但不含具体量化结果"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "background 章末 p11 明确写 'Apply the near-data-processing(NDP) architecture',同时展示 59%/81% GPU 利用率与权重量证据,埋下'NDP 是解药'的钩子过渡到 p12 method"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末不埋钩子会让 method 章开场像空降;点名'即将用 X'调动听众的方案预期,method 章的展开就是揭示",
+      "fix_hint": "在 background 末页底部加一行 'We propose X to address the above'(不给具体数字),或用箭头指向下一章章名",
+      "exceptions": [
+        "章间已有独立过渡/agenda slide 承接的 deck(agenda 已完成 build-up)"
+      ]
+    },
+    {
+      "id": "mini_agenda_at_chapter_start",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥20 pages with ≥3 content sections",
+      "title": "长 deck 每主要章节首页需显示 mini-agenda 导航",
+      "description": "对于 20+ 页且 ≥3 内容章的 deck,每个 method/result 章的首页应放 outline 导航条,高亮当前章、灰显其他章,让听众随时知道'我在第几章、还剩几章',避免长 deck 认知迷航。",
+      "what_to_check": [
+        "定位 section_role ∈ {method, result} 的每章首页(该 section 的第 1 张 slide)",
+        "检查其 视觉骨架 是否含 '大纲/outline/目录/章节列表' 类结构",
+        "关键文字应含当前章名 + 其他章名(灰显/高亮对照)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "method 章首页 p12 与 result 章首页 p20 均为 outline 导航页,高亮当前章、灰显已讲/未讲章节,长 24 页 deck 完整命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 听众每 10 页会失去结构感;mini-agenda 是低成本的定位锚,恢复'当前进度'认知",
+      "fix_hint": "每 method/result 章首页复用 cover-agenda 版式,只把当前章设为高亮色、其他章设为灰阶",
+      "exceptions": [
+        "≤15 页短 deck(章少无需重复导航)",
+        "单章 workshop 分享 deck"
+      ]
+    },
+    {
+      "id": "problem_approach_pair_per_technique",
+      "category": "chapter_transitions",
+      "applicable_when": "method section presenting multiple techniques where each addresses a specific sub-problem",
+      "title": "每项技术需 problem+approach 两页配对呈现",
+      "description": "method 章内每项独立技术,应固定'问题页(暴露痛点/证据)+ 方案页(before/after 对照)'两页配对结构;单页塞完既讲问题又讲方案会失去痛感对比。",
+      "what_to_check": [
+        "在 section_role='method' 中找 ≥2 项并列技术",
+        "对每项技术,检查其对应 slide 是否成对出现(第 N 页 问题 + 第 N+1 页 方案)",
+        "问题页 标题/关键文字 含 'existing/欠利用/imbalance/time-consuming' 等痛点词",
+        "方案页 标题/关键文字 含 'approach/strategy/mechanism' 等方案词 + 量化收益"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "3 项技术均严格 problem+approach 配对:p14 带宽欠利用 + p15 稀疏感知映射;p16 通道负载不均 + p17 启发式调度;p18 掩码解析耗时 + p19 请求-权重对解析,共 6 页整齐配对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "先讲痛点再讲方案是说服学核心节律;单页混讲让听众来不及'感到痛',方案的价值感就消失",
+      "fix_hint": "把每技术拆为两页,前页红字标注痛点数字/低效指标,后页用 before/after 双栏对照并标注收益倍数",
+      "exceptions": [
+        "极简技术 deck(每技术 ≤1 页时,可用左右分栏一页呈现问题+方案)"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any technical/research deck with a nameable main thesis or system name",
+      "title": "主 thesis/系统名需跨 ≥3 章节重复出现",
+      "description": "deck 的主 thesis(系统名 + 核心 idea,如 'SpAct-NDP + 稀疏激活')应在 cover、method、result、closing 至少 3 个不同 section 出现;仅在 cover 和末页出现意味着中段'主题失焦'。",
+      "what_to_check": [
+        "从 cover 主标题 提取 系统名(专有名词)与核心方法词",
+        "扫描 slides_in_order 每页的 标题/核心论断/关键文字",
+        "统计该 anchor 出现的 section_role 集合,应 ≥3 种"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "'SpAct-NDP' 出现在 opening p1、result p22/p23(加速与能效结论)、closing p24;'Sparse Activation' 覆盖 opening/background(p10/p11)/result/closing,4 种 section_role 全覆盖"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众平均只记住 ≤5 个词的主题;跨章不重复系统名 = 让听众每换一章重新猜'这是谁的方法'",
+      "fix_hint": "每章至少 1 张 slide 的标题或结论条中包含系统名(可用 '<系统名> 的 X' 句式)",
+      "exceptions": [
+        "综述性 deck(讨论他人工作时无本 deck 系统名可复现)"
+      ]
+    },
+    {
+      "id": "key_result_number_appears_at_cover_or_closing",
+      "category": "repetition_emphasis",
+      "applicable_when": "decks with quantitative headline result (speedup/accuracy/efficiency)",
+      "title": "核心加速/能效数字需在 cover 或 closing 显式亮出",
+      "description": "deck 论述总结包含具体量化收益(如 X× speedup)时,该数字应在 cover 或 closing 至少一处显式出现;仅埋在 result 章内让听众离场时记不住核心成绩。",
+      "what_to_check": [
+        "从 deck.论述总结 抽取量化结论(含 '×' '%' 或具体数字)",
+        "检查 section_role ∈ {opening, closing} 的所有 slide 的 关键文字/核心论断 是否含该数字或其等价表达",
+        "命中条件:cover 或 closing 至少一处出现"
+      ],
+      "hit_carriers": [],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "reason": "论述总结明确 2.17× 加速为核心成绩,但 cover p1 与 closing p24 均只有题目+作者,无量化数字亮出,数字仅在 p22/p23 出现"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.0,
+      "enforcement_level": "discard",
+      "rationale": "cover/closing 是听众注意力最集中的两个时刻;不亮数字等于放弃 sound-bite 传播",
+      "fix_hint": "在 cover 副标题或 closing 页添加 'Up to 2.17× speedup / 1.53× energy efficiency' 一行",
+      "exceptions": []
+    },
+    {
+      "id": "claim_evidence_one_chart_one_headline",
+      "category": "comparison_evidence",
+      "applicable_when": "result section with quantitative headline claims",
+      "title": "result 章每条 headline claim 需 1 张对应 evidence 图配对",
+      "description": "result 章每条 headline quantitative claim(如 '2.17× speedup')应恰好对应一张 evidence slide(含柱状图/表格 + 底部红框结论条);多 claim 挤一张或图无结论条都会稀释信服力。",
+      "what_to_check": [
+        "在 section_role='result' 中找 关键文字 含 'achieve/最高/×/%' 的结论型 slide",
+        "该 slide 视觉骨架 应同时含 'chart/柱状图/表格' 与 '底部结论条/红框'",
+        "每条独立 headline claim 应独占 1 张 slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "result 章 p22(加速 2.17×/1.92×)与 p23(能效 1.53×/1.45×)结构对称:各自一组分平台柱状图 + 底部红框结论条,1 页 1 claim 严格配对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "一张图+一条 claim 的强绑定让数字有可回溯的图证;混合则听众记不清'哪个数字来自哪张图'",
+      "fix_hint": "拆分多 claim 页为多页,每页顶部图 + 底部 'We achieve X × on Y' 红框结论条,结构复用",
+      "exceptions": [
+        "空间受限短 deck(可将同族指标合并在一张分栏图内)"
+      ]
+    },
+    {
+      "id": "before_after_visual_in_approach_slide",
+      "category": "comparison_evidence",
+      "applicable_when": "method section approach slides for each technique",
+      "title": "方案页需 before/after 双栏视觉对照",
+      "description": "每技术的 approach slide 应用 before/after 双栏图对照(左:原方案痛点视化,右:本方案改进视化),并在改进侧显式标注量化收益;仅文字描述方案会失去视觉对比冲击。",
+      "what_to_check": [
+        "在 section_role='method' 中找 标题/关键文字 含 'approach/strategy/mechanism' 的方案页",
+        "视觉骨架 应含 'before/after 双栏' 或 '对照' 类关键词",
+        "改进侧应含量化收益标注(百分比/倍数/'balanced/utilized' 等状态词)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "p15 稀疏感知映射方案页 before/after 对照 100%/33%/33% → 100% Utilized;p17/p19 同样采用两阶段/配对对照结构 + 3x/9x 收益标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "before/after 是最短路径证'方案确实改善了具体痛点';纯文字方案页要听众自己脑补对比,认知代价高",
+      "fix_hint": "把 approach 页版式固定为左右双栏,左复用问题页的痛点图并标红,右画改进后同结构图并标绿+收益数字",
+      "exceptions": [
+        "理论/公式类方案(无可对照的视觉指标时改用公式前后对照)"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appears_on_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a system name or method acronym in title",
+      "title": "系统名/方法缩写必须在封面首次出现",
+      "description": "deck 的主 anchor(系统名/方法缩写,如 SpAct-NDP)必须在 slide 1(cover)首次亮相,而不是隐藏到 method 章才揭晓;延迟命名让听众前 N 页无法建立'这个 deck 是关于谁'的锚。",
+      "what_to_check": [
+        "从 cover 主标题 抽取专有名词/缩写(如驼峰/连字符/大写词)",
+        "确认该 anchor 出现在 slide_index=1 的 关键文字[0] 或 标题 中",
+        "命中条件:anchor 首次出现页 = 1"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "'SpAct-NDP' 作为主 anchor 在 slide 1 封面标题即首次出现,先于任何背景/方法内容"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面是听众最专注的时刻;anchor 缺席会让 background 章的所有铺垫都没有归宿",
+      "fix_hint": "cover 主标题必须包含系统名/方法缩写(格式:'<系统名>: <一句话卖点>')",
+      "exceptions": [
+        "综述/教程 deck(无本工作系统名可命名)"
+      ]
+    },
+    {
+      "id": "agenda_chapter_verbatim_match",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an explicit agenda/outline page in opening",
+      "title": "agenda 列出的章节必须与实际章节一一对应",
+      "description": "opening 章的 agenda 页列出的章节名(或其子项),必须与 sections_outline 中的实际章节 verbatim 或高度 paraphrased 对应,且顺序一致;agenda 承诺 3 章却讲了 5 章 = 结构违约。",
+      "what_to_check": [
+        "在 section_role='opening' 中找 标题='Outline/目录/大纲' 的 slide",
+        "抽取其 关键文字 中的章节列表",
+        "与 sections_outline 的章节标题逐一匹配,顺序应一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "agenda p2 三段 Background/Techniques(4 子项)/Experiment Results 与实际 section 2/3/4 严格一致,method 4 子项在 p13-19 各自对应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是与听众签的合同;实际章节与承诺偏离 = 让听众怀疑其他 claim 的可信度",
+      "fix_hint": "对齐 agenda 页与实际 section 标题(可反向,先定 sections 再写 agenda,严禁'凑数子项')",
+      "exceptions": [
+        "无 agenda 页的短 deck(≤10 页可直接省 agenda)"
+      ]
+    },
+    {
+      "id": "result_chapter_setup_before_data",
+      "category": "structural_promise",
+      "applicable_when": "result section with quantitative benchmarks",
+      "title": "result 章需先给实验设置页再给数据页",
+      "description": "result 章应先出 1 张 experimental setup 页(工具/模型/baseline/dataset 清单),再出量化数据页;直接甩数字听众无法判断可比性与 baseline 强度。",
+      "what_to_check": [
+        "在 section_role='result' 中定位含 'baseline/dataset/tools/setup/评估设置' 关键词的 slide",
+        "该 slide 应出现在 result 章的量化数据 slide(含 speedup/energy 图)之前",
+        "命中条件:setup slide 存在且位置早于第 1 张 data slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "result 章顺序:p20 outline → p21 experiment setup(工具/模型/baseline/dataset 齐全)→ p22 加速数据 → p23 能效数据,setup 先于 data 严格满足"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "没有 setup 交代的数字是'裸数据';同行第一反应必是'跟谁比、在什么模型上',缺失即失去信任",
+      "fix_hint": "result 章首张 content slide 固定为 setup 页,分块列 tools/benchmarks/baselines/dataset 四项",
+      "exceptions": [
+        "非实验型 deck(纯理论/案例分享)"
+      ]
+    },
+    {
+      "id": "background_ratio_within_cover_to_method_reach",
+      "category": "pacing",
+      "applicable_when": "paper_share decks ≥15 pages",
+      "title": "cover→method 距离应 ≤50% 总页数",
+      "description": "论文分享 deck 的 background 章不应过长,cover(slide 1)到 method 章首个 content slide 的距离应 ≤50% 总页数;background 占比过大会挤压 method 与 result 的展开空间。",
+      "what_to_check": [
+        "取 sections_outline 中 section_role='method' 的 页码范围[0]",
+        "计算 (method_first_page - 1) / 总页数 应 ≤ 0.5",
+        "同时 background 章页数应在 3-9 页合理区间"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "evidence": "24 页 deck,method 章首页 p12,cover→method 距离 = 11/24 ≈ 46%,处于合理区间;background 9 页(p3-11)偏上但未超"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "背景过长听众会疲劳且期待落空;paper_share 的主戏是 method+result,应把叙事重量放后半段",
+      "fix_hint": "若 background 章 >30% 总页数,合并'技术版图'类科普页(如剪枝/量化四象限)为 1 张,把余量让给 method",
+      "exceptions": [
+        "教程/科普型 deck(background 本就是主体,可占 50%+)",
+        "综述 deck(领域扫描本就是核心)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(SpAct-NDP 24 页论文分享),抽出 14 条 rule 覆盖全部 8 category。该 deck 是结构极规范的 paper_share 样本:严格 cover→agenda→背景→方法→结果→closing 五段式,每章首页 mini-agenda 导航,每技术 problem+approach 配对,首尾主标题 verbatim 呼应。因样本量=1,discard 规则 key_result_number_appears_at_cover_or_closing 单 deck miss 但保留仅供后续 batch 验证;其余 hard/soft 规则均基于本 deck 完整命中。",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 1,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 2,
+      "pacing": 1
+    }
+  }
+}

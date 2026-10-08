@@ -1,0 +1,2751 @@
+{
+  "batch_index": 15,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者/日期/邮箱署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 圆圈编号+左侧蓝竖条导航"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "研究报告类 deck 的极简开场: 封面亮主题+讲者信息, 再一张编号目录搭全篇骨架",
+      "anti_patterns": [
+        "单页封面无目录 → 用 opening_blank_cover_skeleton_single_page",
+        "封面含论文标题多机构署名 → 用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "全 deck 的开场:slide 1 封面亮出「稀疏计算助力算力平台」主标题与报告人 DAI 实验室标识,slide 2 用 Contents 目录列出研究背景/思路/成果四大板块,为后文技术主线搭骨架。",
+          "section_topic_tags": [
+            "稀疏计算",
+            "算力平台",
+            "DAI实验室",
+            "汇报封面",
+            "四段式目录"
+          ],
+          "match_evidence": "2 页节奏: 封面主标题+讲者(cover_title_signature) → Contents 编号目录+蓝色导航条(toc_progress_highlight)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "稀疏计算助力人工智能算力平台构建",
+              "slide_claim": "以稀疏计算为主线构建人工智能算力平台(报告封面)",
+              "slide_key_text": [
+                "稀疏计算助力人工智能算力平台构建",
+                "报告人：戴国浩 副教授",
+                "Design Automation Innovation & Domain-specific Artificial Intelligence",
+                "2024.11.11",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中主标题",
+                "横向分隔细线",
+                "报告人/日期/邮箱信息块",
+                "DAI 实验室字母标识"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents 目录:四大研究板块",
+              "slide_claim": "全篇分研究背景/思路/成果等四大板块递进展开",
+              "slide_key_text": [
+                "Contents",
+                "1 研究背景",
+                "2 研究思路",
+                "3 研究成果",
+                "4 (第四板块)",
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外边框",
+                "Contents 居中标题",
+                "1-4 圆圈编号条目列表",
+                "左侧蓝色竖条导航",
+                "底部页脚署名栏"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "motivation_ai_wave_history_sparsity_through_line_to_gap_sanction",
+      "title": "动机·AI三次浪潮稀疏主线+算力鸿沟+制裁",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "AI 发展史",
+          "稀疏化",
+          "算力供需",
+          "制裁",
+          "国产替代"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入研究背景"
+        },
+        {
+          "archetype": "basic_structures_three_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "并列 MLP/CNN/Attention 三种基础网络结构"
+        },
+        {
+          "archetype": "structure_vs_weight_essence",
+          "count": 1,
+          "position": "middle",
+          "purpose": "揭示稀疏化本质=结构信息替代权重信息"
+        },
+        {
+          "archetype": "ai_history_timeline",
+          "count": 2,
+          "position": "middle",
+          "purpose": "分早期(1943-1998)与深度学习(2006-)两页时间线呈现 AI 三次浪潮"
+        },
+        {
+          "archetype": "cognitive_need_scholar_quotes",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引 Kahneman/Hinton 论证感知→认知需更大算力"
+        },
+        {
+          "archetype": "wave_sparsity_evidence",
+          "count": 2,
+          "position": "middle",
+          "purpose": "第二次浪潮剪枝(16→6权重)+第三次浪潮结构化知识(10GFLOPs→1加)分别一页"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "AI算力增速 vs 芯片算力供需缺口>6x"
+        },
+        {
+          "archetype": "external_constraint_timeline",
+          "count": 1,
+          "position": "end",
+          "purpose": "美国对华算力出口制裁条款时间线"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "basic_structures_three_panel",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "basic_structures_three_panel",
+          "to_archetype": "structure_vs_weight_essence",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "structure_vs_weight_essence",
+          "to_archetype": "ai_history_timeline",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "ai_history_timeline",
+          "to_archetype": "ai_history_timeline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "ai_history_timeline",
+          "to_archetype": "cognitive_need_scholar_quotes",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "cognitive_need_scholar_quotes",
+          "to_archetype": "wave_sparsity_evidence",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "wave_sparsity_evidence",
+          "to_archetype": "wave_sparsity_evidence",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "wave_sparsity_evidence",
+          "to_archetype": "quantitative_gap_chart",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "quantitative_gap_chart",
+          "to_archetype": "external_constraint_timeline",
+          "hook_type": "amplify_with_data"
+        }
+      ],
+      "applicable_summary": "以「稀疏化贯穿AI三次浪潮」为主线, 从基础网络结构→稀疏本质→三次浪潮时间线→浪潮内稀疏证据→算力鸿沟→美国制裁的漏斗式长背景章",
+      "anti_patterns": [
+        "纯数据缺口无历史铺陈 → 用 background_macro_gap_to_policy_to_method_bridge",
+        "无外部制裁维度 → 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.02",
+          "section_title": "研究背景与稀疏化浪潮",
+          "section_role": "motivation",
+          "section_narrative": "deck首个内容章。先以网络结构与权重/结构信息铺陈稀疏本质，再沿AI三次浪潮论证「每次浪潮都用稀疏化降算力」，末以算力供需矛盾+美国制裁，为后续软硬件协同与三条技术路线立motivation。",
+          "section_topic_tags": [
+            "AI三次浪潮",
+            "稀疏化本质",
+            "算力供需缺口",
+            "美国制裁",
+            "结构信息vs权重"
+          ],
+          "match_evidence": "10 页节奏: 目录→三基础结构→稀疏本质→两页历史时间线→认知需求→两页浪潮稀疏证据→供需缺口→制裁时间线",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录：研究背景/思路/成果",
+              "slide_claim": "全局汇报分研究背景、思路、成果等板块展开",
+              "slide_key_text": [
+                "研究背景",
+                "研究思路",
+                "研究成果"
+              ],
+              "slide_visual_skeleton": [
+                "4项编号目录列表",
+                "当前项高亮标注",
+                "左侧蓝色竖条装饰"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "basic_structures_three_panel",
+              "archetype": "basic_structures_three_panel",
+              "slide_title": "三种典型网络结构：MLP/CNN/Attention",
+              "slide_claim": "MLP、CNN、注意力网络是三类典型神经网络结构",
+              "slide_key_text": [
+                "多层感知机 MLP",
+                "卷积神经网络 CNN",
+                "注意力网络 Attention"
+              ],
+              "slide_visual_skeleton": [
+                "MLP全连接节点图",
+                "CNN特征图卷积示意",
+                "Attention星型连接图",
+                "3列并列panel"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "structure_vs_weight_essence",
+              "archetype": "structure_vs_weight_essence",
+              "slide_title": "权重信息与结构信息",
+              "slide_claim": "引入结构信息可替代冗余权重，即稀疏化本质",
+              "slide_key_text": [
+                "MLP可完全表示CNN，但会带来权重信息的增加",
+                "结构信息 / 权重信息 => 稀疏化本质"
+              ],
+              "slide_visual_skeleton": [
+                "CNN特征图示意",
+                "MLP≈CNN权重矩阵置零示意",
+                "红色标注冗余权重为0"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "ai_history_timeline",
+              "archetype": "ai_history_timeline",
+              "slide_title": "人工智能发展历程（1943–1998）",
+              "slide_claim": "AI早期历经两次浪潮与两轮低谷起伏发展",
+              "slide_key_text": [
+                "1943 首次用电路模拟神经元，人工神经网络起点",
+                "1956 Dartmouse会议提出'人工智能'",
+                "第一次浪潮(1956~1974)",
+                "第二次浪潮(1982~1995)",
+                "1995 SVM提出，NN研究再入低谷"
+              ],
+              "slide_visual_skeleton": [
+                "水平年代时间轴",
+                "起伏热度曲线",
+                "两次浪潮区间箭头标注"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "ai_history_timeline",
+              "archetype": "ai_history_timeline",
+              "slide_title": "人工智能发展历程（2006–2024）",
+              "slide_claim": "深度学习浪潮(2006–)推动模型与算力爆发式增长",
+              "slide_key_text": [
+                "2006 DBN提出，深层NN训练突破",
+                "2012 AlexNet基于ImageNet夺冠，CNN受关注",
+                "2017 Transformer提出",
+                "2020 OpenAI 1750亿参数GPT-3",
+                "2022 OpenAI发布ChatGPT",
+                "深度学习爆发浪潮(2006~至今)"
+              ],
+              "slide_visual_skeleton": [
+                "水平年代时间轴",
+                "持续上扬增长曲线",
+                "里程碑模型事件标注"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "cognitive_need_scholar_quotes",
+              "archetype": "cognitive_need_scholar_quotes",
+              "slide_title": "应用需求：感知智能→认知智能",
+              "slide_claim": "AI应用需求正从感知智能迈向认知智能(系统II)",
+              "slide_key_text": [
+                "Daniel Kahneman ——《Thinking, Fast and Slow》",
+                "Geoffrey Hinton ——《Deep Learning Course》",
+                "系统I / 系统II",
+                "计算量=? 计算方式=?"
+              ],
+              "slide_visual_skeleton": [
+                "左侧两位学者引言卡片",
+                "右侧系统I/II分层计算示意",
+                "红色未知量标注"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "wave_sparsity_evidence",
+              "archetype": "wave_sparsity_evidence",
+              "slide_title": "第二次浪潮中的稀疏（剪枝）",
+              "slide_claim": "第二次浪潮靠剪枝稀疏化降低算力需求",
+              "slide_key_text": [
+                "第二次浪潮：算力推动，稀疏化(剪枝)降低算力需求",
+                "稠密算法 → 稀疏算法",
+                "稠密：16个权重 → 稀疏：6个权重"
+              ],
+              "slide_visual_skeleton": [
+                "稠密vs稀疏全连接网络对比",
+                "权重矩阵置零示意",
+                "16→6权重红色标注"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "wave_sparsity_evidence",
+              "archetype": "wave_sparsity_evidence",
+              "slide_title": "第三次浪潮中的稀疏（结构化）",
+              "slide_claim": "第三次浪潮靠结构化知识稀疏化大幅降算力",
+              "slide_key_text": [
+                "第三次浪潮：数据推动，稀疏化/结构化降低算力需求",
+                "如何计算'1+1=2'?",
+                "As a token / As a number",
+                "Llama2-7b: 10 GFLOPs → 1 Add",
+                "LLM + Structured Knowledge"
+              ],
+              "slide_visual_skeleton": [
+                "1+1=2两种计算路径流程",
+                "token vs number对比",
+                "算力柱状对比图"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "quantitative_gap_chart",
+              "archetype": "quantitative_gap_chart",
+              "slide_title": "应用算力需求 vs 芯片算力",
+              "slide_claim": "应用算力增速远超芯片算力，缺口逾6倍",
+              "slide_key_text": [
+                "AI算法算力约2.5年翻倍",
+                "AI大模型算力约3-4月翻倍",
+                "缺口每年拉大约6倍",
+                "工艺制程进步放缓，芯片算力每年约翻倍",
+                "缺口>6x (6.86x/年)"
+              ],
+              "slide_visual_skeleton": [
+                "供需缺口>6x对比示意",
+                "AI算法能效散点(M40/P100/A100/H100)",
+                "大模型算力对数增长曲线(AlexNet→Llama3)"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "external_constraint_timeline",
+              "archetype": "external_constraint_timeline",
+              "slide_title": "研究背景：美国制裁限制中国高端算力",
+              "slide_claim": "美国制裁不断加码，限制中国获取高端AI算力",
+              "slide_key_text": [
+                "2022.10.07 算力密度x位宽≥4800、I/O≥600GB/s、14nm起",
+                "2023.10.17 引入TPP/PD阈值进一步收紧",
+                "2024.04.04 单芯片算力≥74TFLOPS即'先进计算'",
+                "2024.11.11 限制高性能AI GPU、7nm及以下",
+                "NVIDIA A100/H100等被禁"
+              ],
+              "slide_visual_skeleton": [
+                "左侧多时点制裁条款清单",
+                "右侧'制裁不断加码'案例说明",
+                "关键型号红色标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "framework_core_formula_with_factor_decomposition",
+      "title": "框架·核心公式统领+多因子拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          2,
+          4
+        ],
+        "must_have_in_chapter_purpose": [
+          "主线公式",
+          "研究思路",
+          "拆解",
+          "方法骨架"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入研究思路章"
+        },
+        {
+          "archetype": "master_formula_multi_task_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "抛出主线公式+并列多任务/模型示意, 底部稠密vs稀疏对比"
+        },
+        {
+          "archetype": "formula_factor_decomposition_flow",
+          "count": 1,
+          "position": "end",
+          "purpose": "把公式关键项拆成 N 个因子流程, 底部因子相乘公式条"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "master_formula_multi_task_panel",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "master_formula_multi_task_panel",
+          "to_archetype": "formula_factor_decomposition_flow",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "以一条核心公式(如AI应用算力=芯片算力×稀疏度)统领, 先给等式+多任务并列, 再把关键项拆成置零/筛选/编码等因子流程, 为后续多路成果搭方法骨架",
+      "anti_patterns": [
+        "以四象限二维框架统领 → 用 method_framework_dual_law_matrix_direction_platform"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.03",
+          "section_title": "研究思路：软硬件协同",
+          "section_role": "framework",
+          "section_narrative": "承接 agenda,抛出全篇主线公式「AI应用算力=芯片算力×稀疏度」,再把稀疏度拆成置零/筛选/编码三因子,为后续三路成果搭方法骨架。",
+          "section_topic_tags": [
+            "软硬件协同",
+            "AI应用算力公式",
+            "稀疏度拆解",
+            "置零筛选编码",
+            "方法骨架"
+          ],
+          "match_evidence": "3 页节奏: agenda 目录 → 主线公式+CNN/GNN/Transformer 三任务 → 稀疏度拆置零/筛选/编码三因子",
+          "slides": [
+            {
+              "slide_index": 13,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录页：进入「研究思路」章节",
+              "slide_claim": "全篇分背景/思路/成果/计划四部分，现进入第2部分研究思路",
+              "slide_key_text": [
+                "Contents",
+                "研究背景",
+                "研究思路",
+                "研究成果",
+                "研究计划"
+              ],
+              "slide_visual_skeleton": [
+                "四项带圈编号目录列表",
+                "当前项蓝色竖条高亮",
+                "非当前项灰显",
+                "外框蓝色矩形边"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "master_formula_multi_task_panel",
+              "archetype": "master_formula_multi_task_panel",
+              "slide_title": "研究思路：软硬件协同提升AI应用算力",
+              "slide_claim": "AI应用算力=芯片算力×稀疏度，稀疏计算剔除稠密无用功",
+              "slide_key_text": [
+                "AI应用算力 = 芯片算力 × 稀疏（稀疏度不改变模型功能）",
+                "计算机视觉 CNN",
+                "图神经网络 GNN",
+                "大模型 Transformer",
+                "计算功耗=计算量/功耗 /J",
+                "稠密计算（无用功）vs 稀疏计算"
+              ],
+              "slide_visual_skeleton": [
+                "顶部主线公式蓝条",
+                "3 列任务模型并列 panel",
+                "各列输入→模型→输出流程图",
+                "底部 vs. 稠密/稀疏对比"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "formula_factor_decomposition_flow",
+              "archetype": "formula_factor_decomposition_flow",
+              "slide_title": "稀疏度拆解：置零×筛选×编码三因子",
+              "slide_claim": "稀疏度由置零、筛选、编码三步因子相乘构成，展开方法骨架",
+              "slide_key_text": [
+                "稠密矩阵 → 稀疏矩阵 → 稀疏卷积核1..N → 稀疏输出结果",
+                "①元素置零变为0",
+                "②筛选出非零元处理",
+                "③稀疏结果编码输出",
+                "AI应用算力=稠密/稀疏后任务量①×筛选效率②×编码效率③×芯片算力"
+              ],
+              "slide_visual_skeleton": [
+                "顶部公式蓝条并高亮稀疏项",
+                "矩阵→矩阵演进示意",
+                "①②③三步大箭头流程",
+                "底部因子相乘公式条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_technique_route_full_arc_prior_challenge_paper_method_result",
+      "title": "方法·单条技术路线全弧线·已有→挑战→论文→方法→实现→成果",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          6,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "单条技术路线",
+          "已有工作",
+          "挑战",
+          "论文",
+          "方法",
+          "成果"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入研究成果章"
+        },
+        {
+          "archetype": "prior_works_taxonomy_table",
+          "count": 1,
+          "position": "start",
+          "purpose": "梳理已有工作(工业库/学术工作)清单或按模型分类"
+        },
+        {
+          "archetype": "challenge_key_contradiction_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "抛出核心矛盾/挑战 (精度vs算力 / 动态数据vs静态计算 / 利用率低)"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "本工作论文封面+作者+会议引入"
+        },
+        {
+          "archetype": "method_formula_overview_with_positioning",
+          "count": 1,
+          "position": "middle",
+          "purpose": "回到算力公式定位本方法在哪个因子/环节"
+        },
+        {
+          "archetype": "method_implementation_progressive_build",
+          "count": "2-5",
+          "position": "middle",
+          "purpose": "方法实现分多页(Pattern→硬件架构→动画帧)递进"
+        },
+        {
+          "archetype": "result_accuracy_or_utilization_table",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "精度/利用率/加速比等主性能表或数字"
+        },
+        {
+          "archetype": "result_efficiency_or_deployment_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "以能效/EDP/换道超车数字收束章节"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "prior_works_taxonomy_table",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "prior_works_taxonomy_table",
+          "to_archetype": "challenge_key_contradiction_statement",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "challenge_key_contradiction_statement",
+          "to_archetype": "paper_title_authors_only",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "paper_title_authors_only",
+          "to_archetype": "method_formula_overview_with_positioning",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "method_formula_overview_with_positioning",
+          "to_archetype": "method_implementation_progressive_build",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "method_implementation_progressive_build",
+          "to_archetype": "method_implementation_progressive_build",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "method_implementation_progressive_build",
+          "to_archetype": "result_accuracy_or_utilization_table",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "result_accuracy_or_utilization_table",
+          "to_archetype": "result_efficiency_or_deployment_headline",
+          "hook_type": "amplify_with_data"
+        }
+      ],
+      "applicable_summary": "单条技术路线(稀疏化/编译/架构)以「已有工作→关键矛盾→论文封面→算力公式定位→实现细节多页→精度/利用率结果→能效/换道超车头条」完整弧线论证, 是研究报告多路线并列时的标准范式",
+      "anti_patterns": [
+        "三层递进闭环 → 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "多观察-解法对 → 用 case_study_multi_observation_solution_pairs_with_end_to_end"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.04",
+          "section_title": "稀疏化路线：TB-STC",
+          "section_role": "method",
+          "section_narrative": "作为三条技术路线之首,以「背景→挑战→方法→实现→成果」完整弧线论证稀疏化层:先铺已有工作与精度/算力两难,再提硬件算法协同的可转置N:M方案(TB-STC),末以精度持平、能效提升收尾,为编译、架构两路线立范式。",
+          "section_topic_tags": [
+            "TB-STC",
+            "N:M稀疏",
+            "可转置稀疏Pattern",
+            "硬件算法协同",
+            "EDP能效"
+          ],
+          "match_evidence": "9 页节奏: agenda→已有工作表→精度算力两难→TB-STC 论文封面→算力公式方法总览→Pattern+压缩格式两页实现→精度对比表→EDP 能效收尾",
+          "slides": [
+            {
+              "slide_index": 16,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents:进入第三部分研究成果",
+              "slide_claim": "汇报进入第三板块——稀疏化路线的研究成果展开",
+              "slide_key_text": [
+                "Contents",
+                "研究背景 / 研究思路 / 研究成果 / 研究展望",
+                "当前高亮第 3 项"
+              ],
+              "slide_visual_skeleton": [
+                "Contents 蓝色标题框",
+                "四项圆圈编号导航",
+                "左侧蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "prior_works_taxonomy_table",
+              "archetype": "prior_works_taxonomy_table",
+              "slide_title": "稀疏化已有工作与稀疏度困境",
+              "slide_claim": "现有剪枝按模型分道,但更大模型如何选剪枝率仍是难题",
+              "slide_key_text": [
+                "模型 / 稀疏方法 / 加速效果 三列梳理",
+                "CNN/RNN、GNN/PointCloud、Transformer/LLM",
+                "更大模型如何选剪枝率?",
+                "Liang 等 Pruning and quantization survey"
+              ],
+              "slide_visual_skeleton": [
+                "三列已有工作梳理框图",
+                "右侧红色提问框+双向箭头",
+                "底部文献引用列表"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "challenge_key_contradiction_statement",
+              "archetype": "challenge_key_contradiction_statement",
+              "slide_title": "稀疏化的挑战:精度与算力两难",
+              "slide_claim": "非结构化保精度但难加速,结构化易加速却掉精度",
+              "slide_key_text": [
+                "精度高,计算量大",
+                "原始稠密算法",
+                "非结构化稀疏 vs 结构化稀疏",
+                "两者难以兼顾"
+              ],
+              "slide_visual_skeleton": [
+                "中间稠密网络向左右分叉示意",
+                "剪刀裁剪神经元连接图",
+                "带数值权重矩阵与向量方块"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "TB-STC 工作引入(HPCA'25)",
+              "slide_claim": "提出可转置分块 N:M 结构稀疏张量核 TB-STC",
+              "slide_key_text": [
+                "TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core",
+                "Jun Liu, Xuefei Ning, Guohao Dai 等",
+                "Shanghai Jiao Tong / Tsinghua / Infinigence-AI",
+                "Accepted by HPCA'25"
+              ],
+              "slide_visual_skeleton": [
+                "大号论文标题",
+                "作者与单位列表",
+                "会议接收标注"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "method_formula_overview_with_positioning",
+              "archetype": "method_formula_overview_with_positioning",
+              "slide_title": "TB-STC 核心方法:硬件算法协同稀疏",
+              "slide_claim": "块状可转置稀疏在提高稀疏度同时兼顾精度与硬件效率",
+              "slide_key_text": [
+                "提出考虑硬件特征的结构化稀疏方法",
+                "AI 芯片算力=有效算力/峰值算力×稀疏度×硬件利用率×时钟频率",
+                "①稀疏度 ②精度 ③硬件利用",
+                "块状可转置稀疏(Ours)",
+                "非结构化 vs 结构化 2:4 对比"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色算力分解公式条",
+                "左侧三步流程框",
+                "三张稀疏矩阵对比图+图例",
+                "红绿精度/加速渐变条"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "TB-STC:可转置 N:M 稀疏 Pattern",
+              "slide_claim": "设计可转置 N:M 稀疏 Pattern 支持前向反向复用",
+              "slide_key_text": [
+                "设计可转置的 N:M 稀疏 Pattern",
+                "稀疏矩阵的转置",
+                "针对现有方案痛点",
+                "Jun Liu*, Shulin Zeng*, TB-STC, HPCA 2025"
+              ],
+              "slide_visual_skeleton": [
+                "紫色核心方法标题框",
+                "灰色转换右向箭头",
+                "转置示意占位区",
+                "底部文献引用"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "TB-STC:自适应压缩/计算格式转换",
+              "slide_claim": "自适应编解码架构在压缩格式与计算格式间高效转换",
+              "slide_key_text": [
+                "提出自适应编解码的硬件架构",
+                "双维度压缩格式与计算格式之间转换",
+                "自适应压缩/计算格式转换"
+              ],
+              "slide_visual_skeleton": [
+                "紫色核心方法标题框",
+                "架构示意占位区",
+                "红字强调关键词"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "result_accuracy_or_utilization_table",
+              "archetype": "result_accuracy_or_utilization_table",
+              "slide_title": "TB-STC 稀疏化方案成果:精度领先",
+              "slide_claim": "TBS 精度比其他 N:M 稀疏高 0.85%~1.03%,仅逊 US 0.17%",
+              "slide_key_text": [
+                "TBS 比其他 N:M 稀疏方案高 0.85%~1.03%",
+                "仅比 US 低 0.17%",
+                "ResNet-50/ResNet-18/BERT",
+                "Dense/US/TS/RS-V/TBS(Ours)"
+              ],
+              "slide_visual_skeleton": [
+                "五方案×三模型准确率表",
+                "Dense 与 TBS 行红框强调",
+                "紫色研究成果标题框"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "result_efficiency_or_deployment_headline",
+              "archetype": "result_efficiency_or_deployment_headline",
+              "slide_title": "TB-STC 稀疏化方案效果:能效前沿",
+              "slide_claim": "TB-STC 在多主流模型上加速并推进能效-延迟前沿",
+              "slide_key_text": [
+                "在多种主流深度学习模型上实现加速",
+                "推动「能耗-延迟」前沿",
+                "EDP: Energy-Delay Product 能耗延迟积"
+              ],
+              "slide_visual_skeleton": [
+                "紫色方案效果标题框",
+                "EDP 指标说明文本",
+                "能效-延迟前沿示意占位"
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.05",
+          "section_title": "编译路线：DA-SpMM",
+          "section_role": "method",
+          "section_narrative": "deck三大技术路线的第二条，专攻「编译」层。以cuSPARSE静态映射失效为起点，提出DA-SpMM动态感知编译映射，用ML动态选择映射策略把稀疏度转成有效算力，佐证「算力=芯片×稀疏度」主线。",
+          "section_topic_tags": [
+            "DA-SpMM",
+            "SpMM编译映射",
+            "动态感知",
+            "LightGBM决策树",
+            "静态vs动态映射"
+          ],
+          "match_evidence": "7 页节奏: cuSPARSE已有工作→静态vs动态矛盾→DAC'22论文封面→算力公式方法总览→M/N/K循环拆解+映射设计两页→3.9x加速头条",
+          "slides": [
+            {
+              "slide_index": 25,
+              "role_in_pattern": "prior_works_taxonomy_table",
+              "archetype": "prior_works_taxonomy_table",
+              "slide_title": "编译已有工作：NVIDIA cuSPARSE 稀疏算子库",
+              "slide_claim": "cuSPARSE 采用静态映射，无法适配动态变化的稀疏模式",
+              "slide_key_text": [
+                "NVIDIA cuSPARSE 稀疏算子库",
+                "面向 SpMM 的稀疏计算",
+                "静态映射难适配动态稀疏"
+              ],
+              "slide_visual_skeleton": [
+                "cuSPARSE 库标注",
+                "红色指向箭头",
+                "底部两栏对照文字",
+                "参考文献脚注"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "challenge_key_contradiction_statement",
+              "archetype": "challenge_key_contradiction_statement",
+              "slide_title": "编译映射的挑战：动态稀疏数据 vs 静态计算流",
+              "slide_claim": "动态稀疏数据与静态计算流的矛盾致 cuSPARSE 性能损失达 85%",
+              "slide_key_text": [
+                "关键矛盾：动态稀疏数据 和 静态计算流",
+                "结构化 / 2:4 / 非结构稀疏",
+                "激活~0.001% 权重~0.01% 注意力~10%",
+                "cuSPARSE SpMM 性能损失约 85%"
+              ],
+              "slide_visual_skeleton": [
+                "红色关键矛盾标语框",
+                "左右双栏边框",
+                "稀疏矩阵掩码示意图",
+                "稀疏度对照表",
+                "cuSPARSE 性能损失气泡"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "参考工作：Heuristic Adaptability for SpMM on GPUs (DAC'22)",
+              "slide_claim": "本方法源自 DAC'22 最佳论文候选，奠定动态感知映射基础",
+              "slide_key_text": [
+                "Heuristic Adaptability to Input Dynamics for SpMM on GPUs",
+                "Guohao Dai 等，清华 & UC San Barbara",
+                "Published in DAC'22 Best Paper Candidate"
+              ],
+              "slide_visual_skeleton": [
+                "大号英文论文标题",
+                "红黑作者列表",
+                "会议出处标注"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "method_formula_overview_with_positioning",
+              "archetype": "method_formula_overview_with_positioning",
+              "slide_title": "DA-SpMM 动态感知编译映射：核心方法",
+              "slide_claim": "把稀疏度转为有效算力需协同理论算力、稀疏与有效利用率",
+              "slide_key_text": [
+                "AI 有效算力 = 理论算力 × 稀疏度 × 有效利用率",
+                "①理论算力 ②稀疏 ③有效利用",
+                "静态映射 → 动态映射",
+                "按输入动态匹配最优算子"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝底算力公式条",
+                "左侧三步纵向流程",
+                "静态映射 vs 动态映射对照图",
+                "红色强调标语"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "DA-SpMM 具体实现：M/N/K-Loop 稀疏计算分析",
+              "slide_claim": "SpMM 可拆为 M/N/K 三层循环，为分层映射设计提供切入点",
+              "slide_key_text": [
+                "分析稀疏计算的 M/N/K-Loop",
+                "for m/n/k 三层嵌套循环",
+                "Y[m,n] += A[m,k]*X[k,n]",
+                "k1(m),...,kK(m) 稀疏索引"
+              ],
+              "slide_visual_skeleton": [
+                "A/X/Y 矩阵示意图",
+                "三层循环伪代码块",
+                "M/N/K-Loop 标注箭头"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "DA-SpMM 具体实现：M/N/K 三层循环映射设计",
+              "slide_claim": "针对 M/N/K 每层循环分别设计专属映射优化策略",
+              "slide_key_text": [
+                "针对每一层循环设计映射策略",
+                "M-Loop 映射设计",
+                "N-Loop 映射设计",
+                "K-Loop 映射设计"
+              ],
+              "slide_visual_skeleton": [
+                "三列并列 panel",
+                "M/N/K-Loop 三列标题",
+                "各列映射策略配图"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "result_efficiency_or_deployment_headline",
+              "archetype": "result_efficiency_or_deployment_headline",
+              "slide_title": "DA-SpMM 方案效果：ML 动态选映射，平均加速 3.9 倍",
+              "slide_claim": "LightGBM 动态选映射使 SpMM 平均加速 3.9 倍",
+              "slide_key_text": [
+                "ML 动态选择映射，平均加速 3.9 倍",
+                "特征提取：N-dim/Non-zeros/Cache/Cores",
+                "ML-Model: LightGBM 决策树",
+                "特征提取开销约 25%，预测准确率>98%"
+              ],
+              "slide_visual_skeleton": [
+                "特征→提取→选择→执行 纵向流程",
+                "特征标签框组",
+                "LightGBM 决策树示意",
+                "加速比与准确率数字标注"
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.06",
+          "section_title": "架构路线：FlightLLM",
+          "section_role": "method",
+          "section_narrative": "作为软硬件协同三条技术路线的第三条(架构),先梳理NVIDIA/学术界已有工作与「细粒度导致利用率低」核心矛盾,再抛出FlightLLM可重构稀疏电路方案,论证硬件利用维度提升1.6×并在低端工艺FPGA上超越GPU。",
+          "section_topic_tags": [
+            "FlightLLM",
+            "可重构稀疏电路",
+            "FPGA大模型推理",
+            "N:M/Block稀疏",
+            "换道超车"
+          ],
+          "match_evidence": "12 页节奏: NVIDIA/学术界两页已有工作→利用率<20%矛盾→FlightLLM论文封面→算力公式定位→可重构稀疏电路多页动画帧实现→1.6x利用率→FPGA换道超车GPU",
+          "slides": [
+            {
+              "slide_index": 32,
+              "role_in_pattern": "prior_works_taxonomy_table",
+              "archetype": "prior_works_taxonomy_table",
+              "slide_title": "NVIDIA 2:4 Sparse Tensor Core 架构已有工作",
+              "slide_claim": "NVIDIA 2:4 稀疏张量核将8次乘法压缩为4次",
+              "slide_key_text": [
+                "NVIDIA 2:4 Sparse Tensor Core",
+                "8次乘法->4次乘法",
+                "Mishra et al. Accelerating sparse DNNs, 2021"
+              ],
+              "slide_visual_skeleton": [
+                "标题+论断文字",
+                "红色8->4压缩标注",
+                "参考文献引用"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "prior_works_taxonomy_table",
+              "archetype": "prior_works_taxonomy_table",
+              "slide_title": "学术界典型稀疏架构: DSTC与Sextans",
+              "slide_claim": "学术界DSTC与Sextans分别探索双边稀疏与流式稀疏加速",
+              "slide_key_text": [
+                "DSTC [1] 双边稀疏张量核",
+                "Sextans [2] 稀疏-稠密矩阵乘流式加速器",
+                "Wang et al. Dual-side sparse tensor core, ISCA 2021",
+                "Song et al. Sextans, FPGA 2021"
+              ],
+              "slide_visual_skeleton": [
+                "左右两列对比panel",
+                "DSTC/Sextans标题",
+                "参考文献引用"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "challenge_key_contradiction_statement",
+              "archetype": "challenge_key_contradiction_statement",
+              "slide_title": "架构关键矛盾: 细粒度计算导致利用率低",
+              "slide_claim": "稀疏细粒度计算行为致硬件计算利用率极低(<20%)",
+              "slide_key_text": [
+                "架构设计的挑战 关键矛盾",
+                "细粒度计算行为导致计算利用率低",
+                "稀疏矩阵不规则访存",
+                "MAC空闲 利用率44.4%",
+                "计算利用率<20%"
+              ],
+              "slide_visual_skeleton": [
+                "图→邻接矩阵示意",
+                "MAC阵列空闲示意",
+                "调度顺序对比",
+                "利用率阶梯曲线"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "FlightLLM 论文标题页 (FPGA'24)",
+              "slide_claim": "FlightLLM提出FPGA上完整映射流的高效大模型推理方案",
+              "slide_key_text": [
+                "FlightLLM: Efficient LLM Inference with a Complete Mapping Flow on FPGAs",
+                "Shulin Zeng, Guohao Dai 等",
+                "Tsinghua / SJTU / Infinigence-AI",
+                "Published by FPGA'24"
+              ],
+              "slide_visual_skeleton": [
+                "论文标题大字",
+                "作者与单位列表",
+                "会议出处"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "method_formula_overview_with_positioning",
+              "archetype": "method_formula_overview_with_positioning",
+              "slide_title": "FlightLLM整体优化框架与算力分解",
+              "slide_claim": "FlightLLM从电路结构维度提升硬件利用率放大AI算力",
+              "slide_key_text": [
+                "AI应用算力 = 稠密/稀疏任务量 × 硬件规模 × 硬件利用率 × 时钟频率",
+                "①算法层 ②硬件 ③电路结构",
+                "电路结构提升硬件利用率"
+              ],
+              "slide_visual_skeleton": [
+                "算力分解公式蓝条",
+                "三层优化流程箭头",
+                "稀疏矩阵示意"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "可重构稀疏电路具体实现: 稀疏矩阵计算",
+              "slide_claim": "可重构稀疏电路针对稀疏矩阵计算展开具体实现",
+              "slide_key_text": [
+                "FlightLLM: 可重构稀疏电路 具体实现",
+                "稀疏矩阵计算"
+              ],
+              "slide_visual_skeleton": [
+                "紫色标题标签",
+                "子模块名+构建帧留白"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "可重构稀疏电路: 稀疏矩阵与注意力计算",
+              "slide_claim": "可重构稀疏电路同时覆盖稀疏矩阵与稀疏注意力计算",
+              "slide_key_text": [
+                "可重构稀疏电路 具体实现",
+                "稀疏矩阵计算",
+                "稀疏注意力计算"
+              ],
+              "slide_visual_skeleton": [
+                "两个子模块并列标签",
+                "构建帧留白"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "可重构稀疏电路: Tensor Core空闲问题",
+              "slide_claim": "稀疏计算下Tensor Core存在空闲需针对性优化",
+              "slide_key_text": [
+                "可重构稀疏电路 具体实现",
+                "Tensor Core 空闲"
+              ],
+              "slide_visual_skeleton": [
+                "Tensor Core空闲标注",
+                "构建帧留白"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "可重构稀疏电路: Tensor Core空闲(续帧)",
+              "slide_claim": "稀疏计算下Tensor Core空闲是电路优化的直接对象",
+              "slide_key_text": [
+                "可重构稀疏电路 具体实现",
+                "Tensor Core 空闲"
+              ],
+              "slide_visual_skeleton": [
+                "Tensor Core空闲标注",
+                "构建帧留白"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "method_implementation_progressive_build",
+              "archetype": "method_implementation_progressive_build",
+              "slide_title": "可重构稀疏电路支持Block与N:M稀疏",
+              "slide_claim": "利用FPGA可编程DSP实现可配置Block稀疏与N:M稀疏",
+              "slide_key_text": [
+                "利用FPGA可编程特性结合DSP配置化",
+                "支持可配置Block稀疏与N:M稀疏",
+                "密集权重矩阵→稀疏权重矩阵",
+                "分块稀疏率 100%/50%/25%"
+              ],
+              "slide_visual_skeleton": [
+                "密集→稀疏矩阵转换箭头",
+                "分块稀疏率标注网格",
+                "N:M稀疏示意"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_pattern": "result_accuracy_or_utilization_table",
+              "archetype": "result_accuracy_or_utilization_table",
+              "slide_title": "可重构稀疏电路硬件利用率提升1.6×",
+              "slide_claim": "相比FPGA原有稀疏电路硬件利用维度提升1.6倍",
+              "slide_key_text": [
+                "相比FPGA原有稀疏电路提升1.6倍",
+                "空闲PE减少",
+                "PE利用提升1.6x"
+              ],
+              "slide_visual_skeleton": [
+                "空闲PE前后对比",
+                "1.6x提升标注"
+              ]
+            },
+            {
+              "slide_index": 43,
+              "role_in_pattern": "result_efficiency_or_deployment_headline",
+              "archetype": "result_efficiency_or_deployment_headline",
+              "slide_title": "成果应用: 低端工艺FPGA换道超车突破算力",
+              "slide_claim": "低端工艺FPGA经软硬件协同在算力能效上超越高端GPU",
+              "slide_key_text": [
+                "工艺换道超车，算力突破",
+                "端云一体/端侧大模型任务",
+                "Gap>11x→稀疏加速13x→1.2x (U280 vs V100)",
+                "Gap>21x→稀疏加速27x→1.3x (V80 vs 3090)",
+                "低端工艺硬件超越GPU"
+              ],
+              "slide_visual_skeleton": [
+                "左右双任务panel",
+                "差距/加速/超越三段柱图",
+                "FPGA vs GPU对比标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 3,
+      "confidence_estimate": "high"
+    },
+    {
+      "id": "discussion_trend_extension_of_master_formula_with_open_problems",
+      "title": "展望·主线公式扩展维度+开放问题",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          4,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "未来趋势",
+          "主线公式扩展",
+          "开放问题",
+          "分化"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入未来趋势章"
+        },
+        {
+          "archetype": "trend_bifurcation_curve",
+          "count": 1,
+          "position": "start",
+          "purpose": "以山峰/分叉曲线展示模型规模两极分化趋势"
+        },
+        {
+          "archetype": "trend_single_branch_zoomin",
+          "count": 1,
+          "position": "middle",
+          "purpose": "聚焦到分叉的某条路线(如超大规模)进一步铺陈"
+        },
+        {
+          "archetype": "formula_dimension_extension",
+          "count": 1,
+          "position": "middle",
+          "purpose": "把核心公式在原维度上再乘一个新因子(集群/端侧)"
+        },
+        {
+          "archetype": "open_problem_scale_timeline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以时间线/阶段轴呈现规模化的开放问题(如万卡纳管)"
+        },
+        {
+          "archetype": "open_problem_ecosystem_compare",
+          "count": 1,
+          "position": "end",
+          "purpose": "以中美/生态双层对比引出第二个开放问题"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "trend_bifurcation_curve",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "trend_bifurcation_curve",
+          "to_archetype": "trend_single_branch_zoomin",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "trend_single_branch_zoomin",
+          "to_archetype": "formula_dimension_extension",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "formula_dimension_extension",
+          "to_archetype": "open_problem_scale_timeline",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "open_problem_scale_timeline",
+          "to_archetype": "open_problem_ecosystem_compare",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "在方法成果后, 把主线算力公式再扩展一维(×集群/×端侧), 用趋势分化曲线+两个开放问题(万卡纳管+中美生态)承接技术成果收尾",
+      "anti_patterns": [
+        "未附带主线公式扩展 → 用 discussion_agenda_vision_topics_team_close"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.07",
+          "section_title": "未来趋势：大规模集群部署",
+          "section_role": "discussion",
+          "section_narrative": "承接三条技术路线成果,把「AI算力=芯片算力×稀疏度」主线延伸到集群维度,论证模型走向大小规模分化后大规模集群部署的必要性,并抛出万卡纳管与中美生态差异两大待解问题。",
+          "section_topic_tags": [
+            "大规模集群",
+            "模型规模分化",
+            "Scaling Law",
+            "万卡纳管",
+            "中美生态"
+          ],
+          "match_evidence": "6 页节奏: agenda→山峰分化曲线→超大规模路线聚焦→算力公式×集群→Scaling Law 万卡问题→中美生态双层对比",
+          "slides": [
+            {
+              "slide_index": 44,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录页：进入第 4 部分未来趋势",
+              "slide_claim": "前三部分收束,报告转入第 4 部分未来趋势",
+              "slide_key_text": [
+                "Contents",
+                "1 研究背景",
+                "2 研究思路",
+                "3 研究成果",
+                "4 未来趋势"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框四项目录列表",
+                "圆圈编号 1-4",
+                "第 4 项高亮标记"
+              ]
+            },
+            {
+              "slide_index": 45,
+              "role_in_pattern": "trend_bifurcation_curve",
+              "archetype": "trend_bifurcation_curve",
+              "slide_title": "未来趋势:模型走向小规模+大规模分化",
+              "slide_claim": "模型规模不再单调放大,将分化为小规模与大规模两条路线",
+              "slide_key_text": [
+                "未来趋势:小规模+大规模",
+                "ChatGPT-turbo 快速生成,支持大规模云服务",
+                "小型 / 中·大 / 超大型",
+                "100T GPT-5?",
+                "1.8T GPT-4",
+                "175B GPT-3"
+              ],
+              "slide_visual_skeleton": [
+                "模型参数量级山峰曲线",
+                "上下双分叉箭头",
+                "参数量级气泡标注",
+                "右侧双标注框"
+              ]
+            },
+            {
+              "slide_index": 46,
+              "role_in_pattern": "trend_single_branch_zoomin",
+              "archetype": "trend_single_branch_zoomin",
+              "slide_title": "未来趋势 1:大规模集群部署",
+              "slide_claim": "沿超大规模路线,模型参数持续攀升催生大规模集群部署需求",
+              "slide_key_text": [
+                "未来趋势 1:大规模集群部署",
+                "100T GPT-5?",
+                "1.8T GPT-4",
+                "175B GPT-3",
+                "超大型",
+                "ChatGPT-turbo 快速生成,支持大规模云服务"
+              ],
+              "slide_visual_skeleton": [
+                "超大规模上升曲线",
+                "参数量级气泡",
+                "右上结论留白框"
+              ]
+            },
+            {
+              "slide_index": 47,
+              "role_in_pattern": "formula_dimension_extension",
+              "archetype": "formula_dimension_extension",
+              "slide_title": "从小规模到大规模:算力公式扩展",
+              "slide_claim": "核心公式在芯片算力×稀疏度基础上再乘以集群维度",
+              "slide_key_text": [
+                "小规模到大规模",
+                "AI 应用算力 = 芯片算力 × 稀疏度",
+                "AI 应用算力 = 芯片算力 × 稀疏度 × 集群"
+              ],
+              "slide_visual_skeleton": [
+                "上下双层公式框",
+                "向下过渡箭头",
+                "集群因子红色高亮"
+              ]
+            },
+            {
+              "slide_index": 48,
+              "role_in_pattern": "open_problem_scale_timeline",
+              "archetype": "open_problem_scale_timeline",
+              "slide_title": "问题 1:Scaling Law 下的集群部署",
+              "slide_claim": "Scaling Law 推动算力从单卡飙升至十万卡,万卡集群纳管成待解难题",
+              "slide_key_text": [
+                "问题 1:Scaling Law 下集群部署",
+                "万卡集群纳管",
+                "CV 时代 / Transformer / ChatGPT / Gemini",
+                "1 卡 → 100 卡 → 1000 卡 → 1 万卡 → 10 万卡"
+              ],
+              "slide_visual_skeleton": [
+                "横向发展时间轴",
+                "阶段节点圆点",
+                "算力量级胶囊标注",
+                "四列 bullet 说明"
+              ]
+            },
+            {
+              "slide_index": 49,
+              "role_in_pattern": "open_problem_ecosystem_compare",
+              "archetype": "open_problem_ecosystem_compare",
+              "slide_title": "问题 2:中美 AI 生态差异",
+              "slide_claim": "中美算力与生态格局分化,催生 m*n 排列组合下的差异化机遇",
+              "slide_key_text": [
+                "问题 2:中美生态差异",
+                "美国算力层和模型层格局收敛,中间层完善应用工具需求",
+                "已有多家独角兽估值兑现,估值空间达数百亿",
+                "BIS 限制 AI 芯片受限",
+                "m*n 排列组合",
+                "10 万卡 / 13 万卡 / 12.5 万卡"
+              ],
+              "slide_visual_skeleton": [
+                "上下双层横条对比",
+                "芯片层/模型层图标",
+                "中央 m*n 蝶形连接示意",
+                "左右两侧差异标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "case_study_paradigm_bridge_company_profile_ecosystem_products_results",
+      "title": "案例·科研范式桥→公司画像→生态统一→产品栈→成果数据",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "产业化",
+          "公司",
+          "生态",
+          "产品栈",
+          "成果数据"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "research_to_industry_pipeline_chain",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 IDEA→PAPER→DEMO→PRODUCT→INDUSTRY 五阶段链条铺陈范式桥"
+        },
+        {
+          "archetype": "company_profile_key_numbers_grid",
+          "count": 1,
+          "position": "start",
+          "purpose": "以估值/算力/城市/团队等一组数字画像目标公司"
+        },
+        {
+          "archetype": "ecosystem_layered_unification_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "分层堆栈图论证碎片化生态如何被统一"
+        },
+        {
+          "archetype": "product_stack_matrix_full",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以完整产品矩阵对齐五层参考架构"
+        },
+        {
+          "archetype": "result_speedup_bar_chart",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "推理加速数字+柱状对比佐证落地能力"
+        },
+        {
+          "archetype": "result_utilization_bar_chart",
+          "count": 1,
+          "position": "end",
+          "purpose": "以异构混训/利用率数字补齐训练侧证据"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "research_to_industry_pipeline_chain",
+          "to_archetype": "company_profile_key_numbers_grid",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "company_profile_key_numbers_grid",
+          "to_archetype": "ecosystem_layered_unification_diagram",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "ecosystem_layered_unification_diagram",
+          "to_archetype": "product_stack_matrix_full",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "product_stack_matrix_full",
+          "to_archetype": "result_speedup_bar_chart",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "result_speedup_bar_chart",
+          "to_archetype": "result_utilization_bar_chart",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "研究成果→产业化案例章: 先立「科研→产业」范式链, 再落到具体公司画像+生态统一+产品栈, 末以推理加速与异构混训两组数据佐证落地实力",
+      "anti_patterns": [
+        "无公司画像纯研究方向 → 用 case_study_platform_overview_evidence_direction_pairs"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.08",
+          "section_title": "无问芯穹产业化",
+          "section_role": "case_study",
+          "section_narrative": "以「科研→产业」范式为引,把前文技术成果落到无问芯穹这一产业化实体:先立公司画像,再展生态统一与Infini产品栈,末以推理加速、异构混训两组数据佐证落地实力",
+          "section_topic_tags": [
+            "无问芯穹",
+            "产业化",
+            "生态统一",
+            "Infini产品栈",
+            "异构混训"
+          ],
+          "match_evidence": "6 页节奏: IDEA→INDUSTRY五阶段链→公司数字画像→生态统一分层图→Infini产品矩阵→FlashDecoding++推理加速→异构混训97.6%利用率",
+          "slides": [
+            {
+              "slide_index": 50,
+              "role_in_pattern": "research_to_industry_pipeline_chain",
+              "archetype": "research_to_industry_pipeline_chain",
+              "slide_title": "科研范式思考:从IDEA到INDUSTRY",
+              "slide_claim": "科研经学术界与工业界接力,由IDEA逐级演进至产业落地",
+              "slide_key_text": [
+                "IDEA→PAPER→DEMO→PRODUCT→INDUSTRY",
+                "学术界与工业界接力推进",
+                "从想法到产业落地"
+              ],
+              "slide_visual_skeleton": [
+                "五阶段横向流程链",
+                "学术界/工业界分区标注",
+                "各阶段要素卡片列",
+                "起止六边形节点"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_pattern": "company_profile_key_numbers_grid",
+              "archetype": "company_profile_key_numbers_grid",
+              "slide_title": "无问芯穹:推动AI基础设施产业化",
+              "slide_claim": "无问芯穹2023年5月成立,以多项规模数据展现产业化实力",
+              "slide_key_text": [
+                "2023年5月共同推动成立",
+                "推动人工智能基础设施产业化",
+                "3000W+估值",
+                "7000P+算力",
+                "100+ 211与985高校",
+                "20+海外名校"
+              ],
+              "slide_visual_skeleton": [
+                "公司数据卡片框",
+                "高亮数字三联块",
+                "多项统计数字网格"
+              ]
+            },
+            {
+              "slide_index": 52,
+              "role_in_pattern": "ecosystem_layered_unification_diagram",
+              "archetype": "ecosystem_layered_unification_diagram",
+              "slide_title": "国内外生态统一:分层软硬件栈",
+              "slide_claim": "无问芯穹在框架/接口/编译/硬件各层统一碎片化生态",
+              "slide_key_text": [
+                "接口层:开源接口(PyTorch等)",
+                "框架层:DeepSpeed等",
+                "编译层:算子/CUDA",
+                "硬件层:GPU",
+                "多方案碎片化统一为整合栈"
+              ],
+              "slide_visual_skeleton": [
+                "左右对照分层栈图",
+                "碎片化多方案列",
+                "中部统一收敛箭头",
+                "整合后单栈"
+              ]
+            },
+            {
+              "slide_index": 53,
+              "role_in_pattern": "product_stack_matrix_full",
+              "archetype": "product_stack_matrix_full",
+              "slide_title": "国内外生态统一:Infini技术栈",
+              "slide_claim": "Infini产品栈横跨云到硬件五层,统一异构AI基础设施",
+              "slide_key_text": [
+                "Infini-Cloud / Infini-MaaS",
+                "Infini-LLM 大模型",
+                "Infini-Interface 统一接口",
+                "Infini-ACC 加速",
+                "Infini-Training 训练",
+                "适配NVIDIA/GPGPU/MXMACA等异构算力"
+              ],
+              "slide_visual_skeleton": [
+                "左侧五层参考架构",
+                "右侧Infini产品矩阵",
+                "分层色块堆叠",
+                "顶部应用/接口/LLM/Agent标签"
+              ]
+            },
+            {
+              "slide_index": 54,
+              "role_in_pattern": "result_speedup_bar_chart",
+              "archetype": "result_speedup_bar_chart",
+              "slide_title": "部分成果:推理加速",
+              "slide_claim": "FlashDecoding++在A100提速37%、MI210提速300%+",
+              "slide_key_text": [
+                "自研FlashDecoding++",
+                "NVIDIA A100相较基线提升37%",
+                "AMD MI210提升300%+",
+                "指标:Token/s吞吐",
+                "测试基于Hugging face"
+              ],
+              "slide_visual_skeleton": [
+                "Token/s柱状对比图",
+                "37%/300%提升高亮标注",
+                "顶部结论横幅",
+                "arXiv扫码链接"
+              ]
+            },
+            {
+              "slide_index": 55,
+              "role_in_pattern": "result_utilization_bar_chart",
+              "archetype": "result_utilization_bar_chart",
+              "slide_title": "部分成果:异构混训",
+              "slide_claim": "异构千卡混训算力利用效率最高可达97.6%",
+              "slide_key_text": [
+                "无问芯穹异构千卡混合训练",
+                "相比同构训练",
+                "集群算力利用效率最高可达97.6%",
+                "NVIDIA+/AMD+多芯片组合对比"
+              ],
+              "slide_visual_skeleton": [
+                "97.6%结论高亮条",
+                "三组合柱状对比图",
+                "Baseline对照标注",
+                "arXiv扫码链接"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "discussion_endside_trend_dual_contradiction_scenarios_chips_gap",
+      "title": "展望·端侧化必然→双矛盾→三场景芯片→与需求差距",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "端侧大模型",
+          "算力矛盾",
+          "存储矛盾",
+          "场景芯片",
+          "需求差距"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "trend_shift_curve_to_endside",
+          "count": 1,
+          "position": "start",
+          "purpose": "以模型规模钟形分布论证从云端转向端侧小规模"
+        },
+        {
+          "archetype": "market_demand_bilateral_arrow_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "以出货量数据+双向箭头论证端侧市场空间"
+        },
+        {
+          "archetype": "endside_advantage_bullet_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "列举端侧部署核心优势(隐私/成本/即时)"
+        },
+        {
+          "archetype": "small_model_bubble_plus_chip_scatter",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以小模型知识密度气泡+异构芯片算力散点证明可行性"
+        },
+        {
+          "archetype": "compute_contradiction_bar",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以延时vs功耗柱状对比抛出算力矛盾"
+        },
+        {
+          "archetype": "memory_contradiction_dual_column",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以LPDDR/HBM双栏对比抛出容量vs带宽矛盾"
+        },
+        {
+          "archetype": "scenario_trilogy_overview",
+          "count": 1,
+          "position": "middle",
+          "purpose": "中心节点向三个典型场景发散总览"
+        },
+        {
+          "archetype": "scenario_chip_capability_table",
+          "count": 2,
+          "position": "middle",
+          "purpose": "分场景/分平台两页汇总芯片功耗-速度能力"
+        },
+        {
+          "archetype": "scenario_chip_example_dual_column",
+          "count": 3,
+          "position": "before_end",
+          "purpose": "分别对具身/自驾/AI PC 三场景各给一页具体芯片实例"
+        },
+        {
+          "archetype": "need_vs_reality_gap_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以泛端需求 vs 平台散点差距 1-2 数量级收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "trend_shift_curve_to_endside",
+          "to_archetype": "market_demand_bilateral_arrow_panel",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "market_demand_bilateral_arrow_panel",
+          "to_archetype": "endside_advantage_bullet_panel",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "endside_advantage_bullet_panel",
+          "to_archetype": "small_model_bubble_plus_chip_scatter",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "small_model_bubble_plus_chip_scatter",
+          "to_archetype": "compute_contradiction_bar",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "compute_contradiction_bar",
+          "to_archetype": "memory_contradiction_dual_column",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "memory_contradiction_dual_column",
+          "to_archetype": "scenario_trilogy_overview",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "scenario_trilogy_overview",
+          "to_archetype": "scenario_chip_capability_table",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "scenario_chip_capability_table",
+          "to_archetype": "scenario_chip_capability_table",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "scenario_chip_capability_table",
+          "to_archetype": "scenario_chip_example_dual_column",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "scenario_chip_example_dual_column",
+          "to_archetype": "scenario_chip_example_dual_column",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "scenario_chip_example_dual_column",
+          "to_archetype": "need_vs_reality_gap_summary",
+          "hook_type": "amplify_with_data"
+        }
+      ],
+      "applicable_summary": "端侧大模型趋势的深展望章: 从模型规模转向→市场空间→端侧优势→双矛盾(算力/存储)→三场景总览+两页芯片汇总→三场景各一页实例→与需求差距 1-2 数量级收尾, 反哺稀疏计算主线",
+      "anti_patterns": [
+        "无场景横向对比 → 用 method_landscape_then_need_vs_reality_gap_platforms"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.09",
+          "section_title": "端侧大模型趋势与挑战",
+          "section_role": "discussion",
+          "section_narrative": "成果后的趋势延伸章：先论证端侧化必然，再拆解算力(延时vs功耗)、存储(容量vs带宽)两大矛盾，以~150款芯片实测证明现有部署距应用需求仍差1-2数量级，反哺稀疏计算主线",
+          "section_topic_tags": [
+            "端侧大模型",
+            "算力矛盾",
+            "存储矛盾",
+            "三场景芯片对比",
+            "需求差距"
+          ],
+          "match_evidence": "13 页节奏: 规模转向→市场数据→端侧优势→小模型+异构芯片→算力矛盾→存储矛盾→三场景总览→分场景表→跨平台表→具身/自驾/AI PC三实例→需求差距结论",
+          "slides": [
+            {
+              "slide_index": 56,
+              "role_in_pattern": "trend_shift_curve_to_endside",
+              "archetype": "trend_shift_curve_to_endside",
+              "slide_title": "未来趋势2：小规模端侧部署",
+              "slide_claim": "大模型从云端大参数向端侧小参数部署迁移",
+              "slide_key_text": [
+                "未来趋势2：小规模端侧部署",
+                "ChatGPT-turbo快速生成，支持大规模云服务",
+                "175B GPT-3",
+                "65B LLaMa",
+                "3B / 20B 小参数端侧模型"
+              ],
+              "slide_visual_skeleton": [
+                "模型规模钟形分布曲线",
+                "参数量气泡标注(<1B~175B)",
+                "云/端趋势箭头",
+                "右侧空白结论框"
+              ]
+            },
+            {
+              "slide_index": 57,
+              "role_in_pattern": "market_demand_bilateral_arrow_panel",
+              "archetype": "market_demand_bilateral_arrow_panel",
+              "slide_title": "人工智能应用领域：从云端到终端",
+              "slide_claim": "AI手机/AIPC/智能网联车放量推动AI从云端走向终端",
+              "slide_key_text": [
+                "人工智能应用领域：从云端到终端",
+                "AI手机年出货5.52亿台",
+                "AIPC出货1.02亿",
+                "智能网联车5000万",
+                "AI手机、AIPC放量"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏蓝标题块",
+                "上下趋势箭头对比",
+                "中部AI芯片头像图标",
+                "底部三组市场数据"
+              ]
+            },
+            {
+              "slide_index": 58,
+              "role_in_pattern": "endside_advantage_bullet_panel",
+              "archetype": "endside_advantage_bullet_panel",
+              "slide_title": "智能终端的优势与应用场景",
+              "slide_claim": "端侧部署具即时个性化、安全隐私、低成本三大优势",
+              "slide_key_text": [
+                "智能终端的优势与应用场景",
+                "更即时、个性化的人机交互",
+                "无处不在的智能终端个人助理",
+                "安全和隐私：数据本地存储计算避免上云风险",
+                "低成本"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏蓝标题块",
+                "上下箭头信息流示意",
+                "中部AI头像图标",
+                "多个优势标签块"
+              ]
+            },
+            {
+              "slide_index": 59,
+              "role_in_pattern": "small_model_bubble_plus_chip_scatter",
+              "archetype": "small_model_bubble_plus_chip_scatter",
+              "slide_title": "智能终端发展：从百模大战到百端齐放",
+              "slide_claim": "小模型知识密度提升+异构算力使端侧生成式AI成为可能",
+              "slide_key_text": [
+                "从百模大战到百端齐放",
+                "大模型知识密度不断提升，小参数也有大智慧",
+                "多源异构计算使高性能端侧生成式AI成为可能",
+                "MiniCPM-4B / Qwen2.5-3B",
+                "通用处理器(x86/ARM/RISCV)+AI加速处理器(GPU/NPU/TPU)"
+              ],
+              "slide_visual_skeleton": [
+                "左侧模型知识密度气泡图",
+                "右侧多芯片算力散点标注",
+                "异构算力构成文字",
+                "双栏蓝标题块"
+              ]
+            },
+            {
+              "slide_index": 60,
+              "role_in_pattern": "compute_contradiction_bar",
+              "archetype": "compute_contradiction_bar",
+              "slide_title": "端侧大模型的算力矛盾：延时vs功耗",
+              "slide_claim": "从文生文到文生图/视频算力需求激增20倍加剧延时功耗矛盾",
+              "slide_key_text": [
+                "端侧大模型的算力矛盾：延时vs功耗",
+                "从文生文到文生图/视频的算力需求分析",
+                "文生文 30/100 vs 1/3",
+                "文生图 25/100 vs 0.5/2",
+                "延时与功耗矛盾"
+              ],
+              "slide_visual_skeleton": [
+                "左侧算力/能效对比柱图",
+                "文生文vs文生图分组",
+                "左下三段说明标签",
+                "右侧象限坐标示意"
+              ]
+            },
+            {
+              "slide_index": 61,
+              "role_in_pattern": "memory_contradiction_dual_column",
+              "archetype": "memory_contradiction_dual_column",
+              "slide_title": "端侧大模型的存储矛盾：容量vs带宽",
+              "slide_claim": "LPDDR大容量但低带宽、3D堆叠高带宽但小容量难两全",
+              "slide_key_text": [
+                "端侧大模型的存储矛盾：容量vs带宽",
+                "移动端LPDDR：32GB/die，带宽42GB/s",
+                "服务器3D堆叠HBM：819GB/s，4GB/die",
+                "Llama2-13B 50 tokens/s @ W8A16",
+                "权重需13GB，带宽需求>1000GB/s"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏虚线框对比",
+                "带宽标注红色虚线",
+                "容量/die数值标注",
+                "底部需求渐变标尺条"
+              ]
+            },
+            {
+              "slide_index": 62,
+              "role_in_pattern": "scenario_trilogy_overview",
+              "archetype": "scenario_trilogy_overview",
+              "slide_title": "大模型在端侧的三个典型场景",
+              "slide_claim": "具身智能、自动驾驶、AI PC是端侧大模型三大典型场景",
+              "slide_key_text": [
+                "大模型在端侧的三个典型场景",
+                "具身智能",
+                "自动驾驶",
+                "AI PC",
+                "路径规划"
+              ],
+              "slide_visual_skeleton": [
+                "中心节点发散箭头",
+                "三个场景标签块",
+                "底部椭圆汇聚节点"
+              ]
+            },
+            {
+              "slide_index": 63,
+              "role_in_pattern": "scenario_chip_capability_table",
+              "archetype": "scenario_chip_capability_table",
+              "slide_title": "端侧大模型推理芯片能力汇总",
+              "slide_claim": "三大场景芯片功耗跨度10~600W、速度10~400tokens/s差异悬殊",
+              "slide_key_text": [
+                "端侧大模型推理芯片能力汇总",
+                "功耗/W 与 速度/tokens/s @7B",
+                "具身智能：10~70W，~10~20 tokens/s",
+                "AIPC：15~35W",
+                "数据中心：600W，~100 / 400 tokens/s"
+              ],
+              "slide_visual_skeleton": [
+                "多行分组数据表格",
+                "场景分类左列",
+                "功耗/速度数值列",
+                "右侧芯片型号标注"
+              ]
+            },
+            {
+              "slide_index": 64,
+              "role_in_pattern": "scenario_chip_capability_table",
+              "archetype": "scenario_chip_capability_table",
+              "slide_title": "端侧大模型推理芯片能力汇总(总览)",
+              "slide_claim": "基于~150款芯片实测，CPU/GPU/FPGA/ASIC/PIM能效差异达数量级",
+              "slide_key_text": [
+                "端侧大模型推理芯片能力汇总",
+                "数据来源：~150款学术与产业界",
+                "模型大小：~7B batch size=1",
+                "CPU/GPU/FPGA/ASIC/PIM",
+                "速度<60~1800 tokens/s，能效0.1~10 tokens/J"
+              ],
+              "slide_visual_skeleton": [
+                "左侧留白象限框",
+                "右侧五类平台数据表",
+                "样本量与配置说明框",
+                "速度/能效数值列"
+              ]
+            },
+            {
+              "slide_index": 65,
+              "role_in_pattern": "scenario_chip_example_dual_column",
+              "archetype": "scenario_chip_example_dual_column",
+              "slide_title": "端侧推理芯片举例(具身智能)",
+              "slide_claim": "现有具身智能芯片30~70W下速度仅10~40tokens/s能效<1",
+              "slide_key_text": [
+                "端侧大模型推理芯片举例（具身智能）",
+                "现有具身智能推理芯片",
+                "功耗：30-70W",
+                "速度：10-40 tokens/s @ 7B",
+                "能效：<1 tokens/J"
+              ],
+              "slide_visual_skeleton": [
+                "左侧芯片实物图",
+                "右栏指标文字块",
+                "双栏蓝框布局",
+                "红圈标注"
+              ]
+            },
+            {
+              "slide_index": 66,
+              "role_in_pattern": "scenario_chip_example_dual_column",
+              "archetype": "scenario_chip_example_dual_column",
+              "slide_title": "端侧推理芯片举例(自动驾驶)",
+              "slide_claim": "现有自动驾驶芯片25~60W下速度10~30tokens/s能效<0.5",
+              "slide_key_text": [
+                "端侧大模型推理芯片举例（自动驾驶）",
+                "现有自动驾驶推理芯片",
+                "功耗：25-60W",
+                "速度：10-30 tokens/s @ 7B",
+                "能效：<0.5 tokens/J"
+              ],
+              "slide_visual_skeleton": [
+                "左侧芯片实物图",
+                "右栏指标文字块",
+                "双栏蓝框布局",
+                "红圈标注"
+              ]
+            },
+            {
+              "slide_index": 67,
+              "role_in_pattern": "scenario_chip_example_dual_column",
+              "archetype": "scenario_chip_example_dual_column",
+              "slide_title": "端侧推理芯片举例(AI PC)",
+              "slide_claim": "现有AI PC芯片15~35W下速度10~20tokens/s能效仅1~2",
+              "slide_key_text": [
+                "端侧大模型推理芯片举例（AI PC）",
+                "现有AI PC推理芯片",
+                "功耗：15-35W",
+                "速度：10-20 tokens/s @ 7B",
+                "能效：1~2 tokens/J"
+              ],
+              "slide_visual_skeleton": [
+                "左侧芯片实物图",
+                "右栏指标文字块",
+                "双栏蓝框布局",
+                "红圈标注"
+              ]
+            },
+            {
+              "slide_index": 68,
+              "role_in_pattern": "need_vs_reality_gap_summary",
+              "archetype": "need_vs_reality_gap_summary",
+              "slide_title": "端侧大模型部署仍难满足应用需求",
+              "slide_claim": "泛端侧应用需100~1000tokens/s、<20W、>20tokens/J现距1~2数量级",
+              "slide_key_text": [
+                "端侧大模型部署仍难以满足应用需求",
+                "泛端侧应用需求",
+                "100-1000 tokens/s",
+                "<20 W，>20 tokens/J",
+                "速度&能效相差1~2个数量级"
+              ],
+              "slide_visual_skeleton": [
+                "中部需求指标蓝框",
+                "左侧红色需求箭头",
+                "右侧CPU/GPU/FPGA/ASIC气泡群",
+                "差距提升箭头"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "case_study_capability_stack_codesign_efficiency_roadmap_vision",
+      "title": "案例·端侧能力栈→软硬协同加速→能效路线→泛端愿景",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "端侧落地",
+          "能力栈",
+          "软硬协同",
+          "能效路线",
+          "部署愿景"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "capability_stack_layered_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "自上而下 N 层能力栈总览端侧技术全貌"
+        },
+        {
+          "archetype": "codesign_multiplicative_acceleration_flow",
+          "count": 1,
+          "position": "middle",
+          "purpose": "四层软硬协同优化叠加加速方案+倍数标注"
+        },
+        {
+          "archetype": "efficiency_evolution_matrix",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效里程碑轴+模型/框架/硬件/IP 多行网格展示逐代提升"
+        },
+        {
+          "archetype": "deployment_target_dual_tier_card",
+          "count": 1,
+          "position": "end",
+          "purpose": "以目标指标框+基础/复杂智能双档场景卡片收束愿景"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "capability_stack_layered_overview",
+          "to_archetype": "codesign_multiplicative_acceleration_flow",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "codesign_multiplicative_acceleration_flow",
+          "to_archetype": "efficiency_evolution_matrix",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "efficiency_evolution_matrix",
+          "to_archetype": "deployment_target_dual_tier_card",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "端侧产品落地案例: 从七层能力栈总览→四层软硬协同加速方案(倍数标注)→能效逐代演进矩阵→泛端部署愿景四档目标, 四段递进展示端侧全栈自研能力",
+      "anti_patterns": [
+        "无能效路线只讲能力栈 → 用 case_study_paradigm_bridge_company_profile_ecosystem_products_results"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.10",
+          "section_title": "无问芯穹端侧技术方案",
+          "section_role": "case_study",
+          "section_narrative": "把前述稀疏/编译/架构成果落地为无问芯穹端侧案例;由能力栈总览→软硬协同加速方案→芯片能效演进→泛端部署愿景层层递进",
+          "section_topic_tags": [
+            "无问芯穹端侧",
+            "端侧能力栈",
+            "软硬协同加速",
+            "能效演进500x",
+            "泛端部署愿景"
+          ],
+          "match_evidence": "4 页节奏: 七层能力栈→四层软硬协同4~10x加速→能效500x演进矩阵→泛端基础/复杂智能双档目标",
+          "slides": [
+            {
+              "slide_index": 69,
+              "role_in_pattern": "capability_stack_layered_overview",
+              "archetype": "capability_stack_layered_overview",
+              "slide_title": "无问芯穹端侧技术能力栈",
+              "slide_claim": "端侧推理由硬件到应用七层能力栈完整贯通支撑",
+              "slide_key_text": [
+                "应用能力:通用 LLM 智能问答、RAG 检索增强",
+                "推理框架:Llama.cpp GGUF/HuggingFace Safetensor/Pytorch",
+                "模型能力:自研端侧模型 / Qwen / Llama / MiniCPM",
+                "算子支持:Embedding/GEMM/GEMV/LayerNorm/RMSNorm",
+                "硬件能力:CPU / GPU / NPU(自研LPU、3D堆叠)"
+              ],
+              "slide_visual_skeleton": [
+                "七层横向能力栈图",
+                "左列层级标签",
+                "每层多色 panel 并列"
+              ]
+            },
+            {
+              "slide_index": 70,
+              "role_in_pattern": "codesign_multiplicative_acceleration_flow",
+              "archetype": "codesign_multiplicative_acceleration_flow",
+              "slide_title": "端侧软硬协同综合加速方案",
+              "slide_claim": "软硬协同四层优化叠加带来 4~10x 端侧综合加速",
+              "slide_key_text": [
+                "端侧专用模型:13B 智能能力压至 3B 参数量",
+                "软硬协综合加速 4~10x",
+                "量化压缩 W3A16/W4A8、稀疏激活 N:M>50%、投机采样 1.5~2.5x",
+                "存算一体能效提升 2~4x、3D DRAM 提升 2~3x",
+                "端侧 7B 模型 >200 tokens/s、能效 >20 tokens/J"
+              ],
+              "slide_visual_skeleton": [
+                "四层横向加速方案图",
+                "左列层级标签+加速倍数",
+                "各层子项加速指标标注"
+              ]
+            },
+            {
+              "slide_index": 71,
+              "role_in_pattern": "efficiency_evolution_matrix",
+              "archetype": "efficiency_evolution_matrix",
+              "slide_title": "端侧芯片能效演进路线",
+              "slide_claim": "模型-框架-硬件-IP 协同演进推动能效 500x 跃升",
+              "slide_key_text": [
+                "基础版本 0.2 token/J (1x)",
+                "0.7 token/J (3.5x) → 20 token/J (100x)",
+                "40 token/J (200x) → 100 token/J (500x)",
+                "模型:FP16→量化→4bit→3bit+50%稀疏→2bit+90%稀疏",
+                "硬件示例:NVIDIA A100、RTX 4060、3D堆叠芯片"
+              ],
+              "slide_visual_skeleton": [
+                "能效演进矩阵表",
+                "顶部倍数递进节点轴",
+                "模型/框架/硬件/IP 四行网格"
+              ]
+            },
+            {
+              "slide_index": 72,
+              "role_in_pattern": "deployment_target_dual_tier_card",
+              "archetype": "deployment_target_dual_tier_card",
+              "slide_title": "泛端侧部署愿景与目标",
+              "slide_claim": "以 100-1000 tokens/s、<20W、>20 tokens/J 定义泛端目标",
+              "slide_key_text": [
+                "未来泛端场景需求:100-1000 tokens/s、<20W、>20 tokens/J",
+                "基础智能:10W、200 tokens/s、20 tokens/J(手机端4核算力)",
+                "复杂智能:20W、2000 tokens/s、100 tokens/J",
+                "边缘端约 200 核算力对标云端"
+              ],
+              "slide_visual_skeleton": [
+                "左侧目标指标框+星标定位",
+                "右侧两档场景卡片",
+                "分档 bullet 指标列表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "discussion_agi_vision_recap_new_paradigm_system_opt_institution_layout",
+      "title": "展望·AGI 愿景→成果回收→新范式+系统优化→机构布局",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "AGI愿景",
+          "研究总结",
+          "新范式",
+          "系统优化",
+          "机构布局"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "vision_dual_law_formula_headline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 AGI = 算力提升 + 模型提升 公式+双定律曲线立愿景"
+        },
+        {
+          "archetype": "research_summary_paper_list",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以汇总示意+参考文献列表回收团队代表工作"
+        },
+        {
+          "archetype": "new_paradigm_case_dual_stage_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以新范式代表(如 o1)训练/推理阶段双列对比+算力需求倍数"
+        },
+        {
+          "archetype": "paradigm_evolution_with_work_mapping",
+          "count": 1,
+          "position": "middle",
+          "purpose": "横向漏斗时间线展示范式三阶段, 各阶段附团队工作卡片"
+        },
+        {
+          "archetype": "system_optimization_speedup_timeline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以横向节点时间线串起 N 个系统优化及倍数"
+        },
+        {
+          "archetype": "institution_direction_tri_column",
+          "count": 1,
+          "position": "end",
+          "purpose": "以研究方向/未来趋势/学院课题三栏并列收束到所属机构布局"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "vision_dual_law_formula_headline",
+          "to_archetype": "research_summary_paper_list",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "research_summary_paper_list",
+          "to_archetype": "new_paradigm_case_dual_stage_compare",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "new_paradigm_case_dual_stage_compare",
+          "to_archetype": "paradigm_evolution_with_work_mapping",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "paradigm_evolution_with_work_mapping",
+          "to_archetype": "system_optimization_speedup_timeline",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "system_optimization_speedup_timeline",
+          "to_archetype": "institution_direction_tri_column",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "研究报告末章 discussion: AGI 双定律愿景开场→成果+文献回收→新计算范式(如 o1)双列对比→范式三阶段与团队工作映射→系统优化倍数时间线→机构方向布局三栏收束",
+      "anti_patterns": [
+        "无机构布局收束 → 用 discussion_trend_extension_of_master_formula_with_open_problems"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.11",
+          "section_title": "通往AGI与研究总结",
+          "section_role": "discussion",
+          "section_narrative": "全deck收尾章。把「算力=芯片×稀疏度」主线上升为AGI愿景（摩尔定律×Scaling Law双轮驱动），总结研究成果，再以OpenAI o1推理范式与系统层优化为例展望新方向，最终落到助力创智学院的方向布局。",
+          "section_topic_tags": [
+            "AGI愿景",
+            "摩尔定律×Scaling Law",
+            "OpenAI o1",
+            "系统层优化",
+            "创智学院布局"
+          ],
+          "match_evidence": "6 页节奏: AGI 双定律公式→研究总结+文献→o1 范式对比→大模型三阶段与工作映射→系统优化 3-4x 时间线→创智学院三栏布局",
+          "slides": [
+            {
+              "slide_index": 73,
+              "role_in_pattern": "vision_dual_law_formula_headline",
+              "archetype": "vision_dual_law_formula_headline",
+              "slide_title": "通往AGI之路：摩尔定律×Scaling Law双轮驱动",
+              "slide_claim": "AGI由算力(摩尔定律)与模型规模(Scaling Law)双轮协同驱动",
+              "slide_key_text": [
+                "AGI = 算力提升 + 模型提升",
+                "算力提升 Moore's Law",
+                "模型提升 Scaling Law",
+                "7B / 70B / >100B 模型量级"
+              ],
+              "slide_visual_skeleton": [
+                "顶部AGI公式框",
+                "左右并列双面板",
+                "两组阶段曲线图",
+                "模型量级箭头标注"
+              ]
+            },
+            {
+              "slide_index": 74,
+              "role_in_pattern": "research_summary_paper_list",
+              "archetype": "research_summary_paper_list",
+              "slide_title": "研究总结举例",
+              "slide_claim": "团队成果贯穿显存管理、PIM、FPGA推理等系统优化方向",
+              "slide_key_text": [
+                "研究总结举例",
+                "PagedAttention, SOSP 2023",
+                "FlightLLM: FPGA 2024",
+                "Attention-Free LLM Hybrid PIM, ICCAD 2024"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔条",
+                "中部汇总示意图",
+                "底部7条参考文献列表"
+              ]
+            },
+            {
+              "slide_index": 75,
+              "role_in_pattern": "new_paradigm_case_dual_stage_compare",
+              "archetype": "new_paradigm_case_dual_stage_compare",
+              "slide_title": "OpenAI o1带来的计算范式变化",
+              "slide_claim": "o1以CoT+RL重塑训练/推理范式，推理算力需求提升10-100倍",
+              "slide_key_text": [
+                "GPT-o1计算范式：CoT + RL",
+                "训练阶段：RLHF + RL(Think) + Safety",
+                "推理阶段：Think&Summary + Answer",
+                "推理算力需求提升 10-100倍"
+              ],
+              "slide_visual_skeleton": [
+                "左侧训练/推理阶段对比框图",
+                "RLHF/RL/Safety色块",
+                "右侧10x-100x算力标尺",
+                "引用脚注"
+              ]
+            },
+            {
+              "slide_index": 76,
+              "role_in_pattern": "paradigm_evolution_with_work_mapping",
+              "archetype": "paradigm_evolution_with_work_mapping",
+              "slide_title": "大模型的计算范式变化与研究布局",
+              "slide_claim": "大模型从语言→多模态→复杂推理演进，团队各阶段均有成果布局",
+              "slide_key_text": [
+                "大语言模型 (ChatGPT, Llama) 语言能力",
+                "多模态/世界模型 (Sora, OpenSora) 多模态能力",
+                "复杂推理慢思考模型 (OpenAI o1) 推理能力",
+                "HPCA25/ICCAD23、ASP-DAC25、DAC25-submission"
+              ],
+              "slide_visual_skeleton": [
+                "横向漏斗时间线",
+                "三节点圆标",
+                "三列成果卡片",
+                "已有/拟研究双栏"
+              ]
+            },
+            {
+              "slide_index": 77,
+              "role_in_pattern": "system_optimization_speedup_timeline",
+              "archetype": "system_optimization_speedup_timeline",
+              "slide_title": "o1系统层优化方案",
+              "slide_claim": "算子/KV Cache/batch/PD分离多级优化使o1推理效率提升3-4倍",
+              "slide_key_text": [
+                "算子级 softmax优化 提升1.3倍",
+                "KV Cache 内存优化 提升1.3倍",
+                "batch 调度优化 提升1.8倍",
+                "PD分离 提升1.4倍",
+                "基于Hugging Face与vLLM，整体提升3-4倍"
+              ],
+              "slide_visual_skeleton": [
+                "横向节点时间线",
+                "四个圆点节点",
+                "各节点倍率标注",
+                "底部框架/整体提升说明"
+              ]
+            },
+            {
+              "slide_index": 78,
+              "role_in_pattern": "institution_direction_tri_column",
+              "archetype": "institution_direction_tri_column",
+              "slide_title": "助力创智学院",
+              "slide_claim": "面向创智学院从研究方向、未来趋势、学院课题三维布局",
+              "slide_key_text": [
+                "助力创智学院",
+                "研究方向",
+                "未来趋势",
+                "学院课题（含拟）"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔条",
+                "三列并列栏标题",
+                "留白正文区"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_thanks_support_dual_zone_speaker_and_logo_wall",
+      "title": "收尾·Thanks致谢+Support机构 logo 墙双分区",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "联系方式",
+          "支持机构",
+          "logo 墙"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "thanks_support_dual_zone_page",
+          "count": 1,
+          "position": "start",
+          "purpose": "左 Thanks 区放讲者姓名/单位/日期/邮箱, 右 Support 区放资助与合作机构 logo 墙"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "研究报告类单页收尾: 左侧 Thanks tag 给讲者身份与致谢, 右侧 Support tag 陈列资助/合作机构 logo 墙, 一页承担致谢+联系方式+资助鸣谢三重功能",
+      "anti_patterns": [
+        "双页收尾(合作机构墙+封底) → 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "极简署名单页 → 用 closing_minimal_thanks_with_speaker_signature"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.12",
+          "section_title": "致谢与联系方式",
+          "section_role": "closing",
+          "section_narrative": "deck 收尾单页,左「Thanks」致谢讲者(姓名+单位+日期+Email),右「Support」logo 墙陈列资助/合作机构,把整场汇报落到讲者身份与致谢",
+          "section_topic_tags": [
+            "Thanks致谢",
+            "讲者联系方式",
+            "Support机构",
+            "logo墙",
+            "DAI lab"
+          ],
+          "match_evidence": "1 页布局: 左 Thanks 讲者身份/邮箱 + 右 Support 多行两列 logo 墙, 双分区收束全 deck",
+          "slides": [
+            {
+              "slide_index": 79,
+              "role_in_pattern": "thanks_support_dual_zone_page",
+              "archetype": "thanks_support_dual_zone_page",
+              "slide_title": "致谢与联系方式(Thanks & Support)",
+              "slide_claim": "汇报落到讲者身份并致谢团队与资助机构",
+              "slide_key_text": [
+                "Thanks / Support 双分区",
+                "戴国浩,上海交通大学",
+                "2024-11-11",
+                "Email: daiguohao@sjtu.edu.cn",
+                "致谢 DAI lab 团队与合作者(vision)"
+              ],
+              "slide_visual_skeleton": [
+                "左青色 Thanks tag",
+                "右粉色 Support tag",
+                "讲者信息文本块",
+                "右侧多行两列 logo 墙"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck 共 12 section, 抽出 10 patterns: 1 复用 previous(opening_cover_plus_progress_highlighted_toc), 9 新建。3 个 method section(sec.04/05/06 稀疏化-编译-架构三条技术路线)合并入同一 pattern method_technique_route_full_arc_prior_challenge_paper_method_result 作 3 个 carrier, 其他每个 section 一个 carrier。跨 batch dedup 后新起 id 与 previous 差异化: 本 deck motivation 章有 AI 三次浪潮时间线+外部制裁维度, 与 previous motivation_trend_landscape 与 background_macro_gap_to_policy 都不同, 遂新建 motivation_ai_wave_history_sparsity_through_line_to_gap_sanction。new_archetype: basic_structures_three_panel — 并列展示 MLP/CNN/Attention 三种基础网络结构的三栏 panel; structure_vs_weight_essence — 用 MLP 权重矩阵置零对比 CNN 揭示稀疏化=结构信息替代权重信息; ai_history_timeline — 水平年代时间轴叠加起伏热度曲线呈现 AI 发展史; cognitive_need_scholar_quotes — 左侧学者引言卡片+右侧系统I/II分层示意; wave_sparsity_evidence — 单次浪潮内以稠密vs稀疏对比图论证稀疏降算力; master_formula_multi_task_panel — 顶部主线公式条+并列多任务示意+底部稠密vs稀疏对比; formula_factor_decomposition_flow — 顶部公式条+多步因子流程+底部因子相乘公式; prior_works_taxonomy_table — 已有工作按模型/方法分类的表格或双列对比; challenge_key_contradiction_statement — 红框断言核心矛盾+对比图/柱图证据; method_formula_overview_with_positioning — 蓝底算力公式条+三步流程框+方案对比; method_implementation_progressive_build — 方法实现的多页动画帧递进(Pattern/架构/模块); result_accuracy_or_utilization_table — 多方案×多模型的精度/利用率对比表; result_efficiency_or_deployment_headline — 大字加速比/EDP/换道超车头条; trend_bifurcation_curve — 山峰形曲线+上下双分叉+参数量气泡; trend_single_branch_zoomin — 分叉后聚焦单条路线的上升曲线; formula_dimension_extension — 上下双层公式框+新因子红色高亮的维度扩展; open_problem_scale_timeline — 横向时间轴+阶段节点+量级胶囊+bullet 说明; open_problem_ecosystem_compare — 上下双层横条+中央蝶形连接的生态差异对比; research_to_industry_pipeline_chain — IDEA→INDUSTRY 五阶段横向流程链+学术/工业分区; company_profile_key_numbers_grid — 公司数字画像卡片网格(估值/算力/团队); ecosystem_layered_unification_diagram — 左右对照的碎片化→统一分层栈图; product_stack_matrix_full — 左侧参考架构+右侧完整产品矩阵; result_speedup_bar_chart — Token/s 柱状对比+提升倍数高亮的加速数字页; result_utilization_bar_chart — 利用率结论横幅+多组合柱状对比; trend_shift_curve_to_endside — 模型规模钟形分布曲线+云/端趋势箭头; market_demand_bilateral_arrow_panel — 双栏+上下箭头+市场出货数据; endside_advantage_bullet_panel — 端侧优势 bullet 列表+双栏箭头信息流; small_model_bubble_plus_chip_scatter — 左侧模型知识密度气泡+右侧多芯片算力散点; compute_contradiction_bar — 文生文vs文生图算力/能效柱状对比+左下三段说明; memory_contradiction_dual_column — LPDDR vs 3D 堆叠 HBM 双栏虚线框对比+底部需求标尺; scenario_trilogy_overview — 中心节点向三个场景发散+底部椭圆汇聚; scenario_chip_capability_table — 多行分组芯片能力汇总数据表(功耗/速度); scenario_chip_example_dual_column — 左侧芯片实物图+右栏功耗/速度/能效指标块; need_vs_reality_gap_summary — 中部需求指标蓝框+四大平台气泡群+差距箭头; capability_stack_layered_overview — 自上而下 N 层能力栈+每层多色 panel 并列; codesign_multiplicative_acceleration_flow — 四层软硬协同优化叠加+加速倍数标注; efficiency_evolution_matrix — 能效里程碑轴+模型/框架/硬件/IP 多行网格; deployment_target_dual_tier_card — 左侧目标指标框+右侧基础/复杂智能双档卡片; vision_dual_law_formula_headline — 顶部愿景公式框+双定律曲线双面板; research_summary_paper_list — 汇总示意图+底部多条参考文献列表; new_paradigm_case_dual_stage_compare — 左侧训练/推理阶段对比框图+右侧算力倍数标尺; paradigm_evolution_with_work_mapping — 横向漏斗时间线+三节点+已有/拟研究双栏卡片; system_optimization_speedup_timeline — 横向节点时间线+多倍率节点标注+底部说明; institution_direction_tri_column — 顶部标题+三列并列栏(研究方向/未来趋势/学院课题); thanks_support_dual_zone_page — 左 Thanks tag+讲者信息 + 右 Support tag+多行 logo 墙的双分区收尾页",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 12,
+    "sections_unassigned_in_this_batch": []
+  }
+}

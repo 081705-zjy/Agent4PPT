@@ -1,0 +1,43 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_12"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 12
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "缺陷根因：缺少长期 KV Cache"
+核心论断: "长期 KV Cache 缺失是 Diffusion Forcing 记忆退化的根因"
+本页讲什么: "本页承接上页现象，剖析根因：Diffusion Forcing 缺少长期 KV Cache，导致模型无法保留远端历史信息，从而引出 Self Forcing 用完整 KV Cache 解决问题。"
+关键文字: "[主要原因是因为 Diffusion Forcing 缺少长期 KV Cache]"
+视觉骨架: "[KV Cache 缺失示意图]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_12.asset.01]"
+适合复用场景: "[KV Cache 机制根因分析页, 记忆退化归因论证页]"
+不适合复用场景: "[范式演进 opener 页, 多模型 benchmark 页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 12: 缺陷根因：缺少长期 KV Cache
+
+**核心论断**: 长期 KV Cache 缺失是 Diffusion Forcing 记忆退化的根因
+
+## 本页讲什么
+本页承接上页现象，剖析根因：Diffusion Forcing 缺少长期 KV Cache，导致模型无法保留远端历史信息，从而引出 Self Forcing 用完整 KV Cache 解决问题。
+
+## 关键文字片段
+- 主要原因是因为 Diffusion Forcing 缺少长期 KV Cache
+
+## 视觉骨架
+- KV Cache 缺失示意图
+
+## 可复用到
+- KV Cache 机制根因分析页
+- 记忆退化归因论证页
+
+## 不适合复用的场景
+- 范式演进 opener 页
+- 多模型 benchmark 页

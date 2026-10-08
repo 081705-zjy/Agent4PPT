@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_24",
+  "所属章节": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.04",
+  "所属deck": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+  "页序号": 24,
+  "源文件": "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx",
+  "页面角色": "content_candidate",
+  "标题": "研究挑战：KV 缓存机制的局限",
+  "核心论断": "既有 KV 缓存方案难适配视频生成需求",
+  "本页讲什么": "作为研究挑战章节收尾，提出挑战3：以往的 KV 缓存优化方案在自回归视频生成场景下存在局限，无法有效压缩或复用缓存，至此完成对注意力、硬件架构与 KV 缓存三大瓶颈的完整铺陈，衔接后续三项技术方案。",
+  "关键文字": [
+    "挑战3：之前的 KV-"
+  ],
+  "视觉骨架": [
+    "KV 缓存机制示意图",
+    "挑战编号标注"
+  ],
+  "资源ID列表": [
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_24.asset.01"
+  ],
+  "适合复用场景": [
+    "KV缓存优化挑战页",
+    "视频生成缓存瓶颈论证页"
+  ],
+  "不适合复用场景": [
+    "方法实现细节页",
+    "结果数据对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

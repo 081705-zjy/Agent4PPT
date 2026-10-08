@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_86",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.09",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 86,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Result：OPT 与 LLaMA2 上的加速器表现",
+  "核心论断": "FlightLLM 在 OPT-6.7B 与 LLaMA2-7B 上取得优异表现",
+  "本页讲什么": "本页展示实验结果：以表格给出 FlightLLM 加速器在 OPT-6.7B、LLaMA2-7B 等模型、[128, 512] 等序列配置下的性能数据，量化三大方案带来的端到端推理收益。",
+  "关键文字": [
+    "Accelerator",
+    "OPT-6.7B",
+    "LLaMA2-7B",
+    "[128, 512]"
+  ],
+  "视觉骨架": [
+    "模型性能对比表",
+    "序列长度配置行"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "FPGA 加速器性能数据页",
+    "LLM 推理 benchmark 表格页"
+  ],
+  "不适合复用场景": [
+    "方案架构示意页",
+    "动机论证页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f.slide_53",
+  "所属章节": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f.sec.08",
+  "所属deck": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+  "页序号": 53,
+  "源文件": "templates/课题组全局汇报/达摩院_稀疏计算与软硬协同_大模型算力提升新思考.pptx",
+  "页面角色": "content_candidate",
+  "标题": "TB-STC：可转置分块 N:M 稀疏张量核",
+  "核心论断": "TB-STC 是可转置分块 N:M 结构化稀疏张量核",
+  "本页讲什么": "给出 TB-STC 的完整命名与定位——Transposable Block-wise N:M Structured Sparse Tensor Core，即支持转置的分块 N:M 结构化稀疏张量核，并标注作者团队（Jun Liu、Shulin Zeng 等），作为该工作的正式标题页承上启下。",
+  "关键文字": [
+    "TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core",
+    "Jun Liu, Shulin Zeng 等"
+  ],
+  "视觉骨架": [
+    "工作标题页配图",
+    "N:M 稀疏张量核示意"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f.slide_53.asset.01"
+  ],
+  "适合复用场景": [
+    "具体工作标题定位页",
+    "N:M 结构化稀疏方案命名页"
+  ],
+  "不适合复用场景": [
+    "纯概念范式讨论页",
+    "多组数据密集图表页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

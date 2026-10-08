@@ -1,0 +1,56 @@
+*.swp
+*.swo
+~$*
+*.tmp
+runs/
+projects/*
+!projects/README.md
+# RLCR meta-artifacts (kept out of the implementation/code-review diff)
+docs/plan.md
+docs/plan_*.md
+.humanize/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+
+# Runtime-generated env file (not part of the project)
+.fee.env
+.env.local
+
+# Local Codex/session runtime state
+.codex-runtime/
+
+# Accidental zero-byte files created from malformed env export commands
+ANTHROPIC_AUTH_TOKEN:
+ANTHROPIC_BASE_URL:
+ANTHROPIC_DEFAULT_OPUS_MODEL:
+ANTHROPIC_MODEL:
+env:
+node_modules/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.cache/
+.DS_Store
+
+/templates/
+
+# Large data directories
+/data/
+/templates/
+
+# Local runtime and dependencies
+.codex-runtime/
+node_modules/
+__pycache__/
+
+# Sensitive configuration
+.env
+.env.*
+.fee.env

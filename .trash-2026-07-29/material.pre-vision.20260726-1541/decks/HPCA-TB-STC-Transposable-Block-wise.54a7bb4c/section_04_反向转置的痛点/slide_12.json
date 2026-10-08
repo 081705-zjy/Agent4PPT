@@ -1,0 +1,46 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 12,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "N:M 稀疏前向相对 dense 的加速",
+  "核心论断": "N:M 稀疏前向相比 dense baseline 可显著加速",
+  "本页讲什么": "本页用柱状图对比稀疏前向与 dense baseline 的性能（纵轴 20-80 刻度），直观展示 N:M 稀疏在前向阶段带来的加速收益。为后文「反向转置破坏稀疏结构、加速难以复用」的痛点做正面铺垫——前向能加速，反向却不行。",
+  "关键文字": [
+    "Baseline (dense)",
+    "80 / 60 / 40 / 20"
+  ],
+  "视觉骨架": [
+    "性能对比柱状图",
+    "dense baseline 基准线",
+    "多组数据条"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.02",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.03",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.04",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.05",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.06",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.07",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.08",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.09",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.10",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.11",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.12",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_12.asset.13"
+  ],
+  "适合复用场景": [
+    "稀疏加速的性能对比页",
+    "N:M 稀疏 motivation 数据页"
+  ],
+  "不适合复用场景": [
+    "纯结构示意图页",
+    "无数值的概念论证页"
+  ],
+  "上页角色": "toc_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

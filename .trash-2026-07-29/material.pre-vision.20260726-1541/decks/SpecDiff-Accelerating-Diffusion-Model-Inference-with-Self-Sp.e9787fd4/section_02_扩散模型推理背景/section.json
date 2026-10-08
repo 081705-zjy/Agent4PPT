@@ -1,0 +1,40 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "章节序号": 2,
+  "章节角色": "background",
+  "标题": "扩散模型推理背景",
+  "页码范围": [
+    2,
+    7
+  ],
+  "页数": 6,
+  "页ID列表": [
+    "slide_02",
+    "slide_03",
+    "slide_04",
+    "slide_05",
+    "slide_06",
+    "slide_07"
+  ],
+  "章节叙事": "为 SpecDiff 方法奠定问题基础：从扩散模型概述切入，逐层揭示其推理的高算力开销，并把成本溯源到 Attention 与 FFN 两大模块，为后续加速动机埋下伏笔。",
+  "页间关系": [
+    "slide 2 → slide 3: 由 Background 分隔标题页进入扩散模型总体介绍",
+    "slide 3 → slide 4: 由扩散模型概述引出其更高的计算需求",
+    "slide 4 → slide 5: 由整体算力开销收敛到推理阶段的具体过程",
+    "slide 5 → slide 6: 由推理过程分解出 Attention 与 FFN 的成本来源",
+    "slide 6 → slide 7: 承接 Attention/FFN 成本因素，进一步展开二者的共性"
+  ],
+  "适合复用场景": [
+    "任何需先铺陈模型推理算力开销的 background 章节",
+    "论证成本集中于 Attention/FFN 的方法类工作",
+    "从模型概述逐层下钻到瓶颈模块的叙事结构"
+  ],
+  "不适合复用场景": [
+    "研究主题与扩散模型或生成模型无关时",
+    "无需展开推理算力来源的应用型分享",
+    "受众已熟悉扩散推理、需直接进入方法时"
+  ],
+  "在deck中的位置": "第 2 章 background，紧接封面，为相关工作与方法章节铺垫问题前提。",
+  "分析状态": "claude-opus-4-8"
+}

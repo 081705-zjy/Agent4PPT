@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.02"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 5
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "content_candidate"
+标题: "STR：从大规模语料抽取相关片段"
+核心论断: "STR 即从大规模语料中识别并抽取相关片段"
+本页讲什么: "从宽泛的文本检索收敛到本 deck 聚焦的子问题 STR——在大规模语料中识别并抽取相关文本片段（chunks）。给出 STR 定义，锁定后文 SG-Filter 要改进的目标问题范围。"
+关键文字: "[STR refers to identifying and extracting, relevant chunks from a large corpus]"
+视觉骨架: "[语料到片段抽取示意图, chunk 高亮标注, 检索管线图]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.08, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.09, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.10, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.11, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.12, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.13, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.14, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.15, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.16, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.17, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.18, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.19, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.20, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.21, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.22, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.23, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.24, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.25, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.26, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.27, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.28, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.29, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.30, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.31, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.32, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.33, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.34, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.35, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.36, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.37, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.38, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.39, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.40, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.41, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.42, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.43, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.44, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.45, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.46, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.47, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.48, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.49, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.50, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.51, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_05.asset.52]"
+适合复用场景: "[STR/片段检索概念定义页, 检索子问题收敛引入页]"
+不适合复用场景: "[纯目录导航页, 多组数据柱图页]"
+上页角色: "ending_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "STR：从大规模语料抽取相关片段"}
+  - {"位置": "中间主体", "内容": "语料到片段抽取示意图与 chunk 高亮"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 5: STR：从大规模语料抽取相关片段
+
+**核心论断**: STR 即从大规模语料中识别并抽取相关片段
+
+## 本页讲什么
+从宽泛的文本检索收敛到本 deck 聚焦的子问题 STR——在大规模语料中识别并抽取相关文本片段（chunks）。给出 STR 定义，锁定后文 SG-Filter 要改进的目标问题范围。
+
+## 关键文字片段
+- STR refers to identifying and extracting
+- relevant chunks from a large corpus
+
+## 视觉骨架
+- 语料到片段抽取示意图
+- chunk 高亮标注
+- 检索管线图
+
+## 可复用到
+- STR/片段检索概念定义页
+- 检索子问题收敛引入页
+
+## 不适合复用的场景
+- 纯目录导航页
+- 多组数据柱图页

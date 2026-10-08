@@ -1,0 +1,959 @@
+{
+  "batch_index": 0,
+  "patterns": [
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "tutorial",
+          "lab_introduction"
+        ],
+        "scenario_keywords": [
+          "AI基础设施/算力战略汇报",
+          "研究院/实验室建设规划",
+          "本组多成果综述串讲",
+          "学术会议 tutorial",
+          "软硬件协同专题"
+        ],
+        "deck_size_range": [
+          50,
+          100
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队",
+          "政府/产业决策方"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            4,
+            9
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-2",
+          "page_count_range": [
+            10,
+            15
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "3-6",
+          "page_count_per_section_range": [
+            8,
+            16
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "outlook_section",
+          "section_count": "0-1"
+        },
+        {
+          "role": "closing",
+          "count": "0-1",
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "动机/背景",
+        "框架/思想",
+        "开源框架或方法总纲",
+        "代表工作/案例 1",
+        "代表工作/案例 2",
+        "代表工作/案例 N",
+        "团队/致谢/展望"
+      ],
+      "applicable_summary": "长篇 deck 骨架:cover+agenda 开场,motivation 铺垫,framework_intro 统领,再以 3-6 个 method/case_study 章节平行陈列本组成果,期间以『全 agenda 灰显+当前章高亮』的 section_divider 作章节导航,末尾以团队展望或致谢封底",
+      "anti_patterns": [
+        "canonical 单论文分享(Background/Challenge/Solution/Evaluation 五段短叙事):用 paper_share_bg_challenge_solution_eval_summary_canonical",
+        "空白模板骨架(无实质内容):用 blank_lab_report_template_skeleton",
+        "商业 BP/投资路演(需财务与市场章节)",
+        "消费级产品 demo(叙事节奏不同)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "match_evidence": "整本 65 页 deck·8 章:1p cover+1p agenda + 5p motivation(算力差距) + 3 个 method 章(12p+12p+11p)+ 4p discussion(国智院团队) + 10p method(研究方向) + 9p case_study(算力底座落地),4 张 section_divider 用『00-04 全 agenda 灰显+当前章高亮』导航",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "AI Infra与国智院建设思考（封面）",
+              "slide_claim": "以「AI Infra与国智院建设」为主题开场并署名讲者",
+              "slide_key_text": [
+                "AI Infra与国智院建设思考",
+                "戴国浩",
+                "2024-10-14 @上海",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "超大主标题居中",
+                "浅色横向分隔线",
+                "下方日期/地点/署名区"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "目录：00-04 五段论述骨架",
+              "slide_claim": "全报告按背景→系统优化→集群→国智院→展望五段展开",
+              "slide_key_text": [
+                "目录",
+                "00. 背景：算力差距与中美差异",
+                "01. 系统优化发展现状与进展",
+                "02.",
+                "03.",
+                "04.",
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色粗分隔线",
+                "00-04 编号章节列表",
+                "当前章高亮/其余灰化",
+                "页脚署名条"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入 01 系统优化与软硬件协同",
+              "slide_claim": "报告进入第 01 章——系统优化与软硬件协同",
+              "slide_key_text": [
+                "00. 背景：大模型技术引领 AGI 发展",
+                "01. 系统优化与软硬件协同",
+                "02/03/04 其余章节"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色分隔横条",
+                "5 项编号目录列表",
+                "当前项黑色高亮"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入第 02 章推理芯片",
+              "slide_claim": "报告推进到第 02 章,聚焦推理时代芯片与端侧算力",
+              "slide_key_text": [
+                "00. 背景:大模型技术引领 AGI 发展",
+                "02.(高亮当前章)",
+                "04. 结束语"
+              ],
+              "slide_visual_skeleton": [
+                "五行编号目录列表",
+                "顶部蓝色分隔条",
+                "当前章高亮其余置灰"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：第03章 异构集群与十万卡训练",
+              "slide_claim": "报告进入第三部分——聚焦AI Infra的异构集群与十万卡训练",
+              "slide_key_text": [
+                "00. 背景：大模型技术引领AGI发展",
+                "03. 异构集群与十万卡训练(高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔线",
+                "5行编号目录列表",
+                "当前项黑色高亮其余灰显"
+              ]
+            },
+            {
+              "slide_index": 43,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入第 04 板块国智院展望",
+              "slide_claim": "报告进入第 04 板块——国智院展望与团队",
+              "slide_key_text": [
+                "00. 背景：大模型技术引领 AGI 发展",
+                "04. 国智院展望"
+              ],
+              "slide_visual_skeleton": [
+                "00-04 目录条目列表",
+                "当前项黑色高亮其余灰化",
+                "顶部蓝色分隔横条"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_算力差距与中美背景",
+              "slide_range": [
+                3,
+                7
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_系统优化与软硬件协同",
+              "slide_range": [
+                8,
+                19
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_推理芯片趋势与端侧算力",
+              "slide_range": [
+                20,
+                31
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_异构集群与十万卡训练",
+              "slide_range": [
+                32,
+                42
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_06_国智院展望与团队组成",
+              "slide_range": [
+                43,
+                46
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_07_研究方向与具身智能",
+              "slide_range": [
+                47,
+                56
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_08_算力底座落地与代表工作",
+              "slide_range": [
+                57,
+                65
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "match_evidence": "整本 93 页 tutorial·11 章:1p cover+1p 四段主线 agenda + 7p motivation(AI 趋势/稀疏动机) + 2 个 framework 章(15p 稀疏思想 + 10p dgSPARSE 框架) + 4 个 case_study 章(点云 14p/超图 8p/FlightLLM 10p/FlashDecoding++ 4p)+ LLM 稀疏方法 method 16p + 2p closing 致谢,3 张 section_divider 用『四段 agenda 灰显+当前项高亮』导航",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "Sparse Acceleration for AI: 进展与趋势",
+              "slide_claim": "稀疏加速是驱动 AI 进展与趋势的核心技术方向",
+              "slide_key_text": [
+                "Sparse Acceleration for Artificial Intelligence Progress and Trends",
+                "Prof. Xiaoming Chen, Institute of Computing Technology, Chinese Academy of Sciences",
+                "Prof. Mingyu Gao, Institute for Interdisciplinary Information",
+                "Qingyuan Research Institute Shanghai Jiao Tong University",
+                "2024/01/24 daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "顶部主标题条",
+                "浅色分隔线",
+                "双讲者署名块",
+                "底部机构与日期署名"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "Contents: 四段主线目录",
+              "slide_claim": "本报告按 Opening→dgSparse→Case study→Other works 四段推进",
+              "slide_key_text": [
+                "Contents",
+                "1 Opening",
+                "2 dgSparse: ——Open-source sparse system framework",
+                "3 Case study: ——An exploration of sparse computing for LLMs",
+                "4 Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框",
+                "圆形编号标记 1-4",
+                "高亮/灰化条目对比",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入 dgSPARSE 开源框架章节",
+              "slide_claim": "议程推进到第二部分——dgSPARSE 开源稀疏系统框架",
+              "slide_key_text": [
+                "dgSparse:Open-source sparse system framework",
+                "Opening",
+                "Case study——An exploration of sparse computing for LMs",
+                "Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框 Contents 容器",
+                "四项编号圆标列表",
+                "当前项蓝色高亮条"
+              ]
+            },
+            {
+              "slide_index": 57,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:高亮案例研究 (LLM 稀疏计算)",
+              "slide_claim": "报告进入第 3 部分——面向 LLM 的稀疏计算案例探索",
+              "slide_key_text": [
+                "Contents",
+                "Opening",
+                "dgSparse: Open-source sparse system framework",
+                "Case study: An exploration of sparse computing for LLMs",
+                "Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "四项编号目录列表",
+                "当前项高亮竖条",
+                "灰色淡出未选项"
+              ]
+            },
+            {
+              "slide_index": 81,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_label",
+              "slide_title": "Challenges(章节过渡分隔页)",
+              "slide_claim": "承接动机,引出 FlightLLM 需解决的三大挑战",
+              "slide_key_text": [
+                "Challenges"
+              ],
+              "slide_visual_skeleton": [
+                "标题+蓝色分隔条",
+                "空正文外框"
+              ]
+            },
+            {
+              "slide_index": 88,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入「Other works and collaborations」章节",
+              "slide_claim": "教程收尾切入第 4 部分——其他工作与合作成果",
+              "slide_key_text": [
+                "Contents",
+                "Opening",
+                "dgSparse: Open-source sparse system framework",
+                "Case study: An exploration of sparse computing for LLMs",
+                "Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框目录卡",
+                "四项编号圆标列表",
+                "当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 93,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "THANKS 封底:团队致谢与联系方式",
+              "slide_claim": "报告收尾致谢团队成员与赞助方并回落至主题与联系方式",
+              "slide_key_text": [
+                "THANKS / Sponsors",
+                "Thanks to members from SJTU and Tsinghua University",
+                "Zhenhua Zhu, Shulin Zeng, Jun Liu, Kai Zhong, Ke Hong, Tianyu Fu, Jiaming Xu, Jinhao Li",
+                "Sparse Acceleration for Artificial Intelligence Progress and Trends",
+                "Guohao Dai  daiguohao@sjtu.edu.cn",
+                "Infinigence Co., LTD / NICS-EFC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "左侧青色竖排 THANKS banner",
+                "机构 + 赞助方 logo 网格",
+                "团队成员致谢文字块",
+                "主题回顾大字 + 联系方式"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与开场目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_AI增长趋势与稀疏动机",
+              "slide_range": [
+                3,
+                9
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_03_稀疏计算流程与思想",
+              "slide_range": [
+                10,
+                24
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_04_开源框架dgSPARSE与算子",
+              "slide_range": [
+                25,
+                34
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_点云稀疏卷积加速",
+              "slide_range": [
+                35,
+                48
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_06_超图神经网络加速",
+              "slide_range": [
+                49,
+                56
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_07_AI时代稀疏性背景",
+              "slide_range": [
+                57,
+                61
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_08_LLM稀疏方法与编译硬件",
+              "slide_range": [
+                62,
+                77
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_09_FlightLLM(FPGA推理)",
+              "slide_range": [
+                78,
+                87
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_10_其他工作FlashDecoding++",
+              "slide_range": [
+                88,
+                91
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_11_合作与致谢",
+              "slide_range": [
+                92,
+                93
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 2,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Challenge→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享"
+        ],
+        "deck_size_range": [
+          15,
+          40
+        ],
+        "audience_levels": [
+          "计算机体系结构/系统方向学术同行",
+          "研究组内同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            5,
+            7
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "Background(背景/动机)",
+        "Challenge(挑战)",
+        "Solution(方案)",
+        "Evaluation(评测)",
+        "Summary(总结)"
+      ],
+      "applicable_summary": "单篇论文分享 canonical 骨架:短 deck(20-40 页),cover+纵向编号 agenda 开场,再按 Background→Challenge→Solution→Evaluation→Summary 五段推进,每段进入前插一张『竖排编号圆点导航+当前段高亮』的 section_divider,末尾回归目录+一句『We propose X』总结页附实验室主页/邮箱收束",
+      "anti_patterns": [
+        "长篇 tutorial/多工作综述(章节数多):用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "空白模板骨架:用 blank_lab_report_template_skeleton",
+        "工业 demo/商业 BP(叙事节奏与结构不同)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "match_evidence": "24 页 paper_share·6 章严格按 Background(5p)→Challenge(5p)→Solution(5p)→Evaluation(6p)→Summary(2p),cover+首页纵向 5 圆圈 agenda 开场,每章前均有『竖排 4 圆点+当前项高亮』section_divider(slide 7/12/17),末尾 slide 23 回归目录+slide 24『We propose Endor...』一句总述附实验室主页与邮箱",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "Endor: Exploit Nearly-Decode-Only Opportunities",
+              "slide_claim": "Endor 论文正式署名亮相,由五校机构联合出品",
+              "slide_key_text": [
+                "Endor: Exploit Nearly-Decode-Only Opportunities",
+                "Jun Liu, Tianlang Zhao, Shiyi Liu, Jiancai Ye 等作者",
+                "Guohao Dai (通讯)",
+                "Shanghai Jiao Tong University, Infinigence AI, SII",
+                "Tsinghua University, Hong Kong University of Science and Technology"
+              ],
+              "slide_visual_skeleton": [
+                "左对齐大标题块",
+                "作者姓名多行列表",
+                "机构脚注编号标注"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "全 deck 五段式 agenda(Background 高亮)",
+              "slide_claim": "全 deck 分五段推进,当前进入 Background 章",
+              "slide_key_text": [
+                "1 Background",
+                "2 Challenge",
+                "3 Solution",
+                "4 Evaluation",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "纵向编号圆圈导航",
+                "5 项章节列表",
+                "当前项高亮对比"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "章节导航:进入 Challenge",
+              "slide_claim": "本章由 Background 承接,聚焦 Challenge 挑战环节",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点导航",
+                "四段目录列表",
+                "当前项高亮加粗"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "章节导航:进入 Solution 部分",
+              "slide_claim": "四段式汇报推进到第 3 部分 Solution",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排 4 圆点进度时间线",
+                "当前项高亮其余灰化",
+                "右侧板块名文字列"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Content 目录:进入第 4 章 Evaluation",
+              "slide_claim": "汇报进入第四部分 Evaluation,前三章已铺垫完毕",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排 4 个圆点编号",
+                "当前章高亮 tag",
+                "灰显未激活项"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "回归目录:四段脉络重点亮",
+              "slide_claim": "Background/Challenge/Solution/Evaluation 四板块构成全 deck 主线",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点串",
+                "四板块标题右列",
+                "留白极简版式"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_deck": "closing",
+              "archetype": "closing_summary_and_outlook",
+              "slide_title": "总述:We propose Endor 并附联系方式",
+              "slide_claim": "Endor 以计算精简算法+近存协同加速大模型推理",
+              "slide_key_text": [
+                "We propose Endor, a computation-reduced algorithm and memory-",
+                "Lab homepage",
+                "Email: liu-"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框总述句",
+                "下方联系方式双栏",
+                "极简收尾版式"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_大模型推理背景与解码演进",
+              "slide_range": [
+                2,
+                6
+              ]
+            },
+            {
+              "chapter_role": "problem",
+              "section_id": "section_03_复用NMP近存架构的挑战",
+              "slide_range": [
+                7,
+                11
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_Endor算法与近存协同设计",
+              "slide_range": [
+                12,
+                16
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_评测设置与加速结果",
+              "slide_range": [
+                17,
+                22
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_06_总结",
+              "slide_range": [
+                23,
+                24
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "blank_lab_report_template_skeleton",
+      "title": "实验室通用汇报空白模板骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "template"
+        ],
+        "scenario_keywords": [
+          "实验室/研究组通用 PPT 空白模板",
+          "个人介绍/课题汇报占位版式骨架",
+          "留白待填的实验室模板"
+        ],
+        "deck_size_range": [
+          5,
+          15
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队内部"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "method_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            1,
+            6
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "空白封面",
+        "个人/团队介绍占位",
+        "内容双栏版式占位",
+        "空白结尾"
+      ],
+      "applicable_summary": "极短 deck(≤10 页)通用空白模板骨架:cover 留白待填标题,中段提供 self_intro 履历+一组左右双栏可编号问题版式作 method 占位区,末尾提供空白 Thanks/Q&A 版式与实验室署名页脚。多数页为占位版式无实质内容,供二次填充课题汇报",
+      "anti_patterns": [
+        "有实质内容的成品 deck(应归入内容型 pattern)",
+        "长篇多章节报告:用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "单论文分享:用 paper_share_bg_challenge_solution_eval_summary_canonical"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "deck_title": "DAI 实验室 PPT 模板",
+          "deck_topic_tags": [
+            "学术模板",
+            "实验室",
+            "人工智能",
+            "集成电路",
+            "EDA",
+            "个人介绍",
+            "创新思路"
+          ],
+          "match_evidence": "7 页极短空白骨架·4 章:1p 空白封面 + 1p self_intro(工作/教育双时间线) + 4p 核心内容占位版式(创新思路/问题1/无标签紫蓝双栏/纯双蓝标题条) + 1p 空白 Thanks 结尾页(带 Guohao Dai @ SJTU 页脚),整套无实质内容,仅提供版式与配色骨架",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_single_title_centered",
+              "slide_title": "DAI 实验室 PPT 模板封面",
+              "slide_claim": "空白封面版式承载整套模板的标题与作者信息",
+              "slide_key_text": [],
+              "slide_visual_skeleton": [
+                "居中标题占位区",
+                "淡粉水平分隔线",
+                "下方作者/副标题占位区",
+                "极简留白背景"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "结尾/致谢空白版式页",
+              "slide_claim": "空白收尾版式,顶部蓝条+底部署名页脚,留白主体供填 Thanks/Q&A",
+              "slide_key_text": [
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色横条",
+                "大面积空白主体",
+                "底部署名页脚+页码"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "self_intro",
+              "section_id": "section_02_个人介绍",
+              "slide_range": [
+                2,
+                2
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_核心内容版式",
+              "slide_range": [
+                3,
+                6
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_04_结尾页",
+              "slide_range": [
+                7,
+                7
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 4 deck 中抽出 3 条 pattern:长篇 works panorama(AI Infra + ASP-DAC Tutorial 2 carrier)、canonical paper share 五段式(Endor)、空白实验室模板(DAI template)。previous_batches_patterns 为空,无跨 batch dedup。全部 archetype 均沿用标准词汇表,未新增。所有 carrier 章节角色 case_study/background/experiment 分别映射到 chapter_role 枚举 method/motivation/result。DAI 模板 slide 3-6 为 content_candidate 占位版式,按 hard rule 不列入 structural_slides。",
+  "coverage": {
+    "decks_in_batch": 4,
+    "decks_assigned_to_some_pattern": 4,
+    "decks_unassigned_in_this_batch": [],
+    "decks_assigned_to_multiple_patterns": []
+  }
+}

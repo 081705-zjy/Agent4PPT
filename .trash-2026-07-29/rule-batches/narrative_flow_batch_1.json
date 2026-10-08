@@ -1,0 +1,362 @@
+{
+  "batch_index": 1,
+  "rules": [
+    {
+      "id": "agenda_reshown_at_each_major_part_start",
+      "category": "callback",
+      "applicable_when": "decks ≥40 pages with a top-level agenda (e.g. tutorial/survey) split into 3+ major parts",
+      "title": "每进入新主部分需重现目录并高亮当前项",
+      "description": "长报告在进入每个 top-level 大部分时，需重新显示 Contents 目录页，当前部分高亮、其他项灰化，作为对开场 agenda 的显式回扣与位置提示，命中率应 ≥90%。",
+      "what_to_check": [
+        "找 slide.关键文字 含 'Contents' 或 目录 / '章节'  的页作为 agenda 页",
+        "对每个 top-level 部分的首页 (可从 sections_outline 或 slides section_role 变化点识别)，检查该页或紧邻页是否含 'Contents' + 高亮某项的视觉骨架",
+        "记录 agenda 复现次数应 ≥ 主部分数 (含开场首次)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "开场 slide 2 首现 Contents 4 项目录; slide 25 dgSparse 部分开头/slide 57 Case study 部分开头/slide 88 Other works 部分开头 3 次复现同一 Contents 并高亮当前项，4/4 主部分命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长报告听众易迷失位置，agenda 复现是低成本的空间锚点，让听众随时知道'我们讲到哪、还剩什么'，是位置感的第一支撑",
+      "fix_hint": "在每个主部分首页插入一张 Contents 页，复用开场目录版式并高亮当前项、灰化其余项",
+      "exceptions": [
+        "≤20 页短 deck 不需要 agenda 复现",
+        "无 top-level 分部的单一线性 deck (如单篇论文 slide)"
+      ]
+    },
+    {
+      "id": "framework_diagram_reuse_in_summary",
+      "category": "callback",
+      "applicable_when": "deck contains a framework diagram (multi-layer / multi-stage) introduced in framework 章",
+      "title": "框架图应在方法/收尾章被回扣复用",
+      "description": "framework 章建立的多层设计图 (如 algorithm-compilation-architecture 三层)，在后续 method 章的总结或 case study 收尾页应被再次引用，以强化'新工作落在框架第 N 层'的心智模型，命中率 ≥85%。",
+      "what_to_check": [
+        "识别 framework 章 slide 中的多层/多阶段骨架 (视觉骨架含'三层框' '三段流程' 或关键文字含 algorithm/compilation/architecture 等分层词)",
+        "在 method / case_study 章的 Summary 页 (标题含 Summary/总结/收束) 中查同一分层骨架或关键文字是否复现",
+        "记录复现次数应 ≥1"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "slide 13-16 建立 Sparsification/Compilation/Architecture 三层框架, slide 77 'LLM: Summary' 用同样三框自上而下复现该框架图, 完成从'框架-案例'的心智回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "框架图是听众用来'挂钩'后续内容的心智支架, 收尾复现能让听众把散落 case 归拢回一个整体图景, 缺失则案例像散点",
+      "fix_hint": "在 method / case_study 章末追加一张 Summary 页, 复用 framework 章的分层骨架图并标出本章落在哪层",
+      "exceptions": [
+        "无显式框架图的纯线性叙事 deck",
+        "只有 1 个 case study 的短 deck (无需归拢)"
+      ]
+    },
+    {
+      "id": "cover_thesis_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with both cover and closing sections",
+      "title": "封面主标题需在收尾页回扣",
+      "description": "封面主标题或主 thesis 关键词应在收尾 (THANKS/致谢/Summary) 页 verbatim 或 paraphrased 出现, 首尾呼应, 命中率 ≥90%。",
+      "what_to_check": [
+        "抽 cover slide (section_role=cover 或 页面角色=cover_candidate) 的主标题关键词",
+        "在 closing slide (section_role=closing 或 页面角色=ending_candidate) 的关键文字中查该关键词是否重现 (verbatim 或核心词一致)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "cover slide 1 主标题 'Sparse Acceleration for Artificial Intelligence Progress and Trends' 在 slide 93 封底 verbatim 复现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾呼应是最基本的完整感信号, 听众离场时脑中留下的是最后一屏, 若与开场主题脱节则'讲了什么'瞬间模糊",
+      "fix_hint": "在收尾页留一行'回到主题'字样, 直接抄录 cover 主标题或主 anchor 短语",
+      "exceptions": [
+        "内部工作汇报无正式封面/封底的极简 deck"
+      ]
+    },
+    {
+      "id": "motivation_ends_with_solution_definition",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with motivation section that precedes a method/framework section",
+      "title": "动机章末应给出解法定义式收束",
+      "description": "motivation 章最后一张 slide 应对'为什么需要这个方向'给出一句定义式收束 (X 是什么 + 它如何提效), 作为过渡到 framework/method 章的枢纽, 命中率 ≥80%。",
+      "what_to_check": [
+        "定位 motivation 章末页 (section_role=motivation 的最后一页)",
+        "该页 核心论断 应含解法名 + 收益机制描述 (含 'improve/提升/降低/加速' 等词)",
+        "不该只有 problem statement, 也不该已展开具体方法细节"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "motivation 章 (slides 3-9) 末页 slide 9 '什么是稀疏计算:跳过零值提效' 用定义式论断 + 2x 加速数字收束, 完美衔接后续 framework 章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "动机章若只讲问题不点解法, 听众带着悬念进 framework 章会跟不上; 若讲得太细又会破坏后续 build-up. 定义式收束是最佳张力点",
+      "fix_hint": "motivation 章末追加一张 slide, 用'X = 通过 Y 机制解决 Z 问题'句式给一句结论并配一个关键数字",
+      "exceptions": [
+        "无 motivation 章的纯参考 / cheat-sheet deck",
+        "综述型 deck (motivation 可能不指向具体方法)"
+      ]
+    },
+    {
+      "id": "framework_chapter_end_teases_case_studies",
+      "category": "suspense_reveal",
+      "applicable_when": "decks with framework section followed by case_study/method sections",
+      "title": "框架章末应预告后续案例方法",
+      "description": "framework 章末页应用一句/一图预告后续 case_study/method 章将展开的具体工作, 建立'总-分'张力, 命中率 ≥70%。",
+      "what_to_check": [
+        "定位 framework 章末页 (section_role=framework 的最后一页)",
+        "该页关键文字应含后续工作的名字/关键词 (可来自 sections_outline 后续 section 标题)",
+        "视觉骨架常见'两行流程' '灰显预告框' 等提示"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "framework 章末 slide 24 上下双行流程带, 下行 'Our methods for LLM: Multi-level Design with Sparsity / Low-cost LLM on FPGA' 明确预告后续两大 case 方向"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "框架章是抽象层, 若不预告落到什么具体工作, 听众不知道后面听什么、张力松掉; 预告能激活期待",
+      "fix_hint": "framework 章末页加一条横带列出后续 case 名字, 用不同颜色/亮度区分'已讲' vs '将讲'",
+      "exceptions": [
+        "framework 章即是 deck 主体的综述型 deck (无 case_study 后续)"
+      ]
+    },
+    {
+      "id": "case_study_challenge_solution_performance_triplet",
+      "category": "chapter_transitions",
+      "applicable_when": "any case_study section presenting a specific method/paper",
+      "title": "case study 章应严格遵循挑战-解法-性能三段式",
+      "description": "每个 case_study 章内部应按 Challenge (问题观察) → Solution (方法) → Performance (性能/消融) 顺序推进, 三段皆有对应 slide, 缺失任一段视为破坏叙事完整性, 命中率应 ≥85%。",
+      "what_to_check": [
+        "对每个 section_role=case_study, 遍历该 section 页面",
+        "关键文字或标题应至少各含一次: 'Challenge/Observation/挑战', 'Solution/方案/创新', 'Performance/Result/Ablation/加速比数字'",
+        "三段顺序应严格 Challenge → Solution → Performance, 不允许 Performance 在 Challenge 之前"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "点云案例 slides 38-40 (Obs1/Sol1) → 41-43 (Obs2/Sol2) → 44-46 (Obs3/Sol3) → 47-48 (Perf/Ablation); HyperGef 案例 slides 50-51 (Challenges) → 52-54 (Solutions) → 55-56 (Performance); FlightLLM 案例 slides 79-81 (Motivation/Challenges) → 82-85 (Solutions) → 86-87 (Result), 4 个 case 命中 4/4"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "Challenge-Solution-Performance 是技术型 case 的最小完整叙事单元, 缺 Challenge 则'为啥这么做'不清、缺 Performance 则'到底有没有用'不清, 三段皆需",
+      "fix_hint": "如 case 章缺 Performance, 追加一张加速比/精度对比页; 如缺 Challenge, 在 Solution 前插入观察页",
+      "exceptions": [
+        "宣讲/演示类 case (不追求量化结果, 只 demo 用法)",
+        "封面型 case (仅 1 页论文引入, 不展开)"
+      ]
+    },
+    {
+      "id": "key_speedup_numbers_repeated_across_summary_pages",
+      "category": "repetition_emphasis",
+      "applicable_when": "decks reporting quantitative performance results across ≥2 works",
+      "title": "关键加速数字应在总结页跨章重复出现",
+      "description": "全 deck 关键性能数字 (如具体加速比、能效倍数) 应在 framework 章总结页、chapter recap 页、closing 页至少重复 2-3 次, 强化听众记忆, 命中率 ≥75%。",
+      "what_to_check": [
+        "抽 deck 中含 'x倍/x speedup/%↑/%↓' 的关键数字",
+        "记录每个关键数字出现的 slide 序号",
+        "top-3 关键数字应各出现 ≥2 次, 且分布在不同章"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "'SpMM 57%' 与 'SDDMM 14.01x' 在 slide 21 (2022→2024 进展)、slide 24 (framework 章末)、slide 29 (dgSparse章过渡)、slide 61 (LLM 章预告) 4 次跨章重复"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "单次露出的数字听众记不住, 跨章 3+ 次重复才能沉淀为'这个工作的招牌数字'; 但过度重复 (>5 次) 又显啰嗦",
+      "fix_hint": "选定 2-3 个招牌数字, 在 framework 收束/章末 recap/closing 各安排一次显式复现",
+      "exceptions": [
+        "无量化结果的纯定性方法 deck",
+        "单一 case 的短 deck (无跨章需求)"
+      ]
+    },
+    {
+      "id": "case_study_ends_with_baseline_comparison",
+      "category": "comparison_evidence",
+      "applicable_when": "any case_study section presenting method performance",
+      "title": "case study 应以基线对比数字收尾",
+      "description": "每个 case_study 章的最后 1-2 张 slide 应给出与 SOTA/商用基线的量化对比 (含 baseline 名字 + 加速比或指标提升), 而非停留在方法描述, 命中率 ≥85%。",
+      "what_to_check": [
+        "定位每个 section_role=case_study 章的末页",
+        "末页 或倒数第二页 关键文字应含 baseline 名字 (如 cuSPARSE/DGL/PyG/TensorRT-LLM/vLLM/SOTA/GPU) + 具体倍数/百分比",
+        "视觉骨架常见'柱状对比图' '数字标注'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "点云案例末 slide 47-48 vs TorchSparse/SpConv 1.64x/1.23x; HyperGef 末 slide 55-56 vs DGL/PyG 2.25-3.39x; FlightLLM 末 slide 86-87 vs GPU 6.0x 能效/1.8x 成本; FlashDecoding++ 末 slide 90-91 vs vLLM/HuggingFace 1.12x/2.01x, 4/4 case 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "'方法讲完但没结果'是技术演讲最致命破绽; 章末必须给基线对比让听众知道方法是否值得关注",
+      "fix_hint": "case 章末追加一张 Performance/Result 页, 用双列/柱图列出 vs baseline 的具体倍数或百分比",
+      "exceptions": [
+        "工程分享/演示类 case (无 baseline 对比场景)",
+        "早期工作/预印本 case (数据未成熟)"
+      ]
+    },
+    {
+      "id": "solution_page_paired_with_quantitative_evidence",
+      "category": "comparison_evidence",
+      "applicable_when": "any case_study or method section presenting multiple Solutions",
+      "title": "每个 Solution 应有对应量化证据 slide",
+      "description": "case_study/method 章中每个 Solution 提出后, 应在同章内以 evidence slide (含具体数字, 如利用率、加速比、节省比例) 佐证其效果, 平均每 Solution ≥1 张 evidence slide, 命中率 ≥80%。",
+      "what_to_check": [
+        "在 case_study 或 method 章内, 抽出所有关键文字含 'Solution' / '解法' 的 slide 数 (记为 S)",
+        "抽出关键文字含具体数字 (%/x/GB/FPS/token) 的 slide 数 (记为 E)",
+        "E/S 应 ≥1.0"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "点云章 3 个 Solution 对应 slide 47 (端到端 1.64x) + slide 48 (逐项 1.21x/1.75x/1.15x); HyperGef 3 个 Solution 对应 slide 55-56 (2.25-3.39x/1.53x/39% 内存节省); FlightLLM 3 个 Solution 对应 slide 86-87 (6.0x/1.8x/3.3GB), 各 case 内 E/S ≥1"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无量化证据的 Solution 只是'我们做了这个', 听众无法判断价值; 必须每 Solution 都有独立数字支撑",
+      "fix_hint": "在 case 章末的 Ablation 页, 逐 Solution 列出独立收益数字 (如'Solution X 单项带来 Y% 提升')",
+      "exceptions": [
+        "定性 / 用户研究 (UX) 类 case (证据可能为访谈引用而非数字)"
+      ]
+    },
+    {
+      "id": "technical_term_defined_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck introducing domain-specific abbreviations or terms",
+      "title": "专业缩写/术语首次使用时应就地展开",
+      "description": "领域专业缩写或核心术语 (如 GEMM/SpMM/FGMS/N:M sparsity) 首次出现时应在同页或相邻页给出全称或定义, 首次使用 → 首次定义距离应 ≤1 页, 命中率 ≥85%。",
+      "what_to_check": [
+        "抽 deck 中的缩写形式 (2-6 字母大写组合) 或专有术语",
+        "定位其首次出现 slide",
+        "该 slide 或前 1 页应含全称/定义 (如括号展开、图示、'is defined as' 类语句)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "slide 10 首次出现 GEMM/SpMM 时同页展开 'General Matrix Multiplication/Sparse-matrix Dense-matrix Multiplication'; slide 41 首用 FGMS 同页展开 'Fused Gather-MM-Scatter'; slide 79 首用 N:M 稀疏时同页三列图例给出定义"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨领域听众对缩写陌生, 首用时不定义会导致后续 slide 全程失焦; 就地展开是低成本的可访问性投入",
+      "fix_hint": "在首用缩写的 slide 括号内追加全称, 或在关键文字/视觉骨架里加一个术语定义框",
+      "exceptions": [
+        "对目标受众公认无需解释的通用缩写 (如 GPU/CPU/AI)"
+      ]
+    },
+    {
+      "id": "agenda_chapters_match_actual_sequence",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an explicit agenda/Contents page after cover",
+      "title": "开场目录应严格对应实际章节顺序",
+      "description": "开场 agenda 列出的 N 项 (在 slide 2-3 附近) 应与实际 sections_outline 的 top-level 部分数量、名称、顺序一致, 命中率 ≥95%。",
+      "what_to_check": [
+        "抽 slide 2-3 附近含 'Contents' 的 slide 的编号列表条目",
+        "对比 sections_outline (或 主要 section_role 变化点) 的 top-level 分部",
+        "条目数、名称语义、顺序应一致 (paraphrase OK)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "slide 2 Contents 4 项 (Opening/dgSparse/Case study/Other works) 精确对应 4 个主部分 (section 1-2 = Opening, 3-4 = dgSparse, 5-8 = Case study, 9-11 = Other works)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是对听众的明确承诺, 顺序 / 名字不一致会让听众怀疑'讲者是不是自己都没想清楚'",
+      "fix_hint": "以实际 sections 为准倒推修改 agenda 页, 或调整实际章节顺序对齐 agenda",
+      "exceptions": [
+        "无显式 agenda 的短 deck (无承诺就无违反)"
+      ]
+    },
+    {
+      "id": "cover_to_motivation_short_distance",
+      "category": "pacing",
+      "applicable_when": "any deck with cover, agenda, and motivation sections",
+      "title": "封面到动机首页距离应 ≤3 页",
+      "description": "cover → agenda → motivation 首页 之间的页数距离应 ≤3, 避免前置结构页过多稀释听众注意力, 命中率 ≥90%。",
+      "what_to_check": [
+        "定位 cover slide (页序号最小的 section_role=cover/opening)",
+        "定位 motivation 章首页 (section_role=motivation 的最小页序号)",
+        "两者页序号之差应 ≤3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "cover slide 1 → agenda slide 2 → motivation 首页 slide 3, 距离 = 2, 满足 ≤3"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场 30 秒是注意力峰值, 应尽快进入'为什么听这个' (motivation); 若前置铺垫超过 3 页, 听众开始神游",
+      "fix_hint": "如前置页过多, 合并 cover 与讲者介绍到一页, agenda 保留 1 页, 尽快进入 motivation",
+      "exceptions": [
+        "组会/内部 deck 有额外的讲者介绍 / 组织架构页 (可放宽到 5 页)"
+      ]
+    },
+    {
+      "id": "structural_pages_ratio_bounded",
+      "category": "pacing",
+      "applicable_when": "any deck ≥20 pages",
+      "title": "结构页占比应控制在 5-15%",
+      "description": "结构页 (cover + agenda + chapter divider + closing) 占总页数比应在 5-15% 区间, 过高显得空洞, 过低则缺乏节奏点, 命中率 ≥75%。",
+      "what_to_check": [
+        "统计 页面角色 in {cover_candidate, ending_candidate, chapter_candidate} 或 关键文字仅含目录/致谢/章节标题的 slide 数 (S)",
+        "算 S / 总页数",
+        "应落在 [0.05, 0.15]"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "evidence": "总 93 页, 结构页 slide 1 (cover) + slides 2/25/57/88 (4 次 agenda) + slide 81 (Challenges divider) + slide 92-93 (closing) ≈ 8 张, 占比 ≈ 8.6%, 落在 [5%,15%]"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页少于 5% 缺章节感觉、听众迷路; 超过 15% 则'过门太多正片太少', 显得内容单薄",
+      "fix_hint": "如结构页超过 15%, 合并同类分隔页; 如低于 5%, 至少加 agenda 页 + 章节分隔条",
+      "exceptions": [
+        "海报型 / 演示型 deck (基本无结构页)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (ASP-DAC Tutorial 93 页), 提取 14 条 rule 覆盖全部 8 大类. 单 deck 的 hit_rate 均为 1.0 因该 deck 严格遵循这些模式, 但真实 universal 命中率待后续 batch 校准. 未来 batch 若发现该 deck 是 'gold standard' 而非典型, 部分 hard rule 需降为 soft.",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 1,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 2
+    }
+  }
+}

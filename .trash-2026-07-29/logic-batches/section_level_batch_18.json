@@ -1,0 +1,2164 @@
+{
+  "batch_index": 18,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(题目+答辩人/导师/日期)接一张分板块目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "论文封面式单页开场无 TOC — 用 opening_paper_cover_multi_author_multi_institution",
+        "空白骨架封面模板类 — 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "deck 开场章:封面亮明「软硬件协同设计」主题与答辩身份，目录用四栏(学习情况/研究背景/研究内容/总结)预告全篇骨架，为后续章节建立导航坐标。",
+          "section_topic_tags": [
+            "博士资格考试封面",
+            "四栏板块目录",
+            "软硬件协同主题亮明",
+            "答辩身份署名"
+          ],
+          "match_evidence": "2 页节奏: 大字标题+答辩人署名的封面(cover_title_signature) 接 四栏板块目录(toc_progress_highlight), 完全吻合开场经典双拍",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "高能效大模型推理系统的软硬件协同设计",
+              "slide_claim": "答辩以「软硬件协同设计」为主线破解大模型推理能效瓶颈",
+              "slide_key_text": [
+                "高能效大模型推理系统的软硬件协同设计",
+                "答辩人 / 导师 / 学院信息",
+                "2025 年 4 月 14 日"
+              ],
+              "slide_visual_skeleton": [
+                "居中横排主标题",
+                "浅色横向分隔线",
+                "身份信息两栏文字块",
+                "底部日期",
+                "右上角校徽图片"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录",
+              "slide_claim": "全篇由学习情况/研究背景/研究内容/总结四板块串联展开",
+              "slide_key_text": [
+                "目录",
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结",
+                "Jinhao Li @ Shanghai Jiao Tong University"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色标题横栏",
+                "左侧竖排四项目录列表",
+                "灰色页脚署名条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "self_intro_course_completion_single_page",
+      "title": "自我介绍·课程完成情况单页声明",
+      "applicable_when": {
+        "chapter_role": [
+          "self_intro"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "学习情况",
+          "课程完成",
+          "资格声明"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "course_completion_single_statement",
+          "count": 1,
+          "position": "start",
+          "purpose": "单页声明博士阶段课程学分已修完, 扫清资格门槛"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "博士资格考试固定环节: 一页居中描边文本框声明「已完成博士阶段全部公共基础课与专业基础课」, 声明进度门槛后过渡到研究正文",
+      "anti_patterns": [
+        "含研究方向+工作/教育双时间线的详细履历页 — 用 self_intro_research_plus_dual_timeline"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.02",
+          "section_title": "学习情况",
+          "section_role": "self_intro",
+          "section_narrative": "博士资格考试固定环节，正文研究汇报前用一页交代考核人课程学习进度，声明已完成全部公共与专业基础课，扫清资格门槛后进入研究内容。",
+          "section_topic_tags": [
+            "博士资格课程学习",
+            "公共基础课",
+            "专业基础课",
+            "资格门槛声明"
+          ],
+          "match_evidence": "单页单句居中文本框声明课程完成情况, 完全吻合 course_completion_single_statement",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "course_completion_single_statement",
+              "archetype": "course_completion_single_statement",
+              "slide_title": "学习情况：课程学分已修完",
+              "slide_claim": "已修完博士全部公共与专业基础课，扫清资格门槛",
+              "slide_key_text": [
+                "学习情况",
+                "已完成博士阶段全部公共基础课与专业基础课"
+              ],
+              "slide_visual_skeleton": [
+                "左上章节标题",
+                "蓝色分隔条",
+                "居中单句描边文本框",
+                "页脚汇报人署名条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "motivation_dual_side_gap_plus_specialization_to_features_extraction",
+      "title": "动机·需求↑供给↓+专用性差→三大特点提炼",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "需求",
+          "供给",
+          "痛点",
+          "特点",
+          "研究内容映射"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "进度目录切入研究背景章"
+        },
+        {
+          "archetype": "macro_capability_and_apps_dual_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "左右两栏铺陈 AI 能力接近人类+下游应用广泛"
+        },
+        {
+          "archetype": "demand_side_quantitative_explosion",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以指数曲线+具体能耗实例量化需求侧压力"
+        },
+        {
+          "archetype": "supply_side_slowdown_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以摩尔定律曲线论证供给侧受限"
+        },
+        {
+          "archetype": "domain_specialization_gap_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以领导讲话/CNCC 引文点出通用大模型专用性弱"
+        },
+        {
+          "archetype": "features_extraction_chain_to_method",
+          "count": 1,
+          "position": "end",
+          "purpose": "以电力→行动能量链条右侧引出三大特点, 为方法章铺垫"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "macro_capability_and_apps_dual_panel",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "macro_capability_and_apps_dual_panel",
+          "to_archetype": "demand_side_quantitative_explosion",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "demand_side_quantitative_explosion",
+          "to_archetype": "supply_side_slowdown_chart",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "supply_side_slowdown_chart",
+          "to_archetype": "domain_specialization_gap_statement",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "domain_specialization_gap_statement",
+          "to_archetype": "features_extraction_chain_to_method",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "研究报告型 motivation 章: 目录→AI 能力/应用铺陈→需求侧算力暴涨(耗电量化)→供给侧摩尔定律放缓→通用模型专用性弱→末页能量链条右侧提炼推理三大特点, 三重背景漏斗后引出研究内容",
+      "anti_patterns": [
+        "纯 AI 路标→供需鸿沟→稀疏解法 — 用 motivation_trend_landscape_to_gap_to_solution_bridge",
+        "宏观三支柱→政策讲话→N 途径公式 — 用 background_macro_gap_to_policy_to_method_bridge"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.03",
+          "section_title": "研究背景与推理动机",
+          "section_role": "motivation",
+          "section_narrative": "全deck首个论证章。先立需求侧「推理算力5年涨4-5数量级、耗电巨大」与供给侧「集成电路放缓」的供需矛盾，再补领域专用性弱，末页三列提炼推理三大特点，为后续三条研究内容铺垫。",
+          "section_topic_tags": [
+            "AI能力与应用",
+            "算力需求指数级增长",
+            "摩尔定律放缓",
+            "通用大模型专用性弱",
+            "推理三大特点"
+          ],
+          "match_evidence": "6 页节奏: 目录→AI能力/应用双栏→FLOPS/DeepSeek能耗需求侧→摩尔定律供给侧→通专融合弱点→电力→行动链条+三特点框, 完整吻合『需求↑供给↓+专用性』三重背景+特点提炼漏斗",
+          "slides": [
+            {
+              "slide_index": 4,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录：定位到「研究背景」章",
+              "slide_claim": "全deck分四板块，当前进入研究背景论证",
+              "slide_key_text": [
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四行目录列表",
+                "当前项高亮加深",
+                "顶部蓝色分隔条"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "macro_capability_and_apps_dual_panel",
+              "archetype": "macro_capability_and_apps_dual_panel",
+              "slide_title": "研究背景：AI能力接近人类并落地应用",
+              "slide_claim": "AI能力接近或超过人类，支撑大量下游应用",
+              "slide_key_text": [
+                "人工智能能力接近或超过人类，支持一系列下游应用",
+                "人工智能能力趋势",
+                "下游应用举例",
+                "对话机器人",
+                "Stanford University AI Index Report 2024"
+              ],
+              "slide_visual_skeleton": [
+                "顶部结论横条",
+                "左右两栏对比布局",
+                "左栏能力趋势曲线",
+                "右栏应用示例图格"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "demand_side_quantitative_explosion",
+              "archetype": "demand_side_quantitative_explosion",
+              "slide_title": "AI算力需求近5年涨4-5数量级、推理耗电巨大",
+              "slide_claim": "大模型算力需求5年涨4-5个数量级，推理耗电惊人",
+              "slide_key_text": [
+                "算力需求呈指数级增长",
+                "近5年增长4-5个数量级",
+                "推理耗电量大",
+                "DeepSeek-R1 671GB",
+                "16张A100，功耗6400W",
+                "iPhone 15Pro Max 电池4422mAh",
+                "10s推理耗电≈1-2部手机"
+              ],
+              "slide_visual_skeleton": [
+                "顶部结论横条",
+                "左右两栏布局",
+                "左栏FLOPS对数增长曲线",
+                "右栏DeepSeek-R1能耗示意框"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "supply_side_slowdown_chart",
+              "archetype": "supply_side_slowdown_chart",
+              "slide_title": "研究背景：摩尔定律放缓、供给侧受限",
+              "slide_claim": "摩尔定律50年指数增长后逼近物理极限、算力增速放缓",
+              "slide_key_text": [
+                "摩尔定律推动集成电路50年指数级增长",
+                "晶体管尺寸逼近物理极限，算力增速显著放缓",
+                "1965年提出，晶体管数每2年翻倍",
+                "Gordon Moore (1929-2023)",
+                "Performance (vs VAX-11/780)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部结论横条",
+                "左右两栏布局",
+                "左栏摩尔定律时间轴+人物",
+                "右栏性能增长趋势曲线"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "domain_specialization_gap_statement",
+              "archetype": "domain_specialization_gap_statement",
+              "slide_title": "研究背景：通用大模型领域专用性弱",
+              "slide_claim": "通用大模型专业性存瓶颈，需通专融合增强领域能力",
+              "slide_key_text": [
+                "专业领域应用针对性强，通用大模型专业性有瓶颈，需要通专融合",
+                "「通专融合」方式构建AGI——路径与关键问题探索",
+                "CNCC2024"
+              ],
+              "slide_visual_skeleton": [
+                "顶部结论横条",
+                "右上通专融合示意图",
+                "来源标注"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "features_extraction_chain_to_method",
+              "archetype": "features_extraction_chain_to_method",
+              "slide_title": "大模型推理三大特点提炼",
+              "slide_claim": "推理沿电力→运算→词元→动作链条呈现三大特点",
+              "slide_key_text": [
+                "电力 Electricity",
+                "运算 Operation",
+                "词元 Token",
+                "动作 Action",
+                "特点1 硬件推理能效低",
+                "特点2",
+                "特点3"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四级纵向转化链",
+                "箭头指向右侧三个特点框",
+                "三个粉色特点卡片"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "background_multi_dimension_survey_to_efficiency_gap_to_research_questions",
+      "title": "现状·多维综述→跨硬件能效汇总→研究问题拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究现状",
+          "综述",
+          "能效数据",
+          "核心问题",
+          "研究问题"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "hardware_architecture_survey_dual_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "两栏并列主流硬件架构综述(GPU/TPU)"
+        },
+        {
+          "archetype": "lightweight_methods_taxonomy_with_table",
+          "count": 1,
+          "position": "start",
+          "purpose": "算法轻量化方法(量化/剪枝/蒸馏)+代表工作加速比表"
+        },
+        {
+          "archetype": "domain_models_generalization_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "专业领域模型 vs 通用大模型的泛化能力对比"
+        },
+        {
+          "archetype": "cross_hardware_efficiency_scatter_and_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "跨硬件(CPU/GPU/FPGA/ASIC/PIM)吞吐/能效散点+表格汇总"
+        },
+        {
+          "archetype": "efficiency_gap_target_positioning",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以椭圆散点+目标区箭头凸显云端/端侧差 1-2 数量级"
+        },
+        {
+          "archetype": "features_to_research_questions_mapping",
+          "count": 1,
+          "position": "end",
+          "purpose": "从能量链条右侧特点映射为三大研究问题, 为方法章立靶"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "hardware_architecture_survey_dual_panel",
+          "to_archetype": "lightweight_methods_taxonomy_with_table",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "lightweight_methods_taxonomy_with_table",
+          "to_archetype": "domain_models_generalization_compare",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "domain_models_generalization_compare",
+          "to_archetype": "cross_hardware_efficiency_scatter_and_table",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "cross_hardware_efficiency_scatter_and_table",
+          "to_archetype": "efficiency_gap_target_positioning",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "efficiency_gap_target_positioning",
+          "to_archetype": "features_to_research_questions_mapping",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "研究报告型现状章: 三视角综述(硬件架构/轻量化算法/专业领域模型)→跨硬件能效数据汇总→揭示云端-端侧差 1-2 数量级→将痛点映射为三大研究问题, 为后续研究内容一一映射铺路",
+      "anti_patterns": [
+        "只做算力鸿沟+稀疏方向立靶 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw",
+        "只做单代范式对比+同构表格递进 — 用 background_paradigm_shift_dual_era_comparison_table"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.04",
+          "section_title": "研究现状与核心问题",
+          "section_role": "background",
+          "section_narrative": "承接动机章，以三视角综述现状（硬件架构/轻量化/专业模型），再汇总跨硬件能效数据，暴露『推理能效低、云端差1~2数量级』核心矛盾，进而提炼三大研究问题，为后续三项研究内容铺垫。",
+          "section_topic_tags": [
+            "硬件架构综述",
+            "算法轻量化综述",
+            "专业领域模型综述",
+            "跨硬件能效对比",
+            "三大研究问题"
+          ],
+          "match_evidence": "6 页节奏: 硬件架构双栏→轻量化方法表→领域模型对比→跨硬件散点表→椭圆+目标区差距→能量链条→三大研究问题, 完整命中『多维综述→能效汇总→研究问题』",
+          "slides": [
+            {
+              "slide_index": 10,
+              "role_in_pattern": "hardware_architecture_survey_dual_panel",
+              "archetype": "hardware_architecture_survey_dual_panel",
+              "slide_title": "研究现状：大模型硬件架构",
+              "slide_claim": "GPU与TPU等主流架构随算法迭代驱动硬件迭代",
+              "slide_key_text": [
+                "英伟达GPU / Tensor Core",
+                "谷歌TPU / Systolic Array",
+                "Mamba/RWKV等新架构",
+                "算法迭代驱动硬件迭代"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框结论",
+                "2列硬件对比panel",
+                "底部迭代箭头链"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "lightweight_methods_taxonomy_with_table",
+              "archetype": "lightweight_methods_taxonomy_with_table",
+              "slide_title": "研究现状：大模型轻量化方法",
+              "slide_claim": "量化/剪枝/蒸馏可显著压缩模型并提升加速比",
+              "slide_key_text": [
+                "量化 FP16→INT4",
+                "剪枝 / 蒸馏",
+                "GPTQ[1] 4x IST Austria",
+                "AWQ[2] 4x",
+                "Wanda[3] 2x CMU / SparseGPT[4] 2x"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框结论",
+                "左侧量化/剪枝矩阵示意",
+                "右侧方法-加速比对比表"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "domain_models_generalization_compare",
+              "archetype": "domain_models_generalization_compare",
+              "slide_title": "研究现状：专业领域模型",
+              "slide_claim": "专业领域模型精度高但通用性弱于通用大模型",
+              "slide_key_text": [
+                "药物研发 AlphaFold[1] Google DeepMind",
+                "EDA芯片 ChipNemo[2] Nvidia",
+                "专业模型泛化能力受限",
+                "通用大模型 GPT-4o 泛化更强"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框结论",
+                "2列领域模型panel",
+                "中部对比箭头",
+                "底部红字对照"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "cross_hardware_efficiency_scatter_and_table",
+              "archetype": "cross_hardware_efficiency_scatter_and_table",
+              "slide_title": "研究现状：推理系统能效汇总",
+              "slide_claim": "不同硬件推理吞吐与能效跨度极大,ASIC/PIM领先",
+              "slide_key_text": [
+                "数据来源: ~150份学术与产业界",
+                "模型大小 ~7B batch size=1",
+                "CPU <60 / 0.1-2",
+                "GPU 10-200 / 0.1-1",
+                "ASIC 10-1800 / 1-10",
+                "PIM ~1000 / 1-10"
+              ],
+              "slide_visual_skeleton": [
+                "左侧端侧-云端散点分布图",
+                "右上数据来源说明框",
+                "右下硬件吞吐/能效表"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "efficiency_gap_target_positioning",
+              "archetype": "efficiency_gap_target_positioning",
+              "slide_title": "研究现状：推理系统能效低",
+              "slide_claim": "现有推理仅约1 tokens/J,云端端侧差1~2数量级",
+              "slide_key_text": [
+                "现有能效约1 tokens/J",
+                "云端端侧差1~2个数量级",
+                "目标: 100~2000 tokens/s <20W >20 tokens/J",
+                "对标GPT-4o/o1 7B等效",
+                "硬件类型 CPU/GPU/FPGA/ASIC"
+              ],
+              "slide_visual_skeleton": [
+                "左侧数据条件bullet框",
+                "右侧四硬件椭圆散点",
+                "指向目标区大箭头",
+                "目标指标标注框"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "features_to_research_questions_mapping",
+              "archetype": "features_to_research_questions_mapping",
+              "slide_title": "大模型推理特点与问题",
+              "slide_claim": "推理三大特点各对应一个待解硬件系统研究问题",
+              "slide_key_text": [
+                "电力Electricity→操作Operation→令牌Token→动作Action",
+                "特点1 / 问题1",
+                "问题1 如何设计支持规约与非规约的高效硬件架构?",
+                "特点2 / 问题2",
+                "特点3 / 问题3"
+              ],
+              "slide_visual_skeleton": [
+                "左侧能量转化纵向流程链",
+                "3行特点→问题并列条",
+                "行内箭头映射"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "framework_codesign_core_idea_plus_energy_chain_content_map",
+      "title": "框架·软硬协同核心思想+能量链条研究内容映射",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "核心思想",
+          "软硬协同",
+          "整体思路",
+          "研究内容映射"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "codesign_core_idea_with_case_example",
+          "count": 1,
+          "position": "start",
+          "purpose": "亮出软硬协同核心思想, 以 FP8 等具体量化贯通软硬两侧"
+        },
+        {
+          "archetype": "energy_chain_research_content_map",
+          "count": 1,
+          "position": "end",
+          "purpose": "以电力→运行→令牌→行动竖链把 N 条研究内容并列纳入总框架"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "codesign_core_idea_with_case_example",
+          "to_archetype": "energy_chain_research_content_map",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "研究报告型 framework 总纲: 一页亮出软硬协同核心思想(以 FP8 量化案例贯通), 一页把三条研究内容并列挂到电力→行动能量链条, 为后续三个方法章立总框架",
+      "anti_patterns": [
+        "多幕流程构建+公式因子高亮(tutorial 深度型) — 用 framework_progressive_flow_build_plus_formula_unpack",
+        "开源生态+代表算子闭环 — 用 framework_opensource_ecosystem_plus_representative_work"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.05",
+          "section_title": "软硬协同核心思想与整体思路",
+          "section_role": "framework",
+          "section_narrative": "framework 总纲章。承 motivation 之后，先亮出「软件algorithm×硬件hardware协同」核心思想（以FP8量化贯通软硬为例），再把三条研究内容纳入电力→算力→智力→行动链条，为后续三个方法章节立总框架。",
+          "section_topic_tags": [
+            "软硬协同核心思想",
+            "FP8量化贯通",
+            "电力→行动能量链条",
+            "三条研究内容总框架"
+          ],
+          "match_evidence": "2 页节奏: 核心思想页(Scaling Law+FP8 案例) 接 整体研究思路页(能量链条+三条研究内容并列), 完整命中『核心思想+能量链条内容映射』双拍",
+          "slides": [
+            {
+              "slide_index": 16,
+              "role_in_pattern": "codesign_core_idea_with_case_example",
+              "archetype": "codesign_core_idea_with_case_example",
+              "slide_title": "核心思想：软件算法×硬件的协同设计",
+              "slide_claim": "软件algorithm与硬件hardware协同优化，以FP8量化贯通软硬件",
+              "slide_key_text": [
+                "核心思想：软硬协同设计",
+                "将软件（algorithm）和硬件（hardware）协同",
+                "Scaling Law",
+                "FP32→FP8量化",
+                "精度损失↓，能效提升↑",
+                "GPU FP8 加速支持"
+              ],
+              "slide_visual_skeleton": [
+                "Scaling Law增长曲线",
+                "软硬联合优化流程图",
+                "FP32→FP8矩阵量化示意",
+                "算力/模型双柱对比"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "energy_chain_research_content_map",
+              "archetype": "energy_chain_research_content_map",
+              "slide_title": "整体研究思路：三条研究内容纳入电力→行动链条",
+              "slide_claim": "三条研究内容沿电力→运行→令牌→行动链条并列展开，构成总框架",
+              "slide_key_text": [
+                "整体研究思路",
+                "研究内容1：并行可重构硬件架构",
+                "研究内容2",
+                "研究内容3",
+                "电力 Electricity → 系统运行 Operation → 令牌 Token → 行动 Action"
+              ],
+              "slide_visual_skeleton": [
+                "电力→行动竖排链条",
+                "三层研究内容并列块",
+                "各层配套说明色块",
+                "链条与内容映射箭头"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_toc_overview_challenge_innovation_result_summary_with_paper",
+      "title": "方法·目录→总览→挑战→创新→成果→小结+论文",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "创新",
+          "成果",
+          "论文",
+          "研究内容"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前研究内容"
+        },
+        {
+          "archetype": "research_content_overview_energy_chain",
+          "count": 1,
+          "position": "start",
+          "purpose": "以能量链条+架构示意统领本研究内容"
+        },
+        {
+          "archetype": "key_challenge_hardware_utilization_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以对比图凸显硬件利用率痛点(1/16 等)"
+        },
+        {
+          "archetype": "innovation_reconfigurable_architecture_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以架构框图给出可配置计算单元创新"
+        },
+        {
+          "archetype": "result_speedup_multi_scale_comparison",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "对多模型规模对比 baseline 给出加速/能效倍数"
+        },
+        {
+          "archetype": "summary_innovations_with_paper_citation",
+          "count": 1,
+          "position": "end",
+          "purpose": "小结创新点+发表论文引用条收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "research_content_overview_energy_chain",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "research_content_overview_energy_chain",
+          "to_archetype": "key_challenge_hardware_utilization_compare",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "key_challenge_hardware_utilization_compare",
+          "to_archetype": "innovation_reconfigurable_architecture_diagram",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "innovation_reconfigurable_architecture_diagram",
+          "to_archetype": "result_speedup_multi_scale_comparison",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "result_speedup_multi_scale_comparison",
+          "to_archetype": "summary_innovations_with_paper_citation",
+          "hook_type": "data_then_implication"
+        }
+      ],
+      "applicable_summary": "研究内容 method 章的经典弧线: 目录→总览→挑战→创新→成果→小结(附论文), 每章一条主线, 常用于博资考/开题的单项研究内容展开",
+      "anti_patterns": [
+        "多并列子技术(如软硬两类)交错展开 — 用 method_multi_parallel_techniques_intro_flow_detail",
+        "两条子线各走三段式 — 用 method_dual_subline_each_challenge_innovation_result_plus_summary"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.06",
+          "section_title": "研究内容一：并行可重构硬件架构",
+          "section_role": "method",
+          "section_narrative": "作为三项研究内容之首，遵循「挑战→创新→成果→小结」弧线，论证可重构规约树架构破解SSM在GPU/TPU上利用率仅1/16的瓶颈，较RTX 3090提能效35×。",
+          "section_topic_tags": [
+            "可重构规约树架构",
+            "SSM 硬件加速",
+            "GPU/TPU 利用率痛点",
+            "MARCA 加速器",
+            "35× 能效提升"
+          ],
+          "match_evidence": "6 页节奏: 目录→能量链条+可重构架构总览→SSM 1/16 利用率挑战→可配置规约单元创新→较 RTX 3090 提 35× 能效→小结+ICCAD 24 MARCA 论文, 完整命中『挑战-创新-成果-小结+论文』标准弧线",
+          "slides": [
+            {
+              "slide_index": 18,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录：定位到「研究内容」章节",
+              "slide_claim": "汇报进入研究内容主体部分",
+              "slide_key_text": [
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "四项纵向目录列表",
+                "当前项高亮",
+                "顶部蓝色分隔条"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "research_content_overview_energy_chain",
+              "archetype": "research_content_overview_energy_chain",
+              "slide_title": "研究内容一：并行可重构硬件架构总览",
+              "slide_claim": "电力经算力转化为token，需芯片级并行可重构架构支撑",
+              "slide_key_text": [
+                "研究内容1：并行可重构硬件架构",
+                "Electricity / Operation / Token / Action",
+                "可重构规约树计算架构"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四级纵向转化链",
+                "蓝色大箭头引导",
+                "芯片内多内存块互联示意图"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "key_challenge_hardware_utilization_compare",
+              "archetype": "key_challenge_hardware_utilization_compare",
+              "slide_title": "子内容一·关键挑战：SSM在GPU/TPU利用率仅1/16",
+              "slide_claim": "现有GPU/TPU规约结构错配SSM，利用率骤降至1/16",
+              "slide_key_text": [
+                "关键挑战",
+                "状态空间模型 SSM",
+                "英伟达GPU Tensor Core",
+                "谷歌TPU Systolic Array",
+                "利用率 1/16"
+              ],
+              "slide_visual_skeleton": [
+                "树形规约结构示意",
+                "线性规约结构示意",
+                "利用率对比坐标图",
+                "红色1/16标注"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "innovation_reconfigurable_architecture_diagram",
+              "archetype": "innovation_reconfigurable_architecture_diagram",
+              "slide_title": "子内容一·创新思路：可配置规约单元架构",
+              "slide_claim": "可配置规约单元在线切换矩阵乘/元素级/近似非线性运算",
+              "slide_key_text": [
+                "创新思路",
+                "设计可配置规约单元，在线支持矩阵乘、元素级和近似非线性运算",
+                "Memory Access Handler",
+                "Reconfigurable CU / Reduction Tree",
+                "Tensor Core-based Architecture"
+              ],
+              "slide_visual_skeleton": [
+                "计算引擎整体框图",
+                "可重构规约树内部结构",
+                "Linear/Reduction/Element-wise三模式标注"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "result_speedup_multi_scale_comparison",
+              "archetype": "result_speedup_multi_scale_comparison",
+              "slide_title": "研究成果：较RTX 3090提能效35×",
+              "slide_claim": "软硬件协同优化后较RTX 3090 GPU能效提升35×",
+              "slide_key_text": [
+                "研究成果",
+                "经软硬件协同优化后",
+                "较英伟达RTX 3090 GPU",
+                "提升35×",
+                "Mamba-130M / 1.4B / 2.8B"
+              ],
+              "slide_visual_skeleton": [
+                "三模型规模并列对比图表",
+                "上下两组数据面板",
+                "35×能效标注"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "summary_innovations_with_paper_citation",
+              "archetype": "summary_innovations_with_paper_citation",
+              "slide_title": "研究内容一·小结与成果发表",
+              "slide_claim": "三项创新点凝练为ICCAD 24论文MARCA",
+              "slide_key_text": [
+                "研究内容1：小结",
+                "创新点1/2/3(架构/方法/方法)",
+                "研究成果",
+                "[ICCAD 24] MARCA: Mamba Accelerator with Reconfigurable Architecture"
+              ],
+              "slide_visual_skeleton": [
+                "纵向创新点纲要列表",
+                "红色论文引用条目"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_dual_subline_each_challenge_innovation_result_plus_summary",
+      "title": "方法·两条子线各走挑战-创新-成果+小结",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "双子线",
+          "挑战",
+          "创新",
+          "成果",
+          "算法硬件协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "research_content_overview_dual_subline_preview",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首总览页预告两条子线并列展开"
+        },
+        {
+          "archetype": "subline_challenge_prior_work_flaw",
+          "count": 2,
+          "position": "middle",
+          "purpose": "每条子线开篇陈述关键挑战(现有方法精度损失/开销大)"
+        },
+        {
+          "archetype": "subline_innovation_algorithm_sensitivity",
+          "count": 2,
+          "position": "middle",
+          "purpose": "每条子线的算法创新页(海森谱/分布特征驱动)"
+        },
+        {
+          "archetype": "subline_innovation_hardware_mechanism",
+          "count": 1,
+          "position": "middle",
+          "purpose": "对复杂子线追加硬件层机制页(GPU 并行解量化)"
+        },
+        {
+          "archetype": "subline_result_metric_headline",
+          "count": 2,
+          "position": "before_end",
+          "purpose": "每条子线以核心指标(压缩/加速/精度损失)给成果"
+        },
+        {
+          "archetype": "summary_innovations_with_paper_citation",
+          "count": 1,
+          "position": "end",
+          "purpose": "小结章内三项创新点并列+代表论文收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "research_content_overview_dual_subline_preview",
+          "to_archetype": "subline_challenge_prior_work_flaw",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "subline_challenge_prior_work_flaw",
+          "to_archetype": "subline_innovation_algorithm_sensitivity",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "subline_innovation_algorithm_sensitivity",
+          "to_archetype": "subline_innovation_hardware_mechanism",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "subline_innovation_hardware_mechanism",
+          "to_archetype": "subline_result_metric_headline",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "subline_result_metric_headline",
+          "to_archetype": "subline_challenge_prior_work_flaw",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "subline_result_metric_headline",
+          "to_archetype": "summary_innovations_with_paper_citation",
+          "hook_type": "data_then_implication"
+        }
+      ],
+      "applicable_summary": "同章内两条并列子技术线(如线性层/非线性层量化)各走『挑战→算法创新→(可选硬件创新)→成果』三段式, 末页统一小结+论文收束, 常见于混合精度/近似类方法章",
+      "anti_patterns": [
+        "单条主线走挑战-创新-成果 — 用 method_toc_overview_challenge_innovation_result_summary_with_paper",
+        "三子层递进(算法→编译→硬件) — 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.07",
+          "section_title": "研究内容二：空间-谱域协同轻量化",
+          "section_role": "method",
+          "section_narrative": "deck 三条研究内容的第二条，承接研究内容1展开混合精度量化近似；内部按线性层（海森谱混合精度量化）与非线性层（分段近似）两条子线并列，各走「关键挑战→算法+硬件协同创新→研究成果」三段式",
+          "section_topic_tags": [
+            "海森谱混合精度量化",
+            "非线性分段近似",
+            "线性层轻量化",
+            "GPU并行解量化",
+            "空间-谱域协同"
+          ],
+          "match_evidence": "9 页节奏: 总览→线性层子线(挑战/算法/硬件/成果)→非线性层子线(挑战/算法/成果)→小结+ICCAD 24 论文, 完整命中『双子线各走挑战-创新-成果』",
+          "slides": [
+            {
+              "slide_index": 24,
+              "role_in_pattern": "research_content_overview_dual_subline_preview",
+              "archetype": "research_content_overview_dual_subline_preview",
+              "slide_title": "研究内容2：空间-谱域协同轻量化总览",
+              "slide_claim": "空间-谱域协同轻量化从线性层与非线性层两条子线并行推进",
+              "slide_key_text": [
+                "研究内容2：空间-谱域协同轻量化方法",
+                "电力→运营→令牌→行动 成本传导",
+                "线性层/非线性层/优化层框图并列"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四级成本传导链",
+                "中部两研究内容对比条",
+                "底部逐层计算框图",
+                "线性/非线性层图例"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "subline_challenge_prior_work_flaw",
+              "archetype": "subline_challenge_prior_work_flaw",
+              "slide_title": "子内容1挑战：现有量化方法精度损失大",
+              "slide_claim": "现有单/混合精度量化未充分利用海森谱，精度损失普遍偏高",
+              "slide_key_text": [
+                "子内容1：基于海森谱分析的混合精度量化",
+                "现有单精度与混合精度量化方法未充分考虑",
+                "GPTQ 5.8% / AWQ >10% / OmniQuant 4.6%",
+                "权重数值范围约2x 差距"
+              ],
+              "slide_visual_skeleton": [
+                "左侧数值范围对比表",
+                "2x 差距标注",
+                "右侧量化方法精度损失对照表"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "subline_innovation_algorithm_sensitivity",
+              "archetype": "subline_innovation_algorithm_sensitivity",
+              "slide_title": "子内容1创新：海森谱敏感性混合精度量化",
+              "slide_claim": "以海森谱敏感性分析驱动软硬件协同的混合精度量化",
+              "slide_key_text": [
+                "基于数值范围和海森谱的敏感性分析",
+                "Min(量化Loss)混合精度量化",
+                "混合精度并行架构 / min 硬件访存开销",
+                "敏感性权重(H)×原始权重(W)→混合精度(S)",
+                "4-bit 高精度 / 2-bit 低精度 / FP16"
+              ],
+              "slide_visual_skeleton": [
+                "左侧算法-硬件协同双栏",
+                "软硬件协同环形箭头",
+                "中部 H×W 敏感性示意",
+                "右侧混合精度权重矩阵"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "subline_innovation_hardware_mechanism",
+              "archetype": "subline_innovation_hardware_mechanism",
+              "slide_title": "子内容1创新：GPU 混合精度并行解量化",
+              "slide_claim": "将解量化访存与计算并行重叠，实现 GPU 混合精度并行解量化",
+              "slide_key_text": [
+                "将解量化中数据访存与计算做并行重叠处理",
+                "基于 GPU 硬件平台实现混合精度并行解量化",
+                "串行流程 vs 重叠流程",
+                "Sync (Low cost) 低成本同步"
+              ],
+              "slide_visual_skeleton": [
+                "左侧串行解量化流程条",
+                "右侧重叠并行流程条",
+                "低成本 Sync 节点",
+                "汇入 MatMul 箭头"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "subline_result_metric_headline",
+              "archetype": "subline_result_metric_headline",
+              "slide_title": "子内容1成果：线性层5.5倍压缩2.53倍加速",
+              "slide_claim": "线性层量化实现5.5倍无损压缩与2.53倍推理加速",
+              "slide_key_text": [
+                "针对线性层计算实现5.5倍压缩",
+                "无损压缩",
+                "2.53倍加速"
+              ],
+              "slide_visual_skeleton": [
+                "页眉核心指标标注",
+                "压缩率/加速比图表占位",
+                "结果对比示意框"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "subline_challenge_prior_work_flaw",
+              "archetype": "subline_challenge_prior_work_flaw",
+              "slide_title": "子内容2挑战：非线性计算占比高开销大",
+              "slide_claim": "大模型非线性计算占比高，专用归一化单元带来约30%面积开销",
+              "slide_key_text": [
+                "子内容2：基于分布特征的分段近似与量化",
+                "大模型计算中非线性计算占比高",
+                "~30% area overhead compared to each PE",
+                "层归一化 / 激活层 占比对比"
+              ],
+              "slide_visual_skeleton": [
+                "2×2 非线性占比图表阵列",
+                "GPT2类/GPT类分行",
+                "30% 面积开销红框标注"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "subline_innovation_algorithm_sensitivity",
+              "archetype": "subline_innovation_algorithm_sensitivity",
+              "slide_title": "子内容2创新：分布特征分段近似与量化",
+              "slide_claim": "以数值分布特征驱动非线性分段近似与混合精度量化",
+              "slide_key_text": [
+                "引入基于数值分布特征的非线性分段近似与混合精度量化",
+                "Min(近似/量化Loss)分段近似方法/混合精度",
+                "分段处理→分段近似结果，补偿量化误差",
+                "指数运算位级近似 (x·ln2+127+c)·1023"
+              ],
+              "slide_visual_skeleton": [
+                "左侧算法-硬件协同双栏",
+                "中部分段近似流程",
+                "右侧指数位级运算示意",
+                "AND/OR 掩码与移位标注"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "subline_result_metric_headline",
+              "archetype": "subline_result_metric_headline",
+              "slide_title": "子内容2成果：Mamba/Transformer精度损失1%",
+              "slide_claim": "非线性分段近似在 Mamba 与 Llama2 上精度损失约1%",
+              "slide_key_text": [
+                "在 Mamba 和 Transformer(Llama2) 基座模型实现分段近似",
+                "8/16 比特",
+                "精度损失约1%",
+                "Mamba 精度对比 / Transformer 精度对比"
+              ],
+              "slide_visual_skeleton": [
+                "页眉核心指标标注",
+                "Mamba 精度对比栏",
+                "Transformer 精度对比栏",
+                "结果示意框"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "summary_innovations_with_paper_citation",
+              "archetype": "summary_innovations_with_paper_citation",
+              "slide_title": "研究内容2小结",
+              "slide_claim": "研究内容2由线性层、非线性层、软硬件三个创新点协同构成",
+              "slide_key_text": [
+                "研究内容2子内容-空间谱域协同轻量化",
+                "子内容1(线性层)海森谱敏感性混合精度量化",
+                "子内容2(非线性层)分布特征分段近似与量化",
+                "子内容3(软硬件)混合精度并行解量化架构",
+                "[ICCAD 24] Fast and Efficient 2-bit LLM Inference on GPU"
+              ],
+              "slide_visual_skeleton": [
+                "三创新点分条列表",
+                "相关工作引文条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_short_positioning_plus_summary_with_paper",
+      "title": "方法·短章·定位框+小结附论文",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究内容定位",
+          "小结",
+          "论文",
+          "系统级挑战"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "research_content_positioning_with_challenge_frame",
+          "count": 1,
+          "position": "start",
+          "purpose": "以能效栈+协作框图定位研究内容并红框点出挑战"
+        },
+        {
+          "archetype": "summary_innovations_with_paper_citation",
+          "count": 1,
+          "position": "end",
+          "purpose": "以创新点列表+代表论文收束方法线"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "research_content_positioning_with_challenge_frame",
+          "to_archetype": "summary_innovations_with_paper_citation",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "作为多项研究内容中的收官短章: 一页定位框图(能效栈+通专融合等系统协作图+红框挑战), 一页创新点列表+代表工作论文, 快速收拢方法线到 discussion 章",
+      "anti_patterns": [
+        "6-9 页完整挑战-创新-成果闭环 — 用 method_toc_overview_challenge_innovation_result_summary_with_paper 或 method_dual_subline_each_challenge_innovation_result_plus_summary"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.08",
+          "section_title": "研究内容三：通专融合系统优化",
+          "section_role": "method",
+          "section_narrative": "作为三大研究内容的收官章，先用四层能效栈（电→运算→Token→动作）图定位「通专融合」——LLM 与专用模型协同、以红框点出系统级优化挑战；再在小结页归纳三项创新并给出 LLSM 论文，收束整条方法线。",
+          "section_topic_tags": [
+            "通专融合系统优化",
+            "LLM+专用模型协同",
+            "系统级挑战",
+            "LLSM 逻辑综合",
+            "四层能效栈定位"
+          ],
+          "match_evidence": "2 页节奏: 能效栈+通专协同定位框图(含红框挑战) 接 三项创新点小结+ASP-DAC 25 LLSM 论文, 完整命中『定位+小结附论文』收官短章",
+          "slides": [
+            {
+              "slide_index": 33,
+              "role_in_pattern": "research_content_positioning_with_challenge_frame",
+              "archetype": "research_content_positioning_with_challenge_frame",
+              "slide_title": "研究内容三：通专融合系统优化定位",
+              "slide_claim": "通专融合以LLM协同专用模型/工具落地系统级优化挑战",
+              "slide_key_text": [
+                "电力 Electricity / 运算 Operation / Token / 动作 Action",
+                "问题分解调度 + 规划",
+                "通用大模型 LLM + 专用小模型 SLM/工具",
+                "结果汇聚",
+                "研究内容3:通专融合系统优化"
+              ],
+              "slide_visual_skeleton": [
+                "四层能效栈纵向坐标",
+                "通专协同框图(上下三层+箭头)",
+                "绿色内容标签块",
+                "红色挑战警示框",
+                "蓝色上行箭头"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "summary_innovations_with_paper_citation",
+              "archetype": "summary_innovations_with_paper_citation",
+              "slide_title": "研究内容三小结:三项创新与代表工作",
+              "slide_claim": "通专融合系统优化贡献三项创新并以LLSM论文收束方法线",
+              "slide_key_text": [
+                "研究内容3的创新点",
+                "创新点1(系统级)…",
+                "创新点2 / 创新点3",
+                "代表工作",
+                "[ASP-DAC 25] LLSM: LLM-enhanced Logic Synthesis Model"
+              ],
+              "slide_visual_skeleton": [
+                "纯文本创新点列表",
+                "顶部标题+蓝色分隔条",
+                "论文引用文本块"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_toc_framework_recap_progressive_plus_paper_list",
+      "title": "收尾·目录→整体框架递进回收→论文列表",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "整体框架",
+          "论文列表",
+          "回收"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "目录高亮总结章切入收尾"
+        },
+        {
+          "archetype": "overall_framework_recap_energy_chain",
+          "count": 2,
+          "position": "middle",
+          "purpose": "以电力→行动主线+三项研究内容并列框架递进回收(可动画分幕)"
+        },
+        {
+          "archetype": "publications_list_bulleted",
+          "count": 1,
+          "position": "end",
+          "purpose": "多篇一作/共一顶会论文列表, 承担成果背书"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "overall_framework_recap_energy_chain",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "overall_framework_recap_energy_chain",
+          "to_archetype": "overall_framework_recap_energy_chain",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "overall_framework_recap_energy_chain",
+          "to_archetype": "publications_list_bulleted",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "博资考/开题的学术收尾章: 目录高亮总结→复用 framework 章的能量链条+三项研究内容框架图逐层动画回收全局脉络→末页一作/共一论文列表做成果背书",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "目录 recap+一句话贡献+联系方式 — 用 closing_toc_recap_plus_summary_contribution_with_contact"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.09",
+          "section_title": "总结与已发表论文",
+          "section_role": "closing",
+          "section_narrative": "收尾章。先用目录页高亮「总结」回收全局脉络，再以「电力→算力→令牌→行动」主线把三项研究内容收束成一张软硬件协同框架图，末页以一作/共一论文列表为博资考成果背书。",
+          "section_topic_tags": [
+            "整体研究思路总结",
+            "能量链条主线",
+            "三项研究内容框架回收",
+            "一作/共一论文列表",
+            "博资考成果背书"
+          ],
+          "match_evidence": "4 页节奏: 目录高亮总结→整体框架图×2(渐进动画)→已发表论文列表, 完整命中『目录+框架递进回收+论文列表』收官三拍",
+          "slides": [
+            {
+              "slide_index": 35,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录：进入「总结」章节",
+              "slide_claim": "全局脉络推进至末章，聚焦总结回收研究主线",
+              "slide_key_text": [
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔条",
+                "四行目录列表",
+                "灰淡未选项+黑色高亮当前项"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "overall_framework_recap_energy_chain",
+              "archetype": "overall_framework_recap_energy_chain",
+              "slide_title": "总结：整体研究思路框架",
+              "slide_claim": "「电力→运行→令牌→行动」主线串起三项研究内容协同优化",
+              "slide_key_text": [
+                "研究内容1：并行可重构硬件架构",
+                "电力 Electricity",
+                "系统运行 Operation",
+                "令牌 Token",
+                "行动 Action"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四级竖向箭头链条",
+                "右侧研究内容框架大框",
+                "三色并列说明块",
+                "向下汇聚箭头"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "overall_framework_recap_energy_chain",
+              "archetype": "overall_framework_recap_energy_chain",
+              "slide_title": "总结：整体研究思路框架（承接）",
+              "slide_claim": "同一框架逐步点亮，强调三项内容自底向上层层协同",
+              "slide_key_text": [
+                "研究内容1：并行可重构硬件架构",
+                "电力 Electricity",
+                "系统运行 Operation",
+                "令牌 Token",
+                "行动 Action"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四级竖向箭头链条",
+                "右侧研究内容框架大框",
+                "三色并列说明块",
+                "向下汇聚箭头"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "publications_list_bulleted",
+              "archetype": "publications_list_bulleted",
+              "slide_title": "总结：已发表论文列表",
+              "slide_claim": "多篇一作/共一顶会论文为博资考成果背书",
+              "slide_key_text": [
+                "发表论文（一作或共一）",
+                "[ICCAD 24] Fast and Efficient 2-bit LLM Inference on GPU",
+                "[ICCAD 24] MARCA: Mamba Accelerator with Reconfigurable Architecture",
+                "[DATE 25] DyLGNN: Efficient LM-GNN Fine-tuning",
+                "[ASP-DAC 25] Accelerator for LLM-Enhanced GNN"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔条",
+                "小标题「发表论文」",
+                "多行论文条目文本列表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "appendix_backup_materials_nonlinear_pool_for_qa",
+      "title": "附录·答辩备份材料非线性池",
+      "applicable_when": {
+        "chapter_role": [
+          "appendix"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          10,
+          25
+        ],
+        "must_have_in_chapter_purpose": [
+          "备份材料",
+          "答辩追问",
+          "Q&A",
+          "深化细节"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "backup_alternative_cover",
+          "count": 1,
+          "position": "start",
+          "purpose": "保留旧版封面作为备份区起始"
+        },
+        {
+          "archetype": "backup_codesign_case_example",
+          "count": 1,
+          "position": "start",
+          "purpose": "以具体案例(如 FP8 训练)示范软硬协同设计"
+        },
+        {
+          "archetype": "backup_roadmap_draft_iteration",
+          "count": "3-5",
+          "position": "middle",
+          "purpose": "整体路线图的多版草稿(逐步构建/论文标注/总结版), 供动画演化"
+        },
+        {
+          "archetype": "backup_content_deep_dive_method",
+          "count": "2-3",
+          "position": "middle",
+          "purpose": "各研究内容(内容1/2/3)的方法细节深化页"
+        },
+        {
+          "archetype": "backup_outline_page",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "详细提纲页, 供答辩导航"
+        },
+        {
+          "archetype": "backup_core_problem_matrix",
+          "count": "2-3",
+          "position": "middle",
+          "purpose": "核心问题矩阵页, 支撑追问答辩(难题-内容映射)"
+        },
+        {
+          "archetype": "backup_progress_completion_status",
+          "count": 1,
+          "position": "middle",
+          "purpose": "在框架图上标注已完成/规划中, 说明研究进度"
+        },
+        {
+          "archetype": "backup_subcontent_detail_challenge",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "深化子内容层挑战(如门级电路稀疏计算)"
+        },
+        {
+          "archetype": "backup_subcontent_detail_innovation",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "深化子内容层创新(AIG→ELLPACK2/GPU 并行)"
+        },
+        {
+          "archetype": "backup_subcontent_detail_result",
+          "count": 1,
+          "position": "end",
+          "purpose": "深化子内容层成果(精度提升/加速倍数)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "backup_alternative_cover",
+          "to_archetype": "backup_codesign_case_example",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "backup_codesign_case_example",
+          "to_archetype": "backup_roadmap_draft_iteration",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "backup_roadmap_draft_iteration",
+          "to_archetype": "backup_content_deep_dive_method",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "backup_content_deep_dive_method",
+          "to_archetype": "backup_outline_page",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "backup_outline_page",
+          "to_archetype": "backup_core_problem_matrix",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "backup_core_problem_matrix",
+          "to_archetype": "backup_progress_completion_status",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "backup_progress_completion_status",
+          "to_archetype": "backup_subcontent_detail_challenge",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "backup_subcontent_detail_challenge",
+          "to_archetype": "backup_subcontent_detail_innovation",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "backup_subcontent_detail_innovation",
+          "to_archetype": "backup_subcontent_detail_result",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "学术答辩收官后的备份材料池: 保留旧版封面/案例/多版路线图草稿/详细提纲/核心问题矩阵/研究内容与子内容深化细节等异质页, 供 Q&A 追问时调取, 非线性冗余而非连贯叙事",
+      "anti_patterns": [
+        "无 appendix (仅正文+收尾) — 不适用",
+        "连贯线性叙事的正文章 — 用对应 method/background pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "section_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4.sec.10",
+          "section_title": "备份材料",
+          "section_role": "appendix",
+          "section_narrative": "答辩备份材料池，为Q&A追问准备的非线性冗余材料而非连贯叙事：汇集旧版封面、整体路线图多版草稿、提纲、核心问题矩阵，及各研究内容与门级电路稀疏计算的深化细节",
+          "section_topic_tags": [
+            "答辩备份材料",
+            "整体路线图多版草稿",
+            "核心问题矩阵",
+            "门级电路稀疏计算",
+            "研究内容深化细节"
+          ],
+          "match_evidence": "19 页非线性池: 旧版封面+FP8 案例+5 版路线图草稿+3 页研究内容方法细节+2 页提纲+3 页核心问题矩阵+1 页完成度+3 页门级电路子内容挑战/创新/成果, 完整命中『备份材料非线性池』",
+          "slides": [
+            {
+              "slide_index": 39,
+              "role_in_pattern": "backup_alternative_cover",
+              "archetype": "backup_alternative_cover",
+              "slide_title": "封面：高能效大模型推理系统软硬协同设计",
+              "slide_claim": "软硬件协同设计是实现高能效大模型推理的核心路径",
+              "slide_key_text": [
+                "题目：高能效大模型推理系统的软硬件协同设计",
+                "2025年4月14日"
+              ],
+              "slide_visual_skeleton": [
+                "居中主标题",
+                "副标题行",
+                "答辩人/导师信息栏",
+                "日期落款",
+                "顶部细分隔线"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "backup_codesign_case_example",
+              "archetype": "backup_codesign_case_example",
+              "slide_title": "软硬协同设计实例：FP8训练",
+              "slide_claim": "FP8训练示范软硬协同贯穿算法-系统-硬件多层优化",
+              "slide_key_text": [
+                "软硬协同设计 实例：FP8训练",
+                "算法设计→算法优化",
+                "硬件Tensor Core支持FP8",
+                "ISA支持FP8低精度计算"
+              ],
+              "slide_visual_skeleton": [
+                "横向模块流水示意",
+                "AI应用上升标注",
+                "四个圆角标题分区块",
+                "算法/系统/硬件层要点列表"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "backup_roadmap_draft_iteration",
+              "archetype": "backup_roadmap_draft_iteration",
+              "slide_title": "整体研究目标和思路(草稿版)",
+              "slide_claim": "三项研究内容自算法层到系统层协同支撑通专融合大模型",
+              "slide_key_text": [
+                "整体研究目标和思路",
+                "研究内容1：大模型轻量化方法研究",
+                "研究内容2/研究内容3",
+                "通用大模型+场景1/场景2"
+              ],
+              "slide_visual_skeleton": [
+                "纵向通用→专用箭头",
+                "算法层/系统层研究内容分块",
+                "右侧细节要点条",
+                "场景适配底栏"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_pattern": "backup_roadmap_draft_iteration",
+              "archetype": "backup_roadmap_draft_iteration",
+              "slide_title": "整体研究思路(混合精度草稿版)",
+              "slide_claim": "研究内容1以混合精度轻量化为核心支撑整体框架",
+              "slide_key_text": [
+                "整体研究思路",
+                "研究内容1：混合精度轻量化方法",
+                "研究内容2/研究内容3",
+                "通用大模型+场景1/场景2"
+              ],
+              "slide_visual_skeleton": [
+                "纵向通用→专用箭头",
+                "研究内容三分层块",
+                "右侧要点条",
+                "场景适配底栏"
+              ]
+            },
+            {
+              "slide_index": 43,
+              "role_in_pattern": "backup_roadmap_draft_iteration",
+              "archetype": "backup_roadmap_draft_iteration",
+              "slide_title": "整体研究思路(空间-谱域草稿版)",
+              "slide_claim": "研究内容1以空间-谱域协同轻量化贯通整体框架",
+              "slide_key_text": [
+                "整体研究思路",
+                "研究内容1：空间-谱域协同轻量化",
+                "研究内容3(EDA)",
+                "通用大模型+场景1/场景2"
+              ],
+              "slide_visual_skeleton": [
+                "外层框包裹整体框架",
+                "研究内容三分层块",
+                "EDA红色高亮块",
+                "通用→专用下沉箭头"
+              ]
+            },
+            {
+              "slide_index": 44,
+              "role_in_pattern": "backup_content_deep_dive_method",
+              "archetype": "backup_content_deep_dive_method",
+              "slide_title": "研究内容1方法：空间-谱域协同轻量化",
+              "slide_claim": "空间-谱域协同在注意力/前馈网络逐层实现轻量化",
+              "slide_key_text": [
+                "研究内容1：空间-谱域协同轻量化方法",
+                "注意力",
+                "前馈网络",
+                "卷积/激活函数"
+              ],
+              "slide_visual_skeleton": [
+                "层0→层N堆叠流水",
+                "注意力/前馈子模块框",
+                "色块图例",
+                "逐层展开示意"
+              ]
+            },
+            {
+              "slide_index": 45,
+              "role_in_pattern": "backup_roadmap_draft_iteration",
+              "archetype": "backup_roadmap_draft_iteration",
+              "slide_title": "整体研究思路(论文标注版)",
+              "slide_claim": "三项研究内容均已产出对应顶会论文成果",
+              "slide_key_text": [
+                "[ICCAD 24]剪枝/[DATE 25] DyLGNN/SoftmAP",
+                "[ICCAD 24] MARCA/[TCAD] SSM",
+                "[ASP-DAC 25] LLSM、LLM4EDA",
+                "ACM Computing Survey综述"
+              ],
+              "slide_visual_skeleton": [
+                "研究内容三分块框",
+                "各块上方论文标签",
+                "场景适配底栏",
+                "能效提升红字标注"
+              ]
+            },
+            {
+              "slide_index": 46,
+              "role_in_pattern": "backup_outline_page",
+              "archetype": "backup_outline_page",
+              "slide_title": "提纲(简版)",
+              "slide_claim": "报告按研究背景与研究内容两大板块展开",
+              "slide_key_text": [
+                "提纲",
+                "研究背景（14）",
+                "大模型算法能力接近或超过人类,充分应用到多个下游领域"
+              ],
+              "slide_visual_skeleton": [
+                "分级文字大纲",
+                "章节页数标注",
+                "顶部细分隔线"
+              ]
+            },
+            {
+              "slide_index": 47,
+              "role_in_pattern": "backup_outline_page",
+              "archetype": "backup_outline_page",
+              "slide_title": "提纲(详版)",
+              "slide_claim": "研究内容与方法(33页)构成报告主体",
+              "slide_key_text": [
+                "提纲",
+                "研究背景（14）",
+                "研究内容与方法（33）",
+                "研究计划(2)/参考文献(5)"
+              ],
+              "slide_visual_skeleton": [
+                "多级文字大纲",
+                "各章节页数标注",
+                "研究内容子条目缩进列表"
+              ]
+            },
+            {
+              "slide_index": 48,
+              "role_in_pattern": "backup_core_problem_matrix",
+              "archetype": "backup_core_problem_matrix",
+              "slide_title": "核心问题矩阵",
+              "slide_claim": "大模型推理关键难题逐层分解为研究内容与子问题",
+              "slide_key_text": [
+                "核心问题",
+                "关键难题",
+                "研究内容",
+                "子问题/子内容",
+                "大模型推理"
+              ],
+              "slide_visual_skeleton": [
+                "多列表头矩阵",
+                "难题-内容映射行",
+                "空白待填单元",
+                "顶部细分隔线"
+              ]
+            },
+            {
+              "slide_index": 49,
+              "role_in_pattern": "backup_core_problem_matrix",
+              "archetype": "backup_core_problem_matrix",
+              "slide_title": "核心问题矩阵(填充版)",
+              "slide_claim": "关键难题→研究内容→子问题的映射逐项落实",
+              "slide_key_text": [
+                "核心问题",
+                "关键难题",
+                "研究内容",
+                "子问题/子内容",
+                "大模型推理"
+              ],
+              "slide_visual_skeleton": [
+                "多列表头矩阵",
+                "填充映射单元",
+                "难题-内容对应行"
+              ]
+            },
+            {
+              "slide_index": 50,
+              "role_in_pattern": "backup_content_deep_dive_method",
+              "archetype": "backup_content_deep_dive_method",
+              "slide_title": "研究内容2方法：稀疏化轻量化",
+              "slide_claim": "稀疏化使计算量按多重稀疏度乘积成倍下降",
+              "slide_key_text": [
+                "研究内容2：空间-谱域协同轻量化方法",
+                "计算量减少=稀疏度×稀疏度×…",
+                "注意力/前馈网络"
+              ],
+              "slide_visual_skeleton": [
+                "层0→层N流水",
+                "顶部要点面板",
+                "计算量减少乘积公式",
+                "子模块高亮"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_pattern": "backup_roadmap_draft_iteration",
+              "archetype": "backup_roadmap_draft_iteration",
+              "slide_title": "总结：整体研究思路",
+              "slide_claim": "三级稀疏度联合使整体计算量成倍压缩",
+              "slide_key_text": [
+                "总结：整体研究思路",
+                "研究内容1：空间-谱域",
+                "计算量减少=稀疏度1×稀疏度2×稀疏度3"
+              ],
+              "slide_visual_skeleton": [
+                "整体框架块图",
+                "研究内容三分块",
+                "EDA红色高亮块",
+                "三级稀疏度乘积公式"
+              ]
+            },
+            {
+              "slide_index": 52,
+              "role_in_pattern": "backup_progress_completion_status",
+              "archetype": "backup_progress_completion_status",
+              "slide_title": "总结：已完成部分",
+              "slide_claim": "研究内容1及部分工作已完成并落地",
+              "slide_key_text": [
+                "总结：已完成部分",
+                "研究内容1：空间-谱域",
+                "计算量减少=稀疏度1×稀疏度2×稀疏度3"
+              ],
+              "slide_visual_skeleton": [
+                "整体框架块图",
+                "已完成部分高亮",
+                "研究内容三分块",
+                "稀疏度乘积公式"
+              ]
+            },
+            {
+              "slide_index": 53,
+              "role_in_pattern": "backup_content_deep_dive_method",
+              "archetype": "backup_content_deep_dive_method",
+              "slide_title": "研究内容3方法：通专融合系统优化",
+              "slide_claim": "通用LLM与专用模型融合实现推理系统级优化",
+              "slide_key_text": [
+                "研究内容3：通专融合系统优化",
+                "注意力/前馈网络",
+                "通用大模型LLM+专用模型",
+                "场景数据"
+              ],
+              "slide_visual_skeleton": [
+                "层0→层N流水",
+                "通用LLM+专用模型组合框",
+                "场景数据输入",
+                "融合箭头"
+              ]
+            },
+            {
+              "slide_index": 54,
+              "role_in_pattern": "backup_core_problem_matrix",
+              "archetype": "backup_core_problem_matrix",
+              "slide_title": "关键难题矩阵",
+              "slide_claim": "硬件推理能效低是待解关键难题之一",
+              "slide_key_text": [
+                "关键难题",
+                "研究内容",
+                "子问题/子内容",
+                "硬件推理能效低"
+              ],
+              "slide_visual_skeleton": [
+                "多列表头矩阵",
+                "难题-子问题映射行",
+                "硬件能效难题条目"
+              ]
+            },
+            {
+              "slide_index": 55,
+              "role_in_pattern": "backup_subcontent_detail_challenge",
+              "archetype": "backup_subcontent_detail_challenge",
+              "slide_title": "子内容2：门级电路稀疏计算优化(挑战)",
+              "slide_claim": "门级电路AIG极度稀疏(稀疏度<0.5)制约GNN加速",
+              "slide_key_text": [
+                "子内容2：门级电路感知的稀疏计算优化",
+                "关键挑战",
+                "AIG (And-Inverter Graph) 稀疏度<0.5",
+                "COO→CSR→cuSPARSE",
+                "加速>10x"
+              ],
+              "slide_visual_skeleton": [
+                "AIG稀疏结构示意",
+                "COO→CSR→cuSPARSE流程",
+                "GNN加速漏斗图",
+                "红色关键挑战标签"
+              ]
+            },
+            {
+              "slide_index": 56,
+              "role_in_pattern": "backup_subcontent_detail_innovation",
+              "archetype": "backup_subcontent_detail_innovation",
+              "slide_title": "子内容1：门级电路稀疏计算优化(创新)",
+              "slide_claim": "利用AIG节点类型转ELLPACK2格式适配GPU并行",
+              "slide_key_text": [
+                "子内容1：门级电路感知的稀疏计算优化",
+                "创新思路 利用AIG",
+                "节点类型 0/1/2 input(NOT/AND)",
+                "ELLPACK2格式",
+                "GPU并行"
+              ],
+              "slide_visual_skeleton": [
+                "AIG节点分类示意",
+                "稀疏矩阵→ELLPACK2转换",
+                "数值+列索引数组",
+                "红色创新思路标签"
+              ]
+            },
+            {
+              "slide_index": 57,
+              "role_in_pattern": "backup_subcontent_detail_result",
+              "archetype": "backup_subcontent_detail_result",
+              "slide_title": "子内容1门级电路稀疏计算：研究成果",
+              "slide_claim": "面积/时延预测精度提升3.49%/6.80%,推理提速1.37倍",
+              "slide_key_text": [
+                "研究成果",
+                "逻辑综合后面积和时延预测精度提升3.49%/6.80%",
+                "推理速度提升1.37倍",
+                "基于PyG实现"
+              ],
+              "slide_visual_skeleton": [
+                "提升幅度大字标注",
+                "baseline对比图表(占位)",
+                "研究成果标签"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (博士资格考试_高能效大模型推理), 共 10 section, 抽出 10 patterns: 复用 previous 的 opening_cover_plus_progress_highlighted_toc 1 条, 新增 9 条(self_intro/motivation/background/framework/method×3/closing/appendix 各 1). 单 deck 单碳源, confidence 多为 low, 需后续 batch 合并验证. new_archetype: course_completion_single_statement — 单页居中描边文本框声明课程完成情况; new_archetype: macro_capability_and_apps_dual_panel — 左右两栏铺陈 AI 能力接近人类+下游应用广泛; new_archetype: demand_side_quantitative_explosion — 以指数曲线+具体能耗实例量化需求侧压力; new_archetype: supply_side_slowdown_chart — 以摩尔定律曲线论证供给侧受限; new_archetype: domain_specialization_gap_statement — 以领导讲话/CNCC 引文点出通用大模型专用性弱; new_archetype: features_extraction_chain_to_method — 以电力→行动能量链条右侧引出N大特点, 为方法章铺垫; new_archetype: hardware_architecture_survey_dual_panel — 两栏并列主流硬件架构综述(GPU/TPU); new_archetype: lightweight_methods_taxonomy_with_table — 算法轻量化方法+代表工作加速比表; new_archetype: domain_models_generalization_compare — 专业领域模型vs通用大模型的泛化能力对比; new_archetype: cross_hardware_efficiency_scatter_and_table — 跨硬件吞吐/能效散点+表格汇总; new_archetype: efficiency_gap_target_positioning — 以椭圆散点+目标区箭头凸显云端/端侧差1-2数量级; new_archetype: features_to_research_questions_mapping — 从能量链条右侧特点映射为N大研究问题; new_archetype: codesign_core_idea_with_case_example — 亮出软硬协同核心思想以FP8等具体量化案例贯通软硬两侧; new_archetype: energy_chain_research_content_map — 以电力→运行→令牌→行动竖链把N条研究内容并列纳入总框架; new_archetype: research_content_overview_energy_chain — 以能量链条+架构示意统领本研究内容; new_archetype: key_challenge_hardware_utilization_compare — 以对比图凸显硬件利用率痛点; new_archetype: innovation_reconfigurable_architecture_diagram — 以架构框图给出可配置计算单元创新; new_archetype: result_speedup_multi_scale_comparison — 对多模型规模对比baseline给出加速/能效倍数; new_archetype: summary_innovations_with_paper_citation — 小结创新点+发表论文引用条收束; new_archetype: research_content_overview_dual_subline_preview — 章首总览页预告两条子线并列展开; new_archetype: subline_challenge_prior_work_flaw — 子线开篇陈述关键挑战以现有方法精度损失/开销大立靶; new_archetype: subline_innovation_algorithm_sensitivity — 子线的算法创新页海森谱/分布特征驱动; new_archetype: subline_innovation_hardware_mechanism — 对复杂子线追加硬件层机制页GPU并行解量化; new_archetype: subline_result_metric_headline — 子线以核心指标压缩/加速/精度损失给成果; new_archetype: research_content_positioning_with_challenge_frame — 以能效栈+协作框图定位研究内容并红框点出挑战; new_archetype: overall_framework_recap_energy_chain — 以电力→行动主线+N项研究内容并列框架回收整体脉络; new_archetype: publications_list_bulleted — 多篇一作/共一顶会论文列表承担成果背书; new_archetype: backup_alternative_cover — 保留旧版封面作为备份区起始; new_archetype: backup_codesign_case_example — 以具体案例FP8训练示范软硬协同; new_archetype: backup_roadmap_draft_iteration — 整体路线图的多版草稿供动画演化; new_archetype: backup_content_deep_dive_method — 各研究内容的方法细节深化页; new_archetype: backup_outline_page — 详细提纲页供答辩导航; new_archetype: backup_core_problem_matrix — 核心问题矩阵页支撑追问答辩; new_archetype: backup_progress_completion_status — 在框架图上标注已完成/规划中说明研究进度; new_archetype: backup_subcontent_detail_challenge — 深化子内容层挑战门级电路稀疏计算; new_archetype: backup_subcontent_detail_innovation — 深化子内容层创新AIG→ELLPACK2/GPU并行; new_archetype: backup_subcontent_detail_result — 深化子内容层成果精度提升/加速倍数",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 10,
+    "sections_unassigned_in_this_batch": []
+  }
+}

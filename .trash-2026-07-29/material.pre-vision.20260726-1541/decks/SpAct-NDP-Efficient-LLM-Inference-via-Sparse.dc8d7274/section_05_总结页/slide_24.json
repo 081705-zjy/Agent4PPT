@@ -1,0 +1,41 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_24",
+  "所属章节": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+  "页序号": 24,
+  "源文件": "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx",
+  "页面角色": "ending_candidate",
+  "标题": "SpAct-NDP：稀疏激活驱动的高效 LLM 推理",
+  "核心论断": "稀疏激活 + NDP-GPU 近数据处理实现高效 LLM 推理",
+  "本页讲什么": "全 deck 收尾封底页，用大标题回收主线 SpAct-NDP —— 面向 NDP-GPU 的稀疏激活高效大模型推理方案。以标题式一屏落点，压缩本场汇报的核心命题（稀疏激活 + 近数据处理流水线），为整场汇报画句号。",
+  "关键文字": [
+    "SpAct-NDP: Efficient LLM Inference",
+    "via Sparse Activation on NDP-GPU"
+  ],
+  "视觉骨架": [
+    "居中大标题封底",
+    "配图/装饰图组",
+    "副标题技术路线短语"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_24.asset.01",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_24.asset.02",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_24.asset.03",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_24.asset.04",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_24.asset.05"
+  ],
+  "适合复用场景": [
+    "大模型推理加速汇报收尾封底",
+    "稀疏激活/NDP 主题总结页",
+    "硬件-算法协同工作的结束页"
+  ],
+  "不适合复用场景": [
+    "含具体数据的结果页",
+    "方法架构详解页",
+    "多要点并列的内容页",
+    "章节引入 opener 页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": null,
+  "分析状态": "claude-opus-4-8"
+}

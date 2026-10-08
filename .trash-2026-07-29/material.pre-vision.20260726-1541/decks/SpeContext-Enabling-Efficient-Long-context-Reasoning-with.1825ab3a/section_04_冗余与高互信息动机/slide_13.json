@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_13",
+  "所属章节": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "页序号": 13,
+  "源文件": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "检索算法的本质目标之问",
+  "核心论断": "检索算法本质即定位与 query 高相关的关键信息",
+  "本页讲什么": "本页以设问形式（What is the essential objective of retrieval algorithms?）引导听众思考检索类算法的根本目标，把注意力稀疏问题类比为检索问题，为下一页用互信息刻画 token 重要性做铺垫。",
+  "关键文字": [
+    "Question: What is the essential objective of retrieval algorithms?"
+  ],
+  "视觉骨架": [
+    "设问式大字标题",
+    "简洁配图示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_13.asset.01",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_13.asset.02"
+  ],
+  "适合复用场景": [
+    "检索/稀疏化 motivation 设问页",
+    "承上启下的引导提问页"
+  ],
+  "不适合复用场景": [
+    "密集数据结果页",
+    "多模块架构图页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

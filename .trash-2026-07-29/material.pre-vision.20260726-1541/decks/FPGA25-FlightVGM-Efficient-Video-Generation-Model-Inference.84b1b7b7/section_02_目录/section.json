@@ -1,0 +1,32 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "章节序号": 2,
+  "章节角色": "agenda",
+  "标题": "目录",
+  "页码范围": [
+    2,
+    3
+  ],
+  "页数": 2,
+  "页ID列表": [
+    "slide_02",
+    "slide_03"
+  ],
+  "章节叙事": "全 deck 目录页，紧承 cover 列出章节骨架（Background 等），为后续技术章节建立导航坐标；内部由两版 Contents 页并置，形成目录呈现/强调的递进。",
+  "页间关系": [
+    "slide 2 → slide 3: 由首版 Contents 目录过渡到同构的第二版 contents，延续同一章节骨架，做目录强调或分步展开"
+  ],
+  "适合复用场景": [
+    "需要独立目录页导航多章节的技术分享 deck",
+    "论文/项目汇报开场后需列章节骨架时",
+    "希望目录分两页强调或渐进展开的场景"
+  ],
+  "不适合复用场景": [
+    "章节数极少无需独立目录页时",
+    "单页目录已足够，不需双版并置",
+    "无明确章节结构的连续叙事 deck"
+  ],
+  "在deck中的位置": "第 2 节，紧跟 cover，作为全 deck 目录入口",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,50 @@
+---
+页标识: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07"
+所属章节: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.sec.03"
+所属deck: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018"
+页序号: 7
+源文件: "templates/个人学术考核/高效端侧大模型推理优化_开题.pptx"
+页面角色: "content_candidate"
+标题: "AI 工厂以智能（token）为核心产出"
+核心论断: "AI 工厂将智能（token）视为核心产出而非副产品"
+本页讲什么: "借「AI factories」论述强调：对 AI 工厂而言智能不是副产品而是首要产出，而这种智能以 token 形式度量。此页把 token 生成上升为核心价值，自然引出下页推理性能（Tokens/s）供给的讨论。"
+关键文字: "[\"For AI factories, intelligence isn't a byproduct but the primary one\", This intelligence]"
+视觉骨架: "[AI 工厂概念配图, 英文论断引文块]"
+资源ID列表: "[tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07.asset.01, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07.asset.02, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07.asset.03, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07.asset.04, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07.asset.05, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_07.asset.06]"
+适合复用场景: "[AI 工厂/token 价值论证页, 推理产出重要性引言页]"
+不适合复用场景: "[方法架构细节页, 数据 benchmark 页, 分层框架总览页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "AI 工厂以智能（token）为核心产出"}
+  - {"位置": "中间主体", "内容": "AI 工厂概念配图"}
+  - {"位置": "下方引文块", "内容": "For AI factories, intelligence isn't a byproduct but the primary one"}
+alternate_claims:
+  - "这种智能以 token 形式度量并输出"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 7: AI 工厂以智能（token）为核心产出
+
+**核心论断**: AI 工厂将智能（token）视为核心产出而非副产品
+
+## 本页讲什么
+借「AI factories」论述强调：对 AI 工厂而言智能不是副产品而是首要产出，而这种智能以 token 形式度量。此页把 token 生成上升为核心价值，自然引出下页推理性能（Tokens/s）供给的讨论。
+
+## 关键文字片段
+- For AI factories, intelligence isn't a byproduct but the primary one
+- This intelligence
+
+## 视觉骨架
+- AI 工厂概念配图
+- 英文论断引文块
+
+## 可复用到
+- AI 工厂/token 价值论证页
+- 推理产出重要性引言页
+
+## 不适合复用的场景
+- 方法架构细节页
+- 数据 benchmark 页
+- 分层框架总览页

@@ -1,0 +1,422 @@
+{
+  "batch_index": 0,
+  "rules": [
+    {
+      "id": "cover_anchor_callback_across_chapters",
+      "category": "callback",
+      "applicable_when": "any deck with a named main anchor in cover title",
+      "title": "封面主 anchor 需在多章节回扣",
+      "description": "cover 主标题中的核心 anchor (e.g. 'AI Infra' / '国智院') 必须在后续 ≥2 个非结构章节被 verbatim 或 paraphrased 引用, 命中率应 ≥90%.",
+      "what_to_check": [
+        "从 slide_1 (cover) 标题/关键文字抽取主 anchor keyword",
+        "统计该 keyword 在 section_role ∈ {method, discussion, case_study} 的 slides 中作为标题/核心论断/关键文字出现的章节数",
+        "章节命中数 ≥2 视为命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "cover 主 anchor 'AI Infra' / '国智院', 'AI Infra' 出现在 sec.02/03/05/06/08 5 章, '国智院' 出现在 sec.06/07/08 3 章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面 anchor 是听众记忆锚点, 只出现一次会让主题在长 deck 后半段断线, 观众忘掉这份报告在讲什么",
+      "fix_hint": "在每个非结构章节至少 1 张 slide 的标题或核心论断中显式复用 cover anchor 词",
+      "exceptions": [
+        "工具型 tutorial (主 anchor 已由封面明示, 后续按操作步骤展开可不重述)"
+      ]
+    },
+    {
+      "id": "background_challenge_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has background/motivation section that lists concrete challenges + subsequent method sections",
+      "title": "背景章挑战需在方法章逐一回应",
+      "description": "背景/动机章列出的挑战 (供需差距/外部限制/性能瓶颈等), 后续方法章需以专门 slide 回应 ≥80% 的挑战条目.",
+      "what_to_check": [
+        "在 section_role=background 的 slides 中扫 slide.核心论断/关键文字, 抽含 '差距/禁令/差/瓶颈/问题' 关键词的挑战项",
+        "对每个挑战项, 在 section_role=method 的所有 slides 中找语义匹配 (verbatim 或 paraphrased)",
+        "算命中率 = 命中挑战数 / 总挑战数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "背景章列出挑战:算力供需差距(slide 4)/出口禁令(slide 5)/端侧能效不足(隐含); 方法章 sec.03 系统优化回应供需差距, sec.05 异构集群/国产 GPU 回应出口禁令, sec.04 推理芯片回应端侧能效, 3/3 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景章列挑战是本 deck 的承诺, 方法章不逐一兑现就让背景沦为独立引子, 破坏 problem→solution 叙事闭环",
+      "fix_hint": "从背景章 slide 抽 challenge 清单, 每条 challenge 在方法章插入 1 张标题含该 challenge 关键词的应对 slide",
+      "exceptions": [
+        "综述型 deck (只梳理挑战不给方案)",
+        "开放讨论型 (末章留白邀听众思考)"
+      ]
+    },
+    {
+      "id": "framework_formula_reuse_in_method",
+      "category": "callback",
+      "applicable_when": "deck introduces a defining formula or framework diagram in background/opening",
+      "title": "背景章公式/框架图需在方法章复用",
+      "description": "背景章提出的核心公式或框架图 (e.g. 算力=A×B×C), 后续方法章需在 ≥1 张 slide 显式沿用其结构或术语, 作为分析骨架.",
+      "what_to_check": [
+        "识别背景章含 '=' 或分层框图的 slide (关键文字含公式符号或视觉骨架含 '框图/分层')",
+        "抽取公式左右两侧核心术语",
+        "在方法章找含这些术语的 slide, ≥1 张命中即视为复用"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "slide 7 提出 '算力=能效比×芯片数量×时间' 公式, 方法章 slide 15/18 沿用 '峰值性能+计算效率+训练成本→算力' 分解, slide 23 沿用 '能效比×规模' 变体, 复用 ≥3 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "公式/框架图是 deck 的分析框架, 只讲一次让方法章沦为孤立技术清单, 复用能把散点技术串成一条推理链",
+      "fix_hint": "方法章首页复现同一框架图, 各方法在图中对应位置标黄, 显式指出'本方法优化的是公式中 X 项'",
+      "exceptions": [
+        "无量化公式的定性讨论型 deck"
+      ]
+    },
+    {
+      "id": "teaser_before_method_chapter",
+      "category": "suspense_reveal",
+      "applicable_when": "deck has background→method chapter transition",
+      "title": "背景章末页需埋方法章钩子",
+      "description": "背景章最后 1-2 张 slide 需提示后续方法章将展开的方向/途径 (e.g. '3 种途径'/'我们的方法'), 但仅点题不细讲.",
+      "what_to_check": [
+        "取 section_role=background 的最后 1-2 张 slide",
+        "看 slide.核心论断/关键文字是否含 'N 种方法/途径/方案' 或 '将展开/后续/我们提出' 类前瞻性语义",
+        "含即命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "slide 7 (背景章末页) 标题 '3 种途径提升智能算力' 明确点出方法章将展开的三条途径, 且仅点题未给具体方案数字"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景讲完直接跳方法章会让观众失去导航, 末页埋钩子既总结上文又建立方法章的期待, 是 problem→approach 之间的桥梁",
+      "fix_hint": "在背景章末页加一张 slide, 标题'解决路径 N 条', 每条只列名称/无数字, 数字留到方法章展开",
+      "exceptions": [
+        "单方法 deck (只有 1 条路径无需铺陈)",
+        "极短 deck ≤10 页"
+      ]
+    },
+    {
+      "id": "result_climax_at_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "any method/result section with quantitative claims",
+      "title": "章节最炸数字应放章末",
+      "description": "方法章/结果章最大 speedup/最优能效/最高利用率等 climax 数字应出现在该章末尾 1-2 张 slide, 而非章首.",
+      "what_to_check": [
+        "对每个 section_role ∈ {method, case_study}, 抽 slide.核心论断/关键文字中含最大量级 (最大 x/最大%/首次/SOTA) 的 slide",
+        "看该 slide 是否位于该 section 页码范围的后 30%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "sec.03 末页 slide 18 给出 '10²-10³x 综合提升', sec.04 末页 slide 31 '能效 500x', sec.05 末页 slide 42 '集群利用率 97.6%' — 三章 climax 数字均在末端"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "最炸数字在章首会让后续内容显得冗余, 放章末能收束整章推理并给听众 'aha' 时刻, 是叙事张力的必要 payoff",
+      "fix_hint": "将章内最大量级 slide 移到该章倒数第 1-2 页, 前面 slide 只用中等量级数字铺陈",
+      "exceptions": [
+        "综述型章节 (无自研数字对比)"
+      ]
+    },
+    {
+      "id": "toc_divider_between_chapters",
+      "category": "chapter_transitions",
+      "applicable_when": "deck ≥30 pages with ≥3 non-opening sections",
+      "title": "长 deck 章间需 TOC 分隔页",
+      "description": "长 deck (≥30 页) 章与章之间需插入 TOC 分隔页, 高亮当前章、其余灰化, 作为叙事进度指示.",
+      "what_to_check": [
+        "找页面角色=toc_candidate 的 slides",
+        "对每个非首章 section (section_index ≥2), 检查其首页或前一页是否为 toc_candidate",
+        "命中率 = TOC 分隔章数 / 非首章总数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "共 5 张 TOC 分隔页 (slide 2/8/20/32/43), 分别位于 sec.02/03/04/05/06 章首, 覆盖 5/7 非首章 (sec.07/08 无独立 TOC 分隔)"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "reason": "sec.07 (slide 47) 与 sec.08 (slide 57) 之间未插 TOC 分隔页, 章切换稍显生硬"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.71,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 听众极易在 30+ 页后迷失, TOC 分隔页是 'you are here' 导航锚, 缺失会让章切换显得跳跃",
+      "fix_hint": "在每个 section 首页前插一张与统一 TOC 模板一致的分隔页, 当前章黑色高亮、其余灰化",
+      "exceptions": [
+        "首章 (opening 不需要)",
+        "极短章 ≤2 页 (章内容比 TOC 分隔页还短时反而累赘)"
+      ]
+    },
+    {
+      "id": "toc_divider_uses_consistent_template",
+      "category": "chapter_transitions",
+      "applicable_when": "deck has ≥2 TOC divider slides",
+      "title": "所有 TOC 分隔页需模板一致",
+      "description": "全 deck 的 TOC 分隔页需使用同一视觉骨架 (相同章节列表/相同分隔条颜色/相同高亮机制), 只切换高亮项.",
+      "what_to_check": [
+        "取所有页面角色=toc_candidate 的 slides",
+        "对比 slide.视觉骨架, 应包含相同 '编号目录列表/分隔横条/高亮机制' 元素",
+        "对比 slide.关键文字, 章节列表条目应基本一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "5 张 TOC 分隔页均使用 00-04 编号列表 + 蓝色分隔条 + 当前章黑色高亮/其余灰化 的统一模板, 仅切换高亮项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "TOC 分隔页多次出现是听众的导航锚, 模板不一致会让每次出现都要重新学习位置关系, 削弱其作为进度条的作用",
+      "fix_hint": "复制第一张 TOC 页, 每次只改高亮项和当前章 index, 不动其余布局",
+      "exceptions": []
+    },
+    {
+      "id": "chapter_outro_bridge_to_next",
+      "category": "chapter_transitions",
+      "applicable_when": "any inter-chapter transition (non-final chapter)",
+      "title": "章末页需承接下一章主题",
+      "description": "每章 (除末章) 最后一张内容页需以核心论断或视觉钩子引出下章主题, 而非戛然而止.",
+      "what_to_check": [
+        "对每个 section (除末), 取其页码范围最后 1 张 content slide",
+        "看 slide.核心论断/关键文字/下页角色是否包含指向下章的过渡语义 (提到下章 anchor / 遗留问题引发下章)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "slide 7 (sec.02 末) 引出 3 途径承接方法章; slide 19 (sec.03 末) 精度-速度定位收束方法; slide 31 (sec.04 末) '系统优化+定制化' 引出集群定制化; slide 42 (sec.05 末) 国智院算力底座直接承接 sec.06 国智院"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末硬切下一章会让 deck 感觉像几份独立报告拼贴, 桥梁 slide 让观众带着上章的收束进入下章期待",
+      "fix_hint": "章末最后一张 slide 结尾一句显式指向下章 anchor (e.g. '这引出下一个问题:X')",
+      "exceptions": [
+        "末章 (无下章可承)",
+        "单章 deck"
+      ]
+    },
+    {
+      "id": "main_thesis_cross_chapter_repeat",
+      "category": "repetition_emphasis",
+      "applicable_when": "deck ≥20 pages with defined main thesis",
+      "title": "主 thesis 需跨 ≥50% 章节复述",
+      "description": "deck 的主 thesis (from 论述总结或 cover 副标题) 相关 anchor 词应在至少 50% 的非结构章节中被复述, 避免主题稀释.",
+      "what_to_check": [
+        "从 deck.论述总结/cover 副标题抽主 thesis 核心 anchor 词 (e.g. '软硬件协同')",
+        "统计该词/其近义词在 section_role ∈ {method, discussion, case_study} 的 slides 中出现的章节数",
+        "章节命中数 / 非结构章节总数 ≥50% 视为命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "主 thesis '软硬件协同' 出现于 sec.03 (slide 9/12/13/15/17/18)/sec.04 (slide 31)/sec.06 (slide 44/45)/sec.08 (slide 61) 共 4 章, 占非结构章 4/6 ≈ 67%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 只在首末提主题会让中段沦为技术堆砌, 跨章复述让每章都在推进主论点而非各自独立成篇",
+      "fix_hint": "每章至少 1 张 slide 标题/核心论断显式带主 thesis 关键词, 让每章都是主论点的一个证据面",
+      "exceptions": [
+        "工作汇报型 (章节按项目/团队并列, 无统一 thesis)"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a substantive cover slide",
+      "title": "主 anchor 首次出现应在封面",
+      "description": "deck 的主 anchor (核心专业术语) 应在 slide_1 (cover) 的标题或关键文字中首次出现, 不应留到中段才提.",
+      "what_to_check": [
+        "从 slide_1 (页面角色=cover_candidate 或 slide_index=1) 抽标题/关键文字词表",
+        "从 deck.主题标签抽主 anchor",
+        "看主 anchor 是否 ∈ slide_1 词表"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "主 anchor 'AI Infra' 与 '国智院' 均出现于 slide 1 主标题 'AI Infra与国智院建设思考' 中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面是唯一 100% 全体听众都会看的 slide, 主 anchor 不在此出现等于放弃最强曝光位, 导致后续每次提及都要重新建立语境",
+      "fix_hint": "cover 主标题必须显式包含主 anchor 名词, 副标题可放限定语",
+      "exceptions": [
+        "悬念型 keynote (故意隐藏主 anchor 制造 reveal 效果)"
+      ]
+    },
+    {
+      "id": "jargon_defined_within_two_pages",
+      "category": "anchor_trajectory",
+      "applicable_when": "deck introduces domain-specific jargon or abbreviations",
+      "title": "专业术语首次使用后 ≤2 页需定义",
+      "description": "首次出现的专业缩写/术语 (如 FP8/CoT/MFU/Scaling Law), 需在使用页或后续 ≤2 页内给出释义或展开, 避免观众在陌生词上卡壳.",
+      "what_to_check": [
+        "扫全 deck slides.关键文字, 抽含 '大写字母缩写' 或加粗术语的首次出现页",
+        "看该页或 ≤2 页后的 slides.核心论断/本页讲什么/关键文字是否含释义关键词 (全称/展开/示意图)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "'FP8' 首现 slide 14, slide 15 立即以三层协同展开释义; 'CoT' 首现 slide 21 同页给出 'Think&Summary' 定义; 'Scaling Law' 首现 slide 36 同页附参数量指数增长曲线释义"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "reason": "'MFU' 首现 slide 41 数据表, 未给出全称 (Model Flops Utilization) 释义, 术语门槛偏高"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "陌生术语不及时定义会让非专业听众断片, 后续再高级的数字也无法建立意义, 是 deck 传达失败的常见根因",
+      "fix_hint": "在术语首现的 slide 底部或次页加一行 '(全称:...)' 或 '如图示意' 释义, 不需长段",
+      "exceptions": [
+        "纯内部技术分享 (听众均是领域内)",
+        "术语已是行业共识 (如 GPU/CPU)"
+      ]
+    },
+    {
+      "id": "quantitative_claim_paired_with_baseline",
+      "category": "comparison_evidence",
+      "applicable_when": "any slide with quantitative performance claim (含 % / × / speedup)",
+      "title": "每个量化 claim 需配对 baseline",
+      "description": "含加速比/能效倍数/性能百分比的量化 slide 需在同页或相邻页给出对比基线 (baseline 型号或旧方案), 而非孤立数字.",
+      "what_to_check": [
+        "扫 slides.核心论断/关键文字含 'x/倍/%/TOPS/tokens/s' 的 slide",
+        "看同页或 ±1 页是否提及 baseline 名称 (e.g. NVIDIA H100/A100, Modellink, 旧方法) 或 'vs' 结构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "slide 16 '1.37-1.75x' 对比 'H100-80GB 现有 GPU 方案'; slide 41 'MFU 48.72%' 对比 'Modellink 44.95%'; slide 27-30 '差 N 倍' 明确对比 CPU/GPU/FPGA/ASIC 各平台;slide 65 '5 倍恢复' 对比 DLRover/Transom/MegaScale"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "reason": "slide 12 '6 年 6 万倍' 未在同页/邻页给出基线年份或起点数值, 数字缺 anchor"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.88,
+      "enforcement_level": "soft",
+      "rationale": "孤立数字听众无法评估 '好在哪里', 配 baseline 才让 claim 具备可验证性, 是技术汇报的信度基石",
+      "fix_hint": "每个 x/倍/% claim 后面小字标 'vs <baseline 名称>', 或在同页角落嵌一个 baseline 对照条",
+      "exceptions": [
+        "纯规模描述 (e.g. 集群 10 万卡, 不需要 baseline)",
+        "行业共识数字 (如 A100 640 TOPS 是硬件规格)"
+      ]
+    },
+    {
+      "id": "positioning_scatter_at_method_end",
+      "category": "comparison_evidence",
+      "applicable_when": "deck has method section with multiple baselines to compare",
+      "title": "方法章末页应有 vs-竞品定位图",
+      "description": "方法章末尾需 ≥1 张 slide 用二维散点/坐标图 (accuracy-speed 或类似) 将 '我们的方法' 与主要 baseline 并置, 显式展示相对优势位置.",
+      "what_to_check": [
+        "取 section_role=method 各 section 的最后 30% slides",
+        "看 slide.视觉骨架是否含 '散点图/坐标图/二维' 且关键文字含多个方法名 + '我们的方法/Better' 标记"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "slide 19 (sec.03 末) 归一化精度-速度散点图铺排 Baseline PyTorch/FA1/FA2/EAGLE-2/Medusa/AWQ 等竞品, '我们的方法' 位于 Better 箭头右上"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "散点定位图是一次性表达 '我们同时优于 N 个 baseline' 的最有效手段, 比 N 张 pairwise 对比表更快建立认知优势",
+      "fix_hint": "在方法章最后加一张 slide, 二维轴选 (性能, 精度) 或 (速度, 能效), 铺方法散点, 用箭头指'Better 方向' + 星标己方",
+      "exceptions": [
+        "方法章仅优化单指标 (e.g. 只讲显存, 无需二维图)",
+        "工程实践类无学术 baseline 可比"
+      ]
+    },
+    {
+      "id": "agenda_chapter_order_matches_deck_order",
+      "category": "structural_promise",
+      "applicable_when": "deck has explicit TOC page listing chapters",
+      "title": "TOC 目录顺序需严格匹配实际章节顺序",
+      "description": "TOC 页 (页面角色=toc_candidate) 列出的章节编号顺序, 必须与实际 section 出现顺序一致, 不能承诺 A→B→C 却讲成 A→C→B.",
+      "what_to_check": [
+        "从 toc_candidate slides 抽章节列表编号顺序",
+        "对比 sections_outline 按 section_index 升序的 section_role/标题",
+        "顺序完全一致视为命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "TOC 编号 00 (背景) → 01 (系统优化) → 02 (推理芯片) → 03 (异构集群) → 04 (国智院/展望), 与 sec.02→03→04→05→06+ 实际顺序完全一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "承诺顺序被打乱会让听众失去可预测感, 也让 TOC 分隔页的进度指示失效, 是结构信任的底线",
+      "fix_hint": "生成 TOC 前先固化 sections_outline 顺序, TOC 章条目按 section_index 升序生成, 不允许人工重排",
+      "exceptions": []
+    },
+    {
+      "id": "cover_to_first_content_within_three_pages",
+      "category": "pacing",
+      "applicable_when": "any deck with cover slide",
+      "title": "封面到首张内容 slide 距离 ≤3 页",
+      "description": "从 cover slide 到首张 section_role ∉ {opening, structural} 的内容 slide, 距离应 ≤3 页, 避免前戏过长损耗观众耐心.",
+      "what_to_check": [
+        "取 slide_index=1 (cover)",
+        "找首个 section_role ∉ {opening} 且页面角色=content_candidate 的 slide 页码",
+        "算距离 = 该页码 - 1"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "evidence": "cover slide 1 → TOC slide 2 → 首张内容 slide 3 (AGI 三要素), 距离 = 2 页"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面到实质内容 >3 页会让听众怀疑 deck 是否有干货, 短 opening 是快节奏汇报的标配",
+      "fix_hint": "opening section 只保留 cover + TOC (可选) + agenda (可选) 三种页型, 总页数 ≤3",
+      "exceptions": [
+        "超长综述 deck (>80 页, 可允许 cover→致谢→引言→TOC→motivation 5 页前戏)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (AI Infra 学术汇报, 65 页 8 章), rules by category: callback=3, suspense_reveal=2, chapter_transitions=3, repetition_emphasis=1, anchor_trajectory=2, comparison_evidence=2, structural_promise=1, pacing=1. 单 deck 样本量小, hit_rate 多为 0/1, 已尽量选取该 deck 强证据、可跨 deck 泛化的规则.",
+  "coverage": {
+    "rules_count": 16,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 3,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

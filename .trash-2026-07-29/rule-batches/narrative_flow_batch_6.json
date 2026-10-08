@@ -1,0 +1,362 @@
+{
+  "batch_index": 6,
+  "rules": [
+    {
+      "id": "challenge_topics_addressed_by_method_content",
+      "category": "callback",
+      "applicable_when": "paper_share deck with both problem/challenges section and method/content section",
+      "title": "问题章列出的挑战需在方法章逐一被回应",
+      "description": "problem 章罗列的 N 个挑战 (挑战1/2/3 或问题清单) 在 method 章应有 N 个 method content (内容1/2/3 或子设计) 分别回应, 拓扑映射覆盖率应达 100%. 映射可按主题匹配, 不必按编号顺序。",
+      "what_to_check": [
+        "在 section_role='problem' 章的 slides 中, 找核心论断/关键文字含 '挑战N' '问题N' 或点题式 bottleneck 关键词, 抽出挑战列表",
+        "在 section_role='method' 章的 slides 中, 找核心论断/标题含 '内容N' '设计N' '方法N' 的 slides, 抽出 method content 列表",
+        "对每条挑战, 在方法列表里找主题匹配的 content (语义 / 关键词重合, 如 sparse↔稀疏, KV↔KV, hardware↔硬件), 算覆盖率"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "3 挑战 (稀疏识别 / GPU block-sparse+AR+Diffusion / KV压缩不适配 diffusion) 在 method 3 内容 (统一稀疏方式 / KV索引压缩 / Flash Attention 硬件数据流) 逐一回应, 覆盖 3/3"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "挑战若无 method 回扣, motivation 章就沦为背景堆料, 听众记住痛点却看不到本工作如何解决",
+      "fix_hint": "为未被回应的挑战新增一个 method content slide, 或删除未映射的孤立挑战",
+      "exceptions": [
+        "综述型 deck (领域挑战本工作只回应部分是常态)",
+        "多工作并列 deck (每个工作各回应一部分挑战)"
+      ]
+    },
+    {
+      "id": "main_thesis_anchors_span_all_body_sections",
+      "category": "callback",
+      "applicable_when": "any technical deck with clear main thesis anchor",
+      "title": "主 thesis 的核心 anchor 应贯穿所有主体章节",
+      "description": "cover 标题里的主 thesis 关键 anchor (2-4 个核心名词, 如 'sparse attention'+'KV compaction'+'autoregressive') 需在 background/problem/method 三大主体章节均至少出现 1 次, 覆盖率 100% (不含 opening/closing).",
+      "what_to_check": [
+        "从 cover slide (页序号 1) 的标题/核心论断抽出 2-4 个核心 anchor 名词",
+        "对每个 anchor, 遍历所有 section_role∈{background,problem,method,experiment} 的 slides 的关键文字/核心论断/标题, 检查是否至少 1 次出现 (verbatim 或近义)",
+        "算 anchor × section 命中矩阵, 覆盖率应 = 100%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "cover anchor '稀疏注意力/KV 压缩/自回归' 在 background(6,7,9,17)、problem(20,22,24) 与 method(27-32) 三大章节均多次出现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "anchor 只在 cover 与方法章出现, 背景与挑战章脱节, 听众无法把 cover 承诺跟本文工作对上号",
+      "fix_hint": "把缺失 anchor 的章节里加一句显式回扣 (background 里点名 anchor, problem 用 anchor 命名挑战)",
+      "exceptions": [
+        "工具/系统类 deck 主 anchor 是产品名而非技术名 (产品名可只在 cover/closing 出现)"
+      ]
+    },
+    {
+      "id": "background_last_page_states_bottleneck",
+      "category": "suspense_reveal",
+      "applicable_when": "deck with background/motivation section ≥3 pages",
+      "title": "背景章末页应明确点出核心 bottleneck",
+      "description": "background 章最后一页 (背景章 sections_outline.页码范围[1]) 的核心论断应给出一个可量化的具体 bottleneck (数字/时长/开销/上界), 为下一章 problem/method 立靶. 不能只做泛化总结。",
+      "what_to_check": [
+        "定位 section_role='background' 章的最后一页 slide",
+        "检查该页 核心论断/关键文字 是否含具体数字或量化限制 (如 '10s' '4-12倍' '算力爆炸' 'Q:5k KV:19k')",
+        "该页应明确点出后续章节要攻克的目标"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "背景章末页 (slide 18) '视频生成始终只能生成 10s 左右, 原因是 bidirectional attention 与 diffusion model 开销' 明确立靶"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景章长达 10+ 页却末页空转, 听众忘记为什么要看方法; 一个量化 bottleneck 让方法章的价值有落点",
+      "fix_hint": "背景章末页补一句量化断言 (X 只能做到 Y, 原因是 Z), 直接呼应后续 problem 章的挑战名词",
+      "exceptions": [
+        "工具/demo 类 deck 无量化 bottleneck (可用定性痛点替代)"
+      ]
+    },
+    {
+      "id": "chapter_switch_uses_agenda_progress_page",
+      "category": "chapter_transitions",
+      "applicable_when": "deck ≥20 pages with ≥3 chapters",
+      "title": "主要章节切换处应插入 agenda 导航页",
+      "description": "在两个主要 chapter (section_role 不同的 section) 边界前后, 应插入一张 agenda/目录导航页, 用同一模板列出全 deck 章节结构. 一个 deck ≥3 chapter 的话至少要有 2 个 agenda 导航页。",
+      "what_to_check": [
+        "统计 页面角色 或 核心论断 中出现 '目录' '导航' 或列出全 deck 章节列表的 slides",
+        "该 slides 应分布在多个 section 边界处 (不是全部堆在开头)",
+        "≥2 个此类 slides 表示 hit"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "slides 2/3/19/25/26 共 5 张 agenda 导航页, 分别出现在 opening、background 开始、problem 开始、method 开始、experiment 开始"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 无进度指示, 听众第 20 页忘了自己在哪一章; 反复插 agenda 页是最低成本的定位手段",
+      "fix_hint": "在每个 section 首页前插一张沿用相同模板的 agenda 页, 高亮当前章节",
+      "exceptions": [
+        "短 deck (<15 页) 单 agenda 页足够",
+        "海报/demo 类 deck 不适用"
+      ]
+    },
+    {
+      "id": "agenda_page_highlights_current_section",
+      "category": "chapter_transitions",
+      "applicable_when": "deck contains any agenda/navigation slide",
+      "title": "agenda 页需视觉标记当前所处章节",
+      "description": "每一张 agenda/导航 slide 应有视觉线索 (颜色加深/竖条/加粗/勾选) 指示听众当前在哪一章. 不能是完全等同的静态列表.",
+      "what_to_check": [
+        "找 页面角色 或 核心论断 中含 '目录' '导航' 关键词的 slides",
+        "检查 视觉骨架 是否含 '进度竖条' '高亮' '加深' '当前项' 等标注",
+        "若多张 agenda 页出现在不同 section, 应各自高亮该 section 的对应项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "slide 3 高亮①研究背景, slide 19 高亮②研究挑战, slide 25 高亮③研究内容, slide 26 高亮④实验结果 — 每张 agenda 均视觉标记当前章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无高亮的 agenda 页只是重复呈现结构, 无法承担'定位当前进度'的功能, 沦为凑页",
+      "fix_hint": "给每张 agenda 页加'当前项加深 + 灰化其余项 + 左侧竖条' 三选一的视觉标记",
+      "exceptions": [
+        "全 deck 只有 1 张开场 agenda (无切换语义, 不需高亮)"
+      ]
+    },
+    {
+      "id": "numbered_topic_prefix_persists_across_multi_page",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck where a single topic spans ≥2 slides",
+      "title": "同一编号主题跨多页时应保持编号前缀",
+      "description": "当同一 topic (挑战N/内容N/RQ N/Step N) 需要多页展开时, 每页标题都应保留完整编号前缀 (挑战1/挑战1 续/挑战1: xxx), 不能只在首页显示编号, 后续页面裸标题.",
+      "what_to_check": [
+        "遍历 slides, 找标题含 '挑战N' '内容N' '步骤N' '设计N' '问题N' 等编号前缀的 slides",
+        "对每个编号 N, 检查其覆盖 slide 段是否连续多页, 若跨页, 后续 slide 标题应仍含该编号"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "挑战1 跨 slide 20/21 (标题均含 '挑战1'), 内容1 跨 27/28/29 (均含 '内容1'), 内容2 跨 30/31 (均含 '内容2') — 编号前缀持续"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "编号消失后听众以为已到下一话题, 但内容还在延续, 造成认知错位; 保持编号是低成本'我们还在讲这个'信号",
+      "fix_hint": "把跨页续讲的 slide 标题改为 '挑战N (续): xxx' 或 '内容N: xxx' 形式",
+      "exceptions": [
+        "跨页由 mini-agenda 或章节分隔明确切开时 (读者已知在续讲)"
+      ]
+    },
+    {
+      "id": "main_thesis_anchor_repeat_across_deck",
+      "category": "repetition_emphasis",
+      "applicable_when": "any technical deck with clear main thesis anchor",
+      "title": "主 thesis 关键 anchor 应在 deck 内重复 ≥5 次",
+      "description": "cover 标题内 2-4 个主 anchor (核心技术名词) 应在整个 deck 中各自累计出现 ≥5 次 (slides.关键文字 + 核心论断 中的 verbatim 或近义匹配). 频次不足意味着 thesis 只在 cover 而不在 body 中生效.",
+      "what_to_check": [
+        "从 cover slide 抽 2-4 个主 anchor 名词 (排除 stopwords)",
+        "对每个 anchor, 全 deck 遍历 slides.关键文字/核心论断/标题, 累计出现次数",
+        "≥5 次为 hit; <3 次为 miss"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "主 anchor '稀疏' 出现 >8 次 (slides 17/20/21/22/23/27/28/29), 'KV' 出现 >10 次 (slides 12-17/24/30/31/32), '自回归/AR' 出现 >8 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "关键词只出现一两次听众听过就忘; 系统性重复是学术汇报里植入 thesis 的核心手段",
+      "fix_hint": "在 background/experiment/closing 各章各追加 1 处主 anchor 提及, 补齐重复次数",
+      "exceptions": [
+        "产品/demo 类 deck 主 anchor 是产品名而非技术名词 (可仅重复产品名)"
+      ]
+    },
+    {
+      "id": "parallel_numbered_structure_problem_and_method",
+      "category": "repetition_emphasis",
+      "applicable_when": "paper_share deck with both problem section and method section",
+      "title": "问题章与方法章应共享相同数量的编号项",
+      "description": "problem 章列出 N 个编号挑战 (挑战1/2/3), method 章也应列出 N 个编号内容 (内容1/2/3 或子设计). 编号数目一致 (无论顺序是否对齐) 让听众能预判方法章的展开节奏.",
+      "what_to_check": [
+        "在 problem 章统计编号挑战数 N_challenge (含 '挑战N' 或类似标题前缀的 slides)",
+        "在 method 章统计编号内容数 N_content (含 '内容N' '设计N' 或类似前缀的 slides)",
+        "N_challenge == N_content 为 hit; |差| ≤1 为软 hit; >1 为 miss"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "problem 章 3 个挑战 (挑战1/2/3), method 章 3 个内容 (内容1/2/3), 数目严格一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "并列编号预告方法章需回应几件事; 数目不一致让听众怀疑方法覆盖不全",
+      "fix_hint": "让 method 章的子设计编号数目 = 挑战编号数目; 若合并挑战则同步合并 method 项",
+      "exceptions": [
+        "多工作并列 deck (可共同回应挑战, 单工作数目 < 挑战数)",
+        "挑战/方法未显式编号的叙述型 deck"
+      ]
+    },
+    {
+      "id": "borrowed_visuals_carry_source_citation",
+      "category": "comparison_evidence",
+      "applicable_when": "any technical deck referencing external work",
+      "title": "借用外部图表/工作时应在页面标注 source",
+      "description": "若 slide 使用了外部论文的图/示意/工作名, 该 slide 应包含 source 引用条 (Source: XXX / arXiv:... / conference name), 通常放在页脚或右下角. 尤其在 background/problem 章高频.",
+      "what_to_check": [
+        "遍历 slides 关键文字 / 视觉骨架, 找含 'Source:' 'arXiv' 'DAC' 'NeurIPS' 等引用关键词的 slides",
+        "识别 slides 中提到外部工作名 (Sora/Wan/Diffusion Forcing/Self Forcing/SWAT/SALO 等) 的 slides",
+        "带外部工作的 slides 应含 source 引用条"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "slides 20/21 引 Sparse VideoGen (arXiv:2502.01776), slide 22 引 SWAT DAC 2024, slides 23/24 引 SALO DAC 2022, slide 13 标注 arXiv:2506.08009, slide 8 标注 arXiv:2503.20314"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "学术汇报借图未署源属基本失范, 会让评审质疑作者对文献边界的把握; source 条也让听众可循迹回读",
+      "fix_hint": "为每张含外部图/数据的 slide 底部加 'Source: 作者, 会议/年份 (arXiv/DOI)' 引用条",
+      "exceptions": [
+        "自制的方法/结果图无需 source",
+        "常识性示意 (公开百科级图片) 可豁免"
+      ]
+    },
+    {
+      "id": "main_anchor_first_at_cover_slide",
+      "category": "anchor_trajectory",
+      "applicable_when": "any technical deck",
+      "title": "主 anchor 首次出现应在 cover slide",
+      "description": "deck 的主 anchor (产品名/方法名/核心技术缩写) 应首次出现在 slide 1 (cover slide 标题/核心论断). 不能在 body 章节先出现再回到 cover 引出.",
+      "what_to_check": [
+        "识别 deck 主 anchor (通常是 cover slide 标题中的核心名词/缩写, 如 LOAC/BERT/YOLO)",
+        "验证该 anchor 首次出现的 slide_index = 1",
+        "cover 若无主 anchor, 说明命名不清晰"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "主 anchor 'LOAC' 与 'Stripe-Informed Sparse Attention and KV Compaction' 全部首次出现在 slide 1 cover 标题"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "cover 是听众记忆 anchor 的最强锚点, 不放主 anchor 等于放弃品牌植入; 后置露出会让 body 提到时听众茫然",
+      "fix_hint": "把主 anchor 名词直接放进 cover slide 标题, 用大字号呈现",
+      "exceptions": [
+        "综述/教学类 deck 无自研 anchor (可豁免)"
+      ]
+    },
+    {
+      "id": "jargon_context_within_two_pages_of_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any technical deck introducing specialized terminology",
+      "title": "专业术语首次出现后 ≤2 页内应提供上下文",
+      "description": "当 slide 首次使用一个专业术语/缩写 (如 KV Cache / Diffusion Forcing / bidirectional attention), 该术语应在同页或后续 ≤2 页内给出定义、示意或功能说明, 避免连续多页只用不解.",
+      "what_to_check": [
+        "识别 slides 中首次出现的专业名词 (含缩写/英文技术名词/研究工作名)",
+        "检查其首次出现 slide 与后续 2 页内是否含定义句/示意画面/功能说明 (关键文字或核心论断)",
+        "若相邻 2 页仍无解释, 判 miss"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "'Diffusion Forcing' slide 10 首次出现, slides 11/12 立即给出记忆缺陷与根因; 'KV Cache' slide 12 首次出现即含机制说明; 'Self Forcing' slide 13 首次出现 slide 14/15 展开机制"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "术语裸奔多页会累积理解债, 到方法章听众已跟不上; 术语首次出现后立即上下文化是学术汇报的基本礼貌",
+      "fix_hint": "在术语首次出现的 slide 或下一页, 加一句'即 XXX (是/用于/解决 YYY)' 的定义/功能说明",
+      "exceptions": [
+        "受众为深度同行 (术语已默认掌握)",
+        "术语在标题中作品牌名而非概念名"
+      ]
+    },
+    {
+      "id": "chapter_nav_pages_share_layout_template",
+      "category": "structural_promise",
+      "applicable_when": "deck contains ≥2 agenda/navigation slides",
+      "title": "多张 agenda 页应共享同一视觉模板",
+      "description": "同 deck 内的多张 agenda/导航 slides 应使用一致的视觉模板 (相同的编号形状/进度竖条/列表布局), 变化只体现在'哪一项被高亮'. 视觉模板混杂会破坏进度信号.",
+      "what_to_check": [
+        "遍历页面角色/核心论断含 '目录' '导航' 关键词的 slides",
+        "对比其 视觉骨架 字段, 关键元素 (编号形状/进度竖条/列表方向/外框) 应一致",
+        "≥80% 视觉骨架关键元素一致即 hit"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "slides 3/19/25/26 4 张 agenda 页均用 '4 项编号圆点/圆圈 + 左侧进度竖条 + 外框' 同模板, 只切换高亮位置"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 页视觉不一致会让听众以为在看新章节而不是进度指示, 破坏它作为导航锚点的作用",
+      "fix_hint": "把所有 agenda 页统一到同一模板 slide, 仅修改高亮项和标题文字",
+      "exceptions": [
+        "首页 agenda 与结尾 agenda 允许略有差异 (如结尾加 'Q&A' 项)"
+      ]
+    },
+    {
+      "id": "paper_share_deck_follows_narrative_arc_sequence",
+      "category": "pacing",
+      "applicable_when": "report_type='paper_share' or academic technical deck",
+      "title": "paper_share deck 应遵循 opening→background→problem→method→experiment→closing 弧线",
+      "description": "paper_share 类型 deck 的 sections_outline.section_role 序列应按 opening→background/motivation→problem→method→experiment→closing 顺序排列. 允许省略某些中间章节, 但不允许颠倒顺序 (如 experiment 在 method 前).",
+      "what_to_check": [
+        "读 sections_outline, 抽取 section_role 序列",
+        "验证 序列 满足 opening 在首, closing 在末, background<problem<method<experiment 的偏序关系",
+        "违反偏序则 miss"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "evidence": "sections_outline 序列为 opening→background→problem→method→experiment→closing, 严格符合弧线"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "学术汇报的弧线是听众的预期模板, 颠倒顺序 (先讲实验再讲方法) 会让听众失去因果链, 除非专门做倒叙修辞",
+      "fix_hint": "重排 sections 顺序回归标准弧线; 若必须倒叙, 首章加 mini-agenda 说明顺序变体",
+      "exceptions": [
+        "综述/tutorial 类 deck (可按话题分类而非弧线)",
+        "商业/产品 deck (可先讲成果再讲技术)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck (LOAC, 34 页, paper_share). 抽出 13 条 rule, 覆盖 8 大 category. 所有 rule 均基于该 deck 明确 hit 的模式 (编号并列/多张 agenda/术语上下文化/source 引用/主 anchor 首现于 cover 等), 未 emit 该 deck violate 的规则 (如 experiment 章仅 1 页, closing 无 thesis 回扣, background 占比 47% 等 — 因 hit_rate=0 无法评估 universal). 后续 batch 若出现 experiment/closing 反例配套可补齐 comparison_evidence 与 callback 类的收尾 rule.",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "callback": 2,
+      "suspense_reveal": 1,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 3,
+      "comparison_evidence": 1,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "deck标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "目录名": "SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "源文件": "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx",
+  "源哈希": "131776401f77db88c9e594db88f68c537ef9e59a",
+  "画布尺寸": [
+    9144000,
+    5143500
+  ],
+  "标题": "SG-Filter: Enhancing Similar Text Retrieval",
+  "总页数": 26,
+  "章节数": 6,
+  "章节列表": [
+    "section_01_封面",
+    "section_02_文本检索背景",
+    "section_03_结构化信息检索难题",
+    "section_04_分层摘要语义索引方法",
+    "section_05_数据集实验与结论",
+    "section_06_结尾"
+  ],
+  "主题标签": [
+    "Text Retrieval",
+    "Similar Text",
+    "Embedding",
+    "Semantic Index",
+    "Filtering",
+    "Summarization",
+    "RAG"
+  ],
+  "目标受众": "Academic peers & IR/NLP researchers",
+  "报告类型": "paper_share",
+  "适用场景": "Academic paper sharing on text retrieval methods",
+  "论述总结": "This deck presents SG-Filter, a similar-text-retrieval method. It reviews the mainstream retrieval paradigm and its limits on structured/summarized information, poses key questions on efficiently obtaining summarized semantics, proposes a hierarchical summarized-semantic index with adaptive filtering, then validates it on datasets and metrics with concluding effectiveness gains.",
+  "论述弧线": [
+    "Background",
+    "Problem",
+    "Method",
+    "Index",
+    "Experiment",
+    "Conclusion"
+  ],
+  "适合复用场景": [
+    "Text retrieval / RAG method paper share",
+    "IR embedding limitation motivation section",
+    "Method-then-experiment academic report",
+    "Semantic indexing technique presentation"
+  ],
+  "不适合复用场景": [
+    "Industry product demo (narrative differs)",
+    "Non-retrieval NLP topics (off-topic)",
+    "Business proposal or pitch deck",
+    "Beginner tutorial (too dense)"
+  ],
+  "分析状态": "claude-opus-4-8"
+}

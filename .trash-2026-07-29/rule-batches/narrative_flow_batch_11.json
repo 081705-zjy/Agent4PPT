@@ -1,0 +1,388 @@
+{
+  "batch_index": 11,
+  "rules": [
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with both cover (section_role=opening) and closing (section_role=closing) sections",
+      "title": "封面标题需在收官页 verbatim/paraphrased 回扣",
+      "description": "cover 页的论文/主题全称必须在 closing 页再次出现 (verbatim 或去掉副标题的近似形式), 让听众在合上的一刻还能对上主题名。",
+      "what_to_check": [
+        "取 sections_outline 中 section_role=opening 的首页 slide.标题 / 关键文字, 抽出论文/deck 全称",
+        "对 section_role=closing 的最后一页, 在 slide.标题 / 核心论断 / 关键文字 中检查该全称是否出现 (允许 paraphrase, 但主 anchor 词必须重合)",
+        "命中判定: 主 anchor 词重合 且 副标题≥半数关键词命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "slide 1 与 slide 25 均出现 verbatim 'SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首因近因效应: 结尾复述主题名让听众带走一个可搜索的锚, 否则回忆时只剩数字",
+      "fix_hint": "closing 页首行加 deck 标题或主 anchor, 与 cover 页保持一致",
+      "exceptions": [
+        "无 closing 页的短 deck (页数≤5, 直接以结果页收束)"
+      ]
+    },
+    {
+      "id": "motivation_question_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck 在 motivation 章末以问句/问题句式收束, 且存在 method 章",
+      "title": "动机章抛出的问题必须在方法章正面回答",
+      "description": "motivation 末页以红字/加粗问句抛出的核心问题 (如 'How to reduce X?'), 需在 method 章前几页以 verbatim 或 paraphrased 方式直接给出答案, 形成 setup-payoff。",
+      "what_to_check": [
+        "扫描 motivation 章末页 slide.关键文字 / 核心论断, 识别以 'How to' / '如何' 开头的问句",
+        "在 method 章前 3 页的 slide.核心论断 / 关键文字中查找相同问句 verbatim 或该问题的答案短语",
+        "两者主 anchor 词需重合"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "motivation 末页 slide 5 红字问 'How to reduce layer computation?' → method 章 slide 13 直接答 'Deploy a predictor after each layer' 跳冗余层"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "问答对拉紧叙事张力: 问句悬念放出后不答, 听众会带着未闭合的疑问听后文, 注意力被耗尽",
+      "fix_hint": "method 章首页在标题旁复述 motivation 问句, 并给出一句答案",
+      "exceptions": [
+        "motivation 章末未抛问句 (以陈述/数字收束) 时不适用"
+      ]
+    },
+    {
+      "id": "framework_diagram_reuse_across_chapters",
+      "category": "callback",
+      "applicable_when": "deck 在某一章 (通常 background/method 首) 使用整体框架图/流水线示意, 且 method 章有多页设计",
+      "title": "整体框架示意图需在方法章多次复用",
+      "description": "在 background 或 method 章首建立的整体框架图 (如逐层流水线 + predictor), 应在 method 章后续 pain/solution 页复用同一视觉骨架, 让读者在同一坐标系下追踪局部改动。",
+      "what_to_check": [
+        "识别整体框架页 (slide.视觉骨架 含 '流水线' / '框图' / '级联' 关键词, 且 slide.核心论断 描述全局结构)",
+        "在 method 章其他 slide.视觉骨架 中查找同类关键词 (逐层/predictor/Attention FFN 流水线) 重现次数",
+        "复现次数 ≥2 判命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "slide 5/7 建立 '逐层 Attention+FFN + predictor Y/N' 框架, method 章 slide 13/16 沿用同一逐层流水线 + 判定分支视觉骨架"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "共同视觉坐标系降低认知切换成本, 每张新图只需听众解读局部差异而非整张图",
+      "fix_hint": "method 章各 pain/solution 页复用整体框架图, 仅高亮/替换本页焦点局部",
+      "exceptions": [
+        "方法章各技术彼此独立、无共享框架时无法复用",
+        "综述型 deck 无自建统一框架"
+      ]
+    },
+    {
+      "id": "teaser_question_at_motivation_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck 有 motivation 章, 且 motivation 章末尾并非直接接 method 首页 (中间可能有 background/related work)",
+      "title": "动机章末尾埋钩子问句而非平铺答案",
+      "description": "motivation 末页应以问句 / 红字设问 / '如何 X' 收束, 而不是给出方案数字。答案要在后续章节揭示, 保留 build-up。",
+      "what_to_check": [
+        "定位 motivation 章 (section_role=motivation) 的最后一页",
+        "检查 slide.关键文字 / 视觉骨架 是否含问句 (含 '?' 或 '如何' / 'How to')",
+        "同时排除该页给出具体方案数字或成品名 — 否则算 anti-pattern (提前揭示)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "motivation 末页 slide 5 底部红字设问 'How to reduce layer computation?', 未给方案名和数字"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "开放式问句制造 setup, 后续揭示时听众会有 'aha' 收敛感; 平铺答案则丢掉这次强化机会",
+      "fix_hint": "motivation 末页删除方案数字, 改为红字 'How to X?' 单行收束",
+      "exceptions": [
+        "motivation 极短 (1 页) 且必须包含核心方案 preview 时"
+      ]
+    },
+    {
+      "id": "pain_solution_adjacent_slide_pair",
+      "category": "suspense_reveal",
+      "applicable_when": "method 章包含多项独立技术且每项技术占 2 张以上 slide",
+      "title": "每项技术采用 pain→solution 相邻双页结构",
+      "description": "method 章每项技术应组织为 'pain 页 (暴露痛点+抛问)' → '紧邻 solution 页 (给出设计+收益)' 的双页对, 而不是一页塞尽。让每项技术自成 mini setup-payoff。",
+      "what_to_check": [
+        "在 method 章按 slide 顺序找相邻两页, 前页 slide.核心论断/关键文字含 '痛点/耗时/太慢/skewed/complexity' 类问题描述",
+        "后页 slide.核心论断/关键文字含对应设计 (含 '设计/降/保精度/reduce complexity')",
+        "两页 anchor 词 (technique 名) 一致才算配对"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "Technique 1 slide 14 (痛点 ~30% 耗时) → slide 15 (概率漂移特征降维); T2 slide 16/17; T3 slide 18/19, 3/3 相邻配对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "痛点先立, 方案再破: 相邻结构让听众带着新鲜疑问看解法, 疑问不隔页会衰减",
+      "fix_hint": "把混在一页的痛点+方案拆成前后两页, 前页只到 '如何 X?'",
+      "exceptions": [
+        "技术过于简单可单页说清 (痛点已在 motivation 讲透)",
+        "多技术 workshop 型只做 highlight 展示"
+      ]
+    },
+    {
+      "id": "mini_agenda_reappears_at_chapter_boundary",
+      "category": "chapter_transitions",
+      "applicable_when": "deck 页数 ≥20 或章节数 ≥5",
+      "title": "长 deck 每进入新章需重现同一 agenda 页并高亮当前章",
+      "description": "长 deck 每次跨章边界处插入一张与首页目录同版式的 outline 页, 通过高亮当前章 / 灰化其余章告诉听众 'you are here', 承接上一章并预告下一章。",
+      "what_to_check": [
+        "扫描全 deck 找到所有 slide.标题 含 'Outline' / '目录' 的 slide",
+        "统计其在 sections_outline 中的位置, 应至少每 ≥3 章边界出现一次",
+        "各 outline 页视觉骨架关键字应一致 (同版式), 且 slide.核心论断 指向不同章的高亮"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "slide 2/6/10/20 四次同版式 Outline 页分别高亮 Background/Related Work/Challenges/Experiment Results, 覆盖每次章边界"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 听众易迷路, 反复出现的同版式导航是低成本重置注意力的锚",
+      "fix_hint": "在每个 section 首页前插入 outline 页并高亮当前章名",
+      "exceptions": [
+        "deck 页数 <15 或章数 ≤3 时无需重复导航"
+      ]
+    },
+    {
+      "id": "chapter_first_page_topic_intro",
+      "category": "chapter_transitions",
+      "applicable_when": "任何多章 deck",
+      "title": "每章首页明确引入本章主题词",
+      "description": "每个新 section 的首页 slide.标题 或 slide.核心论断 必须包含该 section 的主题 keyword, 让听众通过标题就知道本章目标, 而不是靠上下文推断。",
+      "what_to_check": [
+        "对 sections_outline 每个 section, 取 slide_index 落在页码范围首值的 slide",
+        "在 slide.标题 / 核心论断 中查找该 section.标题 的主 keyword (或同义词)",
+        "命中判定: keyword 出现即算 hit"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "5 个非 opening 章首页均含章主题词: slide 3 'Token'/'Action' 引入推理成本; slide 6 Outline 高亮 Related Work; slide 10 高亮 Challenges; slide 20 高亮 Experiment Results"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章首页是听众重定向注意力的入口, 标题不点题则本章前几秒被浪费",
+      "fix_hint": "把章首页标题改为含章主题词的名词短句",
+      "exceptions": [
+        "章首页复用为 outline 页且已高亮章名的情况"
+      ]
+    },
+    {
+      "id": "main_anchor_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "任何有明确主 anchor (核心方法名/系统名) 的 paper_share/tech_share deck",
+      "title": "主 anchor 需在 ≥3 章节反复出现",
+      "description": "deck 的主 anchor (方法/系统名) 应在 opening、method、result、closing 至少 3 章出现, 且总提及 ≥5 次, 否则 deck 主线易被遮盖。",
+      "what_to_check": [
+        "从 deck.标题 / 论述总结 抽取主 anchor 词 (系统/方法名)",
+        "统计该词在所有 slide.标题 / 核心论断 / 关键文字 中出现的 slide 数",
+        "分布应覆盖 ≥3 个不同 section_role (至少含 opening + method + result 或 closing)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "'SpecEE' 出现在 slide 1 (opening)、22-24 (result banner)、25 (closing); 主 anchor 'predictor' 遍布 slide 7-19 (background+method)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "只提一次的名字听众记不住 — 分散在多章的重复才建立 '这是这个 deck 的东西' 的关联",
+      "fix_hint": "在 result banner 与 closing 结论 bullet 加回主 anchor 名",
+      "exceptions": [
+        "综述型 deck 无单一主 anchor"
+      ]
+    },
+    {
+      "id": "key_number_repeat_between_result_and_closing",
+      "category": "repetition_emphasis",
+      "applicable_when": "deck 有 result 章且有 closing 章",
+      "title": "关键提速/精度数字必须在收官页复述",
+      "description": "result 章展示的核心量化数字 (如最高 speedup、accuracy 损失) 需在 closing 页 verbatim 复述 1-2 条最强数字, 让听众带走可引用的定量结论。",
+      "what_to_check": [
+        "扫描 result 章 slide.关键文字 中带 'x speedup' / '%' / '≥' 的数字短语",
+        "在 closing 页 slide.关键文字 / 核心论断 中查找相同数字 (允许 '~' 前缀)",
+        "命中判定: 至少 1 条最强数字重合"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "result slide 23/24 的 2.43x/2.25x 在 closing slide 25 verbatim 复述 '~2.43x and ~2.25x faster'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "数字是最易传播也最易遗忘的载体 — 复述一次让离场听众能对同事复述",
+      "fix_hint": "closing 页加一行蓝字 bullet 直接抄 result 最强 speedup 数",
+      "exceptions": [
+        "非定量型 deck (综述/理论)",
+        "closing 页仅为二维码/致谢 (无正文空间)"
+      ]
+    },
+    {
+      "id": "result_claim_banner_pairing",
+      "category": "comparison_evidence",
+      "applicable_when": "deck 有 result 章且有多张定量结果 slide",
+      "title": "每张 result 页需含单句结论 banner 与数据图配对",
+      "description": "result 章的每张定量 slide 应含 (1) 主体数据图/表 + (2) 底部/顶部单句结论 banner (含具体数字), 形成 evidence-claim 一对一, 而不是让听众自己从图里读结论。",
+      "what_to_check": [
+        "对 section_role=result 的每张 slide, 检查 slide.视觉骨架 含 'banner' / '结论 banner' / '强调框' 类关键字",
+        "同时 slide.关键文字 含具体数字 + 定性词 (speedup/accuracy)",
+        "命中判定: 2 项条件同时满足"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "slide 22 '<1% loss' 米黄 banner; slide 23 'Up to 2.43x on Y7000' banner; slide 24 '2.25x/2.17x + Pareto' banner, 3/3 evidence-claim 配对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众看图 5 秒内提炼不出结论, banner 是主讲人替听众读图 — 缺失就丢结论",
+      "fix_hint": "result 页底加 1 行米黄 banner: '主指标 + 数字 + 平台'",
+      "exceptions": [
+        "纯定性 case study 页 (无量化)"
+      ]
+    },
+    {
+      "id": "baseline_comparison_table_in_background",
+      "category": "comparison_evidence",
+      "applicable_when": "paper_share 类 deck 且有 background/related_work 章",
+      "title": "相关工作章需含横向对比表暴露 baseline 短板",
+      "description": "background/related_work 章不应只并列描述 baseline, 而需含一张多维度 (≥3 维) 横向对比表 (含 heavy/light 或 high/low 颜色标注), 使听众直观看到共性短板, 为本工作 pivot 作反衬。",
+      "what_to_check": [
+        "在 section_role=background 或 related_work 的 slide 中找 slide.视觉骨架 含 '对比表' / '表' 且含 '×维度' 关键字",
+        "slide.关键文字 含 heavy/light 或 high/low 或 red/green 颜色对照",
+        "≥3 baseline × ≥3 维度"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "slide 9 RAEE/AdaInfer/MoD × When to Exit/Search Space/Predict Latency/Training Cost 四维对比表, 红 Heavy/绿 Light 标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "没有 gap 表, 本工作的差异化只能靠听众脑内脑补; 表格把 pivot 论据摆到台面",
+      "fix_hint": "background 末页加 baseline×维度对比表, 关键格标红以暴露 gap",
+      "exceptions": [
+        "无 baseline 的开创性工作",
+        "内部技术分享无 related work 章"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "任何有系统名/方法名的 paper_share/tech_share deck",
+      "title": "主 anchor 首现于封面标题",
+      "description": "deck 主 anchor (系统/方法名) 首次出现应在 slide 1 cover 标题, 而不是在正文中段才引入, 让听众从第一秒就知道要跟踪什么词。",
+      "what_to_check": [
+        "从 deck.标题 抽取主 anchor 词",
+        "扫描全 deck slide.关键文字, 找主 anchor 首次出现的 slide_index",
+        "首次出现应 = slide 1 (cover)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "'SpecEE' 首次出现 slide 1 cover 标题 'SpecEE: Accelerating LLM Inference with Speculative Early Exiting'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面是听众第一次搜索 anchor 的位置, 名字晚出会让听众带着 '这到底叫什么' 的困惑听前几页",
+      "fix_hint": "把主 anchor 加到 cover 标题主行或副标题",
+      "exceptions": [
+        "悬念型/教学型 deck 故意延迟揭示方法名"
+      ]
+    },
+    {
+      "id": "agenda_delivers_all_promised_chapters",
+      "category": "structural_promise",
+      "applicable_when": "deck 有独立 agenda / outline 页",
+      "title": "agenda 承诺的每一章都需在 deck 中实际展开",
+      "description": "cover 附近的 agenda 页列出的所有章节名, 需在后续 sections_outline 中都能对应到 ≥1 个 section, 不能承诺后跳过。",
+      "what_to_check": [
+        "找到含 'Outline' / 'Agenda' 关键词的 slide, 抽取其 slide.关键文字 中的章节名列表",
+        "对每个章节名, 检查 sections_outline 中是否有 section.标题 或 section_role 与之对应 (verbatim 或 paraphrased)",
+        "命中率 = 命中章节 / agenda 列出章节, 需 ≥95%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "agenda slide 2 承诺 Background/Related Work/Challenges and Techniques/Experiment Results 4 章, sections_outline 中 sec.02-05 逐一 deliver, 4/4"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是主讲人对听众的口头合同; 承诺未 deliver 会让整场 deck 结构失信",
+      "fix_hint": "若某章被裁掉, 同步删掉 agenda 该行, 或补 ≥1 张展开 slide",
+      "exceptions": [
+        "无独立 agenda 页的极短 deck"
+      ]
+    },
+    {
+      "id": "method_dominates_page_share_in_paper_share",
+      "category": "pacing",
+      "applicable_when": "报告类型 = paper_share 且总页数 ≥15",
+      "title": "论文分享 deck 的方法章页数占比应最高",
+      "description": "paper_share deck 的 method 章 (含挑战/技术设计) 应是页数最多的单章, 占比 30-50%; 低于 25% 说明方法交代不足, 高于 55% 则 result/motivation 被挤压。",
+      "what_to_check": [
+        "对每个 section 计算页数 = 页码范围 diff + 1",
+        "求 section_role=method 的页数 / 总页数, 应落在 [0.30, 0.50]",
+        "同时 method 章应是所有 section 中页数最多"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "evidence": "method 章 sec.04 页数 10/25 = 40%, 是最长章 (motivation 3, background 4, result 5, closing 1)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "论文分享听众来看新方法, 方法章是核心筹码; 页数不足则本次分享 '干货' 感稀薄",
+      "fix_hint": "方法章不足 30% 时补 pain/design 对页; 超 55% 时把细节合并",
+      "exceptions": [
+        "综述性 paper_share (方法多且各自简短)",
+        "系统 demo 型分享 (result 章占比更高)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SpecEE paper_share, 25 slides, 6 sections)。抽取 14 条 rule, 覆盖 8 大类全部 category。由于样本量小, enforcement_level 主要落在 soft/hard 混合: cover/agenda/anchor 等强共识规则给 hard, 视觉复用/节奏比例等给 soft。previous_batches_rules 为空, 无 dedup 需求, 所有 id 均为新建。",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

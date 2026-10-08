@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_07"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.02"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 7
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "AI 趋势一：算力需求急剧上升"
+核心论断: "AI 应用算力需求正急剧攀升"
+本页讲什么: "本页收束趋势论证，直指 Computility demand 因 AI 应用而急剧上升。它把前几页的数据、任务、模型膨胀汇聚为「算力需求暴涨」的结论，制造供需矛盾张力，为下一页引出稀疏计算这一破局思路做铺垫。"
+关键文字: "[\"AI Trend 1: Data and Task\", Computility demand for AI applications has increased sharply]"
+视觉骨架: "[算力需求上升曲线, 需求增长趋势标注]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_07.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_07.asset.02]"
+适合复用场景: "[算力需求增长 motivation 页, 算力供需矛盾论证页]"
+不适合复用场景: "[具体方法架构页, 多组数据密集图表页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "AI Trend 1: Data and Task"}
+  - {"位置": "下方主体", "内容": "算力需求上升曲线与趋势标注"}
+alternate_claims:
+layout_tag: "curve_chart_with_numbers"
+---
+# slide 7: AI 趋势一：算力需求急剧上升
+
+**核心论断**: AI 应用算力需求正急剧攀升
+
+## 本页讲什么
+本页收束趋势论证，直指 Computility demand 因 AI 应用而急剧上升。它把前几页的数据、任务、模型膨胀汇聚为「算力需求暴涨」的结论，制造供需矛盾张力，为下一页引出稀疏计算这一破局思路做铺垫。
+
+## 关键文字片段
+- AI Trend 1: Data and Task
+- Computility demand for AI applications has increased sharply
+
+## 视觉骨架
+- 算力需求上升曲线
+- 需求增长趋势标注
+
+## 可复用到
+- 算力需求增长 motivation 页
+- 算力供需矛盾论证页
+
+## 不适合复用的场景
+- 具体方法架构页
+- 多组数据密集图表页

@@ -1,0 +1,1378 @@
+{
+  "batch_index": 9,
+  "patterns": [
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "论文",
+          "机构",
+          "作者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中大字论文标题+多机构作者名单+通讯标注"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号目录列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多家机构作者+通讯标注)接一页编号进度式目录",
+      "anti_patterns": [
+        "无 TOC 的单页论文封面开场 — 用 opening_paper_cover_multi_author_multi_institution",
+        "空白模板骨架封面 — 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "全 deck 开场:slide 1 亮出论文标题与作者机构建立学术权威,slide 2 用 Outline 铺开 Background→Related Work→Challenges&Techniques(含四项技术)→Experiment→Extension 六段主线,为后续章节定锚",
+          "section_topic_tags": [
+            "论文封面",
+            "多机构署名",
+            "六段式目录",
+            "章节导航"
+          ],
+          "match_evidence": "2 页节奏: 大字论文标题+多作者多机构封面(single_paper_title_authors_only) → 六段主线目录当前章高亮(toc_progress_highlight)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SpeContext:高效长上下文推理(论文封面)",
+              "slide_claim": "SpeContext 由 SJTU 等团队提出,面向高效长上下文推理",
+              "slide_key_text": [
+                "SpeContext: Enabling Efficient Long-context Reasoning with",
+                "Jiaming Xu, Jiayi Pan, Jiancai Ye, Yu Wang, Guohao Dai",
+                "Shanghai Jiao Tong University, Tsinghua, SII, Infinigence-AI",
+                "jiamingxu@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题",
+                "作者姓名带机构上标",
+                "机构与邮箱脚注行"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:六段主线目录",
+              "slide_claim": "全文沿 Background 到 Extension 六段主线展开,技术含四项",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight",
+                "Lightweight Retrieval Head",
+                "Asynchronous Prefetch Dataflow",
+                "Adaptive Memory Management",
+                "Experiment Results",
+                "Extension"
+              ],
+              "slide_visual_skeleton": [
+                "居中蓝色 Outline 标题",
+                "六段目录纵向列表",
+                "当前章高亮其余灰化",
+                "缩进技术子条目 bullet"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_value_vs_cost_dilemma_funnel_to_solution_call",
+      "title": "背景·价值-代价矛盾漏斗至方案追问",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "价值",
+          "代价",
+          "矛盾",
+          "动机"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_dual_trend_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "以左右并列双列铺陈趋势(如上下文长度+交互轮次同步激增)"
+        },
+        {
+          "archetype": "rhetorical_question_banner_overlay",
+          "count": 1,
+          "position": "middle",
+          "purpose": "在灰化的趋势背景上叠加红框反问, 承上启下"
+        },
+        {
+          "archetype": "value_multi_level_argument",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多列多层次结构论证目标特性的价值(如长上下文五层次)"
+        },
+        {
+          "archetype": "mechanism_diagram_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "由价值面转向代价面, 用机制示意图揭示代价来源"
+        },
+        {
+          "archetype": "quantitative_cost_explosion_table",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "用公式+多规模对照表量化代价爆炸"
+        },
+        {
+          "archetype": "collapse_question_bridge",
+          "count": 1,
+          "position": "end",
+          "purpose": "以红字追问『如何 reduce/压缩』收束, 桥接方法章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "macro_dual_trend_panel",
+          "to_archetype": "rhetorical_question_banner_overlay",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "rhetorical_question_banner_overlay",
+          "to_archetype": "value_multi_level_argument",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "value_multi_level_argument",
+          "to_archetype": "mechanism_diagram_intro",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "mechanism_diagram_intro",
+          "to_archetype": "quantitative_cost_explosion_table",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "quantitative_cost_explosion_table",
+          "to_archetype": "collapse_question_bridge",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型背景章: 以『双趋势→反问→价值层次→机制→量化代价→追问收束』的价值-代价漏斗组织, 常见于 KV Cache/长上下文压缩类工作的动机章",
+      "anti_patterns": [
+        "无 rhetorical question 直接堆价值+代价 — 缺承上启下, 用 background_ai_to_domain_to_hardware_evolution_funnel",
+        "只讲代价不论价值 — 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "section_title": "长上下文推理背景",
+          "section_role": "background",
+          "section_narrative": "背景章:先立『长上下文+多轮交互』趋势与价值(五层次),再抛出 KV Cache 显存爆炸(128K→36GB)这一代价,收束于『如何压缩 KV Cache』,为投机稀疏方法铺垫。",
+          "section_topic_tags": [
+            "长上下文价值",
+            "KV Cache 显存爆炸",
+            "注意力机制",
+            "五层次论证",
+            "价值-代价矛盾"
+          ],
+          "match_evidence": "6 页节奏: 双列趋势 → 红框反问叠加 → 五层次价值 → 注意力机制示意 → 显存公式+对照表 → Full/Selected 对比+『How to reduce』红字追问",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "macro_dual_trend_panel",
+              "archetype": "macro_dual_trend_panel",
+              "slide_title": "新兴LLM与应用:上下文与交互双增长",
+              "slide_claim": "LLM上下文长度(10K→)与应用交互轮次(5→50)同步激增",
+              "slide_key_text": [
+                "Emerging LLMs with increasing context length",
+                "Emerging applications with increasing interaction rounds",
+                "Context Length Support: 10K →",
+                "Interaction rounds: 5 rounds → 50"
+              ],
+              "slide_visual_skeleton": [
+                "左右2列并列panel",
+                "上标题+底部数据行",
+                "底部参考文献条"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "rhetorical_question_banner_overlay",
+              "archetype": "rhetorical_question_banner_overlay",
+              "slide_title": "追问:为何持续追求更长上下文",
+              "slide_claim": "承接双增长趋势,反问为何要持续追求更长上下文",
+              "slide_key_text": [
+                "Why do we persistently pursue longer context?",
+                "Emerging LLMs with increasing context length",
+                "Emerging applications with increasing interaction rounds"
+              ],
+              "slide_visual_skeleton": [
+                "灰化的双列背景",
+                "居中红框强调问句banner"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "value_multi_level_argument",
+              "archetype": "value_multi_level_argument",
+              "slide_title": "长上下文的五层次价值",
+              "slide_claim": "长上下文带来更多信息与更强能力,呈五层次递进",
+              "slide_key_text": [
+                "Long Context in Five Levels",
+                "Five Levels to AGI",
+                "Database RAG (1K-10K→100K)",
+                "Chain-of-thought (10x deeper)",
+                "Multi-turn Tool Prompt (100K→1M)",
+                "Longer Context means more information and greater capability"
+              ],
+              "slide_visual_skeleton": [
+                "3列并列panel",
+                "每列多层堆叠框",
+                "右侧Shannon公式+向下箭头"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "mechanism_diagram_intro",
+              "archetype": "mechanism_diagram_intro",
+              "slide_title": "KV Cache由来:注意力计算机制",
+              "slide_claim": "KV Cache源自注意力中K、V的缓存复用",
+              "slide_key_text": [
+                "KV Cache Dilemma",
+                "QKV Gen.",
+                "QK^T / Attn weight",
+                "K Cache / KV_heads",
+                "KV Cache"
+              ],
+              "slide_visual_skeleton": [
+                "注意力计算框图",
+                "QKV到O的流向",
+                "K/V标红标注块"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "quantitative_cost_explosion_table",
+              "archetype": "quantitative_cost_explosion_table",
+              "slide_title": "KV Cache显存爆炸的量化代价",
+              "slide_claim": "KV Cache随长度线性膨胀,128K达36GB、256K达144GB",
+              "slide_key_text": [
+                "KV Cache Memory Size = 2 × Len × D × bsz × Layers",
+                "Qwen3-8B, bsz=64, D=4096, Layers=36",
+                "Len 32K/128K/256K → 9GB/36GB/144GB",
+                "Up to 70% with 128K in end-to-end"
+              ],
+              "slide_visual_skeleton": [
+                "K/V立方体张量示意",
+                "显存公式",
+                "Len-显存对照表"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "collapse_question_bridge",
+              "archetype": "collapse_question_bridge",
+              "slide_title": "收束:如何压缩KV Cache",
+              "slide_claim": "巨额KV Cache需通过稀疏选择加以压缩",
+              "slide_key_text": [
+                "How to reduce the KV Cache",
+                "KV Cache Memory Size =",
+                "Full Attention",
+                "Selected KV Cache Select"
+              ],
+              "slide_visual_skeleton": [
+                "Full/Selected KV对比示意",
+                "居中红字大问句",
+                "公式残留背景"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "related_work_two_route_taxonomy_survey",
+      "title": "相关工作·两路线分类综述",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "related_work"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "分类",
+          "路线",
+          "对照"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入 Related Work 章"
+        },
+        {
+          "archetype": "related_work_route_static_baseline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第一路线(如永久驱逐/滑动窗口): 用可视化矩阵解释机制+暴露信息丢失缺陷"
+        },
+        {
+          "archetype": "related_work_route_dynamic_advanced",
+          "count": 1,
+          "position": "end",
+          "purpose": "第二路线(如查询感知动态选择): 展示更细粒度机制并暗示开销与精度短板"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "related_work_route_static_baseline",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "related_work_route_static_baseline",
+          "to_archetype": "related_work_route_dynamic_advanced",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型 related work 章: 目录切入→分类展开两条主流路线(静态基线 vs 动态进阶), 每条路线用可视化矩阵解释机制并暴露缺陷, 为本文方法立对照",
+      "anti_patterns": [
+        "三路线以上并列综述 — 用 related_works_survey_three_pillars",
+        "只讲单一路线无对照 — 属方法综述而非 related work"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+          "section_title": "相关工作",
+          "section_role": "background",
+          "section_narrative": "综述稀疏 KV Cache 现有路线,从永久驱逐(信息丢失)递进到 Quest/ClusterKV 的查询感知动态选择,暴露其检索开销与精度短板,为 SpeContext 的投机式稀疏做对照铺垫。",
+          "section_topic_tags": [
+            "稀疏 KV Cache 综述",
+            "永久驱逐",
+            "查询感知动态选择",
+            "Quest",
+            "ClusterKV"
+          ],
+          "match_evidence": "3 页节奏: outline 章节导航 → 永久驱逐(滑动窗口/Sink token)矩阵示意 → Quest/ClusterKV 查询感知 Max/Select 机制",
+          "slides": [
+            {
+              "slide_index": 9,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_chapter_marker",
+              "slide_title": "Outline:定位到 Related Work 章节",
+              "slide_claim": "全篇分五章推进,当前进入 Related Work 相关工作",
+              "slide_key_text": [
+                "Outline",
+                "Background / Related Work / Challenges and Techniques",
+                "Key Insight, Lightweight Retrieval Head",
+                "Asynchronous Prefetch Dataflow",
+                "Adaptive Memory Management",
+                "Experiment Results / Extension"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题 Outline",
+                "章节纵向列表",
+                "当前章节高亮+其余灰显",
+                "子条目缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "related_work_route_static_baseline",
+              "archetype": "related_work_route_static_baseline",
+              "slide_title": "稀疏 KV Cache 之永久驱逐路线",
+              "slide_claim": "永久驱逐类方法以滑动窗口/Sink token 固定保留局部,丢弃远端信息",
+              "slide_key_text": [
+                "Related Works on Sparse KV Cache",
+                "Permanent eviction",
+                "Prompt: What is the largest ocean ?",
+                "Sliding window = 2",
+                "Sink token + Sliding window = 2",
+                "[1] Longformer: The long-document transformer, arXiv:2004.05150"
+              ],
+              "slide_visual_skeleton": [
+                "全量 vs 稀疏 KV 网格对比",
+                "两个带标题的示意方框",
+                "token 序列 + 虚线/彩色格子矩阵",
+                "底部文献引用条"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "related_work_route_dynamic_advanced",
+              "archetype": "related_work_route_dynamic_advanced",
+              "slide_title": "稀疏 KV Cache 之查询感知动态选择",
+              "slide_claim": "Quest/ClusterKV 按查询动态选 KV,精度更高但引入检索开销",
+              "slide_key_text": [
+                "Related Works on Sparse KV Cache",
+                "Permanent eviction",
+                "Paging / Cluster",
+                "Max, Select",
+                "[1] Quest: Query-aware sparsity for efficient long-context llm inference, arXiv:2406.10774",
+                "[2] ClusterKV: Manipulating llm kv cache in semantic space, arXiv:2412.03213"
+              ],
+              "slide_visual_skeleton": [
+                "三个并列机制方框",
+                "KV 分块网格(粉/蓝/灰)",
+                "Paging 与 Cluster 分组示意",
+                "Max/Select 标注 + 匹配计算",
+                "底部双文献引用条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_theoretical_insight_prelude_then_challenge_technique_triad",
+      "title": "方法·理论洞察前奏+三项挑战-技术闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          10,
+          15
+        ],
+        "must_have_in_chapter_purpose": [
+          "洞察",
+          "理论论证",
+          "挑战",
+          "技术",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入方法章"
+        },
+        {
+          "archetype": "insight_question_qa_intro",
+          "count": 2,
+          "position": "middle",
+          "purpose": "以 Question/Answer 版式连抛 2 个核心提问, 铺陈本质目标与既有代价"
+        },
+        {
+          "archetype": "insight_information_theory_proof",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用信息论(互信息/DPI/蒸馏 KL) 论证方案合理性"
+        },
+        {
+          "archetype": "insight_conclusion_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 Original vs Distilled 对照收束洞察结论, 给出核心可复用主张"
+        },
+        {
+          "archetype": "technique_challenge_statement_with_architecture",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术首页: 顶部 Challenge 断言+架构/时序图揭示瓶颈"
+        },
+        {
+          "archetype": "technique_solution_mechanism_or_optimization",
+          "count": "3-6",
+          "position": "before_end",
+          "purpose": "每项技术后续: 剪枝/预取/自适应等具体机制页, 回应对应挑战"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "insight_question_qa_intro",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "insight_question_qa_intro",
+          "to_archetype": "insight_information_theory_proof",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "insight_information_theory_proof",
+          "to_archetype": "insight_conclusion_headline",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "insight_conclusion_headline",
+          "to_archetype": "technique_challenge_statement_with_architecture",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "technique_challenge_statement_with_architecture",
+          "to_archetype": "technique_solution_mechanism_or_optimization",
+          "hook_type": "problem_to_solution"
+        }
+      ],
+      "applicable_summary": "论文分享型方法章: 目录锚定后先用 Q&A + 信息论 4 页建立可复用理论洞察, 再以『Challenge → Technique』模式串接 3 项技术(每项包含挑战陈述+解法机制), 完成从理论根到工程细节的闭环",
+      "anti_patterns": [
+        "无理论洞察直接展开多技术 — 用 method_multi_parallel_techniques_intro_flow_detail",
+        "只有 Challenge-Solution 单对没有多项技术 — 用 case_study_challenge_solution_performance_closed_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "section_title": "挑战与核心技术",
+          "section_role": "method",
+          "section_narrative": "deck 的方法核心。先用信息论证明蒸馏小模型可作 KV 检索头(Insight),再以 Challenge→Technique 模式逐项展开轻量检索、异步预取、自适应内存三项技术,支撑后续实验。",
+          "section_topic_tags": [
+            "蒸馏检索头",
+            "轻量检索",
+            "异步预取",
+            "自适应内存",
+            "信息论洞察"
+          ],
+          "match_evidence": "12 页节奏: 目录 → 2 页 Q&A 提问 → 信息论 DPI 证明 → DLM 检索算法结论 → Tech1(架构+剪枝+粒度3页) → Tech2(挑战+预取2页) → Tech3(挑战+自适应内存2页)",
+          "slides": [
+            {
+              "slide_index": 12,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_chapter_marker",
+              "slide_title": "本节 Agenda:挑战与核心技术",
+              "slide_claim": "本节聚焦三项核心技术:轻量检索、异步预取、自适应内存",
+              "slide_key_text": [
+                "Challenges and Techniques",
+                "Key Insight",
+                "Lightweight Retrieval Head",
+                "Asynchronous Prefetch Dataflow",
+                "Adaptive Memory Management"
+              ],
+              "slide_visual_skeleton": [
+                "章节大纲列表",
+                "当前章节高亮/其余灰显",
+                "多级 bullet 缩进"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "insight_question_qa_intro",
+              "archetype": "insight_question_qa_intro",
+              "slide_title": "Insight 提问:检索算法的本质目标",
+              "slide_claim": "检索算法的本质目标是对齐稀疏注意力与全注意力精度",
+              "slide_key_text": [
+                "Question: What is the essential objective of retrieval algorithms?",
+                "Objective: Align Model Accuracy",
+                "Efficient Retrieve / Sparse Attention",
+                "Original LLM Compute / Full Attention"
+              ],
+              "slide_visual_skeleton": [
+                "Question/Answer 版式",
+                "右侧概念对比示意",
+                "关键词高亮标注"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "insight_question_qa_intro",
+              "archetype": "insight_question_qa_intro",
+              "slide_title": "Insight 提问:为何检索需复杂预处理",
+              "slide_claim": "现有检索算法依赖复杂耗时的预处理来降低计算开销",
+              "slide_key_text": [
+                "Question: Why do existing retrieval algorithms need complex and time-consuming preprocessing?",
+                "Answer: mitigate the computational overhead during decoding",
+                "Paging [Quest, ICML 24]",
+                "Clustering [ClusterKV]",
+                "Len × D × bsz × Layers"
+              ],
+              "slide_visual_skeleton": [
+                "Question/Answer 版式",
+                "KV 张量维度示意",
+                "reduce 方法标注块"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "insight_information_theory_proof",
+              "archetype": "insight_information_theory_proof",
+              "slide_title": "Insight 信息论:上下文与检索的高互信息",
+              "slide_claim": "上下文与检索结果间存在高互信息 I(c,Rт)",
+              "slide_key_text": [
+                "High Mutual Information I(c, Rт)",
+                "Information Flow c → RM → P (Markov)",
+                "Distillation: Minimize D_KL(Pт‖Ps)",
+                "Similar Mutual Information I(c, Rs), I(c, Rт)",
+                "Data Processing Inequality"
+              ],
+              "slide_visual_skeleton": [
+                "信息流箭头示意",
+                "Teacher/Distilled 双列对照",
+                "互信息公式标注"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "insight_conclusion_headline",
+              "archetype": "insight_conclusion_headline",
+              "slide_title": "Insight 结论:蒸馏模型可作检索算法",
+              "slide_claim": "蒸馏语言模型呈现相似信息聚焦,可直接充当检索算法",
+              "slide_key_text": [
+                "Distilled language model exhibits similar information focus",
+                "We can leverage the DLM as the retrieval algorithm",
+                "Key Insight",
+                "Original / Distilled LM"
+              ],
+              "slide_visual_skeleton": [
+                "Original vs Distilled 对照框",
+                "信息聚焦圈选示意",
+                "结论高亮红字"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "technique_challenge_statement_with_architecture",
+              "archetype": "technique_challenge_statement_with_architecture",
+              "slide_title": "Tech1 挑战:DLM 检索头架构",
+              "slide_claim": "轻量检索头为完整 Transformer 解码层仅增约 10% 延迟",
+              "slide_key_text": [
+                "Challenge: Time-consuming DLM",
+                "Distilled LM Architecture",
+                "A full transformer decoder layer + Embedding + Sampling, ~10% latency overhead",
+                "Input_id → Embedding → Query/Key/Value → Attention Weights"
+              ],
+              "slide_visual_skeleton": [
+                "DLM 架构框图",
+                "逐层 KV Cache 示意",
+                "延迟开销红字标注"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "technique_solution_mechanism_or_optimization",
+              "archetype": "technique_solution_mechanism_or_optimization",
+              "slide_title": "Tech1:剪枝去冗余仅取注意力结果",
+              "slide_claim": "DLM 中大量运算冗余,只需注意力结果即可剪枝超 60% FLOPS",
+              "slide_key_text": [
+                "Challenge: Time-consuming DLM",
+                "Pruned >60% FLOPS",
+                "Redundant Operation",
+                "We only need the attention results",
+                "Distilled LM Architecture"
+              ],
+              "slide_visual_skeleton": [
+                "DLM 架构框图",
+                "冗余模块红字标注",
+                "剪枝比例高亮"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "technique_solution_mechanism_or_optimization",
+              "archetype": "technique_solution_mechanism_or_optimization",
+              "slide_title": "Tech1:Head-Level 与 Batch-Level 检索",
+              "slide_claim": "按注意力权重累积在 Head 级与 Batch 级取 Top-K 稀疏检索",
+              "slide_key_text": [
+                "Head-Level Retrieval",
+                "Batch-Level Retrieval",
+                "Attention weight accumulation",
+                "Head1 … Headn / Max",
+                "K="
+              ],
+              "slide_visual_skeleton": [
+                "多 head 权重条示意",
+                "Head/Batch 双柱状对照图",
+                "注意力累积纵轴刻度"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "technique_challenge_statement_with_architecture",
+              "archetype": "technique_challenge_statement_with_architecture",
+              "slide_title": "Tech2 挑战:推理期内存传输瓶颈",
+              "slide_claim": "稀疏 KV Cache 预取中内存传输是推理期主要瓶颈",
+              "slide_key_text": [
+                "Challenge: Heavy Data transfer",
+                "(b) Prefetch Sparse KV Cache",
+                "Memory transfer bottleneck during inference",
+                "Attn / KV Prefetch / FFN",
+                "KV Budget 32 64 128 256 512 1024"
+              ],
+              "slide_visual_skeleton": [
+                "预取时序条示意",
+                "KV Budget 坐标轴",
+                "瓶颈结论红字"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "technique_solution_mechanism_or_optimization",
+              "archetype": "technique_solution_mechanism_or_optimization",
+              "slide_title": "Tech2:相邻 token 上下文相似性预取",
+              "slide_claim": "利用相邻 token 解码的上下文相似性实现异步稀疏预取",
+              "slide_key_text": [
+                "Contextual Similarity in adjacent token decoding",
+                "(a) Prefetch Full KV Cache",
+                "(c) Prefetch Sparse KV Cache (e.g., InfiniGen)",
+                "(d) Prefetch Sparse V Cache (e.g., ShadowKV)",
+                "Attn FFN Re. K Recons. V Fetch"
+              ],
+              "slide_visual_skeleton": [
+                "多方案时序条对照",
+                "阶段标签时间线",
+                "核心论断红字"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "technique_challenge_statement_with_architecture",
+              "archetype": "technique_challenge_statement_with_architecture",
+              "slide_title": "Tech3 挑战:序列微增引发性能骤降",
+              "slide_claim": "序列长度微增(120K→128K)即引发解码速度显著退化",
+              "slide_key_text": [
+                "Challenge: Performance Degradation",
+                "Speed (tokens/s) 45.3",
+                "120K Len. / 128K Len.",
+                "Tiny length increase",
+                "Performance degradation with a tiny increase in sequence length",
+                "Selected KV Cache / Decided before"
+              ],
+              "slide_visual_skeleton": [
+                "速度对比柱状图",
+                "Selected KV Cache 示意",
+                "退化结论红字"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "technique_solution_mechanism_or_optimization",
+              "archetype": "technique_solution_mechanism_or_optimization",
+              "slide_title": "Tech3:理论模型驱动的自适应内存",
+              "slide_claim": "用理论内存模型预计算,在 GPU/HBM/CPU 间自适应调度 KV",
+              "slide_key_text": [
+                "Adaptive memory management system",
+                "Support Theoretical memory model",
+                "Precompute by theoretical model",
+                "GPU HBM CPU / offload",
+                "KV Cache Layer 1~L-1 / 1~L-2",
+                "Decoding Steps"
+              ],
+              "slide_visual_skeleton": [
+                "三级存储分层示意",
+                "解码步时间轴 T₃/T₄",
+                "逐层 KV offload 分布图"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "result_setup_accuracy_dual_lens_speedup_headline",
+      "title": "结果·设置→精度双视角→加速比头条",
+      "applicable_when": {
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "精度评测",
+          "加速比",
+          "无损"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录切入 Experiment Results 章"
+        },
+        {
+          "archetype": "eval_setup_four_dimensions",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以硬件/模型/基线/数据集四维分组罗列评测框架"
+        },
+        {
+          "archetype": "accuracy_result_scenario_one_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "精度视角一(如长输入): 用逐层流程对比证明选择差异不损精度"
+        },
+        {
+          "archetype": "accuracy_result_scenario_two_retention",
+          "count": 1,
+          "position": "middle",
+          "purpose": "精度视角二(如长输出): 用 token 块图证明完整保留新 KV 不掉点"
+        },
+        {
+          "archetype": "speedup_headline_dual_platform",
+          "count": 1,
+          "position": "end",
+          "purpose": "以云端+边缘两组红色大字倍数收束, 甩出核心加速数字"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "eval_setup_four_dimensions",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "eval_setup_four_dimensions",
+          "to_archetype": "accuracy_result_scenario_one_compare",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "accuracy_result_scenario_one_compare",
+          "to_archetype": "accuracy_result_scenario_two_retention",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "accuracy_result_scenario_two_retention",
+          "to_archetype": "speedup_headline_dual_platform",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "论文分享型系统方法结果章: 目录→四维评测框架→精度双视角(长输入+长输出)证无损→云端/边缘双平台加速比头条收束, 完成『精度不损+速度更快』双证",
+      "anti_patterns": [
+        "含消融拆解 — 用 experiment_setup_dual_main_headline_ablation_pair",
+        "包含 demo 展示 — 用 experiment_layered_setup_accuracy_hardware_speedup_demo"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "section_title": "实验结果",
+          "section_role": "result",
+          "section_narrative": "结果章:先立评测框架(硬件/模型/基线/数据集),再以长输入+长输出双维度证明精度无损,最后甩出 24.89x 云端吞吐、10.06x 边缘加速的核心卖点,论证「稀疏不掉点且更快」。",
+          "section_topic_tags": [
+            "评测框架",
+            "精度无损",
+            "长输入长输出",
+            "云端加速",
+            "边缘加速"
+          ],
+          "match_evidence": "5 页节奏: outline → 4 维 setup → 长输入 KV 选择对比 → 长输出完整保留新 KV → 云端 24.89x + 边缘 10.06x 加速头条",
+          "slides": [
+            {
+              "slide_index": 24,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_chapter_marker",
+              "slide_title": "Outline:定位到「实验结果」章节",
+              "slide_claim": "全文六大板块中,进度推进到 Experiment Results 章",
+              "slide_key_text": [
+                "Background / Related Work / Challenges and Techniques",
+                "Key Insight、Lightweight Retrieval Head、Adaptive Memory Management",
+                "Experiment Results(高亮)",
+                "Extension"
+              ],
+              "slide_visual_skeleton": [
+                "单列纵向目录列表",
+                "当前章节黑色高亮其余灰化",
+                "两级缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "eval_setup_four_dimensions",
+              "archetype": "eval_setup_four_dimensions",
+              "slide_title": "Experiment Setup:评测框架四要素",
+              "slide_claim": "从硬件/模型/基线/数据集四维搭建覆盖云边的评测框架",
+              "slide_key_text": [
+                "边缘: Lenovo Legion Y7000P + RTX 4060(8GB) + i7-13650HX",
+                "云端: NVIDIA A800-80GB 多请求",
+                "模型: Llama3.1-8B / DeepSeek-R1-Distill / Qwen3-8B",
+                "基线: 全注意力 HuggingFace/FlashInfer;稀疏 Quest/ClusterKV/ShadowKV",
+                "长输入 LongBench;长输出 LongWriter"
+              ],
+              "slide_visual_skeleton": [
+                "四组分层 bullet 列表",
+                "硬件/模型/基线/数据集四小节标题"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "accuracy_result_scenario_one_compare",
+              "archetype": "accuracy_result_scenario_one_compare",
+              "slide_title": "精度评测(长输入):KV 选择机制对比",
+              "slide_claim": "本方法与 Quest 等采用不同 KV 选择,但保留同一份 KV 不掉点",
+              "slide_key_text": [
+                "Long Input: LongBench datasets and metrics",
+                "Long Output: Longwriter dataset, scored by GPT-4o",
+                "Quest/ClusterKV/ShadowKV vs Ours",
+                "Different KV Selection / Same KV"
+              ],
+              "slide_visual_skeleton": [
+                "左右两列逐层流程框图",
+                "Layer1→Retrieval→Attention→FFN 纵向堆叠",
+                "Different/Same KV 红色对比标注"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "accuracy_result_scenario_two_retention",
+              "archetype": "accuracy_result_scenario_two_retention",
+              "slide_title": "精度评测(长输出):完整保留新 KV",
+              "slide_claim": "完整保留新生成 KV,使 LongWriter 长输出精度与全注意力相当",
+              "slide_key_text": [
+                "Long Input: LongBench datasets and metrics",
+                "Prompt / New Token",
+                "Complete retention of new KV pairs",
+                "Similar accuracy in longwriter"
+              ],
+              "slide_visual_skeleton": [
+                "两行 token 方块序列图",
+                "蓝黄配色区分 Prompt 与 New Token",
+                "红色虚线框标注保留区",
+                "红字结论标签"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "speedup_headline_dual_platform",
+              "archetype": "speedup_headline_dual_platform",
+              "slide_title": "加速评测:云端 24.89x、边缘 10.06x",
+              "slide_claim": "云端多请求吞吐提升达 24.89x,边缘加速达 10.06x,并避免 OOM",
+              "slide_key_text": [
+                "High-end GPU with multi-requests in cloud",
+                "Up to 24.89x throughput improvement in cloud",
+                "Up to 10.06x speedup in edge",
+                "OOM",
+                "[2k,16k] / [2k,32k] / [16k,2k] / [32k,2k]"
+              ],
+              "slide_visual_skeleton": [
+                "多长度配置的散点/柱状图",
+                "OOM 失败标注",
+                "两组红色大数字加速标签"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "outlook_life_analogy_build_dual_system_series_works_lift",
+      "title": "展望·生活类比铺陈→双系统理论→系列工作升华",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "展望",
+          "范式",
+          "类比",
+          "系列工作",
+          "升华"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入 Extension 展望章"
+        },
+        {
+          "archetype": "analogy_dual_paradigm_intro_frame",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第一帧: 左右双范式并列(如 LLM/Diffusion 提问+待生成), 铺陈类比锚点"
+        },
+        {
+          "archetype": "analogy_dual_paradigm_answer_reveal",
+          "count": 1,
+          "position": "middle",
+          "purpose": "第二帧: 用具体答案补全类比(如 Pacific Ocean/绿鸟), 坐实『Step by Step』共性"
+        },
+        {
+          "archetype": "dual_system_cognitive_theory_mapping",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "引经典理论(如 Kahneman System1/2), 映射到 AI 小模型/大模型协同"
+        },
+        {
+          "archetype": "series_works_dual_system_landscape_map",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双系统为骨架, 将本组多项工作(LLM/多模态/VLA) 纳入统一范式"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "analogy_dual_paradigm_intro_frame",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "analogy_dual_paradigm_intro_frame",
+          "to_archetype": "analogy_dual_paradigm_answer_reveal",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "analogy_dual_paradigm_answer_reveal",
+          "to_archetype": "dual_system_cognitive_theory_mapping",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "dual_system_cognitive_theory_mapping",
+          "to_archetype": "series_works_dual_system_landscape_map",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型收尾展望章: 从生活化类比(LLM/Diffusion 都是 Step by Step)分两帧递进→引入 Kahneman 双系统理论→映射到本组 LLM/多模态/VLA 系列工作, 把单点工作升华为投机式推理范式",
+      "anti_patterns": [
+        "纯目录+一句话贡献总述 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "含团队组成栏 — 用 discussion_agenda_vision_topics_team_close"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "section_title": "推理扩展与展望",
+          "section_role": "discussion",
+          "section_narrative": "全 deck 收尾展望章:把 SpeContext 从单点工作升华为「投机式推理」范式——借 LLM/Diffusion 逐步生成类比引出 System1/System2 双系统认知,再映射到本组 LLM/多模态/VLA 系列工作。",
+          "section_topic_tags": [
+            "投机式推理范式",
+            "双系统认知",
+            "Kahneman",
+            "系列工作版图",
+            "跨模态"
+          ],
+          "match_evidence": "5 页节奏: outline → LLM/Diffusion 问答铺陈 → 答案补全坐实 Step by Step → Kahneman 双系统映射 AI → 本组 LLM/多模态/VLA 系列工作双列版图",
+          "slides": [
+            {
+              "slide_index": 29,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_chapter_marker",
+              "slide_title": "Outline:进入 Extension 展望章",
+              "slide_claim": "讲解推进到 Extension 章,承接实验结果转向范式展望",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Lightweight Retrieval Head",
+                "Experiment Results",
+                "Extension"
+              ],
+              "slide_visual_skeleton": [
+                "置灰目录列表",
+                "当前项高亮标黑",
+                "两级缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "analogy_dual_paradigm_intro_frame",
+              "archetype": "analogy_dual_paradigm_intro_frame",
+              "slide_title": "Think Deep into:LLM 与 Diffusion 逐步生成",
+              "slide_claim": "LLM 与 Diffusion 都以 Step by Step 方式逐步展开生成",
+              "slide_key_text": [
+                "Large Language Model: What is the biggest ocean?",
+                "Diffusion Model:",
+                "Step by Step"
+              ],
+              "slide_visual_skeleton": [
+                "上下双范式并列布局",
+                "红色 Step by Step 强调标注",
+                "留白待补的生成过程"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "analogy_dual_paradigm_answer_reveal",
+              "archetype": "analogy_dual_paradigm_answer_reveal",
+              "slide_title": "Think Deep into:逐步生成揭示答案",
+              "slide_claim": "LLM 逐步推出 Pacific Ocean,Diffusion 逐步画出绿鸟",
+              "slide_key_text": [
+                "What is the biggest ocean?",
+                "The Pacific Ocean",
+                "Diffusion Model: Draw a green bird.",
+                "Step by Step"
+              ],
+              "slide_visual_skeleton": [
+                "上下双范式并列布局",
+                "问答逐步展开",
+                "Step by Step 强调标注"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "dual_system_cognitive_theory_mapping",
+              "archetype": "dual_system_cognitive_theory_mapping",
+              "slide_title": "人类双系统认知映射到 AI",
+              "slide_claim": "人类 System1/System2 双系统可映射为 AI 小模型快推理/大模型慢推理",
+              "slide_key_text": [
+                "Human intelligence comprises two systems",
+                "System 1: fast, automatic, intuitive",
+                "System 2: slower, analytical, reasoning",
+                "Daniel Kahneman, Nobel Laureate",
+                "System1 Small Model / Fast Inference",
+                "System2 Large Model / Slow Reasoning → Efficient AI"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏 Human/AI 对照",
+                "两椭圆 System1/System2 节点",
+                "Cooperation/Guide 箭头关系"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "series_works_dual_system_landscape_map",
+              "archetype": "series_works_dual_system_landscape_map",
+              "slide_title": "Our Series of Works:双系统映射本组工作",
+              "slide_claim": "本组 LLM/多模态/VLA 系列工作沿 System1 投机引导 System2 慢推理范式展开",
+              "slide_key_text": [
+                "System 1 / System 2",
+                "Small Model Fast Speculation",
+                "Large Language Model [ISCA'25/ASPLOS'26]",
+                "Multimodal Model / Feature Caching",
+                "Vision-language-action [Under Review]",
+                "System1 Speculation Guide System2"
+              ],
+              "slide_visual_skeleton": [
+                "System1/System2 双列骨架",
+                "多工作节点标注会议出处",
+                "Guide/Redundant 关系箭头"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_single_page_title_plus_key_insight_callback",
+      "title": "收尾·单页论文标题+核心洞见回扣",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "回扣",
+          "核心洞见",
+          "论文标题"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "title_plus_key_insight_callback",
+          "count": 1,
+          "position": "start",
+          "purpose": "上方大字完整论文标题+作者/导师署名, 下方 Key Insight 对照示意+一句话核心主张回扣方法起点"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "论文分享型极简单页收尾: 顶部大字重亮完整论文标题+作者/通讯署名, 下方以 Original vs Distilled 对照回扣全 deck 的 Key Insight, 用一句话论断呼应方法起点, 兼具答辩总结与核心记忆点强化",
+      "anti_patterns": [
+        "含 THANKS 大标题 — 用 closing_minimal_thanks_with_speaker_signature",
+        "含全作者名单 — 用 closing_thanks_single_page_with_full_author_institution_footer"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.07",
+          "section_title": "总结页",
+          "section_role": "closing",
+          "section_narrative": "以完整论文标题+作者收尾,回扣全文核心洞见:蒸馏小模型(DLM)与原模型信息聚焦一致,故可复用为轻量检索算法,呼应方法起点。",
+          "section_topic_tags": [
+            "核心洞见回扣",
+            "论文标题回顾",
+            "蒸馏检索头",
+            "答辩收尾"
+          ],
+          "match_evidence": "1 页节奏: 论文完整标题+作者/导师+Key Insight 对照+一句话核心主张",
+          "slides": [
+            {
+              "slide_index": 34,
+              "role_in_pattern": "title_plus_key_insight_callback",
+              "archetype": "title_plus_key_insight_callback",
+              "slide_title": "SpeContext 结尾页:论文标题+核心洞见回扣",
+              "slide_claim": "蒸馏小模型(DLM)信息聚焦与原模型一致,可复用为检索算法",
+              "slide_key_text": [
+                "SpeContext: Enabling Efficient Long-context Reasoning with Speculative Context Sparsity in LLMs",
+                "Jiaming Xu, supervised by Prof. Guohao Dai",
+                "Key Insight",
+                "Distilled language model exhibits similar information focus",
+                "We can leverage the DLM as the retrieval algorithm"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题+作者署名",
+                "Original vs Distilled LM 对比示意",
+                "绿框核心结论条",
+                "右侧红字点题句"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (SpeContext) 共 7 section, 抽出 7 patterns。sec.01 命中 previous_batches 的 opening_paper_cover_multi_author_multi_institution_plus_toc; 其余 6 section 均为新 pattern: sec.02 → background_value_vs_cost_dilemma_funnel_to_solution_call (价值-代价矛盾漏斗, 明显区别于既有 background_ai_to_domain_to_hardware_evolution_funnel/paradigm_evolution 等), sec.03 → related_work_two_route_taxonomy_survey (两路线分类综述, 与 related_works_survey_three_pillars 三路线区分), sec.04 → method_theoretical_insight_prelude_then_challenge_technique_triad (信息论洞察前奏 + 3 项挑战-技术, 与 method_multi_parallel_techniques_intro_flow_detail 的三项并列技术不同的是前置理论洞察 4 页), sec.05 → result_setup_accuracy_dual_lens_speedup_headline (双精度视角+加速头条, 与含消融的 experiment_setup_dual_main_headline_ablation_pair 区分), sec.06 → outlook_life_analogy_build_dual_system_series_works_lift (类比→理论→系列工作三段升华), sec.07 → closing_single_page_title_plus_key_insight_callback (单页标题+洞见回扣, 与 THANKS 收尾家族区分)。new_archetype: macro_dual_trend_panel — 左右并列双列铺陈两条同步趋势; new_archetype: rhetorical_question_banner_overlay — 灰化背景上叠加红框反问 banner; new_archetype: value_multi_level_argument — 多列多层次论证目标特性价值; new_archetype: mechanism_diagram_intro — 用机制示意图揭示技术代价来源; new_archetype: quantitative_cost_explosion_table — 公式+多规模对照表量化代价; new_archetype: collapse_question_bridge — 红字追问『如何压缩/reduce』桥接方法; new_archetype: related_work_route_static_baseline — 静态基线路线可视化矩阵示意; new_archetype: related_work_route_dynamic_advanced — 动态查询感知路线机制示意; new_archetype: insight_question_qa_intro — Question/Answer 版式提问洞察; new_archetype: insight_information_theory_proof — 信息论互信息/DPI 推导; new_archetype: insight_conclusion_headline — 洞察结论主张 headline; new_archetype: technique_challenge_statement_with_architecture — 断言 Challenge+架构/时序图; new_archetype: technique_solution_mechanism_or_optimization — 解法机制/优化细节; new_archetype: eval_setup_four_dimensions — 硬件/模型/基线/数据集四维评测; new_archetype: accuracy_result_scenario_one_compare — 场景一精度对比(逐层流程); new_archetype: accuracy_result_scenario_two_retention — 场景二精度对比(保留策略); new_archetype: speedup_headline_dual_platform — 云端+边缘双平台加速比头条; new_archetype: analogy_dual_paradigm_intro_frame — 双范式类比第一帧铺陈; new_archetype: analogy_dual_paradigm_answer_reveal — 双范式类比第二帧揭示; new_archetype: dual_system_cognitive_theory_mapping — Kahneman 双系统映射 AI; new_archetype: series_works_dual_system_landscape_map — 双系统骨架下多工作版图; new_archetype: title_plus_key_insight_callback — 论文标题+核心洞见回扣单页",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 7,
+    "sections_unassigned_in_this_batch": []
+  }
+}

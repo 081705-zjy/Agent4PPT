@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_30",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 30,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "统一实验平台与 Baseline 设置",
+  "核心论断": "统一平台与多组 Baseline 保证后续对比公平可信",
+  "本页讲什么": "介绍实验设置：说明所用硬件/软件实验平台，并列出对比用的 Baselines。本页为整个实验 section 铺底，先把评测环境和对照组交代清楚，后续精度、性能、能效各页的数字才有可信基准。",
+  "关键文字": [
+    "Experiment Setup",
+    "Baselines"
+  ],
+  "视觉骨架": [
+    "实验配置文字块",
+    "Baseline 列表",
+    "平台示意配图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_30.asset.01"
+  ],
+  "适合复用场景": [
+    "硬件加速器实验的评测设置页",
+    "算法对比的 Baseline 介绍页"
+  ],
+  "不适合复用场景": [
+    "最终结论收口页",
+    "纯目录导航页"
+  ],
+  "上页角色": "toc_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

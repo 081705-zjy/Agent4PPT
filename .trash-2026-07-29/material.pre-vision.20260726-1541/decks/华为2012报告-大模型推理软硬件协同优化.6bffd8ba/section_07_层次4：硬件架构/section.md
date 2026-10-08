@@ -1,0 +1,60 @@
+---
+章节标识: tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07
+所属deck: tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba
+章节序号: 7
+章节角色: method
+标题: 层次4：硬件架构
+页码范围: [82, 107]
+页数: 26
+页ID列表: [slide_82, slide_83, slide_84, slide_85, slide_86, slide_87, slide_88, slide_89, slide_90, slide_91, slide_92, slide_93, slide_94, slide_95, slide_96, slide_97, slide_98, slide_99, slide_100, slide_101, slide_102, slide_103, slide_104, slide_105, slide_106, slide_107]
+章节叙事: 五层框架第四层，上承系统优化下启芯片集成，以FlightLLM、ViDA、FlightVGM三篇FPGA加速论文分场景论证硬件架构层定制化加速的价值。
+页间关系: ["slide 82 → slide 83: 由五层框架拆解总览定位到本章层次4", "slide 83 → slide 84: 层次4标题延展，正式进入硬件架构主题", "slide 84 → slide 85: 由层次4综述引出首个案例FlightLLM论文", "slide 85 → slide 86: 由FlightLLM论文题目切入场景1", "slide 86 → slide 87: 场景1内部继续铺陈", "slide 87 → slide 88: 场景1逐步展开细节", "slide 88 → slide 89: 场景1继续深入论证", "slide 89 → slide 90: 场景1收尾归纳", "slide 90 → slide 91: 由场景1过渡到场景2", "slide 91 → slide 92: 场景2内部继续推进", "slide 92 → slide 93: 场景2逐步展开", "slide 93 → slide 94: 场景2继续论证", "slide 94 → slide 95: 由场景2引出核心思想与动机", "slide 95 → slide 96: 由动机引出ViDA论文", "slide 96 → slide 97: 由ViDA题目进入场景2.1核心思想", "slide 97 → slide 98: 由核心思想引出Act-Act算子加速瓶颈", "slide 98 → slide 99: 由瓶颈引出自适应列聚集处理单元", "slide 99 → slide 100: 由处理单元引出计算强度自适应数据流与可重构架构", "slide 100 → slide 101: 由ViDA过渡到FlightVGM论文", "slide 101 → slide 102: 由FlightVGM题目进入场景2.2核心思想", "slide 102 → slide 103: 由核心思想进入视频生成场景展开", "slide 103 → slide 104: 场景2.2视频生成继续铺陈", "slide 104 → slide 105: 场景2.2继续深入", "slide 105 → slide 106: 场景2.2继续论证", "slide 106 → slide 107: 由场景2.2收束到硬件优化小结"]
+适合复用场景: [论证定制硬件/FPGA加速价值的method章节, 需要「论文题目页+多场景论证」结构的方法章, 介绍某一优化层次并配代表性论文的章节, 视频生成/扩散模型硬件加速主题章节]
+不适合复用场景: [无硬件架构/芯片视角的纯算法章节, 只有单一案例、无需多场景铺陈时, 受众不关心FPGA/可重构架构细节时, 缺少可引用论文成果支撑时]
+在deck中的位置: 第4/5层方法章，上承层次3系统优化，下接层次5芯片集成
+分析状态: claude-opus-4-8
+---
+
+# section 7: 层次4：硬件架构
+
+## 在 deck 中的位置
+第4/5层方法章，上承层次3系统优化，下接层次5芯片集成
+
+## 章内 slide 间的关系
+- slide 82 → slide 83: 由五层框架拆解总览定位到本章层次4
+- slide 83 → slide 84: 层次4标题延展，正式进入硬件架构主题
+- slide 84 → slide 85: 由层次4综述引出首个案例FlightLLM论文
+- slide 85 → slide 86: 由FlightLLM论文题目切入场景1
+- slide 86 → slide 87: 场景1内部继续铺陈
+- slide 87 → slide 88: 场景1逐步展开细节
+- slide 88 → slide 89: 场景1继续深入论证
+- slide 89 → slide 90: 场景1收尾归纳
+- slide 90 → slide 91: 由场景1过渡到场景2
+- slide 91 → slide 92: 场景2内部继续推进
+- slide 92 → slide 93: 场景2逐步展开
+- slide 93 → slide 94: 场景2继续论证
+- slide 94 → slide 95: 由场景2引出核心思想与动机
+- slide 95 → slide 96: 由动机引出ViDA论文
+- slide 96 → slide 97: 由ViDA题目进入场景2.1核心思想
+- slide 97 → slide 98: 由核心思想引出Act-Act算子加速瓶颈
+- slide 98 → slide 99: 由瓶颈引出自适应列聚集处理单元
+- slide 99 → slide 100: 由处理单元引出计算强度自适应数据流与可重构架构
+- slide 100 → slide 101: 由ViDA过渡到FlightVGM论文
+- slide 101 → slide 102: 由FlightVGM题目进入场景2.2核心思想
+- slide 102 → slide 103: 由核心思想进入视频生成场景展开
+- slide 103 → slide 104: 场景2.2视频生成继续铺陈
+- slide 104 → slide 105: 场景2.2继续深入
+- slide 105 → slide 106: 场景2.2继续论证
+- slide 106 → slide 107: 由场景2.2收束到硬件优化小结
+
+## 整章可复用的场景
+- 论证定制硬件/FPGA加速价值的method章节
+- 需要「论文题目页+多场景论证」结构的方法章
+- 介绍某一优化层次并配代表性论文的章节
+- 视频生成/扩散模型硬件加速主题章节
+
+## 不适合复用的场景
+- 无硬件架构/芯片视角的纯算法章节
+- 只有单一案例、无需多场景铺陈时
+- 受众不关心FPGA/可重构架构细节时
+- 缺少可引用论文成果支撑时

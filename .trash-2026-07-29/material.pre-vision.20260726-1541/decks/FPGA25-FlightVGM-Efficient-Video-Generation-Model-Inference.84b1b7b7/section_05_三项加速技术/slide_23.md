@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_23"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 23
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "激活稀疏化的帧级实现"
+核心论断: "按帧复用与稀疏结合减少激活重复计算"
+本页讲什么: "展开 Tech.1 的方法细节，以帧（F.2、F.3）与技术（T.1）的对应关系示意在线激活稀疏的具体实现，说明如何在帧粒度上复用与跳过激活，落实前页提出的稀疏化思路。"
+关键文字: "[T.1, F.2, F.3]"
+视觉骨架: "[帧-技术对应示意, 稀疏化流程箭头, 激活复用标注]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_23.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_23.asset.02]"
+适合复用场景: "[激活稀疏化方法细节页, 帧级复用机制展开页]"
+不适合复用场景: "[技术引入标题页, benchmark 对比页, 调度编译流程页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 23: 激活稀疏化的帧级实现
+
+**核心论断**: 按帧复用与稀疏结合减少激活重复计算
+
+## 本页讲什么
+展开 Tech.1 的方法细节，以帧（F.2、F.3）与技术（T.1）的对应关系示意在线激活稀疏的具体实现，说明如何在帧粒度上复用与跳过激活，落实前页提出的稀疏化思路。
+
+## 关键文字片段
+- T.1
+- F.2
+- F.3
+
+## 视觉骨架
+- 帧-技术对应示意
+- 稀疏化流程箭头
+- 激活复用标注
+
+## 可复用到
+- 激活稀疏化方法细节页
+- 帧级复用机制展开页
+
+## 不适合复用的场景
+- 技术引入标题页
+- benchmark 对比页
+- 调度编译流程页

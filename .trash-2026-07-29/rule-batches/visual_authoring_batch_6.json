@@ -1,0 +1,452 @@
+{
+  "batch_index": 6,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中大字标题+作者身份署名",
+      "description": "封面页采用居中大字论文/主题标题, 下配细分隔线, 作者/单位/日期作为独立文字块列于中下, 底部署名落款; 全页无正文段落、无 bullet 列表, 无配图。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大字' / '论文标题'",
+        "视觉骨架 含 '作者/身份/日期文字块' 或 '底部署名页脚'",
+        "视觉骨架 无 '正文段落' / 'bullet 列表' / '图表'",
+        "关键文字 含作者姓名 + 单位 (@ 学校) + 日期"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 1,
+          "评价": "居中大字英文论文标题 + 汇报人丁立 + DAC 投稿分享 + 日期 + Li Ding @ SJTU 页脚, 无配图"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "居中大字+署名让听众开场三秒锁定 deck 主题与讲者身份, 任何抢焦元素都会稀释 identity 传达",
+      "fix_hint": "封面主标题居中放大, 移除正文/bullet, 作者+单位+日期放于中下或底部页脚",
+      "exceptions": [
+        "品牌宣传型 deck 可用 logo/slogan 替代作者身份",
+        "空白模板/占位版式无实际身份可展示"
+      ]
+    },
+    {
+      "id": "chapter_divider_layout_topleft_title_with_thick_line",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节分隔·左上大字章节名+粗横线+大留白",
+      "description": "章节分隔页在左上放置大字章节名, 下方紧跟一条粗横向分隔线 (常为蓝色), 主体大面积留白, 不含任何图表/正文/bullet, 只作分幕作用。",
+      "evidence_signals": [
+        "视觉骨架 含 '左上角大字章节标题'",
+        "视觉骨架 含 '粗蓝色横分隔线' 或 '标题下粗横向分隔线'",
+        "视觉骨架 含 '大面积空白主体'",
+        "关键文字 仅含 1-3 字章节名 + 页脚署名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 33,
+          "评价": "左上「实验」大字 + 粗蓝色横线 + 大面积留白 + 页脚, 标准分幕版式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "极简大留白+单字章节名给听众明确的'转场'信号, 让节奏在密集技术页之后有一次视觉呼吸",
+      "fix_hint": "章节页只留 1-3 字章节名 + 粗分隔线, 删除所有正文/图表, 主体保持空白",
+      "exceptions": [
+        "章节页同时承担 agenda 功能时可保留编号进度指示",
+        "无独立分幕需求的短 deck (≤10 页) 可不使用分幕版式"
+      ]
+    },
+    {
+      "id": "toc_navigation_numbered_list_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录导航·编号列表+当前项高亮+进度竖条",
+      "description": "目录/章节导航页用 4 项编号圆点或圆圈+方框纵向列表罗列全 deck 板块, 当前板块加深高亮/其余灰化, 左侧配蓝色进度竖条, 外部常有边框. 用于章节切换时向听众定位当前进度。",
+      "evidence_signals": [
+        "视觉骨架 含 '4 项编号圆点' 或 '4 项编号圆圈+方框列表'",
+        "视觉骨架 含 '左侧蓝色进度竖条' 或 '左侧进度竖条'",
+        "视觉骨架 含 '当前项加深高亮' 或 '外框边框'",
+        "关键文字 为并列的 4 项板块名 (如 '研究背景' '研究挑战' '研究内容' '实验结果')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 3,
+          "评价": "第①项加深, 4 项编号列表 + 左侧进度竖条 + 外框, 定位到研究背景"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 19,
+          "评价": "第②项加深, 同模板过渡进入研究挑战"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 25,
+          "评价": "第③项加深, 切入研究内容"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 26,
+          "评价": "第④项加深, 切入实验结果, 与 25 页同模板配对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "同一目录模板 + 高亮切换让听众在章节切换时保持全局认知锚点, 避免每次目录页信息重刷造成认知负担",
+      "fix_hint": "每次章节切换沿用同一 4 项编号目录模板, 只改变当前项高亮, 不重排结构或换配图",
+      "exceptions": [
+        "开场首个目录页可省略高亮以呈现完整议程",
+        "板块数量 ≠ 4 时可调整编号数但保留高亮/进度机制"
+      ]
+    },
+    {
+      "id": "content_page_top_assertion_bar_with_colored_frame",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页顶部·彩色断言框承载核心论点",
+      "description": "背景/挑战/方法类内容页在顶部放置蓝色或红色的横向断言框/论点条, 一句话给出本页核心判断, 下方主体承载配图/数据/示意, 断言框颜色区分板块 (蓝=背景/铺陈, 红=痛点/断言/警示)。",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部蓝框论点条' 或 '顶部红框论点条' 或 '顶部红色断言框'",
+        "本页讲什么 提到 '顶部...断言/论点' 描述",
+        "核心论断 为一句可作为断言框内容的判断句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 4,
+          "评价": "顶部蓝框论点条 + Sora2 示例画面, motivation 铺陈型"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 11,
+          "评价": "顶部红框论点条陈述 Diffusion Forcing 长期记忆缺陷"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 20,
+          "评价": "顶部红色断言框点题挑战1 + 下方注意力图对比"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 24,
+          "评价": "顶部红框以 KV/diffusion 关键词点题挑战3"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 6,
+          "原因": "范式演进总览图占满页面, 无独立顶部断言条, 由架构流程本身承担结构陈述"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.78,
+      "enforcement_level": "soft",
+      "rationale": "顶部彩色断言框把'本页判断'和'本页论证'物理分层, 让听众能在扫视顶部时先拿到结论再读证据, 是学术汇报页的核心信息架构",
+      "fix_hint": "把核心论断句提炼到页首横向色框, 主体图/数据放置于框下, 蓝框用于铺陈、红框用于痛点/断言",
+      "exceptions": [
+        "架构总览/流程全景页可让主图承担陈述, 不必强加断言框",
+        "分幕/目录/致谢等结构性页不需要断言框"
+      ]
+    },
+    {
+      "id": "source_citation_bar_at_page_bottom",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引用他人工作·底部 source 引用条",
+      "description": "当内容页引用外部论文/工作以佐证观点或对比时, 底部单独一条 source 引用条给出 'Source: <工作名>, <会议年份>' 或 'Source: <工作名> (arXiv:XXXX.YYYYY)' 格式, 与主体图分离。",
+      "evidence_signals": [
+        "视觉骨架 含 '底部 source 引用条'",
+        "关键文字 含 'Source:' 前缀",
+        "关键文字 含 'arXiv:' 或 '<会议名> <年份>' (如 'DAC 2024', 'NeurIPS 2024')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 20,
+          "评价": "底部 'Source: Sparse VideoGen (arXiv:2502.01776)' 引用条"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 22,
+          "评价": "底部 'Source: SWAT, DAC 2024' 引用条"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 23,
+          "评价": "底部 'Source: SALO, DAC 2022' 引用条"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "学术汇报中借他人图/数据必须给出可回溯来源, 独立底部引用条与主体分离既满足学术诚信又不干扰主体信息",
+      "fix_hint": "引用外部图/数据时在页底单独加一条 'Source: <工作>, <会议 年份> 或 arXiv 号', 与正文/主图物理分离",
+      "exceptions": [
+        "完全自主原创图/数据的页不需引用条",
+        "引用工作已在正文中显式点名并含 URL 时可省略底部条"
+      ]
+    },
+    {
+      "id": "ending_layout_thanks_with_speaker_signature",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢收尾·感谢主标题+署名+日期+页脚",
+      "description": "全 deck 最后一页作礼节性收尾, 主标题为'感谢聆听'类致谢文字置于左上或居中, 下方分隔线之后为汇报人姓名, 底部注明汇报日期, 页脚沿用作者@单位落款, 主体大面积留白无内容推进。",
+      "evidence_signals": [
+        "关键文字 含 '感谢聆听' 或 '谢谢' 类致谢词",
+        "关键文字 含汇报人姓名 + 日期",
+        "视觉骨架 含 '分隔线' + '署名文字' + '页脚落款'",
+        "视觉骨架 无正文/图表/bullet"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 34,
+          "评价": "左上'感谢聆听！' + 淡粉分隔线 + '丁立' + 2025 年 11 月 8 日 + Li Ding @ SJTU 页脚, 纯礼节性收束"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "礼节性收尾页给听众明确的'讲完了'信号并再次强化讲者身份, 是中式技术汇报社交惯例, 无此页会让 Q&A 转场生硬",
+      "fix_hint": "末页放'感谢聆听'类主标题 + 分隔线 + 讲者姓名 + 日期 + 单位页脚, 不加正文/图表",
+      "exceptions": [
+        "workshop/tutorial 类长演讲可用 Q&A 页替代",
+        "对外产品发布类 deck 可用 call-to-action 收尾"
+      ]
+    },
+    {
+      "id": "numbered_prefix_for_parallel_enumeration_titles",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "并列枚举·标题用编号前缀 '挑战N/内容N：X'",
+      "description": "同章节内的并列小节使用编号前缀 '挑战1/2/3' '内容1/2/3' 后接冒号与短语, 便于听众在章节内做序号计数; 同一编号的引入页与展开页共用前缀, 用副题区分。",
+      "evidence_signals": [
+        "标题 以 '挑战N：' 或 '内容N：' 开头 (N=数字)",
+        "同一 section 内多张 slide 共享同一编号 (如内容1 出现于多页)",
+        "关键文字 首项为带编号的小节名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 20,
+          "评价": "'挑战1：稀疏注意力难识别重要区间' 起头, 21 页续讲共用前缀"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 22,
+          "评价": "'挑战2：GPU block-sparse 稀疏难落地', 23 页续讲同前缀"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 27,
+          "评价": "'内容1：统一的注意力稀疏方式' 起头, 28/29 页续讲共用前缀"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 30,
+          "评价": "'内容2：KV 索引+压缩' 起头, 31 页续讲同前缀"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "编号前缀让听众在密集技术内容中始终知道当前在'第 N 挑战/第 N 内容', 尤其在多页续讲同一子话题时避免迷路",
+      "fix_hint": "并列小节标题统一 '<子话题类型>N：<主题短语>' 格式, 续讲页沿用相同编号只改主题短语",
+      "exceptions": [
+        "唯一/独立小节不必强加编号 (只有一条时编号无意义)",
+        "非并列结构的叙事页 (motivation/背景铺陈) 不用编号"
+      ]
+    },
+    {
+      "id": "title_uses_colon_separator_or_noun_phrase_not_verb_object",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题结构·冒号分隔或名词短句, 不用完整动宾句",
+      "description": "标题倾向于 '<定位类型>：<主题短语>' 冒号分隔结构 (如 '研究背景：视频生成模型崛起') 或纯名词短句 (如 '双向注意力致算力爆炸'), 不使用 '介绍/本节讲/我们将...' 类完整动宾句。",
+      "evidence_signals": [
+        "标题 含 '：' 冒号且冒号前为定位类型词 ('研究背景'/'挑战N'/'内容N')",
+        "或标题 为 ≤14 字名词短句, 不以 '介绍'/'本节'/'我们将' 开头",
+        "标题 不含完整主谓宾三段结构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 4,
+          "评价": "'研究背景：视频生成模型崛起' 冒号分隔"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 7,
+          "评价": "'双向注意力致算力爆炸' 名词短句"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 12,
+          "评价": "'根因：缺长期KV Cache' 冒号+短语"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 32,
+          "评价": "'内容3：基于 Flash Attention 的硬件数据流' 编号+冒号"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "冒号定位+名词短句让 title 承担'页面位置标签'角色, 完整动宾句会使 title 与 claim 语义重叠, 挤占顶部断言框的功能空间",
+      "fix_hint": "把 title 改成 '<定位>：<主题>' 或纯名词短句, 谓语动词部分归到核心论断/断言框",
+      "exceptions": [
+        "断言型 title 也可短句陈述结论 (如 '双向注意力致算力爆炸' 本身即断言)"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_sentence_with_concrete_signal",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·判断句形式并常嵌具体数据信号",
+      "description": "内容页的核心论断使用完整判断句 (含主谓宾), 而非描述性短语; 涉及量化对比时嵌入具体数字/百分比/倍率 (如 '5s→3s'/'4-12倍'/'density=20%'/'~5k/iteration'), 便于听众记忆数量级。",
+      "evidence_signals": [
+        "核心论断 含完整主谓宾结构 (含动词如 '致'/'难'/'压至'/'兼顾'/'建立')",
+        "核心论断 常含数字/百分比/量级信号 (百分数/倍数/时间/尺寸)",
+        "关键文字 中出现 '<数值1>→<数值2>' 或 'N倍' 或 'N%'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 7,
+          "评价": "'双向注意力时空建模致训推算力爆炸且无法实时生成' + 关键文字 '5s→3s, 300s 算力倍增'"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 17,
+          "评价": "'滑窗AR+Diffusion限住KV但注意力算力仍高(4-12倍)' 嵌入 4-12 倍量化"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 29,
+          "评价": "'统一稀疏方式可将密度压至 20%(含 20% timestep 预热)' 具体 20% 数值"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 15,
+          "评价": "'Self Forcing以KV Cache约5k/iteration配sink+window维持长程' 嵌入 5k 规模"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "判断句让听众抓到'讲者的立场'而非仅'话题', 嵌入具体数字则把主张锚定到可验证量级, 提高说服力与记忆点",
+      "fix_hint": "把 claim 从名词短语改成完整判断句 (加主语+动词), 涉及量化时把关键数字直接写入 claim (百分数/倍率/时间)",
+      "exceptions": [
+        "过渡/导航/目录类页无论证内容, claim 可为定位性短语",
+        "开场铺陈型页可仅陈述话题崛起而不含数字"
+      ]
+    },
+    {
+      "id": "source_citation_uses_work_venue_or_arxiv_format",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引用格式·'Source: <工作名>, <会议年份>' 或 '(arXiv:XXXX.YYYYY)'",
+      "description": "外部工作引用统一采用两种格式之一: 'Source: <工作名>, <会议 年份>' (如 'Source: SALO, DAC 2022') 或 'Source: <工作名> (arXiv:XXXX.YYYYY)' (如 'Source: Sparse VideoGen (arXiv:2502.01776)'), 前置 'Source:' 关键词, 工作名与出处间用逗号或括号分隔。",
+      "evidence_signals": [
+        "关键文字 含 'Source:' 前缀",
+        "关键文字 含 '<会议名> <四位年份>' 模式 (DAC 2022 / NeurIPS 2024 / DAC 2024)",
+        "关键文字 含 'arXiv:XXXX.YYYYY' 模式 (7-10 位数字)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 20,
+          "评价": "'Source: Sparse VideoGen (arXiv:2502.01776)' arXiv 格式"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 22,
+          "评价": "'Source: SWAT, DAC 2024' 会议年份格式"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 23,
+          "评价": "'Source: SALO, DAC 2022' 会议年份格式"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 24,
+          "评价": "'Source: SALO, DAC 2022' 同格式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "统一引用格式让听众瞬间识别引用而非正文, 且格式选择 (arXiv vs 会议) 隐含成熟度信号 — arXiv 表明未发表/最新, 会议名+年份表明经同行评议",
+      "fix_hint": "引用外部工作时写 'Source: <工作简称>, <会议缩写> <年份>' 或 'Source: <工作简称> (arXiv:<编号>)', 不要用其他前缀 (如 'From'/'Ref' 等)",
+      "exceptions": [
+        "本课题组自有前作可用 'Our prior work: <name>' 而非 Source",
+        "网络截图/新闻素材可用 URL 或简短说明代替"
+      ]
+    },
+    {
+      "id": "chapter_divider_uses_single_topic_word",
+      "category": "authoring",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节分幕·标题为 1-3 字主题词, 无标点无副题",
+      "description": "章节分隔页的标题使用极简的 1-3 字主题词 (如 '实验'/'方法'/'背景'), 不带标点, 不带副题, 不带编号前缀, 全靠字号与留白承担仪式感。",
+      "evidence_signals": [
+        "chapter 页的标题 长度 ≤ 4 字",
+        "标题 不含 '：' '·' '与' 类分隔符",
+        "标题 不含编号前缀 (无 '第X章')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "slide_index": 33,
+          "评价": "标题仅一字'实验', 无标点无副题"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "分幕页承担节奏转场而非信息传达, 极简单字标题最大化仪式感与呼吸感, 副题/编号会稀释这种转场信号",
+      "fix_hint": "分幕页标题精简到 1-3 字主题词, 移除副题/编号/标点, 用字号和位置强化仪式感",
+      "exceptions": [
+        "章节名本身是专有名词/英文缩写时可保留原样 (如 'LOAC')",
+        "同时承担 agenda 定位时可允许一句副题"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (LOAC 学术论文分享, 34 页), 从其 cover/chapter/ending 各 1 页 + 大量 content_candidate (含 5 张目录导航 + 5 张 source 引用页 + 编号并列的挑战/内容子节) 中抽取 universal 视觉与写作规则, 共 visual 6 + authoring 5 = 11 条",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 6,
+      "authoring": 5
+    }
+  }
+}

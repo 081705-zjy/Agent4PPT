@@ -1,0 +1,52 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_12"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.02"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 12
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "乘法器瓶颈: 如何改进?"
+核心论断: "摩尔定律放缓下需靠集成更多与提升利用率破局"
+本页讲什么: "本页从乘法器视角收束全章, 指出摩尔定律放缓使「堆更多乘法器」受限, 抛出「How to improve it?」的设问, 给出两条路径: 1) 芯片上集成更多乘法器; 2) 提升乘法器利用率, 以设问加两条改进方向收尾, 直接引出后续稀疏计算三层方案。"
+关键文字: "[Considering Multipliers, How to improve it ?, \"Moore's Law Slowdown\", \"1. Integrate more multipliers on chip\", \"2. Improve utilization of multipliers\"]"
+视觉骨架: "[改进路径分支图, 摩尔定律放缓趋势标注]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_12.asset.01]"
+适合复用场景: "[乘法器瓶颈设问收尾页, 承上启下过渡到方案的 closer 页]"
+不适合复用场景: "[单一数据报价页, 纯背景引入分隔页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "设问: How to improve it?"}
+  - {"位置": "下方主体", "内容": "两条改进路径分支 + 摩尔定律放缓标注"}
+alternate_claims:
+  - "芯片上集成更多乘法器是一条改进路径"
+  - "提升乘法器利用率是另一条改进路径"
+layout_tag: "block_diagram"
+---
+# slide 12: 乘法器瓶颈: 如何改进?
+
+**核心论断**: 摩尔定律放缓下需靠集成更多与提升利用率破局
+
+## 本页讲什么
+本页从乘法器视角收束全章, 指出摩尔定律放缓使「堆更多乘法器」受限, 抛出「How to improve it?」的设问, 给出两条路径: 1) 芯片上集成更多乘法器; 2) 提升乘法器利用率, 以设问加两条改进方向收尾, 直接引出后续稀疏计算三层方案。
+
+## 关键文字片段
+- Considering Multipliers
+- How to improve it ?
+- Moore's Law Slowdown
+- 1. Integrate more multipliers on chip
+- 2. Improve utilization of multipliers
+
+## 视觉骨架
+- 改进路径分支图
+- 摩尔定律放缓趋势标注
+
+## 可复用到
+- 乘法器瓶颈设问收尾页
+- 承上启下过渡到方案的 closer 页
+
+## 不适合复用的场景
+- 单一数据报价页
+- 纯背景引入分隔页

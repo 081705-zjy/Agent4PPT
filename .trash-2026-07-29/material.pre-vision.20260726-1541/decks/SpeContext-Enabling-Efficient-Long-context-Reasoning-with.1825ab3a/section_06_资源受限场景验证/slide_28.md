@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 28
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "显存与 OOM 边界验证"
+核心论断: "SpeContext 显著推后长输入下的显存 OOM 边界"
+本页讲什么: "作为验证章收尾，测试不同输入/输出长度组合下的显存占用与 OOM 边界，用 [2k,16k]、[2k,32k]、[16k,2k]、[32k,2k] 等长度配置对比基线，展示 SpeContext 在资源受限 GPU 上能延后触发 OOM、支持更长上下文，坐实其显存收益。"
+关键文字: "[OOM, [2k,16k] / [2k,32k], [16k,2k] / [32k,2k]]"
+视觉骨架: "[长度配置显存对比表, OOM 边界标注, 输入输出长度矩阵]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28.asset.02, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28.asset.03, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28.asset.04, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28.asset.05, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_28.asset.06]"
+适合复用场景: "[长上下文显存/OOM 边界对比页, 资源受限 GPU 的显存收益验证]"
+不适合复用场景: "[纯速度加速曲线页, 方法概念引入页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+alternate_claims:
+  - "资源受限 GPU 上可支持更长上下文长度组合"
+layout_tag: "benchmark_table"
+---
+# slide 28: 显存与 OOM 边界验证
+
+**核心论断**: SpeContext 显著推后长输入下的显存 OOM 边界
+
+## 本页讲什么
+作为验证章收尾，测试不同输入/输出长度组合下的显存占用与 OOM 边界，用 [2k,16k]、[2k,32k]、[16k,2k]、[32k,2k] 等长度配置对比基线，展示 SpeContext 在资源受限 GPU 上能延后触发 OOM、支持更长上下文，坐实其显存收益。
+
+## 关键文字片段
+- OOM
+- [2k,16k] / [2k,32k]
+- [16k,2k] / [32k,2k]
+
+## 视觉骨架
+- 长度配置显存对比表
+- OOM 边界标注
+- 输入输出长度矩阵
+
+## 可复用到
+- 长上下文显存/OOM 边界对比页
+- 资源受限 GPU 的显存收益验证
+
+## 不适合复用的场景
+- 纯速度加速曲线页
+- 方法概念引入页

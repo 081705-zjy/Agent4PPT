@@ -1,0 +1,39 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_17",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 17,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "toc_candidate",
+  "标题": "本章目录：三项加速技术导览",
+  "核心论断": "背景、洞察与加速方法三部分构成完整技术路线",
+  "本页讲什么": "本章目录页，列出后续内容主线：从 AI 与视频生成背景、帧间相似性洞察，过渡到三项核心加速技术。作为方法章的开场，为听众建立整章导航框架。",
+  "关键文字": [
+    "Contents",
+    "Background: AI and Video Generation",
+    "Insight"
+  ],
+  "视觉骨架": [
+    "目录条目列表",
+    "章节编号标注",
+    "配图缩略图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_17.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_17.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_17.asset.03",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_17.asset.04"
+  ],
+  "适合复用场景": [
+    "技术方法章的本章目录页",
+    "多技术并列的导览页"
+  ],
+  "不适合复用场景": [
+    "单一数据结论页",
+    "架构细节展开页",
+    "benchmark 对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

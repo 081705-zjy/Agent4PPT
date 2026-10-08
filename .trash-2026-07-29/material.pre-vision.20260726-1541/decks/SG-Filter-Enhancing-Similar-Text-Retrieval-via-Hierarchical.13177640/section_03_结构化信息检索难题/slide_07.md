@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.03"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 7
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "toc_candidate"
+标题: "本章目录：从检索背景到核心洞察"
+核心论断: "结构化检索难题需先厘清背景再引出关键洞察"
+本页讲什么: "本页是章节目录页，列出后续内容主线：先回顾 Background（检索与 AI 的关系），再抛出 Insight（核心洞察）。为整章「问题类型→文本示例→范式局限」的推进搭好骨架，是过渡到结构化检索痛点讨论的入口页。"
+关键文字: "[contents, \"Background: Retrieval and AI\", \"Insight:\"]"
+视觉骨架: "[带序号的目录条目列表, 多张章节缩略配图]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_07.asset.08]"
+适合复用场景: "[检索类技术分享的章节目录页, 带缩略图的多主题导航页]"
+不适合复用场景: "[单一数据结论展示页, 方法架构细节展开页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题区", "内容": "contents 章节目录标识"}
+  - {"位置": "下方主体", "内容": "带序号的目录条目 + 章节缩略配图"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 7: 本章目录：从检索背景到核心洞察
+
+**核心论断**: 结构化检索难题需先厘清背景再引出关键洞察
+
+## 本页讲什么
+本页是章节目录页，列出后续内容主线：先回顾 Background（检索与 AI 的关系），再抛出 Insight（核心洞察）。为整章「问题类型→文本示例→范式局限」的推进搭好骨架，是过渡到结构化检索痛点讨论的入口页。
+
+## 关键文字片段
+- contents
+- Background: Retrieval and AI
+- Insight:
+
+## 视觉骨架
+- 带序号的目录条目列表
+- 多张章节缩略配图
+
+## 可复用到
+- 检索类技术分享的章节目录页
+- 带缩略图的多主题导航页
+
+## 不适合复用的场景
+- 单一数据结论展示页
+- 方法架构细节展开页

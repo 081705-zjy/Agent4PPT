@@ -1,0 +1,414 @@
+{
+  "batch_index": 21,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has motivation section listing challenges/gaps and a method/result section",
+      "title": "动机挑战需在方法或成果章逐一回扣",
+      "description": "motivation 章列出的核心矛盾/挑战(通常 3 条内)必须在 method 或 result 章逐一给出回应, 命中率应 ≥80%.",
+      "what_to_check": [
+        "找 motivation 章 slide.核心论断/关键文字/本页讲什么 中的挑战列表 (含 '差距' '矛盾' '瓶颈' '挑战' '受限' 等关键词)",
+        "对每条 challenge, 在 method/result 章 slide 中找语义匹配的回应 (verbatim 或 paraphrased)",
+        "算命中率 = 命中数 / 总 challenge 数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "motivation slide 8-9 列出 '算力需求暴涨 4-5 数量级' '芯片供给放缓' '端侧 3 数量级差距', framework slide 14 拆为算子/应用/模型三层科学问题, result slide 15-18 三项成果逐一回扣 (算法/编译/架构层), 命中 3/3"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "motivation 提出挑战若无回扣, 后续成果就丧失'兑现承诺'的叙事锚, 观众会觉得成果与动机脱节",
+      "fix_hint": "在 method/result 章每张成果 slide 顶部/侧栏标注对应的 motivation challenge 编号",
+      "exceptions": [
+        "综述型 deck 列的是领域整体挑战, 本工作只需覆盖子集"
+      ]
+    },
+    {
+      "id": "cover_title_anchor_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover and closing slide",
+      "title": "封面主 anchor 应在收尾页复现",
+      "description": "封面主标题的核心 anchor 术语 (e.g. '软硬协同' '稀疏计算') 应在收尾 / 致谢页 verbatim 或 paraphrased 复现, 首尾闭合.",
+      "what_to_check": [
+        "从 slide_1 (cover) 关键文字提取主 anchor",
+        "检查 closing 章 slide (section_role=closing 或末几张 ending_candidate) 关键文字/核心论断是否包含该 anchor"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "cover 主 anchor '软硬协同设计', slide 30 收束页 核心论断复现 '软硬件协同基础研究×产业实践交汇', 首尾闭合"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "reason": "slide 31 '谢谢' 页仅致谢与联系方式, 未再提 '软硬协同' 主 anchor, 主 anchor 靠倒数第二页 slide 30 承接"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "首尾复现主 anchor 是听众记忆锚点, 使核心信息在演讲结束前一次巩固, 缺失易让主线淡出",
+      "fix_hint": "在收尾 / 致谢页副标题或引言处再写一句含主 anchor 的收束句",
+      "exceptions": [
+        "纯致谢页可将 anchor 前置到倒数第二页 (总结页)"
+      ]
+    },
+    {
+      "id": "framework_diagram_reuse_in_method",
+      "category": "callback",
+      "applicable_when": "deck introduces a layered framework diagram in framework section",
+      "title": "framework 图应在 method 章多次复用",
+      "description": "framework 章引入的分层框架 (e.g. 算法/编译/架构三层) 应在 method 章每张成果 slide 复用同一骨架并高亮当前层, 复用次数应 ≥N层数.",
+      "what_to_check": [
+        "找 framework 章 slide 视觉骨架中的分层框架图 (含 '分层' '三层' '层级' 关键词)",
+        "检查 method 章每张成果 slide 视觉骨架是否含相同分层框架且高亮不同层"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "framework slide 14 引入 ①算子/②应用/③模型 三层结构, method slide 16-18 每张沿用 ①②③ 分层框架图并分别高亮 ①/②/③, 复用 3 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "重复复用同一框架图能让观众用同一空间地图定位每张成果, 显著降低认知负担",
+      "fix_hint": "复制 framework 图为 method 每张 slide 的左侧缩略图, 仅切换高亮层",
+      "exceptions": [
+        "单一维度的成果 deck (无分层框架) 不适用"
+      ]
+    },
+    {
+      "id": "teaser_at_motivation_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck has motivation section leading into framework/method",
+      "title": "动机章末页应埋方法预告钩子",
+      "description": "motivation 章末页应埋一句 '我们提出 X 方法来解决' 的钩子 (但不细讲具体数字), 让观众带着期待进入 framework 章.",
+      "what_to_check": [
+        "找 motivation 章末页 (section_role=motivation 的最后一张)",
+        "检查 关键文字/核心论断 是否含 '提出' '思路' '本工作' '核心思想' 等预告词, 且指向下一章主 anchor"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "motivation 章末 slide 9 只讲芯片放缓未埋钩子, 但下一张 slide 10 立刻抛出 '核心思想: 软硬协同提升等效算力', 距离为 0 页, 属过渡型"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "reason": "slide 9 结尾只强调供需矛盾, 未预告后续方法, 属硬切过渡"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "章末预告是叙事张力的关键 — 让观众带问题进入下一章, 而不是被动接收章节切换",
+      "fix_hint": "在 motivation 章末页末行加一句 '我们提出 X 思路来弥合此矛盾' 的悬念句",
+      "exceptions": [
+        "motivation 与 framework 章紧密相邻且 framework 首页即揭示方案, 可省略"
+      ]
+    },
+    {
+      "id": "result_holdback_biggest_number_at_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck has result section with multiple quantitative achievements",
+      "title": "最炸的数字应放在成果章末",
+      "description": "result 章内跨多个成果的最大 speedup / 最强指标应位于章末 (最后 1-2 张), 而非章首, 用于收束高潮.",
+      "what_to_check": [
+        "扫描 result 章各 slide 关键文字/核心论断, 提取所有数字型成果 (×加速 / % / TOPS 等)",
+        "比较最大值出现的 slide 是否位于章末 30% 位置内"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "result 章 slide 15-21, 最大产业级数字 '端侧 3B 模型超 GPT-3.5 约 300%' '稀疏优化 27× Gap>21×' 出现在 slide 19 (章内倒数第 3 张), 且 slide 20-21 用最佳论文奖+专家背书收束, 高潮位于章末"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "最大数字放章首会让后续成果显得递减, 放章末能让观众带最强印象离场",
+      "fix_hint": "重排 result 章 slide 顺序, 把最大 speedup / 最强指标挪到章末 1-2 张",
+      "exceptions": [
+        "章末专门用于奖项/评价背书, 数字提前一页也可"
+      ]
+    },
+    {
+      "id": "chapter_outro_hook_required",
+      "category": "chapter_transitions",
+      "applicable_when": "any deck with ≥3 sections",
+      "title": "章末应埋下章 preview",
+      "description": "每章 (opening/appendix 除外) 末页应含指向下章的 preview, 硬切比例应 ≤20%.",
+      "what_to_check": [
+        "找每章末页 (section 页码范围末页)",
+        "检查关键文字/核心论断/本页讲什么 是否含下章 anchor 或 '接下来' '下面' '推进到' 等过渡词"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "self_intro 章末 slide 4 -> slide 5 通过 Contents 高亮 '②研究介绍' 显式过渡; case_study 章末 slide 30 收束到学术×产业闭环, 自然承接 slide 31 致谢"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "reason": "motivation 章末 slide 9 未预告下章; framework 章末 slide 14 未预告成果章; 靠下一章首页 (slide 10, slide 15) 自行开场"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "章末 hook 让章节切换像'翻页'而非'跳章', 观众叙事惯性不断裂",
+      "fix_hint": "每章末页副标题或末行加一句 '下章我们将 X' 的过渡语",
+      "exceptions": [
+        "closing/appendix 章无需 preview 下章"
+      ]
+    },
+    {
+      "id": "chapter_intro_via_agenda_navigation",
+      "category": "chapter_transitions",
+      "applicable_when": "deck ≥15 pages with agenda page",
+      "title": "每章开始应用 agenda 高亮页导航",
+      "description": "每章开始前应插入一张 agenda 页, 高亮当前章序号+灰化其他章, 让观众知道 '你在第 N 章'.",
+      "what_to_check": [
+        "扫描 deck 中的 Contents/agenda 型 slide (标题含 'Contents' '目录')",
+        "检查同一 agenda 骨架是否在 self_intro/motivation/case_study 等主要章前重复出现, 每次高亮不同项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "slide 2 (总览三项)、slide 3 (高亮①个人)、slide 5 (高亮②研究)、slide 22 (高亮③产业) 四张 Contents 同骨架, 每章切换前用一次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 无导航会让观众迷失章节位置, 重复 agenda 页是最低成本的定位机制",
+      "fix_hint": "复制 slide 2 agenda 骨架, 每章开始插入一张, 仅改高亮序号",
+      "exceptions": [
+        "<15 页短 deck 可省略章内 agenda"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with clear main thesis",
+      "title": "主 thesis 应跨多章重复出现",
+      "description": "deck 主 thesis (e.g. '软硬协同') 应在 ≥60% 的主要章节出现, 出现次数 8-15 次为佳.",
+      "what_to_check": [
+        "从 deck.标题/论述总结/cover 关键文字 提取主 thesis anchor",
+        "统计该 anchor 在 slides_in_order 关键文字/核心论断中出现的 slide 数与覆盖章节数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "主 thesis '软硬协同' 出现在 slide 1/7/10/11/12/15/19/30/32, 覆盖 opening/motivation/framework/result/case_study/appendix 6 章, 出现 9 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 thesis 只出现在开场会让观众后半段忘记主题, 跨章重复是主线'滴水穿石'的必要机制",
+      "fix_hint": "每章至少一张 slide 的标题/顶部蓝框含主 thesis 关键词",
+      "exceptions": [
+        "appendix/致谢章可不含"
+      ]
+    },
+    {
+      "id": "key_number_repeat_count",
+      "category": "repetition_emphasis",
+      "applicable_when": "deck has quantitative headline claim (e.g. speedup, %)",
+      "title": "关键数字应重复出现 2-4 次",
+      "description": "deck 最重要的量化 claim (最大 speedup 或核心指标) 应在 deck 中重复出现 2-4 次, 分布于 result 章内多张 slide 及收束页.",
+      "what_to_check": [
+        "扫描 result 章数字, 找频次最高的 speedup / % / TOPS",
+        "检查该数字是否也出现在 case_study 或 closing 章"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "'3B 模型超 GPT-3.5 约 300%' 出现在 slide 19 (result 收束) 和 slide 28 (case_study 无问芯穹方案), 跨 2 章重复; '近 10 亿元融资' 出现在 slide 25/29/30 共 3 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "关键数字只出现 1 次听众记不住, 出现 >5 次显啰嗦, 2-4 次是记忆最优区",
+      "fix_hint": "把 result 章头号数字在收束页/case_study 页各再引一次",
+      "exceptions": [
+        "数字过多类型的 deck (纯数据报告) 可容忍更高频次"
+      ]
+    },
+    {
+      "id": "claim_evidence_pairing_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "deck has result section with quantitative claims",
+      "title": "每条量化 claim 须配 evidence 视觉",
+      "description": "result 章每条 quantitative claim (含 % / ×加速 / TOPS) 必须由同页或紧邻页的 chart/table/示意图承载, 不允许纯文字断言.",
+      "what_to_check": [
+        "扫描 result 章 slide 关键文字提取 quantitative claim",
+        "检查同 slide 视觉骨架是否含 '柱状图/曲线/表格/对比图' 等可视化 evidence"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "slide 15-18 每张成果 slide 均含 '对比柱状图 + 红降幅箭头' + 数字 claim; slide 19 等效算力柱状图 + 倍数箭头承接 13×/27× claim, 全 result 章 7 张均 claim-evidence 配对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "数字无 evidence 视觉观众会怀疑真实性; 视觉+数字并置是可信度的最低门槛",
+      "fix_hint": "每条数字 claim 附一张同页柱状图/表格, 数字标注在图上",
+      "exceptions": [
+        "奖项/背书页可只用文字, 无需可视化"
+      ]
+    },
+    {
+      "id": "baseline_comparison_required",
+      "category": "comparison_evidence",
+      "applicable_when": "result section claims performance improvement",
+      "title": "性能声明必须给出 baseline 对照",
+      "description": "result 章 speedup / 效率类 claim 必须显式指明 baseline (cuSPARSE, GPT-3.5, RTX3090 等), 不允许 '快 X 倍' 无参照.",
+      "what_to_check": [
+        "扫描 result 章 speedup 数字附近文字是否含 baseline 名称 (含 'vs' 'over' '相比' '超越' 关键词)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "slide 13 'SpMM +57% vs cuSPARSE, GCN 5.59× vs DGL'; slide 19 '3B 超 GPT-3.5 约 300%'; slide 21 三位专家评价均指名 'SOTA GNN 方案', 全成果 slide 均配 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无 baseline 的加速数字是空话, 说服学上没有比较即没有主张",
+      "fix_hint": "每条 speedup 数字后补一句 'vs <baseline 名称>'",
+      "exceptions": [
+        "纯 IP/工程指标 (如面积/功耗绝对值) 可不带 baseline"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck",
+      "title": "主 anchor 首次出现应在封面",
+      "description": "deck 主 anchor 术语必须在 slide_1 (cover) 关键文字中首次出现, 不允许在第 3 张之后才引入.",
+      "what_to_check": [
+        "提取 deck.标题主 anchor",
+        "检查 slide_1 关键文字/核心论断是否包含该 anchor"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "主 anchor '软硬协同设计' 在 slide 1 封面主标题 '人工智能+集成电路的软硬协同设计方法' 首现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 anchor 不出现在封面, 观众前 30 秒无法建立主题预期",
+      "fix_hint": "改封面主标题包含主 anchor 关键词",
+      "exceptions": [
+        "封面用悬念标题时主 anchor 应在副标题出现"
+      ]
+    },
+    {
+      "id": "jargon_first_definition_within_2_pages",
+      "category": "anchor_trajectory",
+      "applicable_when": "deck contains technical jargon or abbreviations",
+      "title": "术语/缩写首次使用后 ≤2 页内应定义",
+      "description": "专业术语或缩写 (如 EDA, LLM, SpMM, TOPS) 首次出现后, 应在同页或后续 2 页内给出定义或全称展开.",
+      "what_to_check": [
+        "识别首次出现的缩写型术语 (大写字母组合/含 '(' 展开的术语)",
+        "检查首现页起 ≤3 页内是否含全称展开或定义句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "'EDA' slide 4 首现即以 '电路设计自动化 (EDA)' 定义; 'MaaS/PaaS/IaaS' slide 28 首现即以 '模型即服务/GPU 池化+AI原生/异构融合' 展开"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "reason": "'SpMM' 'SDDMM' slide 13 首现但未定义; 'HETHUB' slide 32 首现未展开"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "不定义的缩写会让跨领域观众断线, 后续叙事无法承接",
+      "fix_hint": "首次出现的缩写在括号内加中文/英文全称",
+      "exceptions": [
+        "领域内已成常识的缩写 (GPU/CPU) 可不定义"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match",
+      "category": "structural_promise",
+      "applicable_when": "deck has agenda page",
+      "title": "agenda 章节应对齐 deck 实际章节",
+      "description": "agenda 页列出的章节数量与顺序必须与 deck 主要 section_role 序列一致, 命中率 ≥90%.",
+      "what_to_check": [
+        "提取 agenda 页 (含 'Contents' 关键词) 的项列表",
+        "比对 deck.章节列表 顺序与 agenda 顺序"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "agenda 三项 '①个人基本情况/②研究介绍/③产业结合' 完全对齐 self_intro/motivation+framework+result/case_study 三大主干章节 (opening/closing/appendix 属结构页, 不入 agenda)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是 deck 对观众的承诺, 章节不对齐等于 deck 结构崩塌",
+      "fix_hint": "修正 agenda 项使其与 deck 主干章节 1-1 对应, 结构页 (封面/致谢/附录) 排除",
+      "exceptions": [
+        "致谢/附录/封面等结构页可不出现在 agenda"
+      ]
+    },
+    {
+      "id": "structural_to_content_ratio_15_25pct",
+      "category": "pacing",
+      "applicable_when": "deck ≥20 pages",
+      "title": "结构页占比应在 15-25%",
+      "description": "cover/agenda/divider/closing 等结构页占 deck 总页数比例应在 15-25%, 过高显松散, 过低显缺导航.",
+      "what_to_check": [
+        "计数 section_role=opening/closing/appendix 的 slide 数 + 全 deck 中标题含 'Contents' 的 slide 数",
+        "除以总页数得比例"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "evidence": "32 页 deck 中结构页 slide 1/2/3/5/22/31/32 计 7 张 = 21.9%, 落入 15-25% 区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结构页太少观众迷路, 太多稀释内容密度, 15-25% 是长 deck 的经验最优",
+      "fix_hint": "若结构页 <15%, 在长章前补 agenda 高亮页; 若 >25%, 合并重复目录页",
+      "exceptions": [
+        "<15 页短 deck 可低于此比例"
+      ]
+    }
+  ],
+  "extraction_notes": "batch 21 只含 1 deck (32 页, 8 章, 简历/学术述职类), 抽取 15 条 rule 覆盖 8 大类. 该 deck 结构规整: agenda 页 4 张 (含高亮切换), framework 图跨 method 章多次复用, 主 anchor '软硬协同' 跨 6 章重复 9 次, result 章 7 张全部 claim-evidence 配对, 首尾主 anchor 闭合. 弱项在 chapter_outro_hook (motivation/framework 章末未埋下章预告, 硬切靠 agenda 页承接) 与部分缩写 (SpMM/HETHUB) 未定义.",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

@@ -1,0 +1,508 @@
+{
+  "batch_index": 24,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·主标题+分隔线+作者署名",
+      "description": "封面页布局:大字主标题居于视觉焦点(左上或居中),中部一条浅色细横线作分隔,线下依次排作者/单位/日期,整体大留白无正文/配图。",
+      "evidence_signals": [
+        "视觉骨架 含 '标题区' + '分隔横线' + '汇报人/单位/日期信息区'",
+        "关键文字 含 汇报人姓名 + 所在单位 + 日期",
+        "不含 'bullet 列表' / '正文段落' / '示意图' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 1,
+          "评价": "左上黑色大字主标题+中部浅色分隔线+线下居中汇报人/单位/日期,标准 cover 版式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "分隔线+署名的三段式让听众开场瞬间锁定主题与讲者身份,大留白抑制其他元素抢焦点",
+      "fix_hint": "把 cover 大字主标题居顶或居中,加一条浅色横线,线下放汇报人/单位/日期,删除正文/bullet",
+      "exceptions": [
+        "空白占位模板无实际身份可展示",
+        "品牌宣传型 deck 让位于 logo/slogan"
+      ]
+    },
+    {
+      "id": "ending_layout_two_line_thanks_with_divider",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页布局·两行致谢+分隔线+大留白",
+      "description": "致谢页仅含 1-2 行短致谢文字,配一条贯穿全宽的浅色分隔线,大面积留白,不承载数据/论断。",
+      "evidence_signals": [
+        "关键文字 只含 '感谢聆听' / '恳请指正' 等礼仪句",
+        "视觉骨架 含 '分隔线' + '大留白' 且无图表",
+        "不含 bullet / 表格 / 图示元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 13,
+          "评价": "左中两行「感谢聆听!」+「恳请各位评审专家提出宝贵意见!」+浅色横线+大留白"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 27,
+          "原因": "末页承载了 MFU/加速百分比多组数据,是内容页而非纯致谢收束"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "极简致谢页把注意力从数据转到人身上,礼仪句配大留白给评审留出提问缓冲",
+      "fix_hint": "删掉致谢页上除礼仪句和分隔线以外的所有元素,只保留 1-2 行大字与横线",
+      "exceptions": [
+        "末页需兼具收尾数据/结论时可保留数据不做纯致谢版式"
+      ]
+    },
+    {
+      "id": "chapter_divider_minimal_dashed_marker",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节分隔页·极简虚线+短词标识",
+      "description": "章节分隔页采用极简版式:居中放一个短词(如「备份」/「Part X」),两侧或上下配虚线装饰,再叠一条贯穿的浅色横线,无正文。",
+      "evidence_signals": [
+        "关键文字 仅含 1 个短词标签(≤4 字)",
+        "视觉骨架 含 '居中文字' + '虚线装饰' + '贯穿横线'",
+        "不含 bullet / 图示 / 数据元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 14,
+          "评价": "居中「备份」二字+两侧虚线+贯穿浅色分隔横线,极简分隔"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "极简分隔页给听众明确的段落切换信号,过多装饰会稀释切换感",
+      "fix_hint": "章节分隔页只留 1 个短词标签+虚线/横线装饰,移除所有正文和数据",
+      "exceptions": [
+        "章节页需承载章节导览/大纲时可扩展为议程式版式"
+      ]
+    },
+    {
+      "id": "content_layout_two_column_parallel_comparison",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页布局·左右双栏并列对比",
+      "description": "当页承载两个并列概念/方案/流程时采用左右双栏并列版式,顶部常有蓝色横幅统一主题,两栏结构对称(标题+要点/图示)。",
+      "evidence_signals": [
+        "视觉骨架 含 '左右 2 列' / '2 栏' / '双栏'",
+        "关键文字 含 '方案 1 / 方案 2' 或 'vs' 或 '传统 vs AI' 类对偶词",
+        "顶部或标题带蓝色横幅/色带"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 5,
+          "评价": "左右2栏并列展示两条求解路线,顶部AI for CO蓝色横幅"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 8,
+          "评价": "科学问题前沿性/高价值性两栏蓝头对称卡片"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 17,
+          "评价": "传统 vs AI 辅助逻辑综合流程左右两列 panel"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 10,
+          "评价": "左右两栏项目横幅并列展示两类前期结题项目"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "双栏对称版式让并列关系一眼可见,顶部横幅给出上位概念避免两栏割裂",
+      "fix_hint": "识别到并列结构时改为左右双栏,加顶部蓝色横幅统一,两栏标题/要点数对称",
+      "exceptions": [
+        "三项及以上并列改用横向 3-4 栏",
+        "单一主体展开时不应硬拆双栏"
+      ]
+    },
+    {
+      "id": "content_layout_metric_highlight_red_number",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键指标·红色/高亮数字标注",
+      "description": "当页含核心量化成果(加速比/百分比/金额)时,数字采用红色/高亮加粗突出,与旁边说明文字形成明显对比。",
+      "evidence_signals": [
+        "关键文字 含数字 + 单位(%/x/万/万元)",
+        "视觉骨架 含 '红色高亮' / '红字标注' / '红色量化数字块'",
+        "数字置于框内/底部/单独一行强调"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 4,
+          "评价": "训练成本红字标注 A100 1-2 周凸显挑战"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 6,
+          "评价": "红色高亮 31.1%、99% 等成果数字"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 10,
+          "评价": "底部红色量化实绩数字块投资 4800+ 万营收 4400+ 万"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 18,
+          "评价": "6.80% 红色高亮数字"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 20,
+          "评价": "底部红框加速比结果条 1.54x / 46.8%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "红色数字触发视觉预注意,让评审在扫读时先抓到量化结论再看细节",
+      "fix_hint": "识别当页最核心的 1-2 个数字/百分比,加粗改红/框起,放在页面主视觉区",
+      "exceptions": [
+        "整页仅为流程/概念图无量化成果时不硬加红字",
+        "品牌禁色场景需换成高亮框而非红色"
+      ]
+    },
+    {
+      "id": "content_layout_table_for_budget_and_metrics",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "经费/指标页·表格化多列呈现",
+      "description": "承载经费预算/项目指标/成员花名册等结构化明细时采用表格,蓝底白字表头+灰白交替行,列数 3-8。",
+      "evidence_signals": [
+        "视觉骨架 含 '表格' / '多列' + '蓝底白字表头'",
+        "关键文字 含 '类别 / 金额 / 占比 / 用途' 或 '姓名 职务 单位' 等表头字段",
+        "内容呈现为行列结构而非 bullet"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 11,
+          "评价": "三列表格指标类型/具体类型/内容,蓝色左侧合并单元格"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 12,
+          "评价": "四列经费表格,蓝底白字表头,灰白交替行"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 16,
+          "评价": "八列成员信息表罗列全体项目成员"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "hard",
+      "rationale": "结构化明细用表格远比 bullet 清晰,蓝底表头+交替行提高长表可读性",
+      "fix_hint": "经费/指标/花名册等明细统一用表格,配蓝底白字表头和灰白交替行",
+      "exceptions": [
+        "数据 <3 行时可退化为要点列表"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_or_claim_summary",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·名词短句或指标结论,不用动宾提问句",
+      "description": "slide.标题 用名词短句(≤20 字)或直接把核心指标/结论作标题(如 「FlashDecoding++ 推理吞吐超越 SOTA」),不用 '介绍 XX' '本节讲 XX' 类空洞动宾句。",
+      "evidence_signals": [
+        "title 不以 '介绍' / '本节' / '我们将' 开头",
+        "title 不含疑问句 '吗' / '?'",
+        "title 常见形态:'X·Y' / 'X 与 Y' / '<结论>+数字' / '<方法> vs <方法>'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 18,
+          "评价": "『思维链+多模态预测电路质量,误差降 6.80%』把量化结论嵌入标题"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 25,
+          "评价": "『FlashDecoding++ 推理吞吐超越 SOTA』结论式标题"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 17,
+          "评价": "『传统 vs AI 辅助逻辑综合流程对比』对偶名词短句"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 4,
+          "评价": "『AI for CO的两大核心挑战』名词短句"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 7,
+          "评价": "『项目四层总体框架』短名词短句"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "名词短句 title 让评审一眼锁定本页主题,结论式 title 更进一步先给判断再看论据",
+      "fix_hint": "把 title 里的 '介绍/本节' 等动词去掉,改为名词短句或直接把结论/指标嵌入",
+      "exceptions": [
+        "章节分隔页 title 承担'即将展开'提示时可用 '备份' / 'Part X' 类短词"
+      ]
+    },
+    {
+      "id": "claim_must_be_judgment_sentence_with_number",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·判断句+量化数字",
+      "description": "content 页的 核心论断 使用判断句('...是...' / '...实现 X 加速' / '...兼具 X 与 Y'),并尽可能内嵌数字/百分比/量级作硬证据。",
+      "evidence_signals": [
+        "核心论断 含谓语判断动词 '是/达/实现/覆盖/突破'",
+        "核心论断 内嵌数字 + 单位(% / x / 万元 / 倍)",
+        "核心论断 不是描述性 '本页介绍...' / '本页展示...'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 20,
+          "评价": "『定制 AIG CUDA kernel 较 PyG 提速 1.54x 并省 46.8% 显存』量化判断"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 25,
+          "评价": "『FlashDecoding++ 吞吐超 SOTA 约 10%、超 HuggingFace 约 3x,且跨 NVIDIA/AMD』"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 27,
+          "评价": "『同构基于 910b 达 A100 的 90.8%,异构千卡混训 MFU 97.6%,提升 24%-96%』"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 10,
+          "评价": "『前期已结题多个人工智能专项,累计投资超 4800 万、营收超 4400 万』"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 12,
+          "评价": "『项目经费概算总额 500 万元,按七类科目分配、劳务费占比 30%』"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 7,
+          "原因": "核心论断 『基础资源到生态赋能四层逐级支撑构成总体框架』为结构说明句,未含量化数字"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.65,
+      "enforcement_level": "soft",
+      "rationale": "判断句+数字比描述句更有说服力,让评审拿到 assertion 而非流程",
+      "fix_hint": "把 '本页介绍 X' 类改成 '<主体> 实现/达/超 <数字> <单位>' 的判断句",
+      "exceptions": [
+        "框架/概念页无实测数据时可退化为纯判断句,不硬凑数字"
+      ]
+    },
+    {
+      "id": "role_labeled_persona_bullet_pattern",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "团队/角色页·角色定位+履历要点",
+      "description": "介绍团队/成员时按 '角色名称:职责说明' 结构陈述,每人配 2-4 条履历要点(头衔/项目/奖项/单位),用 bullet 承载。",
+      "evidence_signals": [
+        "关键文字 含 '<角色>:负责 XX' 或 '<职务>·<职责>'",
+        "关键文字 含 头衔(教授/科学家/工程师) + 单位 + 奖项名",
+        "视觉骨架 含 'panel' / '角色卡片' / 'bullet 列表'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 9,
+          "评价": "领域科学家/系统架构师/AI 科学家/硬件工程师四角色 panel,配 MIT TR35 等履历"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 16,
+          "评价": "成员表'姓名/职务/单位/年龄/职称/研究方向/承担任务/备注'八列信息"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.08,
+      "enforcement_level": "soft",
+      "rationale": "'角色:职责'结构快速回答'谁做什么',履历要点提供可信度",
+      "fix_hint": "团队页统一按 '<角色>:负责 XX' 起头,配 2-4 条履历 bullet",
+      "exceptions": [
+        "匿名/保密团队不列真实履历时可退化为职能面板"
+      ]
+    },
+    {
+      "id": "comparison_uses_traditional_vs_ai_scaffold",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "对比论证·「传统 X vs AI/新方法 Y」二元脚手架",
+      "description": "当页论证新方法优越性时使用 「传统方法 vs AI/新方法」/「基线 vs 本文」二元对比脚手架,两侧文本对称,尾部给出量化差异。",
+      "evidence_signals": [
+        "关键文字 含 'Traditional/传统 XX' + 'AI/本文/新方法' 对偶",
+        "视觉骨架 含 '左右对比 panel' / '两列 vs 结构'",
+        "尾部含量化差 '<数字> vs <数字>' 或 '<x> 加速 / <%> 提升'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 3,
+          "评价": "传统方法 vs AI 方法,精度损失<5%、加速 10-100x"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 17,
+          "评价": "Traditional logic synthesis flow vs AI-assisted flow"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 20,
+          "评价": "FusedGAT (低效基线) vs Customized CUDA kernel (本文),1.54x/46.8%"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 25,
+          "评价": "HuggingFace/vLLM/TRT-LLM 等基线 vs FlashDecoding++,2.9x/115.56 token/s"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "二元对比让'为什么用新方法'一目了然,量化差是最直观的说服凭据",
+      "fix_hint": "把方法论证拆为'传统/基线'+'本文/新方法'两栏,尾部注明加速比/误差差",
+      "exceptions": [
+        "纯概念/框架介绍无基线对照时不硬造对比"
+      ]
+    },
+    {
+      "id": "key_terms_use_bilingual_and_conference_tags",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键文字·中英混排+会议/期刊 tag",
+      "description": "技术方法/引用工作在关键文字中中英混排(方法名保留英文原名),并附会议/期刊 tag (如 NeurIPS 22 / MLSys 24 / ASP-DAC / DATE)。",
+      "evidence_signals": [
+        "关键文字 含英文方法名(FlashAttention / SpMM / GNN 等)",
+        "关键文字 含 '<Conference> <Year>' 格式 tag",
+        "关键文字 含中文说明与英文原名并列"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 24,
+          "评价": "FlashAttention (NeurIPS 22) / FlashDecoding++ (MLSys 24) / FlashInfer (MLSys 25 Best Paper)"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 6,
+          "评价": "获多篇 EDA 领域会议最佳论文奖 (ASP-DAC/FPGA/DATE)"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 17,
+          "评价": "Graph Neural Networks / Transformer predict PPA 英文技术词"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 22,
+          "评价": "RowSplit / MergeSpMM / ASpT / GESpMM 英文方法名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "英文原名让评审精确匹配已知工作,会议 tag 提供权威背书省评审查证时间",
+      "fix_hint": "技术方法保留英文原名,引用工作后加 '(<Conference> <Year>)' 括号 tag",
+      "exceptions": [
+        "面向纯非学术受众/科普场景可去掉英文原名和会议 tag"
+      ]
+    },
+    {
+      "id": "chapter_role_appendix_labeled_backup",
+      "category": "authoring",
+      "applicable_role": [
+        "chapter_candidate",
+        "content_candidate"
+      ],
+      "title": "备份章节·显式「备份」标签+明细导向",
+      "description": "申报答辩类 deck 将正文外的经费明细/成员花名册/研究基础放入显式标注为'备份'的章节,承载查验用明细而非论证。",
+      "evidence_signals": [
+        "章节列表 含 '备份' / 'appendix' / '附录' 字样",
+        "备份章的 slide.核心论断 使用 '逐项列支' / '罗列' / '供查验' 等语汇",
+        "备份章 slide 使用表格/明细表而非论证图"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 14,
+          "评价": "独立「备份」分隔页明确切分正文和备份"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 15,
+          "评价": "设备/测试/材料三小表逐项列支,供评审质询查验经费构成"
+        },
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "slide_index": 16,
+          "评价": "成员花名册长表,供评审质询查验团队梯队"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "显式备份章保护正文节奏不被明细拖累,同时让评审知道随时可查验",
+      "fix_hint": "把经费明细/成员花名册/大量数据表从正文剥离,前置一个'备份'分隔页",
+      "exceptions": [
+        "篇幅极短的 deck 无需拆备份",
+        "面向非答辩场景(如 keynote)无需备份章"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (proposal 项目申报), 抽出 visual 6 rules + authoring 6 rules 共 12 条。命中率较低的通用规则(如双栏对比、红色数字标注)也基于该 deck 的多次出现给出估算,后续 batch 需重估。",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 6,
+      "authoring": 6
+    }
+  }
+}

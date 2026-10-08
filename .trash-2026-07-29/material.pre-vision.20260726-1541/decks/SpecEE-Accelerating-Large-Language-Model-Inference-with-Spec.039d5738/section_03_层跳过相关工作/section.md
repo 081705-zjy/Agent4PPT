@@ -1,0 +1,36 @@
+---
+章节标识: tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03
+所属deck: tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738
+章节序号: 3
+章节角色: background
+标题: 层跳过相关工作
+页码范围: [6, 9]
+页数: 4
+页ID列表: [slide_06, slide_07, slide_08, slide_09]
+章节叙事: 承接推理成本背景，系统梳理已有层跳过/早退方法（预测器部署、跳层、词表映射），暴露各自局限，为 SpecEE 的投机式早退方案做对比铺垫。
+页间关系: ["slide 6 → 7: 由相关工作总览收敛到「部署预测器」这一类早退方法", "slide 7 → 8: 由预测器部署转向 Google 的跳层（Skip Layer）方案", "slide 8 → 9: 由跳层方案过渡到 Llama 基于词表（Vocabulary）的层预测"]
+适合复用场景: [任何需要横向对比多种层跳过/早退方法的 related work 章, 论证「现有早退方案各有局限」以引出新方法的铺垫章, 推理加速类工作的技术路线综述段]
+不适合复用场景: [研究主题与层跳过/早退无关时, 只需单一方法介绍、无需横向对比时, 所列方法已被更新工作取代、数据过时时]
+在deck中的位置: 第 3 章 background，紧跟成本背景章，位于方法章之前
+分析状态: claude-opus-4-8
+---
+
+# section 3: 层跳过相关工作
+
+## 在 deck 中的位置
+第 3 章 background，紧跟成本背景章，位于方法章之前
+
+## 章内 slide 间的关系
+- slide 6 → 7: 由相关工作总览收敛到「部署预测器」这一类早退方法
+- slide 7 → 8: 由预测器部署转向 Google 的跳层（Skip Layer）方案
+- slide 8 → 9: 由跳层方案过渡到 Llama 基于词表（Vocabulary）的层预测
+
+## 整章可复用的场景
+- 任何需要横向对比多种层跳过/早退方法的 related work 章
+- 论证「现有早退方案各有局限」以引出新方法的铺垫章
+- 推理加速类工作的技术路线综述段
+
+## 不适合复用的场景
+- 研究主题与层跳过/早退无关时
+- 只需单一方法介绍、无需横向对比时
+- 所列方法已被更新工作取代、数据过时时

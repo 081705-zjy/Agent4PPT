@@ -1,0 +1,45 @@
+---
+页标识: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23"
+所属章节: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04"
+所属deck: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274"
+页序号: 23
+源文件: "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx"
+页面角色: "content_candidate"
+标题: "加速结果：最高 1.53× 提速"
+核心论断: "在第二组场景下实现最高 1.53× 加速"
+本页讲什么: "本页承接上一结果页，给出第二组场景的加速数据：「We achieve up to 1.53×」及 1.45× 的配套指标，进一步验证方案在不同工作负载下的普适收益，作为实验章的收尾结果页，随后过渡到全篇结束。"
+关键文字: "[We achieve up to 1.53× and 1.45]"
+视觉骨架: "[多组加速对比图表, \"1.53× 峰值数值标注\"]"
+资源ID列表: "[tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.01, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.02, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.03, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.04, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.05, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.06, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.07, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.08, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.09, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.10, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.11, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.12, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.13, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.14, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.15, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.16, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.17, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.18, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.19, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.20, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.21, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.22, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.23, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.24, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.25, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.26, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.27, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.28, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.29, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.30, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.31, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.32, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.33, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.34, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.35, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.36, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.37, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.38, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.39, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.40, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.41, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.42, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.43, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.44, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.45, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.46, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.47, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.48, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_23.asset.49]"
+适合复用场景: "[第二场景推理加速结果页, 多负载 speedup 验证页]"
+不适合复用场景: "[方法流程示意页, 纯文字总结过渡页]"
+上页角色: "content_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+alternate_claims:
+  - "同场景下同时取得 1.45× 的配套加速指标"
+layout_tag: "dense_data_chart"
+---
+# slide 23: 加速结果：最高 1.53× 提速
+
+**核心论断**: 在第二组场景下实现最高 1.53× 加速
+
+## 本页讲什么
+本页承接上一结果页，给出第二组场景的加速数据：「We achieve up to 1.53×」及 1.45× 的配套指标，进一步验证方案在不同工作负载下的普适收益，作为实验章的收尾结果页，随后过渡到全篇结束。
+
+## 关键文字片段
+- We achieve up to 1.53× and 1.45
+
+## 视觉骨架
+- 多组加速对比图表
+- 1.53× 峰值数值标注
+
+## 可复用到
+- 第二场景推理加速结果页
+- 多负载 speedup 验证页
+
+## 不适合复用的场景
+- 方法流程示意页
+- 纯文字总结过渡页

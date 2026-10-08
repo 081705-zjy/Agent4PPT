@@ -1,0 +1,1007 @@
+{
+  "batch_index": 5,
+  "patterns": [
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "lab_introduction",
+          "tutorial",
+          "简历"
+        ],
+        "scenario_keywords": [
+          "大模型推理软硬件协同优化",
+          "稀疏计算/加速课题综述",
+          "本组多技术路线成果综述",
+          "课题组全局汇报",
+          "学术特邀报告",
+          "个人学术述职/人才答辩",
+          "内部组会技术综述",
+          "AI 基础设施企业技术+产业展示"
+        ],
+        "deck_size_range": [
+          30,
+          130
+        ],
+        "audience_levels": [
+          "学术同行",
+          "工业落地研发者",
+          "科研团队",
+          "AI 芯片/系统方向研究者",
+          "评审/答辩委员会"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": "0-1",
+          "position": "fixed_2"
+        },
+        {
+          "role": "self_intro",
+          "count": "0-1",
+          "position": "after_cover"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            3,
+            12
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-1",
+          "page_count_range": [
+            2,
+            8
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "2-6",
+          "page_count_per_section_range": [
+            4,
+            27
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-2",
+          "page_count_range": [
+            2,
+            14
+          ]
+        },
+        {
+          "role": "engineering_or_case_study_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            4,
+            14
+          ]
+        },
+        {
+          "role": "references",
+          "section_count": "0-1"
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        },
+        {
+          "role": "appendix",
+          "count": "0-1",
+          "position": "after_closing"
+        }
+      ],
+      "narrative_arc": [
+        "背景动机",
+        "框架统领",
+        "多工作/多方法平行陈列",
+        "案例/工程落地",
+        "总结/展望",
+        "致谢"
+      ],
+      "applicable_summary": "30-130 页长篇 deck 骨架:cover(+可选 agenda+可选 self_intro)开场,1-2 章 motivation 铺陈供需矛盾/时代趋势/度量方式,可选 framework_intro 抛出统领分层图或稀疏计算范式公式,再以 2-6 章 method 沿框架/工作平行陈列本组多篇代表成果,期间以『全 agenda 灰显+当前章高亮』的 mini-agenda section_divider 作章节导航,末尾以 discussion/工程落地/产业化案例/致谢+联系方式/logo 墙封底,可选 appendix 补备份材料",
+      "anti_patterns": [
+        "单篇论文分享(15-45 页 canonical 五段式): 用 paper_share_bg_challenge_solution_eval_summary_canonical, 别套此长篇 panorama",
+        "极短空白模板 deck (≤15 页, 大量留白待填): 用 blank_lab_report_template_skeleton",
+        "项目立项申报答辩(含团队/经费/多章 appendix): 用 research_proposal_defense_with_team_budget_and_backup_stack",
+        "博士开题答辩(含跨层次框架+研究内容『已完成+拟开展』双子线): 用 qualifying_exam_defense_with_study_progress_and_appendix"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.稀疏计算与大模型.0738f023",
+          "deck_title": "稀疏计算与大模型",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型",
+            "大模型推理",
+            "软硬件协同",
+            "MoE",
+            "量化",
+            "FlightLLM",
+            "算力"
+          ],
+          "match_evidence": "50 页 deck: 1 cover + 1 bio + 1 agenda + 8p motivation(算力vs能源矛盾) + 11p method(尺度定律与稀疏原理) + 9p experiment(FlightLLM+稀疏量化) + 11p framework(新模型范式+软硬协同) + 3p closing(总结+全栈图) + 5p appendix(格式参考+备份) — 完整落入 motivation → framework/method → 多工作 → 收尾 骨架",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "封面:稀疏计算与大模型",
+              "slide_claim": "戴国浩主讲「稀疏计算与大模型」学术报告",
+              "slide_key_text": [
+                "稀疏计算与大模型",
+                "戴国浩",
+                "上海交通大学 副教授",
+                "无问芯穹 联合创始人/首席科学家",
+                "2024-7-17",
+                "daiguohao@sjtu.edu.cn (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "竖排主标题",
+                "细分隔横线",
+                "讲者身份文字块",
+                "日期+邮箱信息行"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_long_deck_navigation",
+              "slide_title": "目录:五段主线 Contents",
+              "slide_claim": "报告按背景→原理→推理→协同→总结五段展开",
+              "slide_key_text": [
+                "Contents",
+                "背景:大语言模型的成本和硬件",
+                "1 / 2 / 3 / 4 / 5 编号五章 (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "外框+Contents 标题",
+                "1-5 蓝色圆圈编号",
+                "五行章节条目列表",
+                "左侧竖向蓝色装饰条"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "章节目录:背景——大模型成本与硬件",
+              "slide_claim": "进入第一章「背景:大语言模型的成本和硬件」",
+              "slide_key_text": [
+                "1 背景:大语言模型的成本和硬件",
+                "2/3/4 后续章节(灰显)",
+                "5 总结"
+              ],
+              "slide_visual_skeleton": [
+                "Contents 蓝框标题",
+                "1-5 编号列表",
+                "当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位「尺度定律与稀疏计算原理」章",
+              "slide_claim": "本章聚焦第2部分——尺度定律与稀疏计算原理",
+              "slide_key_text": [
+                "Contents",
+                "背景:大语言模型的成本和硬件",
+                "本章聚焦第 2 部分"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框 Contents 容器",
+                "1-5 编号圆点列表",
+                "当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入研究内容与代表性成果",
+              "slide_claim": "报告推进至第三部分——研究内容与代表性成果",
+              "slide_key_text": [
+                "Contents",
+                "研究内容与代表性成果"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号圆标目录列表",
+                "当前项蓝色高亮竖条",
+                "外层蓝色边框"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入第四部分新模型范式",
+              "slide_claim": "报告推进到新模型范式与软硬件协同章节",
+              "slide_key_text": [
+                "Contents",
+                "背景:大语言模型的成本和硬件"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号议程列表",
+                "当前项高亮圆点标记",
+                "蓝色边框容器"
+              ]
+            },
+            {
+              "slide_index": 43,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入第 5 部分「总结」",
+              "slide_claim": "报告推进到第 5 章「总结」,收束全篇论述",
+              "slide_key_text": [
+                "Contents",
+                "5 总结",
+                "背景: 大语言模型的成本和硬件"
+              ],
+              "slide_visual_skeleton": [
+                "外框 Contents 目录卡",
+                "5 项编号列表",
+                "当前项蓝色高亮圆圈",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 50,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "致谢与联系方式页",
+              "slide_claim": "致谢并留联系方式,附团队招募与支持二维码",
+              "slide_key_text": [
+                "戴国浩 上海交通大学 副教授",
+                "无问芯穹 联合创始人",
+                "Email: daiguohao@sjtu.edu.cn",
+                "2024-7-17",
+                "欢迎加入DAI lab",
+                "Thanks / Support"
+              ],
+              "slide_visual_skeleton": [
+                "Thanks/Support彩色标签",
+                "中部讲者联系信息块",
+                "右侧二维码网格"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面·个人介绍·目录",
+              "slide_range": [
+                1,
+                3
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_背景-大模型成本与硬件",
+              "slide_range": [
+                4,
+                11
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_尺度定律与稀疏计算原理",
+              "slide_range": [
+                12,
+                22
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_稀疏大模型推理与稀疏量化",
+              "slide_range": [
+                23,
+                31
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_05_新模型范式与软硬件协同",
+              "slide_range": [
+                32,
+                42
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_06_总结-稀疏赋能高效大模型",
+              "slide_range": [
+                43,
+                45
+              ]
+            },
+            {
+              "chapter_role": "appendix",
+              "section_id": "section_07_格式参考与备份产品页",
+              "slide_range": [
+                46,
+                50
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.蚂蚁汇报-人工智能+集成电路的软硬协同设计方法.e33f66bb",
+          "deck_title": "人工智能+集成电路的软硬协同设计方法",
+          "deck_topic_tags": [
+            "软硬协同",
+            "大模型算力",
+            "集成电路",
+            "稀疏计算",
+            "动态编译",
+            "稀疏架构",
+            "产业化",
+            "AI芯片"
+          ],
+          "match_evidence": "32 页 deck: 1 cover + 1 agenda + 2p self_intro + 5p motivation(算力vs芯片矛盾) + 5p framework(稀疏计算总纲+dgSPARSE) + 7p result(三项成果+获奖背书) + 9p case_study(无问芯穹产业化) + 1p closing + 1p appendix(全域算力网络) — 骨架完整,self_intro 段增强述职权威",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "人工智能+集成电路软硬协同设计（封面）",
+              "slide_claim": "本报告聚焦 AI 与集成电路的软硬协同设计方法",
+              "slide_key_text": [
+                "人工智能+集成电路的软硬协同设计方法",
+                "戴国浩",
+                "上海交通大学 副教授",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题",
+                "水平分隔线",
+                "作者信息块",
+                "邮箱联系行"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "报告目录 Contents（三段式）",
+              "slide_claim": "全篇按个人情况/研究介绍/产业结合三段展开",
+              "slide_key_text": [
+                "Contents",
+                "个人基本情况",
+                "研究介绍",
+                "产业结合"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外边框",
+                "带圈序号列表",
+                "左侧蓝色进度竖条",
+                "底部单位页脚条"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents 目录页(定位「个人基本情况」)",
+              "slide_claim": "全报告分个人情况、研究介绍、产业结合三部分,首先切入个人基本情况",
+              "slide_key_text": [
+                "Contents",
+                "1 个人基本情况",
+                "2 研究介绍",
+                "3 产业结合"
+              ],
+              "slide_visual_skeleton": [
+                "外层蓝色矩形边框",
+                "3 项带序号圆圈的目录列表",
+                "当前项高亮/其余灰化",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页:进入「研究介绍」板块",
+              "slide_claim": "汇报由个人情况转入研究介绍板块的第二部分",
+              "slide_key_text": [
+                "Contents",
+                "①个人基本情况",
+                "②研究介绍",
+                "③产业结合"
+              ],
+              "slide_visual_skeleton": [
+                "Contents 边框",
+                "三段式竖排目录",
+                "当前项高亮标记",
+                "序号圆圈图标"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入第三章「产业结合」",
+              "slide_claim": "汇报推进到第三部分——把学术成果落地为产业化",
+              "slide_key_text": [
+                "Contents",
+                "① 个人基本情况",
+                "② 研究介绍",
+                "③ 产业结合(当前高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "Contents 目录外框",
+                "三级编号列表",
+                "③ 高亮编号圈",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_deck": "off_pattern",
+              "archetype": "content_horizontal_timeline_with_events",
+              "slide_title": "深鉴科技创业史(2016-2018)",
+              "slide_claim": "深鉴科技三年从创业走到被Xilinx收购，验证AI芯片产业价值",
+              "slide_key_text": [
+                "2015.7 提出创业想法",
+                "2016.8 Hot Chips 2016 DPU获Best Presentation",
+                "2017.3 完成A+轮融资近10亿元",
+                "2017 CCF科学技术奖",
+                "2018.7 被Xilinx收购",
+                "感谢蚂蚁支持"
+              ],
+              "slide_visual_skeleton": [
+                "水平时间轴带节点",
+                "上下交错事件标注块",
+                "人物/机构引用小注",
+                "结尾致谢脚注"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "谢谢！——演讲者致谢与联系方式",
+              "slide_claim": "汇报以致谢收尾,留下演讲者身份与联系邮箱",
+              "slide_key_text": [
+                "谢谢!",
+                "戴国浩",
+                "上海交通大学 副教授",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "左上超大「谢谢」标题",
+                "水平分隔细线",
+                "居中演讲者信息块",
+                "大面积留白"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "self_intro",
+              "section_id": "section_02_个人基本情况",
+              "slide_range": [
+                3,
+                4
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_研究背景与动机",
+              "slide_range": [
+                5,
+                9
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_04_软硬协同与稀疏计算思路",
+              "slide_range": [
+                10,
+                14
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_主要研究成果与评价",
+              "slide_range": [
+                15,
+                21
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_06_产业结合-无问芯穹",
+              "slide_range": [
+                22,
+                30
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_07_致谢",
+              "slide_range": [
+                31,
+                31
+              ]
+            },
+            {
+              "chapter_role": "appendix",
+              "section_id": "section_08_全域算力协同网络",
+              "slide_range": [
+                32,
+                32
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "match_evidence": "33 页 deck: 1 cover + 1 agenda + 3p background(VGM 三大趋势+演进) + 13p method(UNet→DiT→3D-DiT→AR 路线) + 2p method(高效推理 overview) + 10p framework(训练框架+稀疏 Attn+3D-VAE) + 2p discussion(总结与未来工作) + 1p closing — 以 4 项 mini-agenda 分隔多个技术子章,组会式技术综述",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_single_title_centered",
+              "slide_title": "视频生成模型(VGM)技术路径及高效训推",
+              "slide_claim": "本报告聚焦 VGM 的技术路径与高效训练推理",
+              "slide_key_text": [
+                "视频生成模型(VGM)技术路径及高效训推",
+                "丁立",
+                "2024.12.7",
+                "Li Ding @ CCC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "居中偏左大标题",
+                "淡粉色横向分隔线",
+                "讲者+日期信息块",
+                "页脚署名"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_long_deck_navigation",
+              "slide_title": "Contents 四项编号目录(高亮首章)",
+              "slide_claim": "全篇按背景→训练框架→高效推理→总结四章推进,当前进入首章",
+              "slide_key_text": [
+                "Contents",
+                "VGM背景及技术路径",
+                "VGM训练框架",
+                "VGM高效推理",
+                "总结与展望",
+                "2024/12/7"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色矩形外框",
+                "Contents 标题",
+                "①②③④ 圆圈编号列表",
+                "左侧蓝色进度竖条",
+                "首项高亮/余项灰化"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents 目录:VGM 四大板块导航",
+              "slide_claim": "全 deck 分四板块推进,首讲 VGM 背景及技术路径",
+              "slide_key_text": [
+                "Contents",
+                "① VGM 背景及技术路径",
+                "② VGM 训练框架",
+                "③ VGM 推理"
+              ],
+              "slide_visual_skeleton": [
+                "外层蓝色边框",
+                "1-4 编号圆圈列表",
+                "左侧蓝色当前项进度条",
+                "当前项高亮/其余灰化"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:定位「VGM 高效推理方法」为第 2 主题",
+              "slide_claim": "全篇四大主题中,本章聚焦第 2 项「VGM 高效推理方法」",
+              "slide_key_text": [
+                "Contents",
+                "① VGM 技术路线",
+                "② VGM 高效推理方法",
+                "③ VGM 训练框架"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框目录卡",
+                "四项编号圆点列表",
+                "当前项蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents 目录：进入第 3 部分 VGM 训练框架",
+              "slide_claim": "本页切换到第三大板块——VGM 训练框架(训练侧)",
+              "slide_key_text": [
+                "Contents",
+                "① VGM 技术路线",
+                "③ VGM 训练框架(当前高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框目录卡",
+                "四项圆圈编号列表",
+                "当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents 目录页(高亮第 4 部分总结与未来工作)",
+              "slide_claim": "全 deck 收尾,定位至第 4 部分总结与未来工作",
+              "slide_key_text": [
+                "Contents",
+                "VGM 技术路线",
+                "VGM 高效训练框架",
+                "VGM 推理加速",
+                "总结与未来工作(高亮项)"
+              ],
+              "slide_visual_skeleton": [
+                "外框包裹的目录卡",
+                "左侧四个编号圆标",
+                "灰/蓝高亮态对比",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "Thanks for your attention! 致谢结束页",
+              "slide_claim": "汇报以致谢语收束，署名汇报人与日期，礼节性结束",
+              "slide_key_text": [
+                "Thanks for your attention!",
+                "丁立",
+                "2024.12.7",
+                "Li Ding @ CCC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "左上致谢大标题",
+                "浅粉水平分隔线",
+                "署名+日期文字块",
+                "底部单位脚注"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_VGM-背景与技术路径概述",
+              "slide_range": [
+                3,
+                5
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_VGM-技术路径演进",
+              "slide_range": [
+                6,
+                18
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_VGM-高效推理方法",
+              "slide_range": [
+                19,
+                20
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_05_VGM-训练框架与压缩策略",
+              "slide_range": [
+                21,
+                30
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_06_总结与未来工作",
+              "slide_range": [
+                31,
+                32
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_07_致谢",
+              "slide_range": [
+                33,
+                33
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.达摩院_稀疏计算与软硬协同_大模型算力提升新思考.54b0b40f",
+          "deck_title": "稀疏计算与软硬协同：大模型算力提升新思考",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "软硬协同",
+            "大模型推理",
+            "算力提升",
+            "结构化稀疏",
+            "FPGA加速",
+            "量化",
+            "视频生成"
+          ],
+          "match_evidence": "67 页 deck: 1 cover + 1 agenda + 6p motivation(供需矛盾+度量+范式) + 8p method(三大子问题分层+成果1-3) + 9p result(FlashDecoding++) + 14p case_study(FP8+FlightLLM) + 11p case_study(FlightVGM) + 6p result(TB-STC) + 10p discussion(总结+国产算力展望) + 1p closing — 长篇 panorama 骨架标杆,4 大工作沿框架公式平行陈列",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "稀疏计算与软硬协同（封面）",
+              "slide_claim": "稀疏计算与软硬协同是大模型算力提升的新思考",
+              "slide_key_text": [
+                "稀疏计算与软硬协同",
+                "大模型算力提升新思考",
+                "戴国浩",
+                "上海交通大学",
+                "2024.12.26",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "左上主副标题块",
+                "粉色分隔横线",
+                "浅灰关键词艺术字底纹",
+                "署名与日期信息区"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_long_deck_navigation",
+              "slide_title": "目录：研究背景到总结展望四部分",
+              "slide_claim": "全 deck 按研究背景→方法论→研究成果→总结展望四部分展开",
+              "slide_key_text": [
+                "Contents",
+                "1 研究背景",
+                "2 方法论：稀疏计算范式",
+                "3 研究成果",
+                "4 总结展望"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色描边大边框",
+                "Contents 标题",
+                "四个数字圆点纵向列表",
+                "左侧蓝色竖条强调"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：研究背景/方法论/成果四板块",
+              "slide_claim": "全报告按研究背景、稀疏计算方法论、研究成果四部分展开",
+              "slide_key_text": [
+                "Contents",
+                "研究背景",
+                "方法论：稀疏计算范式",
+                "研究成果"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框目录卡",
+                "1-4编号圆点列表",
+                "当前项高亮"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页：进入第2章方法论·稀疏计算范式",
+              "slide_claim": "报告推进到方法论章节，聚焦稀疏计算范式",
+              "slide_key_text": [
+                "Contents",
+                "方法论：稀疏计算范式",
+                "研究背景",
+                "研究成果"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框目录卡",
+                "四行编号议程列表",
+                "当前项蓝色高亮条"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "章节目录：进入第三部分研究成果",
+              "slide_claim": "汇报由背景与方法论推进到第三部分——研究成果",
+              "slide_key_text": [
+                "研究背景",
+                "方法论：稀疏计算范式",
+                "研究成果",
+                "未来展望"
+              ],
+              "slide_visual_skeleton": [
+                "Contents 蓝框标题",
+                "四项编号圆点列表",
+                "第3项高亮竖条",
+                "灰化未选项"
+              ]
+            },
+            {
+              "slide_index": 57,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入第四部分研究总结",
+              "slide_claim": "报告推进至第4部分——研究总结与展望",
+              "slide_key_text": [
+                "Contents",
+                "1 研究背景",
+                "2 方法论：稀疏计算范式",
+                "3 研究成果",
+                "4 研究总结"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号目录",
+                "第4项高亮其余灰化",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 67,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_with_logo_wall",
+              "slide_title": "致谢与联系方式：戴国浩（上海交大）",
+              "slide_claim": "汇报收尾于致谢，讲者信息叠合作/资助单位 logo 墙留下联络入口",
+              "slide_key_text": [
+                "戴国浩",
+                "上海交通大学",
+                "2024-12-26",
+                "Email: daiguohao@sjtu.edu.cn",
+                "合作单位 / 资助单位（vision）",
+                "NICS-EFC、JKW（vision）"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔条",
+                "居中讲者信息文本块",
+                "左侧双色分区标签块",
+                "合作/资助单位 logo 墙"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与开场目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_研究背景与核心问题",
+              "slide_range": [
+                3,
+                8
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_方法论：稀疏计算范式",
+              "slide_range": [
+                9,
+                16
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_推理引擎系统优化FlashDecoding++",
+              "slide_range": [
+                17,
+                25
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_软硬件协同：FP8训练与FlightLLM",
+              "slide_range": [
+                26,
+                39
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_06_文生视频加速FlightVGM",
+              "slide_range": [
+                40,
+                50
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_07_原生稀疏计算硬件TB-STC",
+              "slide_range": [
+                51,
+                56
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_08_研究总结与国产算力展望",
+              "slide_range": [
+                57,
+                66
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_09_致谢与联系方式",
+              "slide_range": [
+                67,
+                67
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 4,
+      "confidence_estimate": "high"
+    }
+  ],
+  "extraction_notes": "本 batch 4 deck 全部命中已有 pattern long_deck_framework_plus_works_panorama_with_agenda_navigation,不新增 pattern id。deck_size_range 已从 [40, 130] 扩展到 [30, 130] 以纳入蚂蚁汇报(32p)/VGM(33p)两个中长 deck,且 abstract_node_sequence 中 self_intro 与 case_study/engineering 段落已在 previous_batches_patterns 中列为可选,无需变更。deck 蚂蚁汇报 slide_25 (深鉴科技创业时间线)被源标注为 ending_candidate,但实为 case_study 章内的横向时间线内容页,按规则标 off_pattern。new_archetype: closing_thanks_with_logo_wall — 致谢页在讲者信息之外并列展示合作/资助单位 logo 墙 (双色标签分区+底部 logo 排),常见于课题组/机构级长篇 deck 收尾;区别于 closing_thanks_and_qa 的纯讲者信息版式。",
+  "coverage": {
+    "decks_in_batch": 4,
+    "decks_assigned_to_some_pattern": 4,
+    "decks_unassigned_in_this_batch": [],
+    "decks_assigned_to_multiple_patterns": []
+  }
+}

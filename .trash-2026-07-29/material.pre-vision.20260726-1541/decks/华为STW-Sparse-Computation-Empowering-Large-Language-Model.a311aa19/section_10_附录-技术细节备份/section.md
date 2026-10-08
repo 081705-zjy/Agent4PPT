@@ -1,0 +1,48 @@
+---
+章节标识: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.10
+所属deck: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19
+章节序号: 10
+章节角色: content
+标题: "附录:技术细节备份"
+页码范围: [55, 68]
+页数: 14
+页ID列表: [slide_55, slide_56, slide_57, slide_58, slide_59, slide_60, slide_61, slide_62, slide_63, slide_64, slide_65, slide_66, slide_67, slide_68]
+章节叙事: "作为全 deck 附录,不承担对外叙事,而是把正文压缩掉的技术细节铺开:先展开 FlashDecoding++ 的 softmax/GEMM/tiling/编译调优内部机制,再补稀疏精度与硬件权衡,末尾速查 MoE/MoD 原理,供答疑深挖。"
+页间关系: ["slide 55 → 56: 由华为 Beyond Scaling Law 引子进入 prefill/decode 两阶段划分", "slide 56 → 57: 由推理两阶段聚焦 decode 的 partial softmax 问题", "slide 57 → 58: 由 partial softmax 额外更新开销引出统一最大值保持等价", "slide 58 → 59: 由 softmax 优化转向 decode 阶段 Flat GEMM 瓶颈", "slide 59 → 60: 由 Flat GEMM 引出用小 N 细粒度 tiling 提并行度", "slide 60 → 61: 由 tiling 过渡到技术 3 编译调优(M=32)", "slide 61 → 62: 承接编译调优,进一步压缩 workload 变化空间", "slide 62 → 63: 由算子编译优化转向稀疏精度:结构化稀疏精度差", "slide 63 → 64: 由结构化缺陷对比到非结构化稀疏硬件开销大", "slide 64 → 65: 由稀疏两难引出 MoE(Switch)稀疏范式", "slide 65 → 66: 由 MoE Switch 承接到 Megablocks 高效稀疏训练", "slide 66 → 67: 由 MoE 过渡到另一稀疏维度 MoD(Early Exit)", "slide 67 → 68: 由 MoD 进一步到 MoD 与 MoE 融合"]
+适合复用场景: [需为主 deck 提供技术细节备份的附录章节, 讲解算子级推理优化内部机制(softmax/GEMM/tiling/编译), 对比结构化 vs 非结构化稀疏权衡的技术底稿, 需 MoE/MoD 原理速查的备份页]
+不适合复用场景: [面向非技术受众的正式汇报,细节过深, 无需算子/硬件细节的高层概览 deck, 主题不含稀疏或推理加速时, 需连贯叙事而非碎片备份页的场合]
+在deck中的位置: 第 10 章(末章),正文与结尾之后的技术备份附录
+分析状态: claude-opus-4-8
+---
+
+# section 10: 附录:技术细节备份
+
+## 在 deck 中的位置
+第 10 章(末章),正文与结尾之后的技术备份附录
+
+## 章内 slide 间的关系
+- slide 55 → 56: 由华为 Beyond Scaling Law 引子进入 prefill/decode 两阶段划分
+- slide 56 → 57: 由推理两阶段聚焦 decode 的 partial softmax 问题
+- slide 57 → 58: 由 partial softmax 额外更新开销引出统一最大值保持等价
+- slide 58 → 59: 由 softmax 优化转向 decode 阶段 Flat GEMM 瓶颈
+- slide 59 → 60: 由 Flat GEMM 引出用小 N 细粒度 tiling 提并行度
+- slide 60 → 61: 由 tiling 过渡到技术 3 编译调优(M=32)
+- slide 61 → 62: 承接编译调优,进一步压缩 workload 变化空间
+- slide 62 → 63: 由算子编译优化转向稀疏精度:结构化稀疏精度差
+- slide 63 → 64: 由结构化缺陷对比到非结构化稀疏硬件开销大
+- slide 64 → 65: 由稀疏两难引出 MoE(Switch)稀疏范式
+- slide 65 → 66: 由 MoE Switch 承接到 Megablocks 高效稀疏训练
+- slide 66 → 67: 由 MoE 过渡到另一稀疏维度 MoD(Early Exit)
+- slide 67 → 68: 由 MoD 进一步到 MoD 与 MoE 融合
+
+## 整章可复用的场景
+- 需为主 deck 提供技术细节备份的附录章节
+- 讲解算子级推理优化内部机制(softmax/GEMM/tiling/编译)
+- 对比结构化 vs 非结构化稀疏权衡的技术底稿
+- 需 MoE/MoD 原理速查的备份页
+
+## 不适合复用的场景
+- 面向非技术受众的正式汇报,细节过深
+- 无需算子/硬件细节的高层概览 deck
+- 主题不含稀疏或推理加速时
+- 需连贯叙事而非碎片备份页的场合

@@ -1,0 +1,727 @@
+{
+  "batch_index": 6,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+      "目录名": "LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+      "标题": "LOAC 自回归视频生成加速器",
+      "总页数": 34,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与开场目录",
+        "section_02_研究背景与视频生成演进",
+        "section_03_三大研究挑战",
+        "section_04_LOAC核心设计",
+        "section_05_实验验证",
+        "section_06_致谢"
+      ],
+      "主题标签": [
+        "视频生成",
+        "自回归",
+        "稀疏注意力",
+        "KV压缩",
+        "硬件加速",
+        "扩散模型",
+        "DiT"
+      ],
+      "目标受众": "学术同行 / 芯片与体系结构方向组会",
+      "报告类型": "paper_share",
+      "适用场景": "内部组会分享自回归视频生成加速的软硬件协同工作",
+      "论述总结": "从视频生成模型演进与自回归+扩散范式讲起，剖析长序列注意力与KV带来的算力和访存挑战，提出LOAC加速器：以条纹感知的统一稀疏注意力和KV压缩为核心思路，逐条给出三项具体设计，最后用实验验证加速效果。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "方法",
+        "实验",
+        "总结"
+      ],
+      "slides_by_role": {
+        "cover_candidate": [
+          {
+            "页序号": 1,
+            "页面角色": "cover_candidate",
+            "标题": "LOAC: 条纹稀疏注意力与 KV 压缩的自回归视频生成加速器",
+            "核心论断": "LOAC 提出条纹稀疏注意力与 KV 压缩以加速自回归视频生成",
+            "本页讲什么": "论文封面页,居中大字排布完整英文标题 LOAC: An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction,一条细分隔线下方给出汇报人丁立、DAC 投稿分享身份、2025 年 11 月 8 日日期,页脚署名 Li Ding @ Shanghai Jiao Tong University。整页无配图,纯文字开场。",
+            "关键文字": [
+              "LOAC: An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction",
+              "丁立",
+              "DAC 投稿分享",
+              "2025 年 11 月 8 日",
+              "Li Ding @ Shanghai Jiao Tong University"
+            ],
+            "视觉骨架": [
+              "居中大字论文标题",
+              "细横分隔线",
+              "作者/身份/日期文字块",
+              "底部署名页脚"
+            ],
+            "上页角色": null,
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          }
+        ],
+        "content_candidate": [
+          {
+            "页序号": 2,
+            "页面角色": "content_candidate",
+            "标题": "目录: 研究背景 / 研究挑战 / … 四项议程",
+            "核心论断": "全 deck 分四个编号板块依次展开,由研究背景与研究挑战领起",
+            "本页讲什么": "开场目录页,中央用蓝色边框圈住四行并列条目,每行左侧为蓝底圆形编号 ①②③④,右侧为板块名称(研究背景、研究挑战及其后两项),左侧竖立一条深蓝强调竖条。整页无正文数据,仅铺陈全 deck 四段式结构,为后续技术章节建立预期。",
+            "关键文字": [
+              "1 研究背景",
+              "2 研究挑战",
+              "3",
+              "4"
+            ],
+            "视觉骨架": [
+              "蓝色矩形边框",
+              "四行圆形编号 ①-④",
+              "左侧深蓝强调竖条",
+              "编号+条目对齐列表"
+            ],
+            "上页角色": "cover_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          },
+          {
+            "页序号": 3,
+            "页面角色": "content_candidate",
+            "标题": "目录：四部分研究框架",
+            "核心论断": "全篇按研究背景/挑战/内容/总结四部分递进展开",
+            "本页讲什么": "本页为全篇目录，用四个蓝色编号圆点列出研究背景、研究挑战、研究内容、研究总结四大板块，当前高亮第①项研究背景，左侧竖条指示进度，起到章节导航作用。",
+            "关键文字": [
+              "研究背景",
+              "研究挑战",
+              "研究内容",
+              "研究总结"
+            ],
+            "视觉骨架": [
+              "4 项编号圆点列表",
+              "左侧进度竖条",
+              "外框边框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 4,
+            "页面角色": "content_candidate",
+            "标题": "研究背景：视频生成模型崛起",
+            "核心论断": "视频生成模型（如OpenAI Sora2）快速崛起并受广泛关注",
+            "本页讲什么": "本页作为motivation开场，用顶部蓝框论点句配合Sora2示例画面，指出以OpenAI Sora2为代表的视频生成模型正快速崛起、能力惊艳，引出后续对其技术范式与瓶颈的剖析。",
+            "关键文字": [
+              "视频生成模型",
+              "OpenAI 的 sora2"
+            ],
+            "视觉骨架": [
+              "顶部蓝框论点条",
+              "Sora2 示例画面"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 5,
+            "页面角色": "content_candidate",
+            "标题": "研究背景：端到端视频生成范式",
+            "核心论断": "视频生成走向端到端生成范式，摆脱传统分步流程",
+            "本页讲什么": "本页承接上页，用顶部蓝框长句阐述视频生成正转向“端到端生成”的整体范式，配Sora示例画面，为下一页拆解范式演进的技术分期做铺垫。",
+            "关键文字": [
+              "端到端生成",
+              "视频生成"
+            ],
+            "视觉骨架": [
+              "顶部蓝框论点条",
+              "Sora 示例画面"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 6,
+            "页面角色": "content_candidate",
+            "标题": "视频生成范式三阶段演进路线",
+            "核心论断": "视频生成经时空分离→时空联合→AR+Diffusion三阶段演进",
+            "本页讲什么": "本页是全章的范式演进总览：上排展示2D+1D DiT（时空分离，Spatial/Temporal Transformer）→3D DiT（时空联合，3D Transformer）→AR+Diffusion三种架构，中间以红字标注阶段1、阶段2转变；下排用蓝/黄分区把三阶段归为“时空建模”与“自回归生成”两大类，是理解后续每页定位的骨架图。",
+            "关键文字": [
+              "2D+1D DiT",
+              "3D DiT",
+              "AR + Diffusion",
+              "时空分离",
+              "时空联合",
+              "阶段1 / 阶段2 / 阶段3"
+            ],
+            "视觉骨架": [
+              "3 段架构演进流程",
+              "Spatial/Temporal Transformer 框图",
+              "上下双区分类带",
+              "阶段转变红字箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 7,
+            "页面角色": "content_candidate",
+            "标题": "双向注意力致算力爆炸",
+            "核心论断": "双向注意力时空建模致训推算力爆炸且无法实时生成",
+            "本页讲什么": "本页论证旧范式痛点：以往视频模型用双向注意力(bidirectional attention)做全序列时空建模，配帧间全连接注意力矩阵与FLOPs/token随block/layer增长的曲线，标注5s→3s、300s→倍增的算力数据，说明计算量爆炸、无法真正实时生成。",
+            "关键文字": [
+              "双向注意力（bidirectional attention）时空建模",
+              "训推计算量爆炸，无法真正实时生成",
+              "5s→3s，300s 算力倍增"
+            ],
+            "视觉骨架": [
+              "帧间全连接注意力矩阵",
+              "FLOPs/token 增长曲线",
+              "算力倍增红字标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 8,
+            "页面角色": "content_candidate",
+            "标题": "Wan等双向模型的算力困境",
+            "核心论断": "以Wan为代表的双向注意力模型训推算力爆炸难实时",
+            "本页讲什么": "本页承接算力痛点，以Wan等大规模视频生成模型(arXiv:2503.20314)为例，重申双向注意力时空建模导致训推计算量爆炸、无法真正实时生成，为转向自回归埋下伏笔。",
+            "关键文字": [
+              "双向注意力（bidirectional attention）时空建模",
+              "训推计算量爆炸，无法真正实时生成"
+            ],
+            "视觉骨架": [
+              "顶部蓝框论点条",
+              "模型示意画面"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 9,
+            "页面角色": "content_candidate",
+            "标题": "转向自回归(AR)生成",
+            "核心论断": "自回归生成天然可实时且具长期记忆，成新探索方向",
+            "本页讲什么": "本页承接上页痛点给出出路：现有视频模型转向探索自回归生成(AR)，AR天然能实时生成且具备长期记忆，配FLOPs/token曲线与5s→3s、300s等对比数据佐证其效率优势。",
+            "关键文字": [
+              "现在的视频模型探索自回归生成(AR)",
+              "自回归天然能实时生成，且具有长期记忆",
+              "5s→3s，300s 对比"
+            ],
+            "视觉骨架": [
+              "FLOPs/token 曲线",
+              "AR效率对比数据",
+              "顶部红字论点条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 10,
+            "页面角色": "content_candidate",
+            "标题": "Diffusion Forcing引入AR",
+            "核心论断": "Diffusion Forcing探索将AR引入Diffusion Model",
+            "本页讲什么": "本页引入具体工作Diffusion Forcing(NeurIPS 2024)，说明它探索如何把自回归(AR)机制引入到Diffusion Model中，是AR+Diffusion路线的开端，为后续讨论其记忆缺陷铺垫。",
+            "关键文字": [
+              "Diffusion forcing 探索把 AR 引入 Diffusion Model"
+            ],
+            "视觉骨架": [
+              "顶部红框论点条",
+              "方法示意画面"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 11,
+            "页面角色": "content_candidate",
+            "标题": "Diffusion Forcing长期记忆差",
+            "核心论断": "Diffusion Forcing长期记忆弱，长时生成画面损失并重复动作",
+            "本页讲什么": "本页揭示Diffusion Forcing缺陷：长期记忆能力不足，当生成时间过长会出现画面损失、动作不断重复，配两段视频帧对比画面直观展示退化，引出下一页对根因的分析。",
+            "关键文字": [
+              "Diffusion Forcing 长期记忆能力不好",
+              "生成时间过长出现画面损失、动作重复"
+            ],
+            "视觉骨架": [
+              "退化视频帧对比画面",
+              "顶部红框论点条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 12,
+            "页面角色": "content_candidate",
+            "标题": "根因：缺长期KV Cache",
+            "核心论断": "Diffusion Forcing记忆差根因是缺少长期KV Cache",
+            "本页讲什么": "本页分析上页退化的根本原因：Diffusion Forcing缺少长期KV Cache，无法保留远端历史信息，导致长期记忆失效，为下一页Self Forcing建立完整KV Cache的方案作对比铺垫。",
+            "关键文字": [
+              "主要原因是 Diffusion Forcing 缺少长期 KV Cache"
+            ],
+            "视觉骨架": [
+              "顶部红框论点条",
+              "KV Cache 示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 13,
+            "页面角色": "content_candidate",
+            "标题": "Self Forcing建立完整KV Cache",
+            "核心论断": "Self Forcing建立完整KV Cache以补齐长期记忆",
+            "本页讲什么": "本页引入Self Forcing(arXiv:2506.08009)，说明它针对Diffusion Forcing缺陷建立了完整的KV Cache，从而增强长期记忆，配示意画面，承接上页根因给出解法。",
+            "关键文字": [
+              "Self Forcing 建立完整的 KV Cache"
+            ],
+            "视觉骨架": [
+              "顶部红框论点条",
+              "KV Cache 机制示意画面"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 14,
+            "页面角色": "content_candidate",
+            "标题": "Self Forcing的frame/iteration机制",
+            "核心论断": "Self Forcing以完整KV Cache按frame/iteration自回归生成",
+            "本页讲什么": "本页展开Self Forcing机制：其保有完整KV Cache，并以frame/iteration方式逐帧自回归推进（对比token/iteration），引用Self Forcing、Longlive、Rolling Forcing三项工作，用多组示意画面说明该范式的迭代粒度。",
+            "关键文字": [
+              "Self Forcing 完整 KV Cache",
+              "frame/iteration 与 token/iteration",
+              "Self-Forcing 逐帧自回归"
+            ],
+            "视觉骨架": [
+              "多组机制示意画面",
+              "frame/iteration 标注",
+              "顶部红框论点条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 15,
+            "页面角色": "content_candidate",
+            "标题": "Self Forcing的sink+window机制",
+            "核心论断": "Self Forcing以KV Cache约5k/iteration配sink+window维持长程",
+            "本页讲什么": "本页续讲Self Forcing的KV管理：采用attention sink加窗口(window)机制，KV Cache约5k/iteration，在frame/iteration自回归下兼顾长程记忆与开销，引用krea-realtime-14b等实践。",
+            "关键文字": [
+              "Self-Forcing frame/iteration",
+              "KV Cache 约 5k/iteration",
+              "sink + window 机制"
+            ],
+            "视觉骨架": [
+              "sink+window 机制示意",
+              "5k/iteration 数据标注",
+              "顶部红框论点条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 16,
+            "页面角色": "content_candidate",
+            "标题": "AR+Diffusion兼顾记忆与算力",
+            "核心论断": "AR+Diffusion工作在构建长期记忆同时限制计算量",
+            "本页讲什么": "本页小结AR+Diffusion路线：这类工作尝试在构建长期记忆的同时限制计算量（降计算），底部用三段箭头串起AR+Diffusion→长期KV+限计算量→sink+sliding window的技术递进，收束前面各工作。",
+            "关键文字": [
+              "AR+Diffusion 构建长期记忆同时限制计算量",
+              "降计算",
+              "sink + sliding window"
+            ],
+            "视觉骨架": [
+              "3 段箭头技术递进",
+              "AR+Diffusion→KV→sliding window",
+              "顶部红框论点条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 17,
+            "页面角色": "content_candidate",
+            "标题": "滑窗AR+Diffusion的注意力开销",
+            "核心论断": "滑窗AR+Diffusion限住KV但注意力算力仍高(4-12倍)",
+            "本页讲什么": "本页指出滑动窗口AR+Diffusion的残余瓶颈：虽用滑窗限制了KV规模，但attention计算仍偏高，标注Q:5k、KV:19k、Attn接近Linear及4-12倍的算力放大，说明访存/算力问题未根除。",
+            "关键文字": [
+              "基于滑动窗口的 AR+Diffusion 限制了 KV",
+              "attention 计算仍高",
+              "Q:5k KV:19k，Attn≈Linear",
+              "算力 4-12 倍"
+            ],
+            "视觉骨架": [
+              "滑窗注意力示意",
+              "Q/KV规模与Attn标注",
+              "4-12倍算力箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 18,
+            "页面角色": "content_candidate",
+            "标题": "研究背景：长视频仅能生成约10s",
+            "核心论断": "受双向注意力与diffusion开销制约，长视频仅能生成约10s",
+            "本页讲什么": "本页为背景章收束页，点明核心痛点：视频生成始终只能生成约10s，原因在于双向注意力与diffusion model的算力/访存开销随时长激增，配帧间注意力矩阵与block/layer示意，为LOAC加速器立靶。",
+            "关键文字": [
+              "视频生成始终只能生成 10s 左右",
+              "原因是 bidirectional attention 与 diffusion model 开销"
+            ],
+            "视觉骨架": [
+              "帧间注意力矩阵",
+              "block/layer 示意",
+              "10s 限制红字标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 19,
+            "页面角色": "content_candidate",
+            "标题": "章节导航：进入第二部分「研究挑战」",
+            "核心论断": "全篇分四部分，现进入第2部分——研究挑战",
+            "本页讲什么": "四部分章节导航页，用带圈数字列出1研究背景、2研究挑战、3、4四大板块，其中第2项「研究挑战」被加深高亮（左侧蓝色竖条标记），表示演讲进入三大研究挑战章节。是本 section 的过渡开场页。",
+            "关键文字": [
+              "1 研究背景",
+              "2 研究挑战",
+              "3",
+              "4"
+            ],
+            "视觉骨架": [
+              "4 项带圈数字纵向导航列表",
+              "左侧蓝色进度竖条",
+              "外框边界线"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "problem"
+          },
+          {
+            "页序号": 20,
+            "页面角色": "content_candidate",
+            "标题": "挑战1：稀疏注意力难识别重要区间",
+            "核心论断": "已有动/静态稀疏注意力无法有效识别注意力的重要区间",
+            "本页讲什么": "抛出第一大挑战：之前的动态或静态稀疏注意力工作无法有效识别注意力的重要区间。顶部红色断言框点题，下方用两张注意力图对比（Full map 完整注意力 vs Spec map 稀疏推测注意力）直观展示稀疏方案漏掉重要区间的问题。引用 Sparse VideoGen 工作。",
+            "关键文字": [
+              "挑战1：之前的动态或者静态稀疏注意力工作，无法有效识别注意力的重要区间",
+              "Full map",
+              "Spec map",
+              "Source: Sparse VideoGen (arXiv:2502.01776)"
+            ],
+            "视觉骨架": [
+              "顶部红色断言框",
+              "Full map / Spec map 注意力图对比",
+              "底部 source 引用条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "problem"
+          },
+          {
+            "页序号": 21,
+            "页面角色": "content_candidate",
+            "标题": "挑战1（续）：重要区间识别失效实证",
+            "核心论断": "多组注意力图佐证稀疏方法漏识别重要区间",
+            "本页讲什么": "承接上页，继续论证挑战1。同一红色断言框标题不变，下方铺开更多（约5张）注意力可视化图，用更多样本进一步实证已有稀疏注意力方法无法准确识别重要区间，强化问题的普遍性。同样引用 Sparse VideoGen。",
+            "关键文字": [
+              "挑战1：之前的动态或者静态稀疏注意力工作，无法有效识别注意力的重要区间",
+              "Source: Sparse VideoGen (arXiv:2502.01776)"
+            ],
+            "视觉骨架": [
+              "顶部红色断言框",
+              "多张注意力可视化图铺排",
+              "底部 source 引用条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "problem"
+          },
+          {
+            "页序号": 22,
+            "页面角色": "content_candidate",
+            "标题": "挑战2：GPU block-sparse 稀疏难落地",
+            "核心论断": "GPU 上的 block-sparse 稀疏方案难适配加速需求",
+            "本页讲什么": "引出第二大挑战的前半：现有 GPU 上的 block-sparse 稀疏注意力方案在细粒度稀疏场景下难以有效落地/加速。顶部红色断言框点出 GPU、block-sparse 关键词，为下页「细粒度稀疏硬件不适配 AR+Diffusion」铺垫。引用 SWAT (FPGA window attention) 工作。",
+            "关键文字": [
+              "挑战2：GPU block-sparse 稀疏方案难以有效落地",
+              "Source: SWAT, DAC 2024"
+            ],
+            "视觉骨架": [
+              "顶部红色断言框（含 GPU/block-sparse）",
+              "配套硬件/稀疏示意图",
+              "底部 source 引用条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "problem"
+          },
+          {
+            "页序号": 23,
+            "页面角色": "content_candidate",
+            "标题": "挑战2：细粒度稀疏硬件不适配 AR+Diffusion",
+            "核心论断": "已有细粒度稀疏硬件架构不适合 AR+Diffusion 场景",
+            "本页讲什么": "承接上页，点明挑战2核心：之前的细粒度稀疏硬件架构不适合 AR+Diffusion 的混合稀疏模式。顶部红框强调 AR+Diffusion 与 sparse 关键词，说明现有专用加速器难以同时支撑自回归与扩散两种稀疏形态。引用 SALO 混合稀疏注意力加速器工作。",
+            "关键文字": [
+              "挑战2：之前的细粒度稀疏硬件架构不适合 AR+Diffusion",
+              "AR+Diffusion",
+              "sparse",
+              "Source: SALO, DAC 2022"
+            ],
+            "视觉骨架": [
+              "顶部红色断言框（含 AR+Diffusion/sparse）",
+              "配套架构/稀疏模式示意图",
+              "底部 source 引用条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "problem"
+          },
+          {
+            "页序号": 24,
+            "页面角色": "content_candidate",
+            "标题": "挑战3：KV 压缩不适配 diffusion",
+            "核心论断": "已有 KV 压缩/缓存方案不适配 diffusion 生成",
+            "本页讲什么": "抛出第三大挑战、也是本章收尾：之前的 KV 压缩（KV-cache 压缩）方案不适配 diffusion 生成范式。顶部红框以 KV、diffusion 关键词点题，说明沿用自回归 LLM 的 KV 压缩策略无法直接迁移到扩散视频生成，为后续第三项设计铺垫。引用 SALO 工作。",
+            "关键文字": [
+              "挑战3：之前的 KV 压缩方案不适配 diffusion",
+              "KV",
+              "diffusion",
+              "Source: SALO, DAC 2022"
+            ],
+            "视觉骨架": [
+              "顶部红色断言框（含 KV/diffusion）",
+              "配套 KV 压缩示意图",
+              "底部 source 引用条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "problem"
+          },
+          {
+            "页序号": 25,
+            "页面角色": "content_candidate",
+            "标题": "四段式目录导航（定位到研究内容）",
+            "核心论断": "全篇按四大板块推进，此处切入第三板块研究内容",
+            "本页讲什么": "整页是一张四项编号目录导航：①研究背景 ②研究挑战 ③研究内容 ④实验结果（编号圆圈+方框结构）。当前第③项加深高亮，其余灰化，表示演讲进入核心设计（研究内容）板块。属章节切换页，用来给听众定位当前汇报进度。",
+            "关键文字": [
+              "1 研究背景",
+              "2 研究挑战",
+              "3 研究内容",
+              "4 实验结果"
+            ],
+            "视觉骨架": [
+              "4 项编号圆圈+方框列表",
+              "左侧蓝色进度竖条",
+              "当前项加深高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 26,
+            "页面角色": "content_candidate",
+            "标题": "四段式目录导航（定位到实验结果）",
+            "核心论断": "沿四大板块继续推进，此处切入第四板块实验结果",
+            "本页讲什么": "与上页同一张四项编号目录导航（①研究背景②研究挑战③研究内容④实验结果），此处改为第④项实验结果加深高亮，其余灰化，标记汇报即将进入结果板块。与上页构成同模板的进度指示对，是章节间过渡导航页。",
+            "关键文字": [
+              "1 研究背景",
+              "2 研究挑战",
+              "3 研究内容",
+              "4 实验结果"
+            ],
+            "视觉骨架": [
+              "4 项编号圆圈+方框列表",
+              "左侧蓝色进度竖条",
+              "当前项加深高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 27,
+            "页面角色": "content_candidate",
+            "标题": "内容1：统一的注意力稀疏方式（引入）",
+            "核心论断": "以 mask/map 统一表达注意力稀疏，layer0 逐块施加",
+            "本页讲什么": "核心设计第一项“统一的注意力稀疏方式”的引入页。顶部蓝条标题下有一条横向说明框，红色文字点出用 mask 与 map 表达注意力稀疏、layer0 逐块处理的思路，下方有一个待补充的示意小框+引线。整体为该子方法的开场铺垫页，正文尚为占位状态。",
+            "关键文字": [
+              "内容1：统一的注意力稀疏方式",
+              "mask 与 map 表达注意力稀疏",
+              "layer0 逐块施加 mask"
+            ],
+            "视觉骨架": [
+              "蓝条标题+横向说明框",
+              "红色要点文字",
+              "待补充示意小框+引线"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 28,
+            "页面角色": "content_candidate",
+            "标题": "内容1：轻量级预测施加粗细 mask",
+            "核心论断": "按帧内注意力分数和采样，给每块施加不同粗细 mask",
+            "本页讲什么": "承接上页，展开“统一稀疏方式”的轻量级预测机制：通过采样统计每帧内注意力分数和，给不同块施加粗细不同的 mask。右侧用注意力分数向量 [0.1,0.5,0.2,0.05] 映射到密度 [25%,100%,50%,12.5%]，配合左侧三个块条与引线箭头，直观说明分数越高、mask 越密（保留越多）。",
+            "关键文字": [
+              "轻量级预测：采样统计每帧内注意力分数和",
+              "给每个块施加不同粗细的 mask",
+              "[0.1, 0.5, 0.2, 0.05]",
+              "[25%, 100%, 50%, 12.5%]"
+            ],
+            "视觉骨架": [
+              "左侧三块条示意",
+              "注意力分数向量→密度向量映射",
+              "引线箭头分配"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 29,
+            "页面角色": "content_candidate",
+            "标题": "内容1：稀疏密度可降至 20%",
+            "核心论断": "统一稀疏方式可将密度压至 20%（含 20% timestep 预热）",
+            "本页讲什么": "统一稀疏方式的效果结论页：在 20% timestep warmup 条件下，注意力密度可降至 density=20%，即仅保留约两成计算量。整页仅顶部一条横向框内的红色结论文字，正文其余为空，用于一句话点明稀疏方案能达到的压缩水平，收束内容1。",
+            "关键文字": [
+              "density=20%",
+              "20% timestep warmup"
+            ],
+            "视觉骨架": [
+              "蓝条标题+横向结论框",
+              "单行红色数值结论"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 30,
+            "页面角色": "content_candidate",
+            "标题": "内容2：KV 索引+压缩（引入）",
+            "核心论断": "在密集 dense 注意力矩阵上做 KV 索引与压缩",
+            "本页讲什么": "核心设计第二项“KV 索引+压缩”的引入页。顶部标题下横向框内红色文字点明面向密集 dense 注意力矩阵的处理，右下角给出一张绿/灰相间的密集注意力掩码矩阵示意，代表稀疏后的 KV 分布。整体为该子方法的开场页，用密集矩阵图引出后续索引与压缩流程。",
+            "关键文字": [
+              "内容2：KV 索引+压缩",
+              "针对 dense 密集注意力矩阵"
+            ],
+            "视觉骨架": [
+              "蓝条标题+横向说明框",
+              "绿灰相间密集掩码矩阵"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 31,
+            "页面角色": "content_candidate",
+            "标题": "内容2：KV 索引+压缩数据流全图",
+            "核心论断": "掩码矩阵经分块索引重排后压缩，得到紧凑 KV 排布",
+            "本页讲什么": "内容2 的完整流程图页：从左到右依次为密集绿色注意力矩阵→粉色分块网格→带 0~7 行列编号的稀疏掩码矩阵（含斜向索引标注）→右侧 3/2/1/0…6/5/4/3 的编号块阵列，展示如何对 KV 做索引重排与压缩、把稀疏分布映射成紧凑排列。是本子方法的核心机制示意，元素密集（约 80 个形状）。",
+            "关键文字": [
+              "内容2：KV 索引+压缩",
+              "dense 矩阵→分块→索引重排→压缩排列"
+            ],
+            "视觉骨架": [
+              "密集绿色矩阵",
+              "粉色分块网格阵列",
+              "带 0-7 编号的索引掩码矩阵",
+              "重排后编号块阵列"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 32,
+            "页面角色": "content_candidate",
+            "标题": "内容3：基于 Flash Attention 的硬件数据流",
+            "核心论断": "按 Local-KV/Cache-KV 分层组织 Flash Attention 数据流",
+            "本页讲什么": "核心设计第三项“基于 Flash Attention 的硬件架构数据流”页。左侧用金字塔分层图表示存储层次：上层 L1 对应 Local-KV、下层 L2 对应 Cache-KV，两侧箭头指向各自 KV。顶部红色文字点明按 KV 数据流组织硬件计算，把注意力稀疏与 KV 压缩落到硬件访存层次上，收束整套核心设计。",
+            "关键文字": [
+              "内容3：基于 Flash Attention 硬件架构数据流",
+              "Local-KV 对应 L1",
+              "Cache-KV 对应 L2"
+            ],
+            "视觉骨架": [
+              "金字塔两层 L1/L2 结构",
+              "Local-KV/Cache-KV 标注箭头",
+              "蓝条标题+说明框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "chapter_candidate",
+            "section_role": "method"
+          }
+        ],
+        "chapter_candidate": [
+          {
+            "页序号": 33,
+            "页面角色": "chapter_candidate",
+            "标题": "章节分隔页: 实验",
+            "核心论断": "论述转入实验验证阶段, 本页仅作章节过渡不含数据",
+            "本页讲什么": "「实验」章节的分隔/过渡页。左上角一个大字标题「实验」, 下方一条粗蓝色横向分隔线, 页面主体大面积留白, 无任何图表或正文。底部页脚为 Li Ding @ Shanghai Jiao Tong University 与 Page 编号。它标志 deck 从前面三项设计论述切入效果验证, 起分幕作用, 具体实验内容与数据在后续页面展开。",
+            "关键文字": [
+              "实验",
+              "Li Ding @ Shanghai Jiao Tong University (vision)"
+            ],
+            "视觉骨架": [
+              "左上角大字章节标题",
+              "标题下粗蓝色横分隔线",
+              "大面积空白主体",
+              "底部机构/页码页脚"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "ending_candidate",
+            "section_role": "experiment"
+          }
+        ],
+        "ending_candidate": [
+          {
+            "页序号": 34,
+            "页面角色": "ending_candidate",
+            "标题": "感谢聆听（汇报收尾致谢页）",
+            "核心论断": "以「感谢聆听」+ 署名 + 日期礼节性收束整场技术汇报",
+            "本页讲什么": "全 deck 的最后一页致谢结束页，无内容推进。左上角「感谢聆听！」主标题，中部一条淡粉分隔线下署汇报人姓名「丁立」，底部标注汇报日期「2025 年 11 月 8 日」，页脚落款「Li Ding @ Shanghai Jiao Tong University」。整页留白极大，纯作礼貌性结束与身份落款。",
+            "关键文字": [
+              "感谢聆听！",
+              "丁立",
+              "2025 年 11 月 8 日",
+              "Li Ding @ Shanghai Jiao Tong University"
+            ],
+            "视觉骨架": [
+              "左上主标题",
+              "居中淡粉水平分隔线",
+              "中部署名文字",
+              "底部日期与页脚落款"
+            ],
+            "上页角色": "chapter_candidate",
+            "下页角色": null,
+            "section_role": "closing"
+          }
+        ]
+      }
+    }
+  ],
+  "previous_batches_rules": []
+}

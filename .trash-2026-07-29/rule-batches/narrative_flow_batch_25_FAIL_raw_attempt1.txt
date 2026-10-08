@@ -1,0 +1,8 @@
+{
+  "batch_index": 25,
+  "rules": [
+    {
+      "id": "problem_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has both problem/challenge section and method section",
+      "title": "问题章挑战需在方法章逐

@@ -1,0 +1,47 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_51"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.09"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 51
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "回顾：LLM 的成本与延迟背景"
+核心论断: "居高不下的推理成本与延迟是稀疏加速的根本动因"
+本页讲什么: "作为总结章的开场，回收全 deck 起点：LLM 的推理成本（Cost）与延迟（Latency）问题，并重述 Preliminary/Background 中建立的前提，把听众的注意力从具体技术拉回到「为什么要做稀疏加速」这条主线上，为后一页的 Scaling Law 总结做铺垫。"
+关键文字: "[\"Background: Cost and Latency of LLM\", Preliminary]"
+视觉骨架: "[成本-延迟背景示意, Preliminary 编号分区]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_51.asset.01]"
+适合复用场景: "[大模型稀疏加速总结章开场, 推理成本动机的收尾回顾页]"
+不适合复用场景: "[具体算法方法详解页, 含 benchmark 数字的结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题区", "内容": "Background: Cost and Latency of LLM"}
+  - {"位置": "下方主体", "内容": "Preliminary 编号分区 + 成本-延迟背景示意"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 51: 回顾：LLM 的成本与延迟背景
+
+**核心论断**: 居高不下的推理成本与延迟是稀疏加速的根本动因
+
+## 本页讲什么
+作为总结章的开场，回收全 deck 起点：LLM 的推理成本（Cost）与延迟（Latency）问题，并重述 Preliminary/Background 中建立的前提，把听众的注意力从具体技术拉回到「为什么要做稀疏加速」这条主线上，为后一页的 Scaling Law 总结做铺垫。
+
+## 关键文字片段
+- Background: Cost and Latency of LLM
+- Preliminary
+
+## 视觉骨架
+- 成本-延迟背景示意
+- Preliminary 编号分区
+
+## 可复用到
+- 大模型稀疏加速总结章开场
+- 推理成本动机的收尾回顾页
+
+## 不适合复用的场景
+- 具体算法方法详解页
+- 含 benchmark 数字的结果页

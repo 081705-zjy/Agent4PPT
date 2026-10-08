@@ -1,0 +1,820 @@
+{
+  "batch_index": 22,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+      "目录名": "视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+      "标题": "视频生成模型(VGM)技术路径及高效训推",
+      "总页数": 33,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_VGM-背景与技术路径概述",
+        "section_03_VGM-技术路径演进",
+        "section_04_VGM-高效推理方法",
+        "section_05_VGM-训练框架与压缩策略",
+        "section_06_总结与未来工作",
+        "section_07_致谢"
+      ],
+      "主题标签": [
+        "视频生成",
+        "扩散模型",
+        "DiT",
+        "3D-VAE",
+        "稀疏Attention",
+        "高效推理",
+        "训练加速",
+        "自回归"
+      ],
+      "目标受众": "AI 科研同行/内部组会技术交流",
+      "报告类型": "research_report",
+      "适用场景": "实验室组会分享视频生成模型技术综述与训推优化",
+      "论述总结": "系统梳理视频生成模型(VGM)的技术演进,从 GAN/VAE、UNet/DiT 扩散到 3D-DiT 与自回归路线;继而分别讲解面向 VGM 的高效推理方法(Token 复用/合并、缓存)与高效训练框架(稀疏 Attention、3D-VAE、Loss 设计、Open-Sora-Plan 实践),最后总结并展望未来工作。",
+      "论述弧线": [
+        "背景",
+        "技术路径",
+        "高效推理",
+        "训练框架",
+        "总结展望"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "视频生成模型(VGM)技术路径及高效训推",
+          "核心论断": "本报告聚焦 VGM 的技术路径与高效训练推理",
+          "本页讲什么": "全 deck 极简封面页:居中偏左的黑色大标题点出主题「视频生成模型(VGM)技术路径及高效训推」,下方一条淡粉色分隔线区隔标题区与信息区,信息区列出讲者「丁立」与日期「2024.12.7」,页脚署名「Li Ding @ CCC Lab」。整页留白极大、无配图,纯文字排版。",
+          "关键文字": [
+            "视频生成模型(VGM)技术路径及高效训推",
+            "丁立",
+            "2024.12.7",
+            "Li Ding @ CCC Lab"
+          ],
+          "视觉骨架": [
+            "居中偏左大标题",
+            "淡粉色横向分隔线",
+            "讲者+日期信息块",
+            "页脚署名"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Contents 四项编号目录(高亮首章)",
+          "核心论断": "全篇按背景→训练框架→高效推理→总结四章推进,当前进入首章",
+          "本页讲什么": "目录页:顶部蓝色「Contents」标题外套蓝色矩形边框,主体为四条带蓝色圆圈编号(①②③④)的章节条目,依次为「VGM背景及技术路径」「VGM训练框架」「VGM高效推理」「总结与展望」。首条为黑色高亮表示当前所在章,后三条灰化表示未展开;左侧一段蓝色竖条作进度/定位标记。搭好全篇四章骨架。",
+          "关键文字": [
+            "Contents",
+            "VGM背景及技术路径",
+            "VGM训练框架",
+            "VGM高效推理",
+            "总结与展望",
+            "2024/12/7"
+          ],
+          "视觉骨架": [
+            "蓝色矩形外框",
+            "Contents 标题",
+            "①②③④ 圆圈编号列表",
+            "左侧蓝色进度竖条",
+            "首项高亮/余项灰化"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "Contents 目录:VGM 四大板块导航",
+          "核心论断": "全 deck 分四板块推进,首讲 VGM 背景及技术路径",
+          "本页讲什么": "这是一页目录/议程页,列出全报告四个板块:①VGM 背景及技术路径(当前高亮)、②VGM 训练框架、③VGM 推理、④(效率/优化相关板块)。左侧蓝色进度条与高亮圈标示当前进入第①板块,为后续章节建立导航坐标。",
+          "关键文字": [
+            "Contents",
+            "① VGM 背景及技术路径",
+            "② VGM 训练框架",
+            "③ VGM 推理"
+          ],
+          "视觉骨架": [
+            "外层蓝色边框",
+            "1-4 编号圆圈列表",
+            "左侧蓝色当前项进度条",
+            "当前项高亮/其余灰化"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "视频生成模型(VGM)背景:三大发展趋势",
+          "核心论断": "VGM 沿高分辨 Scaling、3D 时空建模、长视频自回归三方向演进",
+          "本页讲什么": "本页立起 VGM 三大主流发展趋势:①高分辨率(1080P、2K)采用 DiT/Transformer 架构,符合大模型 Scaling Law;②3D 时空建模,用 3D Attention 将视频切成 patches 联合建模;③长视频生成(5 分钟++)走自回归模型+Diffusion 路线。下方以 Sora[1]、Vidu[2] 两个代表作配图佐证,为后续技术路径页铺底。",
+          "关键文字": [
+            "视频生成模型(VGM)的三大发展趋势",
+            "高分辨(1080P,2K),基于 DiT 的 Transformer 架构,符合 Scaling Law",
+            "3D 时空建模,3D Attention,将视频切成 patches",
+            "长视频生成(5 分钟++),自回归模型+Diffusion",
+            "Sora [1]",
+            "Vidu [2]"
+          ],
+          "视觉骨架": [
+            "三条编号趋势文字列表",
+            "关键词红色/加粗强调",
+            "顶部蓝色分割横线",
+            "底部左右双图占位(Sora/Vidu)",
+            "底部参考文献行"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "VGM 技术路径:范式演进时间线",
+          "核心论断": "VGM 由 GAN/VAE 经 DiT/3D-DiT 扩散演进至自回归范式",
+          "本页讲什么": "本页用一条横向演进链梳理 VGM 技术路径:GAN/VAE→Unet diffusion→DiT-diffusion(主流范式)→3D-DiT-diffusion→3D-DiT-flow matching(探索性范式)→Autoregressive(未来发展趋势)。每个节点下方虚线对应代表作:MagicVideo、Latte/OpenSora、CogVideoX/OpenSora Plan、Movie Gen、MovieDreamer、VAR/Emu3,把技术演进与落地模型逐一映射,为后续训推方法章定坐标。",
+          "关键文字": [
+            "从技术演进角度看 VGM 技术路径",
+            "GAN/VAE → Unet diffusion → DiT-diffusion",
+            "3D-DiT-diffusion → 3D-DiT-flow matching → Autoregressive",
+            "主流范式 / 探索性范式 / 未来发展趋势",
+            "MagicVideo、Latte、OpenSora、CogVideoX、OpenSora Plan",
+            "Movie Gen、MovieDreamer、VAR、Emu3"
+          ],
+          "视觉骨架": [
+            "横向 6 节点方框+箭头演进链",
+            "三段虚线分组框(主流/探索/未来)",
+            "红色分组小标题",
+            "下方虚线引出代表作分栏",
+            "节点-代表作连接虚线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "更高分辨率: UNet-diffusion 引入",
+          "核心论断": "Diffusion Model 以 UNet 为主干支撑高分辨率生成",
+          "本页讲什么": "开篇引入扩散模型路线:Diffusion Model 通过逐步去噪生成图像,主干网络采用 UNet 编解码结构,为后续高分辨率视频生成奠定架构基础。整页为纯文字说明,附 YouTube 教程链接。",
+          "关键文字": [
+            "Diffusion Model 以 UNet 为主要架构",
+            "UNet-diffusion 路线"
+          ],
+          "视觉骨架": [
+            "纯文字说明段落",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "UNet-diffusion: 潜空间扩散 LDM",
+          "核心论断": "LDM 将扩散移至潜空间实现高分辨率合成",
+          "本页讲什么": "以 Latent Diffusion Models 为例,展示在 VAE 压缩后的潜空间执行 UNet 扩散,降低高分辨率图像合成的算力开销。主体为嵌入的 LDM 架构示意图,正文极简。",
+          "关键文字": [
+            "High-Resolution Image Synthesis with Latent Diffusion Models"
+          ],
+          "视觉骨架": [
+            "LDM 架构示意图 (嵌图)",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "UNet-diffusion: LDM 细节续",
+          "核心论断": "LDM 潜空间扩散兼顾高分辨率与生成质量",
+          "本页讲什么": "承接上页 LDM,继续以嵌入图示展示潜空间扩散的架构或生成效果细节,补充 UNet-diffusion 在高分辨率合成上的表现。正文极简,视觉以图片为主。",
+          "关键文字": [
+            "High-Resolution Image Synthesis with Latent Diffusion Models"
+          ],
+          "视觉骨架": [
+            "LDM 相关示意图 (嵌图)",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "UNet-diffusion: UNet 的 block 组成",
+          "核心论断": "UNet 由 ResNet/Transformer/Conv 等 block 堆叠而成",
+          "本页讲什么": "拆解 UNet(及 U-Net++)的内部构成,说明每个 block 由 ResNet、Transformer、Conv 等模块组合,并引出对文本到图像扩散模型的结构压缩思路。右侧列出三类 block。",
+          "关键文字": [
+            "U-Net++",
+            "block 由 ResNet / Transformer / Conv 组成",
+            "On Architectural Compression of Text-to-Image Diffusion Models"
+          ],
+          "视觉骨架": [
+            "U-Net++ 结构示意",
+            "block 类型列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "UNet-diffusion 视频生成: MagicVideo",
+          "核心论断": "MagicVideo 在 UNet 上加时空注意力与 CLIP 生成视频",
+          "本页讲什么": "介绍 MagicVideo 如何基于 UNet-diffusion 扩展到视频:1) 引入 Spatial-Temporal Attention 建模帧间时序;2) 用 CLIP 文本编码注入 U-Net 实现文本条件生成。本页为纯文字要点。",
+          "关键文字": [
+            "MagicVideo 基于 UNet-diffusion 生成视频",
+            "Spatial-Temporal Attention 建模时序",
+            "CLIP 文本条件注入 U-Net"
+          ],
+          "视觉骨架": [
+            "两条编号要点",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "content_candidate",
+          "标题": "MagicVideo: 时空分离注意力结构",
+          "核心论断": "时空分离注意力分别建模帧内空间与跨帧时序",
+          "本页讲什么": "承接上页,用结构图展开 MagicVideo 的时空注意力:Spatial Attention 在 QKV/O Projection 内对单帧 patch 自注意力,Temporal Attention 跨 Frame i-1/i/i+1 做多头自注意力,实现空间细节与时间连贯的分离建模。",
+          "关键文字": [
+            "Temporal Attention 跨帧建模",
+            "Spatial Attention 帧内建模",
+            "QKV / O Projection",
+            "Multi-head Self Attention"
+          ],
+          "视觉骨架": [
+            "时空注意力结构图",
+            "QKV/O Projection 模块框",
+            "多帧输入箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "更高分辨率: DiT-diffusion",
+          "核心论断": "将 UNet 替换为 Transformer 得到 DiT",
+          "本页讲什么": "引出 DiT 路线,把扩散主干从 UNet 换成 Transformer(Diffusion Transformer)。左栏列 U-Net 的特点与局限,右栏列 Transformer 的可扩展性优势,通过左右对比说明架构演进动机。",
+          "关键文字": [
+            "UNet 替换成 Transformer 架构 (Diffusion Transformer)",
+            "U-Net 的特点与局限",
+            "Transformer 的特点与优势"
+          ],
+          "视觉骨架": [
+            "左右两栏对比",
+            "中间演进箭头",
+            "红色分隔线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "DiT-diffusion: DiT 内部结构",
+          "核心论断": "DiT 用 Spatial+Temporal Attention 在 Transformer 内建模",
+          "本页讲什么": "展开 DiT 内部结构,说明用 Transformer 替换 UNet 后通过 Spatial+Temporal Attention 处理时空信息;图中以①②③虚线框标注 DiT block 的关键组成与连接关系,引自 DiT 原论文。",
+          "关键文字": [
+            "UNet 替换成 Transformer 架构 (DiT)",
+            "DiT 中的 Spatial+Temporal Attention",
+            "Scalable Diffusion Models with Transformers"
+          ],
+          "视觉骨架": [
+            "DiT 结构示意图",
+            "①②③ 虚线标注框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "更强时空一致性: 3D-DiT-diffusion",
+          "核心论断": "3D-DiT 联合时空 token 注意力提升时空一致性",
+          "本页讲什么": "进入时空一致性主题,对比 2D+1D DiT(Spatial Transformer 与 Temporal Transformer 分离)与 3D DiT(时空 token 拼接后统一 3D Transformer),说明 3D 全注意力更好建模时空一致性;以 CogVideoX 的 Transformer(MSA+FFN、Tokenizing/Embedding)为例。",
+          "关键文字": [
+            "Spatial+Temporal Attention",
+            "3D DiT 拼接 token 统一建模",
+            "CogVideoX: Text-to-Video with Expert Transformer"
+          ],
+          "视觉骨架": [
+            "2D+1D DiT vs 3D DiT 对比图",
+            "Transformer MSA/FFN 结构框",
+            "Tokenizing/Embedding 流程"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "更强时空一致性: 3D-DiT-flow matching",
+          "核心论断": "Flow Matching 用 ODE 直路径替代扩散训练",
+          "本页讲什么": "在 3D-DiT 基础上把训练目标从扩散换为 Flow Matching,通过学习 ODE 速度场沿更直的路径把噪声映射到数据,提升生成稳定性与采样效率。本页为纯文字说明。",
+          "关键文字": [
+            "Flow Matching 基于 ODE 学习速度场",
+            "FLOW MATCHING FOR GENERATIVE MODELING"
+          ],
+          "视觉骨架": [
+            "纯文字说明段落",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "更长视频生成: Autoregressive (AR+扩散)",
+          "核心论断": "自回归+扩散逐段延展实现更长视频生成",
+          "本页讲什么": "进入时长主题,介绍自回归两条路线的第一条并高亮:Autoregressive + Diffusion,用扩散生成每段并以前段为条件自回归延展(类 Image-to-Video),以 MovieDreamer 为例实现长序列连贯生成。第二条路线本页弱化。",
+          "关键文字": [
+            "Autoregressive + Diffusion 逐段延展",
+            "类 Image-to-Video 条件生成",
+            "MOVIEDREAMER: 长视觉序列生成"
+          ],
+          "视觉骨架": [
+            "两条编号要点 (要点1 高亮)",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "更长视频生成: Autoregressive (纯 token)",
+          "核心论断": "纯自回归以 next-token 预测生成视频 token",
+          "本页讲什么": "同一页面推进,高亮自回归第二条路线:抛弃扩散,把视频离散成 token 序列做自回归 decoding,逐 token/帧生成;以 Emu3『Next-Token Prediction is All You Need』为例说明统一的 token 预测范式。",
+          "关键文字": [
+            "Autoregressive 纯 token decoding 逐 token/帧生成",
+            "Emu3: Next-Token Prediction is All You Need"
+          ],
+          "视觉骨架": [
+            "两条编号要点 (要点2 高亮)",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "更长视频生成: Autoregressive (next-scale)",
+          "核心论断": "next-scale 自回归按尺度预测提升生成效率",
+          "本页讲什么": "承接纯自回归路线并作为本章收尾,以 VAR 为例展示 next-scale prediction:不再逐 token,而是从粗到细按分辨率尺度自回归生成,兼顾质量与效率,收束时长维度的技术演进。",
+          "关键文字": [
+            "Autoregressive token decoding 逐 token/帧生成",
+            "Visual Autoregressive Modeling: Next-Scale Prediction"
+          ],
+          "视觉骨架": [
+            "两条编号要点 (要点2 高亮)",
+            "蓝色标题分割线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "Contents:定位「VGM 高效推理方法」为第 2 主题",
+          "核心论断": "全篇四大主题中,本章聚焦第 2 项「VGM 高效推理方法」",
+          "本页讲什么": "章节切换的 Contents 目录页,列出四个主题:①VGM 技术路线 ②VGM 高效推理方法 ③VGM 训练框架 ④(应用/总结)。第 2 项「VGM 高效推理方法」被蓝色高亮并加竖条标记,其余三项灰化,提示演讲进入本章。",
+          "关键文字": [
+            "Contents",
+            "① VGM 技术路线",
+            "② VGM 高效推理方法",
+            "③ VGM 训练框架"
+          ],
+          "视觉骨架": [
+            "蓝色边框目录卡",
+            "四项编号圆点列表",
+            "当前项蓝色高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "VGM 高效推理方法总览:空间与时间两条冗余主线",
+          "核心论断": "VGM 推理加速可从空间冗余与时间冗余两个角度分别做 Token 复用",
+          "本页讲什么": "本章 overview 页。顶部指出扩散类 VGM 推理慢,存在大量「冗余」计算可优化。中部用红色括号把 VGM 分为两条主线:空间冗余角度→Token Reuse/Merge[1](VidToMe),时间冗余角度→Token Reuse/缓存[2](Adaptive Caching),为后续两类具体加速方法铺垫。",
+          "关键文字": [
+            "扩散类 VGM 推理存在大量冗余计算可优化",
+            "空间冗余角度:Token Reuse/Merge[1]",
+            "时间冗余角度:Token Reuse/缓存[2]",
+            "[1] VidToMe [2] Adaptive Caching"
+          ],
+          "视觉骨架": [
+            "红色分组括号",
+            "VGM 一分为二的分支示意",
+            "上方论点文字块",
+            "底部参考文献行"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "Contents 目录：进入第 3 部分 VGM 训练框架",
+          "核心论断": "本页切换到第三大板块——VGM 训练框架(训练侧)",
+          "本页讲什么": "这是一张四项议程的目录导航页,列出 VGM 技术路线、VGM 推理框架、VGM 训练框架、以及第四板块;当前高亮第 3 项 VGM 训练框架,标明讲者即将进入训练侧内容。属于章节切换/导航页,本身不含技术信息。",
+          "关键文字": [
+            "Contents",
+            "① VGM 技术路线",
+            "③ VGM 训练框架(当前高亮)"
+          ],
+          "视觉骨架": [
+            "蓝色边框目录卡",
+            "四项圆圈编号列表",
+            "当前项高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "VGM 训练框架总览:四大要素",
+          "核心论断": "VGM 训练框架由训练策略、稀疏 Attention、3D-VAE、Loss 四要素构成,核心是压缩 Token 提效",
+          "本页讲什么": "本页以红色纵向主干加四个分支的结构,把 VGM 训练框架拆成四大模块:训练策略、稀疏化 3D Attention、压缩化 3D-VAE、训练 Loss 指标;并点明基于 Open-Sora-Plan1.3 的 3D-DiT-diffusion,主线是通过减少 Token 数量降低训练开销。是后续四页的总览分发页。",
+          "关键文字": [
+            "基于 Open-Sora-Plan1.3 (3D-DiT-diffusion)",
+            "核心思路:压缩 Token 数量降低训练开销",
+            "训练策略",
+            "稀疏化 3D Attention",
+            "压缩化 3D-VAE",
+            "训练 Loss 指标"
+          ],
+          "视觉骨架": [
+            "红色纵向主干示意",
+            "四分支要素列表",
+            "VGM 训练标签引出"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "VGM 训练框架:训练策略",
+          "核心论断": "Open-Sora Plan 采用图像初始化 + 分辨率/时长渐进的训练策略",
+          "本页讲什么": "本页展开训练框架第一要素——训练策略,说明 Open-Sora Plan 的做法:先用图像预训练模型(如 Pixart-α 的 DiT 权重)初始化,再分阶段推进,先在低分辨率短视频上训练、后在高分辨率长视频上训练,以稳定收敛并降低成本。为概念性条目列表页。",
+          "关键文字": [
+            "Open-Sora Plan 的训练策略",
+            "用图像预训练模型(如 Pixart-α 的 DiT 权重)初始化",
+            "分阶段:先低分辨率短视频,后高分辨率长视频"
+          ],
+          "视觉骨架": [
+            "编号条目列表",
+            "二级 a/b 子条目",
+            "关键短语红色标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "训练压缩:稀疏 Attention(Skiparse 提速)",
+          "核心论断": "Skiparse 稀疏 Attention 在同等 FLOPS 下逼近 3D 全注意力,训练提速约 2.38x/1.88x",
+          "本页讲什么": "本页承接总览进入稀疏 Attention 要素:指出 3D 全注意力开销大、2+1D 效果受损,Open-Sora-Plan 提出 Skiparse(Skip-Sparse)Attention,在接近全注意力效果的同时降低 FLOPS;并给出 k=4 的 Skiparse 让 2.7B 模型在 93x720p、93x480p 上训练分别提速约 2.38x 与 1.88x 的具体数据。",
+          "关键文字": [
+            "3D Attention 开销大,2+1D 效果受损",
+            "Open-Sora-Plan 提出 Skiparse (Skip-Sparse) Attention",
+            "接近全注意力效果同时降低 FLOPS",
+            "k=4 时 2.7B 模型 93x720p / 93x480p 训练提速 2.38x / 1.88x"
+          ],
+          "视觉骨架": [
+            "整页密集文字论述",
+            "加粗分辨率/加速数字",
+            "红色 speedup 强调"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "训练压缩:稀疏 Attention(Skiparse 机制)",
+          "核心论断": "Skiparse DiT 用交替的 Skip/Sparse 块把注意力量降到 1/k,同时保留全局交互",
+          "本页讲什么": "本页深入 Skiparse 的实现机制:把标准 Transformer Block 替换为交替的 Skip Sparse Transformer Block,稀疏度为 k 时每层只让 1/k 的 token 参与注意力,通过 k 层交替覆盖全序列,使单层计算量降为 1/k,更贴合 GPU/NPU 高效执行。是稀疏 Attention 的方法细节页。",
+          "关键文字": [
+            "Skiparse DiT:标准 Transformer Block 替换为交替 Skip Sparse Transformer Block",
+            "稀疏度=k 时每层仅 1/k token 参与注意力",
+            "k 层交替覆盖全序列,单层计算降为 1/k",
+            "更契合 GPU/NPU 高效执行"
+          ],
+          "视觉骨架": [
+            "整页密集文字论述",
+            "k / 1/k 参数说明",
+            "Skip-Sparse 块交替描述"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "content_candidate",
+          "标题": "训练压缩:稀疏 Attention(3D 与 2+1D 对比)",
+          "核心论断": "3D 全注意力让全部 token 互相交互,2+1D 则只在空间/时间维度内分别交互",
+          "本页讲什么": "本页对比两种基线注意力以铺垫 Skiparse 的取舍:3D Attention 让所有 token 相互交互、建模最充分但开销最大;2+1D Attention 把注意力拆到维度 1(空间)和维度 2(时间),每个 token 只与同一空间或同一时间维度内的 token 交互,省算力但跨维交互被削弱。属机制对比说明页。",
+          "关键文字": [
+            "3D Attention:所有 token 相互交互,建模最充分但开销大",
+            "2+1D Attention 拆到维度 1、维度 2 分别交互",
+            "token 只与同维度内 token 交互,跨维交互被削弱"
+          ],
+          "视觉骨架": [
+            "整页密集文字论述",
+            "3D vs 2+1D 对比描述",
+            "维度 1 / 维度 2 分列"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 27,
+          "页面角色": "content_candidate",
+          "标题": "训练压缩:3D-VAE",
+          "核心论断": "相比逐帧 2D-VAE,3D-VAE 在时间维额外压缩,大幅减少视频 latent token",
+          "本页讲什么": "本页进入第三要素 3D-VAE:指出用 2D-VAE Encoder 逐帧压缩只在空间维度降维、时间维度不压缩,latent 序列仍很长;改用 3D-VAE 可在时间维一并压缩,显著减少视频 latent 的 token 数,从而降低下游 DiT 的训练与推理开销。为方法说明页。",
+          "关键文字": [
+            "2D-VAE Encoder 逐帧压缩:仅空间降维,时间维不压缩",
+            "latent 序列仍长",
+            "3D-VAE 在时间维一并压缩,显著减少 latent token 数"
+          ],
+          "视觉骨架": [
+            "整页文字论述",
+            "2D-VAE 与 3D-VAE 对比",
+            "压缩维度说明"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 28,
+          "页面角色": "content_candidate",
+          "标题": "训练压缩:3D-VAE(结构示意)",
+          "核心论断": "3D-VAE 通过时空联合压缩把视频编码为更紧凑的 latent 表征",
+          "本页讲什么": "本页延续 3D-VAE 主题,配合结构示意进一步说明:2D-VAE Encoder 逐帧只压空间、时间不压导致 latent 冗长,而 3D-VAE 以时空联合方式压缩,得到更紧凑的 latent,为 DiT 减负。与上页文字相同但增加图示,属方法细节的图文补充页。",
+          "关键文字": [
+            "2D-VAE Encoder 逐帧压缩:时间维不压缩",
+            "3D-VAE 时空联合压缩得到更紧凑 latent"
+          ],
+          "视觉骨架": [
+            "VAE 编码结构示意图",
+            "2D 与 3D 压缩对比图",
+            "配套说明文字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "content_candidate",
+          "标题": "VGM 训练框架:训练 LOSS 指标",
+          "核心论断": "VGM 训练沿用 diffusion 的去噪回归目标作为核心 Loss",
+          "本页讲什么": "本页进入第四要素训练 Loss:说明基于 diffusion 的训练用去噪/噪声预测的回归目标作为主 loss 来监督模型学习视频分布。文字精简,是 Loss 与评测板块的开篇,承接下页的 VBench 评测指标。",
+          "关键文字": [
+            "基于 diffusion 训练,以去噪/噪声预测回归目标作为核心 loss"
+          ],
+          "视觉骨架": [
+            "单条概述文字",
+            "标题蓝色分割线",
+            "留白为主版式"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 30,
+          "页面角色": "content_candidate",
+          "标题": "VGM 训练框架:评测指标(VBench)",
+          "核心论断": "VGM 用 VBench 从多维度评测生成质量,以对齐 SOTA 视频生成模型",
+          "本页讲什么": "本页承接 Loss 页给出评测侧:除训练 loss 外,采用 VBench 作为视频生成质量的综合评测基准,从多个维度衡量生成视频质量并与 SOTA 模型对比,引用 VBench++ 全面评测套件。是 section 的收尾/评测页,呼应总览四要素的最后一项。",
+          "关键文字": [
+            "采用 VBench 作为视频生成质量综合评测基准",
+            "从多维度衡量生成质量并对齐 SOTA",
+            "参考 VBench++ 视频生成综合评测套件"
+          ],
+          "视觉骨架": [
+            "评测方法概述文字",
+            "VBench 基准引用",
+            "底部论文出处标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_role": "framework"
+        },
+        {
+          "页序号": 31,
+          "页面角色": "content_candidate",
+          "标题": "Contents 目录页(高亮第 4 部分总结与未来工作)",
+          "核心论断": "全 deck 收尾,定位至第 4 部分总结与未来工作",
+          "本页讲什么": "章节导航目录页。左侧竖排四项内容,①②③(VGM 技术路线、VGM 高效训练框架、VGM 推理加速等前序主题)以灰色淡出,第 ④ 项以蓝色圆标高亮点亮,标示演讲进入最后的总结与未来工作部分,起承前启后的定位作用。",
+          "关键文字": [
+            "Contents",
+            "VGM 技术路线",
+            "VGM 高效训练框架",
+            "VGM 推理加速",
+            "总结与未来工作(高亮项)"
+          ],
+          "视觉骨架": [
+            "外框包裹的目录卡",
+            "左侧四个编号圆标",
+            "灰/蓝高亮态对比",
+            "左侧蓝色进度竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 32,
+          "页面角色": "content_candidate",
+          "标题": "总结和未来工作",
+          "核心论断": "技术路线演进、高效训推两主线、算法到系统未来方向三点收束全篇",
+          "本页讲什么": "全 deck 总结页,三条 bullet 逐层收束。第一条画出 VGM 技术路线演进链:图像生成范式(GAN/VAE→Unet-diffusion→DiT-diffusion)、视频生成范式一(3D-DiT-diffusion→3D-DiT-flow matching)、视频生成范式二(Autoregressive);第二条围绕 token 展开高效训练与高效推理两条主线;第三条指出算法上持续提升并给出算法→系统的未来演进方向。",
+          "关键文字": [
+            "总结和未来工作",
+            "GAN/VAE → Unet-diffusion → DiT-diffusion",
+            "3D-DiT-diffusion → 3D-DiT-flow matching → Autoregressive",
+            "图像生成范式 / 视频生成范式一 / 视频生成范式二",
+            "算法上:不断提升",
+            "算法 → 系统"
+          ],
+          "视觉骨架": [
+            "技术路线演进流程链",
+            "三段虚线框分组的范式带",
+            "带箭头的 GAN/VAE→…→AR 链",
+            "训练/推理成对高亮小框",
+            "算法→系统箭头对"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.06",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 33,
+          "页面角色": "ending_candidate",
+          "标题": "Thanks for your attention! 致谢结束页",
+          "核心论断": "汇报以致谢语收束，署名汇报人与日期，礼节性结束",
+          "本页讲什么": "全 deck 收尾致谢页。左上方一行大字「Thanks for your attention!」表达谢意，一条浅粉分隔线下方居中排列汇报人署名「丁立」与日期「2024.12.7」，底部脚注「Li Ding @ CCC Lab」标注单位。整页大面积留白，不含任何技术内容，仅作礼节性结束。",
+          "关键文字": [
+            "Thanks for your attention!",
+            "丁立",
+            "2024.12.7",
+            "Li Ding @ CCC Lab"
+          ],
+          "视觉骨架": [
+            "左上致谢大标题",
+            "浅粉水平分隔线",
+            "署名+日期文字块",
+            "底部单位脚注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.07",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "background",
+          "标题": "VGM 背景与技术路径概述",
+          "页码范围": [
+            3,
+            5
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "method",
+          "标题": "VGM 技术路径演进",
+          "页码范围": [
+            6,
+            18
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "method",
+          "标题": "VGM 高效推理方法",
+          "页码范围": [
+            19,
+            20
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "framework",
+          "标题": "VGM 训练框架与压缩策略",
+          "页码范围": [
+            21,
+            30
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "discussion",
+          "标题": "总结与未来工作",
+          "页码范围": [
+            31,
+            32
+          ]
+        },
+        {
+          "section_index": 7,
+          "section_role": "closing",
+          "标题": "致谢",
+          "页码范围": [
+            33,
+            33
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

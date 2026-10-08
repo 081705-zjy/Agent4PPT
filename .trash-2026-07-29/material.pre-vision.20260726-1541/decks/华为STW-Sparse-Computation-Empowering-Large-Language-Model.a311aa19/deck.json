@@ -1,0 +1,62 @@
+{
+  "deck标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "目录名": "华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "源哈希": "a311aa194161ca84688d88210bde2d19f21d8acb",
+  "画布尺寸": [
+    9144000,
+    5143500
+  ],
+  "标题": "稀疏计算赋能大语言模型",
+  "总页数": 68,
+  "章节数": 10,
+  "章节列表": [
+    "section_01_封面",
+    "section_02_大模型算力与能耗成本",
+    "section_03_GPU算子加速-FlashDecoding++",
+    "section_04_Scaling-Law下的新路径",
+    "section_05_稀疏计算与FPGA加速-FlightLLM",
+    "section_06_视频生成模型稀疏加速-VGAcc",
+    "section_07_稀疏驱动新范式-MoE-MoD",
+    "section_08_稀疏新基础模型-TB-STC",
+    "section_09_总结与展望",
+    "section_10_附录-技术细节备份"
+  ],
+  "主题标签": [
+    "大模型推理",
+    "稀疏计算",
+    "推理加速",
+    "N:M稀疏",
+    "FPGA",
+    "MoE",
+    "算子优化",
+    "软硬协同"
+  ],
+  "目标受众": "学术同行与工业落地研发",
+  "报告类型": "research_report",
+  "适用场景": "大模型推理加速方向的学术型技术汇报",
+  "论述总结": "从大模型高昂算力与能耗成本切入,指出摩尔定律放缓下需转向稀疏计算。依次展示GPU算子加速(FlashDecoding++)、灵活N:M稀疏与FPGA加速(FlightLLM)、视频生成等领域模型稀疏加速,再到MoE/MoD等稀疏驱动的新范式与新基础模型,系统论证稀疏计算贯穿算子、硬件、模型三层的加速路径。",
+  "论述弧线": [
+    "背景成本",
+    "GPU加速",
+    "稀疏计算",
+    "硬件加速",
+    "领域模型",
+    "新范式"
+  ],
+  "适合复用场景": [
+    "大模型推理优化主题的学术报告",
+    "软硬件协同加速技术汇报",
+    "稀疏计算/N:M稀疏方向 motivation 章节",
+    "课题组成果综述型汇报",
+    "算力成本与能耗动机铺陈章节"
+  ],
+  "不适合复用场景": [
+    "Mamba/SSM等非稀疏路线(话题偏离)",
+    "纯商业路演/投资方汇报(缺商业叙事)",
+    "面向学生的入门教程(密度过高)",
+    "无硬件背景的纯算法汇报",
+    "产品demo演示(叙事节奏不同)"
+  ],
+  "分析状态": "claude-opus-4-8"
+}

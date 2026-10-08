@@ -1,0 +1,45 @@
+---
+页标识: "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_96"
+所属章节: "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07"
+所属deck: "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba"
+页序号: 96
+源文件: "templates/课题组全局汇报/华为2012报告  大模型推理软硬件协同优化.pptx"
+页面角色: "content_candidate"
+标题: "ViDA论文标题页"
+核心论断: "ViDA以差分近似与自适应数据流加速视频扩散"
+本页讲什么: "ViDA论文封面页，展示标题「Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow」及作者Li Ding等，正式引入场景2.1的视频扩散加速工作。"
+关键文字:
+  - "ViDA: Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow"
+视觉骨架: "[论文标题封面版式, 作者署名列表]"
+资源ID列表: "[tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_96.asset.01]"
+适合复用场景: "[视频加速论文的工作引入封面, 具名工作标题页]"
+不适合复用场景: "[方法细节页, 数据结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 96: ViDA论文标题页
+
+**核心论断**: ViDA以差分近似与自适应数据流加速视频扩散
+
+## 本页讲什么
+ViDA论文封面页，展示标题「Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow」及作者Li Ding等，正式引入场景2.1的视频扩散加速工作。
+
+## 关键文字片段
+- ViDA: Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow
+
+## 视觉骨架
+- 论文标题封面版式
+- 作者署名列表
+
+## 可复用到
+- 视频加速论文的工作引入封面
+- 具名工作标题页
+
+## 不适合复用的场景
+- 方法细节页
+- 数据结果页

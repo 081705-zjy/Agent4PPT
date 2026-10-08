@@ -1,0 +1,44 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_15"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 15
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "Self Forcing 逐帧迭代（续）"
+核心论断: "frame/iteration 逐帧生成难以兼顾效率与规模"
+本页讲什么: "本页承接上页，继续以 frame/iteration 视角展开 Self Forcing 的逐帧生成过程，进一步说明其迭代方式与随之而来的效率瓶颈。"
+关键文字: "[由于 Self-Forcing 是 frame/iteration 机制]"
+视觉骨架: "[逐帧迭代过程续图, 生成序列示意]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_15.asset.01, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_15.asset.02]"
+适合复用场景: "[Self Forcing 机制续页, 逐帧迭代效率瓶颈论证页]"
+不适合复用场景: "[方法总览首页, benchmark 数字页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 15: Self Forcing 逐帧迭代（续）
+
+**核心论断**: frame/iteration 逐帧生成难以兼顾效率与规模
+
+## 本页讲什么
+本页承接上页，继续以 frame/iteration 视角展开 Self Forcing 的逐帧生成过程，进一步说明其迭代方式与随之而来的效率瓶颈。
+
+## 关键文字片段
+- 由于 Self-Forcing 是 frame/iteration 机制
+
+## 视觉骨架
+- 逐帧迭代过程续图
+- 生成序列示意
+
+## 可复用到
+- Self Forcing 机制续页
+- 逐帧迭代效率瓶颈论证页
+
+## 不适合复用的场景
+- 方法总览首页
+- benchmark 数字页

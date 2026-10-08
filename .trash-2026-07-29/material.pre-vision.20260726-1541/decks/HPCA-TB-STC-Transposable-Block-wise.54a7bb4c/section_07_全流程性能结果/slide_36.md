@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_36"
+所属章节: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.07"
+所属deck: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c"
+页序号: 36
+源文件: "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx"
+页面角色: "toc_candidate"
+标题: "全流程性能结果章节目录页"
+核心论断: "由章节分隔目录切入全流程性能实证部分"
+本页讲什么: "这是「全流程性能结果」章节的分隔/目录页，沿用 deck 统一的 Contents 版式，列出各章标题（含 Background: AI and Sparse Computing 等），作为从前文过渡到本章实证内容的视觉锚点，本身不承载数据结论。"
+关键文字: "[Contents, \"Background: AI and Sparse Computing\"]"
+视觉骨架: "[章节目录列表, 章节编号标记, 配图缩略图组]"
+资源ID列表: "[tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_36.asset.01, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_36.asset.02, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_36.asset.03, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_36.asset.04]"
+适合复用场景: "[技术 deck 章节分隔目录页, 多章节 PPT 的过渡定位页]"
+不适合复用场景: "[承载数据结论的正文页, 单一论断的方法详解页, 含 benchmark 表格的结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Contents"}
+  - {"位置": "下方主体", "内容": "章节列表含 Background: AI and Sparse Computing 等"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 36: 全流程性能结果章节目录页
+
+**核心论断**: 由章节分隔目录切入全流程性能实证部分
+
+## 本页讲什么
+这是「全流程性能结果」章节的分隔/目录页，沿用 deck 统一的 Contents 版式，列出各章标题（含 Background: AI and Sparse Computing 等），作为从前文过渡到本章实证内容的视觉锚点，本身不承载数据结论。
+
+## 关键文字片段
+- Contents
+- Background: AI and Sparse Computing
+
+## 视觉骨架
+- 章节目录列表
+- 章节编号标记
+- 配图缩略图组
+
+## 可复用到
+- 技术 deck 章节分隔目录页
+- 多章节 PPT 的过渡定位页
+
+## 不适合复用的场景
+- 承载数据结论的正文页
+- 单一论断的方法详解页
+- 含 benchmark 表格的结果页

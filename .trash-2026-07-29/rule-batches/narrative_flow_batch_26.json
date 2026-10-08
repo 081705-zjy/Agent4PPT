@@ -1,0 +1,349 @@
+{
+  "batch_index": 26,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "any deck with motivation and method sections",
+      "title": "动机章挑战需在方法章逐一回扣",
+      "description": "motivation 章列出的核心挑战 (痛点/割裂/资源受限等) 必须在 method 章通过具体设计逐一回应, 命中率应 ≥80%.",
+      "what_to_check": [
+        "找 motivation 章 slide.核心论断/关键文字 中的挑战列表 (含 '挑战' '痛点' '割裂' '受限' '难以适配' 关键词)",
+        "对每条挑战, 在 method 章各 slide 中找语义匹配的应对方案",
+        "算命中率 = 命中数 / 总挑战数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "motivation slide 7 提出算法/硬件割裂痛点, slide 8 拆解三层协同; method 章 slide 10/17/32 分层展开算法/系统/硬件, 完整回扣三层协同主张"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记不住 motivation 章列出的所有挑战, method 章逐一回扣是本工作兑现承诺的核心机制, 缺失就让 motivation 沦为空谈",
+      "fix_hint": "遍历 motivation 挑战列表, 每条在 method 章追加一张 slide 明确说 X 挑战由 Y 方法解决",
+      "exceptions": [
+        "综述型 deck (列的是领域整体挑战, 本工作只覆盖一部分是正常的)"
+      ]
+    },
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover and closing sections",
+      "title": "封面主标题需在总结章回扣",
+      "description": "cover 主标题的核心 anchor (主题词组) 应在 closing 章通过 verbatim 或 paraphrased 形式重现, 强化主题闭环.",
+      "what_to_check": [
+        "提取 cover slide (页序号=1) 的主标题关键词",
+        "在 closing 章 slide.核心论断/关键文字 中搜索这些关键词的 verbatim 或 paraphrased 出现",
+        "命中即符合"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "cover slide 1 主标题 '高效端侧大模型推理优化', closing slide 50 顶部横幅 '我们从3个设计层次对端侧大模型推理展开协同优化' 完整回扣 anchor"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾主题呼应是叙事闭环的最基本要求, 缺失会让总结显得游离于主题之外",
+      "fix_hint": "closing 首页横幅或末页结论条中显式重复 cover 主标题的核心词组",
+      "exceptions": []
+    },
+    {
+      "id": "framework_diagram_reuse_across_chapters",
+      "category": "callback",
+      "applicable_when": "decks with an explicit N-layer/N-part framework introduced early",
+      "title": "框架图需在多章复用作为导航锚",
+      "description": "motivation/method 早期引入的核心框架图 (如三层拆解/N部分示意) 应在后续 method 各分章章首页作为定位导航复现, 复用 ≥3 次.",
+      "what_to_check": [
+        "找 motivation 或 method 早期 slide 中的框架示意图 (视觉骨架含 '三层' '分层' '框架' 等)",
+        "统计后续 method 章章首页是否复用该框架并高亮当前所在层",
+        "复用次数 ≥3 记命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "三层拆解框架首现 slide 8, 后于 slide 10 (算法层高亮)/slide 17 (软件层高亮)/slide 32 (高性能层高亮) 三次复用作为章首定位, 共 4 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 中听众易迷失, 框架图重复出现并高亮当前层是最有效的 wayfinding, 避免叙事碎片化",
+      "fix_hint": "每个 method 分章的章首页复用主框架图并高亮当前所在分支",
+      "exceptions": [
+        "总页数 <20 张的短 deck 无需重复导航"
+      ]
+    },
+    {
+      "id": "teaser_at_motivation_end",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with motivation section preceding method",
+      "title": "动机章末页需埋方法预告钩子",
+      "description": "motivation 章末页应埋下 '本工作将用 X 方法解决' 的钩子 (预告方法名/框架但不细讲), 避免硬切进 method 章.",
+      "what_to_check": [
+        "定位 motivation 章最后一页 slide",
+        "看其 核心论断/本页讲什么 是否含 '拆解为' '引出' '过渡' '铺垫' 等预告方法的措辞",
+        "或含 method 章即将展开的关键词"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "motivation 章末页 slide 8 '端侧大模型推理优化可拆解为 3 个设计层次...过渡到下一方法章', 显式预告后续三层方法框架"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末预告是从'问题'到'方案'过渡的心理准备装置, 缺失会让听众感到方法章突兀空降",
+      "fix_hint": "motivation 末页添加一句 '下面我们用 X 方法应对上述挑战' 并露出方法框架图轮廓",
+      "exceptions": []
+    },
+    {
+      "id": "result_at_chapter_end_with_number",
+      "category": "suspense_reveal",
+      "applicable_when": "any method sub-chapter that presents a concrete work with quantitative results",
+      "title": "每项工作的结果页需放章末并突出核心数字",
+      "description": "method 章下每项具体工作 (paper/system) 的实验/结果页应放在该工作段落的最后一页, 且核心加速比/能效数字应高亮.",
+      "what_to_check": [
+        "识别 method 章内每项工作的 slide 段落 (由 论文封面页 开启)",
+        "看该段落最后一页 slide.核心论断/关键文字 是否含 quantitative claim ('X倍加速' 'X%提升' 等)",
+        "确认该页在段落末位"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "SpecEE 段落末页 slide 25 '平均 2.43 倍', SpecDiff 段落末页 slide 31 '平均 3.17 倍', FlightLLM 段落末页 slide 38 '70% 能效', FlightVGM 段落末页 slide 48 '1.30× 能效, 4.49× 性能' — 全部 4 项工作均以量化结果收尾"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末收束在最炸的数字上, 才能让听众带走可记忆的锚点; 前置结果会稀释后续论证的张力",
+      "fix_hint": "把每项工作的加速比/能效结果页移到该段落最后一张, 用红/蓝大字号高亮核心倍数",
+      "exceptions": [
+        "纯定性工作 (无 quantitative result) 可用样例图或用户反馈替代"
+      ]
+    },
+    {
+      "id": "chapter_start_navigation_slide",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥30 pages with multiple method sub-chapters",
+      "title": "每个大章章首需目录导航页定位",
+      "description": "每个大章 (motivation/method 各分章/closing) 章首应有一张目录导航页, 通过高亮当前项 + 灰化已讲/未讲项帮助听众定位.",
+      "what_to_check": [
+        "定位每个 section 的首页 slide",
+        "看其 核心论断/视觉骨架 是否含 'Contents' '目录' '定位' '高亮' 等导航元素",
+        "命中则该章有导航页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "motivation 章首 slide 3, method 高质量章首 slide 9, closing 章首 slide 49 均为 Contents 目录页高亮当前项 + 灰化其余"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 中听众容易失去位置感, 章首导航页提供 you-are-here 心理地图, 显著降低认知负担",
+      "fix_hint": "每个大章章首插入一张目录页, 复用全篇 agenda 并高亮当前项",
+      "exceptions": [
+        "总页数 <20 张的短 deck 无需重复导航"
+      ]
+    },
+    {
+      "id": "chapter_transition_via_framework_highlight",
+      "category": "chapter_transitions",
+      "applicable_when": "decks with a shared N-layer framework across method sub-chapters",
+      "title": "分章间用框架图高亮切换实现平滑过渡",
+      "description": "method 章内各分章之间通过复用主框架图 + 切换高亮层实现过渡, 避免 naked pivot 硬切.",
+      "what_to_check": [
+        "检查相邻 method 分章的交界处 slide",
+        "前一分章末页是否收束到框架图, 后一分章章首是否用同一框架图但高亮不同层",
+        "命中则过渡平滑"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "从算法层 slide 16 过渡到软件层 slide 17 通过复用三层框架并切换高亮至第二层; 从软件层 slide 31 过渡到高性能层 slide 32 同理切换至第三层"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "共用框架图 + 切换高亮是最经济的过渡装置, 让听众一眼看清'现在讲哪层', 避免硬切造成的方向感缺失",
+      "fix_hint": "每个分章章首页复用主框架示意图, 当前层高亮/其余层灰化, 而非另起新图",
+      "exceptions": [
+        "无统一框架的横向并列型 deck"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with an explicit thesis statement",
+      "title": "主 thesis 需在多章重复出现",
+      "description": "deck 的主 thesis (如 '软硬件跨层次协同优化') 应在 opening/motivation/method/closing 至少 4 处重复出现, 强化主线.",
+      "what_to_check": [
+        "从 deck.标题 或 论述总结 抽取主 thesis 关键词组",
+        "在各 section slide.核心论断/关键文字 中统计 verbatim 或 paraphrased 出现次数",
+        "跨 section 出现 ≥4 次记命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "'软硬件跨层次协同优化' 主 thesis 在 slide 2 目录/slide 8 拆解/slide 9 章首/slide 32 章首/slide 50 总结共 5 处重复出现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 thesis 只讲一次听众记不住, 反复出现在关键节点 (目录/章首/总结) 才能建立主线记忆",
+      "fix_hint": "在 agenda/每个大章章首/总结页显式复述主 thesis 短语, 目标 4-6 次",
+      "exceptions": []
+    },
+    {
+      "id": "claim_evidence_pairing_in_method_work",
+      "category": "comparison_evidence",
+      "applicable_when": "method sub-chapters presenting concrete works",
+      "title": "每项方法工作需背景-挑战-方法-结果四段式支撑",
+      "description": "method 章内每项具体工作应遵循 论文封面 → 背景 → 挑战 → 方法 → 结果 的证据链, 且每项 claim 至少配 1 张 evidence slide.",
+      "what_to_check": [
+        "识别 method 章内的工作段落 (以论文封面页开启)",
+        "统计该段落是否覆盖 背景/挑战/方法/结果 四类 slide",
+        "覆盖 ≥3 类记命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "SpecEE (19-25) 覆盖 论文封面-背景-已有工作-方法核心-方法细节-结果 6 类; FlightLLM (33-38) 覆盖 论文封面-背景-挑战-方法x2-结果 6 类; FlightVGM (44-48) 覆盖 5 类"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "每项工作若只讲方法不讲背景/挑战/结果, 听众无法评估其价值; 完整证据链是学术汇报的基本要求",
+      "fix_hint": "每项工作按 封面-背景-挑战-方法-结果 至少 4 张 slide 组织, 缺 挑战 或 结果 立即补齐",
+      "exceptions": [
+        "work-in-progress 型工作可无 结果 页"
+      ]
+    },
+    {
+      "id": "baseline_comparison_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "any method sub-chapter with an experimental result page",
+      "title": "结果页需明确对标 baseline 硬件/方法",
+      "description": "method 章内每项工作的结果页应显式标出对比的 baseline (硬件/方法/量化位宽), 而非孤立报数字.",
+      "what_to_check": [
+        "定位每项工作的结果 slide",
+        "看其 关键文字 是否含 'vs' '对比' '相较' baseline 名称 (GPU/A100/V100/3090 等)",
+        "命中记符合"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "slide 38 明标 '16nm U280 FPGA vs 12nm V100S GPU', slide 48 明标 '对比 NVIDIA 3090 GPU', slide 25 标 '联想 Y7000 PC', slide 31 标 'FLUX.1 Dev'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无 baseline 的加速比数字无意义, 显式对标是让听众判断结果可信度的必要信息",
+      "fix_hint": "结果页 关键文字 强制包含 vs/对比 + baseline 名称 + 制程/精度等公平性说明",
+      "exceptions": []
+    },
+    {
+      "id": "structural_promise_agenda_match_chapters",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an agenda page",
+      "title": "agenda 承诺章节需与实际章节严格对齐",
+      "description": "agenda 页列出的议程条目应与实际 sections_outline 中的 method 主线章节一一对应, 顺序一致.",
+      "what_to_check": [
+        "提取 agenda slide (通常 slide 2) 的议程条目关键词",
+        "对比 sections_outline 中 opening 之外的章节标题",
+        "允许 method 主线合并为 '方法' 一项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "agenda slide 2 列 ①能效动机 ②软硬件协同优化 ③总结, 实际章节 motivation(能效动机)/method x3(协同优化三层)/closing(总结) 完全对齐, method 三层合并为 agenda 第 2 项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是对听众的显式承诺, 与实际章节不符会立即失信; 顺序一致是最基本要求",
+      "fix_hint": "写完 agenda 后按 sections_outline 逐条核对, 顺序/条数/主题不符立即改 agenda 或改章节",
+      "exceptions": [
+        "appendix/备份章节可不出现在 agenda"
+      ]
+    },
+    {
+      "id": "structural_to_content_ratio_healthy",
+      "category": "pacing",
+      "applicable_when": "any deck ≥30 pages",
+      "title": "结构页比例应在 15-25% 区间",
+      "description": "结构页 (cover/agenda 导航/章首定位/closing/致谢) 占总页数比例应在 15-25%, 过低=缺导航, 过高=水分多.",
+      "what_to_check": [
+        "统计 section_role 为 opening/closing/appendix 的 slide 数, 加上 method 章内的目录导航 slide",
+        "算比例 = 结构页数 / 总页数",
+        "0.15-0.25 记命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "opening 2 + closing 3 + appendix 2 + method 章内导航页 (slide 9/17/32) 3 张 = 10 张 / 53 张 = 18.9%, 落在健康区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页比例决定 deck 的导航感与紧凑度; 低于 15% 听众迷路, 高于 25% 内容被稀释",
+      "fix_hint": "统计结构页占比, <15% 补章首导航页, >25% 合并或删除冗余目录页",
+      "exceptions": [
+        "总页数 <15 张的短 deck 结构页比例天然偏高"
+      ]
+    },
+    {
+      "id": "per_chapter_avg_pages_by_role",
+      "category": "pacing",
+      "applicable_when": "any deck with role-labeled sections",
+      "title": "各 section_role 的页数应符合角色预算",
+      "description": "motivation 3-6 页/method 每项工作 5-8 页/closing 2-4 页, 显著偏离说明该角色被过度或不足展开.",
+      "what_to_check": [
+        "按 sections_outline 统计各 section 页数",
+        "motivation 落在 3-6 页记合理, method 各分章按包含工作数 x 5-8 页, closing 2-4 页",
+        "偏离一档记不合理"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "evidence": "motivation 6 页 (合理), method 高质量层 8 页/软件层 15 页 (含 2 项工作)/高性能层 17 页 (含 2 项工作) 均在每项 7-8 页, closing 3 页均合理"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "各章角色决定其信息密度预算, 显著超标或不足会让节奏失衡; motivation 太长拖沓, method 太短空洞",
+      "fix_hint": "超预算章拆分或删水页, 不足章补背景/挑战/结果 slide",
+      "exceptions": [
+        "超长综述型 deck motivation 可到 10 页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck (53 页课题组全局汇报, 三层协同优化框架清晰). 抽出 14 条 rule 覆盖 6 大类. 该 deck 结构模范, 大部分 rule hit_rate=1.0. anchor_trajectory 类因单 deck 样本不足未 emit.",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 0,
+      "structural_promise": 1,
+      "pacing": 2
+    }
+  }
+}

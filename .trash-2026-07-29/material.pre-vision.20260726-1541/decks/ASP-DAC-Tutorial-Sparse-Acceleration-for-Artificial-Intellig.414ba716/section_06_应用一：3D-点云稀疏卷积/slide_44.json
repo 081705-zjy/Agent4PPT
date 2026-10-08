@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_44",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 44,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Observation 3：静态数据流不适配输入动态性",
+  "核心论断": "静态数据流面对输入动态性带来性能损失",
+  "本页讲什么": "本页抛出第三组问题 Observation 3：固定的静态数据流（static dataflow）无法适配点云输入的动态变化（input dynamics），从而带来性能损失。引出后续对逐层自适应数据流选择的需求。",
+  "关键文字": [
+    "Observation 3: Static dataflow brings performance loss against input dynamics"
+  ],
+  "视觉骨架": [
+    "静态数据流性能损失示意",
+    "输入动态性标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_44.asset.01"
+  ],
+  "适合复用场景": [
+    "数据流自适应问题剖析页",
+    "静态调度瓶颈抛出页"
+  ],
+  "不适合复用场景": [
+    "自适应选择解法页",
+    "实验结果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

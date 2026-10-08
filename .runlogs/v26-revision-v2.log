@@ -1,0 +1,80 @@
+
+=== RUN CHARACTER_REVISION @ 14:04:46 ===
+[CHARACTER_REVISION] draft has 50 slides, 50 gap cards
+[CHARACTER_REVISION] agenda pre-pass: 3 agenda/divider slides, unified 8 chapters
+[CHARACTER_REVISION] vision grounding: 50/50 slides have source PNG
+[CHARACTER_REVISION] slide 1/50: ok (+1/-0)
+[CHARACTER_REVISION] slide 2/50: ok (+9/-0)
+[CHARACTER_REVISION] slide 3/50: ok (+1/-0)
+[CHARACTER_REVISION] slide 4/50: ok (+8/-0)
+[CHARACTER_REVISION] slide 5/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 6/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 7/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 8/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 9/50: ok (+6/-0)
+[CHARACTER_REVISION] slide 10/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 11/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 12/50: ok (+1/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[CHARACTER_REVISION] slide 13/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 14/50: ok (+12/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[CHARACTER_REVISION] slide 15/50: ok (+18/-0)
+[CHARACTER_REVISION] slide 16/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 17/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 18/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 19/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 20/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 21/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 22/50: ok (+3/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[CHARACTER_REVISION] slide 23/50: ok (+7/-0)
+[CHARACTER_REVISION] slide 24/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 25/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 26/50: ok (+2/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[claude_cli] timeout after 180s (attempt 2/3); backoff 15s then retry
+[CHARACTER_REVISION] slide 27/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 28/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 29/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 30/50: ok (+9/-0)
+[CHARACTER_REVISION] slide 31/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 32/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 33/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 34/50: ok (+4/-0)
+[CHARACTER_REVISION] slide 35/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 36/50: ok_partial (+4/-1)
+[CHARACTER_REVISION] slide 37/50: ok (+3/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[CHARACTER_REVISION] slide 38/50: ok (+4/-0)
+[CHARACTER_REVISION] slide 39/50: ok (+4/-0)
+[CHARACTER_REVISION] slide 40/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 41/50: ok (+2/-0)
+[CHARACTER_REVISION] slide 42/50: ok (+2/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[CHARACTER_REVISION] slide 43/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 44/50: ok (+2/-0)
+[claude_cli] timeout after 180s (attempt 1/3); backoff 5s then retry
+[CHARACTER_REVISION] slide 45/50: ok (+5/-0)
+[CHARACTER_REVISION] slide 46/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 47/50: ok (+4/-0)
+[CHARACTER_REVISION] slide 48/50: ok (+3/-0)
+[CHARACTER_REVISION] slide 49/50: ok (+5/-0)
+[CHARACTER_REVISION] slide 50/50: ok (+2/-0)
+[CHARACTER_REVISION] done: ok=49, partial=1, failed=0, skipped=0, actions ok/failed=184/1
+[CHARACTER_REVISION] ok=True elapsed=5220.4s
+SUMMARY: {"slide_count": 50, "ok": 49, "ok_partial": 1, "failed": 0, "skipped": 0, "total_actions_succeeded": 184, "total_actions_failed": 1}
+
+=== RUN VISUAL_UNIFICATION @ 15:31:47 ===
+[VISUAL_UNIFICATION] voted profile: font_latin=Arial, font_ea=Arial, palette={'text': '000000', 'primary': 'C00000', 'secondary': '002060', 'muted': '222222', 'bg': 'FFFFFF', 'accent_extra': 'FFFF00,FF0000,00B050,682E73,074BA2,542378'}, tiers={'title': 20.0, 'body': 14.0, 'note': 8.0}
+[VISUAL_UNIFICATION] applied: 50 slides, font_changes=0, size_changes=0, color_changes=17, color_kept=600
+[VISUAL_UNIFICATION] ok=True elapsed=3.5s
+SUMMARY: {"slide_count": 50, "font_changes": 0, "size_changes": 0, "color_changes": 17, "color_kept_semantic": 600}
+
+=== RUN TEMPLATE_UNIFICATION @ 15:31:50 ===
+[TEMPLATE_UNIFICATION] dominant: tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba (13/50 slides), minority=37 slides
+[TEMPLATE_UNIFICATION] overlay mode: 37/37 minority slides updated; canvas_match=True
+[TEMPLATE_UNIFICATION] ok=True elapsed=4.6s
+SUMMARY: {"dominant_deck": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba", "minority_count": 37, "changed_slides": 37, "canvas_match": true}
+
+=== ALL DONE @ 15:31:55 ===

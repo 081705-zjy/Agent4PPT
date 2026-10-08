@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_19",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 19,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "VGAcc 的 GPU 实现",
+  "核心论断": "差分与列集中技术可在 GPU 上落地实现加速",
+  "本页讲什么": "本页说明前述差分计算与列集中方案在 GPU 上的具体实现路径，展示 VGAcc 如何将算法-硬件协同思想映射到通用 GPU 平台，验证方案的可落地性并为专用架构做铺垫。",
+  "关键文字": [
+    "VGAcc：GPU implementation"
+  ],
+  "视觉骨架": [
+    "GPU 实现映射示意图",
+    "计算流程部署图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_19.asset.01",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_19.asset.02"
+  ],
+  "适合复用场景": [
+    "方法在 GPU 平台的实现落地页",
+    "算法到通用硬件的映射介绍"
+  ],
+  "不适合复用场景": [
+    "专用 ASIC 架构总览页",
+    "纯算法推导页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

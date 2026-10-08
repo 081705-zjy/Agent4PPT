@@ -1,0 +1,273 @@
+{
+  "batch_index": 20,
+  "deck_ids_processed": [
+    "tpl.主题学术报告.稀疏计算与大模型.0738f023"
+  ],
+  "rules": [
+    {
+      "rule_id": "b20.r01",
+      "rule_type": "opening_triplet",
+      "scope": "report_type=research_report",
+      "pattern": "opening 章由三页固定序列构成: 封面(cover_candidate) → 个人介绍(履历时间线) → 目录(Contents)",
+      "trigger_conditions": [
+        "section_role==opening",
+        "总页数>=20",
+        "目标受众含学术同行/工业界"
+      ],
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "recommended_action": "生成学术报告类 opening 时,按 封面(讲者+日期+邮箱) → 个人介绍(时间线履历) → Contents(编号目录) 三页展开;讲者身份包含机构/职称/公司角色三要素"
+    },
+    {
+      "rule_id": "b20.r02",
+      "rule_type": "section_navigation",
+      "scope": "long_deck(>=30页)",
+      "pattern": "每个新章节的首页复用同一份 Contents 版式,仅通过高亮当前项(蓝色圆圈+竖条)+其余灰显来完成章节切换导航",
+      "trigger_conditions": [
+        "新 section 的第一页",
+        "存在 >=4 个章节"
+      ],
+      "evidence_pages": [
+        4,
+        12,
+        23,
+        32,
+        43
+      ],
+      "recommended_action": "在每个 section 起始位置插入一张 Contents 导航页,复用相同版式(编号圆圈+竖条),仅切换高亮项;导航页仅承担过渡不承载论证"
+    },
+    {
+      "rule_id": "b20.r03",
+      "rule_type": "motivation_arc",
+      "scope": "section_role=motivation",
+      "pattern": "motivation 章按 6 步逐层收紧: 时代趋势(时间轴) → 应用落地(产品举例) → 挑战对比(算力 vs 能源) → 概念定义(留空公式) → 数据佐证(N 万倍等大数字) → 硬件瓶颈(留白待解)",
+      "trigger_conditions": [
+        "section_role==motivation",
+        "报告类型==research_report"
+      ],
+      "evidence_pages": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "recommended_action": "motivation 章从宏观时代切入(至少一条历史时间轴),经应用广度→资源冲突→度量定义→量化数据→硬件瓶颈,末页留白为下一章方法作钩子"
+    },
+    {
+      "rule_id": "b20.r04",
+      "rule_type": "definition_placeholder",
+      "scope": "concept_introduction",
+      "pattern": "引入关键度量(能源成本/计算能效/等效算力)时,采用「指标名 =」+右侧留空的圆角框,后续页再填充公式或展开",
+      "trigger_conditions": [
+        "页面引入新度量指标",
+        "属于 motivation 或 method 章"
+      ],
+      "evidence_pages": [
+        8,
+        19
+      ],
+      "recommended_action": "对核心度量指标使用两阶段版式:第一次出现留空(建立心锚),后续实证章节再实体化;避免一次性堆砌所有公式"
+    },
+    {
+      "rule_id": "b20.r05",
+      "rule_type": "method_route_framework",
+      "scope": "section_role=method",
+      "pattern": "method 章先立「三路线」总纲(左右双栏+能效曲线+三色路线箭头),再对每条路线各配 1-2 页举例页,最后收束到本文核心方法(稀疏计算)",
+      "trigger_conditions": [
+        "section_role==method",
+        "存在并列的多种方法/路线"
+      ],
+      "evidence_pages": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "recommended_action": "method 章总纲页用双栏对照+多路线着色;举例页保持左右双栏(现有方案 vs 更好方案);末尾用「本文思路」页把三路线收束到自研方法上"
+    },
+    {
+      "rule_id": "b20.r06",
+      "rule_type": "method_chapter_bridge",
+      "scope": "section_role=method",
+      "pattern": "method 章末尾用一张「研究内容拆分」页,把三路线映射到后续实证/框架章的具体成果 panel(如 研究内容1: FlightLLM/VGAcc; 研究内容2: MoE/MoD),作为跨章挂钩",
+      "trigger_conditions": [
+        "method 章的最后 1 页",
+        "后续存在 experiment 或 framework 章"
+      ],
+      "evidence_pages": [
+        22
+      ],
+      "recommended_action": "method 章末页复用总纲能效曲线,右侧新增 2 个研究内容 panel;每个 panel 命名后续章节的代表性成果,形成跨章预告"
+    },
+    {
+      "rule_id": "b20.r07",
+      "rule_type": "experiment_triptych",
+      "scope": "section_role=experiment",
+      "pattern": "experiment 章每项成果按「研究动机(紫标签) → 研究方法(紫标签) → 实验结果(红色数字)」三页组呈现;多项成果时按组重复",
+      "trigger_conditions": [
+        "section_role==experiment",
+        "存在 >=2 项独立成果"
+      ],
+      "evidence_pages": [
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31
+      ],
+      "recommended_action": "为每项工作生成动机页(顶部命题+主体留白)、方法页(核心图示+文献引用)、结果页(2-3 个红色关键指标数字);紫色「研究动机/研究方法」标签块统一版式"
+    },
+    {
+      "rule_id": "b20.r08",
+      "rule_type": "experiment_ip_positioning",
+      "scope": "section_role=experiment",
+      "pattern": "在方法-结果之间插入一张「产品/IP 定位」页,用速度/能效双卡片总结该工作的对外定位,起到从学术成果到工程 IP 的过渡",
+      "trigger_conditions": [
+        "experiment 章存在可对外定位的成果(如 FlightLLM)"
+      ],
+      "evidence_pages": [
+        27
+      ],
+      "recommended_action": "结果页之后可加一张定位页,用两个并列指标卡片(速度/能效)+底部实验设置说明;主体图表允许占位"
+    },
+    {
+      "rule_id": "b20.r09",
+      "rule_type": "framework_paradigm_ladder",
+      "scope": "section_role=framework",
+      "pattern": "framework 章按「结构铺垫(Transformer) → 范式 A(MoE) → 范式 B(MoD) → 多范式统一(联合稀疏度)」四段式递进,末页把并列范式相乘/叠加为一个综合指标",
+      "trigger_conditions": [
+        "section_role==framework",
+        "存在多种并列的新范式"
+      ],
+      "evidence_pages": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "recommended_action": "framework 章先复用同一 block 框图作铺垫,再对每个新范式复用同一版式(block+expert+token 三区),最后用 3 列并列 panel + 汇聚箭头统一"
+    },
+    {
+      "rule_id": "b20.r10",
+      "rule_type": "framework_evolution_stages",
+      "scope": "section_role=framework",
+      "pattern": "范式演进采用「阶段一→阶段二」+「三阶段完整」两页递进呈现:前页留白第三阶段,后页蓝色高亮补全,制造视觉悬念",
+      "trigger_conditions": [
+        "需展示技术/范式的多阶段演进"
+      ],
+      "evidence_pages": [
+        38,
+        39
+      ],
+      "recommended_action": "对范式演进使用两页递进版式,坐标轴与列布局保持一致,仅通过高亮色和补全项区分阶段;避免一页塞满所有阶段"
+    },
+    {
+      "rule_id": "b20.r11",
+      "rule_type": "framework_accelerator_zoom",
+      "scope": "section_role=framework",
+      "pattern": "自研硬件呈现按「总览(数据通路+结果标注) → 关键技术拆解(同版式+技术色块) → 加速结果小结(纯文本要点)」三页收尾",
+      "trigger_conditions": [
+        "framework 章包含自研加速器/系统"
+      ],
+      "evidence_pages": [
+        40,
+        41,
+        42
+      ],
+      "recommended_action": "加速器页复用同一 N:M 稀疏 pattern 网格+数据通路框图;技术拆解页在总览基础上覆盖三项技术色块;末页用两条要点+加速比红字收束"
+    },
+    {
+      "rule_id": "b20.r12",
+      "rule_type": "closing_ecosystem_pivot",
+      "scope": "section_role=closing",
+      "pattern": "closing 章不做纯要点总结,而是引入「生态对比」页揭示问题(如中美 m*n 适配困境),再用一张「全栈解决方案图」把本文方法落到产业上下文",
+      "trigger_conditions": [
+        "section_role==closing",
+        "目标受众含工业界"
+      ],
+      "evidence_pages": [
+        43,
+        44,
+        45
+      ],
+      "recommended_action": "closing 用两页组合:上下双栏生态对比页揭示痛点;全栈映射图页把自研栈对应到通用栈+底部适配国产平台,收束到主题标语"
+    },
+    {
+      "rule_id": "b20.r13",
+      "rule_type": "appendix_backup_pattern",
+      "scope": "section_role=appendix",
+      "pattern": "附录先放「格式参考模板页」(红色占位块划分图位),再放 N 张仅带日期抬头的留白备份页,最后放产品/生态图与致谢联系页",
+      "trigger_conditions": [
+        "section_role==appendix",
+        "报告用于会议/论坛现场讲解"
+      ],
+      "evidence_pages": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "recommended_action": "附录段序列: 格式参考页(标注技术框架图/实验结果图/论文图/二维码占位) → 若干留白日期抬头页 → 产品生态图 → 致谢+联系方式+二维码网格"
+    },
+    {
+      "rule_id": "b20.r14",
+      "rule_type": "ending_slot",
+      "scope": "deck_end",
+      "pattern": "ending_candidate 仅出现在最后 1 页,承担致谢+联系+团队招募三项,采用 Thanks/Support 双彩色标签区分左右分区",
+      "trigger_conditions": [
+        "最后一页",
+        "讲者身份含实验室/公司角色"
+      ],
+      "evidence_pages": [
+        50
+      ],
+      "recommended_action": "末页固定为 ending_candidate;左侧 Thanks(团队/招募文案)、中部讲者联系块、右侧 Support(合作二维码网格);页脚署名讲者+机构"
+    },
+    {
+      "rule_id": "b20.r15",
+      "rule_type": "citation_lineage_discipline",
+      "scope": "research_report_全局",
+      "pattern": "所有引用外部方法/工作的页面在标题或角标处标注 [1]-[N] 或 (作者 et al., 会议 年份),对本文自研成果则用「Ours」明确区分",
+      "trigger_conditions": [
+        "页面引用外部方法或数据"
+      ],
+      "evidence_pages": [
+        15,
+        16,
+        17,
+        18,
+        20,
+        28,
+        30
+      ],
+      "recommended_action": "生成学术报告页时,外部方法必配文献角标或作者-会议-年份;自研贡献用「Ours」/「自研」明确标签;禁止裸露的方法名"
+    }
+  ],
+  "meta": {
+    "arc_type_observed": "背景动机→原理→实证→框架→总结→附录",
+    "section_role_sequence": [
+      "opening",
+      "motivation",
+      "method",
+      "experiment",
+      "framework",
+      "closing",
+      "appendix"
+    ],
+    "rule_count": 15,
+    "carry_forward_notes": "本 deck 建立了学术报告长报告(50 页)的完整模板:三页 opening + Contents 章节导航 + motivation 六步弧 + method 三路线框架 + experiment 动机/方法/结果三页组 + framework 范式阶梯与加速器缩放 + closing 生态转产业 + appendix 备份序列。后续批次可对照 report_type=research_report 时复用。"
+  }
+}

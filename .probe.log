@@ -1,0 +1,37 @@
+probe deck: DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f
+input size: 19 KB
+input saved: probe_DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f_input.json
+cmd model: claude-opus-4-7
+skill: skills/resources_library/logic/section_level_extract.md
+launching claude cli (timeout 1800s)...
+claude done in 209s, rc=0, terminal_err=None
+stdout: 30375 bytes, stderr: 0 bytes
+stdout saved: probe_DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f_stdout.txt (30375 bytes)
+stderr saved: probe_DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f_stderr.txt (0 bytes)
+
+=== stdout head (400 chars) ===
+{
+  "batch_index": 0,
+  "patterns": [
+    {
+      "id": "opening_single_cover_title_authors_institutions",
+      "title": "开场·单页论文封面署名",
+      "applicable_when": {
+        "chapter_role": ["opening", "cover"],
+        "report_type": ["paper_share", "academic_report"],
+        "page_count_range": [1, 1],
+        "must_have_in_chapter_purpose": ["封面", "论文标题", "署名"]
+      },
+      "abstract_node_sequ
+
+=== stdout tail (400 chars) ===
+承接痛点立靶,通常出现在 problem 章末; new_archetype: setup_bullet_list_models_datasets — 两级 bullet 列出实验模型与数据集,带 [n] 引用与底部参考文献; new_archetype: setup_bullet_list_baselines_hardware — 两级 bullet 列出对比基线与硬件配置; new_archetype: closing_one_line_summary_with_contact — 顶部蓝框一句话『We propose X』总述 + 下方实验室主页/邮箱双栏收尾.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}
+
+
+direct parse: OK type=dict
+  top-level keys: ['batch_index', 'patterns', 'extraction_notes', 'coverage']

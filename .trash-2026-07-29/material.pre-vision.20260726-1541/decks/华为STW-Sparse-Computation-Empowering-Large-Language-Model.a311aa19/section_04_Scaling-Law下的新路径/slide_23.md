@@ -1,0 +1,52 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_23"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.04"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 23
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "Way 3 示例:新基础模型 Mamba"
+核心论断: "线性时序状态空间模型 Mamba 是新基础模型方向"
+本页讲什么: "本页作为本章收尾,展开 Way 3 新基础模型,以 Mamba(线性时间选择性状态空间模型)为例,说明超越 Transformer 的新架构路径,呼应三路径框架并完成从技术到方法论的收束。"
+关键文字:
+  - "Way 3 Example: New Foundation Model"
+  - "Mamba: Linear-time sequence modeling with selective state spaces (arXiv:2312.00752)"
+视觉骨架: "[Mamba 架构示意图, 状态空间序列建模结构, 文献引用脚注]"
+资源ID列表:
+适合复用场景: "[新基础模型架构介绍页, Mamba/状态空间模型示例页]"
+不适合复用场景: "[量化压缩数据对比页, Scaling 榜单趋势页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Way 3 Example: New Foundation Model"}
+  - {"位置": "中间主体", "内容": "Mamba 架构示意图与状态空间序列建模结构"}
+  - {"位置": "底部脚注", "内容": "文献引用 arXiv:2312.00752"}
+alternate_claims:
+  - "Mamba 采用选择性状态空间实现线性时间序列建模"
+layout_tag: "block_diagram"
+---
+# slide 23: Way 3 示例:新基础模型 Mamba
+
+**核心论断**: 线性时序状态空间模型 Mamba 是新基础模型方向
+
+## 本页讲什么
+本页作为本章收尾,展开 Way 3 新基础模型,以 Mamba(线性时间选择性状态空间模型)为例,说明超越 Transformer 的新架构路径,呼应三路径框架并完成从技术到方法论的收束。
+
+## 关键文字片段
+- Way 3 Example: New Foundation Model
+- Mamba: Linear-time sequence modeling with selective state spaces (arXiv:2312.00752)
+
+## 视觉骨架
+- Mamba 架构示意图
+- 状态空间序列建模结构
+- 文献引用脚注
+
+## 可复用到
+- 新基础模型架构介绍页
+- Mamba/状态空间模型示例页
+
+## 不适合复用的场景
+- 量化压缩数据对比页
+- Scaling 榜单趋势页

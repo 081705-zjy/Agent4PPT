@@ -1,0 +1,38 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_24",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 24,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "浮点计算的硬件挑战",
+  "核心论断": "注意力等浮点运算对 DSP 计算单元提出挑战",
+  "本页讲什么": "指出注意力等浮点计算（Floating-point computation）在 FPGA DSP 上的开销与瓶颈，引出 DSP-E 相关硬件问题，为第二项混合精度 DSP58 技术做动机铺垫。",
+  "关键文字": [
+    "Floating-point computation (e.g., attention)",
+    "DSP-E"
+  ],
+  "视觉骨架": [
+    "浮点计算示意",
+    "DSP 单元框图",
+    "瓶颈标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_24.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_24.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_24.asset.03",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_24.asset.04"
+  ],
+  "适合复用场景": [
+    "浮点硬件瓶颈动机页",
+    "DSP 计算挑战铺垫页"
+  ],
+  "不适合复用场景": [
+    "帧相似性洞察页",
+    "调度流程图页",
+    "本章目录页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

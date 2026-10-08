@@ -1,0 +1,52 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18"
+所属章节: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05"
+所属deck: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738"
+页序号: 18
+源文件: "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx"
+页面角色: "content_candidate"
+标题: "自回归与投机解码对照采集早退标签"
+核心论断: "自回归与投机解码对照可标注逐层早退监督信号"
+本页讲什么: "本页说明标签的采集方式：以标准自回归解码作为参照，与投机解码逐层对照，得到每一层是否可早退的监督信号；同时指出映射复杂度随层数指数增长，需要通过采集策略加以约束，为预测器提供可靠训练标签。"
+关键文字: "[Autoregressive Decoding, Speculative Decoding, Exponential mapping complexity]"
+视觉骨架: "[自回归与投机解码对照示意, 逐层早退信号标注图, 指数复杂度映射示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.01, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.02, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.03, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.04, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.05, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.06, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.07, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.08, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.09, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.10, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.11, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.12, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.13, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.14, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.15, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.16, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.17, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.18, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.19, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.20, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_18.asset.21]"
+适合复用场景: "[投机解码主题的数据采集对照页, 早退监督标签生成方法页, 两种解码方式对照示意页]"
+不适合复用场景: "[单一模型无对照的展示页, 纯性能数字表格页, section 收尾总结页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "左侧对照区", "内容": "自回归解码 vs 投机解码 逐层对照示意"}
+  - {"位置": "右侧标注区", "内容": "逐层早退监督信号标注 + 指数复杂度映射说明"}
+alternate_claims:
+  - "逐层早退映射复杂度随层数呈指数增长需采集策略约束"
+layout_tag: "block_diagram"
+---
+# slide 18: 自回归与投机解码对照采集早退标签
+
+**核心论断**: 自回归与投机解码对照可标注逐层早退监督信号
+
+## 本页讲什么
+本页说明标签的采集方式：以标准自回归解码作为参照，与投机解码逐层对照，得到每一层是否可早退的监督信号；同时指出映射复杂度随层数指数增长，需要通过采集策略加以约束，为预测器提供可靠训练标签。
+
+## 关键文字片段
+- Autoregressive Decoding
+- Speculative Decoding
+- Exponential mapping complexity
+
+## 视觉骨架
+- 自回归与投机解码对照示意
+- 逐层早退信号标注图
+- 指数复杂度映射示意
+
+## 可复用到
+- 投机解码主题的数据采集对照页
+- 早退监督标签生成方法页
+- 两种解码方式对照示意页
+
+## 不适合复用的场景
+- 单一模型无对照的展示页
+- 纯性能数字表格页
+- section 收尾总结页

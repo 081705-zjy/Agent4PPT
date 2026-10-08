@@ -1,0 +1,57 @@
+=== stage 1: import 3 new pptx ===
+=== v17 preprocess import-all ===
+
+[import_all] importing LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx → tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74
+[import_all] importing 视频生成模型(VGM)技术路径及高效训推.pptx → tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714
+[import_all] importing VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx → tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031
+[import_all] done: ok=3 failed=0 skipped=0
+
+summary: ok=3 failed=0 skipped=0
+  ✅ tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74
+  ✅ tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714
+  ✅ tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031
+
+=== stage 2: build the 3 new deck_ids ===
+=== v17 preprocess build-all ===
+
+logic/ + rule/ are hand-curated + static, no rebuild.
+Building material/ via template_library...
+
+[brief/skip] tpl.内部组会科研交流.视频生成模型-VGM-技术路径及高效训推.4d4a7714: no imports manifest
+[brief] starting batch: 2 decks, concurrency=6, model=claude-opus-4-8
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 1/4: deck_brief
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 1/4: deck_brief
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 2/4: section_split
+  [deck_brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] attempt 1/3 CLI error: cli rc=1: 
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 2/4: section_split
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 3/4: section_briefs (7 sections)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.1 (1 slides)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 3/4: section_briefs (6 sections)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 4/4: slide_brief sec.1 (1 slides)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.2 (5 slides)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 4/4: slide_brief sec.2 (8 slides)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.3 (13 slides)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 4/4: slide_brief sec.3 (6 slides)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 4/4: slide_brief sec.4 (6 slides)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.4 (5 slides)
+  [slide_brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] attempt 1/3 CLI error: json decode: Expecting ',' delimiter: line 26 column 86 (char 924)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 4/4: slide_brief sec.5 (3 slides)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.5 (8 slides)
+[brief/tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031] step 4/4: slide_brief sec.6 (2 slides)
+[brief/OK] tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031: tree → /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks/VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031 (6 sec, 26 slides)
+[brief/progress] 1/2 done (ok=1, failed=0)
+  [slide_brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] attempt 1/3 CLI error: json decode: Expecting value: line 1 column 1 (char 0)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.6 (1 slides)
+[brief/tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74] step 4/4: slide_brief sec.7 (1 slides)
+[brief/OK] tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74: tree → /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks/LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74 (7 sec, 34 slides)
+[brief/progress] 2/2 done (ok=2, failed=0)
+[brief] batch done in 667.8s: ok=2 failed=0
+
+summary: ok=2 failed=0 elapsed=667.8s
+  ✅ tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031
+  ✅ tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74
+
+✅ material/ done. Run 'status' to verify.
+
+=== done ===
+Sun Jul 26 13:40:52 CST 2026

@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_14"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.03"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 14
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "稀疏计算核心思想：隐藏等待时延"
+核心论断: "稀疏计算通过压缩等待时间提升整体执行效率"
+本页讲什么: "延续核心思想论述，从时间维度切入：说明稀疏计算不仅减少计算量，还能缩短等待 (wait) 时延。讲者可结合时间轴图示，讲清稀疏化如何减少空闲等待、提高硬件利用率，与上页的计算量削减形成互补论点。"
+关键文字: "[The Idea of Sparse Computing, time, wait]"
+视觉骨架: "[计算与等待时间轴图, 时延对比示意]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_14.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_14.asset.02]"
+适合复用场景: "[稀疏计算时延优化讲解页, 硬件等待时间分析页]"
+不适合复用场景: "[模型创新点页, 数据流谱系汇总页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "The Idea of Sparse Computing"}
+  - {"位置": "下方主体", "内容": "计算与等待时间轴对比图"}
+alternate_claims:
+  - "稀疏化可减少硬件空闲等待, 提高利用率"
+layout_tag: "block_diagram"
+---
+# slide 14: 稀疏计算核心思想：隐藏等待时延
+
+**核心论断**: 稀疏计算通过压缩等待时间提升整体执行效率
+
+## 本页讲什么
+延续核心思想论述，从时间维度切入：说明稀疏计算不仅减少计算量，还能缩短等待 (wait) 时延。讲者可结合时间轴图示，讲清稀疏化如何减少空闲等待、提高硬件利用率，与上页的计算量削减形成互补论点。
+
+## 关键文字片段
+- The Idea of Sparse Computing
+- time
+- wait
+
+## 视觉骨架
+- 计算与等待时间轴图
+- 时延对比示意
+
+## 可复用到
+- 稀疏计算时延优化讲解页
+- 硬件等待时间分析页
+
+## 不适合复用的场景
+- 模型创新点页
+- 数据流谱系汇总页

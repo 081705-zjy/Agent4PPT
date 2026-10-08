@@ -1,0 +1,51 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_45"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.08"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 45
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "ending_candidate"
+标题: "致谢页 — Thanks for your listening"
+核心论断: "报告正文完毕，以致谢作礼节性收尾"
+本页讲什么: "这是整个 deck 的最后一页致谢页，正文（方法与实验论证）已全部讲完，本页不承载任何论证内容，仅用一句「Thanks for your listening!」向听众致谢并署名讲者，作为演示的礼节性收尾。"
+关键文字: "[\"Thanks for your listening!\", Jun]"
+视觉骨架: "[致谢主标语居中排版, 讲者署名, 装饰性配图/图标]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_45.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_45.asset.02, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_45.asset.03, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_45.asset.04, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_45.asset.05]"
+适合复用场景: "[技术报告 deck 结尾致谢页, 学术演示收尾感谢页, 带讲者署名的答谢页]"
+不适合复用场景: "[需承载论断的正文页, 数据结果展示页, 方法架构说明页, 章节过渡页]"
+上页角色: "content_candidate"
+下页角色: null
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "页面中央", "内容": "致谢主标语 Thanks for your listening!"}
+  - {"位置": "下方", "内容": "讲者署名 Jun"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 45: 致谢页 — Thanks for your listening
+
+**核心论断**: 报告正文完毕，以致谢作礼节性收尾
+
+## 本页讲什么
+这是整个 deck 的最后一页致谢页，正文（方法与实验论证）已全部讲完，本页不承载任何论证内容，仅用一句「Thanks for your listening!」向听众致谢并署名讲者，作为演示的礼节性收尾。
+
+## 关键文字片段
+- Thanks for your listening!
+- Jun
+
+## 视觉骨架
+- 致谢主标语居中排版
+- 讲者署名
+- 装饰性配图/图标
+
+## 可复用到
+- 技术报告 deck 结尾致谢页
+- 学术演示收尾感谢页
+- 带讲者署名的答谢页
+
+## 不适合复用的场景
+- 需承载论断的正文页
+- 数据结果展示页
+- 方法架构说明页
+- 章节过渡页

@@ -1,0 +1,34 @@
+---
+章节标识: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.01
+所属deck: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19
+章节序号: 1
+章节角色: cover
+标题: 封面
+页码范围: [1, 1]
+页数: 1
+页ID列表: [slide_01]
+章节叙事: 全 deck 门面。仅一页，抛出「稀疏计算赋能大语言模型」总命题与作者身份,为后续算子/硬件/模型三层论证定调,不展开子论点。
+页间关系: []
+适合复用场景: [学术型技术报告的单页封面章, 需突出讲者身份(教授/机构)的封面, 主题为大模型系统优化的封面]
+不适合复用场景: [需多页封面+副标题铺陈的场合, 非学术、无个人署名的商业封面, 主题与大模型/稀疏计算无关时]
+在deck中的位置: 第 1 章封面,68 页 deck 起点,后接 agenda 与 motivation
+分析状态: claude-opus-4-8
+---
+
+# section 1: 封面
+
+## 在 deck 中的位置
+第 1 章封面,68 页 deck 起点,后接 agenda 与 motivation
+
+## 章内 slide 间的关系
+- slide 1: Sparse Computation Powering Large Language Model
+
+## 整章可复用的场景
+- 学术型技术报告的单页封面章
+- 需突出讲者身份(教授/机构)的封面
+- 主题为大模型系统优化的封面
+
+## 不适合复用的场景
+- 需多页封面+副标题铺陈的场合
+- 非学术、无个人署名的商业封面
+- 主题与大模型/稀疏计算无关时

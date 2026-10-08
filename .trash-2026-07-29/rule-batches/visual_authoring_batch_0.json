@@ -1,0 +1,571 @@
+{
+  "batch_index": 0,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_speaker_signature",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "封面布局·居中大字主标题+讲者署名",
+      "description": "封面页由居中大字主标题占据视觉核心,下方以浅色分隔线过渡到日期/地点/讲者姓名/邮箱等署名信息,整页留白多、无正文内容元素。",
+      "evidence_signals": [
+        "视觉骨架 含 '超大主标题居中' 或 '大字标题'",
+        "关键文字 含 讲者姓名 + 单位/邮箱 + 日期/地点",
+        "视觉骨架 含 '浅色横向分隔线' 或 '标题分隔横条'",
+        "无 'bullet 列表' / '正文段落' / 'panel' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 1,
+          "评价": "标准封面:居中大字'AI Infra与国智院建设思考'+浅色分隔线+日期地点讲者邮箱四行署名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "居中大字标题让主题在开场瞬间抓住视觉焦点,讲者署名建立身份权威,分隔线组织信息层级,避免其他元素抢占开场认知带宽",
+      "fix_hint": "cover 页仅保留居中主标题+底部署名区,移除 bullet/panel/图表等正文元素,加浅色分隔线过渡",
+      "exceptions": [
+        "空白/占位模板无实际身份可展示时",
+        "品牌宣传型 deck 讲者身份让位于 logo/slogan 时"
+      ]
+    },
+    {
+      "id": "toc_layout_numbered_list_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录布局·编号列表+当前章高亮",
+      "description": "目录页顶部为'目录'标题加蓝色粗分隔线,正文以 00-04 编号纵向列出章节,当前章用黑色高亮,其余章节灰化,可选页脚署名条。",
+      "evidence_signals": [
+        "视觉骨架 含 '蓝色分隔' + '编号目录列表'",
+        "视觉骨架 含 '当前章高亮/其余灰化' 或 '当前项黑色高亮'",
+        "关键文字 以 '00.' '01.' 等编号开头",
+        "无 'panel' / 'chart' / 'bullet 正文'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 2,
+          "评价": "目录+蓝色粗分隔线+00-04编号列表+当前章黑色高亮其余灰化"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 8,
+          "评价": "同版式,高亮01系统优化与软硬件协同"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 20,
+          "评价": "同版式,高亮02推理芯片"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 32,
+          "评价": "同版式,高亮03异构集群"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 43,
+          "评价": "同版式,高亮04国智院展望"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "编号列表让听众可数进度,高亮/灰化对比明确当前所在位置,类似阅读书本目录的心智模型,减少讲者口头交代进度的成本",
+      "fix_hint": "toc 页统一用编号列表+粗分隔线,当前章加深字色,其余章降饱和/灰化,保持跨 toc 页版式一致",
+      "exceptions": [
+        "非章节型 deck (纯 pitch/单幅海报) 无需 toc",
+        "小于 3 章节的短 deck 可用横向进度条替代编号列表"
+      ]
+    },
+    {
+      "id": "chapter_transition_uses_toc_page_as_divider",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "章节切换沿用目录页作为过渡分隔",
+      "description": "章节之间不用独立章节封面 (big chapter number) 过渡,而是复用统一目录版式,仅切换高亮项来提示进入新章。",
+      "evidence_signals": [
+        "同 deck 内多个 toc_candidate 版式完全一致",
+        "仅 '当前章高亮' 位置在不同 toc 页间切换",
+        "toc 页夹在 content_candidate 之间,承担章节过渡功能"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 8,
+          "评价": "每章开始前重现同一目录版式,仅高亮项切换"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 20,
+          "评价": "同一目录复现,高亮项跳到02"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 32,
+          "评价": "同一目录复现,高亮项跳到03"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 43,
+          "评价": "同一目录复现,高亮项跳到04"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "复用目录版式让听众在每次章节切换时都刷新对全局进度的认知,比一次性铺开的目录+独立章节封面更能对抗中途注意力衰减",
+      "fix_hint": "章节交界处插入统一 toc 版式页,只改高亮项,不做独立章节封面页",
+      "exceptions": [
+        "deck 章数≤2 时进度感弱,无需重现目录",
+        "会议 keynote 类偏戏剧化开场的 deck 可用独立章节封面强化仪式感"
+      ]
+    },
+    {
+      "id": "content_page_top_conclusion_or_formula_banner",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文顶部结论条/公式条统领全页",
+      "description": "正文页在顶部用横向结论条或公式条给出本页核心论断/关键框架,下方 panel 或表格是对该结论/公式的分解展开。",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部结论横幅' / '顶部公式蓝条' / '顶部算力分解框图'",
+        "顶部单条文本给出量化结论或公式,下方是分解 panel",
+        "本页讲什么 描述'顶部...下方...'的上下结构"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 4,
+          "评价": "顶部结论条'需求增长4量级、供应约5倍',下方左右对比panel"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 7,
+          "评价": "顶部公式蓝条'能效比×芯片数量×时间',下方三列途径panel"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 23,
+          "评价": "顶部能效公式高亮条,下方端侧/云端分组能效表"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 18,
+          "评价": "顶部'各层加速×'乘法流程,下方柱状与综合汇总"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "顶部先给结论/公式,让听众带着'验证已知答案'的心态读下方分解,比让他们自己从 panel 里逆推结论认知负荷更低",
+      "fix_hint": "内容页顶部加一条结论横幅或公式条,把本页核心判断/框架写成一句,下方 panel 是对它的分解",
+      "exceptions": [
+        "纯陈列型页 (团队组成/成果矩阵) 无单一结论时不需要",
+        "本页仅承接铺垫用无量化结论时"
+      ]
+    },
+    {
+      "id": "content_multi_column_parallel_panel",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容分解用 2-4 列并列 panel",
+      "description": "当页面需要展开多项并列子概念/方法/维度时,统一用 2-4 列并列 panel 版式,每列独立标题+内容,列间视觉重量对称。",
+      "evidence_signals": [
+        "视觉骨架 含 '3列并列panel' / '左右双栏' / '2列对比panel' / '3列路线标题'",
+        "本页讲什么 描述'左列...中列...右列...' 或 '左栏...右栏...'",
+        "页面同时展开多个平行子概念/方法/维度"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 3,
+          "评价": "3列并列展示 AGI 三要素:基座模型/AI Infra/硬件"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 9,
+          "评价": "左右双栏对比 AI 1.0 vs AI 2.0 范式"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 11,
+          "评价": "3列并列量化/投机解码/跳层三类系统优化"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 57,
+          "评价": "3列并列512智算/无问芯穹/DeepLink三平台"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 42,
+          "评价": "左右双栏工程算力底座 vs 研究算力底座"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "并列 panel 用空间关系表达'平行/对比/协同'的语义关系,比纵向 bullet 更能让听众一眼把握维度数与对比关系",
+      "fix_hint": "多项平行子概念用等宽多列 panel 排布,每列独立标题,列间加分隔线/间距,避免高度失衡",
+      "exceptions": [
+        "单一主张/单实例引入的过渡页",
+        "流程/时序类关系不适合并列 (改用箭头链)"
+      ]
+    },
+    {
+      "id": "quantitative_comparison_uses_reference_frame_with_gap_annotation",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "量化对比用基准框+差距倍数红字标注",
+      "description": "当页面涉及多方案对现状/需求的量化对比,用绿色/彩色需求基准框固定参照系,对比对象椭圆化,中间用双向箭头连接,差距倍数以红字加粗标注在箭头上。",
+      "evidence_signals": [
+        "视觉骨架 含 '绿色需求框' + '椭圆' + '双向箭头'",
+        "视觉骨架 含 '差距红字标注'",
+        "本页讲什么 出现 '差 X 倍' / '差 X 个量级'",
+        "跨多页复用同一基准框对标不同对象"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 27,
+          "评价": "绿色需求框对标CPU椭圆,红字标注差6-70倍/1-2量级"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 28,
+          "评价": "同基准框对标GPU,红字标注差2-10倍/2-3量级"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 29,
+          "评价": "同基准框对标FPGA,红字标注差2-20倍/1-2量级"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 30,
+          "评价": "同基准框对标ASIC,标注速度已满足/能效差1-2量级"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.1,
+      "enforcement_level": "soft",
+      "rationale": "固定基准+可比对象+差距数字三件套让'现状离目标多远'一眼可读,红色差距数字激活紧迫感,支撑后续解决路径的必要性",
+      "fix_hint": "多方案对同一目标对比时,把目标做成固定色块基准框,每方案单独一页,中间加双向箭头+红字倍数",
+      "exceptions": [
+        "无明确基准/目标的定性对比不适用",
+        "单方案单页的独立性能报告"
+      ]
+    },
+    {
+      "id": "end_of_chapter_summary_with_sota_or_benchmark_table",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "ending_candidate"
+      ],
+      "title": "章节收尾用 SOTA 对比表/多方案指标卡",
+      "description": "章节最后一页用横向 SOTA 对比或多代表系统指标卡收束,左侧列出对比对象+关键指标数字,右侧点明自身能力,形成'比同行更强'的落地感。",
+      "evidence_signals": [
+        "视觉骨架 含 '时间线' + '指标卡' 或 '成果panel'",
+        "页面同时出现 3+ 竞品/代表系统名称 + 量化指标",
+        "关键文字 含 '达SOTA' 或 '提升X倍'",
+        "section_role 属 discussion/case_study/ending"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 65,
+          "评价": "末页SOTA对比表:DLRover/Transom/MegaScale三系统指标+自身容错能力"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 41,
+          "评价": "9列训练性能对比表,Megatron-Infinigence对比Modellink"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 62,
+          "评价": "4象限成果panel,多款FPGA/芯片TOPS/W能效对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.08,
+      "enforcement_level": "soft",
+      "rationale": "收尾用可比数字对齐同行,把整章方法/工作落到'量化优势'上,给听众带走一个可传播的数字锚点",
+      "fix_hint": "章节末页加SOTA/对标对比:左侧3+竞品指标卡,右侧本方能力条,量化差距数字加粗",
+      "exceptions": [
+        "纯展望/团队/清单型章节无量化结果时",
+        "开场背景章无自方成果对比"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_or_colon_structure_not_full_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用名词短句或冒号定位结构,不用完整动宾句",
+      "description": "slide.标题 倾向于名词短句 (≤14字)、或 '主题:子主题' / '主题·特征' 冒号式定位结构,不用 '介绍 XX' / '我们将' 等动宾开头,不用完整句号句。",
+      "evidence_signals": [
+        "title 不以 '介绍' / '本节' / '我们将' 开头",
+        "title 多为 'X:Y' 或 'X·Y' 或 'X 与 Y' 结构",
+        "title 不含句号,不构成完整谓宾陈述",
+        "title 长度多在 14 字以内"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 21,
+          "评价": "'范式变化:OpenAI o1 引入 CoT 推理' 冒号定位式"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 22,
+          "评价": "'典型芯片:五类平台通用性—定制化谱系' 冒号+名词短句"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 47,
+          "评价": "'研究方向:单体/协同×软硬件框架' 冒号+对偶名词短句"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 37,
+          "评价": "'关键问题1:国产GPU性能低、故障率高' 编号+定位结构"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 9,
+          "评价": "'范式变化:从 AI 1.0 到 AI 2.0' 冒号+方向短语"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "名词短句 title 让听众瞬间抓住本页主题定位,冒号式让'章-节'关系直观,动宾句会让 title 与 claim 语义重叠、退化成描述",
+      "fix_hint": "把动词短语去掉,改写为 '<主题>:<子主题>' 或 '<X>·<Y>' 名词短句,claim 归到本页正文顶部",
+      "exceptions": [
+        "议程/章节封面 title 承担'即将展开' 提示时可用动词短语"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_sentence_with_quantitative_anchor",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断用带量化锚点的判断句",
+      "description": "slide.核心论断 是一句完整判断/主张,通常包含数字/倍数/量级/比例等量化锚点,不用描述句 ('本页讲 XX') 或问题句。",
+      "evidence_signals": [
+        "核心论断 含 数字 + 单位/倍数/百分比/量级",
+        "核心论断 是判断句 (含 '是' / '决定' / '需' / '提升' / '差' 等谓语)",
+        "核心论断 不以 '本页' / '介绍' 开头",
+        "核心论断 与 title 语义不重叠"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 4,
+          "评价": "'训练算力需求增长约4个量级,远超硬件供应约5倍增速'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 18,
+          "评价": "'全栈协同各层加速叠乘达 10²-10³x 综合提升'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 26,
+          "评价": "'具身智能需 100-1000 tokens/s、<20W、>20 tokens/J,现状差 4-200 倍'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 37,
+          "评价": "'国产GPU单卡性能弱且大规模集群故障频发,有效算力占比骤降'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 42,
+          "评价": "'国智院拟构建工程与研究双算力底座,异构集群利用率达97.6%'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 47,
+          "原因": "claim '研究沿单体—协同、软件—硬件两轴四象限展开布局' 为描述句,缺量化锚点"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "带数字的判断句是'可被引用/传播/反驳'的强论断,描述句和问题句无法承载认知锚点,听众记不住",
+      "fix_hint": "claim 改写为 '<主语><谓语>X倍/X%/X个量级<结果>' 判断句式,量化数字尽量放在句子核心位置",
+      "exceptions": [
+        "过渡/铺垫页无独立论断时可省",
+        "定性关系图/团队清单类难以量化时"
+      ]
+    },
+    {
+      "id": "key_text_bullet_uses_metric_value_pattern",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键文字用'指标:数值+单位'紧凑结构",
+      "description": "slide.关键文字 中的每条 bullet 倾向于 '<主体>:<数值><单位>' 的紧凑结构,不用完整句子,数字/单位/型号直接暴露,便于视觉扫读。",
+      "evidence_signals": [
+        "关键文字 bullet 含 '<名称>:<数字>+<单位>' 结构 (如 'NVIDIA A100:100 tokens/s@7B、400W')",
+        "单条 bullet ≤30 字",
+        "bullet 大量使用数字/百分比/型号名",
+        "bullet 不含'的'字长定语句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 28,
+          "评价": "'NVIDIA A100:100 tokens/s@7B、400W、0.25 tokens/J' 紧凑指标结构"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 34,
+          "评价": "'存储:175PB bulk / 46PB cache / 10PB NFS' 分类+数值"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 59,
+          "评价": "'统一资源管理:成本↓20%、利用率92%' 冒号+多指标"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 41,
+          "评价": "'1024卡:MFU 48.72% vs 44.95%,提升8.3%' 对比+提升幅度"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 23,
+          "评价": "'端侧:爱芯元智 AX650N 10、后摩智能 M30 12' 分组+型号数值"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "演讲场景听众滑读 bullet 时只抓关键名词+数字,紧凑'指标:数值'结构比完整句能 3 倍速传递信息,数字在视觉上也自然形成焦点",
+      "fix_hint": "bullet 改为 '<对象>:<数字>+<单位>' 结构,去掉'的''是'等虚词,多个指标用顿号分隔",
+      "exceptions": [
+        "高度概念/无可量化对象的定义型 bullet",
+        "引用型/政策原文型 bullet 需保留完整表述"
+      ]
+    },
+    {
+      "id": "abbrev_and_model_name_used_without_expansion_after_first_intro",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "专有缩写/型号名首次介绍后直接复用",
+      "description": "英文缩写 (FP8/CoT/RLHF/SGD/MFU/SLO/TOPS/PIM) 与芯片型号 (H100/A100/H20/910B) 在首次上下文介绍后,后续 slide 直接以缩写/型号出现,不再展开全称,依赖听众记忆延续。",
+      "evidence_signals": [
+        "同一 deck 内缩写/型号跨多页出现,仅首次或个别页有 '全称 (缩写)' 展开",
+        "后续 slide 直接以 'H100' / 'FP8' / 'MFU' 独立出现",
+        "缩写与领域强关联,面向行业/学术受众"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 14,
+          "评价": "'FP8 训练'直接使用,未在本页解释 FP8 含义"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 21,
+          "评价": "'CoT + 强化学习' 缩写 CoT 未在本页展开"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 41,
+          "评价": "'MFU 最高达48.72%' MFU 未展开"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 59,
+          "评价": "'训练SLO 99.99%' 直接使用 SLO"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "针对行业专家受众,反复展开缩写会浪费空间/让内容显得初级;首次上下文暗示+后续直接复用,匹配听众已有词汇库",
+      "fix_hint": "缩写在首次出现的 slide 用 '全称 (缩写)' 或上下文暗示,后续 slide 直接用缩写",
+      "exceptions": [
+        "面向非专业受众/科普型 deck 需持续展开",
+        "跨领域概念首次跳跃出现时需就地解释"
+      ]
+    },
+    {
+      "id": "citations_inline_with_venue_and_year_tag",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引用用'[会议+年份]'内联标签,不用脚注",
+      "description": "论文/工作引用直接以 '[ICML24 oral]' / '[ICLR'24]' / '[RAL24]' / '[IEEE MICRO 2017]' 等紧凑标签内联在方法名后,不使用页脚编号或独立 References 页。",
+      "evidence_signals": [
+        "关键文字 含 '[<会议缩写><年份>]' 或 '[<会议>'<年份>]' 或类似标签",
+        "标签紧跟方法名/工作名",
+        "无独立参考文献页,或参考只列极少条目"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 53,
+          "评价": "'MAPPO&AR [ICML21]' 紧凑内联标签"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 54,
+          "评价": "'DPOvsPPO [ICML24 oral]' / 'OmniDrones [RAL24]' / 'LAGOON [ICRA24]'"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 64,
+          "评价": "'SoT [ICLR'24]' 内联"
+        },
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "slide_index": 61,
+          "评价": "'网络软硬件协同设计 [IEEE MICRO 2017]' 内联"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "内联会议标签让'工作+来源+分量'三信息在一处闭合,听众无需跳读脚注,同时会议名本身承担了工作质量的信誉锚点",
+      "fix_hint": "论文/工作引用用 '<方法名> [<会议><年份>]' 内联,不用页脚编号,不建独立 References 页",
+      "exceptions": [
+        "非学术型 deck / 无需引用的商业 pitch",
+        "单一论文分享型 deck 可用完整 BibTeX"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck (65 页 research_report),抽出 7 条 visual rule + 5 条 authoring rule,覆盖 cover/toc/content/ending 四类 role 及标题-论断-bullet-引用四类写作维度",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

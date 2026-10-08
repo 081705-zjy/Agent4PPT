@@ -1,0 +1,54 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.07"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 29
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "分步推理案例分析：背景与核心洞察"
+核心论断: "长上下文推理面临 KV 冗余挑战，分步推理暗藏关键优化机会"
+本页讲什么: "本页是 section 开篇总览页，用 Background / Related Work / Challenges and Techniques / Key Insight 四块结构铺陈分步推理案例的研究背景，点出长上下文推理的挑战与本章要揭示的核心洞察，为后续 step-by-step 样例和冗余分析定调。"
+关键文字: "[Background, Related Work, Challenges and Techniques, Key Insight]"
+视觉骨架: "[四分区概念框图, Key Insight 高亮块, 多配图并列]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29.asset.02, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29.asset.03, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29.asset.04, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29.asset.05, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_29.asset.06]"
+适合复用场景: "[长上下文推理章节开篇总览, 分步推理主题背景铺陈页, 研究挑战与洞察四分区概览]"
+不适合复用场景: "[含具体数字的结果对比页, 单一方法架构细节页, benchmark 表格页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "左上区块", "内容": "Background"}
+  - {"位置": "右上区块", "内容": "Related Work"}
+  - {"位置": "下方区块", "内容": "Challenges and Techniques / Key Insight"}
+alternate_claims:
+  - "分步推理中存在可被利用的 KV 复用与冗余优化机会"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 29: 分步推理案例分析：背景与核心洞察
+
+**核心论断**: 长上下文推理面临 KV 冗余挑战，分步推理暗藏关键优化机会
+
+## 本页讲什么
+本页是 section 开篇总览页，用 Background / Related Work / Challenges and Techniques / Key Insight 四块结构铺陈分步推理案例的研究背景，点出长上下文推理的挑战与本章要揭示的核心洞察，为后续 step-by-step 样例和冗余分析定调。
+
+## 关键文字片段
+- Background
+- Related Work
+- Challenges and Techniques
+- Key Insight
+
+## 视觉骨架
+- 四分区概念框图
+- Key Insight 高亮块
+- 多配图并列
+
+## 可复用到
+- 长上下文推理章节开篇总览
+- 分步推理主题背景铺陈页
+- 研究挑战与洞察四分区概览
+
+## 不适合复用的场景
+- 含具体数字的结果对比页
+- 单一方法架构细节页
+- benchmark 表格页

@@ -1,0 +1,1278 @@
+{
+  "batch_index": 24,
+  "patterns": [
+    {
+      "id": "opening_minimal_cover_only_no_toc",
+      "title": "开场·极简单页封面无目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "科研申报",
+          "答辩",
+          "汇报"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "左上大字主题+分隔线下居中承载汇报人/单位/日期, 无目录即入内容章"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "科研申报答辩型 deck 的极简单页开场: 左上大字主题+一条中部分隔横线, 线下居中排列汇报人/单位/日期, 全 deck 无 TOC 页, 从封面直接切入 motivation 章",
+      "anti_patterns": [
+        "多页开场(封面+目录) → 用 opening_cover_plus_progress_highlighted_toc",
+        "论文标题+多机构署名 → 用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.01",
+          "section_title": "封面",
+          "section_role": "opening",
+          "section_narrative": "全 deck 的封面，独立单页。左上标题点明「大规模与多变场景组合优化的 AI 方法」主题，横线下居中承载汇报人、单位、日期，为科研申报答辩定调。",
+          "section_topic_tags": [
+            "科研申报答辩封面",
+            "组合优化",
+            "AI方法",
+            "上海交大"
+          ],
+          "match_evidence": "1 页节奏: 单张封面页, 大字标题+分隔线+讲者署名/单位/日期, 无 TOC, 直接进入下一章",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "面向大规模与多变场景组合优化问题的AI方法",
+              "slide_claim": "以AI方法应对大规模与多变场景下的组合优化问题",
+              "slide_key_text": [
+                "面向大规模与多变场景组合优化问题的AI方法",
+                "汇报人：戴国浩",
+                "上海交通大学 人工智能学院",
+                "2025.9.15"
+              ],
+              "slide_visual_skeleton": [
+                "左上标题区",
+                "中部浅色分隔横线",
+                "线下居中信息区(汇报人/单位/日期)"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "motivation_value_first_then_problem_then_challenges_funnel",
+      "title": "动机·价值先立→问题定义→AI 双挑战暴露",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "价值",
+          "问题定义",
+          "挑战"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "value_argument_dual_panel_evidence",
+          "count": 1,
+          "position": "start",
+          "purpose": "以中心辐射+GDP/政策双价值论证问题重要性"
+        },
+        {
+          "archetype": "problem_definition_with_method_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "定义问题(NP难)并对比传统 vs AI 方法, 引出 AI 路线"
+        },
+        {
+          "archetype": "dual_challenge_panel_with_evidence",
+          "count": 1,
+          "position": "end",
+          "purpose": "并列暴露 AI 落地的两大核心挑战, 用数字/表格佐证"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "value_argument_dual_panel_evidence",
+          "to_archetype": "problem_definition_with_method_compare",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "problem_definition_with_method_compare",
+          "to_archetype": "dual_challenge_panel_with_evidence",
+          "hook_type": "cause_to_effect"
+        }
+      ],
+      "applicable_summary": "科研申报型 motivation 章: 先以 GDP/政策双维度立技术价值→再以经典问题(SAT/NP 难)定义并对比传统与 AI 方法→末页并列抛出 AI 落地的两大挑战, 为方法章立靶",
+      "anti_patterns": [
+        "只讲宏观趋势不立价值 → 用 motivation_funnel_macro_to_pain",
+        "只谈问题不铺价值 → 用 motivation_problem_only_direct"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.02",
+          "section_title": "项目背景与核心挑战",
+          "section_role": "motivation",
+          "section_narrative": "为后续AI求解框架铺垫:先用GDP/政策价值论证组合优化的重要性,再由SAT定义NP难本质并对比传统vs AI方法,最后暴露AI在大规模与动态性下的核心挑战",
+          "section_topic_tags": [
+            "组合优化价值",
+            "NP难",
+            "传统vs AI求解",
+            "大规模挑战",
+            "动态性挑战"
+          ],
+          "match_evidence": "3 页节奏: 经济/政策双价值(macro value) + SAT定义+传统vs AI对比(problem definition) + 大规模+动态性双挑战(dual challenge)",
+          "slides": [
+            {
+              "slide_index": 2,
+              "role_in_pattern": "value_argument_dual_panel_evidence",
+              "archetype": "value_argument_dual_panel_evidence",
+              "slide_title": "组合优化的经济与战略价值总览",
+              "slide_claim": "组合优化广泛存在多领域,对经济发展与国家战略具重大价值",
+              "slide_key_text": [
+                "运输行业物流成本占约6%-25%",
+                "集成电路2024占全球半导体市场GDP14.1%",
+                "国务院印发185号相关政策",
+                "GDP价值论 / 政策价值论"
+              ],
+              "slide_visual_skeleton": [
+                "中心辐射圆形示意图",
+                "6领域标签环绕",
+                "右侧价值论要点栏",
+                "GDP/政策双分区"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_pattern": "problem_definition_with_method_compare",
+              "archetype": "problem_definition_with_method_compare",
+              "slide_title": "组合优化定义与传统vs AI方法对比",
+              "slide_claim": "组合优化因NP难致枚举不可行,AI方法相较传统更具求解潜力",
+              "slide_key_text": [
+                "判断是否存在输入组合使输出为1",
+                "有限对象集中找最优对象",
+                "复杂度NP,穷举/枚举法不可行",
+                "穷举搜索复杂度O(2^N)指数爆炸",
+                "传统方法 vs AI方法",
+                "精度损失<5%,加速10-100x"
+              ],
+              "slide_visual_skeleton": [
+                "SAT电路逻辑示意图",
+                "复杂度爆炸红字标注",
+                "传统vs AI双栏要点",
+                "↓<5%与10-100x趋势图"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "dual_challenge_panel_with_evidence",
+              "archetype": "dual_challenge_panel_with_evidence",
+              "slide_title": "AI for CO的两大核心挑战",
+              "slide_claim": "AI求解组合优化面临大规模泛化差与动态性重训两大核心挑战",
+              "slide_key_text": [
+                "核心挑战1:大规模",
+                "核心挑战2:动态性",
+                "AI随规模增大泛化性差精度下降",
+                "规模10000时SOTA AI超时",
+                "场景变化需重新训练,泛化弱",
+                "A100训练1-2周,成本高"
+              ],
+              "slide_visual_skeleton": [
+                "左右双挑战分栏",
+                "规模-方法对比表格",
+                "场景到重训流程图",
+                "训练成本红字标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_dual_route_foundation_framework_elevation",
+      "title": "方法·双路线并列→研究基础→四层框架→价值升华",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "解决方案",
+          "研究基础",
+          "总体框架",
+          "科学价值"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "dual_route_solution_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "以左右双栏并列陈述两条互补技术路线"
+        },
+        {
+          "archetype": "research_foundation_sota_showcase",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以已有 SOTA 成果+会议最佳论文佐证团队研究基础"
+        },
+        {
+          "archetype": "four_layer_project_framework_stack",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以自下而上四层递进图呈现项目总体框架"
+        },
+        {
+          "archetype": "scientific_value_dual_card_elevation",
+          "count": 1,
+          "position": "end",
+          "purpose": "以左右对称卡片升华科学问题前沿性+高价值性"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "dual_route_solution_panel",
+          "to_archetype": "research_foundation_sota_showcase",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "research_foundation_sota_showcase",
+          "to_archetype": "four_layer_project_framework_stack",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "four_layer_project_framework_stack",
+          "to_archetype": "scientific_value_dual_card_elevation",
+          "hook_type": "cause_to_effect"
+        }
+      ],
+      "applicable_summary": "科研申报型 method 章: 用双路线技术方案+分层研究基础+四层总体框架+末尾双卡价值升华四拍构成核心论证, 兼具方案可行性论证与科学意义升华",
+      "anti_patterns": [
+        "只列单一方法深挖 → 用 method_single_method_deep_dive",
+        "论文型多技术组织 → 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.03",
+          "section_title": "解决方案与总体框架",
+          "section_role": "method",
+          "section_narrative": "本章为deck方法核心：先抛出分而治之与自适应增量两条求解路线，再用分层研究基础与四层总体框架论证可行，末页升华科学问题前沿性与高价值性。",
+          "section_topic_tags": [
+            "分而治之",
+            "自适应增量",
+            "系统级/思维链优化",
+            "四层项目框架",
+            "科学问题价值升华"
+          ],
+          "match_evidence": "4 页节奏: 双路线并列(分治+自适应) → 系统/思维链/EDA 研究基础 → 四层框架蓝图 → 前沿性+高价值性双卡收尾",
+          "slides": [
+            {
+              "slide_index": 5,
+              "role_in_pattern": "dual_route_solution_panel",
+              "archetype": "dual_route_solution_panel",
+              "slide_title": "两条AI for CO求解路线并列",
+              "slide_claim": "分而治之与自适应增量式两条路线共构AI求解组合优化",
+              "slide_key_text": [
+                "解决方案1：分而治之，融合求解",
+                "解决方案2：自适应增量式求解与持续学习",
+                "CO求解框架 = AI组件 + 传统CO组件",
+                "复杂度O(N²)降至k(N/k)²",
+                "奖励 = f(δ, 收益)",
+                "轻量Agent应对场景变化增量求解"
+              ],
+              "slide_visual_skeleton": [
+                "顶部AI for CO蓝色横幅",
+                "左右2列并列panel",
+                "左侧分块求解框架示意图",
+                "右侧RL微调+Agent增量示意图"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "research_foundation_sota_showcase",
+              "archetype": "research_foundation_sota_showcase",
+              "slide_title": "多领域研究基础与SOTA成果",
+              "slide_claim": "系统/思维链/EDA多方向已有SOTA成果支撑项目可行",
+              "slide_key_text": [
+                "系统级优化：LLM推理加速可offload",
+                "超越SOTA，性能提升31.1%",
+                "思维链优化：稀疏矩阵重排dgSPARSE",
+                "推理开销降低达99%",
+                "EDA工具链优化",
+                "获多篇EDA领域会议最佳论文奖(ASP-DAC/FPGA/DATE)"
+              ],
+              "slide_visual_skeleton": [
+                "左右2列研究基础panel",
+                "稀疏矩阵重排前后示意图",
+                "红色高亮成果数字标注",
+                "底部会议最佳论文条目行"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "four_layer_project_framework_stack",
+              "archetype": "four_layer_project_framework_stack",
+              "slide_title": "项目四层总体框架",
+              "slide_claim": "基础资源到生态赋能四层逐级支撑构成总体框架",
+              "slide_key_text": [
+                "基础资源层",
+                "模型核心层",
+                "应用验证层",
+                "生态赋能层",
+                "超大规模静态数据集与基准",
+                "EDA/CO Agent应用与大模型/API输出"
+              ],
+              "slide_visual_skeleton": [
+                "自下而上四层横向色带",
+                "左侧四个上行蓝色箭头",
+                "各层文字标签+示意图元素",
+                "层间虚线承接标注"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "scientific_value_dual_card_elevation",
+              "archetype": "scientific_value_dual_card_elevation",
+              "slide_title": "科学问题前沿性与高价值性",
+              "slide_claim": "项目科学问题兼具学术前沿性与产业高价值性",
+              "slide_key_text": [
+                "科学问题前沿性",
+                "科学问题高价值性",
+                "引领「模型-数据双驱动」新范式",
+                "突破传统组合优化求解瓶颈",
+                "面向产业重大需求",
+                "支撑应用落地与生态经济效益"
+              ],
+              "slide_visual_skeleton": [
+                "左右两栏蓝头文本卡片",
+                "每栏三条带n项目符号bullet",
+                "标题+灰色说明文分层排版",
+                "对称双卡边框"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "discussion_team_record_kpi_budget_defense",
+      "title": "评审支撑·团队→实绩→指标→经费四拍收尾",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "团队",
+          "既往实绩",
+          "考核指标",
+          "经费"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "team_role_composition_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以角色分工中心辐射图介绍谁来做"
+        },
+        {
+          "archetype": "prior_project_track_record_metrics",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以既往结题项目+投资/营收量化数字证明交付能力"
+        },
+        {
+          "archetype": "quantitative_kpi_commitment_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多维指标表承诺可考核目标"
+        },
+        {
+          "archetype": "budget_allocation_multi_category_table",
+          "count": 1,
+          "position": "end",
+          "purpose": "以分类经费表明晰资金分配"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "team_role_composition_diagram",
+          "to_archetype": "prior_project_track_record_metrics",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "prior_project_track_record_metrics",
+          "to_archetype": "quantitative_kpi_commitment_table",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "quantitative_kpi_commitment_table",
+          "to_archetype": "budget_allocation_multi_category_table",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "科研申报答辩的评审支撑收尾章: 团队构成→既往结题实绩→量化考核指标→经费概算四拍, 回答'谁做/能否交付/做到什么/花多少钱'",
+      "anti_patterns": [
+        "纯学术展望无经费/团队 → 用 discussion_agenda_vision_topics_team_close",
+        "只讲结果不讲团队/经费 → 用 result_callout_then_compare"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.04",
+          "section_title": "团队实力、指标与经费",
+          "section_role": "discussion",
+          "section_narrative": "紧接方法与框架章节,以团队构成→既往结题实绩→量化考核指标→经费概算四步,回答'谁做、能否交付、做到什么、花多少钱',构成申报答辩的评审支撑收尾。",
+          "section_topic_tags": [
+            "团队角色分工",
+            "已结题项目实绩",
+            "量化考核指标",
+            "经费概算分类"
+          ],
+          "match_evidence": "4 页节奏: 四类角色团队(who) → 4800+万投资/4400+万营收实绩(can deliver) → 前沿/产业化/人才三维指标(what to achieve) → 500万经费七类分配(how much)",
+          "slides": [
+            {
+              "slide_index": 9,
+              "role_in_pattern": "team_role_composition_diagram",
+              "archetype": "team_role_composition_diagram",
+              "slide_title": "项目团队介绍：四类角色交叉攻关团队",
+              "slide_claim": "组建人工智能与集成电路交叉领域、四类角色协同的科研攻关团队",
+              "slide_key_text": [
+                "人工智能与集成电路交叉领域的科研攻关团队",
+                "领域科学家:负责项目需求定义与技术支持",
+                "芯片领域专家,深度参与平头哥第一代GPGPU/EDA",
+                "MIT TR35 / AI100 等履历(vision)",
+                "系统架构师、AI科学家、硬件工程师(vision)"
+              ],
+              "slide_visual_skeleton": [
+                "中央科学家节点+输入/反馈箭头",
+                "4 个角色 panel 并列",
+                "顶部蓝色团队定位横幅",
+                "履历要点 bullet 列表"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "prior_project_track_record_metrics",
+              "archetype": "prior_project_track_record_metrics",
+              "slide_title": "团队前期已结题项目(人工智能专项)",
+              "slide_claim": "团队前期已结题多个人工智能专项,累计投资超4800万、营收超4400万",
+              "slide_key_text": [
+                "团队前期已结题项目(人工智能专项)",
+                "团队项目基础",
+                "无问芯穹 × 联想 AIPC",
+                "FPGA 相关落地项目(vision)",
+                "投资 4800+ 万,营收超 4400+ 万元"
+              ],
+              "slide_visual_skeleton": [
+                "左右 2 栏项目横幅",
+                "底部产品/合作卡片组",
+                "红色量化实绩数字块"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "quantitative_kpi_commitment_table",
+              "archetype": "quantitative_kpi_commitment_table",
+              "slide_title": "项目指标:前沿攻关/产业化/人才培养",
+              "slide_claim": "从前沿技术攻关、产业化、人才培养三维设定量化考核指标",
+              "slide_key_text": [
+                "项目指标类型 / 具体类型 / 内容",
+                "前沿技术攻关指标:大规模组合优化",
+                "规模量级目标 1,000(vision)",
+                "产业化指标 5,000(vision)",
+                "人才培养:论文/专利、培养约10人(vision)"
+              ],
+              "slide_visual_skeleton": [
+                "三列指标表格",
+                "蓝色左侧类型合并单元格",
+                "灰白交替行底纹"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "budget_allocation_multi_category_table",
+              "archetype": "budget_allocation_multi_category_table",
+              "slide_title": "经费概算:总额500万分七类",
+              "slide_claim": "项目经费概算总额500万元,按七类科目分配、劳务费占比最高达30%",
+              "slide_key_text": [
+                "费用类别 / 金额(万元) / 占比 / 具体用途说明",
+                "设备费 60 万 12%:≥8卡 NVIDIA RTX5090 GPU服务器",
+                "材料/测试费 120 万 24%",
+                "数据/服务费 80 万 16%,差旅费 56 万 11%",
+                "劳务费 150 万 30%,合计 500 万 100%"
+              ],
+              "slide_visual_skeleton": [
+                "四列经费表格",
+                "蓝底白字表头",
+                "灰白交替行",
+                "金额+占比数字列"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_defense_thanks_review_invitation_single_page",
+      "title": "收尾·答辩致谢+邀评审提意见单页",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "感谢聆听",
+          "评审意见"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "thanks_plus_review_invitation_line",
+          "count": 1,
+          "position": "start",
+          "purpose": "极简单页, 左对齐两行『感谢聆听』+『恳请评审提出宝贵意见』, 分隔线+大留白"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "科研申报答辩的极简单页收尾: 左对齐两行答辩礼仪句(感谢聆听+恳请评审指正)+一条贯穿分隔线, 无讲者署名与联系方式, 承担答辩结束礼节收束",
+      "anti_patterns": [
+        "带完整讲者签名/日期 → 用 closing_minimal_thanks_with_speaker_signature",
+        "含合作机构墙的学术致谢 → 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.05",
+          "section_title": "致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾页,以「感谢聆听+恳请评审提意见」的答辩礼仪句收束致谢,内部无展开,是单页情绪落点。",
+          "section_topic_tags": [
+            "答辩致谢",
+            "邀请评审意见",
+            "极简礼仪句"
+          ],
+          "match_evidence": "1 页节奏: 单页答辩收尾, 左对齐两行『感谢聆听』+『恳请评审提出宝贵意见』+贯穿分隔线+大留白",
+          "slides": [
+            {
+              "slide_index": 13,
+              "role_in_pattern": "thanks_plus_review_invitation_line",
+              "archetype": "thanks_plus_review_invitation_line",
+              "slide_title": "感谢聆听并恳请评审指正",
+              "slide_claim": "以答辩礼仪句收束全 deck,请评审提出宝贵意见",
+              "slide_key_text": [
+                "感谢聆听!",
+                "恳请各位评审专家提出宝贵意见!"
+              ],
+              "slide_visual_skeleton": [
+                "左对齐两行致谢文字",
+                "贯穿全宽浅色分隔线",
+                "大面积留白"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "appendix_divider_then_budget_and_member_detail_tables",
+      "title": "备份·分隔页→经费明细→成员花名册",
+      "applicable_when": {
+        "chapter_role": [
+          "appendix"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "备份",
+          "经费明细",
+          "成员名单"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "appendix_divider_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "极简『备份』分隔页, 将正文与备份材料分开"
+        },
+        {
+          "archetype": "budget_detail_itemized_tables",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多张编号明细小表分类列支经费"
+        },
+        {
+          "archetype": "team_roster_full_table",
+          "count": 1,
+          "position": "end",
+          "purpose": "以多列长表罗列全体项目成员花名册"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "appendix_divider_panel",
+          "to_archetype": "budget_detail_itemized_tables",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "budget_detail_itemized_tables",
+          "to_archetype": "team_roster_full_table",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "科研答辩后附的备份章: 用『备份』分隔页开场, 再依次给经费预算明细分类表+项目成员花名册长表, 供评审质询查验, 不承载论证",
+      "anti_patterns": [
+        "带研究基础+成果图表的支撑备份 → 用 appendix_dual_pillar_compare_then_scaling_result",
+        "多子主题深度技术备份 → 用 appendix_multi_subtheme_adaptive_and_cluster_capability"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.06",
+          "section_title": "备份：经费与成员明细",
+          "section_role": "appendix",
+          "section_narrative": "作为答辩正文结束后的备份支撑材料，用『备份』分隔页引出，逐页补充经费预算明细与团队成员花名册，供评审质询时查验，不承载论证。",
+          "section_topic_tags": [
+            "答辩备份材料",
+            "经费预算明细",
+            "团队成员花名册",
+            "评审质询查验"
+          ],
+          "match_evidence": "3 页节奏: 『备份』分隔页 → 设备/测试/材料三类经费明细小表 → 项目成员基本情况长表",
+          "slides": [
+            {
+              "slide_index": 14,
+              "role_in_pattern": "appendix_divider_panel",
+              "archetype": "appendix_divider_panel",
+              "slide_title": "「备份」分隔页",
+              "slide_claim": "答辩正文结束，进入备份支撑材料",
+              "slide_key_text": [
+                "备份"
+              ],
+              "slide_visual_skeleton": [
+                "居中「备份」二字",
+                "两侧虚线装饰",
+                "贯穿浅色分隔横线"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "budget_detail_itemized_tables",
+              "archetype": "budget_detail_itemized_tables",
+              "slide_title": "设备及软件经费明细",
+              "slide_claim": "经费按设备、测试加工、材料三类逐项列支",
+              "slide_key_text": [
+                "1.设备购置费",
+                "8卡GPU服务器 NVIDIA RTX5090 GPU 60万",
+                "2.测试化验加工费 8卡A100服务器租赁 120万",
+                "3.材料费 数据标注/采购 80万"
+              ],
+              "slide_visual_skeleton": [
+                "三段编号分区",
+                "每段一张明细小表",
+                "顶部蓝色标题分隔条"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "team_roster_full_table",
+              "archetype": "team_roster_full_table",
+              "slide_title": "项目成员基本情况表",
+              "slide_claim": "团队含教授领衔与多名博硕士梯队成员",
+              "slide_key_text": [
+                "姓名 职务 工作单位 年龄 职称 研究方向 承担任务 备注",
+                "教授/副教授级骨干成员",
+                "多名博士/硕士研究生成员",
+                "AI方向标注 EDA相关任务"
+              ],
+              "slide_visual_skeleton": [
+                "八列成员信息表",
+                "十余行人员条目",
+                "顶部蓝色标题分隔条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "appendix_dual_pillar_compare_then_scaling_result",
+      "title": "备份·传统vs AI对比→成果+大规模处理→加速",
+      "applicable_when": {
+        "chapter_role": [
+          "appendix"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究基础",
+          "传统vs AI对比",
+          "大规模能力",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "traditional_vs_ai_flow_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "左右两列对比传统流程与 AI 辅助流程"
+        },
+        {
+          "archetype": "method_result_headline_boxed",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以断言横幅+高亮数字给核心方法成果结论"
+        },
+        {
+          "archetype": "large_scale_processing_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以切分/分批策略示意图论证大规模处理能力"
+        },
+        {
+          "archetype": "custom_kernel_speedup_result",
+          "count": 1,
+          "position": "end",
+          "purpose": "以问题-方案对比+底部加速数字条给出定制内核加速成果"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "traditional_vs_ai_flow_compare",
+          "to_archetype": "method_result_headline_boxed",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "method_result_headline_boxed",
+          "to_archetype": "large_scale_processing_diagram",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "large_scale_processing_diagram",
+          "to_archetype": "custom_kernel_speedup_result",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "科研申报备份章: 双支柱依次论证研究基础—先『传统 vs AI 流程对比+方法成果』一对, 再『大规模处理策略+定制 kernel 加速成果』一对, 每对遵循方法示意→量化数字节奏",
+      "anti_patterns": [
+        "只有经费/名单类查验备份 → 用 appendix_divider_then_budget_and_member_detail_tables",
+        "多子主题技术备份 → 用 appendix_multi_subtheme_adaptive_and_cluster_capability"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.07",
+          "section_title": "备份：研究基础与大规模能力",
+          "section_role": "appendix",
+          "section_narrative": "作为答辩末尾的备份支撑章,补充两块研究基础:先以『传统 vs AI 辅助逻辑综合』对比引出思维链+多模态预测电路质量的成果(误差降 6.80%),再以 AIG 切 cone、定制 CUDA kernel 展示大规模加速能力(1.54x 提速、46.8% 省显存)。",
+          "section_topic_tags": [
+            "逻辑综合AI辅助",
+            "思维链多模态预测",
+            "大规模AIG切cone",
+            "定制CUDA kernel",
+            "GNN加速"
+          ],
+          "match_evidence": "4 页节奏: 传统vs AI 逻辑综合对比 → 思维链+多模态误差降6.80%成果 → AIG 切 cone 大规模处理 → 定制 CUDA kernel 1.54x 提速+46.8% 省显存",
+          "slides": [
+            {
+              "slide_index": 17,
+              "role_in_pattern": "traditional_vs_ai_flow_compare",
+              "archetype": "traditional_vs_ai_flow_compare",
+              "slide_title": "传统 vs AI 辅助逻辑综合流程对比",
+              "slide_claim": "AI 辅助逻辑综合以 GNN/Transformer 预测 PPA,迭代远快于传统流程",
+              "slide_key_text": [
+                "Traditional logic synthesis flow",
+                "AI-assisted logic synthesis flow",
+                "Translation Fast (15%)",
+                "Logic optimization Slow, extensive heuristic (50%)",
+                "Process mapping Slow (35%)",
+                "Graph Neural Networks / Transformer predict PPA"
+              ],
+              "slide_visual_skeleton": [
+                "左右两列对比 panel",
+                "传统流程步骤+百分比列表",
+                "RTL→模型→PPA 箭头流程",
+                "迭代回环箭头(Slow/Fast 标注)"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "method_result_headline_boxed",
+              "archetype": "method_result_headline_boxed",
+              "slide_title": "思维链+多模态预测电路质量,误差降 6.80%",
+              "slide_claim": "逻辑综合思维链与多模态模型预测电路质量,预测误差最高降 6.80%",
+              "slide_key_text": [
+                "提出逻辑综合思维链与多模态模型预测电路质量的方法",
+                "实现最高 6.80% 的预测误差减少"
+              ],
+              "slide_visual_skeleton": [
+                "居中论断横幅框",
+                "6.80% 红色高亮数字",
+                "顶部蓝色分隔条"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "large_scale_processing_diagram",
+              "archetype": "large_scale_processing_diagram",
+              "slide_title": "大规模 AIG 切 cone 分批处理",
+              "slide_claim": "将百万门级 AIG 切成 cone 分批、embedding 存 CPU,支撑大规模处理",
+              "slide_key_text": [
+                "Large AIG graph (10^6 gates)",
+                "cone batch",
+                "cut AIG into cones",
+                "store node embeddings on CPU"
+              ],
+              "slide_visual_skeleton": [
+                "大 AIG 图→cone batch 转换箭头",
+                "cone batch 方框",
+                "CPU 存储标注文字"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "custom_kernel_speedup_result",
+              "archetype": "custom_kernel_speedup_result",
+              "slide_title": "定制 CUDA kernel 加速 AIG 图神经网络",
+              "slide_claim": "定制 AIG CUDA kernel 较 PyG 提速 1.54x 并省 46.8% 显存",
+              "slide_key_text": [
+                "Inefficient if using FusedGAT kernel in AIG",
+                "Customized CUDA kernel for AIG feature",
+                "Map reallocation / Skip computation",
+                "1.54x average speedup over PyG",
+                "46.8% memory saving"
+              ],
+              "slide_visual_skeleton": [
+                "左右问题-方案对比文字",
+                "绿色优化手段标注",
+                "底部红框加速比结果条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "appendix_multi_subtheme_adaptive_and_cluster_capability",
+      "title": "备份·多子主题自适应算子+集群训练能力",
+      "applicable_when": {
+        "chapter_role": [
+          "appendix"
+        ],
+        "report_type": [
+          "proposal"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "自适应算子",
+          "GNN",
+          "大模型推理",
+          "集群训练",
+          "工程底座"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "adaptive_operator_multi_axis_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以多维度轴+汇聚箭头引入自适应算子设计思想"
+        },
+        {
+          "archetype": "design_space_coverage_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以设计空间覆盖表落到可枚举算子生成机制"
+        },
+        {
+          "archetype": "layered_speedup_result_multi_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "汇总系统/算子/模型多层加速比与显存缩减成效"
+        },
+        {
+          "archetype": "subtheme_switch_timeline_evolution",
+          "count": 1,
+          "position": "middle",
+          "purpose": "切换子主题, 用时间线铺陈内核演进脉络"
+        },
+        {
+          "archetype": "throughput_benchmark_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以跨硬件平台吞吐柱状图+倍数标注对标 SOTA"
+        },
+        {
+          "archetype": "cross_datacenter_capability_card",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以拓扑图+能力指标卡片展示跨机房训练能力"
+        },
+        {
+          "archetype": "heterogeneous_cluster_result_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "以异构混训对比图+提升百分比头条收束章节"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "adaptive_operator_multi_axis_intro",
+          "to_archetype": "design_space_coverage_table",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "design_space_coverage_table",
+          "to_archetype": "layered_speedup_result_multi_chart",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "layered_speedup_result_multi_chart",
+          "to_archetype": "subtheme_switch_timeline_evolution",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "subtheme_switch_timeline_evolution",
+          "to_archetype": "throughput_benchmark_headline",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "throughput_benchmark_headline",
+          "to_archetype": "cross_datacenter_capability_card",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "cross_datacenter_capability_card",
+          "to_archetype": "heterogeneous_cluster_result_headline",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "科研申报深度技术备份章: 三子主题串起(自适应 GNN 算子: 思想→设计空间→分层成效; 大模型推理内核: 时间线演进→吞吐对标; 集群训练: 跨机房拓扑→异构千卡混训), 每子主题按方法→结果推进, 供答辩按需调取深度技术材料",
+      "anti_patterns": [
+        "只有经费/成员查验备份 → 用 appendix_divider_then_budget_and_member_detail_tables",
+        "只对比两块研究基础 → 用 appendix_dual_pillar_compare_then_scaling_result"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba",
+          "deck_title": "面向大规模与多变场景组合优化问题的AI方法",
+          "deck_topic_tags": [
+            "组合优化",
+            "AI求解",
+            "EDA",
+            "逻辑综合",
+            "SAT问题",
+            "图神经网络",
+            "大模型",
+            "算力集群"
+          ],
+          "section_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba.sec.08",
+          "section_title": "备份：自适应优化与集群训练",
+          "section_role": "appendix",
+          "section_narrative": "备份章，为第 3 章自适应 AI 方案与团队实力提供深度支撑证据。先展开「自适应优化能力」(GNN 稀疏算子 + 大模型推理内核)，再落到「集群与训练能力」，用异属异域及异构千卡实测数据佐证工程底座。",
+          "section_topic_tags": [
+            "GNN稀疏算子自适应",
+            "SpMM设计空间",
+            "大模型推理内核FlashDecoding",
+            "跨机房联合训练",
+            "异构千卡混训"
+          ],
+          "match_evidence": "7 页节奏: M-Loop 三维引入→SpMM 空间表→GNN 分层加速→大模型内核时间线→FlashDecoding++ 吞吐→跨机房拓扑→异构千卡混训收束",
+          "slides": [
+            {
+              "slide_index": 21,
+              "role_in_pattern": "adaptive_operator_multi_axis_intro",
+              "archetype": "adaptive_operator_multi_axis_intro",
+              "slide_title": "GNN 稀疏算子自适应并行设计 (M-Loop)",
+              "slide_claim": "M-Loop 从负载均衡、数据模式、并行效率三维自适应设计 GNN 稀疏算子",
+              "slide_key_text": [
+                "Loop workload balance",
+                "Loop: data pattern",
+                "Loop parallelism efficiency",
+                "M-Loop 自适应设计"
+              ],
+              "slide_visual_skeleton": [
+                "左侧红色柱状占位图",
+                "右侧三层标签框(三维度)",
+                "箭头向右汇聚示意"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "design_space_coverage_table",
+              "archetype": "design_space_coverage_table",
+              "slide_title": "基于完备空间的自适应 SpMM 算子生成",
+              "slide_claim": "遍历 M/N/K 完备设计空间自动生成高效 SpMM CUDA 算子，覆盖现有方法",
+              "slide_key_text": [
+                "M/N/K 维度设计空间",
+                "RowSplit / MergeSpMM / ASpT / GESpMM",
+                "SpMM 设计空间",
+                "本文工作全覆盖",
+                "自动生成高效算子 CUDA 代码"
+              ],
+              "slide_visual_skeleton": [
+                "左侧 SpMM 设计空间覆盖表",
+                "绿框/红框覆盖标注",
+                "右侧 CUDA 代码生成面板"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "layered_speedup_result_multi_chart",
+              "archetype": "layered_speedup_result_multi_chart",
+              "slide_title": "GNN 稀疏算子端到端加速成效",
+              "slide_claim": "系统设计+高效稀疏算子+GNN 模型三层优化实现数量级加速与显存大幅缩减",
+              "slide_key_text": [
+                "System Designs 1.18x speedup, 7.75x memory reduction",
+                "Efficient Sparse Kernel: SpMM 57%, SDDMM 41.01%",
+                "Efficient Sparse GNN Models: GCN 5.59x, GraphSAGE 5.27x",
+                "up to 5x speedup vs 开源框架"
+              ],
+              "slide_visual_skeleton": [
+                "上方系统设计对比(中端 vs 高端硬件)",
+                "下方两组多柱状图(算子/模型加速)",
+                "多组 speedup 百分比标注"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "subtheme_switch_timeline_evolution",
+              "archetype": "subtheme_switch_timeline_evolution",
+              "slide_title": "面向大模型推理的自适应算子内核",
+              "slide_claim": "针对访存/计算密集算子沿 cuBLAS→FlashDecoding++→FlashInfer 路线动态优化推理内核",
+              "slide_key_text": [
+                "Transformer Block 访存密集/计算密集算子",
+                "cuBLAS: Tensor Core 利用率 90%",
+                "FlashAttention (NeurIPS 22)",
+                "FlashDecoding 提升 50 倍 (arXiv 23)",
+                "FlashDecoding++ Decode 加速 4 倍多 (MLSys 24)",
+                "FlashInfer 13%-69% (MLSys 25 Best Paper)"
+              ],
+              "slide_visual_skeleton": [
+                "左 Transformer Block 结构图(两类算子标注)",
+                "右算子演进时间线(5 项工作)",
+                "箭头指向内核发展方向"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "throughput_benchmark_headline",
+              "archetype": "throughput_benchmark_headline",
+              "slide_title": "FlashDecoding++ 推理吞吐超越 SOTA",
+              "slide_claim": "FlashDecoding++ 吞吐超 SOTA 约 10%、超 HuggingFace 约 3x，且跨 NVIDIA/AMD",
+              "slide_key_text": [
+                "A100: FlashDecoding++ 2.9x, 115.56 token/s",
+                "HuggingFace 基线 1.0x, 40.07 token/s",
+                "TRT-LLM 2.5x, vLLM 2.2x",
+                "AMD MI210 相比 vLLM 1.86 倍",
+                "超越 SOTA 约 10%, 超 HuggingFace 约 3x"
+              ],
+              "slide_visual_skeleton": [
+                "左 A100 加速柱状图+speedup 折线(7 框架)",
+                "右 AMD MI210 倍数数据区",
+                "顶部结论条带",
+                "底部论文引用"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "cross_datacenter_capability_card",
+              "archetype": "cross_datacenter_capability_card",
+              "slide_title": "异属异域跨机房联合训练技术",
+              "slide_claim": "全球首创异属异域跨机房联合训练，带宽容忍度最高、支持距离最远",
+              "slide_key_text": [
+                "全球首创异属异域跨机房联合训练技术",
+                "带宽容忍度最高、支持距离最远",
+                "低通信带宽: 仅需约 20GB/s",
+                "对比市面最佳方案约 20TB/s",
+                "支持距离超过 120 公里"
+              ],
+              "slide_visual_skeleton": [
+                "左侧多机房节点气泡分布图",
+                "异属/异域标注箭头",
+                "右侧三张能力指标卡片"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "heterogeneous_cluster_result_headline",
+              "archetype": "heterogeneous_cluster_result_headline",
+              "slide_title": "异构千卡混训性能取得最优",
+              "slide_claim": "同构基于 910b 达 A100 的 90.8%，异构千卡混训 MFU 97.6%，整体提升 24%-96%",
+              "slide_key_text": [
+                "异构千卡混训性能取得最优",
+                "同构: 基于 910b 达 A100 的 90.8%",
+                "567B↑96% / 70B↑24.55% / 567B↑53.5%",
+                "异构混训 4+2, MFU 97.6%",
+                "整体提升 24%-96%"
+              ],
+              "slide_visual_skeleton": [
+                "左同构训练对比图(567B/70B 多组)",
+                "右异构混训 MFU 图(NVIDIA+/AMD+ 多算力)",
+                "多组提升百分比标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck(科研项目申报型 proposal) 共 8 section, 抽出 8 patterns, 全部为新 pattern(proposal 报告类型在 previous batches 未出现过, 论证弧线『价值→挑战→方案→团队+指标+经费→致谢→多重备份』与 paper_share/tutorial/research_report 差异明显, 无可 dedup 项). 所有 27 张 slide 全部命中 pattern 中某 archetype, 无 off_pattern slide.\nnew_archetype: problem_definition_with_method_compare — 同页给出问题定义(NP 难)+传统 vs AI 方法对比双要素的桥接页\nnew_archetype: dual_challenge_panel_with_evidence — 左右双栏并列两大核心挑战, 每挑战配数据/表格佐证\nnew_archetype: dual_route_solution_panel — 横向并列两条互补技术路线的方案总览页\nnew_archetype: research_foundation_sota_showcase — 多子方向研究基础+SOTA 成果数字+会议最佳论文条目的团队积累页\nnew_archetype: four_layer_project_framework_stack — 自下而上四层横向色带+左侧上行箭头的项目总体框架图\nnew_archetype: scientific_value_dual_card_elevation — 左右对称蓝头文本卡片+三条 bullet 升华科学问题前沿性/高价值性\nnew_archetype: team_role_composition_diagram — 中央科学家节点+四角色 panel 环绕的团队分工图\nnew_archetype: prior_project_track_record_metrics — 双栏项目横幅+底部产品卡片+红色量化实绩(投资/营收)的既往结题实绩页\nnew_archetype: quantitative_kpi_commitment_table — 三列表格(指标类型/具体类型/内容)承诺量化考核指标\nnew_archetype: budget_allocation_multi_category_table — 四列经费分类表(费用类别/金额/占比/用途)\nnew_archetype: thanks_plus_review_invitation_line — 左对齐两行『感谢聆听+恳请评审提出宝贵意见』+贯穿分隔线单页答辩致谢\nnew_archetype: appendix_divider_panel — 居中『备份』二字+虚线装饰+贯穿横线的极简分隔页\nnew_archetype: budget_detail_itemized_tables — 三段编号分区+每段一张明细小表的经费预算查验页\nnew_archetype: team_roster_full_table — 八列多行成员花名册长表\nnew_archetype: traditional_vs_ai_flow_compare — 左右两列对比传统流程(带百分比)与 AI 辅助流程(模型预测)的流程对照页\nnew_archetype: method_result_headline_boxed — 居中论断横幅框+红色高亮数字的极简方法成果结论页\nnew_archetype: large_scale_processing_diagram — 大图→切分/分批+存储策略的大规模处理策略示意图\nnew_archetype: custom_kernel_speedup_result — 左右问题-方案对比文字+底部红框加速比结果条的定制内核成果页\nnew_archetype: adaptive_operator_multi_axis_intro — 左侧占位图+右侧三层标签框(三维度)+汇聚箭头引入自适应算子设计\nnew_archetype: design_space_coverage_table — 左侧覆盖表(绿/红框覆盖标注)+右侧代码生成面板的设计空间机制页\nnew_archetype: layered_speedup_result_multi_chart — 上系统对比+下两组多柱状图+多层加速百分比标注的分层成效汇总页\nnew_archetype: subtheme_switch_timeline_evolution — 左结构图(两类算子)+右多工作时间线的内核演进脉络页\nnew_archetype: throughput_benchmark_headline — 左跨框架柱状+speedup 折线+右跨硬件倍数区+顶部结论条带的吞吐对标页\nnew_archetype: cross_datacenter_capability_card — 左侧多机房节点气泡拓扑+右侧三张能力指标卡片\nnew_archetype: heterogeneous_cluster_result_headline — 左同构对比图+右异构混训 MFU 图+多组提升百分比的异构千卡收尾页",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 8,
+    "sections_unassigned_in_this_batch": []
+  }
+}

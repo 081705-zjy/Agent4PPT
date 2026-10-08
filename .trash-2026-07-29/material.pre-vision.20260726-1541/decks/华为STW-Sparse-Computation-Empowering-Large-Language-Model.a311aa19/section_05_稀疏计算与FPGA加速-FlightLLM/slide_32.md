@@ -1,0 +1,47 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_32"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.05"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 32
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "chapter_candidate"
+标题: "LLaMA2-7B on U280 FPGA 实机 Demo"
+核心论断: "FlightLLM 在 U280 FPGA 上跑通 LLaMA2-7B 实机 Demo"
+本页讲什么: "以 LLaMA2-7B 在 U280 FPGA 上的实机演示作为本章收尾，直观展示前述稀疏+FPGA 方案的可落地性，承接上页实测数据。"
+关键文字:
+  - "Demo: LLaMA2-7B on U280 FPGA"
+视觉骨架: "[FPGA 实机运行截图/照片, Demo 标题块]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_32.asset.01]"
+适合复用场景: "[FPGA 实机 Demo 收尾页, 落地演示章节末页]"
+不适合复用场景: "[数据密集对比页, 方法架构详解页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Demo: LLaMA2-7B on U280 FPGA"}
+  - {"位置": "下方主体", "内容": "FPGA 实机运行截图/照片"}
+alternate_claims:
+layout_tag: "mixed"
+---
+# slide 32: LLaMA2-7B on U280 FPGA 实机 Demo
+
+**核心论断**: FlightLLM 在 U280 FPGA 上跑通 LLaMA2-7B 实机 Demo
+
+## 本页讲什么
+以 LLaMA2-7B 在 U280 FPGA 上的实机演示作为本章收尾，直观展示前述稀疏+FPGA 方案的可落地性，承接上页实测数据。
+
+## 关键文字片段
+- Demo: LLaMA2-7B on U280 FPGA
+
+## 视觉骨架
+- FPGA 实机运行截图/照片
+- Demo 标题块
+
+## 可复用到
+- FPGA 实机 Demo 收尾页
+- 落地演示章节末页
+
+## 不适合复用的场景
+- 数据密集对比页
+- 方法架构详解页

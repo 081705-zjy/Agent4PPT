@@ -1,0 +1,291 @@
+{
+  "batch_index": 23,
+  "rules": [
+    {
+      "rule_id": "nf.b23.r01",
+      "rule_type": "section_sequence",
+      "scope": "research_report/学术特邀报告",
+      "pattern": "opening(封面+目录) → motivation(背景+核心问题拆解) → method(方法论范式) → result/case_study(具体工作×N) → discussion(总结+展望) → closing(致谢联系方式)",
+      "evidence_sections": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "confidence": "high",
+      "notes": "课题组学术汇报的九段式骨架；motivation章负责立靶(拆出核心问题清单)，method章给出统一公式/范式，之后每个case_study/result章按同一模板复用"
+    },
+    {
+      "rule_id": "nf.b23.r02",
+      "rule_type": "opening_shape",
+      "scope": "cover→toc",
+      "pattern": "第1页cover(主标题+副标题+作者+日期+邮箱+关键词艺术字底纹) → 第2页TOC(四项议程编号列表，无高亮或全亮)",
+      "evidence_pages": [
+        1,
+        2
+      ],
+      "confidence": "high"
+    },
+    {
+      "rule_id": "nf.b23.r03",
+      "rule_type": "chapter_transition",
+      "scope": "跨章切换",
+      "pattern": "每进入新章节前插入一张Contents目录页，四项议程列表灰化其余项、高亮当前项(蓝色竖条+加粗)，用于让听众重新定位",
+      "evidence_pages": [
+        3,
+        9,
+        17,
+        57
+      ],
+      "confidence": "high",
+      "notes": "同一份TOC模板重复使用；motivation章开头也用一次TOC页做切入"
+    },
+    {
+      "rule_id": "nf.b23.r04",
+      "rule_type": "motivation_shape",
+      "scope": "motivation章(研究背景与核心问题)",
+      "pattern": "TOC导入 → 供需矛盾对比图(需求vs供给) → 度量定义 → 研究思路总纲 → 公式化拆解 → 核心问题清单(①②③三列并列)",
+      "evidence_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "confidence": "high",
+      "notes": "以'把大问题拆成N个可攻的子问题'收束，给后续章节立靶"
+    },
+    {
+      "rule_id": "nf.b23.r05",
+      "rule_type": "method_pair_pattern",
+      "scope": "method章成果单元",
+      "pattern": "每个成果占两页且严格成对：第一页'问题分析'(红色标签+左示意+右两组痛点柱图+文献引用) → 第二页'设计方法'(蓝色公式条对应项高亮+方法示意+两组收益柱图+会议引用)",
+      "evidence_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "confidence": "high",
+      "notes": "三对成果对应motivation章拆出的①②③三个核心问题，形成问题→解法的一一映射"
+    },
+    {
+      "rule_id": "nf.b23.r06",
+      "rule_type": "method_convergence",
+      "scope": "method章收束页",
+      "pattern": "在所有'问题→解法'对之后加一张汇总页：用N个六边形串联各层成果，逐层标注增益倍数，最后相乘得到总增益(如'算力提升1个数量级')",
+      "evidence_pages": [
+        16
+      ],
+      "confidence": "high"
+    },
+    {
+      "rule_id": "nf.b23.r07",
+      "rule_type": "case_study_template",
+      "scope": "case_study/result中的单项工作",
+      "pattern": "开场过渡页(高亮子实例名) → 背景动机页(RoadMap/对标) → 痛点收束页 → 计算流拆解页(引出优化对象) → 现有方案铺陈(1~2页) → 论文封面页(题目+作者+机构+会议) → 核心思想页 → 分设计要点页(1~N页) → 结果页(加速倍数+对比图)",
+      "evidence_pages": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "confidence": "high",
+      "notes": "FlashDecoding++单元完整体现该模板；FlightLLM(33-39)、FlightVGM(40-48)、TB-STC(51-56)复用同一模板"
+    },
+    {
+      "rule_id": "nf.b23.r08",
+      "rule_type": "case_study_short_template",
+      "scope": "多case并列时的次级case",
+      "pattern": "过渡开场页(单方框+横条导入+箭头) → 背景引语页 → 算法-硬件闭环方法页 → 收益页(加速倍数+对比)，篇幅可压缩到4~5页",
+      "evidence_pages": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "confidence": "high",
+      "notes": "FP8训练案例即为压缩版；case_study章内可承载多个不同粒度的子实例"
+    },
+    {
+      "rule_id": "nf.b23.r09",
+      "rule_type": "paper_frontispiece",
+      "scope": "case_study中的论文标题页",
+      "pattern": "每个具体工作在讲核心思想或方法细节前，独立插入一张论文封面页：加粗英文全称 + 彩色作者列表(标注共同贡献/通讯) + 机构列表 + 会议发表信息(Published in XXX)",
+      "evidence_pages": [
+        23,
+        36,
+        44,
+        53
+      ],
+      "confidence": "high",
+      "notes": "为后续技术细节提供权威锚点；无论篇幅长短都不省略"
+    },
+    {
+      "rule_id": "nf.b23.r10",
+      "rule_type": "innovation_tag_pattern",
+      "scope": "case_study的核心方法页",
+      "pattern": "每个创新点独立成页，左上角贴紫色标签(核心思想/算法创新/硬件创新/核心创新/实验结果/研究工作)，顶部方框写论点句，主体左右两panel对照，配红字/红框强调关键差异",
+      "evidence_pages": [
+        24,
+        45,
+        46,
+        47,
+        54,
+        55,
+        56
+      ],
+      "confidence": "high",
+      "notes": "同一份色系标签在整章反复出现，形成视觉一致性；一页一创新，避免堆叠"
+    },
+    {
+      "rule_id": "nf.b23.r11",
+      "rule_type": "result_page_shape",
+      "scope": "case_study收束结果页",
+      "pattern": "左上贴'实验结果'或'研究工作'标签 → 顶部方框写倍数结论 → 主体两panel并列(能效对比+性能对比或加速对比+baseline对比) → 标注对标对象与算力Gap",
+      "evidence_pages": [
+        25,
+        32,
+        39,
+        47,
+        56
+      ],
+      "confidence": "high",
+      "notes": "每个工作以量化倍数收尾，回应本章开篇痛点"
+    },
+    {
+      "rule_id": "nf.b23.r12",
+      "rule_type": "cross_case_summary",
+      "scope": "多case_study之后的小结页",
+      "pattern": "横向对比两个及以上工作的核心指标(算力Gap/性能倍数/能效倍数/绝对数值)，用统一句式点题'低端工艺换道超车'",
+      "evidence_pages": [
+        48
+      ],
+      "confidence": "medium",
+      "notes": "case_study章内嵌汇总，为后续升华页做数据背书"
+    },
+    {
+      "rule_id": "nf.b23.r13",
+      "rule_type": "paradigm_elevation",
+      "scope": "case_study章末尾的范式升华",
+      "pattern": "两页递进：第一页'现状/趋势'时间轴 → 第二页在原图基础上追加'未来'第三阶段，同一栈图从稠密→稀疏演进，收束到专用硬件愿景",
+      "evidence_pages": [
+        49,
+        50
+      ],
+      "confidence": "high",
+      "notes": "同一底图叠加进化，避免读者重新解析新图"
+    },
+    {
+      "rule_id": "nf.b23.r14",
+      "rule_type": "discussion_shape",
+      "scope": "discussion章(研究总结与展望)",
+      "pattern": "TOC切入 → 对标工业界(多列对比+红叉标注差异) → AGI愿景公式页(通用+专用) → 参考文献承载页 → 核心公式回归(初版→完整版逐层放大) → 展望多项(异构千卡混训/国产GPU优化/AI4Science/落地案例/跨域网络验证)",
+      "evidence_pages": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "confidence": "high",
+      "notes": "总结先拉高到范式与AGI，再落回具体落地成果与算力底座"
+    },
+    {
+      "rule_id": "nf.b23.r15",
+      "rule_type": "formula_recap",
+      "scope": "discussion章公式回归页",
+      "pattern": "上下两层公式框：上层浅色框给初版简化公式 → 向下放大箭头 → 下层深蓝框给完整版公式，新增项用红色高亮，把全篇主线收束为单一乘法表达",
+      "evidence_pages": [
+        61
+      ],
+      "confidence": "high"
+    },
+    {
+      "rule_id": "nf.b23.r16",
+      "rule_type": "outlook_landing_evidence",
+      "scope": "discussion章展望后半",
+      "pattern": "展望不停留在愿景，需连续多页给出真实落地证据：多品牌芯片千卡混训 → 具体厂商MFU优化数字对比 → 服务机构logo墙/软件栈框图，把'展望'兑现为'已在支撑'",
+      "evidence_pages": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "confidence": "high"
+    },
+    {
+      "rule_id": "nf.b23.r17",
+      "rule_type": "closing_shape",
+      "scope": "closing(致谢)",
+      "pattern": "单页收尾：顶部蓝条 → 居中讲者信息块(姓名+机构+日期+Email) → 左侧双色分区标签(合作单位/资助单位) → 右侧+底部logo墙(可含占位)",
+      "evidence_pages": [
+        67
+      ],
+      "confidence": "high",
+      "notes": "联系方式与封面首尾呼应；致谢与联系合并为单页"
+    },
+    {
+      "rule_id": "nf.b23.r18",
+      "rule_type": "citation_discipline",
+      "scope": "全deck技术页",
+      "pattern": "凡引用他人工作或对标数据，均在页脚以[Ref: 作者, 会议年份]或[会议缩写 年份]格式挂角标；本组成果页则列出多篇会议名作为出处链",
+      "evidence_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        21,
+        22,
+        34,
+        41
+      ],
+      "confidence": "high"
+    },
+    {
+      "rule_id": "nf.b23.r19",
+      "rule_type": "roadmap_dim_focus",
+      "scope": "背景RoadMap两连页",
+      "pattern": "第一页铺陈完整时间轴列出所有里程碑 → 第二页复用同轴但把里程碑灰化淡出，用红字点出痛点结论并加评测条件脚注",
+      "evidence_pages": [
+        18,
+        19
+      ],
+      "confidence": "high",
+      "notes": "同图两态：先建立视野，再聚焦立靶"
+    },
+    {
+      "rule_id": "nf.b23.r20",
+      "rule_type": "formula_thread",
+      "scope": "method章跨页视觉主线",
+      "pattern": "每个'设计方法'页顶部固定挂同一条'AI应用算力=有效计算量×模型任务量×硬件能效×并行度'蓝色公式条，当前解法所对应因子(①/②/③)高亮，让读者在多个成果之间保持公式坐标",
+      "evidence_pages": [
+        11,
+        13,
+        15
+      ],
+      "confidence": "high"
+    }
+  ]
+}

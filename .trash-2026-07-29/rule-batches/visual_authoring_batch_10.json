@@ -1,0 +1,460 @@
+{
+  "batch_index": 10,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_authors_and_affiliation",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中大标题+作者机构署名",
+      "description": "封面页极简, 上方通栏居中亮出论文主标题(可含冒号副标题), 下方以分隔线隔开列出作者、机构、贡献标注与通讯邮箱, 不含 bullet/图示/正文段落.",
+      "evidence_signals": [
+        "视觉骨架 含 '通栏大标题' 或 '大字主标题'",
+        "关键文字 含 作者名列表 + 机构编号 + '*Corresponding' 或 'Equal Contribution'",
+        "视觉骨架 含 '分隔线' 且不含 'bullet' / '正文段落'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 1,
+          "评价": "SpecDiff 主标题居中 + 4 作者 + 3 机构 + 通讯邮箱 + 浅粉分隔线, 标准 cover"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场瞬间同时锁定论文身份与讲者身份, 避免其他视觉元素抢焦点, 是学术汇报的通用识别版式",
+      "fix_hint": "将主标题居中放大置顶, 作者/机构/通讯邮箱以分隔线之下的独立文本块列出, 移除任何正文/图示",
+      "exceptions": [
+        "品牌宣传型 deck 由 logo 承担身份识别",
+        "空白模板仅含占位符"
+      ]
+    },
+    {
+      "id": "toc_layout_numbered_list_with_current_highlight_bar",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录/章节过渡·编号列表+当前项高亮竖条",
+      "description": "目录/章节过渡页统一使用带外框的 Contents 卡片, 章节以蓝色编号圆点纵向排列, 当前所处章节用左侧蓝色竖条+加粗高亮, 全 deck 复用同一布局做章节切换.",
+      "evidence_signals": [
+        "关键文字 首项为 'Contents'",
+        "视觉骨架 含 '编号圆点' + '当前项高亮竖条'",
+        "关键文字 完整列出 deck 全部章节名",
+        "同一 deck 内多页复用同一目录布局(仅高亮项不同)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 2,
+          "评价": "Contents 卡片, Background 高亮, 蓝色竖条标示进度"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 8,
+          "评价": "同版式过渡到 Related Work"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 14,
+          "评价": "同版式过渡到 Motivation"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 18,
+          "评价": "同版式过渡到 Techniques"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 25,
+          "评价": "同版式过渡到 Evaluation"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节切换页复用同一目录布局给听众提供稳定的'进度条', 高亮竖条替代口播即可传达'讲到哪儿了', 减少认知负荷",
+      "fix_hint": "把每次章节切换都改用同一目录卡, 仅改动当前项的高亮位置, 不做全新版式",
+      "exceptions": [
+        "非章节化 deck(如短汇报/单页海报)可不做目录页"
+      ]
+    },
+    {
+      "id": "content_layout_top_divider_title_with_diagram_body",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文页·顶部分隔线标题+图示为主的正文",
+      "description": "正文页顶部使用蓝色横线分隔标题与正文区, 正文以流程图/张量示意/时间轴/对比表等图示为主, bullet 与长段落极少, 文字仅承担标注、结论与公式.",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部蓝色分隔线' 或 '蓝色标题分隔线'",
+        "视觉骨架 含 '流程图' / '张量方块' / '时间线' / '对比表' 之一",
+        "关键文字条数少, 且多为标签/公式/结论短句而非段落"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 5,
+          "评价": "多步 Model 模块横向串联的流程图 + 顶部标题分隔"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 6,
+          "评价": "张量方块+Q/K/V 矩阵乘示意, 文字仅公式与标签"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 15,
+          "评价": "三步时间线+Chaotic/Ordered 状态标签"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 26,
+          "原因": "实验设置页以 4 组 bullet 列表为主, 无图示"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "论文分享中机制/公式/流程需要空间/时间关系, 图示远比 bullet 快传达; 顶部分隔线让标题与图示区界限清晰",
+      "fix_hint": "把 bullet 罗列改画为流程图/时间线/对比矩阵, 保留顶部分隔线标题, 文字降为图内标注",
+      "exceptions": [
+        "实验设置/超参列表这类天然结构化清单页",
+        "纯文字观点/金句页"
+      ]
+    },
+    {
+      "id": "conclusion_and_question_highlighted_by_red_dashed_box",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "红色虚线框强调关键结论/关键提问",
+      "description": "正文页把本页的核心结论或引出下页的关键提问用红色虚线框(或红色字/红色叉/红色箭头)从图示与文字里单独圈出, 形成'一眼可见的锚点'.",
+      "evidence_signals": [
+        "视觉骨架 含 '红色虚线框' / '红色高亮' / '红字结论'",
+        "关键文字 含 明确结论句 (含数字/'∝'/'>'/'<') 或问号结尾提问"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 7,
+          "评价": "'Reduce input length(L) will speedup' 红字结论收束背景章"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 11,
+          "评价": "红字提问 'How to predict the important tokens?' 引出下段"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 27,
+          "评价": "红色虚线框强调 '2.80× and 2.74× speedup on SD3 and SD3.5'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 13,
+          "评价": "红色虚线框结论 'More information results higher performance.'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "论文页信息密度高, 红框在满屏图示中形成唯一暖色锚点, 让听众瞬间捕获'这页必须记住什么'或'下页要回答什么'",
+      "fix_hint": "在页面收束处加一个红色虚线框, 内放本页 claim 或下页提问, 不要嵌在正文段落里",
+      "exceptions": [
+        "过渡目录页/封面/致谢页无需高亮结论",
+        "纯设置/超参配置页无结论可强调"
+      ]
+    },
+    {
+      "id": "ending_layout_thanks_plus_extended_research_lineage",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "收尾页·致谢联系方式+课题组研究脉络延展",
+      "description": "收尾页左侧回扣论文标题+致谢+通讯邮箱, 右侧列出课题组同主线的其它工作(带会议标注)与 Lab/Paper 二维码, 把单篇成果升维为研究脉络.",
+      "evidence_signals": [
+        "关键文字 含 'Thanks' / '致谢'",
+        "关键文字 含 邮箱地址",
+        "视觉骨架 含 '二维码' 或关键文字含 'Lab Homepage' / 'Paper Link'",
+        "关键文字 含 'Our works on' 或 多个带会议名(ISCA/ASPLOS/NeurIPS 等)的相关工作条目"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 30,
+          "评价": "左致谢+邮箱, 右 'Our works on speculation' 3 条并列+Lab/Paper 二维码"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "收尾把讲者延展为课题组, 让听众记住'这条研究主线'而不仅是一篇论文, 二维码给出后续接触路径, 是学术汇报常见的品牌化收官",
+      "fix_hint": "在收尾页除致谢与邮箱外, 补一栏同主题的课题组其它工作(注明会议)与 Lab/Paper 二维码",
+      "exceptions": [
+        "商业汇报/内部同步不涉及研究脉络",
+        "单次一次性演讲讲者无课题组语境"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_with_colon_subtitle",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题用名词短句+冒号/破折号带副标",
+      "description": "正文页标题倾向 '<主题名词>:<副标结论/机制/数字>' 或 '<主题名词> · <副标>' 结构, 主题定位在前、结论/关键词在后, 不用完整动宾句也不用问句.",
+      "evidence_signals": [
+        "标题 含 冒号 ':' 或书名号级分隔符, 前段为名词短句",
+        "标题 不以 '介绍' / '本节讲' / '我们将' 开头",
+        "标题 不以 '?' 结尾"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 6,
+          "评价": "'Attention 与 FFN 成本随输入长度 L' 名词主题+关键变量"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 10,
+          "评价": "'Token Merging 的缺陷:低相似、同质化、加速有限' 主题+冒号+副标"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 27,
+          "评价": "'SD3/SD3.5 评测:2.80×、2.74× 加速' 主题+冒号+关键数字"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "冒号结构让 title 一眼给出'讨论对象+结论/关键词', 比动宾句更快建立听众对本页定位的抓取, 也避免 title 与 claim 语义重复",
+      "fix_hint": "把 title 里的动词短语去掉, 改写成 '<主题名词>:<结论/关键词/数字>' 或 '<主题> · <副标>' 结构",
+      "exceptions": [
+        "章节封面/目录页 title 通常为单名词 'Contents' 或章节名, 无需冒号"
+      ]
+    },
+    {
+      "id": "claim_must_be_judgment_sentence_with_number_or_ratio",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断用判断句, 优先嵌入具体数字/比例",
+      "description": "每页的核心论断必须是主谓完整的判断句/结论句, 不用描述句('本页介绍…'), 且优先在句中嵌入具体数字、倍数、百分比、复杂度符号使结论可核对.",
+      "evidence_signals": [
+        "核心论断 是完整主谓句, 含判断词 (如 '是' / '导致' / '≥' / '成为' / '将')",
+        "核心论断 含具体数字/倍数/百分比/'∝' 关系式",
+        "核心论断 不以 '本页' / '介绍' / '将讲' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 4,
+          "评价": "'参数量(6500×)与输入规模(10⁴×)双重增长推高算力需求' 判断+双数字"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 10,
+          "评价": "'Token Merging 因相似度<70%导致同质化,加速不足30%' 判断+两数字"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 29,
+          "评价": "'2.80×/2.74×/3.17× 加速且质量近乎无损, 推进精度-速度 Pareto 前沿' 结论+三数字"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 6,
+          "评价": "'Attention∝L²·d_model、FFN∝L·d²_model,成本由 L 主导' 判断+复杂度"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "判断句自带立场, 描述句只交代'讲什么'; 具体数字让 claim 可被听众截图与引用, 是学术汇报'一页一 take-away'的写作杠杆",
+      "fix_hint": "把描述式 claim 改为主谓判断句, 并把关键倍数/百分比/关系符从正文提到 claim 里",
+      "exceptions": [
+        "目录页/过渡页 claim 表达章节推进即可, 无具体数字"
+      ]
+    },
+    {
+      "id": "chinese_narration_with_english_technical_terms",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "中文叙述保留英文专业术语原文",
+      "description": "标题与正文用中文讲述背景与结论, 但模型名、方法名、数据集、指标、机制术语保留英文原文 (Attention/FFN/Token Merging/Feature Caching/Pareto/SD3/A800 等), 不做全中文化翻译.",
+      "evidence_signals": [
+        "标题/核心论断/关键文字 中文与英文术语同现",
+        "英文术语在 deck 内首次与后续出现保持一致拼写"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 7,
+          "评价": "'Attn/FFN 属 compute-bound' 中文叙述+英文术语"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 11,
+          "评价": "'Feature Caching 跨步复用特征' 术语不做翻译"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 29,
+          "评价": "'Pareto 前沿' 混排"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "中英学术圈术语生态高度绑定, 强译反而给同行造成检索/对应成本; 保留原文让听众直接与文献/代码对齐",
+      "fix_hint": "识别模型名/方法名/指标/机制关键词, 保留英文拼写, 中文只承担'讲清楚'的连接与解释",
+      "exceptions": [
+        "面向非专业受众的科普汇报可全中文化"
+      ]
+    },
+    {
+      "id": "cliffhanger_question_bridges_pages",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "以红色提问在页尾埋伏笔, 下一页作答",
+      "description": "在机制介绍/洞察类页面末尾用一个红色高亮的疑问句('How to …?' / 'What … to use?')收束, 下一页标题或 claim 直接回答, 形成'设问-解答'的双页对.",
+      "evidence_signals": [
+        "关键文字 含以 '?' 结尾且以 'How' / 'What' / '如何' / '为什么' 开头的短句",
+        "视觉骨架 含 '红色提问标注' / '红色虚线设问框'",
+        "紧邻下一页的 claim 或 title 显式回应该问题"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 11,
+          "评价": "'How to predict the important tokens?' 引出洞察章"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 17,
+          "评价": "'How to use speculation results to judge' 引出方法章"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 19,
+          "评价": "'What future information to use?' 引出后续几页逐步作答"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 20,
+          "评价": "承接问题, 给出'重要性会突变'洞察"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "论文汇报连页密度高, 一个未答的提问逼听众带着问题看下一页, 相当于每章内建 mini-hook, 优于'直接列 3 点'的干货流",
+      "fix_hint": "在章节内页尾部加一句红色 'How/What/为什么' 短问, 下一页 title 或 claim 直接对应作答",
+      "exceptions": [
+        "实验设置/纯配置页无需伏笔",
+        "结论章/致谢章不再抛问"
+      ]
+    },
+    {
+      "id": "same_diagram_reused_across_pages_with_incremental_overlay",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "同图跨页复用+增量红色叠加, 讲清多步论证",
+      "description": "在连续几页论证中反复复用同一底图(时间线/流程图), 每页只在其上追加或替换一个红色高亮/红叉/红块, 逐页叠加论证, 而不是每页画新图.",
+      "evidence_signals": [
+        "相邻页视觉骨架高度重合(同一 '三步时间线' / '两步流程' 描述)",
+        "相邻页 差别在红色高亮块/红叉/红色虚线的位置或含义",
+        "相邻页 关键文字中的状态标签或轴标签保持一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 15,
+          "评价": "三步时间线首现: Mutate 突变+红叉复用失效"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 16,
+          "评价": "同三步时间线, 把红叉换成'预知/计算'红块"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 9,
+          "评价": "Token Merging 底图首现"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 10,
+          "评价": "同 Token Merging 底图, 叠加三条红色缺陷标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "论证链条一旦每页换图, 听众需要重新理解坐标; 复用底图+红色增量让每页只学一个新概念, 认知负载降到最低",
+      "fix_hint": "识别相邻页'讲同一对象的不同侧面', 用同一底图, 每页只加一层红色叠加而非重画",
+      "exceptions": [
+        "不同章节切换本身就应更换视觉主图",
+        "实验图表结果页每页数据源不同"
+      ]
+    },
+    {
+      "id": "formula_progression_shows_incremental_upgrade",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "公式渐进升级, 展示'加入了什么新变量'",
+      "description": "方法章不一次性抛出最终公式, 而是以 F(A) → F(A,B) → F(A,B,C) 的分步升级展示每次新增的变量, 每步升级用红色高亮新加入项.",
+      "evidence_signals": [
+        "同页或相邻页 关键文字包含前后两版形式相近的公式",
+        "视觉骨架 含 '公式逐级下箭头推导链' 或 '红色向下箭头'",
+        "新增变量在关键文字/视觉骨架里被显式红色标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 22,
+          "评价": "F(His.Attn)→F(His.Attn, Spec.Attn), 红色高亮新增项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "slide_index": 23,
+          "评价": "在 22 页公式上继续升级引入 CF/CR 因子"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "方法本质是'历代加了什么新想法', 一次性写完整公式听众抓不住每一项动机; 分步升级让每一次增补对应一个前页论证的洞察",
+      "fix_hint": "把最终公式拆成 2-3 步中间版本分页展示, 每步用红色高亮当次新增的变量, 并对应前页洞察",
+      "exceptions": [
+        "无公式/纯定性方法可跳过",
+        "公式已在文献中广为人知无需分解"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 单 deck (SpecDiff 论文分享 30 页), 抽出 visual 6 条 + authoring 6 条 = 12 条 rule, 覆盖 cover/toc/content/ending 四种 role, 侧重通用可迁移的版式与写作范式而非本 deck 主题细节.",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 6,
+      "authoring": 6
+    }
+  }
+}

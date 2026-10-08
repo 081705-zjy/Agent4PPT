@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17"
+所属章节: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05"
+所属deck: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c"
+页序号: 17
+源文件: "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx"
+页面角色: "content_candidate"
+标题: "TBS 稀疏配置变体：TS 与 RS-V/RS-H"
+核心论断: "TBS 涵盖 TS 与行稀疏等多种 N:M 可配置变体"
+本页讲什么: "本页枚举 TBS 的具体稀疏配置：TS（N=2,M=4）、RS-V（N={1,2,4},M=4）、RS-H 等，用矩阵图示展现不同变体的保留模式，说明 TBS 通过分块内可变 N:M 实现灵活稀疏。"
+关键文字: "[TS (N=2, M=4), RS-V (N={1,2,4}, M=4), RS-H]"
+视觉骨架: "[多变体稀疏矩阵网格图, \"N:M 配置标注\", 变体并排对照]"
+资源ID列表: "[tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.01, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.02, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.03, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.04, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.05, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.06, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.07, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_17.asset.08]"
+适合复用场景: "[稀疏模式变体枚举页, \"N:M 稀疏配置图解页\"]"
+不适合复用场景: "[宏观 motivation 页, 端到端加速结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "TBS 稀疏配置变体：TS 与 RS-V/RS-H"}
+  - {"位置": "下方主体", "内容": "多变体稀疏矩阵网格图并排对照"}
+alternate_claims:
+  - "RS-V 支持 N∈{1,2,4} 的可变行稀疏配置"
+layout_tag: "block_diagram"
+---
+# slide 17: TBS 稀疏配置变体：TS 与 RS-V/RS-H
+
+**核心论断**: TBS 涵盖 TS 与行稀疏等多种 N:M 可配置变体
+
+## 本页讲什么
+本页枚举 TBS 的具体稀疏配置：TS（N=2,M=4）、RS-V（N={1,2,4},M=4）、RS-H 等，用矩阵图示展现不同变体的保留模式，说明 TBS 通过分块内可变 N:M 实现灵活稀疏。
+
+## 关键文字片段
+- TS (N=2, M=4)
+- RS-V (N={1,2,4}, M=4)
+- RS-H
+
+## 视觉骨架
+- 多变体稀疏矩阵网格图
+- N:M 配置标注
+- 变体并排对照
+
+## 可复用到
+- 稀疏模式变体枚举页
+- N:M 稀疏配置图解页
+
+## 不适合复用的场景
+- 宏观 motivation 页
+- 端到端加速结果页

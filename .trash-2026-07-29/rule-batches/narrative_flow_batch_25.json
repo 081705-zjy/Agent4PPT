@@ -1,0 +1,372 @@
+{
+  "batch_index": 25,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has both motivation/problem sections listing challenges and method sections",
+      "title": "动机挑战需在方法章逐一回扣",
+      "description": "motivation/problem 章列出的 N 个 challenge, method 章必须逐一回应 (verbatim 或 paraphrased), 命中率应 ≥80%.",
+      "what_to_check": [
+        "在 problem/motivation section 的 slide.核心论断/关键文字 中找 challenge 关键词 (瓶颈/挑战/难点/不足)",
+        "对每条 challenge, 在 method section 所有 slide 中找语义匹配 (方案/解决/优化)",
+        "算命中率 = 命中数 / 总 challenge 数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "problem sec.03 列出端侧访存/显存 + 云侧算力/KVcache 4 challenge; method sec.04 用 semi-PD 回应云侧2条, sec.05 用 SpecEE 回应端侧2条, 命中4/4"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "听众记不住 motivation 罗列的所有挑战, method 章逐一回扣是本工作兑现承诺的核心机制, 缺失就让 motivation 沦为空谈",
+      "fix_hint": "遍历 problem 章 challenge 列表, 对每条在 method 章补一句 'X 挑战由 Y 方法解决'",
+      "exceptions": [
+        "综述型 deck (领域挑战本工作仅覆盖一部分)"
+      ]
+    },
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover and closing sections",
+      "title": "封面主标题在收尾章需回扣",
+      "description": "cover 的主标题关键词 (主 anchor) 在 closing 章需 verbatim 或 paraphrased 出现, 形成首尾闭环.",
+      "what_to_check": [
+        "从 slide_1 (cover) 提取标题主 anchor (通常为 3-6 字核心词)",
+        "在 closing section slides 的 关键文字/核心论断 中检索该 anchor 或其 paraphrase",
+        "有出现即命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "cover 主 anchor '高效大模型推理'; closing sec.07 slide 45 出现 'MxN端云协同生态' 呼应 '高效推理', sec.06 slide 42 '端+云推理加速' verbatim 回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "首尾呼应给听众'讲完了'的完形感, 缺失会让收尾像另起一段, 削弱主题印象",
+      "fix_hint": "在 closing 首页或末页显式引用 cover 主标题关键词, 用 '回到最初的 X' 或直接复用",
+      "exceptions": []
+    },
+    {
+      "id": "framework_diagram_reuse_across_chapters",
+      "category": "callback",
+      "applicable_when": "deck contains a framework/schema diagram in early sections",
+      "title": "框架图/关键示意图需跨章复用",
+      "description": "motivation 或 problem 章引入的框架示意 (如四形态图/挑战对照图), 应在 method/case_study 章至少复现 1 次以维系认知锚点.",
+      "what_to_check": [
+        "在 motivation/problem section 找 视觉骨架 含 'panel 对比' '框图' 的核心示意页",
+        "在 method/case_study section 查找同一 anchor (端云对比/P/D 框图) 是否复用",
+        "复用视为命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "slide 9-12 端云对比框架在 slide 38 (case_study) 再次以左右两列 panel 复用, slide 16 P/D 框图在 20/21 semi-PD 方案中反复用作对照底图"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "复用同一视觉骨架降低听众重新解码成本, 让技术推进沿既有轴线迭代而非另起炉灶",
+      "fix_hint": "method 章至少插一张复用 motivation 框架图的对比页, 标注新增/改动部位",
+      "exceptions": [
+        "纯文字型 deck 无框架图"
+      ]
+    },
+    {
+      "id": "teaser_at_problem_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck has a problem section followed by method section",
+      "title": "问题章末应埋方案预告",
+      "description": "problem 章的最后一页需含 '本工作将提出 X 解决' 或指向下章方法名的悬念钩子, 而非只停留在罗列瓶颈.",
+      "what_to_check": [
+        "取 problem section 页码范围的最后一页",
+        "在 slide.下页角色 或 核心论断/本页讲什么 中找 '为下页/下章/下文... 铺垫' 或 method 名 (semi-PD/SpecEE) 等预告词"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "problem 末页 slide 12 本页讲什么 显式含 '为后文 semi-PD 与 SpecEE 方案作问题铺垫', 埋下双方案钩子"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "章末预告制造 build-up, 让听众带着'方案是什么'的悬念进入下章, 直接跳到方案会浪费 setup",
+      "fix_hint": "problem 末页加一句 '下章我们提出 X 方案回应上述挑战' 或用箭头指向下章标题",
+      "exceptions": [
+        "纯综述 deck 无自研方案"
+      ]
+    },
+    {
+      "id": "result_holdback_at_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "method section contains multiple result slides",
+      "title": "最炸结果数字应放章末",
+      "description": "method 章的核心速度/精度提升数字应集中在章末结果页, 而非章首或散落。",
+      "what_to_check": [
+        "在 method section 内找含 % / × / 倍 等数字的 evidence slide",
+        "比较章首 vs 章末 evidence slide 中最大数字的分布"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "sec.04 semi-PD 章开源计划 slide 26 前的 slide 24 P99 TTFT 降 78% / ITL 缩短 5.6×; sec.05 SpecEE 章末 slide 35 帕累托前沿, 最强数字位于章末 2-3 页内"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "章末高潮遵循信息传递曲线, 数字放章首会消耗 payoff, 使 method 章后半冗长无力",
+      "fix_hint": "把最大 speedup 数字页调到 method 章倒数 1-3 张, 之前铺设置/权衡/技术细节",
+      "exceptions": [
+        "综述型 method 无实测数据"
+      ]
+    },
+    {
+      "id": "chapter_outro_hook_required",
+      "category": "chapter_transitions",
+      "applicable_when": "deck has ≥3 sections",
+      "title": "每章末页应含下章预告或收束",
+      "description": "每章最后一页需通过 下页角色=chapter_candidate 的过渡或核心论断中的收束语明示章节收官, 避免硬切.",
+      "what_to_check": [
+        "对每 section 找末页, 检查 下页角色 是否为 chapter_candidate/ending_candidate",
+        "或本页讲什么 是否含 '为下一章/下节... 铺垫/过渡/收束'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "sec.02 末 slide 8 下页角色=content_candidate 但收束到'推理需求爆发'引出 sec.03; sec.03 末 slide 12 下页=chapter_candidate; sec.04 末 slide 26/开源计划本页讲什么显式'为方法章节收束并过渡到下一章'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "章末硬切让听众失去节奏感, 明示 outro 是给认知'合上一页'的标记",
+      "fix_hint": "章末加一句 '至此 X 结束, 下章进入 Y' 或用 chapter_candidate 过渡页",
+      "exceptions": [
+        "≤2 章的迷你 deck"
+      ]
+    },
+    {
+      "id": "chapter_intro_topic_declare",
+      "category": "chapter_transitions",
+      "applicable_when": "deck has ≥3 sections with distinct role transitions",
+      "title": "每章首页需明示本章主题",
+      "description": "每章首页 (chapter_candidate 或该 section 第一张 content) 需以居中大标题或紫色主题条明示本章要讲什么.",
+      "what_to_check": [
+        "对每 section 找首页, 检查 页面角色 是否为 chapter_candidate 或含大主标题",
+        "视觉骨架 中含'居中大标题'/'紫色主题横条' 为命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "sec.04 首 slide 13 chapter_candidate '以弹性算力集群驱动云侧智能升级', sec.05 首 slide 27 '以有限算力架构释放终端应用潜能', sec.06 首 slide 37 '以大模型推理技术创新融合人工智能产业创新' 均居中大标题"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "章首无题让听众不知道自己在哪一章, 破坏 deck 的导航结构感",
+      "fix_hint": "每章首页用居中大标题或封面式版式明示章题, 不塞正文",
+      "exceptions": [
+        "单章 deck"
+      ]
+    },
+    {
+      "id": "main_anchor_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with ≥3 chapters",
+      "title": "主 anchor 需跨章多次出现",
+      "description": "deck 主 anchor (从标题/论述总结抽取) 应在 60%+ 章节中至少出现 1 次, 形成认知反复.",
+      "what_to_check": [
+        "从 deck.标题/论述总结 抽取主 anchor (核心 3-6 字词)",
+        "统计该 anchor 在几个 section 的 slide.关键文字/核心论断 中出现",
+        "算 覆盖章数/总章数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "主 anchor '大模型推理' 出现在 sec.01/02/03/04/05/06/07 全部 7 章, 覆盖 100%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "主 anchor 稀疏出现会让 deck 显得跑题, 反复出现让听众每章都被拉回主题",
+      "fix_hint": "每章至少一张 slide 的标题或首句显式用主 anchor 术语",
+      "exceptions": []
+    },
+    {
+      "id": "key_number_repeat_count",
+      "category": "repetition_emphasis",
+      "applicable_when": "method section contains quantitative claims",
+      "title": "关键提升数字需重复 2-4 次",
+      "description": "deck 中最重要的加速/精度数字应在 method 章内出现 2-4 次 (方案页预告 + 结果页实测 + 章末总结), 强化记忆点.",
+      "what_to_check": [
+        "找 method section 内最大 speedup/降幅 数字 (如 5.6× / 78% / 70%)",
+        "统计该数字在几张 slide 的 关键文字 中出现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "sec.06 slide 40 端侧 '内存降低 70%' 呼应端侧 sec.05 优势, semi-PD '10%/78%/5.6×' 集中在 slide 23-24 双页并列强化"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "reason": "semi-PD 78% / 5.6× 仅在 slide 24 一次出现, 未在章末总结页复现, 略弱"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "数字只出现一次听众记不住, 反复出现 2-4 次是 slogan 化的记忆机制",
+      "fix_hint": "章末总结页或封面案例页复用一次关键数字, 用大字强调",
+      "exceptions": []
+    },
+    {
+      "id": "before_after_pair_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "method section has result slides",
+      "title": "result 需 baseline 对比页",
+      "description": "method 章的结果证据必须以自研方案 vs baseline 的形式对比 (双色曲线/双点位), 至少 1 张 baseline 对比页.",
+      "what_to_check": [
+        "在 method section 找 视觉骨架 含 '双方案配色/双曲线/对比' 的 slide",
+        "关键文字 中含 baseline 名 (SGLang/llama.cpp 等) 为命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "sec.04 slide 23/24/25 semi-PD+SGLang vs SGLang 三张对比; sec.05 slide 35 SpecEE vs llama.cpp 帕累托对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "无 baseline 的裸数字无法验证 claim, 有对比才有说服力",
+      "fix_hint": "每组 method 结果页至少配 1 张与开源/工业 baseline 的双色对比图",
+      "exceptions": [
+        "纯理论 deck 无实测"
+      ]
+    },
+    {
+      "id": "claim_evidence_pairing_in_method",
+      "category": "comparison_evidence",
+      "applicable_when": "method section has quantitative claims",
+      "title": "每条量化 claim 需配 evidence slide",
+      "description": "method 章每条量化 claim (含 % / × / 倍) 应有 1 张对应的 evidence slide (曲线/散点/柱图), 不许仅文字裸述.",
+      "what_to_check": [
+        "在 method section 关键文字 中找量化 claim",
+        "对每条 claim 在同章内找 视觉骨架 含 '图/曲线/散点/柱' 的 evidence slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "semi-PD 三大 claim (吞吐+10%/TTFT-78%/ITL 5.6×) 分别配 slide 23 散点图/slide 24 双曲线; SpecEE 帕累托 claim 配 slide 35 散点图"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "文字裸述数字容易被质疑, 图证据是量化 claim 的必要背书",
+      "fix_hint": "每条量化 claim 至少配 1 张相应图表, 图标题即为该 claim",
+      "exceptions": [
+        "纯定性方法 deck"
+      ]
+    },
+    {
+      "id": "jargon_define_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "deck introduces technical jargon or novel method names",
+      "title": "专业术语首次使用需定义",
+      "description": "deck 引入的自研方法名 (semi-PD/SpecEE) 或行业术语 (CoT/RLHF/Scaling Law) 首次出现时应含定义或解释, 不假设听众已知.",
+      "what_to_check": [
+        "在 slides_in_order 中找方法名/专业术语首次出现的 slide",
+        "检查该 slide 的 本页讲什么 或 关键文字 是否含定义句 ('X 是...' '即...' 或展开说明)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "semi-PD 首次出现 slide 20 即定义 '计算分离+存储融合', SpecEE 首次 slide 32 即定义 '小 LLM 缩减搜索底库', Scaling Law 首次 slide 6 展开三阶段"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "术语无定义会让不熟悉领域的听众掉队, 破坏后续论证接受度",
+      "fix_hint": "术语首次出现的 slide 加一句 'X 指 Y' 或用副标题展开定义",
+      "exceptions": [
+        "纯内部技术分享, 听众全为专家"
+      ]
+    },
+    {
+      "id": "agenda_chapter_role_sequence_invariant",
+      "category": "structural_promise",
+      "applicable_when": "deck has motivation/problem/method/closing roles",
+      "title": "章节角色需遵循 motivation→problem→method→closing 顺序",
+      "description": "deck 的 section_role 序列应遵循 opening→motivation→problem→method→case_study→closing 的经典弧线, 不倒置.",
+      "what_to_check": [
+        "读 sections_outline 的 section_role 序列",
+        "检查是否遵循 opening→motivation→(problem)→method→(case_study)→closing"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "章节角色序列 opening→motivation→problem→method(云)→method(端)→case_study→closing, 完全遵循标准弧线"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "倒置章节顺序 (如先讲方法再讲动机) 会让听众失去问题意识, 强 setup 是说服的前提",
+      "fix_hint": "若发现 method 在 motivation 之前, 调整 section 顺序或补 motivation 章",
+      "exceptions": [
+        "纯 tutorial 无 motivation 需求"
+      ]
+    },
+    {
+      "id": "structural_to_content_ratio",
+      "category": "pacing",
+      "applicable_when": "any deck ≥20 pages",
+      "title": "结构页占比应在 10-25% 之间",
+      "description": "cover/chapter_candidate/ending_candidate 等结构页占总页数比例应在 10-25%, 过低=缺导航, 过高=节奏拖沓.",
+      "what_to_check": [
+        "统计 slides_in_order 中 页面角色 ∈ {cover_candidate, chapter_candidate, ending_candidate} 的 slide 数",
+        "算 结构页数/总页数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.高效大模型推理技术与应用.8584882c",
+          "evidence": "45 页中 cover 1 + chapter 4 (13/27/37/44) + ending 1 = 6 张, 占 13.3%, 位于合理区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "结构页太少听众迷路, 太多冲淡内容密度; 10-25% 是导航与信息密度平衡区",
+      "fix_hint": "若比例过低, 每章前加 chapter_candidate 分隔页; 若过高, 合并冗余过渡页",
+      "exceptions": [
+        "<15 页迷你 deck"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 只有 1 个 deck (45 页学术产业报告), 抽取 15 条 rule 覆盖 8 大类的 7 类. 主 anchor '大模型推理' 高频回扣, semi-PD/SpecEE 双方案对称结构, callback/comparison_evidence 类命中率高.",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

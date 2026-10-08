@@ -1,0 +1,39 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_01",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.01",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 1,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "cover_candidate",
+  "标题": "SpecDiff：自推测加速扩散模型推理",
+  "核心论断": "自推测机制可显著加速扩散模型推理",
+  "本页讲什么": "全 deck 封面页，居中呈现工作标题 SpecDiff（Accelerating Diffusion Model Inference with Self-Speculation），下方列出作者姓名与所属单位编号，为后续「开销分析→相关工作→洞察→算法→实测加速」的技术叙事定调，一句话确立本工作核心命题：用自推测加速扩散推理。",
+  "关键文字": [
+    "SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation",
+    "Jiayi Pan",
+    "Jiaming Xu"
+  ],
+  "视觉骨架": [
+    "居中大标题区",
+    "作者与单位编号列表",
+    "装饰性配图/机构标识"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_01.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_01.asset.02",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_01.asset.03"
+  ],
+  "适合复用场景": [
+    "扩散模型加速工作封面页",
+    "投机解码/自推测主题论文首页",
+    "AI 系统方向学术汇报封面"
+  ],
+  "不适合复用场景": [
+    "正文数据对比页",
+    "多图表混排内容页",
+    "章节过渡 agenda 页"
+  ],
+  "上页角色": null,
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

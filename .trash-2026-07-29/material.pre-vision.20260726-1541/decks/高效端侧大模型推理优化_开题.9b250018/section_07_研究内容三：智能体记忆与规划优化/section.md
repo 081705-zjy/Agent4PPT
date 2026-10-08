@@ -1,0 +1,45 @@
+---
+章节标识: tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.sec.07
+所属deck: tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018
+章节序号: 7
+章节角色: method
+标题: 研究内容三：智能体记忆与规划优化
+页码范围: [49, 60]
+页数: 12
+页ID列表: [slide_49, slide_50, slide_51, slide_52, slide_53, slide_54, slide_55, slide_56, slide_57, slide_58, slide_59, slide_60]
+章节叙事: 作为三大研究内容的收官章，从 ReAct 智能体范式切入，梳理 LLM-Tool 循环与记忆结构，提出记忆/规划关键问题与拟开展研究，落到 Planner-Decider-Actor 框架及 MemOS 记忆优化。
+页间关系: ["slide 49 → slide 50: 由 ReAct 范式引出 LLM-Tool 执行循环", "slide 50 → slide 51: 承接智能体主循环，细化工具调用流程", "slide 51 → slide 52: 由工具调用过渡到 Prompt 驱动的 LLM 生成", "slide 52 → slide 53: 从执行机制切入短期/长期记忆分类", "slide 53 → slide 54: 由记忆结构回到 LLM-Tool 智能体主循环", "slide 54 → slide 55: 从现状铺陈过渡到记忆与规划关键问题", "slide 55 → slide 56: 由关键问题引出拟开展研究方向", "slide 56 → slide 57: 从研究规划落到具体 LLM-Tool 方案示例", "slide 57 → slide 58: 由通用循环深入 Planner-Decider-Actor 分工", "slide 58 → slide 59: 从三角色框架接入与环境交互闭环", "slide 59 → slide 60: 由规划闭环过渡到 MemOS 记忆优化前后对比"]
+适合复用场景: [论证智能体记忆/规划瓶颈的 method 章节, 展示 ReAct 类 LLM-Tool 循环的技术页, 介绍 Planner-Decider-Actor 分工框架, 以 MemOS 为例做记忆优化前后对比]
+不适合复用场景: [研究主题不涉及智能体/Agent 时, 单轮任务、无需记忆与长程规划, 缺少关键问题→拟开展研究叙事结构]
+在deck中的位置: 第 7 章，三块研究内容之末，承接系统与思维链两块优化
+分析状态: claude-opus-4-8
+---
+
+# section 7: 研究内容三：智能体记忆与规划优化
+
+## 在 deck 中的位置
+第 7 章，三块研究内容之末，承接系统与思维链两块优化
+
+## 章内 slide 间的关系
+- slide 49 → slide 50: 由 ReAct 范式引出 LLM-Tool 执行循环
+- slide 50 → slide 51: 承接智能体主循环，细化工具调用流程
+- slide 51 → slide 52: 由工具调用过渡到 Prompt 驱动的 LLM 生成
+- slide 52 → slide 53: 从执行机制切入短期/长期记忆分类
+- slide 53 → slide 54: 由记忆结构回到 LLM-Tool 智能体主循环
+- slide 54 → slide 55: 从现状铺陈过渡到记忆与规划关键问题
+- slide 55 → slide 56: 由关键问题引出拟开展研究方向
+- slide 56 → slide 57: 从研究规划落到具体 LLM-Tool 方案示例
+- slide 57 → slide 58: 由通用循环深入 Planner-Decider-Actor 分工
+- slide 58 → slide 59: 从三角色框架接入与环境交互闭环
+- slide 59 → slide 60: 由规划闭环过渡到 MemOS 记忆优化前后对比
+
+## 整章可复用的场景
+- 论证智能体记忆/规划瓶颈的 method 章节
+- 展示 ReAct 类 LLM-Tool 循环的技术页
+- 介绍 Planner-Decider-Actor 分工框架
+- 以 MemOS 为例做记忆优化前后对比
+
+## 不适合复用的场景
+- 研究主题不涉及智能体/Agent 时
+- 单轮任务、无需记忆与长程规划
+- 缺少关键问题→拟开展研究叙事结构

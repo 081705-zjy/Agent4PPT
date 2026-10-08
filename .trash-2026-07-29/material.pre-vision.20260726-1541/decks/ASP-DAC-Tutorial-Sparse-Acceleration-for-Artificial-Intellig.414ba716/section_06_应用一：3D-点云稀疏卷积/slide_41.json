@@ -1,0 +1,31 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_41",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 41,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Observation 2：逐个计算 FGMS 致利用率不足",
+  "核心论断": "顺序计算各 FGMS 且无法数学并行导致硬件利用率不足",
+  "本页讲什么": "本页抛出第二组问题 Observation 2：逐个顺序计算每个 FGMS（Feature Gather-Matmul-Scatter）导致硬件 under-utilization，且这些 FGMS 在数学上无法直接并行（not able to be paralleled mathematically）。shape 数极多，含密集流程示意，引出后续并行化方案。",
+  "关键文字": [
+    "Observation 2: Sequentially computing each FGMS leads to under-utilization",
+    "not able to be paralleled mathematically"
+  ],
+  "视觉骨架": [
+    "FGMS 顺序计算流程示意",
+    "硬件利用率不足标注"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "稀疏卷积并行度问题剖析",
+    "FGMS 利用率瓶颈抛出页"
+  ],
+  "不适合复用场景": [
+    "解决方案融合调度页",
+    "实验消融页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

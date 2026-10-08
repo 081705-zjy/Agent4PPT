@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_75",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 75,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "硬件架构总览：Tensor Core 与可配置通路",
+  "核心论断": "Tensor Core 配可配置输入输出通路实现统一稀疏加速",
+  "本页讲什么": "给出硬件架构的完整总览：以 Tensor Core 为核心，输入路径为可配置多路复用阵列（Input Path: Configurable Multiplexer Array）、输出路径同样可配置，整合前述部件形成完整的稀疏加速硬件数据通路。",
+  "关键文字": [
+    "Tensor Core",
+    "Input Path: Configurable Multiplexer Array",
+    "Output path: Configurable"
+  ],
+  "视觉骨架": [
+    "硬件架构总览框图",
+    "输入输出可配置通路示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_75.asset.01"
+  ],
+  "适合复用场景": [
+    "稀疏加速硬件架构总览页",
+    "Tensor Core 数据通路页"
+  ],
+  "不适合复用场景": [
+    "方法精度结果页",
+    "时代背景开篇页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

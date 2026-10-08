@@ -1,0 +1,176 @@
+{
+  "batch_index": 2,
+  "rules": [
+    {
+      "id": "closing_no_new_content",
+      "category": "chapter_transitions",
+      "applicable_when": "任意含 closing 章的 deck",
+      "title": "收尾页不引入新论据",
+      "description": "收尾页主体保留大面积留白, 承担 Thanks/Q&A/联系方式功能; 不放入新的 claim、数据或方法细节, 避免观众在临场消化新信息时错过尾声.",
+      "what_to_check": [
+        "找 section_role=closing 的所有 slide",
+        "检查 slide.核心论断 / slide.关键文字 是否含新数据 (%, ×, 具体数字) 或新论断 (未在前面章节出现的方法名/结论)",
+        "若 closing 页含新内容视为违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "evidence": "closing slide 7 主体全空, 仅底部页脚署名, 无新论断/新数据 (关键文字仅含机构署名)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结束页注意力已疲, 新内容无法被记住反而稀释主题最后一击的印象锚点.",
+      "fix_hint": "将 closing 页新论断前移到 result 或 conclusion 章, 收尾页仅留 Thanks/Q&A/联系方式",
+      "exceptions": [
+        "conclusion 章合并 closing 时可含 takeaway 一句总结"
+      ]
+    },
+    {
+      "id": "closing_signature_footer",
+      "category": "repetition_emphasis",
+      "applicable_when": "学术/实验室/受邀 report 类 deck",
+      "title": "收尾页页脚保留作者/机构署名",
+      "description": "收尾页页脚含讲者姓名 + 所在机构 (可选邮箱), 让最后一屏成为听众记住讲者身份的定格.",
+      "what_to_check": [
+        "找 section_role=closing 的最后 slide",
+        "检查 slide.关键文字 或 视觉骨架 是否含'署名/机构名/邮箱/页脚'字段",
+        "若无任何身份识别信息视为违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "evidence": "slide 7 关键文字含 'Guohao Dai @ Shanghai JiaoTong University', 视觉骨架有'底部署名页脚+页码'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结束页是听众记讲者与后续联系的最后锚点, 缺署名让 Q&A 后跟进入口丢失.",
+      "fix_hint": "closing 页脚追加'姓名 @ 机构'一行, 可含邮箱/主页",
+      "exceptions": [
+        "产品发布/公司内部汇报可仅留公司 logo 不署个人",
+        "主持人已充分介绍且 deck 首页有署名"
+      ]
+    },
+    {
+      "id": "cover_to_self_intro_immediacy",
+      "category": "structural_promise",
+      "applicable_when": "含 self_intro 章的学术/实验室 deck",
+      "title": "自我介绍紧接封面",
+      "description": "有自我介绍页的 deck, self_intro 首页应紧接 cover (距离 ≤1 页), 让听众进入正题前先建立对讲者背景的最小认知.",
+      "what_to_check": [
+        "从 sections_outline 找 section_role=self_intro 的首页码",
+        "计算 (self_intro 首页码 - cover 首页码) 是否 ≤2",
+        "≥3 视为违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "evidence": "cover slide 1, self_intro slide 2, 距离=1 页, 严格紧接"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "讲者可信度需在讲内容前完成建立, 拖到中后段做自我介绍会打断主题节奏与听众代入感.",
+      "fix_hint": "把 self_intro 移到 cover 之后 agenda 之前, 单页搞定",
+      "exceptions": [
+        "对内熟悉团队可省 self_intro",
+        "受邀报告主持人已介绍则可省"
+      ]
+    },
+    {
+      "id": "chapter_role_sequence_invariant",
+      "category": "pacing",
+      "applicable_when": "任意 deck",
+      "title": "章节角色顺序保守",
+      "description": "章节按 opening → (self_intro/agenda/motivation) → method → result → closing 的正向偏序排布, 逆序或跳跃 (如 result 章在 method 前) 属反模式.",
+      "what_to_check": [
+        "读 sections_outline, 提取 section_role 序列",
+        "检查是否符合 opening → (self_intro|agenda|motivation)* → method → result* → closing 的正向偏序",
+        "任何 result 在 method 之前, 或 closing 之后还有内容章, 均视为违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "evidence": "sections_outline: opening(1) → self_intro(2) → method(3-6) → closing(7), 完全符合正向偏序"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "人类信息接收依赖 setup→delivery 顺序, 顺序打乱强迫听众来回构建 context, 认知负担陡增.",
+      "fix_hint": "重排 sections 使背景类在前 / method 中段 / result 与 closing 收尾",
+      "exceptions": [
+        "新闻头条式 deck 允许先亮结论再回溯 (需 cover 显式标注)"
+      ]
+    },
+    {
+      "id": "method_dominant_page_share",
+      "category": "pacing",
+      "applicable_when": "短-中长 deck (<20 页) 含 method 章",
+      "title": "方法章占主体页数",
+      "description": "短 deck 中 method 章应占总页数的 40-60%, <30% 说明技术细节欠展开, >70% 说明背景/结果被挤压.",
+      "what_to_check": [
+        "按 section_role=method 统计 slide 数",
+        "计算 method_pages / 总页数, 判断是否在 [0.4, 0.6] 区间"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "evidence": "method 章 4 页 (slide 3-6), 总 7 页, 占比 57.1%, 在区间内"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "技术汇报的核心价值在 method, method 章太薄意味着讲者没提供听众专程来听的干货.",
+      "fix_hint": "从 background/result 各拆 1-2 张关键页并入 method 章, 或将并列子方法各占单独页",
+      "exceptions": [
+        "综述型 deck (多个工作平均分 method 章)",
+        "结果型 talk (讲一个 hero number 而非方法链)"
+      ]
+    },
+    {
+      "id": "structural_wrapper_ratio",
+      "category": "pacing",
+      "applicable_when": "任意 deck",
+      "title": "结构页占比控制在 15-30%",
+      "description": "结构页 (cover + agenda + divider + closing) 占总页数 15-30% 为宜; 太少缺仪式与节奏喘息, 太多稀释内容密度使 deck 显包装厚馅心薄.",
+      "what_to_check": [
+        "统计 section_role∈{opening, closing, agenda, divider} 的 slide 数",
+        "计算 structural_pages / 总页数, 判断是否在 [0.15, 0.30] 区间"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "evidence": "opening 1 页 + closing 1 页 = 2 结构页, 总 7 页, 占比 28.6%, 在区间内"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页给听众节奏喘息与章节感, 但过多则挤压有效信息, 让 deck 显得虚胖.",
+      "fix_hint": "合并 agenda 到 cover 或删除多余 divider, 让内容页占比回到 70%+",
+      "exceptions": [
+        "超长 deck (>60 页) 可加分章 divider 使占比略高至 35%"
+      ]
+    }
+  ],
+  "extraction_notes": "batch 仅 1 个 deck 且是空白模板 (无实质文本内容), 依赖内容语义匹配的规则 (callback / suspense_reveal / comparison_evidence / anchor_trajectory / repetition_emphasis 中的 thesis-repeat 类) 无法在此 batch 可靠抽取; 仅抽结构/顺序型 rule. hit_rate 基于 n=1, 后续 batch 应重新校准.",
+  "coverage": {
+    "rules_count": 6,
+    "by_category": {
+      "callback": 0,
+      "suspense_reveal": 0,
+      "chapter_transitions": 1,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 0,
+      "anchor_trajectory": 0,
+      "structural_promise": 1,
+      "pacing": 3
+    }
+  }
+}

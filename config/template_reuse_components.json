@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "template_scope": {
+    "base_dir": "templates/base",
+    "paper_share_dir": "templates/topic/paper share",
+    "priority": [
+      "base_shell",
+      "paper_share_abstract_patterns",
+      "generated_slide_specifics"
+    ],
+    "policy": "base locks visual identity; paper-share templates provide abstract research-talk layout families, density, and emphasis strategies only"
+  },
+  "locked_base_contract": {
+    "inherits": [
+      "canvas_ratio",
+      "cover_layout",
+      "closing_layout",
+      "background_furniture",
+      "title_region",
+      "title_rule",
+      "footer",
+      "page_number",
+      "lab_identity",
+      "primary_palette",
+      "accent_palette",
+      "typography"
+    ],
+    "forbidden_overrides": [
+      "paper_share_palette_replacing_base",
+      "paper_share_font_replacing_base",
+      "paper_share_cover_or_footer_replacing_base",
+      "copying_paper_specific_images_or_charts",
+      "copying_exact_slide_coordinates"
+    ]
+  },
+  "reuse_levels": [
+    "locked",
+    "style_strategy",
+    "layout_family",
+    "component_pattern"
+  ],
+  "components": [
+    {
+      "component_id": "research_agenda.v1",
+      "slide_roles": ["agenda", "contents"],
+      "evidence_kind": "none",
+      "layout_family": "agenda_grid",
+      "slots": ["section_labels", "optional_current_section", "page_number"],
+      "paper_share_influence": "contents pages with staged research-talk sequence",
+      "copy_assets": false
+    },
+    {
+      "component_id": "background_trend.v1",
+      "slide_roles": ["background", "motivation"],
+      "evidence_kind": "trend_or_scale",
+      "layout_family": "trend_visual_plus_implication",
+      "slots": ["trend_visual", "scale_facts", "implication", "sources"],
+      "paper_share_influence": "background pages that combine scenario images, timeline, and scale facts",
+      "copy_assets": false
+    },
+    {
+      "component_id": "challenge_quantification.v1",
+      "slide_roles": ["challenge", "bottleneck", "problem"],
+      "evidence_kind": "metric_or_formula",
+      "layout_family": "big_metric_plus_causal_explanation",
+      "slots": ["metric", "formula_or_big_number", "mechanism", "consequence", "sources"],
+      "paper_share_influence": "bottleneck pages with large numeric evidence and causal explanation",
+      "copy_assets": false
+    },
+    {
+      "component_id": "related_work_matrix.v1",
+      "slide_roles": ["related_work", "gap", "comparison"],
+      "evidence_kind": "comparison",
+      "layout_family": "highlighted_gap_matrix",
+      "slots": ["method_class", "optimization_object", "strength", "limitation", "gap"],
+      "paper_share_influence": "related-work pages comparing method classes and limitations",
+      "copy_assets": false
+    },
+    {
+      "component_id": "key_insight_mechanism.v1",
+      "slide_roles": ["insight", "core_idea"],
+      "evidence_kind": "mechanism",
+      "layout_family": "dominant_mechanism_with_callouts",
+      "slots": ["insight", "before_after_contrast", "mechanism_diagram", "design_implication", "boundary"],
+      "paper_share_influence": "key-insight pages centered on one mechanism and concise callouts",
+      "copy_assets": false
+    },
+    {
+      "component_id": "method_overview.v1",
+      "slide_roles": ["method", "framework", "architecture"],
+      "evidence_kind": "architecture",
+      "layout_family": "pipeline_or_layered_architecture",
+      "slots": ["input", "stages", "state_or_data_objects", "resource_mapping", "output_metrics"],
+      "paper_share_influence": "method overview pages showing modules, dataflow, and system boundaries",
+      "copy_assets": false
+    },
+    {
+      "component_id": "technique_detail.v1",
+      "slide_roles": ["technique", "mechanism", "optimization"],
+      "evidence_kind": "design_detail",
+      "layout_family": "mechanism_diagram_plus_notes",
+      "slots": ["problem_addressed", "core_idea", "algorithm_or_dataflow", "expected_benefit", "tradeoff"],
+      "paper_share_influence": "technical detail pages with mechanism diagrams and concise design notes",
+      "copy_assets": false
+    },
+    {
+      "component_id": "experiment_result.v1",
+      "slide_roles": ["experiment", "result", "evaluation"],
+      "evidence_kind": "quantitative_result",
+      "layout_family": "dominant_result_visual_plus_interpretation",
+      "slots": ["conclusion", "chart_or_table", "baseline", "metric", "setup", "interpretation", "limitation"],
+      "paper_share_influence": "evaluation pages that foreground result plots and explain setup",
+      "copy_assets": false
+    },
+    {
+      "component_id": "ablation_comparison.v1",
+      "slide_roles": ["ablation", "sensitivity", "comparison"],
+      "evidence_kind": "controlled_comparison",
+      "layout_family": "small_multiples_or_comparison_grid",
+      "slots": ["variants", "controlled_variable", "metric", "winning_condition", "caveat"],
+      "paper_share_influence": "ablation pages with compact variant comparison",
+      "copy_assets": false
+    },
+    {
+      "component_id": "risk_boundary.v1",
+      "slide_roles": ["risk", "plan", "boundary"],
+      "evidence_kind": "risk_matrix",
+      "layout_family": "risk_matrix_with_mitigations",
+      "slots": ["risk", "trigger", "impact", "mitigation", "validation_signal"],
+      "paper_share_influence": "planning/risk pages that make assumptions explicit",
+      "copy_assets": false
+    },
+    {
+      "component_id": "summary_takeaway.v1",
+      "slide_roles": ["summary", "conclusion"],
+      "evidence_kind": "takeaway",
+      "layout_family": "contribution_takeaways",
+      "slots": ["problem", "method", "evidence", "contribution", "next_action"],
+      "paper_share_influence": "summary pages with contribution-oriented takeaways",
+      "copy_assets": false
+    }
+  ],
+  "audit_rules": {
+    "max_consecutive_same_layout_family": 2,
+    "max_card_fallback_ratio": 0.25,
+    "paper_share_copy_assets_allowed": false,
+    "base_copy_assets_allowed_for": ["cover", "ending", "locked_shell"],
+    "must_bind_claim_to_evidence": true,
+    "must_explain_template_reuse_level": true
+  }
+}

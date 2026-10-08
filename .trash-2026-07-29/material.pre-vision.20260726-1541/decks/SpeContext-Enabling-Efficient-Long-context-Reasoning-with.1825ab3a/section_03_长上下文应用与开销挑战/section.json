@@ -1,0 +1,42 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "章节序号": 3,
+  "章节角色": "background",
+  "标题": "长上下文应用与开销挑战",
+  "页码范围": [
+    3,
+    8
+  ],
+  "页数": 6,
+  "页ID列表": [
+    "slide_03",
+    "slide_04",
+    "slide_05",
+    "slide_06",
+    "slide_07",
+    "slide_08"
+  ],
+  "章节叙事": "background 章：先用新兴长上下文应用铺出需求，再逐层展开注意力与 KV 缓存随序列增长的开销，为后文冗余动机与 SpeContext 方法建立问题前提。",
+  "页间关系": [
+    "slide 3 → slide 4: 由新兴 LLM 概览收窄到具体长上下文应用场景",
+    "slide 4 → slide 5: 由应用场景引出「长上下文」这一共性输入特征",
+    "slide 5 → slide 6: 由长输入切入 Attention/FFN 计算结构剖析",
+    "slide 6 → slide 7: 由注意力开销聚焦到 KV 缓存随序列长度增长",
+    "slide 7 → slide 8: 由 KV 显存压力回落到 FFN/配置维度补全开销全貌"
+  ],
+  "适合复用场景": [
+    "需论证「长序列推高注意力/KV 开销」的 motivation 章",
+    "长上下文/长序列推理方法的问题铺垫章节",
+    "从应用需求推导系统瓶颈的背景章",
+    "KV 缓存或显存受限主题的开销拆解章"
+  ],
+  "不适合复用场景": [
+    "研究主题与长上下文推理无关时",
+    "受众已熟知注意力/KV 开销，无需铺垫",
+    "短上下文或非 Transformer 架构主题",
+    "无需应用→瓶颈叙事的纯方法章"
+  ],
+  "在deck中的位置": "第 1 内容章，紧接 cover/agenda，为方法章做铺垫",
+  "分析状态": "claude-opus-4-8"
+}

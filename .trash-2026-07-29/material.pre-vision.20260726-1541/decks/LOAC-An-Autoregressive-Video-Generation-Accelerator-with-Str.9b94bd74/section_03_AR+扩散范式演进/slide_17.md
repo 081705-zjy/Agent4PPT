@@ -1,0 +1,49 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_17"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 17
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "滑动窗口 AR+Diffusion 的局限"
+核心论断: "滑动窗口虽限制 KV 但牺牲了长程记忆能力"
+本页讲什么: "本页指出基于滑动窗口的 AR+Diffusion 模型：虽然通过窗口限制了 KV 规模从而控制算力，但也因此丢失远端历史，长程记忆受限，为后文稀疏注意力/KV 压缩方案埋下动机。"
+关键文字: "[基于滑动窗口的 AR+Diffusion 模型, 虽然限制了 KV，但牺牲长程记忆]"
+视觉骨架: "[滑动窗口 KV 机制示意图, 窗口范围标注]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_17.asset.01, tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_17.asset.02]"
+适合复用场景: "[滑动窗口方案局限论证页, KV 压缩动机铺垫页]"
+不适合复用场景: "[范式演进 opener 页, 完整 KV Cache 优势页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "motivation"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "滑动窗口 AR+Diffusion 的局限"}
+  - {"位置": "中间主体", "内容": "滑动窗口 KV 机制示意图"}
+  - {"位置": "底部结论", "内容": "限制 KV 但牺牲长程记忆"}
+alternate_claims:
+  - "滑动窗口通过限定 KV 规模来控制算力开销"
+layout_tag: "block_diagram"
+---
+# slide 17: 滑动窗口 AR+Diffusion 的局限
+
+**核心论断**: 滑动窗口虽限制 KV 但牺牲了长程记忆能力
+
+## 本页讲什么
+本页指出基于滑动窗口的 AR+Diffusion 模型：虽然通过窗口限制了 KV 规模从而控制算力，但也因此丢失远端历史，长程记忆受限，为后文稀疏注意力/KV 压缩方案埋下动机。
+
+## 关键文字片段
+- 基于滑动窗口的 AR+Diffusion 模型
+- 虽然限制了 KV，但牺牲长程记忆
+
+## 视觉骨架
+- 滑动窗口 KV 机制示意图
+- 窗口范围标注
+
+## 可复用到
+- 滑动窗口方案局限论证页
+- KV 压缩动机铺垫页
+
+## 不适合复用的场景
+- 范式演进 opener 页
+- 完整 KV Cache 优势页

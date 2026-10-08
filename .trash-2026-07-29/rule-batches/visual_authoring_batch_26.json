@@ -1,0 +1,570 @@
+{
+  "batch_index": 26,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中主标题+作者署名+日期落款",
+      "description": "封面页采用极简白底,居中大字主标题下配细分隔线,再列汇报人姓名、所属单位、联系邮箱与汇报日期,不含正文段落或bullet列表,聚焦身份识别。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大标题' 或 '大号标题'",
+        "关键文字 含 作者姓名 + 所属单位 + 日期 (含年份)",
+        "视觉骨架 含 '标题下细分隔线' 或 '细横向分隔线'",
+        "关键文字 含 邮箱或日期落款"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 1,
+          "评价": "标准封面:主标题 + 分隔线 + 作者/单位/邮箱/日期四要素齐备"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场瞬间锁定主题与讲者身份,减少视觉干扰让听众第一时间理解报告归属与权威性",
+      "fix_hint": "把主标题居中放大,下加细分隔线,底部或右下放置作者/单位/邮箱/日期,移除bullet与图表",
+      "exceptions": [
+        "空白模板/纯占位版式(无实际身份信息)"
+      ]
+    },
+    {
+      "id": "toc_layout_bordered_frame_with_numbered_items",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页布局·带框标题区+编号圆点议程列表",
+      "description": "目录/章节导航页顶部为带边框的标题区(含Contents标题),下方竖排编号圆点(①②③或圆圈序号)议程条目,左侧配蓝色高亮竖条指示当前章节进度。",
+      "evidence_signals": [
+        "关键文字 含 'Contents' 或 '目录'",
+        "视觉骨架 含 '蓝框标题区' 或 '带边框目录卡'",
+        "视觉骨架 含 '编号圆圈' 或 '①②③' 或 '带圈序号'",
+        "视觉骨架 含 '蓝色高亮竖条' 或 '进度竖条'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 2,
+          "评价": "首次目录页:蓝框+三条圈码议程+左侧蓝色高亮竖条"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 3,
+          "评价": "章节导航页复用同版式,高亮当前章节其余灰显"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 9,
+          "评价": "方法章导航页同样版式"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 49,
+          "评价": "总结章导航页,已讲项灰化+当前项高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "统一目录版式让听众在多次导航切入时快速识别当前位置,编号+高亮竖条形成稳定的空间锚点",
+      "fix_hint": "把目录标题放入带框标题区,议程用编号圆点竖排,左侧加蓝色高亮竖条并灰化已讲/未讲项",
+      "exceptions": [
+        "单章报告或无章节切分的短deck"
+      ]
+    },
+    {
+      "id": "chapter_navigation_reuses_toc_with_highlight_dimming",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节导航复用总目录+高亮/灰化区分",
+      "description": "章节切入不用独立大字章节封面,而是复用全篇总目录版式,把当前章节高亮为深色/蓝色,其余章节灰化,做视觉定位。",
+      "evidence_signals": [
+        "关键文字 含 'Contents' 且列出多条议程",
+        "视觉骨架 含 '当前项高亮' 与 '其余灰显' 或 '已讲项灰化'",
+        "本页讲什么 含 '章节定位' / '从X切入' / '过渡'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 3,
+          "评价": "从封面切入动机章,高亮第①项其余灰显"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 9,
+          "评价": "切入方法章,高亮第②项"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 49,
+          "评价": "切入总结章,高亮第③项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "复用同一目录框架让听众每次切章都锚定在同一空间坐标上,减少认知切换成本,比独立章节封面更节省注意力",
+      "fix_hint": "章节切入页直接复用总目录布局,把当前项改为高亮色,其余项统一灰化处理",
+      "exceptions": [
+        "单章报告",
+        "章节内容差异极大需独立封面强调时"
+      ]
+    },
+    {
+      "id": "paper_intro_layout_title_authors_venue",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文引入页·题目+作者署名+会议信息三段式",
+      "description": "章节内引入具体论文成果时用独立一页,大字论文题目居中,下方作者与所属单位,底部会议/期刊信息,不含方法细节。",
+      "evidence_signals": [
+        "关键文字 含 论文英文全名 (含 ':' 或 '-')",
+        "关键文字 含 会议缩写 + 年份 (如 'ISCA', 'AAAI', 'ISFPGA', 'MICRO')",
+        "视觉骨架 含 '论文标题大字' 或 '论文大标题'",
+        "视觉骨架 含 '作者署名行' 或 '作者与单位署名块'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 11,
+          "评价": "Megrez-Omni技术报告封面式引入"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 19,
+          "评价": "SpecEE论文标题+作者+ISCA2025"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 26,
+          "评价": "SpecDiff论文标题+AAAI 2026 Oral"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 33,
+          "评价": "FlightLLM论文封面+ISFPGA 2024"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 44,
+          "评价": "FlightVGM论文封面+ISFPGA 2025"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "论文级引入独立一页既给听众明确的章节里程碑,又让顶会背书信息可视化,增强学术公信力",
+      "fix_hint": "在展开每篇论文的方法前插入一页,大字题目居中+作者行+会议年份底部标注,不塞方法细节",
+      "exceptions": [
+        "非学术型报告(产品/商业汇报无论文成果)"
+      ]
+    },
+    {
+      "id": "three_layer_framework_recap_across_chapters",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "三层框架复盘·跨章节复用统一竖排框架",
+      "description": "跨算法/系统/硬件多层展开的报告,在每层章节起始处复用同一「三层竖向堆叠框架」示意图,高亮当前层其余层灰化,右侧标注对应技术/成果卡。",
+      "evidence_signals": [
+        "视觉骨架 含 '三层竖向堆叠框' 或 '三层框架竖排示意' 或 '三层竖排框架条'",
+        "视觉骨架 含 '当前层高亮' 或 '高亮蓝框'",
+        "关键文字 含 '3个设计层次' 或 '三层次拆解'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 8,
+          "评价": "动机章末首次给出三层框架总图"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 10,
+          "评价": "方法章起始复用同图高亮算法模型层"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 17,
+          "评价": "软件层章节复用同图并高亮"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 32,
+          "评价": "硬件层章节复用同图并高亮"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 50,
+          "评价": "总结页复用同图挂接三层产出"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨章节复用同一框架图让多层技术展开有稳定的空间坐标,听众每次都能定位自己走到框架中哪一层,认知负担最小",
+      "fix_hint": "把主体框架抽象为竖向多层框图,在每层章节起始复用同图并只改高亮/灰化位置,右侧挂接本层成果卡",
+      "exceptions": [
+        "单层单主题报告",
+        "无层次拆解的线性叙述"
+      ]
+    },
+    {
+      "id": "closing_summary_binds_framework_to_outputs",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "总结页·主线框架挂接成果卡收束",
+      "description": "全篇总结页复用主体框架图(竖向多层框),左侧配主线竖条+顶部结论横幅,每层用箭头指向右侧对应产出成果(论文/模型/引用),把方法和交付物直接绑定。",
+      "evidence_signals": [
+        "视觉骨架 含 '三层设计层次纵向' 或 '三层竖排' 且含 '成果卡' 或 '成果'",
+        "视觉骨架 含 '箭头指向右侧成果' 或 '箭头指向右侧对应'",
+        "关键文字 含 '收束' / '总结' 语义 或 论文引用列表 (如 '[ISCA 25]', '[AAAI 26]', '[FPGA 24]')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 50,
+          "评价": "顶部结论横幅+三层框架+右侧挂接Megrez/ISCA/AAAI/FPGA五项成果"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "总结不是文字重复讲过的话,而是把主体框架图作为骨架把方法和产出直接绑定,让听众记住的既是方法也是可查证的交付物",
+      "fix_hint": "总结页复用主体框架图,不用bullet堆叠,而在每个层次右侧箭头挂接具体论文/模型/产品名称",
+      "exceptions": [
+        "无成果交付物的纯观点/科普型报告"
+      ]
+    },
+    {
+      "id": "acknowledgment_layout_contact_plus_logo_wall",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "致谢页·联系信息+合作方logo墙",
+      "description": "全篇末页致谢采用左侧汇报人姓名/单位/日期/邮箱文本块+右侧合作企业/高校标签框+页面下部两排合作方logo墙的固定版式。",
+      "evidence_signals": [
+        "关键文字 含 '致谢' 或 'Email:' 或 邮箱地址",
+        "视觉骨架 含 'logo 墙' 或 'logo墙'",
+        "关键文字 含 '合作企业' 或 '合作高校' 或 单位名列表"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 51,
+          "评价": "顶部蓝条+汇报人信息块+合作企业/高校标签+两排logo墙"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "logo墙是学术汇报致谢的强证据形式,比纯文字致谢更直观展示合作生态与资源背书",
+      "fix_hint": "末页左置汇报人/邮箱/日期,右置合作方分组标签,下部一至两排logo墙集中展示合作单位",
+      "exceptions": [
+        "个人报告无合作方",
+        "商业保密场合不便展示合作logo"
+      ]
+    },
+    {
+      "id": "background_vs_challenge_two_column_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "背景/挑战对比·左右双栏panel版式",
+      "description": "动机/背景/挑战类内容页用左右双栏panel并列呈现两个对照对象或两条主线(云侧vs端侧、算法vs硬件、稀疏vs混合精度),底部收敛箭头/结论条。",
+      "evidence_signals": [
+        "视觉骨架 含 '左右双panel' 或 '左右双栏' 或 '双栏对比框'",
+        "视觉骨架 含 底部/收敛结论条或箭头",
+        "本页讲什么 含 对比关系 (X vs Y / 一方面...另一方面)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 4,
+          "评价": "AI 1.0 vs AI 2.0双栏对比+底部蓝条结论"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 12,
+          "评价": "云侧vs端侧资源受限双panel"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 15,
+          "评价": "Dense结构vs数据设计双栏经验"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 28,
+          "评价": "缓存复用vs采样两类已有方法双栏"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 45,
+          "评价": "稀疏计算vs混合精度双栏挑战"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "对比是学术说服的核心手法,左右双栏让两个对象在空间上直接并置,比纯文字对比更快让听众感知差异",
+      "fix_hint": "对比类内容页拆成左右两栏panel,每栏含小标题+要点+机制示意,底部加统一结论条或过渡箭头",
+      "exceptions": [
+        "三方或以上对比适用三/四栏版式",
+        "非对比性内容(纯陈述/流程)"
+      ]
+    },
+    {
+      "id": "title_uses_context_scenario_prefix",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题写作·「场景N/章节:主张」前缀式结构",
+      "description": "内容页标题倾向于「章节定位:核心主张」式两段结构,如「场景1方法:投机早退联合的加速思路」「Megrez 2.0:Dense结构与数据设计经验」,前段定位后段承载信息。",
+      "evidence_signals": [
+        "标题 含 ':' 或 '·' 或 '、' 作为分段符",
+        "标题 前段为 '场景N' / '模型名' / '章节名' 类定位词",
+        "标题 后段为名词短句或核心动作 (含 '方法' '结果' '挑战' 等)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 12,
+          "评价": "'Megrez 1.0:端侧软硬件协同优化的痛点' 前段定位后段主张"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 22,
+          "评价": "'场景1方法:投机早退联合的加速思路'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 25,
+          "评价": "'场景1结果:Y7000 PC平均2.43倍加速'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 41,
+          "评价": "'场景2:视频生成计算量巨大'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 4,
+          "原因": "标题 'AI 2.0 核心生产要素——Token' 无场景/章节前缀,是纯主张"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "多章节+多论文的复杂报告用「定位:主张」双段标题让听众一眼知道当前在哪一章的哪一步,减少上下文回忆成本",
+      "fix_hint": "标题改写为「场景N/模型名/章节:主张」两段式,前段承担导航后段承担信息,用':'或'·'分隔",
+      "exceptions": [
+        "总起/收束类跨章节页",
+        "封面/目录页"
+      ]
+    },
+    {
+      "id": "claim_must_be_judgment_sentence_with_number",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·判断句+数字/结论词",
+      "description": "核心论断字段应为一句完整判断句(含主谓宾+明确判断),优先带具体数字(如「平均2.43倍加速」「能效提升约70%」「减少显存至12GB」)或强判断词(需要/必须/无法),不写纯陈述性事实。",
+      "evidence_signals": [
+        "核心论断 含 数字+单位 (如 '倍', '%', 'GB', 'W', 'Tokens/J')",
+        "核心论断 含 判断/评价动词 ('实现' '需要' '难以' '优于' '受限')",
+        "核心论断 不以疑问句/描述句 ('是...' '有...') 结尾"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 13,
+          "评价": "'Megrez-3B-Omni为同尺寸最强全模态模型,性能提升超30%' 强判断+数字"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 25,
+          "评价": "'SpecEE在联想Y7000 PC上实现平均2.43倍推理加速' 判断句+具体数字"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 38,
+          "评价": "'FlightLLM相较V100S GPU能效提升约70%'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 41,
+          "评价": "'视频生成计算量比图像高2-3个数量级'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 1,
+          "原因": "'端侧大模型推理优化是本次汇报的核心议题' 是元描述而非实质判断,封面页除外可豁免"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "核心论断是每页说服听众的一句话,判断句+数字才具备可验证性和记忆点,纯陈述句容易被略读",
+      "fix_hint": "把核心论断改写为完整判断句,首选嵌入具体数字/百分比/倍数,或换成强判断动词",
+      "exceptions": [
+        "封面/目录/致谢类元信息页",
+        "背景铺垫页(可用中性陈述)"
+      ]
+    },
+    {
+      "id": "method_result_uses_specific_platform_and_baseline",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "结果页写作·具体硬件平台+基线对照+关键倍数",
+      "description": "任何「结果」类内容页的关键文字必须同时包含:(1)具体测试硬件/平台名(如「联想Y7000 PC」「FLUX.1 Dev」「U280 FPGA」「V100S GPU」);(2)对照基线;(3)关键量化倍数或百分比。",
+      "evidence_signals": [
+        "关键文字 含 具体硬件/平台型号 (品牌+型号)",
+        "关键文字 含 基线名称 (如 'vs' / '相较' / '对比 X')",
+        "关键文字 含 '倍' 或 '%' 或 '×' 加数字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 25,
+          "评价": "'联想Y7000 PC' + '平均2.43倍' + '精度无损' 三要素齐"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 31,
+          "评价": "'FLUX.1 Dev' + '平均3.17倍' + 生成质量对照"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 38,
+          "评价": "'16nm U280 FPGA vs 12nm V100S GPU' + '70%能效50%性能'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 48,
+          "评价": "'NVIDIA 3090 GPU' + '1.30×能效4.49×性能'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "学术汇报的结果只有绑定具体平台/基线才可复现可验证,缺一即会被同行质疑数据可信度",
+      "fix_hint": "结果页关键文字必须写全「测试平台+对照基线+具体倍数/百分比」三要素,缺项即补足",
+      "exceptions": [
+        "理论分析型页(无实测数据)",
+        "定性观察页"
+      ]
+    },
+    {
+      "id": "citation_footnote_for_paper_and_data_claims",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文/外部数据引用·底部脚注格式",
+      "description": "凡涉及外部论文成果、他人工作对比或非本组数据的页面,应在关键文字/视觉骨架里附带引用脚注(如'[1] Megrez-omni technical report, arXiv:2502.15803, 2025'或'[MICRO'22]'), 明确出处。",
+      "evidence_signals": [
+        "关键文字 含 '[N]' 编号引用或会议缩写年份 (如 '[MICRO\\'22]', 'ISCA25')",
+        "关键文字 含 'arXiv:' 或论文全名或年份",
+        "视觉骨架 含 '底部引用脚注' 或 '文献引用'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 16,
+          "评价": "MoE参数量方案底部标 '[1] Megrez-omni technical report, arXiv:2502.15803, 2025'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 18,
+          "评价": "投机解码概念页底部引 'Fast Inference from Transformers via Speculative Decoding, 2022'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 21,
+          "评价": "已有工作对比含 RAEE[1]/AdaInfer[2]/MoD[3] 编号引用"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 34,
+          "评价": "研究背景引 'DFX[MICRO\\'22]'、'Understanding[FCCM\\'24]' 会议年份"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 52,
+          "评价": "认知类比页引 'Daniel Kahneman, Thinking, Fast and Slow'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "任何跨他人成果、外部数据或非原创概念必须给出可追溯出处,否则学术诚信被质疑,是研究报告的底线",
+      "fix_hint": "在页面底部或数据右侧加上'[N] 论文名, 会议/期刊 年份'编号引用,或用'[会议\\'年份]'缩写标注",
+      "exceptions": [
+        "纯原创方法/结果页(全部内容为本组产出)",
+        "封面/目录/致谢类元信息页"
+      ]
+    },
+    {
+      "id": "appendix_timeline_horizontal_with_nodes",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate",
+        "content_candidate"
+      ],
+      "title": "演变/时间线·横向时间轴+节点卡片+省略号延展",
+      "description": "展示技术/范式演变的备份/附录类页面用横向时间轴,标注年月节点+每节点技术卡片,末尾用省略号或未来方向文字标记延展趋势。",
+      "evidence_signals": [
+        "视觉骨架 含 '横向时间轴' 或 '时间线' 或 '编码标准时间线'",
+        "关键文字 含 多个 年.月 或 年份 (如 '2022.11', '2024.1', '2024.8')",
+        "视觉骨架 含 '省略号' 或 '未来方向' 或 '延展标记'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 42,
+          "评价": "H.261→MPEG→H.264→H.265 编码标准时间线"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+          "slide_index": 53,
+          "评价": "推测解码演变横向时间轴+三节点+省略号延展"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "时间线是展示技术演进的最直观形式,让听众在几秒内建立范式发展的历史坐标,末尾省略号暗示研究方向仍在扩展",
+      "fix_hint": "演变类页面改为横向时间轴,每个技术节点做卡片式呈现,末尾加省略号或未来方向文字块",
+      "exceptions": [
+        "无时间演进属性的内容页",
+        "单一技术点描述页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (53 slides), visual 9 rules, authoring 4 rules; 由于本 batch 只含单 deck 且高度自洽, hit_rate 普遍较高, enforcement_level 偏 hard/soft; 覆盖封面/目录/章节导航/论文引入/框架复盘/总结/致谢/背景对比/结果写作/引用规范/时间线等主要 role.",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "visual": 9,
+      "authoring": 4
+    }
+  }
+}

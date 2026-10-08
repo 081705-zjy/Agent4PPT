@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.02"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 2
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "toc_candidate"
+标题: "目录：第一章 背景·文本检索"
+核心论断: "全 deck 以文本检索背景为起点逐层展开"
+本页讲什么: "全 deck 目录页，罗列各章节编号与标题；首章即本节 Background: Retrieval，交代整份报告从文本检索背景切入的组织顺序，供听众建立全局导航。"
+关键文字: "[\"Background: Retrieval\", contents]"
+视觉骨架: "[章节编号列表, 目录条目排版, 配图缩略]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_02.asset.08]"
+适合复用场景: "[技术 deck 全局目录页, 检索/NLP 报告章节导航]"
+不适合复用场景: "[单一论点论证页, 含具体数据的结果页]"
+上页角色: "cover_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题区", "内容": "contents 目录标题"}
+  - {"位置": "主体列表区", "内容": "章节编号与标题条目, 首项为 Background: Retrieval"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 2: 目录：第一章 背景·文本检索
+
+**核心论断**: 全 deck 以文本检索背景为起点逐层展开
+
+## 本页讲什么
+全 deck 目录页，罗列各章节编号与标题；首章即本节 Background: Retrieval，交代整份报告从文本检索背景切入的组织顺序，供听众建立全局导航。
+
+## 关键文字片段
+- Background: Retrieval
+- contents
+
+## 视觉骨架
+- 章节编号列表
+- 目录条目排版
+- 配图缩略
+
+## 可复用到
+- 技术 deck 全局目录页
+- 检索/NLP 报告章节导航
+
+## 不适合复用的场景
+- 单一论点论证页
+- 含具体数据的结果页

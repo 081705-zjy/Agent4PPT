@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_14"
+所属章节: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04"
+所属deck: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738"
+页序号: 14
+源文件: "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx"
+页面角色: "content_candidate"
+标题: "原始特征维度超四千的采集挑战"
+核心论断: "原始特征维度超 4×10³，直接训练代价过高"
+本页讲什么: "本页交代预测器训练的离线特征采集问题：原始特征维度超过 4×10³，规模庞大，直接用于训练开销过高，引出下一页的特征筛选与降维需求。"
+关键文字: "[Raw Features, \"> 4×10³\"]"
+视觉骨架: "[原始特征规模标注, 高维特征采集示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_14.asset.01, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_14.asset.02, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_14.asset.03, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_14.asset.04]"
+适合复用场景: "[预测器离线特征采集页, 高维特征降维动机页]"
+不适合复用场景: "[方法框图总览页, 章节开篇问题梳理页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标签", "内容": "Raw Features"}
+  - {"位置": "下方主体", "内容": "高维特征采集示意与 > 4×10³ 规模标注"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 14: 原始特征维度超四千的采集挑战
+
+**核心论断**: 原始特征维度超 4×10³，直接训练代价过高
+
+## 本页讲什么
+本页交代预测器训练的离线特征采集问题：原始特征维度超过 4×10³，规模庞大，直接用于训练开销过高，引出下一页的特征筛选与降维需求。
+
+## 关键文字片段
+- Raw Features
+- > 4×10³
+
+## 视觉骨架
+- 原始特征规模标注
+- 高维特征采集示意
+
+## 可复用到
+- 预测器离线特征采集页
+- 高维特征降维动机页
+
+## 不适合复用的场景
+- 方法框图总览页
+- 章节开篇问题梳理页

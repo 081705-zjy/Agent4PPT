@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_03",
+  "所属章节": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+  "页序号": 3,
+  "源文件": "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx",
+  "页面角色": "content_candidate",
+  "标题": "LLM 引发广泛关注，进入大模型时代",
+  "核心论断": "大模型时代来临，LLM 广受关注并驱动算力需求激增",
+  "本页讲什么": "本页承接开篇，正面立论大模型（LLMs）已吸引巨大关注，宣告「Era of...」大模型时代到来。通过多张配图展示 LLM 的火热与影响力，为下一页拆解其计算负担做重要性铺垫。",
+  "关键文字": [
+    "LLMs have attracted much attention",
+    "Era of"
+  ],
+  "视觉骨架": [
+    "大模型时代主题配图",
+    "关注度示意图组"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_03.asset.01",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_03.asset.02",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_03.asset.03",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_03.asset.04",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_03.asset.05"
+  ],
+  "适合复用场景": [
+    "大模型推理 motivation 首页",
+    "LLM 重要性立论页"
+  ],
+  "不适合复用场景": [
+    "具体算法方法页",
+    "benchmark 数据对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

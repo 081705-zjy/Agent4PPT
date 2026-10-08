@@ -1,0 +1,13 @@
+>>> logic_extract start at 14:04:59
+  args: layer=section_level deck_batch_size=4 section_batch_size=2
+  loaded 28 deck dirs from /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks
+  deck_level: 7 batches (size=4): [4, 4, 4, 4, 4, 4, 4]
+  section_level: 14 batches (size=2): [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+
+=== Phase 2: section_level layer (14 batches, size=2) ===
+  [section_level] batch 0/13 (2 decks)
+    input: section_level_batch_0_input.json (110 KB)
+    attempt 1: done in 977s, ok=True
+    FAILED: unknown
+    attempt 2: done in 884s, ok=True
+    FAILED: unknown

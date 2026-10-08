@@ -1,0 +1,29 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "章节序号": 2,
+  "章节角色": "agenda",
+  "标题": "目录概览",
+  "页码范围": [
+    2,
+    2
+  ],
+  "页数": 1,
+  "页ID列表": [
+    "slide_02"
+  ],
+  "章节叙事": "全 deck 的目录/导航章，在 cover 之后一次性铺开三大板块（Background、Related Work、Challenges and Techniques），为后续背景论证与方法展开建立读者预期与结构锚点。",
+  "页间关系": [],
+  "适合复用场景": [
+    "技术型 deck 需三段式目录导航时",
+    "章节结构为背景→相关工作→挑战方法的论文汇报",
+    "需在开篇一页锚定全篇结构的场合"
+  ],
+  "不适合复用场景": [
+    "deck 板块数与三段式不匹配时",
+    "极短 deck 无需独立目录页时",
+    "面向非技术受众需弱化结构感时"
+  ],
+  "在deck中的位置": "第 2 页，紧跟 cover，位于所有正文章节之前",
+  "分析状态": "claude-opus-4-8"
+}

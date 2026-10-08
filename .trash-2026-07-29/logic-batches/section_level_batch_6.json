@@ -1,0 +1,1185 @@
+{
+  "batch_index": 6,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明论文/报告主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(含标题/作者/日期署名)接一张编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "单页只有封面无目录 — 用 opening_paper_cover_multi_author_multi_institution",
+        "封面直接接背景无 agenda 页 — 属论文型极简单页开场"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "section_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.01",
+          "section_title": "封面与开场目录",
+          "section_role": "opening",
+          "section_narrative": "标准科研汇报开场：slide 1 亮出 LOAC 论文标题/作者/DAC 投稿身份，slide 2 用四项编号目录（研究背景/研究挑战/…）铺陈全 deck 结构，为后续技术章节建立预期。",
+          "section_topic_tags": [
+            "LOAC 论文封面",
+            "DAC 投稿分享",
+            "四段式目录",
+            "研究背景",
+            "研究挑战"
+          ],
+          "match_evidence": "2 页节奏: 居中大字论文标题封面(cover_title_signature) + 蓝色圆形编号 ①②③④ 目录(toc_progress_highlight), 符合封面→高亮目录两拍开场",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "LOAC: 条纹稀疏注意力与 KV 压缩的自回归视频生成加速器",
+              "slide_claim": "LOAC 提出条纹稀疏注意力与 KV 压缩以加速自回归视频生成",
+              "slide_key_text": [
+                "LOAC: An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction",
+                "丁立",
+                "DAC 投稿分享",
+                "2025 年 11 月 8 日",
+                "Li Ding @ Shanghai Jiao Tong University"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题",
+                "细横分隔线",
+                "作者/身份/日期文字块",
+                "底部署名页脚"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录: 研究背景 / 研究挑战 / … 四项议程",
+              "slide_claim": "全 deck 分四个编号板块依次展开,由研究背景与研究挑战领起",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3",
+                "4"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色矩形边框",
+                "四行圆形编号 ①-④",
+                "左侧深蓝强调竖条",
+                "编号+条目对齐列表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "high"
+    },
+    {
+      "id": "background_paradigm_evolution_related_works_survey_to_bottleneck",
+      "title": "背景·范式演进逐篇串讲→瓶颈立靶",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          10,
+          20
+        ],
+        "must_have_in_chapter_purpose": [
+          "范式演进",
+          "相关工作",
+          "串讲",
+          "瓶颈",
+          "立靶"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Background 章"
+        },
+        {
+          "archetype": "domain_hype_opening_showcase",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "以领域最新明星作品(如 Sora2)+论点条铺陈领域崛起"
+        },
+        {
+          "archetype": "paradigm_evolution_roadmap",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多阶段架构演进总览图统领后续逐篇解读"
+        },
+        {
+          "archetype": "paradigm_flaw_quantitative_evidence",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以数据/曲线证明旧范式(如双向注意力)算力爆炸"
+        },
+        {
+          "archetype": "paradigm_pivot_introduction",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以红字论点条转向新方向(如自回归)并给出天然优势"
+        },
+        {
+          "archetype": "related_work_progressive_reveal",
+          "count": "6-8",
+          "position": "middle",
+          "purpose": "逐篇串讲代表工作,每篇按『引入方案→揭示缺陷→根因分析→改进工作』四拍递进"
+        },
+        {
+          "archetype": "residual_bottleneck_summary_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "以核心痛点断言(如仅能生成 10s)收束, 为方案立靶"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "domain_hype_opening_showcase",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "domain_hype_opening_showcase",
+          "to_archetype": "paradigm_evolution_roadmap",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "paradigm_evolution_roadmap",
+          "to_archetype": "paradigm_flaw_quantitative_evidence",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "paradigm_flaw_quantitative_evidence",
+          "to_archetype": "paradigm_pivot_introduction",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "paradigm_pivot_introduction",
+          "to_archetype": "related_work_progressive_reveal",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "related_work_progressive_reveal",
+          "to_archetype": "related_work_progressive_reveal",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "related_work_progressive_reveal",
+          "to_archetype": "residual_bottleneck_summary_headline",
+          "hook_type": "data_then_implication"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速的长背景章: 章首目录→领域明星作品开场→范式演进总览图→旧范式算力痛点→转向新方向(AR)→逐篇串讲 3-4 篇代表工作(每篇按方案-缺陷-根因-改进四拍)→末页核心痛点断言立靶",
+      "anti_patterns": [
+        "短背景仅 3-5 页 — 用 background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+        "由生成式 AI 概览→领域收窄→模型结构→硬件演进的漏斗 — 用 background_ai_to_domain_to_hardware_evolution_funnel",
+        "算力鸿沟→稀疏分类→双硬件缺陷 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "section_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.02",
+          "section_title": "研究背景与视频生成演进",
+          "section_role": "background",
+          "section_narrative": "作为全篇motivation，沿视频生成范式演进（时空分离→AR+Diffusion→Diffusion/Self Forcing→滑窗）逐层揭示注意力与KV Cache的算力/访存瓶颈，论证长视频仅能生成约10s，为LOAC加速器立靶。",
+          "section_topic_tags": [
+            "视频生成范式演进",
+            "双向注意力算力爆炸",
+            "自回归+扩散",
+            "Self Forcing KV Cache",
+            "滑窗注意力开销"
+          ],
+          "match_evidence": "16 页节奏: 目录 + Sora2 明星开场(2 页) + 范式三阶段演进总览 + 双向注意力算力痛点(2 页) + AR 转向 + Diffusion Forcing/Self Forcing/滑窗逐篇串讲(方案-缺陷-根因四拍循环 3 轮共 9 页) + 10s 痛点断言收尾",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录：四部分研究框架",
+              "slide_claim": "全篇按研究背景/挑战/内容/总结四部分递进展开",
+              "slide_key_text": [
+                "研究背景",
+                "研究挑战",
+                "研究内容",
+                "研究总结"
+              ],
+              "slide_visual_skeleton": [
+                "4 项编号圆点列表",
+                "左侧进度竖条",
+                "外框边框"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "domain_hype_opening_showcase",
+              "archetype": "domain_hype_opening_showcase",
+              "slide_title": "研究背景：视频生成模型崛起",
+              "slide_claim": "视频生成模型（如OpenAI Sora2）快速崛起并受广泛关注",
+              "slide_key_text": [
+                "视频生成模型",
+                "OpenAI 的 sora2"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框论点条",
+                "Sora2 示例画面"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "domain_hype_opening_showcase",
+              "archetype": "domain_hype_opening_showcase",
+              "slide_title": "研究背景：端到端视频生成范式",
+              "slide_claim": "视频生成走向端到端生成范式，摆脱传统分步流程",
+              "slide_key_text": [
+                "端到端生成",
+                "视频生成"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框论点条",
+                "Sora 示例画面"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "paradigm_evolution_roadmap",
+              "archetype": "paradigm_evolution_roadmap",
+              "slide_title": "视频生成范式三阶段演进路线",
+              "slide_claim": "视频生成经时空分离→时空联合→AR+Diffusion三阶段演进",
+              "slide_key_text": [
+                "2D+1D DiT",
+                "3D DiT",
+                "AR + Diffusion",
+                "时空分离",
+                "时空联合",
+                "阶段1 / 阶段2 / 阶段3"
+              ],
+              "slide_visual_skeleton": [
+                "3 段架构演进流程",
+                "Spatial/Temporal Transformer 框图",
+                "上下双区分类带",
+                "阶段转变红字箭头"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "paradigm_flaw_quantitative_evidence",
+              "archetype": "paradigm_flaw_quantitative_evidence",
+              "slide_title": "双向注意力致算力爆炸",
+              "slide_claim": "双向注意力时空建模致训推算力爆炸且无法实时生成",
+              "slide_key_text": [
+                "双向注意力（bidirectional attention）时空建模",
+                "训推计算量爆炸，无法真正实时生成",
+                "5s→3s，300s 算力倍增"
+              ],
+              "slide_visual_skeleton": [
+                "帧间全连接注意力矩阵",
+                "FLOPs/token 增长曲线",
+                "算力倍增红字标注"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "paradigm_flaw_quantitative_evidence",
+              "archetype": "paradigm_flaw_quantitative_evidence",
+              "slide_title": "Wan等双向模型的算力困境",
+              "slide_claim": "以Wan为代表的双向注意力模型训推算力爆炸难实时",
+              "slide_key_text": [
+                "双向注意力（bidirectional attention）时空建模",
+                "训推计算量爆炸，无法真正实时生成"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框论点条",
+                "模型示意画面"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "paradigm_pivot_introduction",
+              "archetype": "paradigm_pivot_introduction",
+              "slide_title": "转向自回归(AR)生成",
+              "slide_claim": "自回归生成天然可实时且具长期记忆，成新探索方向",
+              "slide_key_text": [
+                "现在的视频模型探索自回归生成(AR)",
+                "自回归天然能实时生成，且具有长期记忆",
+                "5s→3s，300s 对比"
+              ],
+              "slide_visual_skeleton": [
+                "FLOPs/token 曲线",
+                "AR效率对比数据",
+                "顶部红字论点条"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "Diffusion Forcing引入AR",
+              "slide_claim": "Diffusion Forcing探索将AR引入Diffusion Model",
+              "slide_key_text": [
+                "Diffusion forcing 探索把 AR 引入 Diffusion Model"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红框论点条",
+                "方法示意画面"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "Diffusion Forcing长期记忆差",
+              "slide_claim": "Diffusion Forcing长期记忆弱，长时生成画面损失并重复动作",
+              "slide_key_text": [
+                "Diffusion Forcing 长期记忆能力不好",
+                "生成时间过长出现画面损失、动作重复"
+              ],
+              "slide_visual_skeleton": [
+                "退化视频帧对比画面",
+                "顶部红框论点条"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "根因：缺长期KV Cache",
+              "slide_claim": "Diffusion Forcing记忆差根因是缺少长期KV Cache",
+              "slide_key_text": [
+                "主要原因是 Diffusion Forcing 缺少长期 KV Cache"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红框论点条",
+                "KV Cache 示意"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "Self Forcing建立完整KV Cache",
+              "slide_claim": "Self Forcing建立完整KV Cache以补齐长期记忆",
+              "slide_key_text": [
+                "Self Forcing 建立完整的 KV Cache"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红框论点条",
+                "KV Cache 机制示意画面"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "Self Forcing的frame/iteration机制",
+              "slide_claim": "Self Forcing以完整KV Cache按frame/iteration自回归生成",
+              "slide_key_text": [
+                "Self Forcing 完整 KV Cache",
+                "frame/iteration 与 token/iteration",
+                "Self-Forcing 逐帧自回归"
+              ],
+              "slide_visual_skeleton": [
+                "多组机制示意画面",
+                "frame/iteration 标注",
+                "顶部红框论点条"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "Self Forcing的sink+window机制",
+              "slide_claim": "Self Forcing以KV Cache约5k/iteration配sink+window维持长程",
+              "slide_key_text": [
+                "Self-Forcing frame/iteration",
+                "KV Cache 约 5k/iteration",
+                "sink + window 机制"
+              ],
+              "slide_visual_skeleton": [
+                "sink+window 机制示意",
+                "5k/iteration 数据标注",
+                "顶部红框论点条"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "AR+Diffusion兼顾记忆与算力",
+              "slide_claim": "AR+Diffusion工作在构建长期记忆同时限制计算量",
+              "slide_key_text": [
+                "AR+Diffusion 构建长期记忆同时限制计算量",
+                "降计算",
+                "sink + sliding window"
+              ],
+              "slide_visual_skeleton": [
+                "3 段箭头技术递进",
+                "AR+Diffusion→KV→sliding window",
+                "顶部红框论点条"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "related_work_progressive_reveal",
+              "archetype": "related_work_progressive_reveal",
+              "slide_title": "滑窗AR+Diffusion的注意力开销",
+              "slide_claim": "滑窗AR+Diffusion限住KV但注意力算力仍高(4-12倍)",
+              "slide_key_text": [
+                "基于滑动窗口的 AR+Diffusion 限制了 KV",
+                "attention 计算仍高",
+                "Q:5k KV:19k，Attn≈Linear",
+                "算力 4-12 倍"
+              ],
+              "slide_visual_skeleton": [
+                "滑窗注意力示意",
+                "Q/KV规模与Attn标注",
+                "4-12倍算力箭头"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "residual_bottleneck_summary_headline",
+              "archetype": "residual_bottleneck_summary_headline",
+              "slide_title": "研究背景：长视频仅能生成约10s",
+              "slide_claim": "受双向注意力与diffusion开销制约，长视频仅能生成约10s",
+              "slide_key_text": [
+                "视频生成始终只能生成 10s 左右",
+                "原因是 bidirectional attention 与 diffusion model 开销"
+              ],
+              "slide_visual_skeleton": [
+                "帧间注意力矩阵",
+                "block/layer 示意",
+                "10s 限制红字标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "problem_three_challenges_prior_work_flaw_bulletin",
+      "title": "问题·三挑战按现有工作缺陷逐条抛出",
+      "applicable_when": {
+        "chapter_role": [
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "现有工作缺陷",
+          "逐条",
+          "立靶"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入 Challenge 章"
+        },
+        {
+          "archetype": "challenge_assertion_with_prior_work_evidence",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "每个挑战: 顶部红色断言框+现有工作(Sparse VideoGen/SWAT/SALO)配图+source 引用条"
+        },
+        {
+          "archetype": "challenge_assertion_extension",
+          "count": "0-1",
+          "position": "middle",
+          "purpose": "对复杂挑战(如挑战1)追加一页多图实证, 强化普遍性"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "challenge_assertion_with_prior_work_evidence",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "challenge_assertion_with_prior_work_evidence",
+          "to_archetype": "challenge_assertion_extension",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "challenge_assertion_extension",
+          "to_archetype": "challenge_assertion_with_prior_work_evidence",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型 problem 章: 章首目录→逐条抛出 3 个挑战(每条以顶部红色断言框指出现有工作的失效, 配对应代表工作示意图与 source 引用条), 复杂挑战可追加一页多图实证, 与方法章的三项设计一一映射",
+      "anti_patterns": [
+        "综述现有工作 N 条路线再抛双挑战 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge",
+        "以数字对比证痛点 — 用 first/second_challenge_data_backed_pain"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "section_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03",
+          "section_title": "三大研究挑战",
+          "section_role": "problem",
+          "section_narrative": "problem 章。承接研究背景，逐条抛出三大挑战：稀疏注意力难识别重要区间、细粒度稀疏硬件不适配AR+Diffusion、KV压缩不适配diffusion，为后面三项设计一一铺垫。",
+          "section_topic_tags": [
+            "稀疏注意力区间识别",
+            "block-sparse 硬件适配",
+            "AR+Diffusion 硬件缺口",
+            "KV 压缩 diffusion 缺口",
+            "现有工作缺陷综述"
+          ],
+          "match_evidence": "6 页节奏: 章首导航目录 + 挑战1(稀疏注意力+Sparse VideoGen)+ 挑战1续(多图实证)+ 挑战2 GPU block-sparse(SWAT)+ 挑战2 细粒度硬件(SALO)+ 挑战3 KV 压缩(SALO), 每页顶部红色断言+source 引用条",
+          "slides": [
+            {
+              "slide_index": 19,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "章节导航：进入第二部分「研究挑战」",
+              "slide_claim": "全篇分四部分，现进入第2部分——研究挑战",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3",
+                "4"
+              ],
+              "slide_visual_skeleton": [
+                "4 项带圈数字纵向导航列表",
+                "左侧蓝色进度竖条",
+                "外框边界线"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "challenge_assertion_with_prior_work_evidence",
+              "archetype": "challenge_assertion_with_prior_work_evidence",
+              "slide_title": "挑战1：稀疏注意力难识别重要区间",
+              "slide_claim": "已有动/静态稀疏注意力无法有效识别注意力的重要区间",
+              "slide_key_text": [
+                "挑战1：之前的动态或者静态稀疏注意力工作，无法有效识别注意力的重要区间",
+                "Full map",
+                "Spec map",
+                "Source: Sparse VideoGen (arXiv:2502.01776)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色断言框",
+                "Full map / Spec map 注意力图对比",
+                "底部 source 引用条"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "challenge_assertion_extension",
+              "archetype": "challenge_assertion_extension",
+              "slide_title": "挑战1（续）：重要区间识别失效实证",
+              "slide_claim": "多组注意力图佐证稀疏方法漏识别重要区间",
+              "slide_key_text": [
+                "挑战1：之前的动态或者静态稀疏注意力工作，无法有效识别注意力的重要区间",
+                "Source: Sparse VideoGen (arXiv:2502.01776)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色断言框",
+                "多张注意力可视化图铺排",
+                "底部 source 引用条"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "challenge_assertion_with_prior_work_evidence",
+              "archetype": "challenge_assertion_with_prior_work_evidence",
+              "slide_title": "挑战2：GPU block-sparse 稀疏难落地",
+              "slide_claim": "GPU 上的 block-sparse 稀疏方案难适配加速需求",
+              "slide_key_text": [
+                "挑战2：GPU block-sparse 稀疏方案难以有效落地",
+                "Source: SWAT, DAC 2024"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色断言框（含 GPU/block-sparse）",
+                "配套硬件/稀疏示意图",
+                "底部 source 引用条"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "challenge_assertion_with_prior_work_evidence",
+              "archetype": "challenge_assertion_with_prior_work_evidence",
+              "slide_title": "挑战2：细粒度稀疏硬件不适配 AR+Diffusion",
+              "slide_claim": "已有细粒度稀疏硬件架构不适合 AR+Diffusion 场景",
+              "slide_key_text": [
+                "挑战2：之前的细粒度稀疏硬件架构不适合 AR+Diffusion",
+                "AR+Diffusion",
+                "sparse",
+                "Source: SALO, DAC 2022"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色断言框（含 AR+Diffusion/sparse）",
+                "配套架构/稀疏模式示意图",
+                "底部 source 引用条"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "challenge_assertion_with_prior_work_evidence",
+              "archetype": "challenge_assertion_with_prior_work_evidence",
+              "slide_title": "挑战3：KV 压缩不适配 diffusion",
+              "slide_claim": "已有 KV 压缩/缓存方案不适配 diffusion 生成",
+              "slide_key_text": [
+                "挑战3：之前的 KV 压缩方案不适配 diffusion",
+                "KV",
+                "diffusion",
+                "Source: SALO, DAC 2022"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红色断言框（含 KV/diffusion）",
+                "配套 KV 压缩示意图",
+                "底部 source 引用条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "high"
+    },
+    {
+      "id": "method_three_design_intro_mechanism_result_triad",
+      "title": "方法·三设计各以引入-机制-结果三拍展开",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "三项设计",
+          "稀疏注意力",
+          "KV 压缩",
+          "硬件数据流",
+          "算法硬件协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "章首目录导航, 可用两页同模板分别高亮当前章与下一章"
+        },
+        {
+          "archetype": "design_intro_placeholder_headline",
+          "count": "1",
+          "position": "middle",
+          "purpose": "每项设计首页: 蓝条标题+横向说明框+红色 key idea 文字+占位小示意"
+        },
+        {
+          "archetype": "design_mechanism_with_mapping_diagram",
+          "count": "1",
+          "position": "middle",
+          "purpose": "机制详解页: 用向量/箭头/映射图具象化 key idea(如分数→密度映射)"
+        },
+        {
+          "archetype": "design_result_number_headline",
+          "count": "1",
+          "position": "middle",
+          "purpose": "以极简大字数值结论页(如 density=20%)收束该项设计"
+        },
+        {
+          "archetype": "design_full_dataflow_dense_diagram",
+          "count": "0-1",
+          "position": "middle",
+          "purpose": "对复杂设计追加一张密集元素的完整数据流全图"
+        },
+        {
+          "archetype": "hardware_hierarchy_pyramid_summary",
+          "count": "0-1",
+          "position": "end",
+          "purpose": "以金字塔存储分层图收束整套设计, 桥接到硬件实现"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "toc_chapter_marker",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "design_intro_placeholder_headline",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "design_intro_placeholder_headline",
+          "to_archetype": "design_mechanism_with_mapping_diagram",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "design_mechanism_with_mapping_diagram",
+          "to_archetype": "design_result_number_headline",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "design_result_number_headline",
+          "to_archetype": "design_intro_placeholder_headline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "design_intro_placeholder_headline",
+          "to_archetype": "design_full_dataflow_dense_diagram",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "design_full_dataflow_dense_diagram",
+          "to_archetype": "hardware_hierarchy_pyramid_summary",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速方法章: 章首目录(可双页导航)→每项设计以『引入占位页+机制映射图+数值结论』三拍推进(复杂设计追加完整数据流全图), 末页以硬件存储金字塔收束; 与 problem 章的三挑战一一对应, 每项设计对应一挑战",
+      "anti_patterns": [
+        "以观察-解法配对展开(observation+solution) — 用 case_study_multi_observation_solution_pairs_with_end_to_end",
+        "算法层双支柱+硬件层总览与细节 — 用 method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+        "沿三子层(算法/编译/硬件)递进闭环 — 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "section_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.04",
+          "section_title": "LOAC核心设计",
+          "section_role": "method",
+          "section_narrative": "承接研究挑战章，逐条落地 LOAC 三项核心设计——统一稀疏注意力、KV 索引+压缩、Flash Attention 硬件数据流，构成方法主体，为后续实验提供验证对象。",
+          "section_topic_tags": [
+            "统一稀疏注意力方式",
+            "轻量级 mask 预测",
+            "KV 索引+压缩",
+            "Flash Attention 数据流",
+            "Local-KV/Cache-KV 分层"
+          ],
+          "match_evidence": "8 页节奏: 两页目录导航(先高亮研究内容后高亮实验结果) + 设计1(引入占位+分数→密度映射+density=20% 结论共 3 页) + 设计2(引入密集矩阵+分块索引重排数据流全图共 2 页) + 设计3(金字塔 Local-KV/Cache-KV 分层收束)",
+          "slides": [
+            {
+              "slide_index": 25,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "四段式目录导航（定位到研究内容）",
+              "slide_claim": "全篇按四大板块推进，此处切入第三板块研究内容",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3 研究内容",
+                "4 实验结果"
+              ],
+              "slide_visual_skeleton": [
+                "4 项编号圆圈+方框列表",
+                "左侧蓝色进度竖条",
+                "当前项加深高亮"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "四段式目录导航（定位到实验结果）",
+              "slide_claim": "沿四大板块继续推进，此处切入第四板块实验结果",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3 研究内容",
+                "4 实验结果"
+              ],
+              "slide_visual_skeleton": [
+                "4 项编号圆圈+方框列表",
+                "左侧蓝色进度竖条",
+                "当前项加深高亮"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "design_intro_placeholder_headline",
+              "archetype": "design_intro_placeholder_headline",
+              "slide_title": "内容1：统一的注意力稀疏方式（引入）",
+              "slide_claim": "以 mask/map 统一表达注意力稀疏，layer0 逐块施加",
+              "slide_key_text": [
+                "内容1：统一的注意力稀疏方式",
+                "mask 与 map 表达注意力稀疏",
+                "layer0 逐块施加 mask"
+              ],
+              "slide_visual_skeleton": [
+                "蓝条标题+横向说明框",
+                "红色要点文字",
+                "待补充示意小框+引线"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "design_mechanism_with_mapping_diagram",
+              "archetype": "design_mechanism_with_mapping_diagram",
+              "slide_title": "内容1：轻量级预测施加粗细 mask",
+              "slide_claim": "按帧内注意力分数和采样，给每块施加不同粗细 mask",
+              "slide_key_text": [
+                "轻量级预测：采样统计每帧内注意力分数和",
+                "给每个块施加不同粗细的 mask",
+                "[0.1, 0.5, 0.2, 0.05]",
+                "[25%, 100%, 50%, 12.5%]"
+              ],
+              "slide_visual_skeleton": [
+                "左侧三块条示意",
+                "注意力分数向量→密度向量映射",
+                "引线箭头分配"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "design_result_number_headline",
+              "archetype": "design_result_number_headline",
+              "slide_title": "内容1：稀疏密度可降至 20%",
+              "slide_claim": "统一稀疏方式可将密度压至 20%（含 20% timestep 预热）",
+              "slide_key_text": [
+                "density=20%",
+                "20% timestep warmup"
+              ],
+              "slide_visual_skeleton": [
+                "蓝条标题+横向结论框",
+                "单行红色数值结论"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "design_intro_placeholder_headline",
+              "archetype": "design_intro_placeholder_headline",
+              "slide_title": "内容2：KV 索引+压缩（引入）",
+              "slide_claim": "在密集 dense 注意力矩阵上做 KV 索引与压缩",
+              "slide_key_text": [
+                "内容2：KV 索引+压缩",
+                "针对 dense 密集注意力矩阵"
+              ],
+              "slide_visual_skeleton": [
+                "蓝条标题+横向说明框",
+                "绿灰相间密集掩码矩阵"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "design_full_dataflow_dense_diagram",
+              "archetype": "design_full_dataflow_dense_diagram",
+              "slide_title": "内容2：KV 索引+压缩数据流全图",
+              "slide_claim": "掩码矩阵经分块索引重排后压缩，得到紧凑 KV 排布",
+              "slide_key_text": [
+                "内容2：KV 索引+压缩",
+                "dense 矩阵→分块→索引重排→压缩排列"
+              ],
+              "slide_visual_skeleton": [
+                "密集绿色矩阵",
+                "粉色分块网格阵列",
+                "带 0-7 编号的索引掩码矩阵",
+                "重排后编号块阵列"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "hardware_hierarchy_pyramid_summary",
+              "archetype": "hardware_hierarchy_pyramid_summary",
+              "slide_title": "内容3：基于 Flash Attention 的硬件数据流",
+              "slide_claim": "按 Local-KV/Cache-KV 分层组织 Flash Attention 数据流",
+              "slide_key_text": [
+                "内容3：基于 Flash Attention 硬件架构数据流",
+                "Local-KV 对应 L1",
+                "Cache-KV 对应 L2"
+              ],
+              "slide_visual_skeleton": [
+                "金字塔两层 L1/L2 结构",
+                "Local-KV/Cache-KV 标注箭头",
+                "蓝条标题+说明框"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "experiment_single_page_chapter_divider_placeholder",
+      "title": "实验·单页极简章节分隔留白占位",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验",
+          "章节分隔",
+          "过渡",
+          "占位"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_section_intro_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "以左上大字标题+粗蓝分隔线+大留白+底部页脚, 单页作实验章过渡分隔"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "single_section_intro_panel",
+          "to_archetype": "single_section_intro_panel",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简实验章占位: 仅一页大字『实验』标题+粗蓝色横分隔线+大面积留白, 作为方法章切换到实验章的分幕过渡, 具体实验数据未在本 section 展开",
+      "anti_patterns": [
+        "完整实验章含 setup/主结果/消融多页 — 用 experiment_setup_dual_main_headline_ablation_pair 或 experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "多平台加速比对比页 — 用 case_study_agenda_paper_multi_platform_benchmark"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "section_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.05",
+          "section_title": "实验验证",
+          "section_role": "experiment",
+          "section_narrative": "作为「实验验证」章的过渡分隔页，标志 deck 从三项设计论述切入效果验证，但本 section 仅含标题页，尚未展开具体实验内容与数据。",
+          "section_topic_tags": [
+            "实验章节过渡",
+            "章节分隔页",
+            "留白占位",
+            "严肃学术风"
+          ],
+          "match_evidence": "1 页节奏: 单页仅含左上大字『实验』+粗蓝分隔线+大留白+底部 Li Ding @ SJTU 页脚, 无任何数据/表格, 承担章节分幕功能",
+          "slides": [
+            {
+              "slide_index": 33,
+              "role_in_pattern": "single_section_intro_panel",
+              "archetype": "single_section_intro_panel",
+              "slide_title": "章节分隔页: 实验",
+              "slide_claim": "论述转入实验验证阶段, 本页仅作章节过渡不含数据",
+              "slide_key_text": [
+                "实验",
+                "Li Ding @ Shanghai Jiao Tong University (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "左上角大字章节标题",
+                "标题下粗蓝色横分隔线",
+                "大面积空白主体",
+                "底部机构/页码页脚"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_minimal_thanks_with_speaker_signature",
+      "title": "收尾·极简致谢+讲者署名单页",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share",
+          "topic_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "感谢聆听",
+          "署名",
+          "日期"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "minimal_thanks_with_signature_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "左上大字『感谢聆听！』+中部淡色分隔线下的讲者姓名+日期+底部机构页脚, 极简礼节收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "minimal_thanks_with_signature_only",
+          "to_archetype": "minimal_thanks_with_signature_only",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "组会/科研汇报的极简单页致谢: 左上『感谢聆听！』主标题+淡粉分隔线+中部讲者姓名+日期+底部机构落款, 无 recap 无联系方式, 只承担礼节性收尾",
+      "anti_patterns": [
+        "目录回顾+一句话贡献+联系方式 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "顶部 Thanks+全体作者名单+机构脚注 — 用 thanks_with_full_author_list / closing_thanks_single_page_with_full_author_institution_footer",
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "section_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.06",
+          "section_title": "致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾页，独立成章。以「感谢聆听」+ 汇报人署名 + 日期收束整场技术汇报，无内容推进，仅作礼节性结束与身份落款。",
+          "section_topic_tags": [
+            "感谢聆听",
+            "汇报人署名",
+            "日期落款",
+            "极简收尾"
+          ],
+          "match_evidence": "1 页节奏: 左上大字『感谢聆听！』+中部淡粉分隔线+『丁立』+『2025 年 11 月 8 日』+底部 Li Ding @ SJTU 页脚, 极简礼节结束",
+          "slides": [
+            {
+              "slide_index": 34,
+              "role_in_pattern": "minimal_thanks_with_signature_only",
+              "archetype": "minimal_thanks_with_signature_only",
+              "slide_title": "感谢聆听（汇报收尾致谢页）",
+              "slide_claim": "以「感谢聆听」+ 署名 + 日期礼节性收束整场技术汇报",
+              "slide_key_text": [
+                "感谢聆听！",
+                "丁立",
+                "2025 年 11 月 8 日",
+                "Li Ding @ Shanghai Jiao Tong University"
+              ],
+              "slide_visual_skeleton": [
+                "左上主标题",
+                "居中淡粉水平分隔线",
+                "中部署名文字",
+                "底部日期与页脚落款"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "high"
+    }
+  ],
+  "extraction_notes": "本 batch 仅含 1 个 deck (LOAC 自回归视频生成加速器) 共 6 sections。opening/closing 各命中 previous_batches 相近 pattern (opening_cover_plus_progress_highlighted_toc 复用同 id; closing 因仅『感谢聆听+讲者署名』无 recap/联系方式/全作者名单, 与 previous 的 closing_toc_recap_plus_summary_contribution_with_contact / closing_thanks_single_page_with_full_author_institution_footer 差异明显, 新起 closing_minimal_thanks_with_speaker_signature)。background/problem/method/experiment 因 LOAC 结构独特(超长 background 逐篇串讲 + 3 挑战按现有工作缺陷抛出 + 3 设计 intro-机制-结果三拍 + 单页实验分隔), 与 previous 的对应 pattern 差异显著, 新起 4 条 pattern。new_archetype 定义: cover_title_signature — 大字标题+讲者/作者/机构/日期居中封面; toc_progress_highlight — 编号列表当前章高亮其余灰化的进度目录; domain_hype_opening_showcase — 顶部论点条+领域明星作品示例画面的背景开场; paradigm_evolution_roadmap — 多阶段架构演进上下双区分类的范式总览图; paradigm_flaw_quantitative_evidence — 顶部断言+曲线/矩阵图证旧范式痛点; paradigm_pivot_introduction — 红字论点条转向新方向; related_work_progressive_reveal — 顶部红框论点+对应工作示意画面的逐篇串讲页; residual_bottleneck_summary_headline — 帧间矩阵/机制图+痛点断言收束页; challenge_assertion_with_prior_work_evidence — 顶部红色断言框+现有工作图+底部 source 引用条; challenge_assertion_extension — 同断言标题+多图铺排的实证续页; design_intro_placeholder_headline — 蓝条标题+横向说明+红色 key idea+占位小示意; design_mechanism_with_mapping_diagram — 向量/箭头/映射图具象化 key idea 的机制页; design_result_number_headline — 蓝条+单行大字数值结论极简页; design_full_dataflow_dense_diagram — 密集元素的完整数据流全图; hardware_hierarchy_pyramid_summary — 金字塔存储分层图收束设计; minimal_thanks_with_signature_only — 大字致谢+讲者姓名+日期+机构页脚极简单页。",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}

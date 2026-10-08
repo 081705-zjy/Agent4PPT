@@ -1,0 +1,182 @@
+{
+  "schema_version": "4.0",
+  "pipeline": "reuse_first_v4_cascade",
+  "notes": "Layered retrieval + 3-pass cascade matching (DECK→SECTION→SLIDE). STORY/OUTLINE/AUDIT subsumed into SLIDE_PLAN. DRAFT goes direct_slide_reuse / placeholder.",
+  "confirmation_gates": [
+    "BRIEF",
+    "IDEA_ANALYSIS",
+    "SOURCE_UNDERSTAND",
+    "OUTLINE_GENERATION",
+    "DECK_MATCHING",
+    "SECTION_MATCHING",
+    "SLIDE_MATCHING",
+    "SLIDE_MATCHING_REVIEW",
+    "GAP_CARD_GENERATION",
+    "SLIDE_PLAN",
+    "DRAFT_ASSEMBLY_PLAN",
+    "DRAFT_REVIEW",
+    "GAP_ANALYSIS",
+    "SYSTEM_REVIEW",
+    "FINAL_ACCEPT"
+  ],
+  "generation_gates": [
+    "IDEA_ANALYSIS",
+    "OUTLINE_GENERATION",
+    "DECK_MATCHING",
+    "SECTION_MATCHING",
+    "SLIDE_MATCHING",
+    "SLIDE_MATCHING_REVIEW",
+    "GAP_CARD_GENERATION",
+    "SLIDE_PLAN",
+    "DRAFT_ASSEMBLY_PLAN",
+    "DRAFT_REVIEW",
+    "GAP_ANALYSIS",
+    "GAP_SYNTHESIS",
+    "SLIDE_REWRITE",
+    "STYLE_UNIFICATION",
+    "SYSTEM_REVIEW"
+  ],
+  "stages": [
+    {
+      "stage": "BRIEF",
+      "agent": "IntakeAgent",
+      "next_stage": "IDEA_INTAKE_LIGHT"
+    },
+    {
+      "stage": "IDEA_INTAKE_LIGHT",
+      "agent": "BriefIntakeLightAgent",
+      "next_stage": "TEMPLATE_LIBRARY_BUILD"
+    },
+    {
+      "stage": "TEMPLATE_LIBRARY_BUILD",
+      "agent": "TemplateLibraryBuildAgent",
+      "next_stage": "PROJECT_SOURCE_SCAN",
+      "idempotent": true
+    },
+    {
+      "stage": "PROJECT_SOURCE_SCAN",
+      "agent": "ProjectSourceScanAgent",
+      "next_stage": "SOURCE_UNDERSTAND"
+    },
+    {
+      "stage": "SOURCE_UNDERSTAND",
+      "agent": "SourceUnderstandAgent",
+      "next_stage": "IDEA_ANALYSIS"
+    },
+    {
+      "stage": "IDEA_ANALYSIS",
+      "agent": "BriefAnalysisAgent",
+      "next_stage": "OUTLINE_GENERATION"
+    },
+    {
+      "stage": "OUTLINE_GENERATION",
+      "agent": "OutlineGenerationAgent",
+      "next_stage": "LAYERED_RETRIEVAL"
+    },
+    {
+      "stage": "LAYERED_RETRIEVAL",
+      "agent": "LayeredRetrievalAgent",
+      "next_stage": "DECK_MATCHING"
+    },
+    {
+      "stage": "DECK_MATCHING",
+      "agent": "DeckMatchingAgent",
+      "next_stage": "SECTION_MATCHING"
+    },
+    {
+      "stage": "SECTION_MATCHING",
+      "agent": "SectionMatchingAgent",
+      "next_stage": "SLIDE_MATCHING"
+    },
+    {
+      "stage": "SLIDE_MATCHING",
+      "agent": "SlideMatchingAgent",
+      "next_stage": "SLIDE_MATCHING_REVIEW"
+    },
+    {
+      "stage": "SLIDE_MATCHING_REVIEW",
+      "agent": "SlideMatchingReviewAgent",
+      "next_stage": "GAP_CARD_GENERATION"
+    },
+    {
+      "stage": "GAP_CARD_GENERATION",
+      "agent": "GapCardGenerationAgent",
+      "next_stage": "SLIDE_PLAN"
+    },
+    {
+      "stage": "SLIDE_PLAN",
+      "agent": "SlidePlanAgent",
+      "next_stage": "DRAFT_ASSEMBLY_PLAN"
+    },
+    {
+      "stage": "DRAFT_ASSEMBLY_PLAN",
+      "agent": "DraftAssemblyPlanAgent",
+      "next_stage": "DRAFT_ASSEMBLY"
+    },
+    {
+      "stage": "DRAFT_ASSEMBLY",
+      "agent": "DraftAssemblyAgent",
+      "next_stage": "CODEX_REVIEW"
+    },
+    {
+      "stage": "CODEX_REVIEW",
+      "agent": "CodexReviewAgent",
+      "next_stage": "DRAFT_REVIEW"
+    },
+    {
+      "stage": "DRAFT_REVIEW",
+      "agent": "DraftReviewAgent",
+      "next_stage": "GAP_ANALYSIS"
+    },
+    {
+      "stage": "GAP_ANALYSIS",
+      "agent": "GapAnalysisAgent",
+      "next_stage": "GAP_RESEARCH"
+    },
+    {
+      "stage": "GAP_RESEARCH",
+      "agent": "GapResearchAgent",
+      "next_stage": "GAP_SYNTHESIS"
+    },
+    {
+      "stage": "GAP_SYNTHESIS",
+      "agent": "GapSynthesisAgent",
+      "next_stage": "SLIDE_REWRITE"
+    },
+    {
+      "stage": "SLIDE_REWRITE",
+      "agent": "SlideRewriteAgent",
+      "next_stage": "STYLE_UNIFICATION"
+    },
+    {
+      "stage": "STYLE_UNIFICATION",
+      "agent": "StyleUnificationAgent",
+      "next_stage": "RENDER_PRECHECK"
+    },
+    {
+      "stage": "RENDER_PRECHECK",
+      "agent": "RenderPrecheckAgent",
+      "next_stage": "RENDER"
+    },
+    {
+      "stage": "RENDER",
+      "agent": "RenderAgent",
+      "next_stage": "SYSTEM_REVIEW"
+    },
+    {
+      "stage": "SYSTEM_REVIEW",
+      "agent": "SystemReviewAgent",
+      "next_stage": "REVISION_DECISION"
+    },
+    {
+      "stage": "REVISION_DECISION",
+      "agent": "RevisionDecisionAgent",
+      "next_stage": "FINAL_ACCEPT"
+    },
+    {
+      "stage": "FINAL_ACCEPT",
+      "agent": "ExportAgent",
+      "next_stage": null
+    }
+  ]
+}

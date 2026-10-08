@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_14",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 14,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "章节导航：背景与相关工作回顾",
+  "核心论断": "背景与相关工作已铺垫完毕，进入核心洞察环节",
+  "本页讲什么": "本页是进入动机章节前的导航/回顾页，用目录形式列出已讲过的 Background、Related Work 等板块并高亮当前进度，把观众的注意力从综述部分过渡到即将展开的核心洞察，起到承上启下的路标作用。",
+  "关键文字": [
+    "Background",
+    "Related Work"
+  ],
+  "视觉骨架": [
+    "章节目录列表",
+    "当前进度高亮标注",
+    "页码/编号索引"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_14.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_14.asset.02"
+  ],
+  "适合复用场景": [
+    "长篇技术 deck 的章节过渡导航页",
+    "综述转动机的进度路标页"
+  ],
+  "不适合复用场景": [
+    "承载具体论点的内容页",
+    "含数据图表的结果页",
+    "单一大标题的封面页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

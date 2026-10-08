@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_25"
+所属章节: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06"
+所属deck: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4"
+页序号: 25
+源文件: "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx"
+页面角色: "content_candidate"
+标题: "章节进度导航页（实验部分入口）"
+核心论断: "进入实验环节，验证前述方法的加速效果"
+本页讲什么: "这是一张进度/导航页，用编号列出 deck 的整体脉络（Background、Related Work 等），当前推进到实验设置与评测部分，起承上启下作用，提示听众方法讲解已结束、即将进入实证验证环节。"
+关键文字: "[Background, Related Work]"
+视觉骨架: "[编号目录列表, 当前进度高亮, 配图缩略]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_25.asset.01, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_25.asset.02]"
+适合复用场景: "[技术论文进入实验章的过渡导航页, 多章节 deck 的进度提示页]"
+不适合复用场景: "[承载具体数据的结果页, 单一论断的 motivation 页, 方法架构详解页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "左侧编号列表", "内容": "Background / Related Work 等章节目录"}
+  - {"位置": "右侧配图", "内容": "章节缩略图"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 25: 章节进度导航页（实验部分入口）
+
+**核心论断**: 进入实验环节，验证前述方法的加速效果
+
+## 本页讲什么
+这是一张进度/导航页，用编号列出 deck 的整体脉络（Background、Related Work 等），当前推进到实验设置与评测部分，起承上启下作用，提示听众方法讲解已结束、即将进入实证验证环节。
+
+## 关键文字片段
+- Background
+- Related Work
+
+## 视觉骨架
+- 编号目录列表
+- 当前进度高亮
+- 配图缩略
+
+## 可复用到
+- 技术论文进入实验章的过渡导航页
+- 多章节 deck 的进度提示页
+
+## 不适合复用的场景
+- 承载具体数据的结果页
+- 单一论断的 motivation 页
+- 方法架构详解页

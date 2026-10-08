@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_68",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 68,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "分块计算的访存量与算子融合权衡",
+  "核心论断": "块越小访存量越大，算子融合并非总有收益",
+  "本页讲什么": "分析计算任务分块后的访存量：访存量与计算任务块大小相关，块越小访存量越大，因此算子融合（operator fusion）并不总能带来收益，需要按块大小权衡，为自适应数据流建模做铺垫。",
+  "关键文字": [
+    "The amount of memory access is related to the block size of the computing task",
+    "The smaller the block, the greater the amount of memory access",
+    "Operator fusion does not always bring benefits"
+  ],
+  "视觉骨架": [
+    "分块访存量关系曲线",
+    "算子融合权衡示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_68.asset.01"
+  ],
+  "适合复用场景": [
+    "分块访存量分析页",
+    "算子融合收益权衡页"
+  ],
+  "不适合复用场景": [
+    "时代背景页",
+    "硬件电路结构页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

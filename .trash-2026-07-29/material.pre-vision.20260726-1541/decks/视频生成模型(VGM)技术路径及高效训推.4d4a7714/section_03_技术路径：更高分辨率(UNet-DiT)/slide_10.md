@@ -1,0 +1,46 @@
+---
+页标识: "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.slide_10"
+所属章节: "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03"
+所属deck: "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714"
+页序号: 10
+源文件: "templates/内部组会科研交流/视频生成模型(VGM)技术路径及高效训推.pptx"
+页面角色: "content_candidate"
+标题: "更高分辨率：UNet-diffusion"
+核心论断: "UNet 扩散路线在分辨率维度持续演进"
+本页讲什么: "本页延续 UNet-diffusion 主题，以单图形式补充该路线的又一方法或案例说明，承上启下，为下页更密集的 UNet 综合展开做铺垫。"
+关键文字: "[更高分辨率：UNet-diffusion]"
+视觉骨架: "[UNet 路线示意图, 分辨率主题标题]"
+资源ID列表: "[tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.slide_10.asset.01]"
+适合复用场景: "[UNet 扩散方法细节页, 分辨率路线过渡页]"
+不适合复用场景: "[DiT 架构页, 密集数据图表页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "更高分辨率：UNet-diffusion"}
+  - {"位置": "下方主体", "内容": "UNet 路线示意图"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 10: 更高分辨率：UNet-diffusion
+
+**核心论断**: UNet 扩散路线在分辨率维度持续演进
+
+## 本页讲什么
+本页延续 UNet-diffusion 主题，以单图形式补充该路线的又一方法或案例说明，承上启下，为下页更密集的 UNet 综合展开做铺垫。
+
+## 关键文字片段
+- 更高分辨率：UNet-diffusion
+
+## 视觉骨架
+- UNet 路线示意图
+- 分辨率主题标题
+
+## 可复用到
+- UNet 扩散方法细节页
+- 分辨率路线过渡页
+
+## 不适合复用的场景
+- DiT 架构页
+- 密集数据图表页

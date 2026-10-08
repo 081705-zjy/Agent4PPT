@@ -1,0 +1,1226 @@
+{
+  "batch_index": 22,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "paper_share",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "单页封面无目录 — 用 opening_blank_cover_skeleton_single_page",
+        "论文封面多机构署名 — 用 opening_paper_cover_multi_author_multi_institution_plus_toc"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "全 deck 的开场:slide 1 极简封面点出「VGM 技术路径及高效训推」主题与讲者,slide 2 用四项编号目录(背景/技术路径→训练框架→高效推理→总结)搭好全篇骨架并高亮首章。",
+          "section_topic_tags": [
+            "VGM",
+            "组会开场",
+            "编号目录",
+            "四段议程"
+          ],
+          "match_evidence": "2 页节奏: 极简大字封面(cover_title_signature) + 四项编号目录首项高亮(toc_progress_highlight)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "视频生成模型(VGM)技术路径及高效训推",
+              "slide_claim": "本报告聚焦 VGM 的技术路径与高效训练推理",
+              "slide_key_text": [
+                "视频生成模型(VGM)技术路径及高效训推",
+                "丁立",
+                "2024.12.7",
+                "Li Ding @ CCC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "居中偏左大标题",
+                "淡粉色横向分隔线",
+                "讲者+日期信息块",
+                "页脚署名"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents 四项编号目录(高亮首章)",
+              "slide_claim": "全篇按背景→训练框架→高效推理→总结四章推进,当前进入首章",
+              "slide_key_text": [
+                "Contents",
+                "VGM背景及技术路径",
+                "VGM训练框架",
+                "VGM高效推理",
+                "总结与展望",
+                "2024/12/7"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色矩形外框",
+                "Contents 标题",
+                "①②③④ 圆圈编号列表",
+                "左侧蓝色进度竖条",
+                "首项高亮/余项灰化"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_toc_recall_trend_pillars_evolution_roadmap",
+      "title": "背景·目录回锚→三趋势立柱→范式演进路线图",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "趋势",
+          "技术路径",
+          "代表作",
+          "演进"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录回锚, 高亮进入背景章"
+        },
+        {
+          "archetype": "three_trend_pillars_with_hero_cases",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三条编号趋势(高分辨/时空建模/长视频)+代表作(Sora/Vidu)双图立宏观骨架"
+        },
+        {
+          "archetype": "paradigm_evolution_horizontal_roadmap",
+          "count": 1,
+          "position": "end",
+          "purpose": "以横向多节点方框+分组虚线(主流/探索/未来)+代表作分栏收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "three_trend_pillars_with_hero_cases",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "three_trend_pillars_with_hero_cases",
+          "to_archetype": "paradigm_evolution_horizontal_roadmap",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "组会/科研交流型综述背景章: 章首目录回锚→三条趋势编号立柱(每条配代表作)→横向演进路线图串起技术地图, 为后续方法章定坐标",
+      "anti_patterns": [
+        "宏观供需→政策背书→方法总纲 — 用 background_macro_gap_to_policy_to_method_bridge",
+        "算力鸿沟→稀疏方向→分类立靶 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.02",
+          "section_title": "VGM 背景与技术路径概述",
+          "section_role": "background",
+          "section_narrative": "承接 cover/agenda，为全 deck 铺底：先用 Sora/Vidu 立起 VGM 三大趋势(高分辨率 Scaling、3D 时空建模、长视频自回归)，再以一条演进时间线把 GAN/VAE→DiT→3D-DiT→自回归串成技术地图，为后续训推方法章定坐标。",
+          "section_topic_tags": [
+            "VGM 趋势",
+            "Sora/Vidu",
+            "扩散演进",
+            "3D-DiT",
+            "自回归路径"
+          ],
+          "match_evidence": "3 页节奏: 目录回锚(toc_progress_highlight)+三趋势编号立柱(Sora/Vidu 图证)+横向 GAN/VAE→AR 演进路线图",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents 目录:VGM 四大板块导航",
+              "slide_claim": "全 deck 分四板块推进,首讲 VGM 背景及技术路径",
+              "slide_key_text": [
+                "Contents",
+                "① VGM 背景及技术路径",
+                "② VGM 训练框架",
+                "③ VGM 推理"
+              ],
+              "slide_visual_skeleton": [
+                "外层蓝色边框",
+                "1-4 编号圆圈列表",
+                "左侧蓝色当前项进度条",
+                "当前项高亮/其余灰化"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "three_trend_pillars_with_hero_cases",
+              "archetype": "three_trend_pillars_with_hero_cases",
+              "slide_title": "视频生成模型(VGM)背景:三大发展趋势",
+              "slide_claim": "VGM 沿高分辨 Scaling、3D 时空建模、长视频自回归三方向演进",
+              "slide_key_text": [
+                "视频生成模型(VGM)的三大发展趋势",
+                "高分辨(1080P,2K),基于 DiT 的 Transformer 架构,符合 Scaling Law",
+                "3D 时空建模,3D Attention,将视频切成 patches",
+                "长视频生成(5 分钟++),自回归模型+Diffusion",
+                "Sora [1]",
+                "Vidu [2]"
+              ],
+              "slide_visual_skeleton": [
+                "三条编号趋势文字列表",
+                "关键词红色/加粗强调",
+                "顶部蓝色分割横线",
+                "底部左右双图占位(Sora/Vidu)",
+                "底部参考文献行"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "paradigm_evolution_horizontal_roadmap",
+              "archetype": "paradigm_evolution_horizontal_roadmap",
+              "slide_title": "VGM 技术路径:范式演进时间线",
+              "slide_claim": "VGM 由 GAN/VAE 经 DiT/3D-DiT 扩散演进至自回归范式",
+              "slide_key_text": [
+                "从技术演进角度看 VGM 技术路径",
+                "GAN/VAE → Unet diffusion → DiT-diffusion",
+                "3D-DiT-diffusion → 3D-DiT-flow matching → Autoregressive",
+                "主流范式 / 探索性范式 / 未来发展趋势",
+                "MagicVideo、Latte、OpenSora、CogVideoX、OpenSora Plan",
+                "Movie Gen、MovieDreamer、VAR、Emu3"
+              ],
+              "slide_visual_skeleton": [
+                "横向 6 节点方框+箭头演进链",
+                "三段虚线分组框(主流/探索/未来)",
+                "红色分组小标题",
+                "下方虚线引出代表作分栏",
+                "节点-代表作连接虚线"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_capability_driven_architecture_evolution_by_stages",
+      "title": "方法·能力目标驱动架构分阶段演进",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "技术路径",
+          "架构演进",
+          "能力驱动",
+          "范式对比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "capability_goal_headline_with_intro",
+          "count": "3-4",
+          "position": "start",
+          "purpose": "每个能力目标(更高分辨/更强时空一致/更长视频)开一页断言标题+架构引入"
+        },
+        {
+          "archetype": "architecture_paper_example_embed",
+          "count": "2-3",
+          "position": "middle",
+          "purpose": "以论文封面/嵌图佐证代表作(LDM/MagicVideo/DiT/CogVideoX)"
+        },
+        {
+          "archetype": "internal_mechanism_structure_diagram",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "拆解架构内部机制(UNet block/时空注意力/DiT block)结构图"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以左右双栏对比新旧架构(UNet vs Transformer, 2+1D vs 3D)"
+        },
+        {
+          "archetype": "highlight_bullet_route_selection",
+          "count": "2-3",
+          "position": "end",
+          "purpose": "对同一能力下的多路线以编号要点+高亮呈现(AR+扩散/纯 token/next-scale)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "capability_goal_headline_with_intro",
+          "to_archetype": "architecture_paper_example_embed",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "architecture_paper_example_embed",
+          "to_archetype": "internal_mechanism_structure_diagram",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "internal_mechanism_structure_diagram",
+          "to_archetype": "paradigm_shift_dual_column_compare",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "paradigm_shift_dual_column_compare",
+          "to_archetype": "highlight_bullet_route_selection",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "综述型技术演进方法章: 以『能力目标→架构方案』为轴, 每个能力(分辨率/时空一致/时长)开一断言页+代表作图+内部机制+新旧对比, 最后并列多条路线, 层层递进梳理",
+      "anti_patterns": [
+        "单层优化见顶→全栈协同 — 用 method_plateau_argument_to_full_stack_co_design",
+        "多挑战多解法一一配对 — 用 case_study_challenge_solution_performance_closed_loop",
+        "三子层挑战-创新-实验闭环 — 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.03",
+          "section_title": "VGM 技术路径演进",
+          "section_role": "method",
+          "section_narrative": "VGM 技术主线章节。以『能力目标驱动架构』为轴:分辨率需求推动 UNet→DiT 扩散,时空一致性催生 3D-DiT 与 flow matching,时长需求引出自回归,层层递进梳理路线演进。",
+          "section_topic_tags": [
+            "UNet扩散",
+            "DiT架构",
+            "3D-DiT",
+            "Flow Matching",
+            "自回归视频生成"
+          ],
+          "match_evidence": "13 页节奏: 3 个能力目标断言页(高分辨/时空一致/更长)+多张论文嵌图(LDM/MagicVideo)+机制结构图(UNet block/时空注意力/DiT)+UNet vs Transformer 对比+AR 三条路线并列高亮",
+          "slides": [
+            {
+              "slide_index": 6,
+              "role_in_pattern": "capability_goal_headline_with_intro",
+              "archetype": "capability_goal_headline_with_intro",
+              "slide_title": "更高分辨率: UNet-diffusion 引入",
+              "slide_claim": "Diffusion Model 以 UNet 为主干支撑高分辨率生成",
+              "slide_key_text": [
+                "Diffusion Model 以 UNet 为主要架构",
+                "UNet-diffusion 路线"
+              ],
+              "slide_visual_skeleton": [
+                "纯文字说明段落",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "architecture_paper_example_embed",
+              "archetype": "architecture_paper_example_embed",
+              "slide_title": "UNet-diffusion: 潜空间扩散 LDM",
+              "slide_claim": "LDM 将扩散移至潜空间实现高分辨率合成",
+              "slide_key_text": [
+                "High-Resolution Image Synthesis with Latent Diffusion Models"
+              ],
+              "slide_visual_skeleton": [
+                "LDM 架构示意图 (嵌图)",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "architecture_paper_example_embed",
+              "archetype": "architecture_paper_example_embed",
+              "slide_title": "UNet-diffusion: LDM 细节续",
+              "slide_claim": "LDM 潜空间扩散兼顾高分辨率与生成质量",
+              "slide_key_text": [
+                "High-Resolution Image Synthesis with Latent Diffusion Models"
+              ],
+              "slide_visual_skeleton": [
+                "LDM 相关示意图 (嵌图)",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "internal_mechanism_structure_diagram",
+              "archetype": "internal_mechanism_structure_diagram",
+              "slide_title": "UNet-diffusion: UNet 的 block 组成",
+              "slide_claim": "UNet 由 ResNet/Transformer/Conv 等 block 堆叠而成",
+              "slide_key_text": [
+                "U-Net++",
+                "block 由 ResNet / Transformer / Conv 组成",
+                "On Architectural Compression of Text-to-Image Diffusion Models"
+              ],
+              "slide_visual_skeleton": [
+                "U-Net++ 结构示意",
+                "block 类型列表"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "capability_goal_headline_with_intro",
+              "archetype": "capability_goal_headline_with_intro",
+              "slide_title": "UNet-diffusion 视频生成: MagicVideo",
+              "slide_claim": "MagicVideo 在 UNet 上加时空注意力与 CLIP 生成视频",
+              "slide_key_text": [
+                "MagicVideo 基于 UNet-diffusion 生成视频",
+                "Spatial-Temporal Attention 建模时序",
+                "CLIP 文本条件注入 U-Net"
+              ],
+              "slide_visual_skeleton": [
+                "两条编号要点",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "internal_mechanism_structure_diagram",
+              "archetype": "internal_mechanism_structure_diagram",
+              "slide_title": "MagicVideo: 时空分离注意力结构",
+              "slide_claim": "时空分离注意力分别建模帧内空间与跨帧时序",
+              "slide_key_text": [
+                "Temporal Attention 跨帧建模",
+                "Spatial Attention 帧内建模",
+                "QKV / O Projection",
+                "Multi-head Self Attention"
+              ],
+              "slide_visual_skeleton": [
+                "时空注意力结构图",
+                "QKV/O Projection 模块框",
+                "多帧输入箭头"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "paradigm_shift_dual_column_compare",
+              "archetype": "paradigm_shift_dual_column_compare",
+              "slide_title": "更高分辨率: DiT-diffusion",
+              "slide_claim": "将 UNet 替换为 Transformer 得到 DiT",
+              "slide_key_text": [
+                "UNet 替换成 Transformer 架构 (Diffusion Transformer)",
+                "U-Net 的特点与局限",
+                "Transformer 的特点与优势"
+              ],
+              "slide_visual_skeleton": [
+                "左右两栏对比",
+                "中间演进箭头",
+                "红色分隔线"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "internal_mechanism_structure_diagram",
+              "archetype": "internal_mechanism_structure_diagram",
+              "slide_title": "DiT-diffusion: DiT 内部结构",
+              "slide_claim": "DiT 用 Spatial+Temporal Attention 在 Transformer 内建模",
+              "slide_key_text": [
+                "UNet 替换成 Transformer 架构 (DiT)",
+                "DiT 中的 Spatial+Temporal Attention",
+                "Scalable Diffusion Models with Transformers"
+              ],
+              "slide_visual_skeleton": [
+                "DiT 结构示意图",
+                "①②③ 虚线标注框"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "paradigm_shift_dual_column_compare",
+              "archetype": "paradigm_shift_dual_column_compare",
+              "slide_title": "更强时空一致性: 3D-DiT-diffusion",
+              "slide_claim": "3D-DiT 联合时空 token 注意力提升时空一致性",
+              "slide_key_text": [
+                "Spatial+Temporal Attention",
+                "3D DiT 拼接 token 统一建模",
+                "CogVideoX: Text-to-Video with Expert Transformer"
+              ],
+              "slide_visual_skeleton": [
+                "2D+1D DiT vs 3D DiT 对比图",
+                "Transformer MSA/FFN 结构框",
+                "Tokenizing/Embedding 流程"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "capability_goal_headline_with_intro",
+              "archetype": "capability_goal_headline_with_intro",
+              "slide_title": "更强时空一致性: 3D-DiT-flow matching",
+              "slide_claim": "Flow Matching 用 ODE 直路径替代扩散训练",
+              "slide_key_text": [
+                "Flow Matching 基于 ODE 学习速度场",
+                "FLOW MATCHING FOR GENERATIVE MODELING"
+              ],
+              "slide_visual_skeleton": [
+                "纯文字说明段落",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "highlight_bullet_route_selection",
+              "archetype": "highlight_bullet_route_selection",
+              "slide_title": "更长视频生成: Autoregressive (AR+扩散)",
+              "slide_claim": "自回归+扩散逐段延展实现更长视频生成",
+              "slide_key_text": [
+                "Autoregressive + Diffusion 逐段延展",
+                "类 Image-to-Video 条件生成",
+                "MOVIEDREAMER: 长视觉序列生成"
+              ],
+              "slide_visual_skeleton": [
+                "两条编号要点 (要点1 高亮)",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "highlight_bullet_route_selection",
+              "archetype": "highlight_bullet_route_selection",
+              "slide_title": "更长视频生成: Autoregressive (纯 token)",
+              "slide_claim": "纯自回归以 next-token 预测生成视频 token",
+              "slide_key_text": [
+                "Autoregressive 纯 token decoding 逐 token/帧生成",
+                "Emu3: Next-Token Prediction is All You Need"
+              ],
+              "slide_visual_skeleton": [
+                "两条编号要点 (要点2 高亮)",
+                "蓝色标题分割线"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "highlight_bullet_route_selection",
+              "archetype": "highlight_bullet_route_selection",
+              "slide_title": "更长视频生成: Autoregressive (next-scale)",
+              "slide_claim": "next-scale 自回归按尺度预测提升生成效率",
+              "slide_key_text": [
+                "Autoregressive token decoding 逐 token/帧生成",
+                "Visual Autoregressive Modeling: Next-Scale Prediction"
+              ],
+              "slide_visual_skeleton": [
+                "两条编号要点 (要点2 高亮)",
+                "蓝色标题分割线"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_agenda_plus_dual_axis_redundancy_overview",
+      "title": "方法·目录切入+双维度冗余分支总览",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "高效推理",
+          "冗余",
+          "空间",
+          "时间",
+          "总览"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮当前方法章"
+        },
+        {
+          "archetype": "dual_axis_redundancy_branch_overview",
+          "count": 1,
+          "position": "end",
+          "purpose": "以红色分组括号一分为二(空间/时间冗余), 各配 Token 复用/合并/缓存代表方法"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "dual_axis_redundancy_branch_overview",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "极短加速主题引入章: 章首目录锚定, 再用一页 overview 把加速拆为空间/时间两条并列冗余主线, 作为后续具体方法的分发页",
+      "anti_patterns": [
+        "单页 overview 无 TOC 引入 — 直接进方法, 无引导",
+        "多子技术并列引入 — 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.04",
+          "section_title": "VGM 高效推理方法",
+          "section_role": "method",
+          "section_narrative": "method 章节的开场,先用 Contents 页定位「VGM 高效推理」为第 2 主题,再以 overview 页把推理加速拆为空间冗余(Token Reuse/Merge)与时间冗余(Token Reuse/缓存)两条主线,为后续具体方法铺垫。",
+          "section_topic_tags": [
+            "VGM 推理加速",
+            "空间冗余",
+            "时间冗余",
+            "Token 复用",
+            "缓存"
+          ],
+          "match_evidence": "2 页节奏: 目录高亮第 2 主题(toc_progress_highlight)+ overview 一分为二(空间/时间冗余, VidToMe/Adaptive Caching)",
+          "slides": [
+            {
+              "slide_index": 19,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents:定位「VGM 高效推理方法」为第 2 主题",
+              "slide_claim": "全篇四大主题中,本章聚焦第 2 项「VGM 高效推理方法」",
+              "slide_key_text": [
+                "Contents",
+                "① VGM 技术路线",
+                "② VGM 高效推理方法",
+                "③ VGM 训练框架"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框目录卡",
+                "四项编号圆点列表",
+                "当前项蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "dual_axis_redundancy_branch_overview",
+              "archetype": "dual_axis_redundancy_branch_overview",
+              "slide_title": "VGM 高效推理方法总览:空间与时间两条冗余主线",
+              "slide_claim": "VGM 推理加速可从空间冗余与时间冗余两个角度分别做 Token 复用",
+              "slide_key_text": [
+                "扩散类 VGM 推理存在大量冗余计算可优化",
+                "空间冗余角度:Token Reuse/Merge[1]",
+                "时间冗余角度:Token Reuse/缓存[2]",
+                "[1] VidToMe [2] Adaptive Caching"
+              ],
+              "slide_visual_skeleton": [
+                "红色分组括号",
+                "VGM 一分为二的分支示意",
+                "上方论点文字块",
+                "底部参考文献行"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "framework_overview_tree_plus_per_element_drilldown_to_metric",
+      "title": "框架·总览树分四要素→逐要素深入→评测收束",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "训练框架",
+          "总览",
+          "分要素",
+          "评测"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入训练框架章"
+        },
+        {
+          "archetype": "framework_tree_four_elements_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "以红色纵向主干+四分支列出训练策略/稀疏 Attention/3D-VAE/Loss 四要素"
+        },
+        {
+          "archetype": "element_deep_dive_dense_text",
+          "count": "5-7",
+          "position": "middle",
+          "purpose": "逐要素展开: 训练策略/稀疏 Attention 提速数据/Skiparse 机制/3D vs 2+1D 对比/3D-VAE 压缩/Loss 目标"
+        },
+        {
+          "archetype": "element_structure_diagram_with_text",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "对复杂要素补一页结构示意图(如 3D-VAE)"
+        },
+        {
+          "archetype": "evaluation_metric_benchmark_recap",
+          "count": 1,
+          "position": "end",
+          "purpose": "以 VBench 评测基准收束, 呼应总览四要素最后一项"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "framework_tree_four_elements_overview",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "framework_tree_four_elements_overview",
+          "to_archetype": "element_deep_dive_dense_text",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "element_deep_dive_dense_text",
+          "to_archetype": "element_structure_diagram_with_text",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "element_deep_dive_dense_text",
+          "to_archetype": "evaluation_metric_benchmark_recap",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "训练框架章的『总览树+逐要素深入』结构: 目录锚定→四要素总览树→按要素(策略/稀疏 Attention/3D-VAE/Loss)逐页深入(密集文字+对比+机制图)→VBench 评测收束",
+      "anti_patterns": [
+        "分幕流程 build+公式因子高亮 — 用 framework_progressive_flow_build_plus_formula_unpack",
+        "开源生态总览+代表算子闭环 — 用 framework_opensource_ecosystem_plus_representative_work"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.05",
+          "section_title": "VGM 训练框架与压缩策略",
+          "section_role": "framework",
+          "section_narrative": "deck 第三大板块(训练侧),先以总览树列出训练框架四要素,再逐一深入训练策略、稀疏 Attention、3D-VAE、Loss/评测,系统论证 VGM 高效训练路径。",
+          "section_topic_tags": [
+            "Open-Sora-Plan",
+            "Skiparse Attention",
+            "3D-VAE",
+            "训练 Loss",
+            "VBench"
+          ],
+          "match_evidence": "10 页节奏: 目录切入→四要素红色主干树→训练策略/稀疏 Attention 加速数据/Skiparse 机制/3D vs 2+1D 对比/3D-VAE 文字+结构图/Loss/VBench 评测",
+          "slides": [
+            {
+              "slide_index": 21,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents 目录：进入第 3 部分 VGM 训练框架",
+              "slide_claim": "本页切换到第三大板块——VGM 训练框架(训练侧)",
+              "slide_key_text": [
+                "Contents",
+                "① VGM 技术路线",
+                "③ VGM 训练框架(当前高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框目录卡",
+                "四项圆圈编号列表",
+                "当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "framework_tree_four_elements_overview",
+              "archetype": "framework_tree_four_elements_overview",
+              "slide_title": "VGM 训练框架总览:四大要素",
+              "slide_claim": "VGM 训练框架由训练策略、稀疏 Attention、3D-VAE、Loss 四要素构成,核心是压缩 Token 提效",
+              "slide_key_text": [
+                "基于 Open-Sora-Plan1.3 (3D-DiT-diffusion)",
+                "核心思路:压缩 Token 数量降低训练开销",
+                "训练策略",
+                "稀疏化 3D Attention",
+                "压缩化 3D-VAE",
+                "训练 Loss 指标"
+              ],
+              "slide_visual_skeleton": [
+                "红色纵向主干示意",
+                "四分支要素列表",
+                "VGM 训练标签引出"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "element_deep_dive_dense_text",
+              "archetype": "element_deep_dive_dense_text",
+              "slide_title": "VGM 训练框架:训练策略",
+              "slide_claim": "Open-Sora Plan 采用图像初始化 + 分辨率/时长渐进的训练策略",
+              "slide_key_text": [
+                "Open-Sora Plan 的训练策略",
+                "用图像预训练模型(如 Pixart-α 的 DiT 权重)初始化",
+                "分阶段:先低分辨率短视频,后高分辨率长视频"
+              ],
+              "slide_visual_skeleton": [
+                "编号条目列表",
+                "二级 a/b 子条目",
+                "关键短语红色标注"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "element_deep_dive_dense_text",
+              "archetype": "element_deep_dive_dense_text",
+              "slide_title": "训练压缩:稀疏 Attention(Skiparse 提速)",
+              "slide_claim": "Skiparse 稀疏 Attention 在同等 FLOPS 下逼近 3D 全注意力,训练提速约 2.38x/1.88x",
+              "slide_key_text": [
+                "3D Attention 开销大,2+1D 效果受损",
+                "Open-Sora-Plan 提出 Skiparse (Skip-Sparse) Attention",
+                "接近全注意力效果同时降低 FLOPS",
+                "k=4 时 2.7B 模型 93x720p / 93x480p 训练提速 2.38x / 1.88x"
+              ],
+              "slide_visual_skeleton": [
+                "整页密集文字论述",
+                "加粗分辨率/加速数字",
+                "红色 speedup 强调"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "element_deep_dive_dense_text",
+              "archetype": "element_deep_dive_dense_text",
+              "slide_title": "训练压缩:稀疏 Attention(Skiparse 机制)",
+              "slide_claim": "Skiparse DiT 用交替的 Skip/Sparse 块把注意力量降到 1/k,同时保留全局交互",
+              "slide_key_text": [
+                "Skiparse DiT:标准 Transformer Block 替换为交替 Skip Sparse Transformer Block",
+                "稀疏度=k 时每层仅 1/k token 参与注意力",
+                "k 层交替覆盖全序列,单层计算降为 1/k",
+                "更契合 GPU/NPU 高效执行"
+              ],
+              "slide_visual_skeleton": [
+                "整页密集文字论述",
+                "k / 1/k 参数说明",
+                "Skip-Sparse 块交替描述"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "element_deep_dive_dense_text",
+              "archetype": "element_deep_dive_dense_text",
+              "slide_title": "训练压缩:稀疏 Attention(3D 与 2+1D 对比)",
+              "slide_claim": "3D 全注意力让全部 token 互相交互,2+1D 则只在空间/时间维度内分别交互",
+              "slide_key_text": [
+                "3D Attention:所有 token 相互交互,建模最充分但开销大",
+                "2+1D Attention 拆到维度 1、维度 2 分别交互",
+                "token 只与同维度内 token 交互,跨维交互被削弱"
+              ],
+              "slide_visual_skeleton": [
+                "整页密集文字论述",
+                "3D vs 2+1D 对比描述",
+                "维度 1 / 维度 2 分列"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "element_deep_dive_dense_text",
+              "archetype": "element_deep_dive_dense_text",
+              "slide_title": "训练压缩:3D-VAE",
+              "slide_claim": "相比逐帧 2D-VAE,3D-VAE 在时间维额外压缩,大幅减少视频 latent token",
+              "slide_key_text": [
+                "2D-VAE Encoder 逐帧压缩:仅空间降维,时间维不压缩",
+                "latent 序列仍长",
+                "3D-VAE 在时间维一并压缩,显著减少 latent token 数"
+              ],
+              "slide_visual_skeleton": [
+                "整页文字论述",
+                "2D-VAE 与 3D-VAE 对比",
+                "压缩维度说明"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "element_structure_diagram_with_text",
+              "archetype": "element_structure_diagram_with_text",
+              "slide_title": "训练压缩:3D-VAE(结构示意)",
+              "slide_claim": "3D-VAE 通过时空联合压缩把视频编码为更紧凑的 latent 表征",
+              "slide_key_text": [
+                "2D-VAE Encoder 逐帧压缩:时间维不压缩",
+                "3D-VAE 时空联合压缩得到更紧凑 latent"
+              ],
+              "slide_visual_skeleton": [
+                "VAE 编码结构示意图",
+                "2D 与 3D 压缩对比图",
+                "配套说明文字"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "element_deep_dive_dense_text",
+              "archetype": "element_deep_dive_dense_text",
+              "slide_title": "VGM 训练框架:训练 LOSS 指标",
+              "slide_claim": "VGM 训练沿用 diffusion 的去噪回归目标作为核心 Loss",
+              "slide_key_text": [
+                "基于 diffusion 训练,以去噪/噪声预测回归目标作为核心 loss"
+              ],
+              "slide_visual_skeleton": [
+                "单条概述文字",
+                "标题蓝色分割线",
+                "留白为主版式"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "evaluation_metric_benchmark_recap",
+              "archetype": "evaluation_metric_benchmark_recap",
+              "slide_title": "VGM 训练框架:评测指标(VBench)",
+              "slide_claim": "VGM 用 VBench 从多维度评测生成质量,以对齐 SOTA 视频生成模型",
+              "slide_key_text": [
+                "采用 VBench 作为视频生成质量综合评测基准",
+                "从多维度衡量生成质量并对齐 SOTA",
+                "参考 VBench++ 视频生成综合评测套件"
+              ],
+              "slide_visual_skeleton": [
+                "评测方法概述文字",
+                "VBench 基准引用",
+                "底部论文出处标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "discussion_agenda_plus_evolution_chain_recap_with_future_arrow",
+      "title": "讨论·目录切入+演进链回收+算法到系统未来箭头",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "未来工作",
+          "演进链",
+          "回收"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入总结章"
+        },
+        {
+          "archetype": "evolution_chain_recap_with_future_direction",
+          "count": 1,
+          "position": "end",
+          "purpose": "用技术路线演进链(GAN/VAE→…→AR)+高效训推双主线+算法→系统箭头三条 bullet 收束全篇"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "evolution_chain_recap_with_future_direction",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "组会/科研末章的短闭环: 目录切入总结→一页三段 bullet(演进链回收+训推双主线+算法→系统未来箭头)收束全篇, 呼应背景章的技术路线并给出未来方向",
+      "anti_patterns": [
+        "目录→愿景架构→课题→团队 — 用 discussion_agenda_vision_topics_team_close",
+        "目录→三栏 Goals/Insight/Solution 回收 — 用 discussion_toc_three_pillar_recap_plus_future_extension"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.06",
+          "section_title": "总结与未来工作",
+          "section_role": "discussion",
+          "section_narrative": "全 deck 收尾章。先用 agenda 页高亮定位到第 4 部分，再在总结页把技术路线演进、高效训推两条主线、算法→系统未来方向三点收束，回扣全篇论述。",
+          "section_topic_tags": [
+            "技术路线演进",
+            "高效训推双主线",
+            "算法到系统",
+            "VGM 总结"
+          ],
+          "match_evidence": "2 页节奏: 目录高亮第 4 项(toc_progress_highlight)+一页三段 bullet 演进链回收(GAN/VAE→AR)+算法→系统未来箭头",
+          "slides": [
+            {
+              "slide_index": 31,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents 目录页(高亮第 4 部分总结与未来工作)",
+              "slide_claim": "全 deck 收尾,定位至第 4 部分总结与未来工作",
+              "slide_key_text": [
+                "Contents",
+                "VGM 技术路线",
+                "VGM 高效训练框架",
+                "VGM 推理加速",
+                "总结与未来工作(高亮项)"
+              ],
+              "slide_visual_skeleton": [
+                "外框包裹的目录卡",
+                "左侧四个编号圆标",
+                "灰/蓝高亮态对比",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "evolution_chain_recap_with_future_direction",
+              "archetype": "evolution_chain_recap_with_future_direction",
+              "slide_title": "总结和未来工作",
+              "slide_claim": "技术路线演进、高效训推两主线、算法到系统未来方向三点收束全篇",
+              "slide_key_text": [
+                "总结和未来工作",
+                "GAN/VAE → Unet-diffusion → DiT-diffusion",
+                "3D-DiT-diffusion → 3D-DiT-flow matching → Autoregressive",
+                "图像生成范式 / 视频生成范式一 / 视频生成范式二",
+                "算法上:不断提升",
+                "算法 → 系统"
+              ],
+              "slide_visual_skeleton": [
+                "技术路线演进流程链",
+                "三段虚线框分组的范式带",
+                "带箭头的 GAN/VAE→…→AR 链",
+                "训练/推理成对高亮小框",
+                "算法→系统箭头对"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_minimal_thanks_with_speaker_signature",
+      "title": "收尾·极简致谢+讲者署名单页",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share",
+          "topic_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "感谢聆听",
+          "署名",
+          "日期"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "minimal_thanks_with_signature_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字致谢标题+分隔线下讲者姓名+日期+底部机构页脚, 极简礼节收束"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "组会/科研汇报的极简单页致谢: 顶部『Thanks for your attention!』主标题+浅粉分隔线+讲者姓名+日期+底部机构落款, 无 recap 无联系方式, 只承担礼节性收尾",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "空白 Thanks 版式模板骨架 — 用 closing_blank_thanks_backpanel_with_signature",
+        "Thanks 附全作者列表 — 用 closing_thanks_single_page_with_full_author_institution_footer"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "deck_title": "视频生成模型(VGM)技术路径及高效训推",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "3D-VAE",
+            "稀疏Attention",
+            "高效推理",
+            "训练加速",
+            "自回归"
+          ],
+          "section_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714.sec.07",
+          "section_title": "致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾致谢页,以「Thanks for your attention!」+ 汇报人署名日期收束,不承载技术内容,仅作礼节性结束",
+          "section_topic_tags": [
+            "Thanks",
+            "礼节收束",
+            "组会致谢",
+            "讲者署名"
+          ],
+          "match_evidence": "1 页节奏: 单页极简 Thanks + 讲者姓名/日期/机构脚注",
+          "slides": [
+            {
+              "slide_index": 33,
+              "role_in_pattern": "minimal_thanks_with_signature_only",
+              "archetype": "minimal_thanks_with_signature_only",
+              "slide_title": "Thanks for your attention! 致谢结束页",
+              "slide_claim": "汇报以致谢语收束，署名汇报人与日期，礼节性结束",
+              "slide_key_text": [
+                "Thanks for your attention!",
+                "丁立",
+                "2024.12.7",
+                "Li Ding @ CCC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "左上致谢大标题",
+                "浅粉水平分隔线",
+                "署名+日期文字块",
+                "底部单位脚注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "high"
+    }
+  ],
+  "extraction_notes": "本 batch 单 deck (VGM 技术路径及高效训推) 共 7 section, 抽出 7 patterns 覆盖全部 section: opening/closing 复用前 batch 现成 id (opening_cover_plus_progress_highlighted_toc, closing_minimal_thanks_with_speaker_signature); background/method(路径演进)/method(推理短章)/framework/discussion 起新 id 共 5 条, 均描述综述型组会 deck 的章内节奏. new_archetype: three_trend_pillars_with_hero_cases — 三条编号趋势+双图代表作立柱页; new_archetype: paradigm_evolution_horizontal_roadmap — 横向多节点方框+分组虚线+代表作分栏演进图; new_archetype: capability_goal_headline_with_intro — 能力目标断言标题+架构引入首页; new_archetype: architecture_paper_example_embed — 论文封面/嵌图佐证代表作; new_archetype: internal_mechanism_structure_diagram — 架构内部机制结构图; new_archetype: highlight_bullet_route_selection — 多路线编号要点+当前项高亮; new_archetype: dual_axis_redundancy_branch_overview — 红色分组括号双分支冗余总览; new_archetype: framework_tree_four_elements_overview — 红色纵向主干+四分支要素总览树; new_archetype: element_deep_dive_dense_text — 单要素密集文字深入页; new_archetype: element_structure_diagram_with_text — 要素结构示意图+文字页; new_archetype: evaluation_metric_benchmark_recap — 评测基准收束页; new_archetype: evolution_chain_recap_with_future_direction — 演进链+训推双主线+算法→系统未来箭头收束页",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 7,
+    "sections_unassigned_in_this_batch": []
+  }
+}

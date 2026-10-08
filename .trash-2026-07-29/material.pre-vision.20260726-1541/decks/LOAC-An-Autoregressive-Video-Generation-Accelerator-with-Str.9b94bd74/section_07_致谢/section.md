@@ -1,0 +1,34 @@
+---
+章节标识: tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.07
+所属deck: tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74
+章节序号: 7
+章节角色: closing
+标题: 致谢
+页码范围: [34, 34]
+页数: 1
+页ID列表: [slide_34]
+章节叙事: deck 收尾章，单页致谢。在全篇「背景→挑战→三项方案→实验验证」论述完成后，以感谢聆听收束全场，标注作者与年份，不承载新论点。
+页间关系: []
+适合复用场景: [任何技术分享 deck 的致谢收尾页, 需署名作者+年份的学术汇报结尾, 单页 thank-you 收束场景]
+不适合复用场景: [需在结尾放总结/展望/QA 引导时, 需列致谢名单或资助方时, 汇报要求以 call-to-action 收尾时]
+在deck中的位置: 第 7 章（末章），紧跟实验验证章，为全 deck 收尾
+分析状态: claude-opus-4-8
+---
+
+# section 7: 致谢
+
+## 在 deck 中的位置
+第 7 章（末章），紧跟实验验证章，为全 deck 收尾
+
+## 章内 slide 间的关系
+- slide 34: 感谢聆听
+
+## 整章可复用的场景
+- 任何技术分享 deck 的致谢收尾页
+- 需署名作者+年份的学术汇报结尾
+- 单页 thank-you 收束场景
+
+## 不适合复用的场景
+- 需在结尾放总结/展望/QA 引导时
+- 需列致谢名单或资助方时
+- 汇报要求以 call-to-action 收尾时

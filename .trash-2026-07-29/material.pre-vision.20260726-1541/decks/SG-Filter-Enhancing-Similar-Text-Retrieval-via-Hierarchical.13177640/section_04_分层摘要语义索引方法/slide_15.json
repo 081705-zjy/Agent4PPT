@@ -1,0 +1,48 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15",
+  "所属章节": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "页序号": 15,
+  "源文件": "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx",
+  "页面角色": "content_candidate",
+  "标题": "如何高效获得摘要语义",
+  "核心论断": "通过分层摘要索引高效获得文本摘要语义",
+  "本页讲什么": "承接上页 Q2，正面回答'如何高效获得摘要信息'——通过分层构建的摘要语义索引来组织与压缩文本语义。页面以分层结构图示搭建方法骨架，是本章方法展开的第一层。",
+  "关键文字": [
+    "How to efficiently obtain summarized information?"
+  ],
+  "视觉骨架": [
+    "分层摘要索引结构示意",
+    "语义层级连线图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.01",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.02",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.03",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.04",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.05",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.06",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.07",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.08",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.09",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.10",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.11",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.12",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.13",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.14",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.15",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.16",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_15.asset.17"
+  ],
+  "适合复用场景": [
+    "分层语义索引方法展开页",
+    "摘要压缩机制原理图页"
+  ],
+  "不适合复用场景": [
+    "纯 bullet 概念罗列页",
+    "benchmark 对比表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

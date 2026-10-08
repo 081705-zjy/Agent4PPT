@@ -1,0 +1,416 @@
+{
+  "batch_index": 2,
+  "rules": [
+    {
+      "id": "content_pages_share_top_blue_bar_as_brand_divider",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate",
+        "ending_candidate"
+      ],
+      "title": "内容页顶部蓝色分隔条统一封口",
+      "description": "非封面页在页面顶部统一放一条细蓝色横条/分隔条作为品牌视觉封口, 内容主体位于此条之下, 用于串起整套 deck 的视觉一致性.",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部蓝色分隔条' / '顶部蓝色横条' / '顶部蓝条'",
+        "该元素出现在页面顶部而非中部或底部",
+        "封面页不含此元素 (由封面独立配色定调)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "视觉骨架首项即'顶部蓝色分隔条', 内容区在其下方展开"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 5,
+          "评价": "同样以顶部蓝色分隔条作为版面封口"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 6,
+          "评价": "极简版式仍保留顶部蓝色分隔条, 说明此为不可剥离的品牌元素"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 7,
+          "评价": "结尾页也用顶部蓝色横条封口"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 1,
+          "原因": "封面页用居中淡粉分隔线, 不套用顶部蓝条 (封面独立配色)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.83,
+      "enforcement_level": "hard",
+      "rationale": "顶部固定色条是最低成本的品牌一致性载体, 让听众在页与页之间感知同一套视觉系统, 也把标题区与页眉/母版元素隔离",
+      "fix_hint": "在非封面页顶部加一条与主色一致的细横条, 高度约 4-8px, 通栏或近通栏",
+      "exceptions": [
+        "封面页 (独立视觉锚定, 允许改用居中或其他分隔样式)"
+      ]
+    },
+    {
+      "id": "section_divider_uses_colored_gradient_label_at_top_left",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节/问题标识用左上角彩色渐变圆角标签",
+      "description": "章节或编号性内容页在左上角放一个彩色渐变(紫/红/蓝)圆角矩形标签, 内含 2-4 字章节名 (如 '创新思路', '问题 1'), 作为角标身份标识, 右侧接通栏概述框.",
+      "evidence_signals": [
+        "视觉骨架 含 '渐变' + '圆角' + '标签方块' 关键词",
+        "该元素位于左上角",
+        "标签内文字为 2-4 字短词或 '<词> <编号>' 形式"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "紫色渐变标签方块含 '创新思路' 4 字, 右侧接通栏概述框"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 4,
+          "评价": "红色渐变标签方块含 '问题 1', 编号型章节标识"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 5,
+          "原因": "无标签版式, 靠双栏色彩区分左右, 说明标签是可剥离的强化元素而非必需"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "彩色渐变角标把章节名与主体内容视觉解耦, 听众用余光就能定位当前章节, 比嵌在标题里更抢眼",
+      "fix_hint": "把章节名做成左上角圆角标签, 宽度约 20% 页宽, 用与主色互补的暖色渐变凸显",
+      "exceptions": [
+        "通用双栏版式 (仅做视觉分组, 不承载章节身份时省略标签)"
+      ]
+    },
+    {
+      "id": "chapter_layout_top_summary_bar_plus_two_column",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节页版式 · 顶部概述框 + 左右等宽双栏",
+      "description": "章节/内容展开页典型版式: 顶部一条通栏概述框(填章节总述或标题), 下方为等宽左右双栏, 双栏可选配色差异化或加小标题条, 用于承载并列内容.",
+      "evidence_signals": [
+        "视觉骨架 同时含 '通栏概述框' / '顶部通栏' / '概述框' 与 '左右双栏' / '等宽双栏'",
+        "存在两个视觉对称/接近对称的填充区",
+        "章节页/chapter_candidate 角色"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "顶部通栏概述框 + 左右等宽双栏空框, 标准双栏版式"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 4,
+          "评价": "顶部通栏概述框 + 左右双栏各带蓝色标题条, 双栏加了子标题变体"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 5,
+          "评价": "左右等宽双栏以紫/蓝配色区分, 顶部通栏元素退化为分隔条"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 6,
+          "评价": "极简版式仅保留双栏骨架, 顶部通栏简化到只剩分隔条"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "顶部概述框承担'本页是什么'的锚定, 下方双栏承担'两侧对比/并列'的分解, 这种上下二段式让听众先建立框架再看细节",
+      "fix_hint": "章节页顶部保留一条通栏概述带填标题/总述, 下方分左右两栏承载并列内容, 双栏保持等宽",
+      "exceptions": [
+        "纯图形示意页 (整页一张大图/流程图占据, 不需要双栏分解)"
+      ]
+    },
+    {
+      "id": "ending_page_uses_signature_footer_with_page_number",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "结尾页用底部署名页脚+页码收尾",
+      "description": "结尾/致谢页整页大面积留白, 底部固定放一行讲者署名(Name @ Institution)与页码, 顶部可选一条封口横线, 主体区留给现场填 Thanks/Q&A/联系方式.",
+      "evidence_signals": [
+        "视觉骨架 含 '底部署名页脚' / '页脚' / '页码'",
+        "关键文字 含 'Name @ Institution' 类身份行",
+        "主体区 '大面积空白' / '留白'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 7,
+          "评价": "底部固定 'Guohao Dai @ Shanghai JiaoTong University' + 页码, 主体大面积留白"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结尾页的核心作用是让听众看到讲者身份并留出提问缓冲, 底部署名比顶部标题更符合'放下 deck 内容, 回到人'的心理转场",
+      "fix_hint": "结尾页移除主体标题, 底部放一行 '<讲者> @ <机构>' + 页码, 主体区留白供现场投影 Q&A",
+      "exceptions": [
+        "致谢页含正式感谢名单/合作机构 logo 时可填充主体, 但仍保留底部署名"
+      ]
+    },
+    {
+      "id": "self_intro_uses_dual_timeline_work_and_education",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "个人介绍用工作/教育双时间线并列",
+      "description": "学术类 deck 的个人介绍页典型版式: 顶部一栏列研究方向标签, 下方以时间/单位/职务三列格式分别呈现工作经历与教育经历两条时间线, 平行摆放.",
+      "evidence_signals": [
+        "section_role = 'self_intro' 或 页面角色 = 'content_candidate' 且标题含 '个人介绍'/'自我介绍'",
+        "关键文字 含 '工作经历' + '教育经历'",
+        "视觉骨架 含 '时间线' / '三列表格' / '时间线三列表格'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 2,
+          "评价": "顶部研究方向蓝色标签框 + 工作/教育双时间线三列表格, 完全命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "时间线让履历有连贯感, 工作/教育双线并列比单行罗列更能让听众一眼判断资历成色与方向匹配度",
+      "fix_hint": "把个人介绍拆成顶部研究方向 + 下方工作/教育双时间线, 每行 '起止/单位/职务' 三列对齐",
+      "exceptions": [
+        "产业界短讲者 (无学术履历时可退化为单时间线或团队介绍)"
+      ]
+    },
+    {
+      "id": "title_joins_topic_and_subtopic_with_middle_dot_or_colon",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用「·」或「：」连接主题与子主题",
+      "description": "slide 标题常采用 '<主题> · <子主题>' 或 '<主题>：<版式/子主题>' 的双段结构, 前段定位大类, 后段说明本页视角, 而不用完整动宾句.",
+      "evidence_signals": [
+        "title 中含 '·' 或 '：' 分隔符",
+        "分隔符两侧均为名词短语, 无完整谓语动词",
+        "title 长度 ≤ 20 字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 2,
+          "评价": "'个人介绍：研究领域与工作、教育双时间线' — 冒号双段"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "'创新思路 · 左右双栏总述版式' — 中点双段"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 4,
+          "评价": "'问题 1 · 编号标签双栏版式' — 中点双段"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 5,
+          "评价": "'无标签 · 紫蓝配色双栏版式' — 中点双段"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 6,
+          "评价": "'极简 · 纯结构双栏骨架' — 中点双段"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 1,
+          "原因": "封面 title 为单段 'DAI 实验室 PPT 模板封面', 未使用分隔符"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 7,
+          "原因": "'结尾/致谢空白版式页' 用 '/' 分隔而非 '·'/'：'"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.71,
+      "enforcement_level": "soft",
+      "rationale": "双段式让 title 同时承载'讲什么大类'与'从哪个角度切', 减少听众在标题与正文之间反复确认主题的成本",
+      "fix_hint": "把动宾式或单词式 title 改成 '<大主题> · <本页视角>' 结构, 中点或冒号任选一个统一到全 deck",
+      "exceptions": [
+        "封面/结尾页 (身份型标题, 无子主题可拆)"
+      ]
+    },
+    {
+      "id": "signature_uses_name_at_institution_format",
+      "category": "authoring",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "署名用「Name @ Institution」英文格式",
+      "description": "结尾页/页脚署名统一用 '<讲者英文名> @ <机构英文名>' 格式, 而非中文 '<机构> <讲者>' 或纯讲者名, 便于国际场合与页脚窄条排版.",
+      "evidence_signals": [
+        "关键文字 含 '@' 符号连接姓名与机构",
+        "姓名与机构均为英文/拼音",
+        "该行位于页面底部或页脚位置"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 7,
+          "评价": "底部页脚 'Guohao Dai @ Shanghai JiaoTong University' 严格遵守此格式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "@ 连接式署名短且中性, 页脚窄条能塞得下, 学术圈也符合 email/推特惯用格式, 比中文姓名+单位更省版面",
+      "fix_hint": "把页脚署名改成 '<英文名/拼音> @ <机构英文名>', 全 deck 页脚统一此模式",
+      "exceptions": [
+        "纯中文场合 deck (听众为国内非国际化受众时可用中文署名)"
+      ]
+    },
+    {
+      "id": "section_labels_use_short_noun_phrase_2_to_4_chars",
+      "category": "authoring",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节标签用 2-4 字名词短词",
+      "description": "章节角标/编号标签内的文字统一控制在 2-4 汉字, 用名词或名词+编号, 不用完整句/长短语, 便于圆角标签方块内保持视觉紧凑.",
+      "evidence_signals": [
+        "关键文字/视觉骨架中标签内文字长度 ≤ 4 汉字 (编号数字另计)",
+        "文字为名词/名词短语, 不含谓语",
+        "位置在左上角标签方块内"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "'创新思路' 4 字, 名词短语"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 4,
+          "评价": "'问题 1' 3 字符, 名词+编号"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "标签方块尺寸受限, 长文字会破坏圆角紧凑感, 短词也便于听众用余光识别当前章节",
+      "fix_hint": "把章节标签文字压缩到 2-4 字名词, 编号写成 '<名词> <数字>' 而非 '<名词>的第 N 个问题'",
+      "exceptions": []
+    },
+    {
+      "id": "blank_template_claim_states_layout_purpose_not_content",
+      "category": "authoring",
+      "applicable_role": [
+        "chapter_candidate",
+        "cover_candidate",
+        "ending_candidate"
+      ],
+      "title": "空白版式的核心论断描述版式用途, 不硬编虚构内容",
+      "description": "对空白模板/占位版式页, 核心论断应描述该版式承载什么类型的内容或结构功能(如'左右双栏承载并列内容'), 而非编造具体课题结论.",
+      "evidence_signals": [
+        "关键文字为空数组或仅含标签词",
+        "核心论断含 '版式' / '骨架' / '承载' / '供填充' / '结构' 等结构性描述",
+        "描述的是版面功能而非具体研究结论"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 1,
+          "评价": "'空白封面版式承载整套模板的标题与作者信息' — 描述版式用途"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "'以「创新思路」标签统领上方概述框 + 下方左右双栏结构' — 描述结构而非虚构内容"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 6,
+          "评价": "'剥离所有标签与配色, 仅留双蓝标题条的最简双栏结构' — 纯版式描述"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 7,
+          "评价": "'空白收尾版式, 顶部蓝条+底部署名页脚, 留白主体供填 Thanks/Q&A' — 用途描述"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "对空白模板编造具体研究结论会污染下游 rule/logic 库, 让统计误以为存在实质内容, 骨架描述才能让复用时正确定位版式用途",
+      "fix_hint": "遇到空白版式, claim 写成 '<版式> 承载/统领/承担 <内容类型>', 不硬编具体课题结论",
+      "exceptions": []
+    },
+    {
+      "id": "template_progressive_layout_stripping_pattern",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "模板双栏版式常按「加装饰→剥离」逐步简化",
+      "description": "通用模板中的同类双栏版式常按'带标签+带小标题条'→'仅配色区分'→'纯骨架'的顺序逐步剥离装饰, 提供从丰富到极简的一组变体, 供搭建者按内容密度选取.",
+      "evidence_signals": [
+        "同一 deck 内多张 chapter_candidate 页共用双栏结构",
+        "视觉骨架元素数量沿页序号递减(从多标签→少配色→纯骨架)",
+        "标题含 '极简' / '无标签' / '纯结构' 等递进描述"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 3,
+          "评价": "带彩色标签+通栏框, 装饰最多"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 4,
+          "评价": "彩色标签+双栏小标题条, 中等"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 5,
+          "评价": "去标签, 仅留紫/蓝配色区分"
+        },
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "slide_index": 6,
+          "评价": "纯结构双栏骨架, 装饰全剥离"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "递进剥离让同一 deck 覆盖 '需要强调 / 需要区分 / 需要留白' 三档信息密度, 搭建者按内容多少选层, 不必为每种密度重造版式",
+      "fix_hint": "为核心版式准备 3 档变体: 完整装饰(标签+小标题条)/中等(仅配色)/极简(纯骨架), 按内容密度切换",
+      "exceptions": [
+        "非模板类实战 deck (只需要一种终稿版式, 不必准备装饰变体)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅含 1 个通用模板 deck (7 slides, 多数为占位版式). visual: 6 rules 覆盖顶部蓝条/角标/双栏结构/结尾署名/自我介绍时间线/模板剥离; authoring: 4 rules 覆盖标题双段式/署名格式/标签短词/空白版式 claim 写法. 因样本单一, 部分 rule 的跨 deck 泛化能力需后续 batch 累加校验.",
+  "coverage": {
+    "rules_count": 10,
+    "by_category": {
+      "visual": 6,
+      "authoring": 4
+    }
+  }
+}

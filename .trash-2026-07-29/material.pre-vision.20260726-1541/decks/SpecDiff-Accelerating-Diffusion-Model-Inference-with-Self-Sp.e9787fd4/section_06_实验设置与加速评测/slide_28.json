@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_28",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 28,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Flux.1 Dev 加速评测结果",
+  "核心论断": "SpecDiff 在 Flux.1 Dev 上达 3.17× 加速",
+  "本页讲什么": "延续逐模型评测，给出 SpecDiff 在 Flux.1 Dev 上的结果：取得 3.17× 的推理加速，为全 section 中最高加速比，并以样例图展示质量保持，进一步证明方法对不同架构扩散模型的普适加速能力。",
+  "关键文字": [
+    "SpecDiff achieved 3.17× speedup on Flux.1 Dev"
+  ],
+  "视觉骨架": [
+    "加速比数值标注",
+    "Flux.1 生成样例图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_28.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_28.asset.02"
+  ],
+  "适合复用场景": [
+    "单一模型加速比的评测结果页",
+    "Flux/DiT 类模型加速展示页"
+  ],
+  "不适合复用场景": [
+    "实验设置说明页",
+    "多模型汇总总结页",
+    "方法架构页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

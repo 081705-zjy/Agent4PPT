@@ -1,0 +1,38 @@
+---
+章节标识: tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.03
+所属deck: tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4
+章节序号: 3
+章节角色: background
+标题: 相关工作综述
+页码范围: [8, 13]
+页数: 6
+页ID列表: [slide_08, slide_09, slide_10, slide_11, slide_12, slide_13]
+章节叙事: 承接上一章的成本来源分析，系统综述两条现有加速路线——缩短输入长度(L)与特征缓存，逐一铺陈其做法与局限，为下一章提出自推测洞察埋下对照与痛点。
+页间关系: ["slide 8 → slide 9: 由 Background 分节页切入第一条路线『缩短输入长度 L』", "slide 9 → slide 10: 同一 Token Merging 主题内递进，展开具体合并做法", "slide 10 → slide 11: 由 Token Merge 收束，转入第二条路线 Feature Caching", "slide 11 → slide 12: 从引出特征缓存过渡到其机制细节展开", "slide 12 → slide 13: 延续 Feature Caching，补充其局限为方法章做对照"]
+适合复用场景: [需综述『缩短输入长度 vs 特征缓存』两条加速路线的 related work 章, 扩散/Transformer 推理加速方向的背景对照章, 需先铺陈现有方法局限再引出自家洞察的 motivation-衔接章]
+不适合复用场景: [研究主题与推理加速无关时, 相关工作只有单一路线、无需两路对照时, Token Merge/Feature Caching 已非主流基线时]
+在deck中的位置: 第 3 章 background，位于成本分析之后、方法章之前，做相关工作铺垫。
+分析状态: claude-opus-4-8
+---
+
+# section 3: 相关工作综述
+
+## 在 deck 中的位置
+第 3 章 background，位于成本分析之后、方法章之前，做相关工作铺垫。
+
+## 章内 slide 间的关系
+- slide 8 → slide 9: 由 Background 分节页切入第一条路线『缩短输入长度 L』
+- slide 9 → slide 10: 同一 Token Merging 主题内递进，展开具体合并做法
+- slide 10 → slide 11: 由 Token Merge 收束，转入第二条路线 Feature Caching
+- slide 11 → slide 12: 从引出特征缓存过渡到其机制细节展开
+- slide 12 → slide 13: 延续 Feature Caching，补充其局限为方法章做对照
+
+## 整章可复用的场景
+- 需综述『缩短输入长度 vs 特征缓存』两条加速路线的 related work 章
+- 扩散/Transformer 推理加速方向的背景对照章
+- 需先铺陈现有方法局限再引出自家洞察的 motivation-衔接章
+
+## 不适合复用的场景
+- 研究主题与推理加速无关时
+- 相关工作只有单一路线、无需两路对照时
+- Token Merge/Feature Caching 已非主流基线时

@@ -1,0 +1,2292 @@
+{
+  "batch_index": 0,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "封面+摘要页(不列章节骨架)不属于此 pattern",
+        "封面+全景图导览(非编号目录)另立 pattern",
+        "多张封面/多张目录堆叠属于扩展开场"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "全 deck 开场:封面亮明「AI Infra与国智院」主题+讲者署名,目录页用高亮当前章的进度式菜单铺开 00-04 五段论述骨架,为后续背景→优化→集群→国智院展开定调。",
+          "section_topic_tags": [
+            "AI Infra报告开场",
+            "研究院建设主题",
+            "进度式目录",
+            "五段论述骨架"
+          ],
+          "match_evidence": "2 页节奏严格匹配 cover_title_signature + toc_progress_highlight: 首页大字标题+讲者署名, 次页 00-04 编号列表当前章黑字高亮其余灰化",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "AI Infra与国智院建设思考（封面）",
+              "slide_claim": "以「AI Infra与国智院建设」为主题开场并署名讲者",
+              "slide_key_text": [
+                "AI Infra与国智院建设思考",
+                "戴国浩",
+                "2024-10-14 @上海",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "超大主标题居中",
+                "浅色横向分隔线",
+                "下方日期/地点/署名区"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_current_bold",
+              "slide_title": "目录：00-04 五段论述骨架",
+              "slide_claim": "全报告按背景→系统优化→集群→国智院→展望五段展开",
+              "slide_key_text": [
+                "目录",
+                "00. 背景：算力差距与中美差异",
+                "01. 系统优化发展现状与进展",
+                "02.",
+                "03.",
+                "04.",
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色粗分隔线",
+                "00-04 编号章节列表",
+                "当前章高亮/其余灰化",
+                "页脚署名条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_macro_gap_to_policy_to_method_bridge",
+      "title": "背景·宏观供需→外部约束→政策背书→方法总纲",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "动机",
+          "算力",
+          "差距",
+          "政策"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_framework_three_pillars",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三要素/三支柱框图铺陈宏观背景板"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用量级对比放大供需/差距痛感"
+        },
+        {
+          "archetype": "external_constraint_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线追加外部约束(禁令/限制)加剧压力"
+        },
+        {
+          "archetype": "policy_backing_quote_montage",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以政策/领导讲话进行主题升华"
+        },
+        {
+          "archetype": "method_overview_formula_bridge",
+          "count": 1,
+          "position": "end",
+          "purpose": "用公式化 N 种途径总纲收束, 引出后续方法章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "macro_framework_three_pillars",
+          "to_archetype": "quantitative_gap_chart",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "quantitative_gap_chart",
+          "to_archetype": "external_constraint_timeline",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "external_constraint_timeline",
+          "to_archetype": "policy_backing_quote_montage",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "policy_backing_quote_montage",
+          "to_archetype": "method_overview_formula_bridge",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "研究报告类背景章: 由宏观三要素→供需缺口量级→外部禁令时间线→政策讲话背书→N 途径公式总纲, 层层压强度后桥接到方法章",
+      "anti_patterns": [
+        "纯 problem-only 无政策背书 → 用其它 background pattern",
+        "只有政策背书无量化差距 → 另立 political_backing_only pattern",
+        "缺失方法桥接页 → 属于 background_without_transition pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.02",
+          "section_title": "算力差距与中美背景",
+          "section_role": "background",
+          "section_narrative": "作为deck背景动机层:先以AI Infra框图连接模型与硬件,论证算力供需矛盾+美国出口禁令双重压力,再借总书记重视升华,末页以「三途径提升智能算力」总纲引出后续方法章节。",
+          "section_topic_tags": [
+            "中美算力差距",
+            "AI芯片出口禁令",
+            "大模型算力需求",
+            "国家AI战略",
+            "智能算力提升途径"
+          ],
+          "match_evidence": "5 页节奏完全命中: AGI 三要素框图→供需 4 量级 vs 5 倍差距→两轮出口禁令时间线→总书记讲话升华→三种途径公式总纲桥接方法章",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "macro_framework_three_pillars",
+              "archetype": "three_column_parallel_panels",
+              "slide_title": "AGI发展的三个重要因素",
+              "slide_claim": "AI Infra连接基座模型与硬件，是AGI发展的核心枢纽",
+              "slide_key_text": [
+                "基座模型 / AI Infra / 硬件 三要素并列",
+                "GPT-4 Turbo、Claude 3 Opus、Gemini 1.5 Pro、GLM-4 能力对比",
+                "NVIDIA H100 3958 TOPS、A100 624 TOPS",
+                "昇腾910 640 TOPS、燧原 384 TOPS（vision）"
+              ],
+              "slide_visual_skeleton": [
+                "3列并列panel",
+                "LLM能力对比表",
+                "AI芯片算力表",
+                "双向箭头连接模型与硬件"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "quantitative_gap_chart",
+              "archetype": "top_banner_conclusion_with_dual_scatter",
+              "slide_title": "算力需求 vs 算力供应",
+              "slide_claim": "训练算力需求增长约4个量级，远超硬件供应约5倍增速",
+              "slide_key_text": [
+                "训练算力需求增加约4个量级",
+                "硬件算力供应增长约5倍",
+                "全球AI算力需求 2020→2024",
+                "模型规模从AlexNet到GPT-MoE-1.8T（vision）"
+              ],
+              "slide_visual_skeleton": [
+                "顶部结论横幅",
+                "2列对比panel",
+                "模型规模散点图"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "external_constraint_timeline",
+              "archetype": "two_round_embargo_bullet_timeline",
+              "slide_title": "美国对中国设置NV卡出口禁令",
+              "slide_claim": "美国两轮出口禁令持续收紧，特供H20仅H100约20%性能",
+              "slide_key_text": [
+                "第一轮限令 2022.8.31：禁售A100/H100/MI250",
+                "A800/H800被降级（FP64/FP32）",
+                "第二轮限令 2023.10.17：限制A800/H800/L40s/RTX4090",
+                "特供版H20性能约为H100的20%"
+              ],
+              "slide_visual_skeleton": [
+                "两轮禁令时间线bullet",
+                "关键型号高亮文本框"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "policy_backing_quote_montage",
+              "archetype": "policy_leader_speech_multi_quote",
+              "slide_title": "总书记高度重视高质量发展与人工智能",
+              "slide_claim": "以科技创新引领新质生产力，AI发展上升为国家战略",
+              "slide_key_text": [
+                "以科技创新引领新质生产力发展",
+                "高质量发展是全面建设社会主义现代化国家的首要任务",
+                "打好关键核心技术攻坚战",
+                "多次重要讲话（2022.12起，含日期出处）"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色主题标题引言",
+                "多段讲话原文引用",
+                "右侧日期出处标注"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "method_overview_formula_bridge",
+              "archetype": "top_formula_with_three_column_paths",
+              "slide_title": "3种途径提升智能算力",
+              "slide_claim": "智能算力=能效比×芯片数量×时间，三途径可协同提升",
+              "slide_key_text": [
+                "AI智能算力=单位算力(能效比)×芯片数量×时间",
+                "计算方式改进可提升约2~3倍能效",
+                "V100 12nm→A100 7nm→H100 4nm 制程演进",
+                "Llama3用约4.9万H100、GPT4用约2.5万A100（vision）"
+              ],
+              "slide_visual_skeleton": [
+                "顶部公式蓝条",
+                "3列途径panel",
+                "制程演进chart",
+                "模型GPU用量表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_plateau_argument_to_full_stack_co_design",
+      "title": "方法·单层见顶→全栈协同→架构与收益定位",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "系统优化",
+          "软硬件协同",
+          "全栈",
+          "范式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前章"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "以两代范式对比引入协同优化必要性"
+        },
+        {
+          "archetype": "plateau_evidence_time_series_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以趋势图论证单层优化空间平缓"
+        },
+        {
+          "archetype": "typical_techniques_three_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "盘点单层典型技术加速比"
+        },
+        {
+          "archetype": "single_arrow_big_number_headline",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "大数字过渡页, 抛出协同效果头条"
+        },
+        {
+          "archetype": "co_design_method_layered_formula",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "拆解协同优化的公式化方法"
+        },
+        {
+          "archetype": "single_instance_intro_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "单行实例引入页, 铺垫具体案例"
+        },
+        {
+          "archetype": "three_layer_method_algo_sys_hw",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法-系统-硬件三层方法拆解"
+        },
+        {
+          "archetype": "instance_speedup_result_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "给出实例的具体加速数字"
+        },
+        {
+          "archetype": "full_stack_architecture_dense_diagram",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "整幅分层架构总图"
+        },
+        {
+          "archetype": "aggregated_gain_multiplicative_flow",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "各层加速叠乘的综合收益图"
+        },
+        {
+          "archetype": "accuracy_speed_pareto_positioning",
+          "count": 1,
+          "position": "end",
+          "purpose": "精度-速度散点定位收尾"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "paradigm_shift_dual_column_compare",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "paradigm_shift_dual_column_compare",
+          "to_archetype": "plateau_evidence_time_series_chart",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "plateau_evidence_time_series_chart",
+          "to_archetype": "typical_techniques_three_panel",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "typical_techniques_three_panel",
+          "to_archetype": "single_arrow_big_number_headline",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "single_arrow_big_number_headline",
+          "to_archetype": "co_design_method_layered_formula",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "co_design_method_layered_formula",
+          "to_archetype": "single_instance_intro_line",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "single_instance_intro_line",
+          "to_archetype": "three_layer_method_algo_sys_hw",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "three_layer_method_algo_sys_hw",
+          "to_archetype": "instance_speedup_result_line",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "instance_speedup_result_line",
+          "to_archetype": "full_stack_architecture_dense_diagram",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "full_stack_architecture_dense_diagram",
+          "to_archetype": "aggregated_gain_multiplicative_flow",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "aggregated_gain_multiplicative_flow",
+          "to_archetype": "accuracy_speed_pareto_positioning",
+          "hook_type": "data_then_implication"
+        }
+      ],
+      "applicable_summary": "以「单层优化见顶→全栈软硬件协同→架构总图→叠乘收益→精度速度定位」组织的深度方法章, 常用两代范式与单点实例交替支撑",
+      "anti_patterns": [
+        "单点方法深挖(无 paradigm+plateau 铺垫)→用 method_single_deep_dive pattern",
+        "纯 pipeline 分步流水线(无叠乘收益页)→用 method_pipeline_step_by_step pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.03",
+          "section_title": "系统优化与软硬件协同",
+          "section_role": "method",
+          "section_narrative": "deck 方法核心章。先论证单层系统优化已趋平缓,据此引出软硬件协同;以 AI1.0(能效提升6万倍)对比 AI2.0(FP8训练实例),最终收敛到全栈协同10²-10³x与精度-速度定位。",
+          "section_topic_tags": [
+            "软硬件协同优化",
+            "系统优化平缓",
+            "FP8训练",
+            "全栈协同架构",
+            "精度速度Pareto定位"
+          ],
+          "match_evidence": "12 页节奏严丝合缝: TOC→AI1.0/2.0范式对比→加速比停滞图→量化/投机/跳层三面板→6万倍箭头头条→AI1.0协同公式→FP8实例引入→算法系统硬件三层→1.37x-1.75x结果→Infini全栈架构→10²-10³x叠乘→Better帕累托定位",
+          "slides": [
+            {
+              "slide_index": 8,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_current_bold",
+              "slide_title": "目录：进入 01 系统优化与软硬件协同",
+              "slide_claim": "报告进入第 01 章——系统优化与软硬件协同",
+              "slide_key_text": [
+                "00. 背景：大模型技术引领 AGI 发展",
+                "01. 系统优化与软硬件协同",
+                "02/03/04 其余章节"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色分隔横条",
+                "5 项编号目录列表",
+                "当前项黑色高亮"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "paradigm_shift_dual_column_compare",
+              "archetype": "paradigm_shift_dual_column_compare",
+              "slide_title": "范式变化：从 AI 1.0 到 AI 2.0",
+              "slide_claim": "AI 从专用模型堆叠转向通用大模型，需 App-系统协同",
+              "slide_key_text": [
+                "范式变化：从 AI 1.0 到 AI 2.0",
+                "AI 1.0：专用模型堆叠",
+                "AI 2.0：通用大模型",
+                "App-系统协同",
+                "AIAlg → ToolChain → HW"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏对比框",
+                "App/算法/系统分层示意",
+                "中间协同连接标注"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "plateau_evidence_time_series_chart",
+              "archetype": "speedup_time_series_bar_line_chart",
+              "slide_title": "单一层次系统优化趋于平缓",
+              "slide_claim": "单层系统优化加速比近年停滞在约 2x，空间趋于平缓",
+              "slide_key_text": [
+                "Llama2-7B batchsize=1 输入 128 token A100 GPU",
+                "单一层次的系统优化空间趋于平缓",
+                "2018.10 1.0x → 2023.08 2.5x",
+                "DeepSpeed / LightLLM / TensorRT-LLM / MemPPL",
+                "访存与计算层：cuBLAS/xFormers/Flash Attn"
+              ],
+              "slide_visual_skeleton": [
+                "加速比柱状图",
+                "token/s 折线叠加",
+                "时间轴年份标注",
+                "红框结论标注",
+                "底部技术对照表"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "typical_techniques_three_panel",
+              "archetype": "three_column_technique_with_speedup_table",
+              "slide_title": "典型系统优化技术",
+              "slide_claim": "量化、投机解码、跳层等典型系统优化各具加速比",
+              "slide_key_text": [
+                "典型系统优化技术",
+                "量化 FP16→INT4：GPTQ/AWQ/Wanda 约 4x",
+                "投机解码：Verify + Draft model",
+                "Flash Decoding / EAGLE-2 / Medusa 3-6x",
+                "Skip Layer 跳层"
+              ],
+              "slide_visual_skeleton": [
+                "3 列技术并列 panel",
+                "FP16/INT4 量化矩阵示意",
+                "投机解码框图",
+                "底部方法-加速比对照表"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "single_arrow_big_number_headline",
+              "archetype": "single_arrow_big_number_headline",
+              "slide_title": "AI 1.0 的软硬件协同优化趋势",
+              "slide_claim": "AI 1.0 时代 6 年算力能效提升 6 万倍",
+              "slide_key_text": [
+                "AI 1.0 的软硬件协同优化趋势",
+                "6 年时间，算力能效提升 6 万倍"
+              ],
+              "slide_visual_skeleton": [
+                "大号强调箭头",
+                "单行核心数字标注"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "co_design_method_layered_formula",
+              "archetype": "top_formula_with_task_panels",
+              "slide_title": "AI 1.0 软硬件协同优化方法",
+              "slide_claim": "AI 1.0 协同=峰值性能↑+计算效率↑+训练成本↓",
+              "slide_key_text": [
+                "AI 1.0 软硬件协同优化方法",
+                "软硬件协同：峰值性能↑ + 计算效率↑ + 训练成本↓ → AI 算力↑",
+                "计算机视觉 CNN / 图神经网络 GNN",
+                "自然语言处理 RNN"
+              ],
+              "slide_visual_skeleton": [
+                "顶部公式化算力分解",
+                "流程环框图",
+                "底部 3 面板任务示意"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "single_instance_intro_line",
+              "archetype": "single_instance_intro_line",
+              "slide_title": "AI 2.0 软硬件协同实例：FP8 训练",
+              "slide_claim": "微软亚研院已实现大模型 FP8 训练",
+              "slide_key_text": [
+                "AI 2.0 软硬件协同优化实例：FP8 训练",
+                "微软亚研院实现大模型 FP8"
+              ],
+              "slide_visual_skeleton": [
+                "标题分隔横条",
+                "单行实例陈述"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "three_layer_method_algo_sys_hw",
+              "archetype": "three_layer_method_algo_sys_hw",
+              "slide_title": "AI 2.0 FP8 训练的三层协同方法",
+              "slide_claim": "FP8 训练需算法-系统-硬件三层软硬件协同",
+              "slide_key_text": [
+                "AI 2.0 软硬件协同优化实例：FP8 训练",
+                "算法设计：保证 FP8 训练精度",
+                "系统实现：FP8 混合精度训练框架",
+                "硬件支持：Tensor Core / ISA 提供 FP8 算力"
+              ],
+              "slide_visual_skeleton": [
+                "顶部算力分解框图",
+                "左右分区三层说明",
+                "算法/系统/硬件标题条"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "instance_speedup_result_line",
+              "archetype": "single_result_multiplier_line_with_citation",
+              "slide_title": "AI 2.0 FP8 训练能效收益",
+              "slide_claim": "FP8 训练相比现有 GPU 方案提升 1.37x-1.75 倍",
+              "slide_key_text": [
+                "相比现有 GPU 方案，提升 1.37x-1.75 倍",
+                "H100-80GB",
+                "降低显存占用",
+                "[1] FP8-LM: Training FP8 Large Language Models"
+              ],
+              "slide_visual_skeleton": [
+                "核心倍数陈述文字",
+                "底部参考文献标注"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "full_stack_architecture_dense_diagram",
+              "archetype": "full_stack_architecture_dense_diagram",
+              "slide_title": "AI 2.0 软硬件协同全栈架构",
+              "slide_claim": "全栈软硬件协同覆盖编程语言层到计算平台层",
+              "slide_key_text": [
+                "AI 2.0 软硬件协同优化",
+                "编程语言层 / 接口层 / 计算平台层",
+                "Infini-Cloud / Infini-LLM / Infini-Interface",
+                "Infini-ACC / Infini-Training / Infini-MaaS"
+              ],
+              "slide_visual_skeleton": [
+                "多层堆叠架构图",
+                "横向场景分栏",
+                "各层组件色块矩阵"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "aggregated_gain_multiplicative_flow",
+              "archetype": "multiplicative_speedup_flow_chart",
+              "slide_title": "AI 2.0 全栈协同综合性能提升",
+              "slide_claim": "全栈协同各层加速叠乘达 10²-10³x 综合提升",
+              "slide_key_text": [
+                "算法创新 × 模型计算 × 算力平台 × 系统架构优化",
+                "综合性能提升 10²x-10³x",
+                "各层 10x/5x/3x/5x 加速",
+                "0.02 元/千 tokens",
+                "成本优化 / 效率优化"
+              ],
+              "slide_visual_skeleton": [
+                "横向乘法流程箭头",
+                "各层加速柱状对比",
+                "综合提升汇总柱",
+                "紫/蓝双图例"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "accuracy_speed_pareto_positioning",
+              "archetype": "accuracy_speed_pareto_positioning",
+              "slide_title": "AI 2.0 精度-速度定位对比",
+              "slide_claim": "我们的方法在精度-速度上占据右上更优区",
+              "slide_key_text": [
+                "归一化精度 / 归一化速度",
+                "Baseline PyTorch / FA1 / FA2 / FD++",
+                "EAGLE-2 / Medusa / OmniQuant / SparseGPT",
+                "AWQ / BitNet",
+                "Better / 我们的方法"
+              ],
+              "slide_visual_skeleton": [
+                "精度-速度二维散点图",
+                "方法名称散布标注",
+                "Better 指向箭头",
+                "帕累托前沿虚线"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_landscape_then_need_vs_reality_gap_platforms",
+      "title": "方法·芯片全景→需求锚定→四平台差距→路径收束",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "芯片",
+          "推理",
+          "端侧",
+          "算力平台",
+          "能效"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "新范式(如 o1) 引入算力需求暴涨动机"
+        },
+        {
+          "archetype": "chip_class_spectrum_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多类芯片按通用性—定制化谱系铺盘"
+        },
+        {
+          "archetype": "top_formula_with_efficiency_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效公式+端云对照表拆解关键因子"
+        },
+        {
+          "archetype": "panorama_scatter_capability_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "汇总大量样本芯片能力散点+分类表"
+        },
+        {
+          "archetype": "concrete_example_metrics_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以少量端侧样例落到具体指标"
+        },
+        {
+          "archetype": "need_target_green_spec_box",
+          "count": 1,
+          "position": "middle",
+          "purpose": "定义需求指标绿色目标框, 供后续对标"
+        },
+        {
+          "archetype": "need_vs_platform_gap_ellipse",
+          "count": "3-5",
+          "position": "before_end",
+          "purpose": "对每类平台以椭圆+箭头对标差距倍数"
+        },
+        {
+          "archetype": "path_stacked_efficiency_multiplier",
+          "count": 1,
+          "position": "end",
+          "purpose": "以能效倍数递进横轴收束提升路径"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "paradigm_shift_dual_column_compare",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "paradigm_shift_dual_column_compare",
+          "to_archetype": "chip_class_spectrum_table",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "chip_class_spectrum_table",
+          "to_archetype": "top_formula_with_efficiency_table",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "top_formula_with_efficiency_table",
+          "to_archetype": "panorama_scatter_capability_table",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "panorama_scatter_capability_table",
+          "to_archetype": "concrete_example_metrics_line",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "concrete_example_metrics_line",
+          "to_archetype": "need_target_green_spec_box",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "need_target_green_spec_box",
+          "to_archetype": "need_vs_platform_gap_ellipse",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "need_vs_platform_gap_ellipse",
+          "to_archetype": "need_vs_platform_gap_ellipse",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "need_vs_platform_gap_ellipse",
+          "to_archetype": "path_stacked_efficiency_multiplier",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "算力/芯片类方法章: 从范式变化引出算力需求, 铺开芯片谱系与能效汇总, 定义需求指标后对标 CPU/GPU/FPGA/ASIC 逐一给差距, 以系统+定制化路径收束",
+      "anti_patterns": [
+        "单芯片深挖案例(无横向对比)→用 method_single_chip_deep_dive pattern",
+        "只做能效榜单无需求-差距对标→属 chip_ranking_only pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.04",
+          "section_title": "推理芯片趋势与端侧算力",
+          "section_role": "method",
+          "section_narrative": "承接“提升智能算力途径”,论证推理时代芯片是端侧/具身落地关键:由o1范式变化引出推理算力暴涨,盘点五类芯片与~150款能力,再以具身需求对标CPU/GPU/FPGA/ASIC差距,收于系统优化+定制化提升路径。",
+          "section_topic_tags": [
+            "推理芯片趋势",
+            "端侧算力",
+            "多平台能效对比",
+            "具身智能需求",
+            "系统优化+定制化路径"
+          ],
+          "match_evidence": "12 页节奏严丝合缝: TOC→o1 范式→五类芯片谱系表→能效公式+端云表→150 款汇总→端侧样例→具身需求绿框→CPU/GPU/FPGA/ASIC 四页差距椭圆→系统+定制化收束",
+          "slides": [
+            {
+              "slide_index": 20,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_current_bold",
+              "slide_title": "目录：进入第 02 章推理芯片",
+              "slide_claim": "报告推进到第 02 章,聚焦推理时代芯片与端侧算力",
+              "slide_key_text": [
+                "00. 背景:大模型技术引领 AGI 发展",
+                "02.(高亮当前章)",
+                "04. 结束语"
+              ],
+              "slide_visual_skeleton": [
+                "五行编号目录列表",
+                "顶部蓝色分隔条",
+                "当前章高亮其余置灰"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "paradigm_shift_dual_column_compare",
+              "archetype": "paradigm_shift_dual_column_compare",
+              "slide_title": "范式变化:OpenAI o1 引入 CoT 推理",
+              "slide_claim": "o1 以 CoT+强化学习引入 Think 阶段,推理算力暴涨 10-100 倍",
+              "slide_key_text": [
+                "GPT-o1 的计算范式变化:CoT + 强化学习",
+                "Think&Summary 隐藏 CoT 过程",
+                "推理阶段计算量增长约 10-100 倍",
+                "*ref:OpenAI o1-mini | OpenAI"
+              ],
+              "slide_visual_skeleton": [
+                "GPT-4 vs o1 训练流程条状对比图",
+                "10x/60x/100x 量级标注箭头",
+                "左右双 panel 边框"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "chip_class_spectrum_table",
+              "archetype": "chip_class_spectrum_table",
+              "slide_title": "典型芯片:五类平台通用性—定制化谱系",
+              "slide_claim": "CPU/GPU/FPGA/ASIC/PIM 沿通用性到定制化梯度,算力与能效递增",
+              "slide_key_text": [
+                "CPU 4-70 / GPU 70-1000 / FPGA 50-100 / ASIC 1-1000 / PIM 0.1-10 TOPS",
+                "代表产品:NVIDIA A100、AMD MI200、Intel Gaudi",
+                "通用性↔定制化 双向谱系"
+              ],
+              "slide_visual_skeleton": [
+                "五行芯片参数表格",
+                "五类平台圆角标签行",
+                "通用性—定制化渐变双箭头"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "top_formula_with_efficiency_table",
+              "archetype": "top_formula_with_efficiency_table",
+              "slide_title": "推理芯片:AI 计算能效 = 能效比×规模",
+              "slide_claim": "端侧与云端推理芯片能效比差异显著,能效比是 AI 算力关键因子",
+              "slide_key_text": [
+                "AI 计算能效 = 能效比 × 规模",
+                "端侧:爱芯元智 AX650N 10、后摩智能 M30 12、SOPHGO BM1684x 17",
+                "云端:X Elite 23、特斯拉 FSD 70、Intel Gaudi 600、Groq LPU 240、NVIDIA A100 400"
+              ],
+              "slide_visual_skeleton": [
+                "顶部能效公式高亮条",
+                "端侧/云端分组能效表",
+                "两款端侧芯片实物图"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "panorama_scatter_capability_table",
+              "archetype": "panorama_scatter_capability_table",
+              "slide_title": "LLM 推理芯片能力汇总(~150 款)",
+              "slide_claim": "汇总约 150 款芯片,五类平台推理速度与能效跨越数量级",
+              "slide_key_text": [
+                "数据来源:~150 款学术与产业界芯片",
+                "推理设置:~7B batch size=1",
+                "覆盖 CPU/GPU/FPGA/ASIC/PIM",
+                "PIM ~1000 tokens/s、ASIC 10-1800 tokens/s"
+              ],
+              "slide_visual_skeleton": [
+                "左侧汇总散点图区(留白)",
+                "右上条件说明框",
+                "右下五类速度/能效表"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "concrete_example_metrics_line",
+              "archetype": "chip_photo_with_metrics_block",
+              "slide_title": "端侧 LLM 推理芯片举例",
+              "slide_claim": "实际落地的端侧推理芯片功耗高、能效不足 1 tokens/J",
+              "slide_key_text": [
+                "实际落地的端侧 LLM 推理芯片",
+                "功耗 30-70W",
+                "速度 10-40 tokens/s",
+                "能效 <1 tokens/J",
+                "NV Jetson Orin、Tesla RPU"
+              ],
+              "slide_visual_skeleton": [
+                "左侧芯片实物图(含红圈标注)",
+                "右侧指标文字块",
+                "两款端侧芯片配图"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "need_target_green_spec_box",
+              "archetype": "need_target_green_spec_box",
+              "slide_title": "具身智能实际需求指标",
+              "slide_claim": "具身智能需 100-1000 tokens/s、<20W、>20 tokens/J,现状差 4-200 倍",
+              "slide_key_text": [
+                "具身智能需求:100-1000 tokens/s、<20W、>20 tokens/J",
+                "基础智能:10W、200 tokens/s、20 tokens/J(差 4 倍以上)",
+                "高级智能:20W、2000 tokens/s、100 tokens/J(差 200 倍以上)"
+              ],
+              "slide_visual_skeleton": [
+                "绿色需求指标框",
+                "基础/高级智能双星标注块",
+                "差距倍数红字"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "need_vs_platform_gap_ellipse",
+              "archetype": "need_vs_platform_gap_ellipse",
+              "slide_title": "需求 vs CPU 平台现状",
+              "slide_claim": "CPU 距具身需求速度差 6-70 倍、能效差 1-2 个量级",
+              "slide_key_text": [
+                "需求:100-1000 tokens/s、<20W、>20 tokens/J",
+                "Qualcomm 8 Gen3:15 tokens/s@7B、6.3W、2.4 tokens/J",
+                "速度差 6-70 倍、能效差 1-2 个量级"
+              ],
+              "slide_visual_skeleton": [
+                "绿色需求框",
+                "CPU 椭圆 + 指向箭头",
+                "差距红字标注"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "need_vs_platform_gap_ellipse",
+              "archetype": "need_vs_platform_gap_ellipse",
+              "slide_title": "需求 vs GPU 平台现状",
+              "slide_claim": "GPU 距具身需求速度差 2-10 倍、能效差 2-3 个量级",
+              "slide_key_text": [
+                "需求:100-1000 tokens/s、<20W、>20 tokens/J",
+                "NVIDIA A100:100 tokens/s@7B、400W、0.25 tokens/J",
+                "速度差 2-10 倍、能效差 2-3 个量级"
+              ],
+              "slide_visual_skeleton": [
+                "绿色需求框",
+                "GPU 椭圆 + 双向箭头",
+                "差距红字标注"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "need_vs_platform_gap_ellipse",
+              "archetype": "need_vs_platform_gap_ellipse",
+              "slide_title": "需求 vs FPGA 平台现状",
+              "slide_claim": "FPGA 距具身需求速度差 2-20 倍、能效差 1-2 个量级",
+              "slide_key_text": [
+                "需求:100-1000 tokens/s、<20W、>20 tokens/J",
+                "Xilinx Alveo U280:50 tokens/s@7B、50W、1 tokens/J",
+                "速度差 2-20 倍、能效差 1-2 个量级"
+              ],
+              "slide_visual_skeleton": [
+                "绿色需求框",
+                "FPGA 椭圆 + 双向箭头",
+                "差距红字标注"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "need_vs_platform_gap_ellipse",
+              "archetype": "need_vs_platform_gap_ellipse",
+              "slide_title": "需求 vs ASIC 平台现状",
+              "slide_claim": "ASIC 速度已满足需求,仅能效仍差 1-2 个量级",
+              "slide_key_text": [
+                "需求:100-1000 tokens/s、<20W、>20 tokens/J",
+                "Groq LPU:814 tokens/s@7B、240W、3.4 tokens/J",
+                "速度满足、能效差 1-2 个量级"
+              ],
+              "slide_visual_skeleton": [
+                "绿色需求框",
+                "ASIC 椭圆 + 双向箭头",
+                "差距红字标注"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "path_stacked_efficiency_multiplier",
+              "archetype": "path_stacked_efficiency_multiplier",
+              "slide_title": "「系统优化 + 定制化」提升芯片算力",
+              "slide_claim": "算法—框架—硬件—IP 协同定制,能效可从 0.2 提升约 500 倍",
+              "slide_key_text": [
+                "「系统优化 + 定制化」提升芯片算力",
+                "0.2 token/J(1x)→ 500x",
+                "算法 FP16→量化 / 框架 vLLM / 硬件定制 / IP 定制",
+                "NVIDIA A100 → RTX 4060 → 定制"
+              ],
+              "slide_visual_skeleton": [
+                "能效倍数递进横轴",
+                "算法/框架/硬件/IP 四层堆叠矩阵",
+                "多档能效节点标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_motivation_cases_problems_practices_outlook",
+      "title": "方法·动机→标杆案例→关键问题→行业实践→展望",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          13
+        ],
+        "must_have_in_chapter_purpose": [
+          "集群",
+          "训练",
+          "异构",
+          "案例",
+          "问题"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "quadrant_relation_motivation_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以象限/关系图立本章动机"
+        },
+        {
+          "archetype": "flagship_case_metric_column_list",
+          "count": "2",
+          "position": "middle",
+          "purpose": "并列两个头部厂商标杆案例, 用规格清单佐证规模"
+        },
+        {
+          "archetype": "scaling_law_timeline_milestones",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线里程碑图论证需求量级"
+        },
+        {
+          "archetype": "key_problem_data_with_metrics",
+          "count": "3",
+          "position": "middle",
+          "purpose": "递进拆解 3 个关键工程问题, 每页给数据/表格支撑"
+        },
+        {
+          "archetype": "industry_practice_bullet_case",
+          "count": "2",
+          "position": "before_end",
+          "purpose": "转向业界解法, 并列举 2 家厂商工程实践"
+        },
+        {
+          "archetype": "dual_column_outlook_capability_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双栏能力清单+利用率数字收束展望"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "quadrant_relation_motivation_diagram",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "quadrant_relation_motivation_diagram",
+          "to_archetype": "flagship_case_metric_column_list",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "flagship_case_metric_column_list",
+          "to_archetype": "flagship_case_metric_column_list",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "flagship_case_metric_column_list",
+          "to_archetype": "scaling_law_timeline_milestones",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "scaling_law_timeline_milestones",
+          "to_archetype": "key_problem_data_with_metrics",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "key_problem_data_with_metrics",
+          "to_archetype": "key_problem_data_with_metrics",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "key_problem_data_with_metrics",
+          "to_archetype": "industry_practice_bullet_case",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "industry_practice_bullet_case",
+          "to_archetype": "industry_practice_bullet_case",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "industry_practice_bullet_case",
+          "to_archetype": "dual_column_outlook_capability_summary",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "工程系统方法章: 由象限关系立动机→2 个标杆案例证规模→时间线证需求→3 个关键问题→2 个业界工程实践→双栏展望收束",
+      "anti_patterns": [
+        "纯技术方案(无案例支撑)→用 method_pure_technique pattern",
+        "只列问题不给实践→用 problem_only_direct pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.05",
+          "section_title": "异构集群与十万卡训练",
+          "section_role": "method",
+          "section_narrative": "本章为method核心：先立「芯片决定模型上限」的动机，再用十万卡案例与Scaling Law论证集群规模化必然，落到国产异构集群三大关键问题，最后以Google/无问芯穹实践与国智院算力底座展望收束。",
+          "section_topic_tags": [
+            "十万卡集群训练",
+            "异构GPU集群",
+            "国产GPU故障",
+            "跨数据中心训练",
+            "国智院算力底座"
+          ],
+          "match_evidence": "11 页节奏严丝合缝: TOC→中美芯片/模型象限动机→Meta+xAI 十万卡两案例→Scaling Law 时间线→国产 GPU 故障率/接口/开发难度三大问题→Google+无问芯穹两家实践→研究+工程双底座展望",
+          "slides": [
+            {
+              "slide_index": 32,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_current_bold",
+              "slide_title": "目录：第03章 异构集群与十万卡训练",
+              "slide_claim": "报告进入第三部分——聚焦AI Infra的异构集群与十万卡训练",
+              "slide_key_text": [
+                "00. 背景：大模型技术引领AGI发展",
+                "03. 异构集群与十万卡训练(高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔线",
+                "5行编号目录列表",
+                "当前项黑色高亮其余灰显"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "quadrant_relation_motivation_diagram",
+              "archetype": "quadrant_relation_motivation_diagram",
+              "slide_title": "中美模型/芯片关系：芯片决定模型上限",
+              "slide_claim": "AI芯片能力决定大模型天花板，国产追赶须靠最强芯片",
+              "slide_key_text": [
+                "国产模型/国外模型、国产AI芯片/国外AI芯片",
+                "追赶 / 领先 / 差距",
+                "芯片对齐是模型能力的天花板",
+                "用最强AI芯片打造最强大模型"
+              ],
+              "slide_visual_skeleton": [
+                "四椭圆象限关系图",
+                "追赶/领先/差距箭头标注",
+                "右侧两点论断文字"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "flagship_case_metric_column_list",
+              "archetype": "flagship_case_metric_column_list",
+              "slide_title": "十万卡GPU集群案例：Meta新一代集群",
+              "slide_claim": "Meta以十万卡级H100集群支撑LLaMa 3等大模型训练",
+              "slide_key_text": [
+                "Meta构建新一代GPU集群",
+                "存储：175PB bulk / 46PB cache / 10PB NFS",
+                "算力：2024年底35W块H100，单集群24576块H100训练LLaMa 3",
+                "网络：每GPU 200Gb/s HDR InfiniBand"
+              ],
+              "slide_visual_skeleton": [
+                "右侧存储/算力/网络三栏规格清单",
+                "标题+蓝色分隔线"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_pattern": "flagship_case_metric_column_list",
+              "archetype": "single_case_text_paragraph_with_photo",
+              "slide_title": "十万卡GPU集群案例：xAI Colossus",
+              "slide_claim": "xAI Colossus率先落地十万卡H100并将扩至二十万卡",
+              "slide_key_text": [
+                "2024年9月2日，马斯克xAI上线Colossus超级计算机集群",
+                "初期100000块H100",
+                "将扩容至200,000块GPU(含5万块以上H200)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部整段说明文字",
+                "右下配图占位块"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "scaling_law_timeline_milestones",
+              "archetype": "scaling_law_timeline_milestones",
+              "slide_title": "Scaling Law下集群部署需求激增",
+              "slide_claim": "参数量沿Scaling Law指数增长，倒逼万卡集群纳管三大难题",
+              "slide_key_text": [
+                "Scaling Law下集群部署需求增加",
+                "CV模型→Transformer→ChatGPT→Gemini",
+                "1万→100万→1000万→1亿→10亿参数",
+                "万卡集群纳管 / 计算吞吐加速比问题 / 网络通信性能问题"
+              ],
+              "slide_visual_skeleton": [
+                "横向参数量增长时间线",
+                "五节点里程碑+参数量级标注",
+                "底部三大问题引出"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "key_problem_data_with_metrics",
+              "archetype": "chip_compare_table_with_failure_metrics",
+              "slide_title": "关键问题1：国产GPU性能低、故障率高",
+              "slide_claim": "国产GPU单卡性能弱且大规模集群故障频发，有效算力占比骤降",
+              "slide_key_text": [
+                "国产GPU性能低于NV，AI芯片单卡算力仍有差距",
+                "16384块H100预训练故障频发",
+                "集群规模扩大有效算力占比下降约30%",
+                "规模1000→5.8%，10000→45.1%"
+              ],
+              "slide_visual_skeleton": [
+                "左侧国产GPU参数对比表(TFLOPS/显存)",
+                "右侧故障与有效算力占比图示",
+                "上下箭头因果标注"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "key_problem_data_with_metrics",
+              "archetype": "vendor_lock_diagram_with_bullets",
+              "slide_title": "关键问题2：异构GPU接口不统一",
+              "slide_claim": "通信库与GPU厂商深度绑定，异构互联缺乏统一接口",
+              "slide_key_text": [
+                "通信库与GPU厂商绑定，无法跨厂商互联",
+                "NCCL：绑定NVIDIA GPU",
+                "HCCL：绑定华为昇腾",
+                "BCCL：绑定百度AI芯片",
+                "缺乏统一异构GPU互联接口"
+              ],
+              "slide_visual_skeleton": [
+                "左侧三通信库绑定bullet",
+                "右侧RDMA跨节点/CPU-GPU互联示意图"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_pattern": "key_problem_data_with_metrics",
+              "archetype": "strategy_explosion_concept_paragraph",
+              "slide_title": "关键问题3：异构集群开发训练难度大",
+              "slide_claim": "异构GPU种类增加使并行策略组合指数爆炸，开发训练极难",
+              "slide_key_text": [
+                "分布式策略的指数增长",
+                "并行策略组合21000→210000",
+                "1. 编译优化适配异构GPU算子差异",
+                "2. 负载均衡协调异构GPU算力差异"
+              ],
+              "slide_visual_skeleton": [
+                "整段概念说明文字",
+                "红色高亮策略数量增长标注",
+                "两点应对方向列表"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "industry_practice_bullet_case",
+              "archetype": "industry_practice_bullet_case",
+              "slide_title": "Google实现跨数据中心训练",
+              "slide_claim": "Google以液冷与层次化SGD等技术实现跨数据中心训练",
+              "slide_key_text": [
+                "Google使用机架级液冷技术、层次化SGD等先进技术",
+                "实现跨数据中心训练",
+                "预计2025年Google将扩大跨数据中心训练规模"
+              ],
+              "slide_visual_skeleton": [
+                "两段bullet说明文字",
+                "顶部标题+蓝色分隔线"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "industry_practice_bullet_case",
+              "archetype": "training_mfu_compare_table",
+              "slide_title": "无问芯穹千卡910B训练优化实践",
+              "slide_claim": "自研Megatron-Infinigence在千卡910B上MFU超Modellink达8.3%",
+              "slide_key_text": [
+                "自研Megatron-Infinigence对比Modellink优化910B训练",
+                "llama70b / 910b2 / bf16 / seq4096",
+                "128卡：MFU 50.2% vs 47.42%",
+                "1024卡：MFU 48.72% vs 44.95%，提升8.3%"
+              ],
+              "slide_visual_skeleton": [
+                "九列训练性能对比表(Tokens/s/TFLOPs/MFU)",
+                "红色高亮MFU关键结论"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_pattern": "dual_column_outlook_capability_summary",
+              "archetype": "dual_column_outlook_capability_summary",
+              "slide_title": "研究展望：研究+工程双算力底座",
+              "slide_claim": "国智院拟构建工程与研究双算力底座，异构集群利用率达97.6%",
+              "slide_key_text": [
+                "工程算力底座：智能计算中心，含IaaS/PaaS/MaaS",
+                "GenStudio / AIStudio，服务30+大模型、1个国家级平台",
+                "研究算力底座：4+2异构智算平台，已支持千卡混训",
+                "集群综合利用率97.6%，全球首次实现"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏底座总览",
+                "左栏分层服务框(IaaS/PaaS/MaaS)",
+                "右栏异构平台+利用率+芯片对比chart"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "discussion_agenda_vision_topics_team_close",
+      "title": "展望·目录→愿景架构→课题清单→团队组成",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "展望",
+          "研究方向",
+          "团队",
+          "研究院"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入展望板块"
+        },
+        {
+          "archetype": "vision_forking_panorama_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以底部根节点向上分叉的愿景全景图铺陈"
+        },
+        {
+          "archetype": "topic_bulleted_research_list",
+          "count": 1,
+          "position": "middle",
+          "purpose": "纯文字清单铺开具体研究课题"
+        },
+        {
+          "archetype": "team_block_composition_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以色块分块展示多方联合团队组成"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "vision_forking_panorama_diagram",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "vision_forking_panorama_diagram",
+          "to_archetype": "topic_bulleted_research_list",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "topic_bulleted_research_list",
+          "to_archetype": "team_block_composition_grid",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "研究院/实验室末章展望: agenda 分隔切入→愿景分叉全景图→文字课题清单→多方联合团队色块收束",
+      "anti_patterns": [
+        "纯团队+联系方式(无研究方向铺陈)→用 closing_team_contact pattern",
+        "只有课题清单无愿景图→用 outlook_topic_list_only pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.06",
+          "section_title": "国智院展望与团队组成",
+          "section_role": "discussion",
+          "section_narrative": "全 deck 收尾章。由 agenda 分隔页切入国智院板块，先用愿景分叉图展开软硬件双支撑的研究方向全景，再文字罗列具体研究课题，末页落到清华/交大/无问芯穹/国智院四方团队组成。",
+          "section_topic_tags": [
+            "国智院研究展望",
+            "软硬件双支撑",
+            "AI Infra课题清单",
+            "多方联合团队"
+          ],
+          "match_evidence": "4 页节奏严丝合缝: agenda 目录高亮 04→软硬件双支撑愿景分叉图→纯文字课题清单→四方联合团队色块",
+          "slides": [
+            {
+              "slide_index": 43,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_current_bold",
+              "slide_title": "目录：进入第 04 板块国智院展望",
+              "slide_claim": "报告进入第 04 板块——国智院展望与团队",
+              "slide_key_text": [
+                "00. 背景：大模型技术引领 AGI 发展",
+                "04. 国智院展望"
+              ],
+              "slide_visual_skeleton": [
+                "00-04 目录条目列表",
+                "当前项黑色高亮其余灰化",
+                "顶部蓝色分隔横条"
+              ]
+            },
+            {
+              "slide_index": 44,
+              "role_in_pattern": "vision_forking_panorama_diagram",
+              "archetype": "vision_forking_panorama_diagram",
+              "slide_title": "未来工作汇总：软硬件双支撑研究全景",
+              "slide_claim": "国智院以软硬件双支撑撑起多方向研究全景",
+              "slide_key_text": [
+                "软硬件协同优化",
+                "端侧推理芯片",
+                "国产算力平台",
+                "软件基础支撑 / 硬件基础支撑",
+                "AIPC / AI4Science"
+              ],
+              "slide_visual_skeleton": [
+                "底部根节点向上分叉图",
+                "顶部一排 5 个研究方向椭圆",
+                "研究上升箭头",
+                "两侧协同优化辐射箭头"
+              ]
+            },
+            {
+              "slide_index": 45,
+              "role_in_pattern": "topic_bulleted_research_list",
+              "archetype": "topic_bulleted_research_list",
+              "slide_title": "未来工作汇总：具体研究课题清单",
+              "slide_claim": "国智院将从软硬件协同展开多项 AI Infra 课题",
+              "slide_key_text": [
+                "AI Infra（软件层+硬件层协同）",
+                "大模型部署 AI Infra 框架",
+                "智能体应用软件框架 / 大模型思维链优化",
+                "端侧推理芯片：降低推理 IP 流片成本~1 万元、助力 AI PC 落地",
+                "存算一体 / 视觉大模型 / Survey / Benchmark"
+              ],
+              "slide_visual_skeleton": [
+                "单列纯文字课题清单",
+                "省略号收尾表未尽项"
+              ]
+            },
+            {
+              "slide_index": 46,
+              "role_in_pattern": "team_block_composition_grid",
+              "archetype": "team_block_composition_grid",
+              "slide_title": "团队组成：四方协同团队",
+              "slide_claim": "四方团队协同支撑国智院建设",
+              "slide_key_text": [
+                "清华团队（汪玉）",
+                "交大团队",
+                "无问芯穹团队",
+                "国家人工智能学院"
+              ],
+              "slide_visual_skeleton": [
+                "四个蓝色渐变色块",
+                "上一中二下一的分块排布"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_framework_dual_law_matrix_direction_platform",
+      "title": "方法·二维框架→双定律矩阵→方向成果→平台底座",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究方向",
+          "算法",
+          "架构",
+          "定律",
+          "论文"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "two_axis_quadrant_framework_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以横纵双轴四象限框架统领研究方向"
+        },
+        {
+          "archetype": "formula_plus_dual_law_curve",
+          "count": 1,
+          "position": "start",
+          "purpose": "以能力公式+两条增长曲线奠定路线"
+        },
+        {
+          "archetype": "route_by_layer_content_matrix",
+          "count": "2",
+          "position": "middle",
+          "purpose": "按 AI1.0/AI2.0 各出一页路线×层次内容矩阵"
+        },
+        {
+          "archetype": "efficiency_scaling_curve_multi_route",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效—算力曲线对比多路线技术空间"
+        },
+        {
+          "archetype": "direction_target_arch_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以研究目标+架构示意引入具体方向"
+        },
+        {
+          "archetype": "paper_matrix_by_target_column",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以目标分列展示论文成果矩阵"
+        },
+        {
+          "archetype": "coordination_direction_dual_frame",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以大脑-小脑等双框图展开协同方向"
+        },
+        {
+          "archetype": "platform_base_capability_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以测试场/平台+能力网格作为实验底座收尾"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "two_axis_quadrant_framework_diagram",
+          "to_archetype": "formula_plus_dual_law_curve",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "formula_plus_dual_law_curve",
+          "to_archetype": "route_by_layer_content_matrix",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "route_by_layer_content_matrix",
+          "to_archetype": "route_by_layer_content_matrix",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "route_by_layer_content_matrix",
+          "to_archetype": "efficiency_scaling_curve_multi_route",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "efficiency_scaling_curve_multi_route",
+          "to_archetype": "direction_target_arch_intro",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "direction_target_arch_intro",
+          "to_archetype": "paper_matrix_by_target_column",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "paper_matrix_by_target_column",
+          "to_archetype": "paper_matrix_by_target_column",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "paper_matrix_by_target_column",
+          "to_archetype": "coordination_direction_dual_frame",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "coordination_direction_dual_frame",
+          "to_archetype": "platform_base_capability_grid",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "科研团队研究方向章: 用二维四象限框架+双定律奠基→AI1.0/2.0 两页路线矩阵→单体能效曲线→单个方向的论文矩阵→协同方向框图→实验测试场收束",
+      "anti_patterns": [
+        "纯论文列表(无框架/定律铺垫)→用 paper_list_only pattern",
+        "单方向深挖(无 1.0/2.0 对照矩阵)→用 single_direction_deep_dive pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.07",
+          "section_title": "研究方向与具身智能",
+          "section_role": "method",
+          "section_narrative": "展示国智院具体研究布局:先用「单体/协同×软硬件」框架与AI1.0/2.0双定律铺陈路线,再逐层落到多智能体强化学习、具身智能的成果论文矩阵,最后以千平米智能测试场平台收束。",
+          "section_topic_tags": [
+            "单体协同智能",
+            "AGI通专新",
+            "多智能体强化学习",
+            "具身智能算法",
+            "千平米测试场"
+          ],
+          "match_evidence": "10 页节奏严丝合缝: 单体/协同×软硬件四象限→通专新+摩尔/Scaling 双定律→AI1.0/AI2.0 两页路线矩阵→单体能效曲线→多智能体 RL 方向→RL 论文矩阵→具身论文矩阵→大脑-小脑协同→千平米测试场",
+          "slides": [
+            {
+              "slide_index": 47,
+              "role_in_pattern": "two_axis_quadrant_framework_diagram",
+              "archetype": "two_axis_quadrant_framework_diagram",
+              "slide_title": "研究方向:单体/协同×软硬件框架",
+              "slide_claim": "研究沿单体—协同、软件—硬件两轴四象限展开布局",
+              "slide_key_text": [
+                "单体智能",
+                "协同智能",
+                "软件",
+                "硬件"
+              ],
+              "slide_visual_skeleton": [
+                "二维四象限坐标",
+                "横纵双向箭头轴",
+                "象限文字标签"
+              ]
+            },
+            {
+              "slide_index": 48,
+              "role_in_pattern": "formula_plus_dual_law_curve",
+              "archetype": "formula_plus_dual_law_curve",
+              "slide_title": "\"通专新\"融合与AI双定律",
+              "slide_claim": "AGI由通用/专业/新能力融合,受摩尔与Scaling双定律驱动",
+              "slide_key_text": [
+                "AGI = 通用+专业+新能力",
+                "Moore's Law",
+                "Scaling Law",
+                "7B/70B/>100B"
+              ],
+              "slide_visual_skeleton": [
+                "AGI公式横条",
+                "左右双曲线增长图",
+                "路线1/2/3彩色箭头",
+                "模型量级标注"
+              ]
+            },
+            {
+              "slide_index": 49,
+              "role_in_pattern": "route_by_layer_content_matrix",
+              "archetype": "route_by_layer_content_matrix",
+              "slide_title": "研究方向与内容(AI 1.0)",
+              "slide_claim": "AI 1.0沿摩尔定律等三条路线分层布局研究内容",
+              "slide_key_text": [
+                "AI 1.0",
+                "Moore's Law",
+                "路线2",
+                "路线3"
+              ],
+              "slide_visual_skeleton": [
+                "三列路线标题",
+                "分层文字网格",
+                "三行层次排布"
+              ]
+            },
+            {
+              "slide_index": 50,
+              "role_in_pattern": "route_by_layer_content_matrix",
+              "archetype": "route_by_layer_content_matrix",
+              "slide_title": "研究方向与内容(AI 2.0)",
+              "slide_claim": "AI 2.0沿Scaling Law等三条路线延展研究内容",
+              "slide_key_text": [
+                "AI 2.0",
+                "Scaling Law",
+                "路线2",
+                "路线3"
+              ],
+              "slide_visual_skeleton": [
+                "三列路线标题",
+                "稀疏文字标签"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_pattern": "efficiency_scaling_curve_multi_route",
+              "archetype": "efficiency_scaling_curve_multi_route",
+              "slide_title": "单体智能:能效提升路线",
+              "slide_claim": "存算一体将能效从1TOPS/W跃升至100TOPS/W",
+              "slide_key_text": [
+                "现有CPU/GPU 约1TOPS/W",
+                "存算一体 约100TOPS/W",
+                "CPU~1GOPS/W",
+                "GPU~10GOPS/W",
+                "Scaling Down"
+              ],
+              "slide_visual_skeleton": [
+                "左右能效-算力曲线图",
+                "能效数值标注",
+                "路线1/2/3箭头"
+              ]
+            },
+            {
+              "slide_index": 52,
+              "role_in_pattern": "direction_target_arch_intro",
+              "archetype": "direction_target_arch_intro",
+              "slide_title": "方向:多智能体强化学习算法",
+              "slide_claim": "围绕泛化性与高效性两大目标攻关多智能体RL",
+              "slide_key_text": [
+                "研究目标",
+                "泛化性",
+                "高效性",
+                "强化学习"
+              ],
+              "slide_visual_skeleton": [
+                "左右两架构panel",
+                "感知/决策/控制方块",
+                "下向箭头",
+                "红色高亮框"
+              ]
+            },
+            {
+              "slide_index": 53,
+              "role_in_pattern": "paper_matrix_by_target_column",
+              "archetype": "paper_matrix_by_target_column",
+              "slide_title": "多智能体强化学习算法成果",
+              "slide_claim": "高效性与泛化性两线产出MAPPO等系列顶会成果",
+              "slide_key_text": [
+                "MAPPO&AR [ICML21]",
+                "VACL",
+                "MAGE-X",
+                "ACE / MANTM",
+                "泛化性",
+                "高效性"
+              ],
+              "slide_visual_skeleton": [
+                "两列论文卡片矩阵",
+                "粉色成果框",
+                "底部引文列表"
+              ]
+            },
+            {
+              "slide_index": 54,
+              "role_in_pattern": "paper_matrix_by_target_column",
+              "archetype": "paper_matrix_by_direction_group",
+              "slide_title": "具身智能与大模型对齐成果",
+              "slide_claim": "大脑级大模型推理支撑RLHF、Agent与具身控制成果",
+              "slide_key_text": [
+                "大脑:大模型推理",
+                "DPOvsPPO [ICML24 oral]",
+                "ICPL",
+                "OmniDrones [RAL24]",
+                "LAGOON [ICRA24]"
+              ],
+              "slide_visual_skeleton": [
+                "两大分区论文矩阵",
+                "RLHF/AI Agent/具身场景分组",
+                "粉色论文卡",
+                "底部引文"
+              ]
+            },
+            {
+              "slide_index": 55,
+              "role_in_pattern": "coordination_direction_dual_frame",
+              "archetype": "coordination_direction_dual_frame",
+              "slide_title": "方向:多智能体协同智能",
+              "slide_claim": "大脑—小脑闭环协同,联合中心支撑具身数据采集",
+              "slide_key_text": [
+                "清华-埃夫特具身计算与感知联合研究中心",
+                "开展具身数据采集研究工作",
+                "无人平台测试场"
+              ],
+              "slide_visual_skeleton": [
+                "大脑—小脑上下双框",
+                "闭环下向箭头",
+                "底部平台虚线框标注"
+              ]
+            },
+            {
+              "slide_index": 56,
+              "role_in_pattern": "platform_base_capability_grid",
+              "archetype": "platform_base_capability_grid",
+              "slide_title": "平台基础:千平米智能测试场",
+              "slide_claim": "超1000平米动捕测试场支撑多样具身智能项目",
+              "slide_key_text": [
+                "无人平台测试场",
+                "超1000平米动捕覆盖",
+                "UWB定位系统",
+                "随机环境探索",
+                "家居环境智能",
+                "无人机到楼配送"
+              ],
+              "slide_visual_skeleton": [
+                "顶部平台指标框",
+                "六个能力panel网格",
+                "两行三列布局"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "case_study_platform_overview_evidence_direction_pairs",
+      "title": "案例·平台总览→工程佐证→科研方向框架+代表作对",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "落地",
+          "代表工作",
+          "平台",
+          "算力底座"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "three_platform_overview_panels",
+          "count": 1,
+          "position": "start",
+          "purpose": "横向并列 N 大支撑平台总览"
+        },
+        {
+          "archetype": "engineering_scale_chip_row_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以芯片方块横排+主张论证工程规模能力"
+        },
+        {
+          "archetype": "scheduling_advantage_metrics_capsule",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三组能力胶囊+升降箭头数字坐实调度优势"
+        },
+        {
+          "archetype": "roadmap_puzzle_flow_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以拼图/流程图指向更大规模目标"
+        },
+        {
+          "archetype": "research_direction_codesign_frame",
+          "count": 1,
+          "position": "middle",
+          "purpose": "开启科研方向的软硬件协同框架页"
+        },
+        {
+          "archetype": "representative_works_quad_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以四象限/多面板展示该方向代表作及指标"
+        },
+        {
+          "archetype": "sota_compare_timeline_with_bullets",
+          "count": 1,
+          "position": "end",
+          "purpose": "章末以 SOTA 系统对标时间线+能力清单收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "three_platform_overview_panels",
+          "to_archetype": "engineering_scale_chip_row_diagram",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "engineering_scale_chip_row_diagram",
+          "to_archetype": "scheduling_advantage_metrics_capsule",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "scheduling_advantage_metrics_capsule",
+          "to_archetype": "roadmap_puzzle_flow_chart",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "roadmap_puzzle_flow_chart",
+          "to_archetype": "research_direction_codesign_frame",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "research_direction_codesign_frame",
+          "to_archetype": "representative_works_quad_panel",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "representative_works_quad_panel",
+          "to_archetype": "research_direction_codesign_frame",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "research_direction_codesign_frame",
+          "to_archetype": "representative_works_quad_panel",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "representative_works_quad_panel",
+          "to_archetype": "sota_compare_timeline_with_bullets",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "机构/团队末章案例: 三大平台总览→异构千卡工程佐证→调度优势数字→十万卡路线→科研方向 1 框架+代表作→科研方向 2 框架+代表作→SOTA 对标收尾",
+      "anti_patterns": [
+        "单一代表作深挖(无平台总览铺垫)→用 case_single_deep_dive pattern",
+        "只列成果矩阵无 SOTA 收尾→用 works_matrix_only pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+          "deck_title": "AI Infra与国智院建设思考",
+          "deck_topic_tags": [
+            "AI Infra",
+            "智能算力",
+            "大模型",
+            "软硬件协同",
+            "推理芯片",
+            "异构集群",
+            "国智院",
+            "具身智能"
+          ],
+          "section_id": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.08",
+          "section_title": "算力底座落地与代表工作",
+          "section_role": "case_study",
+          "section_narrative": "case_study 章，展示国智院算力底座落地成果与两大研究方向代表作：先总览三大支撑平台，再以异构千卡到十万卡训练+调度系统证明工程能力，最后用电路与算法两方向代表工作坐实科研实力。",
+          "section_topic_tags": [
+            "三大算力平台",
+            "异构千卡混训",
+            "十万卡训练路线",
+            "高能效电路设计",
+            "高效LLM扩散模型"
+          ],
+          "match_evidence": "9 页节奏严丝合缝: 三平台并列总览→4+2 异构千卡混训芯片行→调度三优势胶囊→万卡到十万卡拼图→方向1框架→方向1代表作四面板→方向2框架→方向2代表作四面板→无穹容错SOTA时间线",
+          "slides": [
+            {
+              "slide_index": 57,
+              "role_in_pattern": "three_platform_overview_panels",
+              "archetype": "three_platform_overview_panels",
+              "slide_title": "三大算力平台支撑上海AI实验室与学院底座",
+              "slide_claim": "512智算、无问芯穹异构、商汤DeepLink三平台已支撑上海AI底座建设",
+              "slide_key_text": [
+                "支撑上海AI实验室/AI学院等算力底座建设",
+                "512智算平台",
+                "无问芯穹异构深度学习平台",
+                "商汤AI Lab底座·DeepLink",
+                "SpMM / diopiSpMM / GNN 算子"
+              ],
+              "slide_visual_skeleton": [
+                "3列并列平台panel",
+                "各列分层栈式框图",
+                "能力打勾标注"
+              ]
+            },
+            {
+              "slide_index": 58,
+              "role_in_pattern": "engineering_scale_chip_row_diagram",
+              "archetype": "engineering_scale_chip_row_diagram",
+              "slide_title": "4+2种芯片异构千卡混合训练",
+              "slide_claim": "在4+2种芯片上实现异构千卡混合训练，验证多芯片工程能力",
+              "slide_key_text": [
+                "4+2种芯片上实现异构千卡混合训练",
+                "4+2种芯片混合训练",
+                "文本生成 / 大语言模型 / 代码生成"
+              ],
+              "slide_visual_skeleton": [
+                "多芯片方块横排示意",
+                "上方主张长条框",
+                "右侧混合训练标签块"
+              ]
+            },
+            {
+              "slide_index": 59,
+              "role_in_pattern": "scheduling_advantage_metrics_capsule",
+              "archetype": "scheduling_advantage_metrics_capsule",
+              "slide_title": "无问芯穹异构集群调度系统三大优势",
+              "slide_claim": "调度系统在资源管理、异构调度、训练性能三维度显著领先",
+              "slide_key_text": [
+                "统一资源管理:成本↓20%、利用率92%",
+                "异构算力调度:延迟↓300%、270 worker s/s",
+                "AI训练性能:rootfs开销5%、训练SLO 99.99%",
+                "国产等多异构芯片统一管理",
+                "小时级资源池动态分配管理"
+              ],
+              "slide_visual_skeleton": [
+                "3个能力标题胶囊块",
+                "升降箭头+数值对比",
+                "左侧能力bullet列"
+              ]
+            },
+            {
+              "slide_index": 60,
+              "role_in_pattern": "roadmap_puzzle_flow_chart",
+              "archetype": "roadmap_puzzle_flow_chart",
+              "slide_title": "万卡到十万卡更大规模联合训练",
+              "slide_claim": "模型-软件-计算平台联合设计推动万卡到十万卡联合训练",
+              "slide_key_text": [
+                "实现万卡到十万卡更大规模的联合训练",
+                "模型、软件及计算平台联合设计",
+                "十万卡大规模联合训练"
+              ],
+              "slide_visual_skeleton": [
+                "4段拼图流程曲线",
+                "递进箭头",
+                "右端灯泡目标图标"
+              ]
+            },
+            {
+              "slide_index": 61,
+              "role_in_pattern": "research_direction_codesign_frame",
+              "archetype": "research_direction_codesign_frame",
+              "slide_title": "方向1：领域专用高能效电路与系统",
+              "slide_claim": "算法-硬件协同设计压缩计算、降功耗并提升能效",
+              "slide_key_text": [
+                "方向1：领域专用高能效电路与系统",
+                "网络软硬件协同设计 [IEEE MICRO 2017]",
+                "计算量↓+功耗↓ → 能效比↑",
+                "剪枝+稀疏化 / 网络压缩"
+              ],
+              "slide_visual_skeleton": [
+                "软硬件协同设计框图",
+                "上升/下降指标箭头",
+                "Scaling Down趋势曲线"
+              ]
+            },
+            {
+              "slide_index": 62,
+              "role_in_pattern": "representative_works_quad_panel",
+              "archetype": "representative_works_quad_panel",
+              "slide_title": "方向1代表性工作：高能效电路成果",
+              "slide_claim": "剪枝-量化协同+多款FPGA/芯片实现高TOPS/W能效",
+              "slide_key_text": [
+                "剪枝-量化协同优化",
+                "FPGA 1.6 TOPS @ 16W",
+                "FPGA 4 TOPS @ 15W",
+                "FPGA 2 TOPS @ 20W",
+                "RONGZHE芯片 16 TOPS @ 8W(8Core CPU/NPU1.0/CAM x4)"
+              ],
+              "slide_visual_skeleton": [
+                "4象限成果panel",
+                "各panel芯片/板卡图",
+                "TOPS/W能效数值标注"
+              ]
+            },
+            {
+              "slide_index": 63,
+              "role_in_pattern": "research_direction_codesign_frame",
+              "archetype": "research_direction_codesign_frame",
+              "slide_title": "方向2：高效AI算法模型设计与优化",
+              "slide_claim": "面向AIGC的软硬件感知优化贯穿算法层与模型层",
+              "slide_key_text": [
+                "方向2：高效AI算法模型设计与优化",
+                "大语言模型LLM / 扩散模型 两类AIGC负载",
+                "hardware-aware 软硬件感知优化",
+                "算法层:Diffusion Timestep Compression/Non-Autoregressive Generation",
+                "模型层:Structure Design/Model Compression"
+              ],
+              "slide_visual_skeleton": [
+                "上下两层框架图",
+                "LLM与扩散模型左右分栏",
+                "算法层/模型层子模块块"
+              ]
+            },
+            {
+              "slide_index": 64,
+              "role_in_pattern": "representative_works_quad_panel",
+              "archetype": "representative_works_dual_panel_paper_matrix",
+              "slide_title": "方向2代表性工作：高效LLM与扩散模型",
+              "slide_claim": "高效LLM与扩散模型两大方向覆盖算法层与模型层系列工作",
+              "slide_key_text": [
+                "Efficient Large Language Models",
+                "SoT [ICLR'24] / MoA / LLM-MQ / OLLM-Eval / EEP",
+                "Efficient Diffusion Models",
+                "LCSC / USF / OMS-DPM / MixDQ / ViDiT-Q",
+                "FlashEval / DiTFastAttn"
+              ],
+              "slide_visual_skeleton": [
+                "左右两大成果panel",
+                "算法层/模型层分格排布",
+                "各工作顶会+倍率标签"
+              ]
+            },
+            {
+              "slide_index": 65,
+              "role_in_pattern": "sota_compare_timeline_with_bullets",
+              "archetype": "sota_compare_timeline_with_bullets",
+              "slide_title": "无穹大模型训练容错系统性能优势",
+              "slide_claim": "无穹容错系统在恢复速度与利用率上达到SOTA水平",
+              "slide_key_text": [
+                "无问芯穹大模型训练容错系统 达SOTA",
+                "DLRover:利用率+30%、5-16倍故障恢复",
+                "Transom:28%、12倍、10倍",
+                "MegaScale:1.34倍、10倍、15倍",
+                "训练pipeline拉起→巡检→自愈→重调度，故障恢复提速5倍以上"
+              ],
+              "slide_visual_skeleton": [
+                "左侧2023-2024时间线",
+                "三代表系统指标卡",
+                "右侧容错能力bullet列"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck 共 8 section, 抽出 8 patterns, 每 pattern 1 carrier, 无跨 batch dedup (previous_batches_patterns 为空). 每 pattern 对应一个具体章节角色/结构组合. 因单 deck 无重复观测, confidence_estimate 统一 medium, 需后续 batch 增补验证. new_archetype: cover_title_signature — 大字标题+讲者/日期/署名的封面版式. new_archetype: toc_progress_highlight_current_bold — 编号目录当前项黑色高亮其余灰化. new_archetype: three_column_parallel_panels — 三列并列 panel 展示三要素. new_archetype: top_banner_conclusion_with_dual_scatter — 顶部结论横幅+双 panel 散点对比. new_archetype: two_round_embargo_bullet_timeline — 两轮外部约束按时间线 bullet 拆解. new_archetype: policy_leader_speech_multi_quote — 多段领导讲话原文+日期出处. new_archetype: top_formula_with_three_column_paths — 顶部公式条+三列途径 panel. new_archetype: paradigm_shift_dual_column_compare — 新旧范式左右双栏对比框. new_archetype: speedup_time_series_bar_line_chart — 加速比柱状+token/s 折线时间序列图. new_archetype: three_column_technique_with_speedup_table — 三列技术并列 panel + 加速比对照表. new_archetype: single_arrow_big_number_headline — 大号强调箭头+单行核心数字. new_archetype: top_formula_with_task_panels — 顶部算力公式+底部任务示意 panel. new_archetype: single_instance_intro_line — 单行实例陈述引入页. new_archetype: three_layer_method_algo_sys_hw — 算法/系统/硬件三层方法拆解. new_archetype: single_result_multiplier_line_with_citation — 单行倍数结果+参考文献. new_archetype: full_stack_architecture_dense_diagram — 多层堆叠架构+横向场景分栏. new_archetype: multiplicative_speedup_flow_chart — 各层加速叠乘横向乘法流程图. new_archetype: accuracy_speed_pareto_positioning — 精度-速度散点+Better 箭头帕累托前沿. new_archetype: chip_class_spectrum_table — 五类芯片通用性—定制化谱系表. new_archetype: top_formula_with_efficiency_table — 顶部能效公式+端云分组能效表. new_archetype: panorama_scatter_capability_table — 大样本芯片能力散点+分类能力表. new_archetype: chip_photo_with_metrics_block — 芯片实物图+指标文字块. new_archetype: need_target_green_spec_box — 绿色需求指标框+多档目标标注. new_archetype: need_vs_platform_gap_ellipse — 需求框+平台椭圆+差距倍数箭头. new_archetype: path_stacked_efficiency_multiplier — 能效倍数递进横轴+多层堆叠矩阵. new_archetype: quadrant_relation_motivation_diagram — 四椭圆象限关系+追赶/领先箭头. new_archetype: flagship_case_metric_column_list — 标杆案例右侧多栏规格清单. new_archetype: single_case_text_paragraph_with_photo — 单案例整段说明+配图占位. new_archetype: scaling_law_timeline_milestones — Scaling Law 横向参数量增长时间线. new_archetype: chip_compare_table_with_failure_metrics — 芯片对比表+故障率/有效算力指标. new_archetype: vendor_lock_diagram_with_bullets — 通信库绑定 bullet+互联示意图. new_archetype: strategy_explosion_concept_paragraph — 策略指数爆炸概念段+两点应对方向. new_archetype: training_mfu_compare_table — 训练 MFU/TFLOPs 多列对比表. new_archetype: dual_column_outlook_capability_summary — 左右双栏底座能力+利用率总览. new_archetype: vision_forking_panorama_diagram — 底部根节点向上分叉的愿景全景图. new_archetype: topic_bulleted_research_list — 单列文字课题清单+省略号收尾. new_archetype: team_block_composition_grid — 多方团队色块分块排布. new_archetype: two_axis_quadrant_framework_diagram — 横纵双轴四象限框架总纲. new_archetype: formula_plus_dual_law_curve — AGI 公式横条+双定律曲线增长图. new_archetype: route_by_layer_content_matrix — 三列路线×分层内容文字矩阵. new_archetype: efficiency_scaling_curve_multi_route — 能效—算力曲线+多路线箭头. new_archetype: direction_target_arch_intro — 研究目标+左右架构 panel 引入方向. new_archetype: paper_matrix_by_target_column — 按目标分列的论文卡片矩阵. new_archetype: paper_matrix_by_direction_group — 按方向分组的论文矩阵. new_archetype: coordination_direction_dual_frame — 大脑-小脑上下双框协同方向图. new_archetype: platform_base_capability_grid — 平台指标框+六 panel 能力网格. new_archetype: three_platform_overview_panels — 三列并列平台栈式框图总览. new_archetype: engineering_scale_chip_row_diagram — 芯片方块横排+工程规模主张. new_archetype: scheduling_advantage_metrics_capsule — 三胶囊+升降箭头调度优势指标. new_archetype: roadmap_puzzle_flow_chart — 拼图流程曲线+递进箭头+目标图标. new_archetype: research_direction_codesign_frame — 科研方向软硬件协同设计框图. new_archetype: representative_works_quad_panel — 四象限成果 panel+能效数值. new_archetype: representative_works_dual_panel_paper_matrix — 双大成果 panel+算法/模型层分格. new_archetype: sota_compare_timeline_with_bullets — SOTA 系统对标时间线+能力 bullet.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 8,
+    "sections_unassigned_in_this_batch": []
+  }
+}

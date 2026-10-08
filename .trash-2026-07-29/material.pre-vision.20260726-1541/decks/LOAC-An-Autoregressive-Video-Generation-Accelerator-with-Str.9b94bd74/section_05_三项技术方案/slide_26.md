@@ -1,0 +1,45 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_26"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.05"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 26
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "研究方案总览：三项技术导航"
+核心论断: "三项技术方案层层递进回应算力开销挑战"
+本页讲什么: "本页延续导航结构，重申研究背景与研究挑战的编号线索，作为进入具体技术方案前的第二张过渡页，为后续统一稀疏注意力等方案铺垫上下文。"
+关键文字: "[研究背景, 研究挑战]"
+视觉骨架: "[章节导航条目列表, 编号序列标记]"
+资源ID列表:
+适合复用场景: "[方法章多页导航过渡, 技术方案编号索引页]"
+不适合复用场景: "[单一架构图详解页, benchmark 对比页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 26: 研究方案总览：三项技术导航
+
+**核心论断**: 三项技术方案层层递进回应算力开销挑战
+
+## 本页讲什么
+本页延续导航结构，重申研究背景与研究挑战的编号线索，作为进入具体技术方案前的第二张过渡页，为后续统一稀疏注意力等方案铺垫上下文。
+
+## 关键文字片段
+- 研究背景
+- 研究挑战
+
+## 视觉骨架
+- 章节导航条目列表
+- 编号序列标记
+
+## 可复用到
+- 方法章多页导航过渡
+- 技术方案编号索引页
+
+## 不适合复用的场景
+- 单一架构图详解页
+- benchmark 对比页

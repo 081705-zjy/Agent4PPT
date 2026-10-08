@@ -1,0 +1,48 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_16"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 16
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "AR+Diffusion：记忆与算力的平衡"
+核心论断: "AR+Diffusion 力求在建长程记忆的同时限制计算量"
+本页讲什么: "本页概括 AR+Diffusion 系列工作的核心目标：在构建长期记忆的同时限制计算量（降计算），点明该范式在记忆能力与算力开销之间寻求平衡，引出滑动窗口方案。"
+关键文字: "[AR+Diffusion 的工作尝试在构建长期记忆的同时，限制计算量, 降计算]"
+视觉骨架: "[记忆-算力平衡示意图, AR+Diffusion 框架图]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_16.asset.01]"
+适合复用场景: "[AR+Diffusion 范式总览页, 记忆与算力权衡论证页]"
+不适合复用场景: "[单一工作方法细节页, 画面退化案例页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "AR+Diffusion：记忆与算力的平衡"}
+  - {"位置": "下方主体", "内容": "AR+Diffusion 框架图与记忆-算力平衡示意"}
+alternate_claims:
+  - "滑动窗口是限制计算量的关键手段"
+layout_tag: "block_diagram"
+---
+# slide 16: AR+Diffusion：记忆与算力的平衡
+
+**核心论断**: AR+Diffusion 力求在建长程记忆的同时限制计算量
+
+## 本页讲什么
+本页概括 AR+Diffusion 系列工作的核心目标：在构建长期记忆的同时限制计算量（降计算），点明该范式在记忆能力与算力开销之间寻求平衡，引出滑动窗口方案。
+
+## 关键文字片段
+- AR+Diffusion 的工作尝试在构建长期记忆的同时，限制计算量
+- 降计算
+
+## 视觉骨架
+- 记忆-算力平衡示意图
+- AR+Diffusion 框架图
+
+## 可复用到
+- AR+Diffusion 范式总览页
+- 记忆与算力权衡论证页
+
+## 不适合复用的场景
+- 单一工作方法细节页
+- 画面退化案例页

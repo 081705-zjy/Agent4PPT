@@ -1,0 +1,44 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "章节序号": 4,
+  "章节角色": "problem",
+  "标题": "GPU难以利用稀疏与低精度",
+  "页码范围": [
+    10,
+    16
+  ],
+  "页数": 7,
+  "页ID列表": [
+    "slide_10",
+    "slide_11",
+    "slide_12",
+    "slide_13",
+    "slide_14",
+    "slide_15",
+    "slide_16"
+  ],
+  "章节叙事": "问题章：先立稀疏+低精度这两大可优化特性，再论证 GPU 架构无法利用它们，并综述 DFX、LLM 加速器等硬件先例，为下文 FPGA 三项技术铺垫必要性。",
+  "页间关系": [
+    "slide 10 → slide 11: 由目录切入，进入 VGM 压缩与开销主题",
+    "slide 11 → slide 12: 由 1000x 压缩收益过渡到视频体积小的特性",
+    "slide 12 → slide 13: 由视频小体积/稀疏特性引出 GPU 架构无法利用",
+    "slide 13 → slide 14: 从 GPU 难用稀疏，转到混合精度维度同样受限",
+    "slide 14 → slide 15: 由通用 GPU 局限转到 DFX 多 FPGA 加速先例",
+    "slide 15 → slide 16: 由 DFX 视频加速转到 LLM 加速器硬件综述"
+  ],
+  "适合复用场景": [
+    "论证「GPU 无法利用稀疏与低精度」的 problem 章节",
+    "为专用/FPGA 加速器铺垫必要性的问题分析",
+    "需先立可优化特性再点 GPU 短板的叙事",
+    "含硬件相关工作综述的加速类问题章"
+  ],
+  "不适合复用场景": [
+    "目标硬件本就是 GPU、无需论证其局限时",
+    "研究主题与稀疏/低精度加速无关时",
+    "无相关加速器先例可综述时",
+    "problem 需从算法而非硬件切入时"
+  ],
+  "在deck中的位置": "第 4 章 problem，承接背景，为方法章论证 GPU 局限、引出 FPGA 动机。",
+  "分析状态": "claude-opus-4-8"
+}

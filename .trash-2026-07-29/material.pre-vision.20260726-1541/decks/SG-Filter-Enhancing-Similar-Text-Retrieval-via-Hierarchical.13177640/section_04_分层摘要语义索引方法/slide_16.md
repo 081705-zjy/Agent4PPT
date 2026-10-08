@@ -1,0 +1,41 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_16"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.04"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 16
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "content_candidate"
+标题: "分层摘要索引结构展开"
+核心论断: "分层索引按语义粒度组织文档形成检索骨架"
+本页讲什么: "延续上页的分层摘要语义索引，进一步用结构图展开索引的内部组织形式（文档—摘要—语义层的对应关系）。原始文字多为图内碎片，视觉主体为框图，用于图解索引的搭建方式。"
+关键文字:
+视觉骨架: "[文档-摘要层级框图, 语义节点连接示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_16.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_16.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_16.asset.03]"
+适合复用场景: "[索引结构内部图解页, 分层语义组织示意页]"
+不适合复用场景: "[设问过渡页, 含明确数值的打分/结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+alternate_claims:
+layout_tag: "layer_hierarchy_diagram"
+---
+# slide 16: 分层摘要索引结构展开
+
+**核心论断**: 分层索引按语义粒度组织文档形成检索骨架
+
+## 本页讲什么
+延续上页的分层摘要语义索引，进一步用结构图展开索引的内部组织形式（文档—摘要—语义层的对应关系）。原始文字多为图内碎片，视觉主体为框图，用于图解索引的搭建方式。
+
+## 视觉骨架
+- 文档-摘要层级框图
+- 语义节点连接示意
+
+## 可复用到
+- 索引结构内部图解页
+- 分层语义组织示意页
+
+## 不适合复用的场景
+- 设问过渡页
+- 含明确数值的打分/结果页

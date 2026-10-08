@@ -1,0 +1,1934 @@
+{
+  "batch_index": 1,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+      "目录名": "FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+      "标题": "FlightVGM: 视频生成模型 FPGA 高效推理",
+      "总页数": 45,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与开场目录",
+        "section_02_AI与视频生成背景",
+        "section_03_视频压缩带来的洞见",
+        "section_04_在线稀疏化与混合精度量化",
+        "section_05_实验与加速能效结果",
+        "section_06_总结与展望致谢"
+      ],
+      "主题标签": [
+        "视频生成",
+        "FPGA",
+        "推理加速",
+        "稀疏化",
+        "混合精度",
+        "量化",
+        "DSP58",
+        "硬件加速"
+      ],
+      "目标受众": "体系结构与硬件加速学术同行、工业落地",
+      "报告类型": "paper_share",
+      "适用场景": "顶会论文宣讲，介绍视频生成模型的 FPGA 加速方案",
+      "论述总结": "面向视频生成模型（VGM）推理成本高的问题，先讲 AI 与视频生成背景及 GPU 架构的不足，再从视频压缩得到启发，提出 FlightVGM：用在线激活稀疏化（帧间+帧内相似性）与可配置 DSP58 混合精度量化两项技术在 FPGA 上加速，实验相比 NVIDIA 3090 实现 1.3x 加速、4.5x 能效，最后总结与展望。",
+      "论述弧线": [
+        "背景",
+        "洞察",
+        "方案",
+        "实验",
+        "总结"
+      ],
+      "适合复用场景": [
+        "深度学习硬件加速器论文宣讲",
+        "FPGA/体系结构方向学术报告",
+        "含背景-洞察-方法-实验弧线的科研汇报",
+        "模型推理优化（稀疏+量化）主题分享"
+      ],
+      "不适合复用场景": [
+        "纯算法/模型创新汇报（无硬件线）",
+        "商业产品 demo（叙事节奏不同）",
+        "非加速类通用 AI 科普",
+        "GPU 软件优化专题（硬件平台不符）"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与开场目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "全篇开场：slide 1 亮出论文标题、作者与机构建立学术身份，slide 2 用五项编号目录（背景→洞察→方案→实验→总结）预告全篇论证路径，为后续章节搭骨架。",
+          "页间关系": [
+            "slide 1 → slide 2: 由标题作者封面过渡到 Contents 五段式目录，把论文名展开为背景/洞察/方案/实验/总结的论证线"
+          ],
+          "适合复用场景": [
+            "学术论文/会议汇报的封面+目录开场组合",
+            "需列多作者多机构署名的科研封面",
+            "五段式（背景-洞察-方案-实验-总结）目录页",
+            "带编号圆点导航的极简目录版式"
+          ],
+          "在deck中的位置": "第 1 章，位于最前，封面+目录奠定全篇结构"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "AI与视频生成背景",
+          "页码范围": [
+            3,
+            9
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09"
+          ],
+          "章节叙事": "作为正文首章，从 Generative AI 概览逐层收窄到视频生成，剖析 VGM 扩散结构使其推理由访存转为计算受限，再引出 GPU 硬件演进，为后续指出 GPU 架构不足、提出 FPGA 方案铺垫。",
+          "页间关系": [
+            "slide 3 → slide 4: 由 TOC 高亮 Background 章进入首页，展开 Generative AI 概述",
+            "slide 4 → slide 5: 由生成式 AI 泛论收窄到视频生成，以 Sora 及大厂跟进为例",
+            "slide 5 → slide 6: 由代表模型转入 VGM 内部结构，讲扩散 transformer 的加噪/去噪",
+            "slide 6 → slide 7: 由模型结构切到模型视角量化，用 LLM/VGM 对比表点出计算受限",
+            "slide 7 → slide 8: 由模型瓶颈转向硬件，展开 NVIDIA GPU 架构演进时间线",
+            "slide 8 → slide 9: 由 GPU 时间线归纳出通用编程+专用架构两大驱动力"
+          ],
+          "适合复用场景": [
+            "需从生成式 AI 逐层收窄到某具体模态的 background 章",
+            "论证某模型推理由访存受限转为计算受限的动机章",
+            "需用架构演进时间线铺陈硬件背景的章节",
+            "以 LLM 对比映衬新模型计算特性的引入章"
+          ],
+          "在deck中的位置": "第 1 章，紧跟 cover，正文开篇，为 insight 与 solution 章节做背景铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.03",
+          "章节序号": 3,
+          "章节角色": "motivation",
+          "标题": "视频压缩带来的洞见",
+          "页码范围": [
+            10,
+            16
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16"
+          ],
+          "章节叙事": "承接背景章,从视频编解码发展史提炼「压缩≈生成」类比,导出激活稀疏化+混合精度两大技术洞见,并暴露 GPU 不支持稀疏、FPGA 混合精度算力受限两个硬件挑战,为后续 solution 章铺垫。",
+          "页间关系": [
+            "slide 10 → slide 11: 由 agenda 高亮 Insight 章节过渡到视频编解码发展史",
+            "slide 11 → slide 12: 由 1000x 压缩史引出「压缩 vs 生成」类比洞见(重要/不重要分量)",
+            "slide 12 → slide 13: 由稀疏化+混合精度两洞见引出 Challenge-1:GPU 无法利用稀疏性",
+            "slide 13 → slide 14: 由稀疏化挑战过渡到 Challenge-2:FPGA 混合精度仅发挥 66.67% 算力",
+            "slide 14 → slide 15: 由两个硬件挑战过渡到 Related Work 算法/硬件工作对比",
+            "slide 15 → slide 16: 由相关工作列举过渡到其局限总结(算法仅增强能力、硬件面向 LLM 而非 VGM)"
+          ],
+          "适合复用场景": [
+            "需借成熟领域类比导出方法洞见的 insight 章节",
+            "需论证稀疏/混合精度硬件挑战的软硬协同章节",
+            "用发展史时间线铺垫核心 insight 的章节",
+            "FPGA/GPU 加速器设计的 challenge 陈述段落",
+            "需用 related work 反衬自身定位的过渡章节"
+          ],
+          "在deck中的位置": "第 3 章(agenda 标为 Insight 2),紧接背景章,承上启下引出方法章"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "在线稀疏化与混合精度量化",
+          "页码范围": [
+            17,
+            33
+          ],
+          "页数": 17,
+          "页ID列表": [
+            "slide_17",
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24",
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29",
+            "slide_30",
+            "slide_31",
+            "slide_32",
+            "slide_33"
+          ],
+          "章节叙事": "承接视频压缩insight,落地FlightVGM三大核心技术:帧间/帧内在线激活稀疏化、可配置DSP58混合精度量化、动静结合自适应调度(补偿稀疏化引入的负载不均),为Experiment加速数据铺垫",
+          "页间关系": [
+            "slide 17 → slide 18: 由Contents分节页高亮\"Solution\"进入Tech.1在线激活稀疏化总述",
+            "slide 18 → slide 19: 由稀疏化key idea(利用帧间/帧内相似性)展开到整体处理流程",
+            "slide 19 → slide 20: 由tokenizing/splitting流水线细化到Similarity Table-1帧间相似度",
+            "slide 20 → slide 21: 由帧间(inter-frame)相似性递进到帧内(intra-frame)空间相似性",
+            "slide 21 → slide 22: 由两类相似性稀疏化引出硬件(Hardware:Sparsification)动画铺垫",
+            "slide 22 → slide 23: 由稀疏化过渡到recovery——Step-1帧内+Step-2帧间恢复",
+            "slide 23 → slide 24: 结束Tech.1,切入Tech.2可配置DSP58混合精度动机",
+            "slide 24 → slide 25: 由混合精度算力动机引入\"What is DSP58\"基础结构",
+            "slide 25 → slide 26: 由DSP58结构({27×24→58})过渡到FP16格式与乘法需求",
+            "slide 26 → slide 27: 由FP16双乘需求过渡到用常规DSP的bit分配要求",
+            "slide 27 → slide 28: 由DSP分配引出Overpacking复用以执行更多INT8乘法",
+            "slide 28 → slide 29: 由overpacking深入到corrupted bits公式与DSP内部架构",
+            "slide 29 → slide 30: 由FP16/INT8两模式总结DSP58-E同时支持两种精度",
+            "slide 30 → slide 31: 结束Tech.2,切入Tech.3动静结合自适应调度",
+            "slide 31 → slide 32: 由调度动机(缓解稀疏化负载不均)展开到编译/调度框架",
+            "slide 32 → slide 33: 由整体框架细化到静态编译(算子融合/量化)+动态调度"
+          ],
+          "适合复用场景": [
+            "需并列拆解多项加速技术(Tech.1/2/3)的method章",
+            "论证\"利用相似性做激活稀疏\"的算法method章",
+            "讲解FPGA/DSP混合精度量化硬件设计的章节",
+            "需\"算法+硬件+调度\"三层协同叙事的系统工作",
+            "按motivation→流程→硬件递进展开单技术的模板"
+          ],
+          "在deck中的位置": "第3章解决方案,紧接Insight视频压缩章,为后续Experiment提供技术支撑"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05",
+          "章节序号": 5,
+          "章节角色": "experiment",
+          "标题": "实验与加速能效结果",
+          "页码范围": [
+            34,
+            41
+          ],
+          "页数": 8,
+          "页ID列表": [
+            "slide_34",
+            "slide_35",
+            "slide_36",
+            "slide_37",
+            "slide_38",
+            "slide_39",
+            "slide_40",
+            "slide_41"
+          ],
+          "章节叙事": "全 deck 的验证章，承接稀疏化+量化方法章。以统一 setup（Latte/Open-Sora + UCF-101 + CLIPSIM/VBench）逐层评估：模型精度近乎无损（0.008 loss）、硬件资源占用、对 3090 的 1.3x/4.5x、对 SOTA 加速器 2.84x，末页以视频 demo 佐证。",
+          "页间关系": [
+            "slide 34 → slide 35: 由目录页（高亮 Experiment）进入实验设置",
+            "slide 35 → slide 36: 由模型/数据集/指标设置引出模型精度评估",
+            "slide 36 → slide 37: 由精度结果回到设置页补充 baselines（GPU/FPGA/ASIC）",
+            "slide 37 → slide 38: 由 baselines 引出硬件资源消耗评估（MPE 为主）",
+            "slide 38 → slide 39: 由资源占用表过渡到相对 3090 的加速/能效总结（1.3x/4.5x）",
+            "slide 39 → slide 40: 由 vs GPU 结果过渡到 vs SOTA 加速器结果（2.84x）",
+            "slide 40 → slide 41: 由量化性能结果过渡到视频生成 demo 展示"
+          ],
+          "适合复用场景": [
+            "硬件/加速器论文需分层对比 GPU 与 SOTA 加速器的实验章",
+            "需先铺 setup（模型+数据集+指标+baseline）再逐项评估的章节",
+            "同时论证『精度无损』与『速度/能效提升』双结论的实验章",
+            "末页需以生成 demo/artifact 徽章佐证结论的展示型收尾"
+          ],
+          "在deck中的位置": "第 5 章（实验），紧接方法章之后，为末章总结展望提供数据支撑"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06",
+          "章节序号": 6,
+          "章节角色": "closing",
+          "标题": "总结与展望致谢",
+          "页码范围": [
+            42,
+            45
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_42",
+            "slide_43",
+            "slide_44",
+            "slide_45"
+          ],
+          "章节叙事": "deck 收尾章:先用 outline 分节页切入,再以 Summary 页回收 FlightVGM 两大技术(时空激活稀疏+混合精度),继以 future work 展望 AIE+HBM 前景,末页致谢",
+          "页间关系": [
+            "slide 42 → slide 43: 由 outline 分节页(高亮 Summary and Future Work)切入,进入总结页",
+            "slide 43 → slide 44: 由 Summary 回收两大技术贡献过渡到 future work 展望(AIE+HBM ~7.5×)",
+            "slide 44 → slide 45: 由展望前景收束到 Thanks 致谢页与作者名单"
+          ],
+          "适合复用场景": [
+            "论文/技术汇报的总结+展望收尾章",
+            "需回收核心技术贡献的 summary 页",
+            "以未来架构升级空间收束的 outlook 页",
+            "带作者名单的学术致谢 ending 页",
+            "长 deck 用 outline 分节页切入收尾部分"
+          ],
+          "在deck中的位置": "第 5 章(末章),紧跟实验章,总结全篇并展望致谢"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "FlightVGM：FPGA 高效视频生成推理",
+          "核心论断": "FlightVGM 用在线稀疏化与混合精度实现 FPGA 高效视频生成推理",
+          "本页讲什么": "论文封面页。居中大标题亮出工作名 FlightVGM 及副标题「基于在线稀疏化与混合精度的 FPGA 高效视频生成模型推理」，下方列出上海交大、清华、Infinigence-AI 三机构合作作者名单，标注共同一作与通讯作者，并给出 yu-wang@tsinghua、daiguohao@sjtu 两个联系邮箱，建立学术身份。",
+          "关键文字": [
+            "FlightVGM: Efficient Video Generation Model Inference",
+            "Online Sparsification and Hybrid Precision on FPGA",
+            "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+            "Co-first author, Corresponding author",
+            "yu-wang@tsinghua.edu.cn, daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "居中大标题+副标题",
+            "多行作者署名列表",
+            "机构与邮箱脚注"
+          ],
+          "上页角色": null,
+          "下页角色": "toc_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "toc_candidate",
+          "标题": "目录：五章论证路径预告",
+          "核心论断": "全篇按背景→洞察→方案→实验→总结五章递进展开",
+          "本页讲什么": "全篇目录页。蓝框内居中标题 Contents，纵向排列五个编号圆点条目：1 背景（AI 与视频生成）、2 洞察（视频压缩与生成）、3 方案（稀疏化与量化）、4 实验、5 总结与未来工作，预告全篇从问题背景到解决方案再到实验总结的论证骨架。",
+          "关键文字": [
+            "Contents",
+            "1 Background: AI and Video Generation",
+            "2 Insight: Video Compression and Generation",
+            "3 Solution: Sparsification and Quantization",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝色边框容器",
+            "纵向 5 编号圆点列表",
+            "居中标题"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "细分角色": "toc_main"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "toc_candidate",
+          "标题": "目录:定位 Background 章节",
+          "核心论断": "全文分五章推进,当前进入 Background: AI 与视频生成",
+          "本页讲什么": "全篇目录页,左侧竖排 5 个编号圆点,第 1 项「Background: AI and Video Generation」高亮为当前章节,其余四项(Insight、Solution、Experiment、Summary and Future Work)灰显。用于告诉听众整体结构并标出正文首章的起点。",
+          "关键文字": [
+            "Background: AI and Video Generation",
+            "Insight: Video Compression and Generation",
+            "Solution: Sparsification and Quantization",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点导航",
+            "当前项高亮蓝点",
+            "外框矩形边界"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "toc_candidate",
+          "标题": "目录:进入 Insight 章节",
+          "核心论断": "全 deck 分五部分,现进入 Insight(视频压缩与生成)章",
+          "本页讲什么": "章节切换导航页。以竖排编号目录列出五个部分:1 Background、2 Insight: Video Compression and Generation、3 Solution、4 Experiment、5 Summary,当前第 2 项高亮为黑色实心,其余灰化,标示演讲进度。",
+          "关键文字": [
+            "Contents",
+            "Insight: Video Compression and Generation",
+            "Background: AI and Video Generation",
+            "Solution: Sparsification and Quantization",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "竖排编号目录",
+            "当前项高亮圆点",
+            "五段章节标题"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "toc_candidate",
+          "标题": "目录页:高亮 Solution 稀疏化与量化章节",
+          "核心论断": "本章进入 Solution:稀疏化与量化,承接 Background 与 Insight",
+          "本页讲什么": "全篇目录页,五个章节纵向排列(Background、Insight、Solution、Experiment、Summary),当前高亮第 3 项 Solution: Sparsification and Quantization,表示演讲进入核心技术方案章节,前两章背景与 insight 已完成,后续为实验与总结。",
+          "关键文字": [
+            "Contents",
+            "Background: AI and Video Generation",
+            "Insight: Video Compression and Generation",
+            "Solution: Sparsification and Quantization",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "五章节纵向导航列表",
+            "当前章节高亮圆点标记",
+            "蓝色边框内容区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 34,
+          "页面角色": "toc_candidate",
+          "标题": "目录: 定位到第 4 章 Experiment",
+          "核心论断": "进入实验章, 验证 FlightVGM 的精度与加速能效",
+          "本页讲什么": "全 deck 五段式目录页, 高亮第 4 项 Experiment (蓝色实心圆), 其余 Background/Insight/Solution/Summary 灰化。作用是把听众从方法章 (稀疏化+量化) 过渡到实验验证章, 声明本章将围绕实验展开。",
+          "关键文字": [
+            "Contents",
+            "Background: AI and Video Generation",
+            "Insight: Video Compression and Generation",
+            "Solution: Sparsification and Quantization",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝框内五项编号目录",
+            "当前项蓝色实心圆高亮",
+            "其余项灰化"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 42,
+          "页面角色": "toc_candidate",
+          "标题": "Contents:进入 Summary and Future Work 章节",
+          "核心论断": "五段式目录推进到第 5 章 Summary and Future Work",
+          "本页讲什么": "全篇统一的 Contents 分节页,列出 Background、Insight、Solution、Experiment、Summary and Future Work 五个章节;第 5 项(蓝色高亮圆点)为当前进入的收尾章。前四项灰化表示已讲完,用于向听众交代讲到哪、接下来讲总结与展望。",
+          "关键文字": [
+            "Contents",
+            "Background: AI and Video Generation",
+            "Insight: Video Compression and Generation",
+            "Solution: Sparsification and Quantization",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝色边框大标题卡",
+            "5 项编号圆点竖排目录",
+            "当前项蓝色高亮圆点"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 45,
+          "页面角色": "ending_candidate",
+          "标题": "Thanks for your listening!致谢页",
+          "核心论断": "致谢并列出全体作者与单位署名",
+          "本页讲什么": "全篇末页,大字 'Thanks for your listening!' 致谢,下方列出全体作者姓名与单位编号(Jun Liu、Shulin Zeng、Li Ding、Zehao Wang 等,通讯作者 Yu Wang、Guohao Dai 红色标注)。用于演讲结束致谢与团队署名。",
+          "关键文字": [
+            "Thanks for your listening!",
+            "Jun Liu, Shulin Zeng, Li Ding, Widyadewi Soedarmadji",
+            "Zehao Wang, Jinhao Li, Jintao Li, Yadong Dai",
+            "Kairui Wen, Shan He, Yaqi Sun",
+            "Yu Wang, Guohao Dai (通讯)"
+          ],
+          "视觉骨架": [
+            "居中大字致谢标题",
+            "多行作者署名列表",
+            "通讯作者红色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+      "目录名": "HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+      "标题": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+      "总页数": 39,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_AI与稀疏计算背景",
+        "section_03_训练需转置的核心洞察",
+        "section_04_可转置块状稀疏与编解码架构",
+        "section_05_精度性能与消融实验",
+        "section_06_总结与未来工作",
+        "section_07_致谢"
+      ],
+      "主题标签": [
+        "N:M sparsity",
+        "sparse tensor core",
+        "GPU",
+        "DNN training",
+        "hardware accel",
+        "structured sparsity",
+        "codec",
+        "TBS pattern"
+      ],
+      "目标受众": "计算机体系结构学术同行 (HPCA)",
+      "报告类型": "paper_share",
+      "适用场景": "顶会论文汇报,稀疏加速硬件/体系结构方向",
+      "论述总结": "该 deck 分享 HPCA 论文 TB-STC:先讲 AI 与稀疏计算背景及现有 N:M 结构化稀疏的局限,给出「训练需转置」的洞察,提出可转置块状稀疏模式 TBS 与片上自适应编解码架构两项技术,最后用 CNN/Transformer/LLM 实验与消融验证精度、性能与能效,并展望未来工作。",
+      "论述弧线": [
+        "背景",
+        "洞察",
+        "方法",
+        "实验",
+        "总结"
+      ],
+      "适合复用场景": [
+        "体系结构/硬件加速类顶会论文汇报",
+        "稀疏计算或 N:M 稀疏主题报告",
+        "含 motivation→方法→实验弧线的学术分享",
+        "带架构示意图的技术方法讲解章节"
+      ],
+      "不适合复用场景": [
+        "纯算法/模型无硬件的汇报(侧重不同)",
+        "工业产品 demo(叙事节奏不同)",
+        "投资路演(缺商业叙事)",
+        "非稀疏/非体系结构主题(话题偏离)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "全 deck 的开场章：封面亮出 TB-STC 主标题与多机构作者，目录列出「背景→洞察→方案→实验→总结」五段主线，为学术汇报锚定阅读路径。",
+          "页间关系": [
+            "slide 1 → slide 2: 由封面主标题/作者身份切入五段式 Contents 目录，从「是谁讲什么」过渡到「按何顺序讲」"
+          ],
+          "适合复用场景": [
+            "计算机体系结构/AI 加速类学术论文汇报的开场",
+            "需展示多机构合作+通讯作者的严肃科研封面",
+            "背景-洞察-方案-实验-总结五段式的目录骨架",
+            "HPCA/ISCA 等顶会 talk 的封面+TOC 套版"
+          ],
+          "在deck中的位置": "第 1 章，位于全 deck 最前，统领后续四个内容章节"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "AI与稀疏计算背景",
+          "页码范围": [
+            3,
+            10
+          ],
+          "页数": 8,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09",
+            "slide_10"
+          ],
+          "章节叙事": "为全 deck 立靶的 background 章：先证 AI 算力鸿沟(需求 240×/年 vs 硬件 2×/年),引出稀疏化,再层层揭示结构化(掉精度)与非结构化(硬件开销大)两类现有方案的硬伤,为后续 TBS 铺垫。",
+          "页间关系": [
+            "slide 3 → slide 4: 由五章目录 TOC(高亮 Background)进入正文,展开算力鸿沟",
+            "slide 4 → slide 5: 由模型-硬件算力鸿沟图,引出稀疏化作为模型压缩手段",
+            "slide 5 → slide 6: 由稀疏化方法概念,过渡到 Tensor Core 硬件对稀疏的逐代支持",
+            "slide 6 → slide 7: 由硬件支持带来 2× 提升,下沉到 dense vs sparse 的 MAC 对比机理",
+            "slide 7 → slide 8: 由 16 vs 6 MACs 的收益,引出稀疏模式分结构化/非结构化两类",
+            "slide 8 → slide 9: 由两类分类,先聚焦结构化稀疏的精度损失(>6% drop)",
+            "slide 9 → slide 10: 由结构化掉精度,转到非结构化的大额硬件开销(>80% 逻辑)"
+          ],
+          "适合复用场景": [
+            "论证 AI 算力供需鸿沟的 background 章",
+            "综述 N:M/结构化 vs 非结构化稀疏的对比章节",
+            "需铺垫「现有方案各有硬伤」以引出新方法的动机章",
+            "介绍稀疏计算 MAC 节省机理的科普段落",
+            "回顾 NVIDIA Tensor Core 稀疏硬件演进的章节"
+          ],
+          "在deck中的位置": "第 1 章正文,紧跟 cover,占全 39 页的 3-10 页"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+          "章节序号": 3,
+          "章节角色": "motivation",
+          "标题": "训练需转置的核心洞察",
+          "页码范围": [
+            11,
+            14
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14"
+          ],
+          "章节叙事": "承接背景章,论证「训练即转置」这一核心洞察为 TBS 方案铺垫:先证原生稀疏训练优于后训练微调,再揭示前向/反向权重互为转置,推出 W 与 Wᵀ 须同时结构化稀疏。",
+          "页间关系": [
+            "slide 11 → slide 12: 目录页高亮「Insight」章,翻入正文先抛出稀疏训练 vs 后训练微调对比",
+            "slide 12 → slide 13: 由「稀疏训练优于后训练」结论,转向训练过程本身,引出前向/反向权重关系",
+            "slide 13 → slide 14: 在前向/反向互为转置图上补全 Wᵀ 与梯度标注,点明「转置特性」是结构化稀疏关键"
+          ],
+          "适合复用场景": [
+            "需「A 优于 B」对比 + 机制洞察双段论证方案动机的章节",
+            "靠揭示隐藏对称/转置性质来引出方法的 insight 章",
+            "需先立「训练时」约束再推出方案的软硬件工作",
+            "洞察需从现象逐页递进到核心结论的叙事"
+          ],
+          "在deck中的位置": "TOC 第 2 章(deck 第 3 章),紧随背景章,为后续 TBS 解决方案铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "可转置块状稀疏与编解码架构",
+          "页码范围": [
+            15,
+            28
+          ],
+          "页数": 14,
+          "页ID列表": [
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24",
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28"
+          ],
+          "章节叙事": "deck 方法核心(第3章 Solution),承接「训练需转置」洞察,依次提出 TBS 稀疏模式、片上自适应编解码架构、稀疏感知调度三项技术,以挑战+硬件总览串联,论证可转置块状稀疏可实现。",
+          "页间关系": [
+            "slide 15 → slide 16: TOC 高亮「Solution」章,进入 Tech.1 提出 TBS 模式",
+            "slide 16 → slide 17: 由 TBS 维度×比例概览,引入 Mask-Space 表示空间概念",
+            "slide 17 → slide 18: 由 MS 定义,论证 TBS 表示空间更大、更接近非结构化",
+            "slide 18 → slide 19: 由 TBS 优越性,转到实现 TBS 面临的三大挑战",
+            "slide 19 → slide 20: 由挑战列举,给出 TB-STC 硬件总览定位各解法",
+            "slide 20 → slide 21: 由硬件总览,深入 Tech.2 解决存储非连续/冗余痛点",
+            "slide 21 → slide 22: 由存储痛点,展示按稀疏维度的压缩格式设计",
+            "slide 22 → slide 23: 由压缩格式,引出自适应编解码架构实现在线转换",
+            "slide 23 → slide 24: 由架构概念,下钻编解码/合并单元的硬件位宽细节",
+            "slide 24 → slide 25: 由编解码硬件,转到 Tech.3 解决稀疏度不均致负载失衡",
+            "slide 25 → slide 26: 由调度挑战,讲块间调度利用局部性均衡算力",
+            "slide 26 → slide 27: 由块间调度,讲块内调度利用非零元总数守恒性质",
+            "slide 27 → slide 28: 由块内调度思想,落到 Diverse VPE + MBD 可配置硬件单元"
+          ],
+          "适合复用场景": [
+            "需先提模式创新、再逐层拆硬件实现的方法章",
+            "含「挑战列举→硬件总览→逐技术攻克」结构的系统类工作",
+            "一章内并列展示 2-3 项技术贡献的 method 章",
+            "算法+存储格式+调度三层协同的加速器论文"
+          ],
+          "在deck中的位置": "第3章 method,紧跟 Background、Insight 章,为后续 Experiment 章提供待验证方案"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "章节序号": 5,
+          "章节角色": "experiment",
+          "标题": "精度性能与消融实验",
+          "页码范围": [
+            29,
+            35
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_29",
+            "slide_30",
+            "slide_31",
+            "slide_32",
+            "slide_33",
+            "slide_34",
+            "slide_35"
+          ],
+          "章节叙事": "deck 的实验验证章,承接 TBS 模式与自适应编解码两项技术,依次用精度、硬件面积、性能加速、消融四组实验证明其精度不掉、开销小(仅 A100 的 1.57%)、平均 1.27× 加速与 3.82× EDP 提升。",
+          "页间关系": [
+            "slide 29 → slide 30: 由 Experiment 章节分隔页进入实验设置(baseline/模型/数据集)",
+            "slide 30 → slide 31: 由实验配置过渡到模型精度评估(重训练 +0.85~1.03%)",
+            "slide 31 → slide 32: 由模型精度转入硬件评估方法论与面积开销",
+            "slide 32 → slide 33: 由硬件方法论引出性能加速比结果(均 1.27×)",
+            "slide 33 → slide 34: 由整体加速转向消融实验(自适应编解码架构)",
+            "slide 34 → slide 35: 由单组件消融汇总到整体 EDP 3.82× 与 Pareto 结论"
+          ],
+          "适合复用场景": [
+            "硬件加速器论文的实验验证章",
+            "需精度+性能+能效多维度评估的章节",
+            "含 baseline 对比与消融的系统评测章",
+            "呈现「设置→结果→消融→总结」实验弧线",
+            "强调面积/EDP 开销优势的评估章"
+          ],
+          "在deck中的位置": "第 4 章(Experiment),位于方法章之后、总结展望之前"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+          "章节序号": 6,
+          "章节角色": "discussion",
+          "标题": "总结与未来工作",
+          "页码范围": [
+            36,
+            38
+          ],
+          "页数": 3,
+          "页ID列表": [
+            "slide_36",
+            "slide_37",
+            "slide_38"
+          ],
+          "章节叙事": "deck 收尾章。先用 TOC 页定位，再以 Summary 页回收「目标—洞察—两项技术」三线闭环，最后用 LLM 稀疏训练初步结果把 TBS 推向未来扩展。",
+          "页间关系": [
+            "slide 36 → slide 37: 由目录高亮「Summary and Future Work」切入，进入正文总结页",
+            "slide 37 → slide 38: 由 Summary 回收目标/洞察/两项技术，转向 Future Work 的 LLM 稀疏训练扩展"
+          ],
+          "适合复用场景": [
+            "论文/技术分享收尾章，需「总结+展望」两页式结构",
+            "需回收「目标-洞察-方案」三线闭环的 Summary 页",
+            "以初步扩展实验(表格)佐证未来方向可行性的 Future Work 页",
+            "章节以本 deck 目录页导航切入的排版"
+          ],
+          "在deck中的位置": "第 5/最后一章，紧跟 Experiment，全 deck 收束与展望"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.07",
+          "章节序号": 7,
+          "章节角色": "closing",
+          "标题": "致谢",
+          "页码范围": [
+            39,
+            39
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_39"
+          ],
+          "章节叙事": "作为 deck 结尾致谢页,以「Thanks for your listening!」收束全篇,并完整列出作者署名与三家单位归属,标注共一与通讯作者",
+          "页间关系": [],
+          "适合复用场景": [
+            "多机构合作论文的答辩收尾致谢页",
+            "需完整罗列长作者名单+单位脚注的结尾",
+            "标注共一/通讯作者的学术署名页"
+          ],
+          "在deck中的位置": "第 7 章,全 deck 最后一页(第 39 页),紧随实验与展望章节收尾"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "TB-STC: Transposable Block-wise N:M 稀疏张量核心",
+          "核心论断": "本文提出 TB-STC——可转置的块级 N:M 结构化稀疏张量核心",
+          "本页讲什么": "学术汇报封面页。居中大标题亮出论文全称 TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core，下方列出上海交大、清华、Infinigence-AI 三家机构的多位作者，标注共同一作与通讯作者 Guohao Dai，并给出联系邮箱，为整场汇报确立主题与身份。",
+          "关键文字": [
+            "TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core",
+            "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+            "*Co-first author, +Corresponding author",
+            "Email: daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "居中双行大标题",
+            "多机构作者名单",
+            "机构与邮箱脚注块"
+          ],
+          "上页角色": null,
+          "下页角色": "toc_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "toc_candidate",
+          "标题": "目录:背景→洞察→方案→实验→总结",
+          "核心论断": "全文按背景、洞察、方案、实验、总结五段主线展开",
+          "本页讲什么": "目录页。蓝框内以「Contents」为题，用编号圆点列出五段汇报主线:1 背景(AI 与稀疏计算)、2 洞察(来自训练的转置信息)、3 方案(可转置块级稀疏)、4 实验、5 总结与未来工作，为听众锚定全 deck 的阅读路径。",
+          "关键文字": [
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝色边框容器",
+            "编号圆点竖列",
+            "五条目录条目"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "toc_candidate",
+          "细分角色": "toc_main"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "toc_candidate",
+          "标题": "Contents: 5-part agenda, Background highlighted",
+          "核心论断": "Deck unfolds in 5 parts, starting from the Background section",
+          "本页讲什么": "This is the table-of-contents / agenda page. It lists the deck's five parts — 1 Background: AI and Sparse Computing, 2 Insight: Transpose Information from Training, 3 Solution: Transposable Block-wise Sparsity, 4 Experiment, 5 Summary and Future Work — with part 1 (Background) highlighted in blue as the section currently entered.",
+          "关键文字": [
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "纵向 5 项 agenda 列表",
+            "编号圆点导航",
+            "当前项蓝色高亮"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "toc_candidate",
+          "标题": "目录:定位到 Insight 章节",
+          "核心论断": "本页进入第 2 章「训练中的转置洞察」",
+          "本页讲什么": "全篇五章目录页,当前高亮第 2 章 Insight: Transpose Information from Training。其余章节(1 Background、3 Solution: Transposable Block-wise Sparsity、4 Experiment、5 Summary and Future Work)灰显,用蓝色圆点+数字标记当前进度,起章节导航过渡作用。",
+          "关键文字": [
+            "Contents",
+            "Insight: Transpose Information from Training",
+            "Background: AI and Sparse Computing",
+            "Solution: Transposable Block-wise Sparsity",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "纵向 5 项编号目录列表",
+            "蓝色高亮当前章圆点",
+            "灰显未激活章节"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "toc_candidate",
+          "标题": "Contents:进入第3章 Solution",
+          "核心论断": "目录切换到第3章「可转置块状稀疏」解决方案",
+          "本页讲什么": "五章目录页,高亮当前进入第3章 Solution: Transposable Block-wise Sparsity。其余四章(Background、Insight、Experiment、Summary)灰显。作为方法章开场,标示接下来讲解可转置块状稀疏方案。",
+          "关键文字": [
+            "Contents",
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "五项编号目录列表",
+            "当前章高亮圆点标记"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "toc_candidate",
+          "标题": "Contents:进入第 4 章 Experiment",
+          "核心论断": "全篇进入第 4 部分实验验证章节",
+          "本页讲什么": "五段式目录导航页,高亮第 4 项 Experiment(实验),表示演讲进入实验验证章节。其余四项(Background、Insight、Solution、Summary and Future Work)灰显,仅第 4 项以黑色加粗与蓝色圆点标出当前进度。",
+          "关键文字": [
+            "Contents",
+            "Background: AI and Sparse Computing",
+            "Insight: Transpose Information from Training",
+            "Solution: Transposable Block-wise Sparsity",
+            "Experiment",
+            "Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "蓝框内 5 项编号列表",
+            "当前项蓝色圆点高亮",
+            "灰显未激活条目"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 36,
+          "页面角色": "toc_candidate",
+          "标题": "目录页：定位「总结与未来工作」章",
+          "核心论断": "五段式目录高亮第 5 章，正式进入总结收尾",
+          "本页讲什么": "全 deck 五章目录页，1 Background、2 Insight、3 Solution、4 Experiment、5 Summary and Future Work 竖排列出，前四章置灰、第 5 章加粗高亮，蓝色圆点指示当前进度，用于把听众从实验章过渡到收尾总结章。",
+          "关键文字": [
+            "Contents",
+            "1 Background: AI and Sparse Computing",
+            "2 Insight: Transpose Information from Training",
+            "3 Solution: Transposable Block-wise Sparsity",
+            "4 Experiment",
+            "5 Summary and Future Work"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点目录",
+            "当前章高亮圆点",
+            "五段章节列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 39,
+          "页面角色": "ending_candidate",
+          "标题": "致谢页:Thanks for your listening",
+          "核心论断": "以致谢收束全篇并完整列出作者与三家单位署名",
+          "本页讲什么": "全 deck 结尾致谢页。页面上方居中大字「Thanks for your listening!」收束演讲;下方列出完整作者署名 Jun Liu、Shulin Zeng 等十余位,标注所属机构角标(1 上海交大、2 清华、3 Infinigence-AI),并用符号区分共同一作(*)与通讯作者(†,Guohao Dai,紫色高亮),底部图例说明星号与加号含义。",
+          "关键文字": [
+            "Thanks for your listening!",
+            "Jun Liu*1,3, Shulin Zeng*2,3, Junbo Zhao2 …",
+            "Xuefei Ning2, Chen Zhang1, Yu Wang2, Guohao Dai†1,3",
+            "1Shanghai Jiao Tong University, 2Tsinghua University, 3Infinigence-AI",
+            "*Co-first author, †Corresponding author"
+          ],
+          "视觉骨架": [
+            "居中致谢大标题",
+            "多行作者署名列表",
+            "机构归属与作者角标图例",
+            "通讯作者紫色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+      "目录名": "LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+      "标题": "LOAC 自回归视频生成加速器",
+      "总页数": 34,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与开场目录",
+        "section_02_研究背景与视频生成演进",
+        "section_03_三大研究挑战",
+        "section_04_LOAC核心设计",
+        "section_05_实验验证",
+        "section_06_致谢"
+      ],
+      "主题标签": [
+        "视频生成",
+        "自回归",
+        "稀疏注意力",
+        "KV压缩",
+        "硬件加速",
+        "扩散模型",
+        "DiT"
+      ],
+      "目标受众": "学术同行 / 芯片与体系结构方向组会",
+      "报告类型": "paper_share",
+      "适用场景": "内部组会分享自回归视频生成加速的软硬件协同工作",
+      "论述总结": "从视频生成模型演进与自回归+扩散范式讲起，剖析长序列注意力与KV带来的算力和访存挑战，提出LOAC加速器：以条纹感知的统一稀疏注意力和KV压缩为核心思路，逐条给出三项具体设计，最后用实验验证加速效果。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "方法",
+        "实验",
+        "总结"
+      ],
+      "适合复用场景": [
+        "视频生成/扩散模型加速主题组会",
+        "AI芯片软硬件协同工作汇报",
+        "带稀疏注意力的加速器方法章节",
+        "长背景铺垫型学术paper share"
+      ],
+      "不适合复用场景": [
+        "纯算法无硬件的推理优化（偏离加速器）",
+        "语言大模型推理（话题不符）",
+        "面向投资方的商业提案（叙事不符）",
+        "轻量demo或教程（背景过长）"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与开场目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "标准科研汇报开场：slide 1 亮出 LOAC 论文标题/作者/DAC 投稿身份，slide 2 用四项编号目录（研究背景/研究挑战/…）铺陈全 deck 结构，为后续技术章节建立预期。",
+          "页间关系": [
+            "slide 1 → slide 2: 由论文标题封面切到四项编号 agenda，从『这是什么工作』过渡到『按背景→挑战→方法→实验展开』的路线图"
+          ],
+          "适合复用场景": [
+            "学术会议/组会的论文投稿分享开场",
+            "需『标题封面 + 编号式四段目录』的技术汇报",
+            "偏素净、蓝色编号锚点风格的开场排版"
+          ],
+          "在deck中的位置": "第 1 章，全 deck 起点（共 34 页），封面+目录奠定基调"
+        },
+        {
+          "章节标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "研究背景与视频生成演进",
+          "页码范围": [
+            3,
+            18
+          ],
+          "页数": 16,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18"
+          ],
+          "章节叙事": "作为全篇motivation，沿视频生成范式演进（时空分离→AR+Diffusion→Diffusion/Self Forcing→滑窗）逐层揭示注意力与KV Cache的算力/访存瓶颈，论证长视频仅能生成约10s，为LOAC加速器立靶。",
+          "页间关系": [
+            "slide 3 → slide 4: 由本章目录页（研究背景高亮）进入，以Sora2展示视频生成到达新高度",
+            "slide 4 → slide 5: 由Sora2高光转折到「仍存在问题」，引出被封印的巨兽隐喻",
+            "slide 5 → slide 6: 由问题铺开范式演进三阶段：时空分离→统一时空→AR+Diffusion",
+            "slide 6 → slide 7: 由范式全景聚焦早期双向注意力（bidirectional attention）建模方式",
+            "slide 7 → slide 8: 由双向注意力定性问题过渡到FLOPS随时长增长的定量证据",
+            "slide 8 → slide 9: 由旧范式算力爆炸，引出转向自回归（AR）天然实时+长记忆",
+            "slide 9 → slide 10: 由AR总体优势具体到Diffusion Forcing如何把AR引入扩散",
+            "slide 10 → slide 11: 由引入AR暴露其长时生成画面损失、动作重复",
+            "slide 11 → slide 12: 由记忆退化现象追溯根因：缺少长期KV Cache",
+            "slide 12 → slide 13: 由缺KV问题过渡到Self Forcing建立完整KV Cache",
+            "slide 13 → slide 14: 由建KV指出其frame/iteration带来的KV计算量增长",
+            "slide 14 → slide 15: 延续Self-Forcing计算量分析，细化到token/iteration量级",
+            "slide 15 → slide 16: 由计算量问题引出sink+window滑窗方案（LongLive/Rolling Forcing）",
+            "slide 16 → slide 17: 由滑窗方案具体到基于滑动窗口的AR+Diffusion限制KV的效果",
+            "slide 17 → slide 18: 由各方案梳理收束到小结：视频仍只能生成约10s及其根因"
+          ],
+          "适合复用场景": [
+            "需梳理视频生成范式演进的background章",
+            "论证注意力/KV Cache成为长序列瓶颈",
+            "为注意力或KV加速类工作立motivation",
+            "AR+扩散视频生成的相关工作串讲铺垫",
+            "逐篇递进揭示技术缺陷的综述式背景"
+          ],
+          "在deck中的位置": "第一个正文章节，紧跟目录页，为后续研究挑战与LOAC三项设计做背景铺垫。"
+        },
+        {
+          "章节标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03",
+          "章节序号": 3,
+          "章节角色": "problem",
+          "标题": "三大研究挑战",
+          "页码范围": [
+            19,
+            24
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "problem 章。承接研究背景，逐条抛出三大挑战：稀疏注意力难识别重要区间、细粒度稀疏硬件不适配AR+Diffusion、KV压缩不适配diffusion，为后面三项设计一一铺垫。",
+          "页间关系": [
+            "slide 19 → slide 20: 由四段式章节导航页(高亮第2项『研究挑战』)进入挑战1正文",
+            "slide 20 → slide 21: 挑战1同一命题递进/动画展开，标题与红字论断不变，逐步补入Full/Spec map配图",
+            "slide 21 → slide 22: 由挑战1(注意力算法无法识别重要区间)转入挑战2硬件层面(block-sparse/GPU)",
+            "slide 22 → slide 23: 挑战2内部递进，明确『细粒度稀疏硬件架构不适合AR+Diffusion』",
+            "slide 23 → slide 24: 由挑战2(注意力硬件)转到挑战3(KV-压缩不适合diffusion)"
+          ],
+          "适合复用场景": [
+            "需逐条列举3个待解决痛点的problem章节",
+            "『现有工作缺陷→本文动机』式的挑战铺垫章节",
+            "每个挑战对应后文一项设计的一一映射结构",
+            "硬件/系统类工作论证已有方案不适配的场景"
+          ],
+          "在deck中的位置": "第2大板块(problem)，紧跟研究背景，为后续LOAC三项设计做逐条铺垫"
+        },
+        {
+          "章节标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "LOAC核心设计",
+          "页码范围": [
+            25,
+            32
+          ],
+          "页数": 8,
+          "页ID列表": [
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29",
+            "slide_30",
+            "slide_31",
+            "slide_32"
+          ],
+          "章节叙事": "承接研究挑战章，逐条落地 LOAC 三项核心设计——统一稀疏注意力、KV 索引+压缩、Flash Attention 硬件数据流，构成方法主体，为后续实验提供验证对象。",
+          "页间关系": [
+            "slide 25 → slide 26: 两张章节导航/进度页，高亮项由第 3 项推进到第 4 项",
+            "slide 26 → slide 27: 由导航页进入设计1标题页（统一注意力稀疏方式）",
+            "slide 27 → slide 28: 由稀疏概念展开到轻量级预测——按注意力分数和给块施加分级 mask",
+            "slide 28 → slide 29: 由 mask 分级方法过渡到 density=20%（timestep warmup）实测效果",
+            "slide 29 → slide 30: 设计1收尾，进入设计2标题页（KV 索引+压缩）与 dense 掩码总览",
+            "slide 30 → slide 31: 由 dense 掩码总览细化到 KV 索引重排/分块存储的具体机制",
+            "slide 31 → slide 32: 由设计2（KV 压缩）过渡到设计3（Flash Attention 硬件数据流）"
+          ],
+          "适合复用场景": [
+            "需按「设计1/2/3」逐条展开的方法章节",
+            "稀疏注意力/KV 压缩类加速方案的方法介绍",
+            "算法与硬件数据流协同设计的技术汇报",
+            "每项设计配示意图逐步递进的组会/科研交流"
+          ],
+          "在deck中的位置": "第 4 章 method 主体，紧接研究挑战，为后面实验验证章铺路"
+        },
+        {
+          "章节标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.05",
+          "章节序号": 5,
+          "章节角色": "experiment",
+          "标题": "实验验证",
+          "页码范围": [
+            33,
+            33
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_33"
+          ],
+          "章节叙事": "作为「实验验证」章的过渡分隔页，标志 deck 从三项设计论述切入效果验证，但本 section 仅含标题页，尚未展开具体实验内容与数据。",
+          "页间关系": [],
+          "适合复用场景": [
+            "需要一张极简蓝线章节分隔页的场合",
+            "论文/组会汇报进入「实验」环节的过渡页",
+            "任何以单页大标题切换章节的严肃学术风 deck"
+          ],
+          "在deck中的位置": "末章，紧接三项设计方案之后，为实验结果收尾做引入"
+        },
+        {
+          "章节标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.06",
+          "章节序号": 6,
+          "章节角色": "closing",
+          "标题": "致谢",
+          "页码范围": [
+            34,
+            34
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_34"
+          ],
+          "章节叙事": "全 deck 收尾页，独立成章。以「感谢聆听」+ 汇报人署名 + 日期收束整场技术汇报，无内容推进，仅作礼节性结束与身份落款。",
+          "页间关系": [],
+          "适合复用场景": [
+            "任何科研组会/学术汇报的致谢结束页",
+            "需要汇报人署名+日期落款的收尾页",
+            "极简留白风格的 thank-you 结尾"
+          ],
+          "在deck中的位置": "第 6 章，末页（slide 34），紧接实验验证章节后收尾"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "LOAC: 条纹稀疏注意力与 KV 压缩的自回归视频生成加速器",
+          "核心论断": "LOAC 提出条纹稀疏注意力与 KV 压缩以加速自回归视频生成",
+          "本页讲什么": "论文封面页,居中大字排布完整英文标题 LOAC: An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction,一条细分隔线下方给出汇报人丁立、DAC 投稿分享身份、2025 年 11 月 8 日日期,页脚署名 Li Ding @ Shanghai Jiao Tong University。整页无配图,纯文字开场。",
+          "关键文字": [
+            "LOAC: An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction",
+            "丁立",
+            "DAC 投稿分享",
+            "2025 年 11 月 8 日",
+            "Li Ding @ Shanghai Jiao Tong University"
+          ],
+          "视觉骨架": [
+            "居中大字论文标题",
+            "细横分隔线",
+            "作者/身份/日期文字块",
+            "底部署名页脚"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "目录: 研究背景 / 研究挑战 / … 四项议程",
+          "核心论断": "全 deck 分四个编号板块依次展开,由研究背景与研究挑战领起",
+          "本页讲什么": "开场目录页,中央用蓝色边框圈住四行并列条目,每行左侧为蓝底圆形编号 ①②③④,右侧为板块名称(研究背景、研究挑战及其后两项),左侧竖立一条深蓝强调竖条。整页无正文数据,仅铺陈全 deck 四段式结构,为后续技术章节建立预期。",
+          "关键文字": [
+            "1 研究背景",
+            "2 研究挑战",
+            "3",
+            "4"
+          ],
+          "视觉骨架": [
+            "蓝色矩形边框",
+            "四行圆形编号 ①-④",
+            "左侧深蓝强调竖条",
+            "编号+条目对齐列表"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "toc_main"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "目录：四部分研究框架",
+          "核心论断": "全篇按研究背景/挑战/内容/总结四部分递进展开",
+          "本页讲什么": "本页为全篇目录，用四个蓝色编号圆点列出研究背景、研究挑战、研究内容、研究总结四大板块，当前高亮第①项研究背景，左侧竖条指示进度，起到章节导航作用。",
+          "关键文字": [
+            "研究背景",
+            "研究挑战",
+            "研究内容",
+            "研究总结"
+          ],
+          "视觉骨架": [
+            "4 项编号圆点列表",
+            "左侧进度竖条",
+            "外框边框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "章节导航：进入第二部分「研究挑战」",
+          "核心论断": "全篇分四部分，现进入第2部分——研究挑战",
+          "本页讲什么": "四部分章节导航页，用带圈数字列出1研究背景、2研究挑战、3、4四大板块，其中第2项「研究挑战」被加深高亮（左侧蓝色竖条标记），表示演讲进入三大研究挑战章节。是本 section 的过渡开场页。",
+          "关键文字": [
+            "1 研究背景",
+            "2 研究挑战",
+            "3",
+            "4"
+          ],
+          "视觉骨架": [
+            "4 项带圈数字纵向导航列表",
+            "左侧蓝色进度竖条",
+            "外框边界线"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "四段式目录导航（定位到研究内容）",
+          "核心论断": "全篇按四大板块推进，此处切入第三板块研究内容",
+          "本页讲什么": "整页是一张四项编号目录导航：①研究背景 ②研究挑战 ③研究内容 ④实验结果（编号圆圈+方框结构）。当前第③项加深高亮，其余灰化，表示演讲进入核心设计（研究内容）板块。属章节切换页，用来给听众定位当前汇报进度。",
+          "关键文字": [
+            "1 研究背景",
+            "2 研究挑战",
+            "3 研究内容",
+            "4 实验结果"
+          ],
+          "视觉骨架": [
+            "4 项编号圆圈+方框列表",
+            "左侧蓝色进度竖条",
+            "当前项加深高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "content_candidate",
+          "标题": "四段式目录导航（定位到实验结果）",
+          "核心论断": "沿四大板块继续推进，此处切入第四板块实验结果",
+          "本页讲什么": "与上页同一张四项编号目录导航（①研究背景②研究挑战③研究内容④实验结果），此处改为第④项实验结果加深高亮，其余灰化，标记汇报即将进入结果板块。与上页构成同模板的进度指示对，是章节间过渡导航页。",
+          "关键文字": [
+            "1 研究背景",
+            "2 研究挑战",
+            "3 研究内容",
+            "4 实验结果"
+          ],
+          "视觉骨架": [
+            "4 项编号圆圈+方框列表",
+            "左侧蓝色进度竖条",
+            "当前项加深高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 33,
+          "页面角色": "chapter_candidate",
+          "标题": "章节分隔页: 实验",
+          "核心论断": "论述转入实验验证阶段, 本页仅作章节过渡不含数据",
+          "本页讲什么": "「实验」章节的分隔/过渡页。左上角一个大字标题「实验」, 下方一条粗蓝色横向分隔线, 页面主体大面积留白, 无任何图表或正文。底部页脚为 Li Ding @ Shanghai Jiao Tong University 与 Page 编号。它标志 deck 从前面三项设计论述切入效果验证, 起分幕作用, 具体实验内容与数据在后续页面展开。",
+          "关键文字": [
+            "实验",
+            "Li Ding @ Shanghai Jiao Tong University (vision)"
+          ],
+          "视觉骨架": [
+            "左上角大字章节标题",
+            "标题下粗蓝色横分隔线",
+            "大面积空白主体",
+            "底部机构/页码页脚"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 34,
+          "页面角色": "ending_candidate",
+          "标题": "感谢聆听（汇报收尾致谢页）",
+          "核心论断": "以「感谢聆听」+ 署名 + 日期礼节性收束整场技术汇报",
+          "本页讲什么": "全 deck 的最后一页致谢结束页，无内容推进。左上角「感谢聆听！」主标题，中部一条淡粉分隔线下署汇报人姓名「丁立」，底部标注汇报日期「2025 年 11 月 8 日」，页脚落款「Li Ding @ Shanghai Jiao Tong University」。整页留白极大，纯作礼貌性结束与身份落款。",
+          "关键文字": [
+            "感谢聆听！",
+            "丁立",
+            "2025 年 11 月 8 日",
+            "Li Ding @ Shanghai Jiao Tong University"
+          ],
+          "视觉骨架": [
+            "左上主标题",
+            "居中淡粉水平分隔线",
+            "中部署名文字",
+            "底部日期与页脚落款"
+          ],
+          "上页角色": "chapter_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+      "目录名": "SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+      "标题": "SG-Filter:相似文本检索的层次摘要语义索引",
+      "总页数": 26,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与内容大纲",
+        "section_02_检索背景与相似文本检索",
+        "section_03_核心洞察-利用摘要信息",
+        "section_04_层次索引与检索方案",
+        "section_05_数据集与实验评估",
+        "section_06_总结与致谢"
+      ],
+      "主题标签": [
+        "文本检索",
+        "相似检索",
+        "摘要索引",
+        "语义索引",
+        "自适应过滤",
+        "向量检索",
+        "RAG"
+      ],
+      "目标受众": "信息检索/RAG 方向学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "会议/组会分享检索类论文方法与实验",
+      "论述总结": "面向相似文本检索(STR)任务,指出主流向量检索范式难以有效建模摘要信息导致召回受限;提出 SG-Filter,通过层次摘要-语义索引与自适应过滤(评分排序+共现)提升召回,并在 Financial/Medical/Qasper/Scifact 等数据集上验证其召回提升与低参数鲁棒性。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "洞察",
+        "方案",
+        "实验"
+      ],
+      "适合复用场景": [
+        "检索/RAG 类论文会议分享",
+        "带 motivation-方法-实验的学术报告",
+        "含目录分隔的四段式论文汇报",
+        "方法创新+多数据集评测型 deck"
+      ],
+      "不适合复用场景": [
+        "工业产品 demo(叙事节奏不同)",
+        "非检索类主题(话题偏离)",
+        "投资/商业路演",
+        "纯教程/tutorial 讲解"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与内容大纲",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "论文汇报开场章节:slide 1 亮明标题/作者/会议身份,slide 2 用 4 项 contents(Background/Insight/Solution/Evaluation)交代全篇路线,当前高亮第 1 章,为后续展开定框架。",
+          "页间关系": [
+            "slide 1 → slide 2: 由标题/作者/CIKM 2025 身份页过渡到 4 项 contents 目录,给出 Background→Insight→Solution→Evaluation 全篇路线并高亮第 1 章"
+          ],
+          "适合复用场景": [
+            "学术论文/会议汇报的封面+目录开场",
+            "需 4 段式路线(背景-洞察-方案-评估)的技术分享",
+            "带作者署名与多机构标注的研究成果 opening",
+            "以高亮当前章、灰显后续章方式引导的目录页"
+          ],
+          "在deck中的位置": "全篇最前 2 页,封面+目录,统领后续 4 大章节"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "检索背景与相似文本检索",
+          "页码范围": [
+            3,
+            6
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06"
+          ],
+          "章节叙事": "为 SG-Filter 铺垫：先立主流向量检索，再引出 STR 这一高占比场景及其两大特征，最终论证向量检索在 STR 下召回不达标(0.72 需求)这一核心痛点",
+          "页间关系": [
+            "slide 3 → slide 4: 由向量检索通用范式收窄到 STR 这一重要且高占比应用场景",
+            "slide 4 → slide 5: 由 STR 场景枚举深入到其定义与「表述各异、语义相近」的第一特征",
+            "slide 5 → slide 6: 由 STR 两大特征推出向量检索召回不达标(需求 0.72)的痛点"
+          ],
+          "适合复用场景": [
+            "需从通用技术范式收窄到细分任务的 background 章节",
+            "论证「某场景下现有方法召回/性能不足」的动机链",
+            "以特征分析驱动出问题定义的研究背景",
+            "检索/RAG 相关任务的问题界定章节"
+          ],
+          "在deck中的位置": "第 2 章 background，紧跟 cover，为后续方法章节立起动机"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.03",
+          "章节序号": 3,
+          "章节角色": "motivation",
+          "标题": "核心洞察:利用摘要信息",
+          "页码范围": [
+            7,
+            12
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_07",
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11",
+            "slide_12"
+          ],
+          "章节叙事": "承接背景章,先把相关工作归为语义/结构两类并对比其召回,再点破现有 embedding 范式无法抽取摘要信息导致低召回,最终引出「补充粗粒度摘要信息(embedding+共现)」这一核心洞察,为后续 SG-Filter 方案铺垫。",
+          "页间关系": [
+            "slide 7 → slide 8: 由 agenda 高亮「Insight」章正式进入,展开相关工作细粒度分类",
+            "slide 8 → slide 9: 由 Type1/Type2 两类方法罗列过渡到二者召回能力(Low/Middle/High)对比",
+            "slide 9 → slide 10: 由方法对比转向指出现有 embedding 范式无法抽取摘要信息→低召回的痛点",
+            "slide 10 → slide 11: 由痛点引出本文洞察——新增粗粒度信息,来源为 embedding 与共现",
+            "slide 11 → slide 12: 由两类信息源深入到 M≪N(唯一 token 稀疏)这一可行性依据"
+          ],
+          "适合复用场景": [
+            "需先分类既有方法再指出共性缺陷的 motivation 章",
+            "论证「摘要/粗粒度信息缺失导致召回下降」的检索类论文",
+            "以 related work 对比表引出自身核心洞察的叙事结构",
+            "需要用 toy example(fox/cat/dog)直观解释向量检索局限的场合"
+          ],
+          "在deck中的位置": "第 2 章(agenda 编号 2),位于 Background 之后、Solution 方案章之前"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "层次索引与检索方案",
+          "页码范围": [
+            13,
+            18
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18"
+          ],
+          "章节叙事": "deck 方法核心章,承接 Insight 落地为 SG-Filter 三项技术:先建层次摘要语义索引(Tech1),再评分排序自适应过滤(Tech2),最后多路融合召回(Tech3),回答 Q1获取/Q2利用摘要信息两问。",
+          "页间关系": [
+            "slide 13 → slide 14: 由 TOC 高亮 Solution 章过渡到 Solution Overview,抛出 Q1获取/Q2利用两问",
+            "slide 14 → slide 15: 由 Q1「如何获取摘要信息」引出 Tech1 层次摘要语义图 Step1 节点构建",
+            "slide 15 → slide 16: 由 Step1 节点扩展到 Step2 共现边+Step3 所属层次,完成语义索引",
+            "slide 16 → slide 17: 由索引构建转向 Q2「如何利用」,进入 Tech2 评分排序自适应过滤",
+            "slide 17 → slide 18: 由单路评分过滤升级到 Tech3 多过滤率多路融合召回"
+          ],
+          "适合复用场景": [
+            "需拆解「获取+利用」双问的方法总览章",
+            "多技术并列(Tech1/2/3)递进式方法章",
+            "含索引构建→过滤→融合流水线的检索方法",
+            "以 Q1/Q2 提问驱动技术展开的叙事"
+          ],
+          "在deck中的位置": "第 3 章 Solution,处 Insight 之后、Evaluation 之前,是全 deck 论证落点"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.05",
+          "章节序号": 5,
+          "章节角色": "result",
+          "标题": "数据集与实验评估",
+          "页码范围": [
+            19,
+            24
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "作为 deck 第 4 部分 Evaluation,承接 Solution 章节,用数据集/指标铺垫→主召回结果→延迟→消融→参数鲁棒性五步,系统论证 SG-Filter 召回提升与低参数鲁棒的有效性。",
+          "页间关系": [
+            "slide 19 → slide 20: 由 TOC 高亮 Evaluation 过渡到实验设置,交代数据集/指标/baseline",
+            "slide 20 → slide 21: 由实验设置铺垫过渡到主结果,给出 Recall@15 提升 10.53%–22.92% 及 SOTA",
+            "slide 21 → slide 22: 由召回效果过渡到效率维度,论证 HNSW 适配下 33.93ms 低延迟",
+            "slide 22 → slide 23: 由整体性能过渡到消融实验,拆解摘要图与结果融合两组件贡献",
+            "slide 23 → slide 24: 由消融验证组件有效性过渡到参数分析,论证鲁棒性与低参数量"
+          ],
+          "适合复用场景": [
+            "检索/RAG 类方法的完整实验评估章节",
+            "需按『设置→主结果→效率→消融→参数』展开的 result 章节",
+            "需同时论证召回提升与低延迟的方法验证",
+            "含多数据集对比与消融/参数分析的科研汇报"
+          ],
+          "在deck中的位置": "第 5 章(Evaluation),紧跟 Solution 方法章节,为全 deck 收尾论证"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.06",
+          "章节序号": 6,
+          "章节角色": "closing",
+          "标题": "总结与致谢",
+          "页码范围": [
+            25,
+            26
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_25",
+            "slide_26"
+          ],
+          "章节叙事": "全 deck 收尾。slide 25 用目录页回扣 Background→Insight→Solution→Evaluation 四段主线，slide 26 以方法示意图重述 SG-Filter 核心并致谢，形成「回顾脉络→浓缩贡献→致谢」的收束弧。",
+          "页间关系": [
+            "slide 25 → slide 26: 由四段主线目录回顾过渡到方法示意图重述核心贡献并致谢"
+          ],
+          "适合复用场景": [
+            "需先回顾全文脉络再收尾的学术汇报结尾",
+            "把方法示意图与致谢/联系方式合并的 summary 页",
+            "含开源代码/主页链接的论文分享收尾",
+            "以目录页作全文回扣的 recap 结构"
+          ],
+          "在deck中的位置": "第 6 章，全 deck 最后两页，紧接 Evaluation 之后收尾"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "SG-Filter 论文封面:标题/作者/会议",
+          "核心论断": "SG-Filter 用层次摘要语义索引与自适应过滤增强相似文本检索",
+          "本页讲什么": "全篇封面页。居中大标题「SG-Filter: Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering」下方依次列出多机构作者(上交、清华、字节、Infinigence AI、上海创智学院)、通讯作者邮箱、会议 CIKM 2025 及日期 2025.11.13,亮明工作身份与出处。",
+          "关键文字": [
+            "SG-Filter: Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering",
+            "Jiancai Ye, Jun Liu, Haoyu Zhang, Maojia Sheng, Tao Yang 等 (vision)",
+            "Shanghai Jiao Tong University, Tsinghua University, ByteDance, Infinigence AI, Shanghai Innovation Institute",
+            "Corresponding to: daiguohao@sjtu.edu.cn (vision)",
+            "CIKM 2025 / 2025.11.13 (vision)"
+          ],
+          "视觉骨架": [
+            "居中多行大标题",
+            "作者姓名带机构上标",
+            "机构脚注列表",
+            "会议与日期署名"
+          ],
+          "上页角色": null,
+          "下页角色": "toc_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "toc_candidate",
+          "标题": "内容大纲:四章路线图(高亮第1章)",
+          "核心论断": "全篇按 Background→Insight→Solution→Evaluation 四章推进,当前进入第1章",
+          "本页讲什么": "目录页。标题「contents」下用编号 1-4 列出四章路线:1 Background: Retrieval、2 Insight: By Summarized Information、3 Solution: Index and Search、4 Evaluation。第1条加黑高亮为当前章,其余灰色待展开,交代全篇结构与进度。",
+          "关键文字": [
+            "1 Background: Retrieval",
+            "2 Insight: By Summarized Information (vision)",
+            "3 Solution: Index and Search (vision)",
+            "4 Evaluation (vision)"
+          ],
+          "视觉骨架": [
+            "蓝色 contents 标题",
+            "编号纵向列表",
+            "当前章加黑高亮/其余灰化"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "toc_candidate",
+          "标题": "目录:定位到「Insight:利用摘要信息」章",
+          "核心论断": "全篇四段式结构,本页高亮进入第 2 章核心洞察",
+          "本页讲什么": "这是一张过渡目录页,列出全篇四个部分(1 Background、2 Insight、3 Solution、4 Evaluation),其中第 2 项「Insight: By Summarized Information」以黑色加粗高亮,其余灰化,标明演讲即将进入核心洞察章节。讲者据此宣布从背景转入洞察部分。",
+          "关键文字": [
+            "contents",
+            "1 Background: Retrieval and AI",
+            "2 Insight: By Summarized Information",
+            "3 Solution: Index and Search",
+            "4 Evaluation"
+          ],
+          "视觉骨架": [
+            "居中标题 contents",
+            "4 行编号目录列表",
+            "当前章高亮/其余灰化"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "toc_candidate",
+          "标题": "目录:进入第3章 Solution 索引与检索",
+          "核心论断": "全篇四章推进至第3章 Solution: Index and Search",
+          "本页讲什么": "四项目录(1 Background、2 Insight、3 Solution: Index and Search、4 Evaluation)中高亮第3项,标示演讲进入方法核心章。其余三项灰显,仅第3项黑色加粗,起章节导航与过渡作用。",
+          "关键文字": [
+            "contents",
+            "1 Background: Retrieval and AI",
+            "2 Insight: By Summarized Information",
+            "3 Solution: Index and Search",
+            "4 Evaluation"
+          ],
+          "视觉骨架": [
+            "居中标题 contents",
+            "4 项编号目录列表",
+            "当前项加粗高亮/余项灰显"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "toc_candidate",
+          "标题": "目录:进入第 4 部分 Evaluation",
+          "核心论断": "全篇进入第 4 部分 Evaluation,前三部分已完成",
+          "本页讲什么": "四段式目录页,列出 Background/Insight/Solution/Evaluation 四大板块,前三项灰显、第 4 项 Evaluation 加粗高亮,表明演讲推进到实验评估章节。是本 section 的导航开场页。",
+          "关键文字": [
+            "Background: Retrieval and AI",
+            "Insight: By Summarized Information",
+            "Solution: Index and Search",
+            "4 Evaluation (高亮)"
+          ],
+          "视觉骨架": [
+            "居中 contents 标题",
+            "4 行编号目录条",
+            "当前项加粗高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "toc_candidate",
+          "标题": "目录回扣:四段主线总览",
+          "核心论断": "全文循 Background→Insight→Solution→Evaluation 四段主线展开",
+          "本页讲什么": "收尾目录页,以极简排版列出全 deck 四条主线:1 Background 检索与 AI、2 Insight 借助摘要信息、3 Solution 索引与检索、4 Evaluation。用于收束前回扣全篇脉络,让听众重温论文的问题—洞见—方案—评估逻辑闭环。",
+          "关键文字": [
+            "contents",
+            "1 Background: Retrieval and AI",
+            "2 Insight: By Summarized Information",
+            "3 Solution: Index and Search",
+            "4 Evaluation"
+          ],
+          "视觉骨架": [
+            "居中 contents 标题",
+            "编号 1-4 纵向列表",
+            "淡灰弱化条目文字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "细分角色": "toc_main"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "ending_candidate",
+          "标题": "SG-Filter 方法重述与致谢",
+          "核心论断": "SG-Filter 以摘要语义索引提升语义/结构检索并致谢收尾",
+          "本页讲什么": "全 deck 末页,左上重述工作标题,中部致谢并给出联系邮箱、GitHub 代码与主页链接;下半区用方法示意图浓缩 SG-Filter 核心:doc 抽取摘要与嵌入,拆分 Semantic/Structured/Summarized 信息,借共现连接提升召回,经 Dense 与混合检索、标签过滤,分别增强语义信息(1)与结构信息(2)。形成回顾脉络→浓缩贡献→致谢的收束。",
+          "关键文字": [
+            "Summary",
+            "Thank you for your attention!",
+            "e-mail: yejiancai@sjtu.edu.cn",
+            "Code: https://github.com/strong-leaf/SG-Filter",
+            "Co-occurrence connection to improve recall rate",
+            "Hybrid retrieval / Label filtering"
+          ],
+          "视觉骨架": [
+            "顶部 Summary + 致谢文字",
+            "邮箱/代码/主页链接行",
+            "SG-Filter 方法示意图",
+            "增强语义/结构 双输出标注"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    }
+  ],
+  "previous_batches_patterns": [
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "tutorial",
+          "lab_introduction"
+        ],
+        "scenario_keywords": [
+          "AI基础设施/算力战略汇报",
+          "研究院/实验室建设规划",
+          "本组多成果综述串讲",
+          "学术会议 tutorial",
+          "软硬件协同专题"
+        ],
+        "deck_size_range": [
+          50,
+          100
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队",
+          "政府/产业决策方"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            4,
+            9
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-2",
+          "page_count_range": [
+            10,
+            15
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "3-6",
+          "page_count_per_section_range": [
+            8,
+            16
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "outlook_section",
+          "section_count": "0-1"
+        },
+        {
+          "role": "closing",
+          "count": "0-1",
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "长篇 deck 骨架:cover+agenda 开场,motivation 铺垫,framework_intro 统领,再以 3-6 个 method/case_study 章节平行陈列本组成果,期间以『全 agenda 灰显+当前章高亮』的 section_divider 作章节导航,末尾以团队展望或致谢封底"
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Challenge→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享"
+        ],
+        "deck_size_range": [
+          15,
+          40
+        ],
+        "audience_levels": [
+          "计算机体系结构/系统方向学术同行",
+          "研究组内同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            5,
+            7
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "单篇论文分享 canonical 骨架:短 deck(20-40 页),cover+纵向编号 agenda 开场,再按 Background→Challenge→Solution→Evaluation→Summary 五段推进,每段进入前插一张『竖排编号圆点导航+当前段高亮』的 section_divider,末尾回归目录+一句『We propose X』总结页附实验室主页/邮箱收束"
+    },
+    {
+      "id": "blank_lab_report_template_skeleton",
+      "title": "实验室通用汇报空白模板骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "template"
+        ],
+        "scenario_keywords": [
+          "实验室/研究组通用 PPT 空白模板",
+          "个人介绍/课题汇报占位版式骨架",
+          "留白待填的实验室模板"
+        ],
+        "deck_size_range": [
+          5,
+          15
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队内部"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "method_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            1,
+            6
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "极短 deck(≤10 页)通用空白模板骨架:cover 留白待填标题,中段提供 self_intro 履历+一组左右双栏可编号问题版式作 method 占位区,末尾提供空白 Thanks/Q&A 版式与实验室署名页脚。多数页为占位版式无实质内容,供二次填充课题汇报"
+    }
+  ]
+}

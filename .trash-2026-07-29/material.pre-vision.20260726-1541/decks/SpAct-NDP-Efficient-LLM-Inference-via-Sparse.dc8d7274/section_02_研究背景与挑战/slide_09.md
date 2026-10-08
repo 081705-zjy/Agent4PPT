@@ -1,0 +1,44 @@
+---
+页标识: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_09"
+所属章节: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02"
+所属deck: "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274"
+页序号: 9
+源文件: "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx"
+页面角色: "content_candidate"
+标题: "参考文献"
+核心论断: "本章压缩技术评述基于 Deja vu 等既有研究成果"
+本页讲什么: "本页为研究背景章节的参考文献列表，收录前述量化、剪枝、动态剪枝等技术评述所引用的论文（如 Liu Z, Wang J, Dao T 等的 Deja vu 等），为全章论断提供出处支撑，作为 section 的收尾。"
+关键文字: "[Liu Z, Wang J, Dao T, et al., \"Deja vu:\"]"
+视觉骨架: "[参考文献列表版式]"
+资源ID列表: "[tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_09.asset.01, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_09.asset.02, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_09.asset.03, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_09.asset.04, tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_09.asset.05]"
+适合复用场景: "[背景章节参考文献页, 压缩技术引文收尾页]"
+不适合复用场景: "[方法细节展开页, 数据结果对比页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 9: 参考文献
+
+**核心论断**: 本章压缩技术评述基于 Deja vu 等既有研究成果
+
+## 本页讲什么
+本页为研究背景章节的参考文献列表，收录前述量化、剪枝、动态剪枝等技术评述所引用的论文（如 Liu Z, Wang J, Dao T 等的 Deja vu 等），为全章论断提供出处支撑，作为 section 的收尾。
+
+## 关键文字片段
+- Liu Z, Wang J, Dao T, et al.
+- Deja vu:
+
+## 视觉骨架
+- 参考文献列表版式
+
+## 可复用到
+- 背景章节参考文献页
+- 压缩技术引文收尾页
+
+## 不适合复用的场景
+- 方法细节展开页
+- 数据结果对比页

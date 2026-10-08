@@ -1,0 +1,43 @@
+---
+章节标识: tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.04
+所属deck: tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716
+章节序号: 4
+章节角色: background
+标题: "2022-2024 进展与开源框架"
+页码范围: [20, 28]
+页数: 9
+页ID列表: [slide_20, slide_21, slide_22, slide_23, slide_24, slide_25, slide_26, slide_27, slide_28]
+章节叙事: 承接前文稀疏计算流与思想，以 ASP-DAC 2022 Tutorial 为锚点，系统盘点 2022-2024 稀疏算子等方向的进展，并收束到 dgSPARSE 开源框架，为后续代表性工作逐一展开铺路。
+页间关系: ["slide 20 → slide 21: 由 ASP-DAC 2022 Tutorial 回顾切入 2022-2024 进展总览", "slide 21 → slide 22: 由进展总览深入到具体方向逐条展开", "slide 22 → slide 23: 沿进展清单继续推进，编号递进", "slide 23 → slide 24: 收拢到稀疏算子方向作重点呈现", "slide 24 → slide 25: 由稀疏算子进展延伸到配套数据/结果页", "slide 25 → slide 26: 由进展成果过渡到 dgSPARSE 开源框架介绍", "slide 26 → slide 27: 由框架总览展开到框架内部结构/组件", "slide 27 → slide 28: 继续细化 dgSPARSE 框架构成并收尾"]
+适合复用场景: [需盘点某领域 N 年进展并落到开源框架的 background 章, 以某次 Tutorial/综述为锚点串联后续工作, 先列进展再引出自研开源生态的叙事, 稀疏计算/算子相关综述型章节]
+不适合复用场景: [无明确时间跨度进展可盘点时, 研究主题与稀疏计算/算子无关, "2022-2024 进展数据已过时", 无配套开源框架可收束]
+在deck中的位置: 第 4 章 background，位于思想梳理之后、代表性工作之前，承上启下
+分析状态: claude-opus-4-8
+---
+
+# section 4: 2022-2024 进展与开源框架
+
+## 在 deck 中的位置
+第 4 章 background，位于思想梳理之后、代表性工作之前，承上启下
+
+## 章内 slide 间的关系
+- slide 20 → slide 21: 由 ASP-DAC 2022 Tutorial 回顾切入 2022-2024 进展总览
+- slide 21 → slide 22: 由进展总览深入到具体方向逐条展开
+- slide 22 → slide 23: 沿进展清单继续推进，编号递进
+- slide 23 → slide 24: 收拢到稀疏算子方向作重点呈现
+- slide 24 → slide 25: 由稀疏算子进展延伸到配套数据/结果页
+- slide 25 → slide 26: 由进展成果过渡到 dgSPARSE 开源框架介绍
+- slide 26 → slide 27: 由框架总览展开到框架内部结构/组件
+- slide 27 → slide 28: 继续细化 dgSPARSE 框架构成并收尾
+
+## 整章可复用的场景
+- 需盘点某领域 N 年进展并落到开源框架的 background 章
+- 以某次 Tutorial/综述为锚点串联后续工作
+- 先列进展再引出自研开源生态的叙事
+- 稀疏计算/算子相关综述型章节
+
+## 不适合复用的场景
+- 无明确时间跨度进展可盘点时
+- 研究主题与稀疏计算/算子无关
+- 2022-2024 进展数据已过时
+- 无配套开源框架可收束

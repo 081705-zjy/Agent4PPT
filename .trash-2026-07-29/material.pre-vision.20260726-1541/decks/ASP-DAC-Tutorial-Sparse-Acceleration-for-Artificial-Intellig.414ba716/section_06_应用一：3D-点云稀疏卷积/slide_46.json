@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_46",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 46,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Solution 3：启发式自适应数据流选择",
+  "核心论断": "逐层启发式自适应选择数据流以匹配输入动态性",
+  "本页讲什么": "本页给出 Observation 3 的解法 Solution 3：Heuristic Adaptive Dataflow Selection，按层（layer-wise）用启发式策略自适应选择数据流，使调度匹配输入动态性、消除静态数据流的性能损失。是三组「问题→解法」范式的最后收口页，随后进入实验。",
+  "关键文字": [
+    "Solution 3: Heuristic Adaptive Dataflow Selection",
+    "Layer-wise dataflow selection"
+  ],
+  "视觉骨架": [
+    "逐层数据流选择示意",
+    "启发式决策流程图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_46.asset.01"
+  ],
+  "适合复用场景": [
+    "自适应数据流方案讲解页",
+    "逐层调度策略展开页"
+  ],
+  "不适合复用场景": [
+    "问题动机抛出页",
+    "端到端加速比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

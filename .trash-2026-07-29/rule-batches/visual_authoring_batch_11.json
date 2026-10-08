@@ -1,0 +1,484 @@
+{
+  "batch_index": 11,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_author_affiliation",
+      "category": "visual",
+      "applicable_role": [
+        "cover",
+        "opening"
+      ],
+      "title": "封面布局·居中大字标题+作者与机构署名",
+      "description": "封面页采用居中大字论文/主题标题, 下方紧接一行作者姓名(带机构上标), 再一行列出机构名, 末行给出通讯作者邮箱; 不含 body bullet 或数据图.",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大字' 或 '主标题'",
+        "关键文字 含 作者姓名 + 上标数字 或 机构名",
+        "关键文字 含 'Correspondence' 或邮箱 @",
+        "视觉骨架 不含 'bullet 列表' / '正文段落' / '柱状图'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 1,
+          "评价": "标准 cover: 论文全称居中大字 + 作者带机构上标 + 通讯作者邮箱, 无 body 元素"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场必须让听众瞬间识别论文主题与讲者身份, 居中大字+作者署名是最短路径, 其他元素会分散注意力",
+      "fix_hint": "把 cover 标题居中放大, 作者机构信息放在标题正下方, 移除或压缩其他非身份识别元素",
+      "exceptions": [
+        "占位空白模板 (无实际身份信息)",
+        "品牌宣传型 deck (品牌 logo 取代作者署名)"
+      ]
+    },
+    {
+      "id": "toc_layout_progressive_highlight_current_section",
+      "category": "visual",
+      "applicable_role": [
+        "toc",
+        "opening",
+        "chapter_divider"
+      ],
+      "title": "目录布局·当前章节高亮+其余置灰",
+      "description": "Outline/目录页顶部为章节大标题, 主体是全篇章节列表; 当前进入的章节以深色/黑色高亮, 其余章节以灰色显示, 呈现进度式导航感; 当前章节可展开缩进子项.",
+      "evidence_signals": [
+        "视觉骨架 含 'Outline' 或 '目录' 大字标题",
+        "视觉骨架 含 '高亮' 且含 '灰化' 或 '置灰'",
+        "关键文字 含多个平行章节名 (如 Background / Related Work / Experiment)",
+        "同一 deck 中同一列表在不同页高亮不同项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 2,
+          "评价": "首个 Outline: Background 黑高亮, 后续章节灰"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 6,
+          "评价": "Related Work 高亮切换"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 10,
+          "评价": "Challenges 高亮 + 缩进四子项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 20,
+          "评价": "Experiment Results 高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "重复出现的目录页需让听众瞬间定位当前进度, 灰/黑对比是最低阅读成本的导航语言",
+      "fix_hint": "把 Outline 页复用同一列表版式, 只切换当前项的字色为深色高亮其余置灰, 不新造章节顺序",
+      "exceptions": [
+        "单章节 deck 无需重复 Outline",
+        "章节封面页承担导航时可用不同布局"
+      ]
+    },
+    {
+      "id": "method_pain_and_design_twin_slide",
+      "category": "visual",
+      "applicable_role": [
+        "method"
+      ],
+      "title": "方法双联页·痛点页+设计页配对出现",
+      "description": "方法章每项 Technique 用两连页展开: 前页痛点(标题含'痛点'+具体问题+底部设问), 后页设计(标题含'设计'+方案示意+底部收益). 不把痛点与方案挤在同一页.",
+      "evidence_signals": [
+        "相邻两页标题分别含 '痛点' 和 '设计'",
+        "痛点页 关键文字 含疑问句(How to / 如何)",
+        "设计页 关键文字 含 '收益' 或 数字降幅",
+        "两页共享同一 Technique 编号"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 14,
+          "评价": "Technique 1 痛点: 高维特征预测慢 + 底部设问"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 15,
+          "评价": "Technique 1 设计: 概率漂移特征降维 + 校正算法"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 16,
+          "评价": "Technique 2 痛点: 激活频率偏斜"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 18,
+          "评价": "Technique 3 痛点: 映射复杂度指数级"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "先看到痛点才能理解方案价值, 挤同页会让方案失去动机, 拆两页让每张 slide 承担一个认知单元",
+      "fix_hint": "把方法章按 Technique 拆为 '痛点+设计' 双联页, 痛点页保留设问结尾, 设计页保留收益结尾",
+      "exceptions": [
+        "极简方法(单一 trick 无子技术)可合并为一页",
+        "综述型 deck 只讲思路不展开工程细节"
+      ]
+    },
+    {
+      "id": "result_bottom_conclusion_banner_with_headline_number",
+      "category": "visual",
+      "applicable_role": [
+        "result",
+        "experiment"
+      ],
+      "title": "实验页底部·结论 banner 承载核心数字",
+      "description": "实验结果页在图表主体下方设置醒目色带(米黄/红框)banner, 用一句英文短句直接给出核心数字结论(如 Up to 2.43x speedup / <1% accuracy loss), 让听众不看图也能带走关键数字.",
+      "evidence_signals": [
+        "视觉骨架 含 '底部' + 'banner' 或 '结论'",
+        "关键文字 含 'Up to' + 数字 + 'x' 或 '<' + 数字 + '%'",
+        "关键文字 含 'speedup' / 'accuracy loss' / 'faster' 等定量词",
+        "该 banner 出现在 result 段落连续多页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 22,
+          "评价": "米黄 banner: Negligible accuracy loss (<1%)"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 23,
+          "评价": "Up to 2.43x speedup on Lenovo Y7000 PC"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 24,
+          "评价": "2.25x / 2.17x + push Pareto frontier"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "实验图表信息密度高, 观众很难自己算出 headline; 底部 banner 用一句话锁死记忆点, 图表沦为二级证据",
+      "fix_hint": "在每张实验图下方加一条色带 banner, 用 'Up to X x speedup' 等短句锁定核心数字",
+      "exceptions": [
+        "定性对比图(无量化数字)可省略 banner",
+        "综合评估表已在标题给出结论时不必重复"
+      ]
+    },
+    {
+      "id": "title_uses_colon_topic_gloss_structure",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题写法·Topic 冒号 Gloss 双段结构",
+      "description": "slide 标题惯用 'TopicName: 短评/要点' 双段结构, 冒号前给出定位(Technique N / Outline / Key Insight), 冒号后给出本页具体判断/内容, 避免只有主题词或只有描述句.",
+      "evidence_signals": [
+        "标题 含 ':' 或 '：' 分隔两段",
+        "冒号前段为名词短语 或含 'Technique/Outline/Key Insight' 定位词",
+        "冒号后段为短评或判断句 (≤14字)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 14,
+          "评价": "Technique 1 痛点:高维原始特征预测太慢 — 定位+判断"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 12,
+          "评价": "Key Insight:投机模型缩小搜索空间"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 23,
+          "评价": "PC 场景加速:最高 2.43x speedup"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 20,
+          "评价": "Outline:高亮进入 Experiment Results"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 1,
+          "原因": "封面页只给论文全称, 不用冒号双段(此为豁免场景)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.88,
+      "enforcement_level": "soft",
+      "rationale": "冒号前定位帮听众找页码, 冒号后判断给出 takeaway; 只有主题词会让 title 空泛, 只有判断句会让 title 与 claim 重合",
+      "fix_hint": "把纯描述型 title 改为 '<定位>: <判断>' 双段结构, 定位从章节名/Technique 编号取, 判断浓缩成 ≤14 字",
+      "exceptions": [
+        "封面/收尾页只给论文全称",
+        "章节封面页只给章节名"
+      ]
+    },
+    {
+      "id": "claim_is_quantitative_judgment_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断·带数字或明确立场的判断句",
+      "description": "slide 的核心论断为完整判断句(有主谓宾), 并且承载具体数字/量级/程度词(如 2.43x / <1% / 指数级 / 数量级差距), 避免'介绍 X' '讲讲 Y' 这类描述性表述.",
+      "evidence_signals": [
+        "核心论断 为完整句 (含主谓宾)",
+        "核心论断 含数字 + 单位 (%/x/倍/量级) 或 'Pareto/最高/几乎无损' 等程度词",
+        "核心论断 不以 '介绍' '本页讲' '关于' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 3,
+          "评价": "'单请求 token 消耗从 0.1k 级跃升至 10k 级' 带量级判断"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 15,
+          "评价": "'概率漂移特征降维约 10^3 倍, 两步校正算法保精度'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 22,
+          "评价": "'SpecEE 相比原模型精度损失 <1%, 几乎无损'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 24,
+          "评价": "'云端最高提速 2.25x/2.17x 并推进 Pareto 前沿'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "带数字的判断句直接被听众记忆并复述, 描述型 claim 无 takeaway 让 slide 变成 filler",
+      "fix_hint": "把 claim 改写为 '<主语> <动词> <量化后果>' 结构, 从图表/结论 banner 拉数字进 claim",
+      "exceptions": [
+        "封面/目录页 claim 允许为总起句",
+        "定性洞察页(纯范式抽象)允许不含数字但需带判断"
+      ]
+    },
+    {
+      "id": "bottom_red_question_hands_off_to_next_slide",
+      "category": "visual",
+      "applicable_role": [
+        "motivation",
+        "method",
+        "background"
+      ],
+      "title": "底部红字设问·把问题抛给下一页",
+      "description": "动机/方法章的过渡页在底部用红色一句问句(How to ... ?)把当前 slide 的痛点直接转成下一页要解决的问题, 形成'问题-回答'的强线索.",
+      "evidence_signals": [
+        "视觉骨架 含 '底部红字' 或 '红色问题'",
+        "关键文字 含 'How to' + '?' 或 '如何' + '?'",
+        "该 slide 下一页 claim 直接回答该问题"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 5,
+          "评价": "'How to reduce layer computation?' 引出后续早退方案"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 7,
+          "评价": "'Key Problem: How to design the predictor?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 12,
+          "评价": "'How to reduce the computation based on reduced space?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 14,
+          "评价": "'How to design a lightweight predictor model?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 16,
+          "评价": "'How to deploy the predictor dynamically?'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "问句形式让听众自动带着期待翻页, 比陈述性小结更能维持注意力弧线; 红色让问题从正文颜色中跳出",
+      "fix_hint": "在痛点/动机页底部加一行红字 'How to ... ?' 问句, 问题的回答留给下一页 claim",
+      "exceptions": [
+        "结果页/收尾页不需设问",
+        "章节内最后一页(承接章节收束)可省略"
+      ]
+    },
+    {
+      "id": "motivation_uses_dual_number_comparison_panel",
+      "category": "visual",
+      "applicable_role": [
+        "motivation"
+      ],
+      "title": "动机页布局·大数字双列对照",
+      "description": "动机页用横向双列/多列 panel 呈现 '现状 vs 需求' 或 '过去 vs 现在' 的大字数字对比(带单位如 token/s、10^n), 底部标注引用脚注; 不用长句描述.",
+      "evidence_signals": [
+        "视觉骨架 含 '横向' + '对照' 或 '并列 panel'",
+        "视觉骨架 含 '巨号数字' 或 '大字数字'",
+        "关键文字 含 至少两组数字+单位 (token/s / % / x)",
+        "关键文字 含 引用脚注 '[数字]'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 3,
+          "评价": "Token→Action 两阶段横向对照 + 巨号 0.1k/10k"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 4,
+          "评价": "四设备并列 Requirement/Now 双行数字对照"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "动机需要制造'差距感/紧迫感', 大字数字对照是数量级冲击力最强的视觉语言, 长句会稀释这种冲击",
+      "fix_hint": "把动机文字改为双列 panel, 每列一个巨号数字+单位, 底部附 [n] 引用",
+      "exceptions": [
+        "无量化数据支撑的动机可用故事场景图替代",
+        "定性动机(理念/趋势)不适用"
+      ]
+    },
+    {
+      "id": "ending_layout_recap_conclusion_qr_entry",
+      "category": "visual",
+      "applicable_role": [
+        "ending",
+        "closing"
+      ],
+      "title": "收尾页布局·标题回放+双结论+论文/代码二维码",
+      "description": "收尾页居中复述论文标题与作者, 下方用两条蓝字 bullet 列出 headline 结论(数字+意义), 右侧配 Paper Link/Code Link 二维码入口, 底部 Powered by 署名条; 不加新增内容.",
+      "evidence_signals": [
+        "视觉骨架 含 '居中论文标题' 或 '标题复述'",
+        "视觉骨架 含 '二维码' 或 'QR'",
+        "关键文字 含 'Paper Link' 或 'Code Link'",
+        "关键文字 含 2 条以内 headline 结论 (数字 + 意义)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 25,
+          "评价": "居中标题+作者 + 两条蓝字结论(~2.43x/~2.25x + Pareto) + Paper/Code 二维码"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "收尾页承担'带走什么/去哪深读'两件事, 标题+结论满足记忆, 二维码满足行动; 不该塞新内容打断收束",
+      "fix_hint": "把 ending 页压成三块: 标题作者复述 + 2 条数字结论 bullet + 论文/代码二维码, 移除新增图表",
+      "exceptions": [
+        "内部汇报无对外分享需求可省二维码",
+        "无量化收益的 idea 分享可用 takeaway 句替代数字结论"
+      ]
+    },
+    {
+      "id": "chapter_transition_reused_outline_page",
+      "category": "authoring",
+      "applicable_role": [
+        "chapter_divider",
+        "toc"
+      ],
+      "title": "章节切换·复用同一 Outline 页仅换高亮",
+      "description": "每次进入新章节前, 复用与首个 Outline 完全相同的目录版式和章节文案, 仅切换当前项高亮; 不为每章设计独立的 chapter divider 页.",
+      "evidence_signals": [
+        "同一 deck 内多个 Outline 页 关键文字列表完全一致",
+        "同一 deck 内多个 Outline 页 视觉骨架一致",
+        "各 Outline 页仅当前高亮项不同"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 2,
+          "评价": "首出 Outline: 5 章节 + Background 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 6,
+          "评价": "同版式 Related Work 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 10,
+          "评价": "同版式 Challenges 高亮 + 展开子项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 20,
+          "评价": "同版式 Experiment Results 高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "复用同一目录版式建立稳定的空间锚点, 让听众知道'又回到了地图', 独立分章版式反而会让导航感断裂",
+      "fix_hint": "把每章开头的 divider 统一替换为同一 Outline 页, 仅改动当前项字色/加粗",
+      "exceptions": [
+        "章节间跨度极大需要故事重启时可用独立 divider",
+        "单章节 deck 不需要重复 Outline"
+      ]
+    },
+    {
+      "id": "insight_progressive_answer_chain_across_pages",
+      "category": "authoring",
+      "applicable_role": [
+        "method",
+        "insight"
+      ],
+      "title": "关键洞察·多页递进式问答链",
+      "description": "Key Insight 或 method 铺垫用 3+ 页递进: 每页在上页问题基础上给出一层答案, 再抛下一层问题(缩空间→跳层→设计预测器), 而非单页塞满全部洞察.",
+      "evidence_signals": [
+        "连续 3 页共享 'Key Insight' 前缀标题",
+        "第 N 页底部问句被第 N+1 页 claim 直接回答",
+        "每页只推进一个概念(空间/计算/预测器)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 11,
+          "评价": "Key Insight 1: 推理即搜索 + 问'如何缩空间?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 12,
+          "评价": "Key Insight 2: 投机模型缩空间 + 问'如何减计算?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "slide_index": 13,
+          "评价": "Key Insight 3: 逐层预测器 + 问'如何设计 predictor?'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "复杂洞察一次讲完会认知过载; 分页递进让每步只承担一个跳跃, 前一页问题变成下一页 claim, 逻辑链条自然浮现",
+      "fix_hint": "把塞满的洞察页拆成 3 页, 每页只推进一个概念, 页尾问句由下一页 claim 回答",
+      "exceptions": [
+        "简单一步到位的洞察不必拆分",
+        "综述型 deck 时间受限时可合并"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (25 slides) — visual: 7 rules, authoring: 5 rules. 由于单 deck 内所有可比 slide 高度一致, 命中率普遍偏高; 需在后续 batch 复核跨 deck 覆盖度以下调 enforcement_level.",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

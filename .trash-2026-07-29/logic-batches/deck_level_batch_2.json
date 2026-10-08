@@ -1,0 +1,855 @@
+{
+  "batch_index": 2,
+  "patterns": [
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Related Work→Method→Evaluation→Summary 五段式(mini-agenda 导航)",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享",
+          "AI 加速/检索类论文分享",
+          "软硬件协同加速论文汇报",
+          "LLM 推理加速论文分享",
+          "扩散模型推理加速论文分享"
+        ],
+        "deck_size_range": [
+          20,
+          45
+        ],
+        "audience_levels": [
+          "计算机体系结构/系统方向学术同行",
+          "研究组内同行",
+          "AI 加速与硬件方向学术同行",
+          "推理系统方向学术同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-3",
+          "page_count_range": [
+            3,
+            12
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            6
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            6,
+            17
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            8
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "cover",
+        "outline",
+        "background/motivation",
+        "related work",
+        "insight/challenge",
+        "method/technique",
+        "evaluation",
+        "summary/thanks"
+      ],
+      "applicable_summary": "单篇论文分享的 canonical 骨架: 20-45 页, cover + 纵向编号/进度式 agenda(5-7 项)开场, 再按 Background→Related Work→Insight/Challenge→Solution→Evaluation→Summary 线性推进, 每章切换前插一张『整张 outline 灰显+当前章节高亮』的 mini-agenda section_divider 作导航, 末尾以标题回扣+作者/致谢/Paper·Code 二维码收束; motivation 常含 background+related_work+insight 多段, method 常拆 2-4 项技术并列(每项 problem→approach 双页展开)。允许小变体: closing 页样式(纯标题回扣 vs 结论+QR vs 致谢+课题组系列)。",
+      "anti_patterns": [
+        "长篇 deck·框架统领+多工作平行陈列: 用 long_deck_framework_plus_works_panorama_with_agenda_navigation, 不套此 pattern",
+        "实验室通用空白模板: 页数极短且无实证内容, 骨架完全不同",
+        "工业产品 demo/live 演示 deck: 无 Background→Method→Evaluation 学术弧线",
+        "训练/预训练主题: 与推理加速的『提速+精度』验证叙事节奏不同"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "deck_title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+          "deck_topic_tags": [
+            "LLM Inference",
+            "Sparse Activation",
+            "NDP-GPU",
+            "Weight Mapping",
+            "Scheduling",
+            "Quantization",
+            "Pruning",
+            "Acceleration"
+          ],
+          "match_evidence": "24 页 paper_share: 1 cover + 1 outline(三段主线) + 9p Background/Challenge + 8p Techniques(章内 agenda 分隔 slide 12) + 4p Experiment(章内 agenda 分隔 slide 20) + 1 title-recap closing; 完全命中五段式 canonical",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "SpAct-NDP:稀疏激活高效 LLM 推理(论文封面)",
+              "slide_claim": "SpAct-NDP 借稀疏激活在 NDP-GPU 异构架构上实现高效 LLM 推理",
+              "slide_key_text": [
+                "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+                "Jiaming Xu*, Tongxin Xie*, Yongkang Zhou, Jinhao Li, Yao Lian",
+                "Zhenhua Zhu, Yu Wang, Guohao Dai",
+                "Infinigence-AI, SII",
+                "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题块",
+                "多行作者+上标署名",
+                "单位与通讯邮箱脚注"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "Outline:背景挑战→技术方法→实验结果",
+              "slide_claim": "全 deck 按背景挑战、四项核心技术、实验结果三段主线展开",
+              "slide_key_text": [
+                "Outline",
+                "Background and Challenge",
+                "Techniques: Overview",
+                "Sparse-aware Weight-Mapping Strategy",
+                "Two-level Heuristic Scheduling System",
+                "Request-weight Pair Parsing Mechanism",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色居中大标题",
+                "三段式层级目录",
+                "子项 bullet 缩进列表"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "本章大纲:核心技术三板块",
+              "slide_claim": "核心技术章将依次展开权重映射、调度、解析三项技术",
+              "slide_key_text": [
+                "Background and Challenge",
+                "Techniques: Overview",
+                "Sparsity-aware Weight Mapping Strategy",
+                "Two-level Heuristic Scheduling System",
+                "Request-weight Pair Parsing Mechanism",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "三级大纲缩进列表",
+                "当前章高亮/它章灰显",
+                "bullet 子条目"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:进入实验评估章节",
+              "slide_claim": "讲完背景与技术,演讲正式切入实验评估结果",
+              "slide_key_text": [
+                "Background and Challenge",
+                "Techniques:Overview / PQ-based MatMul",
+                "Unified Architecture / Extensible GFM-ISA Design",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题 Outline",
+                "灰显已讲条目列表",
+                "黑色高亮当前章节项"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_deck": "closing",
+              "archetype": "closing_title_recap_only",
+              "slide_title": "论文全称 + 作者署名结尾页",
+              "slide_claim": "以论文全称与作者署名收束全篇，呼应封面",
+              "slide_key_text": [
+                "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+                "Jiaming Xu, supervised by Prof. Guohao Dai"
+              ],
+              "slide_visual_skeleton": [
+                "居中大号标题文字块",
+                "标题下方作者署名行",
+                "整体大量留白无图表"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_研究背景与挑战",
+              "slide_range": [
+                3,
+                11
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_核心技术方案",
+              "slide_range": [
+                12,
+                19
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_04_实验评估结果",
+              "slide_range": [
+                20,
+                23
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_05_结尾页",
+              "slide_range": [
+                24,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "deck_title": "SpeContext: 高效长上下文推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "长上下文",
+            "投机稀疏",
+            "KV Cache",
+            "稀疏注意力",
+            "检索头",
+            "推理加速",
+            "内存管理"
+          ],
+          "match_evidence": "34 页 paper_share: 1 cover + 1 outline(六段) + 6p Background + 3p Related Work + 12p Challenges&Techniques(章内 agenda slide 12) + 5p Experiment(章内 agenda slide 24) + 5p Extension(章内 agenda slide 29) + 1p Summary; 每章切换前插 mini-agenda 高亮页, 命中 canonical 五段式(motivation 段扩为 background+related_work+insight)",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "SpeContext:高效长上下文推理(论文封面)",
+              "slide_claim": "SpeContext 由 SJTU 等团队提出,面向高效长上下文推理",
+              "slide_key_text": [
+                "SpeContext: Enabling Efficient Long-context Reasoning with",
+                "Jiaming Xu, Jiayi Pan, Jiancai Ye, Yu Wang, Guohao Dai",
+                "Shanghai Jiao Tong University, Tsinghua, SII, Infinigence-AI",
+                "jiamingxu@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题",
+                "作者姓名带机构上标",
+                "机构与邮箱脚注行"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "Outline:六段主线目录",
+              "slide_claim": "全文沿 Background 到 Extension 六段主线展开,技术含四项",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight",
+                "Lightweight Retrieval Head",
+                "Asynchronous Prefetch Dataflow",
+                "Adaptive Memory Management",
+                "Experiment Results",
+                "Extension"
+              ],
+              "slide_visual_skeleton": [
+                "居中蓝色 Outline 标题",
+                "六段目录纵向列表",
+                "当前章高亮其余灰化",
+                "缩进技术子条目 bullet"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:定位到 Related Work 章节",
+              "slide_claim": "全篇分五章推进,当前进入 Related Work 相关工作",
+              "slide_key_text": [
+                "Outline",
+                "Background / Related Work / Challenges and Techniques",
+                "Key Insight, Lightweight Retrieval Head",
+                "Asynchronous Prefetch Dataflow",
+                "Adaptive Memory Management",
+                "Experiment Results / Extension"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题 Outline",
+                "章节纵向列表",
+                "当前章节高亮+其余灰显",
+                "子条目缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "本节 Agenda:挑战与核心技术",
+              "slide_claim": "本节聚焦三项核心技术:轻量检索、异步预取、自适应内存",
+              "slide_key_text": [
+                "Challenges and Techniques",
+                "Key Insight",
+                "Lightweight Retrieval Head",
+                "Asynchronous Prefetch Dataflow",
+                "Adaptive Memory Management"
+              ],
+              "slide_visual_skeleton": [
+                "章节大纲列表",
+                "当前章节高亮/其余灰显",
+                "多级 bullet 缩进"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:定位到「实验结果」章节",
+              "slide_claim": "全文六大板块中,进度推进到 Experiment Results 章",
+              "slide_key_text": [
+                "Background / Related Work / Challenges and Techniques",
+                "Key Insight、Lightweight Retrieval Head、Adaptive Memory Management",
+                "Experiment Results(高亮)",
+                "Extension"
+              ],
+              "slide_visual_skeleton": [
+                "单列纵向目录列表",
+                "当前章节黑色高亮其余灰化",
+                "两级缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:进入 Extension 展望章",
+              "slide_claim": "讲解推进到 Extension 章,承接实验结果转向范式展望",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Lightweight Retrieval Head",
+                "Experiment Results",
+                "Extension"
+              ],
+              "slide_visual_skeleton": [
+                "置灰目录列表",
+                "当前项高亮标黑",
+                "两级缩进 bullet"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_长上下文推理背景",
+              "slide_range": [
+                3,
+                8
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_相关工作",
+              "slide_range": [
+                9,
+                11
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_挑战与核心技术",
+              "slide_range": [
+                12,
+                23
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_实验结果",
+              "slide_range": [
+                24,
+                28
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_06_推理扩展与展望",
+              "slide_range": [
+                29,
+                33
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_07_总结页",
+              "slide_range": [
+                34,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+          "deck_title": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+          "deck_topic_tags": [
+            "Diffusion",
+            "Inference",
+            "Speculation",
+            "Feature Cache",
+            "Acceleration",
+            "Self-Speculation"
+          ],
+          "match_evidence": "30 页 paper_share: 1 cover + 1 Contents(六节编号) + 5p Background + 6p Related Work + 4p Motivation + 7p Techniques + 5p Evaluation + 1p Summary; 每章切换前插蓝色圆点 mini-agenda 高亮页(slides 8/14/18/25), 末页含致谢+课题组投机系列 panorama, 命中 canonical 五段式扩展",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "SpecDiff：自投机加速扩散模型推理（封面）",
+              "slide_claim": "SpecDiff 以自投机机制加速扩散模型推理",
+              "slide_key_text": [
+                "SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation",
+                "Jiayi Pan, Jiaming Xu, Yongkang Zhou, Guohao Dai",
+                "1Shanghai Jiao Tong University / 2SII / 3Infinigence AI",
+                "Equal Contribution",
+                "*Corresponding to: jiamingxu@sjtu.edu.cn; daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "通栏大标题",
+                "浅粉水平分隔线",
+                "作者与机构署名块",
+                "通讯信息脚注"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "全篇六节目录（Background 高亮）",
+              "slide_claim": "全篇按六节展开，从 Background 起步",
+              "slide_key_text": [
+                "Contents",
+                "1 Background",
+                "2 Related Work",
+                "3 Motivation",
+                "4 Techniques",
+                "5 Evaluation / 6 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "矩形外边框",
+                "蓝色编号圆点竖排目录",
+                "左侧蓝色进度竖条",
+                "当前节高亮",
+                "页脚页码"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入 Related Work 章节",
+              "slide_claim": "演讲推进至第 2 章 Related Work,承上启下",
+              "slide_key_text": [
+                "Contents",
+                "Background / Related Work / Motivation",
+                "Techniques / Evaluation / Summary"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框目录卡",
+                "6 项编号圆点列表",
+                "当前项蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位到 Motivation 章节",
+              "slide_claim": "演讲进入第 3 部分 Motivation,承接 Related Work 展开动机",
+              "slide_key_text": [
+                "Contents",
+                "Background / Related Work / Motivation",
+                "Techniques / Evaluation / Summary"
+              ],
+              "slide_visual_skeleton": [
+                "外框标题卡",
+                "6 项编号圆点竖排列表",
+                "左侧当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入 Techniques 章节",
+              "slide_claim": "演讲进入第 4 部分 Techniques,方法核心即将展开",
+              "slide_key_text": [
+                "Background / Related Work / Motivation",
+                "Techniques(当前高亮)",
+                "Evaluation / Summary"
+              ],
+              "slide_visual_skeleton": [
+                "外框 Contents 标题",
+                "6 项编号圆点纵向列表",
+                "当前项蓝色竖条高亮"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位到第 4 章 Evaluation",
+              "slide_claim": "全篇进入第 4 部分 Evaluation,承接 Techniques 转入评测",
+              "slide_key_text": [
+                "Contents",
+                "1 Background",
+                "2 Related Work",
+                "3 Techniques",
+                "4 Evaluation",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框标题卡",
+                "5 项编号圆圈列表",
+                "左侧当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_with_lab_works_panorama",
+              "slide_title": "总结致谢与课题组投机系列工作",
+              "slide_claim": "SpecDiff 是课题组『投机加速』研究主线中的一环",
+              "slide_key_text": [
+                "Thanks for your attention !",
+                "Communication email: pan_jiayi@sjtu.edu.cn",
+                "Our works on speculation",
+                "Speculation for LLM Early Exit (ISCA 2025)",
+                "Speculation for Sparse Attention",
+                "Speculation for VLA Pruning (ASPLOS 2026)"
+              ],
+              "slide_visual_skeleton": [
+                "SpecDiff 标题框",
+                "致谢+邮箱文字块",
+                "Lab/Paper 二维码",
+                "投机系列 3 卡片并列"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_扩散模型与推理计算成本",
+              "slide_range": [
+                3,
+                7
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_相关工作-降输入长度与特征缓存",
+              "slide_range": [
+                8,
+                13
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_04_关键洞察-相邻步特征可预知",
+              "slide_range": [
+                14,
+                17
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_特征选择与多级分类算法",
+              "slide_range": [
+                18,
+                24
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_06_实验设置与加速评测",
+              "slide_range": [
+                25,
+                29
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_07_总结与致谢",
+              "slide_range": [
+                30,
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "match_evidence": "25 页 paper_share: 1 cover + 1 outline(五段进度式) + 3p Background/Motivation + 4p Related Work + 10p Challenges&Techniques(章内 slide 10 mini-agenda) + 5p Experiment(章内 slide 20 mini-agenda) + 1p Summary; 命中 canonical 五段式, ending 含结论+Paper·Code QR",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+              "slide_claim": "SpecEE 以投机式提前退出加速大模型推理",
+              "slide_key_text": [
+                "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+                "Jiaming Xu, Yaoxiu Lian, Junyi Wu, Guohao Dai",
+                "Shanghai Jiao Tong University, Infinigence-AI, SII",
+                "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题",
+                "作者姓名带机构上标",
+                "机构与通讯作者信息行"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "Outline:全篇章节进度式目录",
+              "slide_claim": "全篇分六段结构,当前高亮定位到 Background",
+              "slide_key_text": [
+                "Outline",
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色 Outline 标题",
+                "高亮/灰化进度式章节列表",
+                "带缩进的子项 bullet"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:进入 Related Work 章节",
+              "slide_claim": "演讲进入「Related Work」环节,承接 Background",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "纵向目录列表",
+                "当前项高亮(黑)+ 其余灰",
+                "蓝色大标题 Outline"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:定位到 Challenges and Techniques",
+              "slide_claim": "本章围绕四项技术展开:关键洞察、轻量预测器、启发调度、合并映射",
+              "slide_key_text": [
+                "Backgrounds / Related Works",
+                "Challenges and Techniques",
+                "Key Insight",
+                "Lightweight Predictor Design",
+                "Heuristic Predictor Scheduling",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "多级 agenda 列表",
+                "当前章高亮其余置灰",
+                "子条目缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Outline:高亮进入 Experiment Results",
+              "slide_claim": "演讲推进至 Experiment Results,正式进入实验章",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "Outline 蓝色大标题",
+                "灰显章节列表",
+                "当前章黑色高亮"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_deck": "closing",
+              "archetype": "closing_conclusion_with_paper_code_qr",
+              "slide_title": "SpecEE 收尾页:标题+作者+核心结论+论文/代码入口",
+              "slide_claim": "SpecEE 实现 ~2.43x/~2.25x 加速并推动 speedup-accuracy Pareto 前沿",
+              "slide_key_text": [
+                "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+                "Jiaming Xu, supervised by Prof. Guohao Dai",
+                "~2.43x and ~2.25x faster LLM inference on PC and cloud scenarios",
+                "Successfully push the Pareto frontier of speedup and accuracy",
+                "Paper Link / Code Link"
+              ],
+              "slide_visual_skeleton": [
+                "居中论文标题+作者署名块",
+                "两条蓝字结论 bullet",
+                "右侧 Paper/Code 二维码入口",
+                "底部 Powered by 署名条"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_研究背景与推理成本动机",
+              "slide_range": [
+                3,
+                5
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_相关工作-现有提前退出方法",
+              "slide_range": [
+                6,
+                9
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_SpecEE-挑战、关键洞察与技术设计",
+              "slide_range": [
+                10,
+                19
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_实验结果与性能评估",
+              "slide_range": [
+                20,
+                24
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_06_论文与代码链接",
+              "slide_range": [
+                25,
+                25
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 4,
+      "confidence_estimate": "high"
+    }
+  ],
+  "extraction_notes": "本 batch 4 deck 全部 paper_share 且 20-34 页, 骨架高度一致(cover+outline+多段 motivation+method+result+closing, 每章切换前插 mini-agenda 高亮页), 直接命中 previous_batches_patterns 的 paper_share_bg_challenge_solution_eval_summary_canonical, 复用同 id 追加 4 carriers, applicable_when 与 abstract_node_sequence 相应扩展 motivation_section 计数上限至 3, 覆盖 background+related_work+insight 组合. 无未分配 deck.\nnew_archetype: closing_title_recap_only — 仅居中重复论文标题+作者署名, 无总结/致谢/QR, 纯视觉落幕呼应封面.\nnew_archetype: closing_thanks_with_lab_works_panorama — 致谢+邮箱+课题组同主线系列工作卡片并列+Paper/Lab 二维码, 把单篇工作升维为研究脉络.\nnew_archetype: closing_conclusion_with_paper_code_qr — 标题回扣+作者+核心指标结论 bullet+Paper/Code 二维码入口, 强调可复现与关键收益.",
+  "coverage": {
+    "decks_in_batch": 4,
+    "decks_assigned_to_some_pattern": 4,
+    "decks_unassigned_in_this_batch": [],
+    "decks_assigned_to_multiple_patterns": []
+  }
+}

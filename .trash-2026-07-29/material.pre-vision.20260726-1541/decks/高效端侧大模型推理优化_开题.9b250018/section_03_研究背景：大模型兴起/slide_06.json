@@ -1,0 +1,41 @@
+{
+  "页标识": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06",
+  "所属章节": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.sec.03",
+  "所属deck": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+  "页序号": 6,
+  "源文件": "templates/个人学术考核/高效端侧大模型推理优化_开题.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Next-Token 预测的自回归生成机制",
+  "核心论断": "大模型经 Tokenize 与逐 token 预测自回归生成",
+  "本页讲什么": "从机制层解释大模型生成过程：输入先 Tokenize，再由 Transformer Decoder 做 Next-Token Prediction 逐词自回归生成。此页揭示「为何推理是逐 token 串行、开销大」，为后文高效推理命题打机制基础。",
+  "关键文字": [
+    "Tokenize",
+    "Next Token Prediction (Transformer Decoder)"
+  ],
+  "视觉骨架": [
+    "Tokenize 流程示意",
+    "Transformer Decoder 结构图",
+    "逐 token 生成箭头"
+  ],
+  "资源ID列表": [
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.01",
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.02",
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.03",
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.04",
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.05",
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.06",
+    "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_06.asset.07"
+  ],
+  "适合复用场景": [
+    "Next-Token 生成机制讲解页",
+    "Transformer 自回归推理原理页"
+  ],
+  "不适合复用场景": [
+    "能效对比结果页",
+    "尺度定律趋势页",
+    "应用赋能铺垫页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

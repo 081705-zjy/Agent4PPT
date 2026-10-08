@@ -1,0 +1,45 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06",
+  "所属章节": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+  "页序号": 6,
+  "源文件": "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx",
+  "页面角色": "content_candidate",
+  "标题": "动态剪枝压缩技术评述",
+  "核心论断": "动态剪枝按输入裁剪计算，但引入运行时开销与局限",
+  "本页讲什么": "承接量化，本页评述另一条压缩路线——动态剪枝（Dynamic Pruning）。用密集的公式与示意展示如何根据当前（Current）输入动态裁剪权重与计算，并暗示其运行时判定开销，为导出稀疏激活的必要性做对比铺垫。",
+  "关键文字": [
+    "Dynamic Pruning",
+    "Current",
+    "Weight"
+  ],
+  "视觉骨架": [
+    "动态剪枝流程示意",
+    "权重裁剪公式图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.01",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.02",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.03",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.04",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.05",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.06",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.07",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.08",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.09",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.10",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.11",
+    "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.slide_06.asset.12"
+  ],
+  "适合复用场景": [
+    "动态剪枝方法介绍页",
+    "输入自适应压缩评述页"
+  ],
+  "不适合复用场景": [
+    "章节 opener 页",
+    "参考文献页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

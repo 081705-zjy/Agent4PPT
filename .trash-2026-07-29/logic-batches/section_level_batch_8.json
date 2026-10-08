@@ -1,0 +1,989 @@
+{
+  "batch_index": 8,
+  "patterns": [
+    {
+      "id": "background_bottleneck_taxonomy_compare_pain_insight",
+      "title": "背景·瓶颈锁定→技术分类学→四象限对比→痛点暴露→洞见桥接",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          8,
+          11
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "挑战",
+          "瓶颈",
+          "技术分类",
+          "痛点"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "era_opener_headline",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首以领域时代级大标题开场, 把观众引入宏观背景"
+        },
+        {
+          "archetype": "bottleneck_breakdown_pipeline_pie",
+          "count": 1,
+          "position": "start",
+          "purpose": "以流水线示意+延迟饼图收敛到具体瓶颈算子"
+        },
+        {
+          "archetype": "optimization_cost_formula_three_column",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以总代价公式+三列并列图铺陈总优化空间"
+        },
+        {
+          "archetype": "sub_taxonomy_dual_panel_compare",
+          "count": 2,
+          "position": "middle",
+          "purpose": "每技术分支各占一页, 分别以左右 panel 对比静态/动态子类"
+        },
+        {
+          "archetype": "four_way_comparison_table_winner_highlight",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用 4×4 对比表在多维度评估技术, 红字高亮胜出者"
+        },
+        {
+          "archetype": "chosen_technique_mechanism_two_step",
+          "count": 1,
+          "position": "middle",
+          "purpose": "深入胜出技术的核心机理, 拆两步流程揭示动态性来源"
+        },
+        {
+          "archetype": "pain_point_pipeline_stall_diagram",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以流水线时间线+同步/重叠标注暴露关键痛点"
+        },
+        {
+          "archetype": "insight_solution_bridge_dual_pipeline",
+          "count": 1,
+          "position": "end",
+          "purpose": "以对比流水线+利用率数字桥接新架构解法, 立靶下一章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "era_opener_headline",
+          "to_archetype": "bottleneck_breakdown_pipeline_pie",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "bottleneck_breakdown_pipeline_pie",
+          "to_archetype": "optimization_cost_formula_three_column",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "optimization_cost_formula_three_column",
+          "to_archetype": "sub_taxonomy_dual_panel_compare",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "sub_taxonomy_dual_panel_compare",
+          "to_archetype": "sub_taxonomy_dual_panel_compare",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "sub_taxonomy_dual_panel_compare",
+          "to_archetype": "four_way_comparison_table_winner_highlight",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "four_way_comparison_table_winner_highlight",
+          "to_archetype": "chosen_technique_mechanism_two_step",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "chosen_technique_mechanism_two_step",
+          "to_archetype": "pain_point_pipeline_stall_diagram",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "pain_point_pipeline_stall_diagram",
+          "to_archetype": "insight_solution_bridge_dual_pipeline",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的中长 background 章: 时代开场→FFN 等具体瓶颈锁定→总代价公式+三列优化空间→剪枝/量化两页分别静态-动态子类比→四象限对比表选优→胜出技术两步机理→流水线痛点→双流水线利用率桥接新架构",
+      "anti_patterns": [
+        "缺失技术分类学的直接瓶颈→洞见 (页数<6, 用 background_gap_to_sparsity_family_taxonomy_dual_flaw 类似 pattern)",
+        "无对比表直接给方案的 problem→solution 短漏斗"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "deck_title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+          "deck_topic_tags": [
+            "LLM Inference",
+            "Sparse Activation",
+            "NDP-GPU",
+            "Weight Mapping",
+            "Scheduling",
+            "Quantization",
+            "Pruning",
+            "Acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "section_title": "研究背景与挑战",
+          "section_role": "background",
+          "section_narrative": "背景章,漏斗式为 NDP 方法铺垫:由 LLM 推理 FFN 瓶颈切入,横扫剪枝/量化技术并对比锁定动态剪枝,再暴露其动态数据搬运致 GPU 利用率低的痛点,引出 NDP 洞见",
+          "section_topic_tags": [
+            "LLM 推理瓶颈",
+            "FFN 延迟",
+            "动态剪枝",
+            "稀疏激活",
+            "GPU 利用率痛点"
+          ],
+          "match_evidence": "9 页节奏: 时代开场(era_opener) + FFN 饼图(bottleneck_breakdown) + 总代价三列(optimization_cost_formula) + 剪枝/量化各一页双栏(sub_taxonomy_dual_panel_compare ×2) + 4×4 对比表红字胜出(four_way_comparison_table_winner_highlight) + 动态剪枝两步机理(chosen_technique_mechanism_two_step) + 流水线痛点(pain_point_pipeline_stall_diagram) + 双流水线利用率桥接 NDP(insight_solution_bridge_dual_pipeline)",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "era_opener_headline",
+              "archetype": "single_text_centric_definition_box",
+              "slide_title": "大语言模型时代(章节开场)",
+              "slide_claim": "LLM 席卷学界与产业,开启大语言模型时代",
+              "slide_key_text": [
+                "Era of Large Language Models",
+                "LLMs have attracted much attention"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题",
+                "蓝色标题色带"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "bottleneck_breakdown_pipeline_pie",
+              "archetype": "pipeline_with_latency_pie_chart",
+              "slide_title": "LLM 推理:FFN 是延迟瓶颈",
+              "slide_claim": "FFN 是日常 LLM 推理 Decode 阶段的主要延迟瓶颈",
+              "slide_key_text": [
+                "FFN is the bottleneck during the daily inference",
+                "Latency Breakdown in Decode Phase",
+                "Prefill Phase",
+                "Decode Phase",
+                "Attention softmax"
+              ],
+              "slide_visual_skeleton": [
+                "Prefill/Decode 两阶段算子示意图",
+                "延迟占比饼图",
+                "红星强调标注"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "optimization_cost_formula_three_column",
+              "archetype": "formula_top_three_column_matrix",
+              "slide_title": "面向 FFN 的多种优化:代价拆解",
+              "slide_claim": "总代价=乘法次数×单次乘法代价,剪枝减次数、量化降单价",
+              "slide_key_text": [
+                "Various techniques is proposed for FFN",
+                "Total Cost = Number of Multiplication × Cost of Single Multiplication",
+                "Original",
+                "Pruning",
+                "Quantization",
+                "MatMul"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列 panel",
+                "权重矩阵网格图",
+                "稀疏/量化着色对比",
+                "总代价公式"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "sub_taxonomy_dual_panel_compare",
+              "archetype": "dashed_dual_panel_offline_online",
+              "slide_title": "剪枝细分:静态剪枝 vs 动态剪枝",
+              "slide_claim": "剪枝分为离线静态剪枝与在线依赖输入的动态剪枝",
+              "slide_key_text": [
+                "Pruning is divided into static pruning and dynamic pruning",
+                "Static Pruning[1,2]",
+                "Dynamic Pruning[3,4]",
+                "Offline",
+                "Online",
+                "Prompt"
+              ],
+              "slide_visual_skeleton": [
+                "左右 2 列虚线框 panel",
+                "稀疏权重矩阵网格图",
+                "Offline/Online 标注"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "sub_taxonomy_dual_panel_compare",
+              "archetype": "dashed_dual_panel_offline_online",
+              "slide_title": "量化细分:静态量化 vs 动态量化",
+              "slide_claim": "量化分为离线静态量化与在线依赖输入的动态量化",
+              "slide_key_text": [
+                "Quantization is divided into static quantization and dynamic",
+                "Static Quantization[1,2]",
+                "Dynamic Quantization[3,4]",
+                "Offline",
+                "Online",
+                "Current Prompt"
+              ],
+              "slide_visual_skeleton": [
+                "左右 2 列虚线框 panel",
+                "量化权重矩阵网格图",
+                "Fixed/Dynamic 标注"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "four_way_comparison_table_winner_highlight",
+              "archetype": "comparison_table_red_highlight_winner",
+              "slide_title": "四类方法对比:动态剪枝胜出",
+              "slide_claim": "动态剪枝以 >90% 稀疏、<1% 精度损失、2x~10x 加速全面领先",
+              "slide_key_text": [
+                "Static/Dynamic Pruning",
+                "Static/Dynamic Quantization",
+                "Sparsity >90%",
+                "Accuracy Loss <1%",
+                "Speedup 2x~10x",
+                "Precision FP16/Int4/Int8"
+              ],
+              "slide_visual_skeleton": [
+                "4 列 × 4 行对比表",
+                "红字高亮胜出列",
+                "蓝色表头"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "chosen_technique_mechanism_two_step",
+              "archetype": "two_step_mechanism_flow_diagram",
+              "slide_title": "动态剪枝原理:ReLU 诱发动态稀疏",
+              "slide_claim": "ReLU 激活带来输入相关的动态稀疏,需在线预测稀疏模式",
+              "slide_key_text": [
+                "ReLU activation results in dynamic sparse",
+                "Predict Pattern",
+                "Dynamic Mask Pattern",
+                "Online / Dependent / Dynamic Access",
+                "Step1 / Step2",
+                "Wup / Wdown / DRAM"
+              ],
+              "slide_visual_skeleton": [
+                "两步流程框图",
+                "预测模式示意",
+                "DRAM 动态访问箭头",
+                "权重矩阵示意"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "pain_point_pipeline_stall_diagram",
+              "archetype": "pipeline_swimlane_stall_timeline",
+              "slide_title": "痛点:动态搬运致 GPU 利用率低",
+              "slide_claim": "繁重且动态的数据搬运引发严重同步、拖垮 GPU 利用率",
+              "slide_key_text": [
+                "Heavy and dynamic data transfer leads to significant synchronization and poor GPU utilization",
+                "LLM Pipeline with Sparse Activation",
+                "Data Loading",
+                "Compute",
+                "Overlap",
+                "Synchronization"
+              ],
+              "slide_visual_skeleton": [
+                "稀疏激活流水线框图",
+                "阶段时间线表格",
+                "Data Loading/Compute 泳道",
+                "同步/重叠标注"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "insight_solution_bridge_dual_pipeline",
+              "archetype": "dual_pipeline_utilization_compare",
+              "slide_title": "洞见:引入近数据处理 NDP 架构",
+              "slide_claim": "针对稀疏激活的数据搬运瓶颈,应引入近数据处理 NDP 架构",
+              "slide_key_text": [
+                "Apply the near-data-processing(NDP) architecture",
+                "Poor GPU utilization",
+                "59% / 81%",
+                "ReLU-Llama-7B 28.39GB",
+                "ReLU-Mistral-7B 102GB",
+                "Original LLM Pipeline / Sparse Activation Pipeline"
+              ],
+              "slide_visual_skeleton": [
+                "两条流水线对比示意",
+                "GPU 利用率百分比标注",
+                "各模型权重量清单"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_challenge_mapping_overview_plus_problem_approach_pairs",
+      "title": "方法·总览挑战映射+每技术 problem→approach 双页对",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          7,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "核心技术",
+          "挑战映射",
+          "问题-方案",
+          "软硬协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入方法章, 高亮当前章及子项"
+        },
+        {
+          "archetype": "system_overview_challenge_to_technique_mapping",
+          "count": 1,
+          "position": "start",
+          "purpose": "左侧硬件系统总览 + 右侧 C1/C2/C3 三挑战对应三技术, 建总纲"
+        },
+        {
+          "archetype": "technique_problem_page",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术首页: 问题版, 用现有映射/负载/掩码等场景图展示痛点"
+        },
+        {
+          "archetype": "technique_approach_page",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术次页: 方案版(Approach), 以 before/after 或 offline/online 对照证明解法有效"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "system_overview_challenge_to_technique_mapping",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "system_overview_challenge_to_technique_mapping",
+          "to_archetype": "technique_problem_page",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "technique_problem_page",
+          "to_archetype": "technique_approach_page",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "technique_approach_page",
+          "to_archetype": "technique_problem_page",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "软硬件协同 method 章的固定套式: 章首目录→系统总览页把 N 挑战一一映射到 N 项技术→每项技术两页(problem 立痛点 → approach 给方案+before/after 数字), 三项技术并列成对推进",
+      "anti_patterns": [
+        "无 problem→approach 明显对页, 单页展开多技术 (用 method_multi_parallel_techniques_intro_flow_detail)",
+        "三设计各以 intro-mechanism-result 三拍展开 (用 method_three_design_intro_mechanism_result_triad)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "deck_title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+          "deck_topic_tags": [
+            "LLM Inference",
+            "Sparse Activation",
+            "NDP-GPU",
+            "Weight Mapping",
+            "Scheduling",
+            "Quantization",
+            "Pruning",
+            "Acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "section_title": "核心技术方案",
+          "section_role": "method",
+          "section_narrative": "承接背景挑战,作为 deck 方法核心;先用系统总览把三大挑战映射到三项技术,再以每技术两页(问题→方案)依次破解 DRAM 带宽欠利用、通道负载不均、掩码解析耗时",
+          "section_topic_tags": [
+            "稀疏感知权重映射",
+            "两级启发式调度",
+            "请求-权重对解析",
+            "NDP-GPU 协同",
+            "软硬件协同方案"
+          ],
+          "match_evidence": "8 页节奏: TOC(toc_chapter_marker) + NDP-GPU 系统总览+C1/C2/C3→三技术映射(system_overview_challenge_to_technique_mapping) + 技术1/2/3 各 problem→approach 双页对(technique_problem_page/technique_approach_page ×3)",
+          "slides": [
+            {
+              "slide_index": 12,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "本章大纲:核心技术三板块",
+              "slide_claim": "核心技术章将依次展开权重映射、调度、解析三项技术",
+              "slide_key_text": [
+                "Background and Challenge",
+                "Techniques: Overview",
+                "Sparsity-aware Weight Mapping Strategy",
+                "Two-level Heuristic Scheduling System",
+                "Request-weight Pair Parsing Mechanism",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "三级大纲缩进列表",
+                "当前章高亮/它章灰显",
+                "bullet 子条目"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "system_overview_challenge_to_technique_mapping",
+              "archetype": "left_arch_right_challenge_mapping",
+              "slide_title": "NDP-GPU 协同系统总览:挑战映射技术",
+              "slide_claim": "三大挑战 C1/C2/C3 一一映射为三项核心技术方案",
+              "slide_key_text": [
+                "NDP-GPU Collaboration System Overview",
+                "Challenge1(C1): Under-utilization of DRAM Bandwidth",
+                "Sparsity-aware weight mapping strategy",
+                "Challenge2(C2): Workload Imbalance across Channels",
+                "Offline and online heuristic scheduling system",
+                "Dataflow Mapping and System Overview"
+              ],
+              "slide_visual_skeleton": [
+                "NDP-GPU 数据流架构图",
+                "挑战→技术映射三行",
+                "GPU/CPU/NDP Chip 模块块图"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "technique_problem_page",
+              "archetype": "two_step_dataflow_with_utilization_annotation",
+              "slide_title": "技术一 权重映射:带宽欠利用问题",
+              "slide_claim": "现有映射策略致稀疏激活下 DRAM Bank 带宽严重欠利用",
+              "slide_key_text": [
+                "Existing mapping strategies cause bandwidth under-utilization for sparse activation",
+                "Dependent Dynamic DRAM Access",
+                "Step1 Up/Gate (dense) / Step2 Down (sparse)",
+                "Bank Under-utilization 100% 33% 33%",
+                "Wdown Wup",
+                "Sparse Activation"
+              ],
+              "slide_visual_skeleton": [
+                "两步数据流示意 (Up/Gate、Down)",
+                "Bank 利用率红框标注",
+                "DRAM 访问依赖图"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "technique_approach_page",
+              "archetype": "before_after_dual_column_approach_tag",
+              "slide_title": "技术一 权重映射:稀疏感知方案",
+              "slide_claim": "稀疏感知权重映射将带宽利用率提升至 100% 并均衡负载",
+              "slide_key_text": [
+                "Sparsity-aware weight mapping strategy considering sparse activation",
+                "improve bandwidth utilization",
+                "Bank Under-utilization 100% 33% 33%",
+                "Workload Balance 100% Utilized",
+                "Step1 Up/Gate / Step2 Down",
+                "Output1/Output2 (sparse/dense)"
+              ],
+              "slide_visual_skeleton": [
+                "before/after 双栏对照图",
+                "Approach 绿色标签",
+                "bank 利用率对比标注"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "technique_problem_page",
+              "archetype": "skew_distribution_with_channel_idle_diagram",
+              "slide_title": "技术二 调度:通道负载不均问题",
+              "slide_claim": "FFN 激活频率高度偏斜引发通道间 workload imbalance",
+              "slide_key_text": [
+                "Highly skewed activation frequency in FFN activation causes workload imbalance",
+                "Weight Activated Frequency Distribution",
+                "Skew Distribution >90% <10%",
+                "Dependent Predicted Mask DRAM Access",
+                "Imbalance / Idle",
+                "NDP Channel Processor Memory"
+              ],
+              "slide_visual_skeleton": [
+                "激活频率分布柱图",
+                "skew 比例标注",
+                "NDP 通道 Idle/Imbalance 示意"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "technique_approach_page",
+              "archetype": "offline_online_two_stage_scheduling_diagram",
+              "slide_title": "技术二 调度:离线+在线启发式方案",
+              "slide_claim": "离线预排+在线调度协同实现通道级负载均衡",
+              "slide_key_text": [
+                "Offline and online heuristic scheduling",
+                "achieve the channel-wise",
+                "Offline Scheduling / Online Scheduling",
+                "Weight Loading",
+                "Reorder simultaneously",
+                "Inference"
+              ],
+              "slide_visual_skeleton": [
+                "离线/在线两阶段块图",
+                "Reorder 矩阵乘示意",
+                "通道 CH 负载排布图"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "technique_problem_page",
+              "archetype": "gpu_ndp_pipeline_with_time_annotation",
+              "slide_title": "技术三 解析:掩码解析耗时问题",
+              "slide_claim": "NDP 逐通道解析预测稀疏掩码,耗时约占推理 20%",
+              "slide_key_text": [
+                "The predicted sparse pattern is parsed by NDP architecture, resulting in time-consuming",
+                "Dependent Dynamic Access Predicted Mask",
+                "QKV Gen. & Attention & Mask Prediction",
+                "Channel-wise Mask Parsing (~0.6ms) ~20% of total",
+                "Transfer Mask via Bus",
+                "Single Request Step1"
+              ],
+              "slide_visual_skeleton": [
+                "GPU-NDP 掩码流水块图",
+                "Mask Parsing 耗时红字标注",
+                "通道级掩码传输示意"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "technique_approach_page",
+              "archetype": "pair_parsing_compression_gain_diagram",
+              "slide_title": "技术三 解析:请求-权重对解析机制",
+              "slide_claim": "请求-权重对解析压缩掩码达 90%,提速 3x、省内存 9x",
+              "slide_key_text": [
+                "Request-weight pair parsing mechanism aims to parse the predicted mask",
+                "compress up to 90% sparsity",
+                "Predicted Mask (~500KB)",
+                "Sub-mask X-W Pair 2:[1], 3:[3], Channel1",
+                "Channel-wise Mask Parsing (~0.6ms) ~20% of total inference",
+                "3x Time 9x Mem."
+              ],
+              "slide_visual_skeleton": [
+                "原掩码 vs 配对 sub-mask 对照",
+                "X-W Pair 拆解示意",
+                "3x/9x 收益标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "result_agenda_setup_speedup_efficiency_dual_headline",
+      "title": "结果·目录→评估设置→加速头条+能效头条对称",
+      "applicable_when": {
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "加速比",
+          "能效",
+          "主结果"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Experiment Results 章, 起承前启后过渡"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 1,
+          "position": "start",
+          "purpose": "单页交代工具/模型/GPU 与 NDP baseline/数据集全部前置设置"
+        },
+        {
+          "archetype": "speedup_headline_multi_platform_bar",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多组柱状图分平台/模型对比, 底部红框大字加速比结论"
+        },
+        {
+          "archetype": "energy_efficiency_headline_multi_platform_bar",
+          "count": 1,
+          "position": "end",
+          "purpose": "与加速对称结构, 多组柱状图给能效结论, 底部红框大字倍数"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "eval_setup_bulleted_with_refs",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_with_refs",
+          "to_archetype": "speedup_headline_multi_platform_bar",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "speedup_headline_multi_platform_bar",
+          "to_archetype": "energy_efficiency_headline_multi_platform_bar",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型极简 result 章: 章首目录→单页评估设置(工具/模型/多类 baseline/数据集)→多平台加速柱状图+红框倍数头条→能效柱状图+红框倍数头条, 加速与能效对称收束成果",
+      "anti_patterns": [
+        "含消融拆解的完整实验章 (用 experiment_setup_dual_main_headline_ablation_pair)",
+        "含精度+面积+加速+消融+EDP 多维度证据的长实验章 (用 experiment_setup_accuracy_area_speedup_ablation_edp_summary)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "deck_title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+          "deck_topic_tags": [
+            "LLM Inference",
+            "Sparse Activation",
+            "NDP-GPU",
+            "Weight Mapping",
+            "Scheduling",
+            "Quantization",
+            "Pruning",
+            "Acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04",
+          "section_title": "实验评估结果",
+          "section_role": "result",
+          "section_narrative": "result 章的完整评估弧线:由 outline 切入实验,先立评估设置(平台/模型/baseline),再用双组柱状图依次论证 2.17× 加速与 1.53× 能效两大成果。",
+          "section_topic_tags": [
+            "NDP-GPU 加速评估",
+            "LLM 推理能效",
+            "多 baseline 对比",
+            "SOTA 稀疏激活加速"
+          ],
+          "match_evidence": "4 页节奏: TOC(toc_chapter_marker) + setup 分级 bullet(eval_setup_bulleted_with_refs) + 加速多平台柱+红框头条 2.17×(speedup_headline_multi_platform_bar) + 能效多平台柱+红框头条 1.53×(energy_efficiency_headline_multi_platform_bar)",
+          "slides": [
+            {
+              "slide_index": 20,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:进入实验评估章节",
+              "slide_claim": "讲完背景与技术,演讲正式切入实验评估结果",
+              "slide_key_text": [
+                "Background and Challenge",
+                "Techniques:Overview / PQ-based MatMul",
+                "Unified Architecture / Extensible GFM-ISA Design",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题 Outline",
+                "灰显已讲条目列表",
+                "黑色高亮当前章节项"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "eval_setup_bulleted_with_refs",
+              "archetype": "tiered_bullet_list_setup",
+              "slide_title": "实验评估设置:平台/模型/baseline",
+              "slide_claim": "实验建立在多模型、多硬件 baseline 与真实数据集之上",
+              "slide_key_text": [
+                "Tools:GPU NVIDIA Nsight Tools、NDP Samsung PIMSimulator",
+                "Benchmark:ReLU-Llama2-7B/13B、TurboSparse-Mistral/Mixtral",
+                "GPU Baseline:Dejavu on A100-80GB-SXM 与 RTX 3090",
+                "NDP-GPU Baseline:Hynix GDDR6-AiM、Samsung HBM-PIM",
+                "Customized Baseline:Hermes(最新 NDP 稀疏激活工作)",
+                "Dataset:ShareGPT"
+              ],
+              "slide_visual_skeleton": [
+                "分级 bullet 列表",
+                "工具/模型/baseline/数据集分块",
+                "关键平台名加粗"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "speedup_headline_multi_platform_bar",
+              "archetype": "multi_platform_speedup_bars_red_headline",
+              "slide_title": "加速评估:最高 2.17×/1.92× 加速",
+              "slide_claim": "SpAct-NDP 相比 SOTA 软件框架最高获 2.17×、1.92× 加速",
+              "slide_key_text": [
+                "We achieve up to 2.17× and 1.92× speedup",
+                "compared with SOTA software frameworks",
+                "on NVIDIA RTX 3090 and NVIDIA Tesla A100",
+                "平台:Dejavu-A100 / HBM-PIM-A100 / AIM-A100",
+                "模型:ReLU-Llama2-7B / ReLU-Llama2-13B"
+              ],
+              "slide_visual_skeleton": [
+                "多组分平台加速柱状图",
+                "batch size 横轴分组",
+                "底部红框结论条"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "energy_efficiency_headline_multi_platform_bar",
+              "archetype": "multi_platform_efficiency_bars_red_headline",
+              "slide_title": "能效评估:最高 1.53×/1.45× 能效",
+              "slide_claim": "SpAct-NDP 相比 SOTA 软件框架最高获 1.53×、1.45× 能效",
+              "slide_key_text": [
+                "We achieve up to 1.53× and 1.45× energy efficiency",
+                "compared with SOTA software frameworks",
+                "on NVIDIA RTX 3090 and NVIDIA Tesla A100",
+                "平台:SpAct-NDP(AIM)-A100 / SpAct-NDP(HBMPIM)-A100",
+                "模型:R-Llama2-7B/13B、T-Mistral-7B"
+              ],
+              "slide_visual_skeleton": [
+                "多组能效柱状图",
+                "Requests(Batch size)横轴",
+                "底部红框结论条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "论文",
+          "机构",
+          "作者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中大字论文标题+多机构作者名单+共一/通讯标注"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号目录列出全 deck 章节骨架 (背景/挑战/方法/实验/总结)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多家机构作者+共一/通讯标注)接一页编号进度式目录, 为后续 background→method→experiment→closing 主线定调",
+      "anti_patterns": [
+        "单页封面无目录 (用 opening_paper_cover_multi_author_multi_institution)",
+        "封面即含日期地点讲者的宏观 tutorial 类 (用 opening_cover_plus_progress_highlighted_toc)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "deck_title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+          "deck_topic_tags": [
+            "LLM Inference",
+            "Sparse Activation",
+            "NDP-GPU",
+            "Weight Mapping",
+            "Scheduling",
+            "Quantization",
+            "Pruning",
+            "Acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "deck 的门面章：slide 1 抛出论文标题/作者/单位建立学术署名,slide 2 以 Outline 展开「背景挑战→技术方法(四小节)→实验结果」三段主线,为全 deck 定框架",
+          "section_topic_tags": [
+            "SpAct-NDP 论文封面",
+            "多作者多机构署名",
+            "三段式 Outline",
+            "学术分享开场"
+          ],
+          "match_evidence": "2 页节奏: 大字论文封面+多机构上标署名+通讯高亮(single_paper_title_authors_only) + Outline 三段式高亮当前(toc_progress_highlight)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SpAct-NDP:稀疏激活高效 LLM 推理(论文封面)",
+              "slide_claim": "SpAct-NDP 借稀疏激活在 NDP-GPU 异构架构上实现高效 LLM 推理",
+              "slide_key_text": [
+                "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+                "Jiaming Xu*, Tongxin Xie*, Yongkang Zhou, Jinhao Li, Yao Lian",
+                "Zhenhua Zhu, Yu Wang, Guohao Dai",
+                "Infinigence-AI, SII",
+                "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题块",
+                "多行作者+上标署名",
+                "单位与通讯邮箱脚注"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:背景挑战→技术方法→实验结果",
+              "slide_claim": "全 deck 按背景挑战、四项核心技术、实验结果三段主线展开",
+              "slide_key_text": [
+                "Outline",
+                "Background and Challenge",
+                "Techniques: Overview",
+                "Sparse-aware Weight-Mapping Strategy",
+                "Two-level Heuristic Scheduling System",
+                "Request-weight Pair Parsing Mechanism",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色居中大标题",
+                "三段式层级目录",
+                "子项 bullet 缩进列表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_title_recap_signature_mirror_cover",
+      "title": "收尾·标题复现+作者署名首尾闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "结尾",
+          "标题复现",
+          "首尾闭环",
+          "作者署名"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "title_recap_with_author_supervisor",
+          "count": 1,
+          "position": "start",
+          "purpose": "整页仅居中呈现论文完整标题+作者/导师署名, 无 Thanks 无 recap, 与封面形成首尾闭环"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "论文分享型极简单页收尾: 大量留白, 居中大号论文完整标题+下方一行作者+导师署名(如 supervised by Prof. X), 不做要点总结/致谢, 只做视觉落幕, 与封面标题呼应形成首尾闭环",
+      "anti_patterns": [
+        "含 Thanks for your listening 主标题 (用 closing_minimal_thanks_with_speaker_signature)",
+        "含全体作者名单+机构角标高亮通讯 (用 closing_thanks_single_page_with_full_author_institution_footer)",
+        "含目录 recap+一句话贡献+联系方式的双页收尾 (用 closing_toc_recap_plus_summary_contribution_with_contact)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "deck_title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+          "deck_topic_tags": [
+            "LLM Inference",
+            "Sparse Activation",
+            "NDP-GPU",
+            "Weight Mapping",
+            "Scheduling",
+            "Quantization",
+            "Pruning",
+            "Acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.05",
+          "section_title": "结尾页",
+          "section_role": "closing",
+          "section_narrative": "以论文全称+作者署名收束全篇,呼应封面标题形成首尾闭环。不做要点总结,仅作视觉落幕,把注意力重新聚回研究本身。",
+          "section_topic_tags": [
+            "论文标题复现",
+            "导师署名",
+            "首尾闭环",
+            "极简落幕"
+          ],
+          "match_evidence": "1 页节奏: 整页居中大号论文完整标题+一行作者(Jiaming Xu, supervised by Prof. Guohao Dai)署名, 大量留白无图表(title_recap_with_author_supervisor)",
+          "slides": [
+            {
+              "slide_index": 24,
+              "role_in_pattern": "title_recap_with_author_supervisor",
+              "archetype": "title_recap_with_author_supervisor",
+              "slide_title": "论文全称 + 作者署名结尾页",
+              "slide_claim": "以论文全称与作者署名收束全篇，呼应封面",
+              "slide_key_text": [
+                "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+                "Jiaming Xu, supervised by Prof. Guohao Dai"
+              ],
+              "slide_visual_skeleton": [
+                "居中大号标题文字块",
+                "标题下方作者署名行",
+                "整体大量留白无图表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(SpAct-NDP 论文分享)共 5 section, 抽出 5 patterns。其中 opening 章复用 previous_batches 中已有 pattern `opening_paper_cover_multi_author_multi_institution_plus_toc`(直接沿用 id, 追加 carrier); background/method/result/closing 各起新 pattern: `background_bottleneck_taxonomy_compare_pain_insight`(9 页漏斗式 + 技术分类学 + 四象限对比表, 与 previous 已有的 background_gap_to_sparsity_family_taxonomy_dual_flaw 有相似性但节奏更完整含痛点+洞见桥接)、`method_challenge_mapping_overview_plus_problem_approach_pairs`(3 挑战→3 技术 problem→approach 双页对, 与 previous 的 method_three_design_intro_mechanism_result_triad 三拍不同)、`result_agenda_setup_speedup_efficiency_dual_headline`(4 页极简, 加速+能效对称, 无消融, 与 previous 的 experiment_setup_dual_main_headline_ablation_pair 不同)、`closing_title_recap_signature_mirror_cover`(单页极简标题复现+导师署名, 与 previous 的 thanks 类收尾均不同, 是新的首尾闭环变体). new_archetype: era_opener_headline — 章节开场大字时代级标题+一句副标, 不含实质数据. new_archetype: bottleneck_breakdown_pipeline_pie — 左侧流水线示意+右侧延迟拆解饼图, 用于定位关键算子瓶颈. new_archetype: optimization_cost_formula_three_column — 顶部总代价公式+三列并列 panel(原始/剪枝/量化)展示优化空间. new_archetype: sub_taxonomy_dual_panel_compare — 单一技术分支的静态 vs 动态子类双 panel 对照. new_archetype: four_way_comparison_table_winner_highlight — 4×4 对比表按维度评估技术, 红字高亮胜出列. new_archetype: chosen_technique_mechanism_two_step — 胜出技术的两步流程框图揭示动态机制. new_archetype: pain_point_pipeline_stall_diagram — 流水线泳道+时间线表格暴露同步/停顿痛点. new_archetype: insight_solution_bridge_dual_pipeline — 对比原/稀疏两条流水线利用率, 桥接新架构. new_archetype: system_overview_challenge_to_technique_mapping — 左硬件系统总览+右挑战 C1/C2/C3→技术一一映射. new_archetype: technique_problem_page — 单项技术的问题版页, 场景图+痛点数字. new_archetype: technique_approach_page — 单项技术的方案版页(Approach), before/after 或 offline/online 对照. new_archetype: speedup_headline_multi_platform_bar — 多平台/模型/batch size 加速柱状图+底部红框大字倍数头条. new_archetype: energy_efficiency_headline_multi_platform_bar — 与加速对称的能效柱状图+红框倍数头条. new_archetype: title_recap_with_author_supervisor — 居中大号论文完整标题+下方 supervised by 导师署名, 单页极简落幕.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 5,
+    "sections_unassigned_in_this_batch": []
+  }
+}

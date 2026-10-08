@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_92"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.11"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 92
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "合作机构与生态资源"
+核心论断: "稀疏加速研究已联结清华、MIT、UC 等顶尖机构生态"
+本页讲什么: "收尾章的合作页，展示已建立或期望建立合作的院校与机构（清华、MIT、UC 等），以 logo 墙形式呈现研究生态与资源网络，为后续对接抛出合作意向，引出讲者联系页。"
+关键文字: "[Collaboration, Tsinghua University, MIT, UC]"
+视觉骨架: "[机构 logo 墙, 合作方分区排布]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_92.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_92.asset.02, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_92.asset.03, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_92.asset.04, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_92.asset.05]"
+适合复用场景: "[技术报告结尾的合作机构展示页, 科研生态资源 logo 墙, 稀疏加速主题的合作邀约页]"
+不适合复用场景: "[含具体数据的结果对比页, 方法架构示意页, 正文论证型 bullet 页]"
+上页角色: "content_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 92: 合作机构与生态资源
+
+**核心论断**: 稀疏加速研究已联结清华、MIT、UC 等顶尖机构生态
+
+## 本页讲什么
+收尾章的合作页，展示已建立或期望建立合作的院校与机构（清华、MIT、UC 等），以 logo 墙形式呈现研究生态与资源网络，为后续对接抛出合作意向，引出讲者联系页。
+
+## 关键文字片段
+- Collaboration
+- Tsinghua University
+- MIT
+- UC
+
+## 视觉骨架
+- 机构 logo 墙
+- 合作方分区排布
+
+## 可复用到
+- 技术报告结尾的合作机构展示页
+- 科研生态资源 logo 墙
+- 稀疏加速主题的合作邀约页
+
+## 不适合复用的场景
+- 含具体数据的结果对比页
+- 方法架构示意页
+- 正文论证型 bullet 页

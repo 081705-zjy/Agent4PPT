@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_24",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 24,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "多级特征分类算法",
+  "核心论断": "不同重要性层级 token 稳定性不同，需分级处理",
+  "本页讲什么": "本页从特征选择收束到多级特征分类算法，指出「不同重要性层级的 token 稳定性各异（Stability varies）」，因此需按重要性把特征划分为多个层级、分别采用不同的复用/计算策略，把前面逐页展开的选择思想落成可实现的两步流程终点。",
+  "关键文字": [
+    "Multi-level Feature Classification Algorithm",
+    "Stability of tokens at different importance level varies"
+  ],
+  "视觉骨架": [
+    "多级分类层次示意图",
+    "不同层级稳定性对比图",
+    "分级策略框图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_24.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_24.asset.02",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_24.asset.03",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_24.asset.04"
+  ],
+  "适合复用场景": [
+    "多级特征分类算法总览页",
+    "按重要性分层处理的策略说明"
+  ],
+  "不适合复用场景": [
+    "单一注意力可视化页",
+    "章节目录导航页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

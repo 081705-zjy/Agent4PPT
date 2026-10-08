@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_06"
+所属章节: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.02"
+所属deck: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031"
+页序号: 6
+源文件: "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx"
+页面角色: "content_candidate"
+标题: "骨干模型：DiT（结构展开①）"
+核心论断: "DiT 各模块以标记序列承载扩散去噪计算"
+本页讲什么: "承接上页 DiT 概览，本页以①编号进一步拆解 DiT 的内部结构与数据流，逐步展开其模块组成，帮助听众理解 DiT 如何逐层处理 latent token，为引出全注意力这一后续优化对象铺路。"
+关键文字: "[\"Backbone model: DiT\", ①]"
+视觉骨架: "[DiT 模块分解框图, 编号步骤标注]"
+资源ID列表: "[tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_06.asset.01, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_06.asset.02, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_06.asset.03, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_06.asset.04]"
+适合复用场景: "[DiT 内部结构分步讲解页, Transformer 模块拆解页]"
+不适合复用场景: "[高层概览页, 结果数据对比页, 非 Transformer 架构主题]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "顶部标题", "内容": "Backbone model: DiT"}
+  - {"位置": "主体", "内容": "DiT 模块分解框图与①编号步骤"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 6: 骨干模型：DiT（结构展开①）
+
+**核心论断**: DiT 各模块以标记序列承载扩散去噪计算
+
+## 本页讲什么
+承接上页 DiT 概览，本页以①编号进一步拆解 DiT 的内部结构与数据流，逐步展开其模块组成，帮助听众理解 DiT 如何逐层处理 latent token，为引出全注意力这一后续优化对象铺路。
+
+## 关键文字片段
+- Backbone model: DiT
+- ①
+
+## 视觉骨架
+- DiT 模块分解框图
+- 编号步骤标注
+
+## 可复用到
+- DiT 内部结构分步讲解页
+- Transformer 模块拆解页
+
+## 不适合复用的场景
+- 高层概览页
+- 结果数据对比页
+- 非 Transformer 架构主题

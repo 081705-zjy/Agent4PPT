@@ -1,0 +1,70 @@
+{
+  "章节标识": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.sec.05",
+  "所属deck": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+  "章节序号": 5,
+  "章节角色": "method",
+  "标题": "研究内容一：投机解码与MoE系统优化",
+  "页码范围": [
+    18,
+    36
+  ],
+  "页数": 19,
+  "页ID列表": [
+    "slide_18",
+    "slide_19",
+    "slide_20",
+    "slide_21",
+    "slide_22",
+    "slide_23",
+    "slide_24",
+    "slide_25",
+    "slide_26",
+    "slide_27",
+    "slide_28",
+    "slide_29",
+    "slide_30",
+    "slide_31",
+    "slide_32",
+    "slide_33",
+    "slide_34",
+    "slide_35",
+    "slide_36"
+  ],
+  "章节叙事": "deck 三块研究内容之首，承接背景与端侧挑战，从系统层用投机解码（Partial softmax+预设统一最大值）与 MoE（激活频率并行+逐层预测器）两条线优化推理，以 vLLM/多框架对比及第一作者成果收尾。",
+  "页间关系": [
+    "slide 18 → slide 19: 由本章目录页切入，进入 Transformer/BERT 技术背景铺垫",
+    "slide 19 → slide 20: 由 Transformer 基础过渡到具体架构/公式示意",
+    "slide 20 → slide 21: 承接架构示意，展开下一组计算细节",
+    "slide 21 → slide 22: 由计算细节过渡到推理引擎与厂商现状",
+    "slide 22 → slide 23: 由推理引擎现状引出 Partial softmax 计算方法",
+    "slide 23 → slide 24: 由 softmax 计算过渡到预设统一最大值去除更新开销",
+    "slide 24 → slide 25: 由方法优化过渡到相较 vLLM 的加速实验结果",
+    "slide 25 → slide 26: 由投机解码结果收尾，转入 MoE 优化示意",
+    "slide 26 → slide 27: 承接 MoE 示意，展开计算细节",
+    "slide 27 → slide 28: 由计算细节过渡到激活频率与计算单元并行",
+    "slide 28 → slide 29: 由 MoE 并行方法过渡到多框架 TPOT 对比实验",
+    "slide 29 → slide 30: 由对比实验转入下一优化点示意",
+    "slide 30 → slide 31: 承接示意，进入 Tokenize/请求调度环节",
+    "slide 31 → slide 32: 由 Prompt 处理过渡到少请求下 Prompt/Output 拆分",
+    "slide 32 → slide 33: 由请求拆分过渡到逐层部署预测器的方法",
+    "slide 33 → slide 34: 由预测器方法过渡到实验结果",
+    "slide 34 → slide 35: 由实验结果过渡到工程化结合与 115.56tokens/s 指标",
+    "slide 35 → slide 36: 由性能指标收束到第一作者发表成果"
+  ],
+  "适合复用场景": [
+    "系统层推理加速的 method 章",
+    "投机解码/EAGLE 类方法展示",
+    "MoE 推理系统优化论述",
+    "含 vLLM/多框架 benchmark 对比的方法章",
+    "系统研究以发表成果收尾"
+  ],
+  "不适合复用场景": [
+    "纯算法/理论、无系统实现的研究",
+    "受众无 GPU/推理引擎背景",
+    "benchmark 数据已过时",
+    "与投机解码/MoE 无关的主题",
+    "单页方法、无需长叙事弧线"
+  ],
+  "在deck中的位置": "第 5 章，三块研究内容开篇，紧接背景与挑战章，为后续 CoT、Agent 研究内容打头阵。",
+  "分析状态": "claude-opus-4-8"
+}

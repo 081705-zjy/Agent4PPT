@@ -1,0 +1,48 @@
+---
+页标识: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_16"
+所属章节: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.04"
+所属deck: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de"
+页序号: 16
+源文件: "templates/课题组全局汇报/高效端侧大模型推理优化_华为端侧AI.pptx"
+页面角色: "content_candidate"
+标题: "Megrez 2.0：端侧 MoE 小模型"
+核心论断: "Megrez 2.0 完成端侧 MoE 落地，收束协同框架落地叙事"
+本页讲什么: "本页作为 Megrez 章节收尾，进一步呈现 Megrez 2.0 端侧 MoE 小模型的落地成果，收束从 1.0 软硬件协同到 2.0 MoE 架构的整章演进叙事，为跨层协同框架的首个落地案例画上句点。"
+关键文字: "[Megrez 2.0：端侧 MoE 小模型, Megrez]"
+视觉骨架: "[MoE 模型落地成果示意, Megrez 系列收束图]"
+资源ID列表: "[tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_16.asset.01, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_16.asset.02, tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_16.asset.03]"
+适合复用场景: "[端侧 MoE 模型落地收尾页, 模型系列章节的总结过渡页]"
+不适合复用场景: "[话题开场引入页, 纯 motivation 论证页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Megrez 2.0：端侧 MoE 小模型"}
+  - {"位置": "下方主体", "内容": "MoE 模型落地成果示意"}
+alternate_claims:
+  - "Megrez 2.0 以 MoE 架构延续端侧小模型演进"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 16: Megrez 2.0：端侧 MoE 小模型
+
+**核心论断**: Megrez 2.0 完成端侧 MoE 落地，收束协同框架落地叙事
+
+## 本页讲什么
+本页作为 Megrez 章节收尾，进一步呈现 Megrez 2.0 端侧 MoE 小模型的落地成果，收束从 1.0 软硬件协同到 2.0 MoE 架构的整章演进叙事，为跨层协同框架的首个落地案例画上句点。
+
+## 关键文字片段
+- Megrez 2.0：端侧 MoE 小模型
+- Megrez
+
+## 视觉骨架
+- MoE 模型落地成果示意
+- Megrez 系列收束图
+
+## 可复用到
+- 端侧 MoE 模型落地收尾页
+- 模型系列章节的总结过渡页
+
+## 不适合复用的场景
+- 话题开场引入页
+- 纯 motivation 论证页

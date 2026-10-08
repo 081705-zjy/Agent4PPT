@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_08"
+所属章节: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03"
+所属deck: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c"
+页序号: 8
+源文件: "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx"
+页面角色: "content_candidate"
+标题: "现有稀疏模式的分类"
+核心论断: "现有稀疏模式可大致分为若干类别"
+本页讲什么: "本页对现有稀疏模式进行分类梳理，将稀疏性大致划分为非结构化与结构化等几类，比较其在灵活性与硬件友好度上的差异，为下页聚焦结构化/N:M 稀疏及其转置痛点做铺垫。"
+关键文字: "[Existing sparsity patterns can be roughly classified]"
+视觉骨架: "[稀疏模式分类图, 各类稀疏矩阵示意]"
+资源ID列表: "[tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_08.asset.01, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_08.asset.02, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_08.asset.03, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_08.asset.04]"
+适合复用场景: "[稀疏模式分类综述页, 结构化 vs 非结构化对比引入]"
+不适合复用场景: "[单一方法架构页, GPU 硬件规格页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "现有稀疏模式的分类"}
+  - {"位置": "下方主体", "内容": "稀疏模式分类图与各类稀疏矩阵示意"}
+alternate_claims:
+  - "不同稀疏模式在灵活性与硬件友好度上存在权衡"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 8: 现有稀疏模式的分类
+
+**核心论断**: 现有稀疏模式可大致分为若干类别
+
+## 本页讲什么
+本页对现有稀疏模式进行分类梳理，将稀疏性大致划分为非结构化与结构化等几类，比较其在灵活性与硬件友好度上的差异，为下页聚焦结构化/N:M 稀疏及其转置痛点做铺垫。
+
+## 关键文字片段
+- Existing sparsity patterns can be roughly classified
+
+## 视觉骨架
+- 稀疏模式分类图
+- 各类稀疏矩阵示意
+
+## 可复用到
+- 稀疏模式分类综述页
+- 结构化 vs 非结构化对比引入
+
+## 不适合复用的场景
+- 单一方法架构页
+- GPU 硬件规格页

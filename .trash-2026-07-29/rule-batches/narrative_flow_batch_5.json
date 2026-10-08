@@ -1,0 +1,317 @@
+{
+  "batch_index": 5,
+  "rules": [
+    {
+      "id": "motivation_key_idea_teaser_before_method",
+      "category": "callback",
+      "applicable_when": "any deck with motivation + method sections",
+      "title": "动机章末以Key idea预告方法章核心",
+      "description": "motivation 章末页应显式给出'Key idea: ...' 类文字, 把本工作方法的核心思想先埋下钩子, 让 method 章开场时听众已握有心理契约。",
+      "what_to_check": [
+        "找 motivation 章 (section_role=motivation) 最后一页 slide.关键文字 / 核心论断",
+        "检查是否包含 'Key idea' / 'insight' / 'utilize' / 'inspired by' 等预告性关键词",
+        "该 key idea 应与后续 method 章首个技术点语义对应"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "motivation 章末 p14 核心论断 'Key idea: Utilizing this transpose property helps to obtain a structured...' 直接预告 method 章 TBS 方案"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "认知负担守恒: 让听众带着预设进入方法章比让他们空脑接受一堆技术细节更省力, 命中率高的 deck 都在章末做这个交接",
+      "fix_hint": "在 motivation 章末页底部加一行 'Key idea: 我们利用 X 得到 Y'，衔接方法章首个技术点",
+      "exceptions": []
+    },
+    {
+      "id": "background_dilemma_resolved_in_method_claim",
+      "category": "callback",
+      "applicable_when": "deck 在 background 立起 A/B 两难 (如结构化 vs 非结构化)",
+      "title": "背景两难必须在方法章明说被本工作调和",
+      "description": "background 章立起的两难困境 (X 精度掉 vs Y 硬件贵), method 章需有一张 slide 或一句核心论断明说'我们的方法同时/近似兼具二者', 否则背景章沦为空谈。",
+      "what_to_check": [
+        "找 background 章 slide.核心论断 是否含 A vs B 立靶 (如 'limits accuracy' + 'hardware overhead' 成对)",
+        "在 method 章找是否有 slide 核心论断含 'approaches / similar to / achieves both / bridges' 类回应词",
+        "回应 slide 需明确指向 background 提出的两个极点"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "background p9-10 立结构化掉精度>6% + 非结构化硬件开销>80% 两难; method p18 '与其他N:M稀疏模式相比,TBS 更接近非结构化稀疏' 直接回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景立靶不还账等于骗观众, 观众记住的是'你说过 A 和 B 都不行', 方法章不明说调和二者就没兑现承诺",
+      "fix_hint": "method 章加一张 slide 明说 '我们的方法既有 A 的 X 优势, 又不像 B 那样代价高'",
+      "exceptions": [
+        "综述型 deck (只梳理不解决)"
+      ]
+    },
+    {
+      "id": "cover_theme_callback_in_summary",
+      "category": "callback",
+      "applicable_when": "any deck with cover + summary/discussion section",
+      "title": "封面核心命题需在总结章语义回扣",
+      "description": "cover 标题里的主 anchor (方法名/关键概念) 需在总结章的 slide 核心论断中被 verbatim 或 paraphrased 引用, 让全篇形成首尾呼应。",
+      "what_to_check": [
+        "从 slide_1 标题/核心论断抽取 主 anchor (方法名如 'TB-STC' 或核心 slogan)",
+        "在 section_role=discussion/summary 的所有 slide 关键文字/核心论断中找该 anchor 出现",
+        "至少 1 次 verbatim + 1 次语义引用为佳"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "cover p1 主 anchor 'TB-STC'; summary p37 三栏 Goals/Insight/Solution 全部围绕 TB-STC 展开, 复述 forward/backward transpose 与 TBS+codec 两项技术"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾呼应是叙事闭环最省成本的表达, 观众记忆最深的就是开头与结尾, 主命题若不回收就丢掉最大记忆锚点",
+      "fix_hint": "总结章加一张 3 栏 panel: Goals / Insight / Solution, 每栏核心论断都提到主 anchor",
+      "exceptions": []
+    },
+    {
+      "id": "chapter_end_result_holdback",
+      "category": "suspense_reveal",
+      "applicable_when": "deck 有 experiment/result 章 ≥3 页",
+      "title": "实验章最炸数字放章末以形成收束高潮",
+      "description": "result 章内部按精度→速度→能效/整体 递进, 最有冲击力的整体指标 (如 EDP / TCO / 综合加速) 应放在章末, 而非章首。",
+      "what_to_check": [
+        "找 section_role=experiment 章所有 slide",
+        "识别每张 slide 的核心 quantitative claim (含 × 或 % 数字)",
+        "检查最大数字或最综合指标是否在该章 last slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "experiment 章 p31 精度 (1.03%)→p33 速度 (1.27×)→p35 章末 EDP 3.82× (最大数字), 递进 holdback 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "叙事峰值放在章末让观众带着高潮进入总结, 首页放最炸数字会导致后续内容都感觉在'下坡'",
+      "fix_hint": "重排 experiment 章顺序: 局部指标→整体指标→章末放综合 EDP/TCO 一张 slide",
+      "exceptions": [
+        "实验数据只有一维指标的短 deck"
+      ]
+    },
+    {
+      "id": "toc_divider_before_major_chapter",
+      "category": "chapter_transitions",
+      "applicable_when": "deck 页数 ≥15 且 章节数 ≥4",
+      "title": "进入主要章节前插入TOC定位页",
+      "description": "每次从一个主要章节进入下一个主要章节 (background→motivation→method→experiment→summary) 应有一张 toc_candidate 页面高亮当前章, 作为承上启下的强 divider。",
+      "what_to_check": [
+        "扫描 slides_in_order, 找 section_role 变化的边界",
+        "检查边界前后是否有 页面角色=toc_candidate 的 slide 作为 divider",
+        "TOC divider 应在该 slide 关键文字中包含所有章节 + 高亮当前"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "p3 进入 background / p11 进入 motivation / p15 进入 method / p29 进入 experiment / p36 进入 summary 共 5 次 TOC divider, 命中所有主要 chapter 边界"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 听众很容易迷失当前进度, TOC divider 是最低成本的位置锚, 缺失会造成硬切失焦",
+      "fix_hint": "在每个主要 section 首页前插入一张 TOC 页, 蓝色圆点高亮当前项、其余灰显",
+      "exceptions": [
+        "页数 <15 的短 deck"
+      ]
+    },
+    {
+      "id": "mini_agenda_current_chapter_highlight",
+      "category": "chapter_transitions",
+      "applicable_when": "deck 使用 TOC divider (见 toc_divider_before_major_chapter)",
+      "title": "TOC定位页必须视觉高亮当前章",
+      "description": "TOC divider slide 不能只是简单列章节, 必须用颜色/加粗/圆点在视觉骨架上明示'你在第 N 章', 否则失去导航功能。",
+      "what_to_check": [
+        "对 页面角色=toc_candidate 的 slide, 检查 视觉骨架 是否含 '高亮 / 加粗 / 蓝色圆点 / 灰显' 类关键词",
+        "本页讲什么 应含 '当前 / 高亮 / 灰显' 表述"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "p11/p15/p29/p36 视觉骨架均有 '当前项蓝色圆点高亮' 与 '灰显未激活条目'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "TOC 页不高亮当前就跟第一张 TOC 完全一样, 听众无从判断进度, 相当于白插一张",
+      "fix_hint": "TOC 页当前章圆点/文字改用蓝色+加粗, 其余灰显",
+      "exceptions": []
+    },
+    {
+      "id": "main_thesis_cross_chapter_repeat",
+      "category": "repetition_emphasis",
+      "applicable_when": "any content deck",
+      "title": "主命题跨多章重复8次以上",
+      "description": "deck 的主 thesis (核心方法名 / 一句话 slogan) 应在至少 3 个不同 section 的 slide 关键文字中重复出现, 总次数 8-15 次为佳, <5 次主题不清, >20 次啰嗦。",
+      "what_to_check": [
+        "从 deck.标题 / 论述总结 抽取主 thesis 关键词 (通常方法缩写如 'TB-STC' 或核心 anchor)",
+        "在 slides_in_order 所有 slide 关键文字 中统计该词出现次数与跨 section 覆盖数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "主 anchor 'TB-STC' 出现在 p1/p20/p32/p33/p35/p37, 跨 opening/method/experiment/discussion 4 章, 频次 8+, 命中 8-15 区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众平均每页记 1-2 个 keyword, 主命题若只在少数页出现就淹没在细节里, 跨章重复是让主题'冒出水面'的唯一手段",
+      "fix_hint": "在每个 major section 的首页或章末页明说一遍主 anchor+核心论断",
+      "exceptions": []
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with cover",
+      "title": "主anchor首次出现应在封面标题",
+      "description": "deck 的主 anchor (方法名/缩写) 应在 slide_1 的标题或核心论断中首次亮出, 而非拖到 background 或 method 章才出现。",
+      "what_to_check": [
+        "找 slide_1.标题 是否含主 anchor (从 deck.标题 抽取)",
+        "对比后续所有 slide 找该 anchor 首次出现页 = 1"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "cover p1 标题 'TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core', 主 anchor 首次出现即封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面 5 秒决定听众第一印象, anchor 拖到后面才出现相当于放弃开场记忆窗口",
+      "fix_hint": "cover 标题必须含方法名/缩写, 不能只用领域大词",
+      "exceptions": [
+        "综述型 deck (无自研 anchor)"
+      ]
+    },
+    {
+      "id": "abbreviation_define_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "deck 使用领域缩写",
+      "title": "缩写首次使用时括号内定义",
+      "description": "专业缩写 (如 MS/EDP/DVPE/TBS) 首次出现时必须在同页括号内给出全称, 避免观众猜谜。",
+      "what_to_check": [
+        "扫描所有 slide 关键文字, 识别全大写 2-5 字母 缩写",
+        "检查该缩写首次出现的 slide 关键文字 是否含 '(全称)' 或全称+缩写并列格式"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "p17 'Mask-Space (MS)' / p28 'Diverse VPE (DVPE)' / p35 'EDP: Energy-Delay Product' 均在首现页括号内定义"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨学科听众对缩写零 prior, 不定义就流失注意力, 观众忙于猜谜就跟不上论证",
+      "fix_hint": "缩写首现页文字改为 '全称 (缩写)' 格式, 后续沿用缩写",
+      "exceptions": [
+        "领域公认常识缩写如 GPU/CPU/AI"
+      ]
+    },
+    {
+      "id": "baseline_comparison_per_metric",
+      "category": "comparison_evidence",
+      "applicable_when": "paper_share deck 含 experiment 章",
+      "title": "每个评测维度都跟baseline对比",
+      "description": "experiment 章每个评测维度 (精度/速度/能效/开销) 都应有独立 slide 跟 ≥3 个 baseline 对比, 而非只跟单一 baseline 或不对比。",
+      "what_to_check": [
+        "找 section_role=experiment 章所有 slide",
+        "检查每张 slide 核心论断是否含 baseline 名或对比数值 (如 'vs STC / VEGETA / HighLight')",
+        "统计不同维度 (accuracy/speedup/EDP/area) 的对比覆盖"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "p31 精度 vs 3 类基线 / p33 speedup vs STC/VEGETA/HighLight/RM-STC 四基线 / p35 EDP / p38 训练精度 vs Dense/2:4/US, 4 维度全覆盖"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "arch/ML 学术社群默认多 baseline 对比是可信度门槛, 缺失单维度对比会被视为 cherry-pick",
+      "fix_hint": "每个评测维度独立一张 slide, 表格首列列出 ≥3 baseline 与本工作",
+      "exceptions": [
+        "无公开 baseline 的全新任务"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match",
+      "category": "structural_promise",
+      "applicable_when": "deck 有 TOC / agenda 页",
+      "title": "TOC承诺章节需与实际章节一致",
+      "description": "cover 后 TOC 页列出的 N 项 = 实际 section_role 分布 (忽略 opening/closing), 且顺序一致, 否则观众预期与实际错位。",
+      "what_to_check": [
+        "找 slide_2 或 slide_3 的 toc_candidate, 抽取其 关键文字 中的编号章节列表",
+        "对比 sections_outline 的核心 section (background/motivation/method/experiment/discussion)",
+        "章节名与顺序应字符/语义匹配"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "TOC 5 项 (Background/Insight/Solution/Experiment/Summary) 精确对应 sections_outline sec.02-06 的 5 个核心章节, 顺序完全一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "TOC 是与观众签的合同, 顺序或名称不对应就是违约, 直接击穿信任",
+      "fix_hint": "TOC 编号项照抄实际 section.标题, 不做文学化改写",
+      "exceptions": []
+    },
+    {
+      "id": "method_chapter_longest_by_pages",
+      "category": "pacing",
+      "applicable_when": "paper_share deck",
+      "title": "方法章页数应为全deck最长",
+      "description": "paper_share deck 中 method 章页数应显著多于其他章 (通常占 total 30-40%), 且不少于 experiment 章的 1.3 倍; method 章 <8 页或短于 experiment 章表明方法阐述不足。",
+      "what_to_check": [
+        "按 sections_outline 算每章页数",
+        "method 章页数 / total 应 ≥0.30",
+        "method 章页数 应 > experiment 章 * 1.3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "evidence": "method 章 p15-28 共 14 页 (36%), experiment 7 页, ratio 2.0, method 显著长于其他章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "paper_share 观众来听方法, method 章太短表明技术贡献未充分展示, 会被误判为 incremental work",
+      "fix_hint": "把 method 章拆成 Tech.1/Tech.2/Tech.3 每项 3-5 页, 每项含 challenge→idea→hardware 三段",
+      "exceptions": [
+        "经验/系统型 paper (方法简单但工程重), 综述型"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck (TB-STC HPCA paper share), 抽出 12 条规则覆盖 7 个 category. 由于单 deck 样本, hit_rate 均为 1.0, enforcement_level 主要依据规则的通用叙事第一性原理判定. pacing 类只出 1 条 (method 页数最长), 因单 deck 无法建立更丰富的分布. suspense_reveal 类的 teaser_at_motivation_end 与 callback 类 motivation_key_idea_teaser_before_method 高度重合, 已合并到 callback 一条.",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 1,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 1,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

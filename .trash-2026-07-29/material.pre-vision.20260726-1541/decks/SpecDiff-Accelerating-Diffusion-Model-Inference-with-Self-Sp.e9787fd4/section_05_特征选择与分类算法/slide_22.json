@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_22",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 22,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "特征选择算法：注意力机制续页",
+  "核心论断": "注意力信号可精简为可落地的特征筛选依据",
+  "本页讲什么": "本页承接上页的注意力分析，以更精简的版式（单图、少量元素）聚焦总结注意力如何转化为特征选择的具体依据，把前几页的可视化观察收束为一条可实现的判据。",
+  "关键文字": [
+    "Feature Selection Algorithm",
+    "Attention from"
+  ],
+  "视觉骨架": [
+    "单幅注意力示意图",
+    "精简结论文字块"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_22.asset.01"
+  ],
+  "适合复用场景": [
+    "注意力分析的收束总结页",
+    "特征筛选判据说明页"
+  ],
+  "不适合复用场景": [
+    "多图密集可视化页",
+    "数据对比表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,30 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_10",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 10,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "背景：视频生成加速的两大问题",
+  "核心论断": "全注意力冗余与算子强度差异是待解决的两大瓶颈",
+  "本页讲什么": "本页作为本章开篇，承接前面骨干网络介绍，抛出全 deck 要攻克的两大核心问题：全注意力带来的巨大冗余计算量，以及不同算子操作强度差异悬殊。为后续差分计算与可重构架构方案铺设动机，是整章的问题引入页。",
+  "关键文字": [
+    "背景：视频生成加速的核心挑战"
+  ],
+  "视觉骨架": [
+    "背景问题引入版式",
+    "章节导语文本块"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "视频生成加速 motivation 开篇页",
+    "硬件加速研究问题引入页"
+  ],
+  "不适合复用场景": [
+    "含具体数据的结果页",
+    "方法架构展开页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

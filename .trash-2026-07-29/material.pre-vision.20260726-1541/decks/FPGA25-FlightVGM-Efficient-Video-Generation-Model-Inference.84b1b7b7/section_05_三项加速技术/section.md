@@ -1,0 +1,51 @@
+---
+章节标识: tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05
+所属deck: tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7
+章节序号: 5
+章节角色: method
+标题: 三项加速技术
+页码范围: [17, 33]
+页数: 17
+页ID列表: [slide_17, slide_18, slide_19, slide_20, slide_21, slide_22, slide_23, slide_24, slide_25, slide_26, slide_27, slide_28, slide_29, slide_30, slide_31, slide_32, slide_33]
+章节叙事: deck 方法核心章。先以帧间相似性观察铺垫，再依次展开 Tech.1 在线激活稀疏、Tech.2 可配置 DSP58 混合精度、Tech.3 动静结合调度，三技术层层递进构成完整加速方案。
+页间关系: ["slide 17 → slide 18: 由本章目录/内容页切入，进入帧间相似性观察", "slide 18 → slide 19: 延续帧跳过(skip)思路，深入帧间冗余", "slide 19 → slide 20: 由帧冗余现象过渡到相似度表格量化证据", "slide 20 → slide 21: 由相似度数据引出稀疏化技术切入点", "slide 21 → slide 22: 铺垫完成，正式提出 Tech.1 在线激活稀疏", "slide 22 → slide 23: 由稀疏技术总述展开其实现机制", "slide 23 → slide 24: 由稀疏机制过渡到浮点计算处理", "slide 24 → slide 25: 由浮点计算引出待解决问题(What is)", "slide 25 → slide 26: 承接问题，转入 Tech.2 可配置 DSP58 混合精度", "slide 26 → slide 27: 由技术总述展开 DSP58 位宽拆分细节", "slide 27 → slide 28: 由位宽拆分过渡到损坏位(corrupted bits)分析", "slide 28 → slide 29: 由损坏位引出 FP16 精度处理", "slide 29 → slide 30: 由 FP16 格式深入到尾数(frac)处理", "slide 30 → slide 31: 混合精度收尾，转入 Tech.3 动静结合调度", "slide 31 → slide 32: 由调度总述展开静态编译流程", "slide 32 → slide 33: 由静态编译过渡到动静结合自适应调度"]
+适合复用场景: [需按「技术1/2/3」并列展开的硬件加速 method 章, 先观察数据现象再引出技术的论证式章节, 多技术点递进介绍的方法章, FPGA/芯片类硬件优化技术拆解章]
+不适合复用场景: [只有单一技术点、无需并列展开时, method 偏算法而非硬件实现时, 缺「现象→技术」论证链的纯罗列章, 技术数量少于三项、结构撑不满时]
+在deck中的位置: 第 5 章 method 核心，承接前文问题铺垫，为后续实验结果提供技术支撑
+分析状态: claude-opus-4-8
+---
+
+# section 5: 三项加速技术
+
+## 在 deck 中的位置
+第 5 章 method 核心，承接前文问题铺垫，为后续实验结果提供技术支撑
+
+## 章内 slide 间的关系
+- slide 17 → slide 18: 由本章目录/内容页切入，进入帧间相似性观察
+- slide 18 → slide 19: 延续帧跳过(skip)思路，深入帧间冗余
+- slide 19 → slide 20: 由帧冗余现象过渡到相似度表格量化证据
+- slide 20 → slide 21: 由相似度数据引出稀疏化技术切入点
+- slide 21 → slide 22: 铺垫完成，正式提出 Tech.1 在线激活稀疏
+- slide 22 → slide 23: 由稀疏技术总述展开其实现机制
+- slide 23 → slide 24: 由稀疏机制过渡到浮点计算处理
+- slide 24 → slide 25: 由浮点计算引出待解决问题(What is)
+- slide 25 → slide 26: 承接问题，转入 Tech.2 可配置 DSP58 混合精度
+- slide 26 → slide 27: 由技术总述展开 DSP58 位宽拆分细节
+- slide 27 → slide 28: 由位宽拆分过渡到损坏位(corrupted bits)分析
+- slide 28 → slide 29: 由损坏位引出 FP16 精度处理
+- slide 29 → slide 30: 由 FP16 格式深入到尾数(frac)处理
+- slide 30 → slide 31: 混合精度收尾，转入 Tech.3 动静结合调度
+- slide 31 → slide 32: 由调度总述展开静态编译流程
+- slide 32 → slide 33: 由静态编译过渡到动静结合自适应调度
+
+## 整章可复用的场景
+- 需按「技术1/2/3」并列展开的硬件加速 method 章
+- 先观察数据现象再引出技术的论证式章节
+- 多技术点递进介绍的方法章
+- FPGA/芯片类硬件优化技术拆解章
+
+## 不适合复用的场景
+- 只有单一技术点、无需并列展开时
+- method 偏算法而非硬件实现时
+- 缺「现象→技术」论证链的纯罗列章
+- 技术数量少于三项、结构撑不满时

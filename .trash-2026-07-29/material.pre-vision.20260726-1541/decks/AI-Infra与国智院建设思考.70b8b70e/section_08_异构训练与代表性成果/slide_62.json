@@ -1,0 +1,41 @@
+{
+  "页标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62",
+  "所属章节": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.08",
+  "所属deck": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+  "页序号": 62,
+  "源文件": "templates/主题学术报告/AI Infra与国智院建设思考.pptx",
+  "页面角色": "content_candidate",
+  "标题": "方向1代表性工作：剪枝-量化",
+  "核心论断": "剪枝-量化协同优化支撑高能效电路代表性工作",
+  "本页讲什么": "承接方向1标题页，用剪枝-量化等代表性工作展开领域专用高能效电路与系统的具体成果，配多张芯片/结果图佐证该方向的落地能力。",
+  "关键文字": [
+    "剪枝-量化"
+  ],
+  "视觉骨架": [
+    "代表性工作芯片图阵",
+    "剪枝量化流程示意"
+  ],
+  "资源ID列表": [
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.01",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.02",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.03",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.04",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.05",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.06",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.07",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.08",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.09",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_62.asset.10"
+  ],
+  "适合复用场景": [
+    "高能效电路代表性工作页",
+    "剪枝量化成果展示页"
+  ],
+  "不适合复用场景": [
+    "纯文字方向概述页",
+    "训练调度系统页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

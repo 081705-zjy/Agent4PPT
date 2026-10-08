@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_16",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 16,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "LLM 加速器瓶颈与 VGM 不同",
+  "核心论断": "现有 LLM 加速器瓶颈不同于视频生成模型",
+  "本页讲什么": "综述硬件先例中的 LLM 加速器，指出其瓶颈与视频生成模型（VGM）不同，因而不能直接照搬，收束本章硬件先例讨论并过渡到下章 FPGA 三项针对性技术。",
+  "关键文字": [
+    "LLM accelerators, whose bottleneck is different from that of VGM"
+  ],
+  "视觉骨架": [
+    "LLM 与 VGM 瓶颈对比图",
+    "硬件先例归纳"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_16.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_16.asset.02"
+  ],
+  "适合复用场景": [
+    "LLM 加速器局限论证页",
+    "硬件先例过渡收束页"
+  ],
+  "不适合复用场景": [
+    "稀疏 DCT 特性页",
+    "视频压缩动机页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "toc_candidate",
+  "分析状态": "claude-opus-4-8"
+}

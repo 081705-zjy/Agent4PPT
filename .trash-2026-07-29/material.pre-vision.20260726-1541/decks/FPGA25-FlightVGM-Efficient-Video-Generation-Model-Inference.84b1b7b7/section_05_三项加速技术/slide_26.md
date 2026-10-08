@@ -1,0 +1,52 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_26"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 26
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "Tech.2：可配置 DSP58 架构"
+核心论断: "可配置 DSP58 架构支持混合精度高效计算"
+本页讲什么: "引入第二项加速技术——可配置 DSP58 架构（Configurable DSP58 Architecture），说明通过重构 DSP58 支持混合精度运算，提升浮点与定点计算效率，作为 Tech.2 的开篇引入页。"
+关键文字:
+  - "Tech.2: Configurable DSP58 Architecture"
+  - "Jun Liu @ Shanghai Jiao Tong"
+视觉骨架: "[技术标题版式, 可配置架构框图, 混合精度示意]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_26.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_26.asset.02, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_26.asset.03, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_26.asset.04]"
+适合复用场景: "[硬件架构技术引入首页, 可配置 DSP 架构引入页]"
+不适合复用场景: "[帧相似性动机页, 密集数据表格页, 本章目录页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方", "内容": "Tech.2 技术编号 tag"}
+  - {"位置": "中部主体", "内容": "Configurable DSP58 Architecture 标题"}
+  - {"位置": "下方", "内容": "作者署名 Jun Liu @ Shanghai Jiao Tong"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 26: Tech.2：可配置 DSP58 架构
+
+**核心论断**: 可配置 DSP58 架构支持混合精度高效计算
+
+## 本页讲什么
+引入第二项加速技术——可配置 DSP58 架构（Configurable DSP58 Architecture），说明通过重构 DSP58 支持混合精度运算，提升浮点与定点计算效率，作为 Tech.2 的开篇引入页。
+
+## 关键文字片段
+- Tech.2: Configurable DSP58 Architecture
+- Jun Liu @ Shanghai Jiao Tong
+
+## 视觉骨架
+- 技术标题版式
+- 可配置架构框图
+- 混合精度示意
+
+## 可复用到
+- 硬件架构技术引入首页
+- 可配置 DSP 架构引入页
+
+## 不适合复用的场景
+- 帧相似性动机页
+- 密集数据表格页
+- 本章目录页

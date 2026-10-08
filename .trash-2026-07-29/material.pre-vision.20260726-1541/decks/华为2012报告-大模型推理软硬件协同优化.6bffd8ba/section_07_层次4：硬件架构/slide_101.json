@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_101",
+  "所属章节": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+  "所属deck": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+  "页序号": 101,
+  "源文件": "templates/课题组全局汇报/华为2012报告  大模型推理软硬件协同优化.pptx",
+  "页面角色": "content_candidate",
+  "标题": "FlightVGM论文标题页",
+  "核心论断": "FlightVGM以在线稀疏化与混合精度加速视频生成",
+  "本页讲什么": "FlightVGM论文封面页，展示标题「Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs」及Jun Liu、Shulin Zeng等作者，引入场景2.2的第二项视频生成加速工作。",
+  "关键文字": [
+    "FlightVGM: Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs"
+  ],
+  "视觉骨架": [
+    "论文标题封面版式",
+    "作者署名列表"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_101.asset.01"
+  ],
+  "适合复用场景": [
+    "视频生成FPGA加速论文封面",
+    "具名工作标题页"
+  ],
+  "不适合复用场景": [
+    "方法细节页",
+    "能效小结页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

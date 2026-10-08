@@ -1,0 +1,47 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_66"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.10"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 66
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "MegaBlocks 节省 1.8-2.4x 训练时间"
+核心论断: "MegaBlocks 端到端训练时间节省 1.8-2.4 倍"
+本页讲什么: "承接 MoE 原理,给出结果:以 MegaBlocks 为例,高效稀疏 MoE 训练可实现 1.8-2.4 倍的端到端训练时间节省,展示 MoE 稀疏计算的实际收益。"
+关键文字: "[Save 1.8 - 2.4 end-to-end training time, \"Gale, Trevor, et al. \\\"Megablocks: Efficient sparse training with mixture-of-experts.\\\" MLSys 2023\"]"
+视觉骨架: "[训练时间节省对比图, 引用文献标注]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_66.asset.01, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_66.asset.02, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_66.asset.03]"
+适合复用场景: "[MoE 训练加速结果页, 稀疏训练收益展示]"
+不适合复用场景: "[原理引入页, 问题提出过渡页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+  - {"位置": "上方主体", "内容": "训练时间节省对比图 (1.8-2.4x)"}
+  - {"位置": "底部", "内容": "引用文献: Gale et al., MegaBlocks, MLSys 2023"}
+alternate_claims:
+layout_tag: "dense_data_chart"
+---
+# slide 66: MegaBlocks 节省 1.8-2.4x 训练时间
+
+**核心论断**: MegaBlocks 端到端训练时间节省 1.8-2.4 倍
+
+## 本页讲什么
+承接 MoE 原理,给出结果:以 MegaBlocks 为例,高效稀疏 MoE 训练可实现 1.8-2.4 倍的端到端训练时间节省,展示 MoE 稀疏计算的实际收益。
+
+## 关键文字片段
+- Save 1.8 - 2.4 end-to-end training time
+- Gale, Trevor, et al. "Megablocks: Efficient sparse training with mixture-of-experts." MLSys 2023
+
+## 视觉骨架
+- 训练时间节省对比图
+- 引用文献标注
+
+## 可复用到
+- MoE 训练加速结果页
+- 稀疏训练收益展示
+
+## 不适合复用的场景
+- 原理引入页
+- 问题提出过渡页

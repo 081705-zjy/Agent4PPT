@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.slide_33",
+  "所属章节": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.06",
+  "所属deck": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+  "页序号": 33,
+  "源文件": "templates/课题组全局汇报/创智  稀疏计算助力人工智能算力平台构建.pptx",
+  "页面角色": "content_candidate",
+  "标题": "架构设计已有工作：学术界典型工作",
+  "核心论断": "学术界以 Dual-side Sparse Tensor Core、Sextans 等推进稀疏加速",
+  "本页讲什么": "承接上页工业界综述，转到学术界典型稀疏架构工作，列举 ISCA 2021 的 Dual-side sparse tensor core 与 FPGA 2021 的 Sextans 流式稀疏矩阵加速器，说明学术界在双边稀疏与通用稀疏-稠密矩阵乘上的探索，进一步划定本组工作的对比坐标。",
+  "关键文字": [
+    "学术界典型工作",
+    "Dual-side sparse tensor core (ISCA 2021)",
+    "Sextans: Streaming Accelerator for Sparse-Matrix Dense-Matrix Multiplication (FPGA 2021)"
+  ],
+  "视觉骨架": [
+    "学术工作架构示意图",
+    "参考文献引用条目"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.slide_33.asset.01",
+    "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.slide_33.asset.02"
+  ],
+  "适合复用场景": [
+    "稀疏架构 related work 综述",
+    "学术界加速器对比引入"
+  ],
+  "不适合复用场景": [
+    "本组方法实现细节页",
+    "端侧应用成果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

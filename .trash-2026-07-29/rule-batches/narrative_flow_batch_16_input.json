@@ -1,0 +1,2985 @@
+{
+  "batch_index": 16,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+      "目录名": "华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+      "标题": "大模型推理软硬件协同优化",
+      "总页数": 128,
+      "章节数": 11,
+      "章节列表": [
+        "section_01_封面",
+        "section_02_个人介绍",
+        "section_03_从智能时代到Token生产要素",
+        "section_04_能效指标tokens-J与优化路径",
+        "section_05_五层次框架与层次一算法设计",
+        "section_06_层次二-算法优化",
+        "section_07_层次三-系统优化",
+        "section_08_层次四-硬件架构",
+        "section_09_层次五-芯片集成",
+        "section_10_集群推理挑战与华为实践",
+        "section_11_致谢与联系方式"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "软硬件协同",
+        "能效优化",
+        "Token经济",
+        "算法优化",
+        "系统优化",
+        "硬件架构",
+        "集群推理"
+      ],
+      "目标受众": "AI系统/芯片研究者与工业落地方(华为技术汇报)",
+      "报告类型": "research_report",
+      "适用场景": "大模型推理优化的学术+工业综合技术汇报",
+      "论述总结": "从AI2.0时代Token成为核心生产要素切入,提出能效指标由TOPs/J转向Tokens/J;将大模型推理拆解为算法设计、算法优化、系统优化、硬件架构、芯片集成五个层次,逐层用课题组代表性论文成果展示优化方法;最后落到超节点、大EP、长文本的集群推理挑战与华为昇腾实践,总结展望。",
+      "论述弧线": [
+        "背景动机",
+        "能效指标",
+        "分层优化",
+        "集群推理",
+        "总结展望"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "大模型推理软硬件协同优化",
+          "核心论断": "大模型推理需软硬件协同优化以突破算力瓶颈",
+          "本页讲什么": "报告封面页,承载报告主标题「大模型推理软硬件协同优化」,并在下方给出演讲人戴国浩、所属机构上海交通大学与无问芯穹,以及联系邮箱 daiguohao@sjtu.edu.cn,为全篇软硬件协同主题定调,无正文内容。",
+          "关键文字": [
+            "大模型推理软硬件协同优化",
+            "戴国浩",
+            "上海交通大学 / 无问芯穹",
+            "Email: daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "左上大标题",
+            "横向细分隔线",
+            "右下演讲人信息块"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "汇报人个人介绍：研究领域与工作教育经历",
+          "核心论断": "汇报人深耕人工智能/集成电路/EDA，履历完整支撑技术权威",
+          "本页讲什么": "这是一张个人名片页。顶部蓝框标出主要研究领域：人工智能、集成电路、电路设计自动化。下方分「工作经历」「教育经历」两栏时间线：工作经历列 2022.11 至今、2023.5 至今、2019.7~2022.11 三段职务与单位；教育经历列 2014.9~2019.7、2017.10~2018.6、2010.9~2014.7 三段求学（含联合培养/交流）经历，为后续技术成果背书。",
+          "关键文字": [
+            "主要研究领域：人工智能 集成电路 电路设计自动化",
+            "工作经历（2022.11 至今 / 2023.5 至今 / 2019.7~2022.11）",
+            "教育经历（2014.9~2019.7 / 2017.10~2018.6 / 2010.9~2014.7）"
+          ],
+          "视觉骨架": [
+            "顶部研究领域蓝色 tag 框",
+            "工作经历时间线栏",
+            "教育经历时间线栏",
+            "上下双栏对称卡片布局"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.02",
+          "section_role": "self_intro"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "目录:四大议题总览(Contents)",
+          "核心论断": "全篇围绕四大议题展开,首议「从Token到价值」",
+          "本页讲什么": "正文目录页。蓝色外框内以带圈数字①-④纵向列出全篇四个议题,①为「大模型推理从Token到价值」,其余三项为后续系统层/优化/展望等主题,点明整体结构并引出第一议题。(②③④原文因字体缺失显示为方块,仅①可辨读)",
+          "关键文字": [
+            "Contents",
+            "① 大模型推理从Token到价值"
+          ],
+          "视觉骨架": [
+            "蓝色外框标题区",
+            "带圈数字①-④纵向列表",
+            "左侧蓝色进度竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "目录:进入议题一「从Token到价值」",
+          "核心论断": "聚焦第一议题——大模型推理从Token到价值",
+          "本页讲什么": "与上页同一目录版式,但高亮①「大模型推理从Token到价值」、其余②③④灰化,作为进入第一章的过渡分隔页,承接上页全目录、聚焦议题一。",
+          "关键文字": [
+            "Contents",
+            "① 大模型推理从Token到价值"
+          ],
+          "视觉骨架": [
+            "目录列表当前项高亮",
+            "其余项灰化处理",
+            "左侧蓝色进度竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "人工智能发展阶段:系统I到系统II",
+          "核心论断": "AI由系统I(AI1.0)迈向系统II(AI2.0)",
+          "本页讲什么": "借Kahneman《Thinking, Fast and Slow》的系统I/系统II论与Hinton深度学习课程观点作权威背书,右侧阶段递进图将人工智能分为第1/2/3阶段:系统I对应AI1.0、系统II对应AI2.0,输入与模型参数f逐级演化,论证AI范式正从快思考迈向慢思考。",
+          "关键文字": [
+            "Daniel Kahneman 诺贝尔奖获得者",
+            "\"Thinking, Fast and Slow\"",
+            "Geoffrey Hinton 图灵奖获得者(vision)",
+            "系统I / 系统II",
+            "人工智能第2/3阶段 = 系统II(AI 2.0)",
+            "输入=? 模型参数f"
+          ],
+          "视觉骨架": [
+            "左侧两位学者引用卡片",
+            "右侧三阶段递进框图",
+            "系统I/II分层标注",
+            "输入与模型参数f标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "AI 2.0核心生产要素——Token",
+          "核心论断": "Token是AI2.0时代的核心生产要素",
+          "本页讲什么": "左右对比两代范式:AI1.0(判别模型/特定任务)以输入数据经GAN/CNN/RNN得输出结果;AI2.0(生成模型/通用任务)以Tokenize→Next Token Prediction(Transformer Decoder)→Detokenize处理,统一以Token为处理单元。落点为Token成为AI2.0核心生产要素,承接上页AI1.0→2.0的演进。",
+          "关键文字": [
+            "AI 1.0 判别模型 特定任务",
+            "AI 2.0 生成模型 通用任务",
+            "GAN / CNN / RNN",
+            "Tokenize / Next Token Prediction (Transformer Decoder) / Detokenize",
+            "时代核心的生产要素——Token"
+          ],
+          "视觉骨架": [
+            "AI1.0 vs AI2.0 双栏对比框图",
+            "分层流程箭头",
+            "Token 红色虚线高亮框",
+            "底部结论横幅"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.03",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "目录：进入软硬件协同优化层次",
+          "核心论断": "本章聚焦大模型推理的软硬件协同优化层次",
+          "本页讲什么": "四项议程的 Contents 目录页，高亮第 2 项『大模型推理的软硬件协同优化层次』，其余三项（从 Token 到价值、优化实践、总结展望）灰显。作为分节导航，标示演讲进入本章主题：从能效指标切入软硬件协同。",
+          "关键文字": [
+            "Contents",
+            "大模型推理的软硬件协同优化层次",
+            "大模型推理从 Token 到价值"
+          ],
+          "视觉骨架": [
+            "带边框 Contents 面板",
+            "四项编号列表",
+            "当前项蓝色高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "能效指标重定义：从 TOPs/J 到 Tokens/J",
+          "核心论断": "AI 2.0 将能效指标从 TOPs/J 重定义为 Tokens/J",
+          "本页讲什么": "左右两栏对比 AI 1.0 与 AI 2.0 的能效度量：左栏旧指标 TOPs/J，右栏新指标 Tokens/J，中间箭头示意迁移。右栏列举多类硬件的实测 tokens/J（PIM/NDP 清华 47、WaferLLM ASIC 6.2、TerEffic FPGA 6.3、AWQ GPU 0.8），佐证新指标下的能效分布。",
+          "关键文字": [
+            "能效指标变化：从 AI 1.0 到 AI 2.0",
+            "TOPs/J -> Tokens/J",
+            "PIM/NDP, 清华, 47 Tokens/J",
+            "AWQ GPU MIT, 0.8 Tokens/J"
+          ],
+          "视觉骨架": [
+            "左右两栏对比框",
+            "TOPs→Tokens 迁移箭头",
+            "多硬件案例标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "AI 2.0 关键指标：高质量 tokens/J",
+          "核心论断": "高质量 tokens/J = max tokens/J 且满足 IQ≥阈值",
+          "本页讲什么": "定义 AI 2.0 的核心能效指标『高质量 tokens/J』：在 AGI 五级智能（OpenAI 分级）框架下，优化目标为 max tokens/J，约束条件为智力水平 IQ 大于阈值。底部以 Level 1（MMLU>65）、Level 2（Math Level 5）、Level 3 等给出各级 IQ 阈值示例，强调能效必须带质量约束。",
+          "关键文字": [
+            "AI 2.0 关键指标：高质量 tokens/J",
+            "max tokens/J s.t. 智力水平(IQ) > threshold",
+            "Level 1 e.g. MMLU >65",
+            "Level 2 e.g. Math Level 5"
+          ],
+          "视觉骨架": [
+            "AGI 五级横向色带",
+            "带约束的优化公式框",
+            "Level 1-3 阈值卡片链"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "能效现状：不同智能等级的 tokens/J",
+          "核心论断": "各智能等级现状能效仅 0.01-10 tokens/J，偏低",
+          "本页讲什么": "三列并列展示 2023-2025 三档智能等级的能效现状：等级一 0.01-10 tokens/J（3-7B，AGI Level-1）、等级二 0.2 tokens/J（1-70B，Level-2）、等级三 0.1-3 tokens/J（100M-7B，Level-3）。底部箭头示意随 IQ 提升的演进，红色虚圈标注各档现状水平，引用 Li Jinhao 综述。为下页需求缺口做铺垫。",
+          "关键文字": [
+            "能效现状：不同智能等级",
+            "现状 0.01-10 tokens/J，模型 3-7B，AGI Level-1",
+            "现状 0.2 tokens/J，模型 1-70B，Level-2",
+            "现状 0.1-3 tokens/J，模型 100M-7B，Level-3"
+          ],
+          "视觉骨架": [
+            "三列并列 panel",
+            "红色虚线圈现状标注",
+            "IQ 演进时间轴箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "chapter_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "chapter_candidate",
+          "标题": "能效需求：不同智能等级的 tokens/J",
+          "核心论断": "需求达 10->20 tokens/J，较现状差 1-3 个数量级",
+          "本页讲什么": "三列并列展示三档智能等级的能效需求场景：智能对话助手需求接近 10 tokens/J；更高等级需 >10 tokens/J（需求 1-2 个数量级提升）、>20 tokens/J（需求 2-3 个数量级提升）。承接上页现状，用红色虚圈对照，凸显现状与需求之间的巨大缺口，两条 IQ 演进箭头引出后续两条优化路径。",
+          "关键文字": [
+            "能效需求：不同智能等级",
+            "智能对话助手，需求接近 10 tokens/J",
+            ">10 tokens/J，需求 1-2 个数量级",
+            ">20 tokens/J，需求 2-3 个数量级"
+          ],
+          "视觉骨架": [
+            "三列并列需求 panel",
+            "绿色场景块",
+            "双 IQ 演进箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "优化路径-1：恒定 tokens/J 提升智能",
+          "核心论断": "小参数 MoE 在恒定 tokens/J 下大幅提升智能",
+          "本页讲什么": "呈现第一条优化路径：保持 tokens/J 不变、提升智能水平（MMLU）。以 MMLU% 定位图对比 Qwen 系列，Qwen2.5-3B（65.65）到 Qwen3-30B-A3B、Qwen3-235B-A22B（87.81）逐步逼近 GPT4 o1，远超 GPT3.5 基线，说明参数量小的 MoE 是提智能的关键手段。引用 Qwen3 技术报告。",
+          "关键文字": [
+            "优化路径-1：保持 tokens/J 同时提升智能水平",
+            "参数量小的 MoE",
+            "Qwen3-235B-A22B MMLU 87.81",
+            "Qwen2.5-3B MMLU 65.65"
+          ],
+          "视觉骨架": [
+            "MMLU 纵轴定位图",
+            "GPT4 o1 / GPT3.5 阈值虚线",
+            "多模型标签+上升箭头"
+          ],
+          "上页角色": "chapter_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "优化路径-2：恒定智能提升 tokens/J",
+          "核心论断": "量化与投机解码在恒定智能下提升 tokens/J",
+          "本页讲什么": "呈现第二条优化路径：保持智能水平不变、提升 tokens/J。两大手段——模型压缩（量化）与并行解码，配实测案例：AWQ INT4（MIT）0.8250 tokens/J、EAGLE 投机解码（PKU）0.5873 tokens/J，箭头示意能效提升方向。与路径-1 互补，共同收敛到软硬件协同。引用 AWQ、EAGLE 论文。",
+          "关键文字": [
+            "优化路径-2：保持智能水平同时提升 tokens/J",
+            "模型压缩（量化）",
+            "并行解码",
+            "AWQ (INT4), MIT, 0.8250 tokens/J",
+            "EAGLE 投机解码, PKU, 0.5873 tokens/J"
+          ],
+          "视觉骨架": [
+            "两手段并列标题",
+            "量化/投机解码案例标签",
+            "能效提升方向箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "高质量 tokens/J 的持续演进",
+          "核心论断": "软硬件协同同步推高 tokens/J 与 IQ 跨级演进",
+          "本页讲什么": "以 tokens/J（纵轴）对 IQ（横轴）的概念图收束前文：Level 1 到 Level 5 各智能等级以红色曲线展开，能效阈值从 ~5 升至 >20 tokens/J，横轴标注各级 IQ 基准（MMLU>65、Math Level5>50% 等）。中央通栏强调唯有软硬件协同才能同步提升 tokens/J 与 IQ，实现高质量能效的持续演进。",
+          "关键文字": [
+            "高质量 tokens/J 的持续演进",
+            "tokens/J 增加 vs IQ 提升",
+            "软硬件协同",
+            "各级 IQ 阈值：MMLU>65 / Math Level5>50%"
+          ],
+          "视觉骨架": [
+            "tokens/J–IQ 概念坐标图",
+            "Level 1-5 红色演进曲线",
+            "中央软硬件协同通栏"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "从硬件被动支持到软硬件协同设计",
+          "核心论断": "范式应从算法主导硬件被动转向软硬件协同",
+          "本页讲什么": "对比传统思路与新思路两条流程：传统思路为算法修改→硬件被动支持→精度提升（硬件被动跟随，效率受限）；新思路强调软硬件协同（硬件主动参与、精度与效率协同优化）。红色横条隔断旧路径、蓝色上扬箭头指向新路径，点明从被动支持到协同设计的范式转变，为后续五层协同框架奠基。",
+          "关键文字": [
+            "传统思路：算法修改，硬件被动支持，精度提升",
+            "新思路：软硬件协同",
+            "硬件被动支持 -> 软硬件协同",
+            "精度提升 / 效率"
+          ],
+          "视觉骨架": [
+            "上下两行流程对比",
+            "红色隔断横条",
+            "被动/协同双流程箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.04",
+          "section_role": "motivation"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "大模型推理优化的五层次拆解框架",
+          "核心论断": "大模型推理可拆解为算法/系统/硬件五个设计层次",
+          "本页讲什么": "立起全deck核心总纲:将大模型推理系统自上而下拆解为模型设计、量化、推理框架、芯片设计、芯片集成五个层次,前三层归为软件层、后两层归为硬件层,每层右侧标出代表技术(DeepSeek/AWQ/vLLM·CANN/H100·910B/Chiplet 2.5D·3D),为后续逐层展开做框架。",
+          "关键文字": [
+            "大模型推理系统可拆解为5个设计层次",
+            "软件层:模型设计/量化/推理框架",
+            "硬件层:芯片设计/芯片集成",
+            "代表技术 DeepSeek·AWQ·vLLM/CANN",
+            "H100/910B·Chiplet 2.5D/3D"
+          ],
+          "视觉骨架": [
+            "五层纵向堆叠框图",
+            "软件层/硬件层分组括号",
+            "每层右向箭头+代表技术标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "目录:进入软硬件协同优化章节",
+          "核心论断": "报告推进至\"大模型推理软硬件协同优化\"主体章节",
+          "本页讲什么": "四段式Contents导航页,高亮第③项\"大模型推理的软硬件协同优化\"(黑色实心),其余(Token价值主张、软硬件协同优化层次、总结与展望)置灰,标示演讲进入协同优化主体部分。",
+          "关键文字": [
+            "Contents",
+            "①大模型推理的Token价值主张",
+            "②大模型推理的软硬件协同优化层次",
+            "③大模型推理的软硬件协同优化(高亮)",
+            "④总结与展望"
+          ],
+          "视觉骨架": [
+            "Contents标题框",
+            "四项编号圆标目录",
+            "第3项高亮+左侧蓝色进度条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "五层次拆解:聚焦层次一模型设计",
+          "核心论断": "从五层框架切入,首先展开顶层模型设计层",
+          "本页讲什么": "复用第16页的五层次框架,但仅高亮顶层\"模型设计\"(对应DeepSeek),其余四层置灰,以视觉build引导观众从整体框架收敛进入\"层次一:算法/模型设计\"的深入讨论。",
+          "关键文字": [
+            "大模型推理系统可拆解为5个设计层次",
+            "高亮:模型设计层(DeepSeek)",
+            "软件层/硬件层",
+            "量化AWQ·推理框架vLLM/CANN置灰",
+            "芯片H100/910B·Chiplet置灰"
+          ],
+          "视觉骨架": [
+            "五层框图(顶层高亮其余置灰)",
+            "软/硬件层分组括号",
+            "右向箭头技术标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "层次1算法设计:云端资源约束对比",
+          "核心论断": "算法设计核心是围绕资源受限降低训练与推理成本",
+          "本页讲什么": "引入层次一算法设计,指出核心是围绕\"资源受限\"降本。左侧云侧大模型对比训练(10万+ H100→2048张)与推理(~5426万→<500万美元),示意可省1~2个数量级;右侧列端侧云/端资源差距(存储1000GB→12GB、算力→50TOPS),铺垫云、端两大场景。",
+          "关键文字": [
+            "算法模型设计的核心是围绕资源受限",
+            "云侧训练 10万+H100 vs 2048张H100",
+            "云侧推理 ~5426万美元 vs <500万美元",
+            "降低1~2个数量级",
+            "端侧 存储1000GB/12GB·算力/50TOPS"
+          ],
+          "视觉骨架": [
+            "云/端双panel",
+            "训练/推理成本对比柱图",
+            "资源约束数字标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "场景1云模型:DeepSeek三大协同技术",
+          "核心论断": "DeepSeek以MLA/MoE/FP8三技术协同降低算力与存储",
+          "本页讲什么": "展开云侧场景,针对平方复杂度注意力对算力/存储的高要求,并列呈现DeepSeek三项软硬协同技术:序列长度缩放MLA(MHA→MQA→GQA→MLA,KV缓存降至1.76%)、专家稀疏MoE(1共享+256路由专家)、计算量FP8量化(FP8 Tensor Core,精度损失<0.25%)。",
+          "关键文字": [
+            "注意力平方复杂度对算力/存储要求高",
+            "序列长度缩放MLA:MHA/MQA/GQA",
+            "KV缓存 100%→25%→1.76%",
+            "专家稀疏MoE:1共享+256路由专家",
+            "计算量FP8量化 FP8 Tensor Core,损失<0.25%"
+          ],
+          "视觉骨架": [
+            "三列技术panel",
+            "MLA注意力头/projection示意",
+            "MoE专家网格·FP8 Tensor Core图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "场景1云模型:DeepSeek协同实践成效",
+          "核心论断": "DeepSeek软硬协同将推理成本降至GPT-4o的1/20",
+          "本页讲什么": "汇总场景1量化成效,以\"优化技术/目的/成效\"表格呈现:序列长度缩放使显存降低90%、专家稀疏使计算量减少18倍、FP8与通信优化提升带宽利用率;右侧以2048张H100 vs 10万+ H100及对比OpenAI GPT-4o 1/20成本,论证协同收益。",
+          "关键文字": [
+            "优化技术/目的/成效",
+            "序列长度缩放:显存需求降低90%",
+            "专家稀疏:计算量减少18倍",
+            "FP8/通信优化:带宽利用率提升",
+            "对比GPT-4o 成本1/20"
+          ],
+          "视觉骨架": [
+            "技术-目的-成效三列表格",
+            "2048 vs 10万H100柱图",
+            "成本对比标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "Megrez-Omni技术报告(端侧工作引入)",
+          "核心论断": "引入自研端侧全模态模型Megrez-Omni工作",
+          "本页讲什么": "以论文封面形式引入自研成果Megrez-Omni Technical Report,列出作者团队(Boxun Li、Yadong Li 等)、通讯作者(Guohao Dai、Yu Wang)及单位(上海交通大学、清华大学),作为端侧场景2的工作背书与出处。",
+          "关键文字": [
+            "Megrez-Omni Technical Report",
+            "作者 Boxun Li, Yadong Li…",
+            "通讯作者 Guohao Dai, Yu Wang",
+            "Shanghai Jiao Tong University, Tsinghua University",
+            "Corresponding authors"
+          ],
+          "视觉骨架": [
+            "论文标题大字",
+            "作者署名列表",
+            "机构与通讯作者标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "场景2端模型:端侧更需软硬协同",
+          "核心论断": "端侧存储/算力比云侧严重受限1-2个数量级",
+          "本页讲什么": "引入端侧场景,对比云端(存储1000GB、算力上千TOPS)与端侧(12GB、50TOPS),指出端侧资源约束严重1-2个数量级,故更需要软硬协同并结合Scale Up/Scale Out,右侧示意端侧优化空间与挑战路径。",
+          "关键文字": [
+            "相比云侧:端侧更需要软硬协同",
+            "云端存储1000GB/算力上千TOPS",
+            "端侧12GB/50TOPS",
+            "端侧约束严重1-2个数量级",
+            "结合Scale Up/Scale Out"
+          ],
+          "视觉骨架": [
+            "云/端资源对比双panel",
+            "向下汇聚箭头",
+            "端侧挑战文本块+曲折路径箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "场景2端模型:Megrez 1.0全模态轻量模型",
+          "核心论断": "Megrez-3B-Omni以小内存占用适配车端/手机/AIPC",
+          "本页讲什么": "介绍端侧全模态轻量模型Megrez 1.0(Megrez-3B-Omni),按内存分档适配车端Orin(4~8GB)、手机(8~12GB)、AIPC(16~32GB);中部benchmark表列多项得分(如均衡6.60),对比精度损失>30%,右侧标注端侧性能可提升约300%。",
+          "关键文字": [
+            "Megrez 1.0:端侧全模态轻量模型 Megrez-3B-Omni",
+            "车端Orin 4~8GB/手机8~12GB/AIPC 16~32GB",
+            "benchmark均衡得分 6.60",
+            "精度损失>30%",
+            "性能提升300%"
+          ],
+          "视觉骨架": [
+            "设备内存分档纵列",
+            "多列benchmark数值表",
+            "300%提升标注箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "场景2端模型:Megrez 1.0架构与数据设计",
+          "核心论断": "Megrez 1.0以Dense架构对齐主流生态便于部署",
+          "本页讲什么": "展开Megrez 1.0设计方法:左侧Dense模型架构设计(依Scaling Law调Attn heads/kv heads、层数、隐层、词表,并权衡Dense与MoE、Mamba/RNN)以对齐主流生态便于部署;右侧训练数据设计(数据总量3T、数据配比、数据质量&数量),对比Qwen3的36T Tokens。",
+          "关键文字": [
+            "Dense模型架构设计,对齐主流生态便于部署",
+            "Attn heads/kv heads·层数·隐层·词表大小",
+            "Mamba/RNN·MoE架构权衡",
+            "训练数据设计:数据总量3T·数据配比",
+            "对比Qwen3训练数据 36T Tokens"
+          ],
+          "视觉骨架": [
+            "架构/数据双panel",
+            "架构超参bullet框",
+            "向下箭头+结论条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "content_candidate",
+          "标题": "场景2端模型:Megrez 2.0小激活MoE架构",
+          "核心论断": "Megrez 2.0用小激活量MoE平衡训练与部署成本",
+          "本页讲什么": "介绍Megrez 2.0采用小激活量MoE架构:左侧MoE架构设计权衡训练成本与部署成本(单卡GPU H800 40-80G、激活参数量),右侧训练策略将总参数20B3A拆为3×7B3A(7B专家、3B激活),兼顾容量与推理开销。引用Megrez-omni technical report(arXiv:2502.15803)。",
+          "关键文字": [
+            "Megrez 2.0:小激活量MoE架构",
+            "MoE架构权衡训练成本与部署成本",
+            "部署:单卡GPU H800 40-80G",
+            "总参数20B3A → 3×7B3A",
+            "7B专家/3B激活"
+          ],
+          "视觉骨架": [
+            "MoE架构/训练策略双panel",
+            "参数拆分20B3A→3x7B3A箭头",
+            "激活量双向箭头示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 27,
+          "页面角色": "content_candidate",
+          "标题": "层次1算法设计小结:能效提升2.5x",
+          "核心论断": "算法设计使云侧与端侧能效比均提升2.5倍",
+          "本页讲什么": "收束层次一算法设计,以算法设计前/后对比给出量化收益:云侧场景与端侧场景的能效比均由1x提升至2.5x(分别以Qwen2.5-3B、Megrez-3B为基准),呼应deck的2.5x能效主张并过渡至下一层次。",
+          "关键文字": [
+            "算法设计前 vs 算法设计后",
+            "云侧场景 1x→2.5x",
+            "端侧场景 1x→2.5x",
+            "基准:Qwen2.5-3B/Megrez-3B",
+            "能效比提升"
+          ],
+          "视觉骨架": [
+            "前/后对比表格",
+            "上升箭头图标",
+            "2.5x强调数值"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+          "section_role": "method"
+        },
+        {
+          "页序号": 28,
+          "页面角色": "content_candidate",
+          "标题": "大模型推理优化五层框架:定位算法优化",
+          "核心论断": "推理系统拆为五层,算法优化居第二层,本章聚焦于此",
+          "本页讲什么": "用五层框架(算法设计/算法优化/推理框架/芯片架构/芯片集成)定位本章。左侧分软件层与硬件层,中间竖排五个层次块,当前高亮「算法优化」第二层,右侧对每层给出代表技术(DeepSeek、AWQ、vLLM/CANN、H100/910B、Chiplet 2.5D/3D),承上启下引入算法优化主题。",
+          "关键文字": [
+            "大模型推理系统可拆解为5个设计层次",
+            "算法优化(第二层)",
+            "DeepSeek / AWQ / vLLM CANN / H100·910B / Chiplet 2.5D/3D"
+          ],
+          "视觉骨架": [
+            "五层竖排框架示意",
+            "软件层/硬件层左括号分组",
+            "右侧逐层代表技术标注",
+            "当前层高亮箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "content_candidate",
+          "标题": "层次2算法优化:三条压缩方法主线",
+          "核心论断": "算法优化经数值精度降低、参数减少、结构精简三条路径压缩模型",
+          "本页讲什么": "总览算法优化的三种手段。上方给出层1到层M的Transformer流水线并展开注意力模块;下方三个并列panel分别对应三条主线——数值精度降低(量化,参数变小)、参数数量减少(稀疏化,参数变少)、结构精简(减少矩阵数量),为后续三篇代表工作铺垫。",
+          "关键文字": [
+            "矩阵内参数变小 + 矩阵内参数变少",
+            "数值精度降低 / 参数数量减少 / 结构精简",
+            "层1…层M 注意力流水线"
+          ],
+          "视觉骨架": [
+            "Transformer多层流水线示意",
+            "注意力模块内部展开图",
+            "3列并列压缩方法panel",
+            "矩阵网格→压缩对比图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 30,
+          "页面角色": "content_candidate",
+          "标题": "算法优化背景:压缩技术发展历程",
+          "核心论断": "量化与结构精简双线演进,MoE/MoD推动矩阵参数变小变少",
+          "本页讲什么": "作为背景页梳理算法优化发展历程。左侧2016-2025时间轴按上下两条线标注代表工作(量化线AdaRound/AWQ等、结构线Deep Compression/StreamingLLM/DeepSeek-N3A等);右侧用MoE分层结构与MoD分层结构示例说明「矩阵内参数变小+变少」的思路。",
+          "关键文字": [
+            "矩阵内参数变小 + 矩阵内参数变少",
+            "2016→2025 压缩技术时间轴",
+            "MoE分层结构 / MoD分层结构",
+            "2025 DeepSeek-N3A"
+          ],
+          "视觉骨架": [
+            "2016-2025双线时间轴",
+            "上下分类代表工作标注",
+            "MoE token路由示意",
+            "MoD分层结构示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 31,
+          "页面角色": "content_candidate",
+          "标题": "代表工作一:2-bit LLM异步反量化推理",
+          "核心论断": "该工作实现GPU上2/4/16-bit混合权重的高效2-bit推理",
+          "本页讲什么": "方法一(量化)的论文引入页。给出论文标题《Fast and Efficient 2-bit LLM Inference on GPU: 2/4/16-bit in a Weight Matrix with Asynchronous Dequantization》、作者(Jinhao Li、Jiaming Xu等,上海交大/Infinigence/清华)及会议ICCAD 2024,引出后续挑战-方法-效果展开。",
+          "关键文字": [
+            "Fast and Efficient 2-bit LLM Inference on GPU",
+            "2/4/16-bit in a Weight Matrix with Asynchronous Dequantization",
+            "Shanghai Jiao Tong University / Infinigence / Tsinghua",
+            "ICCAD 2024"
+          ],
+          "视觉骨架": [
+            "论文标题主视觉",
+            "作者与单位署名行",
+            "会议年份标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 32,
+          "页面角色": "content_candidate",
+          "标题": "方法1挑战:高压缩率下量化精度损失大",
+          "核心论断": "推理访存受限,压缩降开销,但高压缩率下精度损失严重",
+          "本页讲什么": "方法一(矩阵内参数变小)的挑战页。左侧用Roofline图说明推理本质访存受限、量化可从BF16(算术强度1)推向4-bit(强度4)提升上限;右侧表格列GPTQ/AWQ/OmniQuant/APTQ等方法在Llama-7B低比特下的精度下降(5.8%/>10%/4.6%/8.1%),点明现有方法高压缩率精度损失大。",
+          "关键文字": [
+            "推理本质访存受限,压缩降低访存开销",
+            "现有方法高压缩率下精度损失大",
+            "GPTQ 5.8% / AWQ >10% / OmniQuant 4.6% / APTQ 8.1%",
+            "Llama-7B 低比特精度下降"
+          ],
+          "视觉骨架": [
+            "Roofline算术强度曲线",
+            "BF16/4-bit工作点标注",
+            "现有量化方法精度对比表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 33,
+          "页面角色": "content_candidate",
+          "标题": "方法1方案:按通道重要性混合2/4-bit量化",
+          "核心论断": "按通道判断量化组重要性,组内混用2/4-bit可2倍压缩",
+          "本页讲什么": "方法一方案(一)。按通道判断量化组重要性,重要组保留高比特、其余用低比特,矩阵内混合2/4-bit。用Blue/Green两区域的数值范围对比(Range 1.06 vs 0.51)说明重要性差异可达2x,据此在4-bit与2-bit间自适应分配。",
+          "关键文字": [
+            "按通道判断量化组重要性,内部2/4-bit",
+            "Blue区间 Range 1.06 / Green区间 Range 0.51",
+            "2x 范围差异",
+            "S=4bit / S=2bit"
+          ],
+          "视觉骨架": [
+            "权重矩阵区域划分示意",
+            "Region-Min-Max-Range数值表",
+            "2x差异强调标注",
+            "混合比特分配示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 34,
+          "页面角色": "content_candidate",
+          "标题": "方法1方案:GPU异步反量化消除访存瓶颈",
+          "核心论断": "GPU上异步反量化避免kernel串行,消除线性访存开销",
+          "本页讲什么": "方法一方案(二)。针对2/4-bit混合权重的反量化,在GPU上采用异步反量化设计,将outlier与量化组分层处理(All Groups 1.5%→0.5%→2-bit Groups 0.5%),避免kernel launch串行导致的线性开销,使反量化与计算重叠。",
+          "关键文字": [
+            "GPU上异步反量化,避免访存线性增长",
+            "混合2/4-bit权重反量化",
+            "All Groups(1.5%)→(0.5%)→2-bit Groups(0.5%)",
+            "Kernel Launch / Linear Increase / Outliers"
+          ],
+          "视觉骨架": [
+            "异步反量化流程示意",
+            "量化组分层outlier标注",
+            "Kernel Launch vs Linear Increase对比标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 35,
+          "页面角色": "content_candidate",
+          "标题": "方法1效果:量化推理实现5.5倍加速",
+          "核心论断": "该量化方案实现5.5倍加速,较自由度基线再获2.53倍",
+          "本页讲什么": "方法一(量化)的效果页。以顶部结论条给出核心数据:整体实现约5.5x推理加速,相比「自由性」相关基线额外获得2.53x提升,论证按通道混合量化+异步反量化在保精度下大幅降低访存与算力。",
+          "关键文字": [
+            "实现 5.5x 加速",
+            "相比\"自由性\"基线额外 2.53x",
+            "保精度下降低访存开销"
+          ],
+          "视觉骨架": [
+            "顶部结论强调条",
+            "关键加速比大字标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 36,
+          "页面角色": "content_candidate",
+          "标题": "代表工作二:MoA稀疏注意力自动压缩",
+          "核心论断": "MoA以混合稀疏注意力实现大模型自动压缩",
+          "本页讲什么": "方法二(稀疏化)的论文引入页。给出论文标题《MoA: Mixture of Sparse Attention for Automatic Large Language Model Compression》、作者(Tianyu Fu、Haofeng Huang、Xuefei Ning、Yu Wang*等,清华/Infinigence/斯坦福/上海交大)与会议CoLM'25,引出稀疏注意力主线。",
+          "关键文字": [
+            "MoA: Mixture of Sparse Attention for Automatic Large Language Model Compression",
+            "Tianyu Fu / Haofeng Huang / Xuefei Ning / Yu Wang*",
+            "Tsinghua / Infinigence / Stanford / SJTU",
+            "CoLM'25"
+          ],
+          "视觉骨架": [
+            "论文标题主视觉",
+            "作者与单位署名行",
+            "会议年份标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 37,
+          "页面角色": "content_candidate",
+          "标题": "方法2挑战:单一稀疏模式缺乏泛化性",
+          "核心论断": "注意力形式多样,单一稀疏模式难泛化到不同头与长度",
+          "本页讲什么": "方法二(矩阵内参数变少)的挑战页。左右对比两种痛点:一是不同注意力头存在不同注意力形式,单一稀疏形式不具泛化性;二是同一稀疏模式在short input与long input(长短输入)下表现不一致,难以固定,引出需自动化搜索的稀疏方案。",
+          "关键文字": [
+            "单一注意力形式不具备泛化性",
+            "不同注意力头形式不同",
+            "short input / long input 表现不一致"
+          ],
+          "视觉骨架": [
+            "不同注意力头形式对比图",
+            "长短输入分支示意(?)",
+            "两痛点左右分栏"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 38,
+          "页面角色": "content_candidate",
+          "标题": "方法2方案:异质搜索空间自动配置稀疏",
+          "核心论断": "构建异质搜索空间,自动为各头搜索最优稀疏配置",
+          "本页讲什么": "方法二方案页。分三步:1.构建包含多种稀疏形式的异质搜索空间;2.按不同注意力头自动搜索并压缩,针对性优化;3.面向长上下文的KV缓存,自动配置各头稀疏度以适配长短输入。核心是自动化搜索取代单一稀疏模式。",
+          "关键文字": [
+            "1. 异质搜索空间:构建多种稀疏形式",
+            "2. 按注意力头自动搜索压缩",
+            "3. 长上下文KV缓存自动配置",
+            "针对不同头压缩+减少KV缓存"
+          ],
+          "视觉骨架": [
+            "三步方案分栏文字",
+            "异质搜索空间示意",
+            "底部关键结论条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 39,
+          "页面角色": "content_candidate",
+          "标题": "方法2效果:稀疏注意力较FA2提速最高7x",
+          "核心论断": "MoA近乎无损压缩,较FlashAttention2最高提速约7倍",
+          "本页讲什么": "方法二(稀疏)的效果页。在几乎不影响准确率前提下大幅提升吞吐,较FlashAttention2整体约7x、并给出3.9x吞吐、支持256k上下文、以及3.0x KV-Cache、1.5x attention、1.4x batch size、1.2x GPU kernel等分项加速(A100-80GB、7B/13B LLM)。",
+          "关键文字": [
+            "较FlashAttention2约7x",
+            "3.9x 吞吐提升 / 支持256k上下文",
+            "3.0x KV-Cache / 1.5x attention / 1.4x batch / 1.2x GPU kernel",
+            "A100-80GB, 7B/13B LLMs"
+          ],
+          "视觉骨架": [
+            "多组加速比大字标注",
+            "分项(KV/attention/batch/kernel)对照",
+            "开源指标(GitHub Stars)标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 40,
+          "页面角色": "content_candidate",
+          "标题": "代表工作三:SpecEE投机式提前退出",
+          "核心论断": "SpecEE以投机式提前退出加速大模型推理",
+          "本页讲什么": "方法三(结构精简)的论文引入页。给出论文标题《SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting》、作者(Jiaming Xu、Jiayi Pan、Yongkang Zhou、Guohao Dai*等,上海交大/Infinigence)与会议ISCA 2025,引出提前退出主线。",
+          "关键文字": [
+            "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+            "Jiaming Xu / Jiayi Pan / Yongkang Zhou / Guohao Dai*",
+            "Shanghai Jiao Tong University, Infinigence-AI",
+            "ISCA 2025"
+          ],
+          "视觉骨架": [
+            "论文标题主视觉",
+            "作者与单位署名行",
+            "会议年份标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 41,
+          "页面角色": "content_candidate",
+          "标题": "方法3挑战:级联层计算下的退出决策",
+          "核心论断": "级联层逐层计算需高效predictor判断何时提前退出",
+          "本页讲什么": "方法三(矩阵数量变少)的机制页。用Cascaded Layer Computation图展示Prompt经Tokenize后逐层Attention+FFN,每层由predictor(Feature Process+Model)判断退出与否(Y/N),Yes则提前退出到LM_head输出,引出提前退出的核心是准确高效的退出预测。",
+          "关键文字": [
+            "Cascaded Layer Computation 级联层计算",
+            "predictor: Feature Process + Model",
+            "逐层判断 Yes/No 是否提前退出",
+            "Prompt→Tokenize→Attention/FFN→LM_head"
+          ],
+          "视觉骨架": [
+            "级联层逐层计算流程图",
+            "predictor判断分支(Y/N)",
+            "Feature Process+Model结构块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 42,
+          "页面角色": "content_candidate",
+          "标题": "方法3背景:三类提前退出方法对比",
+          "核心论断": "RAEE/AdaInfer/MoD三类退出方法在精度与开销上各有取舍",
+          "本页讲什么": "方法三的相关工作对比页。三列并列对比RAEE[1](检索数据库+Exit Layer ID,约10 tokens开销)、AdaInfer[2](特征查表,约3×10⁴ tokens)、MoD[3](Skip or Forward约2状态,改QKV/MHA/FFN),下方用精度/开销条形对比其效果代价,凸显现有方法开销或精度不足。",
+          "关键文字": [
+            "RAEE[1] 检索数据库 ~10 Tokens",
+            "AdaInfer[2] 特征查表 ~3×10⁴ Tokens",
+            "MoD[3] Skip or Forward ~2 Status",
+            "精度高低 / 开销大小对比"
+          ],
+          "视觉骨架": [
+            "3列方法对比panel",
+            "各方法结构缩略图",
+            "精度/开销条形标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 43,
+          "页面角色": "content_candidate",
+          "标题": "方法3动机:提前退出可跳过冗余层计算",
+          "核心论断": "多数token在浅层即可确定,提前退出跳过深层冗余计算",
+          "本页讲什么": "方法三的动机页。Prompt经tokenize后逐层Attention+FFN到LM_head,通过退出概率示意:当候选词分布(where/go/do/can/are/good→I)在浅层已高度确定时即可提前退出,说明约3层即可得到结果,深层计算存在冗余。",
+          "关键文字": [
+            "逐层Attention+FFN 到 LM_head",
+            "候选词分布提前确定即可退出",
+            "约3层即可得到输出",
+            "退出概率示意"
+          ],
+          "视觉骨架": [
+            "Transformer逐层流水线",
+            "候选词概率云示意",
+            "提前退出箭头标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 44,
+          "页面角色": "content_candidate",
+          "标题": "方法3洞察:退出与投机解码结合",
+          "核心论断": "提前退出可与LLM投机解码结合,协同减少计算",
+          "本页讲什么": "方法三关键洞察页。在提前退出流水线基础上引入投机解码:草稿分布(where/go/do/can等)先给出候选I,再由退出机制验证(Thank/It/I),约3层即可退出、约3token被投机接受,说明提前退出与投机解码可结合以进一步加速。",
+          "关键文字": [
+            "提前退出可与LLM投机解码结合",
+            "候选分布→投机验证",
+            "约3层退出 / 约3 token接受",
+            "逐层Attention+FFN"
+          ],
+          "视觉骨架": [
+            "逐层流水线+退出箭头",
+            "候选词概率云",
+            "投机验证token示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 45,
+          "页面角色": "content_candidate",
+          "标题": "方法3方案:识别关键层布置退出预测",
+          "核心论断": "在关键层布置退出predictor,只在必要处触发退出判断",
+          "本页讲什么": "方法三方案页。在逐层流水线上用绿色predictor仅在关键层(而非每层)布置退出判断,减少predictor调用;下方以概率对比示意提前退出加速效果,强调对退出层的选择性布置以降低预测开销。",
+          "关键文字": [
+            "仅在关键层布置退出predictor",
+            "逐层Attention+FFN + predictor",
+            "提前退出加速",
+            "退出概率对比示意"
+          ],
+          "视觉骨架": [
+            "逐层流水线+关键层predictor绿框",
+            "退出概率对比图",
+            "加速强调箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 46,
+          "页面角色": "content_candidate",
+          "标题": "方法3方案:轻量SVM退出预测器",
+          "核心论断": "以轻量SVM predictor替代重预测,压缩退出判断开销",
+          "本页讲什么": "方法三方案页(退出预测器设计)。predictor由Feature Process+Model组成,采用轻量模型对退出做二分类判断;强调需以极低算力的预测器在每(关键)层做出退出决策,为下一页的>4×10³维特征与SVM设计做铺垫。",
+          "关键文字": [
+            "predictor: Feature Process + Model",
+            "级联层计算逐层退出判断",
+            "轻量退出预测器设计",
+            "Yes/No 退出决策"
+          ],
+          "视觉骨架": [
+            "级联层计算流程图",
+            "predictor结构块(Feature Process+Model)",
+            "退出判断分支"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 47,
+          "页面角色": "content_candidate",
+          "标题": "方法3挑战:高维特征致预测器开销大",
+          "核心论断": "退出预测器输入>4×10³维,SVM带来约30%额外延迟",
+          "本页讲什么": "方法三挑战页。predictor若直接用>4×10³维原始特征,SVM预测器约6.7M参数/FLOPS,在E2E延迟拆解中predictor占约30%,说明高维特征使退出预测本身成为新的开销瓶颈,需降维/轻量化。",
+          "关键文字": [
+            "原始特征 >4×10³ 维",
+            "SVM Predictor ~6.7M Param/FLOPS",
+            "predictor占E2E延迟约30%",
+            "E2E Latency Breakdown"
+          ],
+          "视觉骨架": [
+            "predictor结构块",
+            "原始特征维度标注",
+            "E2E延迟拆解占比图(~30%)"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 48,
+          "页面角色": "content_candidate",
+          "标题": "方法3方案:特征降维压缩预测器算力",
+          "核心论断": "将>4×10³维特征降至约10³维,大幅压缩预测器算力",
+          "本页讲什么": "方法三方案页。左侧用token probability随Layer ID变化的曲线提取有效特征,把原始>4×10³维降到约10³维;右侧给出退出流程(pred>threshold→logits=LM_head(X)/GlobalResult→T'=T→Early Exiting/Forward),兼顾MLP轻量特征处理与准确的退出判定。",
+          "关键文字": [
+            "原始特征 >4×10³ 维 → 约 10³ 维",
+            "token probability 随 Layer ID 变化",
+            "pred>threshold → Early Exiting / Forward",
+            "MLP特征处理 + 退出判定"
+          ],
+          "视觉骨架": [
+            "Token Probability-Layer ID曲线",
+            "特征降维示意(>4×10³→10³)",
+            "退出判定流程图(threshold)"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 49,
+          "页面角色": "content_candidate",
+          "标题": "方法3方案:低频调用降低预测器开销",
+          "核心论断": "退出预测平均每31层仅触发一次,调用频率降至3.2%",
+          "本页讲什么": "方法三方案页。在逐层流水线上仅按需触发退出predictor,统计Llama2-7B各层退出频率:平均频率约1/31=3.2%,即多数层不调用预测器;通过低频调用把退出预测的整体开销压到极低,进一步提升净加速。",
+          "关键文字": [
+            "退出predictor按需低频触发",
+            "Avg. frequency 1/31 = 3.2%",
+            "Layer ID of Llama2-7B",
+            "降低预测调用开销"
+          ],
+          "视觉骨架": [
+            "逐层流水线+退出分支",
+            "各层退出频率柱图",
+            "平均频率3.2%基线标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 50,
+          "页面角色": "content_candidate",
+          "标题": "方法3方案:启发式调度激活退出预测器",
+          "核心论断": "启发式调度引擎在线/离线激活关键层退出预测器",
+          "本页讲什么": "方法三方案页(调度)。左侧统计各层退出分布,给Decoder/Predictor分配到关键层(如Layer 8/19/20);右侧Heuristic Scheduling Engine含Online/Offline Scheduling,决定Activated Predictors(部分激活、部分关闭),按层重要性动态调度退出预测器。",
+          "关键文字": [
+            "Decoder / Predictor 布置于关键层(8/19/20)",
+            "Heuristic Scheduling Engine",
+            "Online Scheduling / Offline Scheduling",
+            "Activated Predictors 选择性激活"
+          ],
+          "视觉骨架": [
+            "各层退出分布示意",
+            "Decoder/Predictor层标注(8/19/20)",
+            "启发式调度引擎框图",
+            "激活predictor勾叉标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 51,
+          "页面角色": "content_candidate",
+          "标题": "方法3挑战:投机解码映射复杂度指数增长",
+          "核心论断": "投机解码路径映射复杂度随深度呈指数级增长",
+          "本页讲什么": "方法三挑战页(投机解码)。对比自回归解码(Original LLM单token提前退出)与投机解码(Draft LLM单层生成token tree),右侧用Mapping Complexity说明:单token映射为S,树深展开为S³乃至Sⁿ,路径数呈指数复杂度,凸显投机+退出结合的映射难题。",
+          "关键文字": [
+            "Autoregressive Decoding vs Speculative Decoding",
+            "Draft LLM(Layer=1)生成Token Tree",
+            "Mapping Complexity: S → S³ → Sⁿ",
+            "Path 指数级复杂度"
+          ],
+          "视觉骨架": [
+            "自回归/投机解码上下对比",
+            "Token Tree树状展开示意",
+            "映射复杂度S/S³/Sⁿ标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 52,
+          "页面角色": "content_candidate",
+          "标题": "方法3方案:Token Tree剪枝降映射复杂度",
+          "核心论断": "对Token Tree剪枝将映射复杂度由Sⁿ降至线性S",
+          "本页讲什么": "方法三方案页。针对投机解码的Token Tree,通过剪除低概率候选token(裁掉不可能路径),把原本Sⁿ的树状映射复杂度压缩到约S的线性规模,使投机+提前退出的路径映射变得可行高效。",
+          "关键文字": [
+            "Token Tree 剪除低概率候选",
+            "映射复杂度 Sⁿ → S 线性",
+            "Prompt: How are you? Token Tree",
+            "保留高概率token路径"
+          ],
+          "视觉骨架": [
+            "剪枝前后Token Tree对比",
+            "低概率token裁剪标注",
+            "复杂度Sⁿ→S标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 53,
+          "页面角色": "content_candidate",
+          "标题": "方法3效果:消费级PC实现2.43倍加速",
+          "核心论断": "SpecEE在Y7000消费级PC上实现2.43倍推理加速",
+          "本页讲什么": "方法三(结构精简/提前退出)的效果页。以结论条给出核心数据:在联想Y7000消费级PC上,SpecEE实现约2.43x推理加速,论证提前退出+投机解码+轻量预测器在端侧的实用加速价值。",
+          "关键文字": [
+            "Y7000 PC 消费级平台",
+            "实现约 2.43x 推理加速",
+            "端侧提前退出加速"
+          ],
+          "视觉骨架": [
+            "顶部结论强调条",
+            "2.43x关键加速比大字标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 54,
+          "页面角色": "content_candidate",
+          "标题": "算法优化小结:能效由0.2升至0.82 tokens/J",
+          "核心论断": "算法优化把能效从0.2推到0.82 tokens/J,提速3.7~4.1x",
+          "本页讲什么": "本章(算法优化)小结页。用能效箭头对比:算法优化前0.2 tokens/J→优化后0.82 tokens/J;并给出预填充1x→3.7x、解码1x→4.1x的加速小结,收束量化/稀疏/结构精简三条主线的整体收益,过渡到下一层次。",
+          "关键文字": [
+            "算法优化前 0.2 tokens/J → 优化后 0.82 tokens/J",
+            "预填充 1x → 3.7x",
+            "解码 1x → 4.1x"
+          ],
+          "视觉骨架": [
+            "能效前后箭头对比",
+            "预填充/解码加速比对照表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.06",
+          "section_role": "method"
+        },
+        {
+          "页序号": 55,
+          "页面角色": "content_candidate",
+          "标题": "大模型推理优化五层框架总览",
+          "核心论断": "推理系统可拆解为五个设计层次,本报告聚焦系统优化层",
+          "本页讲什么": "以竖排五层框架呈现大模型推理优化全景:软件侧含算法/系统等层、硬件侧含硬件架构/芯片集成等层,每层右侧配代表技术(DeepSeek、AWQ、vLLM/CANN、H100/910B、Chiplet)。本页高亮中间的系统优化层,标示其为本章切入点。",
+          "关键文字": [
+            "大模型推理系统可拆解为5个设计层次",
+            "软件侧/硬件侧分层",
+            "DeepSeek",
+            "vLLM CANN",
+            "H100/910B",
+            "Chiplet 2.5D/3D"
+          ],
+          "视觉骨架": [
+            "五层竖排框架示意",
+            "分层代表技术标注",
+            "系统优化层高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 56,
+          "页面角色": "content_candidate",
+          "标题": "层次三:系统优化三方法总览",
+          "核心论断": "系统优化围绕算子优化、计算-通信重叠、推理服务框架三条方法展开",
+          "本页讲什么": "作为系统优化层的开篇,左侧沿用五层框架并高亮系统优化层,右侧用两大分区并列展示本层三条方法:算子优化(GEMV+调度)、计算通信重叠(多卡流水)、推理服务框架优化(P/D卡间分配),为后续三篇论文逐一铺垫。",
+          "关键文字": [
+            "层次3:系统优化",
+            "算子优化",
+            "计算通信重叠",
+            "推理服务框架优化",
+            "预填充/解码",
+            "多卡"
+          ],
+          "视觉骨架": [
+            "五层框架左栏高亮",
+            "三方法并列panel",
+            "多卡资源分配示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 57,
+          "页面角色": "content_candidate",
+          "标题": "FlashDecoding++论文封面",
+          "核心论断": "FlashDecoding++以异步、Flat GEMM优化与启发式加速GPU推理",
+          "本页讲什么": "算子优化方法的引入页,展示论文FlashDecoding++: Faster Large Language Model Inference on GPUs的标题、作者(Ke Hong、Guohao Dai、Yu Wang等)、清华与上海交大单位及MLSys 2024发表信息。",
+          "关键文字": [
+            "FlashDecoding++: Faster Large Language Model Inference on GPUs",
+            "Asynchronization, Flat GEMM Optimization, and Heuristics",
+            "Tsinghua University, Shanghai Jiao Tong University",
+            "MLSys 2024"
+          ],
+          "视觉骨架": [
+            "论文标题主视觉",
+            "作者与单位署名区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 58,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化研究现状",
+          "核心论断": "注意力与矩阵乘算子仍有优化空间,FlashDecoding++承接前序工作",
+          "本页讲什么": "算子优化方法的背景页,用上下双排时间线梳理相关工作:上排FlashAttention(NeurIPS22)、FlashDecoding++(MLSys24),下排cuBLAS、FlashDecoding、FlashInfer(MLSys25 Best Paper),配Transformer Block结构图指出注意力与矩阵乘两类算子仍具优化空间。",
+          "关键文字": [
+            "大模型推理中的注意力和矩阵乘算子仍具有优化空间",
+            "FlashAttention NeurIPS 22",
+            "FlashDecoding++ MLSys 24 Decode加速约4倍",
+            "cuBLAS Tensor Core利用率90%以下",
+            "FlashInfer MLSys 25 Best Paper"
+          ],
+          "视觉骨架": [
+            "Transformer Block结构图",
+            "上下双排研究时间线",
+            "算子分类标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 59,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化关键问题(softmax)",
+          "核心论断": "softmax同步开销与GEMM效率是算子优化的两大瓶颈",
+          "本页讲什么": "指出算子优化的关键问题:FlashAttention中softmax需逐块同步统计最大值带来同步开销,cuBLAS/CUTLASS在GEMM上因batch size小(M维小)导致Tensor Core利用不足,引出两条优化方向。",
+          "关键文字": [
+            "FlashAttention中softmax存在同步开销",
+            "cuBLAS/CUTLASS的GEMM效率问题",
+            "M维过小=batch size",
+            "N,K维远大于M维的GEMM"
+          ],
+          "视觉骨架": [
+            "左右双问题分栏",
+            "softmax分块示意",
+            "GEMM形状矩阵图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 60,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化关键问题(GEMM寻优)",
+          "核心论断": "给定矩阵乘形状,最佳底层实现寻优复杂度高",
+          "本页讲什么": "进一步展开GEMM问题:不同矩阵乘形状(M=4/K=4096/N=11008等多组)对应不同最优实现,FastGEMV、Flat GEMM、cuBLAS各擅长不同区间,场景1(M=1)FastGEMV优于cuBLAS约20%、场景2(M=4)Flat GEMM优于FastGEMV约50%,说明最优实现寻优复杂。",
+          "关键文字": [
+            "给定矩阵乘形状,最佳底层实现寻优复杂度高",
+            "场景1 M=1时FastGEMV快约20%",
+            "场景2 M=4时Flat GEMM快约50%",
+            "FastGEMV/Flat GEMM/cuBLAS各有优势区间"
+          ],
+          "视觉骨架": [
+            "多矩阵形状卡片",
+            "三种GEMM实现对比框",
+            "场景对比结论区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 61,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化核心思路(异步softmax)",
+          "核心论断": "统一量纲的异步softmax消除逐块同步开销",
+          "本页讲什么": "给出算子优化核心思路之一:将softmax部分和以统一量纲(FP32)异步累加,利用99.99%数值落于固定范围的先验免去逐块最大值同步,从而并行计算各分块softmax、消除同步瓶颈。",
+          "关键文字": [
+            "异步softmax核心思路",
+            "部分和累加统一量纲FP32",
+            "99.99%数值落于固定范围",
+            "免去逐块同步"
+          ],
+          "视觉骨架": [
+            "softmax异步流程示意",
+            "统一量纲累加框",
+            "对比前后示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 62,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化核心思路(双缓冲流水)",
+          "核心论断": "双缓冲两级流水将softmax分块与计算重叠",
+          "本页讲什么": "展开核心思路:借助double buffering构建两级流水线,把softmax分块处理与后续计算重叠执行,隐藏softmax延迟,提升算子整体吞吐。",
+          "关键文字": [
+            "double buffering两级流水",
+            "softmax分块处理",
+            "计算与softmax重叠",
+            "隐藏延迟"
+          ],
+          "视觉骨架": [
+            "两级流水线示意",
+            "双缓冲切换箭头",
+            "分块重叠图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 63,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化核心思路(GPU利用率)",
+          "核心论断": "以N个数据初始化BN矩阵提升GPU利用率",
+          "本页讲什么": "继续讲核心思路:通过用N个数据初始化BN矩阵的方式重排计算,提高GPU利用率(以0到1的热力条示意),缓解小batch下算力闲置问题。",
+          "关键文字": [
+            "利用N个数据初始化BN矩阵",
+            "提升GPU利用率",
+            "GPU利用率0到1热力示意"
+          ],
+          "视觉骨架": [
+            "GPU利用率热力色条",
+            "BN矩阵初始化示意",
+            "利用率对比图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 64,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化核心思路(启发式选择)",
+          "核心论断": "按M维启发式选择四种GEMM实现取最优",
+          "本页讲什么": "核心思路收尾:依据矩阵乘M维等特征,用启发式在FastGEMV、Flat GEMM、cuBLAS等约四种GEMM实现间自动选择最优路径,兼顾不同形状场景的效率。",
+          "关键文字": [
+            "启发式选择约4种GEMM实现",
+            "按M维等特征选择",
+            "FastGEMV/Flat GEMM/cuBLAS",
+            "面向不同矩阵乘形状"
+          ],
+          "视觉骨架": [
+            "启发式决策分支图",
+            "四种GEMM候选框",
+            "M维选择箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 65,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化实验结果",
+          "核心论断": "FlashDecoding++吞吐超SOTA约10%,A100上达2.9倍加速",
+          "本页讲什么": "展示算子优化实验结果:在NVIDIA A100上相较HuggingFace达2.9倍加速(115.56 token/s),优于vLLM/TensorRT-LLM等约10%;在AMD MI210上相较vLLM亦有约1.86倍加速,验证跨硬件通用性。",
+          "关键文字": [
+            "吞吐率超过SOTA约10%",
+            "A100相较HuggingFace加速2.9x达115.56 token/s",
+            "AMD MI210相较vLLM加速约1.86x",
+            "对比vLLM/OpenPPL/TRT-LLM"
+          ],
+          "视觉骨架": [
+            "加速比柱状+折线图",
+            "A100/MI210双栏对比",
+            "多baseline并列"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 66,
+          "页面角色": "content_candidate",
+          "标题": "方法一:算子优化成果小结",
+          "核心论断": "FlashDecoding++支持多模型多硬件并被HuggingFace采用",
+          "本页讲什么": "算子优化收尾页,汇总FlashDecoding++成果:支持Llama2/OPT/ChatGLM2等模型、覆盖NVIDIA/AMD多种GPU、被HuggingFace集成,平均加速4.86倍,并给出arXiv链接。",
+          "关键文字": [
+            "FlashDecoding++ arxiv 2311.01282",
+            "支持Llama2/OPT/ChatGLM2",
+            "覆盖NVIDIA/AMD GPU",
+            "HuggingFace采用,加速约4.86x"
+          ],
+          "视觉骨架": [
+            "成果要点列表",
+            "arXiv链接标注",
+            "模型/硬件覆盖标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 67,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap论文封面",
+          "核心论断": "FlashOverlap以轻量设计高效重叠通信与计算",
+          "本页讲什么": "计算-通信重叠方法的引入页,展示论文FlashOverlap: A Lightweight Design For Efficiently Overlapping Communication and Computation的标题、作者(Ke Hong、Xiuhong Li、Guohao Dai、Yu Wang等)与清华/上海交大单位。",
+          "关键文字": [
+            "FlashOverlap: A Lightweight Design For Efficiently Overlapping Communication and Computation",
+            "Ke Hong, Xiuhong Li",
+            "Tsinghua University, Shanghai Jiao Tong University"
+          ],
+          "视觉骨架": [
+            "论文标题主视觉",
+            "作者与单位署名区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 68,
+          "页面角色": "content_candidate",
+          "标题": "方法二:计算-通信重叠研究现状",
+          "核心论断": "计算与通信串行留有空闲,重叠可回收气泡",
+          "本页讲什么": "计算-通信重叠背景页,用计算流A与通信流B的串行示意点出中间空闲气泡,并以上下双排时间线梳理Centauri/Flux/Comet与CoCoNet/AsyncTP/TileLink等工作及其加速数据(如Flux 1.30-1.66倍、Comet MoE约1.96倍)。",
+          "关键文字": [
+            "计算与通信串行存在空闲",
+            "Centauri ASPLOS24 Best Paper",
+            "Flux 加速1.30-1.66倍",
+            "Comet MoE场景约1.96倍",
+            "TileLink MLSys25 加速1.17到20.76倍"
+          ],
+          "视觉骨架": [
+            "计算流/通信流串行示意",
+            "上下双排研究时间线",
+            "空闲气泡标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 69,
+          "页面角色": "content_candidate",
+          "标题": "方法二:计算-通信重叠关键问题",
+          "核心论断": "细粒度算子融合与整体算子两类方案各有代价",
+          "本页讲什么": "对比现有两类重叠方案:AsyncTP类靠细粒度算子融合但需改动/开发大量融合算子、易受依赖限制;Flux/Comet类以整体大算子重叠但灵活性受限,指出二者在开发成本与灵活度上的矛盾。",
+          "关键文字": [
+            "细粒度算子融合方案 AsyncTP",
+            "整体算子方案 Flux/Comet",
+            "需开发大量融合算子",
+            "灵活性受限"
+          ],
+          "视觉骨架": [
+            "左右双方案分栏",
+            "优点/缺点对照框",
+            "算子粒度示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 70,
+          "页面角色": "content_candidate",
+          "标题": "方法二:计算-通信重叠核心思路",
+          "核心论断": "以信号机制驱动通信实现无侵入tile级重叠",
+          "本页讲什么": "给出FlashOverlap核心思路:不侵入原计算kernel,通过数据依赖分析与信号控制,在计算产出各tile后触发对应通信,实现tile粒度的计算-通信重叠,兼顾灵活与高效。",
+          "关键文字": [
+            "无侵入原计算kernel",
+            "信号控制触发通信",
+            "tile粒度重叠",
+            "数据依赖驱动"
+          ],
+          "视觉骨架": [
+            "计算-信号-通信流程图",
+            "tile触发箭头",
+            "无侵入kernel标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 71,
+          "页面角色": "content_candidate",
+          "标题": "方法二:计算-通信重叠实验结果",
+          "核心论断": "FlashOverlap带来最高约1.65倍端到端加速",
+          "本页讲什么": "展示FlashOverlap实验结果:在含通信的GEMM等场景下取得约1.07-1.65倍加速,覆盖2xRTX4090(PCIe,GEMM+ReduceScatter)与4xL800(NVLink,GEMM+AllReduce)等多种通信拓扑,验证方案通用性。",
+          "关键文字": [
+            "最高约1.65倍加速",
+            "含通信的GEMM场景加速1.07-1.65",
+            "2xRTX4090 PCIe GEMM+ReduceScatter",
+            "4xL800 NVLink GEMM+AllReduce"
+          ],
+          "视觉骨架": [
+            "加速比结果图",
+            "多硬件拓扑分栏",
+            "通信原语标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 72,
+          "页面角色": "content_candidate",
+          "标题": "semi-PD论文封面",
+          "核心论断": "semi-PD以分阶段解耦计算与统一存储提升LLM服务",
+          "本页讲什么": "推理服务框架优化方法的引入页,展示论文semi-PD: Towards Efficient LLM Serving via Phase-wise Disaggregated Computation and Unified Storage的标题、作者(Ke Hong、Lufang Chen、Guohao Dai、Yu Wang等)与清华/上海交大单位。",
+          "关键文字": [
+            "semi-PD: Towards Efficient LLM Serving via Phase-wise Disaggregated Computation and Unified Storage",
+            "Ke Hong, Guohao Dai, Yu Wang",
+            "Tsinghua University, Shanghai Jiao Tong University"
+          ],
+          "视觉骨架": [
+            "论文标题主视觉",
+            "作者与单位署名区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 73,
+          "页面角色": "content_candidate",
+          "标题": "方法三:推理服务框架优化研究现状",
+          "核心论断": "满足SLO前提下提升吞吐是推理服务框架核心目标",
+          "本页讲什么": "推理服务框架优化背景页,左侧以P/D资源分配示意引入,右侧上下双排时间线梳理vLLM/Sarathi-Serve/SGLang与Orca/DistServe/Mooncake等工作及其增益(如vLLM 2-4倍吞吐、DistServe P/D分离4.48倍、Mooncake FAST25 Best Paper)。",
+          "关键文字": [
+            "满足SLO前提下提升吞吐",
+            "vLLM SOSP23 提升2-4倍吞吐",
+            "DistServe OSDI24 P/D分离提升4.48倍",
+            "Mooncake FAST25 Best Paper",
+            "SGLang KV cache复用提升6倍"
+          ],
+          "视觉骨架": [
+            "P/D资源分配示意",
+            "上下双排研究时间线",
+            "SLO目标标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 74,
+          "页面角色": "content_candidate",
+          "标题": "方法三:关键问题(资源耦合vs解耦)",
+          "核心论断": "P/D资源耦合与解耦在效率与开销间各有取舍",
+          "本页讲什么": "对比两类服务框架路线:资源耦合(vLLM/SGLang)让Prefill与Decode共享同一GPU资源、简单但相互干扰;资源解耦(Mooncake/DistServe)将P/D拆到不同GPU、隔离干扰但需跨卡传输KV cache,引出两者矛盾。",
+          "关键文字": [
+            "资源耦合 vLLM/SGLang",
+            "资源解耦 Mooncake/DistServe",
+            "P/D共享同一GPU相互干扰",
+            "P/D分离需传输KV cache"
+          ],
+          "视觉骨架": [
+            "左右双路线分栏",
+            "耦合/解耦GPU示意",
+            "KV cache传输箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 75,
+          "页面角色": "content_candidate",
+          "标题": "方法三:关键问题(资源耦合)",
+          "核心论断": "资源耦合下P/D时分复用互相争抢SM与存储",
+          "本页讲什么": "细化资源耦合问题:vLLM/SGLang中Prefill与Decode在同一GPU上时分复用GPU SMs与HBM,导致计算资源与存储资源相互争抢,难以同时满足TTFT与TPOT,是耦合方案的固有短板。",
+          "关键文字": [
+            "资源耦合 vLLM/SGLang",
+            "Prefill与Decode时分复用",
+            "共享GPU SMs与HBM",
+            "计算与存储资源争抢"
+          ],
+          "视觉骨架": [
+            "单GPU时分复用示意",
+            "SMs/HBM共享框",
+            "P/D争抢箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 76,
+          "页面角色": "content_candidate",
+          "标题": "方法三:关键问题(资源解耦)",
+          "核心论断": "资源解耦下P/D空分复用但需跨卡搬运KV cache",
+          "本页讲什么": "细化资源解耦问题:Mooncake/DistServe把Prefill与Decode拆分到不同GPU空分复用,隔离了干扰,但需在P实例与D实例间传输KV cache,带来额外通信与存储开销,并需全局KV cache管理。",
+          "关键文字": [
+            "资源解耦 Mooncake/DistServe",
+            "Prefill与Decode空分复用",
+            "P实例与D实例间传输KV cache",
+            "全局KV cache管理"
+          ],
+          "视觉骨架": [
+            "双GPU空分复用示意",
+            "P/D实例KV传输箭头",
+            "全局存储池框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 77,
+          "页面角色": "content_candidate",
+          "标题": "方法三:核心思路(计算解耦存储统一)",
+          "核心论断": "semi-PD兼取分离式计算优势与统一存储,让P/D并存",
+          "本页讲什么": "给出semi-PD核心思路总纲:在同一GPU上让Prefill与Decode同时存在,计算资源按需在P/D间分配、存储资源统一管理,从而结合分离式系统的计算优势与耦合系统的存储优势。",
+          "关键文字": [
+            "结合分离式系统的计算优势",
+            "统一存储资源",
+            "P/D在同一GPU同时存在",
+            "计算资源与存储资源分治"
+          ],
+          "视觉骨架": [
+            "计算/存储双资源框",
+            "P/D并存示意",
+            "统一存储传输箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 78,
+          "页面角色": "content_candidate",
+          "标题": "方法三:核心思路(SM动态分配)",
+          "核心论断": "SM在P/D间动态分配并统一存储以避WAR冲突",
+          "本页讲什么": "展开核心思路:计算资源上将GPU SM在Prefill与Decode间动态分配,存储资源上统一管理KV cache,同时处理P/D共享存储带来的WAR(写后读)冲突,保证正确性与效率。",
+          "关键文字": [
+            "计算资源SM动态分配",
+            "存储资源统一管理",
+            "P/D共享存储的WAR冲突",
+            "同时满足计算与存储需求"
+          ],
+          "视觉骨架": [
+            "SM动态分配示意",
+            "统一存储框",
+            "WAR冲突标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 79,
+          "页面角色": "content_candidate",
+          "标题": "方法三:核心思路(semi-PD架构)",
+          "核心论断": "P/D worker解耦+统一存储构成semi-PD服务架构",
+          "本页讲什么": "呈现semi-PD整体架构:相较基线在单GPU用一个worker耦合运行P/D,semi-PD将Prefill worker与Decode worker解耦、经API server与调度分发请求,并由统一存储管理器托管KV cache,实现计算解耦而存储统一。",
+          "关键文字": [
+            "计算资源解耦P/D worker",
+            "存储资源统一管理",
+            "semi-PD架构",
+            "API server与调度",
+            "KV cache统一存储"
+          ],
+          "视觉骨架": [
+            "基线单worker对比框",
+            "P/D worker解耦示意",
+            "API server调度与存储管理器"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 80,
+          "页面角色": "content_candidate",
+          "标题": "方法三:推理服务框架优化实验结果",
+          "核心论断": "semi-PD在Llama3提升1.55-1.72倍、DeepSeek-V3提升1.49-2.58倍",
+          "本页讲什么": "展示semi-PD实验结果:满足SLO前提下,Llama3-70B(ShareGPT,FP16,4xA100)相较vLLM/DistServe吞吐提升1.55-1.72倍,DeepSeek-V3(MATH-500,8xH200)提升1.49-2.58倍,验证在多模型多硬件下的服务效率增益。",
+          "关键文字": [
+            "Llama3提升约1.55-1.72倍",
+            "DeepSeek-V3提升约1.49-2.58倍",
+            "Llama3-70B ShareGPT FP16 4xA100",
+            "DeepSeek-V3 MATH-500 8xH200",
+            "满足SLO对比vLLM/DistServe"
+          ],
+          "视觉骨架": [
+            "TTFT/TPOT结果图",
+            "双模型双栏对比",
+            "baseline并列标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 81,
+          "页面角色": "content_candidate",
+          "标题": "系统优化小结",
+          "核心论断": "系统优化使端到端吞吐与推理能效均提升约11.5倍",
+          "本页讲什么": "系统优化层收尾页,汇总三方法整体收益:相较系统优化前,优化后在Llama3-70B(4xA100)上端到端吞吐提升11.5倍、推理能效提升11.5倍,呼应本层承上启下的框架定位。",
+          "关键文字": [
+            "系统优化前后对比",
+            "端到端吞吐提升11.5x",
+            "推理能效提升11.5x",
+            "Llama3-70B 4xA100"
+          ],
+          "视觉骨架": [
+            "前后对比箭头示意",
+            "吞吐/能效倍数表",
+            "提升标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.07",
+          "section_role": "method"
+        },
+        {
+          "页序号": 82,
+          "页面角色": "content_candidate",
+          "标题": "大模型推理五层框架:定位第四层硬件架构",
+          "核心论断": "大模型推理可拆解为五层,本章聚焦第四层硬件架构",
+          "本页讲什么": "回顾全篇\"大模型推理系统可拆解为5个设计层次\"的纵向框架图,五个层次自上而下堆叠并各配代表技术(DeepSeek/AWQ/vLLM·CANN/H100·910B/Chiplet 2.5D-3D),用高亮把当前进度定位到第四层\"硬件架构\",作为本章开场承接上层系统优化、下启芯片集成。",
+          "关键文字": [
+            "大模型推理系统可拆解为5个设计层次",
+            "硬件架构",
+            "H100/910B",
+            "Chiplet 2.5D/3D"
+          ],
+          "视觉骨架": [
+            "五层纵向堆叠框架",
+            "层次高亮定位",
+            "右侧代表技术标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 83,
+          "页面角色": "content_candidate",
+          "标题": "硬件架构层:稀疏计算不损能力却能提能效",
+          "核心论断": "灵活结构化稀疏+硬件协同将能效由维度4推向维度3(约1.3倍)",
+          "本页讲什么": "以\"稀疏计算可以在不影响应用能力下\"提升能效切入硬件架构层。左栏用维度降低(4维→3维,约1.3倍)示意软硬件协同收益;右栏用稀疏方法发展时间线(2017剪枝、2020结构化2:4、2024动态、2025 DeepSeek)配合硬件端侧2.4倍/GPU 2.0倍/6倍/11.6倍加速数据,论证稀疏是硬件层的主线抓手。",
+          "关键文字": [
+            "稀疏计算可以在不影响应用能力下",
+            "剪枝(2017)/结构化2:4支持GPU(2020)",
+            "端侧加速2.4倍",
+            "GPU加速2.0倍",
+            "加速11.6倍"
+          ],
+          "视觉骨架": [
+            "左右双栏对比",
+            "维度降低示意箭头",
+            "稀疏方法发展时间线表格"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 84,
+          "页面角色": "content_candidate",
+          "标题": "硬件架构层:分大语言模型与视频生成两场景",
+          "核心论断": "基于灵活结构化稀疏,分大语言模型与视频生成两条场景线展开",
+          "本页讲什么": "承接稀疏主线,本页把硬件架构层拆成两个并列研究场景:左侧\"大语言模型硬件优化\"(黑色)与右侧\"视频生成模型硬件优化\"(红色),作为本章内的二级导航,预告后续 FlightLLM 与 ViDA/FlightVGM 两组工作。",
+          "关键文字": [
+            "基于灵活的结构化稀疏方法,设计",
+            "大语言模型硬件优化",
+            "视频生成模型硬件优化"
+          ],
+          "视觉骨架": [
+            "2列并列场景panel",
+            "左右主题对照"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 85,
+          "页面角色": "content_candidate",
+          "标题": "FlightLLM:FPGA完整映射流的高效LLM推理",
+          "核心论断": "FlightLLM在FPGA上以完整映射流实现高效大语言模型推理",
+          "本页讲什么": "场景一代表工作 FlightLLM 的论文封面页,给出全称\"Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs\"、作者列表(Shulin Zeng、Jun Liu、Guohao Dai 等)与发表信息(ISFPGA 2024 @ Monterey),作为大语言模型硬件优化工作的引入。",
+          "关键文字": [
+            "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+            "ISFPGA 2024 @ Monterey"
+          ],
+          "视觉骨架": [
+            "论文标题横幅",
+            "作者与单位列表",
+            "会议信息"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 86,
+          "页面角色": "content_candidate",
+          "标题": "场景1背景:现有FPGA-LLM加速器与GPU对比",
+          "核心论断": "现有FPGA LLM加速器(DFX/Understanding)相对GPU仅有限加速",
+          "本页讲什么": "介绍大语言模型硬件优化的现有工作:上栏 DFX[MICRO'22]相比V100 GPU约5.58倍延迟、3.99倍能效;下栏 Understanding[FCCM'24]基于HLS,相比A100约1.9倍能效、5.7倍等收益。铺垫现有FPGA方案的能力边界,引出本工作动机。",
+          "关键文字": [
+            "DFX [MICRO'22, KAIST]",
+            "相比V100 GPU 延迟5.58倍 能效3.99倍",
+            "Understanding [FCCM'24 Journal Track, Cornell]",
+            "基于HLS,相比A100 GPU 1.9倍能效"
+          ],
+          "视觉骨架": [
+            "上下两栏工作卡片",
+            "相对GPU倍率标注",
+            "参考文献脚注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 87,
+          "页面角色": "content_candidate",
+          "标题": "场景1挑战:稀疏矩阵难以充分利用DSP",
+          "核心论断": "现有加速器计算利用率低,稀疏矩阵无法充分利用FPGA的DSP",
+          "本页讲什么": "承接上页,指出现有FPGA加速器在LLM上\"计算利用率低\"的核心挑战。底部用\"稀疏矩阵(含LLM权重稀疏)→ 利用不了DSP\"的流程示意,说明结构化稀疏与DSP资源不匹配是待解问题,为后续DSP链设计做铺垫。",
+          "关键文字": [
+            "现有加速器计算利用率低",
+            "稀疏矩阵",
+            "利用不了DSP块"
+          ],
+          "视觉骨架": [
+            "上方论点红框",
+            "稀疏矩阵→DSP流程箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 88,
+          "页面角色": "content_candidate",
+          "标题": "场景1方法:DSP链支持灵活N:M结构化稀疏",
+          "核心论断": "用可配置DSP链支持4:4/2:4/1:4/0:4多档灵活稀疏,提升利用率",
+          "本页讲什么": "展示FlightLLM核心方法:将权重按N:M稀疏(4:4 Dense、2:4、1:4、0:4 skip)分档,通过可配置的DSP链(DSP行/列组织)映射不同稀疏度矩阵,使灵活结构化稀疏能充分复用DSP,提升计算利用率。全页由框图与箭头构成的纯矢量结构图。",
+          "关键文字": [
+            "4:4 (Dense)",
+            "2:4 / 1:4 / 0:4 (skip)",
+            "灵活N:M结构化稀疏",
+            "可配置DSP链"
+          ],
+          "视觉骨架": [
+            "N:M稀疏矩阵分档示意",
+            "稀疏度到DSP映射箭头",
+            "DSP行列链框图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 89,
+          "页面角色": "content_candidate",
+          "标题": "场景1挑战:decode访存受限且配置切换开销大",
+          "核心论断": "decode阶段访存受限,稀疏难充分利用且配置切换开销大",
+          "本页讲什么": "指出LLM推理decode阶段\"访存受限+配置切换开销大\"的双重挑战。左栏用存储与计算单元间的多向数据搬运示意稀疏计算方式利用不充分;右栏示意频繁配置切换带来的额外开销,进一步说明需要更高效的稀疏计算与调度策略。",
+          "关键文字": [
+            "decode阶段访存受限",
+            "稀疏计算方式利用不充分",
+            "配置切换开销大"
+          ],
+          "视觉骨架": [
+            "左右双栏对比",
+            "存储-计算搬运箭头图",
+            "配置切换示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 90,
+          "页面角色": "content_candidate",
+          "标题": "场景1结果:FlightLLM相比V100S大幅提升能效",
+          "核心论断": "16nm U280上FlightLLM较12nm V100S GPU能效提升约70%、延迟50%",
+          "本页讲什么": "给出FlightLLM实验结果:在16nm U280 FPGA对比12nm V100S GPU,能效提升约70%、延迟降低约50%,覆盖OPT-6.7B与LLaMA2-7B,平均量化精度3.5-bit(对比8-bit)。右侧以要点列出核心增益,论证FPGA方案在LLM推理上的能效优势。",
+          "关键文字": [
+            "16nm U280 FPGA 对比 12nm V100S GPU",
+            "70% 能效提升",
+            "50% 延迟降低",
+            "OPT-6.7B、LLaMA2-7B",
+            "平均3.5-bit(对比8-bit)"
+          ],
+          "视觉骨架": [
+            "硬件对比论点框",
+            "关键增益要点列表",
+            "结果图表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 91,
+          "页面角色": "content_candidate",
+          "标题": "场景2:视频生成兴起,Sora引领众多公司布局",
+          "核心论断": "OpenAI Sora引领视频生成,Google/Kuaishou/ByteDance等纷纷布局",
+          "本页讲什么": "开启场景二视频生成。左栏聚焦OpenAI Sora,引用其被称为\"世界模拟器\"[1];右栏罗列众多公司布局视频生成(Google、Kuaishou、ByteDance 等),说明视频生成模型正成为产业热点,为硬件优化提供需求背景。",
+          "关键文字": [
+            "OpenAI 发布 Sora",
+            "Sora被视为世界模拟器[1]",
+            "众多公司布局",
+            "Google/Kuaishou/ByteDance"
+          ],
+          "视觉骨架": [
+            "左右双栏panel",
+            "Sora代表案例",
+            "多公司logo/名称散布"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 92,
+          "页面角色": "content_candidate",
+          "标题": "场景2:视频生成基于扩散Transformer(DiT)",
+          "核心论断": "视频生成模型主要基于扩散模型,采用Diffusion Transformer(DiT)结构",
+          "本页讲什么": "介绍视频生成模型的技术底座:主要基于扩散模型,采用Diffusion Transformer(DiT)结构。左栏给出DiT结构示意,右栏说明其计算量大/参数规模等特性,为后续\"计算量大、亟需硬件加速\"的论证做结构铺垫。",
+          "关键文字": [
+            "视频生成模型主要基于扩散模型",
+            "Diffusion Transformer(DiT)",
+            "计算量大"
+          ],
+          "视觉骨架": [
+            "左右双栏",
+            "DiT结构框图",
+            "特性要点"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 93,
+          "页面角色": "content_candidate",
+          "标题": "场景2动机:视频生成计算量远超大语言模型",
+          "核心论断": "视频生成计算量随分辨率与时长增长,比大模型高1-3个量级",
+          "本页讲什么": "论证视频生成模型(VGM)计算量巨大、亟需硬件加速。左栏:计算量随分辨率/token增长,比大语言模型高约1-2个量级;右栏:计算量随视频时长增长,再高约2-3个量级[1]。承接上页DiT结构,量化视频生成对算力的极端需求。",
+          "关键文字": [
+            "视频生成模型(VGM)计算量大",
+            "随分辨率/token增长比大模型高1-2个量级",
+            "随视频时长增长再高2-3个量级[1]"
+          ],
+          "视觉骨架": [
+            "左右双栏对比",
+            "计算量增长趋势示意",
+            "量级差标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 94,
+          "页面角色": "content_candidate",
+          "标题": "场景2:传统视频编码演进与帧间冗余利用",
+          "核心论断": "视频编码从H.261演进到H.265,核心是利用帧间冗余压缩",
+          "本页讲什么": "回顾视频编码标准发展时间线:H.261(1988,352×288)→MPEG-1(VCD)→H.262/MPEG-2(DVD,1920×1080)→H.263→H.264/MPEG-4(4096×2048)→H.265/HEVC(2013,支持AR/VR)。强调传统视频处理主要利用帧间冗余,为后续借鉴编码思想加速视频生成埋下伏笔。",
+          "关键文字": [
+            "H.261[1988] 352*288",
+            "H.262/MPEG-2[1995] DVD 1920*1080",
+            "H.264/MPEG-4[1996] 4096*2048",
+            "H.265/HEVC[2013] 支持AR/VR",
+            "传统视频处理利用帧间冗余"
+          ],
+          "视觉骨架": [
+            "编码标准折线时间轴",
+            "各标准年份与分辨率标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 95,
+          "页面角色": "content_candidate",
+          "标题": "核心思想:借鉴编码,分关键帧与非关键帧计算",
+          "核心论断": "借鉴视频压缩\"编码-预测\",关键帧完整计算、非关键帧差分计算",
+          "本页讲什么": "阐明视频生成加速的核心思想与动机:受传统视频压缩\"编码-预测\"启发,把帧分为关键帧与非关键帧(参考H.263、MPEG、HEVC),关键帧做完整计算、非关键帧仅做差分/增量计算,从而大幅削减视频生成的冗余运算。",
+          "关键文字": [
+            "受传统视频压缩编码-预测启发",
+            "关键帧/非关键帧",
+            "e.g. H.263, MPEG, HEVC",
+            "非关键帧做差分计算"
+          ],
+          "视觉骨架": [
+            "左右对照框图",
+            "关键帧/非关键帧流程箭头",
+            "编码借鉴示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 96,
+          "页面角色": "content_candidate",
+          "标题": "ViDA:差分近似与自适应数据流加速视频DiT",
+          "核心论断": "ViDA以差分近似与自适应数据流加速视频扩散Transformer",
+          "本页讲什么": "场景2.1代表工作 ViDA 的论文封面页,给出全称\"Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow\"、作者(Li Ding、Jun Liu、Shan Huang、Guohao Dai 等,SJTU/Infinigence-AI)与会议 ASP-DAC 2025,引入注意力差分近似方向的工作。",
+          "关键文字": [
+            "ViDA: Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow",
+            "ASP-DAC 2025 Conference"
+          ],
+          "视觉骨架": [
+            "论文标题横幅",
+            "作者与单位列表",
+            "会议信息"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 97,
+          "页面角色": "content_candidate",
+          "标题": "场景2.1核心思想:注意力主导下的差分近似计算",
+          "核心论断": "针对注意力计算占主导,ViDA用非关键帧差分近似削减注意力开销",
+          "本页讲什么": "介绍ViDA核心思想:针对视频DiT中\"注意力计算占主导\",对非关键帧采用差分近似计算注意力,只计算相对关键帧的变化量。右侧图表以关键帧/非关键帧、注意力/线性算子占比,量化差分近似可节省的计算,论证方法有效性。",
+          "关键文字": [
+            "针对注意力计算占主导",
+            "关键帧/非关键帧差分近似",
+            "注意力差分近似计算"
+          ],
+          "视觉骨架": [
+            "核心思想论点框",
+            "关键帧/非关键帧标注",
+            "算子占比图表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 98,
+          "页面角色": "content_candidate",
+          "标题": "场景2.1挑战:大量Act-Act算子无法被加速",
+          "核心论断": "现有加速器只支持Act-W,仍有约57%的Act-Act算子无法加速",
+          "本页讲什么": "指出背景挑战:现有加速器(如Cambricon-D[ISCA2024])主要支持Act-Weight算子,但视频DiT中存在大量Act-Act算子无法被加速。右侧用帧间激活余弦相似度>90%及23.53%、19.50%、56.97% Unaccelerated 的数据,说明超半数算子未被加速,凸显差分近似的必要性。",
+          "关键文字": [
+            "现有加速器只支持Act-W",
+            "仍存在大量Act-Act算子无法加速",
+            "帧间激活余弦相似度>90%",
+            "56.97% Unaccelerated",
+            "Cambricon-D [ISCA2024]"
+          ],
+          "视觉骨架": [
+            "挑战论点红框",
+            "帧间相似度示意框",
+            "算子占比图表(含57%高亮)"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 99,
+          "页面角色": "content_candidate",
+          "标题": "场景2.1:自适应列聚集处理单元近似差分计算",
+          "核心论断": "自适应列聚集处理单元实现注意力的近似差分计算",
+          "本页讲什么": "介绍ViDA的处理单元设计:自适应的列聚集处理单元(PE),面向注意力的近似差分计算,对关键帧/非关键帧按列自适应聚集与复用中间结果,以硬件方式落地差分近似,提升注意力算子的计算效率。",
+          "关键文字": [
+            "自适应的列聚集处理单元",
+            "注意力的近似差分计算"
+          ],
+          "视觉骨架": [
+            "处理单元框图",
+            "列聚集数据通路示意",
+            "关键帧/非关键帧标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 100,
+          "页面角色": "content_candidate",
+          "标题": "场景2.1:计算强度自适应的可重构数据流架构",
+          "核心论断": "计算强度自适应数据流通过可重构架构动态分配资源",
+          "本页讲什么": "介绍ViDA的数据流架构:计算强度自适应数据流,配合动态分配资源的可重构架构,针对SpMM与GEMM等不同计算强度算子动态调整PE资源配比(SpMM*x & GEMM*1 → SpMM*1 & GEMM*1),提升整体利用率与灵活性。",
+          "关键文字": [
+            "计算强度自适应数据流",
+            "动态分配资源的可重构架构",
+            "SpMM & GEMM 资源配比调整"
+          ],
+          "视觉骨架": [
+            "左右双栏架构对比",
+            "SpMM/GEMM资源块示意",
+            "重构方向箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 101,
+          "页面角色": "content_candidate",
+          "标题": "FlightVGM:在线稀疏与混合精度加速视频生成",
+          "核心论断": "FlightVGM以在线稀疏化与混合精度在FPGA上高效推理视频生成",
+          "本页讲什么": "场景2.2代表工作 FlightVGM 的论文封面页,给出全称\"Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs\"、作者(Jun Liu、Shulin Zeng、Li Ding 等,SJTU/Tsinghua)与会议 ISFPGA 2025,引入在线稀疏+混合精度方向的工作。",
+          "关键文字": [
+            "FlightVGM: Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs",
+            "ISFPGA 2025 @ Monterey"
+          ],
+          "视觉骨架": [
+            "论文标题横幅",
+            "作者与单位列表",
+            "会议信息"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 102,
+          "页面角色": "content_candidate",
+          "标题": "场景2.2核心思想:帧内帧间稀疏+混合精度",
+          "核心论断": "FlightVGM结合帧内帧间稀疏与在线稀疏化、混合精度削减计算",
+          "本页讲什么": "阐明FlightVGM核心思想:同时利用视频生成中\"帧内\"与\"帧间\"稀疏,配合在线稀疏化与混合精度计算,把冗余运算在线剔除并以低精度执行。左右双栏对照现有方案与本工作思路,给出\"在线稀疏化+混合精度\"的整体技术路线。",
+          "关键文字": [
+            "帧内/帧间稀疏",
+            "在线稀疏化",
+            "混合精度计算"
+          ],
+          "视觉骨架": [
+            "左右双栏对照",
+            "帧内帧间稀疏示意",
+            "混合精度流程箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 103,
+          "页面角色": "content_candidate",
+          "标题": "场景2.2:视频生成模型硬件优化的稀疏计算",
+          "核心论断": "FlightVGM以在线稀疏计算加速视频生成模型硬件推理",
+          "本页讲什么": "承接核心思想,展开视频生成模型硬件优化的稀疏计算部分:左栏给出现有(基线)方案示意,右栏给出本工作的在线稀疏计算方案,通过流程箭头对照说明如何在硬件上实现帧内帧间稀疏的高效执行。",
+          "关键文字": [
+            "视频生成模型硬件优化",
+            "在线稀疏计算"
+          ],
+          "视觉骨架": [
+            "左右双栏对照",
+            "稀疏计算流程箭头",
+            "方案对比框图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 104,
+          "页面角色": "content_candidate",
+          "标题": "场景2.2:复用DSP58实现混合精度MAC",
+          "核心论断": "利用FPGA的DSP58构建IPDSP,FP16算2倍MAC、INT8算4倍MAC",
+          "本页讲什么": "展示FlightVGM的混合精度计算硬件:利用FPGA的DSP58资源构建IPDSP处理单元,FP16模式每周期约2倍MAC、INT8模式约4倍MAC,从而在同一DSP上高效支持混合精度,匹配帧内帧间稀疏后不同算子的精度需求。",
+          "关键文字": [
+            "利用FPGA的DSP58",
+            "IPDSP处理单元",
+            "FP16约2倍MAC",
+            "INT8约4倍MAC"
+          ],
+          "视觉骨架": [
+            "左右双栏架构",
+            "DSP58/IPDSP框图",
+            "FP16/INT8 MAC倍率标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 105,
+          "页面角色": "content_candidate",
+          "标题": "场景2.2:实验设置(模型/数据集/指标/平台)",
+          "核心论断": "在Latte-1与Open-Sora上以CLIPSIM/VBench评测,对比GPU与多类加速器",
+          "本页讲什么": "列出FlightVGM实验设置:模型 Latte-1 与 Open-Sora 1.2,数据集 UCF-101;指标 CLIPSIM(文本-视频相似度)与 VBench(视频质量);平台对比 NVIDIA 3090 GPU、稀疏Transformer FPGA加速器(HiSpMV[FPGA'24]、FlightLLM[FPGA'24])及 DiT ASIC加速器(InterArch[DAC'24]、CMC[ASPLOS'24])。",
+          "关键文字": [
+            "模型:Latte-1 and Open-Sora 1.2",
+            "数据集:UCF-101",
+            "CLIPSIM/VBench",
+            "NVIDIA 3090 GPU",
+            "HiSpMV、FlightLLM、InterArch、CMC"
+          ],
+          "视觉骨架": [
+            "多级bullet列表",
+            "模型/数据集/指标/平台分组"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 106,
+          "页面角色": "content_candidate",
+          "标题": "场景2.2结果:FlightVGM较3090性能1.30倍能效4.49倍",
+          "核心论断": "FlightVGM相比NVIDIA 3090 GPU性能约1.30倍、能效约4.49倍",
+          "本页讲什么": "给出FlightVGM实验结果:相比 NVIDIA 3090 GPU,性能约提升1.30倍、能效约提升4.49倍,同时保持视频生成质量。以对比标注呈现性能与能效两项核心增益,论证在线稀疏+混合精度方案在视频生成上的显著效果。",
+          "关键文字": [
+            "相比NVIDIA 3090 GPU",
+            "性能约1.30倍",
+            "能效约4.49倍"
+          ],
+          "视觉骨架": [
+            "硬件对比论点框",
+            "性能/能效倍率标注",
+            "结果图表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 107,
+          "页面角色": "content_candidate",
+          "标题": "硬件优化小结:能效由~1推至~5 token/J",
+          "核心论断": "硬件层将能效由约1 token/J提升到约5 token/J",
+          "本页讲什么": "小结硬件架构层成果:硬件优化前约1 token/J、优化后约5 token/J。表格分模型给出能效倍率——语言模型由1x提升至1.3x、视频生成由1x提升至4.5x,呼应章节叙事,并为过渡到层次五芯片集成收尾。",
+          "关键文字": [
+            "硬件优化前 ~1 token/J",
+            "硬件优化后 ~5 token/J",
+            "语言模型 1x→1.3x",
+            "视频生成 1x→4.5x"
+          ],
+          "视觉骨架": [
+            "能效前后跃升箭头示意",
+            "分模型能效倍率表格"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.08",
+          "section_role": "method"
+        },
+        {
+          "页序号": 108,
+          "页面角色": "content_candidate",
+          "标题": "大模型推理优化五层次拆解(收束至芯片集成)",
+          "核心论断": "推理系统可拆解为算法到芯片的五层次,芯片集成为最底层",
+          "本页讲什么": "以竖向五层堆叠图回顾全篇方法框架:上部算法层(算法/量化/编译优化,对应DeepSeek/AWQ/vLLM+CANN),下部硬件层(架构优化H100/910B、芯片集成Chiplet 2.5D/3D)。最底一格「芯片集成」高亮,标示本章即将展开的层次五主题。",
+          "关键文字": [
+            "大模型推理系统可拆解为5个设计层次",
+            "芯片集成",
+            "Chiplet 2.5D/3D",
+            "DeepSeek / AWQ / vLLM CANN",
+            "H100/910B"
+          ],
+          "视觉骨架": [
+            "五层竖向堆叠框图",
+            "算法层/硬件层分组括号",
+            "右侧代表技术标注",
+            "底层高亮块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.09",
+          "section_role": "method"
+        },
+        {
+          "页序号": 109,
+          "页面角色": "content_candidate",
+          "标题": "层次五:典型智能应用场景需求",
+          "核心论断": "智能应用同时要求高吞吐(100-1000 tokens/s)与高能效(1 tokens/J)",
+          "本页讲什么": "左右两栏并列论证芯片集成的双重需求。左栏「性能需求」:GPT-4o/o1约200B参数,自动驾驶/机器人场景需100-1000 token/s实时推理(Tesla HW3、Nature 2023、Jim Fan NV)。右栏「能效需求」:等效7B模型需1000 tokens/s且<20W,即0.5 tokens/J提升至1 tokens/J量级,凸显边端能效目标。",
+          "关键文字": [
+            "应用需要100-1000 tokens/s推理能力",
+            "大模型如GPT-4o/o1参数量超200B",
+            "1000 tokens/s @7B < 20W",
+            "自动驾驶感知>100 token/s [Tesla HW3]",
+            "能效需求 1 tokens/J"
+          ],
+          "视觉骨架": [
+            "左右双栏对比布局",
+            "两栏蓝色标题条",
+            "性能指标引用标注",
+            "能效目标气泡+箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.09",
+          "section_role": "method"
+        },
+        {
+          "页序号": 110,
+          "页面角色": "content_candidate",
+          "标题": "层次五:芯片集成发展趋势(2.5D→3D)",
+          "核心论断": "芯片集成沿2.5D向3D演进以持续提升集成度与能效",
+          "本页讲什么": "以2011-2030时间轴展示集成度&能效随时间演进。早期2.5D阶段:Xilinx V72000T FPGA、GP100 GPU+DRAM、A100 GPU+HBM、CoWoS。近期3D阶段:AMD MI300 CPU+GPU+SRAM+HBM三维堆叠,趋向TSMC SoIC与Monolithic 3D。红色箭头指向未来3D集成方向,论证三维集成是必然趋势。",
+          "关键文字": [
+            "Xilinx V72000T FPGA 2.5D",
+            "NVIDIA A100 GPU+HBM 2.5D",
+            "CoWoS 2.5D",
+            "AMD MI300 CPU+GPU+SRAM+HBM 3D",
+            "TSMC SoIC Monolithic 3D"
+          ],
+          "视觉骨架": [
+            "2011-2030时间轴",
+            "2.5D与3D两阶段分区框",
+            "集成度&能效纵轴",
+            "指向3D的趋势箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.09",
+          "section_role": "method"
+        },
+        {
+          "页序号": 111,
+          "页面角色": "content_candidate",
+          "标题": "层次五:三维集成破访存瓶颈",
+          "核心论断": "强推理模型访存开销主导瓶颈,三维堆叠提升带宽是关键",
+          "本页讲什么": "核心洞察:强推理模型输出长度显著增加,性能瓶颈主要来自访存开销,访存约占70%时间。左侧以NVIDIA A100 roofline图指出算力受限于内存带宽。右侧对比LPDDR5x-8533、3DDRAM、HBM2e三种存储的能效(pJ/bit)与带宽:3DDRAM达0.8 pJ/bit、1~4TB/s,论证三维堆叠内存兼顾带宽与能效。",
+          "关键文字": [
+            "强推理模型输出长度增加,性能瓶颈来自访存开销",
+            "访存约占70%时间",
+            "NVIDIA A100 roofline 分析",
+            "3DDRAM 0.8 pJ/bit 1~4TB/s",
+            "对比 LPDDR5x-8533 / 3DDRAM / HBM2e"
+          ],
+          "视觉骨架": [
+            "A100 roofline曲线图",
+            "红色虚线核心结论框",
+            "存储能效带宽对比表",
+            "内存墙上移箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.09",
+          "section_role": "method"
+        },
+        {
+          "页序号": 112,
+          "页面角色": "content_candidate",
+          "标题": "典型3D IC架构与关键技术",
+          "核心论断": "3D IC集成依赖键合、SoIC与TSV硅通孔三项关键技术",
+          "本页讲什么": "以典型3D IC架构框图展开三项技术要点:技术要点1为键合/混合键合(芯片间垂直互连基础);技术要点2为台积电SoIC先进封装;技术要点3为TSV硅通孔实现真三维集成。三个技术标注围绕中心堆叠芯片框图,共同支撑3D IC垂直集成体系。",
+          "关键文字": [
+            "典型 3D IC 架构",
+            "技术要点1:键合/混合键合",
+            "技术要点2:台积电 SoIC",
+            "技术要点3:TSV/硅通孔 3D 集成"
+          ],
+          "视觉骨架": [
+            "中心堆叠芯片框图",
+            "三方向技术标注箭头",
+            "3D IC架构示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.09",
+          "section_role": "method"
+        },
+        {
+          "页序号": 113,
+          "页面角色": "content_candidate",
+          "标题": "芯片集成小结:3D SoIC的算力与能效收益",
+          "核心论断": "相比2.5D,3D SoIC带来3.3×单位面积算力与45×单位能效",
+          "本页讲什么": "以优化前后对比收束层次五。左侧箭头示意从2.5D集成向3D SoIC演进方向。右侧对比表以2.5D为1×基准:3D SoIC单位面积算力提升3.3×,单位能效(Energy/bit)提升45×。用这组量化收益收束全五层方法框架,凸显芯片集成层的巨大提升空间。",
+          "关键文字": [
+            "芯片集成优化前 2.5D 集成",
+            "芯片集成优化后 3D SoIC 集成",
+            "单位面积算力 1x → 3.3x",
+            "单位能效 1x → 45x",
+            "Energy/bit 对比"
+          ],
+          "视觉骨架": [
+            "优化前后对比表",
+            "2.5D→3DSoIC演进箭头",
+            "倍率数字强调"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.09",
+          "section_role": "method"
+        },
+        {
+          "页序号": 114,
+          "页面角色": "content_candidate",
+          "标题": "Contents:第四部分华为实践与展望",
+          "核心论断": "报告进入第四章:昇腾集群推理的华为实践与展望",
+          "本页讲什么": "全deck收尾章的目录过渡页,四项议程中第4项「华为实践与展望」被高亮点亮,前三项(Token量级、软硬件协同优化层次、从Token到价值)置灰,标示演讲正式转入华为集群推理工程实践与总结。",
+          "关键文字": [
+            "Contents",
+            "④ 华为实践与展望",
+            "① 从算力到Token的量级",
+            "② 大模型推理的软硬件协同优化层次",
+            "③ 大模型推理从Token到价值"
+          ],
+          "视觉骨架": [
+            "四段式编号目录框",
+            "第4项高亮其余置灰",
+            "左侧蓝色进度条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 115,
+          "页面角色": "content_candidate",
+          "标题": "推理部署趋势三关键词:超节点、大EP、长文本",
+          "核心论断": "模型尺度、MoE专家数、输出长度三重增长共同推高集群推理需求",
+          "本页讲什么": "本章总纲页,提出推理部署三大趋势关键词。右侧三行并列展开:①模型尺度↑(Llama3-405B/DeepSeek-V3-671B/Kimi-K2-1T)对应「超节点」;②MoE专家数↑(Mixtral-8、DeepSeek-256、Kimi-384)对应「大EP」;③输出长度↑(对话<1k、Test-time scaling~8k、Agent>50k)对应「长文本」,三条主线统领后续各页。",
+          "关键文字": [
+            "关键词:超节点、大EP、长文本",
+            "模型尺度↑:Llama3-405B/DeepSeek-V3-671B/Kimi-K2-1T",
+            "MoE专家数↑:Mixtral-8/DeepSeek-256/Kimi-384",
+            "输出长度↑:对话<1k/Test-time scaling~8k/Agent>50k",
+            "分别指向超节点、大EP、长文本"
+          ],
+          "视觉骨架": [
+            "三行并列趋势-举例-指向表",
+            "红色关键词标题框",
+            "左侧红块+虚线椭圆强调"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 116,
+          "页面角色": "content_candidate",
+          "标题": "超节点:趋势",
+          "核心论断": "大模型尺度效应下集群成为超大模型部署的新解决方案",
+          "本页讲什么": "三主线第一条「超节点」的趋势页。从单节点走向集群互联,借NVLink 5.0与DGX GB200 NVL72(片间带宽129.6TB/s)说明超节点通过Scale up(纵向扩容)与Scale out(横向扩展)构建大带宽域,支撑超大模型训练与推理。",
+          "关键文字": [
+            "集群成为大模型尺度效应下新解决方案",
+            "NVLink 5.0/DGX GB200 NVL72",
+            "片间带宽129.6TB/s",
+            "纵向Scale up与横向Scale out",
+            "构建大带宽互联域"
+          ],
+          "视觉骨架": [
+            "单节点→集群箭头演进图",
+            "红色主标题框",
+            "右侧硬件参数标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 117,
+          "页面角色": "content_candidate",
+          "标题": "超节点:华为实践",
+          "核心论断": "华为超节点集群推理性能比肩英伟达",
+          "本页讲什么": "「超节点」主线的华为实践页,以benchmark表格对比DeepSeek(Blog/Profile on H800)、SGLang(H100)、CloudMatrix-Infer(96 batch)、Atlas 800I A2(910B)在TFLOPS、TPOT、Throughput、每GPU吞吐、能耗等指标,结论是华为昇腾方案吞吐与能效比肩英伟达。",
+          "关键文字": [
+            "华为超节点集群推理性能比肩英伟达",
+            "CloudMatrix-Infer:1943 throughput",
+            "Atlas 800I A2(910B):766 throughput",
+            "对比DeepSeek/SGLang等基线",
+            "每GPU吞吐与能耗对比"
+          ],
+          "视觉骨架": [
+            "多列benchmark对比表",
+            "吞吐/能效高亮列色块",
+            "红色虚线框强调华为行"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 118,
+          "页面角色": "content_candidate",
+          "标题": "大EP:趋势",
+          "核心论断": "主流MoE专家数持续攀升,大规模专家并行成必然",
+          "本页讲什么": "三主线第二条「大EP」的趋势页。左表列出Mixtral-8x7B(8专家)、GPT4(8)、DeepSeek-V3(256)、Llama4(128)、Kimi-K2(384)随时间专家数激增;右侧点明大EP需将专家分散到更多GPU并配合大batch,以「Expert 分散部署+大batch」提升推理效率。",
+          "关键文字": [
+            "主流MoE专家数持续增加",
+            "DeepSeek-V3:256专家/Kimi-K2:384专家",
+            "Mixtral-8x7B:8专家(2023.12)",
+            "大EP:专家分散到更多GPU+大batch",
+            "Expert分散部署提升效率"
+          ],
+          "视觉骨架": [
+            "左侧模型-参数-专家数-时间表",
+            "右侧大EP动机说明框",
+            "两栏蓝色标题带"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 119,
+          "页面角色": "content_candidate",
+          "标题": "大EP:华为实践",
+          "核心论断": "极高专家并行EP320在昇腾910实现1943 tokens/s/NPU",
+          "本页讲什么": "「大EP」主线的华为实践页。华为在昇腾910上做极高专家并行度(EP320)部署,右侧柱状图对比910B与910C:业界普通方案50-60、约15倍差距,华为达700-800,最终单NPU吞吐1943 tokens/s/NPU,展示大EP工程落地效果。",
+          "关键文字": [
+            "极高专家并行度EP320昇腾910部署",
+            "1943 tokens/s/NPU",
+            "910C:700-800 tokens/s/NPU",
+            "业界约50-60,约15倍差距",
+            "910B与910C对比"
+          ],
+          "视觉骨架": [
+            "910B/910C吞吐柱状对比图",
+            "红色主标题框",
+            "关键吞吐数字高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 120,
+          "页面角色": "content_candidate",
+          "标题": "长文本:趋势",
+          "核心论断": "从聊天走向智能体,思维链变长使token量激增超1MB",
+          "本页讲什么": "三主线第三条「长文本」的趋势页。左侧「从聊天到智能体」以强推理模型随思维链增长持续提升为据;右侧说明单Token激活参数超1MB(DeepSeek-V3),对话4k场景下KV cache占比40%、计算60%,而长文本时KV cache传输占比升至95%,凸显长文本对缓存与传输的压力。",
+          "关键文字": [
+            "随思维链总长度增加强推理模型表现持续提高",
+            "从聊天走向智能体",
+            "单Token激活参数超1MB",
+            "对话4k:KV cache占40%/计算60%",
+            "长文本:KV cache传输占比升至95%"
+          ],
+          "视觉骨架": [
+            "左聊天右智能体双栏对比",
+            "手机/多机KV示意图",
+            "占比标注文字"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 121,
+          "页面角色": "content_candidate",
+          "标题": "长文本:挑战总览(2k~4k到>100k)",
+          "核心论断": "上下文从2k~4k激增至>100k,在计算/存储/调度三层引爆挑战",
+          "本页讲什么": "「长文本」挑战的总览页,上下文长度从2k~4k跨越到>100k。左侧计算/存储/调度三层挑战,右侧分别对应:计算层Prefill的Attention计算激增、存储层KV Cache激增、调度层P/D分离下Attention与MoE的负载不均,统领后三页逐一展开。",
+          "关键文字": [
+            "上下文长度2k~4k → >100k",
+            "计算/存储/调度三层挑战",
+            "Prefill Attention计算激增",
+            "KV Cache存储激增",
+            "P/D分离下Attention与MoE负载不均"
+          ],
+          "视觉骨架": [
+            "计算/存储/调度三行分区",
+            "左标签右挑战箭头映射",
+            "底部2k~4k→>100k渐变轴"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 122,
+          "页面角色": "content_candidate",
+          "标题": "长文本挑战之一:Prefill Attention计算瓶颈",
+          "核心论断": "长文本下Attention计算随上下文平方增长成为Prefill瓶颈",
+          "本页讲什么": "长文本三挑战的问题1:计算问题。左侧Prefill Attention随Context Length增长,Attention占比相对Feed-Forward急剧上升,对标量核压力增大;右侧提出用AIC/AIV等异构计算单元协同缓解,标示Attention成为长文本Prefill阶段的主要计算瓶颈。",
+          "关键文字": [
+            "长文本下计算问题:Attention成为瓶颈",
+            "Attention随Context Length增长",
+            "对标量核压力增加",
+            "AIC/AIV异构单元协同",
+            "Prefill阶段Attention占比升高"
+          ],
+          "视觉骨架": [
+            "Attention/Feed-Forward耗时柱图",
+            "左图右应对双栏",
+            "红色虚线框强调优化"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 123,
+          "页面角色": "content_candidate",
+          "标题": "长文本挑战之二:KV Cache存储与传输失衡",
+          "核心论断": "长文本加剧KV Cache存储不均与跨NPU传输开销",
+          "本页讲什么": "长文本三挑战的问题2:存储问题。长文本使KV Cache存储量激增且NPU间分布不均,Attention需跨NPU(NPU0/NPU1)读取KV Cache 0/1,产生GB级传输开销,提出通过KV Cache的Placement均衡放置来缓解存储与传输失衡。",
+          "关键文字": [
+            "长文本加剧KV Cache存储均衡问题",
+            "KV传输开销增大",
+            "跨NPU读取KV Cache 0/1",
+            "GB级传输量",
+            "KV Cache Placement均衡放置"
+          ],
+          "视觉骨架": [
+            "左Placement均衡示意图",
+            "右query-Attention跨NPU取KV图",
+            "NPU0/NPU1分层框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 124,
+          "页面角色": "content_candidate",
+          "标题": "长文本挑战之三:MoE与注意力资源匹配难",
+          "核心论断": "长文本加剧集群推理中注意力与MoE的资源匹配难度",
+          "本页讲什么": "长文本三挑战的问题3:调度问题。左侧示意专家分散(如EP320横跨160/384 NPU)导致负载不均;右侧以MLA_1(44.7%)与MLA_2(40.6%)、batch size与cache length=32k说明长文本下注意力与MoE在算力/访存上难以匹配,凸显集群资源匹配是核心调度挑战。",
+          "关键文字": [
+            "长文本加剧集群推理资源匹配难度",
+            "如何匹配注意力和MoE",
+            "MLA_1(44.7%)/MLA_2(40.6%)",
+            "Batch size=32,Cache length=32k",
+            "专家跨160/384 NPU分散"
+          ],
+          "视觉骨架": [
+            "左专家分散并行示意",
+            "右MLA占比与cache length图",
+            "两栏蓝色标题带"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 125,
+          "页面角色": "content_candidate",
+          "标题": "昇腾基础软件技术积累:算子优化与通算融合",
+          "核心论断": "GEMM算子优化与FlashOverlap通算融合带来1.35~1.5倍加速",
+          "本页讲什么": "转入华为技术积累页,双栏并列:左栏GEMM/Group GEMM基于CCE缓存流水优化(L2→L1→L0),aclNN加速约1.5倍(Llama3-8B验证);右栏计算通信FlashOverlap融合,基于catlass与hccl实现通算重叠,加速约1.35倍。共同支撑昇腾集群推理效率。",
+          "关键文字": [
+            "计算:GEMM/Group GEMM算子优化",
+            "基于CCE缓存流水,L2->L1-L0",
+            "GEMM相比aclNN加速约1.5倍(Llama3-8B)",
+            "计算通信融合FlashOverlap",
+            "基于catlass与hccl,加速约1.35倍"
+          ],
+          "视觉骨架": [
+            "左GEMM右FlashOverlap双栏",
+            "红色虚线框标注加速结论",
+            "蓝色栏标题带"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 126,
+          "页面角色": "content_candidate",
+          "标题": "集群推理方法论",
+          "核心论断": "由硬件与模型约束建模,输出并行切分与PD分离部署策略",
+          "本页讲什么": "章节收束的方法论页,呈现输入→建模→输出流程:输入为模型规模、芯片算力、访存带宽、节点规模等约束;经服务化建模(满足SLO与均衡负载);输出并行切分方案、EP/TP并行策略、xPyD的PD分离部署,形成集群推理的系统性决策框架。",
+          "关键文字": [
+            "输入:模型规模/芯片算力/访存带宽/节点规模",
+            "建模满足SLO与均衡负载",
+            "输出:并行切分方案",
+            "输出:EP/TP并行策略",
+            "输出:xPyD的PD分离部署"
+          ],
+          "视觉骨架": [
+            "输入-建模-输出漏斗流程图",
+            "左多输入框汇聚圆心",
+            "右三输出策略框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 127,
+          "页面角色": "content_candidate",
+          "标题": "超节点/大EP/长文本集群推理综合思考",
+          "核心论断": "以计算通信框架协同+PD分离+KV Cache迁移统合三条主线",
+          "本页讲什么": "全章及全deck的综合总结页,把超节点、大EP、长文本三主线落到统一系统设计:中部按Prefill/MoE/Decode分区,配调度器与UB总线;左侧图解稀疏化Attention与MoE分块;右侧图解Decode实例间KV cache迁移(R1从NPU0迁至NPU1)与PD分离,归纳为负载均衡、并行融合、KV Cache Placement三大工程抓手。",
+          "关键文字": [
+            "超节点、大EP、长文本的集群推理思考",
+            "计算/通信/框架设计协同",
+            "Prefill/MoE/Decode分区+调度器+UB总线",
+            "Decode实例间迁移KV cache",
+            "KV Cache Placement与PD分离"
+          ],
+          "视觉骨架": [
+            "中部Prefill/MoE/Decode三区框图",
+            "左稀疏Attention分块示意",
+            "右KV cache跨NPU迁移图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.10",
+          "section_role": "discussion"
+        },
+        {
+          "页序号": 128,
+          "页面角色": "ending_candidate",
+          "标题": "戴国浩联系方式与课题组招募",
+          "核心论断": "课题组拥有 >1000 块算力资源与多单位合作,面向人才招募",
+          "本页讲什么": "全 deck 收尾页。左侧给出汇报人戴国浩(上海交通大学,2025-7-18)及 Email 联系方式;右侧用红字强调『本课题组拥有充足算力资源 >1000 块算力资源』,并以招生/招聘两个入口 + 合作单位 logo 矩阵(NICS-EFC、JKW、X 等)为课题组做招募背书,把技术汇报导向人才吸引。",
+          "关键文字": [
+            "戴国浩 上海交通大学 2025-7-18",
+            "Email: daiguohao@sjtu.edu.cn",
+            "本课题组拥有充足算力资源 >1000 块算力资源",
+            "招生 / 招聘 (vision)",
+            "合作单位: NICS-EFC、JKW、X …… (vision)"
+          ],
+          "视觉骨架": [
+            "顶部蓝色分隔条 + 标题",
+            "左侧作者联系方式文本块",
+            "红字算力资源强调语",
+            "招生/招聘双色圆角按钮",
+            "合作单位 logo 矩阵网格"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.11",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面",
+          "页码范围": [
+            1,
+            1
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "self_intro",
+          "标题": "个人介绍",
+          "页码范围": [
+            2,
+            2
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "motivation",
+          "标题": "从智能时代到Token生产要素",
+          "页码范围": [
+            3,
+            6
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "motivation",
+          "标题": "能效指标tokens/J与优化路径",
+          "页码范围": [
+            7,
+            15
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "method",
+          "标题": "五层次框架与层次一算法设计",
+          "页码范围": [
+            16,
+            27
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "method",
+          "标题": "层次二:算法优化",
+          "页码范围": [
+            28,
+            54
+          ]
+        },
+        {
+          "section_index": 7,
+          "section_role": "method",
+          "标题": "层次三:系统优化",
+          "页码范围": [
+            55,
+            81
+          ]
+        },
+        {
+          "section_index": 8,
+          "section_role": "method",
+          "标题": "层次四:硬件架构",
+          "页码范围": [
+            82,
+            107
+          ]
+        },
+        {
+          "section_index": 9,
+          "section_role": "method",
+          "标题": "层次五:芯片集成",
+          "页码范围": [
+            108,
+            113
+          ]
+        },
+        {
+          "section_index": 10,
+          "section_role": "discussion",
+          "标题": "集群推理挑战与华为实践",
+          "页码范围": [
+            114,
+            127
+          ]
+        },
+        {
+          "section_index": 11,
+          "section_role": "closing",
+          "标题": "致谢与联系方式",
+          "页码范围": [
+            128,
+            128
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": "tree-v1",
+  "generated_at": "2026-07-25T14:53:27Z",
+  "source": "template_library_shim",
+  "source_count": 25,
+  "source_hash": "2310e4dd5952af9446f0c0468424ae5492cccfeb",
+  "files": [
+    {
+      "path": "templates/个人学术考核/博士资格考试_高能效大模型推理系统的软硬件协同设计.pptx",
+      "size": 62945934,
+      "mtime_ns": 1784986917697386600,
+      "sha1": "fc2f91f4f5a978a294a4e45bb011ea4a3571bf8f"
+    },
+    {
+      "path": "templates/个人学术考核/高效端侧大模型推理优化_开题.pptx",
+      "size": 10443544,
+      "mtime_ns": 1784983454205850500,
+      "sha1": "9b250018406f37adb01b47da2185788c920bb50d"
+    },
+    {
+      "path": "templates/主题学术报告/AI Infra与国智院建设思考.pptx",
+      "size": 237876386,
+      "mtime_ns": 1784987153847463300,
+      "sha1": "70b8b70ea6867bcb4fb06f891cc2ce6d55fea9fa"
+    },
+    {
+      "path": "templates/主题学术报告/从大模型推理优化到昇腾芯片的实践.pptx",
+      "size": 11050993,
+      "mtime_ns": 1784981782628337300,
+      "sha1": "692aa2f99a2111f3b607721afc2755a5ea79012d"
+    },
+    {
+      "path": "templates/主题学术报告/稀疏计算与大模型.pptx",
+      "size": 42081166,
+      "mtime_ns": 1784955247602961400,
+      "sha1": "0738f02383df90eab0021554e40d8056b5b01cfa"
+    },
+    {
+      "path": "templates/主题学术报告/高效大模型推理技术与应用.pptx",
+      "size": 143981644,
+      "mtime_ns": 1784982252580024500,
+      "sha1": "8584882c7cca9017abafb0d6786bc6a15a1d37ce"
+    },
+    {
+      "path": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+      "size": 50183930,
+      "mtime_ns": 1784986875762283300,
+      "sha1": "414ba716d1bb1cc5974a5bd4af3d57774e238492"
+    },
+    {
+      "path": "templates/本组论文与科研成果/DATE26  Endor Exploit Nearly-Decode-Only Opportunities.pptx",
+      "size": 2499475,
+      "mtime_ns": 1784955623740433000,
+      "sha1": "50cfbf4fbb63b4f14597157eb1e427ddbd87bb1d"
+    },
+    {
+      "path": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+      "size": 3637401,
+      "mtime_ns": 1784983088718175200,
+      "sha1": "84b1b7b767bbc812fca73649f6b5ed38ba72e4db"
+    },
+    {
+      "path": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+      "size": 3177782,
+      "mtime_ns": 1784965754325868100,
+      "sha1": "54a7bb4c725ae787c2aadf1e16608eb3211e4561"
+    },
+    {
+      "path": "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx",
+      "size": 1674065,
+      "mtime_ns": 1784967729984058000,
+      "sha1": "131776401f77db88c9e594db88f68c537ef9e59a"
+    },
+    {
+      "path": "templates/本组论文与科研成果/SpAct-NDP Efficient LLM Inference via Sparse.pptx",
+      "size": 1089376,
+      "mtime_ns": 1784967352566924800,
+      "sha1": "dc8d727479f2dcbb635c018996a4bf018bd63c70"
+    },
+    {
+      "path": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+      "size": 1594203,
+      "mtime_ns": 1784963262606615200,
+      "sha1": "1825ab3acd5b0178fc22354f0e21e8532e8b320c"
+    },
+    {
+      "path": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+      "size": 8273867,
+      "mtime_ns": 1784968631920739300,
+      "sha1": "e9787fd4c0d56b18c5655948d0ba6c96bef941ae"
+    },
+    {
+      "path": "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx",
+      "size": 9153847,
+      "mtime_ns": 1784983537858783600,
+      "sha1": "039d5738fcfcd9a38eca77be6cc4321f4046fcc2"
+    },
+    {
+      "path": "templates/课题组全局汇报/VALSE  大模型高效计算与推理.pptx",
+      "size": 20903367,
+      "mtime_ns": 1784981581588205100,
+      "sha1": "6c296eb86eb8d324b763d305edbd30a9787553fd"
+    },
+    {
+      "path": "templates/课题组全局汇报/创智  稀疏计算助力人工智能算力平台构建.pptx",
+      "size": 105305367,
+      "mtime_ns": 1784986841157383400,
+      "sha1": "a78d4178edbe484dc5491f34003e7914bbb20e1e"
+    },
+    {
+      "path": "templates/课题组全局汇报/华为2012报告  大模型推理软硬件协同优化.pptx",
+      "size": 123438995,
+      "mtime_ns": 1784981755720938700,
+      "sha1": "6bffd8bab61e6b81d5fd9d0ab630594901adc863"
+    },
+    {
+      "path": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+      "size": 101205472,
+      "mtime_ns": 1784954752652128800,
+      "sha1": "a311aa194161ca84688d88210bde2d19f21d8acb"
+    },
+    {
+      "path": "templates/课题组全局汇报/机器之心_端侧大模型报告.pptx",
+      "size": 55883070,
+      "mtime_ns": 1784986902724233500,
+      "sha1": "7ced3852de7bb5a987ee07ef28bca78086978ffe"
+    },
+    {
+      "path": "templates/课题组全局汇报/蚂蚁汇报  人工智能+集成电路的软硬协同设计方法.pptx",
+      "size": 43707203,
+      "mtime_ns": 1784982460488606600,
+      "sha1": "e33f66bbfde943dcbedbfb6ed0861431354d4a41"
+    },
+    {
+      "path": "templates/课题组全局汇报/达摩院_稀疏计算与软硬协同_大模型算力提升新思考.pptx",
+      "size": 68589713,
+      "mtime_ns": 1784986888041417200,
+      "sha1": "54b0b40f14df5c539ce124ac893b83fcd5c7881e"
+    },
+    {
+      "path": "templates/课题组全局汇报/高效端侧大模型推理优化_华为端侧AI.pptx",
+      "size": 94909735,
+      "mtime_ns": 1784982500439755100,
+      "sha1": "d36b30ded616bf02ba893fafe491b06585818638"
+    },
+    {
+      "path": "templates/通用模板/DAI 实验室PPT模版.pptx",
+      "size": 2982036,
+      "mtime_ns": 1784957242309044700,
+      "sha1": "2777835f934a15d63ffcf51e65830efca3007435"
+    },
+    {
+      "path": "templates/项目申报/面向大规模与多变场景组合优化问题的AI方法.pptx",
+      "size": 46767824,
+      "mtime_ns": 1784986931601563600,
+      "sha1": "dc0b91ba9a5fc74bd4a51c912978249182f7e89f"
+    }
+  ],
+  "deck_count": 25,
+  "failed_count": 0,
+  "briefs_elapsed_seconds": 3135.673009157181,
+  "briefs_model": "claude-opus-4-8"
+}

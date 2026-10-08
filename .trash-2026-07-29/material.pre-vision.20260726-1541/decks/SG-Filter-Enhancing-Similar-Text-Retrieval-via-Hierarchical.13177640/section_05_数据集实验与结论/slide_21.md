@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_21"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.05"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 21
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "content_candidate"
+标题: "结论：加入 SG-Filter 有效"
+核心论断: "加入该过滤机制显著提升相似文本检索有效性"
+本页讲什么: "本页承接指标口径，直接抛出核心结论——加入 SG-Filter 能有效增强相似文本检索，作为整章的论点句，后续 22-24 页的延迟与过滤率数据即是对该结论的实证支撑。"
+关键文字:
+  - "Conclusion: Demonstrates the effectiveness of adding"
+视觉骨架: "[结论断言文本块, 对比示意小图]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_21.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_21.asset.02]"
+适合复用场景: "[实验章的有效性结论断言页, 方法有效性总结页]"
+不适合复用场景: "[密集数据表格页, 数据集口径介绍页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题区", "内容": "Conclusion 结论标签"}
+  - {"位置": "下方主体", "内容": "加入 SG-Filter 有效性的断言文本"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 21: 结论：加入 SG-Filter 有效
+
+**核心论断**: 加入该过滤机制显著提升相似文本检索有效性
+
+## 本页讲什么
+本页承接指标口径，直接抛出核心结论——加入 SG-Filter 能有效增强相似文本检索，作为整章的论点句，后续 22-24 页的延迟与过滤率数据即是对该结论的实证支撑。
+
+## 关键文字片段
+- Conclusion: Demonstrates the effectiveness of adding
+
+## 视觉骨架
+- 结论断言文本块
+- 对比示意小图
+
+## 可复用到
+- 实验章的有效性结论断言页
+- 方法有效性总结页
+
+## 不适合复用的场景
+- 密集数据表格页
+- 数据集口径介绍页

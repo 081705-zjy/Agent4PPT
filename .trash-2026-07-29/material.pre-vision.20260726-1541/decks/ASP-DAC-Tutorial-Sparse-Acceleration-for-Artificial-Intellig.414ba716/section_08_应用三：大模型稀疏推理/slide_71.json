@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_71",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 71,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏线性层示例：是否融合各有优劣",
+  "核心论断": "稀疏线性层示例证明融合与否需按场景自适应决策",
+  "本页讲什么": "用稀疏线性层的具体示例佐证自适应数据流：在不同情形下「不融合更好」与「融合更好」并存，说明必须按场景自适应地决定是否算子融合，呼应 M³ 建模的价值。",
+  "关键文字": [
+    "The sparse linear layer example",
+    "Better without fusion",
+    "Better with"
+  ],
+  "视觉骨架": [
+    "稀疏线性层融合对比示意",
+    "两种数据流性能对比"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_71.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_71.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_71.asset.03",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_71.asset.04"
+  ],
+  "适合复用场景": [
+    "稀疏线性层融合对比示例页",
+    "自适应数据流案例验证页"
+  ],
+  "不适合复用场景": [
+    "硬件架构总览页",
+    "文献背景页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

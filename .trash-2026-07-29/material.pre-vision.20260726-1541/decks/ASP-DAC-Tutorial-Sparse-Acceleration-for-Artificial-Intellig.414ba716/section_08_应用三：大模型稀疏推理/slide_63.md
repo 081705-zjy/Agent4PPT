@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_63"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 63
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "大模型训练成本远高于小模型"
+核心论断: "LLM 参数与训练集暴增，训练成本远超传统小模型"
+本页讲什么: "用模型参数量、训练集规模的对比表说明 LLM 的训练成本远高于传统小模型，凸显重训练代价高昂这一痛点，从而引出后续「无需重训练的稀疏方法」的价值。"
+关键文字: "[The training cost of LLM is much higher than that of small models, Model, Params, Training set]"
+视觉骨架: "[模型参数量对比表, 训练成本对比示意]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_63.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_63.asset.02]"
+适合复用场景: "[大模型训练成本痛点论证页, 参数规模对比 motivation 页]"
+不适合复用场景: "[硬件电路结构页, 算法流程框图页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "The training cost of LLM is much higher than that of small models"}
+  - {"位置": "下方主体", "内容": "模型参数量与训练集规模对比表"}
+alternate_claims:
+  - "重训练 LLM 代价高昂，催生无需重训练的稀疏方法需求"
+layout_tag: "benchmark_table"
+---
+# slide 63: 大模型训练成本远高于小模型
+
+**核心论断**: LLM 参数与训练集暴增，训练成本远超传统小模型
+
+## 本页讲什么
+用模型参数量、训练集规模的对比表说明 LLM 的训练成本远高于传统小模型，凸显重训练代价高昂这一痛点，从而引出后续「无需重训练的稀疏方法」的价值。
+
+## 关键文字片段
+- The training cost of LLM is much higher than that of small models
+- Model
+- Params
+- Training set
+
+## 视觉骨架
+- 模型参数量对比表
+- 训练成本对比示意
+
+## 可复用到
+- 大模型训练成本痛点论证页
+- 参数规模对比 motivation 页
+
+## 不适合复用的场景
+- 硬件电路结构页
+- 算法流程框图页

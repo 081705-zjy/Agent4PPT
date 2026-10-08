@@ -1,0 +1,417 @@
+{
+  "batch_index": 16,
+  "rules": [
+    {
+      "id": "framework_diagram_reuse_across_method_chapters",
+      "category": "callback",
+      "applicable_when": "decks with a top-level framework diagram (n-layer/n-module) and ≥2 method sub-chapters",
+      "title": "总纲框架图需在每个方法子章首页复用+高亮当前层",
+      "description": "首次立起的多层/多模块总纲框架图,在每个 method 子章开头需再次出现,并以视觉手段(高亮/置灰)标示本章当前所在层,起'方位地图'作用。",
+      "what_to_check": [
+        "找 method 章首页 slide.视觉骨架 是否含'框架/五层/层次'等字样并'高亮/当前层/highlight'标注",
+        "对比同一 deck 内多个 method 章首页视觉骨架是否复用同一框架结构",
+        "记录框架图在 deck 中的复现次数,应 ≥ method 章数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "五层次框架图在 slide 16(立起)、18、28、55、82、108 反复出现,每次高亮当前展开层(模型设计/算法优化/系统优化/硬件架构/芯片集成),共复用 6 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 听众极易迷失章序,框架图复用是最低成本的方位锚,视觉重复远优于文字复述",
+      "fix_hint": "在每个 method 章首插一张框架图 slide,把当前层加粗/上色、其余层置灰,不新画只复用总纲图",
+      "exceptions": [
+        "deck 无 method 分层框架 (单一 case study 型)",
+        "章数 ≤2 的短 deck (视觉冗余大于导航收益)"
+      ]
+    },
+    {
+      "id": "main_thesis_callback_in_each_chapter_summary",
+      "category": "callback",
+      "applicable_when": "any deck with a quantitative main metric (e.g. speedup, energy efficiency) and ≥2 method chapters",
+      "title": "主指标需在每章 summary 页量化回扣",
+      "description": "deck 立起的主量化指标(能效比/加速比等)在每个 method 章末 summary 页需以'前 vs 后'量化数字复现,把本章收益具体挂到全局指标。",
+      "what_to_check": [
+        "找每个 method 章末页 slide.核心论断 / 关键文字 是否含'前→后' '×倍' 'tokens/J' 等量化对比",
+        "核对本章数字是否落在 deck 主指标坐标系里(单位一致)",
+        "命中率 = 含量化回扣的章末数 / method 章数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "算法设计小结(slide27)2.5x/算法优化小结(slide54)0.2→0.82 tokens/J/系统优化小结(slide81)11.5x/硬件优化小结(slide107)1→5 tokens/J/芯片集成小结(slide113)3.3x/45x — 5 个 method 章均在 summary 用主指标量化回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末不落到主指标,本章成为孤立技术展示,听众记不住'到底给全局带来多少提升'",
+      "fix_hint": "章末 summary 页统一模板'前 X → 后 Y (Z 倍)',单位与 deck 主指标一致",
+      "exceptions": [
+        "定性方法章 (无可量化收益)",
+        "背景/综述章 (无自身贡献)"
+      ]
+    },
+    {
+      "id": "cover_title_anchor_expanded_in_motivation",
+      "category": "callback",
+      "applicable_when": "any deck with a cover title containing a core technical thesis",
+      "title": "封面主标题的核心 anchor 需在 motivation 中被展开论证",
+      "description": "cover 标题中的核心概念 (如'软硬件协同'/'端到端') 不能只出现在封面,需在 motivation 章有专门 slide 论证其必要性 (传统方案不足→本 anchor 破局)。",
+      "what_to_check": [
+        "从 slide_1 标题抽 anchor 名词短语",
+        "在 motivation 章 (section_role=motivation) 的 slide.核心论断 / 关键文字 中搜同名或近义 anchor",
+        "找是否有'传统 X 不足 → 新范式 Y'类对比 slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "cover anchor'软硬件协同'在 slide 14 (软硬件协同同步推高)、slide 15 (从硬件被动支持到软硬件协同设计) 展开,并用传统/新思路对比论证必要性"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "标题不被 motivation 展开,anchor 就沦为口号,听众无从建立'为什么必须这样'的信念",
+      "fix_hint": "在 motivation 章加 1 张对比 slide:'传统做法瓶颈' vs '本 anchor 破局',确保封面词有专属论证页",
+      "exceptions": [
+        "cover 只含研究领域名 (如'AI 系统研究')无具体 anchor 时豁免"
+      ]
+    },
+    {
+      "id": "gap_page_before_solution_reveal",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck presenting quantitative problem-solution pairs in motivation",
+      "title": "现状/需求 gap 页必须在解决方案页之前",
+      "description": "motivation 章需先立起'现状 X vs 需求 Y'的定量 gap,再引出优化路径 slide,严禁在展示 gap 前先亮方案数字。",
+      "what_to_check": [
+        "在 motivation 章找含'现状/需求/差距/数量级'的 slide",
+        "检查其页码是否早于含'优化路径/方案/方法'的 slide",
+        "反向检查是否有'方案数字'页出现在'gap 页'之前"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "slide 10(现状 0.01-10 tokens/J)→ slide 11(需求 10-20 tokens/J,差 1-3 数量级)先建 gap,slide 12-13 才展开两条优化路径,顺序严格保持"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "先亮方案再讲差距,听众失去接收动机;先立差距再给方案才有'钩子已经勾住'的心理张力",
+      "fix_hint": "把 motivation 章 slide 顺序调整为:现状数字 → 需求/目标数字 → 优化路径,gap 页排在方案页之前",
+      "exceptions": [
+        "纯 tutorial/综述型 deck (无自身方案主张)"
+      ]
+    },
+    {
+      "id": "paper_cover_before_each_representative_work",
+      "category": "suspense_reveal",
+      "applicable_when": "research_report / paper_share decks with ≥2 representative works",
+      "title": "每个代表工作需以论文封面页开场",
+      "description": "在展开一项代表工作前,先单独用一张'论文标题+作者+会议'封面 slide 引入,给听众清晰的工作边界与权威背书,再进入 challenge/method/result 展开。",
+      "what_to_check": [
+        "在 method 章找 slide.视觉骨架 含'论文标题主视觉/作者与单位署名/会议年份'的 slide",
+        "该 slide 后紧跟同一工作的 challenge/method slide",
+        "统计代表工作数与 paper cover 数是否 1:1"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "9 张论文封面 slide(22 Megrez-Omni/31 2-bit LLM/36 MoA/40 SpecEE/57 FlashDecoding++/67 FlashOverlap/72 semi-PD/85 FlightLLM/96 ViDA/101 FlightVGM)每张后紧接该工作 challenge+method+result"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "先亮论文封面既隔断上一工作叙事又给'这是已发表工作'的信任,减少听众怀疑成本",
+      "fix_hint": "每个代表工作前插 1 张 slide,含论文标题/作者/单位/会议年份,视觉与内容页明显区分",
+      "exceptions": [
+        "非科研背景型 deck (工业方案汇报,无发表出处)",
+        "同一工作跨章展开 (共用一张封面即可)"
+      ]
+    },
+    {
+      "id": "chapter_intro_via_framework_diagram_highlight",
+      "category": "chapter_transitions",
+      "applicable_when": "decks with a top-level layered framework and ≥3 method chapters",
+      "title": "method 章首页需用框架图+当前层高亮做导航",
+      "description": "每个 method 子章的首 slide 不直接进入内容,而是复用总纲框架图并高亮本章所在层,作为'你现在在哪一层'的显式导航,再进入下一 slide 讲具体内容。",
+      "what_to_check": [
+        "找 section_role=method 的每章第 1 张 slide",
+        "检查 slide.视觉骨架 是否含'框架/五层/高亮当前层'",
+        "统计满足此模式的章数 / method 章总数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "slide 18(层次一高亮)/28(层次二高亮)/55(层次三高亮)/82(层次四高亮)/108(层次五高亮)—— 5 个 method 章均以框架图高亮开场"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 内跨章切换,单纯讲'第 N 章开始'不足,视觉高亮框架图是最强导航信号",
+      "fix_hint": "把每 method 章首页设为'总纲框图+当前层高亮'模板,不含正文细节,只做导航",
+      "exceptions": [
+        "deck 无总纲框架图",
+        "method 章 <3 时视觉冗余大于收益"
+      ]
+    },
+    {
+      "id": "chapter_outro_quantitative_summary_page",
+      "category": "chapter_transitions",
+      "applicable_when": "any deck with method chapters yielding quantitative gains",
+      "title": "每 method 章末需单独 1 张'量化收益 summary'页",
+      "description": "章末不能直接切下一章,需专设 1 张 slide 用'前 vs 后'柱图/表格量化本章总收益,作为章末锚点+承下钩子。",
+      "what_to_check": [
+        "找 section_role=method 每章的 last slide",
+        "检查 slide.标题 是否含'小结/总结/成效'",
+        "检查 slide.视觉骨架 是否含'前后对比/箭头/倍率标注'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "slide 27(算法设计小结 2.5x)、54(算法优化小结 0.2→0.82)、81(系统优化小结 11.5x)、107(硬件优化小结 1→5)、113(芯片集成小结 3.3x/45x)—— 5 个 method 章末均有独立量化 summary 页"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章末不收束,细节淹没主线;独立 summary 页给听众'这章我记住这一个数字'的锚,是 recall 关键",
+      "fix_hint": "每 method 章末加 1 张 slide,标题含'小结',视觉用'前 X→后 Y'箭头/表格,不引新概念",
+      "exceptions": [
+        "章内容全为定性讨论无量化结果"
+      ]
+    },
+    {
+      "id": "agenda_page_appears_at_major_chapter_boundary",
+      "category": "chapter_transitions",
+      "applicable_when": "long decks (≥30 slides) with ≥3 major chapters",
+      "title": "主要章节过渡处需 Contents 页高亮当前项",
+      "description": "长 deck 在主要章切换处插入 Contents 目录页,当前章高亮、其余置灰,起'章级书签'作用,而非只在开篇给一次目录。",
+      "what_to_check": [
+        "找 slide.标题 含'Contents/目录'的 slide,统计出现次数",
+        "检查这些 slide 是否分布在不同章界",
+        "检查是否有'高亮当前项其余置灰'的视觉标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "Contents 页出现于 slide 3(全目录)、4(高亮①)、7(高亮②)、17(高亮③)、114(高亮④)—— 5 次穿插于主要章界,每次高亮当前项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 只在开头给一次目录,听众到第 50 页早忘了整体结构;章切时重复目录是极低成本的'你在哪'提示",
+      "fix_hint": "每主章切换处复用同一 Contents 页模板,只改高亮位置,不改结构",
+      "exceptions": [
+        "deck <30 页 (信息负担小,目录重复反而啰嗦)"
+      ]
+    },
+    {
+      "id": "main_anchor_repeat_across_deck_high_frequency",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with a single-phrase main thesis",
+      "title": "主 anchor 需在 deck 中重复 ≥8 次并跨 ≥60% 章节",
+      "description": "deck 的主 thesis 短语(如'软硬件协同')需在 cover、motivation、method 各章、closing 中反复出现,跨越 60%+ 章节,让听众多次接触形成记忆锚。",
+      "what_to_check": [
+        "从 cover 标题抽主 anchor",
+        "在所有 slide.标题/核心论断/关键文字 中搜同名或紧密同义词",
+        "统计出现总次数与覆盖章节数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "'软硬件协同'在 slide 1/14/15/16/17/20/23/28/108 反复出现,跨 opening/motivation/method(sec.05/06/07/08/09) 6+ 章节,重复 10+ 次"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众平均记忆槽仅 3-5 个 anchor,主 anchor 若只出现 1-2 次极易被章内技术细节淹没",
+      "fix_hint": "在每章 summary 或章首把主 anchor 写入 slide 标题或核心论断句,不藏在正文",
+      "exceptions": [
+        "综述型 deck (多 anchor 并列无单一 thesis)"
+      ]
+    },
+    {
+      "id": "main_metric_unit_consistency_across_deck",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with a quantitative main metric (energy/efficiency/speedup)",
+      "title": "主量化指标单位需全 deck 一致复现",
+      "description": "deck 立起的主指标 (e.g. tokens/J、×倍加速) 需在 motivation 立起后,每 method 章 summary 用同一单位复现,严禁章间换单位或忽跳到定性描述。",
+      "what_to_check": [
+        "在 motivation 章找主指标单位 (从 slide.关键文字 抽 'tokens/J' '倍' '%' 等)",
+        "在每 method 章 summary 页 slide.核心论断 检查是否用同一单位表达",
+        "统计单位一致的章数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "'tokens/J'从 slide 8 立起,slide 27/54/81/107 章末均以 tokens/J 或加速倍数复现,单位链贯穿全 deck"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主指标单位换来换去,听众无法在心里累计'整体提升了多少',全 deck 收益丢失",
+      "fix_hint": "定义主指标单位后,每章 summary 强制该单位;若某章无法量化则改为'贡献 X% 到主指标'表述",
+      "exceptions": [
+        "跨领域综述 deck (无单一主指标)"
+      ]
+    },
+    {
+      "id": "representative_work_four_stage_template",
+      "category": "comparison_evidence",
+      "applicable_when": "research_report/paper_share decks with ≥2 representative works per method chapter",
+      "title": "每代表工作按 paper-cover→challenge→method→result 四段展开",
+      "description": "每个代表工作在 method 章内需依次出'论文封面/挑战/方法/效果'四类 slide,顺序不可颠倒,少任一段都属结构缺失。",
+      "what_to_check": [
+        "找 method 章内 paper cover slide (视觉骨架含'论文标题主视觉')",
+        "紧随其后应有 slide.标题含'挑战/问题/瓶颈'的挑战页",
+        "然后 slide.标题含'方案/方法/思路'的方法页",
+        "最后 slide.标题含'效果/结果/加速'的结果页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "2-bit LLM(31 封面→32 挑战→33/34 方案→35 效果)/MoA(36→37→38→39)/SpecEE(40→41-52→53)/FlashDecoding++(57→59/60→61-64→65-66)/semi-PD(72→74-76→77-79→80) 5 项工作均严格遵循四段模板"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "四段模板给听众可预测的接收节奏,少任一段(尤其挑战或效果)工作论证链就断",
+      "fix_hint": "组织代表工作时以'封面-挑战-方法-效果'四段为最小单元,先补齐再考虑增加动机/背景过渡页",
+      "exceptions": [
+        "非科研 deck (工业方案汇报无 paper 结构)"
+      ]
+    },
+    {
+      "id": "result_page_baseline_comparison_required",
+      "category": "comparison_evidence",
+      "applicable_when": "any deck with method chapters claiming quantitative improvement",
+      "title": "每张 result 页必须含 baseline 对比数字",
+      "description": "结果页不能只列自家数字,需明确给出对比对象 (baseline 名 + 数字),让听众能校准量级,单点数字视为无效证据。",
+      "what_to_check": [
+        "找 method 章内 slide.标题含'效果/结果/实验/加速'的 slide",
+        "检查 slide.关键文字 是否含'相比/对比/vs/较...' + 具体 baseline 名称 + 数字",
+        "统计含 baseline 的 result 页比例"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "slide 35 vs 自由性基线 2.53x、slide 39 vs FlashAttention2 7x、slide 65 vs HF/vLLM/TRT-LLM、slide 71 多硬件 baseline、slide 80 vs vLLM/DistServe、slide 90 vs V100S、slide 106 vs 3090 GPU、slide 119 vs 业界 50-60 — 所有 result 页均含 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无 baseline 的数字听众无法解读'2.43x 到底强不强',说服力归零",
+      "fix_hint": "每张 result 页强制加'对比 X,提升 Y' 一行,X 需具名 (SOTA 名称+平台),不用'现有方法'含糊表述",
+      "exceptions": [
+        "定性方法演示 (无量化 result)"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a defined technical thesis",
+      "title": "主 anchor 首次出现应位于 cover slide",
+      "description": "全 deck 主 thesis anchor 应在 slide_1 (cover 标题) 首次露面,不能等到 motivation 或更晚,给听众第一眼的定调。",
+      "what_to_check": [
+        "抽 slide_1 标题中的 anchor 名词",
+        "检查同名 anchor 在 slide_2+ 是否重复出现",
+        "如 anchor 首次出现页 >1 则属违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "主 anchor '大模型推理软硬件协同优化'即 slide_1 封面主标题,后续在 motivation/method 各章反复呼应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面即定调,主 anchor 首次亮相位置越晚,听众越晚建立'这个 deck 讲什么'的心智模型",
+      "fix_hint": "把 deck 主 thesis 短语写入 slide_1 标题主视觉,不用'关于...的一些工作'类模糊表述",
+      "exceptions": [
+        "个人履历/招聘型 deck (无技术 thesis)"
+      ]
+    },
+    {
+      "id": "agenda_chapter_semantic_match",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an explicit agenda/contents page",
+      "title": "Contents 列出的议题需与实际章节标题语义对齐",
+      "description": "agenda 页承诺的议题名 (①②③④) 需能在实际章节标题或首页中找到语义对应,顺序也需一致,不允许承诺 A 却讲 B。",
+      "what_to_check": [
+        "找 slide.标题含'Contents/目录'的 slide",
+        "抽其中列出的议题短语",
+        "对比 sections_outline 的章节标题,做语义匹配 (verbatim 或 paraphrased)",
+        "顺序一致检查"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "Contents 四议题(Token价值主张/软硬件协同优化层次/软硬件协同优化/华为实践与展望) 对应 sec.03-04 motivation/sec.05-09 method/sec.10 discussion,顺序一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是给听众的显式承诺,承诺不兑现,后续每章都在消耗听众信任",
+      "fix_hint": "写完 deck 后回查 agenda,把每项议题标题改为与对应章标题短语一致 (不必逐字,但主 anchor 需重叠)",
+      "exceptions": [
+        "deck 无独立 Contents 页 (完全按章节推进)"
+      ]
+    },
+    {
+      "id": "chapter_pages_scale_with_method_count",
+      "category": "pacing",
+      "applicable_when": "research_report decks with multiple representative works per method chapter",
+      "title": "method 章页数应≈'代表工作数 × 6-9 页'",
+      "description": "每个代表工作按四段模板 (paper cover + challenge + method + result) 通常占 5-9 页,method 章总页数应大致等于其代表工作数乘以该值,超出或不足 30% 属节奏异常。",
+      "what_to_check": [
+        "统计 method 章内的 paper cover slide 数 (即代表工作数)",
+        "计算该章总页数",
+        "验证'章页数 / 代表工作数' 落在 5-9 区间"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "evidence": "sec.06 (27 页/3 工作 ≈9)、sec.07 (27 页/3 工作 ≈9)、sec.08 (26 页/3 工作 ≈8.7)、sec.05 (12 页/2 场景 ≈6)—— 均落在 6-9 页/工作区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "每工作 <5 页信息压缩过度听众跟不上,>9 页则节奏拖沓;6-9 是保证四段模板完整+适度展开的甜蜜区",
+      "fix_hint": "章页数明显偏离时,或合并同类工作段落,或增补 challenge/result 的展开 slide 到目标区间",
+      "exceptions": [
+        "方法综述章 (无代表工作)",
+        "单一工作深度展开章"
+      ]
+    }
+  ],
+  "extraction_notes": "batch 含 1 个 deck (华为2012报告-大模型推理软硬件协同优化,128 页),典型 research_report 长 deck,五层次方法框架清晰、代表工作 8+ 项。抽出的规则聚焦此类多方法长 deck 中反复出现的强模式:框架图跨章复用、章末量化 summary、主 anchor/主指标高频重复、代表工作四段模板、baseline 对比强制。因 batch 只有 1 deck,estimated_hit_rate 均为 1.0,后续 batch 需验证 universal 性。",
+  "coverage": {
+    "rules_count": 16,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 3,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1,
+      "extra_repetition_note": 1
+    }
+  }
+}

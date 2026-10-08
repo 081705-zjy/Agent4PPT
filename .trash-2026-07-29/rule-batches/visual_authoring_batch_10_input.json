@@ -1,0 +1,688 @@
+{
+  "batch_index": 10,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+      "目录名": "SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+      "标题": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+      "总页数": 30,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_扩散模型与推理计算成本",
+        "section_03_相关工作-降输入长度与特征缓存",
+        "section_04_关键洞察-相邻步特征可预知",
+        "section_05_特征选择与多级分类算法",
+        "section_06_实验设置与加速评测",
+        "section_07_总结与致谢"
+      ],
+      "主题标签": [
+        "Diffusion",
+        "Inference",
+        "Speculation",
+        "Feature Cache",
+        "Acceleration",
+        "Self-Speculation"
+      ],
+      "目标受众": "AI系统/推理加速方向的学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "学术会议/组会分享扩散模型推理加速论文",
+      "论述总结": "针对扩散模型推理算力开销大的问题,先铺垫扩散模型推理与Attention/FFN成本,再综述Token Merging与Feature Caching等相关工作;基于相邻步特征可复用的关键洞察,提出以少步全推理作投机的自投机方法与特征选择/多级分类算法,并在SD3/3.5、Flux.1上验证2.7-3.17倍加速。",
+      "论述弧线": [
+        "Background",
+        "Related Work",
+        "Motivation",
+        "Techniques",
+        "Evaluation",
+        "Summary"
+      ],
+      "slides_by_role": {
+        "cover_candidate": [
+          {
+            "页序号": 1,
+            "页面角色": "cover_candidate",
+            "标题": "SpecDiff：自投机加速扩散模型推理（封面）",
+            "核心论断": "SpecDiff 以自投机机制加速扩散模型推理",
+            "本页讲什么": "全篇学术汇报的封面页。上方居中通栏亮出论文标题 SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation，一条浅粉分隔线下方列出四位作者（Jiayi Pan、Jiaming Xu、Yongkang Zhou、Guohao Dai）及 SJTU/SII/Infinigence AI 三家机构署名，并标注 Equal Contribution 与通讯作者邮箱。整页极简、无正文内容，仅承担开场亮题与署名功能。",
+            "关键文字": [
+              "SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation",
+              "Jiayi Pan, Jiaming Xu, Yongkang Zhou, Guohao Dai",
+              "1Shanghai Jiao Tong University / 2SII / 3Infinigence AI",
+              "Equal Contribution",
+              "*Corresponding to: jiamingxu@sjtu.edu.cn; daiguohao@sjtu.edu.cn"
+            ],
+            "视觉骨架": [
+              "通栏大标题",
+              "浅粉水平分隔线",
+              "作者与机构署名块",
+              "通讯信息脚注"
+            ],
+            "上页角色": null,
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          }
+        ],
+        "content_candidate": [
+          {
+            "页序号": 2,
+            "页面角色": "content_candidate",
+            "标题": "全篇六节目录（Background 高亮）",
+            "核心论断": "全篇按六节展开，从 Background 起步",
+            "本页讲什么": "目录页。蓝色矩形边框内顶部居中标题 Contents，下方以蓝色编号圆点串起六个章节：1 Background、2 Related Work、3 Motivation、4 Techniques、5 Evaluation、6 Summary。当前所在的第一节 Background 加粗高亮，左侧一条蓝色竖条标示进度。整页为全篇学术汇报建立骨架，页脚显示 Page 页码标识。",
+            "关键文字": [
+              "Contents",
+              "1 Background",
+              "2 Related Work",
+              "3 Motivation",
+              "4 Techniques",
+              "5 Evaluation / 6 Summary"
+            ],
+            "视觉骨架": [
+              "矩形外边框",
+              "蓝色编号圆点竖排目录",
+              "左侧蓝色进度竖条",
+              "当前节高亮",
+              "页脚页码"
+            ],
+            "上页角色": "cover_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          },
+          {
+            "页序号": 3,
+            "页面角色": "content_candidate",
+            "标题": "扩散模型:跨多域的基础架构",
+            "核心论断": "扩散模型已成为文本/图像/视频/机器人多域的基础架构",
+            "本页讲什么": "背景章开篇页。以一句话点明扩散模型已崛起为跨多个领域的基础架构,下方横向并列 Text、Image、Video、Robotics 四个应用域标签,展示其普及广度,为后文引出算力成本问题做铺垫。",
+            "关键文字": [
+              "Diffusion models have emerged as a foundational architecture across multiple domains",
+              "Text / Image / Video / Robotics"
+            ],
+            "视觉骨架": [
+              "顶部蓝色分隔线标题",
+              "四域横向并列标签行"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 4,
+            "页面角色": "content_candidate",
+            "标题": "扩散模型算力需求的双重爆炸",
+            "核心论断": "参数量(6500×)与输入规模(10⁴×)双重增长推高算力需求",
+            "本页讲什么": "承接上页,论证扩散模型算力需求为何飙升。左栏「More Parameters」用上升箭头串起 DDPM→DDIM→SD v1→DiT-XL/2→Flux.1 Dev→HunyuanImage-3.0,标注参数增长 6500×;右栏「Larger Input Scale」以低分辨率图到高分辨率视频经 VAE&Embedding 后 token 量增长 10⁴× 说明输入规模膨胀。",
+            "关键文字": [
+              "Higher Computational Demand",
+              "More Parameters: 6500×",
+              "DDPM / DDIM / DiT-XL/2 / Flux.1 Dev / HunyuanImage-3.0",
+              "Larger Input Scale: 10^4 ×",
+              "Low-Resolution Image → High-Resolution Video",
+              "VAE & Embedding → Tokens"
+            ],
+            "视觉骨架": [
+              "左右两列对比 panel",
+              "参数增长上升箭头图",
+              "输入放大流程(VAE&Embedding→Tokens)"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 5,
+            "页面角色": "content_candidate",
+            "标题": "扩散模型推理:多步迭代过程",
+            "核心论断": "扩散模型推理是逐步去噪的多步迭代过程",
+            "本页讲什么": "拆解扩散模型推理机制。左侧 Prompt 经 Tokenize→Tokens、Noise 经 VAE 进入模型;中部横向排列 Step 1、Step x、Step N 三个结构相同的 Model 模块(各含 Embedding→Attention→FFN→…→Projection),以省略号表示多步迭代;末步经 VAE 输出。强调推理由大量重复步骤串联而成,为后文按 L 拆解单步成本铺垫。",
+            "关键文字": [
+              "Diffusion model inference is a multi-step iterative process",
+              "Prompt / Tokenize / Tokens / Noise / VAE",
+              "Model: Embedding / Attention / FFN / Projection",
+              "Step 1 … Step x … Step N"
+            ],
+            "视觉骨架": [
+              "左侧输入预处理链",
+              "多步 Model 模块横向串联",
+              "步内 Attn/FFN 堆叠子结构"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 6,
+            "页面角色": "content_candidate",
+            "标题": "Attention 与 FFN 成本随输入长度 L",
+            "核心论断": "Attention∝L²·d_model、FFN∝L·d²_model,成本由 L 主导",
+            "本页讲什么": "解释单步内 Attention 与 FFN 的计算成本来源。定义输入长度 L = height×width×frame + length,左侧以张量方块示意 height/width/frame/length 维度经 Tokenize/VAE 展开为 L;中部展示 Q、K、V 经两次矩阵乘得 O 再 Proj、FFN;右下给出复杂度 Attention∝L²·d_model、FFN∝L·d²_model,点明 L 是成本关键变量。",
+            "关键文字": [
+              "The computational cost of Attention and FFN is influenced by input length(L)",
+              "L = height * width * frame + length",
+              "Attention ∝ L2 · d_model",
+              "FFN ∝ L · d_model 2"
+            ],
+            "视觉骨架": [
+              "输入维度张量方块图",
+              "Q/K/V→O 矩阵乘示意",
+              "复杂度公式标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 7,
+            "页面角色": "content_candidate",
+            "标题": "Attention 与 FFN 均为 compute-bound",
+            "核心论断": "Attn/FFN 属 compute-bound,降低 L 即可加速推理",
+            "本页讲什么": "背景章收束页,给出核心杠杆。基于 Nvidia A800 的 Roofline 模型区分 Memory Bound(数据传输)与 Compute Bound(繁忙计算);由于 L≫10³,Attention 与 FFN 均落在 compute-bound 区。进而 Latency(ATTN)∝L²、Latency(FFN)∝L,得出结论:降低输入长度 L 将带来加速,锚定全 deck 的核心优化方向。",
+            "关键文字": [
+              "Both Attention and FFN are compute-bound",
+              "Roofline Model on Nvidia A800 GPU",
+              "Memory Bound: Data transfer / Compute Bound: Busy computation",
+              "L >> 10^3",
+              "Latency(ATTN) ∝ L2 / Latency(FFN) ∝ L",
+              "Reduce input length(L) will speedup."
+            ],
+            "视觉骨架": [
+              "Roofline 瓶颈说明文本块",
+              "红色箭头推导链",
+              "延迟-L 关系公式"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 8,
+            "页面角色": "content_candidate",
+            "标题": "目录:进入 Related Work 章节",
+            "核心论断": "演讲推进至第 2 章 Related Work,承上启下",
+            "本页讲什么": "这是六段式目录页,当前高亮第 2 项「Related Work」。整个 deck 分为 Background、Related Work、Motivation、Techniques、Evaluation、Summary 六部分,本页用于标示演讲即将进入相关工作综述,引出后续对 Token Merging 与 Feature Caching 两条加速路线的讨论。",
+            "关键文字": [
+              "Contents",
+              "Background / Related Work / Motivation",
+              "Techniques / Evaluation / Summary"
+            ],
+            "视觉骨架": [
+              "蓝色边框目录卡",
+              "6 项编号圆点列表",
+              "当前项蓝色高亮竖条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 9,
+            "页面角色": "content_candidate",
+            "标题": "Token Merging 机制:分类归并降 token 长度",
+            "核心论断": "Token Merging 通过分类相似 token 并归并来缩短输入长度",
+            "本页讲什么": "本页介绍降输入长度(Reduce Input Length, L)的第一条路线 Token Merging。左侧将原始 Tokens 经 Classify 分类后,同类(红/黄/绿等)相似 token 两两 Merge 合并为 Merged Tokens;右侧 Module 处理合并后的更短序列。此为机制铺陈页,尚未点出缺陷,为下一页揭示其相似度不足与同质化问题做准备。",
+            "关键文字": [
+              "Related Work: Reduce Input Length (L)",
+              "Token Merging",
+              "Tokens → Classify → Merge → Merged Tokens",
+              "Module"
+            ],
+            "视觉骨架": [
+              "左右双栏 token 示意图",
+              "彩色方块 Merge 箭头",
+              "Classify 分类分块",
+              "Module 处理框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 10,
+            "页面角色": "content_candidate",
+            "标题": "Token Merging 的缺陷:低相似、同质化、加速有限",
+            "核心论断": "Token Merging 因相似度<70%导致同质化,加速不足30%",
+            "本页讲什么": "本页在上一页机制图上叠加缺陷标注,揭示 Token Merging 三大问题:合并 token 间「Low similarity (<70%)」、右侧序列「Severe homogenization(严重同质化)」、整体「Less than 30% speedup(加速不足30%)」。承接上页机制铺陈,给出否定性评价,推动叙事转向更优的 Feature Caching 路线。",
+            "关键文字": [
+              "Token Merge",
+              "Low similarity (<70%)",
+              "Severe homogenization",
+              "Less than 30% speedup."
+            ],
+            "视觉骨架": [
+              "左右双栏 token 示意图",
+              "虚线框圈选待合并区",
+              "红色缺陷标注文字",
+              "Merge 箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 11,
+            "页面角色": "content_candidate",
+            "标题": "Feature Caching 机制:跨步复用特征",
+            "核心论断": "Feature Caching 跨步复用特征,相似度>90%但需预测重要token",
+            "本页讲什么": "本页转向第二条路线 Feature Caching:Step a 时 Module 计算并缓存 Feature,Step a+1 时对 Trivial 部分直接 Reuse 缓存、对 Important 部分重新 Compute,由 Predictor 判定重要性。右侧标注跨步特征「Higher similarity (>90%)」,并抛出核心问题「How to predict the important tokens?」,为后续洞见与自投机方法埋伏笔。",
+            "关键文字": [
+              "Feature Caching",
+              "Step a / Step a+1",
+              "Predictor / Trivial / Important",
+              "Reuse / Compute",
+              "Higher similarity (>90%)",
+              "How to predict the important tokens?"
+            ],
+            "视觉骨架": [
+              "两步(Step a/a+1)流程图",
+              "Module-Feature-Reuse 箭头链",
+              "Predictor 分支框",
+              "红色提问标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 12,
+            "页面角色": "content_candidate",
+            "标题": "核心洞见:预测所用信息量至关重要",
+            "核心论断": "预测所用信息量决定加速方法性能",
+            "本页讲什么": "本页是提炼洞见的极简观点页,居中一句话「The quantity of information used in prediction is vital.(预测所用信息量至关重要)」,底部列出 FORA、ToCa、RAS、TaylorSeer 四篇 Feature Caching 参考文献。承接上页「如何预测重要 token」的提问,凝练出全章核心论点,为下一页量化对比与自投机方法奠定基础。",
+            "关键文字": [
+              "Related Work: Feature Caching",
+              "The quantity of information used in prediction is vital.",
+              "[1] FORA / [2] ToCa / [3] RAS / [4] TaylorSeer 文献"
+            ],
+            "视觉骨架": [
+              "居中单句金句",
+              "顶部蓝色分隔线",
+              "底部参考文献列表"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 13,
+            "页面角色": "content_candidate",
+            "标题": "Feature Caching 方法对比:信息量越多性能越高",
+            "核心论断": "信息量越大精度越高、延迟越低,「?」指向更优新方法",
+            "本页讲什么": "本页用对比表印证核心洞见。表列 FORA、ToCa、RAS、TaylorSeer 及待填的「?」,三列指标为 Information(None/One-Step/Two-Step/N-Step/More)、Accuracy(Low→Higher)、Latency(High→Lower)。随信息量增加,精度升高、延迟降低,底部红框结论「More information results higher performance.」,「?」行暗示本文自投机方法将用更多信息取得更优表现。",
+            "关键文字": [
+              "FORA / ToCa / RAS / TaylorSeer / ?",
+              "Information / Accuracy / Latency",
+              "None→One-Step→Two-Step→N-Step→More",
+              "More information results higher performance."
+            ],
+            "视觉骨架": [
+              "5 行 4 列对比表",
+              "红绿色阶指标标注",
+              "红色虚线框结论条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "background"
+          },
+          {
+            "页序号": 14,
+            "页面角色": "content_candidate",
+            "标题": "目录:定位到 Motivation 章节",
+            "核心论断": "演讲进入第 3 部分 Motivation,承接 Related Work 展开动机",
+            "本页讲什么": "这是六段式目录过渡页,列出 Background、Related Work、Motivation、Techniques、Evaluation、Summary 六个部分,并用左侧蓝色竖条与加粗高亮当前进入的第 3 部分 Motivation,起到章节导航与转场作用。",
+            "关键文字": [
+              "Contents",
+              "Background / Related Work / Motivation",
+              "Techniques / Evaluation / Summary"
+            ],
+            "视觉骨架": [
+              "外框标题卡",
+              "6 项编号圆点竖排列表",
+              "左侧当前项高亮竖条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 15,
+            "页面角色": "content_candidate",
+            "标题": "关键洞察一:相邻步特征会突变",
+            "核心论断": "相邻扩散步的图像/视频特征会突变,致朴素缓存复用失效",
+            "本页讲什么": "以 Step a-1 → a → a+1 三步时间线论证:普通步间特征处于 Chaotic 状态可缓存复用,但相邻步存在 Mutate 突变,a+1 由不重要特征变为 Important Features(Ordered),此时缓存并复用旧特征(红叉)会出错,揭示朴素 feature cache 的失效根源。",
+            "关键文字": [
+              "The image/video in adjacent step can mutate",
+              "Cache the feature / Reuse the feature",
+              "Unimportant vs Important Features",
+              "Chaotic → Chaotic → Ordered"
+            ],
+            "视觉骨架": [
+              "三步时间线示意",
+              "Mutate 红色突变箭头",
+              "缓存复用红叉标记",
+              "Chaotic/Ordered 状态标签"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 16,
+            "页面角色": "content_candidate",
+            "标题": "关键洞察二:若能预知突变即可算特征",
+            "核心论断": "若能提前预知突变,即可在突变步主动计算而非复用特征",
+            "本页讲什么": "承接上页的失效问题,复用同一三步时间线,把 a+1 处的复用改为一个红色高亮块「If we know the mutation in advance…Calculate the feature」,论证只要提前预知突变,就能在突变步选择计算特征而非盲目缓存复用,从而规避上页的失效,为引入投机机制埋下伏笔。",
+            "关键文字": [
+              "If we can know the mutation in advance …",
+              "Calculate the feature",
+              "Unimportant vs Important Features",
+              "Chaotic → Chaotic → Ordered"
+            ],
+            "视觉骨架": [
+              "三步时间线示意",
+              "红色高亮预知/计算块",
+              "Chaotic/Ordered 状态标签"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 17,
+            "页面角色": "content_candidate",
+            "标题": "关键洞察三:少步扩散提供未来信息",
+            "核心论断": "少迭代扩散过程可作投机,为多步扩散提供未来信息",
+            "本页讲什么": "回答前两页留下的「如何预知突变」:用同一模型跑一个 Few Iterations 的少步扩散作为 Speculation,与 Many Iterations 的完整过程对齐,由投机结果提供重要 token 与未来特征信息,末尾用红色虚线框抛出「How to use speculation results to judge…」问题,为后续自投机方法铺垫。",
+            "关键文字": [
+              "A diffusion process with few iterations will provide future information",
+              "Many Iterations vs Few Iterations",
+              "Speculation generated by same model",
+              "How to use speculation results to judge"
+            ],
+            "视觉骨架": [
+              "Many/Few Iterations 双向轴对照",
+              "Diffusion Process 渐变大箭头",
+              "Speculation 投机区块",
+              "红色虚线设问框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 18,
+            "页面角色": "content_candidate",
+            "标题": "目录:进入 Techniques 章节",
+            "核心论断": "演讲进入第 4 部分 Techniques,方法核心即将展开",
+            "本页讲什么": "这是全 deck 六段式目录页,当前高亮第 4 项 Techniques(方法),其余为 Background、Related Work、Motivation、Evaluation、Summary。用蓝色竖条与加粗标记当前所处章节,起承前启后的过渡作用,引出后续特征选择与多级分类算法的技术细节。",
+            "关键文字": [
+              "Background / Related Work / Motivation",
+              "Techniques(当前高亮)",
+              "Evaluation / Summary"
+            ],
+            "视觉骨架": [
+              "外框 Contents 标题",
+              "6 项编号圆点纵向列表",
+              "当前项蓝色竖条高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 19,
+            "页面角色": "content_candidate",
+            "标题": "以少迭代全推理作为投机步",
+            "核心论断": "用少量迭代的完整推理作 speculation,提供未来信息",
+            "本页讲什么": "开篇提出核心思路:用一次迭代次数很少的完整推理作为 speculation(投机步),从而获取尚未到达的未来步骤信息。示意图把推理分为 Speculation 行与正式 Step 行,虚线框圈出 Future Information,红块中的问号表示待定,底部红框抛出关键问题「What future information to use?」,为后续几页逐步回答埋下伏笔。",
+            "关键文字": [
+              "We use a full inference with few iterations as speculation",
+              "Future Information",
+              "What future information to use?"
+            ],
+            "视觉骨架": [
+              "Speculation 与 Step 双行时间轴",
+              "虚线框标注 Future Information",
+              "红块问号占位",
+              "底部红色虚线问题条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 20,
+            "页面角色": "content_candidate",
+            "标题": "token 重要性在扩散模型中会突变",
+            "核心论断": "token 重要性会在步间突变,历史信息无法预知",
+            "本页讲什么": "承接上页问题,给出洞察:扩散模型中同一 token 的重要性会随步骤突变(mutation)。左侧 Attention Score 分叉出 Step a-1/a/a+1,重要 token 与 trivial token 之间发生跳变;右侧红字点明这种突变「Unknown by historical information」——单靠历史信息无法预测,暗示需要引入未来信息。",
+            "关键文字": [
+              "The importance of token can mutate in diffusion model",
+              "Important Token / Trivial Token",
+              "Mutation",
+              "Unknown by historical information"
+            ],
+            "视觉骨架": [
+              "Attention Score 分叉箭头图",
+              "Step a-1/a/a+1 虚线框",
+              "Mutation 跳变标注",
+              "右侧红字结论"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 21,
+            "页面角色": "content_candidate",
+            "标题": "投机步 attention 可捕获突变",
+            "核心论断": "投机步的 attention 能捕获突变,未来信息使其可知",
+            "本页讲什么": "对上页问题给出解法:来自 speculation 步的 attention(Spec. Attention Score)能够捕获 token 重要性的 mutation。图中 Step a-1/a/a+1 与红色重叠块表示投机步覆盖了突变区间,红字点明这一突变现在「Known by future information」——与上页「Unknown by historical information」形成正反对照,论证投机步的价值。",
+            "关键文字": [
+              "Attention from speculation step can obtain mutation",
+              "Spec. Attention Score",
+              "Known by future information"
+            ],
+            "视觉骨架": [
+              "Step 纵向标签轴",
+              "重叠红块表示投机覆盖",
+              "Spec. Attention Score 标题",
+              "红字结论"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 22,
+            "页面角色": "content_candidate",
+            "标题": "重要性打分公式引入投机 attention",
+            "核心论断": "重要性打分从仅用历史 attention 扩展为叠加投机 attention",
+            "本页讲什么": "把前几页的洞察落成公式:原本 Importance Score = F(His. Attn) 仅依赖历史 attention;经红色下箭头推导后升级为 Importance Score = F(His. Attn, Spec. Attn),即在历史注意力之外叠加投机步注意力(红色高亮 Spec. Attn),正式将投机信号纳入重要性打分。",
+            "关键文字": [
+              "Importance Score = F(His. Attn)",
+              "Importance Score = F(His. Attn, Spec. Attn)"
+            ],
+            "视觉骨架": [
+              "前后两版公式",
+              "红色向下箭头表示升级",
+              "Spec. Attn 红色高亮"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 23,
+            "页面角色": "content_candidate",
+            "标题": "防饿死:引入 CF 与 CR",
+            "核心论断": "从不计算的 token 会降质,需 CF/CR 做防饿死缓存",
+            "本页讲什么": "指出隐患:约 40% 的 token 会长期不被判为重要而永不计算,导致质量下降,故需 Starvation Prevention(防饿死)。在 Importance Score = F(His. Attn, Spec. Attn) 基础上进一步引入 Cached Frequence(CF)与 Cached Ratio(CR)两个因子:Top x% token 走 Compute,其余 token 走 Reuse,平衡质量与开销。",
+            "关键文字": [
+              "Tokens never computed will incur quality decrease",
+              "40% tokens will never be important",
+              "Starvation Prevention",
+              "Cached Frequence (CF) / Cached Ratio (CR)",
+              "Top x% tokens: Compute / Other tokens: Reuse"
+            ],
+            "视觉骨架": [
+              "公式逐级下箭头推导链",
+              "CF/CR 因子标注",
+              "Compute vs Reuse 分流",
+              "Starvation Prevention 红字"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 24,
+            "页面角色": "content_candidate",
+            "标题": "多级特征分类算法(按稳定性分级)",
+            "核心论断": "不同重要性 token 稳定性各异,用 CV 做多级分类复用",
+            "本页讲什么": "过渡到多级特征分类算法:不同重要性等级的 token 稳定性不同。用变异系数 CV 衡量稳定性(CV 越低越稳定),且 CV 与重要性打分相关。据此把 token 分级——Top x% token 走 Compute(模型精算),低稳定性/其余 token 走 Reuse 或 Approximate(近似,承担部分 ERROR),由 CR 控制近似比例,以最小误差换取加速。",
+            "关键文字": [
+              "Stability of tokens at different importance level varies",
+              "coefficient of variation (CV) correlates with importance score",
+              "CV↓ → Stability↑",
+              "Compute / Reuse / Approximate (other tokens)",
+              "Model (Top x% tokens)"
+            ],
+            "视觉骨架": [
+              "Token Score 高低渐变竖箭头",
+              "Low Stability 区间标注",
+              "Compute/Reuse/Approximate 三栏",
+              "CR 控制近似虚线框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 25,
+            "页面角色": "content_candidate",
+            "标题": "目录:定位到第 4 章 Evaluation",
+            "核心论断": "全篇进入第 4 部分 Evaluation,承接 Techniques 转入评测",
+            "本页讲什么": "五项内容目录(Background / Related Work / Techniques / Evaluation / Summary),用蓝色圆圈编号加左侧竖条高亮当前所在的第 4 项『Evaluation』,作为进入实验评测章节的导航分隔页。",
+            "关键文字": [
+              "Contents",
+              "1 Background",
+              "2 Related Work",
+              "3 Techniques",
+              "4 Evaluation",
+              "5 Summary"
+            ],
+            "视觉骨架": [
+              "蓝框标题卡",
+              "5 项编号圆圈列表",
+              "左侧当前项高亮竖条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "experiment"
+          },
+          {
+            "页序号": 26,
+            "页面角色": "content_candidate",
+            "标题": "实验设置:硬件/模型/baseline/数据集",
+            "核心论断": "实验在 A800 上覆盖 SD3、SD3.5、Flux.1 Dev 三模型,对齐主流缓存加速 baseline",
+            "本页讲什么": "四组 bullet 交代评测配置:硬件为 NVIDIA Tesla A800-80GB GPU;模型含 Stable Diffusion 3 Medium、SD 3.5 Large、Flux.1 Dev;baseline 为 Diffusers 框架及 RAS、Taylorseer 两种 feature caching 方法;数据集为 COCO 2014,为后续加速评测建立可比基准。",
+            "关键文字": [
+              "Hardware: NVIDIA Tesla A800-80GB GPU",
+              "Models: SD3 Medium / SD3.5 Large / Flux.1 Dev",
+              "Baseline: Diffusers 框架",
+              "Feature caching: RAS 与 Taylorseer",
+              "Dataset: COCO 2014"
+            ],
+            "视觉骨架": [
+              "4 组分级 bullet 列表",
+              "蓝色标题分隔线"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "experiment"
+          },
+          {
+            "页序号": 27,
+            "页面角色": "content_candidate",
+            "标题": "SD3/SD3.5 评测:2.80×、2.74× 加速",
+            "核心论断": "SpecDiff 在 SD3、SD3.5 上分别取得 2.80× 与 2.74× 加速",
+            "本页讲什么": "第一组结果页,展示 SpecDiff 在 Stable Diffusion 3 与 3.5 上的加速评测(含结果图表,图内嵌于图片区),底部红色虚线框强调核心结论:在 SD3、SD3.5 上分别实现 2.80× 与 2.74× 加速,回应上页设定的评测目标。",
+            "关键文字": [
+              "SpecDiff achieved 2.80× and 2.74× speedup on SD3 and SD3.5"
+            ],
+            "视觉骨架": [
+              "结果图表区(嵌图)",
+              "红色虚线结论强调框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "experiment"
+          },
+          {
+            "页序号": 28,
+            "页面角色": "content_candidate",
+            "标题": "Flux.1 Dev 评测:3.17× 加速",
+            "核心论断": "SpecDiff 在 Flux.1 Dev 上取得 3.17× 加速,超过 SD 系列",
+            "本页讲什么": "第二组结果页,展示 SpecDiff 在 Flux.1 Dev 上的加速评测(结果图嵌于图片区),底部红色虚线框强调核心结论:在 Flux.1 Dev 上实现 3.17× 加速,与上页 SD 系列结果共同支撑跨模型普适的加速能力。",
+            "关键文字": [
+              "SpecDiff achieved 3.17× speedup on Flux.1 Dev"
+            ],
+            "视觉骨架": [
+              "结果图表区(嵌图)",
+              "红色虚线结论强调框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "experiment"
+          },
+          {
+            "页序号": 29,
+            "页面角色": "content_candidate",
+            "标题": "评测总结:推进精度-速度 Pareto 前沿",
+            "核心论断": "SpecDiff 三模型 2.80×/2.74×/3.17× 加速且质量近乎无损,推进精度-速度 Pareto 前沿",
+            "本页讲什么": "评测章收尾页,用一句话汇总三模型结果:SpecDiff 在 SD3、SD3.5、Flux.1 Dev 上分别取得 2.80×、2.74×、3.17× 加速,且质量损失极小,加粗强调其推进了精度与推理速度之间的 Pareto 前沿,收束整章并过渡到 Summary。",
+            "关键文字": [
+              "SpecDiff achieves 2.80×, 2.74× and 3.17× speedup on SD3, SD3.5 and Flux.1 Dev with minimal quality loss",
+              "advancing the Pareto frontier between accuracy and inference speed"
+            ],
+            "视觉骨架": [
+              "单段落总结文本",
+              "加粗关键结论短语",
+              "蓝色标题分隔线"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "ending_candidate",
+            "section_role": "experiment"
+          }
+        ],
+        "ending_candidate": [
+          {
+            "页序号": 30,
+            "页面角色": "ending_candidate",
+            "标题": "总结致谢与课题组投机系列工作",
+            "核心论断": "SpecDiff 是课题组『投机加速』研究主线中的一环",
+            "本页讲什么": "全 deck 收尾页。左上回扣 SpecDiff 完整标题并致谢、留联系邮箱 pan_jiayi@sjtu.edu.cn。右侧用『Our works on speculation』把本工作延展为课题组投机系列:LLM Early Exit(ISCA 2025)、Sparse Attention、VLA Pruning(ASPLOS 2026)三项并列展示,并附 Lab Homepage / Paper Link 二维码,将单篇成果升维为研究脉络。",
+            "关键文字": [
+              "Thanks for your attention !",
+              "Communication email: pan_jiayi@sjtu.edu.cn",
+              "Our works on speculation",
+              "Speculation for LLM Early Exit (ISCA 2025)",
+              "Speculation for Sparse Attention",
+              "Speculation for VLA Pruning (ASPLOS 2026)"
+            ],
+            "视觉骨架": [
+              "SpecDiff 标题框",
+              "致谢+邮箱文字块",
+              "Lab/Paper 二维码",
+              "投机系列 3 卡片并列"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": null,
+            "section_role": "closing"
+          }
+        ]
+      }
+    }
+  ],
+  "previous_batches_rules": []
+}

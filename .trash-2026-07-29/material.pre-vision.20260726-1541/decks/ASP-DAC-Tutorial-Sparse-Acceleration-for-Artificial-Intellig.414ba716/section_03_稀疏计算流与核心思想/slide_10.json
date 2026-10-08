@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_10",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 10,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏计算流：从 SpMM 说起",
+  "核心论断": "稀疏-稠密矩阵乘 (SpMM) 是稀疏计算流的基本算子",
+  "本页讲什么": "作为本章开篇，先给出稀疏计算流这一贯穿全 deck 的方法论骨架，并以稀疏-稠密矩阵乘 (Sparse-matrix Dense-matrix Multiplication, SpMM) 作为最核心的算子引入。讲者可借此说明后续所有稀疏加速工作都围绕这一基础运算展开，为接下来的数据流分类做铺垫。",
+  "关键文字": [
+    "Sparse Computing Flow",
+    "Sparse-matrix Dense-matrix Multiplication (SpMM)"
+  ],
+  "视觉骨架": [
+    "SpMM 矩阵乘示意图",
+    "稀疏计算流总览框图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_10.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_10.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_10.asset.03"
+  ],
+  "适合复用场景": [
+    "稀疏加速方法论章节开篇页",
+    "SpMM 算子概念引入页"
+  ],
+  "不适合复用场景": [
+    "含具体 benchmark 数字的结果页",
+    "单一工作的方法细节页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

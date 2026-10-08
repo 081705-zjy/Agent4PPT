@@ -1,0 +1,38 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "章节序号": 2,
+  "章节角色": "background",
+  "标题": "文本检索背景",
+  "页码范围": [
+    2,
+    6
+  ],
+  "页数": 5,
+  "页ID列表": [
+    "slide_02",
+    "slide_03",
+    "slide_04",
+    "slide_05",
+    "slide_06"
+  ],
+  "章节叙事": "Deck 的背景章：先立起主流文本检索范式与应用场景，再收敛到 STR（结构化/摘要信息检索）这一子问题，为后文暴露范式局限、引出 SG-Filter 铺路。",
+  "页间关系": [
+    "slide 2 → slide 3: 由 Background 目录页切入主流检索范式的正文陈述",
+    "slide 3 → slide 4: 由范式定义过渡到 QA/软件等落地应用场景枚举",
+    "slide 4 → slide 5: 由通用检索场景收敛到 STR 结构化摘要检索的定义",
+    "slide 5 → slide 6: 由 STR 定义延展到其识别抽取机制的进一步展开（注: slide 6 关键文字为占位文本，需核对实际内容）"
+  ],
+  "适合复用场景": [
+    "需先铺陈主流检索范式再收敛到子问题的 background 章",
+    "从通用范式过渡到某一专门检索任务的引入结构",
+    "含章内 toc 页的多章节技术 deck 起始背景章"
+  ],
+  "不适合复用场景": [
+    "主题与文本/信息检索无关时",
+    "无需铺垫范式、直入方法的短 deck",
+    "slide 6 占位文本未替换为真实内容前"
+  ],
+  "在deck中的位置": "第 1 章，紧跟 cover，含本章 toc 页，为方法章做前置铺垫。",
+  "分析状态": "claude-opus-4-8"
+}

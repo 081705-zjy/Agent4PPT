@@ -1,0 +1,146 @@
+{
+  "schema_version": "5.2",
+  "pipeline": "v31_library_first",
+  "notes": "v31: 库理解提前到 IDEA_ANALYSIS (三层结构 top_decks/sections_by_deck/slides_by_section). 删除 SLIDE_PLAN stage — 其职责合并进 GAP_CARD_GENERATION (edit_hints 字段, 记录不 apply). DRAFT_ASSEMBLY 直接从 outline.json + gap-cards.json 读, 只做 byte-clone as-is (partial_rewrite 代码保留, 未来 APPLY_EDITS 用). Plan-A sweep / hard-prune / final-gate 因源头对齐后不触发, 已删除.",
+  "confirmation_gates": [
+    "BRIEF",
+    "IDEA_ANALYSIS",
+    "OUTLINE_GENERATION",
+    "GAP_CARD_GENERATION",
+    "DRAFT_REVIEW",
+    "GAP_ANALYSIS",
+    "SYSTEM_REVIEW",
+    "FINAL_ACCEPT"
+  ],
+  "generation_gates": [
+    "IDEA_ANALYSIS",
+    "OUTLINE_GENERATION",
+    "GAP_CARD_GENERATION",
+    "DRAFT_REVIEW",
+    "GAP_ANALYSIS",
+    "GAP_SYNTHESIS",
+    "SLIDE_REWRITE",
+    "STYLE_UNIFICATION",
+    "SYSTEM_REVIEW"
+  ],
+  "stages": [
+    {
+      "stage": "BRIEF",
+      "agent": "IntakeAgent",
+      "next_stage": "IDEA_INTAKE_LIGHT"
+    },
+    {
+      "stage": "IDEA_INTAKE_LIGHT",
+      "agent": "BriefIntakeLightAgent",
+      "next_stage": "IDEA_ANALYSIS"
+    },
+    {
+      "stage": "IDEA_ANALYSIS",
+      "agent": "BriefAnalysisAgent",
+      "next_stage": "OUTLINE_GENERATION"
+    },
+    {
+      "stage": "OUTLINE_GENERATION",
+      "agent": "OutlineGenerationAgent",
+      "next_stage": "GAP_CARD_GENERATION",
+      "notes": "v17: unified outline with skeleton review (C.1b) + section-first retrieval (C.2) + iterative refinement loop (C.3, per-slide claim alignment + add/replace/delete slides based on codex + chapter-wide cascade for new candidates). v31: 复用 IDEA 建的 library pool (Stage 1b tier1 tier 追加)."
+    },
+    {
+      "stage": "GAP_CARD_GENERATION",
+      "agent": "GapCardGenerationAgent",
+      "next_stage": "DRAFT_ASSEMBLY",
+      "notes": "v31: 承担原 SLIDE_PLAN 的 edit_hints 记录职责. gap-cards.json 每张 slide 加 edit_hints (must_replace / must_add / must_remove) 只记录, 不 apply. DRAFT_ASSEMBLY 只做 byte-clone as-is; 未来 APPLY_EDITS stage (可选) 才 apply edits."
+    },
+    {
+      "stage": "DRAFT_ASSEMBLY",
+      "agent": "DraftAssemblyAgent",
+      "next_stage": "CHARACTER_REVISION",
+      "notes": "v31: 直接从 outline.json + gap-cards.json 读. 只做 byte-clone as-is (partial_rewrite 代码保留但不触发). draft-deck.pptx 是库原样文字, 主题偏离由 gap-cards.edit_hints 记录, 后续人工或 APPLY_EDITS stage 处理."
+    },
+    {
+      "stage": "CHARACTER_REVISION",
+      "agent": "CharacterRevisionAgent",
+      "next_stage": "DRAFT_REVIEW",
+      "notes": "v3 (2026-07-29): 只做文字修订 + 文字颜色 (recolor_text 高亮目录页当前章). 不动图/字体/字号. 目录页共用同源已由 OUTLINE post-pass 约束."
+    },
+    {
+      "stage": "VISUAL_UNIFICATION",
+      "agent": "VisualUnificationAgent",
+      "next_stage": null,
+      "notes": "v3 (2026-07-29): 从主 pipeline 移除. 代码保留, 可手动 run_stage 触发. 之前默认关字体/字号后仍多余, 简化归 CHARACTER_REVISION."
+    },
+    {
+      "stage": "TEMPLATE_UNIFICATION",
+      "agent": "TemplateUnificationAgent",
+      "next_stage": null,
+      "notes": "v3 (2026-07-29): 从主 pipeline 移除. shell 判定太粗 (把内容图当 logo), 造成图片被复制. 保留代码待未来精细化重写."
+    },
+    {
+      "stage": "CODEX_REVIEW",
+      "agent": "CodexReviewAgent",
+      "next_stage": null,
+      "notes": "v34: 从 pipeline 移除 (由 CHARACTER_REVISION 替代). handler + agents.json 条目保留, 可通过手动 run_stage(\"CODEX_REVIEW\") 触发."
+    },
+    {
+      "stage": "DRAFT_REVIEW",
+      "agent": "DraftReviewAgent",
+      "next_stage": "GAP_ANALYSIS"
+    },
+    {
+      "stage": "GAP_ANALYSIS",
+      "agent": "GapAnalysisAgent",
+      "next_stage": "GAP_RESEARCH"
+    },
+    {
+      "stage": "GAP_RESEARCH",
+      "agent": "GapResearchAgent",
+      "next_stage": "GAP_SYNTHESIS"
+    },
+    {
+      "stage": "GAP_SYNTHESIS",
+      "agent": "GapSynthesisAgent",
+      "next_stage": "SLIDE_REWRITE"
+    },
+    {
+      "stage": "SLIDE_REWRITE",
+      "agent": "SlideRewriteAgent",
+      "next_stage": "STYLE_UNIFICATION"
+    },
+    {
+      "stage": "STYLE_UNIFICATION",
+      "agent": "StyleUnificationAgent",
+      "next_stage": "RENDER_PRECHECK"
+    },
+    {
+      "stage": "RENDER_PRECHECK",
+      "agent": "RenderPrecheckAgent",
+      "next_stage": "RENDER"
+    },
+    {
+      "stage": "RENDER",
+      "agent": "RenderAgent",
+      "next_stage": "PPT_EVAL"
+    },
+    {
+      "stage": "PPT_EVAL",
+      "agent": "PptEvalAgent",
+      "next_stage": "SYSTEM_REVIEW",
+      "notes": "v7 (2026-07-30): text-only 3-dim scoring (content/logic/constraint) adapted from icip-cas/PPTAgent ppteval. Style dimension pending libreoffice for vision. Reads deck.pptx or revised-draft-deck.pptx, writes eval-report.json + eval-summary.md."
+    },
+    {
+      "stage": "SYSTEM_REVIEW",
+      "agent": "SystemReviewAgent",
+      "next_stage": "REVISION_DECISION"
+    },
+    {
+      "stage": "REVISION_DECISION",
+      "agent": "RevisionDecisionAgent",
+      "next_stage": "FINAL_ACCEPT"
+    },
+    {
+      "stage": "FINAL_ACCEPT",
+      "agent": "ExportAgent",
+      "next_stage": null
+    }
+  ]
+}

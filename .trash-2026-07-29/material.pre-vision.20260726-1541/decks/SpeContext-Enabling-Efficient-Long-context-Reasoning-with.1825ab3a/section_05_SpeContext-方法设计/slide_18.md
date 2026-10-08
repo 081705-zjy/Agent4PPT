@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_18"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 18
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "蒸馏 LM 架构：剪枝降 FLOPS"
+核心论断: "蒸馏 LM 剪枝逾 60% FLOPS 大幅降低计算开销"
+本页讲什么: "本页延续上页蒸馏 LM 架构，进一步说明通过 Pruned（剪枝）手段将模型计算量削减超过 60% FLOPS，突出蒸馏模型在保持能力前提下的高效性，回应前文对长上下文推理算力冗余的动机。"
+关键文字: "[Distilled LM Architecture, \"Pruned > 60% FLOPS\"]"
+视觉骨架: "[蒸馏 LM 架构框图, 剪枝 FLOPS 削减标注]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_18.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_18.asset.02]"
+适合复用场景: "[模型剪枝降算力 method 页, 蒸馏模型效率论证页]"
+不适合复用场景: "[无数字的概念 bullet 页, 宏观趋势 motivation 页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Distilled LM Architecture"}
+  - {"位置": "下方主体", "内容": "蒸馏 LM 架构框图 + Pruned > 60% FLOPS 标注"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 18: 蒸馏 LM 架构：剪枝降 FLOPS
+
+**核心论断**: 蒸馏 LM 剪枝逾 60% FLOPS 大幅降低计算开销
+
+## 本页讲什么
+本页延续上页蒸馏 LM 架构，进一步说明通过 Pruned（剪枝）手段将模型计算量削减超过 60% FLOPS，突出蒸馏模型在保持能力前提下的高效性，回应前文对长上下文推理算力冗余的动机。
+
+## 关键文字片段
+- Distilled LM Architecture
+- Pruned > 60% FLOPS
+
+## 视觉骨架
+- 蒸馏 LM 架构框图
+- 剪枝 FLOPS 削减标注
+
+## 可复用到
+- 模型剪枝降算力 method 页
+- 蒸馏模型效率论证页
+
+## 不适合复用的场景
+- 无数字的概念 bullet 页
+- 宏观趋势 motivation 页

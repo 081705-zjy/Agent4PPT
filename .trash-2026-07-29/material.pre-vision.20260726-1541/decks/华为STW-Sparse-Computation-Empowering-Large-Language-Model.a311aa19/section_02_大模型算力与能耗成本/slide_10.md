@@ -1,0 +1,46 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_10"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.02"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 10
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "A100 成本测算续: 摊销明细"
+核心论断: "按运行时长摊销后单次推理成本依旧显著"
+本页讲什么: "本页在上页 A100 报价基础上继续展开成本摊销明细, 把 $17900 售价按 5 年 Active Time 折算到实际运行, 得出单位时间/单次推理的成本, 进一步强化 LLM 硬件与能耗代价高昂的结论, 与上页构成同一测算的递进两页。"
+关键文字: "[NVIDIA A100 SXM 80GB, $17900, Active Time 5 years]"
+视觉骨架: "[成本摊销测算表, 运行时长折算标注]"
+资源ID列表:
+适合复用场景: "[硬件成本摊销明细页, 单次推理成本测算页]"
+不适合复用场景: "[应用场景展示页, 方案总览分隔页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+alternate_claims:
+layout_tag: "benchmark_table"
+---
+# slide 10: A100 成本测算续: 摊销明细
+
+**核心论断**: 按运行时长摊销后单次推理成本依旧显著
+
+## 本页讲什么
+本页在上页 A100 报价基础上继续展开成本摊销明细, 把 $17900 售价按 5 年 Active Time 折算到实际运行, 得出单位时间/单次推理的成本, 进一步强化 LLM 硬件与能耗代价高昂的结论, 与上页构成同一测算的递进两页。
+
+## 关键文字片段
+- NVIDIA A100 SXM 80GB
+- $17900
+- Active Time 5 years
+
+## 视觉骨架
+- 成本摊销测算表
+- 运行时长折算标注
+
+## 可复用到
+- 硬件成本摊销明细页
+- 单次推理成本测算页
+
+## 不适合复用的场景
+- 应用场景展示页
+- 方案总览分隔页

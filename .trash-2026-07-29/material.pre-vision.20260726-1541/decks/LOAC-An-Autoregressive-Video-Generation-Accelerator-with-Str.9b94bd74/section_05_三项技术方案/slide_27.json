@@ -1,0 +1,38 @@
+{
+  "页标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_27",
+  "所属章节": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.05",
+  "所属deck": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+  "页序号": 27,
+  "源文件": "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx",
+  "页面角色": "content_candidate",
+  "标题": "技术方案一：统一的注意力稀疏方式",
+  "核心论断": "统一稀疏方式在空间维度施加注意力 mask",
+  "本页讲什么": "本页引入技术方案一——统一的注意力稀疏方式，通过空间维度的 mask 机制对注意力进行稀疏化处理，配合多张示意图展示稀疏 mask 的空间分布，作为该方案的开篇介绍。",
+  "关键文字": [
+    "内容1：统一的注意力稀疏方式",
+    "空间",
+    "mask"
+  ],
+  "视觉骨架": [
+    "注意力稀疏 mask 示意图",
+    "空间维度分块图"
+  ],
+  "资源ID列表": [
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_27.asset.01",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_27.asset.02",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_27.asset.03",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_27.asset.04",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_27.asset.05"
+  ],
+  "适合复用场景": [
+    "注意力稀疏方法引入页",
+    "视频生成稀疏注意力方案介绍"
+  ],
+  "不适合复用场景": [
+    "纯文字导航页",
+    "能效数据对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

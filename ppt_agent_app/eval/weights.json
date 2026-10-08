@@ -1,0 +1,18 @@
+{
+  "deterministic": {
+    "outline_structure": 0.25,
+    "source_distribution": 0.20,
+    "retrieval_match": 0.35,
+    "timing": 0.20
+  },
+  "codex": {
+    "outline_logic": 0.35,
+    "retrieval_match": 0.40,
+    "draft_coherence": 0.25
+  },
+  "overall": {
+    "deterministic": 0.5,
+    "codex": 0.5
+  },
+  "notes": "weights_schema_version=1. Adjust to shift emphasis between deterministic hard metrics and codex-judged soft metrics."
+}

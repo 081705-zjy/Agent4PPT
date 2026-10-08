@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_04"
+所属章节: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.02"
+所属deck: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031"
+页序号: 4
+源文件: "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx"
+页面角色: "content_candidate"
+标题: "背景：扩散模型"
+核心论断: "扩散模型是文本到视频生成的核心生成范式"
+本页讲什么: "承接上页的文生视频任务，本页介绍支撑该任务的扩散模型（Diffusion Model）基本原理，用示意展示加噪—去噪的生成过程，为下一步引入 DiT 骨干做技术铺垫。"
+关键文字:
+  - "Background: Diffusion Model"
+视觉骨架: "[扩散加噪去噪过程示意, 生成流程图示]"
+资源ID列表: "[tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_04.asset.01, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_04.asset.02, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_04.asset.03, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_04.asset.04]"
+适合复用场景: "[扩散模型原理背景页, 视频/图像生成方法铺垫页]"
+不适合复用场景: "[DiT 具体结构展开页, 能效数据对比页, 非生成式模型主题]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Background: Diffusion Model"}
+  - {"位置": "下方主体", "内容": "扩散加噪—去噪过程示意图"}
+alternate_claims:
+layout_tag: "flowchart"
+---
+# slide 4: 背景：扩散模型
+
+**核心论断**: 扩散模型是文本到视频生成的核心生成范式
+
+## 本页讲什么
+承接上页的文生视频任务，本页介绍支撑该任务的扩散模型（Diffusion Model）基本原理，用示意展示加噪—去噪的生成过程，为下一步引入 DiT 骨干做技术铺垫。
+
+## 关键文字片段
+- Background: Diffusion Model
+
+## 视觉骨架
+- 扩散加噪去噪过程示意
+- 生成流程图示
+
+## 可复用到
+- 扩散模型原理背景页
+- 视频/图像生成方法铺垫页
+
+## 不适合复用的场景
+- DiT 具体结构展开页
+- 能效数据对比页
+- 非生成式模型主题

@@ -1,0 +1,1547 @@
+{
+  "batch_index": 17,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+      "目录名": "华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+      "标题": "稀疏计算赋能大语言模型",
+      "总页数": 68,
+      "章节数": 9,
+      "章节列表": [
+        "section_01_封面与目录总览",
+        "section_02_背景-大模型的成本与延迟",
+        "section_03_GPU算子加速FlashDecoding++",
+        "section_04_洞见-从摩尔定律到缩放定律",
+        "section_05_稀疏计算与FlightLLM加速",
+        "section_06_视频生成模型的稀疏加速",
+        "section_07_稀疏新范式与TB-STC",
+        "section_08_全线工作总结与致谢",
+        "section_09_附录-技术细节与备份"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "稀疏计算",
+        "N:M稀疏",
+        "算子优化",
+        "GPU加速",
+        "FPGA",
+        "MoE",
+        "缩放定律"
+      ],
+      "目标受众": "学术同行与工业落地研究者",
+      "报告类型": "research_report",
+      "适用场景": "大模型推理加速方向的科研进展汇报或产学研交流",
+      "论述总结": "从大模型推理的高成本与高延迟出发,回顾GPU上的算子加速(FlashDecoding++),提出算力增长从摩尔定律转向缩放定律的洞见,进而系统展开稀疏计算这一解法——涵盖N:M稀疏、FlightLLM、视频生成加速、TB-STC及MoE/MoD新范式,最后总结全线工作的加速收益。",
+      "论述弧线": [
+        "背景成本",
+        "GPU加速",
+        "缩放洞见",
+        "稀疏解法",
+        "总结展望"
+      ],
+      "slides_by_role": {
+        "cover_candidate": [
+          {
+            "页序号": 1,
+            "页面角色": "cover_candidate",
+            "标题": "稀疏计算赋能大语言模型(封面)",
+            "核心论断": "稀疏计算是赋能大语言模型的核心路径",
+            "本页讲什么": "全 deck 封面页,超大字号主标题「Sparse Computation Powering Large Language Model」亮明报告主旨,下方叠加讲者信息:戴国浩,上海交通大学副教授、无问芯穹首席科学家兼联合创始人,报告日期 2024-5-21,并附联系邮箱 daiguohao@sjtu.edu.cn。整体为极简白底 + 一条淡色横线的学术报告封面。",
+            "关键文字": [
+              "Sparse Computation Powering Large Language Model",
+              "Guohao Dai",
+              "Associate Professor @ Shanghai Jiao Tong University",
+              "Chief Scientist and Co-founder of Infinigence-AI",
+              "2024-5-21",
+              "daiguohao@sjtu.edu.cn"
+            ],
+            "视觉骨架": [
+              "居中超大主标题",
+              "讲者信息多行文本块",
+              "淡色分隔横线",
+              "极简白底布局"
+            ],
+            "上页角色": null,
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          }
+        ],
+        "content_candidate": [
+          {
+            "页序号": 2,
+            "页面角色": "content_candidate",
+            "标题": "目录:全 deck 五段式路线图",
+            "核心论断": "报告沿背景→预备→洞见→稀疏解法→总结五段展开",
+            "本页讲什么": "标准目录页,顶部蓝色「Contents」标题置于矩形边框内,下方以带编号圆圈的五行列表建立全 deck 叙事骨架:1 Background: Cost and Latency of LLM、2 Preliminary: LLM Acceleration on GPUs、3 Insight: From Moore's Law to Scaling Law、4 Solution: Sparse Computation Powering LLM、5 Summary。左侧有一条蓝色进度条标示当前所处章节。",
+            "关键文字": [
+              "Contents",
+              "1 Background: Cost and Latency of LLM",
+              "2 Preliminary: LLM Acceleration on GPUs",
+              "3 Insight: From Moore's Law to Scaling Law",
+              "4 Solution: Sparse Computation Powering LLM",
+              "5 Summary"
+            ],
+            "视觉骨架": [
+              "蓝色 Contents 标题",
+              "矩形外边框",
+              "5 项编号圆圈列表",
+              "左侧蓝色进度条"
+            ],
+            "上页角色": "cover_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "opening"
+          },
+          {
+            "页序号": 3,
+            "页面角色": "content_candidate",
+            "标题": "目录:高亮第一章 Cost and Latency",
+            "核心论断": "全篇分五章,当前进入『大模型的成本与延迟』背景章",
+            "本页讲什么": "这是一张 Contents 导航页,列出五个章节:1 Background: Cost and Latency of LLM、2 Preliminary: LLM Acceleration on GPUs、3 Insight: From Moore's Law to Scaling Law、4 Solution: Sparse Computation Powering LLM、5 Summary。第一章被加粗高亮,其余灰显,表示演讲正切入成本与延迟背景章。",
+            "关键文字": [
+              "Background: Cost and Latency of LLM",
+              "Preliminary: LLM Acceleration on GPUs",
+              "Insight: From Moore's Law to Scaling Law",
+              "Solution: Sparse Computation Powering LLM",
+              "Summary"
+            ],
+            "视觉骨架": [
+              "五项编号目录列表",
+              "当前章高亮+竖线指示",
+              "顶部 Contents 标题框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 4,
+            "页面角色": "content_candidate",
+            "标题": "大模型驱动多样下游应用",
+            "核心论断": "LLM 已支撑起丰富的下游应用生态",
+            "本页讲什么": "以一句话主张『LLMs enable a variety of downstream applications』开场,四角用 logo+文字列举代表性应用:Microsoft Copilot、Midjourney/AI Plot、Meta Code Llama、Baidu ERNIE Bot,直观展示大模型落地的广度,为后续引出昂贵成本铺垫。",
+            "关键文字": [
+              "LLMs enable a variety of downstream applications",
+              "Microsoft Copilot",
+              "Midjourney / AI Plot",
+              "Meta Code Llama",
+              "Baidu ERNIE Bot"
+            ],
+            "视觉骨架": [
+              "顶部单句主张框",
+              "四角 logo+应用名布局",
+              "中心留白展示区"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 5,
+            "页面角色": "content_candidate",
+            "标题": "LLM 应用成本 86% 花在推理",
+            "核心论断": "下游应用总成本中 86% 用于 LLM 本身,仅 14% 用于开发",
+            "本页讲什么": "承接上页应用广泛,切入成本问题。基于 OpenAI 的 LLM 应用总成本统计,用柱状对比突出『86% for LLM』(高亮红框)对比『14% for Dev.』(灰虚框),论证大模型推理才是应用花费的绝对大头。数据引自 nebuly 博客[1]。",
+            "关键文字": [
+              "Most budget of downstream applications are for LLM.",
+              "86% for LLM",
+              "14% for Dev.",
+              "Total Cost of LLM application based on OpenAI [1]"
+            ],
+            "视觉骨架": [
+              "两柱对比图",
+              "86% 红色高亮框",
+              "14% 灰色虚线框",
+              "底部引用脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 6,
+            "页面角色": "content_candidate",
+            "标题": "生成式任务推高算力与能耗",
+            "核心论断": "LLM 生成式扩张使算力与能耗需求急剧攀升",
+            "本页讲什么": "把成本进一步拆成两块并列对比:左侧 Computing power requirement——训练算力达 10^24 FLOPs,与数据中心算力差四个数量级(Four orders of magnitude difference);右侧 Energy requirement——以 GPT-3 为例,175 billion 参数、训练耗电 1.28 million kWh,相当于数百户家庭全年用电,推理能耗占更大比例。两栏共同论证算力与能耗随生成式任务急剧上升。",
+            "关键文字": [
+              "with the expansion of LLMs for generative tasks, the demand for computing power and energy increases sharply",
+              "Computing power requirement",
+              "Energy requirement",
+              "GPT-3 Parameters:175 billion Electricity:1.28 million kWh",
+              "Four orders of magnitude difference"
+            ],
+            "视觉骨架": [
+              "左右双栏对比框",
+              "算力 vs 能耗两组数据",
+              "家庭年用电类比标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 7,
+            "页面角色": "content_candidate",
+            "标题": "能耗成本公式拆解:Power×Latency×电价",
+            "核心论断": "能耗成本 = Power × Latency × Electricity Price,且随模型增大而上升",
+            "本页讲什么": "给出能耗成本公式 Energy Cost = Power × Latency × Electricity Price,并用左右两张散点图分别展示 Power/Watt 与 Latency/ms 随 Model Params(Billion)的变化,标注 GPT、OPT、Vicuna、Qwen 等模型点,数据来自 A100 80GB 上 128 in/128 out token 的实测[1],直观显示两项指标都随模型参数增大而抬升。",
+            "关键文字": [
+              "Energy Cost = Power × Latency × Electricity Price",
+              "Power /Watt",
+              "Latency /ms",
+              "Model Params /Billion",
+              "GPT / OPT / Vicuna / Qwen",
+              "128 tokens input and 128 output tokens on A100 80GB SXM"
+            ],
+            "视觉骨架": [
+              "顶部彩色公式栏",
+              "左右两张散点图",
+              "各模型标注点",
+              "双轴坐标框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 8,
+            "页面角色": "content_candidate",
+            "标题": "小结:功耗与延迟随模型增大而升",
+            "核心论断": "更大的 LLM 带来更高的功耗与延迟",
+            "本页讲什么": "与上页同一张能耗公式+双散点图布局,叠加一句红色总结横幅『Power and latency increase with larger LLMs.』,把上页两图的趋势收敛成一句结论,承接前页数据、强化『模型越大越贵』的论点。",
+            "关键文字": [
+              "Power and latency increase with larger LLMs.",
+              "Energy Cost = Power × Latency × Electricity Price"
+            ],
+            "视觉骨架": [
+              "淡化的公式+双散点底图",
+              "居中红色结论横幅"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 9,
+            "页面角色": "content_candidate",
+            "标题": "总成本模型:能耗+硬件,Cost∝Latency",
+            "核心论断": "总成本=能耗成本+硬件成本,且成本正比于延迟",
+            "本页讲什么": "给出总成本公式 Total Cost = Energy Cost + Hardware Cost = (Power×Latency×电价 + 硬件折旧)。左侧用 NVIDIA A100 80GB 参数表($17900、5 年寿命、$0.409/hour 折旧、400W、$0.256/kWh 电价)量化各项;右侧 Total Cost/dollar-vs-Latency/ms 曲线显示 Cost ∝ Latency,并标注 Speedup 可向左『save money』。",
+            "关键文字": [
+              "Total Cost = Energy Cost + Hardware Cost",
+              "(Power × Latency × Electricity Price + Hardware Depreciation)",
+              "NVIDIA A100 SXM 80GB $17900",
+              "Active Time 5 years / Power 400W / Electricity $0.256/kWh",
+              "Cost ∝ Latency",
+              "Speedup / save money"
+            ],
+            "视觉骨架": [
+              "顶部彩色总成本公式",
+              "左侧硬件参数表",
+              "右侧 Cost-Latency 曲线",
+              "Speedup 箭头标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 10,
+            "页面角色": "content_candidate",
+            "标题": "小结:加速可转化为成本降低",
+            "核心论断": "推理加速可直接转化为成本降低",
+            "本页讲什么": "沿用上页总成本表+Cost-Latency 曲线布局,叠加红框结论『Speedup can translate to cost reduction.』,把前页 Cost∝Latency 的量化关系收敛为一句核心结论——降低延迟即省钱,为后文用稀疏计算加速埋下伏笔。",
+            "关键文字": [
+              "Speedup can translate to cost reduction.",
+              "Total Cost = Energy Cost + Hardware Cost",
+              "Cost ∝ Latency"
+            ],
+            "视觉骨架": [
+              "淡化的成本表+曲线底图",
+              "居中红框结论横幅"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 11,
+            "页面角色": "content_candidate",
+            "标题": "延迟公式:Workload / 乘法器数量",
+            "核心论断": "延迟 = Workload ÷ 等效乘法器数量,模型越大 Workload 越高",
+            "本页讲什么": "把延迟拆解为公式 Latency = Workload / Equivalent Number of Multipliers。左栏用 Training FLOPs(10^21~10^24)对 Model size(1B/10B/100B)的图说明『Model size↑, Workload↑』[1];右栏说明 FLOPS 即代表乘法器数量[2],把延迟归因到工作量与硬件乘法器两个因子,引出下页对乘法器的讨论。",
+            "关键文字": [
+              "Latency = Workload / Equivalent Number of Multipliers",
+              "Workload on LLMs",
+              "Model size ↑, Workload ↑",
+              "Equivalent Number of Multipliers",
+              "FLOPS represents Multipliers"
+            ],
+            "视觉骨架": [
+              "顶部分式公式",
+              "左右双栏框",
+              "左栏 FLOPs-模型规模图",
+              "分子分母双结论标签"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 12,
+            "页面角色": "content_candidate",
+            "标题": "增乘法器路径受阻于摩尔定律放缓",
+            "核心论断": "降延迟需增乘法器,但摩尔定律放缓限制了集成更多乘法器",
+            "本页讲什么": "延迟公式变为 Latency↓ = Workload / 乘法器↑,提出降延迟两条路径:1. Integrate more multipliers on chip(集成更多乘法器,示意 4x);2. Improve utilization of multipliers(提升利用率,25%→100%)。右栏抛出 Moore's Law Slowdown,暗示路径 1(靠工艺堆乘法器)已难以为继,把希望导向路径 2 的利用率提升,为后文稀疏计算铺垫。",
+            "关键文字": [
+              "Latency↓ = Workload / Equivalent Number of Multipliers↑",
+              "How to improve it ?",
+              "1. Integrate more multipliers on chip",
+              "2. Improve utilization of multipliers",
+              "Moore's Law Slowdown",
+              "25% → 100% / 4x"
+            ],
+            "视觉骨架": [
+              "顶部分式公式带升降箭头",
+              "左栏两条改进路径示意图",
+              "乘法器阵列 4x/利用率图标",
+              "右栏 Moore's Law 框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "motivation"
+          },
+          {
+            "页序号": 13,
+            "页面角色": "content_candidate",
+            "标题": "目录:定位第2章 GPU上的LLM加速",
+            "核心论断": "报告进入第2章,聚焦GPU上的LLM加速预备知识",
+            "本页讲什么": "全篇五章目录页,当前高亮第2项「Preliminary: LLM Acceleration on GPUs」,其余四章(背景成本延迟、Moore到Scaling洞见、稀疏计算方案、总结)灰显。作为章节分隔页,提示接下来讲GPU dense优化,作为后续稀疏主线的对照铺垫。",
+            "关键文字": [
+              "Contents",
+              "Background: Cost and Latency of LLM",
+              "Preliminary: LLM Acceleration on GPUs",
+              "Insight: From Moore's Law to Scaling Law",
+              "Solution: Sparse Computation Powering LLM",
+              "Summary"
+            ],
+            "视觉骨架": [
+              "5项编号目录列表",
+              "当前项高亮+左侧竖条",
+              "其余项灰显"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 14,
+            "页面角色": "content_candidate",
+            "标题": "FlashDecoding++三大GPU算子加速技术",
+            "核心论断": "注意力+线性算子+编译调优三技术协同加速GPU上的LLM",
+            "本页讲什么": "三面板并列展开FlashDecoding++的三项核心技术:Tech.1注意力算子用统一最大值消除同步(Synchronization free);Tech.2线性算子为flat形状定制GEMM设计(细粒度分块、双缓冲,兼顾并行与延迟重叠);Tech.3编译调优在多样工作负载/模型/硬件下寻找最优实现(FastGEMV/cuBLAS/Flat GEMM)。整体呈现dense优化的算子级方案。",
+            "关键文字": [
+              "Tech. 1: Attention Operator",
+              "Eliminate synchronization with unified maximum",
+              "Tech. 2: Linear Operator",
+              "Customized designs for flat shape (Flat GEMM)",
+              "Tech. 3: Compilation Tuning",
+              "Find the optimal implementation for diverse linear workload"
+            ],
+            "视觉骨架": [
+              "3面板技术分区",
+              "注意力算子数据流示意图",
+              "GEMM flat形状设计框图",
+              "编译调优选择分支图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 15,
+            "页面角色": "content_candidate",
+            "标题": "FlashDecoding++在NVIDIA上的实测加速",
+            "核心论断": "FlashDecoding++在NVIDIA A100上较HuggingFace平均加速1.88x",
+            "本页讲什么": "承接上页三技术,给出NVIDIA平台实测结果。左侧柱状对比:A100(80GB)平均加速1.88x、RTX 3090(24GB)平均加速1.56x(均对比HuggingFace FP16,Llama2-7B,batch=1,输入输出128/128 tokens);右侧为Llama2-70B-chat在A100*2上的FlashDecoding++ vs HuggingFace实时demo对照。",
+            "关键文字": [
+              "Experimental Results: FlashDecoding++",
+              "1.88x average speedup over HuggingFace (FP16)",
+              "NVIDIA Tesla A100 (80GB)",
+              "1.56x average speedup over HuggingFace (FP16)",
+              "NVIDIA RTX 3090 (24GB)",
+              "Llama2-70B-chat demo on NVIDIA A100*2"
+            ],
+            "视觉骨架": [
+              "左侧双GPU加速柱图",
+              "红色speedup倍率标注",
+              "右侧双栏demo对照框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 16,
+            "页面角色": "content_candidate",
+            "标题": "FlashDecoding++在AMD上的跨平台实测",
+            "核心论断": "FlashDecoding++跨平台迁移AMD,RX7900XTX加速达3.41x",
+            "本页讲什么": "延续NVIDIA结果,证明FlashDecoding++可跨平台迁移到AMD GPU。左侧柱状对比AMD MI210(64GB)与AMD RX7900XTX(24GB)的speedup(RX7900XTX最高3.41x);右侧为Llama2-7B在AMD MI210上的FlashDecoding++ vs vLLM framework实时demo对照,取得4.35x加速。凸显方案的硬件通用性。",
+            "关键文字": [
+              "Experimental Results: FlashDecoding++",
+              "up to 3.41x speedup on AMD RX7900XTX",
+              "AMD MI210 (64GB)",
+              "AMD RX7900XTX (24GB)",
+              "Llama2-7B demo on AMD MI210",
+              "FlashDecoding++ vs vLLM framework: 4.35x"
+            ],
+            "视觉骨架": [
+              "左侧双AMD-GPU加速柱图",
+              "红色speedup倍率标注",
+              "右侧FlashDecoding++ vs vLLM demo对照框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 17,
+            "页面角色": "content_candidate",
+            "标题": "Contents: Section 3 Insight — Moore's to Scaling Law",
+            "核心论断": "The deck now enters Section 3 — the core insight on Moore's-to-Scaling-Law shift",
+            "本页讲什么": "This is the agenda/section-divider page. A 5-item Contents list (Background, Preliminary, Insight, Solution, Summary) is shown, with item 3 'Insight: From Moore's Law to Scaling Law' highlighted in bold blue while the others are greyed out, signalling the deck transitions into the Insight section.",
+            "关键文字": [
+              "Contents",
+              "3 Insight: From Moore's Law to Scaling Law",
+              "1 Background: Cost and Latency of LLM",
+              "2 Preliminary: LLM Acceleration on GPUs",
+              "4 Solution: Sparse Computation Powering LLM",
+              "5 Summary"
+            ],
+            "视觉骨架": [
+              "5 项编号目录列表",
+              "当前 section 高亮竖条",
+              "外框卡片"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 18,
+            "页面角色": "content_candidate",
+            "标题": "Rethinking Latency: the Parameter–Latency Contradiction",
+            "核心论断": "Scaling law raises accuracy but inflates latency — goal is a small model with big-model capability",
+            "本页讲什么": "本页用公式 Latency = Workload / Equivalent Number of Multipliers 引出矛盾:Scaling Law 让参数↑带来精度↑,但参数↑也使 Workload↑、Latency↑,二者构成 Contradiction。右侧逻辑框逐层推导后落到 'Our Goal: Workload↓, Latency↓',结论是让更小的模型拥有更大模型的能力;左侧用 Llama2→Llama3 的精度随参数变化示意佐证。",
+            "关键文字": [
+              "Latency = Workload / Equivalent Number of Multipliers",
+              "LLM Scaling Law: Parameter↑, Accuracy↑",
+              "Parameter↑, Workload↑, Latency↑",
+              "Contradiction",
+              "Our Goal: Workload↓, Latency↓",
+              "Smaller model with larger model's capability"
+            ],
+            "视觉骨架": [
+              "延迟公式排版",
+              "精度-参数示意坐标(Llama2/Llama3)",
+              "右侧逻辑推导框链",
+              "红色 Contradiction 标注",
+              "粉色结论条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 19,
+            "页面角色": "content_candidate",
+            "标题": "New Ways under Scaling Law: Three Breakthrough Paths",
+            "核心论断": "从 Moore's Law 到 Scaling Law,三条路径(缩小模型/高效模型/新基础模型)并列破局",
+            "本页讲什么": "本页以 Moore's Law 与 Scaling Law 两幅算力/模型能力 vs 时间曲线并列对照,总览三条破局路径:Way 1 Scaling Down(缩小模型)、Way 2 Efficient/Domain-specific Model(高效与领域模型)、Way 3 New Foundation Model + New Device(新基础模型与新器件)。左图对应 Yu Wang 团队视角,右图对应对 LLM 作为基础模型的思考,为后三页逐一举例铺垫。",
+            "关键文字": [
+              "From Moore's Law to Scaling Law",
+              "Moore's Law",
+              "Scaling Law",
+              "Way 1: Scaling Down",
+              "Way 2: Efficient Model & Domain-specific Model",
+              "Way 3: New Foundation Model + New Device"
+            ],
+            "视觉骨架": [
+              "左右双坐标曲线对照",
+              "三条彩色路径箭头标注",
+              "Way1/2/3 图例标签"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 20,
+            "页面角色": "content_candidate",
+            "标题": "Way 1 Example: Scaling Law is Slowing",
+            "核心论断": "单纯扩大模型规模的 Scaling Law 收益正在放缓",
+            "本页讲什么": "本页举例 Way 1(Scaling Down 前提):左侧用一根越来越尖的红色楔形示意 'Increasing model size to improve model capability';右侧以 ARC 任务上多个 70B 级模型(Synthia-70B、aug-72B、rhea-72b、72B-v0.8 等)得分随时间趋于饱和,论证 'LLM scaling law is slowing',说明靠堆参数提升能力已边际递减。",
+            "关键文字": [
+              "Scaling Law: Increasing model size to improve model capability",
+              "LLM scaling law is slowing",
+              "The score of 72B LLMs on ARC task",
+              "Synthia-70B / aug-72B / rhea-72b / 72B-v0.8",
+              "Open LLM Leaderboard"
+            ],
+            "视觉骨架": [
+              "模型规模楔形示意图",
+              "得分-时间散点/趋势图",
+              "多模型标签箭头",
+              "参考文献脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 21,
+            "页面角色": "content_candidate",
+            "标题": "Way 2 Example: Efficient Model via Mixed-bit Quantization",
+            "核心论断": "1.27B(2.9-bit)混合量化模型以更低成本达到 7B 级能力",
+            "本页讲什么": "本页举例 Way 2 高效模型:顶部主张 'Ours: 1.27B (2.9-bit) achieves 7B capacity by 2/4/16-bit quantization'。左列拆解方法两块——Intra-weight 2/4-bit Quantization 与 Exclusive 2-bit Outliers;右侧大 panel 'Higher Accuracy and Lower Cost (Ours)' 展示本方法在精度与成本上的优势。底部标注为投稿 ICCAD'24 的工作。",
+            "关键文字": [
+              "Ours: 1.27B (2.9-bit) achieves 7B capacity by 2/4/16-bit quantization",
+              "Intra-weight 2/4-bit Quantization",
+              "Exclusive 2-bit Outliers",
+              "Higher Accuracy and Lower Cost (Ours)",
+              "Fast and Efficient 2-bit LLM Inference on GPU (ICCAD '24)"
+            ],
+            "视觉骨架": [
+              "顶部主张横条",
+              "左列两方法子框",
+              "右侧结果对比大 panel",
+              "红色流程箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 22,
+            "页面角色": "content_candidate",
+            "标题": "Way 2 Example: Domain-specific Model with Structured Knowledge",
+            "核心论断": "LLM 结合结构化知识(RAG/数学知识)可提升领域能力",
+            "本页讲什么": "本页举例 Way 2 领域专用模型:主张 'LLM + Structured Knowledge → Improve LLM capability'。左侧用 '1+1=2' 的例子对比把 '2' 当 token(逐层逐 token 预测)与当 number(结合数学知识)两种处理;右侧列举两类结构化增强——Retrieval-Augmented-Generation LLM(知识库+LLM,更准更详细)与 Math LLM(数学知识+LLM,数学任务更高精度)。",
+            "关键文字": [
+              "LLM + Structured Knowledge → Improve LLM capability",
+              "How to compute '1+1=2'?",
+              "As a token / As a number + Knowledge from Mathematics",
+              "Retrieval-Augmented-Generation LLM: Knowledge database + LLM, More accurate and detailed answers",
+              "Math LLM: Math knowledge + LLM, Higher accuracy for math tasks"
+            ],
+            "视觉骨架": [
+              "左侧 token vs number 处理对照流程",
+              "右上 RAG LLM 框图",
+              "右下 Math LLM 框图",
+              "参考链接脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 23,
+            "页面角色": "content_candidate",
+            "标题": "Way 3 Example: New Foundation Model (Mamba & Hybrid)",
+            "核心论断": "Mamba/Hybrid 等新架构以线性复杂度破解 Transformer 两大瓶颈",
+            "本页讲什么": "本页举例 Way 3 新基础模型:三列并列 Transformer Block、Mamba Block、Hybrid Block。指出 Transformer 两大限制——QK 注意力的二次复杂度与庞大 KV cache 存储;Mamba 用 SSM 把输入压缩进 latent state 以线性复杂度替代注意力;Hybrid Block 融合 Block Attention 与 SSM+FFN。结论是 'Many works focus on solving these two limitations',说明新架构是破局方向之一。",
+            "关键文字": [
+              "Transformer Block / Mamba Block / Hybrid Block",
+              "Two main limitations: QK attention with quadratic computation complexity",
+              "Large KV cache storage overheads",
+              "Compress input into latent state",
+              "Many works focus on solving these two limitations",
+              "Mamba: Linear-time sequence modeling with selective state spaces"
+            ],
+            "视觉骨架": [
+              "三列架构框图并列",
+              "Attention/FFN/SSM 模块块",
+              "矩阵稀疏示意色块",
+              "两大限制红字标注",
+              "底部结论粉条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "framework"
+          },
+          {
+            "页序号": 24,
+            "页面角色": "content_candidate",
+            "标题": "目录:第4章 稀疏计算赋能LLM",
+            "核心论断": "演讲进入第4章解法主线——稀疏计算赋能大语言模型",
+            "本页讲什么": "全篇目录页,五章列表(Background/Preliminary/Insight/Solution/Summary)中高亮第4章「Solution: Sparse Computation Powering LLM」,标记演讲进入解法主线,承接前三章背景与洞察,引出后续稀疏计算与FlightLLM展开。",
+            "关键文字": [
+              "Contents",
+              "4 Solution: Sparse Computation Powering LLM",
+              "Background: Cost and Latency of LLM",
+              "Preliminary: LLM Acceleration on GPUs",
+              "Insight: From Moore's Law to Scaling Law",
+              "Summary"
+            ],
+            "视觉骨架": [
+              "五项编号目录列表",
+              "当前章高亮竖条",
+              "蓝框标题区"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 25,
+            "页面角色": "content_candidate",
+            "标题": "密集算力的终极上限:技术节点",
+            "核心论断": "乘法器利用率上限为100%,密集算力终极瓶颈在技术节点",
+            "本页讲什么": "承接解法开篇论证密集硬件的天花板:一个居中蓝框内两行断言——乘法器利用率上限100%(黑字),终极上限是技术节点(红字强调)。为下一页摩尔定律放缓与引出稀疏计算铺垫问题。",
+            "关键文字": [
+              "The limit of utilization of the multipliers is 100%",
+              "The ultimate limit is the technology node"
+            ],
+            "视觉骨架": [
+              "居中单一强调文本框",
+              "红黑双色断言两行"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 26,
+            "页面角色": "content_candidate",
+            "标题": "摩尔定律放缓,密集电路优化触顶",
+            "核心论断": "摩尔定律放缓,基于密集电路的优化正趋于瓶颈",
+            "本页讲什么": "顶部蓝框给出核心断言——摩尔定律放缓、密集电路优化趋于瓶颈;下方左右两个大图框(左框标注Speedup、底注Llama2-7B/batchsize=1/I-O=128/单张A100 GPU),用趋势图佐证密集路线增益见顶,承接上页技术节点上限、引出稀疏计算必要性。",
+            "关键文字": [
+              "Moore's Law is slowing down, and optimizations based on dense circuits are tending to bottleneck.",
+              "Speedup",
+              "Llama2-7B, batchsize=1, I/O=128, on a single NVIDIA A100 GPU"
+            ],
+            "视觉骨架": [
+              "顶部断言蓝框",
+              "左右并列两图框",
+              "Speedup趋势图区"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 27,
+            "页面角色": "content_candidate",
+            "标题": "稀疏计算:N周期降至N/2周期",
+            "核心论断": "稀疏计算成为降本关键,可将N周期计算降至N/2",
+            "本页讲什么": "承上引出解法核心——顶部蓝框断言稀疏计算对降本(reducing cost)日益关键;下方对比Dense(N Cycles)与Sparse(N/2 Cycles,红字),右侧虚线框标注「Examples in NVIDIA's Tensor Core [1]」,并注明来源为NVIDIA A100 Tensor Core GPU。正式打开稀疏计算主题。",
+            "关键文字": [
+              "Sparse computing is becoming crucial for reducing cost",
+              "Dense: N Cycles",
+              "Sparse: N/2 Cycles",
+              "Examples in NVIDIA's Tensor Core [1]",
+              "Source: [1] NVIDIA A100 TENSOR CORE GPU."
+            ],
+            "视觉骨架": [
+              "顶部断言蓝框",
+              "Dense/Sparse周期对比示意",
+              "右侧虚线示例框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 28,
+            "页面角色": "content_candidate",
+            "标题": "从密集到稀疏:三条路线图",
+            "核心论断": "以Scaling Law为坐标,三条稀疏路线锚定全线工作",
+            "本页讲什么": "全章路线锚定页。左侧Scaling Law坐标(纵轴Model Capability、横轴Time)标出三条路线:Way1增量微调、Way2高效/领域模型、Way3新基础模型架构;右侧三个色块把路线映射到具体工作——高效稀疏模型(FlightLLM)、稀疏视频生成(VGAcc)、稀疏新基础模型(TB-STC),为后续FlightLLM展开建立全局地图。",
+            "关键文字": [
+              "Scaling Law",
+              "Way 1: Incremental/Finetuning",
+              "Way 2: Efficient Model & Domain-specific Model",
+              "Way 3: New Foundation Model Architecture",
+              "Enabling efficient model with sparsity (FlightLLM)",
+              "Video generation model with sparsity (VGAcc)"
+            ],
+            "视觉骨架": [
+              "Scaling Law曲线坐标",
+              "三条路线彩色箭头",
+              "右侧三工作映射色块"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 29,
+            "页面角色": "content_candidate",
+            "标题": "灵活N:M稀疏的核心思想",
+            "核心论断": "非结构化稀疏保精度,结构化稀疏得硬件效率",
+            "本页讲什么": "进入FlightLLM方法层第一页。红色「Key idea」标签+断言框指出:非结构化稀疏保证算法精度(algorithm accuracy),结构化稀疏实现硬件效率(hardware efficiency),红字强调二者;下方大空白框预留N:M稀疏示意图。为下页Sparse DSP Chain架构做方法铺垫。",
+            "关键文字": [
+              "Key idea",
+              "Unstructured sparsity ensure the algorithm accuracy.",
+              "Structured sparsity achieve the hardware efficiency."
+            ],
+            "视觉骨架": [
+              "红色Key idea标签",
+              "断言蓝框",
+              "下方N:M示意图预留区"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 30,
+            "页面角色": "content_candidate",
+            "标题": "Sparse DSP Chain架构",
+            "核心论断": "Sparse DSP Chain同时支持稀疏注意力与线性层",
+            "本页讲什么": "FlightLLM架构核心页。紫色「Innovation」标签+断言:Sparse DSP Chain同时支持LLM中的稀疏注意力与稀疏线性层;左侧示意Sparse Attention(块稀疏)与Sparse Linear(N:M稀疏)支持4:4/2:4/1:4/0:4多种N:M模式,右侧给出可配置稀疏DSP链结构(Sparse MUX→DSP Group→Reduction Node)。是本节最密的架构图页。",
+            "关键文字": [
+              "Sparse DSP Chain supports both sparse attention and linear layers in LLMs",
+              "Sparse Attention (Block Sparse)",
+              "Sparse Linear (N:M Sparse)",
+              "Supports multiple N:M sparse patterns",
+              "Configurable sparse DSP chain"
+            ],
+            "视觉骨架": [
+              "紫色Innovation标签",
+              "稀疏模式矩阵示意",
+              "右侧DSP链框图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 31,
+            "页面角色": "content_candidate",
+            "标题": "FlightLLM实测:U280 FPGA超越V100S",
+            "核心论断": "16nm U280 FPGA在吞吐/成本/能效上全面超越V100S GPU",
+            "本页讲什么": "方法收束的实测结果页。红字断言FlightLLM(16nm U280 FPGA)在吞吐(1.2×)、成本效率(1.8×)、能效(6.0×)上超越12nm V100S GPU;右侧实验设置:70%注意力稀疏、50%权重稀疏(OPT-6.7B与LLaMA2-7B),权重平均3.5-bit、激活8-bit。用FPGA实测数据佐证前述稀疏架构收益。",
+            "关键文字": [
+              "FlightLLM with 16nm U280 FPGA outperforms 12nm V100S GPU",
+              "throughput(1.2×), cost efficiency(1.8×), energy efficiency(6.0×)",
+              "70% attention sparsity, 50% weight sparsity for OPT-6.7B and LLaMA2-7B",
+              "average 3.5-bit for weights and 8-bit for activations"
+            ],
+            "视觉骨架": [
+              "顶部红字断言框",
+              "左侧结果图区",
+              "右侧实验设置文本"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "chapter_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 33,
+            "页面角色": "content_candidate",
+            "标题": "视频生成:Domain-specific 模型背景引入",
+            "核心论断": "视频生成模型凭出色能力成为 LLM 之外的又一热点方向",
+            "本页讲什么": "本页作为第 6 章开篇,把视频生成定位为稀疏计算的一个 domain-specific 案例。红色 Background 标签配一句引言,指出除大语言模型外,视频生成模型因出色能力受到广泛关注;下方大留白区并列展示两个代表性模型示例 Sora[1] 与 Vidu[2],为后续讲加速挑战铺垫。",
+            "关键文字": [
+              "video generation models have also received many attention due to their outstanding capabilities",
+              "The examples of two video generation models",
+              "Sora [1]",
+              "Vidu [2]"
+            ],
+            "视觉骨架": [
+              "红色 Background 标签+引言框",
+              "下方双示例并列大图框",
+              "底部两模型名称标注",
+              "底部参考文献引用"
+            ],
+            "上页角色": "chapter_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "case_study"
+          },
+          {
+            "页序号": 34,
+            "页面角色": "content_candidate",
+            "标题": "视频生成加速的挑战:计算量大且冗余",
+            "核心论断": "视频生成计算量远超文本/图像,且帧间 90%+ 相似带来大量冗余",
+            "本页讲什么": "本页承接开篇,用红色 Challenge 标签点出核心难题:视频生成相比文本生成与图像分类存在更大且冗余的计算。左侧归一化计算量柱图显示 Text 1×、Image 10×、Video 200×,说明密集数据带来的巨大计算;右侧以 1-st frame 到 10-th frame 的 90%+ 相似度示意,说明帧相似带来的冗余计算。两问题共同构成后续稀疏化的动机。",
+            "关键文字": [
+              "larger and redundant computations compared to text generation and image classification",
+              "Normalized computation: Text 1×, Image 10×, Video 200×",
+              "90%+ similarity (1-st frame ~ 10-th frame)",
+              "Large computations by intensive data",
+              "Redundant computations by frames similarity"
+            ],
+            "视觉骨架": [
+              "红色 Challenge 标签+引言框",
+              "归一化计算量三柱对比图",
+              "帧相似度示意 (1st~10th frame)",
+              "左右两问题标题标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "case_study"
+          },
+          {
+            "页序号": 35,
+            "页面角色": "content_candidate",
+            "标题": "加速思路:帧相似性+稀疏分布双技术总览",
+            "核心论断": "利用帧相似性与稀疏分布降开销,拆解为全注意力稀疏+稀疏感知 PE 双技术",
+            "本页讲什么": "本页给出解决思路并总览两条技术路线。红色 Key idea 标签指出通过挖掘帧相似性与稀疏分布来降低计算开销;左侧淡化重现上页挑战图作为承接,右侧用框图列出两项即将展开的技术——1. Full-attention sparse computing 与 2. Sparsity-aware Processing Element,并配 Col-Block Dense-Sparse、sparse PU、Dense PU 等模块示意,充当本节 sub-nav。",
+            "关键文字": [
+              "Reduce computational overhead by exploiting frame similarity and sparse distribution",
+              "1. Full-attention sparse computing",
+              "2. Sparsity-aware Processing Element",
+              "Col-Block Dense-Sparse",
+              "sparse PU / Dense PU"
+            ],
+            "视觉骨架": [
+              "红色 Key idea 标签+引言框",
+              "左侧淡化挑战图 (承接上页)",
+              "右侧双技术框图示意",
+              "两技术编号标注框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "case_study"
+          },
+          {
+            "页序号": 36,
+            "页面角色": "content_candidate",
+            "标题": "技术一:全注意力稀疏计算",
+            "核心论断": "将非线性算子转为线性算子,把 3 次稀疏计算压缩为 1 次且几乎不损精度",
+            "本页讲什么": "本页展开第一项技术——全注意力稀疏计算。紫色 Innovation 标签指出核心创新:将非线性算子转化为线性算子,对稀疏计算的精度影响可忽略。下方左右对比两种方案:左侧 Naive Act-Act Differential Computing 需要 3 sparse computations、计算量更大;经 quadric-free approximate 后,右侧 Differential Computing with Approximation 仅需 1 sparse computation,实现面向 Act-Act 的高效稀疏计算。",
+            "关键文字": [
+              "Turn the nonlinear operators into linear operators with negligible impact on accuracy for sparse computing",
+              "3 sparse computations! (more computation)",
+              "1 sparse computation!",
+              "quadric-free approximate",
+              "efficient sparse computing for Act-Act",
+              "Naive Act-Act Differential Computing vs with Approximation"
+            ],
+            "视觉骨架": [
+              "紫色 Innovation 标签+引言框",
+              "左侧 Naive Act-Act 差分计算框图",
+              "右侧近似后单次稀疏计算框图",
+              "中间箭头+quadric-free 标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "case_study"
+          },
+          {
+            "页序号": 37,
+            "页面角色": "content_candidate",
+            "标题": "技术二:稀疏感知处理单元 (PE)",
+            "核心论断": "稀疏感知 PE 依列稀疏模式混合稀疏/密集计算,area efficiency 提升 1.73×–3.18×",
+            "本页讲什么": "本页展开第二项技术——稀疏感知处理单元。紫色 Innovation 标签指出:Sparsity-aware PE 基于列稀疏模式(column sparsity pattern)混合运用稀疏与密集计算以提升能效。左下 Columns parsity pattern 与 Example 示意其工作方式;右侧能效柱图对比 Dense/Sparse/Ours 三方案,Ours 最高,并标注相比纯 dense 与纯 sparse 架构获得 1.73×–3.18× 更高的面积效率。",
+            "关键文字": [
+              "Sparsity-aware PE utilizes sparse and dense computation to improve energy efficiency based on column sparsity pattern",
+              "Energy efficiency: Dense / Sparse / Ours",
+              "1.73×- 3.18× higher area efficiency",
+              "compared with dense-only and sparse-only architectures",
+              "Columns parsity pattern / Example"
+            ],
+            "视觉骨架": [
+              "紫色 Innovation 标签+引言框",
+              "左侧列稀疏模式与 Example 示意",
+              "右侧 Dense/Sparse/Ours 能效柱图",
+              "红色面积效率提升数值标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "case_study"
+          },
+          {
+            "页序号": 38,
+            "页面角色": "content_candidate",
+            "标题": "实测结果:VGAcc 加速器性能",
+            "核心论断": "VGAcc 相比 NVIDIA A100 GPU 平均 2.74× 加速、2.29× 面积效率",
+            "本页讲什么": "本页收束全章,展示 VGAcc 加速器的实测结果。引言指出 VGAcc 相比 NVIDIA A100 GPU 取得平均 2.74× 加速与 2.29× (面积效率)。下方两组柱图分别为 Speedup to GPU 与 Normalized area efficiency to GPU,横轴覆盖 O-Sora16-256、O-Sora16-512、Latte16-256、Latte16-512、VDT16-256 多个视频生成基准并以 Geomean 汇总(图内数值以图片形式嵌入,文本层仅捕获到标题与均值)。",
+            "关键文字": [
+              "VGAcc achieves average 2.74× speedup and 2.29× compared with NVIDIA A100 GPU",
+              "Speedup to GPU",
+              "Normalized area efficiency to GPU",
+              "O-Sora16-256 / O-Sora16-512 / Latte16-256 / Latte16-512 / VDT16-256",
+              "Geomean"
+            ],
+            "视觉骨架": [
+              "上方结果结论引言框",
+              "上半 Speedup to GPU 柱图",
+              "下半 Normalized area efficiency 柱图",
+              "多 benchmark 横轴+Geomean 分隔线"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "case_study"
+          },
+          {
+            "页序号": 39,
+            "页面角色": "content_candidate",
+            "标题": "Rethink Transformer:级联专家视角",
+            "核心论断": "把 Transformer 每个 block 视为专家,所有 token 经同一组专家串行处理",
+            "本页讲什么": "本页把 Transformer 重新诠释为「级联专家(Cascaded Experts)」:左侧展开标准 block(Multi-Head Attention + Feed Forward + Add&Norm),中间将堆叠的 block 抽象为逐层专家,指出每个 block 就是一个 expert;右侧强调所有输入 token 都被同一组专家处理。为后续 MoE/MoD/稀疏专家的统一叙事奠定「专家」基座。",
+            "关键文字": [
+              "Cascaded Experts",
+              "Each block is an expert",
+              "All tokens are processed by the same experts",
+              "Input tokens: All cats love fish but hate to get their paws wet"
+            ],
+            "视觉骨架": [
+              "Transformer block 展开图",
+              "级联 block→expert 映射示意",
+              "token 处理流示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 40,
+            "页面角色": "content_candidate",
+            "标题": "新范式:混合专家 MoE",
+            "核心论断": "MoE 让每个 block 含 M 个并行专家,不同 token 分派给不同专家",
+            "本页讲什么": "本页在专家视角上引入 MoE(Mixture of Experts):左侧标准 block 替换为含 MoE 与 Gating 的结构,中部指出每个 block 内含 M 个并行专家(Parallel Experts),右侧展示不同 token(their/wet、cats/fish/paws 等)被路由到不同专家。承接上页「同一组专家」,转为「并行多专家按 token 分派」。",
+            "关键文字": [
+              "Parallel Experts",
+              "Each block contains M experts",
+              "Different tokens are processed by the different experts",
+              "MoE / Gating"
+            ],
+            "视觉骨架": [
+              "含 MoE 的 block 展开图",
+              "block→M 并行专家映射",
+              "token→专家分派示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 41,
+            "页面角色": "content_candidate",
+            "标题": "新范式:混合深度 MoD",
+            "核心论断": "MoD 让每个 block 成为可跳过专家,部分 token 跳过部分层",
+            "本页讲什么": "本页引入 MoD(Mixture of Depths):左侧 block 结构加入 Gating,中部展示「级联但可跳过的专家(Cascaded but Skippable Experts)」——每个 block 是一个可跳过专家,右侧显示不同 token 被不同(数量的)专家处理,部分 token 跳过若干层。与 MoE 并列构成稀疏专家两条路径(块稀疏 vs 层稀疏)。",
+            "关键文字": [
+              "Cascaded but Skippable Experts",
+              "Each block is an skippable expert",
+              "Different tokens are processed by the different experts",
+              "Gating"
+            ],
+            "视觉骨架": [
+              "含 Gating 的 block 展开图",
+              "可跳过 block→expert 示意",
+              "token 按深度跳层示意"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 42,
+            "页面角色": "content_candidate",
+            "标题": "稀疏驱动的新范式:三级降载",
+            "核心论断": "MoE/MoD/稀疏专家三级稀疏叠加,总降载可达 8-20×",
+            "本页讲什么": "本页统一 MoE/MoD/稀疏专家为「稀疏驱动新范式」:横向三列并列——MoE(块稀疏,降载 2×)、MoD(层稀疏,降载 2×)、Sparse expert(专家内稀疏,降载 2-5×,配 8×8 稀疏矩阵示意)。核心口号「稀疏专家能跳过更多计算成为更好专家」,底部合流箭头显示三级叠加后总降载可达 8-20×。是本章方法论的收束页。",
+            "关键文字": [
+              "Sparse expert can skip more computations and reduce more workloads to be a better expert",
+              "MoE — Block Sparsity for experts",
+              "MoD — Layer Sparsity for experts",
+              "Sparse expert — Intra-expert Sparsity",
+              "Total workload reduction can be 8-20"
+            ],
+            "视觉骨架": [
+              "3 列并列范式 panel",
+              "8×8 专家内稀疏矩阵示意",
+              "三路合流降载箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 43,
+            "页面角色": "content_candidate",
+            "标题": "稀疏新基座模型:训练到推理",
+            "核心论断": "稀疏在应用/算子/硬件三层贯通,LLM→SpLLM、GEMM→SpGEMM",
+            "本页讲什么": "本页提出「稀疏新基座模型」:借助硬件架构支持,建立从训练到推理的完整稀疏计算范式。用 Tradition→Now 时间轴对比 Application/Operation/Hardware 三层栈——传统 LLMs→GEMMs→GPU,现在演进为 SpLLMs→SpGEMMs→GPU(NVIDIA、AMD)。强调稀疏化贯穿应用层与算子层。",
+            "关键文字": [
+              "With the support of hardware architecture, we establish a complete sparse computing paradigm from training to inference",
+              "Application: LLMs → SpLLMs",
+              "Operation: GEMMs → SpGEMMs",
+              "Hardware: GPUs (NVIDIA, AMD)"
+            ],
+            "视觉骨架": [
+              "Tradition/Now 时间轴",
+              "应用-算子-硬件三层栈",
+              "层间稀疏演进箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 44,
+            "页面角色": "content_candidate",
+            "标题": "稀疏新基座模型:面向未来",
+            "核心论断": "稀疏栈继续演进,硬件由 GPU 迈向专用 Sp-X PU",
+            "本页讲什么": "本页在上页基础上增加 Future 列,延伸稀疏栈演进时间轴:Tradition(LLMs/GEMMs/GPU)→Now(SpLLMs/SpGEMMs/GPU)→Future(SpLLMs/SpGEMMs/Sp-X PU)。核心是硬件层从通用 GPU 迈向面向稀疏的专用处理器 Sp-X PU,呼应后续 TB-STC 专用硬件。",
+            "关键文字": [
+              "With the support of hardware architecture, we establish a complete sparse computing paradigm from training to inference",
+              "Application: SpLLMs",
+              "Operation: SpGEMMs",
+              "Hardware: GPUs → Sp-X PU"
+            ],
+            "视觉骨架": [
+              "三列 Tradition/Now/Future 时间轴",
+              "应用-算子-硬件三层栈",
+              "硬件演进到 Sp-X PU 箭头"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 45,
+            "页面角色": "content_candidate",
+            "标题": "N:M 稀疏:加速的有效手段",
+            "核心论断": "N:M 稀疏兼顾约 2× 加速与精度-硬件效率折中",
+            "本页讲什么": "本页作为 N:M 稀疏的背景引入:指出 N:M 稀疏 pattern 是模型加速的有效手段[1]。页面用示意图+标注说明 N:M 稀疏可带来约 2× 性能提升[2],并实现精度-硬件效率折中[3]。底部列出 ICLR 2021、NVIDIA A100 Tensor Core、MICRO 2023 三条参考文献,把话题从范式收束到具体稀疏结构。",
+            "关键文字": [
+              "The N:M sparsity pattern is a promising ingredient in model acceleration[1]",
+              "N:M sparsity",
+              "2x performance improvement[2]",
+              "N:M sparsity can achieve accuracy-hardware efficiency trade-off[3]"
+            ],
+            "视觉骨架": [
+              "Background 标签框",
+              "N:M 稀疏示意虚线框",
+              "性能/精度折中标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 46,
+            "页面角色": "content_candidate",
+            "标题": "挑战:训练推理统一的稀疏架构缺失",
+            "核心论断": "现有无 N:M 架构能同时高效支持训练与推理三算子",
+            "本页讲什么": "本页抛出挑战:目前没有 N:M 稀疏架构能对训练和推理同时高效支持这些稀疏算子。下方展开稀疏训练的三个阶段(算子):前向 forward pass(SpMM)、反向 backward propagation(SpMM-T)、权重更新 weight update(SDDMM)。为后续 TB-STC 三算子方案设定问题靶心。",
+            "关键文字": [
+              "Challenge: There is no N:M sparse architecture that efficiently supports these sparse operators for both training and inference",
+              "Sparse training consists of three stages (operators)",
+              "forward pass (SpMM)",
+              "backward propagation (SpMM-T)",
+              "weight update (SDDMM)"
+            ],
+            "视觉骨架": [
+              "Challenge 标签框",
+              "三算子列表框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 47,
+            "页面角色": "content_candidate",
+            "标题": "TB-STC 稀疏 Pattern:可转置块级 N:M",
+            "核心论断": "可转置块级 N:M 同时探索块级与维度级稀疏灵活性",
+            "本页讲什么": "本页提出本章核心方法 TB-STC 的稀疏 pattern——可转置块级 N:M 稀疏(Transposable Block-wise N:M Sparsity)。Key idea:同时在块级(block-level)与维度级(dimension-level)探索稀疏灵活性。上方为要点框,下方为大面积留白的示意框(图内容嵌于占位区)。是自研工作方法的开篇。",
+            "关键文字": [
+              "Key idea: Transposable Block-wise N:M Sparsity explores the sparsity flexibility for both block-level and dimension-level"
+            ],
+            "视觉骨架": [
+              "Key idea 标签框",
+              "稀疏 pattern 示意占位框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 48,
+            "页面角色": "content_candidate",
+            "标题": "Tech.1:SpMM 与 SpMM-T 算子",
+            "核心论断": "自适应格式转换以低开销同时支持 SpMM 与 SpMM-T",
+            "本页讲什么": "本页介绍 TB-STC 的第一项技术:自适应格式转换方法(Adaptive format conversion approach),以低开销的格式转换同时支持 SpMM(前向)与 SpMM-T(反向)算子。承接 p46 三算子中的前两个,给出统一支持前向/反向的关键设计。页面以要点文字为主,图示区留白。",
+            "关键文字": [
+              "Adaptive format conversion approach: Supporting SpMM and SpMM-T operators with low-overhead format conversion"
+            ],
+            "视觉骨架": [
+              "单条要点文字块",
+              "算子示意占位区"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 49,
+            "页面角色": "content_candidate",
+            "标题": "Tech.2:SpMM 与 SDDMM 算子",
+            "核心论断": "可配置输入选择+输出交替实现数据通路共享,面效率提 2.60×",
+            "本页讲什么": "本页介绍 TB-STC 第二项技术:可配置输入选择器与输出交替单元(Configurable Input Selector & Output Alternate Unit),实现 SpMM 与 SDDMM 之间的数据通路共享(datapath sharing)。据此 TB-STC 将面积效率提升 2.60×。承接三算子中前向与权重更新算子的融合复用。",
+            "关键文字": [
+              "Configurable Input Selector & Output Alternate Unit",
+              "Realizing the datapath sharing between SpMM and SDDMM",
+              "TB-STC improves the area efficiency by 2.60×"
+            ],
+            "视觉骨架": [
+              "两级要点列表",
+              "算子数据通路示意占位区"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 50,
+            "页面角色": "content_candidate",
+            "标题": "实验结果:TB-STC 端到端加速",
+            "核心论断": "TB-STC 训练端到端提速 3.28×/1.90×、面效率 2.46×/2.01×",
+            "本页讲什么": "本页给出 TB-STC 的实验结果:在训练上相对 Sparse Tensor Core(STC)与 SOTA 稀疏硬件架构,取得端到端 3.28×/1.90× 更高速度、2.46×/2.01× 更好面积效率。是本章及自研工作的量化收束页,用具体加速比佐证前述三算子共享设计的有效性。",
+            "关键文字": [
+              "TB-STC achieves the end-to-end improvement of 3.28×/1.90× higher speed and 2.46×/2.01× better area efficiency over the Sparse Tensor Core (STC) and SOTA sparse hardware architectures on the training"
+            ],
+            "视觉骨架": [
+              "单条结果要点文字块",
+              "加速比数值强调"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 51,
+            "页面角色": "content_candidate",
+            "标题": "Contents:高亮定位第 5 章 Summary",
+            "核心论断": "全线汇报进入 Summary 收尾章,前四章已完成铺陈",
+            "本页讲什么": "全局目录页,列出五大板块:①Background: Cost and Latency of LLM ②Preliminary: LLM Acceleration on GPUs ③Insight: From Moore's Law to Scaling Law ④Solution: Sparse Computation Powering LLM ⑤Summary。当前高亮第 5 项 Summary,标示汇报进入收尾总结环节。",
+            "关键文字": [
+              "Contents",
+              "Background: Cost and Latency of LLM",
+              "Preliminary: LLM Acceleration on GPUs",
+              "Insight: From Moore's Law to Scaling Law",
+              "Solution: Sparse Computation Powering LLM",
+              "5 Summary"
+            ],
+            "视觉骨架": [
+              "五项编号 agenda 列表",
+              "当前项蓝色高亮标记",
+              "左侧蓝色进度条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 52,
+            "页面角色": "content_candidate",
+            "标题": "Summary:以 Cost·Latency 公式串联全线四项工作",
+            "核心论断": "四项稀疏加速工作累计降本 10.3×,共同验证 LLM Scaling Law",
+            "本页讲什么": "用 Cost·Latency = Workload / Equivalent Number of Multipliers 公式统领全线工作:左侧 Scaling Law 曲线示意三条演进路径(高效模型、领域定制、新基础模型架构)。右侧四项工作各自贡献加速比——FlashDecoding++(通用方法)、FlightLLM(稀疏高效模型)、VGAcc(稀疏视频生成)、TB-STC(稀疏新基础模型),分别对应利用率提升与工作量削减,最终 Cost reduction 达 10.3× lower cost。",
+            "关键文字": [
+              "Summary: LLM Scaling Law",
+              "Cost·Latency = Workload / Equivalent Number of Multipliers",
+              "General method for LLMs (FlashDecoding++)",
+              "Enabling efficient model with sparsity (FlightLLM)",
+              "Video generation model with sparsity (VGAcc)",
+              "New foundation model with sparsity (TB-STC)"
+            ],
+            "视觉骨架": [
+              "Cost·Latency 公式框",
+              "Scaling Law 多路径曲线图",
+              "四工作名称竖排列表",
+              "加速比数值列 (2-4x/1.8x/2.7x/3.3x/10.3x)"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 53,
+            "页面角色": "content_candidate",
+            "标题": "Extension Works:LLM 技术栈五层与对应扩展工作",
+            "核心论断": "本组工作沿 LLM 技术栈五层全面铺开,构成成本高效 LLM 体系",
+            "本页讲什么": "左栏「Technique stack of LLMs」自上而下列出五层:Application(Chat/Translate/Search)、Algorithm(Quantization/Sparsification)、System(高性能 GPU kernel/Serving)、Cluster、Hardware(GPU/FPGA/CPU/ASIC)。右栏「Our work for cost-efficient LLMs」逐层对应产出:Collaborators;Quantization[NIPS'23]/Sparsification[under review];FlashDecoding++[MLSys'24]/Quantization GPU kernel[arXiv];Scheduling/Engineering、Startup issues;LLM FPGA acc[FPGA'24]/Sparse Tensor Core[ICCAD'23]。右上 Goal 标注整体目标。",
+            "关键文字": [
+              "Extension Works",
+              "Technique stack of LLMs",
+              "Application / Algorithm / System / Cluster / Hardware",
+              "Our work for cost-efficient LLMs",
+              "FlashDecoding++ [MLSys'24], Quantization GPU kernel [arXiv]",
+              "LLM FPGA acc [FPGA'24], Sparse Tensor Core [ICCAD'23]"
+            ],
+            "视觉骨架": [
+              "左侧五层技术栈堆叠框",
+              "右侧逐层对应工作列表",
+              "右上 Goal 标签",
+              "底部双栏标题对照"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 54,
+            "页面角色": "content_candidate",
+            "标题": "致谢页:Sparse Computation Powering LLM 收束",
+            "核心论断": "全线工作以稀疏计算赋能 LLM 收官,并致谢团队与合作方",
+            "本页讲什么": "汇报收尾致谢页,重申主题 Sparse Computation Powering Large Language Model,列出讲者信息 Guohao Dai(上海交大副教授、Infinigence-AI 首席科学家与联合创始人,daiguohao@sjtu.edu.cn,2024-05-21)。中部再现 Scaling Law 三路径曲线呼应全篇主线,左下感谢上海交大与清华师生,右上以 Thanks/Support 标签及支持方图标收束。",
+            "关键文字": [
+              "Sparse Computation Powering Large Language Model",
+              "Associate Professor @ Shanghai Jiao Tong University",
+              "Chief Scientist and Co-founder of Infinigence-AI",
+              "Guohao Dai, daiguohao@sjtu.edu.cn",
+              "Thanks / Support",
+              "Thanks to Shanghai Jiao Tong University students ..."
+            ],
+            "视觉骨架": [
+              "Thanks / Support 角标",
+              "讲者信息文本块",
+              "Scaling Law 三路径曲线复现",
+              "支持方 logo 网格",
+              "致谢文本块"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "closing"
+          },
+          {
+            "页序号": 55,
+            "页面角色": "content_candidate",
+            "标题": "华为 Beyond Scaling Law 理论结论",
+            "核心论断": "LLM 性能取决于其记忆训练样本的能力",
+            "本页讲什么": "引入华为 2024.05.14 发布的 Beyond Scaling Law 工作,抛出其核心理论结论:大模型的表现依赖于对训练样本的记忆能力。整页仅有标题、发布日期和一句理论结论,几乎无图,作为附录中该主题的开场铺垫。",
+            "关键文字": [
+              "Released in 2024.05.14",
+              "Theoretical results: The performance of LLM depends on its ability to memorize training samples"
+            ],
+            "视觉骨架": [
+              "蓝色大标题条",
+              "右侧两段说明文字",
+              "大面积留白"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 56,
+            "页面角色": "content_candidate",
+            "标题": "LLM Dataflow:主算子为 Attention 与 Linear",
+            "核心论断": "LLM 主要由 Attention 与 Linear 两类算子构成",
+            "本页讲什么": "拆解 LLM 数据流,左侧展示 prefill/decode 两阶段的 Linear-Attention-Linear 结构,右侧用 Llama2-7B/Baichuan-13B/Mistral-7x8B 在 Seqlen=128 下的算子耗时分解图。红框强调结论:LLM 主体是 Attention 与 Linear 算子,为后续三算子优化做铺垫。",
+            "关键文字": [
+              "prefill phase",
+              "decode phase",
+              "The main components of LLMs are Attention and Linear operators",
+              "Breakdown of Attention/Linear"
+            ],
+            "视觉骨架": [
+              "左右两 panel 布局",
+              "prefill/decode 数据流示意",
+              "多模型算子耗时分解柱图",
+              "红框结论标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "chapter_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 58,
+            "页面角色": "content_candidate",
+            "标题": "技术一 Attention 算子:统一最大值解法",
+            "核心论断": "统一最大值加重计算机制,较 FlashDecoding 提速 2.02x",
+            "本页讲什么": "承接上页问题,给出 Approach:对 partial softmax 采用统一最大值并配重计算机制保精度。左侧两点论证:①统一最大值保持 softmax 数学等价;②该 max 值在 99.99% 情况下保证 FP32 计算精度。底部黄框给出结果:较 FlashDecoding 最高提速 2.02x。",
+            "关键文字": [
+              "A unified maximum for partial softmax operation and a recomputation mechanism to ensure accuracy",
+              "The unified maximum preserves the mathematical equivalence of softmax",
+              "The unified max value guarantees the accuracy of FP32 calculation in 99.99% cases",
+              "Up to 2.02x speedup over FlashDecoding"
+            ],
+            "视觉骨架": [
+              "紫色 Approach 标签块",
+              "左侧上下两论证框",
+              "右侧示意大图框",
+              "底部黄底红字结果条"
+            ],
+            "上页角色": "chapter_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 59,
+            "页面角色": "content_candidate",
+            "标题": "技术二 Linear 算子:decode 阶段 Flat GEMM 挑战",
+            "核心论断": "decode 阶段的 flat GEMM 需针对并行度与算术强度精心设计",
+            "本页讲什么": "FlashDecoding++ 技术二挑战页。指出 decode 阶段 GEMM 为 M 极小的 Flat GEMM,需从并行度与算术强度角度设计。右侧按不同 N 做瓶颈分析:小 N 受并行度限制(Parallelism-bounded),大 N 受内存限制(Memory-bounded)。",
+            "关键文字": [
+              "The flat GEMMs need careful designs from the perspective of parallelism and arithmetic intensity",
+              "GEMM at decode phase: Flat GEMM",
+              "M has extremely small value",
+              "Small N: Parallelism-bounded",
+              "Large N: Memory-bounded"
+            ],
+            "视觉骨架": [
+              "红色 Challenge 标签块",
+              "左右两 panel",
+              "decode phase Flat GEMM 示意",
+              "不同 N 瓶颈分析标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 60,
+            "页面角色": "content_candidate",
+            "标题": "技术二 Linear 算子:细粒度分块与双缓冲",
+            "核心论断": "细粒度分块+双缓冲使 Linear 算子较 cuBLAS 平均提速 1.17x",
+            "本页讲什么": "承接上页瓶颈,给出 Approach:小 N 用 fine-grained tiling 提升并行度与 GPU 利用率,大 N 用 double buffering 重叠计算与数据搬运以缓解内存瓶颈。底部结果:较 cuBLAS 平均提速 1.17x。",
+            "关键文字": [
+              "Use fine-grained tiling to improve parallelism with small N and double buffering with large N",
+              "Improve parallelism with small N / Fine-grained Tiling / GPU utilization",
+              "Alleviate memory bottleneck with large N / Double buffering / Overlap computation and data movement",
+              "1.17x average speedup over cuBLAS"
+            ],
+            "视觉骨架": [
+              "紫色 Approach 标签块",
+              "左右两 panel(小N/大N)",
+              "分块与双缓冲示意",
+              "底部黄底红字结果条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 61,
+            "页面角色": "content_candidate",
+            "标题": "技术三 编译调优:次优实现带来显著性能损失",
+            "核心论断": "给定线性负载选最优底层实现非平凡,选错损失显著",
+            "本页讲什么": "FlashDecoding++ 技术三挑战页。指出对给定线性负载选最优底层实现非平凡:因模型多样性、工程效应、输入动态、硬件容量等因素而复杂。举例 shape [1,4096,4096] 用 cuBLAS 比 FastGEMV 慢 20%,[4,4096,4096] 用 FastGEMV 比 Flat GEMM 慢 50%,说明选错实现代价大。",
+            "关键文字": [
+              "For a given linear workload, it is non-trivial to find the optimal underlying implementation",
+              "Sub-optimal implementation brings significant performance loss",
+              "Shape [1,4096,4096]: cuBLAS is 20% slower than FastGEMV",
+              "Shape [4,4096,4096]: FastGEMV is 50% slower than Flat GEMM"
+            ],
+            "视觉骨架": [
+              "红色 Challenge 标签",
+              "workload→implementation 映射框图",
+              "FastGEMV/Flat GEMM/cuBLAS 实现节点",
+              "两个 shape 性能损失标注框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 62,
+            "页面角色": "content_candidate",
+            "标题": "技术三 编译调优:离线映射表启发式选择",
+            "核心论断": "离线建映射表启发式选实现,较静态实现提速 1.29x",
+            "本页讲什么": "承接上页,给出 Approach:离线构建 mapping table,运行时启发式选最优实现。左框基于两条观察缩减负载变化空间(观察1:仅随输入变化;观察2:给定模型仅 4 种选择),右框据此构建映射最优实现的表。底部结果:较静态实现最高提速 1.29x。",
+            "关键文字": [
+              "Build the mapping table offline and heuristically choose the optimal implementation at runtime",
+              "Reduce the workload variation space",
+              "Build the table to map the optimal impl",
+              "Observation 1 / Observation 2: only 4 choices",
+              "Up to 1.29x speedup over the static implementation"
+            ],
+            "视觉骨架": [
+              "紫色 Approach 标签块",
+              "左右两 panel",
+              "两条 Observation 虚线框",
+              "底部黄底红字结果条"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 63,
+            "页面角色": "content_candidate",
+            "标题": "背景:结构化稀疏导致精度下降",
+            "核心论断": "结构化稀疏在大模型上导致精度损失",
+            "本页讲什么": "稀疏方法双困境的第一面。背景断言:现有稀疏方法在大模型上面临精度与硬件效率挑战。本页聚焦结构化稀疏——依托 NVIDIA Sparse Tensor Core,但会导致精度损失(引 SparseGPT [1],Lower is better)。为下一页的非结构化稀疏困境做对照。",
+            "关键文字": [
+              "Existing sparse methods face accuracy and hardware efficiency challenges on large language models",
+              "Structured sparsity leads to poor accuracy",
+              "NVIDIA Sparse Tensor Core",
+              "Accuracy loss! [1] / Lower is better"
+            ],
+            "视觉骨架": [
+              "红色 Background 标签+框",
+              "结构化稀疏精度图",
+              "红框 Accuracy loss 标注",
+              "底部引文脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 64,
+            "页面角色": "content_candidate",
+            "标题": "背景:非结构化稀疏带来硬件开销",
+            "核心论断": "非结构化稀疏在大模型上带来巨大额外硬件开销",
+            "本页讲什么": "稀疏方法双困境的第二面,与上页同一 Background 断言。本页聚焦非结构化稀疏——虽保精度但带来大量额外硬件开销:引 SpAtten [1]、FACT [2]、Matraptor [3],指出超过 80% 的开销来自此。与上页结构化稀疏共同构成'精度 vs 硬件效率'双困境。",
+            "关键文字": [
+              "Existing sparse methods face accuracy and hardware efficiency challenges on large language models",
+              "Unstructured sparsity leads to large additional hardware overhead",
+              "SpAtten [1] / FACT [2]",
+              "Over 80% of the overhead"
+            ],
+            "视觉骨架": [
+              "红色 Background 标签+框",
+              "非结构化稀疏硬件开销图",
+              "红框 Over 80% 标注",
+              "底部三条引文脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 65,
+            "页面角色": "content_candidate",
+            "标题": "MoE:Switch Transformers 稀疏专家层",
+            "核心论断": "MoE 用稀疏专家层同工作量下最高省 7x 时间",
+            "本页讲什么": "以 Switch Transformers [1] 为例介绍 MoE 范式。左侧用 Sparse MoE layers 与 Router 展示在 FFN 中启用不同专家的机制,右侧 Result:相同工作量下最高节省 7x 时间。作为稀疏计算 MoE 论据的开篇工作。",
+            "关键文字": [
+              "Switch Transformers [1]",
+              "Enabling different experts in FFN",
+              "Sparse MoE layers",
+              "Router",
+              "Save up to 7x time for the same workload"
+            ],
+            "视觉骨架": [
+              "左右两 panel",
+              "Sparse MoE layers 与 Router 示意图",
+              "右侧 Result 分区",
+              "底部引文脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 66,
+            "页面角色": "content_candidate",
+            "标题": "MoE:MegaBlocks 块稀疏计算",
+            "核心论断": "MegaBlocks 块稀疏计算省 1.8-2.4x 端到端训练时间",
+            "本页讲什么": "以 MegaBlocks [1] 为例继续 MoE 论据。左侧介绍其为 MoE 启用 block-sparse 计算(专家计算按块稀疏),右侧 Result:节省 1.8-2.4x 端到端训练时间。与上页 Switch Transformers 承接,共同支撑 MoE 的效率论据。",
+            "关键文字": [
+              "MegaBlocks [1]",
+              "Enabling block-sparse computations for MoE",
+              "Computation for experts is block-sparse",
+              "Save 1.8 - 2.4 end-to-end training time"
+            ],
+            "视觉骨架": [
+              "左右两 panel",
+              "block-sparse 计算示意框",
+              "右侧 Result 分区",
+              "底部引文脚注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          },
+          {
+            "页序号": 67,
+            "页面角色": "content_candidate",
+            "标题": "MoD:Early Exit 与 Mixture-of-Depths",
+            "核心论断": "MoD 类方法通过跳层降负载,最高提速约 3.6x",
+            "本页讲什么": "并列对比两种深度稀疏方法。左:Early Exit [1] 跳过后续层,平均降负载 4x、提速 3.6x;右:MoD [2] 跳过特定层(按 Layers×Sequence Step 网格标注 skip/not skip),平均降负载 2x、提速约 2x。共同支撑 MoD 范式降低计算量的论据。",
+            "关键文字": [
+              "Early Exit [1] (Skip the following layers)",
+              "MoD [2] (Skip certain layers)",
+              "Average workload reduction 4x / Speedup 3.6X",
+              "Average workload reduction 2x / Speedup ~2X",
+              "Not skip / Skip"
+            ],
+            "视觉骨架": [
+              "左右两 panel 并列",
+              "Early Exit 层跳过示意",
+              "MoD 层×序列 skip 网格图",
+              "红字降负载/提速标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "ending_candidate",
+            "section_role": "appendix"
+          }
+        ],
+        "chapter_candidate": [
+          {
+            "页序号": 32,
+            "页面角色": "chapter_candidate",
+            "标题": "Demo:LLaMA2-7B跑在U280 FPGA",
+            "核心论断": "FlightLLM实机demo在U280 FPGA上运行LLaMA2-7B",
+            "本页讲什么": "本节收束demo页。仅一个蓝字标题「Demo: LLaMA2-7B on U280 FPGA」+一张demo图(image),用实机演示收束稀疏计算与FlightLLM主线,并过渡到下一章。页面几乎无正文文字,以视觉演示为主。",
+            "关键文字": [
+              "Demo: LLaMA2-7B on U280 FPGA"
+            ],
+            "视觉骨架": [
+              "单一标题栏",
+              "整页demo演示图"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "method"
+          },
+          {
+            "页序号": 57,
+            "页面角色": "chapter_candidate",
+            "标题": "技术一 Attention 算子:partial softmax 更新开销",
+            "核心论断": "基于 partial softmax 的 Attention 引入额外更新开销",
+            "本页讲什么": "FlashDecoding++ 技术一的挑战页。对比 original softmax 与 partial softmax,指出 partial softmax 因各 block 最大值不同而需额外更新(Update Overhead),并抛出关键问题:能否对所有 block 使用统一最大值?为下一页的解法做承接。",
+            "关键文字": [
+              "Attention operator based on the partial softmax introduces overhead for updates",
+              "Additional update is due to the different maximums in different blocks",
+              "Is it feasible to use a unified maximum for all blocks"
+            ],
+            "视觉骨架": [
+              "红色 Challenge 标签块",
+              "original vs partial softmax 对比图",
+              "箭头指向",
+              "红色虚线 Update Overhead 标注"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": "content_candidate",
+            "section_role": "appendix"
+          }
+        ],
+        "ending_candidate": [
+          {
+            "页序号": 68,
+            "页面角色": "ending_candidate",
+            "标题": "MoDE:深度与专家混合降负载延迟",
+            "核心论断": "MoDE 结合 MoE 与 MoD 可跳更多计算并降低推理延迟",
+            "本页讲什么": "本 section 收尾页,将稀疏范式整合。用 MoE [1] + MoD [2] → MoDE(组合)的公式化示意,论证 MoDE 能跳过更多计算、进一步降低推理延迟(右框红字 Less workload and latency)。作为附录中稀疏范式论据的总结过渡页。",
+            "关键文字": [
+              "MoDE can skip more computations and reduce inference latency",
+              "MoE [1] + MoD [2] → MoDE (Combination)",
+              "Less workload and latency"
+            ],
+            "视觉骨架": [
+              "顶部结论框",
+              "MoE+MoD→MoDE 组合示意",
+              "加号与红色箭头",
+              "右侧 Less workload/latency 标注框"
+            ],
+            "上页角色": "content_candidate",
+            "下页角色": null,
+            "section_role": "appendix"
+          }
+        ]
+      }
+    }
+  ],
+  "previous_batches_rules": []
+}

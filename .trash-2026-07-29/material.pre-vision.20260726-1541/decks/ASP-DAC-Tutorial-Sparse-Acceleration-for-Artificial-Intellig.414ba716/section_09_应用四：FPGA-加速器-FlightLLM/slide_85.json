@@ -1,0 +1,31 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_85",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.09",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 85,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Solution 3：长度自适应编译与指令复用",
+  "核心论断": "长度自适应编译通过指令复用降低编译开销",
+  "本页讲什么": "本页给出第三个解决方案：长度自适应编译（Length adaptive compilation），通过指令复用（Instruction reuse）应对不同序列长度，避免为每种长度重复编译，提升端到端映射流的效率。",
+  "关键文字": [
+    "Solution 3: Length adaptive compilation",
+    "Instruction reuse"
+  ],
+  "视觉骨架": [
+    "指令复用流程图",
+    "长度自适应编译示意"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "编译流指令复用方案页",
+    "变长序列自适应方案页"
+  ],
+  "不适合复用场景": [
+    "硬件结果 benchmark 页",
+    "论文封面页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

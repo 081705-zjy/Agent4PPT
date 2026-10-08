@@ -1,0 +1,38 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 39,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "FlightVGM 相对 GPU 的加速比",
+  "核心论断": "FlightVGM 相对 GPU 实现 1.3× 加速",
+  "本页讲什么": "本页交出核心加速结果：以具体数字（1.3× speedup 等）量化 FlightVGM 相对 GPU 基线的性能提升，配合多组对比图直观呈现加速幅度，兑现章节叙事中「显著加速」的承诺。",
+  "关键文字": [
+    "FlightVGM achieves 1.3x speedup and"
+  ],
+  "视觉骨架": [
+    "加速比对比图",
+    "相对 GPU 基线标注",
+    "多模型结果分组"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39.asset.03",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39.asset.04",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39.asset.05",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_39.asset.06"
+  ],
+  "适合复用场景": [
+    "FPGA vs GPU 加速比结果页",
+    "视频生成推理提速数据页"
+  ],
+  "不适合复用场景": [
+    "实验设置介绍页",
+    "概念性动机页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

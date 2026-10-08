@@ -1,0 +1,41 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08",
+  "所属章节": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "页序号": 8,
+  "源文件": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "不同配置下注意力与 FFN 开销对比",
+  "核心论断": "随配置扩展注意力开销占比持续攀升超越 FFN",
+  "本页讲什么": "汇总性数据页：在不同模型 Config 下量化对比 Attention 与 FFN 的计算/存储开销占比，用多组图示说明长上下文场景中注意力侧成本主导整体开销，为 SpeContext 聚焦注意力优化提供量化依据。",
+  "关键文字": [
+    "FFN",
+    "Config",
+    "Attention"
+  ],
+  "视觉骨架": [
+    "Attention/FFN 开销占比图表组",
+    "多配置对比标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.01",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.02",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.03",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.04",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.05",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.06",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.07",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_08.asset.08"
+  ],
+  "适合复用场景": [
+    "注意力 vs FFN 开销量化对比页",
+    "长上下文开销数据支撑页"
+  ],
+  "不适合复用场景": [
+    "概念性应用铺陈页",
+    "单一框架示意图页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

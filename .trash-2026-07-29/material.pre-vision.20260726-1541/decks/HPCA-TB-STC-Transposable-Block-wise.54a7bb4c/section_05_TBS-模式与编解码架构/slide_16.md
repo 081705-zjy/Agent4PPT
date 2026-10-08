@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16"
+所属章节: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05"
+所属deck: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c"
+页序号: 16
+源文件: "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx"
+页面角色: "content_candidate"
+标题: "提出可转置分块稀疏模式 TBS"
+核心论断: "TBS 是一种兼顾灵活性的新型可转置分块稀疏模式"
+本页讲什么: "本页正式抛出全 deck 核心概念 TBS（Transposable Block Sparsity），说明它在分块粒度上探索稀疏灵活性，兼顾多种稀疏配置，为后续与其它 N:M 模式对比、以及编解码架构设计奠定基础。"
+关键文字: "[The novel sparsity pattern (TBS) explores the sparsity flexibility]"
+视觉骨架: "[TBS 分块稀疏模式示意图, 稀疏分块矩阵网格, 模式命名标注]"
+资源ID列表: "[tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.01, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.02, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.03, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.04, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.05, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.06, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.07, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.08, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.09, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.10, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_16.asset.11]"
+适合复用场景: "[新型稀疏模式的概念提出页, 分块稀疏方法的核心定义页]"
+不适合复用场景: "[纯性能数据对比页, 系统硬件架构页]"
+上页角色: "toc_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "提出可转置分块稀疏模式 TBS"}
+  - {"位置": "下方主体", "内容": "TBS 分块稀疏模式示意图与命名标注"}
+alternate_claims:
+  - "TBS 在分块粒度上探索稀疏灵活性"
+layout_tag: "block_diagram"
+---
+# slide 16: 提出可转置分块稀疏模式 TBS
+
+**核心论断**: TBS 是一种兼顾灵活性的新型可转置分块稀疏模式
+
+## 本页讲什么
+本页正式抛出全 deck 核心概念 TBS（Transposable Block Sparsity），说明它在分块粒度上探索稀疏灵活性，兼顾多种稀疏配置，为后续与其它 N:M 模式对比、以及编解码架构设计奠定基础。
+
+## 关键文字片段
+- The novel sparsity pattern (TBS) explores the sparsity flexibility
+
+## 视觉骨架
+- TBS 分块稀疏模式示意图
+- 稀疏分块矩阵网格
+- 模式命名标注
+
+## 可复用到
+- 新型稀疏模式的概念提出页
+- 分块稀疏方法的核心定义页
+
+## 不适合复用的场景
+- 纯性能数据对比页
+- 系统硬件架构页

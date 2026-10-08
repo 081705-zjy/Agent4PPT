@@ -1,0 +1,356 @@
+{
+  "batch_index": 3,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has both problem/motivation section listing enumerated challenges and a method section",
+      "title": "问题章列出的挑战需在方法章逐条回扣",
+      "description": "problem/motivation 章以 'Challenge 1/2/...' 形式明确列出的挑战, method 章必须逐一给出对应的解决机制 (verbatim 或 paraphrased), 命中率应 ≥80%.",
+      "what_to_check": [
+        "找 section_role=problem 或 motivation 的 slide.关键文字/核心论断 中形如 'Challenge N:' '挑战 N' 的显式挑战列表",
+        "对每条挑战, 在 section_role=method 的 slide 中找语义匹配的解决描述 (关键词/paraphrase)",
+        "算命中率 = 命中挑战数 / 总挑战数, 应 ≥80%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "problem 章 slide 9-10 列 2 个 challenge (MPC 算法算力利用率低 / SCF 硬件丧失并行性); method 章 slide 13-14 分别用 '交互缓存复用' 回应挑战 1、用 '预测流水线' 回应挑战 2, 命中 2/2"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记不住 challenge 的所有点, 逐一回扣是把 problem 转成 method 兑现承诺的核心机制, 缺失让 challenge 沦为空谈",
+      "fix_hint": "遍历 problem 章 challenge 列表, 对每条在 method 章增设一张 slide 或段落显式说 'X 挑战由 Y 机制解决'",
+      "exceptions": [
+        "综述型 deck 列的是领域整体挑战, 本工作只覆盖一部分"
+      ]
+    },
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with both cover and closing sections",
+      "title": "封面主标题需在收尾页回扣",
+      "description": "cover 页的核心 anchor (工作名/主标题关键词) 必须在 closing 页 verbatim 或强 paraphrased 出现, 形成'首尾呼应'闭环.",
+      "what_to_check": [
+        "提取 slide_1 (cover) 标题中的核心 anchor (工作名/项目名, 通常大写英文短语)",
+        "在 section_role=closing 的 slide.关键文字 中找同一 anchor 或其解释性描述",
+        "命中 = 同名或明显 paraphrase"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "cover slide 1 anchor 'Endor'; closing slide 24 首句 'We propose Endor, a computation-reduced algorithm and memory-' 完全回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面锚定听众第一印象, 收尾必须回到该锚点否则 deck 语义未闭合, 记忆点被稀释",
+      "fix_hint": "在最后一页顶部加一句 'We propose <cover_anchor>, ...' 一句话总述",
+      "exceptions": []
+    },
+    {
+      "id": "thesis_teaser_at_problem_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "decks with a distinct problem/challenge section preceding method",
+      "title": "挑战章末页需埋方法预告钩子",
+      "description": "problem/challenge 章的末页应含'我们提出 X 来解决这些问题'的一句话方法预告 (不展开细节), 承上启下.",
+      "what_to_check": [
+        "定位 section_role=problem 的最后一张 slide (页码范围末页)",
+        "检查 slide.关键文字/核心论断 是否含 'We propose' '提出' 加工作名 + 一句作用描述",
+        "不含具体数字或方法细节 (那些留给 method 章)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "problem 章末页 slide 11 单句强调 'We propose Endor, a computation-reduced algorithm and memory hardware co-design to accelerate LLM reasoning', 无方法细节, 完美埋钩"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "挑战列完不给出路会让听众焦虑, 一句预告既缓解张力又制造对 method 章的期待",
+      "fix_hint": "problem 章末追加一张 single-line slide, 用 'We propose <name>, a <adjective> <type> to <goal>' 模板",
+      "exceptions": [
+        "非常短 (<15 页) 的极简 deck, method 与 problem 合并成一章"
+      ]
+    },
+    {
+      "id": "toc_navigation_page_at_chapter_boundary",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥15 pages with ≥4 content chapters",
+      "title": "多章 deck 每章开头需 TOC 导航页",
+      "description": "长 deck 每个主要章节 (background/problem/method/experiment/closing) 开头应插入一张 toc_candidate 页, 竖排列出全 deck 章节并高亮当前章.",
+      "what_to_check": [
+        "统计 slide.页面角色 == 'toc_candidate' 的 slide 数量",
+        "验证每个 section_role 边界处 (页码范围首页或前一页) 存在 toc_candidate 页",
+        "TOC 页应含所有主要章节名 + 高亮当前项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "24 页 deck 出现 5 个 toc_candidate (slide 2/7/12/17/23), 完美对应 5 章边界 (background/problem/method/experiment/closing 开头), 每张都高亮当前章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 听众易迷路, 导航页是廉价但有效的定位锚, 复用还能建立节奏感",
+      "fix_hint": "在每章第一张内容页前插一张 TOC slide, 模板: 竖排编号 + 章节名 + 当前项加粗",
+      "exceptions": [
+        "<15 页短 deck 或章节数 ≤3 的 deck 可省"
+      ]
+    },
+    {
+      "id": "chapter_role_sequence_invariant",
+      "category": "chapter_transitions",
+      "applicable_when": "any paper_share type deck",
+      "title": "章节顺序应遵循 background→problem→method→experiment→closing",
+      "description": "论文分享类 deck 章节 section_role 序列应严格按 background→problem/challenge→method/solution→experiment/evaluation→closing 推进, 不跳序不倒置.",
+      "what_to_check": [
+        "提取 sections_outline 按 section_index 排序的 section_role 序列",
+        "验证是否符合 opening→background→problem→method→experiment→closing 顺序 (或子集)",
+        "允许中间省略, 不允许倒置"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "序列: opening→background→problem→method→experiment→closing, 完全符合规范"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "论文分享是听众预期最强的类型, 打破 IMRaD 顺序会造成认知负担",
+      "fix_hint": "若发现倒置 (如 method 出现在 problem 前) 立即调整 section_index 或重新划分章节归属",
+      "exceptions": [
+        "综述/教程型 deck 不适用"
+      ]
+    },
+    {
+      "id": "main_anchor_multi_chapter_span",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with a named main artifact (system/algorithm/framework)",
+      "title": "主 anchor 需跨 ≥3 章节反复出现",
+      "description": "deck 的主命名产物 (工作名/系统名) 应在 cover + method + closing 至少 3 章各出现 ≥1 次, 保证主线贯穿.",
+      "what_to_check": [
+        "从 deck.标题 提取主 anchor 名 (通常大写英文短词)",
+        "遍历 slides_in_order, 统计 slide.标题/关键文字/核心论断 中出现该 anchor 的 slide 及其所属 section_role",
+        "验证覆盖 ≥3 个 unique section_role"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "'Endor' 出现在 opening (slide 1)、problem (slide 11)、method (slide 15 Endor-NMP)、closing (slide 24), 覆盖 4 个 section_role"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 anchor 是听众记忆钩, 只在 cover 出现一次会让工作沦为背景板, 反复出现才能建立品牌感",
+      "fix_hint": "在 method 首页/末页与 closing 至少各加一次工作名, 例如 'Endor 由两部分组成:...' 或 'Endor 达到...'",
+      "exceptions": [
+        "综述 deck 无单一主 anchor"
+      ]
+    },
+    {
+      "id": "key_speedup_number_repeat_in_result_and_closing",
+      "category": "repetition_emphasis",
+      "applicable_when": "experiment section reports quantitative speedup or improvement",
+      "title": "关键量化数字需在结果章重复出现",
+      "description": "result/experiment 章最大 headline 数字 (e.g. 主 speedup) 应在主结果页 + 消融/组件页至少出现 2 次, 强化记忆.",
+      "what_to_check": [
+        "定位 section_role=experiment 的所有 slide",
+        "从 slide.关键文字/核心论断 抽取所有形如 'N.NNx' 或 'N.N倍/×' 的数字",
+        "验证最大数字或主 headline 数字出现频次 ≥2, 或不同粒度 (整体/消融/组件) 都给出对应数字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "experiment 章多层数字覆盖: 主结果 2.97x/4.54x/2.61x (slide 20), 算法消融 2.29x (slide 21), 组件协同 3.69x + 单项 1.29x/1.89x (slide 22), 数字体系连续 3 页强化"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "听众离场只记得住 1-2 个数字, 主数字需重复 + 消融数字支撑 headline 可信度",
+      "fix_hint": "在 result 章加一张消融/分解页, 用不同粒度重复关键数字 (整体加速 / 单模块贡献 / vs baseline)",
+      "exceptions": [
+        "纯定性/理论 deck 无量化指标"
+      ]
+    },
+    {
+      "id": "multi_baseline_comparison_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "experiment section reports performance results",
+      "title": "结果章需对比 ≥3 个 baseline",
+      "description": "experiment 章主结果页应对比 ≥3 个 baseline (通常 1 通用硬件 + 2 领域 SOTA), 单 baseline 对比证据强度不足.",
+      "what_to_check": [
+        "定位 experiment 章主结果 slide (含 'achieve' 'speedup' '对比' 等词)",
+        "提取 slide.关键文字 中出现的 baseline 名称 (GPU 型号 / 会议引用 [MICRO/HPCA/ISCA/FPGA'YY] 等)",
+        "验证 baseline 数量 ≥3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "slide 20 明确对比 4 baseline: NVIDIA A100 GPU (通用硬件) + DFX (MICRO'22) + FlightLLM (FPGA'24) + Hermes (HPCA'25 ASIC)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "单 baseline 对比无法排除'挑软柿子'嫌疑, 多 baseline (通用+领域) 才建立可信度",
+      "fix_hint": "在结果页至少列 1 通用硬件基线 + 2 近年顶会同类 SOTA, 每个附会议引用",
+      "exceptions": [
+        "纯提出新范式无可比对象的极早期工作"
+      ]
+    },
+    {
+      "id": "ablation_pages_after_headline_result",
+      "category": "comparison_evidence",
+      "applicable_when": "co-design deck claiming combined benefit of multiple components",
+      "title": "协同设计需消融页证明单项 vs 协同差异",
+      "description": "算法+硬件/多组件协同类 deck, 主结果之后必须有消融页, 单独展示算法贡献 / 硬件贡献 / 协同贡献, 证明协同必要性.",
+      "what_to_check": [
+        "定位 experiment 章 headline 结果 slide",
+        "检查其后是否至少 1 张 slide 含 'ablation' '仅' '单' '协同' 等词或分解型对比",
+        "分解应含: 只用组件 A 加速 / 只用组件 B 加速 / A+B 加速"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "slide 21 算法单项 2.29x, slide 22 明确 '仅算法 1.29x / 仅 NMP 1.89x / 协同 3.69x', 完整分解证明协同带来超线性收益"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "协同设计工作若不消融, 审稿人/听众会质疑收益来自单项而非协同, 消融是打消该质疑唯一手段",
+      "fix_hint": "主结果后追加一张 '组件贡献分解' slide, 用 3 组柱图 (A only / B only / A+B) 直接对比",
+      "exceptions": [
+        "非协同类工作只提出单一组件"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a named main artifact",
+      "title": "主 anchor 应首现于封面",
+      "description": "工作/系统/算法命名 (主 anchor) 应在 slide_1 (cover) 标题中首次出现, 而非埋到方法章才引入.",
+      "what_to_check": [
+        "从 deck.标题 提取主 anchor 名",
+        "验证 slide_1 (页序号=1) 的 slide.标题 或 关键文字 包含该 anchor",
+        "若首现页 >1 视为违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "'Endor' 首现于 slide 1 标题 'Endor: Exploit Nearly-Decode-Only Opportunities', 首现位置 = 封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面是听众首次接触工作名的时刻, 埋到中段引入等于放弃 20+ 页的品牌曝光",
+      "fix_hint": "cover 页标题模板 '<AnchorName>: <one-line description>', 主 anchor 放最左最大",
+      "exceptions": [
+        "匿名评审阶段 deck 需去 anchor 名"
+      ]
+    },
+    {
+      "id": "abbreviation_define_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck introducing domain-specific abbreviations (2-5 uppercase letters)",
+      "title": "缩写首次使用需就地定义",
+      "description": "领域缩写 (NMP/MPC/CMU/PRM/MCTS 等 2-5 字母大写组合) 首次出现时应同页给出全称或功能解释, 不假设听众已知.",
+      "what_to_check": [
+        "扫描 slides_in_order, 识别形如 [A-Z]{2,5} 的缩写 tokens",
+        "对每个缩写, 定位其首次出现 slide",
+        "验证同页 slide.关键文字/核心论断 是否含全称展开 (括号形式或紧邻定义句)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "PRM 首现 slide 5 同页释义 'PRM (LLM) scores them as evidence'; NMP 首现 slide 8 同页有 'NMP in DRAM banks/DIMM buffer/logic dies' 语境释义; CMU 首现 slide 15 括号展开 'Cache Management Unit (CMU)'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨领域听众对缩写不敏感, 迟到的定义会让前几页信息全部作废, 就地定义是最低成本的桥",
+      "fix_hint": "缩写首现处紧接括号补全称: 'CMU (Cache Management Unit)', 或下一句给功能描述",
+      "exceptions": [
+        "面向纯同行的极专项内部会议 (但也建议保留)"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match_with_deck",
+      "category": "structural_promise",
+      "applicable_when": "decks that include an explicit agenda slide near start",
+      "title": "agenda 列出的章节应与实际 deck 章节一致",
+      "description": "开头 agenda/TOC 页列出的章节名与顺序应与 sections_outline 的实际章节 (去掉 opening/closing 结构页后) 一一对应.",
+      "what_to_check": [
+        "定位 slide 前 3 张中第一个 toc_candidate/agenda slide",
+        "提取其列出的章节项",
+        "对比 sections_outline 中 content 章节 (排除 opening/closing) 的标题/section_role, 命中率应 100%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "slide 2 agenda 列 1 Background / 2 Challenge / 3 Solution / 4 Evaluation / 5 Summary, 完全对应 sections_outline 中 background/problem/method/experiment/closing 5 章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是对听众的显式承诺, 章节不匹配 = 承诺违约, 破坏结构可信度",
+      "fix_hint": "生成 agenda 时直接从 sections_outline 抽 content 章节标题, 不手写",
+      "exceptions": [
+        "无 agenda 页的极短 deck"
+      ]
+    },
+    {
+      "id": "balanced_per_chapter_pages_by_role",
+      "category": "pacing",
+      "applicable_when": "paper_share decks 20-30 pages",
+      "title": "各章页数应符合分布模板",
+      "description": "中等长度论文分享 deck 各章页数分布应近似: cover 1 / background 4-6 / problem 3-5 / method 4-6 / experiment 5-8 / closing 1-2, 偏离过大提示节奏失衡.",
+      "what_to_check": [
+        "从 sections_outline 计算每章页数 = 页码范围末 - 首 + 1",
+        "按 section_role 归类, 对比目标区间 (cover 1, background 4-6, problem 3-5, method 4-6, experiment 5-8, closing 1-2)",
+        "记录哪些章超出/低于区间"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "evidence": "24 页分布: opening 1 / background 5 / problem 5 / method 5 / experiment 6 / closing 2, 全部落在目标区间, 节奏均衡"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "背景过长挤压方法, 或方法只 2 页会让听众感觉核心内容单薄, 分布模板是经验最优",
+      "fix_hint": "若 method <4 页则拆细子模块成独立 slide; 若 background >6 页则合并背景基础知识为一张",
+      "exceptions": [
+        "综述型 deck (background 可 8+ 页)",
+        "工程分享 (experiment 可 10+ 页)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (Endor DATE26 paper_share), 抽取 14 条 rule 覆盖 8 大类. deck 各方面表现优秀 (完整 TOC 导航/挑战回扣完整/多 baseline/协同消融齐全), 因此单 deck 所有 rule 均命中. 后续 batch 需引入更多 deck 以校验 hit_rate 并可能下调 enforcement_level.",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 2,
+      "suspense_reveal": 1,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

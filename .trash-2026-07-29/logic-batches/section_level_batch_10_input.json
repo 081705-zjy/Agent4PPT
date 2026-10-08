@@ -1,0 +1,3532 @@
+{
+  "batch_index": 10,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+      "目录名": "SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+      "标题": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+      "总页数": 30,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_扩散模型与推理计算成本",
+        "section_03_相关工作-降输入长度与特征缓存",
+        "section_04_关键洞察-相邻步特征可预知",
+        "section_05_特征选择与多级分类算法",
+        "section_06_实验设置与加速评测",
+        "section_07_总结与致谢"
+      ],
+      "主题标签": [
+        "Diffusion",
+        "Inference",
+        "Speculation",
+        "Feature Cache",
+        "Acceleration",
+        "Self-Speculation"
+      ],
+      "目标受众": "AI系统/推理加速方向的学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "学术会议/组会分享扩散模型推理加速论文",
+      "论述总结": "针对扩散模型推理算力开销大的问题,先铺垫扩散模型推理与Attention/FFN成本,再综述Token Merging与Feature Caching等相关工作;基于相邻步特征可复用的关键洞察,提出以少步全推理作投机的自投机方法与特征选择/多级分类算法,并在SD3/3.5、Flux.1上验证2.7-3.17倍加速。",
+      "论述弧线": [
+        "Background",
+        "Related Work",
+        "Motivation",
+        "Techniques",
+        "Evaluation",
+        "Summary"
+      ],
+      "适合复用场景": [
+        "扩散模型推理加速主题的论文分享",
+        "投机式推理/特征缓存方法学术汇报",
+        "带Contents导航的六段式科研报告",
+        "系统方向组会motivation+方法讲解"
+      ],
+      "不适合复用场景": [
+        "LLM文本生成加速(话题偏离)",
+        "工业产品demo(叙事节奏不同)",
+        "面向投资方的商业提案",
+        "扩散模型训练主题(非推理)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "deck 的开场章：先以极简封面亮出 SpecDiff 标题、作者与 SJTU/SII/Infinigence 机构署名，再用六节目录（Background→Summary）为全篇学术汇报建立骨架，Background 高亮为起点。",
+          "页间关系": [
+            "slide 1 → slide 2: 由封面标题/作者署名过渡到六节内容目录，从『是谁做什么』切换到『怎么讲』"
+          ],
+          "适合复用场景": [
+            "学术论文/技术汇报类 deck 的封面+目录开场",
+            "需展示多机构合作署名与通讯作者的封面",
+            "六节式『背景-相关工作-动机-方法-实验-总结』标准科研叙事骨架",
+            "带当前章节高亮的竖排编号目录页"
+          ],
+          "在deck中的位置": "第 1 章，位于 deck 最前端，是全篇 30 页的开场入口",
+          "slides": [
+            {
+              "页序号": 1,
+              "页面角色": "cover_candidate",
+              "标题": "SpecDiff：自投机加速扩散模型推理（封面）",
+              "核心论断": "SpecDiff 以自投机机制加速扩散模型推理",
+              "本页讲什么": "全篇学术汇报的封面页。上方居中通栏亮出论文标题 SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation，一条浅粉分隔线下方列出四位作者（Jiayi Pan、Jiaming Xu、Yongkang Zhou、Guohao Dai）及 SJTU/SII/Infinigence AI 三家机构署名，并标注 Equal Contribution 与通讯作者邮箱。整页极简、无正文内容，仅承担开场亮题与署名功能。",
+              "关键文字": [
+                "SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation",
+                "Jiayi Pan, Jiaming Xu, Yongkang Zhou, Guohao Dai",
+                "1Shanghai Jiao Tong University / 2SII / 3Infinigence AI",
+                "Equal Contribution",
+                "*Corresponding to: jiamingxu@sjtu.edu.cn; daiguohao@sjtu.edu.cn"
+              ],
+              "视觉骨架": [
+                "通栏大标题",
+                "浅粉水平分隔线",
+                "作者与机构署名块",
+                "通讯信息脚注"
+              ],
+              "上页角色": null,
+              "下页角色": "content_candidate",
+              "细分角色": "cover"
+            },
+            {
+              "页序号": 2,
+              "页面角色": "content_candidate",
+              "标题": "全篇六节目录（Background 高亮）",
+              "核心论断": "全篇按六节展开，从 Background 起步",
+              "本页讲什么": "目录页。蓝色矩形边框内顶部居中标题 Contents，下方以蓝色编号圆点串起六个章节：1 Background、2 Related Work、3 Motivation、4 Techniques、5 Evaluation、6 Summary。当前所在的第一节 Background 加粗高亮，左侧一条蓝色竖条标示进度。整页为全篇学术汇报建立骨架，页脚显示 Page 页码标识。",
+              "关键文字": [
+                "Contents",
+                "1 Background",
+                "2 Related Work",
+                "3 Motivation",
+                "4 Techniques",
+                "5 Evaluation / 6 Summary"
+              ],
+              "视觉骨架": [
+                "矩形外边框",
+                "蓝色编号圆点竖排目录",
+                "左侧蓝色进度竖条",
+                "当前节高亮",
+                "页脚页码"
+              ],
+              "上页角色": "cover_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "扩散模型与推理计算成本",
+          "页码范围": [
+            3,
+            7
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07"
+          ],
+          "章节叙事": "背景章,层层递进为方法铺垫:从扩散模型多域普及,到算力需求随参数(6500×)与输入规模(10⁴)爆炸,再拆解多步迭代推理中Attn/FFN随L的成本,最终落到二者compute-bound、降L即加速,锚定全deck核心杠杆。",
+          "页间关系": [
+            "slide 3 → slide 4: 由扩散模型四域普及,过渡到其带来的更高算力需求",
+            "slide 4 → slide 5: 由参数与输入规模两路算力压力,聚焦到推理本身的多步迭代结构",
+            "slide 5 → slide 6: 由每步含Attn/FFN的迭代流程,深入拆解二者随输入长度L的计算成本",
+            "slide 6 → slide 7: 由L=h·w·f+length的成本公式,推出Attn/FFN为compute-bound、降L即加速"
+          ],
+          "适合复用场景": [
+            "任何论证『扩散模型推理算力爆炸』的背景章",
+            "需以Attn∝L²、FFN∝L铺垫降L动机的方法章前置",
+            "面向DiT/视频生成加速主题的问题定义章",
+            "需从领域普及递进到瓶颈定位的技术背景"
+          ],
+          "在deck中的位置": "第2章,紧接cover,为后续相关工作与自投机方法奠定问题前提",
+          "slides": [
+            {
+              "页序号": 3,
+              "页面角色": "content_candidate",
+              "标题": "扩散模型:跨多域的基础架构",
+              "核心论断": "扩散模型已成为文本/图像/视频/机器人多域的基础架构",
+              "本页讲什么": "背景章开篇页。以一句话点明扩散模型已崛起为跨多个领域的基础架构,下方横向并列 Text、Image、Video、Robotics 四个应用域标签,展示其普及广度,为后文引出算力成本问题做铺垫。",
+              "关键文字": [
+                "Diffusion models have emerged as a foundational architecture across multiple domains",
+                "Text / Image / Video / Robotics"
+              ],
+              "视觉骨架": [
+                "顶部蓝色分隔线标题",
+                "四域横向并列标签行"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 4,
+              "页面角色": "content_candidate",
+              "标题": "扩散模型算力需求的双重爆炸",
+              "核心论断": "参数量(6500×)与输入规模(10⁴×)双重增长推高算力需求",
+              "本页讲什么": "承接上页,论证扩散模型算力需求为何飙升。左栏「More Parameters」用上升箭头串起 DDPM→DDIM→SD v1→DiT-XL/2→Flux.1 Dev→HunyuanImage-3.0,标注参数增长 6500×;右栏「Larger Input Scale」以低分辨率图到高分辨率视频经 VAE&Embedding 后 token 量增长 10⁴× 说明输入规模膨胀。",
+              "关键文字": [
+                "Higher Computational Demand",
+                "More Parameters: 6500×",
+                "DDPM / DDIM / DiT-XL/2 / Flux.1 Dev / HunyuanImage-3.0",
+                "Larger Input Scale: 10^4 ×",
+                "Low-Resolution Image → High-Resolution Video",
+                "VAE & Embedding → Tokens"
+              ],
+              "视觉骨架": [
+                "左右两列对比 panel",
+                "参数增长上升箭头图",
+                "输入放大流程(VAE&Embedding→Tokens)"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 5,
+              "页面角色": "content_candidate",
+              "标题": "扩散模型推理:多步迭代过程",
+              "核心论断": "扩散模型推理是逐步去噪的多步迭代过程",
+              "本页讲什么": "拆解扩散模型推理机制。左侧 Prompt 经 Tokenize→Tokens、Noise 经 VAE 进入模型;中部横向排列 Step 1、Step x、Step N 三个结构相同的 Model 模块(各含 Embedding→Attention→FFN→…→Projection),以省略号表示多步迭代;末步经 VAE 输出。强调推理由大量重复步骤串联而成,为后文按 L 拆解单步成本铺垫。",
+              "关键文字": [
+                "Diffusion model inference is a multi-step iterative process",
+                "Prompt / Tokenize / Tokens / Noise / VAE",
+                "Model: Embedding / Attention / FFN / Projection",
+                "Step 1 … Step x … Step N"
+              ],
+              "视觉骨架": [
+                "左侧输入预处理链",
+                "多步 Model 模块横向串联",
+                "步内 Attn/FFN 堆叠子结构"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 6,
+              "页面角色": "content_candidate",
+              "标题": "Attention 与 FFN 成本随输入长度 L",
+              "核心论断": "Attention∝L²·d_model、FFN∝L·d²_model,成本由 L 主导",
+              "本页讲什么": "解释单步内 Attention 与 FFN 的计算成本来源。定义输入长度 L = height×width×frame + length,左侧以张量方块示意 height/width/frame/length 维度经 Tokenize/VAE 展开为 L;中部展示 Q、K、V 经两次矩阵乘得 O 再 Proj、FFN;右下给出复杂度 Attention∝L²·d_model、FFN∝L·d²_model,点明 L 是成本关键变量。",
+              "关键文字": [
+                "The computational cost of Attention and FFN is influenced by input length(L)",
+                "L = height * width * frame + length",
+                "Attention ∝ L2 · d_model",
+                "FFN ∝ L · d_model 2"
+              ],
+              "视觉骨架": [
+                "输入维度张量方块图",
+                "Q/K/V→O 矩阵乘示意",
+                "复杂度公式标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 7,
+              "页面角色": "content_candidate",
+              "标题": "Attention 与 FFN 均为 compute-bound",
+              "核心论断": "Attn/FFN 属 compute-bound,降低 L 即可加速推理",
+              "本页讲什么": "背景章收束页,给出核心杠杆。基于 Nvidia A800 的 Roofline 模型区分 Memory Bound(数据传输)与 Compute Bound(繁忙计算);由于 L≫10³,Attention 与 FFN 均落在 compute-bound 区。进而 Latency(ATTN)∝L²、Latency(FFN)∝L,得出结论:降低输入长度 L 将带来加速,锚定全 deck 的核心优化方向。",
+              "关键文字": [
+                "Both Attention and FFN are compute-bound",
+                "Roofline Model on Nvidia A800 GPU",
+                "Memory Bound: Data transfer / Compute Bound: Busy computation",
+                "L >> 10^3",
+                "Latency(ATTN) ∝ L2 / Latency(FFN) ∝ L",
+                "Reduce input length(L) will speedup."
+              ],
+              "视觉骨架": [
+                "Roofline 瓶颈说明文本块",
+                "红色箭头推导链",
+                "延迟-L 关系公式"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.03",
+          "章节序号": 3,
+          "章节角色": "background",
+          "标题": "相关工作:降输入长度与特征缓存",
+          "页码范围": [
+            8,
+            13
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13"
+          ],
+          "章节叙事": "综述两条加速路线：先展示Token Merging机制并揭其缺陷（<70%相似、同质化、<30%加速），再转向Feature Caching跨步复用，最终提炼「预测所用信息量决定性能」的洞见，为自投机方法埋伏笔。",
+          "页间关系": [
+            "slide 8 → slide 9: 由agenda分栏页高亮Related Work，进入第一路线Token Merging机制图",
+            "slide 9 → slide 10: 由token merging正常合并流程，转揭其缺陷—低相似<70%、同质化、<30%加速",
+            "slide 10 → slide 11: 由token merging失败转向第二路线Feature Caching，引出跨步Reuse与「如何预测重要token」",
+            "slide 11 → slide 12: 由caching机制图收敛到核心命题「预测所用信息量至关重要」并列4篇文献",
+            "slide 12 → slide 13: 由文字命题落到FORA/ToCa/RAS/TaylorSeer对比表，量化「信息越多性能越高」"
+          ],
+          "适合复用场景": [
+            "需综述两条技术路线并对比优劣的related work章节",
+            "以「机制图→缺陷→替代方案」推进的问题铺垫叙事",
+            "diffusion/transformer推理加速方向的相关工作梳理",
+            "需用对比表收敛出单一洞见的章节收尾",
+            "为自家方法做「前人不足」铺垫的动机型章节"
+          ],
+          "在deck中的位置": "第2章（deck编号），承Background、启Motivation",
+          "slides": [
+            {
+              "页序号": 8,
+              "页面角色": "content_candidate",
+              "标题": "目录:进入 Related Work 章节",
+              "核心论断": "演讲推进至第 2 章 Related Work,承上启下",
+              "本页讲什么": "这是六段式目录页,当前高亮第 2 项「Related Work」。整个 deck 分为 Background、Related Work、Motivation、Techniques、Evaluation、Summary 六部分,本页用于标示演讲即将进入相关工作综述,引出后续对 Token Merging 与 Feature Caching 两条加速路线的讨论。",
+              "关键文字": [
+                "Contents",
+                "Background / Related Work / Motivation",
+                "Techniques / Evaluation / Summary"
+              ],
+              "视觉骨架": [
+                "蓝色边框目录卡",
+                "6 项编号圆点列表",
+                "当前项蓝色高亮竖条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 9,
+              "页面角色": "content_candidate",
+              "标题": "Token Merging 机制:分类归并降 token 长度",
+              "核心论断": "Token Merging 通过分类相似 token 并归并来缩短输入长度",
+              "本页讲什么": "本页介绍降输入长度(Reduce Input Length, L)的第一条路线 Token Merging。左侧将原始 Tokens 经 Classify 分类后,同类(红/黄/绿等)相似 token 两两 Merge 合并为 Merged Tokens;右侧 Module 处理合并后的更短序列。此为机制铺陈页,尚未点出缺陷,为下一页揭示其相似度不足与同质化问题做准备。",
+              "关键文字": [
+                "Related Work: Reduce Input Length (L)",
+                "Token Merging",
+                "Tokens → Classify → Merge → Merged Tokens",
+                "Module"
+              ],
+              "视觉骨架": [
+                "左右双栏 token 示意图",
+                "彩色方块 Merge 箭头",
+                "Classify 分类分块",
+                "Module 处理框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 10,
+              "页面角色": "content_candidate",
+              "标题": "Token Merging 的缺陷:低相似、同质化、加速有限",
+              "核心论断": "Token Merging 因相似度<70%导致同质化,加速不足30%",
+              "本页讲什么": "本页在上一页机制图上叠加缺陷标注,揭示 Token Merging 三大问题:合并 token 间「Low similarity (<70%)」、右侧序列「Severe homogenization(严重同质化)」、整体「Less than 30% speedup(加速不足30%)」。承接上页机制铺陈,给出否定性评价,推动叙事转向更优的 Feature Caching 路线。",
+              "关键文字": [
+                "Token Merge",
+                "Low similarity (<70%)",
+                "Severe homogenization",
+                "Less than 30% speedup."
+              ],
+              "视觉骨架": [
+                "左右双栏 token 示意图",
+                "虚线框圈选待合并区",
+                "红色缺陷标注文字",
+                "Merge 箭头"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 11,
+              "页面角色": "content_candidate",
+              "标题": "Feature Caching 机制:跨步复用特征",
+              "核心论断": "Feature Caching 跨步复用特征,相似度>90%但需预测重要token",
+              "本页讲什么": "本页转向第二条路线 Feature Caching:Step a 时 Module 计算并缓存 Feature,Step a+1 时对 Trivial 部分直接 Reuse 缓存、对 Important 部分重新 Compute,由 Predictor 判定重要性。右侧标注跨步特征「Higher similarity (>90%)」,并抛出核心问题「How to predict the important tokens?」,为后续洞见与自投机方法埋伏笔。",
+              "关键文字": [
+                "Feature Caching",
+                "Step a / Step a+1",
+                "Predictor / Trivial / Important",
+                "Reuse / Compute",
+                "Higher similarity (>90%)",
+                "How to predict the important tokens?"
+              ],
+              "视觉骨架": [
+                "两步(Step a/a+1)流程图",
+                "Module-Feature-Reuse 箭头链",
+                "Predictor 分支框",
+                "红色提问标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 12,
+              "页面角色": "content_candidate",
+              "标题": "核心洞见:预测所用信息量至关重要",
+              "核心论断": "预测所用信息量决定加速方法性能",
+              "本页讲什么": "本页是提炼洞见的极简观点页,居中一句话「The quantity of information used in prediction is vital.(预测所用信息量至关重要)」,底部列出 FORA、ToCa、RAS、TaylorSeer 四篇 Feature Caching 参考文献。承接上页「如何预测重要 token」的提问,凝练出全章核心论点,为下一页量化对比与自投机方法奠定基础。",
+              "关键文字": [
+                "Related Work: Feature Caching",
+                "The quantity of information used in prediction is vital.",
+                "[1] FORA / [2] ToCa / [3] RAS / [4] TaylorSeer 文献"
+              ],
+              "视觉骨架": [
+                "居中单句金句",
+                "顶部蓝色分隔线",
+                "底部参考文献列表"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 13,
+              "页面角色": "content_candidate",
+              "标题": "Feature Caching 方法对比:信息量越多性能越高",
+              "核心论断": "信息量越大精度越高、延迟越低,「?」指向更优新方法",
+              "本页讲什么": "本页用对比表印证核心洞见。表列 FORA、ToCa、RAS、TaylorSeer 及待填的「?」,三列指标为 Information(None/One-Step/Two-Step/N-Step/More)、Accuracy(Low→Higher)、Latency(High→Lower)。随信息量增加,精度升高、延迟降低,底部红框结论「More information results higher performance.」,「?」行暗示本文自投机方法将用更多信息取得更优表现。",
+              "关键文字": [
+                "FORA / ToCa / RAS / TaylorSeer / ?",
+                "Information / Accuracy / Latency",
+                "None→One-Step→Two-Step→N-Step→More",
+                "More information results higher performance."
+              ],
+              "视觉骨架": [
+                "5 行 4 列对比表",
+                "红绿色阶指标标注",
+                "红色虚线框结论条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.04",
+          "章节序号": 4,
+          "章节角色": "motivation",
+          "标题": "关键洞察:相邻步特征可预知",
+          "页码范围": [
+            14,
+            17
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17"
+          ],
+          "章节叙事": "承接Related Work的动机核。以三段递进论证:相邻步特征会突变致朴素缓存失效→若能预知突变即可计算特征→少步扩散作投机可提供未来信息,为后续自投机方法奠基。",
+          "页间关系": [
+            "slide 14 → slide 15: 由Contents高亮定位Motivation章,进入关键洞察正文",
+            "slide 15 → slide 16: 由『相邻步特征突变使缓存复用失效』推进到『若能提前预知突变』的设问",
+            "slide 16 → slide 17: 由『预知突变』设问引出『少步扩散作投机提供未来信息』的答案"
+          ],
+          "适合复用场景": [
+            "论证『朴素缓存/复用因特征突变失效』的动机章节",
+            "以『先设问再揭示洞察』递进铺陈方法动机",
+            "用少步/低成本前瞻作投机信号引入方法",
+            "扩散/迭代类模型的加速动机段落"
+          ],
+          "在deck中的位置": "第3章 Motivation,接Background、Related Work,为第4章Techniques铺垫",
+          "slides": [
+            {
+              "页序号": 14,
+              "页面角色": "content_candidate",
+              "标题": "目录:定位到 Motivation 章节",
+              "核心论断": "演讲进入第 3 部分 Motivation,承接 Related Work 展开动机",
+              "本页讲什么": "这是六段式目录过渡页,列出 Background、Related Work、Motivation、Techniques、Evaluation、Summary 六个部分,并用左侧蓝色竖条与加粗高亮当前进入的第 3 部分 Motivation,起到章节导航与转场作用。",
+              "关键文字": [
+                "Contents",
+                "Background / Related Work / Motivation",
+                "Techniques / Evaluation / Summary"
+              ],
+              "视觉骨架": [
+                "外框标题卡",
+                "6 项编号圆点竖排列表",
+                "左侧当前项高亮竖条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 15,
+              "页面角色": "content_candidate",
+              "标题": "关键洞察一:相邻步特征会突变",
+              "核心论断": "相邻扩散步的图像/视频特征会突变,致朴素缓存复用失效",
+              "本页讲什么": "以 Step a-1 → a → a+1 三步时间线论证:普通步间特征处于 Chaotic 状态可缓存复用,但相邻步存在 Mutate 突变,a+1 由不重要特征变为 Important Features(Ordered),此时缓存并复用旧特征(红叉)会出错,揭示朴素 feature cache 的失效根源。",
+              "关键文字": [
+                "The image/video in adjacent step can mutate",
+                "Cache the feature / Reuse the feature",
+                "Unimportant vs Important Features",
+                "Chaotic → Chaotic → Ordered"
+              ],
+              "视觉骨架": [
+                "三步时间线示意",
+                "Mutate 红色突变箭头",
+                "缓存复用红叉标记",
+                "Chaotic/Ordered 状态标签"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 16,
+              "页面角色": "content_candidate",
+              "标题": "关键洞察二:若能预知突变即可算特征",
+              "核心论断": "若能提前预知突变,即可在突变步主动计算而非复用特征",
+              "本页讲什么": "承接上页的失效问题,复用同一三步时间线,把 a+1 处的复用改为一个红色高亮块「If we know the mutation in advance…Calculate the feature」,论证只要提前预知突变,就能在突变步选择计算特征而非盲目缓存复用,从而规避上页的失效,为引入投机机制埋下伏笔。",
+              "关键文字": [
+                "If we can know the mutation in advance …",
+                "Calculate the feature",
+                "Unimportant vs Important Features",
+                "Chaotic → Chaotic → Ordered"
+              ],
+              "视觉骨架": [
+                "三步时间线示意",
+                "红色高亮预知/计算块",
+                "Chaotic/Ordered 状态标签"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 17,
+              "页面角色": "content_candidate",
+              "标题": "关键洞察三:少步扩散提供未来信息",
+              "核心论断": "少迭代扩散过程可作投机,为多步扩散提供未来信息",
+              "本页讲什么": "回答前两页留下的「如何预知突变」:用同一模型跑一个 Few Iterations 的少步扩散作为 Speculation,与 Many Iterations 的完整过程对齐,由投机结果提供重要 token 与未来特征信息,末尾用红色虚线框抛出「How to use speculation results to judge…」问题,为后续自投机方法铺垫。",
+              "关键文字": [
+                "A diffusion process with few iterations will provide future information",
+                "Many Iterations vs Few Iterations",
+                "Speculation generated by same model",
+                "How to use speculation results to judge"
+              ],
+              "视觉骨架": [
+                "Many/Few Iterations 双向轴对照",
+                "Diffusion Process 渐变大箭头",
+                "Speculation 投机区块",
+                "红色虚线设问框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+          "章节序号": 5,
+          "章节角色": "method",
+          "标题": "特征选择与多级分类算法",
+          "页码范围": [
+            18,
+            24
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "本章是方法核心。以投机步 attention 捕获 token 重要性突变为洞察,逐步推导重要性打分公式,加入防饿死的 CF/CR,再过渡到基于 CV 稳定性的多级特征分类算法。",
+          "页间关系": [
+            "slide 18 → slide 19: 由 Techniques 章节导航页进入,提出「少步全推理作投机」",
+            "slide 19 → slide 20: 由投机的开放问题(用何未来信息)转入 token 重要性会突变",
+            "slide 20 → slide 21: 由历史信息无法预知突变,引出投机步 attention 可捕获突变",
+            "slide 21 → slide 22: 由定性说明转为定量,把 Spec. Attn 并入重要性打分公式",
+            "slide 22 → slide 23: 由公式转入永不计算 token 致降质,加 CF/CR 防饿死分层",
+            "slide 23 → slide 24: 由特征选择算法转到第二算法——基于 CV 稳定性的多级分类"
+          ],
+          "适合复用场景": [
+            "需「提问→洞察→公式化」逐步推导的方法章",
+            "讲基于 attention/重要性的 token 选择或缓存复用",
+            "用示意图+公式演进讲两个递进算法",
+            "投机/预测类加速方法的核心机制介绍"
+          ],
+          "在deck中的位置": "第4章 Techniques,方法主体,位于 Motivation 之后、Evaluation 之前",
+          "slides": [
+            {
+              "页序号": 18,
+              "页面角色": "content_candidate",
+              "标题": "目录:进入 Techniques 章节",
+              "核心论断": "演讲进入第 4 部分 Techniques,方法核心即将展开",
+              "本页讲什么": "这是全 deck 六段式目录页,当前高亮第 4 项 Techniques(方法),其余为 Background、Related Work、Motivation、Evaluation、Summary。用蓝色竖条与加粗标记当前所处章节,起承前启后的过渡作用,引出后续特征选择与多级分类算法的技术细节。",
+              "关键文字": [
+                "Background / Related Work / Motivation",
+                "Techniques(当前高亮)",
+                "Evaluation / Summary"
+              ],
+              "视觉骨架": [
+                "外框 Contents 标题",
+                "6 项编号圆点纵向列表",
+                "当前项蓝色竖条高亮"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 19,
+              "页面角色": "content_candidate",
+              "标题": "以少迭代全推理作为投机步",
+              "核心论断": "用少量迭代的完整推理作 speculation,提供未来信息",
+              "本页讲什么": "开篇提出核心思路:用一次迭代次数很少的完整推理作为 speculation(投机步),从而获取尚未到达的未来步骤信息。示意图把推理分为 Speculation 行与正式 Step 行,虚线框圈出 Future Information,红块中的问号表示待定,底部红框抛出关键问题「What future information to use?」,为后续几页逐步回答埋下伏笔。",
+              "关键文字": [
+                "We use a full inference with few iterations as speculation",
+                "Future Information",
+                "What future information to use?"
+              ],
+              "视觉骨架": [
+                "Speculation 与 Step 双行时间轴",
+                "虚线框标注 Future Information",
+                "红块问号占位",
+                "底部红色虚线问题条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 20,
+              "页面角色": "content_candidate",
+              "标题": "token 重要性在扩散模型中会突变",
+              "核心论断": "token 重要性会在步间突变,历史信息无法预知",
+              "本页讲什么": "承接上页问题,给出洞察:扩散模型中同一 token 的重要性会随步骤突变(mutation)。左侧 Attention Score 分叉出 Step a-1/a/a+1,重要 token 与 trivial token 之间发生跳变;右侧红字点明这种突变「Unknown by historical information」——单靠历史信息无法预测,暗示需要引入未来信息。",
+              "关键文字": [
+                "The importance of token can mutate in diffusion model",
+                "Important Token / Trivial Token",
+                "Mutation",
+                "Unknown by historical information"
+              ],
+              "视觉骨架": [
+                "Attention Score 分叉箭头图",
+                "Step a-1/a/a+1 虚线框",
+                "Mutation 跳变标注",
+                "右侧红字结论"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 21,
+              "页面角色": "content_candidate",
+              "标题": "投机步 attention 可捕获突变",
+              "核心论断": "投机步的 attention 能捕获突变,未来信息使其可知",
+              "本页讲什么": "对上页问题给出解法:来自 speculation 步的 attention(Spec. Attention Score)能够捕获 token 重要性的 mutation。图中 Step a-1/a/a+1 与红色重叠块表示投机步覆盖了突变区间,红字点明这一突变现在「Known by future information」——与上页「Unknown by historical information」形成正反对照,论证投机步的价值。",
+              "关键文字": [
+                "Attention from speculation step can obtain mutation",
+                "Spec. Attention Score",
+                "Known by future information"
+              ],
+              "视觉骨架": [
+                "Step 纵向标签轴",
+                "重叠红块表示投机覆盖",
+                "Spec. Attention Score 标题",
+                "红字结论"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 22,
+              "页面角色": "content_candidate",
+              "标题": "重要性打分公式引入投机 attention",
+              "核心论断": "重要性打分从仅用历史 attention 扩展为叠加投机 attention",
+              "本页讲什么": "把前几页的洞察落成公式:原本 Importance Score = F(His. Attn) 仅依赖历史 attention;经红色下箭头推导后升级为 Importance Score = F(His. Attn, Spec. Attn),即在历史注意力之外叠加投机步注意力(红色高亮 Spec. Attn),正式将投机信号纳入重要性打分。",
+              "关键文字": [
+                "Importance Score = F(His. Attn)",
+                "Importance Score = F(His. Attn, Spec. Attn)"
+              ],
+              "视觉骨架": [
+                "前后两版公式",
+                "红色向下箭头表示升级",
+                "Spec. Attn 红色高亮"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 23,
+              "页面角色": "content_candidate",
+              "标题": "防饿死:引入 CF 与 CR",
+              "核心论断": "从不计算的 token 会降质,需 CF/CR 做防饿死缓存",
+              "本页讲什么": "指出隐患:约 40% 的 token 会长期不被判为重要而永不计算,导致质量下降,故需 Starvation Prevention(防饿死)。在 Importance Score = F(His. Attn, Spec. Attn) 基础上进一步引入 Cached Frequence(CF)与 Cached Ratio(CR)两个因子:Top x% token 走 Compute,其余 token 走 Reuse,平衡质量与开销。",
+              "关键文字": [
+                "Tokens never computed will incur quality decrease",
+                "40% tokens will never be important",
+                "Starvation Prevention",
+                "Cached Frequence (CF) / Cached Ratio (CR)",
+                "Top x% tokens: Compute / Other tokens: Reuse"
+              ],
+              "视觉骨架": [
+                "公式逐级下箭头推导链",
+                "CF/CR 因子标注",
+                "Compute vs Reuse 分流",
+                "Starvation Prevention 红字"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 24,
+              "页面角色": "content_candidate",
+              "标题": "多级特征分类算法(按稳定性分级)",
+              "核心论断": "不同重要性 token 稳定性各异,用 CV 做多级分类复用",
+              "本页讲什么": "过渡到多级特征分类算法:不同重要性等级的 token 稳定性不同。用变异系数 CV 衡量稳定性(CV 越低越稳定),且 CV 与重要性打分相关。据此把 token 分级——Top x% token 走 Compute(模型精算),低稳定性/其余 token 走 Reuse 或 Approximate(近似,承担部分 ERROR),由 CR 控制近似比例,以最小误差换取加速。",
+              "关键文字": [
+                "Stability of tokens at different importance level varies",
+                "coefficient of variation (CV) correlates with importance score",
+                "CV↓ → Stability↑",
+                "Compute / Reuse / Approximate (other tokens)",
+                "Model (Top x% tokens)"
+              ],
+              "视觉骨架": [
+                "Token Score 高低渐变竖箭头",
+                "Low Stability 区间标注",
+                "Compute/Reuse/Approximate 三栏",
+                "CR 控制近似虚线框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06",
+          "章节序号": 6,
+          "章节角色": "experiment",
+          "标题": "实验设置与加速评测",
+          "页码范围": [
+            25,
+            29
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29"
+          ],
+          "章节叙事": "作为方法章之后的验证闭环:先交代硬件/模型/baseline/数据集,再分 SD3+3.5、Flux.1 Dev 两组给出 2.7-3.17× 加速结论,最后汇总为『质量近乎无损、推进精度-速度 Pareto 前沿』。",
+          "页间关系": [
+            "slide 25 → slide 26: agenda 高亮第 4 章 Evaluation,切入实验设置",
+            "slide 26 → slide 27: 由硬件/模型/baseline/数据集设置进入 SD3、SD3.5 加速结果",
+            "slide 27 → slide 28: 由 SD 系列 2.80×/2.74× 延伸到 Flux.1 Dev 3.17× 结果",
+            "slide 28 → slide 29: 由分模型结果收敛为三模型总体加速小结"
+          ],
+          "适合复用场景": [
+            "推理加速类方法的『设置→分模型评测→汇总』实验章",
+            "需按多个 benchmark 模型逐页展示加速倍数的场景",
+            "以速度-质量 Pareto 权衡作结论的评测章"
+          ],
+          "在deck中的位置": "第 4 章 Evaluation,承接 Techniques 方法章,后接 Summary 收尾",
+          "slides": [
+            {
+              "页序号": 25,
+              "页面角色": "content_candidate",
+              "标题": "目录:定位到第 4 章 Evaluation",
+              "核心论断": "全篇进入第 4 部分 Evaluation,承接 Techniques 转入评测",
+              "本页讲什么": "五项内容目录(Background / Related Work / Techniques / Evaluation / Summary),用蓝色圆圈编号加左侧竖条高亮当前所在的第 4 项『Evaluation』,作为进入实验评测章节的导航分隔页。",
+              "关键文字": [
+                "Contents",
+                "1 Background",
+                "2 Related Work",
+                "3 Techniques",
+                "4 Evaluation",
+                "5 Summary"
+              ],
+              "视觉骨架": [
+                "蓝框标题卡",
+                "5 项编号圆圈列表",
+                "左侧当前项高亮竖条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 26,
+              "页面角色": "content_candidate",
+              "标题": "实验设置:硬件/模型/baseline/数据集",
+              "核心论断": "实验在 A800 上覆盖 SD3、SD3.5、Flux.1 Dev 三模型,对齐主流缓存加速 baseline",
+              "本页讲什么": "四组 bullet 交代评测配置:硬件为 NVIDIA Tesla A800-80GB GPU;模型含 Stable Diffusion 3 Medium、SD 3.5 Large、Flux.1 Dev;baseline 为 Diffusers 框架及 RAS、Taylorseer 两种 feature caching 方法;数据集为 COCO 2014,为后续加速评测建立可比基准。",
+              "关键文字": [
+                "Hardware: NVIDIA Tesla A800-80GB GPU",
+                "Models: SD3 Medium / SD3.5 Large / Flux.1 Dev",
+                "Baseline: Diffusers 框架",
+                "Feature caching: RAS 与 Taylorseer",
+                "Dataset: COCO 2014"
+              ],
+              "视觉骨架": [
+                "4 组分级 bullet 列表",
+                "蓝色标题分隔线"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 27,
+              "页面角色": "content_candidate",
+              "标题": "SD3/SD3.5 评测:2.80×、2.74× 加速",
+              "核心论断": "SpecDiff 在 SD3、SD3.5 上分别取得 2.80× 与 2.74× 加速",
+              "本页讲什么": "第一组结果页,展示 SpecDiff 在 Stable Diffusion 3 与 3.5 上的加速评测(含结果图表,图内嵌于图片区),底部红色虚线框强调核心结论:在 SD3、SD3.5 上分别实现 2.80× 与 2.74× 加速,回应上页设定的评测目标。",
+              "关键文字": [
+                "SpecDiff achieved 2.80× and 2.74× speedup on SD3 and SD3.5"
+              ],
+              "视觉骨架": [
+                "结果图表区(嵌图)",
+                "红色虚线结论强调框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 28,
+              "页面角色": "content_candidate",
+              "标题": "Flux.1 Dev 评测:3.17× 加速",
+              "核心论断": "SpecDiff 在 Flux.1 Dev 上取得 3.17× 加速,超过 SD 系列",
+              "本页讲什么": "第二组结果页,展示 SpecDiff 在 Flux.1 Dev 上的加速评测(结果图嵌于图片区),底部红色虚线框强调核心结论:在 Flux.1 Dev 上实现 3.17× 加速,与上页 SD 系列结果共同支撑跨模型普适的加速能力。",
+              "关键文字": [
+                "SpecDiff achieved 3.17× speedup on Flux.1 Dev"
+              ],
+              "视觉骨架": [
+                "结果图表区(嵌图)",
+                "红色虚线结论强调框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 29,
+              "页面角色": "content_candidate",
+              "标题": "评测总结:推进精度-速度 Pareto 前沿",
+              "核心论断": "SpecDiff 三模型 2.80×/2.74×/3.17× 加速且质量近乎无损,推进精度-速度 Pareto 前沿",
+              "本页讲什么": "评测章收尾页,用一句话汇总三模型结果:SpecDiff 在 SD3、SD3.5、Flux.1 Dev 上分别取得 2.80×、2.74×、3.17× 加速,且质量损失极小,加粗强调其推进了精度与推理速度之间的 Pareto 前沿,收束整章并过渡到 Summary。",
+              "关键文字": [
+                "SpecDiff achieves 2.80×, 2.74× and 3.17× speedup on SD3, SD3.5 and Flux.1 Dev with minimal quality loss",
+                "advancing the Pareto frontier between accuracy and inference speed"
+              ],
+              "视觉骨架": [
+                "单段落总结文本",
+                "加粗关键结论短语",
+                "蓝色标题分隔线"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "ending_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.07",
+          "章节序号": 7,
+          "章节角色": "closing",
+          "标题": "总结与致谢",
+          "页码范围": [
+            30,
+            30
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_30"
+          ],
+          "章节叙事": "全 deck 收尾章,仅一页。左侧回扣 SpecDiff 标题与致谢/联系方式,右下用『Our works on speculation』将本工作延展为课题组投机系列(LLM Early Exit/Sparse Attention/VLA Pruning),把单篇成果升维为研究主线。",
+          "页间关系": [],
+          "适合复用场景": [
+            "需在结尾把单篇工作扩展为课题组系列的 summary 页",
+            "带致谢+联系方式+论文/主页二维码的学术收尾页",
+            "需并列展示多篇相关成果(会议+方向)的收官页"
+          ],
+          "在deck中的位置": "第 7 章,末页,紧跟实验章,作全 deck 收束与致谢",
+          "slides": [
+            {
+              "页序号": 30,
+              "页面角色": "ending_candidate",
+              "标题": "总结致谢与课题组投机系列工作",
+              "核心论断": "SpecDiff 是课题组『投机加速』研究主线中的一环",
+              "本页讲什么": "全 deck 收尾页。左上回扣 SpecDiff 完整标题并致谢、留联系邮箱 pan_jiayi@sjtu.edu.cn。右侧用『Our works on speculation』把本工作延展为课题组投机系列:LLM Early Exit(ISCA 2025)、Sparse Attention、VLA Pruning(ASPLOS 2026)三项并列展示,并附 Lab Homepage / Paper Link 二维码,将单篇成果升维为研究脉络。",
+              "关键文字": [
+                "Thanks for your attention !",
+                "Communication email: pan_jiayi@sjtu.edu.cn",
+                "Our works on speculation",
+                "Speculation for LLM Early Exit (ISCA 2025)",
+                "Speculation for Sparse Attention",
+                "Speculation for VLA Pruning (ASPLOS 2026)"
+              ],
+              "视觉骨架": [
+                "SpecDiff 标题框",
+                "致谢+邮箱文字块",
+                "Lab/Paper 二维码",
+                "投机系列 3 卡片并列"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": null,
+              "细分角色": "ending"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "background_macro_gap_to_policy_to_method_bridge",
+      "title": "背景·宏观供需→外部约束→政策背书→方法总纲",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "动机",
+          "算力",
+          "差距",
+          "政策"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_framework_three_pillars",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三要素/三支柱框图铺陈宏观背景板"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用量级对比放大供需/差距痛感"
+        },
+        {
+          "archetype": "external_constraint_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线追加外部约束(禁令/限制)加剧压力"
+        },
+        {
+          "archetype": "policy_backing_quote_montage",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以政策/领导讲话进行主题升华"
+        },
+        {
+          "archetype": "method_overview_formula_bridge",
+          "count": 1,
+          "position": "end",
+          "purpose": "用公式化 N 种途径总纲收束, 引出后续方法章"
+        }
+      ],
+      "applicable_summary": "研究报告类背景章: 由宏观三要素→供需缺口量级→外部禁令时间线→政策讲话背书→N 途径公式总纲, 层层压强度后桥接到方法章"
+    },
+    {
+      "id": "method_plateau_argument_to_full_stack_co_design",
+      "title": "方法·单层见顶→全栈协同→架构与收益定位",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "系统优化",
+          "软硬件协同",
+          "全栈",
+          "范式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前章"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "以两代范式对比引入协同优化必要性"
+        },
+        {
+          "archetype": "plateau_evidence_time_series_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以趋势图论证单层优化空间平缓"
+        },
+        {
+          "archetype": "typical_techniques_three_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "盘点单层典型技术加速比"
+        },
+        {
+          "archetype": "single_arrow_big_number_headline",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "大数字过渡页, 抛出协同效果头条"
+        },
+        {
+          "archetype": "co_design_method_layered_formula",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "拆解协同优化的公式化方法"
+        },
+        {
+          "archetype": "single_instance_intro_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "单行实例引入页, 铺垫具体案例"
+        },
+        {
+          "archetype": "three_layer_method_algo_sys_hw",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法-系统-硬件三层方法拆解"
+        },
+        {
+          "archetype": "instance_speedup_result_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "给出实例的具体加速数字"
+        },
+        {
+          "archetype": "full_stack_architecture_dense_diagram",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "整幅分层架构总图"
+        },
+        {
+          "archetype": "aggregated_gain_multiplicative_flow",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "各层加速叠乘的综合收益图"
+        },
+        {
+          "archetype": "accuracy_speed_pareto_positioning",
+          "count": 1,
+          "position": "end",
+          "purpose": "精度-速度散点定位收尾"
+        }
+      ],
+      "applicable_summary": "以「单层优化见顶→全栈软硬件协同→架构总图→叠乘收益→精度速度定位」组织的深度方法章, 常用两代范式与单点实例交替支撑"
+    },
+    {
+      "id": "method_landscape_then_need_vs_reality_gap_platforms",
+      "title": "方法·芯片全景→需求锚定→四平台差距→路径收束",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "芯片",
+          "推理",
+          "端侧",
+          "算力平台",
+          "能效"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "新范式(如 o1) 引入算力需求暴涨动机"
+        },
+        {
+          "archetype": "chip_class_spectrum_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多类芯片按通用性—定制化谱系铺盘"
+        },
+        {
+          "archetype": "top_formula_with_efficiency_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效公式+端云对照表拆解关键因子"
+        },
+        {
+          "archetype": "panorama_scatter_capability_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "汇总大量样本芯片能力散点+分类表"
+        },
+        {
+          "archetype": "concrete_example_metrics_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以少量端侧样例落到具体指标"
+        },
+        {
+          "archetype": "need_target_green_spec_box",
+          "count": 1,
+          "position": "middle",
+          "purpose": "定义需求指标绿色目标框, 供后续对标"
+        },
+        {
+          "archetype": "need_vs_platform_gap_ellipse",
+          "count": "3-5",
+          "position": "before_end",
+          "purpose": "对每类平台以椭圆+箭头对标差距倍数"
+        },
+        {
+          "archetype": "path_stacked_efficiency_multiplier",
+          "count": 1,
+          "position": "end",
+          "purpose": "以能效倍数递进横轴收束提升路径"
+        }
+      ],
+      "applicable_summary": "算力/芯片类方法章: 从范式变化引出算力需求, 铺开芯片谱系与能效汇总, 定义需求指标后对标 CPU/GPU/FPGA/ASIC 逐一给差距, 以系统+定制化路径收束"
+    },
+    {
+      "id": "method_motivation_cases_problems_practices_outlook",
+      "title": "方法·动机→标杆案例→关键问题→行业实践→展望",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          13
+        ],
+        "must_have_in_chapter_purpose": [
+          "集群",
+          "训练",
+          "异构",
+          "案例",
+          "问题"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "quadrant_relation_motivation_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以象限/关系图立本章动机"
+        },
+        {
+          "archetype": "flagship_case_metric_column_list",
+          "count": "2",
+          "position": "middle",
+          "purpose": "并列两个头部厂商标杆案例, 用规格清单佐证规模"
+        },
+        {
+          "archetype": "scaling_law_timeline_milestones",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线里程碑图论证需求量级"
+        },
+        {
+          "archetype": "key_problem_data_with_metrics",
+          "count": "3",
+          "position": "middle",
+          "purpose": "递进拆解 3 个关键工程问题, 每页给数据/表格支撑"
+        },
+        {
+          "archetype": "industry_practice_bullet_case",
+          "count": "2",
+          "position": "before_end",
+          "purpose": "转向业界解法, 并列举 2 家厂商工程实践"
+        },
+        {
+          "archetype": "dual_column_outlook_capability_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双栏能力清单+利用率数字收束展望"
+        }
+      ],
+      "applicable_summary": "工程系统方法章: 由象限关系立动机→2 个标杆案例证规模→时间线证需求→3 个关键问题→2 个业界工程实践→双栏展望收束"
+    },
+    {
+      "id": "discussion_agenda_vision_topics_team_close",
+      "title": "展望·目录→愿景架构→课题清单→团队组成",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "展望",
+          "研究方向",
+          "团队",
+          "研究院"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入展望板块"
+        },
+        {
+          "archetype": "vision_forking_panorama_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以底部根节点向上分叉的愿景全景图铺陈"
+        },
+        {
+          "archetype": "topic_bulleted_research_list",
+          "count": 1,
+          "position": "middle",
+          "purpose": "纯文字清单铺开具体研究课题"
+        },
+        {
+          "archetype": "team_block_composition_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以色块分块展示多方联合团队组成"
+        }
+      ],
+      "applicable_summary": "研究院/实验室末章展望: agenda 分隔切入→愿景分叉全景图→文字课题清单→多方联合团队色块收束"
+    },
+    {
+      "id": "method_framework_dual_law_matrix_direction_platform",
+      "title": "方法·二维框架→双定律矩阵→方向成果→平台底座",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究方向",
+          "算法",
+          "架构",
+          "定律",
+          "论文"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "two_axis_quadrant_framework_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以横纵双轴四象限框架统领研究方向"
+        },
+        {
+          "archetype": "formula_plus_dual_law_curve",
+          "count": 1,
+          "position": "start",
+          "purpose": "以能力公式+两条增长曲线奠定路线"
+        },
+        {
+          "archetype": "route_by_layer_content_matrix",
+          "count": "2",
+          "position": "middle",
+          "purpose": "按 AI1.0/AI2.0 各出一页路线×层次内容矩阵"
+        },
+        {
+          "archetype": "efficiency_scaling_curve_multi_route",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效—算力曲线对比多路线技术空间"
+        },
+        {
+          "archetype": "direction_target_arch_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以研究目标+架构示意引入具体方向"
+        },
+        {
+          "archetype": "paper_matrix_by_target_column",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以目标分列展示论文成果矩阵"
+        },
+        {
+          "archetype": "coordination_direction_dual_frame",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以大脑-小脑等双框图展开协同方向"
+        },
+        {
+          "archetype": "platform_base_capability_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以测试场/平台+能力网格作为实验底座收尾"
+        }
+      ],
+      "applicable_summary": "科研团队研究方向章: 用二维四象限框架+双定律奠基→AI1.0/2.0 两页路线矩阵→单体能效曲线→单个方向的论文矩阵→协同方向框图→实验测试场收束"
+    },
+    {
+      "id": "case_study_platform_overview_evidence_direction_pairs",
+      "title": "案例·平台总览→工程佐证→科研方向框架+代表作对",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "落地",
+          "代表工作",
+          "平台",
+          "算力底座"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "three_platform_overview_panels",
+          "count": 1,
+          "position": "start",
+          "purpose": "横向并列 N 大支撑平台总览"
+        },
+        {
+          "archetype": "engineering_scale_chip_row_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以芯片方块横排+主张论证工程规模能力"
+        },
+        {
+          "archetype": "scheduling_advantage_metrics_capsule",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三组能力胶囊+升降箭头数字坐实调度优势"
+        },
+        {
+          "archetype": "roadmap_puzzle_flow_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以拼图/流程图指向更大规模目标"
+        },
+        {
+          "archetype": "research_direction_codesign_frame",
+          "count": 1,
+          "position": "middle",
+          "purpose": "开启科研方向的软硬件协同框架页"
+        },
+        {
+          "archetype": "representative_works_quad_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以四象限/多面板展示该方向代表作及指标"
+        },
+        {
+          "archetype": "sota_compare_timeline_with_bullets",
+          "count": 1,
+          "position": "end",
+          "purpose": "章末以 SOTA 系统对标时间线+能力清单收束"
+        }
+      ],
+      "applicable_summary": "机构/团队末章案例: 三大平台总览→异构千卡工程佐证→调度优势数字→十万卡路线→科研方向 1 框架+代表作→科研方向 2 框架+代表作→SOTA 对标收尾"
+    },
+    {
+      "id": "method_three_sublayer_challenge_innovation_experiment_loop",
+      "title": "方法·三子层挑战-创新-实验递进闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          12,
+          18
+        ],
+        "must_have_in_chapter_purpose": [
+          "稀疏化",
+          "编译",
+          "硬件",
+          "软硬协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "structure_intro_computation_flow",
+          "count": 1,
+          "position": "start",
+          "purpose": "以计算流示意介绍目标对象基本结构"
+        },
+        {
+          "archetype": "sublayer_challenge_statement",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个子层以断言标题抛出关键挑战"
+        },
+        {
+          "archetype": "sublayer_innovation_answer",
+          "count": "5-8",
+          "position": "middle",
+          "purpose": "每个子层给出 1-3 页创新点(方法/机制/示例)"
+        },
+        {
+          "archetype": "sublayer_experiment_result",
+          "count": "2-3",
+          "position": "before_end",
+          "purpose": "每个子层以断言标题+具体数字给出实验结果"
+        },
+        {
+          "archetype": "three_layer_summary_flow",
+          "count": 1,
+          "position": "end",
+          "purpose": "以自上而下的三框流程图收束全章"
+        }
+      ],
+      "applicable_summary": "沿『算法/稀疏化→编译/映射→硬件/架构』三层递进的深度方法章, 每子层以断言标题(Challenge/Key Ideas/Innovation/Experiment)组织挑战-创新-实验闭环, 末页三框流程图收束"
+    },
+    {
+      "id": "framework_progressive_flow_build_plus_formula_unpack",
+      "title": "框架·分幕流程构建+公式因子逐层高亮",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "流程",
+          "方法论",
+          "公式",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "progressive_flow_stage_build",
+          "count": 3,
+          "position": "start",
+          "purpose": "逐帧 build 多阶段技术流程图, 每页新增一段"
+        },
+        {
+          "archetype": "formula_factor_highlight",
+          "count": 3,
+          "position": "middle",
+          "purpose": "用一个等效算力/性能公式, 每页高亮拆解一个因子"
+        },
+        {
+          "archetype": "three_layer_design_summary",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多层协同设计小结, 三分区+三条编号要点"
+        },
+        {
+          "archetype": "trend_lead_in_new_scenario",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引入新场景(如 LLM+专用模型) 承接后续创新点"
+        },
+        {
+          "archetype": "innovation_novel_paradigm_pair",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "用对比示例展示新范式的量级降算力/降复杂度"
+        },
+        {
+          "archetype": "review_previous_tutorial_holder",
+          "count": 1,
+          "position": "middle",
+          "purpose": "回顾旧版 tutorial 作为进展对比锚点"
+        },
+        {
+          "archetype": "progress_map_operators",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图展示 N 年内算子/性能进展"
+        },
+        {
+          "archetype": "industry_revolution_positioning",
+          "count": "1-2",
+          "position": "before_end",
+          "purpose": "用工业革命/时代高度升华技术意义"
+        },
+        {
+          "archetype": "handoff_to_our_methods_roadmap",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双行进展+本组方法预告收束章节"
+        }
+      ],
+      "applicable_summary": "tutorial 方法论内核章: 用分幕 build 的流程图+公式因子高亮拆解原理, 再用新场景+创新点承接, 末尾用回顾/时代升华+本组方法路线图收束"
+    },
+    {
+      "id": "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "title": "案例·多轮观察-解法对+端到端消融",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "观察",
+          "方案",
+          "消融",
+          "加速比",
+          "代表工作"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面/标题+作者+会议引入"
+        },
+        {
+          "archetype": "realtime_need_vs_sota_gap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以现实需求 vs SOTA 精度/性能缺口做动机"
+        },
+        {
+          "archetype": "computation_pipeline_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "铺陈目标计算流程/管线, 供后续 Observation 定位瓶颈"
+        },
+        {
+          "archetype": "observation_initial",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 首页: 抛出一个瓶颈现象+数字"
+        },
+        {
+          "archetype": "observation_extension",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 延伸页: 深入证据/进一步机制"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "针对每个 Observation 给出对应 Solution"
+        },
+        {
+          "archetype": "end_to_end_performance",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "端到端加速比作为整体收益证明"
+        },
+        {
+          "archetype": "ablation_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "多象限消融验证各 Solution 独立贡献"
+        }
+      ],
+      "applicable_summary": "系统/加速器论文的深度案例章: 论文封面→需求缺口→流程图→3 轮 Observation(每轮 initial+extension)→Solution 一一对应→端到端加速+消融收尾"
+    },
+    {
+      "id": "case_study_background_motivation_multi_solution_result",
+      "title": "案例·背景动机→章节分隔→多解法→双视角结果",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "FPGA",
+          "硬件",
+          "方案",
+          "能效",
+          "成本"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面+发表信息引入"
+        },
+        {
+          "archetype": "background_tradeoff_spectrum",
+          "count": 1,
+          "position": "start",
+          "purpose": "以谱系图/对比论证技术折衷"
+        },
+        {
+          "archetype": "motivation_platform_advantage",
+          "count": 1,
+          "position": "start",
+          "purpose": "点明目标平台(FPGA/专用)的核心优势"
+        },
+        {
+          "archetype": "chapter_transition_divider",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以留白分隔页引出后续多解法"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "每个解法以断言标题+方法细节展开"
+        },
+        {
+          "archetype": "performance_result_platform",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以目标平台自身指标(如吞吐/能效)给出结果"
+        },
+        {
+          "archetype": "performance_result_cross_platform",
+          "count": 1,
+          "position": "end",
+          "purpose": "以跨平台对比(如 GPU vs FPGA)给出总账收益"
+        }
+      ],
+      "applicable_summary": "硬件加速案例章: 论文封面+背景折衷+平台动机→章节分隔→多个 Solution 并列展开→结果先给单平台指标再给跨平台总账"
+    },
+    {
+      "id": "case_study_challenge_solution_performance_closed_loop",
+      "title": "案例·多挑战多解法一一配对+消融闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "解法",
+          "算子",
+          "加速",
+          "消融"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文标题+作者+会议引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "1-2 页并列陈述 N 个 challenge, 每个用视觉对比图"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个 Solution 对应一个 Challenge, 展示方法细节"
+        },
+        {
+          "archetype": "performance_headline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以断言式加速数字给主性能结果"
+        },
+        {
+          "archetype": "ablation_supplement",
+          "count": 1,
+          "position": "end",
+          "purpose": "以消融/内存节省等补充实验佐证各设计模块贡献"
+        }
+      ],
+      "applicable_summary": "紧凑型系统/算子案例章: 论文封面→N 个 challenge 并列→N 个 solution 一一配对→主性能加速比→消融补充实验收束"
+    },
+    {
+      "id": "framework_opensource_ecosystem_plus_representative_work",
+      "title": "框架·开源生态总览+代表算子闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "开源框架",
+          "算子",
+          "代表工作",
+          "路线图"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入框架章"
+        },
+        {
+          "archetype": "framework_definition_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 Innovation 标签+一句话定义引入自研开源框架"
+        },
+        {
+          "archetype": "framework_performance_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多组加速比数字铺陈框架性能优势"
+        },
+        {
+          "archetype": "framework_integration_ecosystem",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三列并排展示与多上层框架的集成生态"
+        },
+        {
+          "archetype": "progress_roadmap_bridge",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图作为承上启下枢纽, 引出代表工作"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "代表工作论文封面引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文挑战陈述, 抛出问题"
+        },
+        {
+          "archetype": "solution_formulation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法一:以循环维度/公式化算法空间给出方案"
+        },
+        {
+          "archetype": "solution_mechanism",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法二:进一步落到具体机制(启发式模型/动态选择)"
+        },
+        {
+          "archetype": "performance_result",
+          "count": 1,
+          "position": "end",
+          "purpose": "给出加速比闭环收束章节"
+        }
+      ],
+      "applicable_summary": "开源框架章: 目录→定义→性能数字→生态集成→路线图承接→代表工作论文『挑战-方案-机制-性能』闭环"
+    },
+    {
+      "id": "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "title": "动机·趋势路标→三轴增长→供需鸿沟→解法引入",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "趋势",
+          "算力",
+          "鸿沟",
+          "动机",
+          "稀疏"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_ai_roadmap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三时代阶梯+三轴维度铺陈 AI 演进路标"
+        },
+        {
+          "archetype": "three_axis_trend_panel",
+          "count": 2,
+          "position": "start",
+          "purpose": "用三列并排 panel 分抽象+实证两页展开数据/模态/任务三轴"
+        },
+        {
+          "archetype": "model_moore_law_growth_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以对数增长曲线论证模型规模摩尔定律级暴涨"
+        },
+        {
+          "archetype": "supply_demand_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以需求 vs 硬件曲线证算力供需鸿沟"
+        },
+        {
+          "archetype": "solution_introduction_bridge",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以性能-能效对比正式引入解法(稀疏计算)"
+        },
+        {
+          "archetype": "definition_benefit_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "给解法定义+关键倍数收束"
+        }
+      ],
+      "applicable_summary": "tutorial 动机章: 从 AI 三时代路标→三轴 panel(抽象+实证)→模型摩尔定律→供需鸿沟→稀疏计算引入→定义收束的漏斗式论证"
+    },
+    {
+      "id": "background_paradigm_shift_dual_era_comparison_table",
+      "title": "背景·1.0→2.0 范式对照+同构表格递进",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "范式",
+          "1.0",
+          "2.0",
+          "稀疏",
+          "分类"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入案例研究/背景板块"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column",
+          "count": 1,
+          "position": "start",
+          "purpose": "左右两栏对照 1.0/2.0 范式核心差异"
+        },
+        {
+          "archetype": "era_sparsity_taxonomy_table",
+          "count": 2,
+          "position": "middle",
+          "purpose": "用同构四列表格分别铺 1.0 与 2.0 稀疏性谱系, 用红框强调新增行"
+        },
+        {
+          "archetype": "progress_roadmap_handoff",
+          "count": 1,
+          "position": "end",
+          "purpose": "以进展路线图收束到本组新方法预告"
+        }
+      ],
+      "applicable_summary": "从上一代过渡到新场景的背景章: 目录→双栏范式对照→同构表格逐行递进(1.0→2.0 新增维度)→路线图收束"
+    },
+    {
+      "id": "case_study_agenda_paper_multi_platform_benchmark",
+      "title": "案例·目录切入→论文封面→多平台基准",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "其他工作",
+          "加速比",
+          "跨平台",
+          "baseline"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "进度目录切入补充工作章"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文封面+作者+投稿信息引入"
+        },
+        {
+          "archetype": "platform_benchmark_speedup",
+          "count": 2,
+          "position": "end",
+          "purpose": "每页一个硬件平台家族的加速比对比图, 佐证跨平台通用性"
+        }
+      ],
+      "applicable_summary": "补充成果紧凑章: agenda→论文封面→2 组跨平台(NVIDIA/AMD 等)加速比基准对比, 用于收尾多个 case study"
+    },
+    {
+      "id": "closing_collaboration_wall_plus_thanks_backpanel",
+      "title": "收尾·合作机构墙+THANKS 封底",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "合作",
+          "致谢",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "collaboration_institution_wall",
+          "count": 1,
+          "position": "start",
+          "purpose": "以院校名+logo 网格展示合作学术伙伴阵容"
+        },
+        {
+          "archetype": "thanks_backpanel",
+          "count": 1,
+          "position": "end",
+          "purpose": "以竖排 THANKS + 团队成员/赞助方 + 主题回顾 + 联系方式收束"
+        }
+      ],
+      "applicable_summary": "学术 tutorial/report 双页收尾: 合作机构墙致谢学术伙伴, 再封底集中致谢团队+赞助+联系方式"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "opening_blank_cover_skeleton_single_page",
+      "title": "开场·空白封面骨架单页",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "模板",
+          "骨架"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "blank_cover_placeholder_skeleton",
+          "count": 1,
+          "position": "start",
+          "purpose": "提供留白封面骨架,含标题/作者占位与配色定调"
+        }
+      ],
+      "applicable_summary": "模板类 deck 的极简开场: 单页空白封面骨架, 仅提供标题/作者占位与配色分隔线, 供讲者自行填入课题名与署名"
+    },
+    {
+      "id": "self_intro_dual_timeline_research_work_edu",
+      "title": "自我介绍·研究领域+工作/教育双时间线",
+      "applicable_when": {
+        "chapter_role": [
+          "self_intro"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          2
+        ],
+        "must_have_in_chapter_purpose": [
+          "个人介绍",
+          "履历",
+          "研究领域",
+          "经历"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "self_intro_research_plus_dual_timeline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以研究方向标签统领+工作/教育双时间线并列勾勒学术履历"
+        }
+      ],
+      "applicable_summary": "学术汇报开场后的自我介绍单页: 顶部研究方向标签框+工作经历时间线+教育经历时间线双栏并列, 一页收全个人学术履历全貌"
+    },
+    {
+      "id": "method_dual_column_skeleton_progressive_stripping",
+      "title": "方法·左右双栏版式逐步剥离骨架",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "版式",
+          "双栏",
+          "骨架",
+          "模板"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "innovation_tagged_dual_column_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "以「创新思路」标签+通栏概述+左右双栏骨架起头"
+        },
+        {
+          "archetype": "numbered_problem_tagged_dual_column",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以红标签「问题N」编号+双栏带标题条, 引入编号问题序列"
+        },
+        {
+          "archetype": "colored_dual_column_no_label",
+          "count": 1,
+          "position": "middle",
+          "purpose": "剥离标签, 仅留紫/蓝双色标题条区分左右两栏"
+        },
+        {
+          "archetype": "minimal_bare_dual_column_skeleton",
+          "count": 1,
+          "position": "end",
+          "purpose": "进一步抽象为纯蓝色横条双栏, 去掉底色与标签的最简骨架"
+        }
+      ],
+      "applicable_summary": "模板类方法章的空白骨架递进: 从带「创新思路」标签双栏 → 带「问题N」编号双栏 → 无标签配色双栏 → 极简纯结构双栏, 逐步剥离标签/配色, 供讲者按需选版填充"
+    },
+    {
+      "id": "closing_blank_thanks_backpanel_with_signature",
+      "title": "收尾·空白 Thanks 版式+署名页脚",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "结尾",
+          "致谢",
+          "Thanks",
+          "Q&A"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "blank_ending_placeholder_with_footer_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "提供大面积留白主体+顶部封口蓝条+底部固定署名页脚,供填 Thanks/Q&A/联系方式"
+        }
+      ],
+      "applicable_summary": "模板类 deck 的极简收尾: 单页空白结尾骨架, 顶部蓝色横条视觉封口, 主体全空供填 Thanks/Q&A, 底部固定署名页脚"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution",
+      "title": "开场·论文封面+多作者多机构署名",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "论文",
+          "署名",
+          "机构"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "左对齐大字论文标题+多作者列+多机构脚注, 建立学术身份锚点"
+        }
+      ],
+      "applicable_summary": "论文分享类 deck 的极简单页开场: 一页承担论文封面, 左对齐大标题+多行作者+多家合作机构署名, 无 TOC/agenda 页, 直接接背景章"
+    },
+    {
+      "id": "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+      "title": "背景·agenda→价值→范式代价→机制→算子拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "范式演进",
+          "价值论证",
+          "算子拆解"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首五段式 agenda 高亮定位 Background"
+        },
+        {
+          "archetype": "value_argument_dual_panel_evidence",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论证目标技术(reasoning)价值: 路线图+准确率对比双 panel"
+        },
+        {
+          "archetype": "paradigm_shift_cost_compare_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "揭示范式转变(token→action)带来的成本(10× 延迟)"
+        },
+        {
+          "archetype": "mechanism_overview_plus_detail_dual",
+          "count": 1,
+          "position": "middle",
+          "purpose": "拆解新范式内部机制(MCTS 树 + 单步细节)"
+        },
+        {
+          "archetype": "operator_pipeline_breakdown",
+          "count": 1,
+          "position": "end",
+          "purpose": "将机制进一步拆为多类算子, 为下章硬件挑战埋伏笔"
+        }
+      ],
+      "applicable_summary": "论文分享型 background 章: 五段 agenda → 论证目标技术价值 → 抛出范式转变的成本代价 → 展开内部机制(MCTS) → 拆为算子流水线, 为后续硬件挑战建靶"
+    },
+    {
+      "id": "problem_related_works_survey_dual_challenge_to_solution_bridge",
+      "title": "问题·相关工作综述→双挑战并列→方案桥接",
+      "applicable_when": {
+        "chapter_role": [
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "挑战",
+          "瓶颈",
+          "方案引出"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Challenge 章"
+        },
+        {
+          "archetype": "related_works_survey_three_pillars",
+          "count": 1,
+          "position": "middle",
+          "purpose": "横向 N 列并列综述现有工作三条路线"
+        },
+        {
+          "archetype": "first_challenge_data_backed_pain",
+          "count": 1,
+          "position": "middle",
+          "purpose": "挑战一: 用数字对比(如 <4% 利用率)证明第一大瓶颈"
+        },
+        {
+          "archetype": "second_challenge_data_backed_pain",
+          "count": 1,
+          "position": "middle",
+          "purpose": "挑战二: 用时间线/结构图证明第二大瓶颈"
+        },
+        {
+          "archetype": "proposal_solution_bridge_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "单句大字提出方案名, 桥接到下一章方法"
+        }
+      ],
+      "applicable_summary": "论文分享型 problem 章: agenda → 综述现有工作 N 条路线 → 挑战1(数据佐证) → 挑战2(结构佐证) → 单句提出本文方案, 立靶后收束到下章方法"
+    },
+    {
+      "id": "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+      "title": "方法·算法层双支柱→硬件层总览与细节下钻",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "算法",
+          "硬件",
+          "协同设计",
+          "架构"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Solution 章"
+        },
+        {
+          "archetype": "algorithm_pillar_one_formula_plus_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法支柱一: 打分公式+对比甘特时间线(cache reuse)"
+        },
+        {
+          "archetype": "algorithm_pillar_two_steps_plus_covered_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法支柱二: 分步说明+三行甘特+绿框覆盖标注(pipeline)"
+        },
+        {
+          "archetype": "hardware_architecture_bullet_overview",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "硬件层总览: 顶部定义框+右侧多级 bullet 分模块"
+        },
+        {
+          "archetype": "hardware_submodule_detail_bullet",
+          "count": 1,
+          "position": "end",
+          "purpose": "硬件层细节: 单模块内部 N 个子结构的 bullet 展开"
+        }
+      ],
+      "applicable_summary": "论文分享型 method 章: agenda → 算法层两支柱(公式+甘特对比、分步+覆盖标注) → 硬件层总览(bullet 分模块) → 单模块内部细节, 算法与硬件对半分, 算法在前硬件在后"
+    },
+    {
+      "id": "experiment_setup_dual_main_headline_ablation_pair",
+      "title": "实验·设置双页→主结果头条→消融拆解双页",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "评测设置",
+          "主结果",
+          "消融",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Evaluation 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 2,
+          "position": "middle",
+          "purpose": "评测设置两页并列: 模型/数据集 + 基线/硬件, 均带参考文献编号"
+        },
+        {
+          "archetype": "main_result_speedup_headline_boxed",
+          "count": 1,
+          "position": "middle",
+          "purpose": "主结果头条: 多倍数加速蓝框强调+多基线对比"
+        },
+        {
+          "archetype": "ablation_single_axis_speedup",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "消融一: 算法层单轴消融(算法优化贡献)"
+        },
+        {
+          "archetype": "ablation_combined_vs_individual",
+          "count": 1,
+          "position": "end",
+          "purpose": "消融二: 算法+硬件协同 vs 单项对比, 证协同必要性"
+        }
+      ],
+      "applicable_summary": "论文分享型实验章标配三段式: agenda → 评测设置两页(模型/数据集 + 基线/硬件) → 主结果多倍加速蓝框头条 → 两页消融(单轴+协同拆解)证协同设计必要性"
+    },
+    {
+      "id": "closing_toc_recap_plus_summary_contribution_with_contact",
+      "title": "收尾·目录回顾+一句话贡献总述附联系方式",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "回顾",
+          "贡献",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_recap_all_chapters",
+          "count": 1,
+          "position": "start",
+          "purpose": "回归目录页, 竖排编号点亮全部章节, 串起全 deck 脉络"
+        },
+        {
+          "archetype": "summary_contribution_boxed_with_contact",
+          "count": 1,
+          "position": "end",
+          "purpose": "顶部蓝框『We propose X』一句话总述贡献+下方实验室主页/邮箱"
+        }
+      ],
+      "applicable_summary": "论文分享型极简收尾双页: 先回归目录把四段脉络重新点亮, 再一页顶部蓝框一句话总述贡献+下方联系方式, 兼具回顾/致谢/信息接口三重功能"
+    },
+    {
+      "id": "method_multi_parallel_techniques_intro_flow_detail",
+      "title": "方法·多并列技术·意图-流程-硬件细节",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          12,
+          20
+        ],
+        "must_have_in_chapter_purpose": [
+          "多技术",
+          "算法",
+          "硬件",
+          "调度",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前 Solution 章"
+        },
+        {
+          "archetype": "technique_method_key_idea_intro",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术首页: Method 灰底标签+一句话 key idea+示意图"
+        },
+        {
+          "archetype": "technique_algorithm_flow_stage",
+          "count": "6-8",
+          "position": "middle",
+          "purpose": "算法/流水线细化: 整体处理流程+相似度表/框架/调度阶段等"
+        },
+        {
+          "archetype": "technique_hardware_mechanism_drilldown",
+          "count": "5-7",
+          "position": "middle",
+          "purpose": "硬件层细节: DSP 结构/位宽映射/复用打包/公式补偿/双模式总括"
+        }
+      ],
+      "applicable_summary": "论文分享型深度方法章: 章首目录锚定, 3 项并列技术(算法稀疏化+硬件混合精度+动静调度)各自以 Method key idea 首页起头, 展开若干算法流程与硬件机制细节页, 层层完成软硬协同方案铺陈"
+    },
+    {
+      "id": "background_ai_to_domain_to_hardware_evolution_funnel",
+      "title": "背景·生成式 AI 概览→领域收窄→模型结构→计算受限→硬件演进",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "生成式 AI",
+          "模型结构",
+          "计算受限",
+          "GPU 演进"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Background 章"
+        },
+        {
+          "archetype": "macro_generative_ai_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以机器/人类语言对照或概念图铺陈生成式 AI 已成生产力工具"
+        },
+        {
+          "archetype": "domain_narrowing_dual_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "由 AI 概览收窄到具体模态(视频生成), 左右 panel 展示代表作+跟进"
+        },
+        {
+          "archetype": "model_structure_dual_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "剖析目标模型内部结构(扩散 transformer 的加噪/去噪)"
+        },
+        {
+          "archetype": "bottleneck_comparison_quantitative_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 LLM vs 目标模型的算力/访存/算子强度表, 论证瓶颈由访存转为计算受限"
+        },
+        {
+          "archetype": "hardware_evolution_timeline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以多代 GPU 架构时间线铺陈硬件演进"
+        },
+        {
+          "archetype": "hardware_driver_dual_frame_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双红框+号提炼硬件演进两大驱动力, 为下一章立靶"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 由生成式 AI 概览→领域收窄(视频生成)→模型结构剖析(扩散 transformer)→算力/访存/强度对比表证瓶颈→GPU 架构演进时间线→两大驱动力提炼, 层层漏斗完成软硬件双视角背景"
+    },
+    {
+      "id": "motivation_domain_analogy_dual_challenge_related_work_gap",
+      "title": "动机·领域类比→双硬件挑战→相关工作缺口",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "洞察",
+          "类比",
+          "挑战",
+          "相关工作",
+          "缺口"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前 Insight 章"
+        },
+        {
+          "archetype": "domain_history_timeline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以成熟领域(如视频编解码)发展史+终结横幅铺陈类比源头"
+        },
+        {
+          "archetype": "cross_domain_analogy_dual_row",
+          "count": 1,
+          "position": "middle",
+          "purpose": "并列压缩 vs 生成两行对照, 抽出重要/不重要+双洞见"
+        },
+        {
+          "archetype": "hardware_challenge_statement",
+          "count": 2,
+          "position": "middle",
+          "purpose": "两页并列陈述由洞见引出的两大硬件挑战(GPU 无稀疏/FPGA 混合精度受限)"
+        },
+        {
+          "archetype": "related_work_multi_panel_survey",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "算法/硬件两行多列面板综述已有工作"
+        },
+        {
+          "archetype": "related_work_gap_dual_frame_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "上下双红框收束: 算法只增强能力/硬件只做 LLM, 立本文空白"
+        }
+      ],
+      "applicable_summary": "论文分享 insight/motivation 章: 借成熟领域(视频编解码)发展史铺陈, 类比抽出双洞见, 分别引出双硬件挑战(GPU 无稀疏/FPGA 混合精度限), 再综述相关工作后以双框收束缺口"
+    },
+    {
+      "id": "experiment_layered_setup_accuracy_hardware_speedup_demo",
+      "title": "实验·分层揭示 setup→精度→资源→双 speedup→demo",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          7,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "评测设置",
+          "精度损失",
+          "硬件资源",
+          "加速比",
+          "demo"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Experiment 章"
+        },
+        {
+          "archetype": "eval_setup_progressive_reveal",
+          "count": 2,
+          "position": "middle",
+          "purpose": "同页 setup 分两帧揭示: 先只露模型/指标, 再补 baseline 全部, 视觉分层"
+        },
+        {
+          "archetype": "accuracy_lossless_result_with_frame_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以精度损失小数字 + Original/Ours 视频帧对比证近乎无损"
+        },
+        {
+          "archetype": "hardware_resource_table_with_layout",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以逐模块 LUT/FF/BRAM/URAM 表 + 板卡分区示意, 论证资源分布"
+        },
+        {
+          "archetype": "speedup_headline_boxed_with_attribution",
+          "count": 2,
+          "position": "before_end",
+          "purpose": "各以蓝框大字倍数分别对 GPU 与 SOTA 加速器给主结果, 附技术归因"
+        },
+        {
+          "archetype": "demo_video_artifact_showcase",
+          "count": 1,
+          "position": "end",
+          "purpose": "以生成视频 demo + Artifacts Evaluated/Reproduced √ 徽章收尾实验章"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速实验章: 章首目录→setup 逐帧揭示→精度近乎无损+视觉对比→硬件资源占用表→分别对 GPU 与 SOTA 加速器两页大字加速比+归因→末页视频 demo 徽章收尾"
+    },
+    {
+      "id": "closing_toc_recap_tech_summary_future_thanks_authors",
+      "title": "收尾·目录回顾→技术回收→未来展望→致谢名单",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "展望",
+          "致谢",
+          "作者名单"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Summary and Future Work 章"
+        },
+        {
+          "archetype": "summary_first_contribution_with_dual_tech_recap",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以「首个 X」一句话主张 + 双技术线示意图收束核心方法"
+        },
+        {
+          "archetype": "future_work_gain_projection",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以未来架构升级(如 AIE+HBM)+ 提升倍数展望"
+        },
+        {
+          "archetype": "thanks_with_full_author_list",
+          "count": 1,
+          "position": "end",
+          "purpose": "大字致谢+全体作者名单+通讯作者高亮"
+        }
+      ],
+      "applicable_summary": "论文分享型学术收尾章: 目录回顾进入末章→一句话贡献+双技术回收→未来架构提升展望→大字致谢附作者与通讯名单, 承担 recap/outlook/致谢三重功能"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(含论文标题/作者/机构)接一张编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "method_multi_parallel_techniques_intro_flow_detail",
+      "title": "方法·多并列技术·意图-流程-硬件细节",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          12,
+          20
+        ],
+        "must_have_in_chapter_purpose": [
+          "多技术",
+          "算法",
+          "硬件",
+          "调度",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前 Solution 章"
+        },
+        {
+          "archetype": "technique_method_key_idea_intro",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术首页: Method 灰底标签+一句话 key idea+示意图"
+        },
+        {
+          "archetype": "technique_algorithm_flow_stage",
+          "count": "6-8",
+          "position": "middle",
+          "purpose": "算法/流水线细化: 整体处理流程+格式/挑战/调度阶段等"
+        },
+        {
+          "archetype": "technique_hardware_mechanism_drilldown",
+          "count": "3-5",
+          "position": "middle",
+          "purpose": "硬件层细节: 总览架构/编解码单元/DVPE+MBD 等硬件机制"
+        }
+      ],
+      "applicable_summary": "论文分享型深度方法章: 章首目录锚定, 3 项并列技术(算法稀疏化+硬件混合精度+动静调度或稀疏模式+编解码+调度)各自以 Method key idea 首页起头, 展开若干算法流程与硬件机制细节页, 层层完成软硬协同方案铺陈"
+    },
+    {
+      "id": "background_gap_to_sparsity_family_taxonomy_dual_flaw",
+      "title": "背景·算力鸿沟→稀疏方向→硬件演进→分类立双靶",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "算力鸿沟",
+          "稀疏",
+          "分类",
+          "现有方案缺陷"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Background 章"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "start",
+          "purpose": "用算力供需 240× vs 2× 散点图立宏观 gap"
+        },
+        {
+          "archetype": "solution_family_intro_dual_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引出稀疏化作为压缩方向, 并列展示两类思路"
+        },
+        {
+          "archetype": "hardware_evolution_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 GPU 代际时间线论证专用硬件持续支持稀疏"
+        },
+        {
+          "archetype": "dense_vs_sparse_mac_illustration",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以矩阵×向量 16 vs 6 MACs 例子解释稀疏机理"
+        },
+        {
+          "archetype": "sparsity_pattern_taxonomy_dual_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "将稀疏模式二分为结构化/非结构化两类, 建立对照坐标"
+        },
+        {
+          "archetype": "pattern_flaw_accuracy_drop",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "揭示结构化稀疏的精度硬伤 (>6% drop)"
+        },
+        {
+          "archetype": "pattern_flaw_hardware_overhead",
+          "count": 1,
+          "position": "end",
+          "purpose": "揭示非结构化稀疏的硬件开销硬伤 (>80% logic)"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 目录切入 → 算力供需鸿沟 → 稀疏方向引入 → GPU 稀疏支持代际演进 → 稀疏机理小例 → 稀疏模式二分类 → 分别揭示结构化(掉精度)与非结构化(硬件开销)两类硬伤, 为后续新方案精准立靶"
+    },
+    {
+      "id": "motivation_paradigm_compare_then_transpose_key_idea",
+      "title": "动机·两条路线对比→机制揭示→转置关键思路",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "洞察",
+          "训练",
+          "转置",
+          "关键思路",
+          "对比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Insight 章"
+        },
+        {
+          "archetype": "paradigm_compare_dual_route",
+          "count": 1,
+          "position": "start",
+          "purpose": "对比 post-training vs 原生稀疏训练两条路线, 用图表证明后者更优"
+        },
+        {
+          "archetype": "mechanism_reveal_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "初次揭示前向/反向权重关系(不含公式)"
+        },
+        {
+          "archetype": "key_idea_bridge_annotation",
+          "count": 1,
+          "position": "end",
+          "purpose": "补全 W↔Wᵀ 转置公式并以底部 Key idea 收束, 桥接下一章方法"
+        }
+      ],
+      "applicable_summary": "论文分享型 insight 章的短漏斗式论证: 目录 → 两条路线对比证明训练时约束合理 → 揭示前向/反向机制 → 补全转置公式并给出 Key idea 桥接方法章, 短短 3-4 页递进出核心洞见"
+    },
+    {
+      "id": "experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+      "title": "实验·设置→精度→面积→加速比→消融→EDP 总账",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "精度评测",
+          "面积开销",
+          "加速比",
+          "消融",
+          "EDP"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Experiment 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 1,
+          "position": "start",
+          "purpose": "单页列出 baselines/模型/数据集"
+        },
+        {
+          "archetype": "accuracy_result_dual_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以左右并列双表分别给 retrained 与 one-shot 精度结果"
+        },
+        {
+          "archetype": "hardware_area_methodology_result",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以硬件方法学+面积占比(%A100)佐证开销极小"
+        },
+        {
+          "archetype": "single_experiment_result_speedup_callout",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以柱状图+平均加速比头条给主性能结果"
+        },
+        {
+          "archetype": "ablation_single_component",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "针对某一关键组件(如 Adaptive Codec)的独立消融"
+        },
+        {
+          "archetype": "overall_edp_pareto_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以顶部蓝框大数字+Pareto 前沿散点收束整个实验章"
+        }
+      ],
+      "applicable_summary": "硬件加速器论文分享的实验章标准弧线: 目录→设置(baselines/模型/数据)→精度双表→面积占比小→平均加速比头条→单组件消融→EDP+Pareto 前沿收束, 一次覆盖精度/面积/性能/能效四维证据"
+    },
+    {
+      "id": "discussion_toc_three_pillar_recap_plus_future_extension",
+      "title": "讨论·目录→目标/洞察/方案三线闭环→未来扩展",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          4
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "未来工作",
+          "回收",
+          "初步验证"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录切入 Summary and Future Work"
+        },
+        {
+          "archetype": "three_column_recap_goal_insight_solution",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以横向三栏 Goals / Insight / Solution 一页回收全篇论证闭环"
+        },
+        {
+          "archetype": "future_work_preliminary_result_table",
+          "count": 1,
+          "position": "end",
+          "purpose": "以未来场景(LLM 稀疏训练)+初步实验对比表证扩展性"
+        }
+      ],
+      "applicable_summary": "论文分享型 discussion 章短闭环: 目录切入→一页三栏 (Goals/Insight/Solution) 回收全 deck 主线→一页 Future Work 用初步扩展实验表证明可延展, 不含 thanks(致谢由独立收尾章承担)"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "论文",
+          "机构",
+          "作者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中大字论文标题+多机构作者名单+共一/通讯标注"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号目录列出全 deck 章节骨架 (背景/洞察/方案/实验/总结)"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多家机构作者+共一/通讯标注)接一页编号进度式目录, 为后续 background→insight→solution→experiment→summary 五段主线定调"
+    },
+    {
+      "id": "closing_thanks_single_page_with_full_author_institution_footer",
+      "title": "收尾·单页 Thanks+全作者多机构署名",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "作者名单",
+          "机构",
+          "Thanks"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "thanks_with_full_author_list",
+          "count": 1,
+          "position": "start",
+          "purpose": "顶部大字 Thanks for your listening + 下方完整作者名单 + 机构脚注 + 共一/通讯高亮"
+        }
+      ],
+      "applicable_summary": "论文分享型极简单页收尾: 顶部居中 Thanks 大标题, 下方多行作者名单以角标标注归属机构(1 上交/2 清华/3 无穹), 用符号区分共一(*)与通讯(†)并对通讯作者做视觉高亮; 一页完成致谢+完整署名双重功能"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明论文/报告主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(含标题/作者/日期署名)接一张编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "background_paradigm_evolution_related_works_survey_to_bottleneck",
+      "title": "背景·范式演进逐篇串讲→瓶颈立靶",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          10,
+          20
+        ],
+        "must_have_in_chapter_purpose": [
+          "范式演进",
+          "相关工作",
+          "串讲",
+          "瓶颈",
+          "立靶"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮 Background 章"
+        },
+        {
+          "archetype": "domain_hype_opening_showcase",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "以领域最新明星作品(如 Sora2)+论点条铺陈领域崛起"
+        },
+        {
+          "archetype": "paradigm_evolution_roadmap",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多阶段架构演进总览图统领后续逐篇解读"
+        },
+        {
+          "archetype": "paradigm_flaw_quantitative_evidence",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以数据/曲线证明旧范式(如双向注意力)算力爆炸"
+        },
+        {
+          "archetype": "paradigm_pivot_introduction",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以红字论点条转向新方向(如自回归)并给出天然优势"
+        },
+        {
+          "archetype": "related_work_progressive_reveal",
+          "count": "6-8",
+          "position": "middle",
+          "purpose": "逐篇串讲代表工作,每篇按『引入方案→揭示缺陷→根因分析→改进工作』四拍递进"
+        },
+        {
+          "archetype": "residual_bottleneck_summary_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "以核心痛点断言(如仅能生成 10s)收束, 为方案立靶"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速的长背景章: 章首目录→领域明星作品开场→范式演进总览图→旧范式算力痛点→转向新方向(AR)→逐篇串讲 3-4 篇代表工作(每篇按方案-缺陷-根因-改进四拍)→末页核心痛点断言立靶"
+    },
+    {
+      "id": "problem_three_challenges_prior_work_flaw_bulletin",
+      "title": "问题·三挑战按现有工作缺陷逐条抛出",
+      "applicable_when": {
+        "chapter_role": [
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "现有工作缺陷",
+          "逐条",
+          "立靶"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录高亮进入 Challenge 章"
+        },
+        {
+          "archetype": "challenge_assertion_with_prior_work_evidence",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "每个挑战: 顶部红色断言框+现有工作(Sparse VideoGen/SWAT/SALO)配图+source 引用条"
+        },
+        {
+          "archetype": "challenge_assertion_extension",
+          "count": "0-1",
+          "position": "middle",
+          "purpose": "对复杂挑战(如挑战1)追加一页多图实证, 强化普遍性"
+        }
+      ],
+      "applicable_summary": "论文分享型 problem 章: 章首目录→逐条抛出 3 个挑战(每条以顶部红色断言框指出现有工作的失效, 配对应代表工作示意图与 source 引用条), 复杂挑战可追加一页多图实证, 与方法章的三项设计一一映射"
+    },
+    {
+      "id": "method_three_design_intro_mechanism_result_triad",
+      "title": "方法·三设计各以引入-机制-结果三拍展开",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "三项设计",
+          "稀疏注意力",
+          "KV 压缩",
+          "硬件数据流",
+          "算法硬件协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "章首目录导航, 可用两页同模板分别高亮当前章与下一章"
+        },
+        {
+          "archetype": "design_intro_placeholder_headline",
+          "count": "1",
+          "position": "middle",
+          "purpose": "每项设计首页: 蓝条标题+横向说明框+红色 key idea 文字+占位小示意"
+        },
+        {
+          "archetype": "design_mechanism_with_mapping_diagram",
+          "count": "1",
+          "position": "middle",
+          "purpose": "机制详解页: 用向量/箭头/映射图具象化 key idea(如分数→密度映射)"
+        },
+        {
+          "archetype": "design_result_number_headline",
+          "count": "1",
+          "position": "middle",
+          "purpose": "以极简大字数值结论页(如 density=20%)收束该项设计"
+        },
+        {
+          "archetype": "design_full_dataflow_dense_diagram",
+          "count": "0-1",
+          "position": "middle",
+          "purpose": "对复杂设计追加一张密集元素的完整数据流全图"
+        },
+        {
+          "archetype": "hardware_hierarchy_pyramid_summary",
+          "count": "0-1",
+          "position": "end",
+          "purpose": "以金字塔存储分层图收束整套设计, 桥接到硬件实现"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速方法章: 章首目录(可双页导航)→每项设计以『引入占位页+机制映射图+数值结论』三拍推进(复杂设计追加完整数据流全图), 末页以硬件存储金字塔收束; 与 problem 章的三挑战一一对应, 每项设计对应一挑战"
+    },
+    {
+      "id": "experiment_single_page_chapter_divider_placeholder",
+      "title": "实验·单页极简章节分隔留白占位",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验",
+          "章节分隔",
+          "过渡",
+          "占位"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_section_intro_panel",
+          "count": 1,
+          "position": "start",
+          "purpose": "以左上大字标题+粗蓝分隔线+大留白+底部页脚, 单页作实验章过渡分隔"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简实验章占位: 仅一页大字『实验』标题+粗蓝色横分隔线+大面积留白, 作为方法章切换到实验章的分幕过渡, 具体实验数据未在本 section 展开"
+    },
+    {
+      "id": "closing_minimal_thanks_with_speaker_signature",
+      "title": "收尾·极简致谢+讲者署名单页",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share",
+          "topic_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "感谢聆听",
+          "署名",
+          "日期"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "minimal_thanks_with_signature_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "左上大字『感谢聆听！』+中部淡色分隔线下的讲者姓名+日期+底部机构页脚, 极简礼节收束"
+        }
+      ],
+      "applicable_summary": "组会/科研汇报的极简单页致谢: 左上『感谢聆听！』主标题+淡粉分隔线+中部讲者姓名+日期+底部机构落款, 无 recap 无联系方式, 只承担礼节性收尾"
+    }
+  ]
+}

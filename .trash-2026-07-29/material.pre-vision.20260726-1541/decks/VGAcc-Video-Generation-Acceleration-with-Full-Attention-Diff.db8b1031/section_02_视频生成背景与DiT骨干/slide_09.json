@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_09",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.02",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 9,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Video DiT 结构",
+  "核心论断": "Video DiT 以时空注意力统一建模视频帧序列",
+  "本页讲什么": "作为本章收尾页，本页以①编号展开 Video DiT 的具体结构，说明其如何在时空维度上组织 token 并施加注意力，把前面「任务→扩散→DiT→全注意力」的认知链落到视频专用骨干上，过渡到后续加速方法。",
+  "关键文字": [
+    "Video DiT",
+    "①"
+  ],
+  "视觉骨架": [
+    "Video DiT 时空结构框图",
+    "编号步骤标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_09.asset.01",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_09.asset.02",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_09.asset.03",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_09.asset.04"
+  ],
+  "适合复用场景": [
+    "Video DiT 架构讲解页",
+    "时空注意力骨干收尾页"
+  ],
+  "不适合复用场景": [
+    "扩散原理入门页",
+    "加速结果数据页",
+    "图像专用模型主题"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

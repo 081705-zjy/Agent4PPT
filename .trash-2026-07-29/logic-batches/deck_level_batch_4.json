@@ -1,0 +1,1266 @@
+{
+  "batch_index": 4,
+  "patterns": [
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "lab_introduction",
+          "tutorial"
+        ],
+        "scenario_keywords": [
+          "大模型推理软硬件协同优化",
+          "端侧/边缘大模型汇报",
+          "稀疏计算/加速课题综述",
+          "本组多技术路线成果综述",
+          "学术+工业综合技术汇报"
+        ],
+        "deck_size_range": [
+          40,
+          130
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队",
+          "工业落地研发者",
+          "AI 芯片/系统方向研究者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": "0-1",
+          "position": "fixed_2"
+        },
+        {
+          "role": "self_intro",
+          "count": "0-1",
+          "position": "after_cover"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-3",
+          "page_count_range": [
+            6,
+            15
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-1",
+          "page_count_range": [
+            2,
+            7
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "3-6",
+          "page_count_per_section_range": [
+            4,
+            27
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-2",
+          "page_count_range": [
+            5,
+            14
+          ]
+        },
+        {
+          "role": "engineering_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            4,
+            8
+          ]
+        },
+        {
+          "role": "references",
+          "section_count": "0-1"
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "背景动机",
+        "指标/洞见铺垫",
+        "统领框架",
+        "分层/分工作平行陈列",
+        "工程落地/讨论",
+        "总结与致谢"
+      ],
+      "applicable_summary": "40-130 页长篇 deck 骨架:cover(+可选 agenda+可选 self_intro)开场,1-3 章 motivation 铺陈需求/指标/洞见,可选 framework_intro 抛出统领分层图或公式,再以 3-6 章 method 沿框架/工作平行陈列本组多篇代表论文,期间以『全 agenda 灰显+当前章高亮』的 section_divider 或极简 PART 分隔页作章节导航,末以 discussion/工程落地/展望+致谢+联系方式/招募 CTA 封底",
+      "anti_patterns": [
+        "单篇论文分享 (paper_share 20-40 页): 用 paper_share_bg_challenge_solution_eval_summary_canonical 骨架, method 只一节",
+        "博士资格考试/开题: 需 self_intro 学习情况+多研究内容+备份材料, 用 qualifying_exam_defense_with_study_progress_and_appendix",
+        "实验室空白模板: 骨架页只是占位版式无实质内容, 用 blank_lab_report_template_skeleton"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "deck_title": "大模型推理软硬件协同优化",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬件协同",
+            "能效优化",
+            "Token经济",
+            "算法优化",
+            "系统优化",
+            "硬件架构",
+            "集群推理"
+          ],
+          "match_evidence": "128 页超长 deck: 1 cover + 1 self_intro + 4p+9p motivation(Token价值+能效指标) + framework 融合于 method 第 5-9 章 5 层框架 + 5 章 method(12/27/27/26/6 页)平行陈列课题组代表论文 + 14p discussion(华为集群实践) + 1 closing;每层间用 5-6 张 toc/framework 高亮 divider 导航",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "大模型推理软硬件协同优化",
+              "slide_claim": "大模型推理需软硬件协同优化以突破算力瓶颈",
+              "slide_key_text": [
+                "大模型推理软硬件协同优化",
+                "戴国浩",
+                "上海交通大学 / 无问芯穹",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "左上大标题",
+                "横向细分隔线",
+                "右下演讲人信息块"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_long_deck_navigation",
+              "slide_title": "目录:四大议题总览(Contents)",
+              "slide_claim": "全篇围绕四大议题展开,首议「从Token到价值」",
+              "slide_key_text": [
+                "Contents",
+                "① 大模型推理从Token到价值"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框标题区",
+                "带圈数字①-④纵向列表",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入议题一「从Token到价值」",
+              "slide_claim": "聚焦第一议题——大模型推理从Token到价值",
+              "slide_key_text": [
+                "Contents",
+                "① 大模型推理从Token到价值"
+              ],
+              "slide_visual_skeleton": [
+                "目录列表当前项高亮",
+                "其余项灰化处理",
+                "左侧蓝色进度竖条"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入软硬件协同优化层次",
+              "slide_claim": "本章聚焦大模型推理的软硬件协同优化层次",
+              "slide_key_text": [
+                "Contents",
+                "大模型推理的软硬件协同优化层次",
+                "大模型推理从 Token 到价值"
+              ],
+              "slide_visual_skeleton": [
+                "带边框 Contents 面板",
+                "四项编号列表",
+                "当前项蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入软硬件协同优化章节",
+              "slide_claim": "报告推进至\"大模型推理软硬件协同优化\"主体章节",
+              "slide_key_text": [
+                "Contents",
+                "①大模型推理的Token价值主张",
+                "②大模型推理的软硬件协同优化层次",
+                "③大模型推理的软硬件协同优化(高亮)",
+                "④总结与展望"
+              ],
+              "slide_visual_skeleton": [
+                "Contents标题框",
+                "四项编号圆标目录",
+                "第3项高亮+左侧蓝色进度条"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_deck": "framework_intro",
+              "archetype": "framework_layered_components_explained",
+              "slide_title": "五层次拆解:聚焦层次一模型设计",
+              "slide_claim": "从五层框架切入,首先展开顶层模型设计层",
+              "slide_key_text": [
+                "大模型推理系统可拆解为5个设计层次",
+                "高亮:模型设计层(DeepSeek)",
+                "软件层/硬件层",
+                "量化AWQ·推理框架vLLM/CANN置灰",
+                "芯片H100/910B·Chiplet置灰"
+              ],
+              "slide_visual_skeleton": [
+                "五层框图(顶层高亮其余置灰)",
+                "软/硬件层分组括号",
+                "右向箭头技术标注"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_deck": "framework_intro",
+              "archetype": "framework_layered_components_explained",
+              "slide_title": "大模型推理优化五层框架:定位算法优化",
+              "slide_claim": "推理系统拆为五层,算法优化居第二层,本章聚焦于此",
+              "slide_key_text": [
+                "大模型推理系统可拆解为5个设计层次",
+                "算法优化(第二层)",
+                "DeepSeek / AWQ / vLLM CANN / H100·910B / Chiplet 2.5D/3D"
+              ],
+              "slide_visual_skeleton": [
+                "五层竖排框架示意",
+                "软件层/硬件层左括号分组",
+                "右侧逐层代表技术标注",
+                "当前层高亮箭头"
+              ]
+            },
+            {
+              "slide_index": 55,
+              "role_in_deck": "framework_intro",
+              "archetype": "framework_layered_components_explained",
+              "slide_title": "大模型推理优化五层框架总览",
+              "slide_claim": "推理系统可拆解为五个设计层次,本报告聚焦系统优化层",
+              "slide_key_text": [
+                "大模型推理系统可拆解为5个设计层次",
+                "软件侧/硬件侧分层",
+                "DeepSeek",
+                "vLLM CANN",
+                "H100/910B",
+                "Chiplet 2.5D/3D"
+              ],
+              "slide_visual_skeleton": [
+                "五层竖排框架示意",
+                "分层代表技术标注",
+                "系统优化层高亮"
+              ]
+            },
+            {
+              "slide_index": 56,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_with_subtitle",
+              "slide_title": "层次三:系统优化三方法总览",
+              "slide_claim": "系统优化围绕算子优化、计算-通信重叠、推理服务框架三条方法展开",
+              "slide_key_text": [
+                "层次3:系统优化",
+                "算子优化",
+                "计算通信重叠",
+                "推理服务框架优化",
+                "预填充/解码",
+                "多卡"
+              ],
+              "slide_visual_skeleton": [
+                "五层框架左栏高亮",
+                "三方法并列panel",
+                "多卡资源分配示意"
+              ]
+            },
+            {
+              "slide_index": 82,
+              "role_in_deck": "framework_intro",
+              "archetype": "framework_layered_components_explained",
+              "slide_title": "大模型推理五层框架:定位第四层硬件架构",
+              "slide_claim": "大模型推理可拆解为五层,本章聚焦第四层硬件架构",
+              "slide_key_text": [
+                "大模型推理系统可拆解为5个设计层次",
+                "硬件架构",
+                "H100/910B",
+                "Chiplet 2.5D/3D"
+              ],
+              "slide_visual_skeleton": [
+                "五层纵向堆叠框架",
+                "层次高亮定位",
+                "右侧代表技术标注"
+              ]
+            },
+            {
+              "slide_index": 114,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:第四部分华为实践与展望",
+              "slide_claim": "报告进入第四章:昇腾集群推理的华为实践与展望",
+              "slide_key_text": [
+                "Contents",
+                "④ 华为实践与展望",
+                "① 从算力到Token的量级",
+                "② 大模型推理的软硬件协同优化层次",
+                "③ 大模型推理从Token到价值"
+              ],
+              "slide_visual_skeleton": [
+                "四段式编号目录框",
+                "第4项高亮其余置灰",
+                "左侧蓝色进度条"
+              ]
+            },
+            {
+              "slide_index": 128,
+              "role_in_deck": "closing",
+              "archetype": "closing_industrial_landing_and_vision",
+              "slide_title": "戴国浩联系方式与课题组招募",
+              "slide_claim": "课题组拥有 >1000 块算力资源与多单位合作,面向人才招募",
+              "slide_key_text": [
+                "戴国浩 上海交通大学 2025-7-18",
+                "Email: daiguohao@sjtu.edu.cn",
+                "本课题组拥有充足算力资源 >1000 块算力资源",
+                "招生 / 招聘 (vision)",
+                "合作单位: NICS-EFC、JKW、X …… (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔条 + 标题",
+                "左侧作者联系方式文本块",
+                "红字算力资源强调语",
+                "招生/招聘双色圆角按钮",
+                "合作单位 logo 矩阵网格"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "self_intro",
+              "section_id": "section_02_个人介绍",
+              "slide_range": [
+                2,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_从智能时代到Token生产要素",
+              "slide_range": [
+                3,
+                6
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_04_能效指标tokens-J与优化路径",
+              "slide_range": [
+                7,
+                15
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_五层次框架与层次一算法设计",
+              "slide_range": [
+                16,
+                27
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_06_层次二-算法优化",
+              "slide_range": [
+                28,
+                54
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_07_层次三-系统优化",
+              "slide_range": [
+                55,
+                81
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_08_层次四-硬件架构",
+              "slide_range": [
+                82,
+                107
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_09_层次五-芯片集成",
+              "slide_range": [
+                108,
+                113
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_10_集群推理挑战与华为实践",
+              "slide_range": [
+                114,
+                127
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_11_致谢与联系方式",
+              "slide_range": [
+                128,
+                128
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "deck_title": "稀疏计算赋能大语言模型",
+          "deck_topic_tags": [
+            "大模型推理",
+            "稀疏计算",
+            "N:M稀疏",
+            "算子优化",
+            "GPU加速",
+            "FPGA",
+            "MoE",
+            "缩放定律"
+          ],
+          "match_evidence": "68 页 deck(去附录 54 页): 1 cover + 1 agenda(五段式) + 10p motivation(成本延迟) + 4p method(FlashDecoding++) + 7p framework(Moore→Scaling insight) + 9p+6p+12p method 三工作(FlightLLM/VGAcc/TB-STC) + 4p closing + 14p appendix; 每章前插 mini-agenda 高亮 divider",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "稀疏计算赋能大语言模型(封面)",
+              "slide_claim": "稀疏计算是赋能大语言模型的核心路径",
+              "slide_key_text": [
+                "Sparse Computation Powering Large Language Model",
+                "Guohao Dai",
+                "Associate Professor @ Shanghai Jiao Tong University",
+                "Chief Scientist and Co-founder of Infinigence-AI",
+                "2024-5-21",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中超大主标题",
+                "讲者信息多行文本块",
+                "淡色分隔横线",
+                "极简白底布局"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_long_deck_navigation",
+              "slide_title": "目录:全 deck 五段式路线图",
+              "slide_claim": "报告沿背景→预备→洞见→稀疏解法→总结五段展开",
+              "slide_key_text": [
+                "Contents",
+                "1 Background: Cost and Latency of LLM",
+                "2 Preliminary: LLM Acceleration on GPUs",
+                "3 Insight: From Moore's Law to Scaling Law",
+                "4 Solution: Sparse Computation Powering LLM",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色 Contents 标题",
+                "矩形外边框",
+                "5 项编号圆圈列表",
+                "左侧蓝色进度条"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:高亮第一章 Cost and Latency",
+              "slide_claim": "全篇分五章,当前进入『大模型的成本与延迟』背景章",
+              "slide_key_text": [
+                "Background: Cost and Latency of LLM",
+                "Preliminary: LLM Acceleration on GPUs",
+                "Insight: From Moore's Law to Scaling Law",
+                "Solution: Sparse Computation Powering LLM",
+                "Summary"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号目录列表",
+                "当前章高亮+竖线指示",
+                "顶部 Contents 标题框"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位第2章 GPU上的LLM加速",
+              "slide_claim": "报告进入第2章,聚焦GPU上的LLM加速预备知识",
+              "slide_key_text": [
+                "Contents",
+                "Background: Cost and Latency of LLM",
+                "Preliminary: LLM Acceleration on GPUs",
+                "Insight: From Moore's Law to Scaling Law",
+                "Solution: Sparse Computation Powering LLM",
+                "Summary"
+              ],
+              "slide_visual_skeleton": [
+                "5项编号目录列表",
+                "当前项高亮+左侧竖条",
+                "其余项灰显"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents: Section 3 Insight — Moore's to Scaling Law",
+              "slide_claim": "The deck now enters Section 3 — the core insight on Moore's-to-Scaling-Law shift",
+              "slide_key_text": [
+                "Contents",
+                "3 Insight: From Moore's Law to Scaling Law",
+                "1 Background: Cost and Latency of LLM",
+                "2 Preliminary: LLM Acceleration on GPUs",
+                "4 Solution: Sparse Computation Powering LLM",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "5 项编号目录列表",
+                "当前 section 高亮竖条",
+                "外框卡片"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:第4章 稀疏计算赋能LLM",
+              "slide_claim": "演讲进入第4章解法主线——稀疏计算赋能大语言模型",
+              "slide_key_text": [
+                "Contents",
+                "4 Solution: Sparse Computation Powering LLM",
+                "Background: Cost and Latency of LLM",
+                "Preliminary: LLM Acceleration on GPUs",
+                "Insight: From Moore's Law to Scaling Law",
+                "Summary"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号目录列表",
+                "当前章高亮竖条",
+                "蓝框标题区"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_deck": "off_pattern",
+              "archetype": "chapter_close_demo_showcase",
+              "slide_title": "Demo:LLaMA2-7B跑在U280 FPGA",
+              "slide_claim": "FlightLLM实机demo在U280 FPGA上运行LLaMA2-7B",
+              "slide_key_text": [
+                "Demo: LLaMA2-7B on U280 FPGA"
+              ],
+              "slide_visual_skeleton": [
+                "单一标题栏",
+                "整页demo演示图"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:高亮定位第 5 章 Summary",
+              "slide_claim": "全线汇报进入 Summary 收尾章,前四章已完成铺陈",
+              "slide_key_text": [
+                "Contents",
+                "Background: Cost and Latency of LLM",
+                "Preliminary: LLM Acceleration on GPUs",
+                "Insight: From Moore's Law to Scaling Law",
+                "Solution: Sparse Computation Powering LLM",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号 agenda 列表",
+                "当前项蓝色高亮标记",
+                "左侧蓝色进度条"
+              ]
+            },
+            {
+              "slide_index": 57,
+              "role_in_deck": "off_pattern",
+              "archetype": "content_challenge_deep_dive",
+              "slide_title": "技术一 Attention 算子:partial softmax 更新开销",
+              "slide_claim": "基于 partial softmax 的 Attention 引入额外更新开销",
+              "slide_key_text": [
+                "Attention operator based on the partial softmax introduces overhead for updates",
+                "Additional update is due to the different maximums in different blocks",
+                "Is it feasible to use a unified maximum for all blocks"
+              ],
+              "slide_visual_skeleton": [
+                "红色 Challenge 标签块",
+                "original vs partial softmax 对比图",
+                "箭头指向",
+                "红色虚线 Update Overhead 标注"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与目录总览",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_背景-大模型的成本与延迟",
+              "slide_range": [
+                3,
+                12
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_03_GPU算子加速FlashDecoding++",
+              "slide_range": [
+                13,
+                16
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_04_洞见-从摩尔定律到缩放定律",
+              "slide_range": [
+                17,
+                23
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_稀疏计算与FlightLLM加速",
+              "slide_range": [
+                24,
+                32
+              ]
+            },
+            {
+              "chapter_role": "case_study",
+              "section_id": "section_06_视频生成模型的稀疏加速",
+              "slide_range": [
+                33,
+                38
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_07_稀疏新范式与TB-STC",
+              "slide_range": [
+                39,
+                50
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_08_全线工作总结与致谢",
+              "slide_range": [
+                51,
+                54
+              ]
+            },
+            {
+              "chapter_role": "appendix",
+              "section_id": "section_09_附录-技术细节与备份",
+              "slide_range": [
+                55,
+                68
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "deck_title": "端侧AI大模型开发与应用实践",
+          "deck_topic_tags": [
+            "端侧大模型",
+            "推理",
+            "稀疏计算",
+            "软硬协同",
+            "智能终端",
+            "推理芯片",
+            "AI算力",
+            "无问芯穹"
+          ],
+          "match_evidence": "51 页 deck: 1 cover + 1 self_intro + 13p background(AI 与终端) + 12p problem(端侧推理挑战) + 14p method(软硬协同+三项成果) + 8p discussion(展望与路线图) + 2p closing; 每 PART 前插极简 PART 编号 divider",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "端侧AI大模型开发与应用实践（封面）",
+              "slide_claim": "报告聚焦端侧AI大模型的开发与落地应用实践",
+              "slide_key_text": [
+                "端侧AI大模型开发与应用实践",
+                "戴国浩·上海交通大学"
+              ],
+              "slide_visual_skeleton": [
+                "居中主标题块",
+                "作者机构署名行",
+                "logo/背景装饰图"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "全篇章节导航：四个 PART 总览",
+              "slide_claim": "全报告分四部分，首讲人工智能与智能终端，续接端侧推理挑战",
+              "slide_key_text": [
+                "PART 01 人工智能与智能终端",
+                "PART 02 端侧大模型推理挑战",
+                "PART 03 / PART 04"
+              ],
+              "slide_visual_skeleton": [
+                "四段 PART 编号列表",
+                "章节标题并列排版",
+                "极简留白封面式版式"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_label",
+              "slide_title": "PART 01 章节分隔：人工智能与智能终端",
+              "slide_claim": "正式进入 PART 01，聚焦人工智能与智能终端主题",
+              "slide_key_text": [
+                "人工智能与智能终端",
+                "PART 01"
+              ],
+              "slide_visual_skeleton": [
+                "单一大标题居中/靠左",
+                "PART 编号点缀",
+                "极简留白分隔版式"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_label",
+              "slide_title": "端侧大模型推理挑战",
+              "slide_claim": "端侧大模型推理面临延时、存储等系统性挑战",
+              "slide_key_text": [
+                "端侧大模型推理挑战",
+                "PART 02"
+              ],
+              "slide_visual_skeleton": [
+                "居中蓝框标题带",
+                "留白封面版式"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_label",
+              "slide_title": "PART 03 软硬协同 + 稀疏计算",
+              "slide_claim": "软硬协同与稀疏计算构成本章方法核心抓手",
+              "slide_key_text": [
+                "软硬协同 + 稀疏计算",
+                "PART 03"
+              ],
+              "slide_visual_skeleton": [
+                "极简蓝框标题占位",
+                "大面积留白"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_label",
+              "slide_title": "未来展望与研究方向（PART 04 封面）",
+              "slide_claim": "章节封面页，引出末章「未来展望与研究方向」",
+              "slide_key_text": [
+                "未来展望与研究方向",
+                "PART 04"
+              ],
+              "slide_visual_skeleton": [
+                "章节封面标题框",
+                "大面积留白版式"
+              ]
+            },
+            {
+              "slide_index": 50,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "致谢页:讲者信息+双定律图呼应主线",
+              "slide_claim": "以讲者信息与摩尔/Scaling Law 双图收束,呼应端侧 AI 主线并致谢支持方",
+              "slide_key_text": [
+                "端侧AI大模型开发与应用实践",
+                "2024-10-26",
+                "Email: daiguohao@sjtu.edu.cn",
+                "感谢我在上海交通大学 DAI lab 的支持(vision)",
+                "Moore's Law / Scaling Law",
+                "AGI = ..."
+              ],
+              "slide_visual_skeleton": [
+                "左 Thanks 信息栏",
+                "中主标题+双定律曲线图",
+                "右 Support logo 墙",
+                "3 列并列 panel"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "极简 Thank You 收束页",
+              "slide_claim": "以纯白极简 Thank You 收束全篇",
+              "slide_key_text": [
+                "Thank You !"
+              ],
+              "slide_visual_skeleton": [
+                "纯白背景",
+                "居中致谢短语"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "section_01_封面",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "self_intro",
+              "section_id": "section_02_讲者个人介绍",
+              "slide_range": [
+                2,
+                2
+              ]
+            },
+            {
+              "chapter_role": "background",
+              "section_id": "section_03_人工智能与智能终端",
+              "slide_range": [
+                3,
+                15
+              ]
+            },
+            {
+              "chapter_role": "problem",
+              "section_id": "section_04_端侧大模型推理挑战",
+              "slide_range": [
+                16,
+                27
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_05_软硬协同与稀疏计算",
+              "slide_range": [
+                28,
+                41
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_06_未来展望与研究方向",
+              "slide_range": [
+                42,
+                49
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_07_致谢",
+              "slide_range": [
+                50,
+                51
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 3,
+      "confidence_estimate": "high"
+    },
+    {
+      "id": "qualifying_exam_defense_with_study_progress_and_appendix",
+      "title": "博士资格考试/开题答辩·学习情况+研究内容三段+备份材料",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "scenario_keywords": [
+          "博士资格考试",
+          "博士开题答辩",
+          "学术考核汇报",
+          "研究方向汇报答辩"
+        ],
+        "deck_size_range": [
+          40,
+          80
+        ],
+        "audience_levels": [
+          "博士资格考核委员会",
+          "学位分委员会",
+          "学术导师组"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "self_intro",
+          "count": 1,
+          "position": "after_agenda"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            8
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            8
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-1",
+          "page_count_range": [
+            2,
+            4
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "2-4",
+          "page_count_per_section_range": [
+            2,
+            12
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "after_method"
+        },
+        {
+          "role": "appendix",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "学习情况声明",
+        "研究背景与动机",
+        "研究现状与核心问题",
+        "整体思路/核心思想",
+        "N 项研究内容分述",
+        "总结与发表论文",
+        "备份材料"
+      ],
+      "applicable_summary": "40-80 页博资考/开题 deck 骨架:cover+agenda+一页 self_intro(学习情况/课程进度声明)开场,motivation 立需求-供给矛盾,background 综述现状引出 N 大核心问题,framework 抛出「软硬协同」总思路,再以 2-4 章 method 分述各研究内容(每章遵循『挑战→创新→成果→小结附论文』),末尾 closing 归纳到单张主线图+已发表论文列表,附 appendix 备份池以应答辩追问",
+      "anti_patterns": [
+        "常规研究报告(无学习情况声明+备份材料): 用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "顶会论文分享(单方法+无备份): 用 paper_share_bg_challenge_solution_eval_summary_canonical",
+        "工业产品路演(叙事偏商业, 无核心问题矩阵)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "deck_title": "高能效大模型推理系统的软硬件协同设计",
+          "deck_topic_tags": [
+            "大模型推理",
+            "软硬协同",
+            "能效优化",
+            "可重构架构",
+            "混合精度量化",
+            "稀疏计算",
+            "通专融合",
+            "芯片加速"
+          ],
+          "match_evidence": "57 页博资考 deck: 1 cover + 1 目录 + 1p self_intro(学习情况声明) + 6p motivation(需求供给矛盾) + 6p background(现状+三大核心问题) + 2p framework(软硬协同核心思想) + 6p+9p+2p method 三项研究内容 + 4p closing(主线图+已发表论文) + 19p appendix(备份池)",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "高能效大模型推理系统的软硬件协同设计",
+              "slide_claim": "答辩以「软硬件协同设计」为主线破解大模型推理能效瓶颈",
+              "slide_key_text": [
+                "高能效大模型推理系统的软硬件协同设计",
+                "答辩人 / 导师 / 学院信息",
+                "2025 年 4 月 14 日"
+              ],
+              "slide_visual_skeleton": [
+                "居中横排主标题",
+                "浅色横向分隔线",
+                "身份信息两栏文字块",
+                "底部日期",
+                "右上角校徽图片"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "目录",
+              "slide_claim": "全篇由学习情况/研究背景/研究内容/总结四板块串联展开",
+              "slide_key_text": [
+                "目录",
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结",
+                "Jinhao Li @ Shanghai Jiao Tong University"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色标题横栏",
+                "左侧竖排四项目录列表",
+                "灰色页脚署名条"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "self_intro",
+              "archetype": "self_intro_course_progress_declaration",
+              "slide_title": "学习情况：课程学分已修完",
+              "slide_claim": "已修完博士全部公共与专业基础课，扫清资格门槛",
+              "slide_key_text": [
+                "学习情况",
+                "已完成博士阶段全部公共基础课与专业基础课"
+              ],
+              "slide_visual_skeleton": [
+                "左上章节标题",
+                "蓝色分隔条",
+                "居中单句描边文本框",
+                "页脚汇报人署名条"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：定位到「研究背景」章",
+              "slide_claim": "全deck分四板块，当前进入研究背景论证",
+              "slide_key_text": [
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "左侧四行目录列表",
+                "当前项高亮加深",
+                "顶部蓝色分隔条"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：定位到「研究内容」章节",
+              "slide_claim": "汇报进入研究内容主体部分",
+              "slide_key_text": [
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "四项纵向目录列表",
+                "当前项高亮",
+                "顶部蓝色分隔条"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：进入「总结」章节",
+              "slide_claim": "全局脉络推进至末章，聚焦总结回收研究主线",
+              "slide_key_text": [
+                "学习情况",
+                "研究背景",
+                "研究内容",
+                "总结"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题+蓝色分隔条",
+                "四行目录列表",
+                "灰淡未选项+黑色高亮当前项"
+              ]
+            },
+            {
+              "slide_index": 46,
+              "role_in_deck": "off_pattern",
+              "archetype": "appendix_text_outline_reference",
+              "slide_title": "提纲(简版)",
+              "slide_claim": "报告按研究背景与研究内容两大板块展开",
+              "slide_key_text": [
+                "提纲",
+                "研究背景（14）",
+                "大模型算法能力接近或超过人类,充分应用到多个下游领域"
+              ],
+              "slide_visual_skeleton": [
+                "分级文字大纲",
+                "章节页数标注",
+                "顶部细分隔线"
+              ]
+            },
+            {
+              "slide_index": 52,
+              "role_in_deck": "off_pattern",
+              "archetype": "appendix_progress_summary_highlight",
+              "slide_title": "总结：已完成部分",
+              "slide_claim": "研究内容1及部分工作已完成并落地",
+              "slide_key_text": [
+                "总结：已完成部分",
+                "研究内容1：空间-谱域",
+                "计算量减少=稀疏度1×稀疏度2×稀疏度3"
+              ],
+              "slide_visual_skeleton": [
+                "整体框架块图",
+                "已完成部分高亮",
+                "研究内容三分块",
+                "稀疏度乘积公式"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "self_intro",
+              "section_id": "section_02_学习情况",
+              "slide_range": [
+                3,
+                3
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_研究背景与推理动机",
+              "slide_range": [
+                4,
+                9
+              ]
+            },
+            {
+              "chapter_role": "background",
+              "section_id": "section_04_研究现状与核心问题",
+              "slide_range": [
+                10,
+                15
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "section_05_软硬协同核心思想与整体思路",
+              "slide_range": [
+                16,
+                17
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_06_研究内容一：并行可重构硬件架构",
+              "slide_range": [
+                18,
+                23
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_07_研究内容二：空间-谱域协同轻量化",
+              "slide_range": [
+                24,
+                32
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_08_研究内容三：通专融合系统优化",
+              "slide_range": [
+                33,
+                34
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_09_总结与已发表论文",
+              "slide_range": [
+                35,
+                38
+              ]
+            },
+            {
+              "chapter_role": "appendix",
+              "section_id": "section_10_备份材料",
+              "slide_range": [
+                39,
+                57
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 4 deck 中抽出 2 条 pattern: 3 deck 归入已有 long_deck_framework_plus_works_panorama_with_agenda_navigation(扩 deck_size_range 上限至 130 以涵盖 128p 华为深度报告, 新增 self_intro 作为可选前置节点); 1 deck(博资考) 因『学习情况声明+备份材料池』两个独有节点自成 qualifying_exam_defense_with_study_progress_and_appendix 新 pattern. 跨 batch 对照后确认与 previous_batches 中所有 pattern 均不冲突. new_archetype: self_intro_course_progress_declaration — 博资考等学术考核开场单句声明「已完成课程学分」的固定过场页; new_archetype: self_intro_researcher_bio_two_column — 讲者履历双栏(研究领域+工作/教育经历)自我介绍页; new_archetype: chapter_close_demo_showcase — 单张 demo 图/视频占页作章节收束的过场; new_archetype: content_challenge_deep_dive — 红色 Challenge 标签+对比图+关键问句的深度技术挑战页(实际非骨架,列入 off_pattern); new_archetype: appendix_text_outline_reference — 附录纯文字分级大纲/提纲页, 供答辩追问导航; new_archetype: appendix_progress_summary_highlight — 附录用整体框架图高亮标注已完成/规划中工作进度",
+  "coverage": {
+    "decks_in_batch": 4,
+    "decks_assigned_to_some_pattern": 4,
+    "decks_unassigned_in_this_batch": [],
+    "decks_assigned_to_multiple_patterns": []
+  }
+}

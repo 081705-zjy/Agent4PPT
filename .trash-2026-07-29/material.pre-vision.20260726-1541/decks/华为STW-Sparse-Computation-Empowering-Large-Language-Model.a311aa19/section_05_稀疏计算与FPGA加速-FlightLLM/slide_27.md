@@ -1,0 +1,49 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_27"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.05"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 27
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "稀疏计算：跳过零值省周期"
+核心论断: "稀疏计算跳过零值，用更少 cycle 完成相同计算"
+本页讲什么: "对比 Dense 需 N 个 cycle 与 Sparse 跳过零元素的执行方式，说明稀疏计算通过省略无效乘加显著降低计算周期，是承接前述算力困境、突破瓶颈的关键路径。"
+关键文字: "[Sparse Computing, \"Dense: N Cycles\", Sparse]"
+视觉骨架: "[Dense/Sparse 周期对比图, 零值跳过示意]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_27.asset.01, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_27.asset.02, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_27.asset.03, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_27.asset.04]"
+适合复用场景: "[稀疏计算概念引入页, 稠密vs稀疏执行对比页]"
+不适合复用场景: "[含具体加速比的结果页, 算力困境 motivation 页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Sparse Computing"}
+  - {"位置": "下方主体", "内容": "Dense N Cycles 与 Sparse 跳零对比示意"}
+alternate_claims:
+  - "Dense 执行需完整 N 个 cycle 覆盖全部乘加"
+layout_tag: "block_diagram"
+---
+# slide 27: 稀疏计算：跳过零值省周期
+
+**核心论断**: 稀疏计算跳过零值，用更少 cycle 完成相同计算
+
+## 本页讲什么
+对比 Dense 需 N 个 cycle 与 Sparse 跳过零元素的执行方式，说明稀疏计算通过省略无效乘加显著降低计算周期，是承接前述算力困境、突破瓶颈的关键路径。
+
+## 关键文字片段
+- Sparse Computing
+- Dense: N Cycles
+- Sparse
+
+## 视觉骨架
+- Dense/Sparse 周期对比图
+- 零值跳过示意
+
+## 可复用到
+- 稀疏计算概念引入页
+- 稠密vs稀疏执行对比页
+
+## 不适合复用的场景
+- 含具体加速比的结果页
+- 算力困境 motivation 页

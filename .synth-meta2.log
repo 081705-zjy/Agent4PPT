@@ -1,0 +1,12 @@
+=== v17 preprocess logic-synthesize ===
+
+=== Phase A: meta-pattern synthesis (2 sub-calls) ===
+  deck_level: 6 patterns
+  section_level: 180 patterns (minimal slim)
+  [deck_level] input size: 5 KB (6 patterns)
+  [deck_level] OK in 197s, 3 metas
+  [section_level] input size: 82 KB (180 patterns)
+  [section_level] OK in 428s, 8 metas
+  wrote 11 meta patterns to /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/logic/meta
+
+  INDEX updated: /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/logic/INDEX.json

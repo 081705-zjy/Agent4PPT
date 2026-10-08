@@ -1,0 +1,1497 @@
+{
+  "batch_index": 2,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+      "目录名": "DAI-实验室PPT模版.2777835f",
+      "标题": "DAI 实验室 PPT 模板",
+      "总页数": 7,
+      "章节数": 4,
+      "章节列表": [
+        "section_01_封面",
+        "section_02_个人介绍",
+        "section_03_核心内容版式",
+        "section_04_结尾页"
+      ],
+      "主题标签": [
+        "学术模板",
+        "实验室",
+        "人工智能",
+        "集成电路",
+        "EDA",
+        "个人介绍",
+        "创新思路"
+      ],
+      "目标受众": "学术同行、科研团队",
+      "报告类型": "research_report",
+      "适用场景": "实验室学术汇报、课题进展、个人介绍空白模板",
+      "论述总结": "上海交大戴国浩实验室通用学术模板,以蓝色为主色。含封面、个人介绍(教育/工作时间线)、创新思路、问题、双栏对比、结尾等空白版式骨架,供搭建实验室课题汇报或个人介绍。多数页为占位版式,无实质内容。",
+      "论述弧线": [
+        "封面",
+        "个人介绍",
+        "创新思路",
+        "问题",
+        "对比",
+        "结尾"
+      ],
+      "适合复用场景": [
+        "实验室学术汇报版式复用",
+        "个人介绍/履历时间线页",
+        "创新思路阐述页",
+        "问题分析双栏对比页"
+      ],
+      "不适合复用场景": [
+        "数据密集型图表汇报",
+        "商业提案(风格偏学术)",
+        "面向大众科普演讲",
+        "需成品内容(本模板多空白)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面",
+          "页码范围": [
+            1,
+            1
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_01"
+          ],
+          "章节叙事": "deck 的开场封面,单页,承担整套模板的门面与标题承载功能。作为空白骨架,仅提供封面版式与配色,等待填入课题/个人介绍标题与作者信息。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术课题汇报或实验室介绍的开场封面",
+            "个人介绍类 PPT 的标题页",
+            "需蓝色学术风格封面骨架时"
+          ],
+          "在deck中的位置": "第 1 章,全 deck 起始封面页,后接个人介绍与正文章节。",
+          "slides": [
+            {
+              "页序号": 1,
+              "页面角色": "cover_candidate",
+              "标题": "DAI 实验室 PPT 模板封面",
+              "核心论断": "空白封面版式承载整套模板的标题与作者信息",
+              "本页讲什么": "这是一张空白封面骨架页,通体留白,中部有一条极浅的粉色水平分隔线作为唯一视觉元素。页面提供标题占位与作者/副标题占位,等待填入课题名称或个人介绍标题及作者信息。承担整套模板的门面与配色定调功能,不含任何实质内容。",
+              "关键文字": [],
+              "视觉骨架": [
+                "居中标题占位区",
+                "淡粉水平分隔线",
+                "下方作者/副标题占位区",
+                "极简留白背景"
+              ],
+              "上页角色": null,
+              "下页角色": "content_candidate",
+              "细分角色": "cover"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.02",
+          "章节序号": 2,
+          "章节角色": "self_intro",
+          "标题": "个人介绍",
+          "页码范围": [
+            2,
+            2
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_02"
+          ],
+          "章节叙事": "deck 中的自我介绍章节,单页承载「主要研究领域+工作经历+教育经历」双时间线,横向罗列起止时间/单位/职务,勾勒个人学术履历全貌。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术汇报开场的个人/团队负责人介绍",
+            "需要工作+教育双时间线并列的履历页",
+            "研究领域标签+经历表格组合的自我介绍"
+          ],
+          "在deck中的位置": "第 2 章,紧跟封面,作为汇报人身份铺垫",
+          "slides": [
+            {
+              "页序号": 2,
+              "页面角色": "content_candidate",
+              "标题": "个人介绍：研究领域与工作、教育双时间线",
+              "核心论断": "以研究方向加工作、教育双时间线勾勒个人学术履历全貌",
+              "本页讲什么": "自我介绍单页。顶部蓝框列出主要研究领域：人工智能、集成电路、电路设计自动化；中部「工作经历」区以起止时间/单位/职务横向罗列多段任职（2019.7 起至今）；下部「教育经历」区同样以时间线呈现博士至本科阶段（2010.9~2019.7，含北京市优秀博士毕业生等荣誉）。",
+              "关键文字": [
+                "主要研究领域：人工智能 集成电路 电路设计自动化",
+                "工作经历 / 教育经历 双时间线",
+                "2019.7 ~ 至今 多段任职经历",
+                "2014.9 ~ 2019.7 博士（北京市优秀博士毕业生）",
+                "2010.9 ~ 2014.7 本科"
+              ],
+              "视觉骨架": [
+                "顶部研究方向蓝色标签框",
+                "工作经历时间线三列表格",
+                "教育经历时间线三列表格",
+                "椭圆浅蓝底衬"
+              ],
+              "上页角色": "cover_candidate",
+              "下页角色": "chapter_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.03",
+          "章节序号": 3,
+          "章节角色": "method",
+          "标题": "核心内容版式",
+          "页码范围": [
+            3,
+            6
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06"
+          ],
+          "章节叙事": "deck 的核心内容区,提供一组左右双栏版式骨架:从「创新思路」总述到「问题1」编号页,再到纯配色双栏,逐步剥离标签、留纯结构供自由填充课题内容。",
+          "页间关系": [
+            "slide 3 → slide 4: 由紫标签「创新思路」双栏,过渡到红标签「问题1」带蓝色栏头的编号双栏,引入可递增的问题序列",
+            "slide 4 → slide 5: 由带文字标签+栏头的双栏,简化为仅剩紫/蓝渐变标题条的无标签双栏骨架",
+            "slide 5 → slide 6: 进一步抽象为纯蓝色横条双栏,去掉底色与标签,留最简对比结构"
+          ],
+          "适合复用场景": [
+            "需要左右双栏对比/并列陈述的 method 或问题分析页",
+            "可编号递进的「问题1/2/3」式论点铺陈",
+            "创新思路总述配双栏支撑论据的版式",
+            "需自定义填充、少约束的空白内容页"
+          ],
+          "在deck中的位置": "第 3 章,占 deck 主体(7 页中 4 页),承接封面/个人介绍",
+          "slides": [
+            {
+              "页序号": 3,
+              "页面角色": "chapter_candidate",
+              "标题": "创新思路 · 左右双栏总述版式",
+              "核心论断": "以「创新思路」标签统领上方概述框 + 下方左右双栏结构",
+              "本页讲什么": "一张空的内容版式骨架:顶部蓝色分隔条下,左上角为紫色渐变圆角方块标签「创新思路」,右侧接一条通栏概述框(填标题或总述);下半部为等宽左右两个空白描边框,供并列填充两块创新点内容。整页无正文,是可自由填充的双栏模板。",
+              "关键文字": [
+                "创新思路"
+              ],
+              "视觉骨架": [
+                "紫色渐变标签方块",
+                "顶部通栏概述框",
+                "左右等宽双栏空框",
+                "顶部蓝色分隔条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "chapter_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 4,
+              "页面角色": "chapter_candidate",
+              "标题": "问题 1 · 编号标签双栏版式",
+              "核心论断": "以红色「问题 1」编号标签引出带蓝色标题条的左右双栏",
+              "本页讲什么": "一张空的编号内容版式:左上角为红色渐变圆角方块标签「问题 1」,右侧接通栏概述框;下半部左右两栏各带一条深蓝实心标题条(小标题区),条下为空白描边内容框。相较创新思路页,本页多了双栏小标题带,适合把一个「问题」拆成两个带子标题的并列面板。整页无正文。",
+              "关键文字": [
+                "问题 1"
+              ],
+              "视觉骨架": [
+                "红色渐变编号标签方块",
+                "顶部通栏概述框",
+                "左右双栏各带蓝色标题条",
+                "双栏空白内容框"
+              ],
+              "上页角色": "chapter_candidate",
+              "下页角色": "chapter_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 5,
+              "页面角色": "chapter_candidate",
+              "标题": "无标签 · 紫蓝配色双栏版式",
+              "核心论断": "去除编号标签,仅留紫/蓝双色标题条区分左右两栏",
+              "本页讲什么": "一张剥离了角标标签的纯配色双栏骨架:顶部蓝色分隔条下,左栏为紫色渐变标题条 + 浅紫底填充区,右栏为蓝色渐变标题条 + 空白区,左右以冷暖配色区分。无正文、无编号,靠色彩自然分组,适合把两类内容(如方案A/方案B、优/劣)做配色对照填充。",
+              "关键文字": [],
+              "视觉骨架": [
+                "左栏紫色渐变标题条",
+                "右栏蓝色渐变标题条",
+                "左栏浅紫底填充区",
+                "左右等宽双栏"
+              ],
+              "上页角色": "chapter_candidate",
+              "下页角色": "chapter_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 6,
+              "页面角色": "chapter_candidate",
+              "标题": "极简 · 纯结构双栏骨架",
+              "核心论断": "剥离所有标签与配色,仅留双蓝标题条的最简双栏结构",
+              "本页讲什么": "本 section 最精简的版式骨架:顶部一条蓝色分隔条,下方左右两个深蓝实心标题条,标题条以下全为空白。无标签、无填充底色、无正文,只保留最基本的左右双栏标题结构,供完全自由填充任意课题内容,是这组版式逐步剥离后的裸骨架。",
+              "关键文字": [],
+              "视觉骨架": [
+                "顶部蓝色分隔条",
+                "左右两个蓝色实心标题条",
+                "大面积空白填充区",
+                "左右等宽双栏"
+              ],
+              "上页角色": "chapter_candidate",
+              "下页角色": "ending_candidate",
+              "细分角色": "chapter_transition"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.04",
+          "章节序号": 4,
+          "章节角色": "closing",
+          "标题": "结尾页",
+          "页码范围": [
+            7,
+            7
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_07"
+          ],
+          "章节叙事": "deck 最后一页,充当收尾/致谢版式。顶部蓝色横条 + 底部「Guohao Dai @ Shanghai JiaoTong University」页脚,主体全空,供填 Thanks/Q&A 或联系方式。",
+          "页间关系": [],
+          "适合复用场景": [
+            "学术汇报/个人介绍的 Thanks 或 Q&A 结尾页",
+            "需保留 DAI 实验室署名页脚的收尾版式",
+            "留白待填联系方式/致谢语的空白结尾骨架"
+          ],
+          "在deck中的位置": "第 4 章(末章),紧接双栏对比等正文页之后收尾",
+          "slides": [
+            {
+              "页序号": 7,
+              "页面角色": "ending_candidate",
+              "标题": "结尾/致谢空白版式页",
+              "核心论断": "空白收尾版式,顶部蓝条+底部署名页脚,留白主体供填 Thanks/Q&A",
+              "本页讲什么": "deck 收尾页,整页几乎全空。顶部一条蓝色横线作为视觉封口,主体大面积留白,不含任何标题或正文;底部页脚固定为『Guohao Dai @ Shanghai JiaoTong University』并带页码。作为致谢/结束模板使用,讲者可在主体区自行填入『Thanks』『Q&A』或联系方式。",
+              "关键文字": [
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "视觉骨架": [
+                "顶部蓝色横条",
+                "大面积空白主体",
+                "底部署名页脚+页码"
+              ],
+              "上页角色": "chapter_candidate",
+              "下页角色": null,
+              "细分角色": "ending"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "background_macro_gap_to_policy_to_method_bridge",
+      "title": "背景·宏观供需→外部约束→政策背书→方法总纲",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "动机",
+          "算力",
+          "差距",
+          "政策"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_framework_three_pillars",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三要素/三支柱框图铺陈宏观背景板"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用量级对比放大供需/差距痛感"
+        },
+        {
+          "archetype": "external_constraint_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线追加外部约束(禁令/限制)加剧压力"
+        },
+        {
+          "archetype": "policy_backing_quote_montage",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以政策/领导讲话进行主题升华"
+        },
+        {
+          "archetype": "method_overview_formula_bridge",
+          "count": 1,
+          "position": "end",
+          "purpose": "用公式化 N 种途径总纲收束, 引出后续方法章"
+        }
+      ],
+      "applicable_summary": "研究报告类背景章: 由宏观三要素→供需缺口量级→外部禁令时间线→政策讲话背书→N 途径公式总纲, 层层压强度后桥接到方法章"
+    },
+    {
+      "id": "method_plateau_argument_to_full_stack_co_design",
+      "title": "方法·单层见顶→全栈协同→架构与收益定位",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "系统优化",
+          "软硬件协同",
+          "全栈",
+          "范式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前章"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "以两代范式对比引入协同优化必要性"
+        },
+        {
+          "archetype": "plateau_evidence_time_series_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以趋势图论证单层优化空间平缓"
+        },
+        {
+          "archetype": "typical_techniques_three_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "盘点单层典型技术加速比"
+        },
+        {
+          "archetype": "single_arrow_big_number_headline",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "大数字过渡页, 抛出协同效果头条"
+        },
+        {
+          "archetype": "co_design_method_layered_formula",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "拆解协同优化的公式化方法"
+        },
+        {
+          "archetype": "single_instance_intro_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "单行实例引入页, 铺垫具体案例"
+        },
+        {
+          "archetype": "three_layer_method_algo_sys_hw",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法-系统-硬件三层方法拆解"
+        },
+        {
+          "archetype": "instance_speedup_result_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "给出实例的具体加速数字"
+        },
+        {
+          "archetype": "full_stack_architecture_dense_diagram",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "整幅分层架构总图"
+        },
+        {
+          "archetype": "aggregated_gain_multiplicative_flow",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "各层加速叠乘的综合收益图"
+        },
+        {
+          "archetype": "accuracy_speed_pareto_positioning",
+          "count": 1,
+          "position": "end",
+          "purpose": "精度-速度散点定位收尾"
+        }
+      ],
+      "applicable_summary": "以「单层优化见顶→全栈软硬件协同→架构总图→叠乘收益→精度速度定位」组织的深度方法章, 常用两代范式与单点实例交替支撑"
+    },
+    {
+      "id": "method_landscape_then_need_vs_reality_gap_platforms",
+      "title": "方法·芯片全景→需求锚定→四平台差距→路径收束",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "芯片",
+          "推理",
+          "端侧",
+          "算力平台",
+          "能效"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "新范式(如 o1) 引入算力需求暴涨动机"
+        },
+        {
+          "archetype": "chip_class_spectrum_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多类芯片按通用性—定制化谱系铺盘"
+        },
+        {
+          "archetype": "top_formula_with_efficiency_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效公式+端云对照表拆解关键因子"
+        },
+        {
+          "archetype": "panorama_scatter_capability_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "汇总大量样本芯片能力散点+分类表"
+        },
+        {
+          "archetype": "concrete_example_metrics_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以少量端侧样例落到具体指标"
+        },
+        {
+          "archetype": "need_target_green_spec_box",
+          "count": 1,
+          "position": "middle",
+          "purpose": "定义需求指标绿色目标框, 供后续对标"
+        },
+        {
+          "archetype": "need_vs_platform_gap_ellipse",
+          "count": "3-5",
+          "position": "before_end",
+          "purpose": "对每类平台以椭圆+箭头对标差距倍数"
+        },
+        {
+          "archetype": "path_stacked_efficiency_multiplier",
+          "count": 1,
+          "position": "end",
+          "purpose": "以能效倍数递进横轴收束提升路径"
+        }
+      ],
+      "applicable_summary": "算力/芯片类方法章: 从范式变化引出算力需求, 铺开芯片谱系与能效汇总, 定义需求指标后对标 CPU/GPU/FPGA/ASIC 逐一给差距, 以系统+定制化路径收束"
+    },
+    {
+      "id": "method_motivation_cases_problems_practices_outlook",
+      "title": "方法·动机→标杆案例→关键问题→行业实践→展望",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          13
+        ],
+        "must_have_in_chapter_purpose": [
+          "集群",
+          "训练",
+          "异构",
+          "案例",
+          "问题"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "quadrant_relation_motivation_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以象限/关系图立本章动机"
+        },
+        {
+          "archetype": "flagship_case_metric_column_list",
+          "count": "2",
+          "position": "middle",
+          "purpose": "并列两个头部厂商标杆案例, 用规格清单佐证规模"
+        },
+        {
+          "archetype": "scaling_law_timeline_milestones",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线里程碑图论证需求量级"
+        },
+        {
+          "archetype": "key_problem_data_with_metrics",
+          "count": "3",
+          "position": "middle",
+          "purpose": "递进拆解 3 个关键工程问题, 每页给数据/表格支撑"
+        },
+        {
+          "archetype": "industry_practice_bullet_case",
+          "count": "2",
+          "position": "before_end",
+          "purpose": "转向业界解法, 并列举 2 家厂商工程实践"
+        },
+        {
+          "archetype": "dual_column_outlook_capability_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双栏能力清单+利用率数字收束展望"
+        }
+      ],
+      "applicable_summary": "工程系统方法章: 由象限关系立动机→2 个标杆案例证规模→时间线证需求→3 个关键问题→2 个业界工程实践→双栏展望收束"
+    },
+    {
+      "id": "discussion_agenda_vision_topics_team_close",
+      "title": "展望·目录→愿景架构→课题清单→团队组成",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "展望",
+          "研究方向",
+          "团队",
+          "研究院"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入展望板块"
+        },
+        {
+          "archetype": "vision_forking_panorama_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以底部根节点向上分叉的愿景全景图铺陈"
+        },
+        {
+          "archetype": "topic_bulleted_research_list",
+          "count": 1,
+          "position": "middle",
+          "purpose": "纯文字清单铺开具体研究课题"
+        },
+        {
+          "archetype": "team_block_composition_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以色块分块展示多方联合团队组成"
+        }
+      ],
+      "applicable_summary": "研究院/实验室末章展望: agenda 分隔切入→愿景分叉全景图→文字课题清单→多方联合团队色块收束"
+    },
+    {
+      "id": "method_framework_dual_law_matrix_direction_platform",
+      "title": "方法·二维框架→双定律矩阵→方向成果→平台底座",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究方向",
+          "算法",
+          "架构",
+          "定律",
+          "论文"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "two_axis_quadrant_framework_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以横纵双轴四象限框架统领研究方向"
+        },
+        {
+          "archetype": "formula_plus_dual_law_curve",
+          "count": 1,
+          "position": "start",
+          "purpose": "以能力公式+两条增长曲线奠定路线"
+        },
+        {
+          "archetype": "route_by_layer_content_matrix",
+          "count": "2",
+          "position": "middle",
+          "purpose": "按 AI1.0/AI2.0 各出一页路线×层次内容矩阵"
+        },
+        {
+          "archetype": "efficiency_scaling_curve_multi_route",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效—算力曲线对比多路线技术空间"
+        },
+        {
+          "archetype": "direction_target_arch_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以研究目标+架构示意引入具体方向"
+        },
+        {
+          "archetype": "paper_matrix_by_target_column",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以目标分列展示论文成果矩阵"
+        },
+        {
+          "archetype": "coordination_direction_dual_frame",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以大脑-小脑等双框图展开协同方向"
+        },
+        {
+          "archetype": "platform_base_capability_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以测试场/平台+能力网格作为实验底座收尾"
+        }
+      ],
+      "applicable_summary": "科研团队研究方向章: 用二维四象限框架+双定律奠基→AI1.0/2.0 两页路线矩阵→单体能效曲线→单个方向的论文矩阵→协同方向框图→实验测试场收束"
+    },
+    {
+      "id": "case_study_platform_overview_evidence_direction_pairs",
+      "title": "案例·平台总览→工程佐证→科研方向框架+代表作对",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "落地",
+          "代表工作",
+          "平台",
+          "算力底座"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "three_platform_overview_panels",
+          "count": 1,
+          "position": "start",
+          "purpose": "横向并列 N 大支撑平台总览"
+        },
+        {
+          "archetype": "engineering_scale_chip_row_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以芯片方块横排+主张论证工程规模能力"
+        },
+        {
+          "archetype": "scheduling_advantage_metrics_capsule",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三组能力胶囊+升降箭头数字坐实调度优势"
+        },
+        {
+          "archetype": "roadmap_puzzle_flow_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以拼图/流程图指向更大规模目标"
+        },
+        {
+          "archetype": "research_direction_codesign_frame",
+          "count": 1,
+          "position": "middle",
+          "purpose": "开启科研方向的软硬件协同框架页"
+        },
+        {
+          "archetype": "representative_works_quad_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以四象限/多面板展示该方向代表作及指标"
+        },
+        {
+          "archetype": "sota_compare_timeline_with_bullets",
+          "count": 1,
+          "position": "end",
+          "purpose": "章末以 SOTA 系统对标时间线+能力清单收束"
+        }
+      ],
+      "applicable_summary": "机构/团队末章案例: 三大平台总览→异构千卡工程佐证→调度优势数字→十万卡路线→科研方向 1 框架+代表作→科研方向 2 框架+代表作→SOTA 对标收尾"
+    },
+    {
+      "id": "method_three_sublayer_challenge_innovation_experiment_loop",
+      "title": "方法·三子层挑战-创新-实验递进闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          12,
+          18
+        ],
+        "must_have_in_chapter_purpose": [
+          "稀疏化",
+          "编译",
+          "硬件",
+          "软硬协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "structure_intro_computation_flow",
+          "count": 1,
+          "position": "start",
+          "purpose": "以计算流示意介绍目标对象基本结构"
+        },
+        {
+          "archetype": "sublayer_challenge_statement",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个子层以断言标题抛出关键挑战"
+        },
+        {
+          "archetype": "sublayer_innovation_answer",
+          "count": "5-8",
+          "position": "middle",
+          "purpose": "每个子层给出 1-3 页创新点(方法/机制/示例)"
+        },
+        {
+          "archetype": "sublayer_experiment_result",
+          "count": "2-3",
+          "position": "before_end",
+          "purpose": "每个子层以断言标题+具体数字给出实验结果"
+        },
+        {
+          "archetype": "three_layer_summary_flow",
+          "count": 1,
+          "position": "end",
+          "purpose": "以自上而下的三框流程图收束全章"
+        }
+      ],
+      "applicable_summary": "沿『算法/稀疏化→编译/映射→硬件/架构』三层递进的深度方法章, 每子层以断言标题(Challenge/Key Ideas/Innovation/Experiment)组织挑战-创新-实验闭环, 末页三框流程图收束"
+    },
+    {
+      "id": "framework_progressive_flow_build_plus_formula_unpack",
+      "title": "框架·分幕流程构建+公式因子逐层高亮",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "流程",
+          "方法论",
+          "公式",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "progressive_flow_stage_build",
+          "count": 3,
+          "position": "start",
+          "purpose": "逐帧 build 多阶段技术流程图, 每页新增一段"
+        },
+        {
+          "archetype": "formula_factor_highlight",
+          "count": 3,
+          "position": "middle",
+          "purpose": "用一个等效算力/性能公式, 每页高亮拆解一个因子"
+        },
+        {
+          "archetype": "three_layer_design_summary",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多层协同设计小结, 三分区+三条编号要点"
+        },
+        {
+          "archetype": "trend_lead_in_new_scenario",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引入新场景(如 LLM+专用模型) 承接后续创新点"
+        },
+        {
+          "archetype": "innovation_novel_paradigm_pair",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "用对比示例展示新范式的量级降算力/降复杂度"
+        },
+        {
+          "archetype": "review_previous_tutorial_holder",
+          "count": 1,
+          "position": "middle",
+          "purpose": "回顾旧版 tutorial 作为进展对比锚点"
+        },
+        {
+          "archetype": "progress_map_operators",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图展示 N 年内算子/性能进展"
+        },
+        {
+          "archetype": "industry_revolution_positioning",
+          "count": "1-2",
+          "position": "before_end",
+          "purpose": "用工业革命/时代高度升华技术意义"
+        },
+        {
+          "archetype": "handoff_to_our_methods_roadmap",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双行进展+本组方法预告收束章节"
+        }
+      ],
+      "applicable_summary": "tutorial 方法论内核章: 用分幕 build 的流程图+公式因子高亮拆解原理, 再用新场景+创新点承接, 末尾用回顾/时代升华+本组方法路线图收束"
+    },
+    {
+      "id": "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "title": "案例·多轮观察-解法对+端到端消融",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "观察",
+          "方案",
+          "消融",
+          "加速比",
+          "代表工作"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面/标题+作者+会议引入"
+        },
+        {
+          "archetype": "realtime_need_vs_sota_gap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以现实需求 vs SOTA 精度/性能缺口做动机"
+        },
+        {
+          "archetype": "computation_pipeline_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "铺陈目标计算流程/管线, 供后续 Observation 定位瓶颈"
+        },
+        {
+          "archetype": "observation_initial",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 首页: 抛出一个瓶颈现象+数字"
+        },
+        {
+          "archetype": "observation_extension",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 延伸页: 深入证据/进一步机制"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "针对每个 Observation 给出对应 Solution"
+        },
+        {
+          "archetype": "end_to_end_performance",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "端到端加速比作为整体收益证明"
+        },
+        {
+          "archetype": "ablation_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "多象限消融验证各 Solution 独立贡献"
+        }
+      ],
+      "applicable_summary": "系统/加速器论文的深度案例章: 论文封面→需求缺口→流程图→3 轮 Observation(每轮 initial+extension)→Solution 一一对应→端到端加速+消融收尾"
+    },
+    {
+      "id": "case_study_background_motivation_multi_solution_result",
+      "title": "案例·背景动机→章节分隔→多解法→双视角结果",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "FPGA",
+          "硬件",
+          "方案",
+          "能效",
+          "成本"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面+发表信息引入"
+        },
+        {
+          "archetype": "background_tradeoff_spectrum",
+          "count": 1,
+          "position": "start",
+          "purpose": "以谱系图/对比论证技术折衷"
+        },
+        {
+          "archetype": "motivation_platform_advantage",
+          "count": 1,
+          "position": "start",
+          "purpose": "点明目标平台(FPGA/专用)的核心优势"
+        },
+        {
+          "archetype": "chapter_transition_divider",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以留白分隔页引出后续多解法"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "每个解法以断言标题+方法细节展开"
+        },
+        {
+          "archetype": "performance_result_platform",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以目标平台自身指标(如吞吐/能效)给出结果"
+        },
+        {
+          "archetype": "performance_result_cross_platform",
+          "count": 1,
+          "position": "end",
+          "purpose": "以跨平台对比(如 GPU vs FPGA)给出总账收益"
+        }
+      ],
+      "applicable_summary": "硬件加速案例章: 论文封面+背景折衷+平台动机→章节分隔→多个 Solution 并列展开→结果先给单平台指标再给跨平台总账"
+    },
+    {
+      "id": "case_study_challenge_solution_performance_closed_loop",
+      "title": "案例·多挑战多解法一一配对+消融闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "解法",
+          "算子",
+          "加速",
+          "消融"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文标题+作者+会议引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "1-2 页并列陈述 N 个 challenge, 每个用视觉对比图"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个 Solution 对应一个 Challenge, 展示方法细节"
+        },
+        {
+          "archetype": "performance_headline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以断言式加速数字给主性能结果"
+        },
+        {
+          "archetype": "ablation_supplement",
+          "count": 1,
+          "position": "end",
+          "purpose": "以消融/内存节省等补充实验佐证各设计模块贡献"
+        }
+      ],
+      "applicable_summary": "紧凑型系统/算子案例章: 论文封面→N 个 challenge 并列→N 个 solution 一一配对→主性能加速比→消融补充实验收束"
+    },
+    {
+      "id": "framework_opensource_ecosystem_plus_representative_work",
+      "title": "框架·开源生态总览+代表算子闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "开源框架",
+          "算子",
+          "代表工作",
+          "路线图"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入框架章"
+        },
+        {
+          "archetype": "framework_definition_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 Innovation 标签+一句话定义引入自研开源框架"
+        },
+        {
+          "archetype": "framework_performance_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多组加速比数字铺陈框架性能优势"
+        },
+        {
+          "archetype": "framework_integration_ecosystem",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三列并排展示与多上层框架的集成生态"
+        },
+        {
+          "archetype": "progress_roadmap_bridge",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图作为承上启下枢纽, 引出代表工作"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "代表工作论文封面引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文挑战陈述, 抛出问题"
+        },
+        {
+          "archetype": "solution_formulation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法一:以循环维度/公式化算法空间给出方案"
+        },
+        {
+          "archetype": "solution_mechanism",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法二:进一步落到具体机制(启发式模型/动态选择)"
+        },
+        {
+          "archetype": "performance_result",
+          "count": 1,
+          "position": "end",
+          "purpose": "给出加速比闭环收束章节"
+        }
+      ],
+      "applicable_summary": "开源框架章: 目录→定义→性能数字→生态集成→路线图承接→代表工作论文『挑战-方案-机制-性能』闭环"
+    },
+    {
+      "id": "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "title": "动机·趋势路标→三轴增长→供需鸿沟→解法引入",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "趋势",
+          "算力",
+          "鸿沟",
+          "动机",
+          "稀疏"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_ai_roadmap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三时代阶梯+三轴维度铺陈 AI 演进路标"
+        },
+        {
+          "archetype": "three_axis_trend_panel",
+          "count": 2,
+          "position": "start",
+          "purpose": "用三列并排 panel 分抽象+实证两页展开数据/模态/任务三轴"
+        },
+        {
+          "archetype": "model_moore_law_growth_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以对数增长曲线论证模型规模摩尔定律级暴涨"
+        },
+        {
+          "archetype": "supply_demand_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以需求 vs 硬件曲线证算力供需鸿沟"
+        },
+        {
+          "archetype": "solution_introduction_bridge",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以性能-能效对比正式引入解法(稀疏计算)"
+        },
+        {
+          "archetype": "definition_benefit_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "给解法定义+关键倍数收束"
+        }
+      ],
+      "applicable_summary": "tutorial 动机章: 从 AI 三时代路标→三轴 panel(抽象+实证)→模型摩尔定律→供需鸿沟→稀疏计算引入→定义收束的漏斗式论证"
+    },
+    {
+      "id": "background_paradigm_shift_dual_era_comparison_table",
+      "title": "背景·1.0→2.0 范式对照+同构表格递进",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "范式",
+          "1.0",
+          "2.0",
+          "稀疏",
+          "分类"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入案例研究/背景板块"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column",
+          "count": 1,
+          "position": "start",
+          "purpose": "左右两栏对照 1.0/2.0 范式核心差异"
+        },
+        {
+          "archetype": "era_sparsity_taxonomy_table",
+          "count": 2,
+          "position": "middle",
+          "purpose": "用同构四列表格分别铺 1.0 与 2.0 稀疏性谱系, 用红框强调新增行"
+        },
+        {
+          "archetype": "progress_roadmap_handoff",
+          "count": 1,
+          "position": "end",
+          "purpose": "以进展路线图收束到本组新方法预告"
+        }
+      ],
+      "applicable_summary": "从上一代过渡到新场景的背景章: 目录→双栏范式对照→同构表格逐行递进(1.0→2.0 新增维度)→路线图收束"
+    },
+    {
+      "id": "case_study_agenda_paper_multi_platform_benchmark",
+      "title": "案例·目录切入→论文封面→多平台基准",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "其他工作",
+          "加速比",
+          "跨平台",
+          "baseline"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "进度目录切入补充工作章"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文封面+作者+投稿信息引入"
+        },
+        {
+          "archetype": "platform_benchmark_speedup",
+          "count": 2,
+          "position": "end",
+          "purpose": "每页一个硬件平台家族的加速比对比图, 佐证跨平台通用性"
+        }
+      ],
+      "applicable_summary": "补充成果紧凑章: agenda→论文封面→2 组跨平台(NVIDIA/AMD 等)加速比基准对比, 用于收尾多个 case study"
+    },
+    {
+      "id": "closing_collaboration_wall_plus_thanks_backpanel",
+      "title": "收尾·合作机构墙+THANKS 封底",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "合作",
+          "致谢",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "collaboration_institution_wall",
+          "count": 1,
+          "position": "start",
+          "purpose": "以院校名+logo 网格展示合作学术伙伴阵容"
+        },
+        {
+          "archetype": "thanks_backpanel",
+          "count": 1,
+          "position": "end",
+          "purpose": "以竖排 THANKS + 团队成员/赞助方 + 主题回顾 + 联系方式收束"
+        }
+      ],
+      "applicable_summary": "学术 tutorial/report 双页收尾: 合作机构墙致谢学术伙伴, 再封底集中致谢团队+赞助+联系方式"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调"
+    }
+  ]
+}

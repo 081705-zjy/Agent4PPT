@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_40",
+  "所属章节": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.sec.05",
+  "所属deck": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+  "页序号": 40,
+  "源文件": "templates/课题组全局汇报/华为2012报告  大模型推理软硬件协同优化.pptx",
+  "页面角色": "content_candidate",
+  "标题": "SpecEE 论文（投机式提前退出）",
+  "核心论断": "SpecEE 以投机式提前退出加速大模型推理",
+  "本页讲什么": "方法3的代表论文封面页：SpecEE - Accelerating LLM Inference with Speculative Early Exiting，通过投机式提前退出减少实际参与计算的层/矩阵数量，锚定『矩阵数量变少』方向。",
+  "关键文字": [
+    "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting"
+  ],
+  "视觉骨架": [
+    "论文标题封面版式",
+    "作者列表"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba.slide_40.asset.01"
+  ],
+  "适合复用场景": [
+    "提前退出/投机解码论文引入页",
+    "算法层代表工作封面页"
+  ],
+  "不适合复用场景": [
+    "方法机理拆解页",
+    "能效小结页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

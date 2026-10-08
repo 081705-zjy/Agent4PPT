@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 22
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "选中 KV 缓存的 GPU-HBM 卸载"
+核心论断: "选中 KV 缓存在 GPU HBM 间卸载以省显存"
+本页讲什么: "本页展示 SpeContext 对 Selected KV Cache（选中的 KV 缓存）在 GPU 与 HBM 之间进行 Offload（卸载）的存储调度，用较多模块与图示刻画显存分层管理，说明如何在有限显存下承载长上下文缓存。"
+关键文字: "[Selected KV Cache, Offload GPU / HBM 显存分层]"
+视觉骨架: "[GPU-HBM 卸载存储框图, 选中 KV 缓存分层示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22.asset.02, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22.asset.03, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22.asset.04, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22.asset.05, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_22.asset.06]"
+适合复用场景: "[KV 缓存显存卸载 method 页, GPU 显存分层调度介绍页]"
+不适合复用场景: "[理论建模曲线页, benchmark 表格页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "选中 KV 缓存的 GPU-HBM 卸载"}
+  - {"位置": "下方主体", "内容": "GPU 与 HBM 显存分层管理框图"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 22: 选中 KV 缓存的 GPU-HBM 卸载
+
+**核心论断**: 选中 KV 缓存在 GPU HBM 间卸载以省显存
+
+## 本页讲什么
+本页展示 SpeContext 对 Selected KV Cache（选中的 KV 缓存）在 GPU 与 HBM 之间进行 Offload（卸载）的存储调度，用较多模块与图示刻画显存分层管理，说明如何在有限显存下承载长上下文缓存。
+
+## 关键文字片段
+- Selected KV Cache
+- Offload GPU / HBM 显存分层
+
+## 视觉骨架
+- GPU-HBM 卸载存储框图
+- 选中 KV 缓存分层示意
+
+## 可复用到
+- KV 缓存显存卸载 method 页
+- GPU 显存分层调度介绍页
+
+## 不适合复用的场景
+- 理论建模曲线页
+- benchmark 表格页

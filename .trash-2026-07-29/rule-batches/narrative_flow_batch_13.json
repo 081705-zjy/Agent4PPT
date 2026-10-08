@@ -1,0 +1,381 @@
+{
+  "batch_index": 13,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "any deck with motivation/problem + method sections",
+      "title": "动机痛点须在方法章逐一回扣",
+      "description": "problem/motivation 章列出的 N 条痛点, method 章必须逐一给出对应技术回应 (verbatim 或 paraphrased), 命中率应 ≥80%.",
+      "what_to_check": [
+        "扫描 problem/motivation section 内 slides 的 关键文字 / 核心论断, 抽取 challenge 列表 (含'问题''痛点''冗余''差异''大'等关键词)",
+        "对每条 challenge, 在 method section 所有 slides 的 核心论断/关键文字 中找语义匹配 (方法名/机制名)",
+        "命中率 = 命中数 / 总 challenge 数, 目标 ≥0.8"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "problem 章 (10-15) 列 3 痛点: 视频算力 200× (p11)、帧间冗余但旧差分仅 Act-W (p13-14)、算子 OI 差 10× (p15); method 章 (17-21) 分别以 全注意力差分 (p17)、列集中/稀疏感知 PE (p18,20)、强度自适应可重构架构 (p21) 回应, 3/3 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "痛点若不被方法回扣, motivation 沦为背景铺垫, 听众无法在 method 章建立'兑现承诺'的认知锚",
+      "fix_hint": "遍历 problem 章 challenge, 缺失回扣的在 method 章追加一张 slide 明写 'X 痛点由 Y 机制解决'",
+      "exceptions": [
+        "综述型 deck 只覆盖领域痛点子集"
+      ]
+    },
+    {
+      "id": "framework_diagram_reuse_across_chapters",
+      "category": "callback",
+      "applicable_when": "deck with a system/architecture framework diagram in background or method",
+      "title": "框架/数据流图跨章复用",
+      "description": "系统数据流或框架图在背景章首次出现后, 应在 problem/method 章至少复用 1 次 (可局部高亮不同模块), 建立读者对全景的持续参考.",
+      "what_to_check": [
+        "扫描 background 章 视觉骨架 找 '框图'/'数据流'/'结构示意' 类图",
+        "在 problem 或 method 章 视觉骨架 中查找同名/同类框图复用",
+        "命中定义为同一图在 ≥2 个不同 section_role 中出现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "DiT 结构框图/数据流图在 background (p5-9)、problem (p13 完整 DiT 数据流复现讲冗余) 均出现, Act-W/Act-Act 色标在 background p8 与 problem p13 一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨章复用同一框架图给听众提供'相同地图不同标注'的稳定坐标, 降低理解切换成本",
+      "fix_hint": "在讲新机制的 slide 上复用背景框图, 用红框高亮本次讨论模块位置",
+      "exceptions": [
+        "纯观点型 deck 无系统图可复用"
+      ]
+    },
+    {
+      "id": "problem_chapter_end_teases_method",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with problem + method sections",
+      "title": "问题章末页需为方法章立靶",
+      "description": "problem/motivation 章的最后一页应明确埋下方法钩子 ('为...设计立靶' / '将由...解决' / 提出方法名) 但不细讲, 完成 build-up 到 reveal 的过渡.",
+      "what_to_check": [
+        "定位 problem section 页码范围的最后一页",
+        "在其 本页讲什么/核心论断 中找 '立靶' / '为下章' / '将...解决' / 首次出现方法名 (与 method 章标题呼应) 等语义",
+        "命中条件: 末页含明确 method-teaser 语句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "problem 章末页 p15 讲完 OI 10× 差异后, 本页讲什么 明写'为下章算法-硬件协同(可重构加速器)设计立靶', 直接钩住 method 章 (p17-21)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "问题章不埋方法钩子则章间断裂, 读者要等到方法章首页才知'我们在解决它', 悬念断档削弱信息传递张力",
+      "fix_hint": "problem 章末页正文末尾追加一句 '为此我们提出 X 机制, 详见下章'",
+      "exceptions": [
+        "纯问题综述 deck 无对应解法"
+      ]
+    },
+    {
+      "id": "hero_metric_at_result_chapter_opening",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with a quantitative result section",
+      "title": "核心加速/收益数字放在 result 章首页显著位置",
+      "description": "result 章首页 (通常紧接 method) 应以 hero 数字 (加速比/精度提升/成本降幅) 作为主结论, 用红框/大字标出, 立即揭示成果.",
+      "what_to_check": [
+        "定位 result section 首页 (页码范围起点)",
+        "在 核心论断/关键文字 中找带 '×' / '%' / '倍' 的量化收益, 且在 视觉骨架 中出现 '红框主结论' / '大字' / '顶部结论' 等显要样式",
+        "命中条件: 首页含 ≥1 个 hero 数字并显要展示"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "result 章首页 p23 顶部红色主结论框直书'VGAcc achieves average 2.74× speedup and 2.29× efficiency', 视觉骨架 首项即为'顶部红色主结论框'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众对 method 的耐心峰值在 result 章首页释放, 若首页仍在铺垫图表, 数字被稀释, 记忆点错过黄金窗口",
+      "fix_hint": "把最炸的加速/精度数字提到 result 章首页顶部, 用红框主标题呈现",
+      "exceptions": [
+        "消融/参数扫描类章不需要单个 hero 数字"
+      ]
+    },
+    {
+      "id": "agenda_highlight_at_chapter_start",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥15 pages with ≥3 content chapters",
+      "title": "每章开头插入目录高亮分隔页",
+      "description": "每进入一个新内容章 (problem/method/result), 应插入一张目录页, 高亮当前章节并灰化其他, 提供进度感与导航.",
+      "what_to_check": [
+        "对每个非 opening/closing section, 检查其页码范围首页 页面角色/本页讲什么 是否为目录导航 (含 'Contents' / 'Agenda' / '目录' 字样)",
+        "该页 视觉骨架 是否含'当前项高亮'/'蓝色竖条'/'编号列表'等目录样式",
+        "命中率 = 有目录页的章 / 全部非结构章"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "problem 章首 p10、method 章首 p16、result 章首 p22 均为 Contents 高亮页, 加上 opening 章 p2 共 4 次目录锚点, 3/3 内容章均有"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 听众易迷失, 章前目录页给出'我在第几章'的空间锚, 也隐含 recap 上章+preview 本章的过渡功能",
+      "fix_hint": "在每个内容章首页前插入 Contents 页, 蓝条高亮当前项+灰化其他项",
+      "exceptions": [
+        "≤10 页短 deck 目录页反而占比过重"
+      ]
+    },
+    {
+      "id": "chapter_first_page_declares_chapter_topic",
+      "category": "chapter_transitions",
+      "applicable_when": "any deck with agenda + ≥2 content chapters",
+      "title": "每章首内容页需明确宣告本章主题",
+      "description": "紧随目录分隔页后的第一张内容页, 其 标题/核心论断 应直接对应 agenda 中该章条目, 让听众'看标题就知本章在讲承诺过的哪块'.",
+      "what_to_check": [
+        "对每章首内容页 (跳过 divider), 提取 标题/核心论断",
+        "跟 agenda 中该章条目做语义匹配 (关键词/术语重叠)",
+        "命中率 = 匹配章数 / 总章数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "agenda 承诺'背景/问题/方法/未来', 各章首内容页 p3 (视频生成 DiT 背景)、p11 (视频生成计算量远超文本图像)、p17 (全注意力差分计算) 、p23 (加速效果) 均直接对应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章首若不宣告主题, 听众要靠 3-4 页积累才建立本章上下文, 兑现 agenda 承诺的信号被延后",
+      "fix_hint": "章首页标题直接抄 agenda 条目名, 核心论断 用一句概括本章要传递的主 claim",
+      "exceptions": []
+    },
+    {
+      "id": "main_anchor_appears_in_multiple_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with a named artifact (system/method name)",
+      "title": "主 anchor 需跨 ≥3 个章节复现",
+      "description": "deck 的主 anchor (通常是系统/方法名, 出现在 cover 标题) 应在 background/problem/method/result 至少 3 个章节的 slide 中重复出现, 保证主线不飘.",
+      "what_to_check": [
+        "从 deck.标题 或 cover slide 核心论断 抽主 anchor (通常为大写缩写或专有名词)",
+        "统计 anchor 在各 section_role 内 slides 的 关键文字/核心论断 中的出现次数",
+        "命中: anchor 覆盖 section_role 数 ≥3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "主 anchor 'VGAcc' 出现于 opening (p1)、method (p19)、result (p23) 至少 3 个 section_role, 相关次要 anchor 'DiT' 覆盖 background/problem/method 全部"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 anchor 若只出现在封面和结尾, 中段方法/结果与 anchor 脱节, 听众记不住工作叫什么",
+      "fix_hint": "在 method/result 章 slide 标题或红字主结论中显式带上主 anchor 名",
+      "exceptions": [
+        "纯教程型 deck 无独立命名工作"
+      ]
+    },
+    {
+      "id": "hero_metric_verbatim_repeat_across_result_chapter",
+      "category": "repetition_emphasis",
+      "applicable_when": "deck with quantitative result section",
+      "title": "核心成果数字需在 result 章重复出现",
+      "description": "result 章的 hero 数字 (2-3 个关键指标) 应在章内 slide 的标题/核心论断/图表中重复出现 ≥2 次 (章首 hero 页 + 图表 caption), 强化记忆.",
+      "what_to_check": [
+        "在 result section 中抽 hero 数字 (含 '×' / '%' 且被红框或大字强调)",
+        "统计该数字在同章不同 slide 的 关键文字/核心论断 中的出现次数",
+        "命中: 单一 hero 数字出现 ≥2 次"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "'2.74× speedup' 在 p23 主结论框与柱图 'Speedup to GPU' 中双重呈现, '2.29× efficiency' 同页配对复现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "同一数字文字+图表配对呈现是记忆固化的最短路径, 一次出现听众记不住量级",
+      "fix_hint": "hero 数字在标题/主结论/图表 caption 三处至少两处重复, 单位统一 (×/%)",
+      "exceptions": [
+        "消融表格类页数字太多不适合逐一重复"
+      ]
+    },
+    {
+      "id": "baseline_comparison_required_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "any paper_share / research deck with performance claims",
+      "title": "result 章必须与明确 baseline 对比",
+      "description": "result 章的每张核心成果 slide 都应指名 baseline (对比对象), 且在图表中呈现 our vs baseline 的量化差距, 不能只有绝对数字.",
+      "what_to_check": [
+        "扫描 result section slides 的 关键文字/核心论断 中是否含 'vs' / 'compared with' / 具体 baseline 名 (A100/GPU/前工作名)",
+        "视觉骨架 中检查是否含对比柱图 / 归一化柱图 / 加速比柱图",
+        "命中: ≥80% 成果页含 baseline 参照"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "result 章 p23 明写 'compared with NVIDIA A100 GPU', 加速比柱图 Speedup to GPU + Normalized area efficiency to GPU 双柱图均标 GPU 为 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无 baseline 的绝对数字听众无法判断是否有意义, 加速比只有跟一个 well-known 基线对比才成立",
+      "fix_hint": "每张 result slide 图表 caption 明写 'vs <baseline>', 主结论句里也直接带 baseline 名",
+      "exceptions": [
+        "定性 demo 展示型无量化 claim 的 slide"
+      ]
+    },
+    {
+      "id": "quantitative_claim_per_method_component",
+      "category": "comparison_evidence",
+      "applicable_when": "any paper_share deck with multiple method components",
+      "title": "方法章每个组件需给一个 quantitative 收益",
+      "description": "method 章介绍的每个技术组件 (算法机制 / PE / 架构) 应各自给出至少一个量化收益数字 (加速/能效/精度), 不能只讲结构不讲效果.",
+      "what_to_check": [
+        "定位 method section 每张 slide 的 核心论断",
+        "检查是否含单独该组件的量化数字 (× / %)",
+        "命中率 = 有量化收益的组件页 / 全部组件页, 目标 ≥0.7"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "method 章各组件均带数字: 列集中 PE (p18) 1.73×-3.18× 能效、GPU 并行 (p19) 2.86×/1.43× 加速、可重构架构 (p21) 1.56× 平均性能提升"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无量化收益的方法组件读起来像'新奇设计', 无法进入贡献叙事, 也让 result 章的总收益缺乏拆解证据",
+      "fix_hint": "每个组件 slide 主结论追加一句 'X 组件相比 Y baseline 获得 Z× 收益' 的量化陈述",
+      "exceptions": [
+        "动机/铺垫型 method 页 (如格式转换 CSC→Reduced CSC) 允许无独立数字"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any paper_share / product deck with named artifact",
+      "title": "主 anchor 首次出现即在 cover 标题",
+      "description": "deck 主 anchor (系统/方法名) 的首次出现页应为 slide 1 (cover) 的主标题, 不允许在正文才首次登场.",
+      "what_to_check": [
+        "从 deck.标题 抽主 anchor",
+        "定位 anchor 在 slides_in_order 中的最小出现 页序号",
+        "命中: 首次出现 页序号 == 1 且位于 cover slide 标题/核心论断"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "主 anchor 'VGAcc' 首次出现在 slide 1 标题 'VGAcc:视频生成注意力差分计算与可重构加速' 及长英文标题, 页序号 1 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "anchor 若在中段才登场, 前面 slides 缺失身份挂靠, 听众无法把内容归到具体工作名下",
+      "fix_hint": "cover slide 主标题直接放系统/方法名, 副标题描述任务定位",
+      "exceptions": [
+        "综述 deck 无独立工作名, 用主题词代替"
+      ]
+    },
+    {
+      "id": "abbreviation_defined_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any technical deck introducing acronyms",
+      "title": "缩写首次使用即定义",
+      "description": "关键专业缩写 (2-6 字母大写) 在 deck 中首次出现时, 应在同一 slide 或前后 1 页内给出全称展开 (e.g. 'DiT (Diffusion Transformer)'), 不能默认听众已知.",
+      "what_to_check": [
+        "扫 slides_in_order 找大写缩写首次出现页",
+        "在同页或相邻 1 页 关键文字/本页讲什么 中找全称展开 (含匹配子串)",
+        "命中率 = 定义了的缩写数 / 总首次缩写数, 目标 ≥0.8"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "'DiT' 首次出现 p3 即同页展开 'Diffusion Transformer (DiT)'; 'CSC' 在 p20 关键文字 中直接给出全称 'Compressed Sparse Column(CSC) format'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "未定义的缩写让非专家听众断链, 且论文分享听众专业背景异质, 定义成本极低但覆盖收益大",
+      "fix_hint": "缩写首次出现处紧跟括号补全称, 或在同页配一行小字定义",
+      "exceptions": [
+        "公认基础缩写如 GPU/CPU/FPGA 可省略"
+      ]
+    },
+    {
+      "id": "agenda_chapters_match_deck_sections",
+      "category": "structural_promise",
+      "applicable_when": "deck with agenda slide in opening",
+      "title": "agenda 条目须与实际章节序列一一对应",
+      "description": "opening 章的 agenda 页所列条目 (数量+顺序+主题词) 应与 deck 实际内容章节 (跳过 opening/closing) 严格对应, 不能承诺 4 项讲 3 项.",
+      "what_to_check": [
+        "在 opening section 中定位 agenda slide (含 'Contents'/'目录'), 抽取条目列表",
+        "跟 sections_outline 中的内容章节 (排除 opening/closing) 做顺序对比",
+        "命中: 条目数、顺序、主题词与实际章节均对应"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "agenda (p2) 列 4 项: 背景 Image DiT&Video DiT / 问题 Large&Redundant Computation / 方法 Algorithm-Hardware Co-Design / 未来工作; 对应实际内容章 background(p3-9)/problem(p10-15)/method(p16-21)/result(p22-25), 4/4 严格匹配"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是给听众的显式承诺, 兑现失败直接触发'内容跟预告不符'的心理落差, 破坏可信度",
+      "fix_hint": "定稿前逐条对比 agenda 与实际章节, 有偏差就修正 agenda 或补齐/合并章节",
+      "exceptions": [
+        "opening 无 agenda 页的短 deck 不适用"
+      ]
+    },
+    {
+      "id": "chapter_role_sequence_invariant_bpmr",
+      "category": "pacing",
+      "applicable_when": "any paper_share / research deck",
+      "title": "章节角色序列须遵循 background→problem→method→result→closing",
+      "description": "论文类 deck 应严格按 opening→background→problem→method→result→closing 顺序推进, 不允许乱序 (e.g. method 章在 problem 前).",
+      "what_to_check": [
+        "从 sections_outline 提取 section_role 序列",
+        "检查是否符合 opening→background→problem→method→result→closing 或其子序列 (允许省略部分中间角色)",
+        "命中: 序列符合顺序不逆转"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "evidence": "sections_outline 序列 opening→background→problem→method→result→closing 完全符合规范顺序"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "论文分享的听众心智模型固定为'为什么做→怎么做→结果如何', 乱序打破认知预期, 加大理解负担",
+      "fix_hint": "对照该顺序检查 section_role 序列, 逆转或缺失的重排/补章",
+      "exceptions": [
+        "tutorial/综述型 deck 可为'背景→分类→案例'非线性结构"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (VGAcc paper share), 无 previous_batches_rules 可 dedup. 15 条 rule 覆盖 8 大类, 均基于该 deck 结构良好的实际命中. 单 deck 无法判 miss_carriers, 故均为空数组. 待后续 batch 累积数据后重估 hit_rate 与 enforcement_level.",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 2,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

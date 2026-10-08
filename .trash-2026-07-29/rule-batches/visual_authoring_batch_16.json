@@ -1,0 +1,525 @@
+{
+  "batch_index": 16,
+  "rules": [
+    {
+      "id": "toc_current_chapter_highlight_others_gray",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页·当前章高亮其余置灰",
+      "description": "章节切换的目录/Contents 过渡页复用同一目录版式, 当前推进到的章节以深色/蓝色高亮, 其余项置灰, 左侧常配蓝色进度竖条, 明确当前推进位置.",
+      "evidence_signals": [
+        "标题含 'Contents' 或 '目录:进入'",
+        "视觉骨架含 '当前项高亮 + 其余项灰化' / '带圈数字目录 + 高亮'",
+        "关键文字仅当前章可读, 其余置灰"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 4,
+          "评价": "复用第3页目录版式, 高亮① '大模型推理从Token到价值', 其余灰化"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 7,
+          "评价": "四项议程当前项蓝色高亮竖条 + 其余灰显"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 17,
+          "评价": "四项Contents 第3项黑色实心高亮, 其余置灰"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 114,
+          "评价": "第4项 '华为实践与展望' 高亮, 前三项置灰"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "章节切换处复用同一版式并仅切换高亮项, 让听众看到 '我们走到哪一步' 而不必重新解析目录结构, 降低认知切换成本",
+      "fix_hint": "章切页复用首个 Contents 版式, 仅把当前章调为深色/蓝色, 其余项置灰或降低对比",
+      "exceptions": [
+        "首次出现的完整目录页 (全体项都需可读, 尚无 '当前项')"
+      ]
+    },
+    {
+      "id": "framework_recall_with_current_layer_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "总纲框架图·当前层高亮",
+      "description": "多章报告在每章开场复用同一 N 层框架总纲图, 只把当前将要展开的层高亮 (色块/箭头), 其余层置灰, 承上启下定位本章.",
+      "evidence_signals": [
+        "视觉骨架含 '五层竖排框架' / '当前层高亮' / '其余层置灰'",
+        "标题含 '定位' / '聚焦' / '进入' + 层次名",
+        "关键文字含 '可拆解为N个设计层次'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 18,
+          "评价": "五层框架高亮顶层 '模型设计', 其余置灰引入层次一"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 28,
+          "评价": "五层竖排图高亮第2层 '算法优化', 承接进入本章"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 55,
+          "评价": "同一五层图高亮系统优化层"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 82,
+          "评价": "定位第四层硬件架构, 高亮块"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 108,
+          "评价": "底层芯片集成高亮, 收束至第五层"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "重复出现的总纲图让听众每次都在同一坐标系里定位当前章, 避免'讲到哪儿了'的迷失感, 是长报告结构感的关键载体",
+      "fix_hint": "章开场复用总纲图, 仅将当前层调深色高亮, 其余层置灰或降饱和",
+      "exceptions": [
+        "单章/短报告 (无跨章推进, 无需重复总纲)"
+      ]
+    },
+    {
+      "id": "paper_intro_page_standard_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文引入页·标题+署名+会议",
+      "description": "每次引入代表性论文工作时, 使用一张 '论文封面' 式独立页: 论文全称大字主视觉居中/居上, 下方多行作者与单位署名, 底部标注发表会议与年份, 页面几乎无正文.",
+      "evidence_signals": [
+        "视觉骨架含 '论文标题主视觉' / '作者与单位署名行' / '会议年份标注'",
+        "关键文字含论文全称 + 作者列表 + 会议缩写 (ISCA/MLSys/ICCAD 等) + 年份",
+        "本页几乎无 bullet 正文"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 31,
+          "评价": "'Fast and Efficient 2-bit LLM Inference' 标题+作者+ICCAD 2024"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 36,
+          "评价": "MoA 论文封面, 作者列表 + CoLM'25"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 40,
+          "评价": "SpecEE 论文封面, ISCA 2025"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 57,
+          "评价": "FlashDecoding++ 标题+清华交大+MLSys 2024"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 96,
+          "评价": "ViDA ASP-DAC 2025 论文封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.98,
+      "enforcement_level": "hard",
+      "rationale": "论文封面式独立页给方法赋予明确出处与权威背书, 让听众意识到'接下来是一项已发表工作'而非泛泛讨论, 提升可信度",
+      "fix_hint": "引入代表工作时新开一页, 只放论文全称/作者/单位/会议年份, 移除正文 bullet",
+      "exceptions": [
+        "非论文类工程实践 (如内部实践, 用文字介绍即可, 无 paper 可引)"
+      ]
+    },
+    {
+      "id": "section_summary_before_after_quantified_arrow",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章末小结·前后倍率对比",
+      "description": "每层/每章收尾用一页 '优化前/优化后' 对比页, 表格或箭头形式给出量化倍率 (如 1x → 2.5x, 或数值前后对比), 承上启下过渡到下一章.",
+      "evidence_signals": [
+        "标题含 '小结' / '前后对比' / 层次名 + 收益数字",
+        "视觉骨架含 '前/后对比表格' 或 '上升箭头' 或 '倍数强调'",
+        "关键文字含 '优化前 X → 优化后 Y' 或 '1x → Nx'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 27,
+          "评价": "算法设计前后云/端能效比 1x→2.5x 对比表"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 54,
+          "评价": "算法优化前 0.2 → 优化后 0.82 tokens/J + 3.7x/4.1x"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 81,
+          "评价": "系统优化前后端到端吞吐/能效 11.5x 倍率对照"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 107,
+          "评价": "硬件优化前 ~1 → ~5 token/J, 分模型倍率表"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 113,
+          "评价": "2.5D→3D SoIC 单位算力 3.3x, 能效 45x"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "章末锚定量化收益让听众在离开该章时带走可复述的一句结论 (如 '算法优化能效 x2.5'), 是章节记忆点的必要凝练",
+      "fix_hint": "章末新增一页, 表格/箭头呈现前 X → 后 Y, 强调核心倍率数字",
+      "exceptions": [
+        "纯背景/motivation 章 (无 '优化成果' 可量化对比)"
+      ]
+    },
+    {
+      "id": "cover_layout_title_left_signature_right_bottom",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面·大字主标题+右下署名",
+      "description": "封面页布局为左上或居中大字主标题, 下方细分隔线, 右下角为演讲人姓名/所属机构/邮箱信息块, 无正文.",
+      "evidence_signals": [
+        "视觉骨架含 '左上大标题' / '横向细分隔线' / '右下演讲人信息块'",
+        "关键文字含 主标题 + 姓名 + 机构 + Email",
+        "无 bullet / 图表元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 1,
+          "评价": "'大模型推理软硬件协同优化' 大字主标题, 右下 戴国浩+上海交大+邮箱"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "标题左上/居中+署名右下的分区让主题与讲者身份分居两焦点, 观众入场瞬间即可锁定 '这是谁讲什么', 无需扫读",
+      "fix_hint": "封面主标题放大左上/居中, 姓名/单位/邮箱统一放右下角, 移除多余装饰",
+      "exceptions": [
+        "品牌型 deck (讲者身份让位于机构 logo)",
+        "空白模板 (仅含占位符)"
+      ]
+    },
+    {
+      "id": "ending_page_contact_plus_pitch",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "结尾·联系方式+课题组招募",
+      "description": "结尾页除演讲人联系方式外, 常合并课题组招募信息 (资源亮点/招生招聘/合作单位 logo 矩阵), 把技术汇报导向人才吸引与合作邀请.",
+      "evidence_signals": [
+        "关键文字含 Email/联系方式 + '招生' / '招聘' / '算力资源' / '合作单位'",
+        "视觉骨架含 '联系方式文本块' + '招募按钮/logo 矩阵'",
+        "常含红色/强调色的资源亮点语"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 128,
+          "评价": "左侧作者+Email, 右侧 '>1000块算力资源'+招生招聘+合作单位logo矩阵"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "技术汇报在结尾把 '如何联系' 与 '欢迎加入' 合并, 让听众在讲完技术后立刻看到合作/加盟入口, 抓住兴趣变现的窗口",
+      "fix_hint": "结尾页同时放联系方式 + 招募/合作亮点, 用强调色突出资源/机会",
+      "exceptions": [
+        "纯致谢页 (不承担招募目的)",
+        "纯 Q&A 页"
+      ]
+    },
+    {
+      "id": "title_uses_colon_to_split_topic_and_focus",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·冒号分隔主题与焦点",
+      "description": "slide 标题倾向 '<主题/章节>:<本页焦点>' 名词短句结构, 用中英冒号 (:) 把定位信息 (章节/方法编号/场景) 与本页具体焦点连接, 而非完整动宾句.",
+      "evidence_signals": [
+        "标题含 ':' 或 '：' 字符",
+        "冒号前为章/方法/场景定位 (如 '方法3挑战' / '层次1算法设计' / '场景2端模型')",
+        "冒号后为具体名词短语焦点, 不以 '介绍/我们讲' 起头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 20,
+          "评价": "'场景1云模型:DeepSeek三大协同技术' 冒号分隔场景与焦点"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 32,
+          "评价": "'方法1挑战:高压缩率下量化精度损失大'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 56,
+          "评价": "'层次三:系统优化三方法总览'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 74,
+          "评价": "'方法三:关键问题(资源耦合vs解耦)'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 122,
+          "评价": "'长文本挑战之一:Prefill Attention计算瓶颈'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 5,
+          "评价": "'人工智能发展阶段:系统I到系统II' 用冒号连递进式, 而非章节定位, 属另一子模式"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.65,
+      "enforcement_level": "soft",
+      "rationale": "冒号前的定位信息让听众瞬间知道 '当前在结构树的哪个节点', 冒号后的焦点告诉他 '本页看什么', 两级信息一眼获取",
+      "fix_hint": "把 '介绍 X' / '本节讲 X' 改为 '<章节/方法编号>:<X 名词短语>' 结构",
+      "exceptions": [
+        "motivation/背景类叙事页 (无明确结构位置需要标注)",
+        "封面/致谢等纯标识页"
+      ]
+    },
+    {
+      "id": "claim_is_quantified_judgment_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "论断·带具体数字的判断句",
+      "description": "核心论断多为主谓齐全的判断句, 且大概率携带具体数字 (倍率/百分比/绝对值) 或明确技术名/关系, 极少停留在 '本页介绍 X' 之类的描述型陈述.",
+      "evidence_signals": [
+        "核心论断含数字 + 单位 (x/%, tokens/J, GB, TB/s 等) 或倍率标记 (Nx/N倍)",
+        "核心论断结构为 '<主体> + <动词> + <量化结果>' 而非 '介绍 XX'",
+        "论断不以 '本页介绍' / '本节讨论' 起头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 21,
+          "评价": "'DeepSeek软硬协同将推理成本降至GPT-4o的1/20'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 39,
+          "评价": "'MoA近乎无损压缩,较FlashAttention2最高提速约7倍'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 81,
+          "评价": "'系统优化使端到端吞吐与推理能效均提升约11.5倍'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 113,
+          "评价": "'相比2.5D,3D SoIC带来3.3×算力与45×能效'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 119,
+          "评价": "'极高专家并行EP320在昇腾910实现1943 tokens/s/NPU'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 22,
+          "评价": "'引入自研端侧全模态模型Megrez-Omni工作' 为引入型描述句, 无量化"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "带数字的判断句能让听众离页时记住一句可复述的结论, 描述型陈述则会稀释 slide 的说服力与主张感",
+      "fix_hint": "把论断改写成 '<主体> <动作> <倍率/百分比>' 结构, 强制携带一个具体数字或关系",
+      "exceptions": [
+        "论文封面/引入页 (承担'介绍'角色, 无量化)",
+        "纯 motivation/背景页 (讨论现象, 无收益)"
+      ]
+    },
+    {
+      "id": "paper_ref_lists_full_title_authors_venue",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文引用·全名+作者+会议",
+      "description": "引入代表性论文时以论文全称 (含副标题) + 一行作者列表 (以及通讯作者*标注) + 所属机构 + 会议缩写与年份四要素给出, 而非只写方法简称.",
+      "evidence_signals": [
+        "关键文字含论文全称 (通常带冒号副标题)",
+        "关键文字含 3+ 作者名 + 单位",
+        "关键文字含会议缩写 (ISCA/MLSys/CoLM/ICCAD/ASP-DAC/ISFPGA/FCCM) + 年份"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 36,
+          "评价": "MoA 全称+清华/Infinigence/斯坦福/交大+CoLM'25"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 40,
+          "评价": "SpecEE 全称+四作者+Guohao Dai*+ISCA 2025"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 57,
+          "评价": "FlashDecoding++ 完整副标题+作者+MLSys 2024"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 85,
+          "评价": "FlightLLM 全称+ISFPGA 2024 @ Monterey"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 96,
+          "评价": "ViDA 完整副标题+作者+ASP-DAC 2025"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "'全称+作者+会议' 三件套让工作可被检索与验证, 是学术型汇报的可信度基线, 只写方法简称则失去出处",
+      "fix_hint": "论文引入页统一写: 论文全称 (含副标题) / 作者列表 / 单位 / 会议年份",
+      "exceptions": [
+        "产业内部实践 (无论文出处, 仅列工程名)"
+      ]
+    },
+    {
+      "id": "comparison_uses_left_right_dual_panel",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "对比页·左右双栏并列",
+      "description": "对比两种范式/方案/场景时采用左右双栏对称布局, 每栏含子标题 + 结构示意/数据表, 顶部或底部横条给出结论, 而非上下堆叠或纯文字并列.",
+      "evidence_signals": [
+        "视觉骨架含 '左右双栏' / '双 panel' / '两栏对比框'",
+        "两栏子标题成对出现 (AI 1.0/AI 2.0, 云侧/端侧, 耦合/解耦, 前/后)",
+        "常配横向箭头示意迁移或转变"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 6,
+          "评价": "AI1.0 vs AI2.0 双栏对比框图"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 8,
+          "评价": "TOPs/J → Tokens/J 左右双栏迁移"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 19,
+          "评价": "云/端双 panel 训练推理成本对比"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 74,
+          "评价": "资源耦合 vs 解耦左右双路线"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 111,
+          "评价": "A100 roofline + 存储对比表左右布局"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "左右双栏让 A/B 两个方案处于同一视觉水平线, 观众可平行扫读做直接比对, 上下堆叠会强加优先级导致偏袒感",
+      "fix_hint": "凡两方案/两范式/两场景对比, 改为左右等宽双栏 + 顶部结论横条",
+      "exceptions": [
+        "需要展示时间演进的对比 (适合时间轴/上下线, 非左右)",
+        "3 项及以上并列 (改为 3-4 列 panel)"
+      ]
+    },
+    {
+      "id": "numeric_evidence_uses_x_or_pct_shorthand",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "数字证据·倍率与百分比简写",
+      "description": "定量证据以 'Nx / N倍 / N%' 简写形式呈现, 而非 '提升 N 倍左右' 之类的口语化描述, 便于视觉扫读与记忆凝练.",
+      "evidence_signals": [
+        "关键文字含 'Nx' 或 'N倍' 数值 (2.5x/5.5x/11.5x/70%/1.30倍)",
+        "百分比以 'N%' 呈现 (18倍/90%/40%/30%)",
+        "关键增益结论用短语而非完整口语句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 35,
+          "评价": "'实现 5.5x 加速' + '额外 2.53x' 简写"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 39,
+          "评价": "'3.9x 吞吐 / 3.0x KV-Cache / 1.5x attention' 多组倍率"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 65,
+          "评价": "'A100 加速 2.9x 达 115.56 token/s'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 90,
+          "评价": "'70% 能效提升 / 50% 延迟降低'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为2012报告-大模型推理软硬件协同优化.6bffd8ba",
+          "slide_index": 106,
+          "评价": "'性能约 1.30 倍 / 能效约 4.49 倍'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "'Nx/N%' 简写比 '提升了大约多少' 口语句节省视觉宽度且更易被听众记住, 是数据密集型汇报的通用凝练手法",
+      "fix_hint": "把 '提升了 N 倍' 改为 'Nx' 或 'N倍', 百分比统一 'N%' 短语",
+      "exceptions": [
+        "motivation 叙事段落 (需要口语句流动)",
+        "无法归为倍率的绝对值指标 (如 GB/TB, 保留单位)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (华为2012报告-大模型推理软硬件协同优化, 128 页, 11 章). 已抽取 11 条 rule: visual 6 条 (目录高亮/框架回顾/论文引入/章末小结/封面/结尾/双栏对比), authoring 5 条 (冒号标题/量化论断/论文四要素/倍率简写/以及作为 evidence 交叉). 因单 deck 无跨 deck 反例, miss_carriers 大多为空. 所有 rule 均基于该 deck 内 role/桶级共性识别, 未出统计型 rule.",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 6,
+      "authoring": 5
+    }
+  }
+}

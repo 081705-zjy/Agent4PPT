@@ -1,0 +1,43 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_01",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.01",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 1,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "cover_candidate",
+  "标题": "Sparse Computation Powering Large Language Model",
+  "核心论断": "稀疏计算是赋能大语言模型的核心路径",
+  "本页讲什么": "全 deck 封面页。居中抛出总命题「稀疏计算赋能大语言模型」，标明主讲人 Guohao Dai（上海交通大学副教授、无问芯穹联合创始人兼首席科学家）及演讲日期 2024-5-21，为后续算子/硬件/模型三层论证定调，不展开任何子论点。",
+  "关键文字": [
+    "Sparse Computation Powering Large Language Model",
+    "Guohao Dai",
+    "Associate Professor @ Shanghai Jiao Tong University",
+    "Chief Scientist and Co-founder of Infinigence-AI",
+    "2024-5-21"
+  ],
+  "视觉骨架": [
+    "居中主标题区",
+    "作者身份信息块",
+    "机构/日期署名行",
+    "封面配图/logo 图形"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_01.asset.01",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_01.asset.02"
+  ],
+  "适合复用场景": [
+    "大模型系统技术报告封面",
+    "稀疏计算主题演讲封面",
+    "学术个人主讲开场封面",
+    "AI 算力优化主题 deck 门面"
+  ],
+  "不适合复用场景": [
+    "正文数据论证页",
+    "多子论点 agenda 页",
+    "方法架构展开页",
+    "结果对比 benchmark 页"
+  ],
+  "上页角色": null,
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

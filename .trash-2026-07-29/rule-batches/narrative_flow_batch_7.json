@@ -1,0 +1,411 @@
+{
+  "batch_index": 7,
+  "rules": [
+    {
+      "id": "motivation_pain_point_addressed_in_method",
+      "category": "callback",
+      "applicable_when": "any deck with motivation + method sections proposing a technical solution",
+      "title": "动机痛点需在方法章逐一回应",
+      "description": "motivation 章明确列出的核心痛点 (通常表述为 challenge/pain/cannot/low) 必须在 method 章由具体技术模块逐一回应, 命中率应 ≥80%.",
+      "what_to_check": [
+        "扫 motivation section 的 slide.核心论断 / 关键文字, 提取含 'cannot' / 'low' / '痛点' / '挑战' / 'challenge' 关键词的痛点句",
+        "对每条痛点, 在 method section 所有 slide 的 核心论断 / 关键文字 中找语义匹配的技术回应",
+        "计算命中数 / 总痛点数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "motivation slide 10 提痛点 'existing embedding cannot extract summarized information → low recall', method Tech1 (slide 15-16) 建摘要图抽取, Tech2 (slide 17) 评分排序, Tech3 (slide 18) 融合召回, 逐一回应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "痛点是听众记忆锚, 若 method 不显式回扣, 方法就与需求脱钩, 听众无法判断'到底解决了没有'",
+      "fix_hint": "在 method 章首页并列 Q1/Q2… 与 motivation 痛点一一对应, 或每 Tech 首句写'解决 XX 痛点'",
+      "exceptions": [
+        "综述型 deck (motivation 是领域整体挑战, 单一工作只回应部分)"
+      ]
+    },
+    {
+      "id": "cover_title_recap_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover and closing sections",
+      "title": "封面标题/主 anchor 在结尾回扣",
+      "description": "cover 标题中的主 anchor (方法名 + 核心机制) 必须在 closing 章 verbatim 或 paraphrased 重述, 形成首尾闭环.",
+      "what_to_check": [
+        "从 slide_1 (cover) 标题 / 关键文字 提取方法名 (如 'SG-Filter') + 核心机制词 (如 'Hierarchical Semantic Index')",
+        "在 closing section 的 slide 关键文字 / 视觉骨架 中查同名或同义表述",
+        "命中即算通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "cover 主标题 'SG-Filter' + 'Hierarchical Summarized-Semantic Index' 在 closing slide 26 通过 Summary 文字 + 方法示意图 (Semantic/Structured/Summarized 三输出) 重述"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面 = 演讲入口预期, 结尾 = 记忆出口, 首尾一致才能让听众带走清晰主标签",
+      "fix_hint": "在 closing 末页加一行 'Summary: <方法名> — <一句机制描述>' 与 cover 标题呼应",
+      "exceptions": []
+    },
+    {
+      "id": "teaser_at_motivation_end_before_method",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with distinct motivation → method sections",
+      "title": "motivation 章末埋方法方向钩子",
+      "description": "motivation 章末页应埋'我们的洞察/方向是 X'钩子但不给具体技术细节, 为 method 章制造展开预期.",
+      "what_to_check": [
+        "定位 motivation section 末 1-2 张 slide (由 section_role='motivation' 页码范围末端确定)",
+        "看核心论断/关键文字是否含 'Ours: ...' / 'Key Insight' / 'our approach' / '洞察' / '方向' 类前瞻词",
+        "同时确认该页未展开完整技术细节 (无具体算法/公式/流程图)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "motivation 末 slide 11 'Ours: Adding Coarse-grained information' 抛出两条信息源方向, slide 12 'M<<N' 论证可行性, 均未给具体图构建算法, 完美 setup 到 method Tech1"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "听众从'为什么'切到'怎么做'需要过渡桥, 突然进入方法细节会失去 build-up 的爽感",
+      "fix_hint": "motivation 末页加'Our insight: <一句>'块, 明说方向但按下具体技术不表",
+      "exceptions": [
+        "极短 deck (<10 张) motivation 只 1-2 页, 无空间埋 teaser"
+      ]
+    },
+    {
+      "id": "result_flagship_number_at_first_result_page",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with a result section reporting quantitative gains",
+      "title": "result 章首个内容页直给最炸数字",
+      "description": "result 章跳过 setup 页后的第一张内容页应直接给出最炸的主结果数字 (含 % / × / SOTA), 不藏尾.",
+      "what_to_check": [
+        "定位 result section 中第一张 non-toc/non-setup 的内容页 (通常 section 首页 +1 或 +2)",
+        "看核心论断/关键文字是否含具体数字 (如 '10.53%' '22.92%') + 'SOTA' / '首次' / '最高' 强化词",
+        "命中则通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "result 章 setup slide 20 后, slide 21 首个论断页直给 'Recall@15 提升 10.53%–22.92% 达 SOTA', 未拖延"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "听众到 result 章已积累期待, 越早给主数字越能锚定注意力, 拖到章末反而稀释",
+      "fix_hint": "result 章 setup 页后紧接 flagship number 页, 大字红色高亮主 % / × 数字",
+      "exceptions": [
+        "叙事性 result 章 (先讲现象再给数字)"
+      ]
+    },
+    {
+      "id": "mini_agenda_before_each_chapter",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥20 pages with ≥4 explicit chapters",
+      "title": "每章前一张高亮当前章的目录页",
+      "description": "长 deck 每个内容章开始前应插入一张 toc 页, 用高亮/加粗标示当前章位置, 让听众随时知道进度.",
+      "what_to_check": [
+        "扫全 deck 找 页面角色='toc_candidate' 的 slide",
+        "检查是否每个 section (opening 后, closing 前) 都被至少一张 toc 页领起",
+        "看 toc 页 视觉骨架 是否含 '当前项加粗' / '高亮' / '灰化其余项' 描述"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "5 张 toc 页 (slide 2, 7, 13, 19, 25) 依次领起 background/motivation/method/result/closing, 均加粗当前章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "长演讲听众易失去位置感, 章前 toc 页作为固定 landmark 让脑内地图不脱线",
+      "fix_hint": "每章前插一张 toc 页 (复制 agenda 版式), 只改当前章加粗色",
+      "exceptions": [
+        "短 deck (<15 张) 结构简单, 章前 toc 反而冗余",
+        "研讨/interactive 型 deck 常省略章前 toc"
+      ]
+    },
+    {
+      "id": "toc_page_recap_at_closing",
+      "category": "chapter_transitions",
+      "applicable_when": "decks with mini-agenda pattern (multiple toc pages)",
+      "title": "closing 章前用目录回扣页收束脉络",
+      "description": "在 closing 前应插入一张目录回扣页 (无高亮或均灰化), 让听众重温全 deck 主线, 与 opening agenda 形成呼应.",
+      "what_to_check": [
+        "在 closing section 前 1-2 张位置找 页面角色='toc_candidate' 的 slide",
+        "确认该 toc 页含全章列表 (与 opening agenda 相同)",
+        "视觉骨架含 '淡灰' / '弱化' 描述 (区别于章前高亮 toc)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "slide 25 (closing 章首页) 用极简排版列出 4 大主线, '淡灰弱化条目文字', 用于全篇回顾, 与 slide 2 agenda 首尾呼应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "听众在结尾容易只记住最近的 result, 回扣页把注意力拉回全脉络, 才能形成完整心智模型",
+      "fix_hint": "在 closing 首页加一张 agenda 快照, 弱化字色, 让听众 3 秒扫完全 deck 主线",
+      "exceptions": [
+        "极短 deck (<15 张) 结构清晰无需回扣"
+      ]
+    },
+    {
+      "id": "main_anchor_cross_chapter_span",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with 4+ content chapters",
+      "title": "主 anchor 跨 4+ 章反复出现",
+      "description": "deck 主 anchor (核心概念/方法名) 应跨 ≥4 个章节反复出现, 保证主题贯穿不散.",
+      "what_to_check": [
+        "从 cover 标题 / 论述总结 提取 1-2 个主 anchor (如方法名 + 核心概念)",
+        "遍历所有 slide 的 核心论断 / 关键文字, 记录每个 anchor 首现的 section_role",
+        "计算 anchor 出现 section 数 / 总 section 数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "主 anchor '摘要信息 (summarized information)' 出现在 background(sec2)/motivation(sec3)/method(sec4)/result(sec5)/closing(sec6), 覆盖 5/6 section; 'recall' 覆盖同样 5 section"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "主 anchor 是听众唯一能记的钩子, 断层出现听众就觉得 deck 前后不是一个东西",
+      "fix_hint": "每章至少让主 anchor 出现 1 次 (标题或核心论断), 让概念贯穿全 deck",
+      "exceptions": [
+        "多议题并列 deck (每章独立话题, anchor 天然分裂)"
+      ]
+    },
+    {
+      "id": "key_number_appears_only_once",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck reporting a numerical requirement / target in background or motivation",
+      "title": "背景章立的关键数字应在 result 章回扣",
+      "description": "background/motivation 章立下的数值需求线 (如召回≥0.72, 延迟<50ms) 应在 result 章被显式回扣, 证明达标.",
+      "what_to_check": [
+        "扫 background/motivation section 找关键数字目标 (含 'requirement' '要求' '需要' + 数字)",
+        "在 result section 找相同数字或 'meeting requirement' 类回扣表述",
+        "命中即通过, 未命中记 miss"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "slide 22 延迟结果页写 'the lowest latency while meeting the recall requirement', 回扣 slide 6 立下的 'Requirement = 0.72' 目标线"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "背景章立目标是给听众'及格线', 结果章不回扣就等于问题问出来没答案, 论证链断裂",
+      "fix_hint": "result 章加一句 'meets the X requirement set in Background', 直接引用背景目标数字",
+      "exceptions": [
+        "探索性 deck (无明确需求线, 只报改进量)"
+      ]
+    },
+    {
+      "id": "evidence_type_diversity_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "any deck with a result section ≥3 pages",
+      "title": "result 章覆盖 ≥3 种 evidence type",
+      "description": "result 章应至少含 3 种 evidence type (主结果对比表/延迟/消融/鲁棒性/case study), 单一 evidence 难以支撑贡献.",
+      "what_to_check": [
+        "扫 result section 所有 slide, 依据 标题/核心论断 归类: 主结果对比 / 延迟效率 / 消融实验 / 鲁棒性 / case study / 可视化",
+        "统计不同 evidence 类别数",
+        "≥3 类通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "result 章 4 类 evidence: slide 21 主召回结果 + slide 22 延迟 + slide 23 消融 + slide 24 参数鲁棒性, 覆盖 4 类"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "reviewer 视角: 单一 evidence 可能是碰运气, 多类 evidence 才能证明 gain 来自方法本身而非数据",
+      "fix_hint": "result 章至少补齐: 主对比 + 消融 + 鲁棒性/延迟, 三张 slide 起步",
+      "exceptions": [
+        "偏 demo / 系统类 deck (可用 case study 替代 ablation)"
+      ]
+    },
+    {
+      "id": "baseline_explicitly_listed_before_comparison",
+      "category": "comparison_evidence",
+      "applicable_when": "any deck with a result section comparing against baselines",
+      "title": "result 章首页显式列出 baseline 清单",
+      "description": "result 章首个 setup 页应明确列出所有 baseline 方法名 (分类可选), 让后续对比可追溯.",
+      "what_to_check": [
+        "扫 result section 前 1-2 张 slide, 查 关键文字 是否含具体 baseline 方法名 (如 'Bge' 'M3e' 'Milvus') 或 'baseline' 标题",
+        "确认 baseline 数 ≥2",
+        "命中即通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "slide 20 实验设置页明列 baseline: Semantic (Bge/M3e/InteR) + Structural (Milvus/LightRAG), 分两类共 5 个"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "对比缺 baseline 上下文, 听众看到数字也不知道'跟谁比', 结果失去意义",
+      "fix_hint": "result 章首页专门列 baseline 清单 (可按类别分组), 后续每个对比图注明用了哪个 baseline",
+      "exceptions": [
+        "新任务 deck 无 baseline (需明说)"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a cover page",
+      "title": "主 anchor 首次出现在封面",
+      "description": "deck 主 anchor (方法名/核心概念) 必须在 cover 页 (slide 1) 就出现, 不能拖到第 2 页之后.",
+      "what_to_check": [
+        "从 论述总结 / 章节列表 提取主 anchor (方法名)",
+        "查 slide 1 标题 / 关键文字 是否含此 anchor",
+        "命中即通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "主 anchor 'SG-Filter' 出现在 slide 1 cover 居中大标题首位置"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "cover 是唯一保证被看到的页, 主 anchor 不在 cover 等于错过第一次 branding 机会",
+      "fix_hint": "cover 大标题包含方法名 + 核心机制词, 不用'关于 XX 的一些工作'类模糊标题",
+      "exceptions": []
+    },
+    {
+      "id": "abbreviation_define_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck using domain abbreviations (2-5 letter combos)",
+      "title": "专业缩写首次使用时展开定义",
+      "description": "STR/RAG/HNSW 类专业缩写首次出现的 slide 应同时展开全称, 距离 ≤1 页.",
+      "what_to_check": [
+        "扫全 deck 找 2-5 大写字母组合 (如 'STR' 'RAG' 'HNSW'), 记录首现 slide",
+        "在同页或前后 1 页 关键文字 中查全称展开 (如 'STR = Similar Text Retrieval')",
+        "命中率 = 定义了的缩写数 / 总缩写数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "'STR' 首现 slide 4 同页展开 'Similar Text Retrieval'; slide 5 'STR refers to identifying...' 再次定义强化"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "reason": "'HNSW' 首现 slide 22 未展开全称 (Hierarchical Navigable Small World), 依赖领域先验"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "跨领域听众看不懂缩写就直接掉线, 定义成本低 (一行括号) 但受众覆盖收益大",
+      "fix_hint": "缩写首现时用括号展开: 'STR (Similar Text Retrieval)', 后续可只用缩写",
+      "exceptions": [
+        "圈内高频缩写 (如 'CNN' 'RNN' 对 AI 圈)"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match_actual_structure",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an explicit agenda/toc page after cover",
+      "title": "agenda 承诺章数=实际内容章数",
+      "description": "opening agenda 列出的章数应等于实际 content section 数 (不含 opening/closing), 且顺序一致.",
+      "what_to_check": [
+        "从 slide 2 (agenda 页) 关键文字 提取编号列表 (如 1/2/3/4 项)",
+        "对比 sections_outline 中 section_role ≠ opening/closing 的 section 数",
+        "数量+顺序匹配即通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "slide 2 agenda 列 4 项 (Background/Insight/Solution/Evaluation), 实际 4 个内容 section (background/motivation/method/result) 顺序完全对应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是与听众签的合同, 章数/顺序对不上就是违约, 直接损失 credibility",
+      "fix_hint": "agenda 章名与实际章名保持 1:1 对应 (可略微改写但顺序不动)",
+      "exceptions": [
+        "无 agenda 页 deck (跳过检查)"
+      ]
+    },
+    {
+      "id": "structural_page_ratio_within_15_30",
+      "category": "pacing",
+      "applicable_when": "decks ≥20 pages",
+      "title": "结构页比例控制在 15-30%",
+      "description": "cover/toc/divider/closing 类结构页占比应在 15-30%, 过低则听众失去位置感, 过高则内容稀释.",
+      "what_to_check": [
+        "统计 页面角色 ∈ {cover_candidate, toc_candidate, ending_candidate} 的 slide 数",
+        "计算 结构页数 / 总页数",
+        "落在 [0.15, 0.30] 通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "26 张总页中 7 张结构页 (cover 1 + toc 5 + ending 1) = 27%, 落在合理区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "结构页太少听众迷路, 太多则消耗听众耐心却没给信息, 15-30% 是经验平衡点",
+      "fix_hint": "章前 toc + 章末转场页各留 1 张即可, 不要每 3 张塞一张 divider",
+      "exceptions": [
+        "极短 deck (<15 张) 结构页占比天然偏高"
+      ]
+    },
+    {
+      "id": "cover_to_first_content_distance",
+      "category": "pacing",
+      "applicable_when": "any deck",
+      "title": "封面到首个内容页距离 ≤3 页",
+      "description": "从 slide 1 cover 到第一张真正的内容页 (非 toc/agenda) 距离应 ≤3 页, 不要用过多结构页拖延.",
+      "what_to_check": [
+        "找 slide 1 后第一个 页面角色='content_candidate' 的 slide 页号",
+        "计算 首内容页页号 - 1",
+        "≤3 通过"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "evidence": "slide 1 cover → slide 2 agenda → slide 3 首内容页 (向量检索主流范式), 距离 = 2 页"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "开场 3 页内不给实质内容, 听众注意力已开始流失, 尤其学术分享听众耐心短",
+      "fix_hint": "cover 后最多 1 张 agenda + 1 张 team intro, 立刻进入 background 首页",
+      "exceptions": [
+        "商业 deck 常需 3-5 张 team/company intro"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SG-Filter, 26 页, 6 section), rules 优先覆盖 8 大类中的 7 类. Pacing 类只 emit 2 条因单 deck 数据不足. 大多数 rule 因单 deck 数据限制, hit_rate 保守估计基于 pattern universality 而非批内频率. Cross-batch dedup: previous_batches_rules 空, 全部为新 id.",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 2,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 2,
+      "structural_promise": 1,
+      "pacing": 2
+    }
+  }
+}

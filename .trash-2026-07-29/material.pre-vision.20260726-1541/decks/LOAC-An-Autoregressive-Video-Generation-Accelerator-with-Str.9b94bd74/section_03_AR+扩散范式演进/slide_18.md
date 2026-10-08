@@ -1,0 +1,48 @@
+---
+页标识: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_18"
+所属章节: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03"
+所属deck: "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74"
+页序号: 18
+源文件: "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx"
+页面角色: "content_candidate"
+标题: "视频生成为何止步 10s"
+核心论断: "现有视频生成受限只能产出约 10s 视频"
+本页讲什么: "本页收束前文问题链，指出视频生成模型始终只能生成 10s 左右的视频，并剖析其成因（记忆与算力约束），将本章局限论证归总，指向后续解决方案。"
+关键文字: "[视频生成始终只能生成 10s 左右的视频, 原因是记忆与算力受限]"
+视觉骨架: "[\"10s 时长瓶颈示意图\", 视频长度对比配图]"
+资源ID列表: "[tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_18.asset.01]"
+适合复用场景: "[视频时长瓶颈总结页, 本章局限归总过渡页]"
+不适合复用场景: "[单一工作引入页, 逐帧迭代机制页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "视频生成为何止步 10s"}
+  - {"位置": "下方主体", "内容": "10s 时长瓶颈示意与长度对比配图"}
+alternate_claims:
+  - "记忆与算力约束是长视频生成的核心瓶颈"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 18: 视频生成为何止步 10s
+
+**核心论断**: 现有视频生成受限只能产出约 10s 视频
+
+## 本页讲什么
+本页收束前文问题链，指出视频生成模型始终只能生成 10s 左右的视频，并剖析其成因（记忆与算力约束），将本章局限论证归总，指向后续解决方案。
+
+## 关键文字片段
+- 视频生成始终只能生成 10s 左右的视频
+- 原因是记忆与算力受限
+
+## 视觉骨架
+- 10s 时长瓶颈示意图
+- 视频长度对比配图
+
+## 可复用到
+- 视频时长瓶颈总结页
+- 本章局限归总过渡页
+
+## 不适合复用的场景
+- 单一工作引入页
+- 逐帧迭代机制页

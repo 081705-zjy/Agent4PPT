@@ -1,0 +1,420 @@
+{
+  "batch_index": 2,
+  "patterns": [
+    {
+      "id": "opening_blank_cover_skeleton_single_page",
+      "title": "开场·空白封面骨架单页",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "模板",
+          "骨架"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "blank_cover_placeholder_skeleton",
+          "count": 1,
+          "position": "start",
+          "purpose": "提供留白封面骨架,含标题/作者占位与配色定调"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "模板类 deck 的极简开场: 单页空白封面骨架, 仅提供标题/作者占位与配色分隔线, 供讲者自行填入课题名与署名",
+      "anti_patterns": [
+        "实心大字标题+讲者署名的实体开场 — 用 opening_cover_plus_progress_highlighted_toc pattern",
+        "封面+目录双页开场 — 用 opening_cover_plus_progress_highlighted_toc pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "deck_title": "DAI 实验室 PPT 模板",
+          "deck_topic_tags": [
+            "学术模板",
+            "实验室",
+            "人工智能",
+            "集成电路",
+            "EDA",
+            "个人介绍",
+            "创新思路"
+          ],
+          "section_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.01",
+          "section_title": "封面",
+          "section_role": "opening",
+          "section_narrative": "deck 的开场封面,单页,承担整套模板的门面与标题承载功能。作为空白骨架,仅提供封面版式与配色,等待填入课题/个人介绍标题与作者信息。",
+          "section_topic_tags": [
+            "空白封面模板",
+            "学术骨架",
+            "蓝色配色",
+            "标题占位"
+          ],
+          "match_evidence": "单页封面, 通体留白+淡粉分隔线, 仅标题/副标题占位, 无实体内容, 是纯粹的封面骨架",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "blank_cover_placeholder_skeleton",
+              "archetype": "blank_cover_placeholder_skeleton",
+              "slide_title": "DAI 实验室 PPT 模板封面",
+              "slide_claim": "空白封面版式承载整套模板的标题与作者信息",
+              "slide_key_text": [],
+              "slide_visual_skeleton": [
+                "居中标题占位区",
+                "淡粉水平分隔线",
+                "下方作者/副标题占位区",
+                "极简留白背景"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "self_intro_dual_timeline_research_work_edu",
+      "title": "自我介绍·研究领域+工作/教育双时间线",
+      "applicable_when": {
+        "chapter_role": [
+          "self_intro"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          2
+        ],
+        "must_have_in_chapter_purpose": [
+          "个人介绍",
+          "履历",
+          "研究领域",
+          "经历"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "self_intro_research_plus_dual_timeline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以研究方向标签统领+工作/教育双时间线并列勾勒学术履历"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "学术汇报开场后的自我介绍单页: 顶部研究方向标签框+工作经历时间线+教育经历时间线双栏并列, 一页收全个人学术履历全貌",
+      "anti_patterns": [
+        "纯文字段落式自我介绍 — 无时间线结构",
+        "单一时间线仅列教育或工作 — 缺双栏对照"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "deck_title": "DAI 实验室 PPT 模板",
+          "deck_topic_tags": [
+            "学术模板",
+            "实验室",
+            "人工智能",
+            "集成电路",
+            "EDA",
+            "个人介绍",
+            "创新思路"
+          ],
+          "section_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.02",
+          "section_title": "个人介绍",
+          "section_role": "self_intro",
+          "section_narrative": "deck 中的自我介绍章节,单页承载「主要研究领域+工作经历+教育经历」双时间线,横向罗列起止时间/单位/职务,勾勒个人学术履历全貌。",
+          "section_topic_tags": [
+            "个人介绍",
+            "学术履历",
+            "研究领域",
+            "工作教育时间线"
+          ],
+          "match_evidence": "单页自我介绍, 顶部研究方向蓝框+工作经历时间线+教育经历时间线三段结构, 严格符合双时间线并列版式",
+          "slides": [
+            {
+              "slide_index": 2,
+              "role_in_pattern": "self_intro_research_plus_dual_timeline",
+              "archetype": "self_intro_research_plus_dual_timeline",
+              "slide_title": "个人介绍：研究领域与工作、教育双时间线",
+              "slide_claim": "以研究方向加工作、教育双时间线勾勒个人学术履历全貌",
+              "slide_key_text": [
+                "主要研究领域：人工智能 集成电路 电路设计自动化",
+                "工作经历 / 教育经历 双时间线",
+                "2019.7 ~ 至今 多段任职经历",
+                "2014.9 ~ 2019.7 博士（北京市优秀博士毕业生）",
+                "2010.9 ~ 2014.7 本科"
+              ],
+              "slide_visual_skeleton": [
+                "顶部研究方向蓝色标签框",
+                "工作经历时间线三列表格",
+                "教育经历时间线三列表格",
+                "椭圆浅蓝底衬"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_dual_column_skeleton_progressive_stripping",
+      "title": "方法·左右双栏版式逐步剥离骨架",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "版式",
+          "双栏",
+          "骨架",
+          "模板"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "innovation_tagged_dual_column_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "以「创新思路」标签+通栏概述+左右双栏骨架起头"
+        },
+        {
+          "archetype": "numbered_problem_tagged_dual_column",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以红标签「问题N」编号+双栏带标题条, 引入编号问题序列"
+        },
+        {
+          "archetype": "colored_dual_column_no_label",
+          "count": 1,
+          "position": "middle",
+          "purpose": "剥离标签, 仅留紫/蓝双色标题条区分左右两栏"
+        },
+        {
+          "archetype": "minimal_bare_dual_column_skeleton",
+          "count": 1,
+          "position": "end",
+          "purpose": "进一步抽象为纯蓝色横条双栏, 去掉底色与标签的最简骨架"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "innovation_tagged_dual_column_overview",
+          "to_archetype": "numbered_problem_tagged_dual_column",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "numbered_problem_tagged_dual_column",
+          "to_archetype": "colored_dual_column_no_label",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "colored_dual_column_no_label",
+          "to_archetype": "minimal_bare_dual_column_skeleton",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "模板类方法章的空白骨架递进: 从带「创新思路」标签双栏 → 带「问题N」编号双栏 → 无标签配色双栏 → 极简纯结构双栏, 逐步剥离标签/配色, 供讲者按需选版填充",
+      "anti_patterns": [
+        "带实体内容的方法章双栏 — 用带具体方案的 method pattern",
+        "单栏罗列式方法章 — 无左右对比结构"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "deck_title": "DAI 实验室 PPT 模板",
+          "deck_topic_tags": [
+            "学术模板",
+            "实验室",
+            "人工智能",
+            "集成电路",
+            "EDA",
+            "个人介绍",
+            "创新思路"
+          ],
+          "section_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.03",
+          "section_title": "核心内容版式",
+          "section_role": "method",
+          "section_narrative": "deck 的核心内容区,提供一组左右双栏版式骨架:从「创新思路」总述到「问题1」编号页,再到纯配色双栏,逐步剥离标签、留纯结构供自由填充课题内容。",
+          "section_topic_tags": [
+            "双栏版式骨架",
+            "创新思路模板",
+            "问题分析版式",
+            "空白内容页"
+          ],
+          "match_evidence": "4 页节奏严格递进: 创新思路标签双栏(紫) → 问题1 编号标签双栏(红)带标题条 → 紫蓝配色无标签双栏 → 极简纯双蓝标题条骨架, 逐步剥离直至裸结构",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "innovation_tagged_dual_column_overview",
+              "archetype": "innovation_tagged_dual_column_overview",
+              "slide_title": "创新思路 · 左右双栏总述版式",
+              "slide_claim": "以「创新思路」标签统领上方概述框 + 下方左右双栏结构",
+              "slide_key_text": [
+                "创新思路"
+              ],
+              "slide_visual_skeleton": [
+                "紫色渐变标签方块",
+                "顶部通栏概述框",
+                "左右等宽双栏空框",
+                "顶部蓝色分隔条"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "numbered_problem_tagged_dual_column",
+              "archetype": "numbered_problem_tagged_dual_column",
+              "slide_title": "问题 1 · 编号标签双栏版式",
+              "slide_claim": "以红色「问题 1」编号标签引出带蓝色标题条的左右双栏",
+              "slide_key_text": [
+                "问题 1"
+              ],
+              "slide_visual_skeleton": [
+                "红色渐变编号标签方块",
+                "顶部通栏概述框",
+                "左右双栏各带蓝色标题条",
+                "双栏空白内容框"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "colored_dual_column_no_label",
+              "archetype": "colored_dual_column_no_label",
+              "slide_title": "无标签 · 紫蓝配色双栏版式",
+              "slide_claim": "去除编号标签,仅留紫/蓝双色标题条区分左右两栏",
+              "slide_key_text": [],
+              "slide_visual_skeleton": [
+                "左栏紫色渐变标题条",
+                "右栏蓝色渐变标题条",
+                "左栏浅紫底填充区",
+                "左右等宽双栏"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "minimal_bare_dual_column_skeleton",
+              "archetype": "minimal_bare_dual_column_skeleton",
+              "slide_title": "极简 · 纯结构双栏骨架",
+              "slide_claim": "剥离所有标签与配色,仅留双蓝标题条的最简双栏结构",
+              "slide_key_text": [],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔条",
+                "左右两个蓝色实心标题条",
+                "大面积空白填充区",
+                "左右等宽双栏"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_blank_thanks_backpanel_with_signature",
+      "title": "收尾·空白 Thanks 版式+署名页脚",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "结尾",
+          "致谢",
+          "Thanks",
+          "Q&A"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "blank_ending_placeholder_with_footer_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "提供大面积留白主体+顶部封口蓝条+底部固定署名页脚,供填 Thanks/Q&A/联系方式"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "模板类 deck 的极简收尾: 单页空白结尾骨架, 顶部蓝色横条视觉封口, 主体全空供填 Thanks/Q&A, 底部固定署名页脚",
+      "anti_patterns": [
+        "合作机构墙+THANKS 双页收尾 — 用 closing_collaboration_wall_plus_thanks_backpanel pattern",
+        "实体致谢文字+联系方式实体页 — 无留白骨架属性"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f",
+          "deck_title": "DAI 实验室 PPT 模板",
+          "deck_topic_tags": [
+            "学术模板",
+            "实验室",
+            "人工智能",
+            "集成电路",
+            "EDA",
+            "个人介绍",
+            "创新思路"
+          ],
+          "section_id": "tpl.通用模板.DAI-实验室PPT模版.2777835f.sec.04",
+          "section_title": "结尾页",
+          "section_role": "closing",
+          "section_narrative": "deck 最后一页,充当收尾/致谢版式。顶部蓝色横条 + 底部「Guohao Dai @ Shanghai JiaoTong University」页脚,主体全空,供填 Thanks/Q&A 或联系方式。",
+          "section_topic_tags": [
+            "空白结尾模板",
+            "Thanks版式",
+            "署名页脚",
+            "致谢骨架"
+          ],
+          "match_evidence": "单页收尾, 顶部蓝色横条+主体大面积留白+底部固定署名页脚, 无标题无正文, 是纯粹的空白结尾骨架",
+          "slides": [
+            {
+              "slide_index": 7,
+              "role_in_pattern": "blank_ending_placeholder_with_footer_signature",
+              "archetype": "blank_ending_placeholder_with_footer_signature",
+              "slide_title": "结尾/致谢空白版式页",
+              "slide_claim": "空白收尾版式,顶部蓝条+底部署名页脚,留白主体供填 Thanks/Q&A",
+              "slide_key_text": [
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色横条",
+                "大面积空白主体",
+                "底部署名页脚+页码"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(DAI 实验室 PPT 空白模板), 共 4 section. 全部 section 均为「留白骨架」性质, 无既有 pattern 精准覆盖 — previous_batches 主要来自实体内容 deck(paper_share/research_report). 因此 emit 4 条模板骨架专用 pattern, 每条 confidence_estimate=low 单 carrier. new_archetype: blank_cover_placeholder_skeleton — 通体留白+分隔线+标题占位的封面骨架页. new_archetype: self_intro_research_plus_dual_timeline — 研究方向标签+工作/教育双时间线的个人介绍页. new_archetype: innovation_tagged_dual_column_overview — 紫色渐变「创新思路」标签+顶部通栏概述+左右等宽双栏空框. new_archetype: numbered_problem_tagged_dual_column — 红色渐变「问题N」编号标签+顶部通栏概述+左右双栏各带蓝色小标题条. new_archetype: colored_dual_column_no_label — 无编号标签, 左紫右蓝双色标题条+浅底填充区的配色双栏. new_archetype: minimal_bare_dual_column_skeleton — 顶部蓝色分隔条+左右两个蓝色实心标题条的极简裸双栏骨架. new_archetype: blank_ending_placeholder_with_footer_signature — 顶部蓝条+大面积留白主体+底部固定署名页脚的空白结尾骨架.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 4,
+    "sections_unassigned_in_this_batch": []
+  }
+}

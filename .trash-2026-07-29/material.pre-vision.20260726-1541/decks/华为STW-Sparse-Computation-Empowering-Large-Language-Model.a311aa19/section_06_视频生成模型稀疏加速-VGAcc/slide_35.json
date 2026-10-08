@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_35",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.06",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 35,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "加速思路:利用帧相似与稀疏分布",
+  "核心论断": "利用帧相似性与稀疏分布可削减视频生成算力",
+  "本页讲什么": "回答上页抛出的冗余痛点:通过挖掘帧间相似性和稀疏分布来降低计算开销。本页作为方案总览,把90%+相似度与冗余计算映射到可稀疏化的空间,统领后续Tech.1全注意力稀疏计算与Tech.2稀疏感知PE两项具体技术。",
+  "关键文字": [
+    "利用帧相似性与稀疏分布降低计算开销",
+    "Reduce computational overhead",
+    "90%+ similarity 与冗余计算映射为稀疏空间"
+  ],
+  "视觉骨架": [
+    "帧相似性稀疏分布示意图",
+    "冗余到稀疏映射图"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_35.asset.01",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_35.asset.02",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_35.asset.03"
+  ],
+  "适合复用场景": [
+    "视频生成稀疏加速方案总览页",
+    "帧相似驱动稀疏的思路页"
+  ],
+  "不适合复用场景": [
+    "单一算子公式推导页",
+    "benchmark 数字表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

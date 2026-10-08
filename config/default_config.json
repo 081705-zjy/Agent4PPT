@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "default_slide_count": 10,
+  "default_duration_minutes": 8,
+  "default_audience": "general professional audience",
+  "default_scenario": "formal presentation",
+  "default_style": "clear, professional, restrained",
+  "default_language": "zh",
+  "default_ppt_type": "general",
+  "default_template": "consulting",
+  "base_template": "templates/base/DAI 实验室PPT模版(1).pptx",
+  "base_template_required": true,
+  "default_speaker_name": "xxx",
+  "default_speaker_affiliation": "Shanghai Jiao Tong University",
+  "default_speaker_email": "xxx@shanghai jiaotong",
+  "max_review_rounds": 8,
+  "circuit_breaker_threshold": 3,
+  "max_words_per_slide": 90,
+  "target_seconds_per_slide": 60,
+  "min_research_sources": 5,
+  "min_image_candidates": 3,
+  "min_editable_ratio": 0.8,
+  "min_evidence_per_slide": 0.5,
+  "max_unsupported_ratio": 0.5,
+  "always_material_ingestion": true,
+  "enable_external_research": true,
+  "enable_external_websearch": true,
+  "enable_image_search": true,
+  "enable_generated_images": true,
+  "enable_html_preview": true,
+  "enable_model_routed_generation": true,
+  "render_backend": "native-svg",
+  "render_primary_backend": "ppt-master-free",
+  "render_primary_timeout_seconds": 3600,
+  "render_allow_fallback_after_timeout": false,
+  "enable_svg_finalization": true,
+  "template_skeleton_render": true,
+  "interactive": false,
+  "dry_run": false,
+  "codex_model": "gpt-5.5",
+  "codex_effort": "high",
+  "model_timeout_seconds": 600,
+  "model_fallback_policy": {
+    "description": "Do not fall back just because a model call is slow. Fallback is reserved for unavailable providers/network/configuration failures.",
+    "fallback_on_error_types": ["network_unavailable", "not_configured", "circuit_open", "disabled"],
+    "stop_on_error_types": ["timeout", "invalid_response", "rate_limit", "http_error", "error"]
+  },
+  "stage_model_timeouts": {
+    "task_understanding": 240,
+    "outline": 3600,
+    "slide_rewrite": 600,
+    "research_summary": 360,
+    "template_style": 360,
+    "review": 420,
+    "revision_router": 300,
+    "citation_check": 300
+  },
+  "web_search_cmd": "",
+  "web_fetch_cmd": "",
+  "research_adapter_timeout_seconds": 180,
+  "fetch_adapter_timeout_seconds": 120,
+  "max_research_results_light": 12,
+  "max_research_results_standard": 24,
+  "max_research_results_deep": 40,
+  "max_search_results_per_query_light": 5,
+  "max_search_results_per_query_standard": 8,
+  "max_search_results_per_query_deep": 10,
+  "max_fetch_sources": 20,
+  "max_fetch_sources_light": 8,
+  "max_fetch_sources_standard": 14,
+  "max_fetch_sources_deep": 20,
+  "max_search_queries_light": 2,
+  "max_search_queries_standard": 5,
+  "max_search_queries_deep": 8,
+  "web_search_attempts": 2,
+  "web_fetch_attempts": 2,
+  "providers": {
+    "claude_cli": {
+      "kind": "cli",
+      "label": "Claude CLI",
+      "command": "claude",
+      "model": "claude-opus-4-8",
+      "env_any_keys": [
+        "ANTHROPIC_API_KEY",
+        "ANTHROPIC_AUTH_TOKEN"
+      ],
+      "capabilities": [
+        "research",
+        "reasoning",
+        "task_understanding",
+        "outline",
+        "slide_rewrite",
+        "research_summary",
+        "citation_check",
+        "template_style",
+        "review",
+        "revision_router"
+      ],
+      "timeout_seconds": 600,
+      "web_search_cmd": "bash scripts/claude-search.sh",
+      "web_fetch_cmd": "bash scripts/claude-fetch.sh"
+    },
+    "codex_cli": {
+      "kind": "coding_agent",
+      "label": "Codex CLI",
+      "command": "codex",
+      "model": "gpt-5.5",
+      "env_any_keys": [
+        "OPENAI_API_KEY"
+      ],
+      "capabilities": [
+        "reasoning",
+        "intake",
+        "task_understanding",
+        "outline",
+        "slide_rewrite",
+        "research_summary",
+        "citation_check",
+        "template_style",
+        "review",
+        "revision_router",
+        "code_repair",
+        "pipeline_debug",
+        "test_runner",
+        "render_fix"
+      ]
+    },
+    "glm_5_1": {
+      "kind": "openai_chat",
+      "label": "Infini GLM 5.1",
+      "command": "curl",
+      "env_keys": [
+        "INFINI_API_KEY"
+      ],
+      "base_url": "https://cloud.infini-ai.com/maas/v1/chat/completions",
+      "model": "glm-5.1",
+      "capabilities": [
+        "reasoning",
+        "outline",
+        "slide_rewrite"
+      ]
+    },
+    "kimi_k2_6": {
+      "kind": "openai_chat",
+      "label": "Infini Kimi K2.6",
+      "command": "curl",
+      "env_keys": [
+        "INFINI_API_KEY"
+      ],
+      "base_url": "https://cloud.infini-ai.com/maas/v1/chat/completions",
+      "model": "kimi-k2.6",
+      "capabilities": [
+        "reasoning",
+        "long_context",
+        "slide_rewrite",
+        "review"
+      ]
+    },
+    "deepseek_v4_pro": {
+      "kind": "openai_chat",
+      "label": "Infini DeepSeek V4 Pro",
+      "command": "curl",
+      "env_keys": [
+        "INFINI_API_KEY"
+      ],
+      "base_url": "https://cloud.infini-ai.com/maas/v1/chat/completions",
+      "model": "deepseek-v4-pro",
+      "capabilities": [
+        "reasoning",
+        "review",
+        "critique"
+      ]
+    },
+    "claude_api": {
+      "kind": "openai_chat",
+      "label": "Claude (HTTP API)",
+      "command": "curl",
+      "enabled": true,
+      "env_keys": [
+        "ANTHROPIC_AUTH_TOKEN"
+      ],
+      "base_url_env": "ANTHROPIC_BASE_URL",
+      "path": "/v1/chat/completions",
+      "model": "claude-sonnet-4-6",
+      "max_tokens": 4096,
+      "timeout_seconds": 30,
+      "capabilities": [
+        "reasoning",
+        "review",
+        "critique"
+      ]
+    },
+    "openai_api": {
+      "kind": "openai_chat",
+      "label": "OpenAI (HTTP API)",
+      "command": "curl",
+      "enabled": false,
+      "env_keys": [
+        "OPENAI_API_KEY"
+      ],
+      "base_url_env": "OPENAI_BASE_URL",
+      "path": "/v1/chat/completions",
+      "model": "gpt-4o",
+      "max_tokens": 4096,
+      "timeout_seconds": 30,
+      "capabilities": [
+        "reasoning",
+        "review",
+        "critique"
+      ]
+    },
+    "native_svg": {
+      "kind": "local_script",
+      "label": "Native editable PPTX renderer",
+      "command": "bash scripts/export-pptx.sh",
+      "capabilities": [
+        "render",
+        "pptx",
+        "editable_shapes"
+      ]
+    }
+  },
+  "model_routes": {
+    "intake": {"primary": "codex_cli", "fallback": []},
+    "task_understanding": {"primary": "claude_cli", "fallback": ["codex_cli"]},
+    "outline": {"primary": "claude_cli", "fallback": ["codex_cli"]},
+    "slide_rewrite": {"primary": "claude_cli", "fallback": ["codex_cli"]},
+    "research_summary": {"primary": "claude_cli", "fallback": ["codex_cli"]},
+    "citation_check": {"primary": "claude_cli", "fallback": ["codex_cli"]},
+    "template_style": {"primary": "codex_cli", "fallback": []},
+    "review": {"primary": "codex_cli", "fallback": []},
+    "revision_router": {"primary": "codex_cli", "fallback": []},
+    "code_repair": {"primary": "codex_cli", "fallback": []},
+    "pipeline_debug": {"primary": "codex_cli", "fallback": []},
+    "test_runner": {"primary": "codex_cli", "fallback": []},
+    "render_fix": {"primary": "codex_cli", "fallback": []}
+  },
+  "tool_providers": {
+    "search_adapter": {
+      "kind": "builtin_search",
+      "command": "builtin",
+      "capabilities": [
+        "web_search"
+      ]
+    },
+    "claude_web_search": {
+      "kind": "cli",
+      "command": "bash scripts/claude-search.sh",
+      "capabilities": [
+        "web_search"
+      ]
+    },
+    "claude_web_fetch": {
+      "kind": "cli",
+      "command": "bash scripts/claude-fetch.sh",
+      "capabilities": [
+        "web_fetch"
+      ]
+    },
+    "http_fetch": {
+      "kind": "builtin_http",
+      "command": "builtin",
+      "capabilities": [
+        "web_fetch"
+      ]
+    },
+    "extract_adapter": {
+      "kind": "builtin_extract",
+      "command": "builtin",
+      "capabilities": [
+        "web_fetch"
+      ]
+    },
+    "resource_index": {
+      "kind": "local",
+      "command": "builtin",
+      "capabilities": [
+        "local_resource_search"
+      ]
+    },
+    "native_svg": {
+      "kind": "local_script",
+      "command": "bash scripts/export-pptx.sh",
+      "capabilities": [
+        "ppt_render",
+        "validation"
+      ]
+    }
+  },
+  "tool_routes": {
+    "web_search": {
+      "primary": "claude_web_search",
+      "fallback": [
+        "search_adapter"
+      ]
+    },
+    "web_fetch": {
+      "primary": "claude_web_fetch",
+      "fallback": [
+        "extract_adapter",
+        "http_fetch"
+      ]
+    },
+    "web_extract": {
+      "primary": "claude_web_fetch",
+      "fallback": [
+        "extract_adapter",
+        "http_fetch"
+      ]
+    },
+    "local_resource_search": {
+      "primary": "resource_index",
+      "fallback": []
+    },
+    "ppt_render": {
+      "primary": "native_svg",
+      "fallback": []
+    },
+    "validation": {
+      "primary": "native_svg",
+      "fallback": []
+    }
+  },
+  "research_domains": [
+    "scholar.google.com",
+    "arxiv.org",
+    "semanticscholar.org",
+    "dl.acm.org",
+    "ieeexplore.ieee.org"
+  ]
+}

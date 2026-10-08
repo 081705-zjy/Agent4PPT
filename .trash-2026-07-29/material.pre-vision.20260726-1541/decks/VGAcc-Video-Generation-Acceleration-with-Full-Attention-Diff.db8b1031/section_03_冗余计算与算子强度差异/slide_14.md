@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14"
+所属章节: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.03"
+所属deck: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031"
+页序号: 14
+源文件: "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx"
+页面角色: "content_candidate"
+标题: "逐元素差分揭示冗余可跳过"
+核心论断: "逐元素相减显示帧间差分稀疏，冗余可被跳过"
+本页讲什么: "本页用逐元素相减（Element-Wise Subtraction）的方式量化帧间差异，通过大量差分图（15 张）展示相邻帧相减后结果高度稀疏，直接论证差分计算的可行性——只需处理变化部分即可，是本节冗余问题向差分计算方案过渡的关键页。"
+关键文字: "[\"Large & Redundant Computation\", Element-Wise Subtraction, 逐元素相减差分稀疏]"
+视觉骨架: "[逐元素差分图网格, 帧间相减稀疏可视化]"
+资源ID列表: "[tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.01, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.02, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.03, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.04, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.05, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.06, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.07, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.08, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.09, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.10, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.11, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.12, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.13, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.14, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_14.asset.15]"
+适合复用场景: "[差分计算可行性论证页, 帧间稀疏性可视化页]"
+不适合复用场景: "[概念性 bullet 引入页, 算子强度对比页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Large & Redundant Computation - Element-Wise Subtraction"}
+  - {"位置": "下方主体", "内容": "15 张逐元素差分图网格"}
+alternate_claims:
+  - "差分结果高度稀疏，只需处理变化部分"
+layout_tag: "dense_data_chart"
+---
+# slide 14: 逐元素差分揭示冗余可跳过
+
+**核心论断**: 逐元素相减显示帧间差分稀疏，冗余可被跳过
+
+## 本页讲什么
+本页用逐元素相减（Element-Wise Subtraction）的方式量化帧间差异，通过大量差分图（15 张）展示相邻帧相减后结果高度稀疏，直接论证差分计算的可行性——只需处理变化部分即可，是本节冗余问题向差分计算方案过渡的关键页。
+
+## 关键文字片段
+- Large & Redundant Computation
+- Element-Wise Subtraction
+- 逐元素相减差分稀疏
+
+## 视觉骨架
+- 逐元素差分图网格
+- 帧间相减稀疏可视化
+
+## 可复用到
+- 差分计算可行性论证页
+- 帧间稀疏性可视化页
+
+## 不适合复用的场景
+- 概念性 bullet 引入页
+- 算子强度对比页

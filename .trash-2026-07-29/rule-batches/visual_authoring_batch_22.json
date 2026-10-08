@@ -1,0 +1,492 @@
+{
+  "batch_index": 22,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·大标题+分隔线+讲者署名",
+      "description": "封面页:居中偏左黑色大标题占据视觉主体,下方一条浅粉/浅色水平分隔线,分隔线下排讲者姓名+日期,页脚小字标注单位/实验室,不含正文段落或列表。",
+      "evidence_signals": [
+        "视觉骨架含 '居中偏左大标题' 或 '大标题'",
+        "视觉骨架含 '水平分隔线' 或 '淡粉色横向分隔线'",
+        "关键文字含 讲者姓名+日期+实验室/单位署名",
+        "无 'bullet 列表' / '正文段落' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 1,
+          "评价": "标准 cover:大标题+粉色分隔线+丁立/日期/Li Ding @ CCC Lab 页脚"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面承担身份识别,大字标题+讲者署名让听众开场即锁定主题与讲者,分隔线区隔标题区与信息区避免混杂",
+      "fix_hint": "cover 主标题居中偏左放大,信息区仅留讲者+日期,单位/实验室压到页脚,移除其他非身份识别元素",
+      "exceptions": [
+        "空白模板/占位版式无实际身份可展示时"
+      ]
+    },
+    {
+      "id": "ending_layout_mirrors_cover_with_thanks_headline",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页·镜像封面版式+Thanks 主语",
+      "description": "结束页复用封面版式(分隔线+讲者+日期+单位脚注),把主标题替换为「Thanks for your attention!」等致谢短语,不含技术内容或数据。",
+      "evidence_signals": [
+        "关键文字含 'Thanks' 或 '致谢' 类短语",
+        "视觉骨架含 '水平分隔线' 与 '署名+日期文字块'",
+        "关键文字重复封面的讲者名/日期/单位"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 33,
+          "评价": "Thanks for your attention! + 粉色分隔线 + 丁立/日期/Li Ding,与 cover 视觉呼应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾视觉一致让听众感知 deck 有明确结构收束,礼节性收尾亦让讲者从内容回到署名身份",
+      "fix_hint": "ending 页复用 cover 的分隔线+署名信息块,把主标题换成 'Thanks/致谢' 类短语,移除任何技术图表",
+      "exceptions": [
+        "Q&A 页/合作招募页(承担实际信息而非纯礼节收尾)"
+      ]
+    },
+    {
+      "id": "toc_layout_bordered_numbered_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页·外框+编号圆圈+当前项高亮",
+      "description": "目录/章节切换页外套蓝色矩形边框,内置 'Contents' 标题与①②③④ 编号圆圈章节列表,当前所在章用蓝色/高亮竖条标记,其余灰化。整页无正文技术内容。",
+      "evidence_signals": [
+        "关键文字含 'Contents' 或 '目录'",
+        "视觉骨架含 '编号圆圈列表' 与 '外层蓝色边框'",
+        "视觉骨架含 '当前项高亮竖条' 或 '高亮/灰化' 对比",
+        "无 '嵌图' / '数据表格' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 2,
+          "评价": "首次 Contents:蓝框+四圆圈编号+首项高亮+左侧蓝色进度竖条"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 19,
+          "评价": "第二次 Contents:同版式,第 2 项高亮切至推理章"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 21,
+          "评价": "第三次 Contents:同版式,第 3 项高亮切至训练章"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 31,
+          "评价": "第四次 Contents:同版式,第 4 项高亮切至总结章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "每次章节切换复用同一目录版式并只改高亮位置,让听众用同一坐标系跟踪进度,避免临时新增导航符号造成认知切换成本",
+      "fix_hint": "章节切换页复用首次 Contents 版式,仅切换当前项的高亮圆圈+竖条,其他项保持灰化",
+      "exceptions": [
+        "deck 只有单章无需切换目录时"
+      ]
+    },
+    {
+      "id": "content_title_uses_colon_topic_subtopic_pattern",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题·冒号分层「主题:子专题」",
+      "description": "内容页标题多为「大主题:子专题/展开点」形式,冒号左为章节主题(如「UNet-diffusion」「训练压缩」),右为本页聚焦点(如「LDM 细节续」「稀疏 Attention」),让同一主题下的连续页共享前缀。",
+      "evidence_signals": [
+        "title 含 半角/全角冒号 ':' 或 ':'",
+        "冒号左侧多为章节主题短语",
+        "同一 section 内多页共享冒号左侧前缀"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 7,
+          "评价": "「UNet-diffusion: 潜空间扩散 LDM」冒号左为主题右为子专题"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 12,
+          "评价": "「更高分辨率: DiT-diffusion」同模式承接分辨率主线"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 24,
+          "评价": "「训练压缩:稀疏 Attention(Skiparse 提速)」冒号+括号进一步细分"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 27,
+          "评价": "「训练压缩:3D-VAE」同 section 前缀「训练压缩」连续复用"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 4,
+          "原因": "「视频生成模型(VGM)背景:三大发展趋势」章节起始页也用冒号,不构成反例"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "冒号分层让听众一眼识别本页在 section 中的位置,连续页共享前缀降低认知切换成本,比全句 title 更适合技术演进型 deck",
+      "fix_hint": "把 title 改写为 '<section 主题>:<本页聚焦点>' 形式,同 section 内多页共用同一前缀",
+      "exceptions": [
+        "单页独立主题(如 overview/总结)可用完整短语无需冒号"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_sentence_with_technical_verb",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "论断·判断句而非主题标签",
+      "description": "核心论断字段用完整判断句(含主谓宾或技术动词短语),描述本页要主张的技术判断/结论,而非简单重复 title 或列主题词。常见结构为「X 通过 Y 实现 Z」「X 让 Y 得以 Z」。",
+      "evidence_signals": [
+        "核心论断含谓语动词(如 '通过' '实现' '提升' '联合' '替换')",
+        "核心论断长度 ≥12 字",
+        "核心论断不与 title 完全重复"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 14,
+          "评价": "「3D-DiT 联合时空 token 注意力提升时空一致性」清晰判断句"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 24,
+          "评价": "「Skiparse 稀疏 Attention 在同等 FLOPS 下逼近 3D 全注意力,训练提速约 2.38x/1.88x」带数据的判断句"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 25,
+          "评价": "「Skiparse DiT 用交替的 Skip/Sparse 块把注意力量降到 1/k,同时保留全局交互」机制型判断句"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 27,
+          "评价": "「相比逐帧 2D-VAE,3D-VAE 在时间维额外压缩,大幅减少视频 latent token」对比型判断句"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 6,
+          "原因": "「Diffusion Model 以 UNet 为主干支撑高分辨率生成」为标准判断句但较短,不构成反例"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.88,
+      "enforcement_level": "soft",
+      "rationale": "判断句 claim 让听众带着'讲者想主张什么'的期待读页,主题词式 claim 会与 title 语义重叠浪费认知带宽",
+      "fix_hint": "把 claim 改写为含谓语动词的完整判断句 '<主体> <动词> <对象>,<效果>',确保与 title 不重复",
+      "exceptions": [
+        "纯章节切换页/目录页 claim 可以是定位句"
+      ]
+    },
+    {
+      "id": "key_numbers_and_speedups_get_red_or_bold_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键数字/加速比·红色或加粗强调",
+      "description": "内容页中的分辨率、加速比、参数量、比例等关键数字用红色或加粗字体单独强调,与周围普通文字对比,让听众在密集文字中快速抓住量化结论。",
+      "evidence_signals": [
+        "视觉骨架含 '红色' / '加粗' / '关键词强调' 相关描述",
+        "关键文字含数字+单位(倍/%/px/token)",
+        "视觉骨架含 'speedup 强调' / '红色分隔' 等标记"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 4,
+          "评价": "'1080P,2K' 与 '5 分钟++' 关键词红色/加粗强调"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 24,
+          "评价": "'加粗分辨率/加速数字' + '红色 speedup 强调' 突出 2.38x/1.88x"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 23,
+          "评价": "'关键短语红色标注' 强调渐进训练策略要点"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "科研技术页文字密度高,量化数字是听众记住结论的锚点,红/粗对比让眼球定位关键数值不用逐字读",
+      "fix_hint": "把加速比/分辨率/参数量数字改为红色或加粗,普通描述文字保持默认色,单页强调不超过 3 处",
+      "exceptions": [
+        "纯概念/机制页无量化数字时"
+      ]
+    },
+    {
+      "id": "references_cited_with_bracket_numbers_at_bottom",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引用·方括号编号+页脚参考文献",
+      "description": "论文/方法出处以「[数字]」方括号内联标记出现在正文关键短语后,页脚列出对应参考文献短名(如 [1] VidToMe、[2] Adaptive Caching),做到引用可溯源。",
+      "evidence_signals": [
+        "关键文字含 '[数字]' 方括号编号",
+        "视觉骨架含 '底部参考文献行' 或 '底部论文出处标注'",
+        "关键文字含论文名/方法名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 4,
+          "评价": "Sora [1] Vidu [2] 内联编号+底部参考文献行"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 20,
+          "评价": "'Token Reuse/Merge[1]' + '[1] VidToMe [2] Adaptive Caching' 底行"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "科研分享 deck 必须可溯源,[数字]内联+页脚映射让讲者不打断叙述又留下查证路径,比在正文塞完整论文名更简洁",
+      "fix_hint": "在正文关键方法名后加 '[n]',页脚增加对应参考文献行 '[n] 方法名/论文短名'",
+      "exceptions": [
+        "纯商业/科普 deck 无学术引用需要时"
+      ]
+    },
+    {
+      "id": "overview_page_uses_branching_or_tree_diagram",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "总览页·分支/树形结构展开要素",
+      "description": "章节起始或全篇总览页用横向/纵向的分支结构(树、括号、主干+分支)把本章要讲的 N 个要素一次列全,先给结构再讲细节,后续每页展开一个分支。",
+      "evidence_signals": [
+        "视觉骨架含 '分支' / '主干' / '括号' / '一分为二' / '树形'",
+        "同 section 首页为该 role",
+        "关键文字含 N 个并列要素(3-5 项)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 20,
+          "评价": "推理章总览:红色括号把 VGM 一分为二(空间冗余 / 时间冗余),铺底两条主线"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 22,
+          "评价": "训练章总览:红色纵向主干+四大分支要素,分发到后续 4 页"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "先给结构再展细节符合听众'先框架后填充'的认知路径,总览分支图让讲者在切换分支时始终能回指同一张骨架图",
+      "fix_hint": "每章第 1 页画一张主干+N 分支的骨架图,标出后续页对应哪个分支,而不是直接进入细节",
+      "exceptions": [
+        "单要素主题无需分发时/单页即可讲完的短章"
+      ]
+    },
+    {
+      "id": "evolution_uses_horizontal_arrow_chain_with_grouping",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "技术演进·横向箭头链+虚线分组",
+      "description": "技术路径演进页用横向节点方框+箭头链展示 A→B→C 顺序,再用虚线框把节点分组(如「主流范式/探索性范式/未来发展趋势」),每组下方虚线引出代表作,形成三层结构。",
+      "evidence_signals": [
+        "视觉骨架含 '横向节点+箭头' 或 '演进链'",
+        "视觉骨架含 '虚线分组框' / '分组小标题'",
+        "关键文字含 'A → B → C' 箭头短语"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 5,
+          "评价": "6 节点方框+箭头+三段虚线分组(主流/探索/未来)+代表作分栏"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 32,
+          "评价": "总结页复用同款演进链:GAN/VAE→…→AR + 三段虚线框分组"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.25,
+      "enforcement_level": "soft",
+      "rationale": "技术演进本质是有序阶段+隐含分组,单纯罗列 bullet 会丢失方向感,箭头链让时序显性、虚线分组让阶段属性显性",
+      "fix_hint": "把 '方法 A / 方法 B / 方法 C' 列表改为 A→B→C 横向节点链,再用虚线框把节点按'主流/探索/未来'分组",
+      "exceptions": [
+        "纯并列比较页(无时序关系)/单节点主题页"
+      ]
+    },
+    {
+      "id": "content_title_uses_blue_divider_line_below",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页标题·下方蓝色分割线",
+      "description": "内容页 title 下方有一条蓝色水平分割线,把标题区与正文区显著区隔,同一 deck 内所有内容页共用同样颜色/位置的分隔线,强化统一版式。",
+      "evidence_signals": [
+        "视觉骨架含 '蓝色标题分割线' 或 '蓝色分隔线'",
+        "标题区与正文区通过分割线分离"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 6,
+          "评价": "蓝色标题分割线+纯文字说明"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 15,
+          "评价": "Flow Matching 页同款蓝色分割线"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 29,
+          "评价": "训练 Loss 页蓝色分割线,与其他内容页版式统一"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 24,
+          "原因": "整页密集文字论述页未见蓝色分割线,以'红色 speedup 强调'代替"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "分割线让 title 与 body 有稳定视觉边界,配色统一让听众在多页切换中始终能识别 deck 归属,不必重新扫版式",
+      "fix_hint": "所有内容页在 title 下方补一条同色(蓝色)水平分割线,颜色/粗细与 cover 分隔线呼应但可换色区分身份区/内容区",
+      "exceptions": [
+        "嵌图占满全页/无独立标题区的极简图示页"
+      ]
+    },
+    {
+      "id": "body_uses_numbered_bullets_with_second_level_letters",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文·数字编号+ a/b 子条目层级",
+      "description": "内容页正文用数字编号(①②③ 或 1./2./3.)组织并列要点,需要展开时再用 a/b 二级子条目细化,避免整段散文式描述,让讲者按条讲、听众按条跟。",
+      "evidence_signals": [
+        "视觉骨架含 '编号条目列表' / '两条编号要点' / '三条编号'",
+        "视觉骨架含 '二级 a/b 子条目' 或 '① ② ③'",
+        "关键文字被拆为并列短句而非长段"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 4,
+          "评价": "三条编号趋势文字列表(①高分辨 ②3D 建模 ③长视频)"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 10,
+          "评价": "两条编号要点(时空注意力+CLIP 文本条件)"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 23,
+          "评价": "编号条目+二级 a/b 子条目细化训练策略"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 24,
+          "原因": "整页密集文字论述,未拆为编号条目,读起来更累"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.45,
+      "enforcement_level": "soft",
+      "rationale": "编号条目让讲者可以说'第一点/第二点'带节奏,听众也能按序核对是否漏点,散文段落会让讲者被文字牵着走",
+      "fix_hint": "把 body 段落拆为 ①②③ 编号并列要点,单点需展开时用 a/b 二级细化,单页要点数量控制在 2-4 条",
+      "exceptions": [
+        "纯图示页/单命题机制说明页(无并列点可拆)"
+      ]
+    },
+    {
+      "id": "same_section_reuses_same_title_prefix",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "同 section 多页共用 title 前缀",
+      "description": "属于同一 section 的多页 title 共享冒号左侧或章节短语前缀(如「UNet-diffusion:...」「训练压缩:...」),不同 section 才切换前缀,让听众通过前缀识别当前 section 边界。",
+      "evidence_signals": [
+        "同一 section_role 内相邻页 title 冒号左侧短语相同",
+        "跨 section 时 title 前缀切换",
+        "前缀多为 section 主题短语(2-6 字)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 7,
+          "评价": "UNet-diffusion 前缀页 1: 潜空间扩散 LDM"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 8,
+          "评价": "UNet-diffusion 前缀页 2: LDM 细节续,连续复用前缀"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 24,
+          "评价": "训练压缩前缀页 1: 稀疏 Attention(Skiparse 提速)"
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714",
+          "slide_index": 27,
+          "评价": "训练压缩前缀页 2: 3D-VAE,同 section 复用前缀"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "共享前缀让听众用 title 快速识别 section 归属,不必频繁回看 Contents 定位,前缀切换本身就是 section 边界信号",
+      "fix_hint": "同 section 内所有内容页 title 加上统一的 '<section 主题>:' 前缀,section 切换时更换前缀",
+      "exceptions": [
+        "overview/总结页(单页独立主题无需前缀)",
+        "目录/章节切换页 title 独立表述"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(VGM 技术分享),covers/tocs/ending 各 1/4/1,content 27 页;visual 7 条(cover/ending/toc/内容页 divider/分支总览/演进链/数字强调),authoring 5 条(title 冒号分层/section 前缀/claim 判断句/引用编号/编号 bullet)",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

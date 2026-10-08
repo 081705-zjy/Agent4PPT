@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_02"
+所属章节: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.02"
+所属deck: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738"
+页序号: 2
+源文件: "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx"
+页面角色: "content_candidate"
+标题: "背景章节导览：相关工作与挑战"
+核心论断: "推理加速需先厘清相关工作与关键挑战两条主线"
+本页讲什么: "本页是 Background 章节的封面/导览页，用四个图块列出本章要展开的三条脉络：Related Work（相关工作）、Challenges and Techniques（挑战与技术）、以及 Key（核心问题）。它为后续「推理成本→边缘部署→如何减少逐层计算」的论证搭好框架，让听众知道背景部分将从哪几个维度铺垫 SpecEE。"
+关键文字: "[Background, Related Work, Challenges and Techniques, Key]"
+视觉骨架: "[章节封面大标题, 多图块导览卡片, 分栏主题图标]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_02.asset.01, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_02.asset.02, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_02.asset.03, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_02.asset.04]"
+适合复用场景: "[技术方法类背景章节封面页, 多主线并列的章节导览页]"
+不适合复用场景: "[含具体数据的结果页, 单一论点的正文页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方", "内容": "章节大标题 Background"}
+  - {"位置": "下方主体", "内容": "Related Work / Challenges and Techniques / Key 三个导览图块"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 2: 背景章节导览：相关工作与挑战
+
+**核心论断**: 推理加速需先厘清相关工作与关键挑战两条主线
+
+## 本页讲什么
+本页是 Background 章节的封面/导览页，用四个图块列出本章要展开的三条脉络：Related Work（相关工作）、Challenges and Techniques（挑战与技术）、以及 Key（核心问题）。它为后续「推理成本→边缘部署→如何减少逐层计算」的论证搭好框架，让听众知道背景部分将从哪几个维度铺垫 SpecEE。
+
+## 关键文字片段
+- Background
+- Related Work
+- Challenges and Techniques
+- Key
+
+## 视觉骨架
+- 章节封面大标题
+- 多图块导览卡片
+- 分栏主题图标
+
+## 可复用到
+- 技术方法类背景章节封面页
+- 多主线并列的章节导览页
+
+## 不适合复用的场景
+- 含具体数据的结果页
+- 单一论点的正文页

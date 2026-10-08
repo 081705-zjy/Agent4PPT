@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_07",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 7,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "VGM 与 LLM 的计算差异",
+  "核心论断": "VGM 计算特性与 LLM decode 阶段存在本质差异",
+  "本页讲什么": "在理解 VGM 结构后，对比其与 LLM（主要看 decode 阶段）的计算特性差异，说明为何不能直接套用 LLM 的加速手段，从而凸显 VGM 需要专门优化，为后文稀疏/混合精度技术埋下问题伏笔。",
+  "关键文字": [
+    "LLMs vs VGMs",
+    "LLMs (mainly considering the decode stage)"
+  ],
+  "视觉骨架": [
+    "LLM 与 VGM 对比示意图",
+    "两栏对照布局"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_07.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_07.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_07.asset.03"
+  ],
+  "适合复用场景": [
+    "VGM 与 LLM 差异对比页",
+    "计算特性对比 motivation 页"
+  ],
+  "不适合复用场景": [
+    "单一模型结构介绍页",
+    "GPU 硬件趋势页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

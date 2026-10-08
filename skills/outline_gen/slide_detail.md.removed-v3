@@ -1,0 +1,181 @@
+# Slide Detail Skill — Stage 2: 章内每页 detail 填写
+
+你正在为 **单个 chapter 的所有 slides** 填详细字段。Stage 1 (section_outline.md) 已经给你这一章的
+stubs（每页的 archetype / archetype_placement / target_title / page_purpose_hint）, 你的任务是
+把每个 stub 扩展成完整的 outline.slides[i]:
+target_claim / page_purpose / key_points / needed_evidence / anchor_terms /
+source_resource_ids / gap_research_hint / claim_status_link / expected_resource_kind。
+
+**绝不修改** stub 已给的 archetype / archetype_placement / target_title / target_role / slide 顺序。
+你的输出条数 = 输入 stubs 条数。
+
+## Inputs
+
+```json
+{
+  "chapter": {  // brief.chapter_plan[i] 的完整副本
+    "section_index": 5,
+    "chapter": "代表成果一: LLM 推理加速 ...",
+    "purpose": "...",
+    "expected_pages_indicative": 11,
+    "delivery": {
+      "must_start_with": "1 页回扣范式总图 + LLM 推理簇高亮",
+      "must_end_with": "本章 LLM 推理代表数字小结 (24.89× / 4.54× / +6.2)"
+    },
+    "key_outcome": "...",
+    "claims_to_make": [
+      "SpeContext 长上下文 24.89× 吞吐",
+      "Endor 近存架构 vs A100 2.97× / vs DFX 4.54×",
+      ...
+    ],
+    "claims_to_setup_for_later": ["..."],
+    "scope_out": ["..."],
+    "needs_gap_research": false
+  },
+  "stubs": [  // Stage 1 输出
+    {
+      "slide_index_within_chapter": 1,
+      "target_role": "method",
+      "archetype": "single_framework_recall_5layer_diagram",
+      "archetype_placement": "章首单页回扣范式图",
+      "target_title": "范式坐标 · LLM 推理簇",
+      "page_purpose_hint": "回扣 6 层框架并高亮本章覆盖的 LLM 推理簇"
+    },
+    ...
+  ],
+  "materials_candidates": [
+    {"resource_id": "pdf_uuid_1", "priority": 0.95, "use_in_chapters": [5], "role": "main_evidence",
+     "标题": "SpeContext: ...", "核心论断": "...", "关键图表索引": ["fig 3 throughput", ...]}
+  ],
+  "narrative_slice": {  // 全 brief.narrative_constraints 的本章相关切片
+    "thesis_callback_role": "this chapter is one of callback_at_chapters",
+    "anchor_terms_must_appear": ["软硬件协同", "近存架构"],
+    "cross_section_hooks_in_or_out": [
+      {"from": 4, "to": 5, "hook_type": "metric_teaser", "hook_content": "..."}
+    ],
+    "framework_anchor_repeat": {"this_chapter_repeats": true, "anchor": "5-layer-diagram"}
+  },
+  "brief_anchor_terms": ["软硬件协同", "稀疏激活", ...],  // brief.identity.anchor_terms 全集
+  "claim_status_plan": [  // brief.claim_status_plan 全集
+    {"claim_id": "c01", "claim": "...", "status": "asserted", "evidence_required": "..."},
+    ...
+  ],
+  "gap_filling_recommendations": [  // brief.resource_anchor.gap_filling_recommendations (list[str])
+    "课题组介绍: GAP_RESEARCH 检索 ...",
+    ...
+  ]
+}
+```
+
+## Output: chapter detail JSON
+
+```json
+{
+  "section_index": 5,
+  "slides": [
+    {
+      "slide_index_within_chapter": 1,
+      "target_role": "method",
+      "archetype": "single_framework_recall_5layer_diagram",
+      "archetype_placement": "章首单页回扣范式图",
+      "target_title": "范式坐标 · LLM 推理簇",
+      "page_purpose": "在进入本章 4 个代表作前, 用 6 层框架图把听众注意力重新校准到 LLM 推理簇",
+      "target_claim": "本章 4 项代表作均落在 6 层框架的 算子层+架构层 区间, 共同主题: 软硬件协同优化",
+      "key_points": [
+        "高亮算子层 + 架构层在框架中的位置",
+        "4 项代表作 (SpeContext / Endor / SpAct-NDP / Think-at-Hard) 概览预告",
+        "本章 key_outcome: 4 项代表数字 + 1 个范式叙事 MIC→MPC"
+      ],
+      "needed_evidence": [
+        "6 层框架图 (复用第 4 章框架页, 高亮算子+架构层)",
+        "4 项工作的方法-硬件对照表"
+      ],
+      "anchor_terms": ["软硬件协同", "算子层", "架构层"],
+      "expected_resource_kind": "slide_paste",
+      "source_resource_ids": [],
+      "gap_research_hint": null,
+      "claim_status_link": null
+    },
+    {
+      "slide_index_within_chapter": 2,
+      "target_role": "method",
+      "archetype": "single_paper_title_authors_only",
+      "archetype_placement": "每代表作扉页",
+      "target_title": "SpeContext · 长上下文推理",
+      "page_purpose": "SpeContext 代表作扉页, 立标题 + 一行核心定位, 不给数字 (留待下一页)",
+      "target_claim": "SpeContext 解决长上下文推理 token 量爆炸下的吞吐塌缩",
+      "key_points": [
+        "论文标题 + 作者 + 会议",
+        "一行问题陈述: 长上下文 → KV cache 内存爆炸 → 吞吐塌缩",
+        "一行方法定位: 投机式上下文压缩"
+      ],
+      "needed_evidence": [
+        "SpeContext 论文 (resource_id=pdf_uuid_1), 关键图表 fig 1 problem framing"
+      ],
+      "anchor_terms": ["软硬件协同", "长上下文", "KV cache"],
+      "expected_resource_kind": "slide_paste",
+      "source_resource_ids": ["pdf_uuid_1"],
+      "gap_research_hint": null,
+      "claim_status_link": "c01"
+    },
+    ...
+  ]
+}
+```
+
+## Hard rules
+
+### 不改 stub 已给字段
+- `slide_index_within_chapter / target_role / archetype / archetype_placement / target_title`
+  从 stubs 原样继承, 严禁修改
+- Stub 数与你的输出数严格相等
+
+### claims_to_make 必须覆盖
+- chapter.claims_to_make 里的每一条 claim, 至少要被某一页的 target_claim 引用或体现 (verbatim 或
+  紧密 paraphrase)
+- 把含具体数字的 claim 优先放在 archetype = single_experiment_result_speedup_callout 或类似
+  "数字头条" 的 archetype 页
+
+### delivery.must_start_with / must_end_with 翻译
+- 该章首 slide (slide_index_within_chapter=1) 的 `page_purpose` 必须呼应 delivery.must_start_with;
+  `target_claim` 围绕 must_start_with 的具体内容设计
+- 该章末 slide 的 page_purpose 呼应 delivery.must_end_with; target_claim 含 must_end_with 的关键
+  数字 / 结论
+
+### materials_candidates 优先消费
+- 高 priority (≥0.8) 的 material 必须在该章某页的 `source_resource_ids` 出现 (除非 archetype 显然
+  不需要 material, 如 cover/divider/agenda)
+- 1 slide 的 source_resource_ids 通常 ≤3 条; archetype = single_paper_title_authors_only 类页只
+  挂主论文 1 条
+- material 的 `关键图表索引` 应作为该页 `needed_evidence` 的具体来源 (写 "X 论文 fig N: <描述>")
+
+### anchor_terms 是 brief.anchor_terms 子集
+- per-slide anchor_terms ≤ 3 条, 必须取自 brief_anchor_terms 集合
+- 不允许自由发明新 anchor
+
+### claim_status_link 反查
+- 若该页 target_claim 命中 brief.claim_status_plan 中某 claim, `claim_status_link` 填该 claim_id
+- 否则填 null
+
+### gap_research_hint
+- 若 chapter.needs_gap_research=true 且 page_purpose 对应 gap_filling_recommendations 中某条
+  recommendation, `gap_research_hint` 引用该 recommendation (短版即可, ≤80 字)
+- 否则 null
+
+### narrative_slice 约束
+- `anchor_terms_must_appear` 列出的每条 anchor 必须在该章 ≥1 slide 的 anchor_terms / target_title /
+  target_claim 中出现
+- 若 `framework_anchor_repeat.this_chapter_repeats=true`, 该章必须有 1 slide (通常章首) 引用
+  `framework_anchor_repeat.anchor`
+- `cross_section_hooks_in_or_out` 指明本章入/出 hook, 末/首页应埋这些 hook
+
+### expected_resource_kind 几乎都是 slide_paste
+- 默认 `expected_resource_kind="slide_paste"` (库里有匹配模板)
+- 仅当 archetype 显然需要新生成 (如 gap_research 出的新内容) 才标 `new`
+
+## Output strict rules
+
+- Output strict JSON only
+- 顶层只有 `section_index / slides`
+- slides 顺序与输入 stubs 顺序严格一致
+- 字段顺序按 Output 样例所示

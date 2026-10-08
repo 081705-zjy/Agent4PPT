@@ -1,0 +1,341 @@
+{
+  "batch_index": 17,
+  "rules": [
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with distinct cover and closing sections",
+      "title": "封面主标题需在收尾章 verbatim 或 paraphrased 回扣",
+      "description": "封面 slide 亮明的主标题 / 主 anchor 短语,应在 closing / 致谢章至少出现一次(verbatim 或 paraphrased),让听众听到收尾时能重新锚定主题。",
+      "what_to_check": [
+        "从 cover slide (section_role=opening 首页) 的 标题 / 关键文字 抽取主标题短语",
+        "在 section_role=closing 的所有 slide 的 关键文字 / 标题 中搜索该短语 (verbatim 或 ≥60% 词重合的 paraphrased)",
+        "命中 = 至少 1 张 closing slide 含该短语"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "cover slide 1 主标题 'Sparse Computation Powering Large Language Model';closing slide 54 致谢页 verbatim 重现该短语作为收尾主题"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记忆遵循首尾效应,收尾不回扣主标题=没兑现开场承诺,主题模糊",
+      "fix_hint": "在 closing 首页或致谢页标题区放主标题短语一次,可加副标 '(全线工作)'",
+      "exceptions": [
+        "纯 talk-outline 无致谢章的 deck",
+        "cover 用图片主标而非文本时可用配套文字锚点回扣"
+      ]
+    },
+    {
+      "id": "core_formula_reuse_across_chapters",
+      "category": "callback",
+      "applicable_when": "decks that introduce a core formula in motivation or framework and have subsequent method + closing sections",
+      "title": "开篇提出的核心公式需在方法章与总结章至少复现 1 次",
+      "description": "motivation / framework 章引入的核心公式(如 Cost = Power×Latency×Price 或 Latency = Workload/Multipliers)应在后续 method 章至少 1 次、closing 章至少 1 次以相同形式复现,把量化框架贯穿全线。",
+      "what_to_check": [
+        "扫描 motivation/framework 章 slide 的 关键文字 是否含数学公式片段 (含 '=' 或 '×' 或 '/')",
+        "对该公式,在后续 method 章的 关键文字 中搜索相同左端项 (如 'Latency =' 'Cost =')",
+        "在 closing 章 关键文字 中同样搜索;命中 = method 章 ≥1 次 且 closing 章 ≥1 次"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "slide 7/9 引入 Cost/Latency 公式;framework slide 18 复用 Latency = Workload/Multipliers;closing slide 52 用 'Cost·Latency = Workload/Multipliers' 统领四工作"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "公式是量化叙事的骨架,只出现一次会被记忆冲淡,反复复现让所有加速数字都挂回同一坐标系",
+      "fix_hint": "在每章末页或章首页的角标处以缩小字号复现公式一次,summary 首页放大字号重现",
+      "exceptions": [
+        "非量化型 deck (纯理论/纯叙事)",
+        "公式过于复杂时可只复现关键变量而非全式"
+      ]
+    },
+    {
+      "id": "framework_paths_reused_in_summary",
+      "category": "callback",
+      "applicable_when": "decks whose framework/insight section proposes a taxonomy (e.g. N ways) that maps to subsequent method chapters",
+      "title": "框架章提出的路径分类需在 summary 中逐条对应具体工作",
+      "description": "framework 章提出的 N 条路径 / N 种解法分类 (e.g. Way1/Way2/Way3) 应在 summary 章逐条对应至少 1 个具体工作,让听众听完能把所有工作挂回同一分类骨架。",
+      "what_to_check": [
+        "扫描 framework 章找到明确编号分类 (含 'Way 1' 'Way 2' 'Path 1' 或 '路线一' 等关键词)",
+        "在 closing 章 slide 的 关键文字 / 视觉骨架 中搜索是否重现相同分类标签,并对应到具体工作名 (方法名/系统名)",
+        "命中 = 每条 Way 至少 1 个工作对应"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "framework slide 19 提出 Way1/Way2/Way3;summary slide 52 用 Scaling Law 曲线复现三路径并对应 FlashDecoding++/FlightLLM/VGAcc/TB-STC 四工作"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "分类骨架若不在 summary 复用,听众听完只记得零散工作、失去'全线一盘棋'感受,回汇价值大减",
+      "fix_hint": "summary 首页放框架章分类图,每条路径侧边挂对应工作名+加速比数字",
+      "exceptions": [
+        "framework 只提单一路径 (无 N-way 分类) 的 deck",
+        "综述型 deck 只做 landscape 不做归位"
+      ]
+    },
+    {
+      "id": "chapter_start_mini_agenda_required",
+      "category": "chapter_transitions",
+      "applicable_when": "decks with ≥3 major sections beyond opening/closing",
+      "title": "每主要章节需以高亮当前章的 mini-agenda 页开章",
+      "description": "长 deck 的每个主要章节 (motivation/framework/method/case_study/closing 等) 首页应显示完整章节列表并高亮当前章,让听众随时知道'第几章、剩余几章'。",
+      "what_to_check": [
+        "对每个 section_role∈{motivation,framework,method,case_study,closing} 的 section, 检查首个 slide 的 关键文字 是否含 'Contents' 或完整章节列表 (≥3 项章节名)",
+        "同时检查 视觉骨架 是否含 '高亮' '竖条' '当前章' 类描述",
+        "命中 = 该章首页确为 mini-agenda 高亮页"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "slide 3 (motivation) / 13 (method-FlashDecoding) / 17 (framework) / 24 (method-Sparse) / 51 (closing) 均为高亮当前章的 Contents 页,5/5 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 听众在 30+ 张后极易迷失位置,mini-agenda 是唯一低成本导航手段,消除'我们在哪'的认知负担",
+      "fix_hint": "复制封面后的 agenda 页作为模板,在每章首插入一份并把当前项加粗+其余灰显",
+      "exceptions": [
+        "总页数 <15 的短 deck (听众可全局记忆)",
+        "非线性 talk (自由问答 / poster 型)"
+      ]
+    },
+    {
+      "id": "motivation_end_teaser_to_solution",
+      "category": "suspense_reveal",
+      "applicable_when": "decks with motivation section followed by solution/method section",
+      "title": "motivation 章末页需埋'下章将给出解法'的钩子",
+      "description": "motivation 章的最后一张 slide 应埋下引出 solution 章的钩子:抛出关键问题 / 用红字或强调框指向'路径待选',而非直接给具体方案数字。",
+      "what_to_check": [
+        "定位 motivation 章 (section_role=motivation) 最后一张 slide",
+        "检查 关键文字 是否含疑问句 ('How to' 'Is it feasible' '?' 等) 或 转折词 ('However' 'But' 'Bottleneck' '瓶颈' 'Slowdown')",
+        "同时检查 视觉骨架 是否含'红字/断言横幅/箭头指向下章'类元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "motivation 章末 slide 12 抛出 'How to improve it?' + 'Moore's Law Slowdown' 转折,直接铺垫后续两条解法路径"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "motivation-solution 硬切让听众感觉'问题白提',末页留钩才形成 build-up 张力,是学术汇报最基础的悬念手法",
+      "fix_hint": "motivation 末页加一句 'How to X?' 或 '瓶颈 → 需要 Y' 的转折条,不要提前泄露具体方法名与数字",
+      "exceptions": [
+        "motivation 与 method 共章 (整体连讲) 的 deck",
+        "非 problem-solution 型 (纯 landscape) deck"
+      ]
+    },
+    {
+      "id": "method_chapter_ends_with_quant_result",
+      "category": "comparison_evidence",
+      "applicable_when": "any method or case_study section",
+      "title": "每个方法章需以定量对比结果页收束",
+      "description": "每个 method / case_study 章末页应含定量对比结果 (含数字倍数或百分比 + 具体 baseline 名),不能只有方法框图不给结果,避免'方法讲完但不知效果'。",
+      "what_to_check": [
+        "对每个 section_role∈{method,case_study} 的 section 找末页",
+        "检查 关键文字 是否含数字 (含 '×' 'x' '%' '倍') 且明确 baseline 名 (如 'vs' 'over' 'compared with')",
+        "命中 = 末页 (或倒数第 2 张,若末页为 demo/chapter_candidate) 含定量对比"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "FlashDecoding++章 slide 15-16 (1.88x/1.56x/3.41x vs HuggingFace/vLLM);Sparse章 slide 31 (1.2×/1.8×/6.0× vs V100S);Video章 slide 38 (2.74×/2.29× vs A100);TB-STC章 slide 50 (3.28×/1.90× vs STC/SOTA)——4/4 章命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "方法章不落地到数字=空中楼阁,听众记不住方法只记得数字,末页数字页是唯一让工作'被记住'的机会",
+      "fix_hint": "每章末页放 speedup/energy/accuracy 至少一列柱图,红字标注对比 baseline 名与倍数",
+      "exceptions": [
+        "纯 tutorial / 概念讲解章 (无实验)",
+        "工作尚在进行中的初期分享"
+      ]
+    },
+    {
+      "id": "baseline_name_explicit_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "any slide claiming a speedup/efficiency number",
+      "title": "每条定量 claim 需具名 baseline",
+      "description": "凡是 slide 上出现 '×加速' '% 提升' 等量化 claim,必须在同一 slide 具名对比对象 (硬件型号 / 库名 / SOTA 系统名),不能只有 'ours' 与匿名对比。",
+      "what_to_check": [
+        "扫描含 '×' 或 'x 加速' 或 '% 提升' 的 slide",
+        "检查同 slide 是否具名 baseline (如 'vs HuggingFace' 'over cuBLAS' 'compared with A100' 'to STC')",
+        "命中 = 具名比例 / 总量化 slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "slide 15 'over HuggingFace (FP16)'、slide 16 'vs vLLM framework'、slide 31 'outperforms 12nm V100S GPU'、slide 38 'compared with NVIDIA A100 GPU'、slide 50 'over Sparse Tensor Core (STC) and SOTA'——所有量化 slide 均具名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "匿名对比让听众无法判断结果'公不公平',具名 baseline 是学术信誉的最低门槛,也是审稿最先质疑的点",
+      "fix_hint": "任何 speedup 数字后紧跟 'vs <型号/框架/SOTA名>',用红字或 caption 标出",
+      "exceptions": [
+        "初步内部结果 (明确标 preliminary)",
+        "架构演进图 (自比自)"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "decks with ≥5 major sections and one clear main thesis",
+      "title": "主 thesis 需在 ≥60% 章节的至少 1 张 slide 中出现",
+      "description": "deck 的主 thesis (通常等于封面主标题或副标) 应在超过 60% 的章节中被 verbatim 或 paraphrased 提及至少一次,避免'主题在中段消失'。",
+      "what_to_check": [
+        "从 cover 主标题抽核心 anchor 词 (如 'sparse computation' '稀疏计算')",
+        "对每个 section,检查是否有 slide 的 关键文字 / 核心论断 含该 anchor 词 (verbatim 或 paraphrased)",
+        "命中率 = 含 anchor 的 section 数 / 总 section 数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "主 anchor '稀疏计算/sparse computation' 出现在 9/9 章节 (含目录 opening + 每章多次出现),命中率 100%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 thesis 断档会让中段听众忘记'我们为什么讲这个',反复承接主 anchor 是'一根线穿到底'的核心手法",
+      "fix_hint": "每章至少 1 张 slide 在标题或核心论断中显式出现主 anchor 词,忌只用同义词模糊指代",
+      "exceptions": [
+        "综述型 deck 主题过宽时可放宽到 50%",
+        "纯技术细节章 (附录) 可不重复主 thesis"
+      ]
+    },
+    {
+      "id": "key_speedup_numbers_consolidated_in_summary",
+      "category": "repetition_emphasis",
+      "applicable_when": "decks with multiple method sections each producing quantitative results",
+      "title": "各方法章的关键加速比需在 summary 章一页汇总",
+      "description": "多方法 deck 的 summary 章应有 1 张 slide 汇总各工作的核心加速比 (如 FlashDecoding++ 1.88x / FlightLLM 1.2x / VGAcc 2.74x),形成'一图记住全线收益'。",
+      "what_to_check": [
+        "找 closing 章的 slide, 检查 关键文字 是否同时含 ≥3 个方法名 + 各自数字",
+        "或 视觉骨架 含 '数值列' '柱图汇总' 描述"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "closing slide 52 用 Cost·Latency 公式统领并列出 FlashDecoding++/FlightLLM/VGAcc/TB-STC 四工作及汇总 10.3× cost reduction"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记忆只能承载 3-5 个数字,汇总页是把散落数字'钉'到脑中的最后机会,缺失即前面数字白讲",
+      "fix_hint": "summary 章插入'四工作加速比一图'页,横向对比 speedup / energy / area, 最下方给总收益乘数",
+      "exceptions": [
+        "单工作 deck (无汇总需求)",
+        "纯理论 deck 无量化收益"
+      ]
+    },
+    {
+      "id": "agenda_chapter_exact_match",
+      "category": "structural_promise",
+      "applicable_when": "any deck with explicit agenda page in opening section",
+      "title": "agenda 章节列表需与实际章节顺序一一对应",
+      "description": "opening 章 agenda slide 上列出的章节顺序、名称须与后续 sections_outline 的 section 顺序及 role 一一对应,不允许出现 agenda 承诺但 deck 未讲的章节,或 deck 存在但 agenda 未列的章节。",
+      "what_to_check": [
+        "提取 agenda slide 关键文字 中的编号章节列表",
+        "对比 sections_outline (排除 opening 和 appendix), 检查名称是否一一对应,顺序是否一致",
+        "命中 = 全部对齐"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "agenda slide 2 列出 5 章 (Background/Preliminary/Insight/Solution/Summary),对应 sections_outline 的 sec.02-08 各 role,顺序完全一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是给听众的合同,若与实际章节错位='讲的和承诺不一样',直接损伤汇报可信度",
+      "fix_hint": "在最终定稿后用 agenda 名称遍历实际 section 标题,任何不一致回改 agenda 或章名到完全对齐",
+      "exceptions": [
+        "appendix / backup 章可不列入 agenda",
+        "现场即兴调整章节顺序时需口头说明"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck with a clear cover page",
+      "title": "主 anchor 首次出现应在 cover slide",
+      "description": "deck 的主 anchor 术语 (通常等于 deck 主题的核心名词短语) 应在 slide 1 (cover) 就出现在主标题或副标中,不允许拖到中段才首次亮相,避免'开场不知讲啥'。",
+      "what_to_check": [
+        "从 deck.标题 或 deck.主题标签 抽主 anchor 词",
+        "检查 slide 1 的 关键文字 或 标题 是否含该 anchor",
+        "命中 = 是"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "slide 1 主标题 'Sparse Computation Powering Large Language Model' verbatim 含主 anchor '稀疏计算'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面是听众唯一 100% 会看的一张,主 anchor 不上封面=浪费最贵注意力窗口",
+      "fix_hint": "把主 anchor 词放进 cover 主标题或副标,字号最大,避免用抽象隐喻代替",
+      "exceptions": [
+        "以图代题的艺术型 cover (需在 slide 2 立刻用文字锚定)"
+      ]
+    },
+    {
+      "id": "structural_page_ratio_within_range",
+      "category": "pacing",
+      "applicable_when": "decks with ≥15 slides",
+      "title": "结构性页面 (cover/agenda/divider/closing) 比例应在 15-25%",
+      "description": "整个 deck 的结构性页面 (cover + 各 mini-agenda + closing + thanks) 占比宜在 15-25%,过低=导航缺失,过高=正文被挤压。",
+      "what_to_check": [
+        "统计 section_role∈{opening,closing} 的 slide 数 + 所有 mini-agenda 高亮页数 (关键文字 含 'Contents' 且非 opening)",
+        "除以总 slide 数得比例",
+        "命中 = 0.15 ≤ ratio ≤ 0.25"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "evidence": "opening 2 张 + 中间 4 张 mini-agenda (13/17/24/51) + closing 4 张 = 10 张,占 68 页 14.7%,接近下限但仍在可接受区"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页/正文比控制信息密度与节奏,低于 15% 听众迷路,高于 25% 显得空洞",
+      "fix_hint": "若 <15% 补 mini-agenda; >25% 精简重复目录或合并致谢页",
+      "exceptions": [
+        "≤15 张的短 deck (整体节奏靠一张 agenda 即可)",
+        "海报型 deck (每张自成一体不需结构页)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (稀疏计算赋能大语言模型, 68 页/9 章),但 deck 严格遵循学术汇报叙事模式,可稳定抽出 13 条 rule 覆盖 6 大类。callback/repetition/结构承诺类命中最强,pacing 类因样本小仅出 1 条 soft rule。suspense_reveal 单条覆盖 motivation 末页钩子模式。",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 1,
+      "chapter_transitions": 1,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

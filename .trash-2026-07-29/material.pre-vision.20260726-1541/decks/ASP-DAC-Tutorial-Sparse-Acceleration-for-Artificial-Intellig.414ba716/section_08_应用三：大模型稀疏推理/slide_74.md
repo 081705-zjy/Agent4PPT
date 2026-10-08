@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_74"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 74
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "硬件架构：行主序存储与数据组织"
+核心论断: "行主序存储支撑稀疏数据在阵列中的高效组织"
+本页讲什么: "细化硬件架构的数据组织：采用 row-major storage（行主序存储）方式安排稀疏矩阵数据，配合索引编号说明数据如何映射到计算阵列，支撑前述可配置部件的高效运行。"
+关键文字: "[\"LLM: Hardware Architecture\", row-major storage]"
+视觉骨架: "[行主序存储布局示意, 数据到阵列映射网格图]"
+资源ID列表:
+适合复用场景: "[稀疏数据存储布局细节页, 行主序存储映射页]"
+不适合复用场景: "[方法效果结果页, 研究路线总览页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题栏", "内容": "LLM: Hardware Architecture"}
+  - {"位置": "下方主体", "内容": "行主序存储布局与数据到阵列映射网格图"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 74: 硬件架构：行主序存储与数据组织
+
+**核心论断**: 行主序存储支撑稀疏数据在阵列中的高效组织
+
+## 本页讲什么
+细化硬件架构的数据组织：采用 row-major storage（行主序存储）方式安排稀疏矩阵数据，配合索引编号说明数据如何映射到计算阵列，支撑前述可配置部件的高效运行。
+
+## 关键文字片段
+- LLM: Hardware Architecture
+- row-major storage
+
+## 视觉骨架
+- 行主序存储布局示意
+- 数据到阵列映射网格图
+
+## 可复用到
+- 稀疏数据存储布局细节页
+- 行主序存储映射页
+
+## 不适合复用的场景
+- 方法效果结果页
+- 研究路线总览页

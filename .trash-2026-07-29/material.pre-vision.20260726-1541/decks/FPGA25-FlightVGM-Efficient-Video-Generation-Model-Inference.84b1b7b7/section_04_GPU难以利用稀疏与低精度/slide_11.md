@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 11
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "视频生成实现千倍压缩与开销削减"
+核心论断: "视频生成技术实现千倍尺寸压缩并大幅削减开销"
+本页讲什么: "沿视频技术发展史，说明视频生成模型通过压缩表征，实现相较原始视频约 1000 倍的尺寸压缩与计算开销降低，为后文引出可优化的稀疏与低精度空间做动机铺垫。"
+关键文字: "[\"1000x size compression and overhead reduction\", History of Video]"
+视觉骨架: "[视频发展历史时间线, 千倍压缩对比示意]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.02, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.03, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.04, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.05, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.06, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.07, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.08, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.09, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.10, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.11, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_11.asset.12]"
+适合复用场景: "[视频生成加速的动机铺垫页, 压缩收益量级的对比展示]"
+不适合复用场景: "[硬件架构结构图页, baseline 性能对比表]"
+上页角色: "toc_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "motivation"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "视频生成实现千倍压缩与开销削减"}
+  - {"位置": "下方主体", "内容": "视频发展历史时间线 + 千倍压缩对比示意"}
+alternate_claims:
+  - "视频生成模型通过压缩表征显著降低推理计算开销"
+layout_tag: "mixed"
+---
+# slide 11: 视频生成实现千倍压缩与开销削减
+
+**核心论断**: 视频生成技术实现千倍尺寸压缩并大幅削减开销
+
+## 本页讲什么
+沿视频技术发展史，说明视频生成模型通过压缩表征，实现相较原始视频约 1000 倍的尺寸压缩与计算开销降低，为后文引出可优化的稀疏与低精度空间做动机铺垫。
+
+## 关键文字片段
+- 1000x size compression and overhead reduction
+- History of Video
+
+## 视觉骨架
+- 视频发展历史时间线
+- 千倍压缩对比示意
+
+## 可复用到
+- 视频生成加速的动机铺垫页
+- 压缩收益量级的对比展示
+
+## 不适合复用的场景
+- 硬件架构结构图页
+- baseline 性能对比表

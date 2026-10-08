@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_15",
+  "所属章节": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "页序号": 15,
+  "源文件": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "高互信息论证 token 可稀疏",
+  "核心论断": "高互信息 I(c,R) 表明关键 token 集中、可安全稀疏化",
+  "本页讲什么": "本页用互信息 I(c,R) 刻画上下文 token 与检索结果的关联度，论证少数高互信息 token 承载主要信息、其余可被稀疏化，这是 SpeContext 稀疏 KV 方法的核心理论前提。",
+  "关键文字": [
+    "High Mutual Information I(c,R)"
+  ],
+  "视觉骨架": [
+    "互信息公式 I(c,R)",
+    "高互信息 token 分布示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_15.asset.01",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_15.asset.02"
+  ],
+  "适合复用场景": [
+    "互信息论证 token 稀疏性页",
+    "稀疏 KV 方法理论前提页"
+  ],
+  "不适合复用场景": [
+    "章节导航开场页",
+    "纯工程实现细节页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

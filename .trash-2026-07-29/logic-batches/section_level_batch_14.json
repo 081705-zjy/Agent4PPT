@@ -1,0 +1,1562 @@
+{
+  "batch_index": 14,
+  "patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "paper_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面(含标题/讲者/机构)接一张编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "论文封面+多机构署名式署名 → 用 opening_paper_cover_multi_author_multi_institution",
+        "单页留白骨架 → 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.01",
+          "section_title": "封面与目录开场",
+          "section_role": "opening",
+          "section_narrative": "deck 的开场：封面亮明「推理优化→昇腾芯片」主旨与讲者身份，目录以①高亮方式铺开四章路线（背景→FlashOverlap→Semi-PD→昇腾实践），为全篇建立导航框架",
+          "section_topic_tags": [
+            "报告封面",
+            "四章路线导航",
+            "讲者署名",
+            "章节进度高亮"
+          ],
+          "match_evidence": "2 页节奏: 封面(cover_title_signature) + ①高亮的四章 Contents(toc_progress_highlight), 完全落在开场模式",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature_with_highlight_block",
+              "slide_title": "从大模型推理优化到昇腾芯片的实践（封面）",
+              "slide_claim": "报告主线：从大模型推理优化贯通到昇腾芯片工程实践",
+              "slide_key_text": [
+                "从大模型推理优化到昇腾芯片的实践",
+                "戴国浩",
+                "上海交通大学 / 无问芯穹",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色横条",
+                "居中大标题",
+                "红底高亮色块",
+                "讲者与机构署名区"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_numbered_circles",
+              "slide_title": "Contents 目录（四章路线，①高亮）",
+              "slide_claim": "全篇按四章展开：背景挑战→FlashOverlap→Semi-PD→昇腾实践",
+              "slide_key_text": [
+                "Contents",
+                "① 分布式集群推理的背景和挑战",
+                "② FlashOverlap",
+                "③ Semi-PD",
+                "④ 昇腾芯片上的优化和工程实践"
+              ],
+              "slide_visual_skeleton": [
+                "外框矩形",
+                "带圈序号①-④列表",
+                "当前章高亮/其余灰化",
+                "左侧蓝色进度竖条",
+                "底部机构页脚"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "high"
+    },
+    {
+      "id": "background_scaling_law_concept_ladder_to_sota_challenge_bridge",
+      "title": "背景·尺度律→概念阶梯→SOTA差距→挑战桥接",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "趋势",
+          "概念铺陈",
+          "架构演进",
+          "SOTA",
+          "挑战引出"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_trend_timeline_dual_lane",
+          "count": 1,
+          "position": "start",
+          "purpose": "国内外双泳道时间线铺陈领域演进"
+        },
+        {
+          "archetype": "scaling_law_stage_curve",
+          "count": 1,
+          "position": "start",
+          "purpose": "以一条上扬曲线+多阶段范式点明趋势拐点"
+        },
+        {
+          "archetype": "domain_demand_burst_dual_column",
+          "count": 1,
+          "position": "middle",
+          "purpose": "左右双栏引用权威论断证需求爆发"
+        },
+        {
+          "archetype": "concept_primer_pipeline_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "自底向上引入领域基础概念(如 Prefill/Decode)"
+        },
+        {
+          "archetype": "system_architecture_overview_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "整体系统/集群架构 overview"
+        },
+        {
+          "archetype": "variant_evolution_dual_compare",
+          "count": "2",
+          "position": "middle",
+          "purpose": "分别对部署方式/并行策略等做「旧→新」演进对比"
+        },
+        {
+          "archetype": "related_work_sota_table",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以表格罗列相关工作/SOTA 吞吐+SLA 约束"
+        },
+        {
+          "archetype": "challenge_handoff_numbered_cards",
+          "count": 1,
+          "position": "end",
+          "purpose": "以编号卡片抛出遗留挑战, 桥接后续方法章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "macro_trend_timeline_dual_lane",
+          "to_archetype": "scaling_law_stage_curve",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "scaling_law_stage_curve",
+          "to_archetype": "domain_demand_burst_dual_column",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "domain_demand_burst_dual_column",
+          "to_archetype": "concept_primer_pipeline_diagram",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "concept_primer_pipeline_diagram",
+          "to_archetype": "system_architecture_overview_diagram",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "system_architecture_overview_diagram",
+          "to_archetype": "variant_evolution_dual_compare",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "variant_evolution_dual_compare",
+          "to_archetype": "variant_evolution_dual_compare",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "variant_evolution_dual_compare",
+          "to_archetype": "related_work_sota_table",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "related_work_sota_table",
+          "to_archetype": "challenge_handoff_numbered_cards",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "研究报告型 background 章: 双泳道时间线→尺度律曲线→需求爆发论断→领域基础概念→系统架构→2 轮部署/并行策略演进对比→SOTA 表格→编号挑战卡片桥接方法章, 层层完成概念阶梯搭建",
+      "anti_patterns": [
+        "以宏观供需→政策背书→公式总纲为主 → 用 background_macro_gap_to_policy_to_method_bridge",
+        "以范式对照+同构表格为主 → 用 background_paradigm_shift_dual_era_comparison_table"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_title": "分布式集群推理背景与挑战",
+          "section_role": "background",
+          "section_narrative": "为后续FlashOverlap/semiPD等方法做铺垫：自Scaling Law转向推理侧切入，论证Reasoning引爆推理需求，再自底向上铺陈Prefill/Decode概念、集群引擎架构、PD分离与并行演进，最后以SOTA差距引出遗留挑战",
+          "section_topic_tags": [
+            "Scaling Law 转推理",
+            "Prefill/Decode 概念",
+            "分布式集群推理架构",
+            "PD 分离与并行演进",
+            "SOTA 吞吐对标"
+          ],
+          "match_evidence": "9 页节奏: 双泳道时间线+尺度律曲线+需求爆发双栏+Prefill/Decode 概念+集群架构 overview+PD 与并行两轮演进对比+SOTA 表格+挑战编号卡片, 完整贴合该 pattern",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "macro_trend_timeline_dual_lane",
+              "archetype": "dual_lane_domain_timeline_milestones",
+              "slide_title": "尺度定律逐步转向推理规模扩展",
+              "slide_claim": "大模型沿尺度定律演进，逐步转向推理规模扩展",
+              "slide_key_text": [
+                "尺度定律(Scaling Law)逐步转向推理规模扩展",
+                "2017年谷歌提出Transformer",
+                "2022 OpenAI InstructGPT/ChatGPT",
+                "2024 OpenAI O1开启Test Time Scaling",
+                "2025 DeepSeek R1对标OpenAI O1"
+              ],
+              "slide_visual_skeleton": [
+                "国内外双泳道时间轴",
+                "年份坐标2017-2025",
+                "里程碑事件卡片",
+                "蓝色分区侧标签"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "scaling_law_stage_curve",
+              "archetype": "single_upward_curve_with_three_phase_labels",
+              "slide_title": "Scaling Law三阶段演进至Reasoning",
+              "slide_claim": "算力驱动智能，扩展范式从预训练走向测试时Reasoning",
+              "slide_key_text": [
+                "Pre-Training Scaling",
+                "Post-Training Scaling",
+                "Test-Time Scaling “Reasoning”",
+                "Ref: NVIDIA CEO Jensen Huang Keynote at CES 2025"
+              ],
+              "slide_visual_skeleton": [
+                "智能-算力上扬曲线",
+                "三段扩展范式标注",
+                "趋势箭头"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "domain_demand_burst_dual_column",
+              "archetype": "dual_column_authority_quote_with_big_numbers",
+              "slide_title": "Reasoning模型带来推理需求爆发",
+              "slide_claim": "预训练时代收尾，Reasoning新范式引爆推理算力需求",
+              "slide_key_text": [
+                "预训练时代即将结束",
+                "Reasoning模型开启“新扩展范式”",
+                "Reasoning推理算力需求增长100倍",
+                "70% AI原生APP占比",
+                "QuestMobile 2025年1月"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏对比面板",
+                "蓝色标题条",
+                "100倍/70%强调数字",
+                "引文来源标注"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "concept_primer_pipeline_diagram",
+              "archetype": "concept_stage_flow_diagram",
+              "slide_title": "LLM推理基础概念：Prefill与Decode",
+              "slide_claim": "LLM推理分Prefill处理prompt与Decode逐token生成两阶段",
+              "slide_key_text": [
+                "Prefill和Decode",
+                "自回归生成",
+                "input prompt → Prefill阶段",
+                "Decode阶段逐token生成",
+                "output: def bubble…"
+              ],
+              "slide_visual_skeleton": [
+                "自回归生成流程框",
+                "Prefill/Decode阶段箭头",
+                "token序列示意"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "system_architecture_overview_diagram",
+              "archetype": "layered_system_architecture_overview",
+              "slide_title": "分布式集群推理引擎Overview",
+              "slide_claim": "集群推理引擎由API Server调度多推理实例协同完成请求",
+              "slide_key_text": [
+                "API Server",
+                "Multi-requests / Results",
+                "集群推理引擎(调度)",
+                "推理实例1…n",
+                "KVCache / 显存Offloading"
+              ],
+              "slide_visual_skeleton": [
+                "分层系统架构框图",
+                "顶层API Server",
+                "多推理实例并列panel",
+                "请求/结果箭头"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "variant_evolution_dual_compare",
+              "archetype": "before_after_deployment_dual_diagram",
+              "slide_title": "推理实例：从PD融合到PD分离",
+              "slide_claim": "推理架构由PD融合演进为PD分离以规避相互干扰",
+              "slide_key_text": [
+                "从PD融合到PD分离",
+                "PD融合",
+                "PD分离",
+                "GPU SMs / GPU HBM",
+                "Prefill算得KV cache传给Decode"
+              ],
+              "slide_visual_skeleton": [
+                "左自回归流程框",
+                "中PD融合框图",
+                "右PD分离框图",
+                "GPU SM/HBM与KV传输箭头"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "variant_evolution_dual_compare",
+              "archetype": "before_after_parallel_strategy_dual_diagram",
+              "slide_title": "并行策略：从TP到DP+EP",
+              "slide_claim": "并行由TP演进为DP+EP以匹配KVcache与FFN扩展",
+              "slide_key_text": [
+                "从TP到DP+EP",
+                "DeepSeek-671B",
+                "针对Attention KVcache(MLA/MQA)",
+                "针对FFN层",
+                "EP扩展专家至256 / All2All"
+              ],
+              "slide_visual_skeleton": [
+                "左TP并行图(AllReduce)",
+                "右DP+EP并行图(All2All)",
+                "Attention/FFN两行对照",
+                "大箭头演进"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "related_work_sota_table",
+              "archetype": "related_work_sota_comparison_table",
+              "slide_title": "分布式集群推理相关工作和SOTA",
+              "slide_claim": "主流开源/闭源方案普遍以PD分离+DP+EP达成SOTA吞吐",
+              "slide_key_text": [
+                "开源/闭源相关工作",
+                "DeepSeek PD分离 DP+EP 73.7k/14.8k",
+                "SGLang PD分离 DP+EP 52.3K/22.3K",
+                "NVIDIA Dynamo / vLLM",
+                "TTFT≤2s、TPOT≤100ms SLA"
+              ],
+              "slide_visual_skeleton": [
+                "相关工作对比表格",
+                "开源/闭源分组",
+                "Prefill/Decode吞吐列",
+                "SLA约束标注"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "challenge_handoff_numbered_cards",
+              "archetype": "numbered_challenge_cards_with_placeholder",
+              "slide_title": "分布式集群推理仍存在诸多挑战",
+              "slide_claim": "集群推理仍存挑战，引出FlashOverlap/semiPD等后续工作",
+              "slide_key_text": [
+                "分布式集群推理仍然存在诸多挑战",
+                "②FlashOverlap 计算通信重叠新探索",
+                "③semiPD PD相关",
+                "④后续研究方向"
+              ],
+              "slide_visual_skeleton": [
+                "左侧留白示意框(diagram占位)",
+                "右侧②③④编号卡片",
+                "挑战引出列表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_pain_critique_design_goals_progressive_mechanism_reveal",
+      "title": "方法·痛点→批相关工作→设计目标→机制多帧递推→加速比",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          9,
+          13
+        ],
+        "must_have_in_chapter_purpose": [
+          "痛点",
+          "相关工作批判",
+          "设计目标",
+          "机制递推",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前方法章"
+        },
+        {
+          "archetype": "pain_point_multi_mode_table",
+          "count": 1,
+          "position": "start",
+          "purpose": "以多列/多行汇总表定量立痛点(开销 10-40%)"
+        },
+        {
+          "archetype": "prior_work_critique_with_timeline",
+          "count": 2,
+          "position": "middle",
+          "purpose": "并列 2 页批判现有 2 类方案, 每页以时间线+图示指出缺陷"
+        },
+        {
+          "archetype": "design_goals_criteria_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以对比表归纳理想方案应达成的多维度目标"
+        },
+        {
+          "archetype": "mechanism_progressive_build_stage",
+          "count": "4-5",
+          "position": "middle",
+          "purpose": "在同一张时间线/机制图上逐帧叠加子机制(Reorder→Signal→流水→融合→全景)"
+        },
+        {
+          "archetype": "single_experiment_result_speedup_callout",
+          "count": 1,
+          "position": "end",
+          "purpose": "以实测配置+多组图表+加速比条收尾"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "pain_point_multi_mode_table",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "pain_point_multi_mode_table",
+          "to_archetype": "prior_work_critique_with_timeline",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "prior_work_critique_with_timeline",
+          "to_archetype": "prior_work_critique_with_timeline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "prior_work_critique_with_timeline",
+          "to_archetype": "design_goals_criteria_table",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "design_goals_criteria_table",
+          "to_archetype": "mechanism_progressive_build_stage",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "mechanism_progressive_build_stage",
+          "to_archetype": "mechanism_progressive_build_stage",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "mechanism_progressive_build_stage",
+          "to_archetype": "single_experiment_result_speedup_callout",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "系统优化型方法章: 章首目录→定量痛点→批 2 类现有方案→设计目标→在同张机制图上逐帧叠加(Reorder→Signal→流水→融合)→实测加速比收尾, 强调「批判-立靶-递进构建-数字收束」闭环",
+      "anti_patterns": [
+        "单层见顶→全栈协同→架构+叠乘 → 用 method_plateau_argument_to_full_stack_co_design",
+        "对比方案矩阵后合成 → 用 method_tradeoff_synthesis_paradigm_matrix_to_solution",
+        "多并列技术意图-流程-硬件三段 → 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_title": "FlashOverlap计算通信重叠",
+          "section_role": "method",
+          "section_narrative": "deck 第一个方法章。先立「推理通信开销 10-40%」痛点，批两类现有重叠方案缺陷，再分层揭示 FlashOverlap 的 reorder+信号细粒度重叠机制，以实测 1.07-1.7x 收尾。",
+          "section_topic_tags": [
+            "GEMM 与通信重叠",
+            "FlashOverlap 机制",
+            "Reorder+Signal 细粒度重叠",
+            "算子融合 remapping",
+            "多卡实测加速比"
+          ],
+          "match_evidence": "11 页节奏: 目录+通信开销 10-40% 汇总+2 页批相关方案(MegaScale/cublasmp)+3 目标对比表+5 帧机制递推(Reorder→Signal→流水→融合→全景)+实测 1.07-1.7x, 完整贴合 pattern",
+          "slides": [
+            {
+              "slide_index": 12,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_numbered_circles",
+              "slide_title": "Contents:进入 FlashOverlap 章节",
+              "slide_claim": "本 deck 四大工作之第二项 FlashOverlap 正式登场",
+              "slide_key_text": [
+                "Contents",
+                "FlashOverlap——计算通信重叠新探索",
+                "分布式集群推理的背景和挑战",
+                "Semi-PD",
+                "面向国产芯片的优化"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框目录卡",
+                "四条带序号圆标条目",
+                "当前项左侧蓝色高亮条"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "pain_point_multi_mode_table",
+              "archetype": "multi_mode_overhead_comparison_table",
+              "slide_title": "大模型推理/训练中通信开销不可忽略",
+              "slide_claim": "三类并行模式均引入 10-40% 通信开销,构成推理性能瓶颈",
+              "slide_key_text": [
+                "大模型推理/训练中通信开销不可忽略",
+                "张量并行 AllReduce 10-30%",
+                "张量序列并行 ReduceScatter 10-40%",
+                "专家并行/MoE All2All 10-40%",
+                "并行模式 通信模式 典型通信开销"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列并行模式数据流图",
+                "Rank0…Rank n 数据流箭头",
+                "并行模式-通信开销汇总表"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "prior_work_critique_with_timeline",
+              "archetype": "prior_work_gemm_timeline_critique",
+              "slide_title": "GEMM 与通信重叠相关工作(方法一)",
+              "slide_claim": "方法一按 Tile 粒度拆分重叠,但引入额外拆分开销",
+              "slide_key_text": [
+                "GEMM 和通信操作重叠——相关工作",
+                "沿着一个维度将GEMM计算切分",
+                "按照更细的 Tile 粒度拆分",
+                "沿 M 维度切分",
+                "引入额外开销",
+                "[1] MegaScale: Scaling LLM training to more than 10,000 GPUs, NSDI"
+              ],
+              "slide_visual_skeleton": [
+                "计算/通信/Idle 图例",
+                "GEMM 分块时间线",
+                "A/B/C 矩阵分块示意",
+                "Tile 拆分对比图"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "prior_work_critique_with_timeline",
+              "archetype": "prior_work_gemm_timeline_critique",
+              "slide_title": "GEMM 与通信重叠相关工作(方法二)",
+              "slide_claim": "方法二细粒度重叠通信,但需与计算频繁交互干扰计算",
+              "slide_key_text": [
+                "GEMM 和通信操作重叠——相关工作",
+                "沿着一个维度将GEMM计算切分",
+                "沿 M 维度细粒度切分",
+                "计算与通信频繁交互",
+                "干扰计算",
+                "[1] NVIDIA. cublasmp: high-performance cuda library for distributed dense linear algebra, 2025"
+              ],
+              "slide_visual_skeleton": [
+                "计算/通信/Idle 图例",
+                "GEMM 分块时间线",
+                "细粒度切分数据流图",
+                "计算-通信交互箭头"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "design_goals_criteria_table",
+              "archetype": "design_goals_criteria_dimension_table",
+              "slide_title": "细粒度重叠的三项设计目标",
+              "slide_claim": "理想重叠需同时满足计算无干扰、通信无感知、细粒度",
+              "slide_key_text": [
+                "细粒度重叠",
+                "计算无干扰",
+                "通信无感知",
+                "张量分解",
+                "算子融合",
+                "细粒度重叠需同时满足计算无干扰与通信无感知"
+              ],
+              "slide_visual_skeleton": [
+                "GEMM 计算-通信时间线",
+                "计算/通信/Idle 图例",
+                "方案-三维度对比表格"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "mechanism_progressive_build_stage",
+              "archetype": "mechanism_reorder_map_table_stage",
+              "slide_title": "FlashOverlap:Reorder+Map Table 机制",
+              "slide_claim": "以 Map Table 记录 Reorder,让通信无需感知计算分块顺序",
+              "slide_key_text": [
+                "FlashOverlap——基于信号的计算通信重叠",
+                "Reorder",
+                "Map Table",
+                "0→0 5→1 2→2 4→3 1→4 3→5",
+                "G1 G2 G3",
+                "Main loop Epilogue"
+              ],
+              "slide_visual_skeleton": [
+                "GEMM 三阶段时间线",
+                "Map Table 映射框",
+                "Reorder 重排模块",
+                "A/B/C 矩阵分块图"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "mechanism_progressive_build_stage",
+              "archetype": "mechanism_signal_trigger_stage",
+              "slide_title": "FlashOverlap:信号触发跨卡通信",
+              "slide_claim": "计算完成即发信号,通信等信号后启动重叠搬运",
+              "slide_key_text": [
+                "FlashOverlap——基于信号的计算通信重叠",
+                "Signal",
+                "Wait for Computation",
+                "Inter-GPU Comm.",
+                "Reorder + Map Table",
+                "Timeline"
+              ],
+              "slide_visual_skeleton": [
+                "GEMM 三阶段时间线",
+                "Signal 触发标记",
+                "Inter-GPU Comm. 块",
+                "等待计算的通信轨道"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "mechanism_progressive_build_stage",
+              "archetype": "mechanism_multi_block_pipeline_stage",
+              "slide_title": "FlashOverlap:多分块信号流水重叠",
+              "slide_claim": "各分块信号依次触发通信,形成计算-通信流水重叠",
+              "slide_key_text": [
+                "FlashOverlap——基于信号的计算通信重叠",
+                "Signal",
+                "Inter-GPU Comm.",
+                "Wait for Computation",
+                "Reorder",
+                "Timeline"
+              ],
+              "slide_visual_skeleton": [
+                "GEMM 三阶段时间线",
+                "多个 Signal 触发点",
+                "多段 Inter-GPU Comm. 流水",
+                "Reorder 模块序列"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "mechanism_progressive_build_stage",
+              "archetype": "mechanism_operator_fusion_remap_stage",
+              "slide_title": "FlashOverlap:算子融合与重映射",
+              "slide_claim": "通信后 element-wise 算子融合并重映射,消除重排开销",
+              "slide_key_text": [
+                "FlashOverlap——基于信号的计算通信重叠",
+                "Element-wise operator fused with remapping",
+                "Reorder",
+                "Signal",
+                "Stall for Communication",
+                "Inter-GPU Comm."
+              ],
+              "slide_visual_skeleton": [
+                "GEMM 计算-通信时间线",
+                "Signal 触发点序列",
+                "右侧算子融合重映射框",
+                "Reorder 还原模块"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "mechanism_progressive_build_stage",
+              "archetype": "mechanism_full_panorama_annotated",
+              "slide_title": "FlashOverlap:整体机制全景",
+              "slide_claim": "Reorder+信号+融合重映射协同实现无感知细粒度重叠",
+              "slide_key_text": [
+                "FlashOverlap——基于信号的计算通信重叠",
+                "Signal",
+                "Element-wise operator fused with remapping",
+                "Reorder",
+                "Stall for Communication",
+                "Inter-GPU Comm."
+              ],
+              "slide_visual_skeleton": [
+                "GEMM 全阶段时间线",
+                "多 Signal 触发标记",
+                "多段通信流水",
+                "算子融合重映射框",
+                "机制说明注释"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "single_experiment_result_speedup_callout",
+              "archetype": "single_experiment_result_speedup_callout",
+              "slide_title": "计算通信重叠效果:1.07-1.7x 加速",
+              "slide_claim": "FlashOverlap 在多卡多算子上实现 1.07-1.7x 端到端加速",
+              "slide_key_text": [
+                "计算通信重叠效果",
+                "测试配置 2卡-8卡",
+                "A800 4090",
+                "AllReduce ReduceScatter All2All",
+                "Github",
+                "FlashOverlap 实现 1.07-1.7x 加速"
+              ],
+              "slide_visual_skeleton": [
+                "测试配置说明框",
+                "多组性能对比图表",
+                "通信原语分组",
+                "Github 开源标注",
+                "结论加速比条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "method_tradeoff_synthesis_paradigm_matrix_to_solution",
+      "title": "方法·双范式对比矩阵→取长合成→细节适配→多组实测",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "两种范式对比",
+          "取长合成",
+          "技术细节",
+          "实测收益"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前方法章"
+        },
+        {
+          "archetype": "dual_demand_challenge_scene",
+          "count": 1,
+          "position": "start",
+          "purpose": "以场景图立本章双重需求挑战(如低延时+高吞吐)"
+        },
+        {
+          "archetype": "core_challenge_three_pillars",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三列并列拆解核心技术挑战"
+        },
+        {
+          "archetype": "paradigm_dual_intro_architecture",
+          "count": 1,
+          "position": "middle",
+          "purpose": "并列展示两种候选范式的架构框图"
+        },
+        {
+          "archetype": "paradigm_pros_cons_single_analysis",
+          "count": 2,
+          "position": "middle",
+          "purpose": "各分一页,分别标注两范式的优点与缺点"
+        },
+        {
+          "archetype": "tradeoff_synthesis_matrix",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 2×2 矩阵/✓✗ 标记对比两范式互补空缺"
+        },
+        {
+          "archetype": "synthesized_solution_headline_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以取两✓合成的方案总图正式提出新方法"
+        },
+        {
+          "archetype": "solution_technical_details_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "从计算/存储/时序展开方案技术细节"
+        },
+        {
+          "archetype": "solution_deployment_adaptation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "单实例/集群两类部署场景适配示意"
+        },
+        {
+          "archetype": "measured_throughput_or_latency_curve",
+          "count": "3-4",
+          "position": "end",
+          "purpose": "多组实测结果(吞吐/延时/完成率), 单实例先集群后"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "dual_demand_challenge_scene",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "dual_demand_challenge_scene",
+          "to_archetype": "core_challenge_three_pillars",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "core_challenge_three_pillars",
+          "to_archetype": "paradigm_dual_intro_architecture",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "paradigm_dual_intro_architecture",
+          "to_archetype": "paradigm_pros_cons_single_analysis",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "paradigm_pros_cons_single_analysis",
+          "to_archetype": "paradigm_pros_cons_single_analysis",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "paradigm_pros_cons_single_analysis",
+          "to_archetype": "tradeoff_synthesis_matrix",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "tradeoff_synthesis_matrix",
+          "to_archetype": "synthesized_solution_headline_diagram",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "synthesized_solution_headline_diagram",
+          "to_archetype": "solution_technical_details_diagram",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "solution_technical_details_diagram",
+          "to_archetype": "solution_deployment_adaptation",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "solution_deployment_adaptation",
+          "to_archetype": "measured_throughput_or_latency_curve",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "measured_throughput_or_latency_curve",
+          "to_archetype": "measured_throughput_or_latency_curve",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "以「双范式对比→2×2 优缺矩阵→取长合成新方案→技术细节+部署适配→多组实测」组织的方法章, 强调用互补矩阵合法化『鱼与熊掌兼得』的新方案",
+      "anti_patterns": [
+        "先立痛点批相关工作再逐帧递推机制 → 用 method_pain_critique_design_goals_progressive_mechanism_reveal",
+        "单层见顶+全栈架构+叠乘收益 → 用 method_plateau_argument_to_full_stack_co_design",
+        "多并列技术各出意图-流程-硬件 → 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_title": "Semi-PD资源调度方案",
+          "section_role": "method",
+          "section_narrative": "承接 FlashOverlap 的第二个方法章节。由集群推理挑战切入，对比融合式/分离式实例优缺点，导出 semi-PD『计算分离&存储融合』方案，末以技术细节、应用适配与单实例/集群实测收益（吞吐+10%、延时数倍）收束。",
+          "section_topic_tags": [
+            "集群推理挑战",
+            "PD融合/分离对比",
+            "Semi-PD计算分离存储融合",
+            "SM 分区调度",
+            "吞吐/延时/完成率实测"
+          ],
+          "match_evidence": "14 页节奏: 目录+双需求场景+三大挑战+2 范式架构+2 页优缺分析+2×2 矩阵+合成方案+技术细节+部署适配+4 组实测(3 单实例+1 集群), 完整体现『对比→合成→实测』闭环",
+          "slides": [
+            {
+              "slide_index": 23,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_numbered_circles",
+              "slide_title": "Contents 目录页：定位 Semi-PD 章节",
+              "slide_claim": "报告进入第三项工作 Semi-PD 资源调度方案",
+              "slide_key_text": [
+                "分布式集群推理的背景和挑战",
+                "FlashOverlap——计算通信重叠新探索",
+                "Semi-PD"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框四项编号列表",
+                "③号圆圈高亮标记",
+                "左侧竖向进度条"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "dual_demand_challenge_scene",
+              "archetype": "cloud_service_dual_demand_scene",
+              "slide_title": "挑战：大模型集群推理的双重需求",
+              "slide_claim": "集群推理须同时满足用户低延时与系统高吞吐率",
+              "slide_key_text": [
+                "挑战：大模型集群推理",
+                "用户需求：低延时",
+                "系统需求：高吞吐率",
+                "云侧集群"
+              ],
+              "slide_visual_skeleton": [
+                "云侧集群服务示意图",
+                "用户需求/系统需求双侧标注",
+                "多面板请求流示意"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "core_challenge_three_pillars",
+              "archetype": "three_pillar_challenge_panel",
+              "slide_title": "背景：集群推理三大核心技术挑战",
+              "slide_claim": "集群推理分别面临计算、调度、存储三大挑战",
+              "slide_key_text": [
+                "背景：大模型集群推理核心技术",
+                "计算挑战：提升生成式模型的计算利用率",
+                "调度挑战：不同用户间资源竞争及延时需求",
+                "存储挑战"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列挑战 panel",
+                "计算/调度/存储三分区标题",
+                "各列图标+说明"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "paradigm_dual_intro_architecture",
+              "archetype": "paradigm_dual_deployment_architecture",
+              "slide_title": "背景：融合式与分离式实例两种部署",
+              "slide_claim": "推理部署分为 P/D 融合式与 P/D 分离式两条路线",
+              "slide_key_text": [
+                "背景：融合式与分离式实例",
+                "融合式实例：P/D 计算和存储共享资源",
+                "分离式实例：P/D 计算和存储资源分离"
+              ],
+              "slide_visual_skeleton": [
+                "左右双框对照架构图",
+                "GPU SMs / GPU HBM 分层示意",
+                "Prefill/Decode 队列示意"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "paradigm_pros_cons_single_analysis",
+              "archetype": "paradigm_single_pros_cons_diagram",
+              "slide_title": "思路：融合式实例的优缺点分析",
+              "slide_claim": "融合式共享资源利用率高但 P/D 相互干扰",
+              "slide_key_text": [
+                "思路：融合式与分离式实例分析",
+                "融合式实例：P/D 计算和存储共享资源",
+                "P/D 共享同一份 KV cache"
+              ],
+              "slide_visual_skeleton": [
+                "统一部署 P/D 架构框图",
+                "优点/缺点标注框",
+                "共享 KV cache 指向示意"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "paradigm_pros_cons_single_analysis",
+              "archetype": "paradigm_single_pros_cons_diagram",
+              "slide_title": "思路：分离式实例的优缺点分析",
+              "slide_claim": "分离式可独立控制资源但利用率失衡(P23% vs D72%)",
+              "slide_key_text": [
+                "思路：融合式与分离式实例分析",
+                "分离式实例：P/D 计算和存储资源分离",
+                "P: 23% vs D: 72%*",
+                "*Llama3-70B, Prefill实例TP=4, Decode实例TP=4, ShareGPT数据集"
+              ],
+              "slide_visual_skeleton": [
+                "分离部署 P/D 双实例框图",
+                "优点/缺点标注框",
+                "P/D 利用率数值对比"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "tradeoff_synthesis_matrix",
+              "archetype": "two_by_two_pros_cons_matrix",
+              "slide_title": "小结：融合式与分离式各有一优一劣",
+              "slide_claim": "融合式与分离式在计算与存储上各占一优一劣",
+              "slide_key_text": [
+                "融合式（统一部署）",
+                "分离式（分离部署）",
+                "P/D 共享同一个 KV cache（✓）",
+                "P/D 独立控制计算资源（✓）",
+                "P: 23% vs D: 72%*"
+              ],
+              "slide_visual_skeleton": [
+                "2×2 优缺点对比矩阵",
+                "计算/存储双维度分行",
+                "✓/✗ 标记"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "synthesized_solution_headline_diagram",
+              "archetype": "synthesized_solution_pick_both_check",
+              "slide_title": "方案：semi-PD『计算分离&存储融合』",
+              "slide_claim": "semi-PD 取两者之长：计算分离且存储融合",
+              "slide_key_text": [
+                "方案：semi-PD 实例",
+                "计算分离 & 存储融合",
+                "P/D 独立控制计算资源",
+                "P/D 共享同一份 KV cache"
+              ],
+              "slide_visual_skeleton": [
+                "GPU SMs 蓝黄分区示意",
+                "semi-PD 实例框图",
+                "右侧两个✓能力绿框"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "solution_technical_details_diagram",
+              "archetype": "solution_compute_storage_timing_triple",
+              "slide_title": "方案：semi-PD 技术细节（计算/存储/时序）",
+              "slide_claim": "semi-PD 靠 SM 分区与共享存储实现 P/D 并行",
+              "slide_key_text": [
+                "方案：semi-PD 技术细节：计算分离 & 存储融合",
+                "计算：SM 分区，P/D worker 独立控制",
+                "存储：P/D 共享 KV cache 无需搬运",
+                "时序：多 worker 并行执行"
+              ],
+              "slide_visual_skeleton": [
+                "GPU SM 分区网格图",
+                "Prefill/Decode worker 时序泳道",
+                "共享 KV cache 存储示意"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "solution_deployment_adaptation",
+              "archetype": "solution_single_instance_cluster_adaptation",
+              "slide_title": "方案：semi-PD 应用适配（单实例/集群）",
+              "slide_claim": "semi-PD 可适配单实例与集群两类推理场景",
+              "slide_key_text": [
+                "方案：semi-PD 应用适配",
+                "实例推理场景",
+                "集群推理场景",
+                "API server / 调度模块",
+                "KV cache 传输",
+                "*以TP=2, PP=2为例"
+              ],
+              "slide_visual_skeleton": [
+                "左单实例 semi-PD 部署框图",
+                "右集群调度架构图",
+                "Prefill/Decode/semi-PD worker 模块"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "measured_throughput_or_latency_curve",
+              "archetype": "measured_throughput_scatter_curve",
+              "slide_title": "实例推理结果：吞吐率提升约 10%",
+              "slide_claim": "semi-PD+SGLang 较 SGLang 吞吐提升约 10%",
+              "slide_key_text": [
+                "实例推理结果：更低的延时，更高的吞吐率",
+                "semi-PD+SGLang vs SGLang",
+                "DeepSeek-V3, FP8, TP8, H200",
+                "输入 2k, 输出 256",
+                "吞吐提升约 10%"
+              ],
+              "slide_visual_skeleton": [
+                "吞吐-请求速率散点图",
+                "双方案 tps 数值标注",
+                "左侧配置说明框"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "measured_throughput_or_latency_curve",
+              "archetype": "measured_latency_dual_curve",
+              "slide_title": "实例推理效果：首/平均 Token 延时大幅下降",
+              "slide_claim": "semi-PD 使 P99 TTFT 降 78%、ITL 降 5.6 倍",
+              "slide_key_text": [
+                "实例推理效果：首 Token 延时和 Token 平均延时",
+                "P99 TTFT：请求 99% 的首 Token 延时上限",
+                "P99 ITL：请求 99% 的 Token 间延时上限",
+                "降低 78%",
+                "降低 5.6 倍"
+              ],
+              "slide_visual_skeleton": [
+                "P99 TTFT 曲线图",
+                "P99 ITL 曲线图",
+                "降幅倍数标注箭头"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_pattern": "measured_throughput_or_latency_curve",
+              "archetype": "measured_completion_rate_time_series",
+              "slide_title": "实例推理效果：请求完成率实时对比",
+              "slide_claim": "固定请求速率下 semi-PD 请求完成率持续领先",
+              "slide_key_text": [
+                "实例推理效果：请求完成率实时对比",
+                "semi-PD+SGLang vs SGLang",
+                "DeepSeek-V3, FP8, TP8, H20",
+                "请求速率 = 4 request/s"
+              ],
+              "slide_visual_skeleton": [
+                "请求完成率-时间曲线",
+                "双方案曲线对照",
+                "左侧配置说明框"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "measured_throughput_or_latency_curve",
+              "archetype": "measured_cluster_completion_rate_time_series",
+              "slide_title": "集群推理效果：请求完成率实时对比并开源",
+              "slide_claim": "集群场景 semi-PD+Dynamo 完成率优于原生 Dynamo",
+              "slide_key_text": [
+                "集群推理效果：请求完成率实时对比",
+                "semi-PD+Dynamo vs NVIDIA Dynamo",
+                "DeepSeek-V2-Lite, 8*A800 80GB",
+                "2P6D vs 1P3D4S(含 4 卡 semi-PD)",
+                "代码已 Github 开源"
+              ],
+              "slide_visual_skeleton": [
+                "集群请求完成率时序曲线",
+                "2P6D/1P3D4S 配置说明",
+                "左侧 baseline 说明框"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "case_study_stack_compare_engineering_practices_drilldown",
+      "title": "案例·软件栈对比→三项工程实践逐层加速",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "国产芯片",
+          "工程实践",
+          "软件栈对比",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮工程实践章"
+        },
+        {
+          "archetype": "stack_comparison_practices_roadmap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以左表(NV vs 国产芯片多维度对比)+右侧三项工程实践编号清单立路线图"
+        },
+        {
+          "archetype": "practice_operator_optimization_speedup",
+          "count": 1,
+          "position": "middle",
+          "purpose": "工程实践之一:算子优化(GEMM/groupGEMM)+ 具体加速倍数"
+        },
+        {
+          "archetype": "practice_communication_overlap_port",
+          "count": 1,
+          "position": "middle",
+          "purpose": "工程实践之二:自研通信重叠方法在目标芯片上的移植与加速"
+        },
+        {
+          "archetype": "practice_elastic_scheduling_arch",
+          "count": 1,
+          "position": "end",
+          "purpose": "工程实践之三:云原生弹性扩缩容+PD 分离资源调度架构"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "stack_comparison_practices_roadmap",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "stack_comparison_practices_roadmap",
+          "to_archetype": "practice_operator_optimization_speedup",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "practice_operator_optimization_speedup",
+          "to_archetype": "practice_communication_overlap_port",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "practice_communication_overlap_port",
+          "to_archetype": "practice_elastic_scheduling_arch",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "国产/异构芯片落地类案例章: 目录→NV vs 国产芯片软件栈横向对比(锁定三项工程实践)→算子级优化+加速比→系统级通信重叠移植+加速比→集群级弹性调度架构收束, 遵循『算子→系统→集群』逐级递进",
+      "anti_patterns": [
+        "三大平台总览+代表作四象限 → 用 case_study_platform_overview_evidence_direction_pairs",
+        "多轮 Observation-Solution + 端到端消融 → 用 case_study_multi_observation_solution_pairs_with_end_to_end"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+          "section_title": "昇腾芯片优化与工程实践",
+          "section_role": "case_study",
+          "section_narrative": "全deck收尾章，把前述FlashOverlap/Semi-PD等方法落地到昇腾；先以NV软件栈对比锁定GEMM算子、通信重叠适配、弹性扩缩容三项工程实践，再逐层给出实测加速收益",
+          "section_topic_tags": [
+            "英伟达 vs 昇腾软件栈",
+            "GEMM 算子优化",
+            "FlashOverlap 移植适配",
+            "云原生弹性扩缩容",
+            "PD 分离 KV 传输"
+          ],
+          "match_evidence": "5 页节奏: 目录+NV/昇腾软件栈对比→三项工程实践(GEMM 1.5×/groupGEMM 1.8×、FlashOverlap 移植 +35%、弹性扩缩容架构), 严格贴合『算子→系统→集群』递进",
+          "slides": [
+            {
+              "slide_index": 37,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight_numbered_circles",
+              "slide_title": "目录页:定位第四部分工程实践",
+              "slide_claim": "报告进入第四部分——昇腾芯片优化与工程实践",
+              "slide_key_text": [
+                "Contents",
+                "分布式集群推理的背景和挑战",
+                "计算通信重叠新探索",
+                "从PD分离到PD融合",
+                "昇腾芯片优化与工程实践"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框Contents标题",
+                "1-4编号圆点列表",
+                "第4项圆圈高亮"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "stack_comparison_practices_roadmap",
+              "archetype": "vendor_stack_compare_with_practices_list",
+              "slide_title": "昇腾与英伟达LLM软件栈对比及工程实践",
+              "slide_claim": "对比NV软件栈锁定GEMM/通信重叠/弹性扩缩容三项工程实践",
+              "slide_key_text": [
+                "昇腾和英伟达在LLM相关软件栈上的对比",
+                "体系结构:SIMT vs SIMD",
+                "编程语言:CUDA+Triton+CUTLASS vs AscendC",
+                "通信:NCCL+NVSHMEM vs HCCL",
+                "工程实践:①GEMM算子 ②FlashOverlap ③弹性扩缩容"
+              ],
+              "slide_visual_skeleton": [
+                "紫色双列对比表",
+                "四行维度分层",
+                "右侧三项编号实践清单"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_pattern": "practice_operator_optimization_speedup",
+              "archetype": "operator_dual_panel_speedup_bullets",
+              "slide_title": "优化LLM推理关键算子:GEMM与groupGEMM",
+              "slide_claim": "自研GEMM/groupGEMM相比aclNN分别提速约1.5倍/1.8倍",
+              "slide_key_text": [
+                "基于CCE指令优化流水",
+                "优化L2->L1-L0数据搬运",
+                "GEMM算子相比aclNN性能提升约1.5倍",
+                "调整AIC/AIV分核策略",
+                "groupGEMM相比aclNN性能提升约1.8倍"
+              ],
+              "slide_visual_skeleton": [
+                "上下两个蓝色标签面板",
+                "GEMM/groupGEMM分区",
+                "bullet要点列表"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "practice_communication_overlap_port",
+              "archetype": "method_port_timeline_speedup",
+              "slide_title": "FlashOverlap在昇腾上的高效优化适配",
+              "slide_claim": "FlashOverlap相比aclNN+HCCL计算通信重叠提速约35%",
+              "slide_key_text": [
+                "基于AscendC模板库适配",
+                "融合Kernel实现计算通信重叠",
+                "通信调用HCCL接口",
+                "定位社区3处问题并提交5+ bug issue",
+                "FlashOverlap相比aclNN+HCCL提升约35%"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色标签+bullet要点",
+                "红色对比箭头",
+                "两条Timeline时序对比"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "practice_elastic_scheduling_arch",
+              "archetype": "cloud_native_pd_split_dispatch_arch",
+              "slide_title": "弹性扩缩容:云原生智能路由与PD分离",
+              "slide_claim": "云原生弹性伸缩+智能路由实现PD分离的高效KVCache传输",
+              "slide_key_text": [
+                "根据负载及前缀匹配程度智能路由",
+                "P-D分离服务:弹性伸缩/智能路由/PD分离",
+                "大模型:DP Attention、EP FFN、all2all通信",
+                "KVCache基于LLM-DataDist高效传输",
+                "PrefillCluster与DecodeCluster分组调度"
+              ],
+              "slide_visual_skeleton": [
+                "用户到集群的分层框图",
+                "PrefillCluster/DecodeCluster多组堆叠",
+                "右侧云原生/大模型/KVCache三标签块"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_speaker_thanks_with_recruitment_collaboration_cta",
+      "title": "收尾·讲者致谢+招聘/合作邀约触点",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          1,
+          2
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "招聘",
+          "合作邀约",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "thanks_with_recruitment_collaboration_panels",
+          "count": 1,
+          "position": "start",
+          "purpose": "顶部讲者信息+两个 CTA 按钮(招聘/合作)+双栏机构/实验室介绍+底部招聘方向长条"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "学术报告收尾页把技术分享转化为团队招募/合作邀请: 一页集中讲者姓名+日期+邮箱+青粉双 CTA 按钮+研究组与实验室介绍双栏+底部招聘方向, 兼具致谢与信息接口三重功能",
+      "anti_patterns": [
+        "纯 Thanks+作者名单署名 → 用 closing_thanks_single_page_with_full_author_institution_footer",
+        "极简 Thanks 单页 → 用 closing_minimal_thanks_with_speaker_signature",
+        "目录回顾+一句话贡献 → 用 closing_toc_recap_plus_summary_contribution_with_contact"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.06",
+          "section_title": "致谢与联系方式",
+          "section_role": "closing",
+          "section_narrative": "deck 收尾页,在方法与实践论述完成后落到讲者致谢与招聘/合作邀约,把技术分享转化为团队招募与合作触点",
+          "section_topic_tags": [
+            "讲者致谢",
+            "招聘信息触点",
+            "合作邀约触点",
+            "研究组/实验室介绍",
+            "联系方式"
+          ],
+          "match_evidence": "1 页节奏: 顶部讲者信息+青粉双 CTA 按钮+研究组与 NICS-EFC 双栏+底部招聘方向长条, 完全落在带 CTA 的致谢模式",
+          "slides": [
+            {
+              "slide_index": 42,
+              "role_in_pattern": "thanks_with_recruitment_collaboration_panels",
+              "archetype": "thanks_with_dual_cta_and_lab_panels",
+              "slide_title": "致谢与联系方式:讲者信息及招聘合作邀约",
+              "slide_claim": "报告落到讲者致谢,并发出招聘与合作邀约触点",
+              "slide_key_text": [
+                "戴国浩 / 上海交通大学",
+                "2025-5-12",
+                "Email: daiguohao@sjtu.edu.cn",
+                "NICS-EFC(实验室)",
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔横条",
+                "讲者信息文字块",
+                "青/粉两个 CTA 按钮",
+                "两列信息 panel + 底部长条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck 共 6 sections, 抽出 6 patterns。section_01 复用 previous_batches 的 opening_cover_plus_progress_highlighted_toc(id 沿用), 其余 5 sections 各自形成新 pattern。5 个新 pattern 均单碳载, confidence=low, 待后续 batch 合并。 new_archetype: macro_trend_timeline_dual_lane — 以国内外双泳道时间线并列铺陈领域里程碑演进。 new_archetype: scaling_law_stage_curve — 单条上扬曲线上标注多阶段范式(pre-training/post-training/test-time)的趋势曲线。 new_archetype: domain_demand_burst_dual_column — 左右双栏各引一段权威论断+大字数字论证需求爆发。 new_archetype: concept_primer_pipeline_diagram — 用两阶段流程图初次引入领域基础概念(如 Prefill/Decode)。 new_archetype: system_architecture_overview_diagram — 顶层 API+中层调度+多实例并列的分层系统架构 overview。 new_archetype: variant_evolution_dual_compare — 左右两框对比同一维度旧新两种变体(PD 融合→分离、TP→DP+EP)。 new_archetype: related_work_sota_table — 相关工作/SOTA 吞吐/SLA 约束的对比表格。 new_archetype: challenge_handoff_numbered_cards — 章末以编号卡片抛出遗留挑战桥接下章。 new_archetype: pain_point_multi_mode_table — 多模式(并行/通信原语)开销汇总表。 new_archetype: prior_work_critique_with_timeline — 时间线甘特+图示,批判现有方案缺陷。 new_archetype: design_goals_criteria_table — 以对比表列出理想方案在 N 个维度的达成情况。 new_archetype: mechanism_progressive_build_stage — 同一张机制/时间线图上逐帧叠加子机制(reorder→signal→pipeline→fusion→panorama)。 new_archetype: dual_demand_challenge_scene — 服务场景图+双侧标注两类需求(低延时/高吞吐)。 new_archetype: core_challenge_three_pillars — 三列并列拆解核心技术挑战。 new_archetype: paradigm_dual_intro_architecture — 左右并列两候选范式的架构框图。 new_archetype: paradigm_pros_cons_single_analysis — 单页深入一种范式的架构+优点+缺点。 new_archetype: tradeoff_synthesis_matrix — 2×2 或多维度✓✗矩阵展示两方案互补。 new_archetype: synthesized_solution_headline_diagram — 将两方案✓合成到新方案的示意图。 new_archetype: solution_technical_details_diagram — 计算/存储/时序三视角展开方案技术细节。 new_archetype: solution_deployment_adaptation — 单实例与集群双部署场景适配示意。 new_archetype: measured_throughput_or_latency_curve — 请求速率/时间轴上双方案吞吐/延时/完成率对比曲线。 new_archetype: stack_comparison_practices_roadmap — 左表软件栈横向对比+右侧编号工程实践清单。 new_archetype: practice_operator_optimization_speedup — 单页展示算子优化要点+具体加速倍数。 new_archetype: practice_communication_overlap_port — 自研通信重叠方法移植到目标平台+timeline+加速比。 new_archetype: practice_elastic_scheduling_arch — 用户到集群分层框图+云原生/大模型/KVCache 三标签块。 new_archetype: thanks_with_recruitment_collaboration_panels — 讲者信息+双 CTA 按钮(招聘/合作)+双栏机构/实验室介绍+底部招聘方向长条。",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}

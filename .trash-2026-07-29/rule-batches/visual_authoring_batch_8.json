@@ -1,0 +1,540 @@
+{
+  "batch_index": 8,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_author_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover"
+      ],
+      "title": "封面布局·居中大标题+多行作者署名",
+      "description": "学术分享 deck 封面页采用居中大字主标题,下方多行罗列作者名(带 * 共一/上标编号)、单位、通讯邮箱,不含任何 bullet 正文或图表元素。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大标题块' + '多行作者+上标署名' + '单位与通讯邮箱脚注'",
+        "关键文字 包含论文完整题目 + 作者名列表 + 单位缩写 + '<name>@<domain>' 邮箱",
+        "无 '正文段落' / 'bullet 列表' / '柱状图' 等 body 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 1,
+          "评价": "标准封面:居中题目'SpAct-NDP: Efficient LLM Inference...' + 两行作者(带 * 与上标)+ 单位 + 通讯邮箱"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "居中大字+完整署名让听众开场瞬间锁定 deck 主题与讲者身份,任何 body 元素都会分散身份识别焦点",
+      "fix_hint": "把封面主标题放大居中,作者/单位/邮箱按行列在下方,移除封面上一切 bullet/图表",
+      "exceptions": [
+        "品牌型或占位型模板(讲者身份让位于 logo/slogan)"
+      ]
+    },
+    {
+      "id": "toc_layout_hierarchical_with_current_chapter_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "toc",
+        "chapter_opener"
+      ],
+      "title": "目录/章节导航·层级列表+当前章高亮",
+      "description": "目录页与章节切换页共用同一模板:居中大标题 'Outline' 下用二/三级缩进列表罗列所有章节及子项,当前章节以深色高亮,其余章节以灰色显示,起承前启后作用。",
+      "evidence_signals": [
+        "视觉骨架 含 '大标题 Outline' + '缩进列表' + '当前章高亮/它章灰显'",
+        "关键文字 出现 'Outline' 或章节名称序列(Background / Techniques / Experiment Results)",
+        "同一列表在多页反复出现,仅高亮项发生变化"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 2,
+          "评价": "首次目录页,高亮 Background and Challenge"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 12,
+          "评价": "进入核心技术章前的同一目录,高亮 Techniques"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 20,
+          "评价": "进入实验章前的同一目录,黑色高亮 Experiment Results"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "复用同一目录模板并只切换高亮,能让听众持续定位当前进度,减少重新构建心智地图的认知负担",
+      "fix_hint": "章节切换处复用首页目录版式,仅把当前章节改为高亮色,其余转灰,不重排列表顺序",
+      "exceptions": [
+        "极短 deck (总章节 ≤ 2, 目录冗余)"
+      ]
+    },
+    {
+      "id": "problem_approach_paired_page_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "方法章·问题页+方案页成对出现",
+      "description": "方法章每项核心技术使用两页成对结构:第一页(Problem)展示现有做法与量化痛点,第二页(Approach)用 before/after 对照或改造流程给出方案,并回应上一页数字指标。",
+      "evidence_signals": [
+        "相邻两页标题共用同一技术前缀,分别以 '问题/瓶颈' 与 '方案/Approach' 结尾",
+        "第二页视觉骨架含 'before/after 双栏对照' 或 'Approach' 标签",
+        "两页关键文字复用同一指标名称(如 Bank Under-utilization 100%/33%/33%)以形成前后呼应"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 14,
+          "评价": "技术一 Problem 页:bank 100%/33%/33% 欠利用"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 15,
+          "评价": "技术一 Approach 页:before/after 对照,100% Utilized"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 16,
+          "评价": "技术二 Problem 页:激活频率 skew 分布"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 17,
+          "评价": "技术二 Approach 页:离线+在线两阶段块图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 18,
+          "评价": "技术三 Problem 页:掩码解析 ~0.6ms/~20%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "先痛点后方案的两页节奏能建立'问题→解法'因果证据链,单页展开会淹没量化痛点,削弱方案的必要性论证",
+      "fix_hint": "每项核心技术拆成两页:第一页只讲现有做法的量化痛点,第二页用同指标 before/after 展示改进",
+      "exceptions": [
+        "技术极其简单,一页 before/after 已足够",
+        "背景章综述型页面(仅罗列多方案,无自研改进)"
+      ]
+    },
+    {
+      "id": "ending_echoes_cover_layout",
+      "category": "visual",
+      "applicable_role": [
+        "ending"
+      ],
+      "title": "结尾页·呼应封面的题目+署名闭环",
+      "description": "结尾页整页仅居中呈现论文完整题目 + 作者/导师署名,无任何要点总结、图表、感谢语,大量留白,与封面形成首尾对称。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大号标题文字块' + '标题下方作者署名行' + '整体大量留白无图表'",
+        "关键文字 与封面题目完全一致,签名简化为 'X, supervised by Prof. Y'",
+        "不含 'Thanks' / 'Q&A' / '总结' bullet 等常规收束元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 24,
+          "评价": "整页仅题目 + 'Jiaming Xu, supervised by Prof. Guohao Dai',呼应封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "以题目结尾把注意力从细节拉回主张本身,视觉留白让听众记住 deck 的核心命名而非最后一张图",
+      "fix_hint": "结尾页删除感谢语/Q&A/总结 bullet,只保留居中论文题目 + 一行作者/导师署名",
+      "exceptions": [
+        "商业型 deck 需展示 CTA / 联系方式",
+        "教学型 deck 需明确 Q&A 引导"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_sentence_with_verdict",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断用判断句,不用描述句",
+      "description": "每页 '核心论断' 采用'X 是/优于/达到 Y' 的判断句式,直接给出主张或结论,不写'本页讲 X' / '介绍 X' 这类描述句。",
+      "evidence_signals": [
+        "核心论断 含判断动词 '是/优于/领先/引发/达到/胜出/收束'",
+        "核心论断 不以 '本页' / '介绍' / '讲' 开头",
+        "核心论断 长度 ≤ 30 字且句末为陈述结论"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 4,
+          "评价": "'FFN 是日常 LLM 推理 Decode 阶段的主要延迟瓶颈' - 直给判断"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 8,
+          "评价": "'动态剪枝以 >90% 稀疏、<1% 精度损失、2x~10x 加速全面领先'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 19,
+          "评价": "'请求-权重对解析压缩掩码达 90%,提速 3x、省内存 9x'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "判断句让听众一眼抓到结论,描述句只讲主题不给立场,会让整页失去主张,论证链条断裂",
+      "fix_hint": "把 claim 里 '本页/介绍/讲述' 类描述动词换成 '是/优于/达到' 判断动词,直给主张",
+      "exceptions": [
+        "纯过场页(章节封面)claim 可为主题词式短语"
+      ]
+    },
+    {
+      "id": "result_claim_carries_concrete_numeric_speedup",
+      "category": "authoring",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "结果页 claim 必带具体加速/收益数字",
+      "description": "实验结果章 claim 必带 '×'/百分比等硬数字(如 '2.17×'、'>90%'),并注明对齐 baseline 与硬件平台,不写 '效果显著' 这类模糊表述。",
+      "evidence_signals": [
+        "核心论断 含 '\\d+(\\.\\d+)?×' 或 '\\d+%' 等数字",
+        "关键文字 含 'compared with SOTA' / 'baseline' 等对齐词",
+        "关键文字 含具体硬件名(A100 / RTX 3090 / HBM-PIM)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 22,
+          "评价": "'最高 2.17×/1.92× 加速'+ RTX 3090/Tesla A100"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 23,
+          "评价": "'最高 1.53×/1.45× 能效' + 同一 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结果页无数字等于无论证,硬数字+baseline+硬件三件套让加速主张可比可复现,否则听众只能凭感觉判断",
+      "fix_hint": "结果页 claim 写成 '相比 <baseline> 在 <硬件> 上取得 <倍数>× <指标>' 模板",
+      "exceptions": [
+        "定性实验(ablation 的存在性说明)可用比较级替代倍数"
+      ]
+    },
+    {
+      "id": "problem_page_carries_quantified_pain_point",
+      "category": "authoring",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "方法章问题页必带量化痛点",
+      "description": "方法章 Problem 页 claim 或关键文字必带具体百分比/时耗/内存等量化指标(如 '33%'、'~0.6ms'、'~20%'),把'痛点'落实为可测量的坏值。",
+      "evidence_signals": [
+        "标题含 '问题/瓶颈/不均/欠利用' 关键词",
+        "关键文字 含 'Under-utilization 100% 33% 33%' / '~0.6ms' / '~20% of total' 等具体数字",
+        "视觉骨架 含红字标注 / 红框强调痛点数值"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 14,
+          "评价": "Bank 利用率 100%/33%/33% 具体指标"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 18,
+          "评价": "Mask Parsing ~0.6ms、约总推理 20%"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 11,
+          "评价": "GPU 利用率 59%/81%,权重量 28.39GB/15.88GB/102GB"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 3,
+          "原因": "章节开场页仅一句总标语,不承担痛点量化职责"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "量化的痛点=可反驳的坏值,让后一页方案的改进量('从 33% 提到 100%')可直接对齐,方案价值不再靠形容词论证",
+      "fix_hint": "把 Problem 页里'性能差/开销大'等形容词替换为具体百分比/毫秒/GB,并在方案页复用同一指标",
+      "exceptions": [
+        "章节过场/背景概览页(不承担问题量化任务)"
+      ]
+    },
+    {
+      "id": "title_uses_colon_topic_subtopic_pattern",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用'主题:子焦点'冒号结构,不用完整动宾句",
+      "description": "slide 标题偏好'X:Y' 冒号结构,前半为主题定位(技术名/章节名),后半为本页焦点(问题/方案/子对比),不用 '介绍 X' 或 '本节讲 Y' 等动宾句。",
+      "evidence_signals": [
+        "标题含中文冒号 ':' 或英文冒号 ':' 且两侧长度均 ≥ 2 字",
+        "标题不以 '介绍' / '本节' / '我们' 开头",
+        "标题前半重复出现在多页(如 '技术一 权重映射' / '技术二 调度')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 6,
+          "评价": "'剪枝细分:静态剪枝 vs 动态剪枝'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 14,
+          "评价": "'技术一 权重映射:带宽欠利用问题'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 22,
+          "评价": "'加速评估:最高 2.17×/1.92× 加速'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 3,
+          "原因": "章节开场页标题为主题词 'Era of Large Language Models',无冒号结构"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "冒号结构让'主题'与'子焦点'各就其位,听众可用前半锁定章节位置,用后半锁定本页立场,比动宾句信息密度高",
+      "fix_hint": "把 title 里'介绍 X' 类动词去掉,改成 '<技术/章节名>:<本页焦点>' 名词短句",
+      "exceptions": [
+        "章节封面页仅用主题词/口号",
+        "结尾页仅用论文全称"
+      ]
+    },
+    {
+      "id": "multi_column_parallel_comparison_grid_for_technique_survey",
+      "category": "visual",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "综述页·多列并列 panel 网格图对比",
+      "description": "背景章综述多方案时使用 2-3 列并列 panel 布局,每列头部为方案名(Original/Pruning/Quantization、Static/Dynamic),下方用相同结构的矩阵/网格图,让方案差异一眼可视化。",
+      "evidence_signals": [
+        "视觉骨架 含 '2 列并列 panel' / '3 列并列 panel' + '虚线框/网格图'",
+        "关键文字 含并列的方案名(Static X vs Dynamic X)",
+        "各 panel 使用相同图表结构(如权重矩阵网格)以便像素级比较"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 5,
+          "评价": "3 列 Original/Pruning/Quantization 矩阵网格对比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 6,
+          "评价": "2 列 Static/Dynamic Pruning 虚线框 panel"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 7,
+          "评价": "2 列 Static/Dynamic Quantization 同版式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "同结构并列 panel 让方案差异只体现在着色/稀疏模式上,消除版式噪声,读者可专注比较真正的方案差异",
+      "fix_hint": "综述页把 N 个方案放在等宽等高的 N 列 panel 里,共用同一底图结构,仅差异部分变色",
+      "exceptions": [
+        "方案数 = 1 无需对比",
+        "方案维度 > 4 时改用表格"
+      ]
+    },
+    {
+      "id": "comparison_table_with_red_highlight_winner",
+      "category": "visual",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "对比表·红字高亮胜出列作为切入点",
+      "description": "综述章末用多列 × 多行对比表横评所有方案,胜出列用红字通体高亮所有指标,以此锁定后续工作聚焦的技术路线,承担综述→切入的过渡功能。",
+      "evidence_signals": [
+        "视觉骨架 含 '\\d 列 × \\d 行对比表' + '红字高亮胜出列'",
+        "行标签为指标名(Sparsity/Accuracy Loss/Speedup),列标签为方案名",
+        "仅一列为红字,其余列黑/灰字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 8,
+          "评价": "4 列对比表,Dynamic Pruning 通体红字胜出"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "红字高亮把'我们选谁'从多方案概览中显性化,避免听众读完表格仍不知本工作站队,承担综述→切入的信号功能",
+      "fix_hint": "综述章末补一张 N 方案 × M 指标表,把本工作选择的方案整列改红字",
+      "exceptions": [
+        "综述本身即结论(不做切入)时无需高亮"
+      ]
+    },
+    {
+      "id": "result_chart_with_bottom_red_box_conclusion_strip",
+      "category": "visual",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "结果页·柱状图上+底部红框结论条",
+      "description": "实验结果页顶部用多组分平台/分模型柱状图铺开原始数据,底部固定一条红框结论条用一句话总结加速/能效倍数,让'图看不完但结论一眼记住'。",
+      "evidence_signals": [
+        "视觉骨架 含 '多组...柱状图' + '底部红框结论条'",
+        "关键文字 底部含 'We achieve up to X× ... on <hardware>' 句式",
+        "柱状图横轴分组(batch size / requests)且多平台并列"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 22,
+          "评价": "加速柱状图 + 底部红框 '最高 2.17×/1.92×'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 23,
+          "评价": "能效柱状图 + 底部红框 '最高 1.53×/1.45×'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "多组柱图信息量大听众解不完,底部红框结论条把'该记住的一句话'与图分离,保证观众离开时至少带走加速倍数",
+      "fix_hint": "结果页在多组柱图下方加一条红框文本,用 'We achieve up to X× ... on Y' 一句话固定结论",
+      "exceptions": [
+        "单柱简单图已足够醒目,无需二次结论条"
+      ]
+    },
+    {
+      "id": "system_overview_maps_challenges_to_techniques",
+      "category": "visual",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "方法章总览·左架构图+右挑战→技术映射",
+      "description": "方法章首页用左侧硬件/系统架构图 + 右侧 'Challenge Cx → Technique' 一一对齐的映射列表,把 N 个挑战显性映射为 N 项自研技术,作为后续每技术两页展开的总纲。",
+      "evidence_signals": [
+        "视觉骨架 含 'NDP-GPU 数据流架构图' 或类似模块块图 + '挑战→技术映射' 列表",
+        "关键文字 含 'Challenge\\d?(C\\d)' + 一一对应的技术名",
+        "挑战数量与后续技术章节数量相等"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 13,
+          "评价": "左 NDP-GPU 架构图,右 C1/C2/C3 → 三项技术三行对齐"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "挑战与技术一一映射的总览页让听众提前建立'为何有 N 项技术'的心智地图,避免技术页展开时不知其解决什么",
+      "fix_hint": "方法章首页画左架构图+右侧 N 行 'Cx: <痛点> → <技术名>',并保证 N 与后续技术页数量相等",
+      "exceptions": [
+        "只有单项技术时无需映射表"
+      ]
+    },
+    {
+      "id": "citation_superscript_in_key_phrases",
+      "category": "authoring",
+      "applicable_role": [
+        "content"
+      ],
+      "title": "关键文字·方法名后紧跟 [n,m] 引用上标",
+      "description": "综述页引述已有工作时,在方法名或术语后紧跟方括号引用上标(如 Static Pruning[1,2]、Dynamic Pruning[3,4]),明示 claim 出处,符合学术分享 deck 的溯源习惯。",
+      "evidence_signals": [
+        "关键文字 含 '\\[\\d+(,\\d+)?\\]' 方括号数字引用",
+        "引用上标紧跟在方法名/技术名后,不单独出现",
+        "多个方案对比时每方案均带引用"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 6,
+          "评价": "Static Pruning[1,2] / Dynamic Pruning[3,4] 成对出现"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 7,
+          "评价": "Static/Dynamic Quantization[1,2]/[3,4] 同版式"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 4,
+          "原因": "描述本工作数据的页面无需引用"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "学术分享 deck 引述他人方法必须溯源,方括号上标是圈内通用的轻量引用形式,避免读者以为是本工作原创",
+      "fix_hint": "综述/相关工作页,在每个非本工作方法名后加 '[n]' 或 '[n,m]' 上标,底部或另页列出对应参考文献",
+      "exceptions": [
+        "本工作原创方法/结果页(无需引用)",
+        "非学术型 deck (商业/教学)"
+      ]
+    },
+    {
+      "id": "chinese_title_english_technical_terms_preserved",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用中文·关键术语保留英文原文",
+      "description": "中文学术分享 deck 标题用中文以降低听众读取门槛,但方法名、术语、指标名(如 NDP、DRAM Bank、FFN、Wup/Wdown)在关键文字中保持英文原文,不做机械翻译。",
+      "evidence_signals": [
+        "标题为中文汉字为主(≥ 60%)",
+        "关键文字 混用中英文,英文集中在术语与方法名(如 'FFN'、'ReLU'、'NDP')",
+        "术语首次出现时不做翻译,直接使用原文"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 4,
+          "评价": "中文标题 'LLM 推理:FFN 是延迟瓶颈' + 英文术语 Prefill/Decode/Attention"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 14,
+          "评价": "中文标题 '权重映射:带宽欠利用问题' + Wup/Wdown/DRAM 原文"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+          "slide_index": 1,
+          "原因": "封面/结尾页题目为纯英文,无中文标题"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "中文标题降低快速定位成本,英文术语避免生造译名带来的歧义,是中文体系结构/AI 学术圈通行的双语平衡",
+      "fix_hint": "标题写中文,方法名/指标/API 名保留英文原文,不要用 '快速前馈网络' 替换 'FFN'",
+      "exceptions": [
+        "面向纯英文听众的 deck (全英文)",
+        "纯中文期刊要求 deck"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck(SpAct-NDP 论文分享,24 页),visual: 8 rules 涵盖封面/目录/方法双页/结果结构/结尾闭环,authoring: 6 rules 涵盖 title 名词短句、claim 判断句、结果数字硬约束、量化痛点、引用溯源、双语混排。规则均标注 previous_batches_rules 为空的首次抽取,后续 batch 可扩充/去重。",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "visual": 7,
+      "authoring": 7
+    }
+  }
+}

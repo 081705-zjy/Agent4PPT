@@ -1,0 +1,354 @@
+{
+  "batch_index": 14,
+  "rules": [
+    {
+      "id": "motivation_challenges_preview_next_chapters",
+      "category": "callback",
+      "applicable_when": "deck 有 background/motivation 章且后续存在 method/case_study 章",
+      "title": "动机章末显式预告后续章节",
+      "description": "background/motivation 章末页应显式列出后续将展开的工作/挑战条目, 让每一项在后续章节中都有对应的方法/结果回扣, 命中率应 ≥85%.",
+      "what_to_check": [
+        "定位 section_role=background 或 motivation 的最后一张 slide (取该 section 页码范围最大页)",
+        "在 slide.关键文字 / 核心论断 / 本页讲什么 中找是否列出 ≥2 条编号或 bullet 化的'后续工作/挑战'(常含 '②/③/④' '仍然存在' '接下来' '后续' 等信号词)",
+        "对每条列出的工作, 在其对应 method/case_study 章 slide.标题 或 slide.核心论断 中找 verbatim 或 paraphrased 命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 11 (background 末页) 列出 ②FlashOverlap ③semiPD ④后续研究方向 三条; slide 12-22 展开 FlashOverlap, slide 23-36 展开 Semi-PD, slide 37-41 承接后续研究方向, 命中 3/3"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景章末列出的清单是听众建立整场心智地图的锚点, 每条不回扣就等于开了空头支票, 破坏叙事契约",
+      "fix_hint": "在 background 末页补一张 slide 用编号列出后续 ≥2 项工作, 并保证每一项都有 method 章承接",
+      "exceptions": [
+        "单一方法 deck 后续只有 1 项工作时无需列表"
+      ]
+    },
+    {
+      "id": "background_concept_reuse_in_method",
+      "category": "callback",
+      "applicable_when": "background 章建立了 ≥1 个核心技术概念且后续存在 method 章",
+      "title": "背景章核心概念在方法章反复复用",
+      "description": "background 章引入的核心技术术语/概念图 (如 Prefill/Decode 或 PD 分离/PD 融合) 应在 method 章 slide 中至少被 3 处引用作为论证支点, 而非只在 background 里出现一次.",
+      "what_to_check": [
+        "在 section_role=background 的 slides 中抽取被明确定义的核心概念 (通常出现在 slide.核心论断 或 slide.关键文字, 含 '基础概念' '介绍' 等信号词)",
+        "统计该概念在 section_role=method 的 slides 中 verbatim 或 paraphrased 出现次数, 应 ≥3",
+        "确认这些出现是作为论证支点 (在核心论断/本页讲什么中) 而非仅字面提及"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 6/8 background 章定义 Prefill/Decode 与 PD 融合/分离; slide 26,27,28,29,30,31,32 (Semi-PD 章) 全部围绕 PD 融合/分离展开, 复用 ≥7 处"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "背景章不复用即变成孤立扫盲, 只有作为方法章论证支点才能兑现'背景服务论证'的信息设计契约",
+      "fix_hint": "对 background 章每个核心概念, 在 method 章 slide 显式引用作为分析对象或改造起点 ≥3 次",
+      "exceptions": [
+        "纯教学 tutorial deck 背景本身即目的时"
+      ]
+    },
+    {
+      "id": "method_result_reused_in_case_study",
+      "category": "callback",
+      "applicable_when": "deck 同时含 method 章与 case_study/engineering 章",
+      "title": "方法章成果在案例章被适配回扣",
+      "description": "method 章提出的具名方法 (如 FlashOverlap) 应在 case_study 或 engineering 章至少 1 张 slide 显式作为适配对象出现, 证明方法不是孤立理论。",
+      "what_to_check": [
+        "从 method 章 slide.标题 中抽取具名方法 anchor (通常大写英文或首字母缩写)",
+        "在 section_role=case_study 的 slides 中搜索该 anchor 在 slide.标题 或 slide.核心论断 中的 verbatim 出现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "method 章 (section 3) 提出 FlashOverlap; case_study 章 slide 38 明确列为工程实践 ②FlashOverlap, slide 40 整页讲 'FlashOverlap 在昇腾上的高效优化适配', 命中 2 处"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "方法不落地则悬空, 案例章不引用具名方法就变成平行工作而非同一叙事的兑现",
+      "fix_hint": "在 case_study 章至少加 1 张 slide 标题直接含方法 anchor, 说明其在具体场景的适配收益",
+      "exceptions": [
+        "纯理论综述 deck 不含工程适配章"
+      ]
+    },
+    {
+      "id": "teaser_at_background_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "background 章后紧接 method 章的 deck",
+      "title": "背景章末埋方法预告钩子",
+      "description": "background 章末页应含向 method 章的过渡钩子 (预告接下来会展开哪些方法), 而非直接停在挑战陈述上",
+      "what_to_check": [
+        "定位 section_role=background 的最后一张 slide",
+        "检查 slide.核心论断 或 slide.本页讲什么 中是否含'接下来''后续''引出''承接下一章'等预告信号",
+        "检查是否点名 ≥1 个即将展开的方法 anchor"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 11 核心论断明确写 '引出FlashOverlap/semiPD等后续工作', 本页讲什么明确点名'承接下一章方法介绍'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "章末不埋钩子就是硬切, 听众失去期待感, 方法章开场缺少牵引力",
+      "fix_hint": "在 background 章末页文字区加一句'接下来我们展开 X/Y 两个方法回应上述挑战'",
+      "exceptions": [
+        "method 章与 background 章之间已有独立 agenda 过渡页承担钩子功能"
+      ]
+    },
+    {
+      "id": "problem_buildup_before_solution_reveal",
+      "category": "suspense_reveal",
+      "applicable_when": "method 章包含 ≥1 个具名方案的 deck",
+      "title": "方法章先展开问题分析再揭示方案",
+      "description": "method 章在正式给出具名方案 slide 前, 应有 2-4 张 slide 用于问题分析/相关工作批判/设计目标推导, 而不是章开头直接给方案. 距离过短 (≤1 页) 则缺乏 build-up, 过长 (≥6 页) 则拖沓.",
+      "what_to_check": [
+        "定位每个 method 章的 slide 序列",
+        "找出该章'方案'首次揭示 slide (slide.标题 含'方案'或直接命名方法且 slide.核心论断 描述该方案本身而非批判/铺垫)",
+        "计算章开始到方案揭示 slide 间的 slide 数, 目标区间 2-4"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "Semi-PD 章 slide 23 目录页, slide 24-29 连续 6 张问题+相关工作批判+对比矩阵铺垫, slide 30 才揭示 semi-PD 方案 (距离 6 页, 稍长但有意义); FlashOverlap 章 slide 13-16 批判后 slide 17 揭示 (距离 4 页, 落在目标区间)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "方案的说服力来自'问题为何非解不可'的 build-up, 直接摆方案听众无法评估价值",
+      "fix_hint": "方法章开头补 2-3 张 slide 分别讲挑战/相关工作局限/设计目标, 再进入具名方案 slide",
+      "exceptions": [
+        "方案已在 background 章充分铺垫, method 章可直接展开细节"
+      ]
+    },
+    {
+      "id": "result_holdback_at_method_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "method 章含实测结果的 deck",
+      "title": "方法章最强实测结果压在章末",
+      "description": "method 章最有说服力的 quantitative claim (最大加速比/最大延时降幅) 应放在该章末 1-3 页, 而非章中或章首, 形成'铺垫→机制→数据收尾'的爬升.",
+      "what_to_check": [
+        "定位 method 章所有含 quantitative claim 的 slide (slide.关键文字 含 '倍' '%' 'x' 数字)",
+        "对每张标记其在章内位置",
+        "确认最大数字出现的 slide 位于该 method 章末 3 页内"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "FlashOverlap 章末页 slide 22 给出 1.07-1.7x 加速, 全章 quantitative 数字仅在此页; Semi-PD 章末 slide 33-36 依次给吞吐 10%、TTFT 78%、ITL 5.6 倍、集群完成率, 4 页放章末"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结果压末形成'机制成立→数据坐实'的完整闭环, 数字提前则前面机制页失去悬念张力",
+      "fix_hint": "把 method 章最大加速/最大降幅数字的 slide 移到章末 3 页范围",
+      "exceptions": [
+        "会议 5 分钟 lightning talk 数据前置以抓注意力"
+      ]
+    },
+    {
+      "id": "mini_agenda_at_each_chapter_start",
+      "category": "chapter_transitions",
+      "applicable_when": "deck 总页数 ≥30 且章节数 ≥4",
+      "title": "每主章开始前插入定位导航页",
+      "description": "长 deck 应在每个主章 (background/method/case_study 等) 首页前插入一张 Contents 导航 slide, 显示所有章列表并高亮当前章, 帮助听众定位在整体叙事中的位置.",
+      "what_to_check": [
+        "定位每个 non-opening non-closing section 的首页 slide",
+        "检查该首页或紧邻前一张是否 slide.标题 含 'Contents' 或 slide.视觉骨架 含'目录列表''高亮'类描述",
+        "确认列出全部主章且当前章有视觉高亮标记"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 2/12/23/37 均为 Contents 导航页, 分别对应 background/method-FlashOverlap/method-SemiPD/case_study 章开头, 每张高亮当前章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "40+ 页 deck 听众极易迷失, 章前 mini-agenda 每 8-14 页出现一次是保持定位感的成本最低机制",
+      "fix_hint": "复制 slide 2 目录模板, 在每主章首页前插入一份并高亮对应编号",
+      "exceptions": [
+        "<25 页短 deck 章数 ≤3 时可省略"
+      ]
+    },
+    {
+      "id": "main_anchor_cross_chapter_span",
+      "category": "repetition_emphasis",
+      "applicable_when": "deck 有 ≥1 个主要方法 anchor (英文命名或缩写)",
+      "title": "主方法 anchor 跨章反复出现",
+      "description": "主方法 anchor (如 FlashOverlap/Semi-PD) 应在其自身章节外至少 2 个其他章节的 slide 中被引用, 保持全 deck 主题一致.",
+      "what_to_check": [
+        "从 method 章 slide.标题 抽取具名方法 anchor",
+        "统计该 anchor 在 slide.关键文字 或 slide.标题 中出现的 section_role 分布, 应覆盖 ≥3 个不同 section_role"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "FlashOverlap 出现在 background 章 slide 11、method 章 slide 12-22、case_study 章 slide 38/40, 跨 3 个 section_role; Semi-PD 类似跨 background/method/case_study 三章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 anchor 只在本章反复而其他章不见, 说明它没有支撑起 deck 主题, 沦为局部工作",
+      "fix_hint": "在 background 末页与 case_study 章各安排 ≥1 张 slide 显式引用主方法 anchor",
+      "exceptions": [
+        "方法为纯背景铺垫 tool 而非 deck 主题时"
+      ]
+    },
+    {
+      "id": "quantitative_claim_paired_with_test_config",
+      "category": "comparison_evidence",
+      "applicable_when": "任意含 speedup/延时/吞吐等 quantitative claim 的 deck",
+      "title": "每项量化指标必附测试配置",
+      "description": "结果 slide 中每条 quantitative claim (含 '倍' '%' 'x' 或具体数字) 应在同一张或紧邻上一张 slide 中给出测试配置 (模型/硬件/数据集/请求速率至少 2 项), 否则数据缺乏可信度.",
+      "what_to_check": [
+        "定位所有 slide.核心论断 含 quantitative claim 的 slide",
+        "在同页 slide.关键文字 或 slide.视觉骨架 中找是否含 model 名 (DeepSeek/Llama)、硬件 (A800/H200/4090)、TP/DP 配置、数据集或请求速率至少 2 项",
+        "缺失 2 项以上则视为违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 22 给测试配置 (2-8 卡, A800/4090, AllReduce/ReduceScatter/All2All); slide 33-35 (DeepSeek-V3, FP8, TP8, H200, 输入 2k/输出 256); slide 36 (DeepSeek-V2-Lite, 8×A800 80GB, 2P6D vs 1P3D4S), 全部量化 slide 均附完整配置"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "无测试配置的数字在学术/工业场景等于失信, 听众无法评估可复现性与适用性",
+      "fix_hint": "在每张结果 slide 加左侧配置说明框, 列出 model/hardware/dataset/parallelism ≥3 项",
+      "exceptions": [
+        "纯 teaser slide 数字用于制造张力且后页会补完整配置"
+      ]
+    },
+    {
+      "id": "baseline_comparison_in_every_method_result",
+      "category": "comparison_evidence",
+      "applicable_when": "任意 method 章含实测结果的 deck",
+      "title": "每个方法必给 vs baseline 对比",
+      "description": "method 章每个具名方法的结果 slide 都应包含 vs baseline 或 SOTA 的对比 (曲线/散点/表格), 而不仅报告绝对数字.",
+      "what_to_check": [
+        "定位每个 method 章的结果 slide",
+        "检查 slide.核心论断 或 slide.关键文字 是否显式含 'vs' 或与 baseline 系统名 (SGLang/Dynamo/aclNN/vLLM/NCCL 等) 并列出现",
+        "检查 slide.视觉骨架 是否描述'双方案曲线对照'或'对比图表'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 22 vs baseline 加速比 1.07-1.7x; slide 33-36 semi-PD+SGLang vs SGLang, semi-PD+Dynamo vs Dynamo; slide 39/40 GEMM vs aclNN, FlashOverlap vs aclNN+HCCL, 6 处对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "绝对数字无法证明方法价值, 只有 vs baseline 的差值才承载'方法为何值得做'的信息",
+      "fix_hint": "把每张结果 slide 的绝对数字改为双方案对比 (曲线/散点/柱状), 显式命名 baseline",
+      "exceptions": [
+        "方法本身首创无同类 baseline 可比时可用理论上限或 naive 实现"
+      ]
+    },
+    {
+      "id": "abbreviation_define_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "deck 使用 ≥1 个专业缩写 (2-5 字母全大写)",
+      "title": "专业缩写首次出现即给完整定义",
+      "description": "专业缩写 (如 PD/GEMM/MoE/TP/EP) 首次出现的 slide 应含其展开形式或概念图解, 而非默认听众已知.",
+      "what_to_check": [
+        "扫描所有 slide.关键文字 找 2-5 字母全大写词或首字母缩写",
+        "对每个缩写定位首次出现 slide",
+        "检查该 slide.核心论断 或 slide.本页讲什么 中是否给出展开 (如 'Prefill 处理 prompt 与 Decode 逐 token 生成' 即 PD 的展开)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "PD 首现 slide 6 同页显式讲 'Prefill 和 Decode' 两阶段; TP/DP/EP 首现 slide 9 同页给出 'Tensor Parallel / Data Parallel / Expert Parallel' 展开与并行策略图解"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "缩写不定义即在听众头脑中留下未闭合的黑箱, 后续所有基于该缩写的推理都失去着陆点",
+      "fix_hint": "为每个专业缩写在首现 slide 加一行 '(<全称>)' 或专门插入一张概念图解 slide",
+      "exceptions": [
+        "领域内通用缩写 (LLM/GPU/CPU/API) 可免"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match_and_order",
+      "category": "structural_promise",
+      "applicable_when": "deck 有 agenda/Contents 页",
+      "title": "目录承诺章节顺序与实际一致",
+      "description": "agenda 页列出的章节顺序应与实际 section_role 序列一一对应, 顺序错乱或缺项即违反结构承诺.",
+      "what_to_check": [
+        "定位首个 slide.标题 含 'Contents' 或 '目录' 的 slide",
+        "抽取其 slide.关键文字 中带序号的章条目列表",
+        "对照 sections_outline 里 non-opening non-closing section 顺序, 检查每项都能匹配且顺序一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "slide 2 Contents 列出 ①背景挑战 ②FlashOverlap ③Semi-PD ④昇腾芯片实践, 对应 sections_outline section 2/3/4/5, 顺序与命名完全匹配"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是对听众的显式契约, 顺序错位或章节缺失直接摧毁 deck 可信度",
+      "fix_hint": "生成 agenda 时直接从 sections_outline 抓 section.标题 按 section_index 排序",
+      "exceptions": [
+        "无 agenda 页的短 deck 无该约束"
+      ]
+    },
+    {
+      "id": "methods_dominate_research_report_pacing",
+      "category": "pacing",
+      "applicable_when": "报告类型=research_report 且总页数 ≥30",
+      "title": "研究型 deck 方法章占比 40-70%",
+      "description": "research_report 类 deck 中 section_role=method 的 slides 总数应占 deck 总页数 40-70%, 低于则方法未充分展开, 高于则结构失衡.",
+      "what_to_check": [
+        "统计 sections_outline 中 section_role=method 的所有 section 页码范围累计页数",
+        "除以总页数, 目标区间 0.40-0.70"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "evidence": "method 章 section 3 (11 页) + section 4 (14 页) = 25 页 / 42 总页 = 59.5%, 落在目标区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "研究报告核心贡献即方法与结果, 方法占比过低听众获得感不足, 过高则背景/case 铺垫缺失",
+      "fix_hint": "若 method 占比 <40%, 补机制拆解与实测 slide; 若 >70%, 合并冗余细节页或迁至 appendix",
+      "exceptions": [
+        "纯 tutorial/survey deck 方法占比通常更低"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (42 页 research_report), 单样本无 miss_carriers, hit_rate 全为 1.0. Rule 覆盖 8 category 中的 7 个 (未出 anchor_trajectory 之外的 anchor 首现位置 rule, 因单 deck 该维度信息不足). callback 3 条, suspense_reveal 3 条, chapter_transitions 1 条, repetition_emphasis 1 条, comparison_evidence 2 条, anchor_trajectory 1 条, structural_promise 1 条, pacing 1 条, 合计 13 条.",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 3,
+      "chapter_transitions": 1,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

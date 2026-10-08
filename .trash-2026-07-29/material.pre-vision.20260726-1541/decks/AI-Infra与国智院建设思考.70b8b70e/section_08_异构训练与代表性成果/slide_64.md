@@ -1,0 +1,49 @@
+---
+页标识: "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_64"
+所属章节: "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.08"
+所属deck: "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e"
+页序号: 64
+源文件: "templates/主题学术报告/AI Infra与国智院建设思考.pptx"
+页面角色: "content_candidate"
+标题: "方向2代表性工作：高效大模型"
+核心论断: "SoT 等顶会工作代表高效大模型算法优化成果"
+本页讲什么: "承接方向2标题页，罗列 Efficient Large Language Models 方向的代表性工作，如发表于 ICLR'24 的 SoT、Parallel 等，用顶会成果佐证高效算法模型设计的研究实力。"
+关键文字: "[Efficient Large Language Models, \"SoT [ICLR'24]\", Parallel]"
+视觉骨架: "[代表性工作论文列表, 方法名+会议标注]"
+资源ID列表:
+适合复用场景: "[高效大模型代表性工作页, 顶会论文成果罗列页]"
+不适合复用场景: "[硬件电路成果页, 系统调度能力页]"
+上页角色: "content_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Efficient Large Language Models 方向名"}
+  - {"位置": "下方主体", "内容": "代表性工作论文列表 (方法名+顶会标注)"}
+alternate_claims:
+  - "ICLR'24 等顶会论文体现高效算法研究实力"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 64: 方向2代表性工作：高效大模型
+
+**核心论断**: SoT 等顶会工作代表高效大模型算法优化成果
+
+## 本页讲什么
+承接方向2标题页，罗列 Efficient Large Language Models 方向的代表性工作，如发表于 ICLR'24 的 SoT、Parallel 等，用顶会成果佐证高效算法模型设计的研究实力。
+
+## 关键文字片段
+- Efficient Large Language Models
+- SoT [ICLR'24]
+- Parallel
+
+## 视觉骨架
+- 代表性工作论文列表
+- 方法名+会议标注
+
+## 可复用到
+- 高效大模型代表性工作页
+- 顶会论文成果罗列页
+
+## 不适合复用的场景
+- 硬件电路成果页
+- 系统调度能力页

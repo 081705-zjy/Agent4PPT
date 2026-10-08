@@ -1,0 +1,566 @@
+{
+  "batch_index": 17,
+  "rules": [
+    {
+      "id": "toc_layout_numbered_list_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录/章节导航页·编号列表+当前项高亮",
+      "description": "TOC或章节分隔页使用统一版式:顶部『Contents』标题(蓝色/矩形框)+编号5项列表+当前所处章节加粗高亮或竖线标注,其余灰显。首次全景亮相后,每进入新章复用同一模板并切换高亮项。",
+      "evidence_signals": [
+        "标题字段含 'Contents' 或『目录』",
+        "关键文字含带编号的多项列表 (1..2..3..)",
+        "视觉骨架含 '当前项高亮' / '竖线' / '灰显' / '进度条'",
+        "关键文字重复出现全 deck 章节名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 2,
+          "评价": "首次全景目录,5项列表全展示,含左侧蓝色进度条"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 3,
+          "评价": "同模板,高亮第1项 Cost and Latency"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 13,
+          "评价": "高亮第2项 Preliminary,其余灰显"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 24,
+          "评价": "高亮第4项 Solution,进入解法主线"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 51,
+          "评价": "高亮第5项 Summary,收尾章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "复用同一目录模板并切换高亮,建立稳定空间锚点,让听众每次进入新章都能瞬间定位在全篇中的位置",
+      "fix_hint": "把章节切换页改成 Contents 模板 + 当前项高亮,别新做版式",
+      "exceptions": [
+        "篇幅极短deck(≤10页)可省略目录复现",
+        "非线性结构(并列专题)不适用一维编号"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_with_quantified_value",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "核心论断为带量化数值的判断句",
+      "description": "内容页核心论断不做描述陈述,而是给出带具体倍率/百分比/绝对量的判断句,如『X 加速 N.NN×』『Y 占 XX%』『Z 降至 N/2 周期』,让每页有一个可被复述、可对赌的量化结论。",
+      "evidence_signals": [
+        "核心论断含数字+单位 (×, %, x, Cycles, bit, ms, kWh)",
+        "核心论断动词为判断动词 (提升/超越/达到/降至/占)",
+        "关键文字含具体加速比或占比数值"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 5,
+          "评价": "『86% 花在推理』量化占比判断"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 15,
+          "评价": "『A100 平均加速 1.88x』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 31,
+          "评价": "『吞吐 1.2×/成本 1.8×/能效 6.0×』三数值判断"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 50,
+          "评价": "『端到端 3.28×/1.90× 加速+2.46×/2.01× 面积效率』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 52,
+          "评价": "『累计降本 10.3×』总结判断"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 29,
+          "原因": "Key idea 页只提『保精度/得效率』的定性对偶,未给量化"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.72,
+      "enforcement_level": "soft",
+      "rationale": "带数值的判断句让听众可以在脑内记住并复述,定性描述会随时间淡出;科研汇报的说服力来自可核验的量化",
+      "fix_hint": "在 core_claim 里加入具体倍率/百分比/绝对量,把动词换成判断动词",
+      "exceptions": [
+        "Key idea/定义型页(方法思想介绍,量化留给下页)",
+        "章节封面/agenda 页"
+      ]
+    },
+    {
+      "id": "content_uses_named_semantic_tags",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "内容页顶部挂彩色语义标签统领页面",
+      "description": "方法/案例章的内容页在顶部或左上挂一枚色块标签(如红色 Background/Challenge、紫色 Approach/Innovation、Key idea)+ 一句主张框,标签色与语义严格对应,统领整页论述阶段。",
+      "evidence_signals": [
+        "视觉骨架含 '红色 Challenge 标签' / '紫色 Innovation 标签' / '紫色 Approach 标签' / 'Key idea 标签' / 'Background 标签'",
+        "标签词属于闭集: {Background, Challenge, Key idea, Innovation, Approach, Result}",
+        "标签下方为一句断言型引言框"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 29,
+          "评价": "红色 Key idea 标签+双句主张"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 34,
+          "评价": "红色 Challenge 标签点出核心难题"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 36,
+          "评价": "紫色 Innovation 标签+创新点断言"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 58,
+          "评价": "紫色 Approach 标签+解法块"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 63,
+          "评价": "红色 Background 标签+背景断言"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 15,
+          "原因": "结果页无语义标签,直接给数值加速比"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "彩色语义标签让听众瞬间识别本页在『问题-解法-结果』叙事中的位置,替代冗长的过渡说明",
+      "fix_hint": "在方法/案例章内容页顶部加固定色标签(红=问题/背景,紫=解法/创新)",
+      "exceptions": [
+        "结果/数据页(直接展示数值,标签让位于数字)",
+        "目录/封面/致谢等结构页"
+      ]
+    },
+    {
+      "id": "content_top_formula_bar_with_below_visualization",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "分析页·顶部彩色公式栏+下方图/双栏印证",
+      "description": "推理成本/延迟/负载分析页把关键公式(Latency=Workload/Multipliers、Cost=Energy+Hardware 等)横排在页顶彩色栏内,下方以双散点图或左右双栏参数表印证公式各分量,公式即页面骨架。",
+      "evidence_signals": [
+        "视觉骨架含 '顶部彩色公式栏' 或 '顶部分式公式'",
+        "关键文字含 '=' 号 + 变量组合 (Latency=/Cost=/Energy=)",
+        "下方视觉骨架为『双散点图』或『左右双栏』",
+        "公式变量与下方图轴/参数表变量一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 7,
+          "评价": "Energy Cost=Power×Latency×电价 + 双散点图"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 9,
+          "评价": "Total Cost=Energy+Hardware + 参数表+Cost-Latency曲线"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 11,
+          "评价": "Latency=Workload/Multipliers + 双栏因子拆解"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 12,
+          "评价": "同公式带升降箭头+两条改进路径"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 52,
+          "评价": "Cost·Latency 公式统领全线四工作 summary"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "公式挂在顶部让听众抓住不变的分析框架,下方图/表印证的是同一公式的分量,避免每页重新建立思考路径",
+      "fix_hint": "把统领全篇的公式提到页顶彩色栏,下方图轴与公式变量对齐",
+      "exceptions": [
+        "无核心公式的应用/演示页",
+        "结果柱图页(直接呈现加速比)"
+      ]
+    },
+    {
+      "id": "content_two_column_comparison_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "内容页左右双栏对比布局",
+      "description": "内容页大量使用左右双栏结构进行对比:naive vs improved、dense vs sparse、challenge vs approach、平台A vs 平台B,栏宽近似对等,顶部各挂子标题,便于同一维度直接比较。",
+      "evidence_signals": [
+        "视觉骨架含 '左右双栏' / '两栏' / '并列' / '左右 panel'",
+        "关键文字含成对术语 (Dense/Sparse, Naive/Ours, Original/Partial, Way1/Way2)",
+        "两栏顶部各有子标题"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 6,
+          "评价": "Computing vs Energy 双栏对比"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 27,
+          "评价": "Dense N Cycles vs Sparse N/2 Cycles 双栏"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 36,
+          "评价": "Naive Act-Act vs 近似后单次稀疏计算"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 60,
+          "评价": "小N Fine-grained Tiling vs 大N Double Buffering"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 63,
+          "评价": "结构化vs非结构化稀疏两页对偶"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 42,
+          "原因": "三列并列而非双栏(MoE/MoD/Sparse expert 三路)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.45,
+      "enforcement_level": "soft",
+      "rationale": "双栏对比让听众用极短眼动完成 A 与 B 差异比较,比顺序陈述节省一半认知负荷",
+      "fix_hint": "把有对比语义的两块信息改成左右等宽双栏,栏顶各挂子标题",
+      "exceptions": [
+        "三方对比(改三栏)",
+        "单一主题深挖(不需对比)"
+      ]
+    },
+    {
+      "id": "result_page_speedup_numbers_in_bold_red",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "结果页·加速比数值以红字/大号高亮",
+      "description": "各方法的实测结果页把 speedup/energy efficiency/area efficiency 的具体倍率(如 1.88×、3.41×、6.0×、10.3×)以红字或大号字挑出,通常置于顶部结论条或柱图上方,让数值本身成为视觉主角。",
+      "evidence_signals": [
+        "视觉骨架含 '红色 speedup 倍率标注' / '红字断言' / '加速比数值强调'",
+        "关键文字含形如 'N.NN×' 或 'N.NNx speedup' 的表达",
+        "标题含『实测』/『结果』/『Experimental Results』"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 15,
+          "评价": "1.88x 红字倍率标注"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 16,
+          "评价": "3.41x/4.35x 红字标注"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 31,
+          "评价": "1.2×/1.8×/6.0× 三项红字断言"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 37,
+          "评价": "1.73×–3.18× 面积效率红字"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 50,
+          "评价": "3.28×/1.90×+2.46×/2.01× 全数值断言"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.12,
+      "enforcement_level": "soft",
+      "rationale": "结果页的说服力来自具体倍率,红字/大号让数字比图表本身更抢眼,匹配听众『多少倍』的第一诉求",
+      "fix_hint": "把 speedup/efficiency 倍率提到顶部结论条并用红字加大",
+      "exceptions": [
+        "非量化结果页(demo/定性效果)",
+        "方法/背景页(数值让位于逻辑)"
+      ]
+    },
+    {
+      "id": "cited_sources_with_bracketed_footnotes",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "引用规范·正文方括号编号+底部脚注",
+      "description": "在正文关键论断处用 [1]/[2]/[3] 的方括号数字引文,底部或角标列出对应文献(论文名/会议年份/博客链接),让每一条外部数据、方法比较、事实断言都有可追溯来源。",
+      "evidence_signals": [
+        "关键文字含 '[1]' / '[2]' 等方括号数字",
+        "关键文字含参考文献信息 (会议年份/作者/URL/blog)",
+        "视觉骨架含 '底部引用脚注' / '参考文献引用'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 5,
+          "评价": "86% 数据引 nebuly [1] 博客"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 27,
+          "评价": "[1] NVIDIA A100 Tensor Core GPU 引"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 45,
+          "评价": "三条 [1][2][3] 引文集中出现"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 64,
+          "评价": "SpAtten [1]/FACT [2]/Matraptor [3] 三条脚注"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 67,
+          "评价": "Early Exit [1] / MoD [2] 对比引用"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 25,
+          "原因": "断言页无引用(概念性断言)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "科研汇报的可信度来自可追溯,方括号+脚注是学术共同体默认约定,避免『无源数据』被质疑",
+      "fix_hint": "外部数据/对比方法后加 [N],底部对应位置补脚注",
+      "exceptions": [
+        "自研工作的自我结论(可不加引)",
+        "概念/定义性断言(非外部事实)"
+      ]
+    },
+    {
+      "id": "techniques_numbered_systematically",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "多技术编号化命名:Tech.N/Way N",
+      "description": "同一章内多项技术/路径以 Tech.1/Tech.2/Tech.3 或 Way 1/Way 2/Way 3 系统编号命名,每项独占一页(或成组页),标题格式为『Tech.N: <算子/主题名>』,让听众建立本章有 N 项子内容的心智模型。",
+      "evidence_signals": [
+        "标题含 'Tech. N' 或 'Way N' 或 '技术N' 或 'Approach N'",
+        "同一章内连续多页标题共用同一编号前缀",
+        "总览页出现编号并列 (Tech.1/Tech.2/Tech.3)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 14,
+          "评价": "总览页三项 Tech.1/2/3 并列"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 19,
+          "评价": "Way 1/2/3 三条破局路径统一编号"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 20,
+          "评价": "『Way 1 Example: Scaling Law is Slowing』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 48,
+          "评价": "『Tech.1:SpMM 与 SpMM-T 算子』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 59,
+          "评价": "『技术二 Linear 算子』续编号"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "编号命名让听众知道本章共 N 项、当前第几项,避免多技术并列时迷失进度",
+      "fix_hint": "章内多技术页统一改成『Tech.N: <名称>』标题,并在总览页给编号并列",
+      "exceptions": [
+        "单一方法/单技术的章节",
+        "叙事驱动的 case study 章"
+      ]
+    },
+    {
+      "id": "content_conclusion_banner_reappears_over_previous_chart",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "两页配对·结论横幅覆盖上页底图",
+      "description": "先用一页展示数据/公式/散点图铺陈,紧接一页复用同一淡化底图,在正中叠加红框/红字结论横幅(如『Power and latency increase with larger LLMs』『Speedup can translate to cost reduction』)。上页给证据,下页给结论,借视觉延续强化因果。",
+      "evidence_signals": [
+        "视觉骨架含 '淡化的...底图' + '居中红框/红色结论横幅'",
+        "关键文字有一句结论式短句 (X can translate to Y / X increases with Y)",
+        "上页视觉骨架与本页高度相似,仅多一层结论层"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 8,
+          "评价": "同 p7 双散点图+红色结论横幅『Power and latency increase』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 10,
+          "评价": "同 p9 成本表+曲线+『Speedup can translate to cost reduction』红框"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.05,
+      "enforcement_level": "soft",
+      "rationale": "同图淡化+结论横幅让听众在同一视觉锚点上看到『数据→结论』的抽象跃迁,比换页给纯文字结论更能承接注意力",
+      "fix_hint": "把结论页做成上页底图淡化+居中红框结论,而非全新版式",
+      "exceptions": [
+        "单页可完结的证据-结论组合",
+        "无强因果结论的展示页"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_with_speaker_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面·居中大字主标题+讲者多行署名",
+      "description": "封面布局极简:居中超大字号英文主标题一行,下方多行讲者信息(姓名/职务/单位/联合单位/日期/邮箱),中间以一条淡色横线分隔,白底,不含其他正文或图形元素。",
+      "evidence_signals": [
+        "视觉骨架含 '居中超大主标题' / '讲者信息多行文本块' / '淡色分隔横线' / '极简白底'",
+        "关键文字含姓名+机构+日期+邮箱四类信息",
+        "无 '正文段落' / 'bullet 列表' / '柱图' 等其他元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 1,
+          "评价": "Sparse Computation Powering LLM + Guohao Dai + SJTU/Infinigence-AI + 日期 + 邮箱,极简布局"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "开场瞬间让听众锁定报告主题与讲者身份,极简白底避免其他元素抢焦点",
+      "fix_hint": "把 cover 的主标题放大居中,讲者信息多行紧随其下,移除其他视觉元素",
+      "exceptions": [
+        "品牌宣传型 deck(logo/slogan 优先于讲者)",
+        "多讲者/机构联合汇报(需并列 logo 网格)"
+      ]
+    },
+    {
+      "id": "title_uses_role_prefix_with_colon_content",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "标题采用『角色前缀:内容』的冒号结构",
+      "description": "内容页标题倾向于用『<角色/编号/阶段>:<具体内容>』的冒号结构,前缀承担在本章中的位置定位(Contents/Way N Example/Tech.N/背景/小结/Demo/技术二),冒号后给出该页具体主题,让标题同时携带位置与内容两层信息。",
+      "evidence_signals": [
+        "标题字段含中文冒号『:』或英文冒号 ':'",
+        "冒号前为角色/编号词 (Contents/Way/Tech/技术/背景/小结/挑战/Demo)",
+        "冒号后为具体内容名词短句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 8,
+          "评价": "『小结:功耗与延迟随模型增大而升』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 20,
+          "评价": "『Way 1 Example: Scaling Law is Slowing』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 32,
+          "评价": "『Demo: LLaMA2-7B on U280 FPGA』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 58,
+          "评价": "『技术一 Attention 算子:统一最大值解法』"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 63,
+          "评价": "『背景:结构化稀疏导致精度下降』"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+          "slide_index": 4,
+          "原因": "标题为完整断言句『大模型驱动多样下游应用』,无角色前缀"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "冒号前缀让标题携带『本页在全篇的位置』信息,听众看标题即知这是背景/方法/结果哪一环节",
+      "fix_hint": "给内容页标题加『<角色/编号>:<具体主题>』前缀结构",
+      "exceptions": [
+        "封面/致谢页(独立标题)",
+        "结论断言式标题(直接呈现判断)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck (华为STW-Sparse-Computation-Empowering-Large-Language-Model, 68页),抽出 11 条 rule。visual 6 条 (cover/toc/双栏/顶部公式/结论横幅/结果红字+语义标签),authoring 5 条 (claim 量化/引用规范/技术编号/冒号标题)。因单 deck 内一致性极高,hit_rate 估值较稳。作为首个 batch,previous_batches_rules 为空,全部为新 id。",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 6,
+      "authoring": 5
+    }
+  }
+}

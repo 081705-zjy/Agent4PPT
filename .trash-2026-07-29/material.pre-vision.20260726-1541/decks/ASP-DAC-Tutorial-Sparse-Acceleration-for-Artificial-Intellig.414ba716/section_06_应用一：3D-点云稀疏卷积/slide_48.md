@@ -1,0 +1,45 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_48"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 48
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "实验：消融与附加研究"
+核心论断: "消融实验显示各组件平均带来 1.21x/1.10x 加速"
+本页讲什么: "本页给出消融与附加研究（Ablation & Additional Studies）：各设计组件平均贡献 1.21x/1.10x 的加速，逐项拆解三组 Solution 的独立收益。作为 section 末页，坐实各设计的有效性并收束整个 3D 点云案例。"
+关键文字: "[\"Experiment: Ablation & Additional Studies\", On average 1.21x/1.10x speedup]"
+视觉骨架: "[消融加速比对比图表, 分组件收益标注]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_48.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_48.asset.02, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_48.asset.03, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_48.asset.04]"
+适合复用场景: "[稀疏卷积消融实验页, 组件级 speedup 拆解页]"
+不适合复用场景: "[工作封面引入页, 问题动机抛出页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+alternate_claims:
+layout_tag: "dense_data_chart"
+---
+# slide 48: 实验：消融与附加研究
+
+**核心论断**: 消融实验显示各组件平均带来 1.21x/1.10x 加速
+
+## 本页讲什么
+本页给出消融与附加研究（Ablation & Additional Studies）：各设计组件平均贡献 1.21x/1.10x 的加速，逐项拆解三组 Solution 的独立收益。作为 section 末页，坐实各设计的有效性并收束整个 3D 点云案例。
+
+## 关键文字片段
+- Experiment: Ablation & Additional Studies
+- On average 1.21x/1.10x speedup
+
+## 视觉骨架
+- 消融加速比对比图表
+- 分组件收益标注
+
+## 可复用到
+- 稀疏卷积消融实验页
+- 组件级 speedup 拆解页
+
+## 不适合复用的场景
+- 工作封面引入页
+- 问题动机抛出页

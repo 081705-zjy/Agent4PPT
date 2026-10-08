@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_06"
+所属章节: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.02"
+所属deck: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4"
+页序号: 6
+源文件: "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx"
+页面角色: "content_candidate"
+标题: "Attention 与 FFN 成本随输入长度变化"
+核心论断: "Attention 与 FFN 的算力开销由输入长度 L 决定"
+本页讲什么: "将推理成本溯源到两大核心模块 Attention 与 FFN，说明二者的计算量都受输入长度 L 影响。从 Tokenize 起点拆解计算路径，为下页得出「二者 compute-bound、缩短 L 即可加速」的结论做铺垫。"
+关键文字: "[The computational cost of Attention and FFN is influenced by input length(L), Tokenize]"
+视觉骨架: "[Attention/FFN 模块结构图, 输入长度 L 标注]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_06.asset.01, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_06.asset.02, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_06.asset.03, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_06.asset.04, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_06.asset.05]"
+适合复用场景: "[Transformer 模块算力拆解页, Attention/FFN 成本溯源讲解]"
+不适合复用场景: "[宏观应用概述页, 无模块细节的目录页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Attention 与 FFN 成本随输入长度变化"}
+  - {"位置": "下方主体", "内容": "Attention/FFN 模块结构图 + 输入长度 L 标注"}
+alternate_claims:
+  - "Attention 与 FFN 的计算路径均从 Tokenize 起点拆解"
+layout_tag: "block_diagram"
+---
+# slide 6: Attention 与 FFN 成本随输入长度变化
+
+**核心论断**: Attention 与 FFN 的算力开销由输入长度 L 决定
+
+## 本页讲什么
+将推理成本溯源到两大核心模块 Attention 与 FFN，说明二者的计算量都受输入长度 L 影响。从 Tokenize 起点拆解计算路径，为下页得出「二者 compute-bound、缩短 L 即可加速」的结论做铺垫。
+
+## 关键文字片段
+- The computational cost of Attention and FFN is influenced by input length(L)
+- Tokenize
+
+## 视觉骨架
+- Attention/FFN 模块结构图
+- 输入长度 L 标注
+
+## 可复用到
+- Transformer 模块算力拆解页
+- Attention/FFN 成本溯源讲解
+
+## 不适合复用的场景
+- 宏观应用概述页
+- 无模块细节的目录页

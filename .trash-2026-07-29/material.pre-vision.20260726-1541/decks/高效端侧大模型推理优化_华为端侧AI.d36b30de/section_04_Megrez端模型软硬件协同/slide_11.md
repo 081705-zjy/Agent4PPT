@@ -1,0 +1,46 @@
+---
+页标识: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_11"
+所属章节: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.04"
+所属deck: "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de"
+页序号: 11
+源文件: "templates/课题组全局汇报/高效端侧大模型推理优化_华为端侧AI.pptx"
+页面角色: "content_candidate"
+标题: "Megrez-Omni 技术报告"
+核心论断: "Megrez-Omni 有完整技术报告背书，端模型工作可信落地"
+本页讲什么: "本页作为 Megrez 章节的开场，用 Megrez-Omni Technical Report 的封面与作者署名为整章立信誉背书，表明后续要讲的端侧模型系列是有正式技术报告支撑的真实工作，为 1.0→2.0 的演进叙事奠定权威基础。"
+关键文字: "[Megrez-Omni Technical Report]"
+视觉骨架: "[技术报告封面示意, 作者署名列表]"
+资源ID列表: "[tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_11.asset.01]"
+适合复用场景: "[端侧大模型工作的技术报告背书页, 某具体模型系列的开场立信页]"
+不适合复用场景: "[含具体性能数字的结果页, 算法方法细节展开页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题区", "内容": "Megrez-Omni Technical Report 报告标题"}
+  - {"位置": "下方署名区", "内容": "作者署名列表"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 11: Megrez-Omni 技术报告
+
+**核心论断**: Megrez-Omni 有完整技术报告背书，端模型工作可信落地
+
+## 本页讲什么
+本页作为 Megrez 章节的开场，用 Megrez-Omni Technical Report 的封面与作者署名为整章立信誉背书，表明后续要讲的端侧模型系列是有正式技术报告支撑的真实工作，为 1.0→2.0 的演进叙事奠定权威基础。
+
+## 关键文字片段
+- Megrez-Omni Technical Report
+
+## 视觉骨架
+- 技术报告封面示意
+- 作者署名列表
+
+## 可复用到
+- 端侧大模型工作的技术报告背书页
+- 某具体模型系列的开场立信页
+
+## 不适合复用的场景
+- 含具体性能数字的结果页
+- 算法方法细节展开页

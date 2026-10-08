@@ -1,0 +1,4158 @@
+{
+  "concrete_patterns": [
+    {
+      "id": "appendix_backup_materials_nonlinear_pool_for_qa",
+      "layer": "section_level",
+      "title": "附录·答辩备份材料非线性池",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "backup_alternative_cover",
+        "backup_codesign_case_example",
+        "backup_roadmap_draft_iteration",
+        "backup_content_deep_dive_method",
+        "backup_outline_page",
+        "backup_core_problem_matrix",
+        "backup_progress_completion_status",
+        "backup_subcontent_detail_challenge",
+        "backup_subcontent_detail_innovation",
+        "backup_subcontent_detail_result"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_challenge_approach_multi_operator_and_paradigm_backup",
+      "layer": "section_level",
+      "title": "附录·多算子挑战-方案-结果+范式论据备份",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "external_theory_intro_holder",
+        "dataflow_operator_breakdown_headline",
+        "operator_challenge_statement",
+        "operator_approach_with_result_number",
+        "sparsity_dual_flaw_background",
+        "moe_representative_work_with_result",
+        "mod_dual_method_side_by_side",
+        "mode_combination_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_cognitive_analogy_plus_paradigm_timeline_backup",
+      "layer": "section_level",
+      "title": "备份·认知类比铺垫+范式演变时间线",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "cognitive_analogy_dual_node",
+        "paradigm_evolution_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_divider_then_budget_and_member_detail_tables",
+      "layer": "section_level",
+      "title": "备份·分隔页→经费明细→成员花名册",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "appendix_divider_panel",
+        "budget_detail_itemized_tables",
+        "team_roster_full_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_dual_pillar_compare_then_scaling_result",
+      "layer": "section_level",
+      "title": "备份·传统vs AI对比→成果+大规模处理→加速",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "traditional_vs_ai_flow_compare",
+        "method_result_headline_boxed",
+        "large_scale_processing_diagram",
+        "custom_kernel_speedup_result"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_format_template_backup_pages_plus_product_thanks",
+      "layer": "section_level",
+      "title": "附录·格式模板+留白备份页+产品介绍+致谢",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "format_reference_placeholder_template",
+        "blank_backup_page_with_date_header",
+        "product_platform_ecosystem_diagram",
+        "thanks_with_speaker_and_support_qr"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_method_supplement_detail_with_blank_transition",
+      "layer": "section_level",
+      "title": "附录·方法细节补充+空白过渡页",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "predictor_mechanism_with_decision_flow",
+        "blank_transition_page_with_footer_only",
+        "offline_online_scheduling_dual_stage_diagram"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_multi_subtheme_adaptive_and_cluster_capability",
+      "layer": "section_level",
+      "title": "备份·多子主题自适应算子+集群训练能力",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "appendix"
+        ]
+      },
+      "archetype_sequence": [
+        "adaptive_operator_multi_axis_intro",
+        "design_space_coverage_table",
+        "layered_speedup_result_multi_chart",
+        "subtheme_switch_timeline_evolution",
+        "throughput_benchmark_headline",
+        "cross_datacenter_capability_card",
+        "heterogeneous_cluster_result_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_single_page_industrial_architecture_showcase",
+      "layer": "section_level",
+      "title": "附录·单页产业化全景架构收束",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix",
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "single_page_industrial_architecture_with_bullets"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_ai_to_domain_to_hardware_evolution_funnel",
+      "layer": "section_level",
+      "title": "背景·生成式 AI 概览→领域收窄→模型结构→计算受限→硬件演进",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "macro_generative_ai_intro",
+        "domain_narrowing_dual_panel",
+        "model_structure_dual_panel",
+        "bottleneck_comparison_quantitative_table",
+        "hardware_evolution_timeline",
+        "hardware_driver_dual_frame_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_app_paradigm_essence_metric_gap_funnel",
+      "layer": "section_level",
+      "title": "背景·应用赋能→范式转变→本质定义→度量单位→供需差距漏斗",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "domain_application_landscape",
+        "paradigm_shift_with_quote_backing",
+        "essence_definition_with_quote_backing",
+        "metric_unit_analogy_bridge",
+        "supply_demand_gap_multi_tier_devices"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "background_bottleneck_taxonomy_compare_pain_insight",
+      "layer": "section_level",
+      "title": "背景·瓶颈锁定→技术分类学→四象限对比→痛点暴露→洞见桥接",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "era_opener_headline",
+        "bottleneck_breakdown_pipeline_pie",
+        "optimization_cost_formula_three_column",
+        "sub_taxonomy_dual_panel_compare",
+        "four_way_comparison_table_winner_highlight",
+        "chosen_technique_mechanism_two_step",
+        "pain_point_pipeline_stall_diagram",
+        "insight_solution_bridge_dual_pipeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_domain_intro_principle_backbone_reveal_to_video_extension",
+      "layer": "section_level",
+      "title": "背景·域引入→原理→骨干渐进揭示→视频扩展",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "domain_intro_with_examples",
+        "foundational_principle_arrows",
+        "backbone_element_progressive_reveal",
+        "extension_change_key_diffs",
+        "extension_variants_dual_display"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_domain_landscape_to_operator_bottleneck_funnel",
+      "layer": "section_level",
+      "title": "背景·多域普及→双轴算力爆炸→推理机制→算子成本→bottleneck定位",
+      "applicable_when": {
+        "report_type": [
+          "paper_share",
+          "research_report"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "domain_landscape_multi_field_intro",
+        "dual_axis_growth_scaling_compare",
+        "inference_pipeline_multi_step_diagram",
+        "operator_cost_formula_derivation",
+        "bottleneck_conclusion_speedup_direction"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_gap_to_sparsity_family_taxonomy_dual_flaw",
+      "layer": "section_level",
+      "title": "背景·算力鸿沟→稀疏方向→硬件演进→分类立双靶",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "quantitative_gap_chart",
+        "solution_family_intro_dual_panel",
+        "hardware_evolution_timeline",
+        "dense_vs_sparse_mac_illustration",
+        "sparsity_pattern_taxonomy_dual_compare",
+        "pattern_flaw_accuracy_drop",
+        "pattern_flaw_hardware_overhead"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_history_dual_system_to_paradigm_shift_to_edge_demand",
+      "layer": "section_level",
+      "title": "背景·科技史→双系统→范式演进→云到端漏斗",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_main",
+        "chapter_transition",
+        "macro_science_revolution_timeline",
+        "human_dual_system_theory",
+        "ai_demand_perception_to_cognition",
+        "ai_three_elements_root_diagram",
+        "ai_history_timeline_early_era",
+        "ai_history_timeline_deep_learning_era",
+        "paradigm_shift_dual_column_compare",
+        "parameter_growth_mountain_chart",
+        "cloud_to_edge_migration_diagram",
+        "edge_advantage_cost_privacy_compare",
+        "hundred_models_to_hundred_devices_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_macro_gap_to_policy_to_method_bridge",
+      "layer": "section_level",
+      "title": "背景·宏观供需→外部约束→政策背书→方法总纲",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "macro_framework_three_pillars",
+        "quantitative_gap_chart",
+        "external_constraint_timeline",
+        "policy_backing_quote_montage",
+        "method_overview_formula_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_multi_dimension_survey_to_efficiency_gap_to_research_questions",
+      "layer": "section_level",
+      "title": "现状·多维综述→跨硬件能效汇总→研究问题拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "hardware_architecture_survey_dual_panel",
+        "lightweight_methods_taxonomy_with_table",
+        "domain_models_generalization_compare",
+        "cross_hardware_efficiency_scatter_and_table",
+        "efficiency_gap_target_positioning",
+        "features_to_research_questions_mapping"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+      "layer": "section_level",
+      "title": "背景·agenda→价值→范式代价→机制→算子拆解",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "value_argument_dual_panel_evidence",
+        "paradigm_shift_cost_compare_chart",
+        "mechanism_overview_plus_detail_dual",
+        "operator_pipeline_breakdown"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paradigm_evolution_related_works_survey_to_bottleneck",
+      "layer": "section_level",
+      "title": "背景·范式演进逐篇串讲→瓶颈立靶",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "domain_hype_opening_showcase",
+        "paradigm_evolution_roadmap",
+        "paradigm_flaw_quantitative_evidence",
+        "paradigm_pivot_introduction",
+        "related_work_progressive_reveal",
+        "residual_bottleneck_summary_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paradigm_shift_dual_era_comparison_table",
+      "layer": "section_level",
+      "title": "背景·1.0→2.0 范式对照+同构表格递进",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_shift_dual_column",
+        "era_sparsity_taxonomy_table",
+        "progress_roadmap_handoff"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paradigm_to_scenario_narrow_to_feature_to_recall_gap",
+      "layer": "section_level",
+      "title": "背景·主流范式→场景收窄→特征剖析→召回鸿沟",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "mainstream_paradigm_flow_intro",
+        "target_scenario_importance_dual_panel",
+        "scenario_feature_embedding_illustration",
+        "recall_gap_quantitative_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_related_work_paradigm_abstract_three_methods_compare_table",
+      "layer": "section_level",
+      "title": "背景·相关工作·通用范式→三方法并列→多维对比表",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "problem"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_abstract_with_key_problem",
+        "three_methods_architecture_parallel",
+        "multi_dimension_compare_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_scaling_law_concept_ladder_to_sota_challenge_bridge",
+      "layer": "section_level",
+      "title": "背景·尺度律→概念阶梯→SOTA差距→挑战桥接",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "macro_trend_timeline_dual_lane",
+        "scaling_law_stage_curve",
+        "domain_demand_burst_dual_column",
+        "concept_primer_pipeline_diagram",
+        "system_architecture_overview_diagram",
+        "variant_evolution_dual_compare",
+        "related_work_sota_table",
+        "challenge_handoff_numbered_cards"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_toc_recall_trend_pillars_evolution_roadmap",
+      "layer": "section_level",
+      "title": "背景·目录回锚→三趋势立柱→范式演进路线图",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "three_trend_pillars_with_hero_cases",
+        "paradigm_evolution_horizontal_roadmap"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_value_vs_cost_dilemma_funnel_to_solution_call",
+      "layer": "section_level",
+      "title": "背景·价值-代价矛盾漏斗至方案追问",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "macro_dual_trend_panel",
+        "rhetorical_question_banner_overlay",
+        "value_multi_level_argument",
+        "mechanism_diagram_intro",
+        "quantitative_cost_explosion_table",
+        "collapse_question_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_academic_to_industry_closed_loop_with_venture_history",
+      "layer": "section_level",
+      "title": "案例·学术到产业闭环+创业史+当下缺口+分层方案+融资背书",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "effective_compute_formula_expansion",
+        "idea_to_industry_pipeline_ecosystem",
+        "venture_history_timeline",
+        "current_compute_gap_bubble_and_chip_compare",
+        "layered_solution_architecture_overview",
+        "layered_solution_technical_advantages",
+        "venture_capital_backing_wall",
+        "academic_industry_closed_loop_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_agenda_paper_multi_platform_benchmark",
+      "layer": "section_level",
+      "title": "案例·目录切入→论文封面→多平台基准",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paper_title_authors_only",
+        "platform_benchmark_speedup"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_background_motivation_multi_solution_result",
+      "layer": "section_level",
+      "title": "案例·背景动机→章节分隔→多解法→双视角结果",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "paper_title_authors_only",
+        "background_tradeoff_spectrum",
+        "motivation_platform_advantage",
+        "chapter_transition_divider",
+        "solution_answer",
+        "performance_result_platform",
+        "performance_result_cross_platform"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_capability_stack_codesign_efficiency_roadmap_vision",
+      "layer": "section_level",
+      "title": "案例·端侧能力栈→软硬协同加速→能效路线→泛端愿景",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "capability_stack_layered_overview",
+        "codesign_multiplicative_acceleration_flow",
+        "efficiency_evolution_matrix",
+        "deployment_target_dual_tier_card"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_challenge_solution_performance_closed_loop",
+      "layer": "section_level",
+      "title": "案例·多挑战多解法一一配对+消融闭环",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "paper_title_authors_only",
+        "challenge_statement",
+        "solution_answer",
+        "performance_headline",
+        "ablation_supplement"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_domain_challenge_key_idea_dual_tech_result",
+      "layer": "section_level",
+      "title": "案例·背景→挑战→思路→算法硬件双技术→实测",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "paper_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "domain_background_showcase_examples",
+        "domain_challenge_dual_evidence",
+        "key_idea_dual_technique_overview",
+        "algorithm_innovation_before_after_compare",
+        "hardware_innovation_efficiency_bar",
+        "result_speedup_and_area_efficiency_dual_bar"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_dual_side_recap_to_ecosystem_landing_to_vision",
+      "layer": "section_level",
+      "title": "案例·双侧挑战回顾→双侧生态落地→协同架构→普惠愿景",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_divider",
+        "dual_side_challenge_recap",
+        "cloud_ecosystem_platform_landing",
+        "edge_ecosystem_terminal_landing",
+        "coordination_architecture_dual_panel",
+        "cost_reduction_pipeline_value",
+        "universal_access_analogy_vision"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_framework_definition_multi_instance_bg_method_result",
+      "layer": "section_level",
+      "title": "案例·瓶颈-框架定义-多实例分别背景-方法-结果",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "bottleneck_dual_column_setup",
+        "codesign_framework_definition",
+        "instance_overview_navigator",
+        "instance_entry_transition",
+        "instance_background_reference",
+        "instance_algo_hw_loop",
+        "paper_title_authors_only",
+        "instance_hardware_design_drilldown",
+        "instance_speedup_result"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "layer": "section_level",
+      "title": "案例·多轮观察-解法对+端到端消融",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "paper_title_authors_only",
+        "realtime_need_vs_sota_gap",
+        "computation_pipeline_overview",
+        "observation_initial",
+        "observation_extension",
+        "solution_answer",
+        "end_to_end_performance",
+        "ablation_grid"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_paradigm_bridge_company_profile_ecosystem_products_results",
+      "layer": "section_level",
+      "title": "案例·科研范式桥→公司画像→生态统一→产品栈→成果数据",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "research_to_industry_pipeline_chain",
+        "company_profile_key_numbers_grid",
+        "ecosystem_layered_unification_diagram",
+        "product_stack_matrix_full",
+        "result_speedup_bar_chart",
+        "result_utilization_bar_chart"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_platform_overview_evidence_direction_pairs",
+      "layer": "section_level",
+      "title": "案例·平台总览→工程佐证→科研方向框架+代表作对",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "three_platform_overview_panels",
+        "engineering_scale_chip_row_diagram",
+        "scheduling_advantage_metrics_capsule",
+        "roadmap_puzzle_flow_chart",
+        "research_direction_codesign_frame",
+        "representative_works_quad_panel",
+        "sota_compare_timeline_with_bullets"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_stack_compare_engineering_practices_drilldown",
+      "layer": "section_level",
+      "title": "案例·软件栈对比→三项工程实践逐层加速",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "stack_comparison_practices_roadmap",
+        "practice_operator_optimization_speedup",
+        "practice_communication_overlap_port",
+        "practice_elastic_scheduling_arch"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_traditional_analog_to_new_domain_paper_algo_hw_result_paradigm_lift",
+      "layer": "section_level",
+      "title": "案例·传统方法类比→新域→核心思想→论文→算法/硬件双创新→结果→范式升华",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "instance_entry_transition",
+        "traditional_method_bridge",
+        "domain_transition_flow",
+        "core_idea_analog_bridge",
+        "paper_title_authors_only",
+        "algorithm_innovation_dual_panel",
+        "hardware_innovation_dual_panel",
+        "experiment_result_gpu_compare",
+        "case_summary_dual_work_compare",
+        "paradigm_thinking_stage_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_agenda_industry_gap_to_full_stack_solution",
+      "layer": "section_level",
+      "title": "收尾·目录→行业格局困境→全栈解决方案图",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "industry_landscape_dual_row_gap",
+        "full_stack_solution_mapping_diagram"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_blank_thanks_backpanel_with_signature",
+      "layer": "section_level",
+      "title": "收尾·空白 Thanks 版式+署名页脚",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "blank_ending_placeholder_with_footer_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_blank_transition_plus_pillar_vision",
+      "layer": "section_level",
+      "title": "收尾·空白过渡+三支柱愿景升华",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "blank_transition_placeholder_page",
+        "central_symbol_three_pillar_vision"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_collaboration_wall_plus_thanks_backpanel",
+      "layer": "section_level",
+      "title": "收尾·合作机构墙+THANKS 封底",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "collaboration_institution_wall",
+        "thanks_backpanel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_contact_with_lab_recruitment",
+      "layer": "section_level",
+      "title": "收尾·联系方式+课题组招募",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "closing_contact_plus_recruitment"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_defense_thanks_review_invitation_single_page",
+      "layer": "section_level",
+      "title": "收尾·答辩致谢+邀评审提意见单页",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "thanks_plus_review_invitation_line"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_formula_summary_multi_work_stack_extension_thanks",
+      "layer": "section_level",
+      "title": "收尾·公式串联多工作→技术栈扩展→致谢",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "formula_summary_multi_work_speedup",
+        "technique_stack_extension_grid",
+        "thanks_with_speaker_signature_and_support"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_info_page_plus_minimal_thanks_two_page",
+      "layer": "section_level",
+      "title": "收尾·信息致谢页+极简 Thank You 双页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "info_thanks_with_topic_recap",
+        "minimal_thank_you_backpanel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_minimal_thanks_with_speaker_signature",
+      "layer": "section_level",
+      "title": "收尾·极简致谢+讲者署名单页",
+      "applicable_when": {
+        "report_type": [
+          "paper_share",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "minimal_thanks_with_signature_only"
+      ],
+      "source_count": 4,
+      "confidence": "high"
+    },
+    {
+      "id": "closing_signature_with_collaboration_funding_logo_wall_single_page",
+      "layer": "section_level",
+      "title": "收尾·讲者署名+合作/资助单位 logo 墙单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "signature_with_collaboration_funding_wall"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_signature_with_team_and_collab_logo_wall_single_page",
+      "layer": "section_level",
+      "title": "收尾·汇报人署名+合作/团队logo墙单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "signature_with_dual_tag_team_logo_wall"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_single_page_paper_summary_with_qrcode_entry",
+      "layer": "section_level",
+      "title": "收尾·单页论文标题+核心结论+双二维码入口",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "paper_recap_conclusions_with_qrcode_entry"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_single_page_title_plus_key_insight_callback",
+      "layer": "section_level",
+      "title": "收尾·单页论文标题+核心洞见回扣",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "title_plus_key_insight_callback"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_speaker_thanks_with_recruitment_collaboration_cta",
+      "layer": "section_level",
+      "title": "收尾·讲者致谢+招聘/合作邀约触点",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "thanks_with_recruitment_collaboration_panels"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_thanks_plus_lab_speculation_series_showcase",
+      "layer": "section_level",
+      "title": "收尾·致谢+课题组研究主线系列工作展台",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "thanks_with_lab_series_showcase"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_thanks_single_page_with_full_author_institution_footer",
+      "layer": "section_level",
+      "title": "收尾·单页 Thanks+全作者多机构署名",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "thanks_with_full_author_list"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_thanks_support_dual_zone_speaker_and_logo_wall",
+      "layer": "section_level",
+      "title": "收尾·Thanks致谢+Support机构 logo 墙双分区",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "thanks_support_dual_zone_page"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_title_recap_signature_mirror_cover",
+      "layer": "section_level",
+      "title": "收尾·标题复现+作者署名首尾闭环",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "title_recap_with_author_supervisor"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_framework_recap_progressive_plus_paper_list",
+      "layer": "section_level",
+      "title": "收尾·目录→整体框架递进回收→论文列表",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "overall_framework_recap_energy_chain",
+        "publications_list_bulleted"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_framework_summary_thanks_with_logos",
+      "layer": "section_level",
+      "title": "收尾·目录转场→框架三层回收→致谢与合作 logo 墙",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "framework_summary_with_output_lineup",
+        "thanks_with_logo_wall_and_contact"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_plus_method_diagram_and_thanks_contact",
+      "layer": "section_level",
+      "title": "收尾·目录回扣+方法示意图重述与致谢联系方式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_recap_all_chapters",
+        "summary_method_diagram_with_thanks_contact"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_plus_summary_contribution_with_contact",
+      "layer": "section_level",
+      "title": "收尾·目录回顾+一句话贡献总述附联系方式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_recap_all_chapters",
+        "summary_contribution_boxed_with_contact"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_tech_summary_future_thanks_authors",
+      "layer": "section_level",
+      "title": "收尾·目录回顾→技术回收→未来展望→致谢名单",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "summary_first_contribution_with_dual_tech_recap",
+        "future_work_gain_projection",
+        "thanks_with_full_author_list"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_agenda_plus_evolution_chain_recap_with_future_arrow",
+      "layer": "section_level",
+      "title": "讨论·目录切入+演进链回收+算法到系统未来箭头",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "evolution_chain_recap_with_future_direction"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_agenda_vision_topics_team_close",
+      "layer": "section_level",
+      "title": "展望·目录→愿景架构→课题清单→团队组成",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "vision_forking_panorama_diagram",
+        "topic_bulleted_research_list",
+        "team_block_composition_grid"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_agi_vision_recap_new_paradigm_system_opt_institution_layout",
+      "layer": "section_level",
+      "title": "展望·AGI 愿景→成果回收→新范式+系统优化→机构布局",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "vision_dual_law_formula_headline",
+        "research_summary_paper_list",
+        "new_paradigm_case_dual_stage_compare",
+        "paradigm_evolution_with_work_mapping",
+        "system_optimization_speedup_timeline",
+        "institution_direction_tri_column"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_dual_law_matrix_tech_path_capability_stack_targets",
+      "layer": "section_level",
+      "title": "展望·双定律矩阵→自研聚焦→技术路径→能力栈→量化目标",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition",
+        "dual_law_agi_framework",
+        "algorithm_circuit_matrix_landscape",
+        "algorithm_circuit_matrix_ours_focus",
+        "tech_path_generation_timeline",
+        "capability_stack_overview",
+        "capability_stack_gain_layered",
+        "pan_edge_deployment_targets"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_endside_trend_dual_contradiction_scenarios_chips_gap",
+      "layer": "section_level",
+      "title": "展望·端侧化必然→双矛盾→三场景芯片→与需求差距",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "trend_shift_curve_to_endside",
+        "market_demand_bilateral_arrow_panel",
+        "endside_advantage_bullet_panel",
+        "small_model_bubble_plus_chip_scatter",
+        "compute_contradiction_bar",
+        "memory_contradiction_dual_column",
+        "scenario_trilogy_overview",
+        "scenario_chip_capability_table",
+        "scenario_chip_example_dual_column",
+        "need_vs_reality_gap_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_industry_bench_vision_recap_multi_outlook_landing_cases",
+      "layer": "section_level",
+      "title": "总结·工业界对标→AGI 愿景→公式回收→多路展望+落地案例",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "industry_benchmark_compare_panel",
+        "agi_vision_dual_curve",
+        "reference_holder_page",
+        "core_formula_recap_headline",
+        "outlook_multi_chip_heterogeneous",
+        "outlook_domestic_gpu_mfu_dual_panel",
+        "outlook_dual_direction_infra",
+        "landing_case_three_platforms",
+        "outlook_cross_domain_network_verify"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_scaling_trends_to_jevons_to_energy_paradigm_shift",
+      "layer": "section_level",
+      "title": "展望·规模化趋势→杰文斯悖论→成本演进→能效范式",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "multi_axis_scaling_trends_table",
+        "codesign_necessity_headline",
+        "jevons_paradox_argument",
+        "cost_evolution_multi_metric_headline",
+        "energy_efficiency_paradigm_shift"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_team_record_kpi_budget_defense",
+      "layer": "section_level",
+      "title": "评审支撑·团队→实绩→指标→经费四拍收尾",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "discussion"
+        ]
+      },
+      "archetype_sequence": [
+        "team_role_composition_diagram",
+        "prior_project_track_record_metrics",
+        "quantitative_kpi_commitment_table",
+        "budget_allocation_multi_category_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_three_keyword_trend_practice_challenges_methodology",
+      "layer": "section_level",
+      "title": "讨论·三关键词趋势-实践+挑战-方法论综合",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "three_keyword_trend_overview",
+        "trend_page",
+        "industry_practice_benchmark",
+        "challenge_breakdown_three_pillars",
+        "foundation_software_stack_capability",
+        "system_methodology_funnel",
+        "comprehensive_thinking_layout"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_toc_recap_bottleneck_replay_plan_results_publications",
+      "layer": "section_level",
+      "title": "总结·目录回顾→瓶颈复现→拟开展研究逐项加速结果→论文/专利收束",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_recap_all_chapters",
+        "three_bottleneck_replay_parallel_panels",
+        "planned_research_before_after_result",
+        "publication_list_categorized_by_venue",
+        "patents_projects_outlook_multilevel_bullet"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_toc_three_pillar_recap_plus_future_extension",
+      "layer": "section_level",
+      "title": "讨论·目录→目标/洞察/方案三线闭环→未来扩展",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "three_column_recap_goal_insight_solution",
+        "future_work_preliminary_result_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_trend_extension_of_master_formula_with_open_problems",
+      "layer": "section_level",
+      "title": "展望·主线公式扩展维度+开放问题",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "trend_bifurcation_curve",
+        "trend_single_branch_zoomin",
+        "formula_dimension_extension",
+        "open_problem_scale_timeline",
+        "open_problem_ecosystem_compare"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_agenda_setup_accuracy_dual_platform_speedup_pareto",
+      "layer": "section_level",
+      "title": "实验·目录→设置→精度→双平台加速→帕累托收束",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "eval_setup_bulleted_platform_model_baseline",
+        "accuracy_lossless_headline",
+        "platform_speedup_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_layered_setup_accuracy_hardware_speedup_demo",
+      "layer": "section_level",
+      "title": "实验·分层揭示 setup→精度→资源→双 speedup→demo",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_progressive_reveal",
+        "accuracy_lossless_result_with_frame_compare",
+        "hardware_resource_table_with_layout",
+        "speedup_headline_boxed_with_attribution",
+        "demo_video_artifact_showcase"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+      "layer": "section_level",
+      "title": "实验·设置→精度→面积→加速比→消融→EDP 总账",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_bulleted_with_refs",
+        "accuracy_result_dual_table",
+        "hardware_area_methodology_result",
+        "single_experiment_result_speedup_callout",
+        "ablation_single_component",
+        "overall_edp_pareto_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_setup_dual_main_headline_ablation_pair",
+      "layer": "section_level",
+      "title": "实验·设置双页→主结果头条→消融拆解双页",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "eval_setup_bulleted_with_refs",
+        "main_result_speedup_headline_boxed",
+        "ablation_single_axis_speedup",
+        "ablation_combined_vs_individual"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_setup_per_model_speedup_pareto_summary",
+      "layer": "section_level",
+      "title": "实验·设置→分模型加速比→Pareto总结",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_bulleted_with_refs",
+        "per_model_speedup_result",
+        "pareto_frontier_summary_line"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_single_page_chapter_divider_placeholder",
+      "layer": "section_level",
+      "title": "实验·单页极简章节分隔留白占位",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "single_section_intro_panel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_two_parallel_works_motivation_method_result_triad",
+      "layer": "section_level",
+      "title": "实证·两并列成果·各以动机-方法-结果三拍展开",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result",
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "work_research_motivation_placeholder",
+        "work_research_method_diagram",
+        "work_research_method_extension",
+        "work_experiment_result_setup",
+        "work_ip_positioning_dual_metric",
+        "work_compression_speedup_result_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_capability_ladder_cross_layer_loop_challenge_mapping",
+      "layer": "section_level",
+      "title": "框架·能力阶梯→跨层次循环框图→三挑战映射研究方向",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "capability_evolution_ladder",
+        "cross_layer_loop_framework_diagram",
+        "challenge_evidence_with_research_tag",
+        "cross_layer_thesis_statement",
+        "next_chapter_motivation_three_panel"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_codesign_core_idea_plus_energy_chain_content_map",
+      "layer": "section_level",
+      "title": "框架·软硬协同核心思想+能量链条研究内容映射",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "codesign_core_idea_with_case_example",
+        "energy_chain_research_content_map"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_codesign_grand_narrative_to_layered_scientific_problem",
+      "layer": "section_level",
+      "title": "框架·软硬协同总纲→稀疏抓手→案例验证→开源库→科学问题分层",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "codesign_grand_narrative_scaling_law",
+        "sparse_mechanism_speedup_intro",
+        "case_study_three_layer_optimization",
+        "opensource_library_benchmark_validation",
+        "scientific_problem_three_layer_taxonomy"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_core_formula_with_factor_decomposition",
+      "layer": "section_level",
+      "title": "框架·核心公式统领+多因子拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "master_formula_multi_task_panel",
+        "formula_factor_decomposition_flow"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_new_paradigms_stacking_to_codesign_evolution_to_hardware",
+      "layer": "section_level",
+      "title": "框架·新范式叠加→协同演进→专用硬件加速器",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework",
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "structure_rethink_intro",
+        "paradigm_variant_moe_intro",
+        "paradigm_variant_mod_intro",
+        "unified_sparsity_synthesis_grid",
+        "codesign_paradigm_shift_dual_frame",
+        "compute_paradigm_stage_build",
+        "custom_hardware_accelerator_overview",
+        "custom_hardware_key_techniques_annotation",
+        "acceleration_result_bullet_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_opensource_ecosystem_plus_representative_work",
+      "layer": "section_level",
+      "title": "框架·开源生态总览+代表算子闭环",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "topic_share",
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "framework_definition_intro",
+        "framework_performance_headline",
+        "framework_integration_ecosystem",
+        "progress_roadmap_bridge",
+        "paper_title_authors_only",
+        "challenge_statement",
+        "solution_formulation",
+        "solution_mechanism",
+        "performance_result"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_overview_tree_plus_per_element_drilldown_to_metric",
+      "layer": "section_level",
+      "title": "框架·总览树分四要素→逐要素深入→评测收束",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "framework_tree_four_elements_overview",
+        "element_deep_dive_dense_text",
+        "element_structure_diagram_with_text",
+        "evaluation_metric_benchmark_recap"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_progressive_flow_build_plus_formula_unpack",
+      "layer": "section_level",
+      "title": "框架·分幕流程构建+公式因子逐层高亮",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework"
+        ]
+      },
+      "archetype_sequence": [
+        "progressive_flow_stage_build",
+        "formula_factor_highlight",
+        "three_layer_design_summary",
+        "trend_lead_in_new_scenario",
+        "innovation_novel_paradigm_pair",
+        "review_previous_tutorial_holder",
+        "progress_map_operators",
+        "industry_revolution_positioning",
+        "handoff_to_our_methods_roadmap"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "insight_formula_contradiction_three_paths_examples",
+      "layer": "section_level",
+      "title": "洞见·公式揭示矛盾→三条路径→逐一举例",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework",
+          "insight"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "formula_contradiction_goal_logic",
+        "three_paths_dual_curve_overview",
+        "path_example_wedge_or_score_chart",
+        "path_example_efficient_method_result",
+        "path_example_domain_specific_dual_case",
+        "path_example_new_foundation_arch_compare"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_agenda_plus_dual_axis_redundancy_overview",
+      "layer": "section_level",
+      "title": "方法·目录切入+双维度冗余分支总览",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "dual_axis_redundancy_branch_overview"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_agent_time_decomposition_triple_subproblem_pairs",
+      "layer": "section_level",
+      "title": "方法·公式驱动的三子问题拆解+问题/拟开展双页对",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "workflow_redundancy_overview_with_paradigm_table",
+        "time_decomposition_formula_with_timing_diagram",
+        "subproblem_thought_highlight_switch",
+        "subproblem_key_question_with_quantified_waste",
+        "subproblem_planned_research_with_layered_design",
+        "triple_synergy_metric_recap_headline"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algo_layer_paper_backed_two_gen_model_lineup",
+      "layer": "section_level",
+      "title": "方法·算法层·论文背书+两代自研模型分代经验",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "three_layer_framework_recall_with_model_branch",
+        "single_paper_title_authors_only",
+        "model_pain_point_statement",
+        "model_result_headline",
+        "model_motivation_scenario_tradeoff",
+        "model_design_experience_dual_panel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+      "layer": "section_level",
+      "title": "方法·算法层双支柱→硬件层总览与细节下钻",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "algorithm_pillar_one_formula_plus_timeline",
+        "algorithm_pillar_two_steps_plus_covered_timeline",
+        "hardware_architecture_bullet_overview",
+        "hardware_submodule_detail_bullet"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algorithm_linearization_to_hardware_pe_gpu_reconfig_stack",
+      "layer": "section_level",
+      "title": "方法·算法线性化→PE→GPU 验证→稀疏感知 PE→可重构架构叠加",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "algorithm_linearization_dual_compare",
+        "hardware_pe_with_energy_bar",
+        "gpu_implementation_dual_core_speedup",
+        "sparsity_aware_pe_format_conversion",
+        "reconfigurable_dataflow_routing"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algorithm_sublines_methodology_typical_scatter_triad",
+      "layer": "section_level",
+      "title": "方法·算法层多子线·方法论-典型方法-效果散点三段式",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_layer_relocation",
+        "algorithm_taxonomy_three_categories",
+        "sublines_navigation_three_columns",
+        "subline_methodology_headline",
+        "subline_typical_methods_dual_panel",
+        "subline_effect_scatter_overview",
+        "chapter_summary_practice_flow"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_bipartite_frontend_backend_environment_sweep",
+      "layer": "section_level",
+      "title": "方法·系统层前后端二分逐环拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_layer_relocation",
+        "frontend_backend_bipartite_framework",
+        "sub_environment_methodology_panel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_bottleneck_framework_solve_each_with_gpu_speedup",
+      "layer": "section_level",
+      "title": "方法·硬件层N类受限框架逐类求解对标GPU",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_layer_relocation",
+        "multi_bottleneck_framework_overview",
+        "bottleneck_solution_with_speedup_ratio"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_capability_driven_architecture_evolution_by_stages",
+      "layer": "section_level",
+      "title": "方法·能力目标驱动架构分阶段演进",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "capability_goal_headline_with_intro",
+        "architecture_paper_example_embed",
+        "internal_mechanism_structure_diagram",
+        "paradigm_shift_dual_column_compare",
+        "highlight_bullet_route_selection"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_challenge_mapping_overview_plus_problem_approach_pairs",
+      "layer": "section_level",
+      "title": "方法·总览挑战映射+每技术 problem→approach 双页对",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "system_overview_challenge_to_technique_mapping",
+        "technique_problem_page",
+        "technique_approach_page"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_column_skeleton_progressive_stripping",
+      "layer": "section_level",
+      "title": "方法·左右双栏版式逐步剥离骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "innovation_tagged_dual_column_overview",
+        "numbered_problem_tagged_dual_column",
+        "colored_dual_column_no_label",
+        "minimal_bare_dual_column_skeleton"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_paradigm_tradeoff_to_hybrid_solution_with_experiments",
+      "layer": "section_level",
+      "title": "方法·双范式权衡→混合方案→三组实测→开源计划",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_divider",
+        "problem_definition_dual_need",
+        "tech_milestone_timeline_with_challenge_map",
+        "dual_paradigm_baseline_compare",
+        "paradigm_a_pros_cons_analysis",
+        "paradigm_b_pros_cons_analysis",
+        "paradigm_tradeoff_summary_table",
+        "hybrid_solution_concept_intro",
+        "solution_technical_detail_dual_panel",
+        "solution_deployment_scenarios",
+        "experiment_throughput_scatter",
+        "experiment_latency_dual_curve",
+        "experiment_completion_realtime",
+        "opensource_three_stage_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_route_foundation_framework_elevation",
+      "layer": "section_level",
+      "title": "方法·双路线并列→研究基础→四层框架→价值升华",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "dual_route_solution_panel",
+        "research_foundation_sota_showcase",
+        "four_layer_project_framework_stack",
+        "scientific_value_dual_card_elevation"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_subline_each_challenge_innovation_result_plus_summary",
+      "layer": "section_level",
+      "title": "方法·两条子线各走挑战-创新-成果+小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "research_content_overview_dual_subline_preview",
+        "subline_challenge_prior_work_flaw",
+        "subline_innovation_algorithm_sensitivity",
+        "subline_innovation_hardware_mechanism",
+        "subline_result_metric_headline",
+        "summary_innovations_with_paper_citation"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_subproblem_template_reuse_transition",
+      "layer": "section_level",
+      "title": "方法·双子问题递进+瓶颈模板复用过渡",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "long_output_token_scale_intro",
+        "dual_bottleneck_complexity_split",
+        "subproblem_background_hardware_evidence",
+        "innovation_method_flow_with_key_insight",
+        "experiment_result_scenario_targeted",
+        "bottleneck_template_reuse_switch_subproblem",
+        "subproblem_key_question_short_bullet",
+        "planned_method_diagram_with_adaptive_logic",
+        "before_after_end_to_end_metric_table",
+        "publication_list_with_venue_ccf_tag"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "method_formula_framework_three_result_challenge_solution_plus_real_system",
+      "layer": "section_level",
+      "title": "方法·公式框架→三成果挑战-方案对→真实系统对标",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition",
+        "metric_shift_headline",
+        "top_formula_with_task_panels",
+        "codesign_three_path_framework",
+        "sparse_computing_key_lever",
+        "formula_factor_decomposition",
+        "result_layer_challenge",
+        "result_layer_method",
+        "real_system_gpu_compare"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_framework_dual_law_matrix_direction_platform",
+      "layer": "section_level",
+      "title": "方法·二维框架→双定律矩阵→方向成果→平台底座",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "two_axis_quadrant_framework_diagram",
+        "formula_plus_dual_law_curve",
+        "route_by_layer_content_matrix",
+        "efficiency_scaling_curve_multi_route",
+        "direction_target_arch_intro",
+        "paper_matrix_by_target_column",
+        "coordination_direction_dual_frame",
+        "platform_base_capability_grid"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_framework_positioning_dual_scenario_paper_lineup_with_summary",
+      "layer": "section_level",
+      "title": "方法·框架定位+双场景论文串讲+能效小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "framework_layer_positioning",
+        "scenario_split_intro",
+        "scenario_paper_lineup",
+        "energy_efficiency_before_after_summary"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_hardware_integration_evolution_bottleneck_summary",
+      "layer": "section_level",
+      "title": "方法·芯片集成演进→访存瓶颈→3D IC技术→倍率小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "framework_layer_positioning",
+        "application_need_dual_axis",
+        "integration_evolution_timeline",
+        "bandwidth_bottleneck_roofline_evidence",
+        "key_technique_three_pillars",
+        "integration_gain_before_after_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_hardware_limit_roadmap_then_single_work_full_arc",
+      "layer": "section_level",
+      "title": "方法·硬件极限论证→路线锚定→单工作四段展开",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "hardware_ultimate_limit_assertion",
+        "moore_slowdown_dense_bottleneck_evidence",
+        "sparse_paradigm_dense_vs_sparse_cycle",
+        "three_route_work_scaling_law_map",
+        "key_idea_algo_accuracy_hw_efficiency_pair",
+        "architecture_innovation_dense_diagram",
+        "hardware_speedup_result_assertion",
+        "demo_video_single_page_showcase"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_key_insight_triad_then_three_pain_solution_pairs",
+      "layer": "section_level",
+      "title": "方法·Key Insight 三连+三项技术痛点-方案对",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "key_insight_progressive_search_reduction",
+        "technique_pain_point_statement",
+        "technique_solution_design"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_landscape_then_need_vs_reality_gap_platforms",
+      "layer": "section_level",
+      "title": "方法·芯片全景→需求锚定→四平台差距→路径收束",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_shift_dual_column_compare",
+        "chip_class_spectrum_table",
+        "top_formula_with_efficiency_table",
+        "panorama_scatter_capability_table",
+        "concrete_example_metrics_line",
+        "need_target_green_spec_box",
+        "need_vs_platform_gap_ellipse",
+        "path_stacked_efficiency_multiplier"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_layer_two_parallel_works_lineup_full_arc",
+      "layer": "section_level",
+      "title": "方法·层内两项并列工作各自完整弧线",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "three_layer_framework_recall_current_layer_expand",
+        "shared_concept_intro_or_paper_cover",
+        "single_paper_title_authors_only",
+        "work_background_or_scenario_context",
+        "work_prior_work_or_challenge_survey",
+        "work_key_observation_or_insight",
+        "work_method_mechanism_detail",
+        "work_experiment_setup",
+        "work_result_speedup_headline"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_motivation_cases_problems_practices_outlook",
+      "layer": "section_level",
+      "title": "方法·动机→标杆案例→关键问题→行业实践→展望",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "quadrant_relation_motivation_diagram",
+        "flagship_case_metric_column_list",
+        "scaling_law_timeline_milestones",
+        "key_problem_data_with_metrics",
+        "industry_practice_bullet_case",
+        "dual_column_outlook_capability_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_multi_parallel_techniques_intro_flow_detail",
+      "layer": "section_level",
+      "title": "方法·多并列技术·意图-流程-硬件细节",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "technique_method_key_idea_intro",
+        "technique_algorithm_flow_stage",
+        "technique_hardware_mechanism_drilldown"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_multi_route_survey_converge_to_ours",
+      "layer": "section_level",
+      "title": "方法·三路线综述→收束到本组稀疏计算",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "three_route_overview_framework",
+        "route_example_dual_column_compare",
+        "route_example_method_grid",
+        "route_example_new_architecture_compare",
+        "converge_to_own_method_formula",
+        "own_method_effective_compute_evidence",
+        "own_method_definition_dense_vs_sparse",
+        "chapter_close_map_to_research_content"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_need_challenge_analysis_idea_pareto_opensource",
+      "layer": "section_level",
+      "title": "方法·需求-挑战-分析-核心思想-细节-帕累托-开源",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_divider",
+        "application_need_pyramid_evidence",
+        "efficiency_challenge_three_pillars",
+        "tech_milestone_landscape_timeline",
+        "key_analysis_problem_reframe",
+        "core_idea_bridge_headline",
+        "tech_core_mechanism_reveal",
+        "tech_detail_algo_system_dual",
+        "pareto_frontier_result",
+        "opensource_three_stage_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_pain_critique_design_goals_progressive_mechanism_reveal",
+      "layer": "section_level",
+      "title": "方法·痛点→批相关工作→设计目标→机制多帧递推→加速比",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "pain_point_multi_mode_table",
+        "prior_work_critique_with_timeline",
+        "design_goals_criteria_table",
+        "mechanism_progressive_build_stage",
+        "single_experiment_result_speedup_callout"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_paired_problem_solution_triad_with_aggregation",
+      "layer": "section_level",
+      "title": "方法·三层问题-解法成对展开+叠乘汇总",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "layered_problem_analysis",
+        "layered_design_method_with_gain",
+        "aggregated_gain_multiplicative_flow"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_paradigm_reconstruction_expert_view_to_dedicated_hardware",
+      "layer": "section_level",
+      "title": "方法·专家视角三级稀疏→技术栈演进→专用硬件三算子",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "transformer_rethink_expert_view",
+        "moe_parallel_expert_paradigm",
+        "mod_skippable_expert_paradigm",
+        "sparse_paradigm_multi_level_synthesis",
+        "sparse_stack_tradition_to_now",
+        "sparse_stack_tradition_to_future",
+        "sparsity_pattern_background_introduction",
+        "challenge_no_unified_architecture_three_operator",
+        "key_idea_transposable_block_sparsity",
+        "tech_adaptive_format_conversion",
+        "tech_datapath_sharing_area_efficiency",
+        "end_to_end_training_speedup_dual_metric"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_plateau_argument_to_full_stack_co_design",
+      "layer": "section_level",
+      "title": "方法·单层见顶→全栈协同→架构与收益定位",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_shift_dual_column_compare",
+        "plateau_evidence_time_series_chart",
+        "typical_techniques_three_panel",
+        "single_arrow_big_number_headline",
+        "co_design_method_layered_formula",
+        "single_instance_intro_line",
+        "three_layer_method_algo_sys_hw",
+        "instance_speedup_result_line",
+        "full_stack_architecture_dense_diagram",
+        "aggregated_gain_multiplicative_flow",
+        "accuracy_speed_pareto_positioning"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_preliminary_three_technique_dual_platform_verify",
+      "layer": "section_level",
+      "title": "方法·预备三技术总览+双平台实测",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method",
+          "preliminary"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "three_technique_parallel_panels",
+        "platform_benchmark_speedup_with_demo"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_progressive_score_formula_derivation_plus_stability_taxonomy",
+      "layer": "section_level",
+      "title": "方法·核心思路+现象洞察对+打分公式逐级演进+稳定性分类",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "method_core_idea_with_open_question",
+        "phenomenon_insight_page",
+        "formula_upgrade_add_new_term",
+        "side_effect_patch_with_new_factors",
+        "taxonomy_extension_by_stability"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_shared_structure_map_progressive_highlight_focus",
+      "layer": "section_level",
+      "title": "方法·共享结构总览图+逐页高亮聚焦子挑战",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "field_scale_explosion_timeline",
+        "structural_overview_with_challenge_list",
+        "operator_state_of_art_table",
+        "core_problem_side_by_side_comparison",
+        "dual_method_side_by_side_with_validation",
+        "speedup_stacked_bar_experiment"
+      ],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "method_short_positioning_plus_summary_with_paper",
+      "layer": "section_level",
+      "title": "方法·短章·定位框+小结附论文",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "research_content_positioning_with_challenge_frame",
+        "summary_innovations_with_paper_citation"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_technique_route_full_arc_prior_challenge_paper_method_result",
+      "layer": "section_level",
+      "title": "方法·单条技术路线全弧线·已有→挑战→论文→方法→实现→成果",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "prior_works_taxonomy_table",
+        "challenge_key_contradiction_statement",
+        "paper_title_authors_only",
+        "method_formula_overview_with_positioning",
+        "method_implementation_progressive_build",
+        "result_accuracy_or_utilization_table",
+        "result_efficiency_or_deployment_headline"
+      ],
+      "source_count": 3,
+      "confidence": "high"
+    },
+    {
+      "id": "method_theoretical_insight_prelude_then_challenge_technique_triad",
+      "layer": "section_level",
+      "title": "方法·理论洞察前奏+三项挑战-技术闭环",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "insight_question_qa_intro",
+        "insight_information_theory_proof",
+        "insight_conclusion_headline",
+        "technique_challenge_statement_with_architecture",
+        "technique_solution_mechanism_or_optimization"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_three_design_intro_mechanism_result_triad",
+      "layer": "section_level",
+      "title": "方法·三设计各以引入-机制-结果三拍展开",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "design_intro_placeholder_headline",
+        "design_mechanism_with_mapping_diagram",
+        "design_result_number_headline",
+        "design_full_dataflow_dense_diagram",
+        "hardware_hierarchy_pyramid_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_three_paper_lineup_challenge_method_result_with_summary",
+      "layer": "section_level",
+      "title": "方法·三论文串讲·挑战-方法-效果+能效小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "sublayer_technique_overview",
+        "domain_background_timeline",
+        "single_paper_title_authors_only",
+        "challenge_statement",
+        "solution_mechanism_detail",
+        "single_experiment_result_speedup_callout",
+        "energy_efficiency_before_after_summary"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_three_sublayer_challenge_innovation_experiment_loop",
+      "layer": "section_level",
+      "title": "方法·三子层挑战-创新-实验递进闭环",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "structure_intro_computation_flow",
+        "sublayer_challenge_statement",
+        "sublayer_innovation_answer",
+        "sublayer_experiment_result",
+        "three_layer_summary_flow"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_toc_overview_challenge_innovation_result_summary_with_paper",
+      "layer": "section_level",
+      "title": "方法·目录→总览→挑战→创新→成果→小结+论文",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "research_content_overview_energy_chain",
+        "key_challenge_hardware_utilization_compare",
+        "innovation_reconfigurable_architecture_diagram",
+        "result_speedup_multi_scale_comparison",
+        "summary_innovations_with_paper_citation"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_tradeoff_synthesis_paradigm_matrix_to_solution",
+      "layer": "section_level",
+      "title": "方法·双范式对比矩阵→取长合成→细节适配→多组实测",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "dual_demand_challenge_scene",
+        "core_challenge_three_pillars",
+        "paradigm_dual_intro_architecture",
+        "paradigm_pros_cons_single_analysis",
+        "tradeoff_synthesis_matrix",
+        "synthesized_solution_headline_diagram",
+        "solution_technical_details_diagram",
+        "solution_deployment_adaptation",
+        "measured_throughput_or_latency_curve"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_two_question_frame_three_technique_sequence",
+      "layer": "section_level",
+      "title": "方法·两问框架驱动三技术顺序展开",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "solution_overview_two_question_frame",
+        "tech1_index_node_construction",
+        "tech1_index_edge_hierarchy",
+        "tech2_adaptive_score_filter",
+        "tech3_multi_ratio_fusion_recall"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_agenda_transition_paradigm_evolution_token_pivot",
+      "layer": "section_level",
+      "title": "动机·目录过渡→系统I/II范式演进→Token核心",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "paradigm_evolution_authority_backed",
+        "paradigm_shift_dual_column"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_ai_wave_history_sparsity_through_line_to_gap_sanction",
+      "layer": "section_level",
+      "title": "动机·AI三次浪潮稀疏主线+算力鸿沟+制裁",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "basic_structures_three_panel",
+        "structure_vs_weight_essence",
+        "ai_history_timeline",
+        "cognitive_need_scholar_quotes",
+        "wave_sparsity_evidence",
+        "quantitative_gap_chart",
+        "external_constraint_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_analogy_codesign_demand_supply_gap",
+      "layer": "section_level",
+      "title": "动机·历史类比→软硬协同定位→算力需求暴涨→硬件供给放缓",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "historical_revolution_analogy_matrix",
+        "algorithm_hardware_dual_panel_codesign",
+        "quantitative_gap_chart",
+        "hardware_slowdown_moore_law_curve"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_cost_formula_layered_decomposition_to_moore_wall",
+      "layer": "section_level",
+      "title": "动机·成本公式逐层拆解直至摩尔定律墙",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "domain_application_landscape_logos",
+        "cost_share_two_bar_headline",
+        "dual_column_compute_energy_gap",
+        "formula_top_with_dual_scatter_evidence",
+        "summary_headline_overlay_previous_diagram",
+        "total_cost_formula_with_hardware_curve",
+        "latency_formula_two_factor_breakdown",
+        "two_path_choice_with_moore_wall"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_domain_analogy_dual_challenge_related_work_gap",
+      "layer": "section_level",
+      "title": "动机·领域类比→双硬件挑战→相关工作缺口",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "domain_history_timeline",
+        "cross_domain_analogy_dual_row",
+        "hardware_challenge_statement",
+        "related_work_multi_panel_survey",
+        "related_work_gap_dual_frame_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_dual_side_gap_plus_specialization_to_features_extraction",
+      "layer": "section_level",
+      "title": "动机·需求↑供给↓+专用性差→三大特点提炼",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "macro_capability_and_apps_dual_panel",
+        "demand_side_quantitative_explosion",
+        "supply_side_slowdown_chart",
+        "domain_specialization_gap_statement",
+        "features_extraction_chain_to_method"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_gap_measurement_formula_to_tripartite_problems",
+      "layer": "section_level",
+      "title": "动机·供需鸿沟→度量定义→公式拆解→三大子问题",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "quantitative_gap_chart",
+        "measurement_definition_multi_scene",
+        "codesign_approach_three_domain",
+        "formula_factor_decomposition",
+        "tripartite_core_problem_panel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_industrial_analogy_to_layer_stack_mapping",
+      "layer": "section_level",
+      "title": "动机·产业革命类比→成本公式→蛋糕分层→三层映射",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "industrial_revolution_comparison_table",
+        "value_chain_flow_diagram",
+        "cost_formula_decomposition",
+        "authority_figure_layer_cake_intro",
+        "layer_cake_middle_focus_callout",
+        "three_layer_method_mapping"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_industrial_revolution_to_paradigm_shift_to_ignition",
+      "layer": "section_level",
+      "title": "动机·工业革命宏观→技术定位→范式转变→需求爆发",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "macro_industrial_revolution_timeline",
+        "tool_driver_evolution_horizontal",
+        "tech_positioning_hub_diagram",
+        "tech_history_dual_timeline",
+        "scaling_law_three_stage_curve",
+        "paradigm_compute_shift_multiplier",
+        "industry_ignition_evidence_dual_frame"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_metric_redefinition_supply_gap_two_paths_codesign",
+      "layer": "section_level",
+      "title": "动机·指标重定义→现状/需求供需→两条路径→协同设计",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "metric_redefinition_dual_column",
+        "metric_definition_with_constraint",
+        "current_state_multi_tier_panel",
+        "demand_gap_multi_tier_panel",
+        "optimization_path_one",
+        "optimization_path_two",
+        "dual_axis_evolution_chart",
+        "paradigm_shift_dual_column"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_paradigm_compare_then_transpose_key_idea",
+      "layer": "section_level",
+      "title": "动机·两条路线对比→机制揭示→转置关键思路",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "paradigm_compare_dual_route",
+        "mechanism_reveal_intro",
+        "key_idea_bridge_annotation"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_paradigm_shift_metric_shift_goal_gap_framework_split",
+      "layer": "section_level",
+      "title": "动机·范式换代→指标换代→目标定义→思路割裂→框架拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "paradigm_shift_dual_column_compare",
+        "metric_shift_headline_with_hardware_evidence",
+        "objective_2d_chart_with_levels",
+        "traditional_silo_gap_statement",
+        "framework_decomposition_intro"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_related_work_taxonomy_paradigm_flaw_to_key_insight",
+      "layer": "section_level",
+      "title": "动机·相关工作分类→范式痛点→双源核心洞察",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "related_work_two_type_taxonomy",
+        "two_type_recall_qualitative_compare",
+        "existing_paradigm_flaw_illustration",
+        "key_insight_dual_source_supplement",
+        "insight_feasibility_quantitative_evidence"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_supply_demand_contradiction_expose",
+      "layer": "section_level",
+      "title": "动机·趋势→定义→悖论→供需鸿沟层层压强度",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "macro_trend_wave_timeline",
+        "application_landscape_four_corner",
+        "compute_vs_supply_contradiction_compare",
+        "metric_definition_placeholder",
+        "paradox_scaling_vs_goal_frame",
+        "quantitative_gap_growth_chart",
+        "supply_side_bottleneck_illustration"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_three_step_insight_chain_failure_hypothesis_answer",
+      "layer": "section_level",
+      "title": "动机·三步洞察链·失效→设问→新信号解答",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "insight_one_current_failure",
+        "insight_two_conditional_setup",
+        "insight_three_new_signal_answer"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_token_scale_demand_gap_layer_cascade",
+      "layer": "section_level",
+      "title": "动机·token量级爆炸→需求现状鸿沟→层计算冗余设问",
+      "applicable_when": {
+        "report_type": [
+          "paper_share",
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "macro_scale_growth_dual_stage",
+        "need_vs_reality_gap_multi_scenario",
+        "root_cause_question_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "layer": "section_level",
+      "title": "动机·趋势路标→三轴增长→供需鸿沟→解法引入",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ]
+      },
+      "archetype_sequence": [
+        "macro_ai_roadmap",
+        "three_axis_trend_panel",
+        "model_moore_law_growth_chart",
+        "supply_demand_gap_chart",
+        "solution_introduction_bridge",
+        "definition_benefit_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_value_first_then_problem_then_challenges_funnel",
+      "layer": "section_level",
+      "title": "动机·价值先立→问题定义→AI 双挑战暴露",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "value_argument_dual_panel_evidence",
+        "problem_definition_with_method_compare",
+        "dual_challenge_panel_with_evidence"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_academic_minimalist_cover_single_page",
+      "layer": "section_level",
+      "title": "开场·学术极简封面单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "academic_minimalist_cover_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_blank_cover_skeleton_single_page",
+      "layer": "section_level",
+      "title": "开场·空白封面骨架单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "blank_cover_placeholder_skeleton"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_cover_bio_toc_triad",
+      "layer": "section_level",
+      "title": "开场·封面+讲者履历+目录三件套",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "cover_title_signature",
+        "self_intro_timeline_bio",
+        "toc_master_numbered_five_chapter"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "layer": "section_level",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "cover_title_signature",
+        "toc_progress_highlight"
+      ],
+      "source_count": 14,
+      "confidence": "high"
+    },
+    {
+      "id": "opening_minimal_cover_only_no_toc",
+      "layer": "section_level",
+      "title": "开场·极简单页封面无目录",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "cover_title_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution",
+      "layer": "section_level",
+      "title": "开场·论文封面+多作者多机构署名",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "single_paper_title_authors_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "layer": "section_level",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "single_paper_title_authors_only",
+        "toc_progress_highlight"
+      ],
+      "source_count": 5,
+      "confidence": "high"
+    },
+    {
+      "id": "opening_single_cover_signature_only",
+      "layer": "section_level",
+      "title": "开场·单页封面无目录",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "cover_title_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_single_page_cover_signature",
+      "layer": "section_level",
+      "title": "开场·单页封面+讲者机构署名",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "cover_title_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_single_page_speaker_cover_no_toc",
+      "layer": "section_level",
+      "title": "开场·单页讲者身份封面无目录",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ]
+      },
+      "archetype_sequence": [
+        "cover_title_with_speaker_identity"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "outlook_life_analogy_build_dual_system_series_works_lift",
+      "layer": "section_level",
+      "title": "展望·生活类比铺陈→双系统理论→系列工作升华",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "analogy_dual_paradigm_intro_frame",
+        "analogy_dual_paradigm_answer_reveal",
+        "dual_system_cognitive_theory_mapping",
+        "series_works_dual_system_landscape_map"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_dual_bottleneck_paradigm_shift_chip_landscape_scenarios_gap",
+      "layer": "section_level",
+      "title": "问题·双硬件矛盾→范式放大→芯片全景→场景举例→数量级差距",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "problem",
+          "motivation"
+        ]
+      },
+      "archetype_sequence": [
+        "chapter_transition",
+        "compute_latency_power_tradeoff",
+        "storage_capacity_bandwidth_tradeoff",
+        "new_paradigm_compute_amplification",
+        "chip_class_spectrum_table",
+        "three_scenario_forking_diagram",
+        "chip_capability_aggregate_table",
+        "chip_capability_scatter_efficiency",
+        "concrete_scenario_chip_example",
+        "need_vs_reality_gap_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_landscape_focus_parallel_dual_bottleneck",
+      "layer": "section_level",
+      "title": "问题·多形态全景→单侧聚焦→并列对照→双侧瓶颈",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ]
+      },
+      "archetype_sequence": [
+        "system_form_landscape_overview",
+        "single_side_focus_highlight",
+        "dual_side_parallel_target_compare",
+        "dual_side_bottleneck_quantitative"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_related_works_survey_dual_challenge_to_solution_bridge",
+      "layer": "section_level",
+      "title": "问题·相关工作综述→双挑战并列→方案桥接",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "related_works_survey_three_pillars",
+        "first_challenge_data_backed_pain",
+        "second_challenge_data_backed_pain",
+        "proposal_solution_bridge_headline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_three_challenges_prior_work_flaw_bulletin",
+      "layer": "section_level",
+      "title": "问题·三挑战按现有工作缺陷逐条抛出",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "challenge_assertion_with_prior_work_evidence",
+        "challenge_assertion_extension"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_three_layered_bottlenecks_gap_redundancy_operator_heterogeneity",
+      "layer": "section_level",
+      "title": "问题·三层瓶颈(算力大+冗余高+算子异构)递进立靶",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "quantitative_gap_chart",
+        "continued_chart_alternative_angle",
+        "redundancy_opportunity_intro",
+        "prior_work_limitation_dataflow",
+        "operator_heterogeneity_oi_compare"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "references_layered_by_method_chapter_bibliography",
+      "layer": "section_level",
+      "title": "参考文献·按方法章分层罗列",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "paper_share"
+        ],
+        "chapter_role": [
+          "references"
+        ]
+      },
+      "archetype_sequence": [
+        "references_layered_bibliography_page"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "related_work_dual_route_mechanism_flaw_to_insight_table",
+      "layer": "section_level",
+      "title": "相关工作·双路线机制-缺陷→洞见→对比表引方案",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "related_work"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "route_one_mechanism_diagram",
+        "route_one_flaw_annotation",
+        "route_two_mechanism_diagram",
+        "insight_headline_with_references",
+        "comparison_table_with_placeholder_row"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "related_work_two_route_taxonomy_survey",
+      "layer": "section_level",
+      "title": "相关工作·两路线分类综述",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "related_work"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "related_work_route_static_baseline",
+        "related_work_route_dynamic_advanced"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_agenda_main_speedup_future_open_questions_close",
+      "layer": "section_level",
+      "title": "结果·agenda→主加速头条→未来工作→开放问题收尾",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "main_result_speedup_dual_bar_headline",
+        "future_work_bulleted_with_metric_table",
+        "open_questions_numbered_list"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_agenda_setup_speedup_efficiency_dual_headline",
+      "layer": "section_level",
+      "title": "结果·目录→评估设置→加速头条+能效头条对称",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_bulleted_with_refs",
+        "speedup_headline_multi_platform_bar",
+        "energy_efficiency_headline_multi_platform_bar"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_field_roadmap_gap_operator_decompose_existing_paper_result",
+      "layer": "section_level",
+      "title": "成果·领域 RoadMap→痛点→双算子拆解→现有优化→论文→核心思想→结果",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "result",
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "field_roadmap_timeline",
+        "roadmap_gap_conclusion",
+        "operator_pipeline_decomposition",
+        "existing_optimization_survey",
+        "paper_title_authors_only",
+        "core_idea_dual_operator",
+        "single_experiment_result_speedup_callout"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_instance_key_idea_paper_dual_innovation_experiment",
+      "layer": "section_level",
+      "title": "成果单元·入场→核心思想→论文→双核心创新→实验结果",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "result",
+          "case_study"
+        ]
+      },
+      "archetype_sequence": [
+        "instance_entry_transition",
+        "core_idea_dual_view_bridge",
+        "paper_title_authors_only",
+        "core_innovation_paired_frame",
+        "experiment_result_headline_with_metric"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_setup_accuracy_dual_lens_speedup_headline",
+      "layer": "section_level",
+      "title": "结果·设置→精度双视角→加速比头条",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_four_dimensions",
+        "accuracy_result_scenario_one_compare",
+        "accuracy_result_scenario_two_retention",
+        "speedup_headline_dual_platform"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_setup_main_latency_ablation_param_robust_five_step",
+      "layer": "section_level",
+      "title": "结果·设置→主结果→延迟→消融→参数鲁棒五步",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "eval_setup_bulleted_with_refs",
+        "main_recall_sota_dual_claim",
+        "latency_headline_single_number",
+        "ablation_component_dual_group",
+        "parameter_robustness_multi_curve_grid"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_three_work_overview_drilldown_awards_endorsement",
+      "layer": "section_level",
+      "title": "成果·三工作总览→分层下钻→整体收益→获奖→专家背书",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report"
+        ],
+        "chapter_role": [
+          "result"
+        ]
+      },
+      "archetype_sequence": [
+        "three_work_parallel_overview",
+        "work_layered_drilldown",
+        "aggregated_gain_industrial_metrics",
+        "best_paper_awards_montage",
+        "expert_endorsement_trio_quotes"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "self_intro_course_completion_single_page",
+      "layer": "section_level",
+      "title": "自我介绍·课程完成情况单页声明",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "self_intro"
+        ]
+      },
+      "archetype_sequence": [
+        "course_completion_single_statement"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "self_intro_dual_timeline_research_work_edu",
+      "layer": "section_level",
+      "title": "自我介绍·研究领域+工作/教育双时间线",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "self_intro"
+        ]
+      },
+      "archetype_sequence": [
+        "self_intro_research_plus_dual_timeline"
+      ],
+      "source_count": 3,
+      "confidence": "high"
+    },
+    {
+      "id": "self_intro_with_toc_transition_dual_timeline",
+      "layer": "section_level",
+      "title": "自我介绍·目录切入+研究领域标签+双时间线单页",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report"
+        ],
+        "chapter_role": [
+          "self_intro"
+        ]
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "self_intro_research_plus_dual_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    }
+  ]
+}

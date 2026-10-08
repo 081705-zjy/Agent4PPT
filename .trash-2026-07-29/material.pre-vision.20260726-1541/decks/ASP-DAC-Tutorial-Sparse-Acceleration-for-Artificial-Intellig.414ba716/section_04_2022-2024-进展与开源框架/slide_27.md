@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_27"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.04"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 27
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "dgSPARSE 算子性能对比"
+核心论断: "稀疏算子较 NVIDIA 商用库最高快一个数量级"
+本页讲什么: "本页展开 dgSPARSE 稀疏算子的性能证据，以密集的对比数据说明其相对 NVIDIA 商用库最高可达一个数量级的加速，是对上页框架优势的量化支撑，也是本章开源框架部分的核心结果页。"
+关键文字: "[Open-source Sparse System Framework, Sparse operator, Up to an order faster than NVIDIA commercial libraries]"
+视觉骨架: "[算子性能对比图表, 多算子加速数据阵]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_27.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_27.asset.02]"
+适合复用场景: "[稀疏算子加速比数据页, 对比商用库的性能结果页]"
+不适合复用场景: "[概念框架总览页, 历史类比动机页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Open-source Sparse System Framework — Sparse operator"}
+  - {"位置": "下方主体", "内容": "多算子对比图表阵：dgSPARSE vs NVIDIA 商用库加速数据"}
+alternate_claims:
+  - "dgSPARSE 覆盖多类稀疏算子的系统性对比"
+layout_tag: "dense_data_chart"
+---
+# slide 27: dgSPARSE 算子性能对比
+
+**核心论断**: 稀疏算子较 NVIDIA 商用库最高快一个数量级
+
+## 本页讲什么
+本页展开 dgSPARSE 稀疏算子的性能证据，以密集的对比数据说明其相对 NVIDIA 商用库最高可达一个数量级的加速，是对上页框架优势的量化支撑，也是本章开源框架部分的核心结果页。
+
+## 关键文字片段
+- Open-source Sparse System Framework
+- Sparse operator
+- Up to an order faster than NVIDIA commercial libraries
+
+## 视觉骨架
+- 算子性能对比图表
+- 多算子加速数据阵
+
+## 可复用到
+- 稀疏算子加速比数据页
+- 对比商用库的性能结果页
+
+## 不适合复用的场景
+- 概念框架总览页
+- 历史类比动机页

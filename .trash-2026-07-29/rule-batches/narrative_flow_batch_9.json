@@ -1,0 +1,330 @@
+{
+  "batch_index": 9,
+  "rules": [
+    {
+      "id": "cover_title_verbatim_recall_in_closing",
+      "category": "callback",
+      "applicable_when": "any paper_share deck with cover + closing slides",
+      "title": "封面主标题在结尾页 verbatim 回扣",
+      "description": "封面 (slide 1) 出现的论文主标题, 在结尾页 (last slide) 以 verbatim 或近乎完整版本再次居中呈现, 形成首尾闭环命名锚点。",
+      "what_to_check": [
+        "读 slides_in_order[0].关键文字 找主标题字符串 (通常含冒号+副标题, 例 'SpeContext: ...')",
+        "读 last slide (页面角色=ending_candidate) 的 关键文字, 判断主标题是否 verbatim 或补全版重现",
+        "命中条件: 主标题连续 ≥6 个中英字符在结尾页出现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "cover slide 1 标题 'SpeContext: Enabling Efficient Long-context Reasoning with' 在 slide 34 补全为完整版 'SpeContext: Enabling Efficient Long-context Reasoning with Speculative Context Sparsity in LLMs'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众听完整场后主标题仍是识别工作的核心 handle, 结尾页 verbatim 回扣建立命名锚点, 避免'讲了半天不知道叫啥'",
+      "fix_hint": "把结尾页主 anchor 替换为 cover 主标题 verbatim (可补全副标题)",
+      "exceptions": []
+    },
+    {
+      "id": "key_insight_verbatim_recall_in_closing",
+      "category": "callback",
+      "applicable_when": "paper_share deck 含 method 章中 'Key Insight' 标注页",
+      "title": "核心洞见句在结尾页 verbatim 回扣",
+      "description": "method 章中被标注为 Key Insight 的核心结论句 (通常 1-2 句), 应在结尾页以 verbatim 形式再次出现, 与主标题一起形成首尾双锚点。",
+      "what_to_check": [
+        "在 slides_in_order 中找 关键文字 或 标题 含 'Key Insight' 的 slide, 抽取其核心结论句",
+        "在结尾页 (section_role=closing) 的 关键文字 中匹配这些结论句",
+        "命中: 至少 1 条核心结论句在结尾页 verbatim 复现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "slide 16 Key Insight 结论 'Distilled language model exhibits similar information focus' + 'We can leverage the DLM as the retrieval algorithm' 在 slide 34 结尾页 verbatim 重现两句"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众离场只会带走一句话, Key Insight 在结尾页 verbatim 强化让'方法起点'成为听众记忆残留物",
+      "fix_hint": "在结尾页保留 Key Insight 原句作为回扣文案",
+      "exceptions": [
+        "survey 型 deck 无单一 Key Insight (可豁免)"
+      ]
+    },
+    {
+      "id": "outline_page_repeated_at_chapter_boundary",
+      "category": "chapter_transitions",
+      "applicable_when": "deck 章节数 ≥4 或总页数 ≥25",
+      "title": "章间反复展示同一 outline 页并高亮当前章",
+      "description": "每进入新一级章节前插入一张 outline 导航页, 结构完全一致但把当前章标黑其余章灰化, 让听众实时感知'我在哪'。",
+      "what_to_check": [
+        "扫描 slides_in_order, 找 标题 或 关键文字 含 'Outline' 的 slide",
+        "验证这些 outline 页出现次数 ≥ 章节数-1 (对每个非首章章节, 章前应有一张)",
+        "确认各 outline 页 关键文字 列表相同 (章目录一致)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "34 页 deck 出现 5 次 outline (slides 2/9/12/24/29), 分别高亮 Background/Related Work/Challenges/Experiment/Extension, 章目录完全一致"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 听众容易迷失; 反复同框 outline 是最低成本的方位感重置, 比口播'下面进入第 N 章'有效",
+      "fix_hint": "在每个新章首页前插入一张 outline copy, 仅切换高亮项",
+      "exceptions": [
+        "deck 总页数 <20 (章节切换靠口播即可)",
+        "章节数 ≤3 的短分享"
+      ]
+    },
+    {
+      "id": "challenge_framed_before_technique_reveal",
+      "category": "chapter_transitions",
+      "applicable_when": "paper_share deck 的 method 章含 ≥2 个子技术",
+      "title": "每个子技术以 'Challenge:' 挑战页开场再给方案",
+      "description": "method 章下每一个 sub-technique 用统一格式的 'Challenge: <痛点>' 页开场描述缺陷, 下一页/下几页才展示对应解法, 形成 problem→solution 局部弧线。",
+      "what_to_check": [
+        "在 method 章 slides 中找 关键文字 或 标题 以 'Challenge:' 前缀开头的 slide",
+        "验证每个 sub-technique 名 (如 Tech1/2/3) 对应至少 1 张 Challenge 页 + 至少 1 张解法页",
+        "命中: Challenge 覆盖率 = 有 Challenge 页的子技术数 / 子技术总数 ≥ 80%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "Tech1 slide 17 'Challenge: Time-consuming DLM'; Tech2 slide 20 'Challenge: Heavy Data transfer'; Tech3 slide 22 'Challenge: Performance Degradation' — 3/3 子技术覆盖"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "系统类论文的每个 sub-technique 都是被特定痛点驱动的; 先立痛点再给方案让每一技术显得必要而非炫技",
+      "fix_hint": "对没有 Challenge 页的子技术, 补一张只写 'Challenge: <痛点>' 的引子页, 内容取自该子技术首页的动机段",
+      "exceptions": [
+        "综述/教程型 deck (只讲方法不含挑战驱动)"
+      ]
+    },
+    {
+      "id": "rhetorical_question_setup_before_answer",
+      "category": "suspense_reveal",
+      "applicable_when": "background 或 method 章含 ≥1 张问句主导页",
+      "title": "醒目问句独占一页, 下一页给出解答",
+      "description": "在章内关键节点单独用一张页贴出红框/大字问句 (Why/How/What), 该页只做设问; 紧邻的下一页 (或同章后续) 给出答案页, 制造 setup→payoff。",
+      "what_to_check": [
+        "扫描 slides_in_order, 找 关键文字 或 视觉骨架 含 'Why/How/What' 问句 + '红框/居中大字/banner' 描述的 slide",
+        "验证该问句在下一张 (或本章后续 ≤3 张) slide 的 核心论断 中被解答",
+        "命中: 每张问句页有对应解答页覆盖率 ≥80%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "slide 4 'Why do we persistently pursue longer context?' → slide 5 'Long Context in Five Levels' 给出五层价值答案; slide 8 'How to reduce the KV Cache' → 转入相关工作+方法章; slide 13/14 Q&A 结构在 Key Insight 反复使用"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "问句独占一页强制暂停, 让听众自动进入'找答案'预期; 该悬念是让下一页真正被'看进去'的核心杠杆",
+      "fix_hint": "把章内关键转折句改写为设问, 独占一页, 下一页保留答案",
+      "exceptions": [
+        "纯数据展示章 (result 章不适合设问打断)"
+      ]
+    },
+    {
+      "id": "hero_number_reveal_at_result_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "paper_share deck 含 result 章且有 hero speedup/accuracy 数字",
+      "title": "最炸数字放在 result 章末页且前文不泄漏",
+      "description": "整场最大的加速比/准确率数字 (例 24×) 只在 result 章的最后一页 (或倒数第一/二页) 首次出现, cover/motivation/method 章不做数字泄漏, 保住 build-up 张力。",
+      "what_to_check": [
+        "从 slides_in_order 中扫 关键文字 找形如 'Nx / N倍 / N% / speedup / throughput' 的最大数字",
+        "验证该数字首次出现的页在 section_role=result 章的末页 (页码范围内最后一张)",
+        "反向: 检查 cover/background/method 章 slides 中是否 提前出现该数字 (泄漏就 miss)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "hero 数字 24.89x/10.06x 首次亮出在 result 章末页 slide 28 (章页码范围 24-28), cover 与 method 章无提前泄漏"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "hero 数字是全场高潮; 提前泄漏就没有 result 章的爆点, 章末揭晓能让加速比读起来像'努力换来的结果'",
+      "fix_hint": "把 cover/motivation/method 里出现的加速数字改成 '~an order of magnitude' 等模糊说法, 数字仅在 result 章末页首次显式化",
+      "exceptions": [
+        "工程 demo/产品发布 deck (需在开场立即立卖点数字)",
+        "cover 已强制含数字的模板"
+      ]
+    },
+    {
+      "id": "outline_subitems_deliver_as_method_slides",
+      "category": "structural_promise",
+      "applicable_when": "outline 页在章条目下含 sub-bullet 列表",
+      "title": "outline 中的子技术条目在 method 章逐一兑现",
+      "description": "outline 页在'方法/技术'章下列出的 sub-bullet 列表 (每条为一个子技术名), method 章应为每条 sub-bullet 至少提供 1 张明确对应的 slide (标题/关键文字包含子技术名)。",
+      "what_to_check": [
+        "从首张 outline slide (通常 slide 2) 抽取方法章下的 sub-bullet 列表 (缩进条目)",
+        "在 section_role=method 章内 slides 的 标题/关键文字 中查找每个 sub-bullet 名的 verbatim 或 paraphrase 匹配",
+        "命中率 = 已 deliver 子条目数 / outline 承诺子条目数 ≥ 90%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "outline 承诺 4 子项 (Key Insight/Lightweight Retrieval Head/Asynchronous Prefetch Dataflow/Adaptive Memory Management), method 章 slides 13-16 覆盖 Key Insight, 17-19 Lightweight Retrieval, 20-21 Async Prefetch, 22-23 Adaptive Memory — 4/4 全部 deliver"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "outline 是对听众的书面承诺, sub-bullet 落空会让听众产生'讲少了'的直观错觉, 破坏结构信任",
+      "fix_hint": "对未 deliver 的 sub-bullet, 要么在 method 章补一张对应 slide, 要么从 outline 中删除该 bullet",
+      "exceptions": []
+    },
+    {
+      "id": "baseline_named_in_related_work_then_reused_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "paper_share deck 同时含 related work 章和 result 章",
+      "title": "baseline 方法名先在相关工作章立牌, 再在实验章复用",
+      "description": "result 章中作为对比对象的 baseline 方法名, 应先在 related work 章以 concept 形式引入 (含缩略描述+文献引用), 避免在实验章突兀出现陌生方法名。",
+      "what_to_check": [
+        "扫描 result 章 slides 中作为对比对象的方法名列表 (通常紧跟'vs/Ours/baseline'关键词)",
+        "反向查这些方法名是否在 related work 章 slides 的 关键文字/核心论断 中提前出现",
+        "命中率 = 已在 related work 提名的 baseline 数 / result 章 baseline 总数 ≥ 80%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "result 章 slides 25-26 用 Quest/ClusterKV/ShadowKV 做对比, 三者已在 related work slides 10-11 立牌介绍 (Quest ICML24, ClusterKV) — 3/3 baseline 提前引入"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "实验图里 baseline 缩略名密集出现, 听众若首次听说会来不及对应上是哪个方法, related work 章的提前立牌是唯一低成本对齐机制",
+      "fix_hint": "对 result 章出现但 related work 未介绍的 baseline, 在相关工作章补一张概念页或将其加入现有比较页",
+      "exceptions": [
+        "实验部分只与'全注意力'等常识 baseline 对比 (不需要 related work 立牌)"
+      ]
+    },
+    {
+      "id": "jargon_defined_at_first_visual_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "deck 含专业名词/缩写 anchor",
+      "title": "关键术语与缩写首次使用即用视觉方式定义",
+      "description": "论文核心术语 (如 KV Cache, DLM, System1/System2) 首次出现的 slide 应同时提供视觉定义 (公式/结构图/引用出处), 而非留待后续解释, 使术语从第一次曝光即可解码。",
+      "what_to_check": [
+        "扫描 主题标签 或反复出现的技术名词/缩写",
+        "对每个术语, 找 slides_in_order 中的首次出现页",
+        "验证该首次出现页的 视觉骨架 或 关键文字 是否包含定义元素 (公式/结构图/文献引用)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "'KV Cache' 首次出现 slide 6 附注意力计算框图 + K/V 标红定义; 'DLM' 首次深入使用 slide 15-16 附信息流 + Distilled LM 架构图; 'System1/System2' 首次 slide 32 附 Kahneman 引用与双系统定义"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "术语裸出无定义会让听众瞬间掉线, 首次曝光即视觉化定义是让整场后文都能被解码的前提条件",
+      "fix_hint": "对首次出现但无定义的术语, 在该页追加公式/结构图/文献脚注中至少 1 种",
+      "exceptions": [
+        "听众绝对同行的圈内共识术语 (在目标受众字段明确标注时可豁免)"
+      ]
+    },
+    {
+      "id": "main_anchor_repeat_across_all_role_sections",
+      "category": "repetition_emphasis",
+      "applicable_when": "任意有明确产品/方法命名的 paper_share deck",
+      "title": "主 anchor (方法名) 在每个 section_role 至少出现一次",
+      "description": "论文核心命名 anchor (通常是 cover 主标题中的方法名) 应至少在 opening/method/result/closing 每个 section_role 内的 slide 中各出现 1 次, 保证跨章节'谁'的一致性。",
+      "what_to_check": [
+        "从 cover slide 主标题抽取方法名 anchor (通常是首个大写词或专有名词)",
+        "按 section_role 分组 slides, 检查每类 slide 组内是否至少一张的 关键文字/核心论断 含该 anchor",
+        "命中: 覆盖的 section_role 类数 / 该 deck 的 section_role 类数 ≥90%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "'SpeContext' anchor 在 opening slides 1-2, background slide 8 (伏笔), method slide 12 (章导航), result slide 28 (加速卖点), discussion slide 33 (系列工作定位), closing slide 34 全覆盖 — 6/6 section_role"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨章节的主 anchor 复现是让听众记住'谁'的唯一途径; 中间某章长时间不提名会让方法名从记忆中滑出",
+      "fix_hint": "在缺失 anchor 的章节内选一张 slide, 在标题或首句显式插入方法名",
+      "exceptions": [
+        "综述/tutorial 类 deck 无单一主方法"
+      ]
+    },
+    {
+      "id": "method_chapter_is_largest_page_block_for_paper_share",
+      "category": "pacing",
+      "applicable_when": "报告类型=paper_share 的 deck",
+      "title": "paper_share 中 method 章占页数最多",
+      "description": "paper_share 类 deck 中 method 章的页数应显著大于其他任何单一章 (通常 ≥30% 总页数, 且 > result 章至少 1.5x), 反映系统类论文'方法为核心'的重心分配。",
+      "what_to_check": [
+        "从 sections_outline 计算每章页数 = 页码范围[1] - 页码范围[0] + 1",
+        "找 section_role=method 的章, 记页数 M",
+        "验证 M / 总页数 ≥ 0.30 且 M / max(其他章页数) > 1.3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "method 章 (slides 12-23) 12 页 / 34 总页 = 35%; 其他单章最多 6 页 (background), method/max_other = 2.0x"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "paper_share 的听众预期是学到'方法怎么做', 方法章页数不足会让'系统贡献感'塌陷; 但纯理论论文可能反例",
+      "fix_hint": "若 method 章不足 30%, 拆分 sub-technique 各自补充 challenge/dataflow/ablation 页, 或从 background 挪出细节页",
+      "exceptions": [
+        "纯理论论文 (证明章可能超过方法章)",
+        "实验驱动论文 (result 章可与 method 章相当)"
+      ]
+    },
+    {
+      "id": "chapter_end_hook_bridges_to_next_chapter",
+      "category": "chapter_transitions",
+      "applicable_when": "章节数 ≥3 的 deck",
+      "title": "章末页埋下一章预告钩子",
+      "description": "章末页 (每章页码范围最后一张) 应埋一句指向下一章主题的问句/预告/收束句, 避免章间硬切。命中率应 ≥70% (以问句、reduce-to-next-topic、'下面看...'等语义信号计)。",
+      "what_to_check": [
+        "对每个非最后章的 section, 取该章页码范围末页 slide",
+        "检查该 slide 的 核心论断/关键文字 是否含指向下一章 role 的收束句 (Why/How/接下来/收敛为.../'如何...'等)",
+        "命中: 有 hook 章数 / (总章数-1) ≥ 70%"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "evidence": "background 章末 slide 8 'How to reduce the KV Cache' 埋钩勾出 related work + method; method 章末 slide 23 收束为自适应内存实现引向实验章; discussion 章末 slide 33 把 SpeContext 升华为系列工作范式引向 closing"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "章间硬切会让听众每章都要重启注意力; 章末的一句钩子把注意力'带过去', 是维持整场心流的关键零成本工具",
+      "fix_hint": "对无钩子的章末页, 在标题或红字位置追加一句设问指向下一章主题",
+      "exceptions": [
+        "deck 最后一章 (closing 前) 天然收束, 不需要 hook"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck (SpeContext, paper_share, 34 页, 7 章). 该 deck 是极典型的系统类论文分享, 展现了完整的 opening→background→related work→method(challenges+techniques)→result→discussion(extension)→closing 弧线, 章间反复用 outline 导航, sub-technique 统一用 'Challenge:' 引子, hero 数字精准放在 result 章末, cover 主标题与 Key Insight 均在结尾 verbatim 回扣. 抽出 13 条覆盖 7 类的 rule (缺 anchor_trajectory 的多条抽取, 因单 deck 样本可支撑证据有限). 所有 rule 的 hit_rate 均为 1.0 因样本 N=1; 后续 batch 需交叉验证以下调过度自信的 enforcement_level.",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "callback": 2,
+      "suspense_reveal": 2,
+      "chapter_transitions": 3,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 1,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

@@ -1,0 +1,46 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_03"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 3
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "新兴大模型与应用格局"
+核心论断: "大模型能力跃升催生一批新兴长上下文应用"
+本页讲什么: "作为 background 章开篇，铺陈近年大模型（LLMs）的爆发式演进及其带动的新兴应用形态，用图标/示例把\"模型进步→应用繁荣\"的因果讲清楚，为后文引出长上下文需求埋下伏笔。"
+关键文字: "[Emerging LLMs and Applications]"
+视觉骨架: "[模型/应用示例图标阵列, 标题横幅]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_03.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_03.asset.02, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_03.asset.03]"
+适合复用场景: "[长上下文推理 background 开篇页, 大模型应用趋势引入页]"
+不适合复用场景: "[具体方法架构详解页, 含 benchmark 数据的结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题横幅", "内容": "Emerging LLMs and Applications"}
+  - {"位置": "下方主体", "内容": "模型与应用示例图标阵列"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 3: 新兴大模型与应用格局
+
+**核心论断**: 大模型能力跃升催生一批新兴长上下文应用
+
+## 本页讲什么
+作为 background 章开篇，铺陈近年大模型（LLMs）的爆发式演进及其带动的新兴应用形态，用图标/示例把"模型进步→应用繁荣"的因果讲清楚，为后文引出长上下文需求埋下伏笔。
+
+## 关键文字片段
+- Emerging LLMs and Applications
+
+## 视觉骨架
+- 模型/应用示例图标阵列
+- 标题横幅
+
+## 可复用到
+- 长上下文推理 background 开篇页
+- 大模型应用趋势引入页
+
+## 不适合复用的场景
+- 具体方法架构详解页
+- 含 benchmark 数据的结果页

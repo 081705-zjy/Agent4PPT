@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_18"
+所属章节: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05"
+所属deck: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4"
+页序号: 18
+源文件: "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx"
+页面角色: "content_candidate"
+标题: "章节目录导航页"
+核心论断: "方法章由特征选择与分类两步流程构成"
+本页讲什么: "本页是进入方法核心章前的目录/导航页，罗列 Background、Related Work、Techniques 等板块与对应页码，帮助听众定位当前讲到「特征选择与分类算法」这一部分，为后续逐页展开算法做铺垫。"
+关键文字: "[Background, Related Work, Techniques]"
+视觉骨架: "[章节目录列表, 板块页码索引, 配图缩略图]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_18.asset.01, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_18.asset.02]"
+适合复用场景: "[技术方法章前的目录导航页, 多板块论文汇报的章节索引页]"
+不适合复用场景: "[单一算法细节展开页, 含具体数据的结果对比页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "左侧主体", "内容": "章节目录列表: Background / Related Work / Techniques"}
+  - {"位置": "右侧或底部", "内容": "板块页码索引与配图缩略图"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 18: 章节目录导航页
+
+**核心论断**: 方法章由特征选择与分类两步流程构成
+
+## 本页讲什么
+本页是进入方法核心章前的目录/导航页，罗列 Background、Related Work、Techniques 等板块与对应页码，帮助听众定位当前讲到「特征选择与分类算法」这一部分，为后续逐页展开算法做铺垫。
+
+## 关键文字片段
+- Background
+- Related Work
+- Techniques
+
+## 视觉骨架
+- 章节目录列表
+- 板块页码索引
+- 配图缩略图
+
+## 可复用到
+- 技术方法章前的目录导航页
+- 多板块论文汇报的章节索引页
+
+## 不适合复用的场景
+- 单一算法细节展开页
+- 含具体数据的结果对比页

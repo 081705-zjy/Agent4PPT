@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_63",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.10",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 63,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "结构化稀疏导致精度下降",
+  "核心论断": "结构化稀疏在 LLM 上导致精度显著下降",
+  "本页讲什么": "转入稀疏精度与硬件权衡话题的背景铺陈:指出现有稀疏方法在大模型上面临精度与硬件效率双重挑战,本页聚焦结构化稀疏——其带来的问题是精度下降。",
+  "关键文字": [
+    "Structured sparsity leads to poor accuracy",
+    "Existing sparse methods face accuracy and hardware efficiency challenges on large language models"
+  ],
+  "视觉骨架": [
+    "结构化稀疏矩阵示意",
+    "精度下降对比图"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_63.asset.01",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_63.asset.02"
+  ],
+  "适合复用场景": [
+    "稀疏方法挑战背景页",
+    "结构化稀疏精度问题介绍"
+  ],
+  "不适合复用场景": [
+    "GEMM 编译调优结果页",
+    "MoE 训练加速页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

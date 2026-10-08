@@ -1,0 +1,11 @@
+{
+  "batch_index": 26,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has both motivation and method sections",
+      "title": "动机挑战需在方法章逐一回扣",
+      "description": "motivation章列出的挑战（算法硬件割裂、端侧资源受限、生态碎片化、能效指标转变），method章必须逐一回应，命中率≥80%。",
+      "what_to_check": [
+        "找motivation章slide.关键文字/核心论断中含'挑战''痛点''割裂''受限'

@@ -1,0 +1,42 @@
+---
+章节标识: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.08
+所属deck: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19
+章节序号: 8
+章节角色: method
+标题: "稀疏新基础模型:TB-STC"
+页码范围: [43, 50]
+页数: 8
+页ID列表: [slide_43, slide_44, slide_45, slide_46, slide_47, slide_48, slide_49, slide_50]
+章节叙事: "作为 deck 收官 method 章,把稀疏从算子/硬件推进到基础模型训练层:先立「带稀疏的新基础模型」愿景,落到 N:M 稀疏训练三阶段,再抛出 TB-STC 可转置块状稀疏这一核心创新,以两个算子技术支撑并用端到端实验收尾。"
+页间关系: ["slide 43 → slide 44: 由稀疏新基础模型开篇延续论证其必要性", "slide 44 → slide 45: 从愿景收敛到 N:M 稀疏这一具体机制", "slide 45 → slide 46: 由 N:M 稀疏引出稀疏训练三阶段(算子)", "slide 46 → slide 47: 由训练三阶段痛点抛出可转置块状稀疏核心思想", "slide 47 → slide 48: 由 pattern 设计过渡到技术一 SpMM/SpMM-T 算子", "slide 48 → slide 49: 从格式转换算子推进到技术二 SpMM/SDDMM 算子", "slide 49 → slide 50: 由两项算子技术收束到 TB-STC 端到端实验结果"]
+适合复用场景: [介绍自研稀疏训练框架/基础模型的 method 章, "论证 N:M 稀疏可迁移到训练而非仅推理", 「愿景→机制→核心创新→技术→实验」的方法章骨架, 需并列讲多个稀疏算子技术的章节]
+不适合复用场景: [研究不涉及训练侧稀疏加速时, 只有单一技术点、撑不起两页 Tech 并列时, 无端到端实测数据支撑收尾时, 面向纯推理稀疏、无训练三阶段的主题]
+在deck中的位置: 第 8 章(末章 method),接前面算子/硬件稀疏,升维到训练层。
+分析状态: claude-opus-4-8
+---
+
+# section 8: 稀疏新基础模型:TB-STC
+
+## 在 deck 中的位置
+第 8 章(末章 method),接前面算子/硬件稀疏,升维到训练层。
+
+## 章内 slide 间的关系
+- slide 43 → slide 44: 由稀疏新基础模型开篇延续论证其必要性
+- slide 44 → slide 45: 从愿景收敛到 N:M 稀疏这一具体机制
+- slide 45 → slide 46: 由 N:M 稀疏引出稀疏训练三阶段(算子)
+- slide 46 → slide 47: 由训练三阶段痛点抛出可转置块状稀疏核心思想
+- slide 47 → slide 48: 由 pattern 设计过渡到技术一 SpMM/SpMM-T 算子
+- slide 48 → slide 49: 从格式转换算子推进到技术二 SpMM/SDDMM 算子
+- slide 49 → slide 50: 由两项算子技术收束到 TB-STC 端到端实验结果
+
+## 整章可复用的场景
+- 介绍自研稀疏训练框架/基础模型的 method 章
+- 论证 N:M 稀疏可迁移到训练而非仅推理
+- 「愿景→机制→核心创新→技术→实验」的方法章骨架
+- 需并列讲多个稀疏算子技术的章节
+
+## 不适合复用的场景
+- 研究不涉及训练侧稀疏加速时
+- 只有单一技术点、撑不起两页 Tech 并列时
+- 无端到端实测数据支撑收尾时
+- 面向纯推理稀疏、无训练三阶段的主题

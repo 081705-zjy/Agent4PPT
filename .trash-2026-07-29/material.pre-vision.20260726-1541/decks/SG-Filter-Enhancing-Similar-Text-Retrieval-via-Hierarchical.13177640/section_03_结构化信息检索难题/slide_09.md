@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_09"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.03"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 9
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "content_candidate"
+标题: "文本示例：一句话的检索场景"
+核心论断: "以一句样例文本直观呈现结构化检索的输入形态"
+本页讲什么: "本页用一条样例句子「A fast brown fox leaps above the idle cat」作为演示文本，配序号标记①，把抽象的结构化检索问题落到具体文本上。承接上页抛出的 Type2 问题，为下页说明「现有 embedding 范式为何失效」提供直观的文本对象。"
+关键文字: "[A fast brown fox leaps above the idle cat, ①]"
+视觉骨架: "[单句样例文本卡片, 序号标记①]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_09.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_09.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_09.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_09.asset.04]"
+适合复用场景: "[检索示例的样例文本演示页, 问题铺垫的单句示意页]"
+不适合复用场景: "[多组数据图表页, 整体架构总览页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方序号标记", "内容": "①"}
+  - {"位置": "下方主体", "内容": "样例句子 A fast brown fox leaps above the idle cat"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 9: 文本示例：一句话的检索场景
+
+**核心论断**: 以一句样例文本直观呈现结构化检索的输入形态
+
+## 本页讲什么
+本页用一条样例句子「A fast brown fox leaps above the idle cat」作为演示文本，配序号标记①，把抽象的结构化检索问题落到具体文本上。承接上页抛出的 Type2 问题，为下页说明「现有 embedding 范式为何失效」提供直观的文本对象。
+
+## 关键文字片段
+- A fast brown fox leaps above the idle cat
+- ①
+
+## 视觉骨架
+- 单句样例文本卡片
+- 序号标记①
+
+## 可复用到
+- 检索示例的样例文本演示页
+- 问题铺垫的单句示意页
+
+## 不适合复用的场景
+- 多组数据图表页
+- 整体架构总览页

@@ -1,0 +1,1056 @@
+{
+  "batch_index": 11,
+  "patterns": [
+    {
+      "id": "method_key_insight_triad_then_three_pain_solution_pairs",
+      "title": "方法·Key Insight 三连+三项技术痛点-方案对",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "关键洞察",
+          "技术",
+          "痛点",
+          "方案",
+          "predictor"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮进入方法章"
+        },
+        {
+          "archetype": "key_insight_progressive_search_reduction",
+          "count": 3,
+          "position": "middle",
+          "purpose": "三页 Key Insight 漏斗:抽象为搜索过程→缩空间→逐层部署预测器,层层设问推进"
+        },
+        {
+          "archetype": "technique_pain_point_statement",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术首页以数据/结构图暴露痛点(高维特征/偏斜分布/指数复杂度)并设问"
+        },
+        {
+          "archetype": "technique_solution_design",
+          "count": 3,
+          "position": "end",
+          "purpose": "每项技术次页给出对应设计(概率漂移+校正/两级调度/合并映射)并标注量化收益"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "key_insight_progressive_search_reduction",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "key_insight_progressive_search_reduction",
+          "to_archetype": "key_insight_progressive_search_reduction",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "key_insight_progressive_search_reduction",
+          "to_archetype": "technique_pain_point_statement",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "technique_pain_point_statement",
+          "to_archetype": "technique_solution_design",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "technique_solution_design",
+          "to_archetype": "technique_pain_point_statement",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型方法章:章首目录→3 页 Key Insight 漏斗式推进(把推理抽象为搜索过程并逐步缩空间)→3 项技术各自以『痛点(数据/结构证据+设问)→设计(方案图+量化收益)』成对展开,3 挑战与 3 技术一一对应",
+      "anti_patterns": [
+        "纯 3-4 页多解法一一配对无 Key Insight 铺垫 — 用 case_study_challenge_solution_performance_closed_loop",
+        "方法章含消融/实验结果混杂 — 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "单一 method 深钻缺多技术并列 — 用 method_single_method_deep_dive"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "section_title": "SpecEE 挑战、关键洞察与技术设计",
+          "section_role": "method",
+          "section_narrative": "SpecEE 方法主体。先用 Key Insight 三连把推理拆成「缩搜索空间→跳冗余层→设计预测器」三问,再以「痛点→设计图→收益」范式依次给出轻量预测器、启发式调度、合并映射三项技术。",
+          "section_topic_tags": [
+            "投机式提前退出",
+            "轻量预测器",
+            "启发调度",
+            "合并映射",
+            "LLM 推理加速"
+          ],
+          "match_evidence": "10 页节奏:TOC(1)+Key Insight 三连(3:搜索过程→缩空间→逐层预测器)+3 项技术各以痛点-设计对展开(6)",
+          "slides": [
+            {
+              "slide_index": 10,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:定位到 Challenges and Techniques",
+              "slide_claim": "本章围绕四项技术展开:关键洞察、轻量预测器、启发调度、合并映射",
+              "slide_key_text": [
+                "Backgrounds / Related Works",
+                "Challenges and Techniques",
+                "Key Insight",
+                "Lightweight Predictor Design",
+                "Heuristic Predictor Scheduling",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "多级 agenda 列表",
+                "当前章高亮其余置灰",
+                "子条目缩进 bullet"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "key_insight_progressive_search_reduction",
+              "archetype": "pipeline_with_search_space_annotation",
+              "slide_title": "Key Insight:LLM 推理即搜索过程",
+              "slide_claim": "LLM 自回归推理本质是在全词表上的搜索过程",
+              "slide_key_text": [
+                "A Search Process",
+                "This is the search space",
+                "Full Vocabulary (~3×10^4 Tokens)",
+                "How to reduce the effective search space"
+              ],
+              "slide_visual_skeleton": [
+                "Prompt→Attention/FFN→Output 流水线",
+                "搜索空间标注气泡",
+                "全词表 token 示意"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "key_insight_progressive_search_reduction",
+              "archetype": "speculative_vocab_reduction_diagram",
+              "slide_title": "Key Insight:投机模型缩小搜索空间",
+              "slide_claim": "投机模型把全词表搜索空间压缩到极少候选 token",
+              "slide_key_text": [
+                "A speculative model for search space reduction",
+                "Full Vocabulary (~3×10^4 Tokens)",
+                "Reduced Vocabulary (~3 Tokens)",
+                "Speculative Model",
+                "How to reduce the computation based on reduced space?"
+              ],
+              "slide_visual_skeleton": [
+                "Prompt→多层 decoder→LM_head 流水线",
+                "全词表 vs 缩减词表对比气泡",
+                "投机模型标注框",
+                "底部红框问题条"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "key_insight_progressive_search_reduction",
+              "archetype": "per_layer_predictor_with_key_problem",
+              "slide_title": "Key Insight:逐层部署预测器跳冗余层",
+              "slide_claim": "每层后部署预测器,基于缩小空间跳过冗余层实现早退",
+              "slide_key_text": [
+                "Deploy a predictor after each layer",
+                "Feature Process Model",
+                "Yes / No",
+                "Key Problem: How to design the predictor?"
+              ],
+              "slide_visual_skeleton": [
+                "逐层流水线各层后挂 predictor",
+                "Yes/No 判定分支",
+                "早退跳层示意",
+                "底部红字关键问题"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "technique_pain_point_statement",
+              "archetype": "high_dimension_feature_time_percent_pain",
+              "slide_title": "Technique 1 痛点:高维原始特征预测太慢",
+              "slide_claim": "基于 >4×10^3 维原始特征的预测器约占 30% 耗时,拖慢推理",
+              "slide_key_text": [
+                "predictor based on raw high-dimensional (>4×10^3) features is time-consuming",
+                "Raw Features > 4×10^3 dimensions",
+                "~30%",
+                "How to design a lightweight predictor model?"
+              ],
+              "slide_visual_skeleton": [
+                "预测器特征处理框图",
+                "~30% 耗时占比标注",
+                "原始特征维度标注",
+                "底部引用脚注"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "technique_solution_design",
+              "archetype": "dimension_reduction_two_step_correction_design",
+              "slide_title": "Technique 1 设计:概率漂移特征+校正算法",
+              "slide_claim": "概率漂移特征降维约 10^3 倍,两步校正算法保精度",
+              "slide_key_text": [
+                "probability shift feature for lightweight predictor design",
+                "correction algorithm to ensure accuracy",
+                "Extracted features ~3 dimensions",
+                "~10^3 features reduction",
+                "Correction Algorithm Based on full vocabulary",
+                "Two-step prediction to ensure accuracy"
+              ],
+              "slide_visual_skeleton": [
+                "概率漂移特征降维示意",
+                "两步预测判定流程",
+                "校正算法 Early/Forward 分支",
+                "底部收益标注条"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "technique_pain_point_statement",
+              "archetype": "skewed_frequency_distribution_pain_chart",
+              "slide_title": "Technique 2 痛点:激活频率呈偏斜分布",
+              "slide_claim": "逐层部署预测器使各层激活频率呈显著偏斜分布",
+              "slide_key_text": [
+                "layer-wise predictor deployment introduces the skewed distribution on the activation frequency",
+                "Activation frequency",
+                "Skewed",
+                "Layer ID of Llama2-7B",
+                "How to deploy the predictor dynamically?"
+              ],
+              "slide_visual_skeleton": [
+                "顶部逐层流水线+Yes/No 判定",
+                "激活频率柱状图(5%–15%)",
+                "Llama2-7B 层号横轴",
+                "Skewed 红字标注"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "technique_solution_design",
+              "archetype": "dual_column_online_offline_scheduling",
+              "slide_title": "Technique 2 设计:在线+离线两级调度",
+              "slide_claim": "两级(在线+离线)启发式调度实现预测器动态部署",
+              "slide_key_text": [
+                "Two-level (online and offline) heuristic predictor scheduling",
+                "Context similarity in exiting",
+                "Offline Data Collection",
+                "Select the predictor with high frequency",
+                "Online Scheduling / Offline Scheduling"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏在线/离线",
+                "在线:表盘+逐层 Decoder/Predictor 匹配",
+                "离线:数据采集→选高频层",
+                "顶部蓝色标题块"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "technique_pain_point_statement",
+              "archetype": "exponential_mapping_complexity_compare",
+              "slide_title": "Technique 3 痛点:早退映射复杂度指数级",
+              "slide_claim": "投机解码中早退预测器的映射复杂度随 token 树指数级膨胀",
+              "slide_key_text": [
+                "Exponential mapping complexity of early exiting predictor in speculative decoding",
+                "Autoregressive Decoding",
+                "Speculative Decoding",
+                "Single Token vs Token Tree",
+                "Mapping Complexity S … Sn"
+              ],
+              "slide_visual_skeleton": [
+                "上下两行解码范式对比",
+                "自回归单 token 流",
+                "投机解码 token 树+多路径",
+                "右侧 S→Sn 复杂度标注框"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "technique_solution_design",
+              "archetype": "context_aware_merged_mapping_diagram",
+              "slide_title": "Technique 3 设计:上下文感知合并映射",
+              "slide_claim": "上下文感知的合并映射把映射复杂度从 Sⁿ 降到 S",
+              "slide_key_text": [
+                "Context-aware merged mapping for predictor to reduce mapping complexity",
+                "Merge as Hyper token",
+                "Token Tree",
+                "Merged mapping of the token path in token tree",
+                "Reduce the complexity from Sn to S"
+              ],
+              "slide_visual_skeleton": [
+                "token 树+多路径",
+                "Hyper token 合并示意",
+                "合并后路径单次映射",
+                "底部收益标注条 Sn→S"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_related_work_paradigm_abstract_three_methods_compare_table",
+      "title": "背景·相关工作·通用范式→三方法并列→多维对比表",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "范式抽象",
+          "方法对比",
+          "短板暴露"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Related Work 章"
+        },
+        {
+          "archetype": "paradigm_abstract_with_key_problem",
+          "count": 1,
+          "position": "start",
+          "purpose": "将现有方法抽象为通用范式(如每层部署 predictor)并抛出核心问题"
+        },
+        {
+          "archetype": "three_methods_architecture_parallel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "三列并排展示三种代表方法的架构示意"
+        },
+        {
+          "archetype": "multi_dimension_compare_table",
+          "count": 1,
+          "position": "end",
+          "purpose": "以方法×维度对比表暴露共性短板(红字 Heavy/High vs 绿字 Light/Low)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "paradigm_abstract_with_key_problem",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "paradigm_abstract_with_key_problem",
+          "to_archetype": "three_methods_architecture_parallel",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "three_methods_architecture_parallel",
+          "to_archetype": "multi_dimension_compare_table",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "论文分享型 related work 章:目录切入→抽象通用范式并抛出核心问题→三列并排代表方法架构→多维对比表暴露短板,为本文方案立反衬靶",
+      "anti_patterns": [
+        "纯 N 列并列综述无对比表 — 用 related_works_survey_three_pillars",
+        "related work 混入本文动机 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03",
+          "section_title": "相关工作:现有提前退出方法",
+          "section_role": "background",
+          "section_narrative": "承接 background,系统综述现有提前退出方法:先抽象出「每层部署 predictor」通用范式并抛出「如何设计 predictor」核心问题,再横比 RAEE/AdaInfer/MoD 三法,暴露其 predictor 过重、搜索空间过大等短板,为 SpecEE 轻量投机预测器铺垫。",
+          "section_topic_tags": [
+            "提前退出方法",
+            "每层预测器范式",
+            "RAEE/AdaInfer/MoD",
+            "predictor 设计",
+            "方法对比"
+          ],
+          "match_evidence": "4 页节奏:TOC+范式抽象+关键问题+三方法架构并列+多维对比表,恰好命中 pattern 四步",
+          "slides": [
+            {
+              "slide_index": 6,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:进入 Related Work 章节",
+              "slide_claim": "演讲进入「Related Work」环节,承接 Background",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "纵向目录列表",
+                "当前项高亮(黑)+ 其余灰",
+                "蓝色大标题 Outline"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "paradigm_abstract_with_key_problem",
+              "archetype": "pipeline_with_per_layer_predictor_diagram",
+              "slide_title": "提前退出通用范式:每层部署 predictor",
+              "slide_claim": "现有提前退出可抽象为「每层后接 predictor」,核心问题是如何设计 predictor",
+              "slide_key_text": [
+                "Deploy a predictor after each layer",
+                "Key Problem: How to design the predictor?",
+                "Prompt / Attention FFN / Output",
+                "Feature Process",
+                "Not all layers of LLMs are necessary [1]"
+              ],
+              "slide_visual_skeleton": [
+                "逐层流水线框图(Prompt→层→Output)",
+                "每层下挂 predictor Y/N 分支",
+                "底部红色问题句"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "three_methods_architecture_parallel",
+              "archetype": "three_column_method_architecture_compare",
+              "slide_title": "三种提前退出方法架构横比:RAEE/AdaInfer/MoD",
+              "slide_claim": "RAEE、AdaInfer、MoD 三法并列展开,各自的 predictor 与搜索空间设计不同",
+              "slide_key_text": [
+                "RAEE",
+                "AdaInfer [2]",
+                "Google MoD [3]",
+                "Trainable / Freezed",
+                "Predictor / Llama Layer / New Model",
+                "Search Space / Online Search / Embeddings"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列架构 panel",
+                "Trainable/Freezed 图例",
+                "每列 predictor+layer 框图"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "multi_dimension_compare_table",
+              "archetype": "method_dimension_compare_table",
+              "slide_title": "三法开销对比:predictor 过重、搜索空间过大",
+              "slide_claim": "RAEE/AdaInfer/MoD 的 predictor 普遍偏重、搜索空间偏大,暴露共性短板",
+              "slide_key_text": [
+                "When to Exit / Search Space / Predict Latency / Training Cost",
+                "RAEE / AdaInfer / MoD",
+                "Heavy / Light",
+                "High / Low",
+                "Skip or Forward",
+                "Layer ID / QKV / MHA / FFN"
+              ],
+              "slide_visual_skeleton": [
+                "方法×维度对比表",
+                "红字 Heavy/High vs 绿字 Light/Low",
+                "Predict Latency/Training Cost 底部标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "experiment_agenda_setup_accuracy_dual_platform_speedup_pareto",
+      "title": "实验·目录→设置→精度→双平台加速→帕累托收束",
+      "applicable_when": {
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "精度",
+          "加速比",
+          "端云双平台",
+          "帕累托"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Experiment 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_platform_model_baseline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以分组 bullet 列出硬件平台/模型/基线/数据集"
+        },
+        {
+          "archetype": "accuracy_lossless_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以底部 banner 断言精度损失可忽略"
+        },
+        {
+          "archetype": "platform_speedup_headline",
+          "count": 2,
+          "position": "end",
+          "purpose": "分别对端(PC) 与云(A100/RTX4090) 给加速比头条,末页附 Pareto 前沿收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "eval_setup_bulleted_platform_model_baseline",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_platform_model_baseline",
+          "to_archetype": "accuracy_lossless_headline",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "accuracy_lossless_headline",
+          "to_archetype": "platform_speedup_headline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "platform_speedup_headline",
+          "to_archetype": "platform_speedup_headline",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型实验章:章首目录→设置(平台/模型/基线/数据集)→精度无损→PC 加速→云端加速+Pareto 前沿收束,按『精度→单场景→多场景』逐层放大收益",
+      "anti_patterns": [
+        "实验章含消融拆解 — 用 experiment_setup_dual_main_headline_ablation_pair",
+        "实验章分层揭示 setup+demo — 用 experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "含 EDP 总账收尾 — 用 experiment_setup_accuracy_area_speedup_ablation_edp_summary"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "section_title": "实验结果与性能评估",
+          "section_role": "result",
+          "section_narrative": "以「先设定后验证」弧线收束全 deck：由 agenda 高亮切入实验章，先交代软硬件平台，再依「精度几乎无损→PC 提速→云端提速并推进帕累托前沿」逐层放大 SpecEE 的收益。",
+          "section_topic_tags": [
+            "实验评估",
+            "精度无损",
+            "PC 加速",
+            "云端加速",
+            "Pareto 前沿"
+          ],
+          "match_evidence": "5 页节奏:TOC+分组 setup+精度断言 banner+PC 场景加速头条+云端 A100/4090 加速+Pareto 收尾,恰好匹配 pattern 四步",
+          "slides": [
+            {
+              "slide_index": 20,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:高亮进入 Experiment Results",
+              "slide_claim": "演讲推进至 Experiment Results,正式进入实验章",
+              "slide_key_text": [
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "Outline 蓝色大标题",
+                "灰显章节列表",
+                "当前章黑色高亮"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "eval_setup_bulleted_platform_model_baseline",
+              "archetype": "eval_setup_bulleted_with_refs",
+              "slide_title": "Experiment Setup:平台/模型/基线/数据集",
+              "slide_claim": "SpecEE 在 PC 与云端双平台、多模型多基线下接受检验",
+              "slide_key_text": [
+                "PC scenario: Lenovo Legion Y7000 + RTX 4060 8GB, i7-13650HX",
+                "Cloud scenario: A100-80GB GPU 与 RTX 4090 24GB",
+                "Models: Llama2-7B/14B/70B",
+                "Baselines: HuggingFace/vLLM/llama.cpp; AdaInfer/RAEE; AWQ/PowerInfer",
+                "Datasets: MT-Bench, SUM"
+              ],
+              "slide_visual_skeleton": [
+                "分组标题 + bullet 列表",
+                "平台/模型/基线/数据集四分区"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "accuracy_lossless_headline",
+              "archetype": "accuracy_lossless_result_with_banner",
+              "slide_title": "Accuracy Evaluation:精度损失 <1%",
+              "slide_claim": "SpecEE 相比原模型精度损失 <1%,几乎无损",
+              "slide_key_text": [
+                "Negligible accuracy loss (<1%)",
+                "compared with the original model"
+              ],
+              "slide_visual_skeleton": [
+                "精度对比表/图(主体)",
+                "底部米黄结论 banner",
+                "红框强调框"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "platform_speedup_headline",
+              "archetype": "single_experiment_result_speedup_callout",
+              "slide_title": "PC 场景加速:最高 2.43x speedup",
+              "slide_claim": "SpecEE 在 Lenovo Y7000 PC 上最高提速 2.43x",
+              "slide_key_text": [
+                "Experiment Setup: Lenovo Legion Y7000 PC",
+                "NVIDIA RTX 4060 Laptop GPU(8GB), CUDA 12.1, i7-13650HX",
+                "Up to 2.43x speedup on Lenovo Y7000 PC"
+              ],
+              "slide_visual_skeleton": [
+                "speedup 柱/曲线图",
+                "实验配置说明块",
+                "底部米黄结论 banner"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "platform_speedup_headline",
+              "archetype": "dual_hardware_speedup_with_pareto_frontier",
+              "slide_title": "云端加速:2.25x/2.17x 并推进帕累托前沿",
+              "slide_claim": "云端最高提速 2.25x(A100)/2.17x(RTX4090)并推进精度-速度帕累托前沿",
+              "slide_key_text": [
+                "NVIDIA A100 SXM 80GB, CUDA 12.1",
+                "NVIDIA RTX 4090 24GB, CUDA 11.6",
+                "Up to 2.25x speedup on A100-80GB and 2.17x speedup on RTX 4090",
+                "Successfully push the Pareto frontier of accuracy and speedup"
+              ],
+              "slide_visual_skeleton": [
+                "实验配置小表",
+                "speedup / Pareto frontier 图",
+                "底部米黄结论 banner"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "motivation_token_scale_demand_gap_layer_cascade",
+      "title": "动机·token量级爆炸→需求现状鸿沟→层计算冗余设问",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          4
+        ],
+        "must_have_in_chapter_purpose": [
+          "需求爆炸",
+          "延迟",
+          "端云",
+          "层计算",
+          "设问"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_scale_growth_dual_stage",
+          "count": 1,
+          "position": "start",
+          "purpose": "以两阶段大字数字对比铺陈需求量级(如 token/request 10× 放大)"
+        },
+        {
+          "archetype": "need_vs_reality_gap_multi_scenario",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多场景横向 panel 展示 Requirement vs Now 数字差距,证明加速迫切"
+        },
+        {
+          "archetype": "root_cause_question_bridge",
+          "count": 1,
+          "position": "end",
+          "purpose": "点破根因(如逐层级联计算)并以红字设问桥接方法章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "macro_scale_growth_dual_stage",
+          "to_archetype": "need_vs_reality_gap_multi_scenario",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "need_vs_reality_gap_multi_scenario",
+          "to_archetype": "root_cause_question_bridge",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型 motivation 短章:大字量级对比→多场景需求-现状鸿沟→根因设问,3 页递进立起 LLM 推理加速动机",
+      "anti_patterns": [
+        "纯宏观供需鸿沟无设问收束 — 用 motivation_trend_landscape_to_gap_to_solution_bridge",
+        "含 agenda+价值论证+算子拆解 — 用 background_paper_share_agenda_to_value_to_paradigm_shift_to_operators"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.02",
+          "section_title": "研究背景与推理成本动机",
+          "section_role": "motivation",
+          "section_narrative": "承 cover 之后铺垫全篇：先以 token 需求爆炸与推理延迟需求-现状鸿沟立起加速动机，再点破根因是逐层级联计算，落到「如何减少层计算」引出后文早退方案。",
+          "section_topic_tags": [
+            "token 需求爆炸",
+            "端云延迟鸿沟",
+            "逐层级联计算",
+            "LLM 推理动机",
+            "减少层计算"
+          ],
+          "match_evidence": "3 页节奏:token 生成→action 量级 10× 放大+四场景 Requirement/Now 鸿沟+层链示意红字设问,恰好命中 pattern 三步",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "macro_scale_growth_dual_stage",
+              "archetype": "two_stage_number_scale_compare",
+              "slide_title": "From Token to Action：Agent 时代 token 需求量级",
+              "slide_claim": "从生成 token 到执行 action，单请求 token 消耗从 0.1k 级跃升至 10k 级",
+              "slide_key_text": [
+                "Token Generation → Action",
+                "Agent: 0.1k~1k tokens/request",
+                "1k~10k [2]",
+                "Generate the answer",
+                "[1] Achiam et al. GPT-4 technical report, 2023"
+              ],
+              "slide_visual_skeleton": [
+                "左右两阶段横向对照",
+                "巨号量级数字(蓝/红)",
+                "底部引用脚注"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "need_vs_reality_gap_multi_scenario",
+              "archetype": "multi_scenario_requirement_vs_now_panels",
+              "slide_title": "LLM 推理延迟需求 vs 现状的巨大鸿沟",
+              "slide_claim": "端到云四类场景下推理吞吐现状远低于需求，存在数量级差距",
+              "slide_key_text": [
+                "LLM Inference Latency Requirement",
+                "Requirement：100-1000 token/s",
+                "Now：1~10 / 5~15 token/s",
+                "Requirement：25-30k token/s",
+                "Now：8000 / 14.8k token/s/node",
+                "Model/Hardware/Backend 标注"
+              ],
+              "slide_visual_skeleton": [
+                "4 列设备图标并列 panel",
+                "Requirement/Now 双行数字对照",
+                "各列底部配置小字"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "root_cause_question_bridge",
+              "archetype": "cascaded_layer_chain_with_question",
+              "slide_title": "LLM 推理即逐层级联计算，如何减少层计算？",
+              "slide_claim": "LLM 推理本质是逐层 Attention+FFN 级联，减少层计算是加速关键",
+              "slide_key_text": [
+                "LLM Inference: Cascaded Layer Computation",
+                "All the LLM inference is the cascaded layer computation",
+                "Prompt → Attention FFN ×N → Output",
+                "How to reduce layer computation?"
+              ],
+              "slide_visual_skeleton": [
+                "横向级联层链示意",
+                "顶部蓝色强调条",
+                "底部红字设问"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share",
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明论文/报告主题+讲者/作者/机构署名"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场:一张大字封面(含标题/作者/机构署名)接一张进度式高亮目录,为后续多章展开定调",
+      "anti_patterns": [
+        "单页论文封面无目录 — 用 opening_paper_cover_multi_author_multi_institution",
+        "单页空白骨架 — 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "deck 开场：封面亮明标题/作者/机构，目录以高亮 Background、灰化后续五章的进度式列表铺陈全篇六段结构，为后文技术章节定锚。",
+          "section_topic_tags": [
+            "论文封面",
+            "多作者多机构",
+            "进度式目录",
+            "六段结构",
+            "开场导航"
+          ],
+          "match_evidence": "2 页节奏:居中大字论文封面(含 SJTU/Infinigence/SII 三家机构)+进度式高亮 Outline 目录,匹配 pattern 两步",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+              "slide_claim": "SpecEE 以投机式提前退出加速大模型推理",
+              "slide_key_text": [
+                "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+                "Jiaming Xu, Yaoxiu Lian, Junyi Wu, Guohao Dai",
+                "Shanghai Jiao Tong University, Infinigence-AI, SII",
+                "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题",
+                "作者姓名带机构上标",
+                "机构与通讯作者信息行"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Outline:全篇章节进度式目录",
+              "slide_claim": "全篇分六段结构,当前高亮定位到 Background",
+              "slide_key_text": [
+                "Outline",
+                "Background",
+                "Related Work",
+                "Challenges and Techniques",
+                "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+                "Experiment Results"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色 Outline 标题",
+                "高亮/灰化进度式章节列表",
+                "带缩进的子项 bullet"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_single_page_paper_summary_with_qrcode_entry",
+      "title": "收尾·单页论文标题+核心结论+双二维码入口",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "收尾",
+          "核心结论",
+          "论文入口",
+          "代码入口",
+          "二维码"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_recap_conclusions_with_qrcode_entry",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中复述论文标题+作者署名,配 2 条蓝字核心结论(加速比+Pareto),右侧 Paper/Code 二维码入口"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "论文分享型极简单页收尾:居中论文标题+作者署名+2 条蓝字核心指标结论(如加速比+Pareto 前沿)+右侧 Paper/Code 二维码,一页完成 recap/署名/资源入口三重功能",
+      "anti_patterns": [
+        "纯 Thanks 大字无结论回收 — 用 closing_thanks_single_page_with_full_author_institution_footer",
+        "含目录回顾+一句话贡献 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "极简 Thanks+讲者署名 — 用 closing_minimal_thanks_with_speaker_signature"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+          "deck_title": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "deck_topic_tags": [
+            "LLM inference",
+            "early exit",
+            "speculative",
+            "predictor",
+            "edge",
+            "cloud",
+            "acceleration"
+          ],
+          "section_id": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.06",
+          "section_title": "论文与代码链接",
+          "section_role": "closing",
+          "section_narrative": "全篇收尾页：复述论文标题与作者署名，用 ~2.43x/~2.25x 与推动 speedup-accuracy Pareto 前沿两条结论收束全文，并给出 Paper/Code 二维码入口",
+          "section_topic_tags": [
+            "论文收尾",
+            "核心指标回收",
+            "Pareto 前沿",
+            "Paper/Code 入口",
+            "二维码"
+          ],
+          "match_evidence": "1 页承担全部收尾功能:论文标题+作者+2 条蓝字结论(2.43x/2.25x+Pareto)+右侧 Paper/Code 双二维码,恰好命中 pattern 单节点",
+          "slides": [
+            {
+              "slide_index": 25,
+              "role_in_pattern": "paper_recap_conclusions_with_qrcode_entry",
+              "archetype": "single_page_ending_with_dual_qrcode",
+              "slide_title": "SpecEE 收尾页:标题+作者+核心结论+论文/代码入口",
+              "slide_claim": "SpecEE 实现 ~2.43x/~2.25x 加速并推动 speedup-accuracy Pareto 前沿",
+              "slide_key_text": [
+                "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+                "Jiaming Xu, supervised by Prof. Guohao Dai",
+                "~2.43x and ~2.25x faster LLM inference on PC and cloud scenarios",
+                "Successfully push the Pareto frontier of speedup and accuracy",
+                "Paper Link / Code Link"
+              ],
+              "slide_visual_skeleton": [
+                "居中论文标题+作者署名块",
+                "两条蓝字结论 bullet",
+                "右侧 Paper/Code 二维码入口",
+                "底部 Powered by 署名条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SpecEE 论文分享) 6 section, 抽出 6 pattern; 其中 opening (sec.01) 复用 previous_batches 已有 id `opening_cover_plus_progress_highlighted_toc`; 其余 5 pattern 均为新 id (motivation/background/method/result/closing 各 1). new_archetype: two_stage_number_scale_compare — 左右两阶段横向数字量级对照页; new_archetype: multi_scenario_requirement_vs_now_panels — 多场景横向 panel 展示 Requirement vs Now 双行数字对照; new_archetype: cascaded_layer_chain_with_question — 横向级联层链示意+底部红字设问桥接页; new_archetype: pipeline_with_per_layer_predictor_diagram — 逐层流水线+每层挂 predictor Y/N 分支的通用范式图; new_archetype: three_column_method_architecture_compare — 三列并列展示三种代表方法架构的对比页; new_archetype: method_dimension_compare_table — 方法×维度对比表+红绿字凸显短板; new_archetype: pipeline_with_search_space_annotation — 流水线+搜索空间标注气泡的推理即搜索页; new_archetype: speculative_vocab_reduction_diagram — 全词表 vs 缩减词表的投机模型缩空间对比图; new_archetype: per_layer_predictor_with_key_problem — 每层挂 predictor+底部红字关键问题桥接页; new_archetype: high_dimension_feature_time_percent_pain — 高维原始特征+耗时占比数字的痛点页; new_archetype: dimension_reduction_two_step_correction_design — 降维+两步预测校正算法的设计页; new_archetype: skewed_frequency_distribution_pain_chart — 层激活频率偏斜分布柱状图痛点页; new_archetype: dual_column_online_offline_scheduling — 在线+离线两级调度双栏设计页; new_archetype: exponential_mapping_complexity_compare — 自回归 vs 投机解码的指数复杂度对比页; new_archetype: context_aware_merged_mapping_diagram — token 树 Hyper token 合并映射的设计页; new_archetype: accuracy_lossless_result_with_banner — 精度对比+底部米黄结论 banner 页; new_archetype: dual_hardware_speedup_with_pareto_frontier — 双硬件加速比+Pareto 前沿图收尾页; new_archetype: single_page_ending_with_dual_qrcode — 单页收尾: 标题+结论+右侧 Paper/Code 双二维码入口",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}

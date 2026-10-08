@@ -1,0 +1,44 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "章节序号": 4,
+  "章节角色": "motivation",
+  "标题": "冗余与高互信息动机",
+  "页码范围": [
+    9,
+    16
+  ],
+  "页数": 8,
+  "页ID列表": [
+    "slide_09",
+    "slide_10",
+    "slide_11",
+    "slide_12",
+    "slide_13",
+    "slide_14",
+    "slide_15",
+    "slide_16"
+  ],
+  "章节叙事": "承接应用与开销挑战，用注意力示例揭示 KV 冗余，进而以高互信息论证token可稀疏化，为SpeContext稀疏KV方法奠定前提。",
+  "页间关系": [
+    "slide 9 → slide 10: 由 Background/Related Work 框架切入具体 prompt 示例",
+    "slide 10 → slide 11: 由问答 prompt 进入注意力 Max/QK 计算，暴露开销",
+    "slide 11 → slide 12: 由单例注意力回到 Backgrounds/Related Works 综述",
+    "slide 12 → slide 13: 由相关工作抛出核心 Question，聚焦本质目标",
+    "slide 13 → slide 14: 由问题过渡到 Motivation，提出冗余动机",
+    "slide 14 → slide 15: 由冗余动机引出 High Mutual Information 论证",
+    "slide 15 → slide 16: 由高互信息继续深化 Motivation，收束稀疏前提"
+  ],
+  "适合复用场景": [
+    "论证 KV 缓存/注意力存在冗余的 motivation 章节",
+    "用高互信息支撑 token 可稀疏化的动机段",
+    "先 background 再 prompt 示例的注意力开销铺陈"
+  ],
+  "不适合复用场景": [
+    "研究主题与注意力/KV 缓存无关时",
+    "无需论证冗余、直接进方法的 deck",
+    "受众已熟知注意力冗余、无需铺垫时"
+  ],
+  "在deck中的位置": "第4章motivation，紧跟应用/挑战，为SpeContext方法章节铺垫",
+  "分析状态": "claude-opus-4-8"
+}

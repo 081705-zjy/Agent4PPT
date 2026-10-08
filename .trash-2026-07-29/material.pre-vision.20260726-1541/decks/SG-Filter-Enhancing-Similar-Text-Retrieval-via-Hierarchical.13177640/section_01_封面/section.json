@@ -1,0 +1,29 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.01",
+  "所属deck": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "章节序号": 1,
+  "章节角色": "cover",
+  "标题": "封面",
+  "页码范围": [
+    1,
+    1
+  ],
+  "页数": 1,
+  "页ID列表": [
+    "slide_01"
+  ],
+  "章节叙事": "Opening cover of the deck. Establishes the topic SG-Filter and frames the whole talk around enhancing similar-text retrieval; sets tone before agenda and motivation.",
+  "页间关系": [],
+  "适合复用场景": [
+    "Any retrieval/NLP method deck needing a title cover",
+    "Technical talks led by a named method + tagline",
+    "Single-line-title academic or research covers"
+  ],
+  "不适合复用场景": [
+    "Decks needing author/affiliation block on cover",
+    "Covers requiring a hero visual or figure",
+    "Multi-line subtitle or dense cover layouts"
+  ],
+  "在deck中的位置": "Section 1, the very first page, precedes agenda/motivation.",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,39 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 14,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "GPU 难以利用混合精度算力",
+  "核心论断": "GPU 算力配比使其难以利用混合精度优化",
+  "本页讲什么": "承接稀疏挑战，进一步指出混合精度（Hybrid precision）特性下 GPU 因不同精度算力配比固定，难以匹配视频生成的低精度需求，构成第二个可优化但 GPU 无法利用的特性。",
+  "关键文字": [
+    "Hybrid precision",
+    "ratio of the computing power"
+  ],
+  "视觉骨架": [
+    "混合精度算力配比图",
+    "精度需求对比示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.03",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.04",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.05",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.06",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_14.asset.07"
+  ],
+  "适合复用场景": [
+    "低精度混合精度论证页",
+    "GPU 算力配比瓶颈说明"
+  ],
+  "不适合复用场景": [
+    "视频历史动机页",
+    "硬件先例综述页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

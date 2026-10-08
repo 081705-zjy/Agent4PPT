@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_27"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 27
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "DSP58 的位宽拆分方案"
+核心论断: "按 11-bit 分组拆分 DSP58 位宽实现并行乘加"
+本页讲什么: "展开 Tech.2 方法细节，以位域示意说明如何将 DSP58 乘法器按 11-bit 等宽度分组拆分，在单个 DSP 上并行完成多路乘加，提升混合精度计算吞吐。"
+关键文字:
+  - "11-bit"
+视觉骨架: "[位宽分组位域图, 乘加拆分示意, 比特分区标注]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_27.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_27.asset.02, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_27.asset.03, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_27.asset.04, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_27.asset.05]"
+适合复用场景: "[DSP 位宽拆分方法页, 混合精度位域展开页]"
+不适合复用场景: "[技术引入标题页, 帧相似性洞察页, 调度流程图页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 27: DSP58 的位宽拆分方案
+
+**核心论断**: 按 11-bit 分组拆分 DSP58 位宽实现并行乘加
+
+## 本页讲什么
+展开 Tech.2 方法细节，以位域示意说明如何将 DSP58 乘法器按 11-bit 等宽度分组拆分，在单个 DSP 上并行完成多路乘加，提升混合精度计算吞吐。
+
+## 关键文字片段
+- 11-bit
+
+## 视觉骨架
+- 位宽分组位域图
+- 乘加拆分示意
+- 比特分区标注
+
+## 可复用到
+- DSP 位宽拆分方法页
+- 混合精度位域展开页
+
+## 不适合复用的场景
+- 技术引入标题页
+- 帧相似性洞察页
+- 调度流程图页

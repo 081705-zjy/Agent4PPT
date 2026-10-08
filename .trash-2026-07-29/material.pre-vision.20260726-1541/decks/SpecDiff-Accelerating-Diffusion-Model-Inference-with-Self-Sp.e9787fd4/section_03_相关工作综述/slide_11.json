@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_11",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 11,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "过渡到特征缓存路线",
+  "核心论断": "特征缓存复用相邻步骤的模块输出以跳过重复计算",
+  "本页讲什么": "本页由缩短输入长度路线切换到第二条路线——特征缓存(Feature Caching)：通过在扩散多步推理中缓存并复用模块(Module)在某步(Step)的输出，跳过重复计算实现加速。标题仍沿用上一路线，实为过渡衔接页。",
+  "关键文字": [
+    "Feature Caching",
+    "Module",
+    "Step a"
+  ],
+  "视觉骨架": [
+    "特征缓存模块步骤图",
+    "多步骤模块复用示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_11.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_11.asset.02",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_11.asset.03",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_11.asset.04"
+  ],
+  "适合复用场景": [
+    "特征缓存路线的引入过渡页",
+    "跨步骤复用机制的说明页"
+  ],
+  "不适合复用场景": [
+    "纯 Token 合并方法页",
+    "含具体 speedup 曲线的结果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

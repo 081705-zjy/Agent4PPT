@@ -1,0 +1,59 @@
+{
+  "页标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42",
+  "所属章节": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.06",
+  "所属deck": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+  "页序号": 42,
+  "源文件": "templates/主题学术报告/AI Infra与国智院建设思考.pptx",
+  "页面角色": "content_candidate",
+  "标题": "研究展望：构建大规模工程算力底座",
+  "核心论断": "构建大规模研究+工程算力底座支撑千卡混训",
+  "本页讲什么": "本页作为章节收尾与展望，提出构建大规模研究加工程算力底座的目标，用紫色实线标注已支持千卡混训、全球首次实现等成果，收束三大难题并导向算力底座建设的整体愿景。",
+  "关键文字": [
+    "研究展望：构建大规模研究+工程算力底座",
+    "已支持千卡混训",
+    "全球首次实现"
+  ],
+  "视觉骨架": [
+    "算力底座总览架构图",
+    "多要素成果标注示意"
+  ],
+  "资源ID列表": [
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.01",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.02",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.03",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.04",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.05",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.06",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.07",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.08",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.09",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.10",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.11",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.12",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.13",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.14",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.15",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.16",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.17",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.18",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.19",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.20",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.21",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.22",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.23",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.24",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.25",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_42.asset.26"
+  ],
+  "适合复用场景": [
+    "算力底座建设研究展望页",
+    "千卡混训成果收束页"
+  ],
+  "不适合复用场景": [
+    "单一问题痛点页",
+    "章节切换目录页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "toc_candidate",
+  "分析状态": "claude-opus-4-8"
+}

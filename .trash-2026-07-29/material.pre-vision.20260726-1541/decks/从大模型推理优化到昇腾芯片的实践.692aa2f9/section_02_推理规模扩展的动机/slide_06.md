@@ -1,0 +1,49 @@
+---
+页标识: "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.slide_06"
+所属章节: "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02"
+所属deck: "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9"
+页序号: 6
+源文件: "templates/主题学术报告/从大模型推理优化到昇腾芯片的实践.pptx"
+页面角色: "content_candidate"
+标题: "LLM 推理基础概念：Prefill 与 Decode"
+核心论断: "LLM 推理分为 Prefill 与 Decode 两个特性迥异的阶段"
+本页讲什么: "补齐 LLM 推理的基础概念，重点讲清 Prefill（一次性并行处理输入 prompt）与 Decode（逐 token 自回归生成）两个阶段的划分与差异，为后续分布式集群推理挑战与 FlashOverlap、semi-PD 等优化方案打下概念基础。"
+关键文字: "[LLM 推理中的基础概念, Prefill 和 Decode]"
+视觉骨架: "[Prefill/Decode 阶段示意图, 推理流程框图]"
+资源ID列表: "[tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.slide_06.asset.01, tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.slide_06.asset.02, tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.slide_06.asset.03]"
+适合复用场景: "[LLM 推理机制入门讲解页, Prefill/Decode 概念铺垫页]"
+不适合复用场景: "[模型发展史时间线页, 纯数据 benchmark 页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "LLM 推理中的基础概念：Prefill 和 Decode"}
+  - {"位置": "下方主体", "内容": "Prefill 与 Decode 阶段示意图与推理流程框图"}
+alternate_claims:
+  - "Prefill 一次性并行处理输入 prompt"
+  - "Decode 逐 token 自回归生成输出"
+layout_tag: "block_diagram"
+---
+# slide 6: LLM 推理基础概念：Prefill 与 Decode
+
+**核心论断**: LLM 推理分为 Prefill 与 Decode 两个特性迥异的阶段
+
+## 本页讲什么
+补齐 LLM 推理的基础概念，重点讲清 Prefill（一次性并行处理输入 prompt）与 Decode（逐 token 自回归生成）两个阶段的划分与差异，为后续分布式集群推理挑战与 FlashOverlap、semi-PD 等优化方案打下概念基础。
+
+## 关键文字片段
+- LLM 推理中的基础概念
+- Prefill 和 Decode
+
+## 视觉骨架
+- Prefill/Decode 阶段示意图
+- 推理流程框图
+
+## 可复用到
+- LLM 推理机制入门讲解页
+- Prefill/Decode 概念铺垫页
+
+## 不适合复用的场景
+- 模型发展史时间线页
+- 纯数据 benchmark 页

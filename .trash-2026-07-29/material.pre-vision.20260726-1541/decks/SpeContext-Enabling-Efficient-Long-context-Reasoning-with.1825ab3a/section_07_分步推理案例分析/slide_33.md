@@ -1,0 +1,54 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_33"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.07"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 33
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "相邻步骤对比揭示 Token 冗余"
+核心论断: "相邻推理步骤间大量 token 冗余，可用 speculation 稀疏复用"
+本页讲什么: "本页对比 Last Step 与 Current Step，标注出 Previous Steps 中大量 Redundant token，并将 System 1 式 Speculation 映射到冗余复用上，直观揭示分步推理相邻步骤间的 KV 冗余，为 SpeContext 稀疏缓存提供收尾证据并过渡到下一 section。"
+关键文字: "[Last Step / Current Step, Redundant, Previous Steps, System1 Speculation]"
+视觉骨架: "[相邻步骤对比图, Redundant token 高亮标注, 冗余区块示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_33.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_33.asset.02, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_33.asset.03]"
+适合复用场景: "[相邻步骤冗余对比论证页, KV 冗余可视化收尾页, 稀疏缓存动机证据页]"
+不适合复用场景: "[方法架构总览页, 概念性 bullet 引入页, 分层框架示意页]"
+上页角色: "content_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方标签", "内容": "Last Step / Current Step 对比标题"}
+  - {"位置": "中间主体", "内容": "相邻步骤 token 对比图与 Redundant 高亮"}
+  - {"位置": "下方注释", "内容": "System1 Speculation 映射说明"}
+alternate_claims:
+  - "System1 式 Speculation 可直接映射到冗余 token 复用"
+layout_tag: "block_diagram"
+---
+# slide 33: 相邻步骤对比揭示 Token 冗余
+
+**核心论断**: 相邻推理步骤间大量 token 冗余，可用 speculation 稀疏复用
+
+## 本页讲什么
+本页对比 Last Step 与 Current Step，标注出 Previous Steps 中大量 Redundant token，并将 System 1 式 Speculation 映射到冗余复用上，直观揭示分步推理相邻步骤间的 KV 冗余，为 SpeContext 稀疏缓存提供收尾证据并过渡到下一 section。
+
+## 关键文字片段
+- Last Step / Current Step
+- Redundant
+- Previous Steps
+- System1 Speculation
+
+## 视觉骨架
+- 相邻步骤对比图
+- Redundant token 高亮标注
+- 冗余区块示意
+
+## 可复用到
+- 相邻步骤冗余对比论证页
+- KV 冗余可视化收尾页
+- 稀疏缓存动机证据页
+
+## 不适合复用的场景
+- 方法架构总览页
+- 概念性 bullet 引入页
+- 分层框架示意页

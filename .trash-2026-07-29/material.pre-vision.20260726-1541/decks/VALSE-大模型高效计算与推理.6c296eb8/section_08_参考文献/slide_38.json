@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.slide_38",
+  "所属章节": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.08",
+  "所属deck": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+  "页序号": 38,
+  "源文件": "templates/课题组全局汇报/VALSE  大模型高效计算与推理.pptx",
+  "页面角色": "content_candidate",
+  "标题": "参考文献·算法设计（量化）",
+  "核心论断": "本页汇总量化类算法（如 AWQ）的引用来源",
+  "本页讲什么": "参考文献章的第一页，聚焦「算法设计」子类下的量化方向，列出如 AWQ（Activation-aware weight quantization）等权重量化工作的文献条目，为正文中量化压缩相关论述提供可追溯来源。",
+  "关键文字": [
+    "参考文献",
+    "算法设计 · 量化",
+    "[1] Lin, Ji, et al. AWQ: Activation-aware weight quantization for on-device"
+  ],
+  "视觉骨架": [
+    "文献条目编号列表",
+    "分类小标题标签"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "量化压缩主题的文献页",
+    "算法层 references 收尾页"
+  ],
+  "不适合复用场景": [
+    "含图表数据的正文页",
+    "系统或硬件层引用页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

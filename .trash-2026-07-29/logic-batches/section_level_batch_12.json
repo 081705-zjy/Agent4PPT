@@ -1,0 +1,1606 @@
+{
+  "batch_index": 12,
+  "patterns": [
+    {
+      "id": "method_algorithm_sublines_methodology_typical_scatter_triad",
+      "title": "方法·算法层多子线·方法论-典型方法-效果散点三段式",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "算法",
+          "子线",
+          "方法论",
+          "散点",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "chapter_layer_relocation",
+          "count": 1,
+          "position": "start",
+          "purpose": "由三层总览下沉到当前章目标层(算法层)"
+        },
+        {
+          "archetype": "algorithm_taxonomy_three_categories",
+          "count": 1,
+          "position": "start",
+          "purpose": "抛出N类算法族,红框锁定本章展开对象"
+        },
+        {
+          "archetype": "sublines_navigation_three_columns",
+          "count": 1,
+          "position": "start",
+          "purpose": "横向N列并列的子主线分区导航"
+        },
+        {
+          "archetype": "subline_methodology_headline",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每条子线首页:方法论标签+核心思路+框图示例"
+        },
+        {
+          "archetype": "subline_typical_methods_dual_panel",
+          "count": "2-3",
+          "position": "middle",
+          "purpose": "每条子线次页:2列并列典型方法(不同场景/优化维度)"
+        },
+        {
+          "archetype": "subline_effect_scatter_overview",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每条子线末页:1-2张散点图汇总效果(加速比 vs 计算量/接受率)"
+        },
+        {
+          "archetype": "chapter_summary_practice_flow",
+          "count": 1,
+          "position": "end",
+          "purpose": "以流程条+团队工作标签把方法论与团队成果对应收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "chapter_layer_relocation",
+          "to_archetype": "algorithm_taxonomy_three_categories",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "algorithm_taxonomy_three_categories",
+          "to_archetype": "sublines_navigation_three_columns",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "sublines_navigation_three_columns",
+          "to_archetype": "subline_methodology_headline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "subline_methodology_headline",
+          "to_archetype": "subline_typical_methods_dual_panel",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "subline_typical_methods_dual_panel",
+          "to_archetype": "subline_effect_scatter_overview",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "subline_effect_scatter_overview",
+          "to_archetype": "subline_methodology_headline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "subline_effect_scatter_overview",
+          "to_archetype": "chapter_summary_practice_flow",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "综述型算法层方法章:章首层次下沉+类别锁定+子主线导航,每条子线以「方法论→典型方法→效果散点」三拍展开,末页流程条+团队成果收束,专用于系统综述含多子方向的技术族",
+      "anti_patterns": [
+        "单一方法深挖(无多子线并列) — 用 method_single_method_deep_dive",
+        "子线数>4且缺失效果散点 — 用 method_landscape_survey_only"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.03",
+          "section_title": "算法设计:投机计算与投机解码",
+          "section_role": "method",
+          "section_narrative": "作为method三层的第一层「算法设计」,从推理优化三层拆解切入,锁定投机式推理,按投机计算→投机解码→二者组合三条主线,每线以「方法论—典型方法—效果散点」三段式展开,末页汇总并落地团队成果。",
+          "section_topic_tags": [
+            "投机计算",
+            "投机解码",
+            "算法层优化",
+            "LLM/扩散加速",
+            "加速比散点对比"
+          ],
+          "match_evidence": "12页节奏:层次下沉+类别锁定+3子线导航→3组「方法论-典型方法-散点」triad→团队成果流程条收束",
+          "slides": [
+            {
+              "slide_index": 8,
+              "role_in_pattern": "chapter_layer_relocation",
+              "archetype": "three_layer_relocation_to_current_layer",
+              "slide_title": "大模型推理优化的三层拆解",
+              "slide_claim": "大模型推理优化可拆为系统、优化技术、模型算法三层,本章聚焦算法层",
+              "slide_key_text": [
+                "大模型推理优化拆解",
+                "大模型推理系统",
+                "大模型推理优化技术",
+                "模型算法设计"
+              ],
+              "slide_visual_skeleton": [
+                "三层堆叠层级示意",
+                "模型虚线框",
+                "箭头指向分层",
+                "左右对照布局"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "algorithm_taxonomy_three_categories",
+              "archetype": "algorithm_family_three_columns_red_highlight",
+              "slide_title": "模型算法设计层的三类技术",
+              "slide_claim": "算法层优化分量化低秩、结构化剪枝、投机式推理三类,本章主攻投机式推理",
+              "slide_key_text": [
+                "模型算法设计",
+                "GPTQ ICLR23 / AWQ MLSys24 BestPaper",
+                "SparseGPT ICML23 / Wanda ICLR23",
+                "EAGLE ICML24 / DFlash NeurIPS25"
+              ],
+              "slide_visual_skeleton": [
+                "Transformer 层块图",
+                "3 列技术并列 panel",
+                "红色虚线高亮框",
+                "论文出处标注"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "sublines_navigation_three_columns",
+              "archetype": "subline_navigation_three_column_panels",
+              "slide_title": "投机式推理的三条主线",
+              "slide_claim": "投机式推理按投机计算、投机解码、二者组合三条主线并列展开",
+              "slide_key_text": [
+                "投机计算",
+                "投机解码",
+                "投机计算 + 投机解码"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列标题 panel",
+                "分区导航布局",
+                "红色小标注文字"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "subline_methodology_headline",
+              "archetype": "methodology_label_with_small_model_routing",
+              "slide_title": "投机计算的方法论",
+              "slide_claim": "投机计算用小模型识别任务难度,大模型据难度动态调整计算资源",
+              "slide_key_text": [
+                "方法论",
+                "大模型推理任务有难易之分",
+                "通过小模型识别任务难度,大模型根据任务难度调整计算资源"
+              ],
+              "slide_visual_skeleton": [
+                "小模型分流框图",
+                "难/易任务两路箭头",
+                "Module 堆叠模块",
+                "Prompt/Answer 示例"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "subline_typical_methods_dual_panel",
+              "archetype": "typical_methods_dual_scenario_panel",
+              "slide_title": "投机计算的典型方法",
+              "slide_claim": "投机计算在大语言模型与扩散模型两类场景中均有典型落地",
+              "slide_key_text": [
+                "大语言模型和扩散模型中的投机计算",
+                "大语言模型",
+                "扩散模型"
+              ],
+              "slide_visual_skeleton": [
+                "2 列并列 panel",
+                "小模型分流框图 x2",
+                "难度分配箭头"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "subline_effect_scatter_overview",
+              "archetype": "dual_scatter_speedup_vs_reduction",
+              "slide_title": "投机计算效果总览",
+              "slide_claim": "投机计算在计算量减少越多时加速比越高,SpeContext/SpecDiff 处于前沿",
+              "slide_key_text": [
+                "计算量减少",
+                "加速比",
+                "SpeContext (2026,ASPLOS,70%,2.30)",
+                "Quest (2024,ICML,68%,2.05)",
+                "SpecDiff (2026,AAAI,81.6%,3.1)",
+                "SpeCa (2025,MM,80.0%,3.05)"
+              ],
+              "slide_visual_skeleton": [
+                "双散点坐标图",
+                "红点+文字标注",
+                "加速比纵轴/计算量减少横轴"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "subline_methodology_headline",
+              "archetype": "methodology_label_with_small_model_routing",
+              "slide_title": "投机解码的方法论",
+              "slide_claim": "投机解码用小模型低成本生成候选词组,大模型并行验证接受",
+              "slide_key_text": [
+                "方法论",
+                "自然语言以词组的形式出现",
+                "通过小模型低成本生成候选词组,大模型并行验证"
+              ],
+              "slide_visual_skeleton": [
+                "小模型串行生成框",
+                "候选词组分发箭头",
+                "大模型并行验证框",
+                "验证≈生成标注"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "subline_typical_methods_dual_panel",
+              "archetype": "typical_methods_two_route_optimization",
+              "slide_title": "投机解码的典型方法",
+              "slide_claim": "投机解码沿提高小模型接受率与提升系统并行性两条路线优化",
+              "slide_key_text": [
+                "提高小模型接收率和提高系统并行性",
+                "树形token生成与验证",
+                "Vanilla",
+                "Eagle/Medusa",
+                "系统并行性优化"
+              ],
+              "slide_visual_skeleton": [
+                "2 列并列 panel",
+                "链式 vs 树形结构对比",
+                "流水线错位调度示意"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "subline_effect_scatter_overview",
+              "archetype": "dual_scatter_speedup_vs_acceptance",
+              "slide_title": "投机解码效果总览",
+              "slide_claim": "接受率与 GPU 利用率越高加速比越大,Eagle 系列与 DFlash 领先",
+              "slide_key_text": [
+                "接受率",
+                "加速比",
+                "GPU利用率",
+                "DFlash (2026,arxiv,6.3,3.96)",
+                "Eagle3 (2025,NeurIPS,5.5,3.81)",
+                "SSD (2026,ICLR,0.9,1.78)"
+              ],
+              "slide_visual_skeleton": [
+                "双散点坐标图",
+                "红点+文字标注",
+                "接受率/GPU利用率横轴"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "subline_methodology_headline",
+              "archetype": "methodology_combined_dual_branch",
+              "slide_title": "投机计算+投机解码的方法论",
+              "slide_claim": "组合投机计算与投机解码,同时降低计算量并提升并行性",
+              "slide_key_text": [
+                "结合投机计算和投机解码,同时降低计算量和提高并行性",
+                "计算量与难度评估",
+                "解码加速",
+                "并行生成多个token"
+              ],
+              "slide_visual_skeleton": [
+                "小模型双分支框图",
+                "难度评估+解码加速两路",
+                "Module 堆叠模块",
+                "Prompt/Answer 示例"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "subline_effect_scatter_overview",
+              "archetype": "single_scatter_stacked_combinations",
+              "slide_title": "投机计算+投机解码效果总览",
+              "slide_claim": "计算量与接受率协同优化带来最高加速,三者叠加效果最优",
+              "slide_key_text": [
+                "加速比",
+                "计算量/接受率",
+                "SpecEE+SpeContext+Eagle",
+                "SpeContext+Eagle",
+                "SpecEE+Eagle (2025,ISCA,4.3,3.15)",
+                "Triforce (2024,COLM,3.2,2.32)"
+              ],
+              "slide_visual_skeleton": [
+                "单散点坐标图",
+                "红点+组合方法标注",
+                "加速比纵轴/计算量接受率横轴"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "chapter_summary_practice_flow",
+              "archetype": "flow_condensation_with_team_work_tags",
+              "slide_title": "投机方法总结与我们的实践",
+              "slide_claim": "提升「Token/时间」即可提升推理速度,团队工作贯穿生成到接受各环节",
+              "slide_key_text": [
+                "提升「Token/时间」就能提升推理速度",
+                "SpecEE ISCA25",
+                "SpecDiff AAAI25",
+                "SpeContext ASPLOS",
+                "SpecPrune-VLA ICML26"
+              ],
+              "slide_visual_skeleton": [
+                "生成-验证-Token-接受率-加速流程条",
+                "红色高亮箭头指向环节",
+                "团队成果标签",
+                "蓝色结论文字"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_bipartite_frontend_backend_environment_sweep",
+      "title": "方法·系统层前后端二分逐环拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "系统",
+          "前端",
+          "后端",
+          "调度",
+          "并行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "chapter_layer_relocation",
+          "count": 1,
+          "position": "start",
+          "purpose": "由三层总览下沉到系统层"
+        },
+        {
+          "archetype": "frontend_backend_bipartite_framework",
+          "count": 1,
+          "position": "start",
+          "purpose": "立起「前端请求编排 vs 后端资源编排」二分总纲"
+        },
+        {
+          "archetype": "sub_environment_methodology_panel",
+          "count": "4-6",
+          "position": "middle",
+          "purpose": "每子环境一页:方法论横幅+左右双面板+挑战标签+代表系统引用"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "chapter_layer_relocation",
+          "to_archetype": "frontend_backend_bipartite_framework",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "frontend_backend_bipartite_framework",
+          "to_archetype": "sub_environment_methodology_panel",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "sub_environment_methodology_panel",
+          "to_archetype": "sub_environment_methodology_panel",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "服务系统方法章:章首层次下沉→前后端二分总纲→逐环(请求调度/资源分配/多卡并行/通信/算子)各一页方法论+双面板+挑战标签+代表系统引用,沿前端→后端顺序线性铺陈",
+      "anti_patterns": [
+        "单一系统深挖(仅一款系统全景) — 用 case_study_single_system_deep",
+        "不区分前后端仅铺技术清单 — 用 method_landscape_survey_only"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.04",
+          "section_title": "系统优化:前后端调度与并行",
+          "section_role": "method",
+          "section_narrative": "承接算法层,展开推理优化三层框架中的\"系统优化\"层:先立前端(请求编排)/后端(资源编排)总纲,再逐环拆前端调度、资源分配与后端并行、通信、算子优化。",
+          "section_topic_tags": [
+            "推理系统优化",
+            "前端请求编排",
+            "后端资源编排",
+            "多卡并行",
+            "通信/算子优化"
+          ],
+          "match_evidence": "7页节奏:层次下沉+前后端二分总纲+5个子环境逐环方法论页(请求调度/资源分配/多卡并行/通信/算子)",
+          "slides": [
+            {
+              "slide_index": 20,
+              "role_in_pattern": "chapter_layer_relocation",
+              "archetype": "three_layer_relocation_to_current_layer",
+              "slide_title": "大模型推理优化拆解:三层技术框架",
+              "slide_claim": "推理优化技术自上而下拆为模型算法设计、推理系统、基础设施三层",
+              "slide_key_text": [
+                "大模型推理优化技术",
+                "模型算法设计",
+                "大模型推理系统",
+                "基础设施"
+              ],
+              "slide_visual_skeleton": [
+                "左侧红框源模块",
+                "三条水平映射箭头",
+                "右侧三层蓝色条带",
+                "中间层高亮"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "frontend_backend_bipartite_framework",
+              "archetype": "frontend_backend_dual_panel_grand_frame",
+              "slide_title": "系统优化总纲:前端请求编排与后端资源编排",
+              "slide_claim": "推理系统优化沿前端(请求编排)与后端(资源编排)两条主线展开",
+              "slide_key_text": [
+                "请求批处理",
+                "前端(请求编排)",
+                "后端(资源编排)",
+                "Prefill (P)",
+                "Decode (D)"
+              ],
+              "slide_visual_skeleton": [
+                "左侧请求批处理框",
+                "粉色前端编排面板",
+                "蓝色后端编排面板",
+                "P/D 请求色块"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "sub_environment_methodology_panel",
+              "archetype": "sub_environment_methodology_dual_panel_with_challenge",
+              "slide_title": "前端:请求调度",
+              "slide_claim": "按流量与资源特点优化多维请求到计算的映射,提升调度效率",
+              "slide_key_text": [
+                "方法论",
+                "基于流量和资源的特点,优化多维请求映射至计算的调度效率",
+                "请求粒度调度",
+                "请求节奏调度",
+                "Orca [OSDI'22]",
+                "Llumnix [OSDI'24]"
+              ],
+              "slide_visual_skeleton": [
+                "左侧请求批处理框",
+                "方法论横幅",
+                "请求粒度/节奏调度双面板",
+                "P/D 合批示意",
+                "引用文献标注"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "sub_environment_methodology_panel",
+              "archetype": "sub_environment_methodology_dual_panel_with_challenge",
+              "slide_title": "前端:资源分配",
+              "slide_claim": "按上下文与计算特点优化负载到资源池的映射,提升分配效率",
+              "slide_key_text": [
+                "方法论",
+                "基于上下文和计算特点,优化负载映射至系统资源池的分配效率",
+                "存储资源分配",
+                "计算资源分配",
+                "PagedAttention [SOSP'23]",
+                "Mooncake [FAST'25]"
+              ],
+              "slide_visual_skeleton": [
+                "方法论横幅",
+                "存储资源分配面板",
+                "计算资源分配面板",
+                "Card 显存色块",
+                "引用文献标注"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "sub_environment_methodology_panel",
+              "archetype": "sub_environment_methodology_dual_panel_with_challenge",
+              "slide_title": "后端:多卡并行",
+              "slide_claim": "按模型与集群特点优化超大规模模型的分布式推理效率",
+              "slide_key_text": [
+                "方法论",
+                "基于模型与集群特点,优化超大规模模型分布式推理效率",
+                "并行方式:任务拆解",
+                "分布式计算流程",
+                "Card 0",
+                "Card 1"
+              ],
+              "slide_visual_skeleton": [
+                "方法论横幅",
+                "多卡 Card 0/1 时序",
+                "任务拆解并行示意",
+                "分布式计算流程框"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "sub_environment_methodology_panel",
+              "archetype": "sub_environment_methodology_dual_panel_with_challenge",
+              "slide_title": "后端:通信优化",
+              "slide_claim": "分析计算通信数据依赖使两者重叠执行,充分利用异构硬件",
+              "slide_key_text": [
+                "方法论",
+                "分析计算和通信数据依赖关系使两者重叠执行",
+                "计算-通信重叠",
+                "CoCoNet [ASPLOS'22]",
+                "Flux/Comet",
+                "FlashOverlap [MLSys'25]"
+              ],
+              "slide_visual_skeleton": [
+                "方法论横幅",
+                "Card 0/1 计算通信重叠时序",
+                "三条技术路线纵向列表",
+                "引用文献标注"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "sub_environment_methodology_panel",
+              "archetype": "sub_environment_methodology_dual_panel_with_challenge",
+              "slide_title": "后端:算子优化",
+              "slide_claim": "按负载与硬件特点优化特定负载到硬件的计算效率",
+              "slide_key_text": [
+                "方法论",
+                "基于负载和硬件的特点,优化特定负载映射至硬件的计算效率",
+                "访存优化",
+                "计算优化",
+                "FlashAttention [NeurIPS'22]",
+                "cuBLAS [NVIDIA]"
+              ],
+              "slide_visual_skeleton": [
+                "方法论横幅",
+                "访存优化面板",
+                "计算优化面板",
+                "GPU 利用率示意",
+                "引用文献标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_bottleneck_framework_solve_each_with_gpu_speedup",
+      "title": "方法·硬件层N类受限框架逐类求解对标GPU",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "硬件",
+          "瓶颈",
+          "受限",
+          "专用硬件",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "chapter_layer_relocation",
+          "count": 1,
+          "position": "start",
+          "purpose": "由三层总览下沉到硬件/芯片层"
+        },
+        {
+          "archetype": "multi_bottleneck_framework_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "立起「N类受限」总框架+并列硬件架构panel"
+        },
+        {
+          "archetype": "bottleneck_solution_with_speedup_ratio",
+          "count": "3-5",
+          "position": "middle",
+          "purpose": "每类瓶颈一页:方法论+2条技术路线+相比GPU加速比数字标注"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "chapter_layer_relocation",
+          "to_archetype": "multi_bottleneck_framework_overview",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "multi_bottleneck_framework_overview",
+          "to_archetype": "bottleneck_solution_with_speedup_ratio",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "bottleneck_solution_with_speedup_ratio",
+          "to_archetype": "bottleneck_solution_with_speedup_ratio",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "硬件层方法章:章首层次下沉→N类瓶颈(计算/存储/带宽/通信)总框架→每类瓶颈单独一页给出2条专用硬件路线并附加速比数字,单点方案对标GPU",
+      "anti_patterns": [
+        "硬件方案单一深挖(仅一款芯片全流程) — 用 case_study_single_chip",
+        "N类瓶颈但不给加速比数字 — 用 method_hardware_taxonomy_only"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.05",
+          "section_title": "硬件架构:四类受限求解",
+          "section_role": "method",
+          "section_narrative": "method 三层的收束层。先由三层拆解重定位到硬件,再立「性能受计算/访存/带宽/通信四类受限」框架,逐页给出专用硬件求解方案及对标 GPU 加速比。",
+          "section_topic_tags": [
+            "硬件架构",
+            "计算/存储/带宽/通信受限",
+            "专用硬件加速",
+            "GPU对标加速比",
+            "存内计算/晶圆级集成"
+          ],
+          "match_evidence": "6页节奏:层次下沉+4类瓶颈总框架+4类受限逐页求解(计算/存储/带宽/通信),每页附加速比数字",
+          "slides": [
+            {
+              "slide_index": 27,
+              "role_in_pattern": "chapter_layer_relocation",
+              "archetype": "three_layer_relocation_to_current_layer",
+              "slide_title": "推理优化拆解重定位到硬件/芯片层",
+              "slide_claim": "三层拆解收束到芯片层,硬件成为本章优化落点",
+              "slide_key_text": [
+                "大模型推理优化拆解",
+                "模型算法设计 → 大模型推理系统 / 大模型推理技术 / 芯片",
+                "本章聚焦芯片(硬件)层"
+              ],
+              "slide_visual_skeleton": [
+                "左侧虚线归类框",
+                "右侧三层水平堆叠条",
+                "指向底层芯片的箭头"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "multi_bottleneck_framework_overview",
+              "archetype": "n_bottleneck_grand_framework_three_columns",
+              "slide_title": "硬件架构:计算/存储/通信三类架构框架",
+              "slide_claim": "推理性能受计算、访存、带宽、通信四类受限,对应三类硬件架构",
+              "slide_key_text": [
+                "大模型推理性能由计算、访存、带宽、通信四类受限",
+                "计算架构 / 存储架构 / 通信架构",
+                "存储瓶颈:存不下 KV Cache",
+                "通信瓶颈:分布式部署片间通信开销大"
+              ],
+              "slide_visual_skeleton": [
+                "三列并列 panel",
+                "GPU-SM-HBM 存储示意",
+                "Node-NVLink-IB Switch 通信拓扑图"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "bottleneck_solution_with_speedup_ratio",
+              "archetype": "bottleneck_solution_dual_route_speedup_vs_gpu",
+              "slide_title": "解决计算受限:稀疏化与量化专用硬件",
+              "slide_claim": "设计专用硬件重匹配注意力计算,可显著加速计算受限场景",
+              "slide_key_text": [
+                "计算受限:注意力平方复杂度",
+                "设计专用硬件,让硬件执行方式重新匹配注意力计算",
+                "稀疏化利用注意力稀疏特点:FlightLLM 相比 GPU 1.2x",
+                "量化让不同数据在不同精度 PE 执行:Tender ISCA 24 2.6x"
+              ],
+              "slide_visual_skeleton": [
+                "稀疏矩阵网格示意",
+                "Sparse Pred./Engine 框图",
+                "Quant Pred.+FP/INT PE 框图"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "bottleneck_solution_with_speedup_ratio",
+              "archetype": "bottleneck_solution_dual_route_speedup_vs_gpu",
+              "slide_title": "解决存储受限:卸载与压缩扩展存储层次",
+              "slide_claim": "卸载与压缩扩展有效存储层次,可容纳百 GB 级 KV Cache",
+              "slide_key_text": [
+                "存储瓶颈:存不下 KV Cache",
+                "基于卸载与压缩,扩展有效存储层次,容纳百 GB 级 KV Cache",
+                "卸载至 Host Memory:Beluga SIGMOD 26 相比 GPU 7.4x",
+                "压缩量化 KV Cache:Oaken ISCA 25 相比 GPU 1.6x"
+              ],
+              "slide_visual_skeleton": [
+                "GPU-HBM-KV Cache 基础架构图",
+                "HBM→Host Memory 卸载箭头图",
+                "HBM 压缩前后容量对比框"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "bottleneck_solution_with_speedup_ratio",
+              "archetype": "bottleneck_solution_dual_route_speedup_vs_gpu",
+              "slide_title": "解决带宽受限:存内计算与 3D 集成",
+              "slide_claim": "存内计算与 3D 集成用近数据计算突破带宽墙",
+              "slide_key_text": [
+                "带宽瓶颈:KV Cache 搬运受限于 HBM 带宽",
+                "基于存内计算与 3D 集成技术,用近数据计算突破带宽",
+                "bank 内近存计算:Attacc ASPLOS 24 2.8x、CENT ASPLOS 25 2.3x",
+                "3D 堆叠存算一体:H2-LLM ISCA 25 2.7x"
+              ],
+              "slide_visual_skeleton": [
+                "HBM/GDDR Bank+PE 近存框图",
+                "Memory+Cu Pillar+PEs 3D 堆叠示意",
+                "相比 GPU 加速比标注"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "bottleneck_solution_with_speedup_ratio",
+              "archetype": "bottleneck_solution_dual_route_speedup_vs_gpu",
+              "slide_title": "解决通信受限:数据流与晶圆级集成",
+              "slide_claim": "数据流处理器与晶圆级集成消灭片间通信边界",
+              "slide_key_text": [
+                "通信瓶颈:分布式部署片间通信开销大",
+                "基于数据流处理器与晶圆级集成,消灭片间通信边界",
+                "数据流架构:Groq LPU 9x、SambaNova SN40L 3.7x",
+                "晶圆级/D2D 集成:Cerebras WSE-3 15x、MoEntwine HPCA 26 1.6x"
+              ],
+              "slide_visual_skeleton": [
+                "多 Node+NVLink+IB Switch 通信拓扑",
+                "Embed/QKV/Attn/FFN PE 数据流管线框",
+                "相比 GPU 加速比标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "motivation_industrial_analogy_to_layer_stack_mapping",
+      "title": "动机·产业革命类比→成本公式→蛋糕分层→三层映射",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          8
+        ],
+        "must_have_in_chapter_purpose": [
+          "产业革命",
+          "类比",
+          "Token",
+          "分层",
+          "成本",
+          "框架映射"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "industrial_revolution_comparison_table",
+          "count": 1,
+          "position": "start",
+          "purpose": "横向N次产业革命对比表格,抛出核心生产要素跃迁"
+        },
+        {
+          "archetype": "value_chain_flow_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以生产链流程+反馈回路刻画目标要素(如Token)在价值链位置"
+        },
+        {
+          "archetype": "cost_formula_decomposition",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以公式拆解目标要素成本结构,给出降本路径"
+        },
+        {
+          "archetype": "authority_figure_layer_cake_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引入权威人物(如黄仁勋)N层理论,建立产业分层视图"
+        },
+        {
+          "archetype": "layer_cake_middle_focus_callout",
+          "count": 1,
+          "position": "middle",
+          "purpose": "在同一分层图上用红框圈定核心中间层为优化对象"
+        },
+        {
+          "archetype": "three_layer_method_mapping",
+          "count": 1,
+          "position": "end",
+          "purpose": "映射中间层到算法/系统/硬件三大方向作为全deck框架"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "industrial_revolution_comparison_table",
+          "to_archetype": "value_chain_flow_diagram",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "value_chain_flow_diagram",
+          "to_archetype": "cost_formula_decomposition",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "cost_formula_decomposition",
+          "to_archetype": "authority_figure_layer_cake_intro",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "authority_figure_layer_cake_intro",
+          "to_archetype": "layer_cake_middle_focus_callout",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "layer_cake_middle_focus_callout",
+          "to_archetype": "three_layer_method_mapping",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "综述型报告的宏观类比 motivation 章:借产业革命类比确立目标要素→用流程链+成本公式落地→引入权威分层理论→红框锁定中间层→映射到方法章三层框架,漏斗式桥接后续技术章",
+      "anti_patterns": [
+        "纯数据论证型 motivation(无宏观类比) — 用 motivation_trend_landscape_to_gap",
+        "缺失最终三层映射(未桥接方法章) — 用 background_general_survey_only"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.02",
+          "section_title": "产业革命类比与Token经济成本",
+          "section_role": "motivation",
+          "section_narrative": "motivation章:借产业革命类比确立Token为新生产要素,逐层推导Token成本结构,再用黄仁勋5层蛋糕锁定模型/基建/芯片三层,映射出算法/系统/硬件三大优化方向,为全deck框架铺垫",
+          "section_topic_tags": [
+            "Token经济",
+            "产业革命类比",
+            "算力成本结构",
+            "5层蛋糕分层",
+            "算法/系统/硬件三层优化"
+          ],
+          "match_evidence": "6页节奏:产业革命对比表→Token生产链流程→成本公式拆解→黄仁勋5层蛋糕→中间三层红框→映射到算法/系统/硬件三层",
+          "slides": [
+            {
+              "slide_index": 2,
+              "role_in_pattern": "industrial_revolution_comparison_table",
+              "archetype": "multi_era_five_dimension_compare_table",
+              "slide_title": "回顾历史:产业革命与Token",
+              "slide_claim": "历次产业革命更替生产要素,Token成为AI时代新生产要素",
+              "slide_key_text": [
+                "投入/主要能源/生产要素/生产力/价值 五维度",
+                "Token 为AI时代新生产要素",
+                "2025年算力需求增长5816.9倍",
+                "较2024年增长129.9%",
+                "Source: Stanford"
+              ],
+              "slide_visual_skeleton": [
+                "五阶段流程条",
+                "产业革命对比表格",
+                "Token列红色虚线框",
+                "蒸汽机到AI时间线",
+                "算力增长数据标注"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_pattern": "value_chain_flow_diagram",
+              "archetype": "production_chain_flow_with_feedback_equations",
+              "slide_title": "底层逻辑:Token的生产链位置",
+              "slide_claim": "Token处于\"能源→Token→生产力\"价值转化链的核心环节",
+              "slide_key_text": [
+                "投入→能源→Token→生产力→价值",
+                "电能+芯片 = Token(生产成本)",
+                "Token+使用 = 生产力(生产价值)"
+              ],
+              "slide_visual_skeleton": [
+                "五段流程链",
+                "上下反馈回路虚线",
+                "两组等式框"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "cost_formula_decomposition",
+              "archetype": "top_formula_with_derivation_block",
+              "slide_title": "Token的价值转化与成本结构",
+              "slide_claim": "Token成本=芯片投入÷(计算速度×使用时间),速度与时长决定单Token成本",
+              "slide_key_text": [
+                "生产成本 = 芯片投入 ÷(计算速度 × 使用时间)",
+                "Token/元 = Token/(速度×时间)",
+                "= Token/时间 ÷ 速度",
+                "降本路径:提Token/时间 + 降Token/元"
+              ],
+              "slide_visual_skeleton": [
+                "顶部成本公式条",
+                "速度×时间高亮框",
+                "Token分式推导块",
+                "颜色图例"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "authority_figure_layer_cake_intro",
+              "archetype": "industry_layer_pyramid_from_authority",
+              "slide_title": "黄仁勋\"5层蛋糕\"理论",
+              "slide_claim": "黄仁勋以芯片到应用五层蛋糕描绘AI产业栈,预测2026为机器人觉醒之年",
+              "slide_key_text": [
+                "黄仁勋\"5层蛋糕\"理论",
+                "世界经济论坛年会讲话",
+                "2026将是AI机器人\"觉醒之年\"",
+                "芯片/基建/基础设施/模型/应用 五层"
+              ],
+              "slide_visual_skeleton": [
+                "五层蛋糕金字塔",
+                "贯穿中轴渐变条",
+                "右侧纵向标注条"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "layer_cake_middle_focus_callout",
+              "archetype": "layer_pyramid_middle_red_box_focus",
+              "slide_title": "5层蛋糕锁定算力优化核心三层",
+              "slide_claim": "模型、基础设施、基建三层是算力优化的核心所在",
+              "slide_key_text": [
+                "黄仁勋\"5层蛋糕\"理论",
+                "算力优化的核心",
+                "模型/基础设施/基建 中间三层"
+              ],
+              "slide_visual_skeleton": [
+                "五层蛋糕金字塔",
+                "中间三层红色虚线框",
+                "右侧纵向标注条",
+                "核心三层红字标注"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "three_layer_method_mapping",
+              "archetype": "three_layer_method_algo_sys_hw",
+              "slide_title": "大模型推理优化拆解为三大方向",
+              "slide_claim": "模型/基础设施/基建三层分别映射算法层、系统层、硬件层三大优化方向",
+              "slide_key_text": [
+                "算力优化的核心 → 大模型推理优化拆解",
+                "模型 → 算法层优化",
+                "基础设施 → 系统层优化",
+                "基建 → 硬件层优化"
+              ],
+              "slide_visual_skeleton": [
+                "左侧五层蛋糕(中三层红框)",
+                "三条映射箭头",
+                "右侧三层优化蓝框"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "discussion_scaling_trends_to_jevons_to_energy_paradigm_shift",
+      "title": "展望·规模化趋势→杰文斯悖论→成本演进→能效范式",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "规模化",
+          "趋势",
+          "降本",
+          "悖论",
+          "能效",
+          "范式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "multi_axis_scaling_trends_table",
+          "count": 1,
+          "position": "start",
+          "purpose": "以N行并列表格铺开规模化趋势(参数/专家/序列长度等)"
+        },
+        {
+          "archetype": "codesign_necessity_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以一句主论断+空白面板给出「协同优化必然」结论"
+        },
+        {
+          "archetype": "jevons_paradox_argument",
+          "count": 1,
+          "position": "middle",
+          "purpose": "借悖论论证效率提升反致需求爆炸,数据佐证"
+        },
+        {
+          "archetype": "cost_evolution_multi_metric_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用大字倍数(50X/35X)呈现成本/交互性演进"
+        },
+        {
+          "archetype": "energy_efficiency_paradigm_shift",
+          "count": 1,
+          "position": "end",
+          "purpose": "以AI1.0→AI2.0能效范式(TOPS/W→Tokens/J)+多芯片能效数据收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "multi_axis_scaling_trends_table",
+          "to_archetype": "codesign_necessity_headline",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "codesign_necessity_headline",
+          "to_archetype": "jevons_paradox_argument",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "jevons_paradox_argument",
+          "to_archetype": "cost_evolution_multi_metric_headline",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "cost_evolution_multi_metric_headline",
+          "to_archetype": "energy_efficiency_paradigm_shift",
+          "hook_type": "data_then_implication"
+        }
+      ],
+      "applicable_summary": "综述型报告收尾展望章:先铺规模化多轴趋势→抛协同降本论点→借经济学悖论论证需求爆炸→给出具体成本演进倍数→以能效范式切换(TOPS/W→Tokens/J)收束全篇",
+      "anti_patterns": [
+        "纯团队愿景/研究方向清单 — 用 discussion_agenda_vision_topics_team_close",
+        "缺乏跨代对比数据 — 用 discussion_open_challenges_bulleted"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.06",
+          "section_title": "未来趋势与成本演进展望",
+          "section_role": "discussion",
+          "section_narrative": "作为 deck 末章展望,先由超节点/大EP/长文本三大规模化趋势引出软硬件协同降本的必然性,再借杰文斯悖论论证需求爆炸,最后用 50X 成本下降与 Tokens/J 新能效范式收束全篇。",
+          "section_topic_tags": [
+            "规模化趋势",
+            "软硬件协同降本",
+            "杰文斯悖论",
+            "Token成本演进",
+            "Tokens/J能效范式"
+          ],
+          "match_evidence": "5页节奏:三大规模化趋势表→协同降本论断→杰文斯悖论+10x/year数据→50X/35X成本倍数→TOPS/W到Tokens/J能效范式",
+          "slides": [
+            {
+              "slide_index": 33,
+              "role_in_pattern": "multi_axis_scaling_trends_table",
+              "archetype": "three_row_scaling_trends_parallel",
+              "slide_title": "未来趋势:超节点、大EP、长文本三大规模化方向",
+              "slide_claim": "参数、专家数、序列长度三重增长共同催生超节点、大EP、长文本需求",
+              "slide_key_text": [
+                "超节点、大EP、长文本",
+                "模型参数↑:Llama3 405B / DeepSeek-V3 671B / Kimi-K2 1T",
+                "MoE专家数↑:Mixtral 8 / DeepSeek-V3 256 / Kimi-K2 384",
+                "序列长度↑:预训练<1k / Test-time scaling ~8k / Agent >50k"
+              ],
+              "slide_visual_skeleton": [
+                "3行趋势并列表格",
+                "①②③序号标记",
+                "红字关键词高亮列"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "codesign_necessity_headline",
+              "archetype": "single_claim_with_three_placeholder_panels",
+              "slide_title": "软硬件协同优化是推理成本下降的必然趋势",
+              "slide_claim": "打通软硬件协同优化是推理成本下降的必然趋势",
+              "slide_key_text": [
+                "打通软硬件协同优化,是推理成本下降的必然趋势"
+              ],
+              "slide_visual_skeleton": [
+                "顶部红字主论断框",
+                "3列并列空白 panel"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_pattern": "jevons_paradox_argument",
+              "archetype": "paradox_portrait_with_big_growth_callout",
+              "slide_title": "杰文斯悖论:Token 消耗量约 10x/year",
+              "slide_claim": "效率提升不减反增总消耗,Token 用量以约 10 倍每年爆炸增长",
+              "slide_key_text": [
+                "Token 消耗量 10x/year",
+                "技术进步提高资源使用效率时,总消耗量反而可能上升",
+                "2026年3月24日单周约3万亿token,一年增长约140倍",
+                "2024年不到1000亿,2025年前100名占3万亿、前三名占40%"
+              ],
+              "slide_visual_skeleton": [
+                "杰文斯人物肖像框",
+                "右侧红字 10x/year 大标注",
+                "底部数据说明框"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "cost_evolution_multi_metric_headline",
+              "archetype": "dual_metric_multiplier_headline_side_by_side",
+              "slide_title": "Token 成本快速下降:两年间降 50X/35X",
+              "slide_claim": "推理 Token 成本两年内快速下降,最高降幅达 50X",
+              "slide_key_text": [
+                "过去两年的推理 Token 成本",
+                "Token 成本快速下降",
+                "成本下降 50X",
+                "Interactivity 提升 35X",
+                "数据来源:NVIDIA GTC 2026"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏对比布局",
+                "50X/35X 红字大标注",
+                "两组趋势图占位"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "energy_efficiency_paradigm_shift",
+              "archetype": "era_paradigm_shift_dual_column_metrics",
+              "slide_title": "能效新范式:从 TOPS/W 到 Tokens/J",
+              "slide_claim": "AI 2.0 能效度量从 TOPS/W 转向 Tokens/J,指标提升 10 到 50 倍",
+              "slide_key_text": [
+                "AI 1.0(2014-2024) TOPS/W → AI 2.0(2023-?) Tokens/J",
+                "指标约提升 10 到 50 倍",
+                "Cerebras 晶圆级 ASIC:19 Tokens/J",
+                "清华 PIM/NDP 47 tokens/J;Cornell FPGA 0.9 Tokens/J;MIT GPU+AWQ 0.8 Tokens/J"
+              ],
+              "slide_visual_skeleton": [
+                "左右时代对比色块横条",
+                "虚线连各芯片能效标签框",
+                "TOPS/W 与 Tokens/J 大字对比"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "references_layered_by_method_chapter_bibliography",
+      "title": "参考文献·按方法章分层罗列",
+      "applicable_when": {
+        "chapter_role": [
+          "references"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "参考文献",
+          "分层",
+          "算法",
+          "系统",
+          "硬件"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "references_layered_bibliography_page",
+          "count": "3-5",
+          "position": "start",
+          "purpose": "每页对应一层(算法/系统/硬件),左侧分类小标签+多栏编号文献条目"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "references_layered_bibliography_page",
+          "to_archetype": "references_layered_bibliography_page",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "综述型报告的文献支撑收尾章:按正文「算法/系统/硬件」分层顺序,每页罗列该层引用,顶部统一「参考文献」蓝色分隔线+左侧分类标签,纯列表无新论点",
+      "anti_patterns": [
+        "无分层混合罗列 — 用 references_flat_list",
+        "单页压缩全部文献 — 用 references_single_page"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.07",
+          "section_title": "参考文献",
+          "section_role": "references",
+          "section_narrative": "deck 收尾的文献支撑章,按正文「算法/系统/硬件」三层结构组织引用,为全篇优化手段提供出处,无新论点。",
+          "section_topic_tags": [
+            "算法层文献",
+            "投机解码文献",
+            "系统优化文献",
+            "硬件架构文献",
+            "分层参考文献"
+          ],
+          "match_evidence": "4页节奏:算法设计文献2页(量化剪枝投机+投机解码)+系统优化文献1页+硬件架构文献1页,承接正文三层结构",
+          "slides": [
+            {
+              "slide_index": 38,
+              "role_in_pattern": "references_layered_bibliography_page",
+              "archetype": "references_layered_bibliography_page",
+              "slide_title": "参考文献 · 算法设计(量化/剪枝/投机)",
+              "slide_claim": "算法层优化手段的文献出处,涵盖量化、剪枝与投机三类",
+              "slide_key_text": [
+                "算法设计",
+                "量化 / 剪枝 / 投机",
+                "[1] Lin, Ji, et al. \"AWQ: Activation-aware weight quantization\"",
+                "[1] Frantar & Alistarh. SparseGPT",
+                "[1] Xu, Jiaming, et al. \"Specee: Accelerating LLM inference\""
+              ],
+              "slide_visual_skeleton": [
+                "顶部「参考文献」标题+蓝色分隔线",
+                "左侧分类小标签(量化/剪枝/投机)",
+                "多栏编号文献条目列表"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_pattern": "references_layered_bibliography_page",
+              "archetype": "references_layered_bibliography_page",
+              "slide_title": "参考文献 · 算法设计(投机解码)",
+              "slide_claim": "投机解码方向的文献出处集中罗列,承接上页算法设计",
+              "slide_key_text": [
+                "投机解码",
+                "[1] Fu, Yichao, et al. \"Break the sequential dependency (Lookahead)\"",
+                "[2] Cai, Tianle, et al. \"Medusa\"",
+                "[3] Eagle / Eagle-2 / Eagle-3 系列",
+                "[9] Zhang, Ziyi, et al. \"Swiftspec\""
+              ],
+              "slide_visual_skeleton": [
+                "顶部「参考文献」标题+蓝色分隔线",
+                "左侧「投机解码」小标签",
+                "单栏长文献列表"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "references_layered_bibliography_page",
+              "archetype": "references_layered_bibliography_page",
+              "slide_title": "参考文献 · 系统优化",
+              "slide_claim": "系统层优化手段的文献出处,覆盖服务调度与注意力算子",
+              "slide_key_text": [
+                "系统优化",
+                "[1] Yu, Gyeong-In, et al. \"Orca: A distributed serving system\"",
+                "[2] Agrawal, et al. \"Sarathi-Serve\"",
+                "[4] Kwon, et al. PagedAttention",
+                "[8] Dao, et al. \"FlashAttention\""
+              ],
+              "slide_visual_skeleton": [
+                "顶部「参考文献」标题+蓝色分隔线",
+                "左侧「系统优化」小标签",
+                "单栏编号文献列表"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "references_layered_bibliography_page",
+              "archetype": "references_layered_bibliography_page",
+              "slide_title": "参考文献 · 硬件架构",
+              "slide_claim": "硬件层优化手段的文献出处,收束全篇三层文献结构",
+              "slide_key_text": [
+                "硬件架构",
+                "[1] Zeng, Shulin, et al. \"FlightLLM: ... on FPGAs\"",
+                "[4] Beluga: A cxl-based memory architecture",
+                "[6] Park, et al. \"Attacc!\"",
+                "[10] Tang, Xinru, et al. \"MoEntwine\""
+              ],
+              "slide_visual_skeleton": [
+                "顶部「参考文献」标题+蓝色分隔线",
+                "左侧「硬件架构」小标签",
+                "单栏编号文献列表"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "opening_academic_minimalist_cover_single_page",
+      "title": "开场·学术极简封面单页",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "讲者",
+          "场合",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "academic_minimalist_cover_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "左对齐大字主标题+淡色横线分隔+讲者/机构/场合/邮箱,大量留白定调学术极简"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "学术会议报告类 deck 的极简单页封面:主标题左对齐居中偏上+淡粉色横向分隔线+讲者姓名/机构/汇报场合/联系邮箱依次列出,纯白大留白,无 TOC 页,直接接后续正文章",
+      "anti_patterns": [
+        "带 TOC 页的双页开场 — 用 opening_cover_plus_progress_highlighted_toc",
+        "模板留白骨架单页 — 用 opening_blank_cover_skeleton_single_page",
+        "论文封面多机构署名 — 用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.01",
+          "section_title": "封面",
+          "section_role": "opening",
+          "section_narrative": "全 deck 的封面,唯一一页,承载主标题、讲者与场合信息,为后续算法/系统/硬件三层论述定调,左对齐留白极简风格奠定学术汇报基调。",
+          "section_topic_tags": [
+            "大模型高效计算",
+            "学术汇报封面",
+            "VALSE 2026",
+            "上海交通大学",
+            "讲者署名"
+          ],
+          "match_evidence": "1页节奏:左对齐大标题+淡粉色横线+讲者信息文本块,纯白大留白单页学术封面",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "academic_minimalist_cover_signature",
+              "archetype": "academic_minimalist_cover_signature",
+              "slide_title": "大模型高效计算与推理",
+              "slide_claim": "围绕大模型高效计算与推理展开的学术汇报定调",
+              "slide_key_text": [
+                "大模型高效计算与推理",
+                "戴国浩",
+                "上海交通大学",
+                "VALSE 2026 @",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "左对齐大标题",
+                "淡粉色横向分隔线",
+                "讲者信息文本块"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_signature_with_team_and_collab_logo_wall_single_page",
+      "title": "收尾·汇报人署名+合作/团队logo墙单页",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "汇报人",
+          "合作单位",
+          "团队",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "signature_with_dual_tag_team_logo_wall",
+          "count": 1,
+          "position": "start",
+          "purpose": "中部汇报人+日期+邮箱信息+左侧双色圆角标签(合作单位/团队成员)引出右侧logo墙+底部头像占位,一页收全致谢/身份/联系方式"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "学术汇报收尾单页:中部汇报人姓名+汇报日期+联系邮箱,左侧青/粉双色圆角标签「合作单位」「团队成员」引出右侧上下两组logo墙(机构logo+成员头像占位),底部课题组署名页脚,礼节性收束整场技术汇报",
+      "anti_patterns": [
+        "双页合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "仅讲者署名极简 Thanks — 用 closing_minimal_thanks_with_speaker_signature",
+        "模板空白结尾骨架 — 用 closing_blank_thanks_backpanel_with_signature"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.08",
+          "section_title": "致谢与联系方式",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾章,仅一页致谢页收束整场汇报,给出汇报人、日期与联系方式,并以合作/团队 logo 墙收拢课题组身份,与前七章技术论述形成礼节性闭合。",
+          "section_topic_tags": [
+            "汇报人署名",
+            "合作单位logo墙",
+            "NICS-EFC实验室",
+            "课题组团队",
+            "联系方式"
+          ],
+          "match_evidence": "1页节奏:汇报人+日期+邮箱信息+青/粉双色标签+右侧合作单位logo墙+底部团队成员头像占位排",
+          "slides": [
+            {
+              "slide_index": 42,
+              "role_in_pattern": "signature_with_dual_tag_team_logo_wall",
+              "archetype": "signature_with_dual_tag_team_logo_wall",
+              "slide_title": "致谢与联系方式(汇报人戴国浩)",
+              "slide_claim": "汇报以致谢收尾,亮明汇报人身份与课题组归属",
+              "slide_key_text": [
+                "戴国浩",
+                "2026-05-08",
+                "Email: daiguohao@sjtu.edu.cn",
+                "NICS-EFC(实验室,vision)",
+                "合作单位 / 团队成员(vision)",
+                "Guohao Dai @ Shanghai JiaoTong University(vision)"
+              ],
+              "slide_visual_skeleton": [
+                "汇报人信息文本块",
+                "青/粉双色圆角标签",
+                "合作单位 logo 墙",
+                "团队成员头像占位排"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck 8 section,抽出 8 patterns(每 pattern 1 carrier,source_count_in_this_batch 均=1),跨 batch 未复用 previous_batches 已有 pattern(本 deck 的产业革命类比motivation、方法章三层分别自成独立结构、references分层章、单页学术封面/署名+logo墙closing 均为新样式)。新 archetype 声明:new_archetype: three_layer_relocation_to_current_layer — 由三层拆解图重定位到当前章目标层的过渡页;new_archetype: subline_methodology_headline — 多子线方法章内每条子线的方法论首页;new_archetype: subline_typical_methods_dual_panel — 子线次页的双场景/双路线典型方法并列;new_archetype: subline_effect_scatter_overview — 子线末页的加速比vs指标散点总览;new_archetype: sub_environment_methodology_dual_panel_with_challenge — 系统层子环境页的方法论横幅+双面板+挑战标签;new_archetype: multi_bottleneck_framework_overview — N类瓶颈总框架并列panel;new_archetype: bottleneck_solution_dual_route_speedup_vs_gpu — 单类瓶颈的双技术路线+GPU加速比数字页;new_archetype: industrial_revolution_comparison_table — 横向N次产业革命五维对比表;new_archetype: production_chain_flow_with_feedback_equations — 生产链流程+反馈回路+等式对;new_archetype: top_formula_with_derivation_block — 顶部公式+分式推导块;new_archetype: industry_layer_pyramid_from_authority — 权威人物N层理论蛋糕金字塔;new_archetype: layer_pyramid_middle_red_box_focus — 分层金字塔中间层红框锁定;new_archetype: three_row_scaling_trends_parallel — N行并列的规模化趋势表;new_archetype: paradox_portrait_with_big_growth_callout — 悖论人物肖像+大字增长倍数;new_archetype: dual_metric_multiplier_headline_side_by_side — 左右双栏大字倍数对比页;new_archetype: era_paradigm_shift_dual_column_metrics — AI1.0/2.0能效范式双栏对比+多芯片能效标签;new_archetype: references_layered_bibliography_page — 分层参考文献页(小标签+编号列表);new_archetype: academic_minimalist_cover_signature — 学术极简封面(左对齐大标题+淡横线+讲者信息);new_archetype: signature_with_dual_tag_team_logo_wall — 汇报人署名+双色标签+合作/团队logo墙收尾页;new_archetype: single_claim_with_three_placeholder_panels — 单句主论断顶部框+3列占位面板过渡页;new_archetype: methodology_combined_dual_branch — 组合方法双分支框图方法论页;new_archetype: flow_condensation_with_team_work_tags — 流程条+团队工作标签收束页;new_archetype: n_bottleneck_grand_framework_three_columns — N类受限总框架三列并列硬件panel;new_archetype: methodology_label_with_small_model_routing — 方法论标签+小模型分流框图页;new_archetype: typical_methods_dual_scenario_panel — 两场景(LLM/Diffusion)并列典型方法panel;new_archetype: typical_methods_two_route_optimization — 两优化路线(接受率/并行性)并列典型方法panel;new_archetype: algorithm_family_three_columns_red_highlight — 3列算法族并列+红框锁定本章对象;new_archetype: subline_navigation_three_column_panels — 3列并列子主线导航page;new_archetype: dual_scatter_speedup_vs_reduction — 双散点(加速比 vs 计算量减少)LLM/Diffusion;new_archetype: dual_scatter_speedup_vs_acceptance — 双散点(加速比 vs 接受率/GPU利用率);new_archetype: single_scatter_stacked_combinations — 单散点+组合方法叠加标注;new_archetype: multi_era_five_dimension_compare_table — 多时代五维度对比表;new_archetype: frontend_backend_dual_panel_grand_frame — 前后端二分总纲(粉蓝双色panel)。",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 8,
+    "sections_unassigned_in_this_batch": []
+  }
+}

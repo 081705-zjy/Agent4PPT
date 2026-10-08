@@ -1,0 +1,27 @@
+{
+  "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.08",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "章节序号": 8,
+  "章节角色": "closing",
+  "标题": "致谢",
+  "页码范围": [
+    45,
+    45
+  ],
+  "页数": 1,
+  "页ID列表": [
+    "slide_45"
+  ],
+  "章节叙事": "deck 收束页，在方法与实验论证完成后以致谢作结，无内部叙事弧线，仅承担礼节性收尾功能。",
+  "页间关系": [],
+  "适合复用场景": [
+    "任何技术分享 deck 的致谢收尾页",
+    "学术/工业汇报的礼节性结束页"
+  ],
+  "不适合复用场景": [
+    "需要 CTA 或联系方式的商业收尾",
+    "需总结要点的 takeaway 型结尾"
+  ],
+  "在deck中的位置": "末章（第 8 章），紧跟结论/实验章之后收尾全 deck。",
+  "分析状态": "claude-opus-4-8"
+}

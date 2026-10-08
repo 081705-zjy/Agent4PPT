@@ -1,0 +1,2949 @@
+{
+  "batch_index": 4,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+      "目录名": "FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+      "标题": "FlightVGM: 视频生成模型 FPGA 高效推理",
+      "总页数": 45,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与开场目录",
+        "section_02_AI与视频生成背景",
+        "section_03_视频压缩带来的洞见",
+        "section_04_在线稀疏化与混合精度量化",
+        "section_05_实验与加速能效结果",
+        "section_06_总结与展望致谢"
+      ],
+      "主题标签": [
+        "视频生成",
+        "FPGA",
+        "推理加速",
+        "稀疏化",
+        "混合精度",
+        "量化",
+        "DSP58",
+        "硬件加速"
+      ],
+      "目标受众": "体系结构与硬件加速学术同行、工业落地",
+      "报告类型": "paper_share",
+      "适用场景": "顶会论文宣讲，介绍视频生成模型的 FPGA 加速方案",
+      "论述总结": "面向视频生成模型（VGM）推理成本高的问题，先讲 AI 与视频生成背景及 GPU 架构的不足，再从视频压缩得到启发，提出 FlightVGM：用在线激活稀疏化（帧间+帧内相似性）与可配置 DSP58 混合精度量化两项技术在 FPGA 上加速，实验相比 NVIDIA 3090 实现 1.3x 加速、4.5x 能效，最后总结与展望。",
+      "论述弧线": [
+        "背景",
+        "洞察",
+        "方案",
+        "实验",
+        "总结"
+      ],
+      "适合复用场景": [
+        "深度学习硬件加速器论文宣讲",
+        "FPGA/体系结构方向学术报告",
+        "含背景-洞察-方法-实验弧线的科研汇报",
+        "模型推理优化（稀疏+量化）主题分享"
+      ],
+      "不适合复用场景": [
+        "纯算法/模型创新汇报（无硬件线）",
+        "商业产品 demo（叙事节奏不同）",
+        "非加速类通用 AI 科普",
+        "GPU 软件优化专题（硬件平台不符）"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与开场目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "全篇开场：slide 1 亮出论文标题、作者与机构建立学术身份，slide 2 用五项编号目录（背景→洞察→方案→实验→总结）预告全篇论证路径，为后续章节搭骨架。",
+          "页间关系": [
+            "slide 1 → slide 2: 由标题作者封面过渡到 Contents 五段式目录，把论文名展开为背景/洞察/方案/实验/总结的论证线"
+          ],
+          "适合复用场景": [
+            "学术论文/会议汇报的封面+目录开场组合",
+            "需列多作者多机构署名的科研封面",
+            "五段式（背景-洞察-方案-实验-总结）目录页",
+            "带编号圆点导航的极简目录版式"
+          ],
+          "在deck中的位置": "第 1 章，位于最前，封面+目录奠定全篇结构",
+          "slides": [
+            {
+              "页序号": 1,
+              "页面角色": "content_candidate",
+              "标题": "FlightVGM：FPGA 高效视频生成推理",
+              "核心论断": "FlightVGM 用在线稀疏化与混合精度实现 FPGA 高效视频生成推理",
+              "本页讲什么": "论文封面页。居中大标题亮出工作名 FlightVGM 及副标题「基于在线稀疏化与混合精度的 FPGA 高效视频生成模型推理」，下方列出上海交大、清华、Infinigence-AI 三机构合作作者名单，标注共同一作与通讯作者，并给出 yu-wang@tsinghua、daiguohao@sjtu 两个联系邮箱，建立学术身份。",
+              "关键文字": [
+                "FlightVGM: Efficient Video Generation Model Inference",
+                "Online Sparsification and Hybrid Precision on FPGA",
+                "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+                "Co-first author, Corresponding author",
+                "yu-wang@tsinghua.edu.cn, daiguohao@sjtu.edu.cn"
+              ],
+              "视觉骨架": [
+                "居中大标题+副标题",
+                "多行作者署名列表",
+                "机构与邮箱脚注"
+              ],
+              "上页角色": null,
+              "下页角色": "toc_candidate",
+              "细分角色": "cover"
+            },
+            {
+              "页序号": 2,
+              "页面角色": "toc_candidate",
+              "标题": "目录：五章论证路径预告",
+              "核心论断": "全篇按背景→洞察→方案→实验→总结五章递进展开",
+              "本页讲什么": "全篇目录页。蓝框内居中标题 Contents，纵向排列五个编号圆点条目：1 背景（AI 与视频生成）、2 洞察（视频压缩与生成）、3 方案（稀疏化与量化）、4 实验、5 总结与未来工作，预告全篇从问题背景到解决方案再到实验总结的论证骨架。",
+              "关键文字": [
+                "Contents",
+                "1 Background: AI and Video Generation",
+                "2 Insight: Video Compression and Generation",
+                "3 Solution: Sparsification and Quantization",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "视觉骨架": [
+                "蓝色边框容器",
+                "纵向 5 编号圆点列表",
+                "居中标题"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "toc_candidate",
+              "细分角色": "toc_main"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "AI与视频生成背景",
+          "页码范围": [
+            3,
+            9
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09"
+          ],
+          "章节叙事": "作为正文首章，从 Generative AI 概览逐层收窄到视频生成，剖析 VGM 扩散结构使其推理由访存转为计算受限，再引出 GPU 硬件演进，为后续指出 GPU 架构不足、提出 FPGA 方案铺垫。",
+          "页间关系": [
+            "slide 3 → slide 4: 由 TOC 高亮 Background 章进入首页，展开 Generative AI 概述",
+            "slide 4 → slide 5: 由生成式 AI 泛论收窄到视频生成，以 Sora 及大厂跟进为例",
+            "slide 5 → slide 6: 由代表模型转入 VGM 内部结构，讲扩散 transformer 的加噪/去噪",
+            "slide 6 → slide 7: 由模型结构切到模型视角量化，用 LLM/VGM 对比表点出计算受限",
+            "slide 7 → slide 8: 由模型瓶颈转向硬件，展开 NVIDIA GPU 架构演进时间线",
+            "slide 8 → slide 9: 由 GPU 时间线归纳出通用编程+专用架构两大驱动力"
+          ],
+          "适合复用场景": [
+            "需从生成式 AI 逐层收窄到某具体模态的 background 章",
+            "论证某模型推理由访存受限转为计算受限的动机章",
+            "需用架构演进时间线铺陈硬件背景的章节",
+            "以 LLM 对比映衬新模型计算特性的引入章"
+          ],
+          "在deck中的位置": "第 1 章，紧跟 cover，正文开篇，为 insight 与 solution 章节做背景铺垫",
+          "slides": [
+            {
+              "页序号": 3,
+              "页面角色": "toc_candidate",
+              "标题": "目录:定位 Background 章节",
+              "核心论断": "全文分五章推进,当前进入 Background: AI 与视频生成",
+              "本页讲什么": "全篇目录页,左侧竖排 5 个编号圆点,第 1 项「Background: AI and Video Generation」高亮为当前章节,其余四项(Insight、Solution、Experiment、Summary and Future Work)灰显。用于告诉听众整体结构并标出正文首章的起点。",
+              "关键文字": [
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "视觉骨架": [
+                "竖排编号圆点导航",
+                "当前项高亮蓝点",
+                "外框矩形边界"
+              ],
+              "上页角色": "toc_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 4,
+              "页面角色": "content_candidate",
+              "标题": "Background:生成式 AI 概览",
+              "核心论断": "生成式 AI 已成为日常生活的基础生产力工具",
+              "本页讲什么": "章节开篇,论述 Generative AI 已成为日常生活中的基础生产力工具。页面以「machine language ↔ human language」两个红色对照标签为核心视觉,示意生成式 AI 在机器语言与人类语言之间建立新的交互方式,底部两段小字分别讲「生成介绍信息」与「带来全新方式」。属概念性引入页。",
+              "关键文字": [
+                "Generative AI becomes a fundamental productivity tool in our daily life",
+                "machine language",
+                "human language",
+                "It brings a new way of"
+              ],
+              "视觉骨架": [
+                "顶部蓝色标题条",
+                "机器/人类语言双标签对照",
+                "底部双列说明文字"
+              ],
+              "上页角色": "toc_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 5,
+              "页面角色": "content_candidate",
+              "标题": "Background:视频生成的兴起",
+              "核心论断": "视频生成是重要模态,Sora 引领、各大厂商跟进",
+              "本页讲什么": "由 AI 概览收窄到视频生成。顶部断言视频生成是通向物理世界模拟的重要且有前景的模态。下方左右两个 panel 并列:左列「OpenAI's Sora model」展示 Sora 生成视频近乎逼真,右列「Follow-ups by major technology firms」列出 Google 等大厂的跟进工作。两列共同说明视频生成已成产业热点。",
+              "关键文字": [
+                "Video generation is one of the important modalities",
+                "a promising path towards as the physical world",
+                "OpenAI's Sora model",
+                "Follow-ups by major technology firms",
+                "Videos generated by Sora are almost",
+                "Google"
+              ],
+              "视觉骨架": [
+                "顶部蓝色论断条",
+                "左右双 panel 并列",
+                "Sora 与厂商跟进两栏示例"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 6,
+              "页面角色": "content_candidate",
+              "标题": "VGM 结构:扩散 Transformer",
+              "核心论断": "VGM 主要基于扩散 Transformer,含加噪与去噪过程",
+              "本页讲什么": "剖析视频生成模型(VGM)的结构。顶部断言 VGM 主要基于扩散 Transformer,由加噪/去噪过程组成,用 Transformer 层完成计算。下方左右两 panel:左列「The structure of VGMs」展示模型结构,右列「Diffusion」拆解前向扩散(逐步加入不同幅度高斯噪声)与反向扩散(逐步去噪推理)。为后续分析访存/计算瓶颈铺垫。",
+              "关键文字": [
+                "VGMs are mainly based on diffusion transformers",
+                "noising and denoising process, using transformer layers",
+                "The structure of VGMs",
+                "Forward diffusion: Gradually add Gaussian noise of different amplitude",
+                "Reverse diffusion (inference): Denoise gradually"
+              ],
+              "视觉骨架": [
+                "顶部蓝色论断条",
+                "左右双 panel 并列",
+                "扩散前向/反向流程示意"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 7,
+              "页面角色": "content_candidate",
+              "标题": "从模型看:瓶颈转向计算受限",
+              "核心论断": "与 LLM 不同,VGM 推理瓶颈由访存转为计算受限",
+              "本页讲什么": "承接上页的结构分析,给出量化对比。顶部断言与 LLM 不同,VGM 的推理瓶颈已由 memory-bound 转为 compute-bound。下方表格对比 LLMs 与 VGMs 的计算量、访存量与算子强度:LLM 算子强度≈1,VGM≈FN,说明 VGM 计算强度远高、受计算约束。表下注明 F 为视频帧数、N 为 token 数、d 为隐藏维度。",
+              "关键文字": [
+                "Different from LLMs, the inference bottleneck of VGMs has shifted from memory to compute-bound",
+                "Computation ≈ 12d! + 2Nd (LLM) / ≈ 16FNd! (VGM)",
+                "Memory access ≈ 12d! + 2Nd / ≈ 16d! + 15FNd",
+                "Operational intensity ≈ 1 (LLM) / ≈ FN (VGM)",
+                "F: Video frames. N: Tokens. d: Hidden"
+              ],
+              "视觉骨架": [
+                "顶部蓝色论断条",
+                "LLM/VGM 三行两列对比表",
+                "公式化指标单元格"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 8,
+              "页面角色": "content_candidate",
+              "标题": "从硬件看:NVIDIA GPU 演进",
+              "核心论断": "NVIDIA GPU 持续演进源于专用架构与通用编程范式",
+              "本页讲什么": "转入硬件视角,论述 NVIDIA GPU 的持续发展源于专用架构创新与通用编程范式。页面以时间线排布多代架构:Volta-2017(Tensor Core)、Turing-2018(更多精度支持含 INT8)、Ampere-2020、Hopper-2022、Blackwell-2024(新 FP4 格式),左下标注 CUDA(Compute Unified Device Architecture)代表通用编程范式,红字突出各代关键特性。",
+              "关键文字": [
+                "The continuous development of NVIDIA GPUs stems from dedicated architecture innovations and general-purpose programming paradigms",
+                "Volta-2017 Tensor Core",
+                "Turing-2018 More supported precisions (INT8",
+                "Ampere-2020",
+                "Hopper-2022",
+                "Blackwell-2024 New FP4 format",
+                "CUDA: Compute Unified Device Architecture"
+              ],
+              "视觉骨架": [
+                "顶部蓝色论断条",
+                "多代 GPU 架构时间线",
+                "红字关键特性标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "toc_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 9,
+              "页面角色": "content_candidate",
+              "标题": "硬件演进的两大驱动力",
+              "核心论断": "GPU 进步 = 通用可编程 + 专用架构创新双轮驱动",
+              "本页讲什么": "对硬件章节收束,提炼 NVIDIA GPU 持续发展的两大驱动力。顶部重申 GPU 发展源于专用架构创新与通用编程范式,下方用两个红色方框加「+」号图示:「General-purpose」+「Dedicated architecture innovations」,直观表达二者结合共同推动 GPU 进步。为后续指出 GPU 不足、引出 FPGA 方案做铺垫。",
+              "关键文字": [
+                "The continuous development of NVIDIA GPUs stems from dedicated architecture innovations and general-purpose programming paradigms",
+                "General-purpose",
+                "Dedicated architecture innovations"
+              ],
+              "视觉骨架": [
+                "顶部蓝色论断条",
+                "双红框 + 号并列图",
+                "二要素相加示意"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "toc_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.03",
+          "章节序号": 3,
+          "章节角色": "motivation",
+          "标题": "视频压缩带来的洞见",
+          "页码范围": [
+            10,
+            16
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16"
+          ],
+          "章节叙事": "承接背景章,从视频编解码发展史提炼「压缩≈生成」类比,导出激活稀疏化+混合精度两大技术洞见,并暴露 GPU 不支持稀疏、FPGA 混合精度算力受限两个硬件挑战,为后续 solution 章铺垫。",
+          "页间关系": [
+            "slide 10 → slide 11: 由 agenda 高亮 Insight 章节过渡到视频编解码发展史",
+            "slide 11 → slide 12: 由 1000x 压缩史引出「压缩 vs 生成」类比洞见(重要/不重要分量)",
+            "slide 12 → slide 13: 由稀疏化+混合精度两洞见引出 Challenge-1:GPU 无法利用稀疏性",
+            "slide 13 → slide 14: 由稀疏化挑战过渡到 Challenge-2:FPGA 混合精度仅发挥 66.67% 算力",
+            "slide 14 → slide 15: 由两个硬件挑战过渡到 Related Work 算法/硬件工作对比",
+            "slide 15 → slide 16: 由相关工作列举过渡到其局限总结(算法仅增强能力、硬件面向 LLM 而非 VGM)"
+          ],
+          "适合复用场景": [
+            "需借成熟领域类比导出方法洞见的 insight 章节",
+            "需论证稀疏/混合精度硬件挑战的软硬协同章节",
+            "用发展史时间线铺垫核心 insight 的章节",
+            "FPGA/GPU 加速器设计的 challenge 陈述段落",
+            "需用 related work 反衬自身定位的过渡章节"
+          ],
+          "在deck中的位置": "第 3 章(agenda 标为 Insight 2),紧接背景章,承上启下引出方法章",
+          "slides": [
+            {
+              "页序号": 10,
+              "页面角色": "toc_candidate",
+              "标题": "目录:进入 Insight 章节",
+              "核心论断": "全 deck 分五部分,现进入 Insight(视频压缩与生成)章",
+              "本页讲什么": "章节切换导航页。以竖排编号目录列出五个部分:1 Background、2 Insight: Video Compression and Generation、3 Solution、4 Experiment、5 Summary,当前第 2 项高亮为黑色实心,其余灰化,标示演讲进度。",
+              "关键文字": [
+                "Contents",
+                "Insight: Video Compression and Generation",
+                "Background: AI and Video Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "视觉骨架": [
+                "竖排编号目录",
+                "当前项高亮圆点",
+                "五段章节标题"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 11,
+              "页面角色": "content_candidate",
+              "标题": "视频编解码发展史",
+              "核心论断": "视频编码 30 年演进实现 1000x 压缩与开销降低",
+              "本页讲什么": "用横向时间线铺陈视频编解码里程碑:H.261(1988)首个实用编码,MPEG-1(1993)、H.262/MPEG-2(1995)、H.263/H.264(1996,当今最常用),到 H.265/HEVC(2013)支撑 AR/VR。底部红色横幅点题:整个发展史带来 1000x 体积压缩与开销降低,为「压缩≈生成」类比铺垫。",
+              "关键文字": [
+                "History of Video",
+                "H.261 [1988] First modern and useful codec",
+                "H.264/MPEG-4 [1996] the most used video codec today",
+                "H.265/HEVC [2013] enables technologies such as AR and VR",
+                "1000x size compression and overhead reduction!"
+              ],
+              "视觉骨架": [
+                "横向编解码时间线",
+                "六个里程碑标注面板",
+                "底部红色点题横幅"
+              ],
+              "上页角色": "toc_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 12,
+              "页面角色": "content_candidate",
+              "标题": "关键洞见:压缩≈生成类比",
+              "核心论断": "视频压缩与生成同理,导出激活稀疏化与混合精度两洞见",
+              "本页讲什么": "并列对照 Video Compression 与 Video Generation:压缩经 DCT 变换区分重要/不重要成分得到小体积视频,生成同样存在重要与不重要激活。由此类比导出两大技术洞见——1. Activation sparsification(激活稀疏化)与 2. Hybrid precision(混合精度),承接上页压缩史、引出下两页硬件挑战。",
+              "关键文字": [
+                "Key Insights",
+                "Video Compression",
+                "Video Generation",
+                "DCT (Transform)",
+                "Unimportant / Important",
+                "1. Activation sparsification    2. Hybrid precision"
+              ],
+              "视觉骨架": [
+                "压缩vs生成双行类比图",
+                "重要/不重要激活标注",
+                "两洞见并列结论条"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 13,
+              "页面角色": "content_candidate",
+              "标题": "挑战一:GPU 无法利用稀疏性",
+              "核心论断": "GPU 规则架构无法从激活稀疏中获得加速收益",
+              "本页讲什么": "承接洞见一,暴露激活稀疏化的硬件障碍:用稀疏矩阵与规则方块经双向箭头对照,说明 Sparse operation 与 Hardware(e.g., GPU)的 Regular 执行模式不匹配,GPU 架构无法利用激活稀疏,为后文改用 FPGA 定制稀疏加速做铺垫。",
+              "关键文字": [
+                "Challenge-1: Sparsification",
+                "GPU architecture can not take advantage of sparsity",
+                "Sparse operation",
+                "Hardware (e.g., GPU) (Regular)",
+                "Activation"
+              ],
+              "视觉骨架": [
+                "稀疏矩阵示意格",
+                "双向红箭头对照",
+                "规则方块示意"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 14,
+              "页面角色": "content_candidate",
+              "标题": "挑战二:FPGA 混合精度算力受限",
+              "核心论断": "混合精度下 FPGA 仅能发挥 66.67% 峰值算力",
+              "本页讲什么": "承接洞见二,暴露混合精度的硬件障碍:FPGA 的 DSP 在不同精度下算力不同(FP 1 MACs、INT 3 MACs),对重要/不重要成分做混合精度时 DSP 无法同时满负荷,假设算力配比后最多只发挥 66.67% 峰值,说明 FPGA 混合精度算力受限,需专门设计克服。",
+              "关键文字": [
+                "Challenge-2: Hybrid precision",
+                "FPGA cannot provide full computing performance under hybrid precision",
+                "FP 1 MACs",
+                "INT 3 MACs",
+                "*Assuming that the ratio of the computing power",
+                "Only 66.67% of its maximum hardware"
+              ],
+              "视觉骨架": [
+                "DSP/FP/INT 三方块图",
+                "重要/不重要精度标注",
+                "66.67% 算力损失标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 15,
+              "页面角色": "content_candidate",
+              "标题": "相关工作:算法与硬件对比",
+              "核心论断": "现有算法与 FPGA 加速器均未针对 VGM 联合优化",
+              "本页讲什么": "以两行多列面板综述相关工作。算法行:Saining Xie 提出 DiT、PixArt-α 支持 1024p、Stable Diffusion 3 提升多提示图像质量、Sora 生成最长一分钟视频。硬件行:DFX[MICRO'22] 5.6x over V100、FlightLLM[FPGA'24] 1.2x over GPU、InterArch[DAC'24] 40.6x 与 1.9x、CMC[ASPLOS'24] 8.8x over A100。铺陈已有成果以定位本文空白。",
+              "关键文字": [
+                "Related Work — Algorithm / Hardware",
+                "DiT (Diffusion Transformer) first proposed [1]",
+                "Sora: up to one minute long video [4]",
+                "DFX [MICRO'22] 5.6x speedup over V100 GPU",
+                "FlightLLM [FPGA'24] 1.2x higher throughput than GPU",
+                "CMC [ASPLOS'24] 8.8x over A100 GPU"
+              ],
+              "视觉骨架": [
+                "算法/硬件两行分组",
+                "每行四个工作面板",
+                "红色数字提升标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 16,
+              "页面角色": "content_candidate",
+              "标题": "相关工作小结:算法与硬件缺口",
+              "核心论断": "现有 LLM 加速器瓶颈异于 VGM,留下研究空白",
+              "本页讲什么": "以上下两个红框收束相关工作。Algorithm 框指出已有算法关注「如何增强模型能力」;Hardware 框指出现有 LLM 加速器的瓶颈与 VGM 不同,不能直接照搬。由此点明本文针对 VGM 的软硬件协同优化空白,过渡到 Solution 章。",
+              "关键文字": [
+                "Related Work",
+                "Algorithm: How to enhance the model's capability?",
+                "Hardware: LLM accelerators, whose bottleneck is different from that of VGM"
+              ],
+              "视觉骨架": [
+                "上下双红框布局",
+                "算法/硬件两问题条",
+                "留白突出结论"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "toc_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "在线稀疏化与混合精度量化",
+          "页码范围": [
+            17,
+            33
+          ],
+          "页数": 17,
+          "页ID列表": [
+            "slide_17",
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24",
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29",
+            "slide_30",
+            "slide_31",
+            "slide_32",
+            "slide_33"
+          ],
+          "章节叙事": "承接视频压缩insight,落地FlightVGM三大核心技术:帧间/帧内在线激活稀疏化、可配置DSP58混合精度量化、动静结合自适应调度(补偿稀疏化引入的负载不均),为Experiment加速数据铺垫",
+          "页间关系": [
+            "slide 17 → slide 18: 由Contents分节页高亮\"Solution\"进入Tech.1在线激活稀疏化总述",
+            "slide 18 → slide 19: 由稀疏化key idea(利用帧间/帧内相似性)展开到整体处理流程",
+            "slide 19 → slide 20: 由tokenizing/splitting流水线细化到Similarity Table-1帧间相似度",
+            "slide 20 → slide 21: 由帧间(inter-frame)相似性递进到帧内(intra-frame)空间相似性",
+            "slide 21 → slide 22: 由两类相似性稀疏化引出硬件(Hardware:Sparsification)动画铺垫",
+            "slide 22 → slide 23: 由稀疏化过渡到recovery——Step-1帧内+Step-2帧间恢复",
+            "slide 23 → slide 24: 结束Tech.1,切入Tech.2可配置DSP58混合精度动机",
+            "slide 24 → slide 25: 由混合精度算力动机引入\"What is DSP58\"基础结构",
+            "slide 25 → slide 26: 由DSP58结构({27×24→58})过渡到FP16格式与乘法需求",
+            "slide 26 → slide 27: 由FP16双乘需求过渡到用常规DSP的bit分配要求",
+            "slide 27 → slide 28: 由DSP分配引出Overpacking复用以执行更多INT8乘法",
+            "slide 28 → slide 29: 由overpacking深入到corrupted bits公式与DSP内部架构",
+            "slide 29 → slide 30: 由FP16/INT8两模式总结DSP58-E同时支持两种精度",
+            "slide 30 → slide 31: 结束Tech.2,切入Tech.3动静结合自适应调度",
+            "slide 31 → slide 32: 由调度动机(缓解稀疏化负载不均)展开到编译/调度框架",
+            "slide 32 → slide 33: 由整体框架细化到静态编译(算子融合/量化)+动态调度"
+          ],
+          "适合复用场景": [
+            "需并列拆解多项加速技术(Tech.1/2/3)的method章",
+            "论证\"利用相似性做激活稀疏\"的算法method章",
+            "讲解FPGA/DSP混合精度量化硬件设计的章节",
+            "需\"算法+硬件+调度\"三层协同叙事的系统工作",
+            "按motivation→流程→硬件递进展开单技术的模板"
+          ],
+          "在deck中的位置": "第3章解决方案,紧接Insight视频压缩章,为后续Experiment提供技术支撑",
+          "slides": [
+            {
+              "页序号": 17,
+              "页面角色": "toc_candidate",
+              "标题": "目录页:高亮 Solution 稀疏化与量化章节",
+              "核心论断": "本章进入 Solution:稀疏化与量化,承接 Background 与 Insight",
+              "本页讲什么": "全篇目录页,五个章节纵向排列(Background、Insight、Solution、Experiment、Summary),当前高亮第 3 项 Solution: Sparsification and Quantization,表示演讲进入核心技术方案章节,前两章背景与 insight 已完成,后续为实验与总结。",
+              "关键文字": [
+                "Contents",
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "视觉骨架": [
+                "五章节纵向导航列表",
+                "当前章节高亮圆点标记",
+                "蓝色边框内容区"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 18,
+              "页面角色": "content_candidate",
+              "标题": "Tech.1:时空在线激活稀疏化方法引入",
+              "核心论断": "时空在线激活稀疏化消除 VGM 冗余计算,4 token 仅算少数",
+              "本页讲什么": "引入本章第一项技术 Tech.1 时空在线激活稀疏化。方法框指出其消除视频生成模型中的冗余计算,示意图用相似度/时空压缩表达跳过(skip)大量冗余 token,4 个 token 中仅保留少数计算。核心思想是利用帧间/帧内相似性削减冗余计算,为后续 overall 流程与 recovery 步骤铺垫。",
+              "关键文字": [
+                "Tech.1: Online Activation Sparsification",
+                "The spatial-temporal online activation sparsification eliminates redundant computations in VGM",
+                "Spatial-temporal compression",
+                "Key idea: Reduce redundant computations by leveraging inter-/intra-frame similarity",
+                "Only 4!",
+                "skip"
+              ],
+              "视觉骨架": [
+                "Method 灰底标签框",
+                "相似度 token 网格示意",
+                "帧序列 skip 标注"
+              ],
+              "上页角色": "toc_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 19,
+              "页面角色": "content_candidate",
+              "标题": "Tech.1:激活稀疏化整体处理流程",
+              "核心论断": "稀疏化流程串联 Tokenizing、Splitting、DiT Block、Linear 等阶段",
+              "本页讲什么": "展开 Tech.1 的 overall processing flow。用横向流程图串联 Tokenizing and Embedding、Splitting、DiT Block、Token/Linear/Non-linear operation 等处理阶段,并以示例视频的 Token 1-4、Frame 1-3 展示 token 如何被切分与重排,说明激活稀疏化嵌入在整个 DiT 推理管线的哪些环节。",
+              "关键文字": [
+                "Overall processing flow",
+                "Tokenizing and Embedding",
+                "DiT Block i Splitting",
+                "Linear",
+                "Non-linear o",
+                "An example video"
+              ],
+              "视觉骨架": [
+                "横向阶段流程图",
+                "token 网格排列示意",
+                "示例视频帧标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 20,
+              "页面角色": "content_candidate",
+              "标题": "Tech.1:帧内相似度表与参考帧机制",
+              "核心论断": "DiT Block 内构建 Similarity Table-1 记录帧内 token 相似关系",
+              "本页讲什么": "延续整体流程,聚焦 DiT Block 内部机制。放大展示以参考帧(Ref. frame)为基准构建 Similarity Table-1,记录 T.1/T.2/T.3 各 token 相对参考帧的相似关系,用彩色网格表达帧内 token 与参考帧的匹配,为帧内稀疏跳过提供相似度依据。",
+              "关键文字": [
+                "Overall processing flow",
+                "DiT Block",
+                "Similarity Table-1",
+                "Ref. frame",
+                "Token",
+                "Non-linear operation"
+              ],
+              "视觉骨架": [
+                "DiT Block 放大标注",
+                "彩色 token 网格立方",
+                "Similarity Table 相似度表"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 21,
+              "页面角色": "content_candidate",
+              "标题": "Tech.1:帧间稀疏化与 Similarity Table-2",
+              "核心论断": "帧间+帧内稀疏化利用时空相似性,经 Similarity Table-2 定位冗余",
+              "本页讲什么": "进一步说明稀疏化分帧间(Inter-frame)与帧内(Intra-frame)两类,利用时空相似性 exploit spatial similarity。用三维 token 立方与 Similarity Table-2(T.1-T.4)展示跨帧 token 的相似匹配,标出被跳过的冗余 token(灰色格),说明帧间稀疏在多帧立方上的实施方式。",
+              "关键文字": [
+                "Overall processing",
+                "Sparsification: Inter-frame + Intra-frame",
+                "exploit the spatial similarity",
+                "Similarity Table-2",
+                "T.1",
+                "T.4"
+              ],
+              "视觉骨架": [
+                "三维 token 立方体",
+                "Similarity Table-2 匹配表",
+                "帧间冗余灰格标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 22,
+              "页面角色": "content_candidate",
+              "标题": "Tech.1:硬件稀疏化与两步 recovery 流程",
+              "核心论断": "硬件按帧内→帧间两步 recovery 还原稀疏化后的激活",
+              "本页讲什么": "从算法转到硬件实现,展示稀疏化后如何在硬件上恢复。Step-1 Intra-frame recovery 用参考 token 表(Ref. token 0/1 矩阵)在帧内还原,Step-2 Inter-frame recovery 跨帧(F.1/F.2)还原,配合 Hardware: Recovery 说明稀疏化激活经两步 recovery 重建完整计算结果。",
+              "关键文字": [
+                "Overall processing flow",
+                "Sparsification: Inter-frame",
+                "Hardware: Recovery",
+                "Step-1: Intra-frame recovery",
+                "Step-2: Inter-frame recovery",
+                "Ref. token"
+              ],
+              "视觉骨架": [
+                "两步 recovery 分区",
+                "参考 token 0/1 矩阵表",
+                "帧序列还原示意"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 23,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:基于 DSP58 的可配置混合精度硬件",
+              "核心论断": "基于 DSP58 的可配置硬件解决 FPGA 混合精度算力受限问题",
+              "本页讲什么": "引入本章第二项技术 Tech.2 可配置 DSP58 架构。方法框指出可配置硬件解决 FPGA 上混合精度计算性能受限的问题;示意用 DSP-Expansion(DSP-E)与 Max 结构支持定点(如 linear)与浮点(如 attention)两类运算。核心思想是可配置设计支持混合精度,为量化加速铺垫。",
+              "关键文字": [
+                "Tech.2: Configurable DSP58 Architecture",
+                "The configurable hardware based on DSP58 solves limited computing performance of mixed precision FPGAs",
+                "Fixed-point computation (e.g., linear)",
+                "Floating-point computation (e.g., attention)",
+                "DSP-Expansion (DSP-E)",
+                "Key idea: The configurable design supports hybrid precision"
+              ],
+              "视觉骨架": [
+                "Method 灰底标签框",
+                "DSP-E 扩展结构框图",
+                "定点/浮点分支示意"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 24,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:DSP58 简介与位宽结构",
+              "核心论断": "DSP58 提供 27×24→58 位乘法,是混合精度设计的硬件基础",
+              "本页讲什么": "背景铺垫,回答 What is the DSP58?。用 DSP58 simplified block diagram 展示其内部数学运算结构:C/A 输入端 24bit,27-bit×24-bit 乘法输出 58bit,记为 DSP58:{27×24→58}。说明这是后续可配置混合精度乘法复用的硬件原语。",
+              "关键文字": [
+                "What is the DSP58?",
+                "DSP58 simplified block dia",
+                "24bit",
+                "58bit",
+                "27-bit",
+                "24-bit"
+              ],
+              "视觉骨架": [
+                "DSP58 简化框图",
+                "位宽标注(27/24/58bit)",
+                "C/A 输入端标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 25,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:FP16 浮点乘法与 DSP58 映射",
+              "核心论断": "FP16 单/双浮点乘法可用 11-bit×11-bit 映射到 DSP58",
+              "本页讲什么": "讲 FP16 浮点乘法如何在 DSP58 上实现。给出 FP16 format(Sign 1-bit、Exponent、Fraction 10-bit),展示单个 FP 乘法用 11-bit×11-bit(含隐含位)完成(For one FP multiplication),以及把两个 FP 乘法(u1、u0 与权重 w)打包到一个 DSP58 的方案(For two FP multiplication),为 overpacking 复用做铺垫。",
+              "关键文字": [
+                "FP16",
+                "FP16 format",
+                "Sign (1-bit)",
+                "Exponent",
+                "Fraction (10-bit)",
+                "11-bit x 11-bit"
+              ],
+              "视觉骨架": [
+                "FP16 位域格式条",
+                "单浮点乘法⊗示意",
+                "双浮点乘法打包框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 26,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:DSP58 双浮点乘法的位宽需求",
+              "核心论断": "双 FP 乘法需 27×24→58 位,恰好匹配 DSP58 能力",
+              "本页讲什么": "分析用 DSP58 做两个 FP 乘法时的位宽需求。以位坐标(0/11/22/33/44)标出 u1、u0 与 11-bit 权重在 DSP.A/DSP.B/DSP.P 端的排布,给出 Requirement 与 DSP58 的乘法规格 {27×24→58},说明将两路浮点乘法 overpacking 到单 DSP 的位宽是可行的,红色高亮 27。",
+              "关键文字": [
+                "For two FP multiplication, if we use the well-known DSP",
+                "u1",
+                "u0",
+                "11-bit",
+                "DSP.A / DSP.B / DSP.P",
+                "Requirement",
+                "DSP58 {27 x 24 -> 58}"
+              ],
+              "视觉骨架": [
+                "位坐标刻度轴",
+                "u1/u0 位宽排布",
+                "DSP.A/B/P 端映射标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 27,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:Overpacking 复用 DSP 执行更多 INT8",
+              "核心论断": "借 Overpacking 右移 u1 并复用 DSP,可多做 INT8 乘法",
+              "本页讲什么": "讲复用策略:对两个 FP 乘法采用文献[1]的 Overpacking,并复用同一 DSP 执行更多 INT8 乘法。将 u1 右移 7 位(>>7)、补零并按正数计算,标出 4-bit、corrupted bits[21:15] 等位段与 DSP.A/B/P 映射,给出 Requirement {26×11→37} 与 DSP58 {27×24→...} 的位宽对照。",
+              "关键文字": [
+                "For two FP multiplication, we use the Overpacking like in [1]",
+                "reuse it to execute more INT8 multiplication",
+                "Right shift u1 (>> 7 bits)",
+                "Append zeros and calculate it as a positive number",
+                "corrupted bits",
+                "Requirement {26 x 11 -> 37}"
+              ],
+              "视觉骨架": [
+                "右移位段示意",
+                "corrupted bits 位标注",
+                "DSP.A/B/P 位宽映射"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 28,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:Corrupted bits 计算公式",
+              "核心论断": "Corrupted bits 由 (u1·frac)[6:0] 等分量相加得出并需补偿",
+              "本页讲什么": "给出 corrupted bits 的定量计算。公式 Corrupted bits = (u1·frac)[6:0] + …,说明 overpacking 复用后哪些低位会被污染,以及在 FP16 mode(Calculate corrupted bits)与 INT8 mode(Calculate more)下 DSP58-E 各输入端(IN0/IN1/IN2、B1、C0/C1)的数据打包与规范化-舍入(Normalization & Rounder)处理,支撑误差补偿。",
+              "关键文字": [
+                "Corrupted bits = (u1 . \")[6:0] +",
+                "FP16 mode Calculate corrupted bits",
+                "INT8 mode Calculate more",
+                "Max DSP (scalar)",
+                "Normalization & Rounder",
+                "58bit DSP58"
+              ],
+              "视觉骨架": [
+                "corrupted bits 公式",
+                "FP16/INT8 双模式分区",
+                "DSP58-E 输入端打包框图"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 29,
+              "页面角色": "content_candidate",
+              "标题": "Tech.2:DSP58-E 架构同时支持 FP16 与 INT8",
+              "核心论断": "DSP58-E 架构一套硬件同时支持 FP16 与 INT8 双模式",
+              "本页讲什么": "总括 Tech.2 的可配置硬件成果。方法框重申基于 DSP58 的可配置硬件解决 FPGA 混合精度算力受限;用 FP16 mode 与 INT8 mode 并列的数据通路(INT8 MUL、Normalization、Max、_.frac、四路 INT8 等)展示同一 DSP58-E 架构可切换支持 FP16 和 INT8,底部结论 DSP58-E architecture supports both FP16 and INT8。",
+              "关键文字": [
+                "The configurable hardware based on DSP58 solves limited computing performance of mixed precision FPGAs",
+                "FP16 mode",
+                "INT8 mode",
+                "Four INT8",
+                "INT8 MUL",
+                "DSP58-E architecture supports both FP16 and INT8"
+              ],
+              "视觉骨架": [
+                "Method 灰底标签框",
+                "FP16/INT8 双通路并列图",
+                "INT8 MUL/Normalization 模块"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 30,
+              "页面角色": "content_candidate",
+              "标题": "Tech.3:动静结合自适应调度方法引入",
+              "核心论断": "动静结合自适应调度缓解在线稀疏化引入的负载不均",
+              "本页讲什么": "引入本章第三项技术 Tech.3 动静结合自适应调度。指出该方法通过缓解在线稀疏化带来的 workload imbalance 提升整体计算效率。用 activation with sparsification 的不规则块 → (a) Native 与 (b) Scheduling 两种排布对比,展示调度后 a/b/c 各分块更均衡地填满时间线,右侧 Speedup 标注加速收益。",
+              "关键文字": [
+                "Dynamic-static combined adaptive scheduling method",
+                "Scheduling improve the overall computational efficiency",
+                "alleviating the workload imbalance problem introduced by online sparsification",
+                "Activation with sparsification",
+                "(a) Native",
+                "(b) Scheduling"
+              ],
+              "视觉骨架": [
+                "稀疏激活不规则块",
+                "Native vs Scheduling 排布对比",
+                "Speedup 纵向标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 31,
+              "页面角色": "content_candidate",
+              "标题": "Tech.3:动静结合调度总体框架",
+              "核心论断": "调度框架由静态编译优化与动态自适应调度两阶段组成",
+              "本页讲什么": "展开 Tech.3 的总体框架。从 User-friendly model description 出发,经 Static compilation & Model optimization(High-level IR、Op. fusion、Quantization 等静态优化),再到 Dynamic adaptive 调度阶段,形成动静结合的编译-调度流水,说明模型描述如何经静态优化与动态调度落到高效执行。",
+              "关键文字": [
+                "Dynamic-static combined adaptive scheduling method",
+                "User-friendly model description",
+                "Static compilation & Model optimization",
+                "Dynamic adaptive",
+                "High-level IR",
+                "Op. fusion Quantization"
+              ],
+              "视觉骨架": [
+                "自上而下框架流程",
+                "静态编译优化模块组",
+                "动态调度阶段框"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 32,
+              "页面角色": "content_candidate",
+              "标题": "Tech.3:调度框架四阶段流水",
+              "核心论断": "调度自模型描述经静态编译与动态调度产出高效执行",
+              "本页讲什么": "以精简四阶段呈现调度流程:User-friendly model description → Static compilation & Model optimization → Dynamic adaptive → High(效执行)。承接上页框架,强调从用户友好的模型描述到静态编译优化,再到动态自适应调度的端到端流程,是 Tech.3 框架的主干路径。",
+              "关键文字": [
+                "User-friendly model description",
+                "Static compilation & Model optimization",
+                "Dynamic adaptive",
+                "High"
+              ],
+              "视觉骨架": [
+                "四阶段横向流程",
+                "阶段名文本块",
+                "阶段间箭头衔接"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 33,
+              "页面角色": "content_candidate",
+              "标题": "Tech.3:静态编译与动态调度分工细化",
+              "核心论断": "静态编译做算子融合量化,动态调度按在线负载调优先级",
+              "本页讲什么": "细化动静两阶段分工。Static Compilation 负责算子融合与量化等离线优化;Dynamic Scheduling 则在线上根据 Activation 实际负载做权重预加载(Weight pre-load)与算子优先级调整(Adjust Op. priority),体现动静结合如何在编译期与运行期协同优化,收束整章三项技术。",
+              "关键文字": [
+                "Dynamic-static combined adaptive scheduling method",
+                "Static Compilation: Optimizations such as operator fusion and quantization",
+                "Dynamic Scheduling: Take into account the load after online",
+                "Weight pre-load",
+                "Adjust Op. priority",
+                "Activation"
+              ],
+              "视觉骨架": [
+                "静态/动态两分支说明",
+                "Weight pre-load 决策标注",
+                "Adjust Op. priority 分支"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "toc_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.05",
+          "章节序号": 5,
+          "章节角色": "experiment",
+          "标题": "实验与加速能效结果",
+          "页码范围": [
+            34,
+            41
+          ],
+          "页数": 8,
+          "页ID列表": [
+            "slide_34",
+            "slide_35",
+            "slide_36",
+            "slide_37",
+            "slide_38",
+            "slide_39",
+            "slide_40",
+            "slide_41"
+          ],
+          "章节叙事": "全 deck 的验证章，承接稀疏化+量化方法章。以统一 setup（Latte/Open-Sora + UCF-101 + CLIPSIM/VBench）逐层评估：模型精度近乎无损（0.008 loss）、硬件资源占用、对 3090 的 1.3x/4.5x、对 SOTA 加速器 2.84x，末页以视频 demo 佐证。",
+          "页间关系": [
+            "slide 34 → slide 35: 由目录页（高亮 Experiment）进入实验设置",
+            "slide 35 → slide 36: 由模型/数据集/指标设置引出模型精度评估",
+            "slide 36 → slide 37: 由精度结果回到设置页补充 baselines（GPU/FPGA/ASIC）",
+            "slide 37 → slide 38: 由 baselines 引出硬件资源消耗评估（MPE 为主）",
+            "slide 38 → slide 39: 由资源占用表过渡到相对 3090 的加速/能效总结（1.3x/4.5x）",
+            "slide 39 → slide 40: 由 vs GPU 结果过渡到 vs SOTA 加速器结果（2.84x）",
+            "slide 40 → slide 41: 由量化性能结果过渡到视频生成 demo 展示"
+          ],
+          "适合复用场景": [
+            "硬件/加速器论文需分层对比 GPU 与 SOTA 加速器的实验章",
+            "需先铺 setup（模型+数据集+指标+baseline）再逐项评估的章节",
+            "同时论证『精度无损』与『速度/能效提升』双结论的实验章",
+            "末页需以生成 demo/artifact 徽章佐证结论的展示型收尾"
+          ],
+          "在deck中的位置": "第 5 章（实验），紧接方法章之后，为末章总结展望提供数据支撑",
+          "slides": [
+            {
+              "页序号": 34,
+              "页面角色": "toc_candidate",
+              "标题": "目录: 定位到第 4 章 Experiment",
+              "核心论断": "进入实验章, 验证 FlightVGM 的精度与加速能效",
+              "本页讲什么": "全 deck 五段式目录页, 高亮第 4 项 Experiment (蓝色实心圆), 其余 Background/Insight/Solution/Summary 灰化。作用是把听众从方法章 (稀疏化+量化) 过渡到实验验证章, 声明本章将围绕实验展开。",
+              "关键文字": [
+                "Contents",
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "视觉骨架": [
+                "蓝框内五项编号目录",
+                "当前项蓝色实心圆高亮",
+                "其余项灰化"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 35,
+              "页面角色": "content_candidate",
+              "标题": "实验设置 (逐步揭示第一层)",
+              "核心论断": "以 UCF-101 数据集与 CLIPSIM 指标搭建评估框架",
+              "本页讲什么": "Experimental Setup 的动画首帧, 只揭示了 Models and datasets (Dataset: UCF-101) 与 Metrics (CLIPSIM: Prompt-video alignment) 两条, 右侧散落 Models / Latte / 2024.10 等未排版碎片。作用是引入统一评估 setup, 下一同名页会补全模型与 baseline。",
+              "关键文字": [
+                "Models and datasets",
+                "Dataset: UCF-101",
+                "Metrics",
+                "CLIPSIM: Prompt-video alignment"
+              ],
+              "视觉骨架": [
+                "二级缩进 bullet 大纲",
+                "蓝色 n 项目符号",
+                "右侧未排版文字碎片"
+              ],
+              "上页角色": "toc_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 36,
+              "页面角色": "content_candidate",
+              "标题": "精度评估: FlightVGM 近乎无损",
+              "核心论断": "FlightVGM 仅 0.008 精度损失, 远优于 INT8 的 0.042",
+              "本页讲什么": "Evaluation: Model 页, 论断 FlightVGM 相比 baseline 精度几乎不变 (平均仅 0.008 loss), 而常规 INT8 量化损失 0.042。右下用 Original 与 Ours 两组视频帧对比, 佐证本方案主观质量与原始接近, 优于 conventional quantization。",
+              "关键文字": [
+                "Compared with the baseline, model accuracy of FlightVGM is almost the same",
+                "only average 0.008 loss",
+                "INT8 quantization has 0.042",
+                "conventional quantization",
+                "Original",
+                "Ours"
+              ],
+              "视觉骨架": [
+                "顶部论断文字 + 红色高亮数字",
+                "Original/Ours 视频帧对比列",
+                "conventional quantization 标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 37,
+              "页面角色": "content_candidate",
+              "标题": "实验设置 (完整版: 模型与 baseline)",
+              "核心论断": "在 Latte-1/Open-Sora 上对比 GPU 与 SOTA 加速器 baseline",
+              "本页讲什么": "Experimental Setup 完整帧, 补全全部 setup: 模型 Latte-1 与 Open-Sora 1.2, 数据集 UCF-101, 指标 CLIPSIM+VBench, 并新揭示 Baselines — 通用硬件 NVIDIA 3090 GPU, Transformer 类 FlightLLM[FPGA'24], DiT 类 ASIC 加速器 InterArch[DAC'24] 与 CMC[ASPLOS'24]。为后续逐层评测锁定对照对象。",
+              "关键文字": [
+                "Models: Latte-1 and Open-Sora 1.2",
+                "Dataset: UCF-101",
+                "CLIPSIM: Prompt-video alignment",
+                "VBench: Video's quality",
+                "Baselines: NVIDIA 3090 GPU",
+                "FlightLLM[FPGA'24], InterArch[DAC'24], CMC[ASPLOS'24]"
+              ],
+              "视觉骨架": [
+                "多级缩进 bullet 大纲",
+                "上半灰化下半黑显 (动画分层)",
+                "baseline 加速器标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 38,
+              "页面角色": "content_candidate",
+              "标题": "硬件资源评估: MPE 为主要开销",
+              "核心论断": "MPE 是 FPGA 资源消耗主体, 整体占满板卡资源",
+              "本页讲什么": "Evaluation: Hardware 页, 用逐模块资源表 (Module/LUT(k)/FF(k)/BRAM/URAM) 列出 MPE、SU+RU、SFU、MMU、Global 及 Total 相对 Available 的占用, 论断 MPE 是资源消耗主要来源 (LUT 1267k/FF 1956k)。左侧配 MPE/SU+RU/SFU Global Buffer 分区示意与实现板卡照片。",
+              "关键文字": [
+                "The MPE is the main source of resource consumption",
+                "Module / LUT(k) / FF(k) / BRAM / URAM",
+                "Available: 2574 / 5148 / 4224 / 1924",
+                "MPE: 1267 / 1956",
+                "Total: 1593 / 2446 / 1746 / 528",
+                "The implementation layout, board card"
+              ],
+              "视觉骨架": [
+                "多列资源占用表格",
+                "左侧模块分区示意",
+                "板卡实现照片"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 39,
+              "页面角色": "content_candidate",
+              "标题": "对 GPU 加速: 1.3x 速度 / 4.5x 能效",
+              "核心论断": "较 3090 GPU 实现 1.3x 加速与 4.5x 能效 (21x 峰值算力)",
+              "本页讲什么": "Evaluation (vs GPU) 页, 顶部蓝框论断 FlightVGM 相比 NVIDIA 3090 GPU 取得 1.3x speedup 与 4.5x energy efficiency (21x peak performance)。下方用两项技术溯源增益: Tech.1 稀疏化 (帧间/帧内相似) 带来 Workload reduction, Tech.2 混合精度 DSP-E 量化带来 Peak TOPs 提升 ~3x 与 Workload balance。",
+              "关键文字": [
+                "FlightVGM achieves 1.3x speedup and 4.5x energy efficiency compared with NVIDIA 3090 GPU",
+                "21x peak performance",
+                "Tech.1: [Sparsification] Inter-/Intra-frame similarity",
+                "Tech.2: [Quantization] Mix-precision DSP-E",
+                "Peak TOPs improvement ~3x",
+                "Workload reduction / balance"
+              ],
+              "视觉骨架": [
+                "顶部蓝框论断 + 红色高亮倍数",
+                "Tech.1/Tech.2 双技术归因块",
+                "彩色增益标注 (reduction/balance)"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 40,
+              "页面角色": "content_candidate",
+              "标题": "对 SOTA 加速器: 平均 2.84x 性能",
+              "核心论断": "较 SOTA 加速器平均 2.84x 性能与能效提升",
+              "本页讲什么": "Evaluation (vs SOTA) 页, 论断 FlightVGM 相比 SOTA 加速器平均取得 2.84x 性能与能效提升。对照对象包括 Transformer 类 FlightLLM[FPGA'24] 等 baseline, 配对比图表 (嵌图) 支撑倍数结论。承接前页 vs GPU 的对比, 把优势外推到专用加速器。",
+              "关键文字": [
+                "FlightVGM achieves an average on 2.84x performance and energy efficiency improvements",
+                "compared with the SOTA accelerators",
+                "Transformer-based FlightLLM[FPGA'24]"
+              ],
+              "视觉骨架": [
+                "顶部论断 + 红色高亮 2.84x",
+                "SOTA baseline 对比图表 (嵌图)"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 41,
+              "页面角色": "content_candidate",
+              "标题": "视频生成效果演示 (Demonstration)",
+              "核心论断": "以真实视频 demo 佐证 FlightVGM 生成质量",
+              "本页讲什么": "章末 Demonstration 页, 用 Latte (Latent Diffusion Transformer for video Generation) 生成的视频示例展示实际输出效果, 含 deepseek 相关文字与视频帧 (嵌图), 右下标注 Artifacts Evaluated / Reproduced 均通过 (√)。作用是以直观 demo 收尾实验章, 过渡到 Summary。",
+              "关键文字": [
+                "Demonstration",
+                "Latte: Latent Diffusion Transformer for video Generation",
+                "Artifacts Evaluated: √",
+                "Artifacts Reproduced: √"
+              ],
+              "视觉骨架": [
+                "大标题 Demonstration",
+                "视频帧/demo 嵌图",
+                "右下 Artifacts 认证 √ 标记"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "toc_candidate",
+              "细分角色": "content"
+            }
+          ]
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06",
+          "章节序号": 6,
+          "章节角色": "closing",
+          "标题": "总结与展望致谢",
+          "页码范围": [
+            42,
+            45
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_42",
+            "slide_43",
+            "slide_44",
+            "slide_45"
+          ],
+          "章节叙事": "deck 收尾章:先用 outline 分节页切入,再以 Summary 页回收 FlightVGM 两大技术(时空激活稀疏+混合精度),继以 future work 展望 AIE+HBM 前景,末页致谢",
+          "页间关系": [
+            "slide 42 → slide 43: 由 outline 分节页(高亮 Summary and Future Work)切入,进入总结页",
+            "slide 43 → slide 44: 由 Summary 回收两大技术贡献过渡到 future work 展望(AIE+HBM ~7.5×)",
+            "slide 44 → slide 45: 由展望前景收束到 Thanks 致谢页与作者名单"
+          ],
+          "适合复用场景": [
+            "论文/技术汇报的总结+展望收尾章",
+            "需回收核心技术贡献的 summary 页",
+            "以未来架构升级空间收束的 outlook 页",
+            "带作者名单的学术致谢 ending 页",
+            "长 deck 用 outline 分节页切入收尾部分"
+          ],
+          "在deck中的位置": "第 5 章(末章),紧跟实验章,总结全篇并展望致谢",
+          "slides": [
+            {
+              "页序号": 42,
+              "页面角色": "toc_candidate",
+              "标题": "Contents:进入 Summary and Future Work 章节",
+              "核心论断": "五段式目录推进到第 5 章 Summary and Future Work",
+              "本页讲什么": "全篇统一的 Contents 分节页,列出 Background、Insight、Solution、Experiment、Summary and Future Work 五个章节;第 5 项(蓝色高亮圆点)为当前进入的收尾章。前四项灰化表示已讲完,用于向听众交代讲到哪、接下来讲总结与展望。",
+              "关键文字": [
+                "Contents",
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "视觉骨架": [
+                "蓝色边框大标题卡",
+                "5 项编号圆点竖排目录",
+                "当前项蓝色高亮圆点"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "chapter_transition"
+            },
+            {
+              "页序号": 43,
+              "页面角色": "content_candidate",
+              "标题": "Summary:FlightVGM 两大核心技术回收",
+              "核心论断": "FlightVGM 首个 FPGA VGM 加速器,靠时空稀疏+混合精度加速",
+              "本页讲什么": "总结页,一句话定性 FlightVGM 是首个面向视频生成模型(VGM)的 FPGA 加速器,核心为时空激活稀疏化与浮点-定点混合精度加速。下方用示意图回收两条技术线:一是视频压缩+激活稀疏化(区分 Important/Unimportant 激活,削减冗余计算);二是 DSP-Expansion 支撑的混合精度,只用 4-bit 量化。是对 Solution 章两大贡献的收束。",
+              "关键文字": [
+                "FlightVGM, the first FPGA accelerator for VGMs",
+                "spatial-temporal activation sparsification and floating-fixed hybrid precision acceleration",
+                "Spatial-temporal compression",
+                "Sparsification: Reduce redundant computation",
+                "DSP-Expansion",
+                "Important / Unimportant activation"
+              ],
+              "视觉骨架": [
+                "蓝框一句话主张卡",
+                "上下双技术线示意图",
+                "Important/Unimportant 激活对比块",
+                "DSP-E 计算示意"
+              ],
+              "上页角色": "toc_candidate",
+              "下页角色": "content_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 44,
+              "页面角色": "content_candidate",
+              "标题": "Future Work:AIE+HBM 架构前景展望",
+              "核心论断": "FPGA 已超 GPU,AIE+HBM 架构可再获 ~30% 与 ~7.5x 提升",
+              "本页讲什么": "展望页,主张 FPGA 在 VGM 上(结合稀疏化与 DSP-E)已可超越 GPU,并可借 AIE+HBM 架构进一步提升。给出对比数字:相较 NVIDIA 3090 约 27x、AMD V80 上 ~30% 提升,面向 AIE+HBM Future 预期 ~7.5x 提升。标题以 'Let's make FPGA greater' 收束,承接上页总结转向未来方向。",
+              "关键文字": [
+                "Let's make FPGA greater",
+                "FPGAs can surpass GPUs on VGM (w/ sparsification, DSP-E)",
+                "further be improved with AIE+HBM architecture",
+                "~30% improvement",
+                "~7.5x improvement",
+                "~27x (vs NVIDIA 3090, AMD V80)"
+              ],
+              "视觉骨架": [
+                "提升幅度大字数字标注",
+                "GPU/FPGA 平台横向对比条",
+                "AIE+HBM 未来方向标注"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": "ending_candidate",
+              "细分角色": "content"
+            },
+            {
+              "页序号": 45,
+              "页面角色": "ending_candidate",
+              "标题": "Thanks for your listening!致谢页",
+              "核心论断": "致谢并列出全体作者与单位署名",
+              "本页讲什么": "全篇末页,大字 'Thanks for your listening!' 致谢,下方列出全体作者姓名与单位编号(Jun Liu、Shulin Zeng、Li Ding、Zehao Wang 等,通讯作者 Yu Wang、Guohao Dai 红色标注)。用于演讲结束致谢与团队署名。",
+              "关键文字": [
+                "Thanks for your listening!",
+                "Jun Liu, Shulin Zeng, Li Ding, Widyadewi Soedarmadji",
+                "Zehao Wang, Jinhao Li, Jintao Li, Yadong Dai",
+                "Kairui Wen, Shan He, Yaqi Sun",
+                "Yu Wang, Guohao Dai (通讯)"
+              ],
+              "视觉骨架": [
+                "居中大字致谢标题",
+                "多行作者署名列表",
+                "通讯作者红色高亮"
+              ],
+              "上页角色": "content_candidate",
+              "下页角色": null,
+              "细分角色": "ending"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_patterns": [
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "background_macro_gap_to_policy_to_method_bridge",
+      "title": "背景·宏观供需→外部约束→政策背书→方法总纲",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "动机",
+          "算力",
+          "差距",
+          "政策"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_framework_three_pillars",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三要素/三支柱框图铺陈宏观背景板"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "用量级对比放大供需/差距痛感"
+        },
+        {
+          "archetype": "external_constraint_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线追加外部约束(禁令/限制)加剧压力"
+        },
+        {
+          "archetype": "policy_backing_quote_montage",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以政策/领导讲话进行主题升华"
+        },
+        {
+          "archetype": "method_overview_formula_bridge",
+          "count": 1,
+          "position": "end",
+          "purpose": "用公式化 N 种途径总纲收束, 引出后续方法章"
+        }
+      ],
+      "applicable_summary": "研究报告类背景章: 由宏观三要素→供需缺口量级→外部禁令时间线→政策讲话背书→N 途径公式总纲, 层层压强度后桥接到方法章"
+    },
+    {
+      "id": "method_plateau_argument_to_full_stack_co_design",
+      "title": "方法·单层见顶→全栈协同→架构与收益定位",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "系统优化",
+          "软硬件协同",
+          "全栈",
+          "范式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前章"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "以两代范式对比引入协同优化必要性"
+        },
+        {
+          "archetype": "plateau_evidence_time_series_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以趋势图论证单层优化空间平缓"
+        },
+        {
+          "archetype": "typical_techniques_three_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "盘点单层典型技术加速比"
+        },
+        {
+          "archetype": "single_arrow_big_number_headline",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "大数字过渡页, 抛出协同效果头条"
+        },
+        {
+          "archetype": "co_design_method_layered_formula",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "拆解协同优化的公式化方法"
+        },
+        {
+          "archetype": "single_instance_intro_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "单行实例引入页, 铺垫具体案例"
+        },
+        {
+          "archetype": "three_layer_method_algo_sys_hw",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法-系统-硬件三层方法拆解"
+        },
+        {
+          "archetype": "instance_speedup_result_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "给出实例的具体加速数字"
+        },
+        {
+          "archetype": "full_stack_architecture_dense_diagram",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "整幅分层架构总图"
+        },
+        {
+          "archetype": "aggregated_gain_multiplicative_flow",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "各层加速叠乘的综合收益图"
+        },
+        {
+          "archetype": "accuracy_speed_pareto_positioning",
+          "count": 1,
+          "position": "end",
+          "purpose": "精度-速度散点定位收尾"
+        }
+      ],
+      "applicable_summary": "以「单层优化见顶→全栈软硬件协同→架构总图→叠乘收益→精度速度定位」组织的深度方法章, 常用两代范式与单点实例交替支撑"
+    },
+    {
+      "id": "method_landscape_then_need_vs_reality_gap_platforms",
+      "title": "方法·芯片全景→需求锚定→四平台差距→路径收束",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          14
+        ],
+        "must_have_in_chapter_purpose": [
+          "芯片",
+          "推理",
+          "端侧",
+          "算力平台",
+          "能效"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column_compare",
+          "count": 1,
+          "position": "start",
+          "purpose": "新范式(如 o1) 引入算力需求暴涨动机"
+        },
+        {
+          "archetype": "chip_class_spectrum_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多类芯片按通用性—定制化谱系铺盘"
+        },
+        {
+          "archetype": "top_formula_with_efficiency_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效公式+端云对照表拆解关键因子"
+        },
+        {
+          "archetype": "panorama_scatter_capability_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "汇总大量样本芯片能力散点+分类表"
+        },
+        {
+          "archetype": "concrete_example_metrics_line",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以少量端侧样例落到具体指标"
+        },
+        {
+          "archetype": "need_target_green_spec_box",
+          "count": 1,
+          "position": "middle",
+          "purpose": "定义需求指标绿色目标框, 供后续对标"
+        },
+        {
+          "archetype": "need_vs_platform_gap_ellipse",
+          "count": "3-5",
+          "position": "before_end",
+          "purpose": "对每类平台以椭圆+箭头对标差距倍数"
+        },
+        {
+          "archetype": "path_stacked_efficiency_multiplier",
+          "count": 1,
+          "position": "end",
+          "purpose": "以能效倍数递进横轴收束提升路径"
+        }
+      ],
+      "applicable_summary": "算力/芯片类方法章: 从范式变化引出算力需求, 铺开芯片谱系与能效汇总, 定义需求指标后对标 CPU/GPU/FPGA/ASIC 逐一给差距, 以系统+定制化路径收束"
+    },
+    {
+      "id": "method_motivation_cases_problems_practices_outlook",
+      "title": "方法·动机→标杆案例→关键问题→行业实践→展望",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          13
+        ],
+        "must_have_in_chapter_purpose": [
+          "集群",
+          "训练",
+          "异构",
+          "案例",
+          "问题"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录"
+        },
+        {
+          "archetype": "quadrant_relation_motivation_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以象限/关系图立本章动机"
+        },
+        {
+          "archetype": "flagship_case_metric_column_list",
+          "count": "2",
+          "position": "middle",
+          "purpose": "并列两个头部厂商标杆案例, 用规格清单佐证规模"
+        },
+        {
+          "archetype": "scaling_law_timeline_milestones",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以时间线里程碑图论证需求量级"
+        },
+        {
+          "archetype": "key_problem_data_with_metrics",
+          "count": "3",
+          "position": "middle",
+          "purpose": "递进拆解 3 个关键工程问题, 每页给数据/表格支撑"
+        },
+        {
+          "archetype": "industry_practice_bullet_case",
+          "count": "2",
+          "position": "before_end",
+          "purpose": "转向业界解法, 并列举 2 家厂商工程实践"
+        },
+        {
+          "archetype": "dual_column_outlook_capability_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双栏能力清单+利用率数字收束展望"
+        }
+      ],
+      "applicable_summary": "工程系统方法章: 由象限关系立动机→2 个标杆案例证规模→时间线证需求→3 个关键问题→2 个业界工程实践→双栏展望收束"
+    },
+    {
+      "id": "discussion_agenda_vision_topics_team_close",
+      "title": "展望·目录→愿景架构→课题清单→团队组成",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "展望",
+          "研究方向",
+          "团队",
+          "研究院"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入展望板块"
+        },
+        {
+          "archetype": "vision_forking_panorama_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以底部根节点向上分叉的愿景全景图铺陈"
+        },
+        {
+          "archetype": "topic_bulleted_research_list",
+          "count": 1,
+          "position": "middle",
+          "purpose": "纯文字清单铺开具体研究课题"
+        },
+        {
+          "archetype": "team_block_composition_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以色块分块展示多方联合团队组成"
+        }
+      ],
+      "applicable_summary": "研究院/实验室末章展望: agenda 分隔切入→愿景分叉全景图→文字课题清单→多方联合团队色块收束"
+    },
+    {
+      "id": "method_framework_dual_law_matrix_direction_platform",
+      "title": "方法·二维框架→双定律矩阵→方向成果→平台底座",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "研究方向",
+          "算法",
+          "架构",
+          "定律",
+          "论文"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "two_axis_quadrant_framework_diagram",
+          "count": 1,
+          "position": "start",
+          "purpose": "以横纵双轴四象限框架统领研究方向"
+        },
+        {
+          "archetype": "formula_plus_dual_law_curve",
+          "count": 1,
+          "position": "start",
+          "purpose": "以能力公式+两条增长曲线奠定路线"
+        },
+        {
+          "archetype": "route_by_layer_content_matrix",
+          "count": "2",
+          "position": "middle",
+          "purpose": "按 AI1.0/AI2.0 各出一页路线×层次内容矩阵"
+        },
+        {
+          "archetype": "efficiency_scaling_curve_multi_route",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以能效—算力曲线对比多路线技术空间"
+        },
+        {
+          "archetype": "direction_target_arch_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以研究目标+架构示意引入具体方向"
+        },
+        {
+          "archetype": "paper_matrix_by_target_column",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "以目标分列展示论文成果矩阵"
+        },
+        {
+          "archetype": "coordination_direction_dual_frame",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以大脑-小脑等双框图展开协同方向"
+        },
+        {
+          "archetype": "platform_base_capability_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "以测试场/平台+能力网格作为实验底座收尾"
+        }
+      ],
+      "applicable_summary": "科研团队研究方向章: 用二维四象限框架+双定律奠基→AI1.0/2.0 两页路线矩阵→单体能效曲线→单个方向的论文矩阵→协同方向框图→实验测试场收束"
+    },
+    {
+      "id": "case_study_platform_overview_evidence_direction_pairs",
+      "title": "案例·平台总览→工程佐证→科研方向框架+代表作对",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "research_report"
+        ],
+        "page_count_range": [
+          7,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "落地",
+          "代表工作",
+          "平台",
+          "算力底座"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "three_platform_overview_panels",
+          "count": 1,
+          "position": "start",
+          "purpose": "横向并列 N 大支撑平台总览"
+        },
+        {
+          "archetype": "engineering_scale_chip_row_diagram",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以芯片方块横排+主张论证工程规模能力"
+        },
+        {
+          "archetype": "scheduling_advantage_metrics_capsule",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三组能力胶囊+升降箭头数字坐实调度优势"
+        },
+        {
+          "archetype": "roadmap_puzzle_flow_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以拼图/流程图指向更大规模目标"
+        },
+        {
+          "archetype": "research_direction_codesign_frame",
+          "count": 1,
+          "position": "middle",
+          "purpose": "开启科研方向的软硬件协同框架页"
+        },
+        {
+          "archetype": "representative_works_quad_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以四象限/多面板展示该方向代表作及指标"
+        },
+        {
+          "archetype": "sota_compare_timeline_with_bullets",
+          "count": 1,
+          "position": "end",
+          "purpose": "章末以 SOTA 系统对标时间线+能力清单收束"
+        }
+      ],
+      "applicable_summary": "机构/团队末章案例: 三大平台总览→异构千卡工程佐证→调度优势数字→十万卡路线→科研方向 1 框架+代表作→科研方向 2 框架+代表作→SOTA 对标收尾"
+    },
+    {
+      "id": "method_three_sublayer_challenge_innovation_experiment_loop",
+      "title": "方法·三子层挑战-创新-实验递进闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          12,
+          18
+        ],
+        "must_have_in_chapter_purpose": [
+          "稀疏化",
+          "编译",
+          "硬件",
+          "软硬协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "structure_intro_computation_flow",
+          "count": 1,
+          "position": "start",
+          "purpose": "以计算流示意介绍目标对象基本结构"
+        },
+        {
+          "archetype": "sublayer_challenge_statement",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个子层以断言标题抛出关键挑战"
+        },
+        {
+          "archetype": "sublayer_innovation_answer",
+          "count": "5-8",
+          "position": "middle",
+          "purpose": "每个子层给出 1-3 页创新点(方法/机制/示例)"
+        },
+        {
+          "archetype": "sublayer_experiment_result",
+          "count": "2-3",
+          "position": "before_end",
+          "purpose": "每个子层以断言标题+具体数字给出实验结果"
+        },
+        {
+          "archetype": "three_layer_summary_flow",
+          "count": 1,
+          "position": "end",
+          "purpose": "以自上而下的三框流程图收束全章"
+        }
+      ],
+      "applicable_summary": "沿『算法/稀疏化→编译/映射→硬件/架构』三层递进的深度方法章, 每子层以断言标题(Challenge/Key Ideas/Innovation/Experiment)组织挑战-创新-实验闭环, 末页三框流程图收束"
+    },
+    {
+      "id": "framework_progressive_flow_build_plus_formula_unpack",
+      "title": "框架·分幕流程构建+公式因子逐层高亮",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "流程",
+          "方法论",
+          "公式",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "progressive_flow_stage_build",
+          "count": 3,
+          "position": "start",
+          "purpose": "逐帧 build 多阶段技术流程图, 每页新增一段"
+        },
+        {
+          "archetype": "formula_factor_highlight",
+          "count": 3,
+          "position": "middle",
+          "purpose": "用一个等效算力/性能公式, 每页高亮拆解一个因子"
+        },
+        {
+          "archetype": "three_layer_design_summary",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多层协同设计小结, 三分区+三条编号要点"
+        },
+        {
+          "archetype": "trend_lead_in_new_scenario",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引入新场景(如 LLM+专用模型) 承接后续创新点"
+        },
+        {
+          "archetype": "innovation_novel_paradigm_pair",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "用对比示例展示新范式的量级降算力/降复杂度"
+        },
+        {
+          "archetype": "review_previous_tutorial_holder",
+          "count": 1,
+          "position": "middle",
+          "purpose": "回顾旧版 tutorial 作为进展对比锚点"
+        },
+        {
+          "archetype": "progress_map_operators",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图展示 N 年内算子/性能进展"
+        },
+        {
+          "archetype": "industry_revolution_positioning",
+          "count": "1-2",
+          "position": "before_end",
+          "purpose": "用工业革命/时代高度升华技术意义"
+        },
+        {
+          "archetype": "handoff_to_our_methods_roadmap",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双行进展+本组方法预告收束章节"
+        }
+      ],
+      "applicable_summary": "tutorial 方法论内核章: 用分幕 build 的流程图+公式因子高亮拆解原理, 再用新场景+创新点承接, 末尾用回顾/时代升华+本组方法路线图收束"
+    },
+    {
+      "id": "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "title": "案例·多轮观察-解法对+端到端消融",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "观察",
+          "方案",
+          "消融",
+          "加速比",
+          "代表工作"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面/标题+作者+会议引入"
+        },
+        {
+          "archetype": "realtime_need_vs_sota_gap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以现实需求 vs SOTA 精度/性能缺口做动机"
+        },
+        {
+          "archetype": "computation_pipeline_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "铺陈目标计算流程/管线, 供后续 Observation 定位瓶颈"
+        },
+        {
+          "archetype": "observation_initial",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 首页: 抛出一个瓶颈现象+数字"
+        },
+        {
+          "archetype": "observation_extension",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 延伸页: 深入证据/进一步机制"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "针对每个 Observation 给出对应 Solution"
+        },
+        {
+          "archetype": "end_to_end_performance",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "端到端加速比作为整体收益证明"
+        },
+        {
+          "archetype": "ablation_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "多象限消融验证各 Solution 独立贡献"
+        }
+      ],
+      "applicable_summary": "系统/加速器论文的深度案例章: 论文封面→需求缺口→流程图→3 轮 Observation(每轮 initial+extension)→Solution 一一对应→端到端加速+消融收尾"
+    },
+    {
+      "id": "case_study_background_motivation_multi_solution_result",
+      "title": "案例·背景动机→章节分隔→多解法→双视角结果",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "FPGA",
+          "硬件",
+          "方案",
+          "能效",
+          "成本"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面+发表信息引入"
+        },
+        {
+          "archetype": "background_tradeoff_spectrum",
+          "count": 1,
+          "position": "start",
+          "purpose": "以谱系图/对比论证技术折衷"
+        },
+        {
+          "archetype": "motivation_platform_advantage",
+          "count": 1,
+          "position": "start",
+          "purpose": "点明目标平台(FPGA/专用)的核心优势"
+        },
+        {
+          "archetype": "chapter_transition_divider",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以留白分隔页引出后续多解法"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "每个解法以断言标题+方法细节展开"
+        },
+        {
+          "archetype": "performance_result_platform",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以目标平台自身指标(如吞吐/能效)给出结果"
+        },
+        {
+          "archetype": "performance_result_cross_platform",
+          "count": 1,
+          "position": "end",
+          "purpose": "以跨平台对比(如 GPU vs FPGA)给出总账收益"
+        }
+      ],
+      "applicable_summary": "硬件加速案例章: 论文封面+背景折衷+平台动机→章节分隔→多个 Solution 并列展开→结果先给单平台指标再给跨平台总账"
+    },
+    {
+      "id": "case_study_challenge_solution_performance_closed_loop",
+      "title": "案例·多挑战多解法一一配对+消融闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "解法",
+          "算子",
+          "加速",
+          "消融"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文标题+作者+会议引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "1-2 页并列陈述 N 个 challenge, 每个用视觉对比图"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个 Solution 对应一个 Challenge, 展示方法细节"
+        },
+        {
+          "archetype": "performance_headline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以断言式加速数字给主性能结果"
+        },
+        {
+          "archetype": "ablation_supplement",
+          "count": 1,
+          "position": "end",
+          "purpose": "以消融/内存节省等补充实验佐证各设计模块贡献"
+        }
+      ],
+      "applicable_summary": "紧凑型系统/算子案例章: 论文封面→N 个 challenge 并列→N 个 solution 一一配对→主性能加速比→消融补充实验收束"
+    },
+    {
+      "id": "framework_opensource_ecosystem_plus_representative_work",
+      "title": "框架·开源生态总览+代表算子闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "开源框架",
+          "算子",
+          "代表工作",
+          "路线图"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入框架章"
+        },
+        {
+          "archetype": "framework_definition_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 Innovation 标签+一句话定义引入自研开源框架"
+        },
+        {
+          "archetype": "framework_performance_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多组加速比数字铺陈框架性能优势"
+        },
+        {
+          "archetype": "framework_integration_ecosystem",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三列并排展示与多上层框架的集成生态"
+        },
+        {
+          "archetype": "progress_roadmap_bridge",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图作为承上启下枢纽, 引出代表工作"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "代表工作论文封面引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文挑战陈述, 抛出问题"
+        },
+        {
+          "archetype": "solution_formulation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法一:以循环维度/公式化算法空间给出方案"
+        },
+        {
+          "archetype": "solution_mechanism",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法二:进一步落到具体机制(启发式模型/动态选择)"
+        },
+        {
+          "archetype": "performance_result",
+          "count": 1,
+          "position": "end",
+          "purpose": "给出加速比闭环收束章节"
+        }
+      ],
+      "applicable_summary": "开源框架章: 目录→定义→性能数字→生态集成→路线图承接→代表工作论文『挑战-方案-机制-性能』闭环"
+    },
+    {
+      "id": "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "title": "动机·趋势路标→三轴增长→供需鸿沟→解法引入",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "趋势",
+          "算力",
+          "鸿沟",
+          "动机",
+          "稀疏"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_ai_roadmap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三时代阶梯+三轴维度铺陈 AI 演进路标"
+        },
+        {
+          "archetype": "three_axis_trend_panel",
+          "count": 2,
+          "position": "start",
+          "purpose": "用三列并排 panel 分抽象+实证两页展开数据/模态/任务三轴"
+        },
+        {
+          "archetype": "model_moore_law_growth_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以对数增长曲线论证模型规模摩尔定律级暴涨"
+        },
+        {
+          "archetype": "supply_demand_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以需求 vs 硬件曲线证算力供需鸿沟"
+        },
+        {
+          "archetype": "solution_introduction_bridge",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以性能-能效对比正式引入解法(稀疏计算)"
+        },
+        {
+          "archetype": "definition_benefit_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "给解法定义+关键倍数收束"
+        }
+      ],
+      "applicable_summary": "tutorial 动机章: 从 AI 三时代路标→三轴 panel(抽象+实证)→模型摩尔定律→供需鸿沟→稀疏计算引入→定义收束的漏斗式论证"
+    },
+    {
+      "id": "background_paradigm_shift_dual_era_comparison_table",
+      "title": "背景·1.0→2.0 范式对照+同构表格递进",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "范式",
+          "1.0",
+          "2.0",
+          "稀疏",
+          "分类"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入案例研究/背景板块"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column",
+          "count": 1,
+          "position": "start",
+          "purpose": "左右两栏对照 1.0/2.0 范式核心差异"
+        },
+        {
+          "archetype": "era_sparsity_taxonomy_table",
+          "count": 2,
+          "position": "middle",
+          "purpose": "用同构四列表格分别铺 1.0 与 2.0 稀疏性谱系, 用红框强调新增行"
+        },
+        {
+          "archetype": "progress_roadmap_handoff",
+          "count": 1,
+          "position": "end",
+          "purpose": "以进展路线图收束到本组新方法预告"
+        }
+      ],
+      "applicable_summary": "从上一代过渡到新场景的背景章: 目录→双栏范式对照→同构表格逐行递进(1.0→2.0 新增维度)→路线图收束"
+    },
+    {
+      "id": "case_study_agenda_paper_multi_platform_benchmark",
+      "title": "案例·目录切入→论文封面→多平台基准",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "其他工作",
+          "加速比",
+          "跨平台",
+          "baseline"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "进度目录切入补充工作章"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文封面+作者+投稿信息引入"
+        },
+        {
+          "archetype": "platform_benchmark_speedup",
+          "count": 2,
+          "position": "end",
+          "purpose": "每页一个硬件平台家族的加速比对比图, 佐证跨平台通用性"
+        }
+      ],
+      "applicable_summary": "补充成果紧凑章: agenda→论文封面→2 组跨平台(NVIDIA/AMD 等)加速比基准对比, 用于收尾多个 case study"
+    },
+    {
+      "id": "closing_collaboration_wall_plus_thanks_backpanel",
+      "title": "收尾·合作机构墙+THANKS 封底",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "合作",
+          "致谢",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "collaboration_institution_wall",
+          "count": 1,
+          "position": "start",
+          "purpose": "以院校名+logo 网格展示合作学术伙伴阵容"
+        },
+        {
+          "archetype": "thanks_backpanel",
+          "count": 1,
+          "position": "end",
+          "purpose": "以竖排 THANKS + 团队成员/赞助方 + 主题回顾 + 联系方式收束"
+        }
+      ],
+      "applicable_summary": "学术 tutorial/report 双页收尾: 合作机构墙致谢学术伙伴, 再封底集中致谢团队+赞助+联系方式"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调"
+    },
+    {
+      "id": "opening_blank_cover_skeleton_single_page",
+      "title": "开场·空白封面骨架单页",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "模板",
+          "骨架"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "blank_cover_placeholder_skeleton",
+          "count": 1,
+          "position": "start",
+          "purpose": "提供留白封面骨架,含标题/作者占位与配色定调"
+        }
+      ],
+      "applicable_summary": "模板类 deck 的极简开场: 单页空白封面骨架, 仅提供标题/作者占位与配色分隔线, 供讲者自行填入课题名与署名"
+    },
+    {
+      "id": "self_intro_dual_timeline_research_work_edu",
+      "title": "自我介绍·研究领域+工作/教育双时间线",
+      "applicable_when": {
+        "chapter_role": [
+          "self_intro"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          2
+        ],
+        "must_have_in_chapter_purpose": [
+          "个人介绍",
+          "履历",
+          "研究领域",
+          "经历"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "self_intro_research_plus_dual_timeline",
+          "count": 1,
+          "position": "start",
+          "purpose": "以研究方向标签统领+工作/教育双时间线并列勾勒学术履历"
+        }
+      ],
+      "applicable_summary": "学术汇报开场后的自我介绍单页: 顶部研究方向标签框+工作经历时间线+教育经历时间线双栏并列, 一页收全个人学术履历全貌"
+    },
+    {
+      "id": "method_dual_column_skeleton_progressive_stripping",
+      "title": "方法·左右双栏版式逐步剥离骨架",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          3,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "版式",
+          "双栏",
+          "骨架",
+          "模板"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "innovation_tagged_dual_column_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "以「创新思路」标签+通栏概述+左右双栏骨架起头"
+        },
+        {
+          "archetype": "numbered_problem_tagged_dual_column",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以红标签「问题N」编号+双栏带标题条, 引入编号问题序列"
+        },
+        {
+          "archetype": "colored_dual_column_no_label",
+          "count": 1,
+          "position": "middle",
+          "purpose": "剥离标签, 仅留紫/蓝双色标题条区分左右两栏"
+        },
+        {
+          "archetype": "minimal_bare_dual_column_skeleton",
+          "count": 1,
+          "position": "end",
+          "purpose": "进一步抽象为纯蓝色横条双栏, 去掉底色与标签的最简骨架"
+        }
+      ],
+      "applicable_summary": "模板类方法章的空白骨架递进: 从带「创新思路」标签双栏 → 带「问题N」编号双栏 → 无标签配色双栏 → 极简纯结构双栏, 逐步剥离标签/配色, 供讲者按需选版填充"
+    },
+    {
+      "id": "closing_blank_thanks_backpanel_with_signature",
+      "title": "收尾·空白 Thanks 版式+署名页脚",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "结尾",
+          "致谢",
+          "Thanks",
+          "Q&A"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "blank_ending_placeholder_with_footer_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "提供大面积留白主体+顶部封口蓝条+底部固定署名页脚,供填 Thanks/Q&A/联系方式"
+        }
+      ],
+      "applicable_summary": "模板类 deck 的极简收尾: 单页空白结尾骨架, 顶部蓝色横条视觉封口, 主体全空供填 Thanks/Q&A, 底部固定署名页脚"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution",
+      "title": "开场·论文封面+多作者多机构署名",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "论文",
+          "署名",
+          "机构"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "左对齐大字论文标题+多作者列+多机构脚注, 建立学术身份锚点"
+        }
+      ],
+      "applicable_summary": "论文分享类 deck 的极简单页开场: 一页承担论文封面, 左对齐大标题+多行作者+多家合作机构署名, 无 TOC/agenda 页, 直接接背景章"
+    },
+    {
+      "id": "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+      "title": "背景·agenda→价值→范式代价→机制→算子拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "范式演进",
+          "价值论证",
+          "算子拆解"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首五段式 agenda 高亮定位 Background"
+        },
+        {
+          "archetype": "value_argument_dual_panel_evidence",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论证目标技术(reasoning)价值: 路线图+准确率对比双 panel"
+        },
+        {
+          "archetype": "paradigm_shift_cost_compare_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "揭示范式转变(token→action)带来的成本(10× 延迟)"
+        },
+        {
+          "archetype": "mechanism_overview_plus_detail_dual",
+          "count": 1,
+          "position": "middle",
+          "purpose": "拆解新范式内部机制(MCTS 树 + 单步细节)"
+        },
+        {
+          "archetype": "operator_pipeline_breakdown",
+          "count": 1,
+          "position": "end",
+          "purpose": "将机制进一步拆为多类算子, 为下章硬件挑战埋伏笔"
+        }
+      ],
+      "applicable_summary": "论文分享型 background 章: 五段 agenda → 论证目标技术价值 → 抛出范式转变的成本代价 → 展开内部机制(MCTS) → 拆为算子流水线, 为后续硬件挑战建靶"
+    },
+    {
+      "id": "problem_related_works_survey_dual_challenge_to_solution_bridge",
+      "title": "问题·相关工作综述→双挑战并列→方案桥接",
+      "applicable_when": {
+        "chapter_role": [
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "挑战",
+          "瓶颈",
+          "方案引出"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Challenge 章"
+        },
+        {
+          "archetype": "related_works_survey_three_pillars",
+          "count": 1,
+          "position": "middle",
+          "purpose": "横向 N 列并列综述现有工作三条路线"
+        },
+        {
+          "archetype": "first_challenge_data_backed_pain",
+          "count": 1,
+          "position": "middle",
+          "purpose": "挑战一: 用数字对比(如 <4% 利用率)证明第一大瓶颈"
+        },
+        {
+          "archetype": "second_challenge_data_backed_pain",
+          "count": 1,
+          "position": "middle",
+          "purpose": "挑战二: 用时间线/结构图证明第二大瓶颈"
+        },
+        {
+          "archetype": "proposal_solution_bridge_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "单句大字提出方案名, 桥接到下一章方法"
+        }
+      ],
+      "applicable_summary": "论文分享型 problem 章: agenda → 综述现有工作 N 条路线 → 挑战1(数据佐证) → 挑战2(结构佐证) → 单句提出本文方案, 立靶后收束到下章方法"
+    },
+    {
+      "id": "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+      "title": "方法·算法层双支柱→硬件层总览与细节下钻",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "算法",
+          "硬件",
+          "协同设计",
+          "架构"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Solution 章"
+        },
+        {
+          "archetype": "algorithm_pillar_one_formula_plus_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法支柱一: 打分公式+对比甘特时间线(cache reuse)"
+        },
+        {
+          "archetype": "algorithm_pillar_two_steps_plus_covered_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法支柱二: 分步说明+三行甘特+绿框覆盖标注(pipeline)"
+        },
+        {
+          "archetype": "hardware_architecture_bullet_overview",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "硬件层总览: 顶部定义框+右侧多级 bullet 分模块"
+        },
+        {
+          "archetype": "hardware_submodule_detail_bullet",
+          "count": 1,
+          "position": "end",
+          "purpose": "硬件层细节: 单模块内部 N 个子结构的 bullet 展开"
+        }
+      ],
+      "applicable_summary": "论文分享型 method 章: agenda → 算法层两支柱(公式+甘特对比、分步+覆盖标注) → 硬件层总览(bullet 分模块) → 单模块内部细节, 算法与硬件对半分, 算法在前硬件在后"
+    },
+    {
+      "id": "experiment_setup_dual_main_headline_ablation_pair",
+      "title": "实验·设置双页→主结果头条→消融拆解双页",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "评测设置",
+          "主结果",
+          "消融",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Evaluation 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 2,
+          "position": "middle",
+          "purpose": "评测设置两页并列: 模型/数据集 + 基线/硬件, 均带参考文献编号"
+        },
+        {
+          "archetype": "main_result_speedup_headline_boxed",
+          "count": 1,
+          "position": "middle",
+          "purpose": "主结果头条: 多倍数加速蓝框强调+多基线对比"
+        },
+        {
+          "archetype": "ablation_single_axis_speedup",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "消融一: 算法层单轴消融(算法优化贡献)"
+        },
+        {
+          "archetype": "ablation_combined_vs_individual",
+          "count": 1,
+          "position": "end",
+          "purpose": "消融二: 算法+硬件协同 vs 单项对比, 证协同必要性"
+        }
+      ],
+      "applicable_summary": "论文分享型实验章标配三段式: agenda → 评测设置两页(模型/数据集 + 基线/硬件) → 主结果多倍加速蓝框头条 → 两页消融(单轴+协同拆解)证协同设计必要性"
+    },
+    {
+      "id": "closing_toc_recap_plus_summary_contribution_with_contact",
+      "title": "收尾·目录回顾+一句话贡献总述附联系方式",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "回顾",
+          "贡献",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_recap_all_chapters",
+          "count": 1,
+          "position": "start",
+          "purpose": "回归目录页, 竖排编号点亮全部章节, 串起全 deck 脉络"
+        },
+        {
+          "archetype": "summary_contribution_boxed_with_contact",
+          "count": 1,
+          "position": "end",
+          "purpose": "顶部蓝框『We propose X』一句话总述贡献+下方实验室主页/邮箱"
+        }
+      ],
+      "applicable_summary": "论文分享型极简收尾双页: 先回归目录把四段脉络重新点亮, 再一页顶部蓝框一句话总述贡献+下方联系方式, 兼具回顾/致谢/信息接口三重功能"
+    }
+  ]
+}

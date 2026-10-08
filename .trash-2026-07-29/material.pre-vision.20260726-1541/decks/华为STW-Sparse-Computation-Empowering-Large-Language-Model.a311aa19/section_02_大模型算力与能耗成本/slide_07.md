@@ -1,0 +1,45 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_07"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.02"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 7
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "能耗成本的构成公式"
+核心论断: "能耗成本由功率、延迟与电价三者相乘决定"
+本页讲什么: "本页给出能耗成本的定义公式 Energy Cost = Power × Latency × Electricity Price, 把抽象的能耗代价拆成功率、延迟、电价三个可量化因子, 为后续代入 A100 硬件参数做具体测算搭好框架, 是全章从定性转向定量的关键公式页。"
+关键文字: "[Energy Cost = Power × Latency × Electricity Price]"
+视觉骨架: "[能耗成本公式版式, 三因子分解标注]"
+资源ID列表:
+适合复用场景: "[能耗成本公式定义页, 代价因子分解讲解页]"
+不适合复用场景: "[产品应用展示页, 结果 benchmark 对比页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "页面主体", "内容": "能耗成本公式 Energy Cost = Power × Latency × Electricity Price"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 7: 能耗成本的构成公式
+
+**核心论断**: 能耗成本由功率、延迟与电价三者相乘决定
+
+## 本页讲什么
+本页给出能耗成本的定义公式 Energy Cost = Power × Latency × Electricity Price, 把抽象的能耗代价拆成功率、延迟、电价三个可量化因子, 为后续代入 A100 硬件参数做具体测算搭好框架, 是全章从定性转向定量的关键公式页。
+
+## 关键文字片段
+- Energy Cost = Power × Latency × Electricity Price
+
+## 视觉骨架
+- 能耗成本公式版式
+- 三因子分解标注
+
+## 可复用到
+- 能耗成本公式定义页
+- 代价因子分解讲解页
+
+## 不适合复用的场景
+- 产品应用展示页
+- 结果 benchmark 对比页

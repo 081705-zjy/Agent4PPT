@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_14",
+  "所属章节": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.03",
+  "所属deck": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+  "页序号": 14,
+  "源文件": "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Self Forcing 的逐帧迭代代价",
+  "核心论断": "Self Forcing 的 frame/iteration 机制带来沉重计算代价",
+  "本页讲什么": "本页展开 Self Forcing 的机制细节：由于它按 frame/iteration 逐帧迭代生成，配合多张示意图说明其工作方式，同时暗示这一机制带来的计算开销问题。",
+  "关键文字": [
+    "由于 Self-Forcing 是 frame/iteration 机制"
+  ],
+  "视觉骨架": [
+    "逐帧迭代生成流程图",
+    "多帧生成过程配图组"
+  ],
+  "资源ID列表": [
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_14.asset.01",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_14.asset.02",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_14.asset.03",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_14.asset.04"
+  ],
+  "适合复用场景": [
+    "Self Forcing 机制细节展开页",
+    "逐帧迭代生成流程说明页"
+  ],
+  "不适合复用场景": [
+    "范式演进 opener 页",
+    "纯概念 bullet 页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_38"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 38
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "FPGA 硬件资源占用明细"
+核心论断: "各模块资源占用在 FPGA 预算内可实现"
+本页讲什么: "本页用资源表逐模块列出 LUT、FF、BRAM 等 FPGA 资源占用，说明 FlightVGM 各硬件模块的开销规模与可实现性，为后续加速比和能效比结果交代硬件成本基础。"
+关键文字: "[Module, LUT (k), FF (k), BRAM]"
+视觉骨架: "[硬件资源占用表, 模块分行明细, 资源类型分列]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_38.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_38.asset.02]"
+适合复用场景: "[FPGA 加速器资源占用表页, 硬件模块开销明细页]"
+不适合复用场景: "[生成精度对比页, 概念性方法介绍页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+alternate_claims:
+layout_tag: "benchmark_table"
+---
+# slide 38: FPGA 硬件资源占用明细
+
+**核心论断**: 各模块资源占用在 FPGA 预算内可实现
+
+## 本页讲什么
+本页用资源表逐模块列出 LUT、FF、BRAM 等 FPGA 资源占用，说明 FlightVGM 各硬件模块的开销规模与可实现性，为后续加速比和能效比结果交代硬件成本基础。
+
+## 关键文字片段
+- Module
+- LUT (k)
+- FF (k)
+- BRAM
+
+## 视觉骨架
+- 硬件资源占用表
+- 模块分行明细
+- 资源类型分列
+
+## 可复用到
+- FPGA 加速器资源占用表页
+- 硬件模块开销明细页
+
+## 不适合复用的场景
+- 生成精度对比页
+- 概念性方法介绍页

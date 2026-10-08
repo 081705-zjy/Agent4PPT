@@ -1,0 +1,45 @@
+---
+章节标识: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.02
+所属deck: tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19
+章节序号: 2
+章节角色: motivation
+标题: 大模型算力与能耗成本
+页码范围: [2, 12]
+页数: 11
+页ID列表: [slide_02, slide_03, slide_04, slide_05, slide_06, slide_07, slide_08, slide_09, slide_10, slide_11, slide_12]
+章节叙事: "为全 deck 铺垫问题动机:从 LLM 广泛应用切入,层层论证算力、能耗、成本高昂与乘法器瓶颈,末页以「如何改进」设问引出稀疏计算三层方案。"
+页间关系: ["slide 2 → slide 3: Background 封面延续,承接章节主题铺开。", "slide 3 → slide 4: 由背景引入 LLM 定义及其广泛下游应用。", "slide 4 → slide 5: 由应用广泛过渡到基于 OpenAI 的总成本高昂。", "slide 5 → slide 6: 由总成本引出生成任务扩张带来的需求膨胀。", "slide 6 → slide 7: 由需求膨胀引出能耗成本(Energy Cost)公式。", "slide 7 → slide 8: 能耗公式进一步展开与量化深化。", "slide 8 → slide 9: 由能耗公式过渡到 A100 硬件实例佐证。", "slide 9 → slide 10: A100 成本数据继续深化对比。", "slide 10 → slide 11: 由硬件成本转向延迟与乘法器量级视角。", "slide 11 → slide 12: 由乘法器量级引出「如何改进」设问,承接后文。"]
+适合复用场景: [需论证「LLM 算力/能耗/成本爆炸」的 motivation 章节。, 从应用广泛→成本高昂→设问引出方案的动机弧线。, 以 A100 等硬件实例量化成本的背景铺垫。, 以乘法器/延迟量级引出加速需求的技术类开场。]
+不适合复用场景: [研究主题与大模型算力成本无关时。, 无需硬件成本量化的纯理论章节。, A100 及 OpenAI 成本数据已过时的场合。, 动机极短、无需 11 页展开的轻量 deck。]
+在deck中的位置: 第 2 章 motivation,紧跟 Background 封面,为后续算子/硬件/模型三层加速铺垫。
+分析状态: claude-opus-4-8
+---
+
+# section 2: 大模型算力与能耗成本
+
+## 在 deck 中的位置
+第 2 章 motivation,紧跟 Background 封面,为后续算子/硬件/模型三层加速铺垫。
+
+## 章内 slide 间的关系
+- slide 2 → slide 3: Background 封面延续,承接章节主题铺开。
+- slide 3 → slide 4: 由背景引入 LLM 定义及其广泛下游应用。
+- slide 4 → slide 5: 由应用广泛过渡到基于 OpenAI 的总成本高昂。
+- slide 5 → slide 6: 由总成本引出生成任务扩张带来的需求膨胀。
+- slide 6 → slide 7: 由需求膨胀引出能耗成本(Energy Cost)公式。
+- slide 7 → slide 8: 能耗公式进一步展开与量化深化。
+- slide 8 → slide 9: 由能耗公式过渡到 A100 硬件实例佐证。
+- slide 9 → slide 10: A100 成本数据继续深化对比。
+- slide 10 → slide 11: 由硬件成本转向延迟与乘法器量级视角。
+- slide 11 → slide 12: 由乘法器量级引出「如何改进」设问,承接后文。
+
+## 整章可复用的场景
+- 需论证「LLM 算力/能耗/成本爆炸」的 motivation 章节。
+- 从应用广泛→成本高昂→设问引出方案的动机弧线。
+- 以 A100 等硬件实例量化成本的背景铺垫。
+- 以乘法器/延迟量级引出加速需求的技术类开场。
+
+## 不适合复用的场景
+- 研究主题与大模型算力成本无关时。
+- 无需硬件成本量化的纯理论章节。
+- A100 及 OpenAI 成本数据已过时的场合。
+- 动机极短、无需 11 页展开的轻量 deck。

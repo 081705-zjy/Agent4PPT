@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_32"
+所属章节: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06"
+所属deck: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c"
+页序号: 32
+源文件: "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx"
+页面角色: "content_candidate"
+标题: "其他 Baseline 配置与精度对比"
+核心论断: "沿用各 Baseline 原始配置对比仍显 TB-STC 优势"
+本页讲什么: "精度评测的延续，说明对于其他 Baseline，采用它们各自原始论文的配置进行对比，以保证公平，并给出相应精度结果。承接上页 retrained 结果，把对比范围扩展到全部对照组，巩固精度无损结论。"
+关键文字: "[For other baselines, we refer to configuration of them]"
+视觉骨架: "[Baseline 配置说明, 精度对比图表]"
+资源ID列表: "[tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_32.asset.01, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_32.asset.02]"
+适合复用场景: "[多 Baseline 公平配置说明页, 扩展对照组的精度对比页]"
+不适合复用场景: "[能效对比页, 方法架构图页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+  - {"位置": "上方说明文字", "内容": "For other baselines, we refer to configuration of them"}
+  - {"位置": "下方主体", "内容": "各 Baseline 原始配置下的精度对比图表"}
+alternate_claims:
+  - "各 Baseline 采用其原论文配置以保证对比公平"
+layout_tag: "benchmark_table"
+---
+# slide 32: 其他 Baseline 配置与精度对比
+
+**核心论断**: 沿用各 Baseline 原始配置对比仍显 TB-STC 优势
+
+## 本页讲什么
+精度评测的延续，说明对于其他 Baseline，采用它们各自原始论文的配置进行对比，以保证公平，并给出相应精度结果。承接上页 retrained 结果，把对比范围扩展到全部对照组，巩固精度无损结论。
+
+## 关键文字片段
+- For other baselines, we refer to configuration of them
+
+## 视觉骨架
+- Baseline 配置说明
+- 精度对比图表
+
+## 可复用到
+- 多 Baseline 公平配置说明页
+- 扩展对照组的精度对比页
+
+## 不适合复用的场景
+- 能效对比页
+- 方法架构图页

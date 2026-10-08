@@ -1,0 +1,12 @@
+=== PPT_EVAL on v26 @ 15:51:13 ===
+[PPT_EVAL] evaluating final-shell-deck.pptx (expected slide_count=50, language=zh)
+[PPT_EVAL] done in 790.8s: content_avg=2.54, logic=5.0, constraint=1.0, overall=0.836
+
+[PPT_EVAL] ok=True elapsed=791.3s
+
+Aggregate scores:
+  content_avg: 2.54
+  style_avg: None
+  logic_score: 5.0
+  constraint_score: 1.0
+  overall: 0.836

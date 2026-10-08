@@ -1,0 +1,544 @@
+{
+  "batch_index": 15,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_presenter_info",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中主标题+讲者/单位/日期/邮箱",
+      "description": "封面页版式:居中大字主标题居于版面正中,下方依次排列报告人姓名+职称、实验室/机构名、日期、联系邮箱;无正文段落、无插图,常配一条横向分隔细线,整体极简白底。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中主标题' + '横向分隔细线'",
+        "关键文字 含 '报告人' / 姓名+职称 / 日期 (YYYY.MM.DD) / Email",
+        "无 '正文段落' / 'bullet 列表' / 'panel 并列' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 1,
+          "评价": "标准封面:主标题居中,下含报告人戴国浩、DAI 实验室字母标识、2024.11.11、daiguohao@sjtu.edu.cn,含横向分隔线,极简白底"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场瞬间锁定 deck 主题与讲者身份,极简版式避免其他元素抢焦点,横线分隔标题区与信息区提供视觉秩序",
+      "fix_hint": "把 cover 主标题放大居中,讲者/单位/日期/邮箱放于横线下方成信息块,移除正文与插图",
+      "exceptions": [
+        "品牌宣传型 deck 讲者信息让位于品牌 logo",
+        "空白模板占位版式"
+      ]
+    },
+    {
+      "id": "toc_page_numbered_items_with_current_highlighted",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录/章节切换页·带圈编号列表+当前项高亮",
+      "description": "章节导航/切换页用蓝色外框+Contents 标题+ 1-4 带圈编号条目竖排,当前进入的板块黑色高亮或加左侧蓝色竖条,其余灰显;页面无正文,仅承担章节切换。",
+      "evidence_signals": [
+        "视觉骨架 含 '带圈编号' / '圆圈编号' 列表 + 'Contents' 蓝色外框",
+        "视觉骨架 含 '当前项' + '高亮' / '蓝色竖条'",
+        "关键文字 含 'Contents' / '研究背景/思路/成果' 类板块名,不含正文数据"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 2,
+          "评价": "Contents 首现:蓝色外框+1-4 圆圈编号+左侧蓝色竖条"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 13,
+          "评价": "进入研究思路:第 2 项高亮,其余灰显"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 16,
+          "评价": "进入研究成果:第 3 项蓝色竖条高亮"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 44,
+          "评价": "进入未来趋势:第 4 项黑色高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节切换页反复出现同一目录骨架并高亮当前项,让听众持续知道'走到哪一步',以视觉锚点强化整体结构感",
+      "fix_hint": "章节切换页复用相同 Contents 骨架, 仅切换当前项高亮/竖条位置, 其余项灰显",
+      "exceptions": [
+        "短 deck 无板块划分",
+        "非线性索引 deck"
+      ]
+    },
+    {
+      "id": "paper_intro_page_title_authors_venue",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "论文引入页·大字标题+作者列表+会议标注",
+      "description": "引入某项工作时单开一页承担'工作正式亮相':大字英文/技术论文标题为主体,下方紧跟作者名单(第一作者与通讯常加*),再下方是单位机构与会议出处(如 Published in HPCA'25、Best Paper Candidate)。不含正文数据。",
+      "evidence_signals": [
+        "视觉骨架 含 '大号论文标题' / '论文标题大字'",
+        "视觉骨架 含 '作者与单位列表' / '会议接收标注'",
+        "关键文字 含 'Accepted by' / 'Published' + 会议缩写年份"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 19,
+          "评价": "TB-STC 工作引入:大标题+作者名单+ 'Accepted by HPCA'25'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 27,
+          "评价": "DA-SpMM 引入:论文标题+作者+DAC'22 Best Paper Candidate"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 35,
+          "评价": "FlightLLM 引入:大字标题+作者与单位+ 'Published by FPGA'24'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "先亮出正式工作出处再展开细节,给听众'这是发表工作'的学术背书,避免技术方法凭空出现,降低可信度门槛",
+      "fix_hint": "在新方法首次登场前插一页仅含 '论文标题+作者+会议出处' 的引入页,不夹带方法示意",
+      "exceptions": [
+        "工业界无论文出处的 case_study",
+        "综述 deck 不逐工作亮相"
+      ]
+    },
+    {
+      "id": "method_page_top_formula_banner",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法总览页·顶部主线公式蓝条+下方拆解",
+      "description": "承担方法/思路展开的页面,顶部横置一条蓝底/深色横条,内为贯穿全篇的主线公式(如'AI应用算力=芯片算力×稀疏度×...'),下方以流程图或多列 panel 拆解各因子。公式贯穿多页,变形/扩展时同一条带保持位置一致。",
+      "evidence_signals": [
+        "视觉骨架 含 '公式条' / '公式蓝条' / '算力分解公式'",
+        "关键文字 含 '=' + '×' 或 '/' 组成的算力/效率公式",
+        "视觉骨架 含 '流程' 或 '三列 panel' 位于公式条下方"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 14,
+          "评价": "顶部蓝条 'AI应用算力=芯片算力×稀疏' +下方三列 CNN/GNN/Transformer"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 15,
+          "评价": "顶部公式扩展为三因子相乘,下方矩阵流程"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 20,
+          "评价": "蓝色算力分解公式条+三步流程框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 28,
+          "评价": "顶部有效算力公式+左侧三步纵向流程"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 47,
+          "评价": "算力公式向下扩展加'集群'因子,双层公式框"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 4,
+          "原因": "MLP/CNN/Attention 结构介绍页无主线公式,仅并列示意图"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "把主线公式钉在页面顶部并跨页复用,提供全篇'认知锚点',让每次拆解都能回到同一坐标系,避免方法细节各自为战",
+      "fix_hint": "在方法总览与每层拆解页顶部复用同一条主线公式条,当前展开的因子红色/加粗高亮",
+      "exceptions": [
+        "背景/动机页无需公式",
+        "结论/展望页可省"
+      ]
+    },
+    {
+      "id": "content_page_multi_column_parallel_panels",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页·2-3列并列 panel 呈现平行概念",
+      "description": "对比或平行展开多项时用 2-3 列并列 panel:每列独立标题+示意图+bullet,列间视觉重量对等;常用于对比现有方案 vs 本文方法、多种网络结构、多个循环维度等场景。",
+      "evidence_signals": [
+        "视觉骨架 含 '3列并列panel' / '双栏对照' / '并列 panel'",
+        "关键文字 含 3 个及以上标题词并列结构 (如 'MLP/CNN/Attention', 'M-Loop/N-Loop/K-Loop')",
+        "视觉骨架 无 '单栏纵向流程' 描述"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 4,
+          "评价": "MLP/CNN/Attention 三列并列 panel"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 14,
+          "评价": "CV/GNN/Transformer 三列任务并列"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 30,
+          "评价": "M/N/K-Loop 三列映射设计"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 33,
+          "评价": "DSTC/Sextans 左右两列对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.25,
+      "enforcement_level": "soft",
+      "rationale": "平行概念用等宽并列 panel 让听众一眼看出'这是同一层级的多个候选',避免用纵向 bullet 造成的隐性优先级误读",
+      "fix_hint": "把平行子项拆到 2-4 列等宽 panel,每列同结构(标题+示意+要点),不用嵌套 bullet",
+      "exceptions": [
+        "只有单一概念不必强行拆列",
+        "有递进/因果关系时改用纵向流程"
+      ]
+    },
+    {
+      "id": "results_page_quantitative_headline_with_chart",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "成果页·标题即量化结论+柱状/表格佐证",
+      "description": "成果/效果收尾页把量化数字(百分比/倍率/tokens/s)放到 title 与 claim,主体是柱状对比图或多方案指标表,关键数字用红框/加粗/高亮标注,配 '相比 baseline 提升 Nx' 等对照条件。",
+      "evidence_signals": [
+        "标题 含 'x' / '倍' / '%' / '提升' / '前沿' / '领先' 等成果词",
+        "视觉骨架 含 '柱状对比图' / '准确率表' / '前后对比'",
+        "关键文字 含 具体数字+baseline 对照 (如 '提升1.6倍', '3.9倍', '97.6%')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 23,
+          "评价": "TBS 精度对比表+Dense/TBS 行红框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 31,
+          "评价": "DA-SpMM 平均加速 3.9 倍,LightGBM 流程+数字标注"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 42,
+          "评价": "PE 利用提升 1.6x,前后对比"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 54,
+          "评价": "FlashDecoding++ A100 +37%、MI210 +300%,柱图高亮"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 55,
+          "评价": "异构千卡混训 97.6%,柱图对照 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "hard",
+      "rationale": "成果页的说服力来自可验证数字,标题就抛结论+图表回填证据,让听众不必阅读细节即可完成'有多大提升'的认知闭环",
+      "fix_hint": "把 title 改成 '<方案> <提升方向> <数字>x/%<对照>' 结构,页面主体只放对比图/表,数字用红框标出",
+      "exceptions": [
+        "方法拆解页无最终数据",
+        "定性成果不适用量化"
+      ]
+    },
+    {
+      "id": "ending_page_thanks_support_dual_zone",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "结束页·Thanks/Support 双分区+讲者信息+资助 logo 墙",
+      "description": "全场收尾页分为左右两区:左侧 Thanks 区含讲者姓名/单位/日期/邮箱与团队致谢文字;右侧 Support 区为资助/合作机构的多行 logo 墙(常两列排布,末尾可用 '…' 暗示尚有更多)。无正文数据。",
+      "evidence_signals": [
+        "视觉骨架 含 'Thanks tag' / 'Support tag' / '双分区'",
+        "视觉骨架 含 '讲者信息文本块' + 'logo 墙' / '两列 logo'",
+        "关键文字 含 'Thanks' + 'Support' 或 '致谢' + 讲者 Email"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 79,
+          "评价": "左 Thanks(戴国浩+SJTU+Email+团队致谢)/右 Support(多行两列 logo 墙+……)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结束页同时承担'讲者身份回落'与'资助合作背书',左右分区让二者互不抢位,避免用一堆 logo 遮掉讲者联系方式",
+      "fix_hint": "把 ending 拆成左右两区:左放讲者+Email+致谢文字,右放两列 logo 墙,logo 后加 '……' 表示更多",
+      "exceptions": [
+        "无外部资助/合作的 deck 可省 Support 区",
+        "内部汇报仅需简短致谢"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_with_colon_separator",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用'主体·副题'名词短句,不用完整动宾句",
+      "description": "slide.标题 主要采用 '<主体>:<副题>' / '<主体>·<副题>' / '<主体>与<副题>' 名词短句结构,主体是方法名/工作名/主题词,副题是本页视角,总长≤20 字;不用 '介绍 XX' / '本节讨论' 类动宾开头句。",
+      "evidence_signals": [
+        "标题 含 ':' 或 '·' 或 '与' 作为分隔",
+        "标题 不以 '介绍' / '本节' / '我们将' / '讨论' 开头",
+        "标题 不含完整谓语句 (无 '……了' / '实现了……' 类)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 14,
+          "评价": "'研究思路:软硬件协同提升AI应用算力' — 主体:副题结构"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 20,
+          "评价": "'TB-STC 核心方法:硬件算法协同稀疏' — 工作名:视角"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 28,
+          "评价": "'DA-SpMM 动态感知编译映射:核心方法'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 60,
+          "评价": "'端侧大模型的算力矛盾:延时vs功耗'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "'主体:副题'名词句让 title 同时承担'我是谁'与'本页看哪一面'两个坐标,听众一眼定位在整篇中的位置;动宾句会退化为过程描述,与 claim 语义重叠",
+      "fix_hint": "把动词开头的 title 改写为 '<方法名/主题>:<本页视角>' 结构,视角用 4-8 字名词短句",
+      "exceptions": [
+        "章节封面/议程页可用 '进入 X 章节'",
+        "标题即结论式成果页 (标题含数字) 保留数字为要旨"
+      ]
+    },
+    {
+      "id": "title_appends_venue_marker_in_parens",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "工作引入页标题末尾加圆括号会议标注",
+      "description": "首次引入一项发表工作时,slide.标题 末尾附会议缩写+两位年份 (如 '(HPCA'25)' / '(FPGA'24)' / '(DAC'22)') 圆括号标注,提供学术背书。非工作引入页不加。",
+      "evidence_signals": [
+        "标题 以 '(<会议缩写>'YY)' 结尾",
+        "关键文字 含 'Accepted by' / 'Published in' + 相同会议缩写",
+        "本页承担'工作引入'(视觉骨架为'大号论文标题+作者')"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 19,
+          "评价": "'TB-STC 工作引入(HPCA'25)'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 27,
+          "评价": "'参考工作:Heuristic Adaptability for SpMM on GPUs (DAC'22)'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 35,
+          "评价": "'FlightLLM 论文标题页 (FPGA'24)'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.04,
+      "enforcement_level": "soft",
+      "rationale": "把会议出处贴到 title 末尾,后续听众看到方法名时能立刻回想该工作出自何处,减少'这是内部想法还是发表工作'的疑虑",
+      "fix_hint": "工作首次引入页标题末尾加 '(<venue>'YY)' 圆括号标注,配 claim 中的 'Accepted by/Published in'",
+      "exceptions": [
+        "尚未投稿的 in-progress 工作",
+        "工业界产品无会议出处"
+      ]
+    },
+    {
+      "id": "claim_leads_with_specific_quantitative_evidence",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "核心论断内嵌具体数字/倍率作证据",
+      "description": "slide.核心论断 倾向于在一句话内同时给出'判断+关键量化证据':数字为具体值(37%、3.9 倍、97.6%、10-100 倍、<20%),而非'显著提升'/'大幅降低'等定性词;数字通常带比较对象或计算条件。",
+      "evidence_signals": [
+        "核心论断 含 数字 + '%' / '倍' / 'x' / 'tokens/s' / 'GFLOPs' 等单位",
+        "核心论断 不以纯定性词 (提升/大幅/显著) 独立成句",
+        "关键文字 含 '相比 baseline' / '@7B' / 'vs' 等对照条件"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 23,
+          "评价": "claim 'TBS 精度比其他 N:M 稀疏高 0.85%~1.03%,仅逊 US 0.17%'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 31,
+          "评价": "claim 'LightGBM 动态选映射使 SpMM 平均加速 3.9 倍'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 54,
+          "评价": "claim 'FlashDecoding++在A100提速37%、MI210提速300%+'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 55,
+          "评价": "claim '异构千卡混训算力利用效率最高可达97.6%'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 68,
+          "评价": "claim '泛端侧需100~1000tokens/s、<20W、>20tokens/J现距1~2数量级'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 38,
+          "原因": "动画构建帧 claim 定性 '可重构稀疏电路同时覆盖稀疏矩阵与稀疏注意力计算',无数字"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "把具体数字嵌进 claim 让听众看 title+claim 就能完成'量化确认',不必翻图表;定性 claim 会退化为口号,失去证据感",
+      "fix_hint": "把 claim 里 '大幅/显著' 类词替换为 '<具体数字>%/倍<对照条件>',优先带 baseline 或 @<batch/size> 前提",
+      "exceptions": [
+        "背景/动机页只做定性铺垫",
+        "动画构建过渡帧本身无数据",
+        "章节切换页无正文"
+      ]
+    },
+    {
+      "id": "formula_uses_multiplication_x_between_factors",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "算力/能效公式用 '×' 连接各因子",
+      "description": "全篇算力/效率类公式统一用 '×' 连接各因子 (如 'AI应用算力 = 芯片算力 × 稀疏度 × 集群'),不用 '*' / '·' 或加号;因子按'物理量→优化维度'从左到右排列,新增因子在右端接续。",
+      "evidence_signals": [
+        "关键文字 含 '= <A> × <B> × <C>' 结构",
+        "不出现 '*' 星号或 '+' 求和形式的算力公式",
+        "同一公式跨页复用时因子顺序保持一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 14,
+          "评价": "'AI应用算力 = 芯片算力 × 稀疏'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 20,
+          "评价": "'AI芯片算力=有效算力/峰值算力×稀疏度×硬件利用率×时钟频率'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 36,
+          "评价": "'AI应用算力 = 稠密/稀疏任务量 × 硬件规模 × 硬件利用率 × 时钟频率'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 47,
+          "评价": "扩展公式加 '× 集群'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.1,
+      "enforcement_level": "hard",
+      "rationale": "统一用 '×' 连接让主线公式在不同页面视觉与语法都一致,新增/高亮因子只需换红色,不必改结构;混用 '*'/加号会破坏跨页锚点感",
+      "fix_hint": "把公式中的 '*'/'·'/'+' 统一改为 '×',因子按'物理量→优化维度'排列,新增因子放右端",
+      "exceptions": [
+        "严格数学表达需区分乘法运算符类型",
+        "非算力/效率类公式 (损失函数等)"
+      ]
+    },
+    {
+      "id": "chapter_transition_uses_目录页_prefix_in_title",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节切换页标题用'目录页/Contents'前缀+去向说明",
+      "description": "章节切换页 slide.标题 以 '目录页' 或 'Contents' 起头,后接冒号+去向说明 (如 '目录页:进入第 4 部分未来趋势' / 'Contents:进入第三部分研究成果'),让听众看标题即知'切到哪个板块'。",
+      "evidence_signals": [
+        "标题 以 '目录页' / 'Contents' / '目录' 起头",
+        "标题 含 '进入' / '第 N 部分' / '第 N 项'",
+        "视觉骨架 含 '带圈编号列表' + '高亮'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 13,
+          "评价": "'目录页:进入「研究思路」章节'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 16,
+          "评价": "'Contents:进入第三部分研究成果'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 44,
+          "评价": "'目录页:进入第 4 部分未来趋势'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "slide_index": 2,
+          "原因": "首次 Contents 标题为 'Contents 目录:四大研究板块',不含'进入'去向说明,承担的是骨架搭建而非切换"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.05,
+      "enforcement_level": "soft",
+      "rationale": "章节切换标题明确写'进入 X 板块'让听众听讲时不用回看目录页也能定位;若只写 'Contents' 会与首次目录页混淆",
+      "fix_hint": "章节切换页 title 改为 '目录页:进入<第N部分><板块名>',首次 Contents 不加'进入'保持区分",
+      "exceptions": [
+        "首个 Contents 页承担骨架搭建,不写'进入'",
+        "无板块化的短 deck"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (79 slides),visual 规则 7 条主要覆盖 cover/toc/method/results/ending 五类版式,authoring 规则 5 条聚焦 title 名词句结构、venue 标注、claim 量化、公式统一乘号、章节切换标题前缀.由于样本 deck 单一,estimated_hit_rate 按 deck 内命中率计.",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

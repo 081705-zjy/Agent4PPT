@@ -1,0 +1,1282 @@
+{
+  "meta_patterns": [
+    {
+      "id": "convince_of_novelty_via_gap_then_evidence",
+      "title": "以创新说服·context → gap → claim → evidence → takeaway",
+      "narrative_purpose": "让专业听众接受本工作的创新性与可信度",
+      "target_audience_types": [
+        "学术同行",
+        "评审",
+        "领域专家",
+        "本组研究人员"
+      ],
+      "trigger_signals": [
+        "用户主题含'论文/研究/方法/贡献/创新'等词",
+        "听众为专家或评审, 需要被说服接受一个新主张",
+        "存在明确的 gap 陈述空间(已有工作在 X 维度上不够)",
+        "用户希望展示自研方法/工作的价值与效果"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "context_establishment",
+          "purpose": "建立共享 vocabulary + 领域 landscape, 让听众进入语境",
+          "typical_chapter_roles": [
+            "cover",
+            "agenda",
+            "motivation_section"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "gap_or_pain_reveal",
+          "purpose": "揭示现状矛盾/已有工作的空白, 立靶让主张有的放矢",
+          "typical_chapter_roles": [
+            "motivation_section",
+            "problem_section"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "claim_and_solution",
+          "purpose": "抛出核心主张 + 方法/框架概述, 回应上一步的 gap",
+          "typical_chapter_roles": [
+            "method_section",
+            "framework_intro"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "evidence_deployment",
+          "purpose": "用实验数据/案例/落地成果支撑主张, 让创新性变成可验证的",
+          "typical_chapter_roles": [
+            "result_section",
+            "engineering_section",
+            "method_works_panorama_section"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "takeaway_and_handoff",
+          "purpose": "凝练贡献要点, 附联系方式/未来方向, 让听众带走一句话",
+          "typical_chapter_roles": [
+            "closing",
+            "discussion_section",
+            "outlook_section"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "gap 必须在 solution/method 之前 — 否则听众不知道方案要解决什么, 创新性无法评估",
+        "每一条 claim 至少配一条对应 evidence — 无 evidence 的 claim 在专家听众下必然被质疑",
+        "cover + 某种形式的 agenda(纵向编号/横向导航)是必须的 — 专业听众需要预期地图",
+        "takeaway 页必须一句话概括核心贡献 — 听众只记得住一句"
+      ],
+      "swappable_dimensions": [
+        "context_establishment 篇幅: 顶会分享/组会等同行听众可 1-2 页;跨领域/评审听众可 3-6 页背景铺垫",
+        "evidence 章数: 单方法可合并 1 章(paper_share), 多方法/多贡献可拆 2-4 章 panorama",
+        "engineering landing 是否单独成章: 学术分享可无, 工程落地强 report 应单开章",
+        "takeaway 是否附 future work / 合作 CTA / 联系方式",
+        "总篇幅: 20-40 页短线性叙事 vs 40-80 页多章 panorama"
+      ],
+      "info_density_arc": "稀疏(cover/agenda) → 逐步加密(motivation/gap) → 密集(method/framework) → 密集(evidence) → 稀疏(takeaway)",
+      "instantiations": [
+        "paper_share_bg_challenge_solution_eval_summary_canonical",
+        "research_report_method_pair_with_engineering_landing",
+        "qualifying_exam_defense_with_study_progress_and_appendix",
+        "research_proposal_defense_with_team_budget_and_backup_stack"
+      ],
+      "anti_patterns": [
+        "solution-first(未立 gap 先讲方法): 听众不接受方案的动机, 创新性沦为技术展示",
+        "evidence-only(只有实验/数据, 没有 gap → claim 链): 听众记不住 takeaway, 只留下'做了很多实验'的印象",
+        "context 过长(专家听众下背景 > 5 页): 消耗听众耐心, 未进入 gap 就疲惫",
+        "claim 与 evidence 不匹配(讲 A 方法有效, 却给 B 场景数据): 一击即溃"
+      ]
+    },
+    {
+      "id": "showcase_capability_via_multi_work_panorama",
+      "title": "长篇能力展示·framework 统领 + 多工作平行陈列(带导航)",
+      "narrative_purpose": "在长篇 deck 中系统性展示本组/团队多项工作, 让听众建立能力全景图",
+      "target_audience_types": [
+        "学术会议听众",
+        "研究院内部汇报对象",
+        "实验室/团队来访者",
+        "评审"
+      ],
+      "trigger_signals": [
+        "用户主题含'团队工作汇总/tutorial/研究方向综述/实验室介绍'等",
+        "有 3+ 个相对独立的方法/成果需并列陈列",
+        "deck 页数目标较大(40+), 单线叙事无法承载",
+        "听众需要跨方法比较, 建立能力全景印象"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "opening_and_agenda",
+          "purpose": "cover + agenda 建立整体地图, 明确本次会展示 N 项工作",
+          "typical_chapter_roles": [
+            "cover",
+            "agenda"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "umbrella_framing",
+          "purpose": "motivation + framework_intro 抛出统领性主张(例如'软硬协同/PD 分离'), 让 N 项工作有共同语境",
+          "typical_chapter_roles": [
+            "motivation_section",
+            "framework_intro"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "parallel_work_deployment",
+          "purpose": "以 3-6 章 method/case_study 平行陈列各项工作, 每章内部自成 challenge → solution → result 小叙事",
+          "typical_chapter_roles": [
+            "method_section",
+            "method_works_panorama_section",
+            "engineering_section"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "chapter_navigation",
+          "purpose": "章节切换处插入'全 agenda 灰显 + 当前章高亮'section_divider, 让听众随时知道处于何处",
+          "typical_chapter_roles": [
+            "section_divider"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "closing_or_outlook",
+          "purpose": "整合 N 项工作到一张主线图, 附团队展望或致谢/招聘 CTA",
+          "typical_chapter_roles": [
+            "closing",
+            "outlook_section",
+            "discussion_section"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "framework_intro 必须先于 parallel_work_deployment — 否则听众看多章工作无法归拢共同语境",
+        "每一并列章内部必须自成完整小叙事(问题 → 方法 → 结果) — 否则听众章间跳跃迷失",
+        "章节数 ≥ 3 才使用该模式 — 少于 3 章走 [[convince_of_novelty_via_gap_then_evidence]] 单线叙事更清晰",
+        "长篇(40+ 页)下必须有 agenda + section_divider 双重导航 — 单一 agenda 不足以让听众跟随"
+      ],
+      "swappable_dimensions": [
+        "并列章数: 3-6 章都可, 章数越多 framework_intro 需越强",
+        "chapter_navigation 形式: 全 agenda 高亮 / 竖排编号圆点 / 纯页码进度均可",
+        "engineering case_study 是否作为最后一章压轴 — 工程导向 report 建议压轴, 学术 tutorial 可无",
+        "closing 是否含团队构成/招聘/合作 CTA",
+        "framework_intro 深度: 1 页图示 vs 单开一章展开"
+      ],
+      "info_density_arc": "稀疏(cover/agenda) → 稀疏(framework 抽象图) → 波浪型密集/稀疏交替(每章 dense 内容 + section_divider 稀疏切换) → 稀疏(closing)",
+      "instantiations": [
+        "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "qualifying_exam_defense_with_study_progress_and_appendix",
+        "research_report_method_pair_with_engineering_landing"
+      ],
+      "anti_patterns": [
+        "无 framework_intro 直接进入 method 列表: 听众看到的是'一堆工作', 记不住共同价值观",
+        "各并列章之间无 section_divider(章间硬切): 听众失去位置感, 长 deck 中期开始走神",
+        "并列章内部结构不一致(有的讲实验, 有的讲设计, 有的讲部署): 破坏 panorama 的可比较性, 听众无法横向理解"
+      ]
+    },
+    {
+      "id": "anchor_credibility_via_execution_evidence_and_backup",
+      "title": "以执行证据锚定可信度·主叙事之外附落地/团队/备份池",
+      "narrative_purpose": "让评审/资助方/合作者不只信'方法讲得通', 更信'能被交付/已被交付/可以被追问'",
+      "target_audience_types": [
+        "答辩评审",
+        "科研资助方",
+        "潜在合作方",
+        "内部审批人"
+      ],
+      "trigger_signals": [
+        "用户主题含'答辩/立项/资助/评审/审批/申报'等词",
+        "听众为审批方或资助方, 有权拒绝, 且会追问细节",
+        "存在明确的'能否落地/谁来做/花多少钱/已做过什么'追问空间",
+        "用户希望展示不仅有方法, 且已有落地案例 / 团队 / 经费支撑"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "main_claim_and_method",
+          "purpose": "主叙事: 建立 motivation → 主张 → 方法, 但保持精炼(评审耐心有限)",
+          "typical_chapter_roles": [
+            "motivation_section",
+            "method_section",
+            "framework_intro"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "execution_anchor",
+          "purpose": "在主叙事之外或末尾, 附一章证明'能落地'的证据: 工程 case_study / 团队构成 / 经费概算 / 既往结题",
+          "typical_chapter_roles": [
+            "engineering_section",
+            "discussion_section",
+            "method_works_panorama_section"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "interrogation_preparation",
+          "purpose": "备份池(appendix)或深度细节章, 供评审临场追问时快速调用, 不承载主叙事",
+          "typical_chapter_roles": [
+            "appendix"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "handoff_and_ask",
+          "purpose": "closing 收束诉求(通过/资助/合作), 附联系方式/招聘/CTA",
+          "typical_chapter_roles": [
+            "closing"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "主叙事必须保持精炼(通常 < 一半篇幅) — 否则评审在追问阶段之前就疲劳, 备份章无机会展开",
+        "execution_anchor 必须给具体的名字/数字/时间(团队成员姓名/经费金额/交付案例名) — 抽象承诺无法说服资助方",
+        "appendix 内容不能重复主叙事 — 它是追问触发时的深度池, 不是主线扩展",
+        "closing 必须明确'ask'(想要什么: 通过/资助/合作) — 评审需要知道该做什么决定"
+      ],
+      "swappable_dimensions": [
+        "execution_anchor 形式: 工程落地案例 / 团队+经费四合一 / 既往论文列表 / 已发表成果, 可任选或组合",
+        "appendix 长度: 从无 appendix 到占全 deck 一半(重量级答辩), 依听众追问倾向决定",
+        "主叙事页数: 15-30 页典型;资助方审查偏严可压至 10-15 页 + 大量 appendix",
+        "self_intro 是否独立成页 — 博资考/首次评审必须有, 熟悉的资助方可省"
+      ],
+      "info_density_arc": "稀疏(cover) → 密集但节制(主叙事, 数据点足够但不铺陈) → 稀疏(execution_anchor 图示化) → 密集(appendix 备份, 供追问时深挖) → 稀疏(closing 一句 ask)",
+      "instantiations": [
+        "qualifying_exam_defense_with_study_progress_and_appendix",
+        "research_proposal_defense_with_team_budget_and_backup_stack",
+        "research_report_method_pair_with_engineering_landing"
+      ],
+      "anti_patterns": [
+        "主叙事臃肿(> 2/3 篇幅), 备份/落地被压缩: 评审追问时无深度可展开, 显得准备不足",
+        "只有方法论述, 无团队/经费/落地任何一种 execution_anchor: 评审无法评估'这钱花下去谁来干'",
+        "appendix 与主叙事重复: 浪费评审时间, 且暴露'其实没有更多准备'",
+        "closing 无明确 ask 只说'谢谢聆听': 评审不知道该点头通过还是提问, 决策拖延"
+      ]
+    },
+    {
+      "id": "expose_solution_via_layered_claim_and_mechanism",
+      "title": "解法暴露·分层主张→机制→收益",
+      "narrative_purpose": "让听众理解并接受本工作的方法/框架, 从抽象主张到具体机制到量化收益",
+      "target_audience_types": [
+        "技术评审",
+        "领域专家",
+        "同行"
+      ],
+      "trigger_signals": [
+        "章节角色为 method / framework / insight / preliminary",
+        "内容需要展开一个多层级技术方案 (算法+系统+硬件, 或多子问题拆解)",
+        "存在明确的 claim 需要被逐层证成",
+        "章节长度 6-25 页, 且方法本身有子结构"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "framework_or_claim_overview",
+          "purpose": "先用一图/一公式/一句话给出整体主张的位置",
+          "typical_chapter_roles": [
+            "method",
+            "framework",
+            "insight"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "decomposition_into_components",
+          "purpose": "把主张拆成 2-4 个可并列或串联的子技术/子问题",
+          "typical_chapter_roles": [
+            "method",
+            "framework"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "per_component_problem_or_challenge",
+          "purpose": "每个组件先立局部靶子 (pain / prior gap)",
+          "typical_chapter_roles": [
+            "method",
+            "insight"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "per_component_mechanism_reveal",
+          "purpose": "揭示该组件的核心机制/公式/结构",
+          "typical_chapter_roles": [
+            "method",
+            "framework"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "per_component_local_evidence",
+          "purpose": "点缀局部数据/加速比证成该组件",
+          "typical_chapter_roles": [
+            "method",
+            "result"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "aggregation_or_multiplicative_summary",
+          "purpose": "把各组件收益叠乘/汇总回主张",
+          "typical_chapter_roles": [
+            "method",
+            "framework"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "overview 必须在 per_component 之前 — 否则听众迷失在细节里不知道各部分位置",
+        "每个 component 必须成对呈现 problem→solution 或 mechanism→evidence, 单侧展开会让听众怀疑必要性",
+        "抽象层 (公式/框架图) 与具象层 (硬件图/时序图) 必须交替 — 全抽象让人昏睡, 全具象丢失主张",
+        "aggregation 若存在必须收回到 overview 那张图/公式上, 保持首尾闭环"
+      ],
+      "swappable_dimensions": [
+        "组件数量 (2 组件 dual_column vs 3 组件 triad vs 4+ 组件 grid)",
+        "每组件是否单开子章 (paper_backed 深入 vs bullet 一页概括)",
+        "机制层是否有公式驱动 (formula_top 学术风 vs pure diagram 工程风)",
+        "是否单独插入 preliminary / theoretical_insight 前奏",
+        "是否附论文封面页 (paper_title_authors_only) 作组件锚点",
+        "aggregation 页是否存在 (可省略, 由 result 章接手)"
+      ],
+      "info_density_arc": "中密度 (overview 抽象图) → 高密度 (component 机制/公式) → 高密度 (局部数据) → 中密度 (aggregation 收束)",
+      "instantiations": [
+        "framework_capability_ladder_cross_layer_loop_challenge_mapping",
+        "framework_codesign_core_idea_plus_energy_chain_content_map",
+        "framework_codesign_grand_narrative_to_layered_scientific_problem",
+        "framework_core_formula_with_factor_decomposition",
+        "framework_new_paradigms_stacking_to_codesign_evolution_to_hardware",
+        "framework_opensource_ecosystem_plus_representative_work",
+        "framework_overview_tree_plus_per_element_drilldown_to_metric",
+        "framework_progressive_flow_build_plus_formula_unpack",
+        "insight_formula_contradiction_three_paths_examples",
+        "method_agenda_plus_dual_axis_redundancy_overview",
+        "method_agent_time_decomposition_triple_subproblem_pairs",
+        "method_algo_layer_paper_backed_two_gen_model_lineup",
+        "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+        "method_algorithm_linearization_to_hardware_pe_gpu_reconfig_stack",
+        "method_algorithm_sublines_methodology_typical_scatter_triad",
+        "method_bipartite_frontend_backend_environment_sweep",
+        "method_bottleneck_framework_solve_each_with_gpu_speedup",
+        "method_capability_driven_architecture_evolution_by_stages",
+        "method_challenge_mapping_overview_plus_problem_approach_pairs",
+        "method_dual_column_skeleton_progressive_stripping",
+        "method_dual_paradigm_tradeoff_to_hybrid_solution_with_experiments",
+        "method_dual_route_foundation_framework_elevation",
+        "method_dual_subline_each_challenge_innovation_result_plus_summary",
+        "method_dual_subproblem_template_reuse_transition",
+        "method_formula_framework_three_result_challenge_solution_plus_real_system",
+        "method_framework_dual_law_matrix_direction_platform",
+        "method_framework_positioning_dual_scenario_paper_lineup_with_summary",
+        "method_hardware_integration_evolution_bottleneck_summary",
+        "method_hardware_limit_roadmap_then_single_work_full_arc",
+        "method_key_insight_triad_then_three_pain_solution_pairs",
+        "method_landscape_then_need_vs_reality_gap_platforms",
+        "method_layer_two_parallel_works_lineup_full_arc",
+        "method_motivation_cases_problems_practices_outlook",
+        "method_multi_parallel_techniques_intro_flow_detail",
+        "method_multi_route_survey_converge_to_ours",
+        "method_need_challenge_analysis_idea_pareto_opensource",
+        "method_pain_critique_design_goals_progressive_mechanism_reveal",
+        "method_paired_problem_solution_triad_with_aggregation",
+        "method_paradigm_reconstruction_expert_view_to_dedicated_hardware",
+        "method_plateau_argument_to_full_stack_co_design",
+        "method_preliminary_three_technique_dual_platform_verify",
+        "method_progressive_score_formula_derivation_plus_stability_taxonomy",
+        "method_shared_structure_map_progressive_highlight_focus",
+        "method_short_positioning_plus_summary_with_paper",
+        "method_technique_route_full_arc_prior_challenge_paper_method_result",
+        "method_theoretical_insight_prelude_then_challenge_technique_triad",
+        "method_three_design_intro_mechanism_result_triad",
+        "method_three_paper_lineup_challenge_method_result_with_summary",
+        "method_three_sublayer_challenge_innovation_experiment_loop",
+        "method_toc_overview_challenge_innovation_result_summary_with_paper",
+        "method_tradeoff_synthesis_paradigm_matrix_to_solution",
+        "method_two_question_frame_three_technique_sequence"
+      ],
+      "anti_patterns": [
+        "component-first (未给 overview 直接讲子技术) — 听众抓不到主张与子技术的映射",
+        "全部 mechanism 无 problem — 听众不知道为什么需要这个机制, 记不住动机",
+        "aggregation 缺失且组件间无 explicit link — 收益变得散点, 主张失去权重"
+      ]
+    },
+    {
+      "id": "establish_gap_via_landscape_and_pain",
+      "title": "缺口铺陈·全景→机制→痛点→桥接",
+      "narrative_purpose": "让听众接受本工作要解决的问题真实且重要, 从共享上下文收窄到明确空白",
+      "target_audience_types": [
+        "同行",
+        "评审",
+        "领域外听众",
+        "资助方"
+      ],
+      "trigger_signals": [
+        "章节角色为 background / motivation / problem / related_work",
+        "听众可能对领域概念/趋势不熟悉, 需要先建立 vocabulary",
+        "本工作动机可以用 supply-demand gap / paradigm shift / prior work flaw 表述",
+        "章节长度 3-15 页, 位于全 deck 前 1/3"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "landscape_or_trend_opener",
+          "purpose": "用宏观趋势/多领域应用/时间线打开场景",
+          "typical_chapter_roles": [
+            "background",
+            "motivation"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "mechanism_or_paradigm_intro",
+          "purpose": "解释核心概念/主流范式的机制, 建立听众共享词汇",
+          "typical_chapter_roles": [
+            "background",
+            "motivation",
+            "related_work"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "prior_work_survey",
+          "purpose": "分类/时间线综述已有工作, 定位本工作坐标",
+          "typical_chapter_roles": [
+            "background",
+            "related_work",
+            "problem"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "quantitative_gap_reveal",
+          "purpose": "用数据/图表暴露供需差距或范式缺陷",
+          "typical_chapter_roles": [
+            "motivation",
+            "background",
+            "problem"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "pain_or_flaw_articulation",
+          "purpose": "把 gap 转成 1-3 条可解决的具体痛点",
+          "typical_chapter_roles": [
+            "motivation",
+            "problem"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "bridge_to_solution",
+          "purpose": "抛出方案追问/研究问题/框架预告, 交棒下章",
+          "typical_chapter_roles": [
+            "motivation",
+            "problem"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "quantitative_gap 必须出现 — 无数据支撑的 gap 陈述在专业听众面前不被接受",
+        "landscape 到 pain 必须是漏斗结构 (从广到窄), 不能跳级 — 直接讲痛点会让听众怀疑动机的普遍性",
+        "prior_work 若出现必须显式暴露 flaw 或 gap, 单纯罗列会读作 review 而非 motivation",
+        "bridge 必须点明本工作接下来要做什么维度, 不能悬空停在痛点上"
+      ],
+      "swappable_dimensions": [
+        "landscape 深度 (1 页宏观 vs 4-6 页跨范式时间线)",
+        "是否引入类比 (industrial_revolution / cognitive_analogy) 作为共情锚点",
+        "gap 是量化图表 (quantitative_gap_chart) 还是双栏对照 (paradigm_shift_dual_column)",
+        "prior_work 是路线综述 (paradigm_evolution_roadmap) 还是分类表 (taxonomy_table)",
+        "pain 是三痛点并列 (three_pillars) 还是双源痛点 (dual_flaw) 还是单点聚焦",
+        "bridge 是研究问题拆解 (research_questions) 还是方案预告 (solution_bridge)"
+      ],
+      "info_density_arc": "低密度 (landscape 全景图) → 中密度 (mechanism 铺陈) → 高密度 (quantitative gap 数据) → 高密度 (pain 精确表述) → 低密度 (bridge 单句)",
+      "instantiations": [
+        "background_ai_to_domain_to_hardware_evolution_funnel",
+        "background_app_paradigm_essence_metric_gap_funnel",
+        "background_bottleneck_taxonomy_compare_pain_insight",
+        "background_domain_intro_principle_backbone_reveal_to_video_extension",
+        "background_domain_landscape_to_operator_bottleneck_funnel",
+        "background_gap_to_sparsity_family_taxonomy_dual_flaw",
+        "background_history_dual_system_to_paradigm_shift_to_edge_demand",
+        "background_macro_gap_to_policy_to_method_bridge",
+        "background_multi_dimension_survey_to_efficiency_gap_to_research_questions",
+        "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+        "background_paradigm_evolution_related_works_survey_to_bottleneck",
+        "background_paradigm_shift_dual_era_comparison_table",
+        "background_paradigm_to_scenario_narrow_to_feature_to_recall_gap",
+        "background_related_work_paradigm_abstract_three_methods_compare_table",
+        "background_scaling_law_concept_ladder_to_sota_challenge_bridge",
+        "background_toc_recall_trend_pillars_evolution_roadmap",
+        "background_value_vs_cost_dilemma_funnel_to_solution_call",
+        "motivation_agenda_transition_paradigm_evolution_token_pivot",
+        "motivation_ai_wave_history_sparsity_through_line_to_gap_sanction",
+        "motivation_analogy_codesign_demand_supply_gap",
+        "motivation_cost_formula_layered_decomposition_to_moore_wall",
+        "motivation_domain_analogy_dual_challenge_related_work_gap",
+        "motivation_dual_side_gap_plus_specialization_to_features_extraction",
+        "motivation_gap_measurement_formula_to_tripartite_problems",
+        "motivation_industrial_analogy_to_layer_stack_mapping",
+        "motivation_industrial_revolution_to_paradigm_shift_to_ignition",
+        "motivation_metric_redefinition_supply_gap_two_paths_codesign",
+        "motivation_paradigm_compare_then_transpose_key_idea",
+        "motivation_paradigm_shift_metric_shift_goal_gap_framework_split",
+        "motivation_related_work_taxonomy_paradigm_flaw_to_key_insight",
+        "motivation_supply_demand_contradiction_expose",
+        "motivation_three_step_insight_chain_failure_hypothesis_answer",
+        "motivation_token_scale_demand_gap_layer_cascade",
+        "motivation_trend_landscape_to_gap_to_solution_bridge",
+        "motivation_value_first_then_problem_then_challenges_funnel",
+        "problem_dual_bottleneck_paradigm_shift_chip_landscape_scenarios_gap",
+        "problem_landscape_focus_parallel_dual_bottleneck",
+        "problem_related_works_survey_dual_challenge_to_solution_bridge",
+        "problem_three_challenges_prior_work_flaw_bulletin",
+        "problem_three_layered_bottlenecks_gap_redundancy_operator_heterogeneity",
+        "related_work_dual_route_mechanism_flaw_to_insight_table",
+        "related_work_two_route_taxonomy_survey"
+      ],
+      "anti_patterns": [
+        "pain 无数据 — 只有形容词 (‘算力紧张/成本高’) 无数字, 说服力崩塌",
+        "landscape 过长直到超过章节 60% — 听众等不到 pain 就放弃跟随",
+        "gap 揭露后无 bridge 直接翻页到 method — 章节间接缝断裂"
+      ]
+    },
+    {
+      "id": "close_via_credits_and_call_to_action",
+      "title": "收尾·致谢+触点+可选回扣",
+      "narrative_purpose": "以致谢/署名/联系触点收束, 让听众带走行动号召, 保持敬业收尾礼节",
+      "target_audience_types": [
+        "全体听众",
+        "潜在合作者",
+        "招聘对象"
+      ],
+      "trigger_signals": [
+        "章节角色为 closing (含论文封底/致谢页/联系页/合作 logo 墙)",
+        "位于全 deck 最后 1-4 页",
+        "存在讲者署名 / 机构 logo / 联系方式 / 招聘/合作邀约需要展示"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "optional_content_recap",
+          "purpose": "可选的最后一次回扣 (贡献回顾/框架复现/公式串联)",
+          "typical_chapter_roles": [
+            "closing"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "gratitude_expression",
+          "purpose": "Thanks / 致谢 / 感谢主持字样, 完成敬业礼节",
+          "typical_chapter_roles": [
+            "closing"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "credits_and_provenance",
+          "purpose": "作者/合作机构/资助方 logo 墙",
+          "typical_chapter_roles": [
+            "closing"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "call_to_action",
+          "purpose": "联系方式 / 招聘 / 合作邀约 / 论文二维码 / 评审提意见",
+          "typical_chapter_roles": [
+            "closing"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "gratitude 必须存在, 无论多简 — 缺失致谢会读作演讲未完成",
+        "credits 若涉及 funder/合作方必须完整列出, 部分省略会有政治风险",
+        "recap 若出现必须极简 (1 页封顶) — 冗长的回顾在收尾位置会稀释情感冲击",
+        "CTA 必须与听众类型匹配 — 学术场合放二维码/联系方式, 招聘场合放 lab_recruitment, 答辩场合放 review_invitation"
+      ],
+      "swappable_dimensions": [
+        "recap 是否存在 (0 页无回扣 vs 1 页 vs 2 页公式/框架回收)",
+        "gratitude 是极简 THANKS 单页 vs 与联系方式合并 vs 与 logo 墙合并",
+        "CTA 强度 (只署名 vs 加二维码 vs 加招聘/合作 CTA 面板)",
+        "首尾闭环深度 (标题复现 vs 完全新页)",
+        "多机构署名布局 (footer 一行 vs 完整 logo 墙 vs 分区双栏)"
+      ],
+      "info_density_arc": "低密度 (recap 若存在) → 极低密度 (gratitude 单词) → 中密度 (credits logo 墙) → 低密度 (CTA)",
+      "instantiations": [
+        "closing_agenda_industry_gap_to_full_stack_solution",
+        "closing_blank_thanks_backpanel_with_signature",
+        "closing_blank_transition_plus_pillar_vision",
+        "closing_collaboration_wall_plus_thanks_backpanel",
+        "closing_contact_with_lab_recruitment",
+        "closing_defense_thanks_review_invitation_single_page",
+        "closing_formula_summary_multi_work_stack_extension_thanks",
+        "closing_info_page_plus_minimal_thanks_two_page",
+        "closing_minimal_thanks_with_speaker_signature",
+        "closing_signature_with_collaboration_funding_logo_wall_single_page",
+        "closing_signature_with_team_and_collab_logo_wall_single_page",
+        "closing_single_page_paper_summary_with_qrcode_entry",
+        "closing_single_page_title_plus_key_insight_callback",
+        "closing_speaker_thanks_with_recruitment_collaboration_cta",
+        "closing_thanks_plus_lab_speculation_series_showcase",
+        "closing_thanks_single_page_with_full_author_institution_footer",
+        "closing_thanks_support_dual_zone_speaker_and_logo_wall",
+        "closing_title_recap_signature_mirror_cover",
+        "closing_toc_framework_recap_progressive_plus_paper_list",
+        "closing_toc_recap_framework_summary_thanks_with_logos",
+        "closing_toc_recap_plus_method_diagram_and_thanks_contact",
+        "closing_toc_recap_plus_summary_contribution_with_contact",
+        "closing_toc_recap_tech_summary_future_thanks_authors"
+      ],
+      "anti_patterns": [
+        "recap 变长 (3+ 页) — 侵占情感收尾, 听众情绪进入疲态",
+        "只有 THANKS 无署名无 CTA — 学术场合缺失可复访触点, 显得草率",
+        "把新信息 (未展示过的成果/未来章节) 塞进收尾 — 破坏 deck 结构闭环"
+      ]
+    },
+    {
+      "id": "deploy_evidence_via_setup_headline_ablation",
+      "title": "证据部署·设置→头条→消融→帕累托",
+      "narrative_purpose": "用受控实验证明主张成立, 让专业听众接受结果的可复现性与说服力",
+      "target_audience_types": [
+        "技术评审",
+        "同行",
+        "论文审稿人"
+      ],
+      "trigger_signals": [
+        "章节角色为 experiment / result",
+        "存在可控实验设置 (baseline / platform / benchmark)",
+        "有主要 metric (加速比/精度/能效) 需要头条化",
+        "位于 method 章之后"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "eval_setup_declaration",
+          "purpose": "声明 baseline / platform / benchmark / model 让结果可复现",
+          "typical_chapter_roles": [
+            "experiment",
+            "result"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "main_result_headline",
+          "purpose": "单页加粗最强 metric (加速比/精度), 抓住听众注意力",
+          "typical_chapter_roles": [
+            "result",
+            "experiment"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "secondary_axis_result",
+          "purpose": "补充第二维 metric (精度/能效/延迟/面积), 立体化主张",
+          "typical_chapter_roles": [
+            "experiment",
+            "result"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "ablation_or_decomposition",
+          "purpose": "拆解各组件收益贡献, 证明每部分必要",
+          "typical_chapter_roles": [
+            "experiment",
+            "result"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "pareto_or_summary_closure",
+          "purpose": "帕累托前沿/单张总账图收束, 呈现整体位置",
+          "typical_chapter_roles": [
+            "experiment",
+            "result"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "setup 必须在 headline 之前 — 无 baseline 的加速比在专业听众面前无意义",
+        "main_result 必须头条化 (居中大字/单页 boxed), 不能与次要结果混排",
+        "ablation 中每个组件的收益必须与 method 章的 component 一一对应, 顺序一致",
+        "若展示多平台, 各平台的 setup 必须显式声明, 不能只给一个 setup 复用"
+      ],
+      "swappable_dimensions": [
+        "setup 详细度 (bullet 1 页 vs 分层揭示 progressive_reveal 多页)",
+        "main_result 单指标 vs 双指标对称 (speedup + energy_efficiency)",
+        "ablation 是单轴 (single_axis_speedup) 还是双轴组合 (combined_vs_individual)",
+        "是否含 demo 视频 (demo_video_artifact_showcase)",
+        "是否有 pareto 收束 (专业场合必备, 工业分享可省)",
+        "是否附 future_work / open_questions 作为章尾延伸"
+      ],
+      "info_density_arc": "中密度 (setup 声明) → 极高密度 (main_result headline 单点) → 高密度 (secondary + ablation) → 中密度 (pareto 收束)",
+      "instantiations": [
+        "experiment_agenda_setup_accuracy_dual_platform_speedup_pareto",
+        "experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+        "experiment_setup_dual_main_headline_ablation_pair",
+        "experiment_setup_per_model_speedup_pareto_summary",
+        "experiment_single_page_chapter_divider_placeholder",
+        "experiment_two_parallel_works_motivation_method_result_triad",
+        "result_agenda_main_speedup_future_open_questions_close",
+        "result_agenda_setup_speedup_efficiency_dual_headline",
+        "result_field_roadmap_gap_operator_decompose_existing_paper_result",
+        "result_instance_key_idea_paper_dual_innovation_experiment",
+        "result_setup_accuracy_dual_lens_speedup_headline",
+        "result_setup_main_latency_ablation_param_robust_five_step",
+        "result_three_work_overview_drilldown_awards_endorsement"
+      ],
+      "anti_patterns": [
+        "headline-first (跳过 setup 直接给加速比) — 数据不可复现, 学术听众不接受",
+        "堆表格无 headline — 关键 metric 被埋没, 听众记不住数字",
+        "ablation 与 method 组件不匹配 — 让听众怀疑收益归因"
+      ]
+    },
+    {
+      "id": "exemplify_via_case_full_arc",
+      "title": "案例实证·全弧线子叙事",
+      "narrative_purpose": "把抽象方法/框架落地到具体实例, 每个 case 走完动机→方法→结果的小弧线, 让听众看到主张可复用",
+      "target_audience_types": [
+        "工业听众",
+        "跨领域观察者",
+        "潜在应用方"
+      ],
+      "trigger_signals": [
+        "章节角色为 case_study (可与 method/result 混合)",
+        "存在多个可并列展开的具体工作/产品/平台实例",
+        "听众关心方法在不同场景的可迁移性",
+        "位于 method 章之后或与 result 章耦合"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "case_entry_transition",
+          "purpose": "instance_entry 页/paper_title_authors_only 建立单个 case 的锚点",
+          "typical_chapter_roles": [
+            "case_study",
+            "method"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "case_context_or_challenge",
+          "purpose": "该 case 的场景背景/领域挑战/prior work gap",
+          "typical_chapter_roles": [
+            "case_study",
+            "method"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "case_key_idea_and_method",
+          "purpose": "该 case 的核心思想 + 算法/硬件双技术展开",
+          "typical_chapter_roles": [
+            "case_study",
+            "method"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "case_result_deployment",
+          "purpose": "该 case 的加速比/精度/落地指标",
+          "typical_chapter_roles": [
+            "case_study",
+            "result"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "case_summary_or_paradigm_lift",
+          "purpose": "该 case 的贡献总结, 或抽象升华到范式演进/生态图",
+          "typical_chapter_roles": [
+            "case_study"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "每个 case 必须 self-contained — 听众可能只关心其中一个 case, 独立可读性优于章节紧凑性",
+        "case 之间必须有 explicit transition (instance_entry_transition / chapter_divider), 否则听众混淆归属",
+        "case 内部顺序 context→method→result 不可打乱 — 案例的信服力依赖这个 arc",
+        "多 case 应共享一致的骨架 (每个都走同一 5 段式), 差异只在细节, 让听众建立预期"
+      ],
+      "swappable_dimensions": [
+        "case 数量 (2 并列 vs 3 论文串讲 vs 4+ 生态展台)",
+        "每个 case 长度 (2 页极简 vs 6-8 页完整弧线)",
+        "case 之间是否有 shared_concept_intro 或 framework_definition 前置",
+        "是否含 paper_title_authors_only 作为学术锚点",
+        "case 后是否有 paradigm_lift (案例升华为普遍规律)",
+        "case 是竖向串讲 (依次) 还是横向并列 (parallel_overview 后各自 drilldown)"
+      ],
+      "info_density_arc": "中密度 (case entry) → 中密度 (context) → 高密度 (method 细节) → 高密度 (result headline) → 低密度 (summary lift)",
+      "instantiations": [
+        "case_study_academic_to_industry_closed_loop_with_venture_history",
+        "case_study_agenda_paper_multi_platform_benchmark",
+        "case_study_background_motivation_multi_solution_result",
+        "case_study_capability_stack_codesign_efficiency_roadmap_vision",
+        "case_study_challenge_solution_performance_closed_loop",
+        "case_study_domain_challenge_key_idea_dual_tech_result",
+        "case_study_dual_side_recap_to_ecosystem_landing_to_vision",
+        "case_study_framework_definition_multi_instance_bg_method_result",
+        "case_study_multi_observation_solution_pairs_with_end_to_end",
+        "case_study_paradigm_bridge_company_profile_ecosystem_products_results",
+        "case_study_platform_overview_evidence_direction_pairs",
+        "case_study_stack_compare_engineering_practices_drilldown",
+        "case_study_traditional_analog_to_new_domain_paper_algo_hw_result_paradigm_lift"
+      ],
+      "anti_patterns": [
+        "case 骨架不一致 — 一个走 context→method→result, 另一个跳过 context, 听众失去比较框架",
+        "case 无 transition — 直接翻页到下一 case, 听众以为是同一 case 的延续",
+        "只有 result 无 context — 案例读作 marketing 而非 exemplar, 说服力弱"
+      ]
+    },
+    {
+      "id": "recap_and_forecast_via_contribution_and_horizon",
+      "title": "回收展望·贡献回顾→抽象升华→未来方向",
+      "narrative_purpose": "在 deck 尾部把已展示工作抽象化, 抛出未来方向/开放问题, 让听众带走 takeaway 和研究议程",
+      "target_audience_types": [
+        "同行",
+        "潜在合作者",
+        "评审",
+        "学生/后辈"
+      ],
+      "trigger_signals": [
+        "章节角色为 discussion / outlook / future_work",
+        "位于 result 章之后, closing 之前",
+        "本工作可被抽象化为普遍公式/定律/趋势",
+        "存在未解决的 open problem 或延伸方向"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "chapter_transition_or_toc_recap",
+          "purpose": "目录回锚, 让听众进入总结节奏",
+          "typical_chapter_roles": [
+            "discussion",
+            "outlook"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "contribution_recap",
+          "purpose": "回收已展示工作的核心贡献 (公式串联/多工作 landscape/研究成果 paper list)",
+          "typical_chapter_roles": [
+            "discussion",
+            "outlook"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "abstraction_or_generalization",
+          "purpose": "把本组工作抽象为更普遍的规律/双定律/演进链/AGI 愿景",
+          "typical_chapter_roles": [
+            "discussion",
+            "outlook"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "future_direction_projection",
+          "purpose": "抛出未来技术方向/开放问题/量化目标",
+          "typical_chapter_roles": [
+            "outlook",
+            "discussion"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "team_or_ecosystem_positioning",
+          "purpose": "可选的团队/机构/平台底座定位, 承接落地",
+          "typical_chapter_roles": [
+            "discussion",
+            "outlook"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "abstraction 必须超越具体工作层级 — 只重复已展示的 method/result 不算展望, 必须给出更高维度的规律",
+        "future_direction 必须与 contribution_recap 一脉相承, 不能是无关的新话题 — 否则读作牵强附会",
+        "open_problem 若存在必须诚实标注不确定性, 避免过度承诺",
+        "vision 抽象度与听众专业度匹配 — 内部同行可以谈定律级抽象, 跨领域听众需回到应用场景"
+      ],
+      "swappable_dimensions": [
+        "recap 方式 (paper_list / formula_summary / evolution_chain / three_pillar_recap)",
+        "抽象层级 (industry_benchmark 对标 vs jevons_paradox 定律 vs AGI_vision 愿景)",
+        "future 深度 (单张 curve vs multi_outlook 多路展望 vs open_problem 列表)",
+        "是否含 quantitative_target (可测目标 vs 定性方向)",
+        "是否附团队/机构定位 (research_report/proposal 常见, paper_share 可省)"
+      ],
+      "info_density_arc": "中密度 (recap 公式/paper 列表) → 高密度 (abstraction 定律/矩阵) → 中密度 (future 方向图) → 低密度 (open questions 列表)",
+      "instantiations": [
+        "discussion_agenda_plus_evolution_chain_recap_with_future_arrow",
+        "discussion_agenda_vision_topics_team_close",
+        "discussion_agi_vision_recap_new_paradigm_system_opt_institution_layout",
+        "discussion_dual_law_matrix_tech_path_capability_stack_targets",
+        "discussion_endside_trend_dual_contradiction_scenarios_chips_gap",
+        "discussion_industry_bench_vision_recap_multi_outlook_landing_cases",
+        "discussion_scaling_trends_to_jevons_to_energy_paradigm_shift",
+        "discussion_team_record_kpi_budget_defense",
+        "discussion_three_keyword_trend_practice_challenges_methodology",
+        "discussion_toc_recap_bottleneck_replay_plan_results_publications",
+        "discussion_toc_three_pillar_recap_plus_future_extension",
+        "discussion_trend_extension_of_master_formula_with_open_problems",
+        "outlook_life_analogy_build_dual_system_series_works_lift"
+      ],
+      "anti_patterns": [
+        "recap 无 abstraction — 只重复贡献不上升, 章节读作冗余而非升华",
+        "future 与 method 无 lineage — 未来方向凭空冒出, 显得缺乏基础",
+        "open_problem 变成 marketing — 未来方向全部承诺可解, 反而削弱可信度"
+      ]
+    },
+    {
+      "id": "open_via_identity_and_agenda_contract",
+      "title": "开场·身份铭牌+路线图契约",
+      "narrative_purpose": "在 deck 首部建立讲者/deck 身份+可选的自我介绍+与听众达成章节路线图契约",
+      "target_audience_types": [
+        "首次听讲者",
+        "评审",
+        "潜在合作者"
+      ],
+      "trigger_signals": [
+        "章节角色为 opening / self_intro",
+        "位于 deck 首 1-3 页",
+        "存在讲者署名/机构 logo/deck 标题需要展示",
+        "chapter 数量 ≥3 且需要 agenda 契约"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "cover_identity_declaration",
+          "purpose": "标题+讲者+机构+日期, 建立 deck 身份铭牌",
+          "typical_chapter_roles": [
+            "opening"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "optional_speaker_bio",
+          "purpose": "讲者履历/研究领域/工作教育时间线, 建立可信度",
+          "typical_chapter_roles": [
+            "opening",
+            "self_intro"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "agenda_contract",
+          "purpose": "编号目录/进度式高亮 toc, 与听众达成章节路线图契约",
+          "typical_chapter_roles": [
+            "opening"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "cover 必须存在 — 无封面的 deck 读作草稿",
+        "speaker_bio 若存在必须与场合匹配 — 面向同行时 5-8 行研究领域即可, 面向陌生听众可拓展至教育/工作时间线",
+        "agenda 若存在必须与后续章节一一对应, 章序不能骗人 — 否则 toc 复用 (进度回锚) 会失效",
+        "cover_signature 的作者/机构与 closing 的 credits 必须一致 — 首尾闭环"
+      ],
+      "swappable_dimensions": [
+        "cover 复杂度 (单页 signature vs 论文封面多作者多机构 vs 学术极简 vs 空白骨架)",
+        "是否含 bio (paper_share 常省 vs research_report 常见)",
+        "bio 深度 (research_field 一行 vs dual_timeline 详细履历)",
+        "是否含 toc (opening_minimal_cover_only_no_toc 极简 vs opening_cover_plus_progress_highlighted_toc 主流)",
+        "toc 样式 (numbered_five_chapter 编号 vs progress_highlight 进度指示)"
+      ],
+      "info_density_arc": "低密度 (cover 极简) → 中密度 (bio 若存在) → 中密度 (toc)",
+      "instantiations": [
+        "opening_academic_minimalist_cover_single_page",
+        "opening_blank_cover_skeleton_single_page",
+        "opening_cover_bio_toc_triad",
+        "opening_cover_plus_progress_highlighted_toc",
+        "opening_minimal_cover_only_no_toc",
+        "opening_paper_cover_multi_author_multi_institution",
+        "opening_paper_cover_multi_author_multi_institution_plus_toc",
+        "opening_single_cover_signature_only",
+        "opening_single_page_cover_signature",
+        "opening_single_page_speaker_cover_no_toc",
+        "self_intro_course_completion_single_page",
+        "self_intro_dual_timeline_research_work_edu",
+        "self_intro_with_toc_transition_dual_timeline"
+      ],
+      "anti_patterns": [
+        "cover 缺失或空白无内容 — deck 无身份, 读作草稿",
+        "toc 与后续章节不匹配 — 后续 toc_progress_highlight 回锚时会尴尬",
+        "bio 过长 (3+ 页) — 侵占正文时间, 显得自我中心"
+      ]
+    },
+    {
+      "id": "stage_backup_and_provenance_pool",
+      "title": "备份池·非线性可选材料",
+      "narrative_purpose": "为 Q&A 或深入听众准备非线性可访问的备份材料/明细/参考文献, 保持主 deck 精简",
+      "target_audience_types": [
+        "评审提问者",
+        "深度追问者",
+        "参考文献追溯者"
+      ],
+      "trigger_signals": [
+        "章节角色为 appendix / references",
+        "位于 closing 之后 (deck 尾部)",
+        "存在预算明细/成员花名册/参考文献/方法补充等不适合主 deck 但需可访问的内容",
+        "答辩/评审场景, 预期有 Q&A"
+      ],
+      "core_task_sequence": [
+        {
+          "task": "appendix_divider_or_transition",
+          "purpose": "空白过渡页/appendix_divider 声明进入备份区",
+          "typical_chapter_roles": [
+            "appendix"
+          ],
+          "swappable": true
+        },
+        {
+          "task": "supplementary_detail_pool",
+          "purpose": "方法细节补充/预算明细/成员花名册/背景类比等非线性可访问材料",
+          "typical_chapter_roles": [
+            "appendix"
+          ],
+          "swappable": false
+        },
+        {
+          "task": "provenance_or_references",
+          "purpose": "参考文献分层列表 / 论文列表 / 引文出处",
+          "typical_chapter_roles": [
+            "references",
+            "appendix"
+          ],
+          "swappable": true
+        }
+      ],
+      "invariant_principles": [
+        "appendix 内容必须真正非线性 — 讲者不应期望顺序展示, 每页 self-contained",
+        "appendix 不应引入主 deck 未出现的关键 claim — 否则听众感觉核心内容被藏在附录",
+        "references 若存在必须按章分层或按方法分组, 无序列表让审稿人难以追溯",
+        "divider 明确标注 ‘APPENDIX / BACKUP’, 避免与正文混淆"
+      ],
+      "swappable_dimensions": [
+        "backup 内容类型 (答辩备份 QA 池 vs 预算明细 vs 方法细节 vs 认知类比铺垫)",
+        "backup 是单页格式模板 vs 多页深入内容",
+        "是否含 references (paper_share 通常必备 vs proposal 可省)",
+        "是否含 blank_transition_page 作场景切换",
+        "是否含 product_platform_ecosystem 作产业介绍收束"
+      ],
+      "info_density_arc": "低密度 (divider) → 高密度 (每页 self-contained 明细) → 高密度 (references 列表)",
+      "instantiations": [
+        "appendix_backup_materials_nonlinear_pool_for_qa",
+        "appendix_challenge_approach_multi_operator_and_paradigm_backup",
+        "appendix_cognitive_analogy_plus_paradigm_timeline_backup",
+        "appendix_divider_then_budget_and_member_detail_tables",
+        "appendix_dual_pillar_compare_then_scaling_result",
+        "appendix_format_template_backup_pages_plus_product_thanks",
+        "appendix_method_supplement_detail_with_blank_transition",
+        "appendix_multi_subtheme_adaptive_and_cluster_capability",
+        "appendix_single_page_industrial_architecture_showcase",
+        "references_layered_by_method_chapter_bibliography"
+      ],
+      "anti_patterns": [
+        "appendix 藏关键 claim — 主 deck 缺失的核心内容被塞进附录, 让听众怀疑主 deck 完整性",
+        "appendix 强序化 — 讲者按顺序讲附录, 违背非线性设计初衷",
+        "references 无分层无编号 — 审稿人追溯困难"
+      ]
+    }
+  ],
+  "coverage": {
+    "instantiated_deck_level_ids": [
+      "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "research_report_method_pair_with_engineering_landing",
+      "qualifying_exam_defense_with_study_progress_and_appendix",
+      "research_proposal_defense_with_team_budget_and_backup_stack",
+      "long_deck_framework_plus_works_panorama_with_agenda_navigation"
+    ],
+    "instantiated_section_level_ids": [
+      "appendix_backup_materials_nonlinear_pool_for_qa",
+      "appendix_challenge_approach_multi_operator_and_paradigm_backup",
+      "appendix_cognitive_analogy_plus_paradigm_timeline_backup",
+      "appendix_divider_then_budget_and_member_detail_tables",
+      "appendix_dual_pillar_compare_then_scaling_result",
+      "appendix_format_template_backup_pages_plus_product_thanks",
+      "appendix_method_supplement_detail_with_blank_transition",
+      "appendix_multi_subtheme_adaptive_and_cluster_capability",
+      "appendix_single_page_industrial_architecture_showcase",
+      "background_ai_to_domain_to_hardware_evolution_funnel",
+      "background_app_paradigm_essence_metric_gap_funnel",
+      "background_bottleneck_taxonomy_compare_pain_insight",
+      "background_domain_intro_principle_backbone_reveal_to_video_extension",
+      "background_domain_landscape_to_operator_bottleneck_funnel",
+      "background_gap_to_sparsity_family_taxonomy_dual_flaw",
+      "background_history_dual_system_to_paradigm_shift_to_edge_demand",
+      "background_macro_gap_to_policy_to_method_bridge",
+      "background_multi_dimension_survey_to_efficiency_gap_to_research_questions",
+      "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+      "background_paradigm_evolution_related_works_survey_to_bottleneck",
+      "background_paradigm_shift_dual_era_comparison_table",
+      "background_paradigm_to_scenario_narrow_to_feature_to_recall_gap",
+      "background_related_work_paradigm_abstract_three_methods_compare_table",
+      "background_scaling_law_concept_ladder_to_sota_challenge_bridge",
+      "background_toc_recall_trend_pillars_evolution_roadmap",
+      "background_value_vs_cost_dilemma_funnel_to_solution_call",
+      "case_study_academic_to_industry_closed_loop_with_venture_history",
+      "case_study_agenda_paper_multi_platform_benchmark",
+      "case_study_background_motivation_multi_solution_result",
+      "case_study_capability_stack_codesign_efficiency_roadmap_vision",
+      "case_study_challenge_solution_performance_closed_loop",
+      "case_study_domain_challenge_key_idea_dual_tech_result",
+      "case_study_dual_side_recap_to_ecosystem_landing_to_vision",
+      "case_study_framework_definition_multi_instance_bg_method_result",
+      "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "case_study_paradigm_bridge_company_profile_ecosystem_products_results",
+      "case_study_platform_overview_evidence_direction_pairs",
+      "case_study_stack_compare_engineering_practices_drilldown",
+      "case_study_traditional_analog_to_new_domain_paper_algo_hw_result_paradigm_lift",
+      "closing_agenda_industry_gap_to_full_stack_solution",
+      "closing_blank_thanks_backpanel_with_signature",
+      "closing_blank_transition_plus_pillar_vision",
+      "closing_collaboration_wall_plus_thanks_backpanel",
+      "closing_contact_with_lab_recruitment",
+      "closing_defense_thanks_review_invitation_single_page",
+      "closing_formula_summary_multi_work_stack_extension_thanks",
+      "closing_info_page_plus_minimal_thanks_two_page",
+      "closing_minimal_thanks_with_speaker_signature",
+      "closing_signature_with_collaboration_funding_logo_wall_single_page",
+      "closing_signature_with_team_and_collab_logo_wall_single_page",
+      "closing_single_page_paper_summary_with_qrcode_entry",
+      "closing_single_page_title_plus_key_insight_callback",
+      "closing_speaker_thanks_with_recruitment_collaboration_cta",
+      "closing_thanks_plus_lab_speculation_series_showcase",
+      "closing_thanks_single_page_with_full_author_institution_footer",
+      "closing_thanks_support_dual_zone_speaker_and_logo_wall",
+      "closing_title_recap_signature_mirror_cover",
+      "closing_toc_framework_recap_progressive_plus_paper_list",
+      "closing_toc_recap_framework_summary_thanks_with_logos",
+      "closing_toc_recap_plus_method_diagram_and_thanks_contact",
+      "closing_toc_recap_plus_summary_contribution_with_contact",
+      "closing_toc_recap_tech_summary_future_thanks_authors",
+      "discussion_agenda_plus_evolution_chain_recap_with_future_arrow",
+      "discussion_agenda_vision_topics_team_close",
+      "discussion_agi_vision_recap_new_paradigm_system_opt_institution_layout",
+      "discussion_dual_law_matrix_tech_path_capability_stack_targets",
+      "discussion_endside_trend_dual_contradiction_scenarios_chips_gap",
+      "discussion_industry_bench_vision_recap_multi_outlook_landing_cases",
+      "discussion_scaling_trends_to_jevons_to_energy_paradigm_shift",
+      "discussion_team_record_kpi_budget_defense",
+      "discussion_three_keyword_trend_practice_challenges_methodology",
+      "discussion_toc_recap_bottleneck_replay_plan_results_publications",
+      "discussion_toc_three_pillar_recap_plus_future_extension",
+      "discussion_trend_extension_of_master_formula_with_open_problems",
+      "experiment_agenda_setup_accuracy_dual_platform_speedup_pareto",
+      "experiment_layered_setup_accuracy_hardware_speedup_demo",
+      "experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+      "experiment_setup_dual_main_headline_ablation_pair",
+      "experiment_setup_per_model_speedup_pareto_summary",
+      "experiment_single_page_chapter_divider_placeholder",
+      "experiment_two_parallel_works_motivation_method_result_triad",
+      "framework_capability_ladder_cross_layer_loop_challenge_mapping",
+      "framework_codesign_core_idea_plus_energy_chain_content_map",
+      "framework_codesign_grand_narrative_to_layered_scientific_problem",
+      "framework_core_formula_with_factor_decomposition",
+      "framework_new_paradigms_stacking_to_codesign_evolution_to_hardware",
+      "framework_opensource_ecosystem_plus_representative_work",
+      "framework_overview_tree_plus_per_element_drilldown_to_metric",
+      "framework_progressive_flow_build_plus_formula_unpack",
+      "insight_formula_contradiction_three_paths_examples",
+      "method_agenda_plus_dual_axis_redundancy_overview",
+      "method_agent_time_decomposition_triple_subproblem_pairs",
+      "method_algo_layer_paper_backed_two_gen_model_lineup",
+      "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+      "method_algorithm_linearization_to_hardware_pe_gpu_reconfig_stack",
+      "method_algorithm_sublines_methodology_typical_scatter_triad",
+      "method_bipartite_frontend_backend_environment_sweep",
+      "method_bottleneck_framework_solve_each_with_gpu_speedup",
+      "method_capability_driven_architecture_evolution_by_stages",
+      "method_challenge_mapping_overview_plus_problem_approach_pairs",
+      "method_dual_column_skeleton_progressive_stripping",
+      "method_dual_paradigm_tradeoff_to_hybrid_solution_with_experiments",
+      "method_dual_route_foundation_framework_elevation",
+      "method_dual_subline_each_challenge_innovation_result_plus_summary",
+      "method_dual_subproblem_template_reuse_transition",
+      "method_formula_framework_three_result_challenge_solution_plus_real_system",
+      "method_framework_dual_law_matrix_direction_platform",
+      "method_framework_positioning_dual_scenario_paper_lineup_with_summary",
+      "method_hardware_integration_evolution_bottleneck_summary",
+      "method_hardware_limit_roadmap_then_single_work_full_arc",
+      "method_key_insight_triad_then_three_pain_solution_pairs",
+      "method_landscape_then_need_vs_reality_gap_platforms",
+      "method_layer_two_parallel_works_lineup_full_arc",
+      "method_motivation_cases_problems_practices_outlook",
+      "method_multi_parallel_techniques_intro_flow_detail",
+      "method_multi_route_survey_converge_to_ours",
+      "method_need_challenge_analysis_idea_pareto_opensource",
+      "method_pain_critique_design_goals_progressive_mechanism_reveal",
+      "method_paired_problem_solution_triad_with_aggregation",
+      "method_paradigm_reconstruction_expert_view_to_dedicated_hardware",
+      "method_plateau_argument_to_full_stack_co_design",
+      "method_preliminary_three_technique_dual_platform_verify",
+      "method_progressive_score_formula_derivation_plus_stability_taxonomy",
+      "method_shared_structure_map_progressive_highlight_focus",
+      "method_short_positioning_plus_summary_with_paper",
+      "method_technique_route_full_arc_prior_challenge_paper_method_result",
+      "method_theoretical_insight_prelude_then_challenge_technique_triad",
+      "method_three_design_intro_mechanism_result_triad",
+      "method_three_paper_lineup_challenge_method_result_with_summary",
+      "method_three_sublayer_challenge_innovation_experiment_loop",
+      "method_toc_overview_challenge_innovation_result_summary_with_paper",
+      "method_tradeoff_synthesis_paradigm_matrix_to_solution",
+      "method_two_question_frame_three_technique_sequence",
+      "motivation_agenda_transition_paradigm_evolution_token_pivot",
+      "motivation_ai_wave_history_sparsity_through_line_to_gap_sanction",
+      "motivation_analogy_codesign_demand_supply_gap",
+      "motivation_cost_formula_layered_decomposition_to_moore_wall",
+      "motivation_domain_analogy_dual_challenge_related_work_gap",
+      "motivation_dual_side_gap_plus_specialization_to_features_extraction",
+      "motivation_gap_measurement_formula_to_tripartite_problems",
+      "motivation_industrial_analogy_to_layer_stack_mapping",
+      "motivation_industrial_revolution_to_paradigm_shift_to_ignition",
+      "motivation_metric_redefinition_supply_gap_two_paths_codesign",
+      "motivation_paradigm_compare_then_transpose_key_idea",
+      "motivation_paradigm_shift_metric_shift_goal_gap_framework_split",
+      "motivation_related_work_taxonomy_paradigm_flaw_to_key_insight",
+      "motivation_supply_demand_contradiction_expose",
+      "motivation_three_step_insight_chain_failure_hypothesis_answer",
+      "motivation_token_scale_demand_gap_layer_cascade",
+      "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "motivation_value_first_then_problem_then_challenges_funnel",
+      "opening_academic_minimalist_cover_single_page",
+      "opening_blank_cover_skeleton_single_page",
+      "opening_cover_bio_toc_triad",
+      "opening_cover_plus_progress_highlighted_toc",
+      "opening_minimal_cover_only_no_toc",
+      "opening_paper_cover_multi_author_multi_institution",
+      "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "opening_single_cover_signature_only",
+      "opening_single_page_cover_signature",
+      "opening_single_page_speaker_cover_no_toc",
+      "outlook_life_analogy_build_dual_system_series_works_lift",
+      "problem_dual_bottleneck_paradigm_shift_chip_landscape_scenarios_gap",
+      "problem_landscape_focus_parallel_dual_bottleneck",
+      "problem_related_works_survey_dual_challenge_to_solution_bridge",
+      "problem_three_challenges_prior_work_flaw_bulletin",
+      "problem_three_layered_bottlenecks_gap_redundancy_operator_heterogeneity",
+      "references_layered_by_method_chapter_bibliography",
+      "related_work_dual_route_mechanism_flaw_to_insight_table",
+      "related_work_two_route_taxonomy_survey",
+      "result_agenda_main_speedup_future_open_questions_close",
+      "result_agenda_setup_speedup_efficiency_dual_headline",
+      "result_field_roadmap_gap_operator_decompose_existing_paper_result",
+      "result_instance_key_idea_paper_dual_innovation_experiment",
+      "result_setup_accuracy_dual_lens_speedup_headline",
+      "result_setup_main_latency_ablation_param_robust_five_step",
+      "result_three_work_overview_drilldown_awards_endorsement",
+      "self_intro_course_completion_single_page",
+      "self_intro_dual_timeline_research_work_edu",
+      "self_intro_with_toc_transition_dual_timeline"
+    ]
+  },
+  "extraction_notes": "2 sub-calls: deck_level(6) + section_level(180), produced 11 total meta-patterns"
+}

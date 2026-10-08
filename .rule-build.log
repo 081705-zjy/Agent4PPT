@@ -1,0 +1,297 @@
+=== v17 preprocess rule-build ===
+
+>> Phase 1: statistical rules (Python)
+>>> rule_stats: loading corpus from /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks
+  loaded 28 decks
+  building text...
+    3 rules
+  building role_position...
+    3 rules
+  building structure...
+    2 rules
+  building adjacency...
+    1 rules
+  building scenario...
+    1 rules
+  building narrative_flow_stats...
+    3 rules
+
+  writing .md files to /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/rule/
+  written: 10 (skipped 3 discard-level)
+  INDEX:   /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/rule/INDEX.json
+   stats rules: 0
+
+>> Phase 2: Claude-derived rules (visual + narrative, bs=1, workers=4)
+>>> rule_extract start at 19:57:13
+  args: skill=both batch_size=1
+  loaded 28 deck dirs
+  28 batches (size=1): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+=== Phase 1: visual_authoring (28 batches) ===
+  [visual_authoring] parallel mode: 4 workers × 28 batches (seed=0 rules)
+  [visual_authoring] START batch 0/27 (1 decks)
+  [visual_authoring] START batch 1/27 (1 decks)
+  [visual_authoring] START batch 2/27 (1 decks)
+  [visual_authoring] START batch 3/27 (1 decks)
+    input: visual_authoring_batch_2_input.json (3 KB)
+    input: visual_authoring_batch_3_input.json (15 KB)
+    input: visual_authoring_batch_0_input.json (33 KB)
+    input: visual_authoring_batch_1_input.json (60 KB)
+    attempt 1: done in 140s, ok=True
+  [visual_authoring] DONE batch 2: +10 rules
+  [visual_authoring] START batch 4/27 (1 decks)
+    input: visual_authoring_batch_4_input.json (30 KB)
+    attempt 1: done in 164s, ok=True
+  [visual_authoring] DONE batch 0: +12 rules
+  [visual_authoring] START batch 5/27 (1 decks)
+    input: visual_authoring_batch_5_input.json (25 KB)
+    attempt 1: done in 189s, ok=True
+  [visual_authoring] DONE batch 3: +12 rules
+  [visual_authoring] START batch 6/27 (1 decks)
+    input: visual_authoring_batch_6_input.json (16 KB)
+    attempt 1: done in 233s, ok=True
+  [visual_authoring] DONE batch 1: +13 rules
+  [visual_authoring] START batch 7/27 (1 decks)
+    input: visual_authoring_batch_7_input.json (18 KB)
+    attempt 1: done in 171s, ok=True
+  [visual_authoring] DONE batch 4: +12 rules
+  [visual_authoring] START batch 8/27 (1 decks)
+    input: visual_authoring_batch_8_input.json (17 KB)
+    attempt 1: done in 176s, ok=True
+  [visual_authoring] DONE batch 5: +12 rules
+  [visual_authoring] START batch 9/27 (1 decks)
+    input: visual_authoring_batch_9_input.json (24 KB)
+    attempt 1: done in 185s, ok=True
+  [visual_authoring] DONE batch 6: +11 rules
+  [visual_authoring] START batch 10/27 (1 decks)
+    input: visual_authoring_batch_10_input.json (19 KB)
+    attempt 1: done in 150s, ok=True
+  [visual_authoring] DONE batch 7: +11 rules
+  [visual_authoring] START batch 11/27 (1 decks)
+    input: visual_authoring_batch_11_input.json (17 KB)
+    attempt 1: done in 208s, ok=True
+  [visual_authoring] DONE batch 8: +14 rules
+  [visual_authoring] START batch 12/27 (1 decks)
+    input: visual_authoring_batch_12_input.json (22 KB)
+    attempt 1: done in 196s, ok=True
+  [visual_authoring] DONE batch 9: +12 rules
+  [visual_authoring] START batch 13/27 (1 decks)
+    input: visual_authoring_batch_13_input.json (17 KB)
+    attempt 1: done in 163s, ok=True
+  [visual_authoring] DONE batch 10: +11 rules
+  [visual_authoring] START batch 14/27 (1 decks)
+    input: visual_authoring_batch_14_input.json (23 KB)
+    attempt 1: done in 181s, ok=True
+  [visual_authoring] DONE batch 11: +11 rules
+  [visual_authoring] START batch 15/27 (1 decks)
+    input: visual_authoring_batch_15_input.json (41 KB)
+    attempt 1: done in 150s, ok=True
+  [visual_authoring] DONE batch 12: +12 rules
+  [visual_authoring] START batch 16/27 (1 decks)
+    input: visual_authoring_batch_16_input.json (64 KB)
+    attempt 1: done in 163s, ok=True
+  [visual_authoring] DONE batch 14: +11 rules
+  [visual_authoring] START batch 17/27 (1 decks)
+    input: visual_authoring_batch_17_input.json (46 KB)
+    attempt 1: done in 166s, ok=True
+  [visual_authoring] DONE batch 13: +11 rules
+  [visual_authoring] START batch 18/27 (1 decks)
+    input: visual_authoring_batch_18_input.json (28 KB)
+    attempt 1: done in 188s, ok=True
+  [visual_authoring] DONE batch 15: +12 rules
+  [visual_authoring] START batch 19/27 (1 decks)
+    input: visual_authoring_batch_19_input.json (26 KB)
+    attempt 1: done in 197s, ok=True
+  [visual_authoring] DONE batch 16: +11 rules
+  [visual_authoring] START batch 20/27 (1 decks)
+    input: visual_authoring_batch_20_input.json (26 KB)
+    attempt 1: done in 187s, ok=True
+  [visual_authoring] DONE batch 18: +12 rules
+  [visual_authoring] START batch 21/27 (1 decks)
+    input: visual_authoring_batch_21_input.json (18 KB)
+    attempt 1: done in 153s, ok=True
+  [visual_authoring] DONE batch 19: +12 rules
+  [visual_authoring] START batch 22/27 (1 decks)
+    input: visual_authoring_batch_22_input.json (17 KB)
+    attempt 1: done in 212s, ok=True
+  [visual_authoring] DONE batch 17: +11 rules
+  [visual_authoring] START batch 23/27 (1 decks)
+    input: visual_authoring_batch_23_input.json (34 KB)
+    attempt 1: done in 157s, ok=True
+  [visual_authoring] DONE batch 20: +12 rules
+  [visual_authoring] START batch 24/27 (1 decks)
+    input: visual_authoring_batch_24_input.json (16 KB)
+    attempt 1: done in 144s, ok=True
+  [visual_authoring] DONE batch 23: +12 rules
+  [visual_authoring] START batch 25/27 (1 decks)
+    input: visual_authoring_batch_25_input.json (24 KB)
+    attempt 1: done in 162s, ok=True
+  [visual_authoring] DONE batch 22: +12 rules
+  [visual_authoring] START batch 26/27 (1 decks)
+    input: visual_authoring_batch_26_input.json (26 KB)
+    attempt 1: done in 184s, ok=True
+  [visual_authoring] DONE batch 21: +11 rules
+  [visual_authoring] START batch 27/27 (1 decks)
+    input: visual_authoring_batch_27_input.json (36 KB)
+    attempt 1: done in 143s, ok=True
+  [visual_authoring] DONE batch 24: +12 rules
+    attempt 1: done in 134s, ok=True
+  [visual_authoring] DONE batch 25: +11 rules
+    attempt 1: done in 161s, ok=True
+  [visual_authoring] DONE batch 26: +13 rules
+    attempt 1: done in 182s, ok=True
+  [visual_authoring] DONE batch 27: +12 rules
+  visual_authoring done in 1255s
+
+=== Phase 2: narrative_flow (28 batches) ===
+  [narrative_flow] parallel mode: 4 workers × 28 batches (seed=0 rules)
+  [narrative_flow] START batch 0/27 (1 decks)
+  [narrative_flow] START batch 1/27 (1 decks)
+  [narrative_flow] START batch 2/27 (1 decks)  [narrative_flow] START batch 3/27 (1 decks)
+
+    input: narrative_flow_batch_2_input.json (4 KB)
+    input: narrative_flow_batch_3_input.json (17 KB)
+    input: narrative_flow_batch_0_input.json (37 KB)
+    input: narrative_flow_batch_1_input.json (71 KB)
+    attempt 1: done in 113s, ok=True
+  [narrative_flow] DONE batch 3: +13 rules
+  [narrative_flow] START batch 4/27 (1 decks)
+    input: narrative_flow_batch_4_input.json (35 KB)
+    attempt 1: done in 151s, ok=True
+  [narrative_flow] DONE batch 2: +6 rules
+  [narrative_flow] START batch 5/27 (1 decks)
+    input: narrative_flow_batch_5_input.json (29 KB)
+    attempt 1: done in 191s, ok=True
+  [narrative_flow] DONE batch 1: +13 rules
+  [narrative_flow] START batch 6/27 (1 decks)
+    input: narrative_flow_batch_6_input.json (20 KB)
+    attempt 1: done in 220s, ok=True
+  [narrative_flow] DONE batch 0: +15 rules
+  [narrative_flow] START batch 7/27 (1 decks)
+    input: narrative_flow_batch_7_input.json (21 KB)
+    attempt 1: done in 130s, ok=True
+  [narrative_flow] DONE batch 5: +12 rules
+  [narrative_flow] START batch 8/27 (1 decks)
+    input: narrative_flow_batch_8_input.json (19 KB)
+    attempt 1: done in 198s, ok=True
+  [narrative_flow] DONE batch 4: +14 rules
+  [narrative_flow] START batch 9/27 (1 decks)
+    input: narrative_flow_batch_9_input.json (28 KB)
+    attempt 1: done in 199s, ok=True
+  [narrative_flow] DONE batch 7: +15 rules
+  [narrative_flow] START batch 10/27 (1 decks)
+    input: narrative_flow_batch_10_input.json (23 KB)
+    attempt 1: done in 295s, ok=True
+  [narrative_flow] DONE batch 6: +13 rules
+  [narrative_flow] START batch 11/27 (1 decks)
+    input: narrative_flow_batch_11_input.json (21 KB)
+    attempt 1: done in 209s, ok=True
+  [narrative_flow] DONE batch 8: +14 rules
+  [narrative_flow] START batch 12/27 (1 decks)
+    input: narrative_flow_batch_12_input.json (25 KB)
+    attempt 1: done in 205s, ok=True
+  [narrative_flow] DONE batch 9: +12 rules
+  [narrative_flow] START batch 13/27 (1 decks)
+    input: narrative_flow_batch_13_input.json (20 KB)
+    attempt 1: done in 192s, ok=True
+  [narrative_flow] DONE batch 10: +14 rules
+  [narrative_flow] START batch 14/27 (1 decks)
+    input: narrative_flow_batch_14_input.json (26 KB)
+    attempt 1: done in 151s, ok=True
+  [narrative_flow] DONE batch 12: +15 rules
+  [narrative_flow] START batch 15/27 (1 decks)
+    input: narrative_flow_batch_15_input.json (47 KB)
+    attempt 1: done in 189s, ok=True
+  [narrative_flow] DONE batch 11: +14 rules
+  [narrative_flow] START batch 16/27 (1 decks)
+    input: narrative_flow_batch_16_input.json (73 KB)
+    attempt 1: done in 195s, ok=True
+  [narrative_flow] DONE batch 13: +14 rules
+  [narrative_flow] START batch 17/27 (1 decks)
+    input: narrative_flow_batch_17_input.json (54 KB)
+    attempt 1: done in 197s, ok=True
+  [narrative_flow] DONE batch 14: +13 rules
+  [narrative_flow] START batch 18/27 (1 decks)
+    input: narrative_flow_batch_18_input.json (32 KB)
+    attempt 1: done in 215s, ok=True
+  [narrative_flow] DONE batch 15: +14 rules
+  [narrative_flow] START batch 19/27 (1 decks)
+    input: narrative_flow_batch_19_input.json (29 KB)
+    attempt 1: done in 190s, ok=True
+  [narrative_flow] DONE batch 16: +15 rules
+  [narrative_flow] START batch 20/27 (1 decks)
+    input: narrative_flow_batch_20_input.json (29 KB)
+    attempt 1: done in 167s, ok=True
+  [narrative_flow] DONE batch 17: +12 rules
+  [narrative_flow] START batch 21/27 (1 decks)
+    input: narrative_flow_batch_21_input.json (20 KB)
+    attempt 1: done in 38s, ok=False
+    FAILED (cli): empty stdout from claude
+    attempt 1: done in 61s, ok=False
+    FAILED (cli): empty stdout from claude
+    attempt 1: done in 109s, ok=False
+    FAILED (cli): json decode: Unterminated string starting at: line 1 column 2611 (char 2610)
+    attempt 1: done in 121s, ok=True
+  [narrative_flow] DONE batch 20: +15 rules
+  [narrative_flow] START batch 22/27 (1 decks)
+    input: narrative_flow_batch_22_input.json (20 KB)
+    attempt 2: done in 150s, ok=True
+  [narrative_flow] DONE batch 21: +15 rules
+  [narrative_flow] START batch 23/27 (1 decks)
+    input: narrative_flow_batch_23_input.json (39 KB)
+    attempt 2: done in 156s, ok=True
+  [narrative_flow] DONE batch 18: +12 rules
+  [narrative_flow] START batch 24/27 (1 decks)
+    input: narrative_flow_batch_24_input.json (18 KB)
+    attempt 2: done in 162s, ok=True
+  [narrative_flow] DONE batch 19: +14 rules
+  [narrative_flow] START batch 25/27 (1 decks)
+    input: narrative_flow_batch_25_input.json (27 KB)
+    attempt 1: done in 52s, ok=True
+  [narrative_flow] DONE batch 24: +15 rules
+  [narrative_flow] START batch 26/27 (1 decks)
+    input: narrative_flow_batch_26_input.json (29 KB)
+    attempt 1: done in 87s, ok=True
+  [narrative_flow] DONE batch 23: +20 rules
+  [narrative_flow] START batch 27/27 (1 decks)
+    input: narrative_flow_batch_27_input.json (42 KB)
+    attempt 1: done in 202s, ok=True
+  [narrative_flow] DONE batch 22: +14 rules
+    attempt 1: done in 517s, ok=False
+    FAILED (cli): json decode: Unterminated string starting at: line 8 column 16 (char 227)
+    attempt 2: done in 99s, ok=True
+  [narrative_flow] DONE batch 25: +14 rules
+    attempt 1: done in 693s, ok=False
+    FAILED (cli): json decode: Unterminated string starting at: line 11 column 9 (char 358)
+    attempt 1: done in 849s, ok=False
+    FAILED (cli): empty stdout from claude
+    attempt 2: done in 205s, ok=True
+  [narrative_flow] DONE batch 26: +13 rules
+    attempt 2: done in 125s, ok=True
+  [narrative_flow] DONE batch 27: +14 rules
+  narrative_flow done in 2128s
+
+=== Phase 3: cross-batch rule merge ===
+  visual_authoring: 316 unique rules
+  narrative_flow: 271 unique rules
+
+=== Phase 4: write per-rule .md + .json ===
+  wrote 469 rule files (skipped 118 discard-level)
+
+=== Phase 5: rebuild INDEX.json (merge statistical + Claude) ===
+  INDEX: /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/rule/INDEX.json
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/preprocess.py", line 471, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/preprocess.py", line 458, in main
+    return cmd_rule_build(stats_only=stats_only, claude_only=claude_only,
+                           batch_size=bs, dry_run=dry)
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/preprocess.py", line 330, in cmd_rule_build
+    result = rule_extract.run(args)
+  File "/home/zjy/agent-application/ppt-agent/ppt-agent-v1/ppt_agent_app/library_extract/rule_extract.py", line 735, in run
+    print(f"  rules_count: {idx['rules_count']}", flush=True)
+                            ~~~^^^^^^^^^^^^^^^
+KeyError: 'rules_count'

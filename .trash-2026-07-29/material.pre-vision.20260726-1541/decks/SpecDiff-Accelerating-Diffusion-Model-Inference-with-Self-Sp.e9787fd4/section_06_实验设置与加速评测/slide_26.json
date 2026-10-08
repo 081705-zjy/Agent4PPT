@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_26",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 26,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "实验设置：硬件平台与测试模型",
+  "核心论断": "在 A800 上以 SD3/SD3.5/Flux.1 为平台验证加速",
+  "本页讲什么": "交代实验的硬件与模型平台：硬件为 NVIDIA Tesla A800-80GB GPU，测试模型覆盖 Stable Diffusion 3 Medium、SD3.5 与 Flux.1 Dev。为后续逐一给出的加速比结果奠定统一、可比的实验基线。",
+  "关键文字": [
+    "Hardware Platform：NVIDIA Tesla A800-80GB GPU",
+    "Models：Stable Diffusion 3 Medium",
+    "Flux.1 Dev"
+  ],
+  "视觉骨架": [
+    "硬件/模型分栏列表",
+    "平台配置说明块"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "扩散模型加速工作的实验设置页",
+    "交代硬件平台与测试模型的 setup 页"
+  ],
+  "不适合复用场景": [
+    "含加速比数字的结果页",
+    "方法架构示意页",
+    "章节总结页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

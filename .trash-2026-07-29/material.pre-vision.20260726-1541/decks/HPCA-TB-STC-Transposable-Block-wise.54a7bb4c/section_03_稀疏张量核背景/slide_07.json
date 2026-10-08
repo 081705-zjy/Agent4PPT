@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_07",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 7,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏运算：跳过零值 MAC",
+  "核心论断": "稀疏方式跳过零值 MAC，可省去大量无效乘加",
+  "本页讲什么": "本页解释稀疏张量核的加速原理：以稀疏方式组织权重后，硬件可跳过零值对应的 MAC（乘加）运算，从而减少大量无效计算，是稀疏张量核带来吞吐提升的核心机理，承接上页架构演进说明其硬件收益来源。",
+  "关键文字": [
+    "Sparse manner",
+    "zero MACs"
+  ],
+  "视觉骨架": [
+    "稀疏 MAC 跳过示意图",
+    "零值计算省略标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_07.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_07.asset.02",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_07.asset.03"
+  ],
+  "适合复用场景": [
+    "稀疏加速原理讲解页",
+    "零值跳过机理介绍"
+  ],
+  "不适合复用场景": [
+    "GPU 产品硬件页",
+    "相关工作对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

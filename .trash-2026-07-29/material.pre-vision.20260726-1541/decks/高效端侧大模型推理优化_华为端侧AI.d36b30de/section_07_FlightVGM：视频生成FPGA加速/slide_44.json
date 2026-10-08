@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_44",
+  "所属章节": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.sec.07",
+  "所属deck": "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de",
+  "页序号": 44,
+  "源文件": "templates/课题组全局汇报/高效端侧大模型推理优化_华为端侧AI.pptx",
+  "页面角色": "content_candidate",
+  "标题": "FlightVGM：FPGA 视频生成加速",
+  "核心论断": "在线稀疏化+混合精度让 FPGA 高效跑视频生成模型",
+  "本页讲什么": "本 section 的开篇标题页，引出第二个 FPGA 案例 FlightVGM。承接前一节 FlightLLM，把加速对象从大模型推理扩展到视频生成模型，主张通过在线稀疏化与混合精度两项技术在 FPGA 上实现高效视频生成推理。列出论文题目与作者。",
+  "关键文字": [
+    "FlightVGM: Efficient Video Generation Model Inference",
+    "Online Sparsification and Hybrid Precision on FPGAs",
+    "Jun Liu, Shulin Zeng"
+  ],
+  "视觉骨架": [
+    "论文标题版式",
+    "作者署名行",
+    "配图/示意图"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.高效端侧大模型推理优化_华为端侧AI.d36b30de.slide_44.asset.01"
+  ],
+  "适合复用场景": [
+    "FPGA 视频生成加速案例开篇",
+    "硬件加速工作论文引入页"
+  ],
+  "不适合复用场景": [
+    "含具体数据的结果页",
+    "多模块架构详解页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

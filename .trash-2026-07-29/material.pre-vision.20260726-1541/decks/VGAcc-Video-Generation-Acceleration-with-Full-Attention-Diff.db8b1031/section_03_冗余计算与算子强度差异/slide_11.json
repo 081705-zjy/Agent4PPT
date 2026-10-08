@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_11",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 11,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "全注意力计算量大且高度冗余（一）",
+  "核心论断": "视频生成全注意力计算量庞大且存在大量冗余",
+  "本页讲什么": "本页展开第一个问题——全注意力（Large & Redundant Computation）。通过示意图说明视频扩散模型中全注意力机制带来的巨大计算量，并指出相邻帧/token 间存在高度相似性，暗示大量注意力计算是冗余的，为差分计算方案埋下伏笔。",
+  "关键文字": [
+    "Large & Redundant Computation",
+    "全注意力计算量庞大"
+  ],
+  "视觉骨架": [
+    "全注意力计算示意图",
+    "冗余相似性标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_11.asset.01",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_11.asset.02",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_11.asset.03"
+  ],
+  "适合复用场景": [
+    "视频注意力冗余 motivation 页",
+    "扩散模型算力瓶颈论证页"
+  ],
+  "不适合复用场景": [
+    "benchmark 数据对比页",
+    "算子强度分析页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,528 @@
+{
+  "batch_index": 9,
+  "rules": [
+    {
+      "id": "outline_navigation_current_highlighted_others_grayed",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录导航·当前章高亮+其余章置灰",
+      "description": "同一份章节目录在 deck 中反复出现作为导航页,列出所有一级章节及技术子条目;当前所在章节用黑色/深色高亮,其余章节及子条目统一置灰,子条目缩进 2 层。",
+      "evidence_signals": [
+        "标题为 'Outline' 或 '目录' 且含 '定位到 X 章节' 类描述",
+        "视觉骨架含 '当前章高亮/其余灰化' 或 '置灰目录列表 + 当前项高亮标黑'",
+        "关键文字重复出现相同的章节列表 (Background/Related Work/... /Extension)",
+        "视觉骨架含 '两级缩进 bullet' 或 '缩进技术子条目 bullet'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 2,
+          "评价": "Outline 首现,Background 高亮其余灰化,子条目缩进"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 9,
+          "评价": "同一份目录 Related Work 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 12,
+          "评价": "Challenges and Techniques 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 24,
+          "评价": "Experiment Results 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 29,
+          "评价": "Extension 高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "重复出现同一目录并高亮当前位置,帮助听众在长篇技术分享中随时定位进度,防止在细节中迷失整体结构",
+      "fix_hint": "在每个章节起点插入同一份 Outline slide,当前章文字加深加粗其余章降灰,子条目按 2 级缩进保持一致",
+      "exceptions": [
+        "短篇 deck (≤10 页) 无需重复导航,只放一次目录即可"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_authors_institution_footer",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "ending_candidate"
+      ],
+      "title": "封面·居中大字标题+作者机构上标+邮箱脚注",
+      "description": "封面/结尾页布局:居中大字论文标题,下方作者姓名后带机构上标数字,再下一行按上标编号列出机构名,底部附通讯作者邮箱行,不含任何 body 段落或 bullet 列表。",
+      "evidence_signals": [
+        "视觉骨架含 '居中大字论文标题' 与 '作者姓名带机构上标'",
+        "关键文字含多位作者姓名逗号分隔 + 高校/机构名 + 邮箱 (含 @)",
+        "无 '正文段落' / 'bullet 列表' / '柱状图' 等 body 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 1,
+          "评价": "标准 cover: SpeContext 大字标题 + 5 位作者 + 4 机构 + jiamingxu@sjtu.edu.cn"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 34,
+          "评价": "ending 页复用同一版式,居中大字完整论文标题 + Jiaming Xu supervised by Prof. Guohao Dai"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场瞬间锁定论文身份与讲者归属,建立学术权威;版式简洁避免其他元素抢走对作者/机构的注意",
+      "fix_hint": "把 cover 主标题居中放大到最大字号,作者按 <姓名>^<机构编号> 格式并列,机构与邮箱压到底部小字,移除其他 body 元素",
+      "exceptions": [
+        "非论文分享类 deck (品牌宣传/产品发布) 讲者身份让位于品牌 logo"
+      ]
+    },
+    {
+      "id": "left_right_parallel_panel_comparison_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "左右并列 panel·对比/类比版式",
+      "description": "对比或类比页统一采用左右两列并列 panel:两列各含独立子标题+插图+文字,构图对称,用于呈现两个概念/范式/方法的对照(baseline vs ours、System1 vs System2、LLM vs Diffusion、Original vs Distilled)。",
+      "evidence_signals": [
+        "视觉骨架含 '左右2列并列panel' 或 '左右双栏对照' 或 '两列逐层流程框图'",
+        "两列内容语义为对比关系 (baseline vs ours / A vs B)",
+        "关键文字含成对术语 (Original/Distilled、System1/System2、Different KV/Same KV)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 3,
+          "评价": "LLM 上下文增长 vs 应用交互轮次增长 两列并列"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 26,
+          "评价": "baseline (Quest/ClusterKV/ShadowKV) vs Ours 左右两列逐层流程对照"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 32,
+          "评价": "Human 双系统 vs AI 大小模型 左右对照"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 33,
+          "评价": "System1/System2 双列骨架承载多个系列工作"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "对称结构让听众在扫视瞬间捕捉到 '两个东西在被比较' 的语义,减少读者自行匹配左右语义元素的认知负担",
+      "fix_hint": "把对比页两侧内容按同一模板 (子标题+图+说明) 对称摆放,共享同尺寸/同字号,重要差异用相同高亮色标注",
+      "exceptions": [
+        "单实体深入解析页无需对比,不适用此版式"
+      ]
+    },
+    {
+      "id": "red_text_or_frame_for_headline_claim_or_question",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "红色字体/红框·点题金句与转折问句",
+      "description": "承上启下的动机问句、核心结论、关键数字统一用红色字体或红框强调,与页面其他内容形成对比色跳出,常置于居中或右侧显要位置。",
+      "evidence_signals": [
+        "视觉骨架含 '红框' / '红字' / '红色 X 标签' / '结论高亮红字' 类描述",
+        "关键文字含醒目短句 (Why / Contextual Similarity / Up to Xx / Similar accuracy)",
+        "位置为居中banner 或右下角结论条"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 4,
+          "评价": "居中红框 'Why do we persistently pursue longer context?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 8,
+          "评价": "居中红字 'How to reduce the KV Cache'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 21,
+          "评价": "核心论断红字 'Contextual Similarity in adjacent token decoding'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 28,
+          "评价": "两组红色大数字 'Up to 24.89x/10.06x'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "红色是全页最强视觉信号,专供 '本页最想让人记住的一句/一个数' 使用,滥用会稀释,只在承上启下问句和核心数字上使用",
+      "fix_hint": "为承转问句/核心结论/关键数字单独套红框或改红字,其余文字保持中性色,页面红元素不超过 1 处",
+      "exceptions": [
+        "纯背景/机制解释页无金句时不加红"
+      ]
+    },
+    {
+      "id": "citation_bottom_bar_arxiv_format",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "底部引用条·[n] 标题+arXiv 编号",
+      "description": "涉及他人工作或数据出处的 slide 在页面底部放一条引用条,以 [1] Paper Title, arXiv:XXXX.XXXXX 的紧凑格式列出,多引用时按顺序换行叠加。",
+      "evidence_signals": [
+        "视觉骨架含 '底部参考文献条' 或 '底部双文献引用条'",
+        "关键文字含 'arXiv:' 或会议缩写 + 年份 (ISCA'25/ASPLOS'26)",
+        "引用位于页面最下方,字号小于正文"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 10,
+          "评价": "底部 '[1] Longformer: ..., arXiv:2004.05150'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 11,
+          "评价": "底部双文献 Quest arXiv:2406.10774 + ClusterKV arXiv:2412.03213"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 33,
+          "评价": "系列工作节点标注 ISCA'25/ASPLOS'26 等会议出处"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 5,
+          "原因": "只引 Shannon 信息论概念,未做正式引用条"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "学术分享需明确他人工作出处以避免抄袭嫌疑;底部窄条不干扰主要构图,但读者可随时溯源",
+      "fix_hint": "凡引用他人方法/数据的页面,在最下方增加 '[n] Title, arXiv:XXXX.XXXXX' 一行小字条",
+      "exceptions": [
+        "纯自研机制页 / 概念介绍页无外部引用可不加"
+      ]
+    },
+    {
+      "id": "question_answer_split_layout_for_insight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "Question/Answer 版式·洞见推导页",
+      "description": "Key Insight 类推导页采用 Question/Answer 分区版式:左上以 'Question:' 抛出思考问句,右侧配概念对比示意 (对术语标注/框图),下方或后续页给出 Answer;多页串联形成推导链条。",
+      "evidence_signals": [
+        "视觉骨架含 'Question/Answer 版式'",
+        "关键文字以 'Question:' / 'Answer:' 引导",
+        "多张同构页连续出现,推导链条 (提问→为何→回答→结论)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 13,
+          "评价": "首提 'What is the essential objective of retrieval algorithms?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 14,
+          "评价": "延续 Q&A,'Why do existing retrieval algorithms need complex preprocessing?'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 16,
+          "评价": "结论页红字 'We can leverage the DLM as the retrieval algorithm'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "Insight 章节的核心是让听众跟着讲者推导,Q&A 骨架把 '发现问题-思考-得出结论' 的思维链条显式化,防止直接抛结论显得突兀",
+      "fix_hint": "把 Insight 系列页统一改成 Question 标黑+Answer 留白/延续格式,概念示意固定在右侧,一页一问",
+      "exceptions": [
+        "非推理/非 insight 类页面 (纯机制/结果展示) 不适用"
+      ]
+    },
+    {
+      "id": "ending_page_mirrors_cover_with_key_insight_recall",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "结尾页·封面版式+核心洞见回扣",
+      "description": "结尾页复用封面的居中大字标题+作者署名版式,但下方额外插入 Key Insight 回扣区:含小标题'Key Insight'、核心概念对比示意、绿框结论条与红字点题句。不做 Q&A / 致谢 / Thank You 类填充。",
+      "evidence_signals": [
+        "视觉骨架含 '居中大字论文标题+作者署名' 与 '核心结论条'",
+        "关键文字含 'Key Insight' + 核心洞见句",
+        "无 'Thank You' / '感谢聆听' / '致谢' 类词汇"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 34,
+          "评价": "居中论文全名 + Jiaming Xu supervised by... + Key Insight 回扣 Original/Distilled 对照 + 红字点题"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结尾页最后印象点应回扣核心洞见而非空泛致谢,让听众在离场前再固化一次论文的一句话价值主张",
+      "fix_hint": "把 Thank You 结尾页替换为 '论文标题+作者' 封面版式,并在下半页放 'Key Insight' 小标题+一句话核心结论",
+      "exceptions": [
+        "非学术论文场景 (商业/产品 pitch) 结尾可用 CTA / 联系方式版式"
+      ]
+    },
+    {
+      "id": "title_uses_colon_prefixed_noun_phrase",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·前缀+冒号+名词短语",
+      "description": "slide.标题 大量采用 '<定位前缀>:<内容主题>' 双段式,前缀标定位 (Outline/Insight 提问/Tech1 挑战/Tech1),冒号后接名词短语描述本页主题,避免完整动宾句和 '本节讲/我们将介绍' 类开头。",
+      "evidence_signals": [
+        "title 含中文/英文冒号 ':' 或 ':'",
+        "冒号前多为定位词 (Outline / Tech<N> / Insight / Tech<N> 挑战 / Experiment Setup)",
+        "冒号后为名词短语 (无完整谓语动词+宾语)",
+        "title 不以 '介绍' / '本节' / '我们将' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 2,
+          "评价": "'Outline:六段主线目录'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 13,
+          "评价": "'Insight 提问:检索算法的本质目标'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 17,
+          "评价": "'Tech1 挑战:DLM 检索头架构'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 28,
+          "评价": "'加速评测:云端 24.89x、边缘 10.06x'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 3,
+          "原因": "'新兴LLM与应用:上下文与交互双增长',冒号前非严格定位词而是主题词"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "冒号前定位词让听众瞬间知道'这是第几章/什么类型的页',冒号后短语交代内容,双段式比长句 title 阅读速度快 3-5 倍",
+      "fix_hint": "把 title 改为 '<Outline/Tech<N>/Insight/评测/挑战>:<名词短语>' 结构,冒号前是章节/类型标记,冒号后是本页主题名词化",
+      "exceptions": [
+        "纯封面 / 结尾页 title 可用完整论文名不带定位前缀"
+      ]
+    },
+    {
+      "id": "technique_pages_paired_challenge_solution_titles",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页·Tech<N> 挑战/解法配对标题",
+      "description": "每项核心技术开场页 title 用 'Tech<N> 挑战:...' 抛出该技术要解决的痛点,紧随其后的技术页 title 用 'Tech<N>:...' 展开解法机制,形成 '挑战→技术响应' 的连续序号叙事。",
+      "evidence_signals": [
+        "title 前缀含 'Tech<N> 挑战' 与 'Tech<N>' 交替出现",
+        "同一 Tech<N> 编号连续跨 2-3 页",
+        "'挑战' 页多含 red text 或痛点数字,解法页多含机制图"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 17,
+          "评价": "'Tech1 挑战:DLM 检索头架构' 抛出耗时痛点"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 18,
+          "评价": "'Tech1:剪枝去冗余仅取注意力结果' 给解法"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 20,
+          "评价": "'Tech2 挑战:推理期内存传输瓶颈'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 22,
+          "评价": "'Tech3 挑战:序列微增引发性能骤降'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.25,
+      "enforcement_level": "soft",
+      "rationale": "先讲挑战再讲技术响应,让每项方法都锚定在一个具体痛点上,避免技术为技术而技术;编号 Tech<N> 让听众数得清一共几项",
+      "fix_hint": "方法章每项技术拆成 'Tech<N> 挑战:痛点' + 'Tech<N>:机制' 两页,标题共享 Tech<N> 编号形成配对",
+      "exceptions": [
+        "纯理论 insight 章无独立技术不适用;仅 1 项技术的方法页无需编号"
+      ]
+    },
+    {
+      "id": "core_claim_embeds_specific_quantitative_metric",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·嵌具体数字/百分比",
+      "description": "凡涉及性能、显存、精度、加速比、剪枝率等可量化维度,核心论断 (核心论断字段) 必须嵌具体数字或百分比或比例 (24.89x、60% FLOPS、128K→36GB、~10% latency),不用 '显著'/'大幅' 等空泛副词。",
+      "evidence_signals": [
+        "核心论断字段含数字+单位 (Xx / X% / XGB / XK)",
+        "关键文字中重复相同数字用作强化",
+        "不含 '显著提升' / '大幅优化' / '较好' 等定性词"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 7,
+          "评价": "'128K达36GB、256K达144GB'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 17,
+          "评价": "'仅增约 10% 延迟'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 18,
+          "评价": "'剪枝超 60% FLOPS'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 28,
+          "评价": "'云端 24.89x、边缘 10.06x'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 26,
+          "原因": "'保留同一份 KV 不掉点',属定性表述,可量化处未加具体数字"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "系统类论文的信誉建立在可复现数字上;把 '大幅提升' 换成 '24.89x' 立刻从空话变成可验证承诺,也让听众记住具体量级",
+      "fix_hint": "核心论断里凡遇量化维度,替换 '显著/大幅' 为 '<倍数>x' 或 '<百分比>%' 或 '<数值><单位>' 具体数字",
+      "exceptions": [
+        "机制解释页 / 概念定义页无实验数据不硬编数字"
+      ]
+    },
+    {
+      "id": "english_technical_terms_kept_inside_chinese_text",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "术语·英文技术词嵌中文语境",
+      "description": "专有技术术语 (KV Cache, DLM, Attention, FFN, Sliding window, Sink token, Prefetch, LongBench 等) 一律保留英文原词,描述性/解释性文字用中文,不做 '键值缓存 (KV Cache)' 类中英双写。",
+      "evidence_signals": [
+        "关键文字中英文技术词直接嵌入中文句 (未加中文译名)",
+        "核心论断/本页讲什么 字段术语英文, 连接词/描述词中文",
+        "英文首字母大写术语无中文括号翻译"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 6,
+          "评价": "'KV Cache源自注意力中K、V的缓存复用'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 17,
+          "评价": "'轻量检索头为完整 Transformer 解码层仅增约 10% 延迟'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 21,
+          "评价": "'借相邻 token 解码的上下文相似性把预取与计算异步重叠'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "系统方向受众全英文文献习惯,英文原词保持与论文/API/代码一致,中文译名反而增加术语查询摩擦并产生歧义",
+      "fix_hint": "写关键文字/核心论断时,专有名词全保留英文首字母大写形式,连接/描述用中文,不加 '中文名 (English)' 括号翻译",
+      "exceptions": [
+        "面向非技术背景大众听众的科普 deck 可加中文译名"
+      ]
+    },
+    {
+      "id": "outline_title_states_current_chapter_transition",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "目录页标题·明写当前章节切换",
+      "description": "每张 Outline 导航页 title 不写单纯 'Outline',而用 'Outline:定位到 X 章节' 或 'Outline:进入 X 章' 明写当前推进到哪一章,让 title 本身承担导航说明。",
+      "evidence_signals": [
+        "title 以 'Outline:' 开头",
+        "冒号后含 '定位到' / '进入' 等推进动词 + 章节名",
+        "同一 deck 中多张 Outline 页 title 结构一致,仅章节名不同"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 9,
+          "评价": "'Outline:定位到 Related Work 章节'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 24,
+          "评价": "'Outline:定位到「实验结果」章节'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 29,
+          "评价": "'Outline:进入 Extension 展望章'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+          "slide_index": 2,
+          "原因": "'Outline:六段主线目录',首次目录用主线概述,未写具体切换章节 (因首次尚未切换)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "同一 Outline 版面反复出现时,若 title 都是 'Outline' 听众看不出差异;title 里明写当前章节,即使不看正文也能识别推进位置",
+      "fix_hint": "每张 Outline 导航页 title 改为 'Outline:定位到 <章节名>' 或 'Outline:进入 <章节名>',首次目录页可用 'Outline:X 段主线'",
+      "exceptions": [
+        "首次亮相的目录页无 '切换' 语义,可用 'Outline:X 段主线'"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SpeContext,34 slides,单一 paper_share 类型)。视觉规则围绕导航目录/封面/对比 panel/红色强调/引用条/QA 版式/结尾回扣共 7 条;写作规则围绕冒号双段标题/挑战解法配对/量化数字/中英混排/目录切换写法共 5 条。因单 deck 覆盖,统一现象命中率高但泛化性需后续 batch 校验。",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 7,
+      "authoring": 5
+    }
+  }
+}

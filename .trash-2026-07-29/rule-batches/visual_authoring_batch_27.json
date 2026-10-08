@@ -1,0 +1,570 @@
+{
+  "batch_index": 27,
+  "rules": [
+    {
+      "id": "toc_layout_contents_with_numbered_dots_and_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录页·Contents居中+编号圆点+当前项高亮",
+      "description": "目录/章节切换页: 蓝色大字 Contents 居中或居顶, 主体区用竖排编号圆点(1/2/3)串联章节名, 当前所在章节以高亮/彩色圆点标示, 其余章节灰化, 整页仅承担导航, 无实质内容元素.",
+      "evidence_signals": [
+        "关键文字含 'Contents' + 章节名列表",
+        "视觉骨架含 '竖排编号圆圈' / '编号圆点' / '编号圆点导航'",
+        "视觉骨架含 '当前项高亮' / '灰化' / '高亮/其余灰化'",
+        "视觉骨架含 '蓝框' / '蓝色边框'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 2,
+          "评价": "标准 Contents 目录页, 蓝色标题居中 + 竖排编号圆圈 + 蓝色外框"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 3,
+          "评价": "编号 1 高亮 / 2、3 灰显, 标示进入研究背景章节"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 9,
+          "评价": "高亮第 2 项圆点, 标示进入研究思路章节"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 18,
+          "评价": "高亮第 3 项圆点, 标示进入研究内容章节"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 61,
+          "评价": "总结前的过渡目录, 竖向 3 编号圆点串联全局板块"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "目录页承担章节切换与当前位置提示, 高亮编号让听众瞬间锁定进度, 其余元素会分散导航焦点",
+      "fix_hint": "目录页只保留 Contents 大标题+竖排编号圆点, 当前章节圆点高亮, 其余灰化, 删除本页任何正文/图表元素",
+      "exceptions": [
+        "deck 无分章导航需求时可省略此模板"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_with_signature_and_date",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面·居中主标题+分行署名+底部日期",
+      "description": "封面页: 居中大字主标题居中, 下方分行列汇报人/专业/年级/导师, 底部标注答辩日期, 不含 body 段落也不含图表.",
+      "evidence_signals": [
+        "关键文字含 '汇报人' + '专业' + 年份日期",
+        "视觉骨架含 '居中大标题' / '大标题'",
+        "视觉骨架含 '分行信息块' / '底部日期行'",
+        "无正文段落 / bullet 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 1,
+          "评价": "居中主标题 + 汇报人/专业/年级/导师分行 + 底部 2025年9月28日"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面用居中大字与分行署名建立主题+讲者身份, 是学术答辩的标准身份识别版式, 干扰元素会分散开场焦点",
+      "fix_hint": "把封面主标题居中放大, 汇报人/导师/日期分行贴底部, 移除其他非身份识别元素",
+      "exceptions": [
+        "空白模板/占位封面无实际身份信息时可豁免"
+      ]
+    },
+    {
+      "id": "ending_layout_thanks_with_title_and_signature_reiteration",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页·居中致谢语+题目与汇报人重申",
+      "description": "致谢收尾页: 居中大字'谢谢…敬请批评指正'作为落幕语, 下方重申答辩题目、汇报人及日期, 不承载新论点, 仅收束全篇.",
+      "evidence_signals": [
+        "关键文字含 '谢谢' + '批评指正' 类致谢句",
+        "关键文字含答辩题目 + 汇报人 + 日期",
+        "视觉骨架含 '居中大字' / '致谢标语'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 71,
+          "评价": "居中大字'谢谢各位老师, 敬请批评指正!'+ 题目 + 汇报人 + 日期落款"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 73,
+          "原因": "附录内空白过渡页, 仅剩页脚署名, 未承担致谢功能"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "致谢页统一到'居中致谢语+题目/汇报人重申'能让听众立刻识别汇报结束, 避免与附录/过渡页混淆",
+      "fix_hint": "把致谢页正中放大致谢语, 下方补题目+汇报人+日期, 移除新的图表或论点内容",
+      "exceptions": [
+        "附录/空白过渡页不承担致谢, 不适用本规则"
+      ]
+    },
+    {
+      "id": "content_page_top_blue_strip_states_main_claim",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页·顶部蓝框条陈述本页主论断",
+      "description": "内容页普遍在顶部用蓝色横条框放置本页主论断/核心论点, 主体区放数据/流程图/公式/表, 底部再挂章节导航或引用, 形成'顶部亮论断→主体证据'的固定结构.",
+      "evidence_signals": [
+        "视觉骨架含 '蓝框主论点条' / '蓝框结论区' / '顶部蓝框'",
+        "核心论断字段与主标题短语呼应, 且置于页面顶部",
+        "视觉骨架含底部'研究背景列表'/'挑战列表'/'子问题标签'条"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 4,
+          "评价": "顶部蓝框陈述'大模型赋能一系列下游应用', 主体铺云侧/端侧应用图标"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 8,
+          "评价": "顶部蓝框断言'端侧供给与需求差 1~2 数量级', 主体是四档设备吞吐对比"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 37,
+          "评价": "顶部蓝框放长思维链结论, 下方接答题条形+对比表"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 38,
+          "评价": "顶部双结论蓝框(计算/显存双超80%), 底部子问题拆解"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 62,
+          "评价": "顶部蓝框亮总结论, 主体三栏 panel 复现三大瓶颈"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 68,
+          "原因": "参考文献页无主论断, 单列引用条目铺陈"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "顶部蓝框条把'本页要证明什么'先给听众, 后续图表/公式再作为证据, 契合'先结论后论据'的学术汇报节奏",
+      "fix_hint": "在内容页顶部加一条蓝色横条框, 把核心论断浓缩成一句话置于其中, 图表下移作为证据",
+      "exceptions": [
+        "参考文献页 / 空白过渡页 / 纯目录页无主论断, 不适用"
+      ]
+    },
+    {
+      "id": "content_page_bottom_navigation_strip_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页·底部导航条+当前项高亮串联章节脉络",
+      "description": "在多子问题/多挑战的章节里, 每页底部固定挂一条'研究背景1/2/3'或'挑战一/二/三'或'子问题1/子问题2'横向标签, 用高亮/置灰标示当前所在支线, 让听众随时看到位置.",
+      "evidence_signals": [
+        "视觉骨架含 '底部三挑战列表' / '底部研究背景高亮列表' / '底部子问题拆解'",
+        "多张连续 slide 复用同一底部标签集合, 仅高亮不同项",
+        "关键文字含 '挑战1/2/3' 或 '子问题1/子问题2' 或 '拆解思路1/2/3'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 20,
+          "评价": "底部三条研究背景列表, 高亮第 1 条(算子层)"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 26,
+          "评价": "底部三挑战列表, 本页高亮挑战二"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 30,
+          "评价": "同一 Transformer 结构图 + 底部高亮切到挑战三"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 44,
+          "评价": "底部子问题1置灰、子问题2高亮, 标示进入延迟优化"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 51,
+          "评价": "底部拆解思路1高亮、2/3置灰"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 68,
+          "原因": "参考文献页无章节支线, 不需要导航条"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "分子问题递进讲述时听众易迷失, 底部固定导航条+当前项高亮把'当下讲哪支线'持续提示, 复用同一模板还能强化对比",
+      "fix_hint": "在多支线章节的所有 slide 底部复用同一条支线标签横条, 仅切换高亮项, 支线名与本章拆分保持一致",
+      "exceptions": [
+        "参考文献/致谢/封面/附录不承担支线导航, 不适用"
+      ]
+    },
+    {
+      "id": "quantitative_result_page_uses_speedup_number_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate",
+        "ending_candidate"
+      ],
+      "title": "结果页·加速倍数/关键数字红色强调",
+      "description": "实验/优化结果页把核心加速倍数、tokens/s、耗时对比等关键数字放大或用红色/彩色强调, 与柱状图/对比表配合, 让听众一眼抓住量化收益.",
+      "evidence_signals": [
+        "视觉骨架含 '红字标注' / '红字强调' / '加速比递增柱状图' / '优化前后对比表' / '数字标注'",
+        "关键文字含 'x倍加速' / 'tokens/s' / '倍加速' / '耗时…降至…'",
+        "核心论断为具体倍数或耗时下降量"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 25,
+          "评价": "递增柱状图 + 1.86 倍加速红字高亮"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 29,
+          "评价": "多 baseline 柱状图 + 3.94x/4.53x 加速标注"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 43,
+          "评价": "10.06 倍加速红字强调, 对比高端/低端 GPU"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 47,
+          "评价": "耗时 6.3s→4.7s 红字标注 + 优化前后对比表"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 60,
+          "评价": "总耗时 59.46s→10s 红字对比 + 逐项对比表"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "量化收益是学术汇报的说服核心, 数字被红色/放大强调 + 柱状图并列, 能让听众在一秒内感知'方法值不值得'",
+      "fix_hint": "结果页把关键倍数/数字加粗放大, 用红色/彩色强调, 并与柱状图或优化前后对比表并列",
+      "exceptions": [
+        "纯背景/动机页不给结果数字时不需此强调"
+      ]
+    },
+    {
+      "id": "chapter_transition_reuses_same_skeleton_with_highlight_swap",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "章节切换·复用同一骨架图仅换高亮项",
+      "description": "跨支线切换时(如挑战一→挑战二/三, 子问题1→子问题2), 复用同一张 Transformer 结构图或同一张双结论/复杂度模板, 仅切换底部或子问题条的高亮项, 强化'同一框架下切换支线'的认知.",
+      "evidence_signals": [
+        "相邻 slide 视觉骨架字段完全相同, 只有底部高亮项差异",
+        "本页描述含 '与第X页同一模板' / '复用…模板'",
+        "章节名或子问题标签在底部条切换高亮/置灰"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 30,
+          "评价": "复用第 26 页 Transformer 结构图, 只切底部高亮到挑战三"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 39,
+          "评价": "第 38 页双结论模板的动画递进版, 骨架不变"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 44,
+          "评价": "复用双瓶颈模板作过渡, 底部切子问题1置灰/子问题2高亮"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 51,
+          "评价": "同一耗时拆解框架, 高亮拆解思路1"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 54,
+          "评价": "同一耗时拆解框架, 高亮拆解思路2"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "复用骨架仅切换高亮项能让听众在多支线并列的方法章保持全局定位, 减少重新认知每张图的负担",
+      "fix_hint": "跨支线切换时, 复用上一页的骨架图/结构框, 只切换'当前支线'的高亮标注, 避免每次都换一张新图",
+      "exceptions": [
+        "首次引入新支线时可用新骨架, 之后再复用"
+      ]
+    },
+    {
+      "id": "title_prefixed_with_chapter_id_and_colon",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate",
+        "chapter_candidate"
+      ],
+      "title": "标题以章节编号+冒号引出本页主题",
+      "description": "内容页标题多以 '研究背景1' / '研究内容1.1' / '研究内容2.2延迟优化' / '拟开展研究2' 等章节编号开头, 后接冒号或直接连接本页主题短语, 让听众第一时间锁定当前章节与内容支线.",
+      "evidence_signals": [
+        "标题以 '研究背景N' / '研究内容N.N' / '拟开展研究N' / '冗余拆解思路N' 开头",
+        "标题含冒号(: 或 ·) 分隔章节标签与本页主题",
+        "同一章节的连续多页 title 前缀一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 20,
+          "评价": "'研究背景1: Transformer结构与三层优化空间'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 22,
+          "评价": "'研究内容1.1: 注意力算子优化现状'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 41,
+          "评价": "'研究内容2.1显存优化: 蒸馏预测KV Cache'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 51,
+          "评价": "'冗余拆解思路1: 降低记忆冗余'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 63,
+          "评价": "'拟开展研究1: 端侧算力加速初步结果'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 71,
+          "原因": "致谢页无章节归属, 只写致谢语"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.65,
+      "enforcement_level": "soft",
+      "rationale": "开题/proposal 类 deck 章节支线多, 标题前缀章节编号让听众随时定位当前分层位置, 弱化了 title 需要独立自解释的负担",
+      "fix_hint": "在多支线章节内容页, title 用 '章节编号+冒号+主题短语' 结构, 章节编号与目录/底部导航条保持一致",
+      "exceptions": [
+        "封面/目录/致谢/参考文献页无章节前缀"
+      ]
+    },
+    {
+      "id": "claim_is_declarative_with_quantitative_numbers",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断为判断句+具体数字/倍数",
+      "description": "核心论断(核心 claim)倾向为完整判断句, 且大量嵌入具体数字/百分比/倍数 (如'1.86倍加速' '占比超80%' '6.3s降至4.7s'), 而非'方法有效''性能提升'等空泛表述.",
+      "evidence_signals": [
+        "核心论断字段含 '×倍' / '%' / 'tokens/s' / '数量级' / '降至' 等量化词",
+        "核心论断为陈述判断句(有主语+断言谓语), 不用'介绍'/'讲'/'关于'类描述句"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 8,
+          "评价": "'端侧Tokens/s供给与需求慢1~2个数量级'——数量级级差断言"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 25,
+          "评价": "'相较vLLM平均加速1.86倍'——具体倍数"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 27,
+          "评价": "'相似 token 激活相似专家, 复用热专家实现 1.64x 加速'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 47,
+          "评价": "'端到端延迟由6.3s降至4.7s'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 65,
+          "评价": "'智能体优化将总耗时从 59.46s 压缩至 10s'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 68,
+          "原因": "参考文献页核心论断为'背书学术严谨性', 描述性无数字"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "量化数字使论断可验证/可比较, 是学术汇报可信度的核心; 空泛描述让听众无法评估贡献大小",
+      "fix_hint": "把每页 claim 改写为'主语+具体谓语+量化数字'结构, 数字带单位(倍/%/tokens/s/秒), 避免'有效''显著'等模糊词",
+      "exceptions": [
+        "参考文献/致谢/纯定义页不产生新数据, 无需数字"
+      ]
+    },
+    {
+      "id": "quoted_authority_uses_english_original_plus_source_line",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引用大牛/权威·英文原句+来源署名",
+      "description": "动机/研究背景章引用行业权威(黄仁勋 GTC/Ilya Sutskever 等)时, 用英文原文置于灰底引言块, 下方以'——姓名 场合'格式补署名, 而不用中译或paraphrase, 强化说服力.",
+      "evidence_signals": [
+        "关键文字含英文引言 + '——' + 人名/场合",
+        "视觉骨架含 '灰底英文引言块'",
+        "同页存在主论断与英文引言并置"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 5,
+          "评价": "'Test-time scaling is an algorithm…——黄仁勋 2025GTC演讲'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 6,
+          "评价": "'Next-token prediction is enough for AGI——Ilya Sutskever, OpenAI'"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 7,
+          "评价": "'For AI factories, intelligence is measured by AI token throughput——黄仁勋 2025GTC演讲'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "研究动机引权威原文比中译更具说服力, 且署名场合让听众能追溯来源; 中译会稀释可信度、paraphrase 会失去权威口吻",
+      "fix_hint": "动机/背景页引权威语时保留英文原句, 单独灰底引言块置放, 下方用 '——人名 场合' 格式署名, 不做翻译改写",
+      "exceptions": [
+        "方法/结果页无需引权威, 直接用数据说话"
+      ]
+    },
+    {
+      "id": "bullet_uses_noun_phrase_or_data_point_not_full_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "bullet/关键文字用名词短语+数据点",
+      "description": "内容页的关键文字/bullet 以名词短句或'指标+数值'的数据点形式呈现 (如'预填充复杂度 4BSD²+BDS²'、'端侧 153.34 tokens/s'), 而不用完整动宾句或'我们做了 X'的第一人称表述.",
+      "evidence_signals": [
+        "关键文字条目 ≤ 20 字, 以名词短语或数据点结尾",
+        "条目不含 '我们' / '本文' / '本页' 类主语",
+        "条目常含'指标:数值'冒号结构或数字+单位"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 8,
+          "评价": "'手机 供给5-10 / 需求100-1000 token/s'——设备+吞吐数据点"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 22,
+          "评价": "'TensorRT-LLM / NVIDIA / Flash Attention'——引擎/机构/算子三元组"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 35,
+          "评价": "'端侧 153.34 tokens/s' '云边协同 115.56 tokens/s'——数据点罗列"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 65,
+          "评价": "'循环次数 9 → 5' '记忆检索时间 2.64s → 0.54s'——优化前后数据点对"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "学术汇报 bullet 是给听众扫读的锚点, 名词短语+数据点扫读效率最高, 完整句会让听众陷入阅读而错过讲者口述",
+      "fix_hint": "把 bullet 改写为'名词短语'或'指标: 数值'/'A→B'结构, 删掉'我们''本文'类主语与完整谓语",
+      "exceptions": [
+        "致谢句/权威引言等需完整语义时可用完整句"
+      ]
+    },
+    {
+      "id": "reference_page_uses_single_column_citation_list",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "参考文献页·单列引用条目+超链接标注",
+      "description": "参考文献章用单列引用条目铺陈, 每条按'作者. 论文名. 会议/期刊 年份'格式, 蓝色超链接标注 arXiv/会议出处, 无正文叙事, 无核心论断.",
+      "evidence_signals": [
+        "section_role == 'references'",
+        "视觉骨架含 '单列引用条目列表' + '蓝色超链接文本'",
+        "关键文字含 arXiv/会议缩写(NIPS/SOSP/CVPR/ICLR/NeurIPS)",
+        "无主论点顶部蓝框"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 68,
+          "评价": "参考文献第1页, 单列条目 + 蓝色超链接"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 69,
+          "评价": "KV 缓存/量化相关引用, 同样单列 + 超链接"
+        },
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "slide_index": 70,
+          "评价": "剪枝/投机解码/智能体引用, 收尾单列"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "参考文献页作用是可追溯来源, 单列+超链接便于扫读与在电子稿点击跳转, 双列或图示会干扰查阅",
+      "fix_hint": "参考文献页统一为单列条目 + arXiv/会议出处蓝色超链接, 不加图表或论点框",
+      "exceptions": [
+        "无引用清单需求时不出参考文献页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (proposal, 74 slides), visual: 8 rules, authoring: 4 rules; deck 支线密集(3 大挑战 × 3 子问题), 底部导航条与骨架复用规则突出, 结果页数字强调与 claim 量化在方法/结果章密集出现",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 8,
+      "authoring": 4
+    }
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "schema_version": "4.0",
+  "pipeline": "v31_library_first",
+  "notes": "v31: IDEA builds a library-first material/logic/rule understanding; OUTLINE owns matching; GAP records unification/edit hints before deterministic byte-clone assembly.",
+  "agents": {
+    "IntakeAgent": {
+      "stage": "BRIEF",
+      "skills": [
+        "skills/intake/skill.md"
+      ],
+      "model_route": "intake",
+      "tool_routes": [],
+      "inputs": [
+        "app-state.json",
+        "question-state.json"
+      ],
+      "outputs": [
+        "question-state.json"
+      ],
+      "human_gate": true,
+      "review_gate": false
+    },
+    "BriefAnalysisAgent": {
+      "stage": "IDEA_ANALYSIS",
+      "skills": [
+        "skills/idea/idea_analysis.md"
+      ],
+      "model_route": "idea_analysis",
+      "tool_routes": [],
+      "inputs": [
+        "question-state.json",
+        "idea-intake-light.json",
+        "data/resources_library/logic/deck_level/",
+        "data/resources_library/logic/section_level/",
+        "data/resources_library/rule/logic_story/INDEX.json",
+        "data/resources_library/material/decks-index.json",
+        "data/resources_library/material/decks/*/deck.json",
+        "data/resources_library/material/decks/*/section.json"
+      ],
+      "outputs": [
+        "idea-analysis.json",
+        "idea-analysis.md",
+        "idea-review.json",
+        "idea-user-status.json"
+      ],
+      "human_gate": true,
+      "review_gate": false
+    },
+    "ProjectSourceUnderstandingAgent_REMOVED": {
+      "_note": "Stage merged into SOURCE_UNDERSTAND in P16. Master synthesis now lives at data/source-understanding.json."
+    },
+    "OutlineGenerationAgent": {
+      "stage": "OUTLINE_GENERATION",
+      "skills": [
+        "skills/outline_gen/outline_chapter_unified.md",
+        "skills/outline_gen/outline_chapter_stub.md",
+        "skills/outline_gen/outline_slide_detail.md",
+        "skills/outline_gen/outline_review.md",
+        "skills/outline_gen/outline_fix_from_review.md",
+        "skills/outline_gen/outline_human_summary.md"
+      ],
+      "model_route": "outline_generation",
+      "tool_routes": [],
+      "inputs": [
+        "idea-analysis.json",
+        "idea-intake-light.json",
+        "question-state.json",
+        "data/source-understanding.json",
+        "data/resources_library/rule/page_specific/INDEX.json",
+        "data/resources_library/rule/logic_story/INDEX.json",
+        "data/resources_library/logic/section_level/",
+        "data/resources_library/material/decks/"
+      ],
+      "outputs": [
+        "outline.json",
+        "outline.md",
+        "outline-review.json",
+        "outline-user-status.json",
+        "outline-chapter-stubs.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "GapCardGenerationAgent": {
+      "stage": "GAP_CARD_GENERATION",
+      "skills": [
+        "skills/gap_cards/gap_card_generation.md"
+      ],
+      "model_route": "gap_card_generation",
+      "tool_routes": [],
+      "inputs": [
+        "outline.json",
+        "slide-matches.json",
+        "data/source-understanding.json",
+        "project-doc-units.json",
+        "data/resources_library/material/decks/",
+        "data/resources_library/rule/page_specific/INDEX.json",
+        "data/resources_library/rule/logic_story/INDEX.json"
+      ],
+      "outputs": [
+        "gap-cards.json",
+        "chapter-gap-summary.json",
+        "slide-annotations.json",
+        "gap-card-user-status.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "DraftAssemblyAgent": {
+      "stage": "DRAFT_ASSEMBLY",
+      "skills": [
+        "skills/draft/draft_assembly.md"
+      ],
+      "model_route": null,
+      "tool_routes": [
+        "ppt_render"
+      ],
+      "inputs": [
+        "outline.json",
+        "gap-cards.json",
+        "slide-matches.json",
+        "slide-plan.json",
+        "reuse-first-outline.json",
+        "draft-assembly-plan.json",
+        "data/resources_library/material/imports/"
+      ],
+      "outputs": [
+        "draft-deck.pptx",
+        "draft-manuscript.md",
+        "draft-visual-plan.json",
+        "draft-source-lineage.json"
+      ],
+      "constraints": [
+        "tool-only execution of DRAFT_ASSEMBLY_PLAN; no semantic decisions"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "CharacterRevisionAgent": {
+      "stage": "CHARACTER_REVISION",
+      "skills": [
+        "skills/character_revision/apply_edits.md"
+      ],
+      "model_route": "character_revision",
+      "tool_routes": [],
+      "inputs": [
+        "draft-deck.pptx",
+        "gap-cards.json"
+      ],
+      "outputs": [
+        "revised-draft-deck.pptx",
+        "character-revision-audit.json"
+      ],
+      "constraints": [
+        "per-slide Claude call; JSON action DSL (replace_text/append_bullet/remove_bullet/replace_image); python-pptx applies; 3-retry on failure"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "VisualUnificationAgent": {
+      "stage": "VISUAL_UNIFICATION",
+      "skills": [],
+      "model_route": null,
+      "tool_routes": [],
+      "inputs": [
+        "revised-draft-deck.pptx"
+      ],
+      "outputs": [
+        "unified-draft-deck.pptx",
+        "visual-profile.json",
+        "visual-unification-audit.json"
+      ],
+      "constraints": [
+        "pure python (no LLM); vote profile from draft self, apply to fonts/sizes/colors while keeping semantic color whitelist"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "TemplateUnificationAgent": {
+      "stage": "TEMPLATE_UNIFICATION",
+      "skills": [],
+      "model_route": null,
+      "tool_routes": [],
+      "inputs": [
+        "unified-draft-deck.pptx",
+        "draft-source-lineage.json"
+      ],
+      "outputs": [
+        "final-shell-deck.pptx",
+        "template-unification-audit.json"
+      ],
+      "constraints": [
+        "pure python (no LLM); vote dominant source deck from lineage, overlay its shell (footer/pageNum/logo) onto minority slides"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "DraftReviewAgent": {
+      "stage": "DRAFT_REVIEW",
+      "skills": [
+        "skills/draft/draft_review.md"
+      ],
+      "model_route": "draft_review",
+      "tool_routes": [],
+      "inputs": [
+        "draft-assembly-plan.json",
+        "draft-manuscript.md",
+        "draft-visual-plan.json",
+        "slide-plan.json",
+        "reuse-decision-audit.json"
+      ],
+      "outputs": [
+        "draft-review.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "GapAnalysisAgent": {
+      "stage": "GAP_ANALYSIS",
+      "skills": [
+        "skills/draft/gap_analysis.md"
+      ],
+      "model_route": "gap_analysis",
+      "tool_routes": [],
+      "inputs": [
+        "slide-plan.json",
+        "draft-review.json",
+        "draft-source-lineage.json",
+        "data/source-understanding.json"
+      ],
+      "outputs": [
+        "slide-gap-plan.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "GapResearchAgent": {
+      "stage": "GAP_RESEARCH",
+      "skills": [
+        "skills/research/query_generation.md"
+      ],
+      "model_route": "research_query",
+      "tool_routes": [
+        "web_search",
+        "web_fetch",
+        "local_resource_search"
+      ],
+      "inputs": [
+        "slide-gap-plan.json",
+        "project-source-digest.json"
+      ],
+      "outputs": [
+        "research-query-plan.json",
+        "raw-research-results.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "GapSynthesisAgent": {
+      "stage": "GAP_SYNTHESIS",
+      "skills": [
+        "skills/research/synthesis.md",
+        "skills/research/gap_synthesis.md"
+      ],
+      "model_route": "gap_synthesis",
+      "tool_routes": [],
+      "inputs": [
+        "raw-research-results.json",
+        "slide-gap-plan.json",
+        "research-query-plan.json"
+      ],
+      "outputs": [
+        "per-slide-evidence-pack.json",
+        "citations.json",
+        "research.md",
+        "research-audit.json",
+        "gap-research-results.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "SlideRewriteAgent": {
+      "stage": "SLIDE_REWRITE",
+      "skills": [
+        "skills/slide/slide_rewrite.md"
+      ],
+      "model_route": "slide_rewrite",
+      "tool_routes": [],
+      "inputs": [
+        "slide-plan.json",
+        "draft-assembly-plan.json",
+        "reuse-decision-audit.json",
+        "per-slide-evidence-pack.json",
+        "citations.json"
+      ],
+      "outputs": [
+        "manuscript.md",
+        "slide-composition.json",
+        "visual-plan.json",
+        "model-routed-plan.json"
+      ],
+      "constraints": [
+        "claims may only come from slide-plan; evidence only from per-slide-evidence-pack; resource uses only from reuse-decision-audit"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "StyleUnificationAgent": {
+      "stage": "STYLE_UNIFICATION",
+      "skills": [
+        "skills/style/template_binding.md"
+      ],
+      "model_route": "template_style",
+      "tool_routes": [],
+      "inputs": [
+        "templates/basic/",
+        "draft-assembly-plan.json",
+        "visual-plan.json",
+        "manuscript.md"
+      ],
+      "outputs": [
+        "style-unification-plan.json",
+        "template-binding.json",
+        "style-profile.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "RenderPrecheckAgent": {
+      "stage": "RENDER_PRECHECK",
+      "skills": [
+        "skills/render/render_precheck.md"
+      ],
+      "model_route": "render_precheck",
+      "tool_routes": [],
+      "inputs": [
+        "manuscript.md",
+        "visual-plan.json",
+        "template-binding.json",
+        "citations.json"
+      ],
+      "outputs": [
+        "render-precheck.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "RenderAgent": {
+      "stage": "RENDER",
+      "skills": [
+        "skills/render/render_contract.md"
+      ],
+      "model_route": null,
+      "tool_routes": [
+        "ppt_render"
+      ],
+      "inputs": [
+        "manuscript.md",
+        "visual-plan.json",
+        "style-profile.json",
+        "template-binding.json",
+        "render-precheck.json"
+      ],
+      "outputs": [
+        "deck.pptx",
+        "render-log.md",
+        "structural-validation.md",
+        "render-audit.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "PptEvalAgent": {
+      "stage": "PPT_EVAL",
+      "skills": [
+        "skills/eval/ppteval_content.md",
+        "skills/eval/ppteval_coherence.md",
+        "skills/eval/ppteval_extract.md"
+      ],
+      "model_route": "ppt_eval",
+      "tool_routes": [],
+      "inputs": [
+        "deck.pptx",
+        "revised-draft-deck.pptx",
+        "idea-intake-light.json"
+      ],
+      "outputs": [
+        "eval-report.json",
+        "eval-summary.md"
+      ],
+      "constraints": [
+        "text-only 3-dim scoring (content/logic/constraint) via Claude; style dimension deferred pending libreoffice for VLM inspection"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "SystemReviewAgent": {
+      "stage": "SYSTEM_REVIEW",
+      "skills": [
+        "skills/review/structural_review.md",
+        "skills/review/logic_review.md",
+        "skills/review/fact_citation_review.md",
+        "skills/review/visual_review.md",
+        "skills/review/duration_density_review.md",
+        "skills/review/audience_fit_review.md"
+      ],
+      "model_route": "review",
+      "tool_routes": [
+        "validation"
+      ],
+      "inputs": [
+        "deck.pptx",
+        "project-source-digest.json",
+        "draft-assembly-plan.json",
+        "slide-plan.json",
+        "slide-gap-plan.json",
+        "per-slide-evidence-pack.json",
+        "structural-validation.md"
+      ],
+      "outputs": [
+        "deck-review.md",
+        "review-report.json",
+        "system-review-report.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "RevisionDecisionAgent": {
+      "stage": "REVISION_DECISION",
+      "skills": [
+        "skills/review/revision_decision.md"
+      ],
+      "model_route": "review",
+      "tool_routes": [],
+      "inputs": [
+        "system-review-report.json",
+        "review-report.json",
+        "render-audit.json",
+        "revision-state.json"
+      ],
+      "outputs": [
+        "revision-plan.json"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "ExportAgent": {
+      "stage": "FINAL_ACCEPT",
+      "skills": [
+        "skills/export/final_acceptance.md"
+      ],
+      "model_route": null,
+      "tool_routes": [],
+      "inputs": [
+        "deck.pptx",
+        "review-report.json",
+        "system-review-report.json",
+        "structural-validation.md"
+      ],
+      "outputs": [
+        "final-report.json"
+      ],
+      "human_gate": true,
+      "review_gate": false
+    },
+    "CodexDebugAgent": {
+      "stage": "PIPELINE_DEBUG",
+      "skills": [
+        "skills/debug/codex_debug.md"
+      ],
+      "model_route": "pipeline_debug",
+      "tool_routes": [],
+      "inputs": [
+        "app-state.json",
+        "route-log.jsonl",
+        "structural-validation.md"
+      ],
+      "outputs": [
+        "devops/codex-debug-report.md"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "BriefIntakeLightAgent": {
+      "stage": "IDEA_INTAKE_LIGHT",
+      "skills": [
+        "skills/idea/idea_intake_light.md"
+      ],
+      "model_route": "idea_intake_light",
+      "tool_routes": [],
+      "inputs": [
+        "question-state.json"
+      ],
+      "outputs": [
+        "idea-intake-light.json"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    }
+  }
+}

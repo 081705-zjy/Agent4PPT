@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_35",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 35,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "实验用模型与数据集",
+  "核心论断": "选取代表性视频生成模型与数据集验证方法",
+  "本页讲什么": "本页交代实验设置的第一块：所用的视频生成模型（Models）和评测数据集（datasets），为后续加速比、能效比、精度对比给出统一的实验基准，让听众理解结果建立在哪些模型和任务之上。",
+  "关键文字": [
+    "Models and datasets",
+    "Models"
+  ],
+  "视觉骨架": [
+    "模型与数据集清单",
+    "模型示意配图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_35.asset.01"
+  ],
+  "适合复用场景": [
+    "视频生成加速工作的实验设置页",
+    "模型/数据集基准介绍页"
+  ],
+  "不适合复用场景": [
+    "加速比结果对比页",
+    "硬件资源占用表页"
+  ],
+  "上页角色": "toc_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

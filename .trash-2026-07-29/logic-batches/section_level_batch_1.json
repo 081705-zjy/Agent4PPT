@@ -1,0 +1,3133 @@
+{
+  "batch_index": 1,
+  "patterns": [
+    {
+      "id": "method_three_sublayer_challenge_innovation_experiment_loop",
+      "title": "方法·三子层挑战-创新-实验递进闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          12,
+          18
+        ],
+        "must_have_in_chapter_purpose": [
+          "稀疏化",
+          "编译",
+          "硬件",
+          "软硬协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "structure_intro_computation_flow",
+          "count": 1,
+          "position": "start",
+          "purpose": "以计算流示意介绍目标对象基本结构"
+        },
+        {
+          "archetype": "sublayer_challenge_statement",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个子层以断言标题抛出关键挑战"
+        },
+        {
+          "archetype": "sublayer_innovation_answer",
+          "count": "5-8",
+          "position": "middle",
+          "purpose": "每个子层给出 1-3 页创新点(方法/机制/示例)"
+        },
+        {
+          "archetype": "sublayer_experiment_result",
+          "count": "2-3",
+          "position": "before_end",
+          "purpose": "每个子层以断言标题+具体数字给出实验结果"
+        },
+        {
+          "archetype": "three_layer_summary_flow",
+          "count": 1,
+          "position": "end",
+          "purpose": "以自上而下的三框流程图收束全章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "structure_intro_computation_flow",
+          "to_archetype": "sublayer_challenge_statement",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "sublayer_challenge_statement",
+          "to_archetype": "sublayer_innovation_answer",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "sublayer_innovation_answer",
+          "to_archetype": "sublayer_experiment_result",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "sublayer_experiment_result",
+          "to_archetype": "sublayer_challenge_statement",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "sublayer_experiment_result",
+          "to_archetype": "three_layer_summary_flow",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "沿『算法/稀疏化→编译/映射→硬件/架构』三层递进的深度方法章, 每子层以断言标题(Challenge/Key Ideas/Innovation/Experiment)组织挑战-创新-实验闭环, 末页三框流程图收束",
+      "anti_patterns": [
+        "单层深挖无三层结构 (只讲算法或只讲硬件) — 用 single_method_deep_dive pattern",
+        "challenge/solution 一一对应无子层分组 — 用 case_study_challenge_solution_performance_closed_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08",
+          "section_title": "LLM稀疏方法与编译硬件",
+          "section_role": "method",
+          "section_narrative": "展示本组LLM稀疏成果,沿「稀疏化→编译映射→硬件架构」三层递进,每层以挑战-创新-实验闭环,论证稀疏可近乎无精度损失地降算力并提速2×",
+          "section_topic_tags": [
+            "LLM 稀疏化",
+            "M3 自适应数据流",
+            "可配置硬件架构",
+            "算法-编译-架构协同"
+          ],
+          "match_evidence": "16 页恰好呈现三子层(sparsification 62-66 / compilation 67-71 / architecture 72-76)+ intro 62 + summary 77, 每子层含 challenge→innovation→experiment 内循环",
+          "slides": [
+            {
+              "slide_index": 62,
+              "role_in_pattern": "structure_intro_computation_flow",
+              "archetype": "intro_computation_flow_diagram",
+              "slide_title": "Introduction to LLM: attention + linear layers",
+              "slide_claim": "An LLM is mainly composed of attention layers and linear (Liner) layers",
+              "slide_key_text": [
+                "The LLM mainly consists of attention layers and linear layers",
+                "Attention layer Computational flow",
+                "Attention-mask",
+                "Liner"
+              ],
+              "slide_visual_skeleton": [
+                "Introduction 蓝色 tag",
+                "attention 计算流框图",
+                "Liner/Attention-mask 标注"
+              ]
+            },
+            {
+              "slide_index": 63,
+              "role_in_pattern": "sublayer_challenge_statement",
+              "archetype": "key_challenge_comparison_table",
+              "slide_title": "大模型稀疏重训练成本远高于小模型",
+              "slide_claim": "与 AI 1.0 小模型不同,大模型稀疏重训练极其昂贵,难以有效利用稀疏性",
+              "slide_key_text": [
+                "Different from AI 1.0 models, sparse retraining of large models is expensive",
+                "The training cost of LLM is much higher than that of small models",
+                "BERT-large 340M / 16GB / 3.3 billion / 16 V100 * 3 day",
+                "Llama2-7B 7B / 2.7TB / 2.0 trillion / 2048 A100 * 3.75 day"
+              ],
+              "slide_visual_skeleton": [
+                "Key Challenge 蓝色 tag",
+                "模型训练成本对比表",
+                "红字高亮成本 + 下箭头"
+              ]
+            },
+            {
+              "slide_index": 64,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_mask_generation_diagram",
+              "slide_title": "基于统计注意力分布自动生成稀疏掩码",
+              "slide_claim": "依据输入的统计注意力分布自动生成稀疏 mask,保信息同时降算力",
+              "slide_key_text": [
+                "Based on the statistical attention distribution, a sparse attention mask is automatically generated to maintain the original information while reducing calculation",
+                "Attention matrix at different positions of a model",
+                "Original model",
+                "Artificial mask: affects data distribution and requires retraining",
+                "Statistically generated mask: reduced impact without retraining or simple fine-tuning"
+              ],
+              "slide_visual_skeleton": [
+                "Innovation 紫色 tag",
+                "注意力矩阵转换箭头图",
+                "右侧三类掩码图例"
+              ]
+            },
+            {
+              "slide_index": 65,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_dual_table_compare",
+              "slide_title": "微调替代重训练,密度更低",
+              "slide_claim": "用微调代替重训练即可稀疏化,收敛快且密度降至 15.6%,优于同类",
+              "slide_key_text": [
+                "Fine-tuning from pre-trained dense model to sparse model",
+                "Use fine-tuning instead of retraining",
+                "finetune 6.4 million / 2 A100 * 1h",
+                "Converge fast",
+                "longformer 34% / bigbird 33% / reformer 25% / ours 15.6%"
+              ],
+              "slide_visual_skeleton": [
+                "Innovation 紫色 tag",
+                "左侧微调成本对比表",
+                "右侧密度对比表(ours 红框)"
+              ]
+            },
+            {
+              "slide_index": 66,
+              "role_in_pattern": "sublayer_experiment_result",
+              "archetype": "experiment_result_dual_path",
+              "slide_title": "稀疏掩码近乎无损降算力(精度降<0.14%)",
+              "slide_claim": "稀疏掩码在可接受精度内降算力:无重训练精度仅降0.14%,微调后反升0.37%",
+              "slide_key_text": [
+                "The use of sparse masks reduces model calculations while keeping accuracy changes within an acceptable range",
+                "Pretrained model -> sparse attention: without retraining, accuracy drops within 0.14%",
+                "Pretrained model -> super sparse attention + fine-tuning on 1.5K sentences: accuracy increased by 0.37%",
+                "Fluently summarize thousand words"
+              ],
+              "slide_visual_skeleton": [
+                "Experiment Result tag",
+                "两栏精度对比 + chart 占位",
+                "下方长文本摘要示例框"
+              ]
+            },
+            {
+              "slide_index": 67,
+              "role_in_pattern": "sublayer_challenge_statement",
+              "archetype": "challenge_utilization_compare",
+              "slide_title": "稀疏 LLM 访存受限,单一编译映射难达最优",
+              "slide_claim": "稀疏 LLM 算子访存受限,单一编译映射得不到最优数据流,算力利用率低",
+              "slide_key_text": [
+                "Operators in sparse LLM generally have limited memory access, and a single compilation mapping cannot obtain the optimal data flow, resulting in low utilization of computing units",
+                "The attention operator has the characteristic of limited memory access",
+                "SpMM Utilization 100%",
+                "SpGEMM Utilization 50%",
+                "Source: FLAT"
+              ],
+              "slide_visual_skeleton": [
+                "Challenge 蓝色 tag",
+                "左右两栏对比框",
+                "SpMM/SpGEMM 利用率标注"
+              ]
+            },
+            {
+              "slide_index": 68,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "key_idea_tradeoff_statement",
+              "slide_title": "分块后访存量取决于块大小,算子融合非总有益",
+              "slide_claim": "计算任务分块后访存量与块大小相关,块越小访存越大,算子融合并非总有益",
+              "slide_key_text": [
+                "Operator fusion does not always bring benefits, depending on the relationship between the size of the computing task and hardware resources",
+                "Consider the amount of memory access after computing tasks are divided into blocks",
+                "The amount of memory access is related to the block size of the computing task",
+                "The smaller the block, the greater the amount of memory access"
+              ],
+              "slide_visual_skeleton": [
+                "Key Ideas 紫色 tag",
+                "分块访存概念说明框",
+                "红字结论强调"
+              ]
+            },
+            {
+              "slide_index": 69,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "key_idea_quantitative_example",
+              "slide_title": "片上存储受限使融合数据流访存反增(13x)",
+              "slide_claim": "片上存储有限致其他维度数据复用变差,融合数据流反而放大总访存",
+              "slide_key_text": [
+                "A×B=C, C×D=E",
+                "No operator fusion (10x memory access amount)",
+                "Operator fusion (13x memory access amount)",
+                "Due to limited on-chip storage, data reuse in other dimensions becomes worse and the total memory access becomes larger",
+                "reside on chip"
+              ],
+              "slide_visual_skeleton": [
+                "Key Ideas 紫色 tag",
+                "矩阵乘法维度数字标注",
+                "融合/不融合访存量对比"
+              ]
+            },
+            {
+              "slide_index": 70,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_model_adaptive_dataflow",
+              "slide_title": "基于 M3 建模的自适应稀疏数据流",
+              "slide_claim": "提出稀疏多矩阵乘(M3)模型,依任务与硬件自适应选择最优数据流",
+              "slide_key_text": [
+                "A sparse multi-matrix multiplication (M3) model is proposed to adaptively select the best execution data flow based on the input of the task and hardware",
+                "Adaptive sparse data flow based on M3",
+                "Hardware constraints + Computing tasks -> Best data flow",
+                "Non-fused / Fused / Adaptive",
+                "Apply non-fused data flow / Apply fused data flow"
+              ],
+              "slide_visual_skeleton": [
+                "Key Ideas 紫色 tag",
+                "M3 模型输入→输出框图",
+                "Non-fused/Fused/Adaptive 三列对比"
+              ]
+            },
+            {
+              "slide_index": 71,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_operator_combination_example",
+              "slide_title": "M3 建模多算子组合的稀疏线性层示例",
+              "slide_claim": "考虑稀疏后 M3 可建模多种算子组合,以稀疏线性层为例判定融合优劣",
+              "slide_key_text": [
+                "After considering sparsity, the multi-matrix multiplication model can be used to model multiple operator combinations",
+                "The sparse linear layer example",
+                "Dense operator / Sparse attention / Sparse FFN",
+                "Other sparse operators (combinations)",
+                "Better without fusion / Better with fusion"
+              ],
+              "slide_visual_skeleton": [
+                "Key Ideas 紫色 tag",
+                "多算子类型列表",
+                "融合优劣判定示意"
+              ]
+            },
+            {
+              "slide_index": 72,
+              "role_in_pattern": "sublayer_challenge_statement",
+              "archetype": "challenge_discrete_vs_configurable",
+              "slide_title": "SpMM 与 SDDMM 主导,离散设计硬件昂贵",
+              "slide_claim": "稀疏算子以 SpMM、SDDMM 为主,为各算子离散设计专用硬件开销高",
+              "slide_key_text": [
+                "Large models have multiple sparse operators at the same time, and it is expensive to design the hardware architecture discretely",
+                "Sparse operators SpMM and SDDMM dominate",
+                "Designing dedicated hardware architectures for different sparsity operators is expensive",
+                "Discrete design, high hardware overhead",
+                "Configurable, low hardware overhead"
+              ],
+              "slide_visual_skeleton": [
+                "Challenges 蓝色 tag",
+                "算子占比示意",
+                "离散设计 vs 可配置硬件对比框"
+              ]
+            },
+            {
+              "slide_index": 73,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_configurable_array_diagram",
+              "slide_title": "可配置乘法器阵列与归约单元架构",
+              "slide_claim": "结合稀疏方法复用算子间共性,设计可配置架构以最小化硬件开销",
+              "slide_key_text": [
+                "Combined with the sparse method, maximize the reusable structure between different sparse operators, and design a configurable hardware architecture to minimize hardware overhead",
+                "Configurable Multiplexer Array and Reduction",
+                "Input Path: Configurable Multiplexer Array",
+                "Output path: Configurable Reduction",
+                "Schematic diagram of data path on SpMM and SDDMM"
+              ],
+              "slide_visual_skeleton": [
+                "Innovation 紫色 tag",
+                "Tensor Core 输入/输出路径框图",
+                "SpMM/SDDMM 数据通路示意"
+              ]
+            },
+            {
+              "slide_index": 74,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_input_path_configurable",
+              "slide_title": "输入路径:按算子顺序复用的可配置数据通路",
+              "slide_claim": "输入路径按不同稀疏算子运算顺序复用数据路径(select/transpose)",
+              "slide_key_text": [
+                "Matrix input path: multiplex the input data path according to the order of different sparse operator operations",
+                "row-major storage",
+                "select / transpose",
+                "(a) SpMM",
+                "(b) SDDMM"
+              ],
+              "slide_visual_skeleton": [
+                "Innovation 紫色 tag",
+                "输入路径高亮框图",
+                "select/transpose 矩阵变换示意"
+              ]
+            },
+            {
+              "slide_index": 75,
+              "role_in_pattern": "sublayer_innovation_answer",
+              "archetype": "innovation_output_path_configurable",
+              "slide_title": "输出路径:块重要度稀疏模式复用归约树",
+              "slide_claim": "输出路径结合块重要度稀疏模式复用归约树,不扩位宽、不增连线",
+              "slide_key_text": [
+                "Matrix output path: combined with block importance-based sparse mode to minimize additional hardware architecture overhead",
+                "Output path: Configurable Reduction",
+                "(a) SpMM / (b) SDDMM",
+                "Only expands the data bit width, no additional connection structure is required"
+              ],
+              "slide_visual_skeleton": [
+                "Innovation 紫色 tag",
+                "输出路径归约树框图",
+                "SpMM/SDDMM PE 归约对比"
+              ]
+            },
+            {
+              "slide_index": 76,
+              "role_in_pattern": "sublayer_experiment_result",
+              "archetype": "experiment_result_baseline_multi",
+              "slide_title": "相比现有架构加速最高达 2 倍",
+              "slide_claim": "在 BERT-6.7B、OPT-6.7B 上,相比现有硬件架构速度最高提升 2 倍",
+              "slide_key_text": [
+                "Compared with the existing hardware architecture, the speed is increased by up to 2 times",
+                "Experimental setup",
+                "Baseline: Tensor core, SpMM accelerator Sextans, LLM accelerator Sanger",
+                "Model: BERT-6.7B and OPT-6.7B",
+                "Evaluation on two typical LLMs"
+              ],
+              "slide_visual_skeleton": [
+                "Experiment 标题栏",
+                "左侧实验设置文本框",
+                "右侧 BERT/OPT 评测图区"
+              ]
+            },
+            {
+              "slide_index": 77,
+              "role_in_pattern": "three_layer_summary_flow",
+              "archetype": "three_layer_summary_vertical_flow",
+              "slide_title": "LLM 稀疏工作总结:稀疏化→编译→架构",
+              "slide_claim": "本组 LLM 稀疏工作沿稀疏化→编译→架构三层递进闭环",
+              "slide_key_text": [
+                "LLM: Summary",
+                "Sparsification",
+                "Compilation",
+                "Architecture"
+              ],
+              "slide_visual_skeleton": [
+                "Summary 标题栏",
+                "三框竖向流程图",
+                "向下箭头连接"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "framework_progressive_flow_build_plus_formula_unpack",
+      "title": "框架·分幕流程构建+公式因子逐层高亮",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "流程",
+          "方法论",
+          "公式",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "progressive_flow_stage_build",
+          "count": 3,
+          "position": "start",
+          "purpose": "逐帧 build 多阶段技术流程图, 每页新增一段"
+        },
+        {
+          "archetype": "formula_factor_highlight",
+          "count": 3,
+          "position": "middle",
+          "purpose": "用一个等效算力/性能公式, 每页高亮拆解一个因子"
+        },
+        {
+          "archetype": "three_layer_design_summary",
+          "count": 1,
+          "position": "middle",
+          "purpose": "多层协同设计小结, 三分区+三条编号要点"
+        },
+        {
+          "archetype": "trend_lead_in_new_scenario",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引入新场景(如 LLM+专用模型) 承接后续创新点"
+        },
+        {
+          "archetype": "innovation_novel_paradigm_pair",
+          "count": "1-2",
+          "position": "middle",
+          "purpose": "用对比示例展示新范式的量级降算力/降复杂度"
+        },
+        {
+          "archetype": "review_previous_tutorial_holder",
+          "count": 1,
+          "position": "middle",
+          "purpose": "回顾旧版 tutorial 作为进展对比锚点"
+        },
+        {
+          "archetype": "progress_map_operators",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图展示 N 年内算子/性能进展"
+        },
+        {
+          "archetype": "industry_revolution_positioning",
+          "count": "1-2",
+          "position": "before_end",
+          "purpose": "用工业革命/时代高度升华技术意义"
+        },
+        {
+          "archetype": "handoff_to_our_methods_roadmap",
+          "count": 1,
+          "position": "end",
+          "purpose": "以双行进展+本组方法预告收束章节"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "progressive_flow_stage_build",
+          "to_archetype": "progressive_flow_stage_build",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "progressive_flow_stage_build",
+          "to_archetype": "formula_factor_highlight",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "formula_factor_highlight",
+          "to_archetype": "formula_factor_highlight",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "formula_factor_highlight",
+          "to_archetype": "three_layer_design_summary",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "three_layer_design_summary",
+          "to_archetype": "trend_lead_in_new_scenario",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "trend_lead_in_new_scenario",
+          "to_archetype": "innovation_novel_paradigm_pair",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "innovation_novel_paradigm_pair",
+          "to_archetype": "review_previous_tutorial_holder",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "review_previous_tutorial_holder",
+          "to_archetype": "progress_map_operators",
+          "hook_type": "before_to_after"
+        },
+        {
+          "from_archetype": "progress_map_operators",
+          "to_archetype": "industry_revolution_positioning",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "industry_revolution_positioning",
+          "to_archetype": "handoff_to_our_methods_roadmap",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "tutorial 方法论内核章: 用分幕 build 的流程图+公式因子高亮拆解原理, 再用新场景+创新点承接, 末尾用回顾/时代升华+本组方法路线图收束",
+      "anti_patterns": [
+        "单页塞完整流程图无逐帧 build — 用 single_dense_diagram pattern",
+        "公式一次性给出无因子拆解 — 用 formula_all_at_once pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.03",
+          "section_title": "稀疏计算流程与思想",
+          "section_role": "framework",
+          "section_narrative": "全deck方法论内核章：先用逐步build的三段流程图(稀疏化-编译-架构)与等效算力公式讲清稀疏计算原理，再以LLM+结构化知识为创新点，回顾2022并展示2022→2024进展，末尾预告本组方法，承接后续成果章。",
+          "section_topic_tags": [
+            "稀疏计算流程",
+            "等效算力公式",
+            "算法-编译-架构协同",
+            "LLM 结构化知识",
+            "工业革命升华"
+          ],
+          "match_evidence": "15 页节奏: slide10-12 逐帧 build 稀疏化-编译-架构三段流程 + slide13-15 逐层高亮等效算力公式三因子 + 小结/趋势/创新/回顾/进展/时代/预告",
+          "slides": [
+            {
+              "slide_index": 10,
+              "role_in_pattern": "progressive_flow_stage_build",
+              "archetype": "progressive_flow_stage_build",
+              "slide_title": "稀疏计算流程(一)：稀疏化 GEMM→SpMM",
+              "slide_claim": "神经网络稀疏化把稠密 GEMM 转为 SpMM，是稀疏计算的第一步",
+              "slide_key_text": [
+                "General Matrix Multiplication (GEMM)",
+                "Sparse-matrix Dense-matrix Multiplication (SpMM)",
+                "Sparsification"
+              ],
+              "slide_visual_skeleton": [
+                "稠密/稀疏神经网络对比图",
+                "GEMM 与 SpMM 矩阵示意",
+                "Sparsification 红框标注",
+                "灰色箭头流程"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "progressive_flow_stage_build",
+              "archetype": "progressive_flow_stage_build",
+              "slide_title": "稀疏计算流程(二)：编译的三种乘法模式",
+              "slide_claim": "稀疏化后需经 Compilation 选择 Inner/Row-based/Outer product 计算模式",
+              "slide_key_text": [
+                "Sparsification",
+                "Compilation",
+                "Inner product",
+                "Row-based",
+                "Outer product"
+              ],
+              "slide_visual_skeleton": [
+                "稠密/稀疏网络对比图",
+                "三种乘法模式矩阵示意",
+                "Compilation 红框高亮",
+                "分步流程箭头"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "progressive_flow_stage_build",
+              "archetype": "progressive_flow_stage_build",
+              "slide_title": "稀疏计算流程(三)：稀疏化-编译-架构全流程",
+              "slide_claim": "稀疏计算由稀疏化、编译、架构三段串联构成完整流程",
+              "slide_key_text": [
+                "Sparsification",
+                "Compilation",
+                "Architecture",
+                "Inner product",
+                "Row-based",
+                "Outer product"
+              ],
+              "slide_visual_skeleton": [
+                "三段流程箭头链",
+                "网络+矩阵+乘法模式组合图",
+                "Architecture 红圈占位",
+                "分层流程标签"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "formula_factor_highlight",
+              "archetype": "formula_factor_highlight",
+              "slide_title": "稀疏计算思想(一)：算法层降低计算量",
+              "slide_claim": "算法层稀疏化在完成同任务时降低稀疏计算工作量占比",
+              "slide_key_text": [
+                "study the design method of multi-level sparse computing based on \"algorithm-compilation-architecture\"",
+                "When completing the same task, the proportion of sparse computing workload reduced",
+                "Equivalent computational ratio",
+                "Moore's Law Slows"
+              ],
+              "slide_visual_skeleton": [
+                "Research 紫色标签框",
+                "算法-编译-架构三层竖排框",
+                "等效算力公式条",
+                "稠密/稀疏矩阵向量对比"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "formula_factor_highlight",
+              "archetype": "formula_factor_highlight",
+              "slide_title": "稀疏计算思想(二)：编译层提升利用率",
+              "slide_claim": "编译层通过隐藏数据读写等待时间提升计算单元利用率",
+              "slide_key_text": [
+                "Peak computility × Equivalent computational ratio × Utilization",
+                "wait data read",
+                "wait data write back",
+                "runtime",
+                "available time",
+                "computing unit"
+              ],
+              "slide_visual_skeleton": [
+                "算法-编译-架构三层框(Compilation 高亮)",
+                "等效算力×利用率公式",
+                "计算单元时间轴甘特图",
+                "等待/运行时段标注"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "formula_factor_highlight",
+              "archetype": "formula_factor_highlight",
+              "slide_title": "稀疏计算思想(三)：架构层支持稀疏模式",
+              "slide_claim": "架构层需支持多种稀疏模式以完成等效算力公式最后一环",
+              "slide_key_text": [
+                "Architecture support",
+                "sparse mode 0, proportion: 30%",
+                "sparse mode 1, proportion: 40%",
+                "sparse algorithm",
+                "Equivalent computational ratio × Utilization"
+              ],
+              "slide_visual_skeleton": [
+                "算法-编译-架构三层框(Architecture 高亮)",
+                "四因子等效算力公式",
+                "两种稀疏模式矩阵示意",
+                "sparse algorithm 虚线框"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "three_layer_design_summary",
+              "archetype": "three_layer_design_summary",
+              "slide_title": "稀疏计算思想小结：多层设计三要点",
+              "slide_claim": "AI 稀疏计算需算法降计算、编译提利用、架构支持稀疏三层协同",
+              "slide_key_text": [
+                "AI Sparse Computing multi-level design approach",
+                "① algorithm: reduce computation",
+                "② compilation: increase utilization",
+                "③ architecture: support sparsity",
+                "Sparse Algorithm / Compilation / Architecture"
+              ],
+              "slide_visual_skeleton": [
+                "左侧三层彩色框",
+                "右侧三条编号要点",
+                "多层设计标题居中",
+                "花括号归纳符"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "trend_lead_in_new_scenario",
+              "archetype": "trend_lead_in_new_scenario",
+              "slide_title": "AI 趋势二：LLM+专用模型",
+              "slide_claim": "LLM 与专用模型融合，用大模型增强各类专用模型能力",
+              "slide_key_text": [
+                "Model: LLM + Specific models",
+                "Specific Model Types",
+                "CNN / GNN / Point Cloud / Transformer",
+                "Computer Vision / Recommendation System / Object Detection / NLP",
+                "LLM enhanced Models"
+              ],
+              "slide_visual_skeleton": [
+                "左右两大分区框",
+                "专用模型类型→应用箭头列表",
+                "LLM 红块 + 能力箭头",
+                "上升绿箭头"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "innovation_novel_paradigm_pair",
+              "archetype": "innovation_novel_paradigm_pair",
+              "slide_title": "创新点：LLM+结构化知识降算力",
+              "slide_claim": "LLM 融合结构化知识可将单 token 算力从 GFLOPs 降到 KFLOPs",
+              "slide_key_text": [
+                "LLM + structured knowledge becomes a new way to improve LLM ability",
+                "How to compute '1+1+1=3' ?",
+                "10 GFLOPs per token (Dense)",
+                "~KFLOPs per token (Sparse)",
+                "Structured Knowledge also reduce computility",
+                "LLaMA2-7b"
+              ],
+              "slide_visual_skeleton": [
+                "左右两组 LLM 层块图",
+                "Dense/Sparse 算力对比柱图",
+                "1+1+1=3 示例文字",
+                "结构化知识标注框"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "innovation_novel_paradigm_pair",
+              "archetype": "innovation_novel_paradigm_pair",
+              "slide_title": "创新点：结构化知识把复杂度降到 O(1)",
+              "slide_claim": "结构化知识把 LLM 的 O(N²) 计算复杂度降至 O(1)",
+              "slide_key_text": [
+                "Text '1+1+1='",
+                "LLM → O(N²)",
+                "LLM + Structured Knowledge → O(1)",
+                "x2 / x3 / x5"
+              ],
+              "slide_visual_skeleton": [
+                "左侧 LLM 红色意象图",
+                "右侧知识图谱节点边图",
+                "O(N²)/O(1) 对比箭头",
+                "红色空心箭头"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "review_previous_tutorial_holder",
+              "archetype": "review_previous_tutorial_holder",
+              "slide_title": "回顾 ASP-DAC 2022 Tutorial",
+              "slide_claim": "回顾 2022 tutorial 以 GNN/SC'20 为代表的稀疏工作起点",
+              "slide_key_text": [
+                "Review ASP-DAC 2022 Tutorial",
+                "GNN",
+                "SC' 20"
+              ],
+              "slide_visual_skeleton": [
+                "左中右三块占位版式",
+                "右侧 GNN/SC'20 小框",
+                "红色标注框",
+                "虚线引导线"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "progress_map_operators",
+              "archetype": "progress_map_operators",
+              "slide_title": "2022→2024 进展：更多应用与更高性能",
+              "slide_claim": "两年间稀疏算子扩展到更多应用并取得显著性能提升",
+              "slide_key_text": [
+                "Sparse operators",
+                "More Applications",
+                "GNN / Point Cloud / HyperGraph",
+                "Higher Performance",
+                "SpMM 57%",
+                "SDDMM 14.01x",
+                "cuSPARSE vs GT-SPARSE"
+              ],
+              "slide_visual_skeleton": [
+                "Sparse operators 横向流程带",
+                "More Applications/Higher Performance 双框",
+                "SpMM/SDDMM 对比柱图",
+                "红色加速比标注"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "industry_revolution_positioning",
+              "archetype": "industry_revolution_positioning",
+              "slide_title": "2022→2024：AI 是第四次工业革命生产力基础",
+              "slide_claim": "AI 正成为第四次工业革命的生产力基础，此刻正当时",
+              "slide_key_text": [
+                "AI is the foundation of the productivity in the 4th Industrial Revolution",
+                "1st Industrial Revolution 1760s -",
+                "2nd Industrial Revolution 1870s -",
+                "3rd Industrial Revolution 1940s -",
+                "4th Industrial Revolution Now!"
+              ],
+              "slide_visual_skeleton": [
+                "顶部主张横幅框",
+                "四段工业革命时间线",
+                "粉色时间轴箭头",
+                "各阶段节点标注"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "industry_revolution_positioning",
+              "archetype": "industry_revolution_positioning",
+              "slide_title": "2022→2024：LLM 是各类 AI 应用的基础设施",
+              "slide_claim": "LLM 正成为支撑各类 AI 应用的基础设施",
+              "slide_key_text": [
+                "LLM is infrastructure for various AI applications",
+                "4th Industrial Revolution Now!"
+              ],
+              "slide_visual_skeleton": [
+                "顶部主张横幅框",
+                "红色空心右向箭头",
+                "粉色时间轴(仅第四次节点)",
+                "留白版式"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "handoff_to_our_methods_roadmap",
+              "archetype": "handoff_to_our_methods_roadmap",
+              "slide_title": "2022→2024 全景：预告本组 LLM 稀疏方法",
+              "slide_claim": "在稀疏算子进展之上，本组面向 LLM 提出多层稀疏与低成本 FPGA 方法",
+              "slide_key_text": [
+                "Sparse operators",
+                "More Applications",
+                "Higher Performance",
+                "SpMM 57% / SDDMM 14.01x",
+                "Our methods for LLM",
+                "Multi-level Design with Sparsity",
+                "Low-cost LLM on FPGA"
+              ],
+              "slide_visual_skeleton": [
+                "上下两行横向流程带",
+                "上行算子进展双框+柱图",
+                "下行本组方法双框",
+                "红/蓝双色区分"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "title": "案例·多轮观察-解法对+端到端消融",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          10,
+          16
+        ],
+        "must_have_in_chapter_purpose": [
+          "观察",
+          "方案",
+          "消融",
+          "加速比",
+          "代表工作"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面/标题+作者+会议引入"
+        },
+        {
+          "archetype": "realtime_need_vs_sota_gap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以现实需求 vs SOTA 精度/性能缺口做动机"
+        },
+        {
+          "archetype": "computation_pipeline_overview",
+          "count": 1,
+          "position": "start",
+          "purpose": "铺陈目标计算流程/管线, 供后续 Observation 定位瓶颈"
+        },
+        {
+          "archetype": "observation_initial",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 首页: 抛出一个瓶颈现象+数字"
+        },
+        {
+          "archetype": "observation_extension",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每轮 Observation 延伸页: 深入证据/进一步机制"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "针对每个 Observation 给出对应 Solution"
+        },
+        {
+          "archetype": "end_to_end_performance",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "端到端加速比作为整体收益证明"
+        },
+        {
+          "archetype": "ablation_grid",
+          "count": 1,
+          "position": "end",
+          "purpose": "多象限消融验证各 Solution 独立贡献"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "paper_title_authors_only",
+          "to_archetype": "realtime_need_vs_sota_gap",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "realtime_need_vs_sota_gap",
+          "to_archetype": "computation_pipeline_overview",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "computation_pipeline_overview",
+          "to_archetype": "observation_initial",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "observation_initial",
+          "to_archetype": "observation_extension",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "observation_extension",
+          "to_archetype": "solution_answer",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "solution_answer",
+          "to_archetype": "observation_initial",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "solution_answer",
+          "to_archetype": "end_to_end_performance",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "end_to_end_performance",
+          "to_archetype": "ablation_grid",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "系统/加速器论文的深度案例章: 论文封面→需求缺口→流程图→3 轮 Observation(每轮 initial+extension)→Solution 一一对应→端到端加速+消融收尾",
+      "anti_patterns": [
+        "单挑战单解法一次性给出 — 用 challenge_solution_performance_closed_loop pattern",
+        "无 Observation→Solution 一一对应, 只讲方法罗列 — 用 method_component_listing pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.05",
+          "section_title": "点云稀疏卷积加速",
+          "section_role": "case_study",
+          "section_narrative": "作为 deck 首个落地成果案例,深度拆解点云稀疏卷积加速论文:由「实时需求 vs SOTA 精度」缺口切入,以三组 Observation→Solution 递进(冗余加载/低利用率/静态数据流),末尾端到端加速比与消融收束。",
+          "section_topic_tags": [
+            "点云稀疏卷积",
+            "Coded-CSR 存储",
+            "FGMS 融合",
+            "自适应数据流",
+            "MLSys23"
+          ],
+          "match_evidence": "14 页节奏: paper(35)+gap(36)+pipeline(37)+ 3 轮 obs-ext-sol(38-46)+ e2e(47)+ ablation(48)",
+          "slides": [
+            {
+              "slide_index": 35,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "论文首页:点云稀疏卷积硬件利用与自适应数据流",
+              "slide_claim": "本工作面向 3D 点云稀疏卷积,联合优化硬件利用率与自适应数据流",
+              "slide_key_text": [
+                "Exploiting Hardware Utilization and Adaptive Dataflow for Efficient Sparse Convolution in 3D Point Clouds",
+                "Ke Hong, Zhongming Yu, Guohao Dai 等",
+                "Tsinghua / UC San Diego / SJTU",
+                "Accepted by MLSys'23"
+              ],
+              "slide_visual_skeleton": [
+                "大号论文标题",
+                "作者与机构署名块",
+                "会议接收标注"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_pattern": "realtime_need_vs_sota_gap",
+              "archetype": "realtime_need_vs_sota_gap",
+              "slide_title": "点云应用:实时需求与 SOTA 精度的缺口",
+              "slide_claim": "Voxel-based 方法虽达 SOTA 精度,但帧率远低于 25~30FPS 实时需求",
+              "slide_key_text": [
+                "Voxel-based 方法达 SOTA Accuracy",
+                "Real-time Demand: 25~30FPS",
+                "<5FPS on Nvidia Xavier GPU",
+                "~10FPS on Nvidia RTX 2080 GPU"
+              ],
+              "slide_visual_skeleton": [
+                "左侧 Methods 虚线框",
+                "右侧精度-需求对照块",
+                "帧率数字标注"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "computation_pipeline_overview",
+              "archetype": "computation_pipeline_overview",
+              "slide_title": "稀疏卷积计算流程:Gather-MM-Scatter",
+              "slide_claim": "稀疏卷积由稀疏输入经不规则访存、稠密计算、再散射构成",
+              "slide_key_text": [
+                "Sparse Input: Only 0.01%-1% density",
+                "Irregular Access: Gather valid features",
+                "Dense Computing: MMs between features and weights",
+                "Irregular Access: Scatter partial sums"
+              ],
+              "slide_visual_skeleton": [
+                "四阶段横向流程框",
+                "Gather-MM-Scatter 管线示意"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "observation_initial",
+              "archetype": "observation_initial",
+              "slide_title": "Observation 1:无效映射的冗余加载",
+              "slide_claim": "遍历全部权重映射时,高达 79.97% 映射为空造成冗余加载",
+              "slide_key_text": [
+                "Observation 1: Redundant loadings of invalid mappings",
+                "1) Load input feature (P)",
+                "3) Traverse mappings of all weights (W)",
+                "5) If mapping is valid, write feature",
+                "Up to 79.97% mappings are empty"
+              ],
+              "slide_visual_skeleton": [
+                "Observation 编号标题块",
+                "编号步骤列表",
+                "红框冗余加载结论标注"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_pattern": "observation_extension",
+              "archetype": "observation_extension",
+              "slide_title": "Observation 1 延伸:列/值数组可进一步压缩",
+              "slide_claim": "列元素<K、值元素<N,列数组与值数组可进一步压缩",
+              "slide_key_text": [
+                "Column array and value array can be further compressed",
+                "Column element < K (kernel size)",
+                "value element < N (number of input non-zeros)",
+                "Only valid mappings are stored"
+              ],
+              "slide_visual_skeleton": [
+                "Observation 1 灰化回顾标题",
+                "压缩空间论断行",
+                "有效映射结论标注"
+              ]
+            },
+            {
+              "slide_index": 40,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 1:Coded-CSR 映射存储格式",
+              "slide_claim": "Coded-CSR 将列/值编码为单数组,有效映射仅需约 1 次 int32 加载",
+              "slide_key_text": [
+                "Solution 1: Coded-CSR Format Mapping Storage",
+                "Sparse format for mapping storage",
+                "Column and value arrays coded into one array",
+                "Encoder function: c = a + Mb, M ≥ K",
+                "about 1 (int32) loading for a valid mapping"
+              ],
+              "slide_visual_skeleton": [
+                "Solution 编号标题块",
+                "编码公式行",
+                "单映射加载量结论标注"
+              ]
+            },
+            {
+              "slide_index": 41,
+              "role_in_pattern": "observation_initial",
+              "archetype": "observation_initial",
+              "slide_title": "Observation 2:逐个计算 FGMS 导致利用率低",
+              "slide_claim": "顺序执行各 FGMS 无法数学并行,GPU 利用率仅 22.3%",
+              "slide_key_text": [
+                "Observation 2: Sequentially computing each FGMS leads to under-utilization",
+                "not able to be paralleled mathematically",
+                "Dataflow: Fetch-on-Demand",
+                "Weight-major mapping",
+                "Only 22.3% GPU utilization"
+              ],
+              "slide_visual_skeleton": [
+                "Observation 标题块",
+                "FGMS 输入-权重-输出计算示意图",
+                "利用率红框标注"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_pattern": "observation_extension",
+              "archetype": "observation_extension",
+              "slide_title": "Observation 2 延伸:批量 FGMS 仍存在冗余",
+              "slide_claim": "分段 FGMS 可硬件并行,但批量方案仍致冗余,利用率仅 32.6%",
+              "slide_key_text": [
+                "Segmented FGMSs can be paralleled through hardware mapping strategy",
+                "Batched FGMS scheme still leads to computing redundancy and under-utilization",
+                "Only 32.6% GPU utilization"
+              ],
+              "slide_visual_skeleton": [
+                "Observation 2 灰化回顾标题",
+                "并行化论断行",
+                "利用率红框标注"
+              ]
+            },
+            {
+              "slide_index": 43,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 2:指示符辅助 FGMS 融合方案",
+              "slide_claim": "用稀疏指示符融合分段 FGMS,指明各 FGMS 的映射表地址",
+              "slide_key_text": [
+                "Solution 2: Indicator-assisted FGMS Fusion Scheme",
+                "Segmented FGMSs are fused with a sparse indicator",
+                "indicator indicates the mapping table address from each FGMS"
+              ],
+              "slide_visual_skeleton": [
+                "Solution 编号标题块",
+                "指示符融合方案说明行"
+              ]
+            },
+            {
+              "slide_index": 44,
+              "role_in_pattern": "observation_initial",
+              "archetype": "observation_initial",
+              "slide_title": "Observation 3:静态数据流面对输入动态性损失性能",
+              "slide_claim": "面对多变输入,单一静态数据流带来性能损失",
+              "slide_key_text": [
+                "Observation 3: Static dataflow brings performance loss against input dynamics",
+                "Various input",
+                "Performance loss with single dataflow"
+              ],
+              "slide_visual_skeleton": [
+                "Observation 标题块",
+                "输入多变性示意",
+                "性能损失虚线框标注"
+              ]
+            },
+            {
+              "slide_index": 45,
+              "role_in_pattern": "observation_extension",
+              "archetype": "observation_extension",
+              "slide_title": "Observation 3 延伸:数据流切换引发额外映射搜索",
+              "slide_claim": "数据流切换致额外映射搜索占 70.03%,可依网络结构复用映射",
+              "slide_key_text": [
+                "Different mapping patterns are used in different dataflows",
+                "extra mapping searches upon dataflow switches",
+                "Mapping reuse can be exploited based on network structure",
+                "Mapping search 70.03% / Others 29.97%",
+                "Runtime breakdown of a strided sparse convolutional layer"
+              ],
+              "slide_visual_skeleton": [
+                "Observation 3 灰化回顾标题",
+                "静态/切换数据流映射搜索对比图",
+                "运行时分解占比标注"
+              ]
+            },
+            {
+              "slide_index": 46,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 3:启发式自适应数据流选择",
+              "slide_claim": "层间选数据流提性能,分组选数据流避免额外映射搜索",
+              "slide_key_text": [
+                "Solution 3: Heuristic Adaptive Dataflow Selection",
+                "Layer-wise dataflow selection to exploit network performance improvement",
+                "Group-based dataflow selection to avoid extra mapping searches"
+              ],
+              "slide_visual_skeleton": [
+                "Solution 编号标题块",
+                "Layer-wise 选择示意框",
+                "Group-based 选择示意框"
+              ]
+            },
+            {
+              "slide_index": 47,
+              "role_in_pattern": "end_to_end_performance",
+              "archetype": "end_to_end_performance",
+              "slide_title": "端到端实验:相较 TorchSparse/SpConv 的加速",
+              "slide_claim": "端到端平均加速 1.64x/1.23x,稀疏卷积加速 1.81x/1.76x",
+              "slide_key_text": [
+                "End-to-end: 1.64x, 1.23x speedup over TorchSparse, SpConv on average",
+                "Sparse convolution: 1.81x, 1.76x speedup over TorchSparse, SpConv"
+              ],
+              "slide_visual_skeleton": [
+                "Performance 标题块",
+                "端到端加速比结论框",
+                "(图区留白/图表位)"
+              ]
+            },
+            {
+              "slide_index": 48,
+              "role_in_pattern": "ablation_grid",
+              "archetype": "ablation_grid",
+              "slide_title": "消融与附加研究:三方案分别收益概览",
+              "slide_claim": "三项 Solution 各自贡献加速与省内存,阈值调节带来进一步提升",
+              "slide_key_text": [
+                "Coded-CSR Format Mapping Storage: 1.21x/1.10x speedup, 21.18% less memory",
+                "Indicator-assisted FGMS fusion: 1.75x/1.41x speedup",
+                "Heuristics Adaptive Dataflow Selection: 1.15x/1.5x speedup over static dataflows",
+                "Threshold choice for dataflow heuristic algorithm: testing on different datasets brings further improvement"
+              ],
+              "slide_visual_skeleton": [
+                "四象限并列 panel",
+                "各 panel 加速比数字标注",
+                "分方案消融图表位"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "case_study_background_motivation_multi_solution_result",
+      "title": "案例·背景动机→章节分隔→多解法→双视角结果",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "FPGA",
+          "硬件",
+          "方案",
+          "能效",
+          "成本"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文封面+发表信息引入"
+        },
+        {
+          "archetype": "background_tradeoff_spectrum",
+          "count": 1,
+          "position": "start",
+          "purpose": "以谱系图/对比论证技术折衷"
+        },
+        {
+          "archetype": "motivation_platform_advantage",
+          "count": 1,
+          "position": "start",
+          "purpose": "点明目标平台(FPGA/专用)的核心优势"
+        },
+        {
+          "archetype": "chapter_transition_divider",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以留白分隔页引出后续多解法"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": "3-4",
+          "position": "middle",
+          "purpose": "每个解法以断言标题+方法细节展开"
+        },
+        {
+          "archetype": "performance_result_platform",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以目标平台自身指标(如吞吐/能效)给出结果"
+        },
+        {
+          "archetype": "performance_result_cross_platform",
+          "count": 1,
+          "position": "end",
+          "purpose": "以跨平台对比(如 GPU vs FPGA)给出总账收益"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "paper_title_authors_only",
+          "to_archetype": "background_tradeoff_spectrum",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "background_tradeoff_spectrum",
+          "to_archetype": "motivation_platform_advantage",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "motivation_platform_advantage",
+          "to_archetype": "chapter_transition_divider",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "chapter_transition_divider",
+          "to_archetype": "solution_answer",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "solution_answer",
+          "to_archetype": "solution_answer",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "solution_answer",
+          "to_archetype": "performance_result_platform",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "performance_result_platform",
+          "to_archetype": "performance_result_cross_platform",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "硬件加速案例章: 论文封面+背景折衷+平台动机→章节分隔→多个 Solution 并列展开→结果先给单平台指标再给跨平台总账",
+      "anti_patterns": [
+        "无平台对比/纯单平台方法论 — 用 method_deep_dive pattern",
+        "challenge/solution 严格一一对应 — 用 challenge_solution_performance_closed_loop"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.09",
+          "section_title": "FlightLLM(FPGA推理)",
+          "section_role": "case_study",
+          "section_narrative": "作为第四个本组成果 case,论证 FPGA(可配置+低成本)是稀疏 LLM 推理的新载体;从背景/动机切入,经三大 Solution(稀疏 DSP 链、片上解码、长度自适应编译)递进,收束到 6.0× 能效/1.8× 成本增益。",
+          "section_topic_tags": [
+            "FlightLLM",
+            "FPGA 推理",
+            "N:M 稀疏",
+            "长度自适应编译",
+            "能效成本对比"
+          ],
+          "match_evidence": "10 页节奏: paper(78)+bg(79)+motiv(80)+divider(81)+ 3 solutions/4 pages(82-85)+ result U280(86)+ result GPU vs FPGA(87)",
+          "slides": [
+            {
+              "slide_index": 78,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "FlightLLM: FPGA 上的完整映射流 LLM 推理",
+              "slide_claim": "FlightLLM 用完整映射流实现 FPGA 上高效 LLM 推理",
+              "slide_key_text": [
+                "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+                "Shulin Zeng 等,清华/上交/Infinigence-AI",
+                "Accepted by FPGA'24"
+              ],
+              "slide_visual_skeleton": [
+                "大字号论文标题",
+                "作者与单位署名块",
+                "发表信息标注"
+              ]
+            },
+            {
+              "slide_index": 79,
+              "role_in_pattern": "background_tradeoff_spectrum",
+              "archetype": "background_tradeoff_spectrum",
+              "slide_title": "Background:灵活 N:M 稀疏在算法与硬件间折衷",
+              "slide_claim": "N:M 稀疏在算法灵活性与硬件效率间取得折衷",
+              "slide_key_text": [
+                "Coarse-grained arbitrary sparsity for algorithm flexibility",
+                "Fine-grained structured sparsity for hardware",
+                "Arbitrary sparsity / Flexible N:M sparsity (Ours) / 2:4 structured sparsity",
+                "Algorithm flexibility↑ 与 Hardware efficiency↑"
+              ],
+              "slide_visual_skeleton": [
+                "三列稀疏矩阵示意图",
+                "非零/padding/deleted 图例",
+                "灵活性-效率渐变箭头轴"
+              ]
+            },
+            {
+              "slide_index": 80,
+              "role_in_pattern": "motivation_platform_advantage",
+              "archetype": "motivation_platform_advantage",
+              "slide_title": "Motivation:FPGA 可配置且低成本",
+              "slide_claim": "相比 GPU,FPGA 可配置低成本,更适合定制 LLM 服务",
+              "slide_key_text": [
+                "Compared with GPU, FPGA is configurable and low-cost",
+                "Improve performance and reduce overhead",
+                "Configurable / Low-cost",
+                "TSTC + FPGA → Code Completion / AI Custom Service"
+              ],
+              "slide_visual_skeleton": [
+                "TSTC+FPGA 组合示意",
+                "上指箭头指向应用场景",
+                "Configurable/Low-cost 标签框"
+              ]
+            },
+            {
+              "slide_index": 81,
+              "role_in_pattern": "chapter_transition_divider",
+              "archetype": "chapter_transition_divider",
+              "slide_title": "Challenges(章节过渡分隔页)",
+              "slide_claim": "承接动机,引出 FlightLLM 需解决的三大挑战",
+              "slide_key_text": [
+                "Challenges"
+              ],
+              "slide_visual_skeleton": [
+                "标题+蓝色分隔条",
+                "空正文外框"
+              ]
+            },
+            {
+              "slide_index": 82,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 1:Sparse DSP Chain",
+              "slide_claim": "稀疏 DSP 链支持多种稀疏模式并提升硬件利用率",
+              "slide_key_text": [
+                "A sparse DSP chain was proposed to support different sparse patterns and improve the hardware utilization",
+                "Solution 1: Sparse DSP Chain"
+              ],
+              "slide_visual_skeleton": [
+                "紫色 Solution 角标",
+                "断言式蓝框标题",
+                "空正文外框"
+              ]
+            },
+            {
+              "slide_index": 83,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Sparse DSP Chain 支持 N:M 与 block 稀疏",
+              "slide_claim": "稀疏 DSP 链同时支持线性层 N:M 稀疏与注意力层 block 稀疏",
+              "slide_key_text": [
+                "Support N:M sparsity (Linear layer) and block sparsity (Attention Layer)",
+                "Sparse Attention",
+                "Sparse Linear Layer",
+                "分块占比 100% / 0% / 50% / 25%"
+              ],
+              "slide_visual_skeleton": [
+                "左右双区(注意力/线性层)",
+                "分块占比权重矩阵示意",
+                "连接箭头"
+              ]
+            },
+            {
+              "slide_index": 84,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 2:Always-on-chip Decode Scheme",
+              "slide_claim": "支持混合精度的全片解码方案提升带宽利用率",
+              "slide_key_text": [
+                "A full-chip decoding scheme with mixed-precision support was proposed to improve the bandwidth utilization",
+                "Solution 2: Always-on-chip Decode Scheme"
+              ],
+              "slide_visual_skeleton": [
+                "紫色 Solution 角标",
+                "断言式蓝框标题",
+                "左右并列留白外框"
+              ]
+            },
+            {
+              "slide_index": 85,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 3:长度自适应编译",
+              "slide_claim": "长度自适应编译大幅降低指令存储开销至 3.3GB",
+              "slide_key_text": [
+                "A length adaptive compilation method is proposed to significantly reduce the instruction storage overhead",
+                "Instruction reuse",
+                "The step length of prefill and decode(128 / 16)",
+                "The latency increases with the number of tokens",
+                "instruction storage size is reduced to 3.3GB"
+              ],
+              "slide_visual_skeleton": [
+                "左右双区(步长/指令复用)",
+                "prefill-decode 步长标注",
+                "指令复用块图"
+              ]
+            },
+            {
+              "slide_index": 86,
+              "role_in_pattern": "performance_result_platform",
+              "archetype": "performance_result_platform",
+              "slide_title": "Result:U280 FPGA 能效 6.0×、成本 1.8×",
+              "slide_claim": "U280 FPGA 方案能效提升 6.0×、成本效率提升 1.8×",
+              "slide_key_text": [
+                "U280 FPGA with our design improves the energy efficiency by 6.0x, and cost efficiency by 1.8x",
+                "OPT-6.7B / LLaMA2-7B",
+                "Throughput Speedup / Accelerator / Energy Efficiency",
+                "[128,512]…[512,1536] / Geomean"
+              ],
+              "slide_visual_skeleton": [
+                "双模型分栏图表区",
+                "三行指标(吞吐/加速器/能效)",
+                "多序列长度 x 轴 + Geomean"
+              ]
+            },
+            {
+              "slide_index": 87,
+              "role_in_pattern": "performance_result_cross_platform",
+              "archetype": "performance_result_cross_platform",
+              "slide_title": "Result:FPGA 相较 GPU 能效成本双增益",
+              "slide_claim": "FlightLLM(FPGA)对比 GPU 吞吐/成本 1.8×、吞吐/功耗 6.0×",
+              "slide_key_text": [
+                "U280 FPGA improves the energy efficiency by 6.0x, and cost efficiency by 1.8x",
+                "GPU: vLLM INT8, 12nm, ~$12K, ~220W, ~45 token/s (1×)",
+                "FPGA: Flight LLM, U280, 16nm, ~$8K, ~45W, ~55 token/s",
+                "1.8x throughput/prize, 6.0x throughput/power",
+                "LLM: LLaMA2, OPT, …"
+              ],
+              "slide_visual_skeleton": [
+                "GPU/FPGA 上下双卡对比",
+                "成本/功耗/性能指标块",
+                "增益倍数标注箭头"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "case_study_challenge_solution_performance_closed_loop",
+      "title": "案例·多挑战多解法一一配对+消融闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "挑战",
+          "解法",
+          "算子",
+          "加速",
+          "消融"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "论文标题+作者+会议引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": "1-2",
+          "position": "start",
+          "purpose": "1-2 页并列陈述 N 个 challenge, 每个用视觉对比图"
+        },
+        {
+          "archetype": "solution_answer",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每个 Solution 对应一个 Challenge, 展示方法细节"
+        },
+        {
+          "archetype": "performance_headline",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以断言式加速数字给主性能结果"
+        },
+        {
+          "archetype": "ablation_supplement",
+          "count": 1,
+          "position": "end",
+          "purpose": "以消融/内存节省等补充实验佐证各设计模块贡献"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "paper_title_authors_only",
+          "to_archetype": "challenge_statement",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "challenge_statement",
+          "to_archetype": "challenge_statement",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "challenge_statement",
+          "to_archetype": "solution_answer",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "solution_answer",
+          "to_archetype": "solution_answer",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "solution_answer",
+          "to_archetype": "performance_headline",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "performance_headline",
+          "to_archetype": "ablation_supplement",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "紧凑型系统/算子案例章: 论文封面→N 个 challenge 并列→N 个 solution 一一配对→主性能加速比→消融补充实验收束",
+      "anti_patterns": [
+        "challenge 分多轮+每轮内部延伸 — 用 multi_observation_solution_pairs pattern",
+        "不含 challenge-solution 配对, 只讲方法 — 用 method_component_listing pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.06",
+          "section_title": "超图神经网络加速",
+          "section_role": "case_study",
+          "section_narrative": "本组第二个 case study,承接稀疏计算主线,以 HyperGef 为例展示「三挑战→三解法→性能验证」的完整研究闭环,论证超图神经网络在 GPU 上可高效 fusion 加速。",
+          "section_topic_tags": [
+            "超图神经网络",
+            "GPU 算子融合",
+            "边分割负载均衡",
+            "共享内存 grouping",
+            "MLSys23"
+          ],
+          "match_evidence": "8 页节奏: paper(49)+challenge 1(50)+challenge 2/3(51)+ 3 solutions(52-54)+ perf(55)+ ablation(56)",
+          "slides": [
+            {
+              "slide_index": 49,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "HyperGef: 超图神经网络 GPU 高效 Fusion 框架",
+              "slide_claim": "HyperGef 实现超图神经网络在 GPU 上的高效 fusion 加速",
+              "slide_key_text": [
+                "HyperGef: A Framework Enabling Efficient Fusion For Hypergraph Neural Network on GPU",
+                "Accepted by MLSys'23",
+                "Zhongming Yu, Guohao Dai 等",
+                "Work was done during the internship at Nvidia"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题",
+                "作者与单位列表",
+                "会议接收标注"
+              ]
+            },
+            {
+              "slide_index": 50,
+              "role_in_pattern": "challenge_statement",
+              "archetype": "challenge_statement",
+              "slide_title": "Challenge 1: 低效的图划分",
+              "slide_claim": "顶点/超边两种划分分别带来冗余与负载不均衡",
+              "slide_key_text": [
+                "Challenge 1: inefficient partition",
+                "redundancy",
+                "imbalance",
+                "Vertex (0-hop) partition",
+                "Hyperedge (1-hop) partition"
+              ],
+              "slide_visual_skeleton": [
+                "左右两组二部图示意",
+                "顶点-超边连接箭头",
+                "redundancy/imbalance 红字标注"
+              ]
+            },
+            {
+              "slide_index": 51,
+              "role_in_pattern": "challenge_statement",
+              "archetype": "challenge_statement",
+              "slide_title": "Challenge 2 与 3: 格式无工作负载 & 写冲突严重",
+              "slide_claim": "现有数据格式缺工作负载信息且写操作冲突严重",
+              "slide_key_text": [
+                "Challenge 2: Workload-Agnostic format",
+                "no workload information",
+                "Incidence matrix / Compressed Sparse Row",
+                "Challenge 3: Heavy writing conflicts",
+                "conflicts"
+              ],
+              "slide_visual_skeleton": [
+                "左右两栏 panel",
+                "左栏关联矩阵+CSR 格子图",
+                "右栏顶点-超边写冲突示意"
+              ]
+            },
+            {
+              "slide_index": 52,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 1: Edge-split 负载均衡划分",
+              "slide_claim": "Edge-split 划分同时消除冗余并均衡负载",
+              "slide_key_text": [
+                "Solution 1: Edge-split workload balance partition",
+                "Input/Output Vertex Partition",
+                "Hyperedge Partition",
+                "Edge-split Partition",
+                "Balance"
+              ],
+              "slide_visual_skeleton": [
+                "多阶段划分流程图",
+                "Read/Write/Atomic 箭头标注",
+                "左冗余右均衡对比"
+              ]
+            },
+            {
+              "slide_index": 53,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 2: 工作负载感知的数据格式",
+              "slide_claim": "工作负载感知格式为算子提供负载信息",
+              "slide_key_text": [
+                "Solution 2: Workload-aware data format"
+              ],
+              "slide_visual_skeleton": [
+                "上方标题框",
+                "主体大图区+向下转换箭头"
+              ]
+            },
+            {
+              "slide_index": 54,
+              "role_in_pattern": "solution_answer",
+              "archetype": "solution_answer",
+              "slide_title": "Solution 3: 共享内存感知的分组",
+              "slide_claim": "共享内存感知分组利用重叠减少写冲突",
+              "slide_key_text": [
+                "Solution 3: Shared-memory aware grouping",
+                "Source partitions",
+                "Destination partitions",
+                "Overlapping"
+              ],
+              "slide_visual_skeleton": [
+                "上方标题框",
+                "源/目标分区示意",
+                "Overlapping 重叠区标注"
+              ]
+            },
+            {
+              "slide_index": 55,
+              "role_in_pattern": "performance_headline",
+              "archetype": "performance_headline",
+              "slide_title": "Performance: 端到端与算子级加速",
+              "slide_claim": "HyperGef 端到端 2.25-3.39x、算子级 3.31x 加速",
+              "slide_key_text": [
+                "Performance",
+                "2.25x-3.39x end-to-end speedup over DGL/PyG on average",
+                "3.31x kernel-wise speedup over cuSPARSE on average"
+              ],
+              "slide_visual_skeleton": [
+                "Performance 标题框",
+                "右侧要点式加速数字",
+                "留白图表区"
+              ]
+            },
+            {
+              "slide_index": 56,
+              "role_in_pattern": "ablation_supplement",
+              "archetype": "ablation_supplement",
+              "slide_title": "Performance: 消融与补充实验",
+              "slide_claim": "显存访问平均省 39%,edge-split 单项带来 1.53x 加速",
+              "slide_key_text": [
+                "Performance: Ablation & Additional Studies",
+                "39% global memory access average saving compared to cuSPRARSE-based SpMM",
+                "1.53x average speedup brought by edge-split partition",
+                "2.25x-3.39x end-to-end speedup over DGL/PyG on average"
+              ],
+              "slide_visual_skeleton": [
+                "Ablation 标题框",
+                "多处要点式数字标注",
+                "留白图表区"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "framework_opensource_ecosystem_plus_representative_work",
+      "title": "框架·开源生态总览+代表算子闭环",
+      "applicable_when": {
+        "chapter_role": [
+          "framework"
+        ],
+        "report_type": [
+          "tutorial",
+          "topic_share",
+          "research_report"
+        ],
+        "page_count_range": [
+          8,
+          12
+        ],
+        "must_have_in_chapter_purpose": [
+          "开源框架",
+          "算子",
+          "代表工作",
+          "路线图"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入框架章"
+        },
+        {
+          "archetype": "framework_definition_intro",
+          "count": 1,
+          "position": "start",
+          "purpose": "以 Innovation 标签+一句话定义引入自研开源框架"
+        },
+        {
+          "archetype": "framework_performance_headline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以多组加速比数字铺陈框架性能优势"
+        },
+        {
+          "archetype": "framework_integration_ecosystem",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以三列并排展示与多上层框架的集成生态"
+        },
+        {
+          "archetype": "progress_roadmap_bridge",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以路线图作为承上启下枢纽, 引出代表工作"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "代表工作论文封面引入"
+        },
+        {
+          "archetype": "challenge_statement",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文挑战陈述, 抛出问题"
+        },
+        {
+          "archetype": "solution_formulation",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法一:以循环维度/公式化算法空间给出方案"
+        },
+        {
+          "archetype": "solution_mechanism",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文解法二:进一步落到具体机制(启发式模型/动态选择)"
+        },
+        {
+          "archetype": "performance_result",
+          "count": 1,
+          "position": "end",
+          "purpose": "给出加速比闭环收束章节"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "framework_definition_intro",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "framework_definition_intro",
+          "to_archetype": "framework_performance_headline",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "framework_performance_headline",
+          "to_archetype": "framework_integration_ecosystem",
+          "hook_type": "detail_to_overview"
+        },
+        {
+          "from_archetype": "framework_integration_ecosystem",
+          "to_archetype": "progress_roadmap_bridge",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "progress_roadmap_bridge",
+          "to_archetype": "paper_title_authors_only",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "paper_title_authors_only",
+          "to_archetype": "challenge_statement",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "challenge_statement",
+          "to_archetype": "solution_formulation",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "solution_formulation",
+          "to_archetype": "solution_mechanism",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "solution_mechanism",
+          "to_archetype": "performance_result",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "开源框架章: 目录→定义→性能数字→生态集成→路线图承接→代表工作论文『挑战-方案-机制-性能』闭环",
+      "anti_patterns": [
+        "无开源框架, 只讲一篇代表作 — 用 case_study_challenge_solution_performance_closed_loop",
+        "无代表作深入, 只讲框架能力 — 用 framework_capability_overview pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.04",
+          "section_title": "开源框架dgSPARSE与算子",
+          "section_role": "framework",
+          "section_narrative": "承接稀疏计算思想,落地为开源框架 dgSPARSE:先立框架(开源生态+算子/GNN 加速),经 2022→2024 路线图过渡到代表算子工作 SpMM 启发式自适应(DAC'22)的『挑战→方案→模型→性能』闭环",
+          "section_topic_tags": [
+            "dgSPARSE 开源框架",
+            "GNN 算子加速",
+            "SpMM 启发式自适应",
+            "cuSPARSE 对比",
+            "DAC22"
+          ],
+          "match_evidence": "10 页节奏: toc(25)+定义(26)+性能头条(27)+生态集成(28)+路线图(29)+论文标题(30)+challenge(31)+solution formulation(32)+solution mechanism(33)+performance(34)",
+          "slides": [
+            {
+              "slide_index": 25,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents:进入 dgSPARSE 开源框架章节",
+              "slide_claim": "议程推进到第二部分——dgSPARSE 开源稀疏系统框架",
+              "slide_key_text": [
+                "dgSparse:Open-source sparse system framework",
+                "Opening",
+                "Case study——An exploration of sparse computing for LMs",
+                "Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框 Contents 容器",
+                "四项编号圆标列表",
+                "当前项蓝色高亮条"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "framework_definition_intro",
+              "archetype": "framework_definition_intro",
+              "slide_title": "dgSPARSE 开源框架:立框架与多维加速",
+              "slide_claim": "科研成果开源为 dgSPARSE 项目,支撑 GNN 等稀疏系统",
+              "slide_key_text": [
+                "The research results were open sourced to form the Deep Graph Sparse (dgSPARSE) project to support GNN and other sparse systems",
+                "Coarse-grain 65%↑",
+                "Efficient reduction 37%↑",
+                "https://dgsparse.github.io/"
+              ],
+              "slide_visual_skeleton": [
+                "Innovation 紫色标签",
+                "顶部论断文本框",
+                "多能力节点横排框图",
+                "算法/算子/硬件研究者圆节点"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "framework_performance_headline",
+              "archetype": "framework_performance_headline",
+              "slide_title": "dgSPARSE 打破 AI 算力瓶颈:方法与性能全景",
+              "slide_claim": "dgSPARSE 以结构化方法与高效算子打破 AI 算力瓶颈",
+              "slide_key_text": [
+                "Break the bottleneck of AI compute",
+                "Up to an order faster than NVIDIA commercial libraries",
+                "Up to 5x faster than the best open source frameworks",
+                "1.18x speedup",
+                "7.75x memory saving"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Innovation 论断条",
+                "中部方法/性能对比 panel",
+                "多组柱状加速比图",
+                "算子与 GNN 两分区"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "framework_integration_ecosystem",
+              "archetype": "framework_integration_ecosystem",
+              "slide_title": "dgSPARSE 集成多开源框架支撑上层应用",
+              "slide_claim": "dgSPARSE 集成入多个开源框架,以自研后端超越商用",
+              "slide_key_text": [
+                "dgSPARSE is integrated with multiple open source frameworks to support upper-layer applications",
+                "Outperform with our backends",
+                "DgSPARSE is integrated with CogDL framework, which outperforms other commercial framework",
+                "https://github.com/THUDM/cogdl"
+              ],
+              "slide_visual_skeleton": [
+                "顶部集成论断框",
+                "三列并列 panel",
+                "红/灰对比柱示意",
+                "集成框架地址标注"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_pattern": "progress_roadmap_bridge",
+              "archetype": "progress_roadmap_bridge",
+              "slide_title": "稀疏计算路线图:2022→2024 承上启下",
+              "slide_claim": "稀疏计算从算子拓展到 LLM,应用更广、性能更高",
+              "slide_key_text": [
+                "Sparse Computing: From 2022 to 2024",
+                "Sparse operators",
+                "More Applications",
+                "Higher Performance",
+                "Our methods for LLM"
+              ],
+              "slide_visual_skeleton": [
+                "双行箭头路线带",
+                "More Applications/Higher Performance 分支框",
+                "SpMM/SDDMM 加速柱图",
+                "LLM 方法灰显预告框"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "代表工作:SpMM 输入动态启发式自适应(DAC'22)",
+              "slide_claim": "引入 DAC'22 工作:面向 GPU SpMM 的输入动态启发式自适应",
+              "slide_key_text": [
+                "Heuristic Adaptability to Input Dynamics for SpMM on GPUs",
+                "Guohao Dai, Guyue Huang, Shang Yang, Yu Wang",
+                "1Tsinghua University, 2UC San Barbara",
+                "Accepted by DAC'22"
+              ],
+              "slide_visual_skeleton": [
+                "大字论文标题",
+                "作者与单位列表",
+                "会议接收标注",
+                "浅色分隔线"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "challenge_statement",
+              "archetype": "challenge_statement",
+              "slide_title": "Sparse Operators 挑战:单算法难适应输入动态",
+              "slide_claim": "单一 SpMM 算法无法在所有输入下达到最优性能",
+              "slide_key_text": [
+                "Challenge: performance loss to input dynamics",
+                "A single algorithm cannot always achieve",
+                "10 cuSPARSE SpMM algorithms, SuiteSparse matrix dataset"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Challenge 论断框",
+                "下方大幅性能分布图区",
+                "算法×矩阵对比示意"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "solution_formulation",
+              "archetype": "solution_formulation",
+              "slide_title": "方案:启发式自适应——为稀疏定制算法空间",
+              "slide_claim": "以启发式自适应为 SpMM 构建面向稀疏的专门算法空间",
+              "slide_key_text": [
+                "Solution: Heuristic adaptability",
+                "Formulate algorithm space for SpMM problems",
+                "Loop workload balance",
+                "Loop data pattern",
+                "Loop parallelism efficiency",
+                "special design for sparse"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Solution 论断框",
+                "左侧红色主干条",
+                "三循环维度虚线框",
+                "汇聚箭头指向专门设计"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "solution_mechanism",
+              "archetype": "solution_mechanism",
+              "slide_title": "方案:启发式模型动态选择算法",
+              "slide_claim": "用启发式模型在运行时动态选择最优 SpMM 算法",
+              "slide_key_text": [
+                "Solution: Heuristic adaptability",
+                "A heuristic model to select algorithms dynamically"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Solution 论断框",
+                "下方大幅机制示意图区",
+                "动态选择流程框"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "performance_result",
+              "archetype": "performance_result",
+              "slide_title": "性能:较 cuSPARSE 提速 1.26x–1.37x",
+              "slide_claim": "启发式自适应较最佳 cuSPARSE 方案提速 1.26x–1.37x",
+              "slide_key_text": [
+                "1.26x to 1.37x speedup over commercial (cuSPARSE) solution",
+                "best cuSPARSE SpMM algorithm in 10 for each matrix",
+                "956 matrices in SuiteSparse"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Performance 标题框",
+                "加速比要点 bullet",
+                "右侧加速比分布图区"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "title": "动机·趋势路标→三轴增长→供需鸿沟→解法引入",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          5,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "趋势",
+          "算力",
+          "鸿沟",
+          "动机",
+          "稀疏"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "macro_ai_roadmap",
+          "count": 1,
+          "position": "start",
+          "purpose": "以三时代阶梯+三轴维度铺陈 AI 演进路标"
+        },
+        {
+          "archetype": "three_axis_trend_panel",
+          "count": 2,
+          "position": "start",
+          "purpose": "用三列并排 panel 分抽象+实证两页展开数据/模态/任务三轴"
+        },
+        {
+          "archetype": "model_moore_law_growth_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以对数增长曲线论证模型规模摩尔定律级暴涨"
+        },
+        {
+          "archetype": "supply_demand_gap_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以需求 vs 硬件曲线证算力供需鸿沟"
+        },
+        {
+          "archetype": "solution_introduction_bridge",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "以性能-能效对比正式引入解法(稀疏计算)"
+        },
+        {
+          "archetype": "definition_benefit_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "给解法定义+关键倍数收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "macro_ai_roadmap",
+          "to_archetype": "three_axis_trend_panel",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "three_axis_trend_panel",
+          "to_archetype": "three_axis_trend_panel",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "three_axis_trend_panel",
+          "to_archetype": "model_moore_law_growth_chart",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "model_moore_law_growth_chart",
+          "to_archetype": "supply_demand_gap_chart",
+          "hook_type": "amplify_with_data"
+        },
+        {
+          "from_archetype": "supply_demand_gap_chart",
+          "to_archetype": "solution_introduction_bridge",
+          "hook_type": "pain_to_solution_bridge"
+        },
+        {
+          "from_archetype": "solution_introduction_bridge",
+          "to_archetype": "definition_benefit_summary",
+          "hook_type": "claim_then_evidence"
+        }
+      ],
+      "applicable_summary": "tutorial 动机章: 从 AI 三时代路标→三轴 panel(抽象+实证)→模型摩尔定律→供需鸿沟→稀疏计算引入→定义收束的漏斗式论证",
+      "anti_patterns": [
+        "纯痛点无 macro 铺陈 — 用 motivation_problem_only_direct pattern",
+        "无解法引入桥接, 只讲问题 — 用 background_only_chronology pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.02",
+          "section_title": "AI增长趋势与稀疏动机",
+          "section_role": "motivation",
+          "section_narrative": "紧接封面/大纲的动机章:先用AI三时代路标+数据/算力/任务三轴铺陈趋势,层层论证模型10×增长带来算力供需鸿沟,顺势引出稀疏计算作为提效新路,为后续稀疏方法与成果章节奠定前提。",
+          "section_topic_tags": [
+            "AI 三时代路标",
+            "数据/模态/任务趋势",
+            "LLM 摩尔定律",
+            "算力供需鸿沟",
+            "稀疏计算引入"
+          ],
+          "match_evidence": "7 页节奏: roadmap(3)+ 三轴抽象/实证(4-5)+ LLM 摩尔定律(6)+ 供需鸿沟(7)+ 稀疏引入(8)+ 定义(9)",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "macro_ai_roadmap",
+              "archetype": "macro_ai_roadmap",
+              "slide_title": "AI 发展路线图:三时代与 Model/Data/Task",
+              "slide_claim": "AI 历经计算-感知-认知三时代,Model/Data/Task 三轴共同驱动其演进",
+              "slide_key_text": [
+                "General AI Roadmap",
+                "AI Era 1: Computation / Era 2: Perception / Era 3: Cognition",
+                "Human System 1 / System 2",
+                "Model, Data, Task",
+                "Geoffrey Hinton (Turing Prize)",
+                "Daniel Kahneman (Nobel Prize)"
+              ],
+              "slide_visual_skeleton": [
+                "三级阶梯时代示意",
+                "左侧双学者引文卡",
+                "Model/Data/Task 三轴标注",
+                "红色柱形顶栏"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "three_axis_trend_panel",
+              "archetype": "three_axis_trend_panel",
+              "slide_title": "AI 趋势一:大数据、多模态、复杂任务",
+              "slide_claim": "AI 数据与任务正沿大数据、多模态、复杂任务三方向同步扩张",
+              "slide_key_text": [
+                "Data and task: big data, multimodal, complex tasks",
+                "Big Data / Multimodal / Complex Tasks",
+                "global data generated annually",
+                "multimodal data in healthcare",
+                "1 ZB = 万亿 GB 级"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列 panel",
+                "数据量 ZB 增长曲线",
+                "顶部主题横条"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "three_axis_trend_panel",
+              "archetype": "three_axis_trend_panel",
+              "slide_title": "数据与任务趋势:自动驾驶实证",
+              "slide_claim": "以自动驾驶为例,大数据、多模态、复杂任务同时逼近现实系统",
+              "slide_key_text": [
+                "Big Data / Multimodal / Complex Tasks",
+                "Point to Point Autonomous Driving",
+                "GB/Day/Car, TB/Day/Car",
+                "Intelligent perception of vehicle road collaboration",
+                "5-6 types, 30-40 sensors",
+                "Integrated intelligent for driving and parking, Model size Million"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列 panel",
+                "自动驾驶三主题分栏",
+                "顶部主题横条"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "model_moore_law_growth_chart",
+              "archetype": "model_moore_law_growth_chart",
+              "slide_title": "LLM 摩尔定律:模型规模每年 10 倍",
+              "slide_claim": "2018-2022 模型参数暴增 5 个数量级,每年约 10 倍增长",
+              "slide_key_text": [
+                "LLM Moore's Law: Model size increases",
+                "Large Language Models",
+                "2018-2022 参数增长 5 orders of magnitude",
+                "Every year the model size increases by 10x",
+                "Model Size (Billion)"
+              ],
+              "slide_visual_skeleton": [
+                "左右双面板",
+                "对数纵轴模型规模示意",
+                "2018/2022 圈注+上升箭头"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "supply_demand_gap_chart",
+              "archetype": "supply_demand_gap_chart",
+              "slide_title": "算力供需鸿沟:需求飙升远超硬件",
+              "slide_claim": "AI 算力需求飙升,增速达硬件 3-4 倍,形成巨大供需鸿沟",
+              "slide_key_text": [
+                "Computility demand for AI applications has increased sharply",
+                "深度学习算力需求增速是硬件的 3-4 倍",
+                "Deep Learning: doubling every 6 months",
+                "Moore's Law: computility doubles every 24 months",
+                "The emergence of LLMs increase computility demand sharply",
+                "There is a huge gap between computility supply and demand"
+              ],
+              "slide_visual_skeleton": [
+                "左右双趋势面板",
+                "中央红框结论标语",
+                "需求 vs 硬件增速对比曲线"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "solution_introduction_bridge",
+              "archetype": "solution_introduction_bridge",
+              "slide_title": "创新思路:稀疏计算提升 AI 算力",
+              "slide_claim": "稀疏计算成为提升 AI 算力与能效的新路径",
+              "slide_key_text": [
+                "Sparse computing becomes a new way to improve AI computility",
+                "Dense NN vs Sparse NN",
+                "Tensor Core w/ sparsity: ~842TFLOPS, ~406W",
+                "Tensor Core w/o sparsity: ~125TFLOPS, 350W",
+                "Sparse computing promotes further improvement of neural network energy efficiency"
+              ],
+              "slide_visual_skeleton": [
+                "性能-能效散点示意",
+                "Dense/Sparse 图例",
+                "带/不带稀疏 Tensor Core 数据标注框",
+                "红框结论"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "definition_benefit_summary",
+              "archetype": "definition_benefit_summary",
+              "slide_title": "什么是稀疏计算:跳过零值提效",
+              "slide_claim": "稀疏计算通过跳过零值无效运算,以更短时间完成同任务",
+              "slide_key_text": [
+                "Sparse computing can improve equivalent computility",
+                "By avoiding invalid calculations (zero value), complete the same task in less time",
+                "Computational acceleration is 2x faster than dense",
+                "[1] NVIDIA Ampere whitepaper"
+              ],
+              "slide_visual_skeleton": [
+                "顶部要点文字层级",
+                "右下角倍数结论强调块",
+                "蓝色标题分隔条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "background_paradigm_shift_dual_era_comparison_table",
+      "title": "背景·1.0→2.0 范式对照+同构表格递进",
+      "applicable_when": {
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          4,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "范式",
+          "1.0",
+          "2.0",
+          "稀疏",
+          "分类"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入案例研究/背景板块"
+        },
+        {
+          "archetype": "paradigm_shift_dual_column",
+          "count": 1,
+          "position": "start",
+          "purpose": "左右两栏对照 1.0/2.0 范式核心差异"
+        },
+        {
+          "archetype": "era_sparsity_taxonomy_table",
+          "count": 2,
+          "position": "middle",
+          "purpose": "用同构四列表格分别铺 1.0 与 2.0 稀疏性谱系, 用红框强调新增行"
+        },
+        {
+          "archetype": "progress_roadmap_handoff",
+          "count": 1,
+          "position": "end",
+          "purpose": "以进展路线图收束到本组新方法预告"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "paradigm_shift_dual_column",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "paradigm_shift_dual_column",
+          "to_archetype": "era_sparsity_taxonomy_table",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "era_sparsity_taxonomy_table",
+          "to_archetype": "era_sparsity_taxonomy_table",
+          "hook_type": "before_to_after"
+        },
+        {
+          "from_archetype": "era_sparsity_taxonomy_table",
+          "to_archetype": "progress_roadmap_handoff",
+          "hook_type": "chapter_handoff"
+        }
+      ],
+      "applicable_summary": "从上一代过渡到新场景的背景章: 目录→双栏范式对照→同构表格逐行递进(1.0→2.0 新增维度)→路线图收束",
+      "anti_patterns": [
+        "无范式对照, 只讲一个时代 — 用 background_single_era_taxonomy pattern",
+        "表格不同构无递进 — 用 background_multi_table_listing pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.07",
+          "section_title": "AI时代稀疏性背景",
+          "section_role": "background",
+          "section_narrative": "为「LLM 稀疏计算」案例章开场:先用 AI1.0→2.0 定调,再对照两代稀疏性表格,凸显 Transformer 注意力稀疏这一新维度,收束到本组 LLM 方法路线图。",
+          "section_topic_tags": [
+            "AI 1.0 到 2.0",
+            "注意力稀疏",
+            "稀疏性谱系表",
+            "LLM 方法路线图"
+          ],
+          "match_evidence": "5 页节奏: toc(57)+ 双栏范式(58)+ 1.0 表(59)+ 2.0 表带红框新增行(60)+ roadmap 收束(61)",
+          "slides": [
+            {
+              "slide_index": 57,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents:高亮案例研究 (LLM 稀疏计算)",
+              "slide_claim": "报告进入第 3 部分——面向 LLM 的稀疏计算案例探索",
+              "slide_key_text": [
+                "Contents",
+                "Opening",
+                "dgSparse: Open-source sparse system framework",
+                "Case study: An exploration of sparse computing for LLMs",
+                "Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "四项编号目录列表",
+                "当前项高亮竖条",
+                "灰色淡出未选项"
+              ]
+            },
+            {
+              "slide_index": 58,
+              "role_in_pattern": "paradigm_shift_dual_column",
+              "archetype": "paradigm_shift_dual_column",
+              "slide_title": "From AI 1.0 to AI 2.0:两代范式对照",
+              "slide_claim": "AI 从 1.0 判别式专用模型演进到 2.0 生成式通用大模型",
+              "slide_key_text": [
+                "1.0: Specialized models for discriminative tasks",
+                "2.0: general models for generative tasks",
+                "App-algorithm binding",
+                "algorithm-system co-design",
+                "Fine-tuning",
+                "App-Alg-System co-optimization"
+              ],
+              "slide_visual_skeleton": [
+                "左右双栏对照",
+                "App/Algorithm/System 三层分层图",
+                "算法-系统工具链示意",
+                "红色强调标注"
+              ]
+            },
+            {
+              "slide_index": 59,
+              "role_in_pattern": "era_sparsity_taxonomy_table",
+              "archetype": "era_sparsity_taxonomy_table",
+              "slide_title": "Sparsity in the AI 1.0 era:稀疏性谱系",
+              "slide_claim": "AI 1.0 稀疏性源自权重与输入,呈结构化/非结构化两类",
+              "slide_key_text": [
+                "Sparsity in the AI 1.0 era",
+                "Algorithm: CNN/RNN, GNN/PointCloud",
+                "Sources of sparsity: Weight sparsity, Input sparsity",
+                "Sparse mode: Offline / Online",
+                "Sparse properties: Structured / Unstructured"
+              ],
+              "slide_visual_skeleton": [
+                "四列稀疏性属性表",
+                "箭头连接的源→模式流向",
+                "底部引用脚注"
+              ]
+            },
+            {
+              "slide_index": 60,
+              "role_in_pattern": "era_sparsity_taxonomy_table",
+              "archetype": "era_sparsity_taxonomy_table",
+              "slide_title": "Sparsity in the AI 2.0 era:新增注意力稀疏",
+              "slide_claim": "AI 2.0 引入 Transformer 注意力稀疏这一新维度",
+              "slide_key_text": [
+                "Sparsity in the AI 2.0 era",
+                "Transformer",
+                "Attention sparsity [4]",
+                "Offline/Online: Pre/Online process",
+                "Sparse properties: Structured + U"
+              ],
+              "slide_visual_skeleton": [
+                "四列稀疏性属性表",
+                "末行红色虚线强调框",
+                "Transformer 注意力稀疏新增行"
+              ]
+            },
+            {
+              "slide_index": 61,
+              "role_in_pattern": "progress_roadmap_handoff",
+              "archetype": "progress_roadmap_handoff",
+              "slide_title": "Sparse Computing 2022-2024:收束到 LLM 方法",
+              "slide_claim": "本组研究从稀疏算子拓展到面向 LLM 的稀疏方法路线",
+              "slide_key_text": [
+                "Sparse Computing: From 2022 to 2024",
+                "Sparse operators",
+                "More Applications: GNN / Point Cloud / HyperGraph",
+                "Higher Performance: SpMM 57%, SDDMM 14.01x",
+                "Our methods for LLM",
+                "Multi-level Design with Sparsity",
+                "Low-cost LLM on FPGA"
+              ],
+              "slide_visual_skeleton": [
+                "时间轴箭头路线图",
+                "淡出背景层 vs 强调前景层",
+                "两个 LLM 方法方框",
+                "小型加速比柱图"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "case_study_agenda_paper_multi_platform_benchmark",
+      "title": "案例·目录切入→论文封面→多平台基准",
+      "applicable_when": {
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "其他工作",
+          "加速比",
+          "跨平台",
+          "baseline"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "进度目录切入补充工作章"
+        },
+        {
+          "archetype": "paper_title_authors_only",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论文封面+作者+投稿信息引入"
+        },
+        {
+          "archetype": "platform_benchmark_speedup",
+          "count": 2,
+          "position": "end",
+          "purpose": "每页一个硬件平台家族的加速比对比图, 佐证跨平台通用性"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "paper_title_authors_only",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "paper_title_authors_only",
+          "to_archetype": "platform_benchmark_speedup",
+          "hook_type": "claim_then_evidence"
+        },
+        {
+          "from_archetype": "platform_benchmark_speedup",
+          "to_archetype": "platform_benchmark_speedup",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "补充成果紧凑章: agenda→论文封面→2 组跨平台(NVIDIA/AMD 等)加速比基准对比, 用于收尾多个 case study",
+      "anti_patterns": [
+        "单平台+多角度分析 — 用 case_study_deep_dive pattern",
+        "无 agenda 直接铺结果 — 用 result_only_benchmark pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.10",
+          "section_title": "其他工作FlashDecoding++",
+          "section_role": "case_study",
+          "section_narrative": "作为 case study 收尾的补充成果章，先用 agenda 页切入「Other works」，再引出 FlashDecoding++ 论文，最后用 NVIDIA、AMD 两组跨平台加速数据佐证方法的通用性。",
+          "section_topic_tags": [
+            "FlashDecoding++",
+            "跨 GPU 平台通用性",
+            "NVIDIA A100 RTX3090",
+            "AMD MI210 RX7900XTX"
+          ],
+          "match_evidence": "4 页节奏: toc(88)+ paper(89)+ NVIDIA 加速(90)+ AMD 加速(91)",
+          "slides": [
+            {
+              "slide_index": 88,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录：进入「Other works and collaborations」章节",
+              "slide_claim": "教程收尾切入第 4 部分——其他工作与合作成果",
+              "slide_key_text": [
+                "Contents",
+                "Opening",
+                "dgSparse: Open-source sparse system framework",
+                "Case study: An exploration of sparse computing for LLMs",
+                "Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框目录卡",
+                "四项编号圆标列表",
+                "当前项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 89,
+              "role_in_pattern": "paper_title_authors_only",
+              "archetype": "paper_title_authors_only",
+              "slide_title": "FlashDecoding++：GPU 上更快的大模型推理",
+              "slide_claim": "FlashDecoding++ 面向 GPU 加速大语言模型推理",
+              "slide_key_text": [
+                "FlashDecoding++: Faster Large Language Model Inference on GPUs",
+                "Ke Hong, Guohao Dai*, Jiaming Xu, Yu Wang*",
+                "Tsinghua / Shanghai Jiao Tong / Peking University, Infinigence-AI",
+                "Submitted to MLSys'24"
+              ],
+              "slide_visual_skeleton": [
+                "大字论文标题",
+                "分隔横线",
+                "作者与单位列表块"
+              ]
+            },
+            {
+              "slide_index": 90,
+              "role_in_pattern": "platform_benchmark_speedup",
+              "archetype": "platform_benchmark_speedup",
+              "slide_title": "FlashDecoding++ 在 NVIDIA A100/RTX3090 的加速",
+              "slide_claim": "NVIDIA 平台上 FlashDecoding++ 较 SOTA 平均 1.12x 加速",
+              "slide_key_text": [
+                "On NVIDIA Tesla A100 and RTX3090 compared with SOTA, 1.12x speedup",
+                "Speedup on A100 and RTX3090 GPU",
+                "vs vLLM, DeepSpeed, TensorRT-LLM, OpenPPL, FlashDecoding",
+                "1.25x, 1.48x, 1.12x, 1.23x, 1.24x",
+                "https://arxiv.org/abs/2311.01282"
+              ],
+              "slide_visual_skeleton": [
+                "NVIDIA 加速柱状对比图",
+                "多 baseline 分组横轴",
+                "红色加速倍数标注",
+                "论文链接竖排"
+              ]
+            },
+            {
+              "slide_index": 91,
+              "role_in_pattern": "platform_benchmark_speedup",
+              "archetype": "platform_benchmark_speedup",
+              "slide_title": "FlashDecoding++ 在 AMD MI210/RX7900XTX 的加速",
+              "slide_claim": "AMD 平台上 FlashDecoding++ 较 SOTA 平均 2.01x 加速",
+              "slide_key_text": [
+                "On AMD MI210 and RX7900XTX GPU compared with SOTA, 2.01x speedup",
+                "Speedup on MI210 and RX7900XTX GPU",
+                "Compared with SOTA HuggingFace average 2.01x speedup",
+                "https://arxiv.org/abs/2311.01282"
+              ],
+              "slide_visual_skeleton": [
+                "AMD 加速柱状对比图",
+                "红色加速倍数标注",
+                "论文链接竖排"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "closing_collaboration_wall_plus_thanks_backpanel",
+      "title": "收尾·合作机构墙+THANKS 封底",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "合作",
+          "致谢",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "collaboration_institution_wall",
+          "count": 1,
+          "position": "start",
+          "purpose": "以院校名+logo 网格展示合作学术伙伴阵容"
+        },
+        {
+          "archetype": "thanks_backpanel",
+          "count": 1,
+          "position": "end",
+          "purpose": "以竖排 THANKS + 团队成员/赞助方 + 主题回顾 + 联系方式收束"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "collaboration_institution_wall",
+          "to_archetype": "thanks_backpanel",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "学术 tutorial/report 双页收尾: 合作机构墙致谢学术伙伴, 再封底集中致谢团队+赞助+联系方式",
+      "anti_patterns": [
+        "单页 THANKS 无合作机构墙 — 用 closing_simple_thanks pattern",
+        "无 THANKS 主题的机构 logo 页 — 用 sponsor_logo_grid pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.11",
+          "section_title": "合作与致谢",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾章。先以合作机构墙致谢学术伙伴,再落到 THANKS 封底:团队成员、赞助方、主题回顾与联系方式,完成从成果展示到人际收束的闭环。",
+          "section_topic_tags": [
+            "合作机构 logo 墙",
+            "团队致谢",
+            "Sponsors",
+            "联系方式"
+          ],
+          "match_evidence": "2 页节奏: 合作机构墙(92)+ THANKS 封底(93)",
+          "slides": [
+            {
+              "slide_index": 92,
+              "role_in_pattern": "collaboration_institution_wall",
+              "archetype": "collaboration_institution_wall",
+              "slide_title": "合作机构墙:五所高校与实验室",
+              "slide_claim": "本工作依托清华、MIT、UC、HKUST、KIT 等多机构协作完成",
+              "slide_key_text": [
+                "Collaboration",
+                "Tsinghua University",
+                "MIT",
+                "UC (Riverside/Irvine)",
+                "HKUST",
+                "KIT"
+              ],
+              "slide_visual_skeleton": [
+                "红色院校名 + logo 网格",
+                "顶部蓝色分隔线",
+                "2 行多机构并列排布",
+                "底部作者页脚条"
+              ]
+            },
+            {
+              "slide_index": 93,
+              "role_in_pattern": "thanks_backpanel",
+              "archetype": "thanks_backpanel",
+              "slide_title": "THANKS 封底:团队致谢与联系方式",
+              "slide_claim": "报告收尾致谢团队成员与赞助方并回落至主题与联系方式",
+              "slide_key_text": [
+                "THANKS / Sponsors",
+                "Thanks to members from SJTU and Tsinghua University",
+                "Zhenhua Zhu, Shulin Zeng, Jun Liu, Kai Zhong, Ke Hong, Tianyu Fu, Jiaming Xu, Jinhao Li",
+                "Sparse Acceleration for Artificial Intelligence Progress and Trends",
+                "Guohao Dai  daiguohao@sjtu.edu.cn",
+                "Infinigence Co., LTD / NICS-EFC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "左侧青色竖排 THANKS banner",
+                "机构 + 赞助方 logo 网格",
+                "团队成员致谢文字块",
+                "主题回顾大字 + 联系方式"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial",
+          "all"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "开场"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "cover_title_signature",
+          "count": 1,
+          "position": "start",
+          "purpose": "大字亮明主题+讲者署名/日期地点"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号列出全 deck 章节骨架, 当前章高亮其余灰化"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "cover_title_signature",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "封面单页无目录 — 用 cover_only_opening pattern",
+        "目录页无进度高亮 — 用 toc_plain_listing pattern"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+          "deck_title": "稀疏加速的AI进展与趋势 (ASP-DAC Tutorial)",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "硬件加速",
+            "点云",
+            "GNN",
+            "FPGA",
+            "算子优化",
+            "软硬协同"
+          ],
+          "section_id": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.01",
+          "section_title": "封面与开场目录",
+          "section_role": "opening",
+          "section_narrative": "全 deck 的门面章:封面亮出标题/双讲者身份,目录页用高亮 1 与灰化 2-4 建立「Opening→dgSparse→Case study→Other works」四段主线,给听众全局地图。",
+          "section_topic_tags": [
+            "tutorial 封面",
+            "双讲者署名",
+            "四段进度目录"
+          ],
+          "match_evidence": "2 页节奏: 大字双讲者封面(1) + 4 段编号高亮目录(2)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "cover_title_signature",
+              "archetype": "cover_title_signature",
+              "slide_title": "Sparse Acceleration for AI: 进展与趋势",
+              "slide_claim": "稀疏加速是驱动 AI 进展与趋势的核心技术方向",
+              "slide_key_text": [
+                "Sparse Acceleration for Artificial Intelligence Progress and Trends",
+                "Prof. Xiaoming Chen, Institute of Computing Technology, Chinese Academy of Sciences",
+                "Prof. Mingyu Gao, Institute for Interdisciplinary Information",
+                "Qingyuan Research Institute Shanghai Jiao Tong University",
+                "2024/01/24 daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "顶部主标题条",
+                "浅色分隔线",
+                "双讲者署名块",
+                "底部机构与日期署名"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents: 四段主线目录",
+              "slide_claim": "本报告按 Opening→dgSparse→Case study→Other works 四段推进",
+              "slide_key_text": [
+                "Contents",
+                "1 Opening",
+                "2 dgSparse: ——Open-source sparse system framework",
+                "3 Case study: ——An exploration of sparse computing for LLMs",
+                "4 Other works and collaborations"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框",
+                "圆形编号标记 1-4",
+                "高亮/灰化条目对比",
+                "左侧蓝色进度竖条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 个 deck(ASP-DAC Tutorial 93 页 11 sections), 抽出 10 个 patterns(其中 opening_cover_plus_progress_highlighted_toc 复用 batch 0 已有 id, 其余 9 个为新 pattern)。每 pattern 仅 1 carrier(单 deck 限制), confidence 多为 low。跨 batch dedup: sec.01 复用 opening_cover_plus_progress_highlighted_toc(与 batch 0 定义 applicable_when + abstract_node_sequence 一致)。batch 内 dedup: case_study_challenge_solution_performance_closed_loop(sec.06) 与 case_study_background_motivation_multi_solution_result(sec.09) 保持分立 — 前者 challenge-solution 严格并列且规模紧凑(6-10 页), 后者含 background+motivation+分隔页+双视角结果差异明显; case_study_multi_observation_solution_pairs_with_end_to_end(sec.05) 与前两者节点数与递进结构不同, 单独立项。new_archetype 列表: structure_intro_computation_flow — 以计算流示意图介绍目标对象基本结构; sublayer_challenge_statement — 子层挑战断言式标题页; sublayer_innovation_answer — 子层创新方法页(多子类型); sublayer_experiment_result — 子层实验结果断言页; three_layer_summary_flow — 自上而下三框流程图收束; progressive_flow_stage_build — 逐帧 build 多阶段流程图; formula_factor_highlight — 公式因子逐层高亮; three_layer_design_summary — 多层协同设计小结; trend_lead_in_new_scenario — 引入新场景(LLM+专用模型); innovation_novel_paradigm_pair — 新范式对比示例; review_previous_tutorial_holder — 回顾旧版 tutorial 占位; progress_map_operators — 算子/性能进展路线图; industry_revolution_positioning — 工业革命时代高度升华; handoff_to_our_methods_roadmap — 双行进展+本组方法预告收束; paper_title_authors_only — 论文标题+作者+会议信息; realtime_need_vs_sota_gap — 实时需求 vs SOTA 精度缺口; computation_pipeline_overview — 目标计算流程/管线铺陈; observation_initial — Observation 首页(现象+数字); observation_extension — Observation 延伸页(证据/机制); solution_answer — Solution 断言标题+方法细节; end_to_end_performance — 端到端加速比整体证明; ablation_grid — 多象限消融; challenge_statement — 挑战断言+视觉对比; performance_headline — 断言式加速数字主结果; ablation_supplement — 消融/内存节省补充实验; framework_definition_intro — Innovation 标签+一句话定义引入自研框架; framework_performance_headline — 多组加速比数字铺陈框架性能; framework_integration_ecosystem — 三列并排展示开源生态集成; progress_roadmap_bridge — 路线图承上启下枢纽; solution_formulation — 循环维度/公式化算法空间; solution_mechanism — 具体机制(启发式模型/动态选择); performance_result — 加速比闭环; macro_ai_roadmap — 三时代阶梯+三轴维度 AI 演进路标; three_axis_trend_panel — 三列并排 panel 展开数据/模态/任务三轴; model_moore_law_growth_chart — 对数增长曲线论证模型规模摩尔定律级暴涨; supply_demand_gap_chart — 需求 vs 硬件曲线证算力供需鸿沟; solution_introduction_bridge — 性能-能效对比正式引入解法; definition_benefit_summary — 解法定义+关键倍数收束; paradigm_shift_dual_column — 左右两栏对照 1.0/2.0 范式核心差异; era_sparsity_taxonomy_table — 同构四列表格铺 1.0/2.0 稀疏性谱系, 红框强调新增行; progress_roadmap_handoff — 进展路线图收束到新方法预告; platform_benchmark_speedup — 单个硬件平台家族的加速比对比图; collaboration_institution_wall — 院校名+logo 网格展示合作学术伙伴; thanks_backpanel — 竖排 THANKS + 团队成员/赞助方 + 主题回顾 + 联系方式封底; background_tradeoff_spectrum — 谱系图/对比论证技术折衷; motivation_platform_advantage — 目标平台核心优势论证; chapter_transition_divider — 留白分隔页引出后续多解法; performance_result_platform — 目标平台自身指标结果; performance_result_cross_platform — 跨平台对比(如 GPU vs FPGA)总账收益; key_challenge_comparison_table — 训练成本对比表 challenge; innovation_mask_generation_diagram — mask 自动生成图例; innovation_dual_table_compare — 双表对比创新点; experiment_result_dual_path — 双路径精度实验结果; challenge_utilization_compare — 利用率左右两栏 challenge; key_idea_tradeoff_statement — 权衡关键洞见断言; key_idea_quantitative_example — 定量示例关键洞见; innovation_model_adaptive_dataflow — M3 自适应数据流建模; innovation_operator_combination_example — 多算子组合建模示例; challenge_discrete_vs_configurable — 离散 vs 可配置挑战; innovation_configurable_array_diagram — 可配置乘法器阵列架构; innovation_input_path_configurable — 可配置输入路径; innovation_output_path_configurable — 可配置输出路径; experiment_result_baseline_multi — 多 baseline 评测结果; three_layer_summary_vertical_flow — 竖向三框流程图收尾。",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 11,
+    "sections_unassigned_in_this_batch": []
+  }
+}

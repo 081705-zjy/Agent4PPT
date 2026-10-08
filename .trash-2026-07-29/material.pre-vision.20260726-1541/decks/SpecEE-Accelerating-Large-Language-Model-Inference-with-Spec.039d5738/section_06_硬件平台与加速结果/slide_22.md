@@ -1,0 +1,45 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_22"
+所属章节: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.06"
+所属deck: "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738"
+页序号: 22
+源文件: "templates/本组论文与科研成果/SpecEE Accelerating Large Language Model Inference with Speculative Early Exiting.pptx"
+页面角色: "content_candidate"
+标题: "精度无损：准确率损失小于 1%"
+核心论断: "SpecEE 相比原模型精度损失可忽略（<1%）"
+本页讲什么: "本页给出 SpecEE 的精度评测结果，表明相比原始模型准确率损失可忽略（小于 1%），先兑现精度无损承诺，再为后续加速倍数结果扫清质量顾虑，是结果层的第一重证据。"
+关键文字: "[\"Negligible accuracy loss (<1%)\", compared with the original model]"
+视觉骨架: "[精度对比表格, 准确率损失标注]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_22.asset.01, tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.slide_22.asset.02]"
+适合复用场景: "[加速方法精度无损论证页, 与原模型准确率对比结果页]"
+不适合复用场景: "[纯速度加速图页, 方法架构示意页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+alternate_claims:
+layout_tag: "benchmark_table"
+---
+# slide 22: 精度无损：准确率损失小于 1%
+
+**核心论断**: SpecEE 相比原模型精度损失可忽略（<1%）
+
+## 本页讲什么
+本页给出 SpecEE 的精度评测结果，表明相比原始模型准确率损失可忽略（小于 1%），先兑现精度无损承诺，再为后续加速倍数结果扫清质量顾虑，是结果层的第一重证据。
+
+## 关键文字片段
+- Negligible accuracy loss (<1%)
+- compared with the original model
+
+## 视觉骨架
+- 精度对比表格
+- 准确率损失标注
+
+## 可复用到
+- 加速方法精度无损论证页
+- 与原模型准确率对比结果页
+
+## 不适合复用的场景
+- 纯速度加速图页
+- 方法架构示意页

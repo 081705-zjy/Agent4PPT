@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_14",
+  "所属章节": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+  "页序号": 14,
+  "源文件": "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Q2：如何利用摘要信息？",
+  "核心论断": "如何高效利用摘要信息是检索增强的核心待解问题",
+  "本页讲什么": "以大字提问 'Q2: How to utilize summarized information?' 抛出本方法章要回答的核心问题，承接前文背景与洞察，正式引入分层摘要语义索引这条方法线，随后几页将逐层给出答案。",
+  "关键文字": [
+    "Q2: How to utilize summarized information?"
+  ],
+  "视觉骨架": [
+    "居中大字提问版式",
+    "问题编号 Q2 标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_14.asset.01",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_14.asset.02",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_14.asset.03",
+    "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_14.asset.04"
+  ],
+  "适合复用场景": [
+    "方法章开篇提问式过渡页",
+    "RAG 摘要利用主题设问页"
+  ],
+  "不适合复用场景": [
+    "密集数据图表页",
+    "多模块架构总览页"
+  ],
+  "上页角色": "toc_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

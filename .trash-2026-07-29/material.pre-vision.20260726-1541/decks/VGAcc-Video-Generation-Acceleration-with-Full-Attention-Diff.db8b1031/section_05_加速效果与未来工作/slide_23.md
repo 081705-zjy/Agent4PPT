@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_23"
+所属章节: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.05"
+所属deck: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031"
+页序号: 23
+源文件: "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx"
+页面角色: "content_candidate"
+标题: "VGAcc 加速比与面积效率"
+核心论断: "VGAcc 在加速比与面积效率上显著优于基线"
+本页讲什么: "承接过渡页，用量化数据坐实前四章架构设计的收益。展示 VGAcc 达成的加速比（speedup）与面积效率（area efficiency）两项核心指标，配两张图表对比说明架构改造带来的性能与硬件开销优势。"
+关键文字: "[Speedup and area efficiency, VGAcc achieves]"
+视觉骨架: "[加速比对比图, 面积效率对比图]"
+资源ID列表: "[tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_23.asset.01, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_23.asset.02]"
+适合复用场景: "[硬件加速器加速比结果页, 面积效率对比展示页]"
+不适合复用场景: "[纯文字动机论证页, 架构框图总览页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "result"
+视觉文本层次:
+  - {"位置": "左侧图表", "内容": "加速比对比图"}
+  - {"位置": "右侧图表", "内容": "面积效率对比图"}
+alternate_claims:
+  - "面积效率优于基线架构"
+layout_tag: "benchmark_table"
+---
+# slide 23: VGAcc 加速比与面积效率
+
+**核心论断**: VGAcc 在加速比与面积效率上显著优于基线
+
+## 本页讲什么
+承接过渡页，用量化数据坐实前四章架构设计的收益。展示 VGAcc 达成的加速比（speedup）与面积效率（area efficiency）两项核心指标，配两张图表对比说明架构改造带来的性能与硬件开销优势。
+
+## 关键文字片段
+- Speedup and area efficiency
+- VGAcc achieves
+
+## 视觉骨架
+- 加速比对比图
+- 面积效率对比图
+
+## 可复用到
+- 硬件加速器加速比结果页
+- 面积效率对比展示页
+
+## 不适合复用的场景
+- 纯文字动机论证页
+- 架构框图总览页

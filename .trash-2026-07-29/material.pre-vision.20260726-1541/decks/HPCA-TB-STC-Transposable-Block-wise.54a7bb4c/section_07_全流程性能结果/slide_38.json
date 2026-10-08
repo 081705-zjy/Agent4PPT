@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_38",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.07",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 38,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "相对 Dense 基线的全流程加速收益",
+  "核心论断": "TB-STC 全流程相较 Dense 基线取得明确定量加速",
+  "本页讲什么": "本页以 Dense 为对照基线，用一组具体数值（如 0.617、0.477、0.203、0.176、0.505 等）落地全流程（含反向传播）训练的定量收益，兑现前文与上一页反向转置加速的承诺，是本章及 deck 收尾的实证落点。",
+  "关键文字": [
+    "Dense",
+    "0.617 / 0.477",
+    "0.203 / 0.176",
+    "0.505"
+  ],
+  "视觉骨架": [
+    "Dense 对照数值组",
+    "全流程加速对比图/表"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_38.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_38.asset.02"
+  ],
+  "适合复用场景": [
+    "稀疏核 vs Dense 定量结果页",
+    "训练全流程加速收益对照页"
+  ],
+  "不适合复用场景": [
+    "章节目录/分隔页",
+    "无数字的方法示意页",
+    "概念性 bullet 页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "ending_candidate",
+  "分析状态": "claude-opus-4-8"
+}

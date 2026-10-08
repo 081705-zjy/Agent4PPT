@@ -1,0 +1,524 @@
+{
+  "batch_index": 4,
+  "rules": [
+    {
+      "id": "toc_layout_vertical_numbered_list_with_current_highlighted",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录页布局·纵向编号列表+当前项高亮",
+      "description": "目录/章节切换页统一采用蓝色边框容器内纵向排列 5 个带编号圆点的章节标题，当前章节以实心蓝点高亮，其余灰化，用同一版式反复出现以强化进度感。",
+      "evidence_signals": [
+        "视觉骨架 含 '蓝色边框' / '编号圆点' / '竖排目录'",
+        "关键文字 含 'Contents' + 章节序号 (1/2/3/...)",
+        "视觉骨架 含 '当前项高亮' 或 '灰化' 标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 2,
+          "评价": "全篇首个 Contents 页, 蓝框内 5 编号圆点纵排"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 10,
+          "评价": "章节切换页, 高亮第 2 项 Insight, 其余灰化"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 17,
+          "评价": "高亮第 3 项 Solution, 版式与前几张 Contents 页完全一致"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 34,
+          "评价": "高亮第 4 项 Experiment"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 42,
+          "评价": "高亮第 5 项 Summary, 收尾章 toc"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节间反复复用同一目录版式并高亮当前项, 让听众持续知道'讲到哪儿', 是长 deck 的空间锚点, 变换版式反而破坏定位感",
+      "fix_hint": "把 toc 页统一为 5 项纵向编号列表, 当前章节高亮实心圆点, 其余灰化",
+      "exceptions": [
+        "章节数 < 3 的短 deck (整体导航价值低)"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_bilingual_title_with_author_block",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "封面页布局·居中双语标题+多机构作者块",
+      "description": "论文分享型 cover 页居中大字英文主标题+副标题(方法名/技术定位), 下方多行作者署名列出机构与共同一作/通讯作者, 底部脚注邮箱, 无正文内容元素。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大标题' / '副标题'",
+        "关键文字 含 机构名 + 多行作者姓名",
+        "关键文字 含 '@' 邮箱或 '通讯作者'/'Corresponding' 字样",
+        "无 '正文段落' / 'bullet 列表' 视觉元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 1,
+          "评价": "居中主标题 FlightVGM + 副标题 + 三机构作者块 + 两邮箱脚注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "论文分享的开场瞬间必须完成'我是谁、代表哪个机构、研究什么'三重身份声明, 居中大标题+作者块是最短路径, 加入其他内容元素会分散身份聚焦",
+      "fix_hint": "cover 主标题居中放大, 作者与机构列在标题下, 邮箱做脚注, 移除任何 bullet 或正文段落",
+      "exceptions": [
+        "商业型 pitch cover (品牌/slogan 优先, 作者块可省略)"
+      ]
+    },
+    {
+      "id": "content_top_thesis_banner_with_body_below",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文页布局·顶部论断条+下方图解主体",
+      "description": "正文页顶部固定为蓝色条(或蓝框)承载一句判断句结论, 下方留给示意图/表格/公式主体, 关键数字用红色高亮, 形成'看红字就懂主张'的视觉入口。",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部蓝色论断条' / '顶部蓝色标题条' / '蓝框论断'",
+        "视觉骨架 含 '红色高亮' 或 '红字'",
+        "关键文字 首句为完整判断句 (含 '是' / 'is' / 'are' / 'achieves' / '仅' 等)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 7,
+          "评价": "顶部蓝条 'VGM 瓶颈已从访存转为计算受限', 下方 LLM/VGM 对比表"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 36,
+          "评价": "顶部论断 + 红字 0.008 loss, 下方 Original/Ours 视频帧对比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 39,
+          "评价": "顶部蓝框 1.3x/4.5x 论断 + 红色倍数, 下方 Tech.1/Tech.2 归因块"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 40,
+          "评价": "顶部论断 2.84x + 红色高亮, 下方对比图表"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 35,
+          "原因": "动画首帧的过渡态, 只有 bullet 大纲, 未加载顶部论断条"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "顶部一句判断句让听众 3 秒抓住本页主张, 图解主体承担'为什么', 分工清晰; 若图先文后, 听众要看完图才知道主张, 认知成本高",
+      "fix_hint": "把本页核心论断改成判断句放到顶部蓝条, 关键数字/术语用红字, 图表/公式放下半页支撑",
+      "exceptions": [
+        "章节封面/目录/致谢等无内容主体的角色页",
+        "纯 demo 展示页 (视觉本身即结论)"
+      ]
+    },
+    {
+      "id": "method_intro_uses_gray_method_label_with_key_idea",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法引入页·灰底 Method 标签+Key idea 一句话",
+      "description": "章节内每项新技术(Tech.N)的引入页统一带一个灰底 'Method' 标签框, 内置 'Key idea:' 一句话主张, 配示意图, 用同一版式让听众识别'又进入一项新技术'。",
+      "evidence_signals": [
+        "视觉骨架 含 'Method 灰底标签框'",
+        "关键文字 含 'Key idea:' 或 'Tech.N:' 前缀",
+        "标题以 'Tech.' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 18,
+          "评价": "Tech.1 引入页, Method 灰底框 + Key idea: 帧间/帧内相似性"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 23,
+          "评价": "Tech.2 引入页, Method 灰底框 + Key idea: 可配置设计支持混合精度"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 29,
+          "评价": "Tech.2 收束页也复用 Method 灰底框声明结论"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "多项技术并列时, 统一的引入标签让听众每次都在同一视觉位置捕获'新技术+核心想法', 减少每次重新定位版面的成本",
+      "fix_hint": "在每项新技术首页顶部加灰底 Method 标签框, 内写 'Key idea: <一句话>', 下方留示意图",
+      "exceptions": [
+        "单一技术的短 deck (无需并列区分)",
+        "非 paper_share 类型 deck (无 Tech.N 结构)"
+      ]
+    },
+    {
+      "id": "comparison_uses_side_by_side_dual_panel",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "对比页布局·左右并列双面板",
+      "description": "涉及 A vs B、方案对比、多示例并列时统一采用左右两栏并列面板结构, 每栏独立小标题+图/文, 避免上下堆叠, 强化对照关系。",
+      "evidence_signals": [
+        "视觉骨架 含 '左右双 panel 并列' 或 '两栏并列'",
+        "关键文字 含两个对照小标题 (如 'A' 与 'B', 'Original' 与 'Ours')",
+        "本页讲什么 含 '对照' / '并列' / '对比'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 5,
+          "评价": "Sora 与厂商跟进左右双 panel"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 6,
+          "评价": "VGM 结构与 Diffusion 左右两栏"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 12,
+          "评价": "Video Compression 与 Video Generation 双行类比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 36,
+          "评价": "Original 与 Ours 视频帧左右列对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "并列对比用左右横向排布最贴合视觉扫描习惯, 上下堆叠会让听众把两块当因果或先后关系而非对照",
+      "fix_hint": "涉及 A/B 对比时改为左右双栏, 每栏顶置小标题, 图/文各自独立, 尺寸对称",
+      "exceptions": [
+        "对比项 ≥ 4 时改用表格或行列网格",
+        "对比项有明确时序/因果关系时改用上下箭头链"
+      ]
+    },
+    {
+      "id": "ending_layout_thanks_headline_with_full_author_block",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页布局·大字 Thanks+全员作者署名",
+      "description": "全篇末页居中大字 'Thanks for your listening!', 下方列出完整作者姓名与单位, 通讯作者以红色/加粗高亮, 无内容元素。",
+      "evidence_signals": [
+        "关键文字 含 'Thanks' 或 '致谢'",
+        "视觉骨架 含 '大字致谢标题' / '居中'",
+        "关键文字 含多行作者姓名 + '通讯' 或 'Corresponding' 高亮"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 45,
+          "评价": "大字 Thanks + 全体作者 + Yu Wang/Guohao Dai 红色通讯标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结尾页承担'讲完了+再次点名团队'的双重仪式功能, 大字致谢定基调, 作者块回收团队信用, 加内容会稀释仪式感",
+      "fix_hint": "末页只留一个居中大字致谢标题 + 全员作者块, 通讯作者高亮; 移除任何内容/引用元素",
+      "exceptions": [
+        "商业 pitch 结尾 (改为 CTA 或联系方式而非致谢)"
+      ]
+    },
+    {
+      "id": "title_prefixed_with_section_or_tech_marker",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题前缀·Section 名/Tech 序号锁定位置",
+      "description": "正文页标题统一用 'Background:XXX' / 'Tech.N:XXX' / 'Evaluation:XXX' / 'Summary:XXX' 等冒号前缀显式声明所属章节或技术编号, 让听众看标题就知道讲到哪。",
+      "evidence_signals": [
+        "标题含冒号 ':'",
+        "标题以 'Background' / 'Tech.' / 'Evaluation' / 'Summary' / 'Future Work' 等章节关键词开头",
+        "冒号后为具体页主题"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 4,
+          "评价": "'Background:生成式 AI 概览' — Background 前缀锁定章节"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 18,
+          "评价": "'Tech.1:时空在线激活稀疏化方法引入' — Tech.N 序号前缀"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 23,
+          "评价": "'Tech.2:基于 DSP58 的可配置混合精度硬件'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 30,
+          "评价": "'Tech.3:动静结合自适应调度方法引入'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 43,
+          "评价": "'Summary:FlightVGM 两大核心技术回收'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 9,
+          "原因": "'硬件演进的两大驱动力' 未加 Background 前缀, 位置模糊"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "长 deck 里标题前缀是听众定位当前章节最快的信号, 比每次跳回 toc 页确认成本低; 前缀化让 title 同时承载'位置'与'主题'双信息",
+      "fix_hint": "正文页 title 前加 'Background:' / 'Tech.N:' / 'Evaluation:' / 'Summary:' 章节前缀, 冒号后写页主题",
+      "exceptions": [
+        "cover / toc / 致谢等无章节归属页",
+        "非结构化 deck (无明显章节划分时无前缀可加)"
+      ]
+    },
+    {
+      "id": "claim_carries_concrete_number_with_baseline",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断携带数字+对照 baseline",
+      "description": "实验/评估类页面的核心论断句必须包含具体数字(倍数/百分比/损失值)并显式对照 baseline, 例如 '1.3x speedup / 4.5x energy efficiency compared with NVIDIA 3090 GPU', 不用 '显著提升' 之类模糊表达。",
+      "evidence_signals": [
+        "核心论断 含数字 + 'x' / '%' / 单位",
+        "核心论断 含 'compared with' / 'over' / '相比' / '较' + baseline 名",
+        "section_role = 'experiment' 或 'closing'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 36,
+          "评价": "'仅 0.008 精度损失, 远优于 INT8 的 0.042' — 数字+对照"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 39,
+          "评价": "'较 3090 GPU 实现 1.3x 加速与 4.5x 能效 (21x 峰值算力)'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 40,
+          "评价": "'较 SOTA 加速器平均 2.84x 性能与能效提升'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 14,
+          "评价": "'混合精度下 FPGA 仅能发挥 66.67% 峰值算力' — 数字锚定问题严重度"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "学术分享里唯一有说服力的定量证据是'相对 baseline 的具体倍数', 缺任一半(缺数字或缺 baseline)听众都无法判断成果分量",
+      "fix_hint": "把 experiment/closing 页的核心论断改成 '<数字x/%> <指标> compared with <baseline>' 三段结构",
+      "exceptions": [
+        "非实验类页(背景/方法引入) 允许无数字",
+        "定性洞察页 (Insight 类) 允许无 baseline"
+      ]
+    },
+    {
+      "id": "key_numbers_and_terms_highlighted_in_red",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "关键数字与术语用红色高亮",
+      "description": "核心倍数、百分比、被强调的关键术语(算子强度、MACs、通讯作者)在正文中用红色着重, 让听众扫过页面时红色 token 首先入眼。",
+      "evidence_signals": [
+        "视觉骨架 含 '红色高亮' / '红字' / '红色标注'",
+        "关键文字 含具体数字 (Nx / N%)",
+        "本页讲什么 提到 '红色' / '高亮'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 8,
+          "评价": "各代 GPU 架构关键特性红字标注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 15,
+          "评价": "各工作提升倍数红色数字标注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 39,
+          "评价": "1.3x/4.5x/21x 倍数红色高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 45,
+          "评价": "通讯作者 Yu Wang, Guohao Dai 红色标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "红色是视觉高对比色, 用它专门锁定'一页里最要记住的 1-2 个信号'能形成稳定的注意力引导; 若泛用红色则退化为噪音",
+      "fix_hint": "把每页最值得记的数字/关键术语单独染红, 其余文字保持默认色, 每页红字 token 控制在 3 个以内",
+      "exceptions": [
+        "全页只讲一个数字/示意 (无需再高亮)",
+        "封面/致谢等无对比诉求页"
+      ]
+    },
+    {
+      "id": "method_pages_lead_with_key_idea_one_sentence",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页首句·Key idea 一句话点题",
+      "description": "方法引入页在示意图前必带一句 'Key idea: <一句话>' 直陈本技术的核心机制(如'利用帧间/帧内相似性削减冗余计算'), 让听众先拿到抽象机制再看具体图。",
+      "evidence_signals": [
+        "关键文字 含 'Key idea:'",
+        "section_role = 'method'",
+        "本页讲什么 含 '核心思想' 或 '关键机制'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 18,
+          "评价": "'Key idea: Reduce redundant computations by leveraging inter-/intra-frame similarity'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 23,
+          "评价": "'Key idea: The configurable design supports hybrid precision'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 30,
+          "原因": "Tech.3 引入页未显式写 'Key idea:', 直接进入 Scheduling 说明"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "机制先于示意能让听众在看图时带着'该找什么'的问题, 反之只看图容易被视觉细节淹没抓不到点; Key idea 一句话是最短的先验注入",
+      "fix_hint": "每项新技术首页第一行写 'Key idea: <抽象机制一句话>' 再放示意图/流程",
+      "exceptions": [
+        "纯背景/引入页 (无技术机制可讲)",
+        "延续上页的技术细节页 (Key idea 已在首页给出)"
+      ]
+    },
+    {
+      "id": "bilingual_english_topic_with_chinese_gloss",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题双语·英文术语+中文短语解释",
+      "description": "面向中文听众的英文论文分享 deck, 标题常用'英文技术词/前缀+中文简短解释'双语构造, 如 'Tech.1:时空在线激活稀疏化方法引入', 兼顾原文术语可追溯与中文快速理解。",
+      "evidence_signals": [
+        "标题同时含英文单词/缩写 与 中文短语",
+        "关键文字 主要为英文, 但 本页讲什么 与 标题 含中文",
+        "报告类型 = paper_share"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 4,
+          "评价": "'Background:生成式 AI 概览' 中英前缀+中文说明"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 23,
+          "评价": "'Tech.2:基于 DSP58 的可配置混合精度硬件'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 43,
+          "评价": "'Summary:FlightVGM 两大核心技术回收'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "国际论文的原始术语保英文能与图/表/引文对齐, 中文短语补足非母语听众瞬时理解成本, 纯英文标题会让讲者不得不口头翻译, 纯中文会与图内英文脱节",
+      "fix_hint": "标题写 '<英文前缀/术语>:<中文短语解释>', 页内图表保留英文原词",
+      "exceptions": [
+        "面向纯英文受众的 deck",
+        "面向非专业中文听众的科普 deck (可全中文)"
+      ]
+    },
+    {
+      "id": "claim_uses_judgment_sentence_not_topic_phrase",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·判断句而非主题短语",
+      "description": "每页核心论断字段必须是完整判断句(含'是/不同于/仅/实现/需要'等谓词), 表达明确立场; 不用 'XX 的介绍' / 'XX 概述' 这类主题短语, 让论断本身即可独立成立。",
+      "evidence_signals": [
+        "核心论断 含完整谓语结构 ('是' / '实现' / '不同于' / '需要' / 'is' / 'achieves')",
+        "核心论断 不以 '介绍' / '概述' / 'Introduction to' 结尾",
+        "核心论断 表达可被证伪或验证的判断"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 7,
+          "评价": "'与 LLM 不同, VGM 推理瓶颈由访存转为计算受限' — 明确判断"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 13,
+          "评价": "'GPU 规则架构无法从激活稀疏中获得加速收益'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "slide_index": 43,
+          "评价": "'FlightVGM 首个 FPGA VGM 加速器, 靠时空稀疏+混合精度加速'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.92,
+      "enforcement_level": "hard",
+      "rationale": "判断句让本页有'立场', 听众能对齐或反驳; 主题短语只声明'讲什么'不给出立场, 页面变成'展开性 filler', 分享节奏松弛",
+      "fix_hint": "把核心论断改成 '<主语> <谓语> <宾语>' 判断句, 去掉 '介绍/概述/关于' 之类主题词",
+      "exceptions": [
+        "纯示例/demo 页 (视觉即结论)",
+        "章节封面/toc 页 (承担导航而非主张)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (FlightVGM 论文分享), 6 条 visual rule + 6 条 authoring rule, 覆盖 cover/toc/content/method-intro/experiment/ending 全部 role. previous_batches_rules 为空, 全部新 id",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 6,
+      "authoring": 6
+    }
+  }
+}

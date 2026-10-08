@@ -1,0 +1,1046 @@
+{
+  "batch_index": 3,
+  "patterns": [
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution",
+      "title": "开场·论文封面+多作者多机构署名",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "论文",
+          "署名",
+          "机构"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "左对齐大字论文标题+多作者列+多机构脚注, 建立学术身份锚点"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "论文分享类 deck 的极简单页开场: 一页承担论文封面, 左对齐大标题+多行作者+多家合作机构署名, 无 TOC/agenda 页, 直接接背景章",
+      "anti_patterns": [
+        "封面+高亮 TOC 二连页(2 页开场) — 用 [[opening_cover_plus_progress_highlighted_toc]]",
+        "空白模板占位封面(无真实论文名/作者) — 用 [[opening_blank_cover_skeleton_single_page]]"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.01",
+          "section_title": "封面",
+          "section_role": "opening",
+          "section_narrative": "全 deck 门面页,单页承担身份声明:亮出论文标题 Endor、作者团队与五家机构,为后续背景/方法/评测建立学术署名与主题锚点。",
+          "section_topic_tags": [
+            "Endor论文封面",
+            "近解码机会挖掘",
+            "大模型推理",
+            "多机构合作署名"
+          ],
+          "match_evidence": "单页承担论文封面身份: 左对齐大标题 Endor + 多行作者(含通讯作者) + 五家机构脚注, 无 TOC 页",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "Endor: Exploit Nearly-Decode-Only Opportunities",
+              "slide_claim": "Endor 论文正式署名亮相,由五校机构联合出品",
+              "slide_key_text": [
+                "Endor: Exploit Nearly-Decode-Only Opportunities",
+                "Jun Liu, Tianlang Zhao, Shiyi Liu, Jiancai Ye 等作者",
+                "Guohao Dai (通讯)",
+                "Shanghai Jiao Tong University, Infinigence AI, SII",
+                "Tsinghua University, Hong Kong University of Science and Technology"
+              ],
+              "slide_visual_skeleton": [
+                "左对齐大标题块",
+                "作者姓名多行列表",
+                "机构脚注编号标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+      "title": "背景·agenda→价值→范式代价→机制→算子拆解",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "范式演进",
+          "价值论证",
+          "算子拆解"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首五段式 agenda 高亮定位 Background"
+        },
+        {
+          "archetype": "value_argument_dual_panel_evidence",
+          "count": 1,
+          "position": "middle",
+          "purpose": "论证目标技术(reasoning)价值: 路线图+准确率对比双 panel"
+        },
+        {
+          "archetype": "paradigm_shift_cost_compare_chart",
+          "count": 1,
+          "position": "middle",
+          "purpose": "揭示范式转变(token→action)带来的成本(10× 延迟)"
+        },
+        {
+          "archetype": "mechanism_overview_plus_detail_dual",
+          "count": 1,
+          "position": "middle",
+          "purpose": "拆解新范式内部机制(MCTS 树 + 单步细节)"
+        },
+        {
+          "archetype": "operator_pipeline_breakdown",
+          "count": 1,
+          "position": "end",
+          "purpose": "将机制进一步拆为多类算子, 为下章硬件挑战埋伏笔"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "value_argument_dual_panel_evidence",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "value_argument_dual_panel_evidence",
+          "to_archetype": "paradigm_shift_cost_compare_chart",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "paradigm_shift_cost_compare_chart",
+          "to_archetype": "mechanism_overview_plus_detail_dual",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "mechanism_overview_plus_detail_dual",
+          "to_archetype": "operator_pipeline_breakdown",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型 background 章: 五段 agenda → 论证目标技术价值 → 抛出范式转变的成本代价 → 展开内部机制(MCTS) → 拆为算子流水线, 为后续硬件挑战建靶",
+      "anti_patterns": [
+        "宏观→痛点漏斗式 background(无算子级下钻) — 用 [[background_macro_gap_to_policy_to_method_bridge]]",
+        "1.0→2.0 范式对照式 background(仅表格递进) — 用 [[background_paradigm_shift_dual_era_comparison_table]]"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "section_title": "大模型推理背景与解码演进",
+          "section_role": "background",
+          "section_narrative": "Background 章,为全 deck 铺垫:先论证 LLM reasoning 提升能力的价值,再揭示解码由 token 级转向 action 级带来 10× 延迟,末尾拆出 Prefill/Decode/PRM 三类算子,为后续 NMP 挑战埋伏笔",
+          "section_topic_tags": [
+            "LLM reasoning价值",
+            "action级解码",
+            "MCTS推理树",
+            "10x延迟成本",
+            "算子流水线拆解"
+          ],
+          "match_evidence": "5 页节奏: agenda → 价值双 panel(路线图+准确率) → token vs action 10× 成本 → MCTS 总览+细节 → LLM-P/LLM-D/PRM 算子拆解, 逐层下钻到算子级",
+          "slides": [
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "全 deck 五段式 agenda(Background 高亮)",
+              "slide_claim": "全 deck 分五段推进,当前进入 Background 章",
+              "slide_key_text": [
+                "1 Background",
+                "2 Challenge",
+                "3 Solution",
+                "4 Evaluation",
+                "5 Summary"
+              ],
+              "slide_visual_skeleton": [
+                "纵向编号圆圈导航",
+                "5 项章节列表",
+                "当前项高亮对比"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_pattern": "value_argument_dual_panel_evidence",
+              "archetype": "dual_panel_roadmap_plus_accuracy_bar",
+              "slide_title": "LLM reasoning 提升能力成为重要研究方向",
+              "slide_claim": "reasoning 相比标准解码显著提升 LLM 能力,成为重要方向",
+              "slide_key_text": [
+                "LLM reasoning has become an important research direction",
+                "Because it improves LLM capabilities compared to standard",
+                "OpenAI's roadmap toward AGI (2022-2024)",
+                "Capability improvement: DeepSeek V3 (LLM)",
+                "Accuracy 97.3 / 96.3",
+                "DeepSeek V3 VS DeepSeek R1"
+              ],
+              "slide_visual_skeleton": [
+                "左右双 panel 布局",
+                "AGI roadmap 时间线",
+                "准确率对比柱图",
+                "Better 箭头标注"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "paradigm_shift_cost_compare_chart",
+              "archetype": "token_vs_action_latency_compare",
+              "slide_title": "解码由 token 级转向 action 级带来 10× 开销",
+              "slide_claim": "自回归解码从 token 级转向 action 级,推理开销激增约 10×",
+              "slide_key_text": [
+                "The autoregressive decoding shifts from token-level to action-level by step-",
+                "Token-level × 1",
+                "Action-level × N Iterations",
+                "Inference Cost 10×",
+                "Latency (s)"
+              ],
+              "slide_visual_skeleton": [
+                "左右 token vs action 对比图",
+                "Latency 灰红双柱图",
+                "10× 红字开销标注",
+                "N 次迭代箭头"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "mechanism_overview_plus_detail_dual",
+              "archetype": "mcts_tree_overview_plus_step_detail",
+              "slide_title": "Action 级推理为 MCTS 四步流程",
+              "slide_claim": "LLM 生成子答案、PRM 打分作证据扩展子节点,构成 MCTS 四步推理",
+              "slide_key_text": [
+                "The LLM generates subordinate answers, and the PRM scores them as evidence to create child nodes",
+                "Overview: The four step of Action-level procedure LLM reasoning (MCTS-based)",
+                "Expansion / Simulation",
+                "PRM (LLM) / Pre-trained LLM",
+                "SubQuestion / SubAnswer / Update next input"
+              ],
+              "slide_visual_skeleton": [
+                "MCTS 树状节点图",
+                "四步流程标注",
+                "左总览右细节双区",
+                "PRM 打分流程框图"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "operator_pipeline_breakdown",
+              "archetype": "operator_pipeline_colored_blocks",
+              "slide_title": "推理流水线拆为 Prefill/Decode/PRM 三类算子",
+              "slide_claim": "推理流水线由 LLM Prefill、LLM Decode、PRM prefill 三类算子组成",
+              "slide_key_text": [
+                "The reasoning pipeline consists of three types of operators (①②③)",
+                "① LLM Prefill (LLM-P)",
+                "② LLM Decode, used to generate subquestions (LLM-D)",
+                "③ PRM prefill, used to compute the reward score (PRM)",
+                "Update next input"
+              ],
+              "slide_visual_skeleton": [
+                "LLM-P|LLM-D|PRM 三色块流水线",
+                "编号 ①②③ 算子标注",
+                "Question→Reward score 数据流图"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "problem_related_works_survey_dual_challenge_to_solution_bridge",
+      "title": "问题·相关工作综述→双挑战并列→方案桥接",
+      "applicable_when": {
+        "chapter_role": [
+          "problem"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "相关工作",
+          "挑战",
+          "瓶颈",
+          "方案引出"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Challenge 章"
+        },
+        {
+          "archetype": "related_works_survey_three_pillars",
+          "count": 1,
+          "position": "middle",
+          "purpose": "横向 N 列并列综述现有工作三条路线"
+        },
+        {
+          "archetype": "first_challenge_data_backed_pain",
+          "count": 1,
+          "position": "middle",
+          "purpose": "挑战一: 用数字对比(如 <4% 利用率)证明第一大瓶颈"
+        },
+        {
+          "archetype": "second_challenge_data_backed_pain",
+          "count": 1,
+          "position": "middle",
+          "purpose": "挑战二: 用时间线/结构图证明第二大瓶颈"
+        },
+        {
+          "archetype": "proposal_solution_bridge_headline",
+          "count": 1,
+          "position": "end",
+          "purpose": "单句大字提出方案名, 桥接到下一章方法"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "related_works_survey_three_pillars",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "related_works_survey_three_pillars",
+          "to_archetype": "first_challenge_data_backed_pain",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "first_challenge_data_backed_pain",
+          "to_archetype": "second_challenge_data_backed_pain",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "second_challenge_data_backed_pain",
+          "to_archetype": "proposal_solution_bridge_headline",
+          "hook_type": "pain_to_solution_bridge"
+        }
+      ],
+      "applicable_summary": "论文分享型 problem 章: agenda → 综述现有工作 N 条路线 → 挑战1(数据佐证) → 挑战2(结构佐证) → 单句提出本文方案, 立靶后收束到下章方法",
+      "anti_patterns": [
+        "宏观→痛点漏斗(先趋势后落到本领域痛点) — 用 [[motivation_funnel_macro_to_pain]] 类模式",
+        "单挑战直接展开(无相关工作综述、无双挑战对照) — 用其他 problem_only 类模式"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "section_title": "复用NMP近存架构的挑战",
+          "section_role": "problem",
+          "section_narrative": "承接 Background,先综述三类 NMP/SCF 近存工作,再拆出算力利用率低与并行性丧失两大障碍,为下一章 Endor 算法-硬件协同设计立靶。",
+          "section_topic_tags": [
+            "NMP近存架构综述",
+            "SCF存算融合",
+            "KV Cache访存瓶颈",
+            "算力利用率低",
+            "并行性丧失"
+          ],
+          "match_evidence": "5 页节奏: TOC → 三列 NMP 工作综述(PAISE/Hermes/H2-LLM) → 挑战1 <4% GPU 利用率 → 挑战2 NMP 并行性浪费 → 单句 We propose Endor 桥接",
+          "slides": [
+            {
+              "slide_index": 7,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "章节导航:进入 Challenge",
+              "slide_claim": "本章由 Background 承接,聚焦 Challenge 挑战环节",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点导航",
+                "四段目录列表",
+                "当前项高亮加粗"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "related_works_survey_three_pillars",
+              "archetype": "three_column_related_work_panels",
+              "slide_title": "三类 NMP/SCF 近存工作综述",
+              "slide_claim": "现有工作沿三条路线用 NMP 架构做存算融合加速 LLM 推理",
+              "slide_key_text": [
+                "Current works leverage the NMP architecture as a SCF solution for efficient LLM inference",
+                "NMP in DRAM banks — PAISE [HPCA'25]",
+                "NMP in DIMM buffer chips — Hermes [HPCA'25]",
+                "NMP in logic dies — H2-LLM [ISCA'25]"
+              ],
+              "slide_visual_skeleton": [
+                "3 列并列 panel",
+                "各列近存架构示意图",
+                "顶部总述框",
+                "底部参考文献行"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "first_challenge_data_backed_pain",
+              "archetype": "quantitative_gap_with_bottleneck_number",
+              "slide_title": "挑战一:MPC 算法算力利用率低",
+              "slide_claim": "直接套用 MPC 算法导致算力利用率极低,GPU 不足 4%",
+              "slide_key_text": [
+                "Challenge 1: Simply using the MPC algorithms leads to low computational utilization",
+                "KV Cache Usage > 100 G",
+                "Model Weight 80 G (NVIDIA A100)",
+                "Frequent off-chip KV Cache accesses",
+                "< 4% GPU"
+              ],
+              "slide_visual_skeleton": [
+                "容量对比示意(>100G vs 80G)",
+                "片外 KV 访问示意图",
+                "红色强调数字标注"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "second_challenge_data_backed_pain",
+              "archetype": "timeline_with_wasted_parallelism_annotation",
+              "slide_title": "挑战二:SCF 硬件丧失并行性",
+              "slide_claim": "直接用 SCF 硬件会丧失 NMP 架构固有的大规模并行性",
+              "slide_key_text": [
+                "Challenge 2: Directly leveraging the SCF hardwares fail to ... inherent extensive parallelism",
+                "Original Algorithm: LLM-P / LLM-D / PRM 交替执行",
+                "The inherent extensive parallelism of NMP architectures is (wasted)"
+              ],
+              "slide_visual_skeleton": [
+                "原始算法执行时间线",
+                "LLM-P 阶段红圈圈注",
+                "向下箭头指向 NMP 架构框"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_pattern": "proposal_solution_bridge_headline",
+              "archetype": "centered_headline_proposal_box",
+              "slide_title": "提出 Endor:算法-硬件协同设计",
+              "slide_claim": "Endor 以算力约减算法与近存硬件协同设计加速 LLM 推理",
+              "slide_key_text": [
+                "We propose Endor, a computation-reduced algorithm and memory hardware co-design to accelerate LLM reasoning"
+              ],
+              "slide_visual_skeleton": [
+                "单句强调框",
+                "居中大字核心陈述"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+      "title": "方法·算法层双支柱→硬件层总览与细节下钻",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          4,
+          6
+        ],
+        "must_have_in_chapter_purpose": [
+          "算法",
+          "硬件",
+          "协同设计",
+          "架构"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Solution 章"
+        },
+        {
+          "archetype": "algorithm_pillar_one_formula_plus_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法支柱一: 打分公式+对比甘特时间线(cache reuse)"
+        },
+        {
+          "archetype": "algorithm_pillar_two_steps_plus_covered_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "算法支柱二: 分步说明+三行甘特+绿框覆盖标注(pipeline)"
+        },
+        {
+          "archetype": "hardware_architecture_bullet_overview",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "硬件层总览: 顶部定义框+右侧多级 bullet 分模块"
+        },
+        {
+          "archetype": "hardware_submodule_detail_bullet",
+          "count": 1,
+          "position": "end",
+          "purpose": "硬件层细节: 单模块内部 N 个子结构的 bullet 展开"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "algorithm_pillar_one_formula_plus_timeline",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "algorithm_pillar_one_formula_plus_timeline",
+          "to_archetype": "algorithm_pillar_two_steps_plus_covered_timeline",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "algorithm_pillar_two_steps_plus_covered_timeline",
+          "to_archetype": "hardware_architecture_bullet_overview",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "hardware_architecture_bullet_overview",
+          "to_archetype": "hardware_submodule_detail_bullet",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型 method 章: agenda → 算法层两支柱(公式+甘特对比、分步+覆盖标注) → 硬件层总览(bullet 分模块) → 单模块内部细节, 算法与硬件对半分, 算法在前硬件在后",
+      "anti_patterns": [
+        "全栈分层型方法章(算法/系统/硬件三层递进多页) — 用 [[method_three_sublayer_challenge_innovation_experiment_loop]]",
+        "范式对比+架构总图型方法章(大而全) — 用 [[method_plateau_argument_to_full_stack_co_design]]"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "section_title": "Endor算法与近存协同设计",
+          "section_role": "method",
+          "section_narrative": "deck 方法核心(Solution):先给交互缓存复用+打分算法与预测流水线,再落到 Endor-NMP 两级近存硬件,论证算法-硬件协同加速 reasoning。",
+          "section_topic_tags": [
+            "交互缓存复用",
+            "预测式流水线",
+            "Endor-NMP两级架构",
+            "CMU缓存管理单元",
+            "算法硬件协同"
+          ],
+          "match_evidence": "5 页节奏: TOC → 算法支柱1(打分公式+甘特对比) → 算法支柱2(分步预测+绿框覆盖) → 硬件 Endor-NMP 两级总览 → CMU 三张表细节, 算法与硬件对半展开",
+          "slides": [
+            {
+              "slide_index": 12,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "章节导航:进入 Solution 部分",
+              "slide_claim": "四段式汇报推进到第 3 部分 Solution",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排 4 圆点进度时间线",
+                "当前项高亮其余灰化",
+                "右侧板块名文字列"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "algorithm_pillar_one_formula_plus_timeline",
+              "archetype": "formula_plus_gantt_timeline_compare",
+              "slide_title": "交互缓存复用 + 打分算法",
+              "slide_claim": "复用父节点 KV 缓存并按打分公式排序以加速推理",
+              "slide_key_text": [
+                "Storing and managing the KV cache of parent nodes to accommodate the buffer size",
+                "sᵢ = rewardᵢ + #reuseᵢ / #total",
+                "Original algorithm",
+                "Inter-action cache reuse",
+                "LLM-P / LLM-D / PRM"
+              ],
+              "slide_visual_skeleton": [
+                "动作打分公式",
+                "上下两行执行甘特时间线",
+                "LLM-P/D、PRM 彩色时序块",
+                "KV 缓存网格示意"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "algorithm_pillar_two_steps_plus_covered_timeline",
+              "archetype": "step_by_step_plus_gantt_with_covered_annotation",
+              "slide_title": "基于预测的流水线",
+              "slide_claim": "先同层打分再预测下一动作,使计算几乎被 decode 完全覆盖",
+              "slide_key_text": [
+                "1. Score multiple actions at the same layer",
+                "2. Speculate the next action from scores",
+                "Almost completely covered by decode",
+                "Prediction-based pipeline",
+                "a3, a4 → r3, r4"
+              ],
+              "slide_visual_skeleton": [
+                "两步骤说明块",
+                "LLM/PRM 投机预测色块",
+                "三行执行甘特时序对比",
+                "绿色虚线覆盖标注框"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_pattern": "hardware_architecture_bullet_overview",
+              "archetype": "architecture_bullet_layered_overview",
+              "slide_title": "Endor-NMP 两级近存架构",
+              "slide_claim": "Endor-NMP 用两级近存加缓存管理单元高效执行 reasoning 推理",
+              "slide_key_text": [
+                "Endor-NMP, a two-level NMP architecture for efficient LLM reasoning inference",
+                "Two levels of NMP design",
+                "Rank-NMP: To support non-linear operations (softmax)",
+                "Bank-NMP: To execute GeMV operations",
+                "A Cache Management Unit (CMU): To process the prediction results"
+              ],
+              "slide_visual_skeleton": [
+                "顶部标题强调框",
+                "右侧多级 bullet 列表",
+                "两级 NMP + CMU 分点结构"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "hardware_submodule_detail_bullet",
+              "archetype": "submodule_bullet_breakdown",
+              "slide_title": "CMU 缓存管理单元构成",
+              "slide_claim": "CMU 由树表/信息表/分数表加优先队列组成以决策 KV 换出",
+              "slide_key_text": [
+                "The CMU consists of",
+                "Tree table: To store all the action IDs on the reasoning path",
+                "Info. table: position of each action's KV cache",
+                "Score table & Priority queue: compute the score and decide whether to swap"
+              ],
+              "slide_visual_skeleton": [
+                "多级 bullet 列表",
+                "CMU 三子模块分点",
+                "右侧偏置文字块"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "experiment_setup_dual_main_headline_ablation_pair",
+      "title": "实验·设置双页→主结果头条→消融拆解双页",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          5,
+          7
+        ],
+        "must_have_in_chapter_purpose": [
+          "评测设置",
+          "主结果",
+          "消融",
+          "加速比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首 agenda 高亮进入 Evaluation 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 2,
+          "position": "middle",
+          "purpose": "评测设置两页并列: 模型/数据集 + 基线/硬件, 均带参考文献编号"
+        },
+        {
+          "archetype": "main_result_speedup_headline_boxed",
+          "count": 1,
+          "position": "middle",
+          "purpose": "主结果头条: 多倍数加速蓝框强调+多基线对比"
+        },
+        {
+          "archetype": "ablation_single_axis_speedup",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "消融一: 算法层单轴消融(算法优化贡献)"
+        },
+        {
+          "archetype": "ablation_combined_vs_individual",
+          "count": 1,
+          "position": "end",
+          "purpose": "消融二: 算法+硬件协同 vs 单项对比, 证协同必要性"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_progress_highlight",
+          "to_archetype": "eval_setup_bulleted_with_refs",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_with_refs",
+          "to_archetype": "eval_setup_bulleted_with_refs",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_with_refs",
+          "to_archetype": "main_result_speedup_headline_boxed",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "main_result_speedup_headline_boxed",
+          "to_archetype": "ablation_single_axis_speedup",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "ablation_single_axis_speedup",
+          "to_archetype": "ablation_combined_vs_individual",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型实验章标配三段式: agenda → 评测设置两页(模型/数据集 + 基线/硬件) → 主结果多倍加速蓝框头条 → 两页消融(单轴+协同拆解)证协同设计必要性",
+      "anti_patterns": [
+        "单一结果表格(无消融拆解) — 用 [[result_table_systematic]] 类模式",
+        "结果先给头条再前后对比(非消融) — 用 [[result_callout_then_compare]] 类模式"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_title": "评测设置与加速结果",
+          "section_role": "experiment",
+          "section_narrative": "验证章节,承接 Solution:先立评测设置(模型/数据集/NMP 基线),再抛 2.97x/4.54x/2.61x 主结果,最后用消融拆解算法+近存各组件贡献,证明协同设计有效。",
+          "section_topic_tags": [
+            "评测设置",
+            "多基线对比",
+            "MATH/GSM8K数据集",
+            "算法+硬件消融",
+            "2.97x/4.54x加速"
+          ],
+          "match_evidence": "6 页节奏: TOC → 模型/数据集设置 → 基线/硬件设置 → 主结果 2.97x/4.54x/2.61x → 算法消融 2.29x → 协同 vs 单项 3.69x, 严格设置-主结果-消融三段",
+          "slides": [
+            {
+              "slide_index": 17,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Content 目录:进入第 4 章 Evaluation",
+              "slide_claim": "汇报进入第四部分 Evaluation,前三章已铺垫完毕",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排 4 个圆点编号",
+                "当前章高亮 tag",
+                "灰显未激活项"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "eval_setup_bulleted_with_refs",
+              "archetype": "bulleted_setup_with_reference_footer",
+              "slide_title": "评测设置:模型与数据集",
+              "slide_claim": "评测采用 OpenR/LLM-Reasoner 模型与 MATH/GSM8K 数据集",
+              "slide_key_text": [
+                "Models: OpenR, LLM-Reasoner",
+                "Datasets: MATH & GSM8K",
+                "for 数学推理评测"
+              ],
+              "slide_visual_skeleton": [
+                "两级 bullet 列表",
+                "带 [n] 上标引用",
+                "底部参考文献区"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "eval_setup_bulleted_with_refs",
+              "archetype": "bulleted_setup_with_reference_footer",
+              "slide_title": "评测设置:NMP 架构与对比基线",
+              "slide_claim": "以 A100 GPU、DFX、FlightLLM 作为对比基线",
+              "slide_key_text": [
+                "Baselines: NVIDIA A100 GPU",
+                "DFX [MICRO'22] & FlightLLM [FPGA'24]",
+                "for ASIC-based LLM accelerators"
+              ],
+              "slide_visual_skeleton": [
+                "两级 bullet 列表",
+                "带 [n] 上标引用",
+                "底部参考文献区"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "main_result_speedup_headline_boxed",
+              "archetype": "single_arrow_big_number_headline",
+              "slide_title": "主结果:2.97x/4.54x/2.61x 加速",
+              "slide_claim": "相较 A100/DFX/FlightLLM/Hermes 分别取得 2.97x/4.54x/2.61x 加速",
+              "slide_key_text": [
+                "We achieve an average acceleration of 2.97x, 4.54x, 2.61x",
+                "compared to NVIDIA A100 GPU, DFX, FlightLLM, and Hermes"
+              ],
+              "slide_visual_skeleton": [
+                "加速倍数蓝色高亮框",
+                "多基线加速对比柱图",
+                "结论句突出排版"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "ablation_single_axis_speedup",
+              "archetype": "ablation_single_axis_speedup",
+              "slide_title": "消融:算法优化贡献 2.29x",
+              "slide_claim": "算法优化相较无优化平均带来 2.29x 加速",
+              "slide_key_text": [
+                "Achieves an average 2.29x speedup compared to no algorithmic optimization"
+              ],
+              "slide_visual_skeleton": [
+                "消融加速倍数结论句",
+                "算法开关对比柱图"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "ablation_combined_vs_individual",
+              "archetype": "ablation_combined_vs_individual",
+              "slide_title": "各组件性能:算法+近存协同 3.69x",
+              "slide_claim": "单用算法或单用 NMP 仅 1.29x/1.89x,协同达 3.69x",
+              "slide_key_text": [
+                "Optimizing only the algorithm or using only the NMP architecture achieves limited speedups of 1.29x and 1.89x",
+                "Achieves 3.69x speedup compared to baseline"
+              ],
+              "slide_visual_skeleton": [
+                "单项 vs 协同加速对比柱图",
+                "组件贡献分解结论句"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_toc_recap_plus_summary_contribution_with_contact",
+      "title": "收尾·目录回顾+一句话贡献总述附联系方式",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "回顾",
+          "贡献",
+          "联系方式"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_recap_all_chapters",
+          "count": 1,
+          "position": "start",
+          "purpose": "回归目录页, 竖排编号点亮全部章节, 串起全 deck 脉络"
+        },
+        {
+          "archetype": "summary_contribution_boxed_with_contact",
+          "count": 1,
+          "position": "end",
+          "purpose": "顶部蓝框『We propose X』一句话总述贡献+下方实验室主页/邮箱"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_recap_all_chapters",
+          "to_archetype": "summary_contribution_boxed_with_contact",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型极简收尾双页: 先回归目录把四段脉络重新点亮, 再一页顶部蓝框一句话总述贡献+下方联系方式, 兼具回顾/致谢/信息接口三重功能",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底(学术 tutorial 大合影式) — 用 [[closing_collaboration_wall_plus_thanks_backpanel]]",
+        "空白 Thanks 骨架页(纯模板) — 用 [[closing_blank_thanks_backpanel_with_signature]]"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "deck_title": "Endor: 挖掘近解码型机会加速大模型推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "近存计算",
+            "软硬件协同",
+            "KV缓存",
+            "过程奖励模型",
+            "推理加速",
+            "算法优化",
+            "存内架构"
+          ],
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.06",
+          "section_title": "总结",
+          "section_role": "closing",
+          "section_narrative": "全 deck 收尾。先用回归目录页把四段脉络(Background/Challenge/Solution/Evaluation)重新点亮,再落到一句「We propose Endor」总述本文算法+近存协同贡献,并附联系方式收束。",
+          "section_topic_tags": [
+            "Endor贡献一句话总述",
+            "四段脉络回顾",
+            "联系方式收束",
+            "论文结束页"
+          ],
+          "match_evidence": "2 页节奏: 回归目录竖排点亮四板块 → 顶部蓝框 We propose Endor + 下方 Lab homepage/Email 收束",
+          "slides": [
+            {
+              "slide_index": 23,
+              "role_in_pattern": "toc_recap_all_chapters",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "回归目录:四段脉络重点亮",
+              "slide_claim": "Background/Challenge/Solution/Evaluation 四板块构成全 deck 主线",
+              "slide_key_text": [
+                "Background",
+                "Challenge",
+                "Solution",
+                "Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点串",
+                "四板块标题右列",
+                "留白极简版式"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "summary_contribution_boxed_with_contact",
+              "archetype": "boxed_summary_with_contact_footer",
+              "slide_title": "总述:We propose Endor 并附联系方式",
+              "slide_claim": "Endor 以计算精简算法+近存协同加速大模型推理",
+              "slide_key_text": [
+                "We propose Endor, a computation-reduced algorithm and memory-",
+                "Lab homepage",
+                "Email: liu-"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框总述句",
+                "下方联系方式双栏",
+                "极简收尾版式"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (DATE26-Endor paper_share) 共 6 section, 抽出 6 patterns, 均为该 deck 特有 pattern; 与 previous_batches 中 opening_cover_plus_progress_highlighted_toc / opening_blank_cover_skeleton_single_page 均不重合(此处为单页论文封面, 无 TOC/非空白模板), 与已有 background/method/case_study patterns 均不重合(此为 paper_share 类型, 节奏更紧凑且强算法-硬件对半分). 每个 pattern carrier=1, confidence 保守为 low/medium 待跨 deck 佐证. 全部 slides 命中 abstract 节奏, 无 off_pattern 页. new_archetype: paper_cover_multi_author_multi_institution — 论文封面页, 左对齐大标题+多行作者名单+多家合作机构脚注. new_archetype: value_argument_dual_panel_evidence — 左右双 panel, 一侧路线图/时间线, 一侧准确率对比柱图, 论证目标技术能力增益. new_archetype: paradigm_shift_cost_compare_chart — 对比新旧解码/计算范式, 中间给出延迟/成本柱图与倍数标注. new_archetype: mechanism_overview_plus_detail_dual — 左总览(如 MCTS 树), 右单步细节流程, 拆解算法机制. new_archetype: operator_pipeline_breakdown — 用彩色分块流水线+编号 ①②③ 拆解为 N 类算子. new_archetype: related_works_survey_three_pillars — 横向 N 列并列综述现有工作, 每列一条技术路线+代表工作引用. new_archetype: first_challenge_data_backed_pain — 抛出编号 Challenge 1, 配数字对比证明第一大瓶颈. new_archetype: second_challenge_data_backed_pain — 抛出编号 Challenge 2, 配时间线/结构图证明第二大瓶颈. new_archetype: proposal_solution_bridge_headline — 单句大字 We propose X, 桥接章挑战到下章方法. new_archetype: algorithm_pillar_one_formula_plus_timeline — 算法层第一支柱: 打分公式+上下对比甘特时间线. new_archetype: algorithm_pillar_two_steps_plus_covered_timeline — 算法层第二支柱: 分步说明+三行甘特+绿框覆盖标注. new_archetype: hardware_architecture_bullet_overview — 硬件层总览: 顶部定义框+右侧多级 bullet 分模块. new_archetype: hardware_submodule_detail_bullet — 单硬件模块内部 N 个子结构的 bullet 展开. new_archetype: eval_setup_bulleted_with_refs — 评测设置 bullet 页+底部带 [n] 参考文献. new_archetype: main_result_speedup_headline_boxed — 主结果多倍加速蓝框头条+多基线对比. new_archetype: ablation_single_axis_speedup — 单轴消融, 一句话给单开关的加速比. new_archetype: ablation_combined_vs_individual — 协同 vs 单项对比, 证协同设计必要性. new_archetype: toc_recap_all_chapters — 收尾章的回归目录, 竖排点亮全部章节. new_archetype: summary_contribution_boxed_with_contact — 顶部蓝框一句话总述贡献+下方联系方式的收束页.",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 6,
+    "sections_unassigned_in_this_batch": []
+  }
+}

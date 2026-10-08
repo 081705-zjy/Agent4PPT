@@ -1,0 +1,505 @@
+{
+  "batch_index": 3,
+  "rules": [
+    {
+      "id": "toc_layout_vertical_numbered_dots_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录/章节导航·竖排编号圆点+当前项高亮",
+      "description": "toc/章节导航页采用竖排 1-N 编号圆点列出全部章节标题, 当前章高亮加粗其余灰显, 不含任何正文/图表, 版式极简, 仅承担'我们到哪儿了'的定位功能",
+      "evidence_signals": [
+        "视觉骨架 含 '竖排编号圆点' / '圆点导航' / '编号圆圈' 等词",
+        "视觉骨架 或 关键文字 含 '当前项高亮' / '灰显' / '高亮加粗' 等对比标注",
+        "关键文字 仅为章节标题列表, 无正文句子"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 7,
+          "评价": "竖排 1-4 圆点导航, 当前项 Challenge 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 12,
+          "评价": "同版式竖排 4 圆点, 高亮 Solution 其余灰化"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 17,
+          "评价": "竖排 4 圆点, 加粗高亮 Evaluation 项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 23,
+          "评价": "收尾回归目录页, 同版式重新点亮四板块"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节导航页的唯一功能是让听众定位当前进度; 高亮当前+灰化其它是最经济的进度语义视觉编码, 塞入正文/图表会稀释定位信号",
+      "fix_hint": "toc 页只保留章节编号圆点与标题, 当前章高亮加粗其余项置灰, 删除所有正文/图表",
+      "exceptions": [
+        "全 deck 无分章结构 (单页/极短 deck)"
+      ]
+    },
+    {
+      "id": "title_uses_colon_split_prefix_and_content",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题用冒号切分·前缀角色+后缀主题",
+      "description": "content 页标题倾向 '<前缀角色>:<具体主题>' 冒号切分式, 前缀标注该页在叙事中的角色 (挑战一/评测设置/消融/主结果), 后缀给出具体主题短句, 让听众瞬间锁定本页在整体弧线中的位置",
+      "evidence_signals": [
+        "标题 含 ':' 或 ':' 分隔符",
+        "冒号前为角色名词短语 (挑战/评测设置/主结果/消融/CMU/Endor-NMP)",
+        "冒号后为具体主题, 通常含数字或名词短语"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 9,
+          "评价": "'挑战一:MPC 算法算力利用率低' 前缀标 challenge 角色"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 18,
+          "评价": "'评测设置:模型与数据集' 冒号切分角色+主题"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 20,
+          "评价": "'主结果:2.97x/4.54x/2.61x 加速' 冒号切分, 后缀带具体数字"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 21,
+          "评价": "'消融:算法优化贡献 2.29x' 消融角色+具体贡献"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 15,
+          "评价": "'Endor-NMP 两级近存架构' 名词式冒号-连字符替代变体"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 3,
+          "原因": "'LLM reasoning 提升能力成为重要研究方向' 为完整陈述句, 无冒号切分"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 4,
+          "原因": "'解码由 token 级转向 action 级带来 10× 开销' 完整动宾陈述句"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "冒号前缀把'页角色'与'页主题'分离, 听众先定位再理解细节; 完整陈述句 title 会让 title 与 claim 语义重叠, 也丢失叙事定位",
+      "fix_hint": "把标题改写为 '<角色词>:<主题短句>' 结构, 角色词从叙事弧线(挑战/方法/评测/消融)选取",
+      "exceptions": [
+        "背景铺垫页 title 可用完整判断句直接抛观点",
+        "章节封面/目录页 title 无需角色前缀"
+      ]
+    },
+    {
+      "id": "claim_states_concrete_multiple_or_percent",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断用具体倍数/百分比而非泛化描述",
+      "description": "content 页核心论断倾向用具体倍数 (2.97x/4.54x/10×) 或百分比 (<4% GPU) 承载, 而非'显著提升/大幅加速'类模糊表述, 让听众一句话获取可验证结论",
+      "evidence_signals": [
+        "核心论断 含 'Nx' / 'N%' / '>N' / '<N' 等具体数字",
+        "核心论断 不用 '显著/大幅/极大/明显' 等模糊定量词",
+        "关键文字 出现与核心论断呼应的具体数字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 4,
+          "评价": "'推理开销激增约 10×' 具体倍数, 非'显著增加'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 9,
+          "评价": "'GPU 不足 4%' 具体百分比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 20,
+          "评价": "'2.97x/4.54x/2.61x 加速' 三个基线具体倍数"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 22,
+          "评价": "'仅 1.29x/1.89x, 协同达 3.69x' 三段具体倍数拆消融"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 3,
+          "原因": "'reasoning 相比标准解码显著提升 LLM 能力' 用'显著提升'模糊定量"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "学术分享的说服力来自可验证数字; '显著/大幅'类描述缺乏对比锚点, 听众记不住也无法引用; 具体倍数即使不记全, 数量级也留得下印象",
+      "fix_hint": "把 claim 里的'显著/大幅'替换为具体 Nx/N% 数字, 找不到就从关键文字提取一个代表性数字",
+      "exceptions": [
+        "定性铺垫页 (概念解释) 允许模糊描述, 因无数据可量化",
+        "总结页允许用范围数字 (2.6x-4.5x) 概括多基线"
+      ]
+    },
+    {
+      "id": "references_use_bracket_venue_year_citation",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "文献引用用方括号会议缩写+年份",
+      "description": "content 页引用他人工作时用 '[会议缩写'年份]' 格式紧跟在工作名后 (HPCA'25 / ISCA'25 / MICRO'22 / FPGA'24), 并在页脚列参考文献行, 建立学术可追溯感",
+      "evidence_signals": [
+        "关键文字 含 '[<会议>'<年份>]' 或 '[<会议> <年份>]' 模式",
+        "视觉骨架 或 关键文字 含 '底部参考文献行' / '带 [n] 上标引用'",
+        "工作名与引用同行出现 (PAISE [HPCA'25] / Hermes [HPCA'25])"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 8,
+          "评价": "三类工作各带 [HPCA'25]/[HPCA'25]/[ISCA'25] 会议年份缩写"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 19,
+          "评价": "'DFX [MICRO'22]' '[FPGA'24]' 基线附会议年份"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "会议缩写+年份是学术圈的通用识别码, 听众看到 HPCA'25 就知道来源新近且顶会; 直接列 URL 或 arXiv 号则打断视线且低效",
+      "fix_hint": "工作名紧跟方括号 [<会议缩写>'<两位年份>], 底部再列完整参考文献行",
+      "exceptions": [
+        "面向非学术受众的 deck (行业分享)可省略引用",
+        "自研工作不需引用"
+      ]
+    },
+    {
+      "id": "cover_layout_left_aligned_title_with_authors_and_affiliations",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面·左对齐大标题+多行作者+编号机构脚注",
+      "description": "封面页采用左对齐大字论文标题块, 下方多行列出作者姓名 (通讯作者标注), 再以编号脚注方式列出多家署名机构, 版式不居中而偏左, 契合学术论文封面的信息密度",
+      "evidence_signals": [
+        "视觉骨架 含 '左对齐大标题' / '左对齐' + '大标题块'",
+        "视觉骨架 含 '作者姓名多行列表'",
+        "视觉骨架 含 '机构脚注编号标注' 或 '上标' 类描述",
+        "关键文字 含多个机构名 + 通讯作者标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 1,
+          "评价": "左对齐 'Endor: Exploit Nearly-Decode-Only Opportunities' + 5 家机构脚注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "多作者/多机构合作论文封面信息密度高, 左对齐+编号脚注比居中版式更能容纳长作者串与多机构而不显拥挤",
+      "fix_hint": "把 cover 标题改为左对齐大字块, 作者多行铺开, 机构用上标数字对应脚注列出",
+      "exceptions": [
+        "单机构/单作者论文可改用居中版式",
+        "非论文类 deck (行业汇报/演讲)可改用视觉主图封面"
+      ]
+    },
+    {
+      "id": "ending_layout_summary_box_plus_contact_footer",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "收尾·顶部蓝框总述句+底部联系方式",
+      "description": "ending 页顶部用高亮色 (蓝) 强调框写一句 'We propose X, ...' 式贡献总述, 下方给出实验室主页/邮箱等联系方式双栏收尾, 不含正文/图表, 极简版式",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部蓝框' / '强调框' + '总述句'",
+        "关键文字 含 'We propose' 或类似论断句",
+        "关键文字 含 '邮箱' / 'Email' / 'homepage' / 'Lab'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 24,
+          "评价": "顶部蓝框 'We propose Endor...' + 下方 lab homepage + email"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "ending 页承担'带走一句话+方便后续联系'双职责, 强调框保留贡献总述, 联系方式让感兴趣的听众能直接跟进, 无需再回翻封面",
+      "fix_hint": "ending 页顶部保留一句 'We propose <X>, <方法特征>' 强调框, 底部加实验室主页+邮箱",
+      "exceptions": [
+        "会议 pitch 型 deck 可用 Q&A 页替代",
+        "内部汇报无需联系方式"
+      ]
+    },
+    {
+      "id": "content_dual_panel_side_by_side_comparison",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页·左右双 panel 承担对比论证",
+      "description": "当内容页需要论证'X 优于/引发 Y'时, 采用左右双 panel 布局:一侧承担概念示意 (roadmap/流程图), 另一侧承担量化对比 (柱图/时间线), 双向支撑同一论断",
+      "evidence_signals": [
+        "视觉骨架 含 '左右双 panel' / '左右' + 'panel' / '双区'",
+        "同一 slide 出现两类视觉元素组合 (示意图 + 柱图 / 时间线 + 柱图)",
+        "关键文字 内容分属两类 (概念名词 + 量化数字)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 3,
+          "评价": "左 AGI roadmap 时间线 + 右准确率柱图, 双向证 reasoning 提能力"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 4,
+          "评价": "左右 token vs action 对比 + 中间 Latency 柱图, 双向证 10× 开销"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 5,
+          "评价": "(a) Overview 树状图 + (b) Detail 单步展开, 双区呈现 MCTS 机制"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "对比论证的说服力=概念可视化 × 数据支撑; 单 panel 要么只讲概念听众记不住, 要么只讲数字听众看不懂; 双 panel 让两侧互相锚定",
+      "fix_hint": "有对比论断的页面拆为左右两 panel: 左放概念/示意图, 右放柱图/时间线量化数据",
+      "exceptions": [
+        "单一硬件架构图页面 (无对比对象)",
+        "纯 bullet 列表页 (综述/评测设置)"
+      ]
+    },
+    {
+      "id": "content_pipeline_uses_colored_blocks_with_circled_numbers",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页·流水线用彩色分块+带圈序号标注算子",
+      "description": "当页面需要呈现多算子/多阶段流水线 (Prefill/Decode/PRM) 时, 用不同颜色分块表示每类算子并顺序拼接, 配 ①②③ 带圈序号在文字侧对应, 让听众瞬间读出'流水线有几段+每段做啥'",
+      "evidence_signals": [
+        "视觉骨架 含 '三色块流水线' / '彩色时序块' / '色块' + '流水线'",
+        "关键文字 含 '①' '②' '③' 或 'LLM-P|LLM-D|PRM' 类算子拼接串",
+        "同一 slide 图示与文字都出现相同数量的算子/阶段"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 6,
+          "评价": "LLM-P|LLM-D|PRM 三色块 + ①②③ 编号标注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 13,
+          "评价": "LLM-P/D、PRM 彩色时序块 + Original vs Reuse 甘特对比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 14,
+          "评价": "三行执行甘特, LLM/PRM 投机预测色块+绿框覆盖标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "并列算子/阶段用颜色分块比纯文字更快建立'相同类型=相同颜色'的心智模型, 带圈序号又让文字侧与图示能一一对齐, 减少认知跳跃",
+      "fix_hint": "把算子/阶段用固定色板分色, 文字侧引用时加 ①②③ 带圈序号对应图中同色块",
+      "exceptions": [
+        "非流水线/无并列结构的普通内容页"
+      ]
+    },
+    {
+      "id": "content_metric_slide_highlights_key_number_in_colored_box",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键指标页·核心数字置于蓝框/红字强调",
+      "description": "抛出主结果/挑战量化时, 页面把关键数字 (加速倍数/百分比/开销倍数) 单独放入蓝框或用红字放大, 让数字成为视觉焦点, 而不是埋在正文中",
+      "evidence_signals": [
+        "视觉骨架 含 '蓝色高亮框' / '红字' / '强调框' / '大字'",
+        "视觉骨架 含 '数字标注' / '高亮框' + '倍数'",
+        "关键文字 出现 'Nx' / 'N%' 与蓝框/红字视觉标注呼应"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 4,
+          "评价": "'Inference Cost 10×' 红字标注开销"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 9,
+          "评价": "'<4% GPU' 红色强调数字标注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 20,
+          "评价": "加速倍数 2.97x/4.54x/2.61x 蓝色高亮框强调"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.3,
+      "enforcement_level": "soft",
+      "rationale": "核心数字承担了 slide 一半的说服力; 埋在正文中会与其它文字竞争注意力, 单独置于色框/大字则成为视觉锚点, 听众瞥一眼就抓到",
+      "fix_hint": "把 claim 中的关键 Nx/N% 数字单独放入色框或用红字放大, 与图表分离出来",
+      "exceptions": [
+        "定性/概念页无关键数字",
+        "数字过多的对比表格 (需另用表格形式)"
+      ]
+    },
+    {
+      "id": "transition_slide_uses_single_centered_thesis_sentence",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "过渡页·单句居中大字承担章节抛靶",
+      "description": "章节过渡处的 pivot 页用一整页只放一句居中大字判断句 (通常是 'We propose <X>, ...' 或 '<结论>'), 无正文无图表, 强制听众在下一章开始前吸收这句话",
+      "evidence_signals": [
+        "视觉骨架 含 '单句强调框' / '居中大字' / '大字核心陈述'",
+        "关键文字 只含 1 条句子, 无 bullet",
+        "该 slide 承担 chapter transition 位置 (紧接 problem 章末或 method 章首)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 11,
+          "评价": "'We propose Endor...' 单句居中, 承担 problem→method 过渡抛靶"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.05,
+      "enforcement_level": "soft",
+      "rationale": "章节过渡是听众注意力的自然重置点, 用单句 pivot 页而非导航页更能强制'停一下, 抓这一句', 比塞正文更有力",
+      "fix_hint": "在 problem→method 或 method→experiment 边界插入一页, 只放一句居中大字判断句抛靶下一章",
+      "exceptions": [
+        "章节切换已由 toc 导航页承担时不需要额外 pivot",
+        "极短 deck 无独立过渡空间"
+      ]
+    },
+    {
+      "id": "method_slide_pairs_step_bullets_with_gantt_timeline",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页·步骤 bullet 上方+甘特时间线下方",
+      "description": "方法章介绍多步算法/优化时, 页面上半区放 1-N 步骤 bullet 说明算法逻辑, 下半区放执行时间线甘特图对比 Original vs 优化后的时序, 让'讲什么'与'带来什么加速'同页视觉呼应",
+      "evidence_signals": [
+        "视觉骨架 含 '甘特' / '时序块' / '执行时间线' / '两行/三行执行'",
+        "视觉骨架 同页含 '步骤说明块' / 'bullet' + '公式'/'时序'",
+        "关键文字 含 '1.' '2.' 步骤编号或 'Original algorithm' / 'Inter-action cache reuse' 类时序对比标签"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 13,
+          "评价": "上方公式+说明, 下方 Original vs Reuse 两行甘特对比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 14,
+          "评价": "上方 1/2 两步骤块, 下方三行甘特+绿框覆盖标注"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 15,
+          "原因": "Endor-NMP 硬件页只有 bullet 无时间线, 因架构描述不涉及时序对比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 16,
+          "原因": "CMU 组件页纯 bullet 描述, 无执行时序"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "算法优化的价值证明要'算法逻辑+时序增益'同框, 只放 bullet 听众不知优化在哪一段生效, 只放甘特听众不知每段代表什么; 上下拼接让两者眼神跳一次即可关联",
+      "fix_hint": "方法页把算法步骤 bullet 放上半区, 下半区加 Original vs 优化后甘特时序对比, 关键覆盖段用色框标注",
+      "exceptions": [
+        "硬件架构描述页 (无算法时序可对比)",
+        "纯数据结构/组件构成页"
+      ]
+    },
+    {
+      "id": "content_bullet_list_uses_indented_hierarchy_with_bold_role_labels",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "bullet 列表·多级缩进+角色标签加粗",
+      "description": "bullet 型内容页 (综述/评测设置/组件构成) 采用两级 bullet: 一级为角色标签 (加粗名词短语如 'Models:' 'Baselines:' 'Rank-NMP:'), 二级为具体条目/说明, 通过缩进+加粗区分层级",
+      "evidence_signals": [
+        "视觉骨架 含 '两级 bullet' / '多级 bullet 列表' / '分点结构'",
+        "关键文字 含 '<名词>:' 形式的角色标签",
+        "关键文字 含角色标签+说明的对偶结构 (Models: X, Y / Baselines: A, B)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 15,
+          "评价": "Rank-NMP:/Bank-NMP:/CMU: 三级 bullet 角色标签+说明"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 16,
+          "评价": "Tree table:/Info. table:/Score table: 三子模块分点"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 18,
+          "评价": "Models:/Datasets: 一级角色标签+二级具体项"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+          "slide_index": 19,
+          "评价": "Baselines: 分类罗列 GPU/ASIC/FPGA 型对比对象"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "综述/枚举型页面天然分类, 缩进+加粗让'类目'与'条目'一眼分离; 平铺 bullet 会让听众自己在脑内分组, 增加认知负担",
+      "fix_hint": "把 bullet 列表拆成'<角色标签>: <条目>'两级, 一级加粗做类目, 二级正常字重做具体项",
+      "exceptions": [
+        "只有单类枚举 (纯条目列表) 无需分级",
+        "图表页无 bullet 结构"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (Endor 论文分享), 抽出 visual 8 条 + authoring 4 条 = 12 条 rule. cover/toc/ending 各 1 slide 命中率高但 evidence 单薄; content 22 slides 覆盖多种版式变体, hit_rate 相应偏低但反映真实分布. 无 previous_batches_rules 传入, 全部为新 id",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 8,
+      "authoring": 4
+    }
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "batch_index": 12,
+  "rules": [
+    {
+      "id": "cover_layout_left_aligned_title_with_speaker_signature",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·左对齐主标题+讲者署名",
+      "description": "封面页用左对齐大字主标题居中偏上放置,下方以细横线分隔,依次列出讲者姓名、所属机构、汇报场合与联系邮箱,纯白背景大量留白,不含正文段落或 bullet 列表。",
+      "evidence_signals": [
+        "视觉骨架 含 '左对齐大标题' / '大标题'",
+        "关键文字 含 讲者姓名 + 机构 + 汇报场合(如 VALSE/会议名)",
+        "关键文字 含 'Email:' 或邮箱地址",
+        "视觉骨架 含 '分隔线' / '横向分隔线'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 1,
+          "评价": "左对齐大标题 '大模型高效计算与推理' + 淡粉色分隔线 + 戴国浩/上海交通大学/VALSE 2026/邮箱,标准讲者身份识别版式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "讲者署名版式让听众在开场瞬间锁定汇报主题与讲者身份,分隔线把主标题与身份信息视觉分层,避免其他内容抢焦点",
+      "fix_hint": "cover 主标题左对齐放大,下方加分隔线,依次排讲者名/机构/场合/邮箱,移除正文文字",
+      "exceptions": [
+        "空白模板 / 占位版式",
+        "品牌宣传型 deck(讲者身份让位于品牌 logo)"
+      ]
+    },
+    {
+      "id": "ending_layout_speaker_info_with_partner_and_team_logos",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "收尾布局·汇报人信息+合作单位/团队 logo 墙",
+      "description": "致谢收尾页给出汇报人姓名+日期+邮箱,配左侧类别标签(合作单位/团队成员)引出右侧 logo 墙与团队头像排,页脚署名机构,不含技术论点。",
+      "evidence_signals": [
+        "关键文字 含 讲者姓名 + 日期 + 'Email:'",
+        "视觉骨架 含 'logo 墙' / '合作单位' / '团队成员'",
+        "视觉骨架 含 '头像占位' 或 '头像'",
+        "关键文字 含 机构署名(@ university/institute)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 42,
+          "评价": "戴国浩 + 2026-05-08 + 邮箱 + 青/粉双色标签(合作单位/团队成员) + 合作 logo 墙 + 团队头像排 + 页脚 @ SJTU"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "致谢页承担礼节收束与团队/合作归属亮相,logo 墙比纯文字致谢更能让听众直观识别合作生态",
+      "fix_hint": "ending 页居中放汇报人+日期+邮箱,加合作单位与团队成员双列标签,右侧铺 logo 墙与头像排,页脚署名机构",
+      "exceptions": [
+        "无团队/合作背景的独立汇报(仅需汇报人信息)"
+      ]
+    },
+    {
+      "id": "claim_uses_judgment_sentence_not_topic_description",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断用判断句,不用主题描述",
+      "description": "slide.核心论断 采用完整判断句(主语+谓语+论点),陈述一个可被反驳的观点或事实结论,不用 '本页讲 X' / '介绍 X' 这类主题描述,也不与 title 语义重复。",
+      "evidence_signals": [
+        "核心论断 含 谓语动词构成完整判断",
+        "核心论断 不以 '介绍' / '本页' / '关于' 开头",
+        "核心论断 表达明确观点或结论(如 'X 是 Y', 'X 决定 Y', 'X 带来 Y')",
+        "核心论断 与 title 内容不重复"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 4,
+          "评价": "'Token成本=芯片投入÷(计算速度×使用时间),速度与时长决定单Token成本' — 判断句+因果结构"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 28,
+          "评价": "'推理性能受计算、访存、带宽、通信四类受限,对应三类硬件架构' — 陈述性判断"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 35,
+          "评价": "'效率提升不减反增总消耗,Token 用量以约 10 倍每年爆炸增长' — 反直觉判断句"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "判断句让每页有明确可反驳观点,推动叙事;主题描述式 claim 会退化为章节标题,听众抓不到本页立场",
+      "fix_hint": "把 claim 里的 '介绍/讲/关于' 去掉,改写为 '<主语> <谓语> <论断>' 完整判断句,与 title 语义错开",
+      "exceptions": [
+        "cover/toc/references/ending 类结构页(claim 承担定调而非论证)"
+      ]
+    },
+    {
+      "id": "title_uses_colon_or_dash_for_topic_focus_split",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页标题·冒号或破折号分隔主题与焦点",
+      "description": "content slide 标题倾向用「主题:焦点」或「主题·焦点」结构,冒号/中点前定位当前章节所在层级,后半点出本页具体焦点,不用完整动宾句也不只写单一名词。",
+      "evidence_signals": [
+        "标题 含 ':' 或 '·' 或 '——' 分隔符",
+        "冒号/中点前为章节层级(如 '前端' / '后端' / '硬件架构' / '未来趋势')",
+        "冒号/中点后为本页具体焦点(如 '请求调度' / '通信优化' / '三大规模化方向')",
+        "标题字数在 8-20 字之间"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 22,
+          "评价": "'前端:请求调度' 冒号前定位层级,冒号后点焦点"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 28,
+          "评价": "'硬件架构:计算/存储/通信三类架构框架'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 31,
+          "评价": "'解决带宽受限:存内计算与 3D 集成' 冒号分隔问题与方案"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 37,
+          "评价": "'能效新范式:从 TOPS/W 到 Tokens/J'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 5,
+          "原因": "'黄仁勋\"5层蛋糕\"理论' 单一名词短句,未使用冒号分隔"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "冒号分隔的双段式标题在系列拆解型汇报中让听众能同时看到章节层级与本页焦点,减少读 title 时的定位负担",
+      "fix_hint": "把 content slide title 改写为 '<章节层级>:<本页焦点>' 或 '<层级>·<焦点>' 双段式",
+      "exceptions": [
+        "cover / toc / ending / references 结构页",
+        "单一主题概念页(如引理/定义,无需拆层)"
+      ]
+    },
+    {
+      "id": "method_section_uses_methodology_banner_before_typical_methods",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法章节·方法论横幅先于典型方法",
+      "description": "method 类 slide 在展开具体系统/方法之前,先以顶部横幅显式写出「方法论」和一句方法论陈述,再在下方列典型方法框图,形成「方法论 → 典型方法」自上而下结构。",
+      "evidence_signals": [
+        "视觉骨架 含 '方法论横幅'",
+        "关键文字 含 '方法论' 且紧跟一句陈述",
+        "slide 下方 panel 展示具体系统/方法名 + 引用文献",
+        "section_role == 'method'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 11,
+          "评价": "顶部 '方法论' 横幅 + '大模型推理任务有难易之分...' 陈述 + 下方小模型分流框图"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 22,
+          "评价": "'方法论' 横幅 + 请求调度陈述 + 请求粒度/节奏调度双面板"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 25,
+          "评价": "'方法论' 横幅 + 计算通信重叠陈述 + 三条技术路线纵向列表"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 26,
+          "评价": "'方法论' 横幅 + 算子优化陈述 + 访存/计算优化双面板"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 13,
+          "原因": "效果总览页仅有散点图无方法论横幅(属于 method 章但角色是 evidence)"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "横幅式方法论让听众在看具体系统列举前先建立评判尺子,避免把 method slide 读成堆料的文献 list",
+      "fix_hint": "method slide 顶部加一条 '方法论' 横幅,写一句方法论陈述,再在下方铺典型方法框图+文献",
+      "exceptions": [
+        "method 章的效果总览/散点图页",
+        "方法论已由上一页承担的连续拆解页"
+      ]
+    },
+    {
+      "id": "reference_page_uses_top_title_bar_with_category_side_tag",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "参考文献页·顶部标题+左侧分类标签",
+      "description": "参考文献类 slide 顶部为「参考文献」标题+分隔线,左侧竖列小分类标签(算法设计/系统优化/硬件架构等)指向右侧编号文献列表,纯文献无正文论点。",
+      "evidence_signals": [
+        "标题 含 '参考文献' 或 'References'",
+        "视觉骨架 含 '顶部...标题+...分隔线'",
+        "视觉骨架 含 '左侧...小标签' 或 '分类小标签'",
+        "关键文字 含 '[数字]' 编号引用",
+        "section_role == 'references'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 38,
+          "评价": "'参考文献 · 算法设计(量化/剪枝/投机)' + 左侧分类标签 + 多栏编号列表"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 40,
+          "评价": "'参考文献 · 系统优化' + 左侧标签 + 单栏编号列表"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 41,
+          "评价": "'参考文献 · 硬件架构' + 收束全篇文献结构"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "顶部统一标题让听众快速识别进入文献区,左侧分类标签让翻页时能按章节结构定位文献子类",
+      "fix_hint": "references slide 顶部加 '参考文献 · <子类>' 标题+分隔线,左侧竖列分类标签,右侧编号文献列表",
+      "exceptions": [
+        "文献极少的 deck 可合并为单页 references"
+      ]
+    },
+    {
+      "id": "transition_page_uses_left_source_frame_maps_to_right_layered_stack",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "承接过渡页·左侧源模块经箭头映射右侧分层堆叠",
+      "description": "章节过渡型 slide 用左侧红/虚线框标出承接自上章的源模块,通过 2-3 条箭头映射到右侧纵向或水平堆叠的多层条带,把叙事焦点定位到下章要展开的层级。",
+      "evidence_signals": [
+        "视觉骨架 含 '左侧...框' + '箭头'",
+        "视觉骨架 含 '右侧...层/条带/堆叠'",
+        "关键文字 含 '拆解' / '映射' / '本章聚焦'",
+        "上/下页角色 跨越 method 与 method 之间的层级切换"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 7,
+          "评价": "左侧5层蛋糕(中三层红框) + 三条映射箭头 + 右侧三层优化蓝框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 20,
+          "评价": "左侧红框源模块 + 三条水平映射箭头 + 右侧三层蓝色条带,中间层高亮"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 27,
+          "评价": "左侧虚线归类框 + 右侧三层水平堆叠 + 指向底层芯片箭头"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "过渡页用视觉映射把上章结论与下章展开对象连成一图,让听众看得到章节间的结构承接而不是纯文字铺垫",
+      "fix_hint": "transition slide 加左侧承接源框 + 箭头 + 右侧分层堆叠条带,并高亮下章要展开的一层",
+      "exceptions": [
+        "文字型章节导航页(仅列子章标题,无需视觉映射)"
+      ]
+    },
+    {
+      "id": "key_text_uses_conference_year_shorthand_after_method_name",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键文字·方法名后带会议年份缩写",
+      "description": "method 或 references 类 slide 提到具体系统/方法时,方法名后紧跟 '会议 年' 或 '[会议\\'年]' 简写(如 'ISCA 24' / 'OSDI\\'22' / 'FAST\\'25' / 'NeurIPS22'),提供权威出处而不写完整引用。",
+      "evidence_signals": [
+        "关键文字 含 '<方法名> <大写会议缩写> <2位或4位年份>'",
+        "关键文字 含 会议缩写 ISCA/ICML/NeurIPS/ASPLOS/OSDI/SOSP/FAST/HPCA/ICLR 等",
+        "方法名 与 会议年份 紧邻同一段"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 9,
+          "评价": "'GPTQ ICLR23 / AWQ MLSys24 BestPaper' 方法名+会议年紧邻"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 22,
+          "评价": "'Orca [OSDI\\'22]' / 'Llumnix [OSDI\\'24]' 方括号会议年简写"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 29,
+          "评价": "'Tender ISCA 24 2.6x' 方法名+会议年+加速比三段"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 31,
+          "评价": "'Attacc ASPLOS 24 2.8x、CENT ASPLOS 25 2.3x'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "学术汇报的听众能从会议缩写+年份直接判断方法权威度与新旧,比完整 bibtex 引用更省字幕空间",
+      "fix_hint": "method slide 里提到系统时,后接 '<会议缩写> <2位年份>' 或 '[<会议>\\'<年>]' 简写,不写完整引用",
+      "exceptions": [
+        "纯 references 页(此处需完整引用)",
+        "非学术型 deck / 工业产品页"
+      ]
+    },
+    {
+      "id": "data_evidence_appended_with_source_attribution",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "关键文字·数据后附出处",
+      "description": "当页给出关键数字/百分比/加速比等硬数据时,在同一段或紧邻位置附出处('Source: X' / '数据来源:X' / '来自 X' / 具体机构如 Stanford/NVIDIA GTC),不孤立给数字。",
+      "evidence_signals": [
+        "关键文字 含 数字+单位(百分比/倍数/K/M/B/T token)",
+        "同 slide 关键文字 含 'Source:' / '数据来源:' / '来自' 或权威机构名(Stanford/NVIDIA/GTC/Openrouter)",
+        "数据段与出处段紧邻或同段"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 2,
+          "评价": "'2025年算力需求增长5816.9倍' + 'Source: Stanford'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 36,
+          "评价": "'成本下降 50X / 提升 35X' + '数据来源:NVIDIA GTC 2026'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 35,
+          "评价": "'2026年3月24日单周约3万亿token' 附 Openrouter 数据来源"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "硬数据不附出处会被质疑为杜撰,附上权威机构名让论证从主观宣称升级为可核查陈述",
+      "fix_hint": "给关键数字时同段加 'Source: <机构>' 或 '数据来源:<机构>',若来自自研工作则标 'DAI Lab'/内部实验",
+      "exceptions": [
+        "公式推导页(数字来自当页推导本身)",
+        "方法论横幅式陈述(非数据佐证)"
+      ]
+    },
+    {
+      "id": "visual_uses_red_dashed_box_or_red_text_for_focus",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "视觉焦点·红色虚线框或红字高亮当前对象",
+      "description": "当前页需要在多元素并列中指出焦点(某一列/某一层/某一环)时,用红色虚线框圈住或以红色文字高亮该对象,把听众视线导向本页要展开的部分。",
+      "evidence_signals": [
+        "视觉骨架 含 '红色虚线框' / '红框' / '红色高亮'",
+        "关键文字 或 视觉骨架 含 '红字' / '红色小标注' / '挑战'(常用红色标签)",
+        "多元素并列(3+ panel/层)中有 1-2 个被高亮"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 6,
+          "评价": "5层蛋糕中间三层用红色虚线框标为'算力优化的核心'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 9,
+          "评价": "三类算法优化中'投机式推理'用红色虚线框重点圈出"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 22,
+          "评价": "多环节列表中用红色'挑战'标签标出本组切入点"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 2,
+          "评价": "产业革命对比表中'Token'列用红色虚线框高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.55,
+      "enforcement_level": "soft",
+      "rationale": "多元素并列页若不显式高亮焦点,听众要花时间判断本页重心;红框/红字是最强对比色,把焦点从并列结构中拎出来",
+      "fix_hint": "多 panel 或分层页里给当前要展开的对象加红色虚线框或红字标签,其他元素保持中性色",
+      "exceptions": [
+        "单一主题页(无并列元素)",
+        "参考文献 / cover / ending 等结构性页"
+      ]
+    },
+    {
+      "id": "comparative_effect_page_uses_scatter_plot_with_annotated_points",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "效果总览页·带标注红点的散点图对比",
+      "description": "多方法效果对比页用散点图形式,横轴放关键变量(计算量减少/接受率/GPU利用率),纵轴放加速比,每个方法一红点+文字标签(方法名+年份+会议+指标+加速比)。",
+      "evidence_signals": [
+        "视觉骨架 含 '散点' / '坐标图'",
+        "视觉骨架 含 '红点+文字标注' 或 '红点+标注'",
+        "关键文字 含 多个 '<方法名> (<年>,<会议>,<指标>,<加速比>)' 格式",
+        "标题 含 '效果' 或 '总览' 或 '汇总'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 13,
+          "评价": "双散点图 + 红点+文字标注: 'SpeContext (2026,ASPLOS,70%,2.30)'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 16,
+          "评价": "双散点图: 'DFlash (2026,arxiv,6.3,3.96)' 等"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 18,
+          "评价": "单散点图汇总组合方法: 'SpecEE+Eagle (2025,ISCA,4.3,3.15)'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "散点图让方法对比同时呈现两个正交维度与加速比,直观显示 pareto 前沿,比表格更能揭示优化趋势",
+      "fix_hint": "效果对比页把方法列表改为散点图,横轴/纵轴选正交指标,每点配 '<方法>(<年>,<会议>,<指标>,<倍数>)' 标注",
+      "exceptions": [
+        "单一维度对比(用条形图更合适)",
+        "方法数 <3 的对比(散点图信息密度不足)"
+      ]
+    },
+    {
+      "id": "authoring_visual_hierarchy_uses_layered_labels_or_arrows",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "层级拆解页·分层堆叠条带 + 命名标签",
+      "description": "讲多层次框架拆解时,用纵向或水平的多层堆叠条带(2-4 层),每层配简短命名标签(如 '算法层' / '系统层' / '硬件层' / '模型算法设计'),形成可视化层级骨架。",
+      "evidence_signals": [
+        "视觉骨架 含 '三层堆叠' / '多层堆叠' / '层级示意' / '堆叠条带'",
+        "关键文字 含 '<层名> / <层名> / <层名>' 分隔格式",
+        "视觉骨架 含 '<层次> + 蓝框/红框' 命名标签"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 8,
+          "评价": "三层堆叠层级示意 + '大模型推理系统/优化技术/模型算法设计'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 5,
+          "评价": "五层蛋糕金字塔 + 芯片/基建/基础设施/模型/应用命名"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "slide_index": 28,
+          "评价": "三列并列 panel + 计算/存储/通信架构命名"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "层级堆叠+命名标签把抽象的三层拆解落到可视骨架,让听众看到层级关系而不是靠 title 与 bullet 想象",
+      "fix_hint": "讲拆解框架时把 bullet 列表换成 2-4 层堆叠条带,每层加简短层名标签,不同层用不同色系区分",
+      "exceptions": [
+        "单层聚焦页",
+        "非拆解型章节(如动机/效果/结论)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck(VALSE 大模型推理综述,42 页),覆盖 cover/content(motivation/method/discussion/references)/ending 各 role;visual 8 条,authoring 5 条,其中 hard 6 条 / soft 7 条;命中率均基于本 deck 内估算,跨 batch 融合需 driver 重算。",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "visual": 8,
+      "authoring": 5
+    }
+  }
+}

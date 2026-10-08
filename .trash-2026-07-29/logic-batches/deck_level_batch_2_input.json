@@ -1,0 +1,1805 @@
+{
+  "batch_index": 2,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+      "目录名": "SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274",
+      "标题": "SpAct-NDP: Efficient LLM Inference via Sparse Activation",
+      "总页数": 24,
+      "章节数": 5,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_研究背景与挑战",
+        "section_03_核心技术方案",
+        "section_04_实验评估结果",
+        "section_05_结尾页"
+      ],
+      "主题标签": [
+        "LLM Inference",
+        "Sparse Activation",
+        "NDP-GPU",
+        "Weight Mapping",
+        "Scheduling",
+        "Quantization",
+        "Pruning",
+        "Acceleration"
+      ],
+      "目标受众": "学术同行 / 体系结构与AI系统研究者",
+      "报告类型": "paper_share",
+      "适用场景": "学术会议或组会分享大模型推理加速硬件协同工作",
+      "论述总结": "面向大模型推理中动态稀疏激活带来的数据搬运与GPU利用率瓶颈,提出SpAct-NDP在NDP-GPU异构架构上的方案:含稀疏感知权重映射、两级启发式调度与请求-权重对解析机制,最终在A100/3090上实现最高2.17×加速。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "方法",
+        "调度",
+        "实验",
+        "总结"
+      ],
+      "适合复用场景": [
+        "大模型推理加速主题学术分享",
+        "软硬件协同/近数据处理工作汇报",
+        "含背景-挑战-方法-实验的论文型 deck",
+        "稀疏激活/动态剪枝技术介绍章节"
+      ],
+      "不适合复用场景": [
+        "纯算法无硬件的模型训练分享",
+        "工业产品 demo(叙事节奏不同)",
+        "非 LLM 领域体系结构工作",
+        "商业提案或投资路演",
+        "面向学生的入门教学"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "deck 的门面章：slide 1 抛出论文标题/作者/单位建立学术署名,slide 2 以 Outline 展开「背景挑战→技术方法(四小节)→实验结果」三段主线,为全 deck 定框架",
+          "页间关系": [
+            "slide 1 → slide 2: 由标题作者封面切入 Outline,把 deck 拆成背景挑战/技术方法/实验结果三大块并高亮首块"
+          ],
+          "适合复用场景": [
+            "学术论文汇报的封面+目录开场",
+            "含多作者多单位署名的顶会 talk",
+            "「背景→方法→实验」三段式技术分享",
+            "需高亮当前进度的可导航 Outline 页"
+          ],
+          "在deck中的位置": "第 1 章开篇,占前 2 页,统领后续背景/方法/实验章节"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "研究背景与挑战",
+          "页码范围": [
+            3,
+            11
+          ],
+          "页数": 9,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11"
+          ],
+          "章节叙事": "背景章,漏斗式为 NDP 方法铺垫:由 LLM 推理 FFN 瓶颈切入,横扫剪枝/量化技术并对比锁定动态剪枝,再暴露其动态数据搬运致 GPU 利用率低的痛点,引出 NDP 洞见",
+          "页间关系": [
+            "slide 3 → slide 4: 由 LLM 时代宏观开场收敛到推理流程,聚焦 FFN 为解码瓶颈",
+            "slide 4 → slide 5: 由 FFN 瓶颈引出优化总框架(总成本=乘法数×单次乘法成本)",
+            "slide 5 → slide 6: 从优化总框架细化到剪枝,拆为静态 vs 动态剪枝",
+            "slide 6 → slide 7: 与剪枝并列,平移展开到量化的静态 vs 动态",
+            "slide 7 → slide 8: 四类技术汇总为对比表,凸显动态剪枝最优",
+            "slide 8 → slide 9: 选定动态剪枝,深入其 ReLU 稀疏的预测+轻量两步机制",
+            "slide 9 → slide 10: 由动态机制转折到挑战:动态数据搬运致同步开销、GPU 利用率低",
+            "slide 10 → slide 11: 由挑战引出洞见,提出采用近数据处理 NDP 架构"
+          ],
+          "适合复用场景": [
+            "需论证「动态稀疏激活致 GPU 利用率低」的 motivation 章",
+            "需横向对比剪枝/量化多种压缩技术的背景章",
+            "从通用瓶颈层层收敛到某一技术的漏斗式引入",
+            "硬件-算法协同(NDP/近数据处理)选题的背景铺垫"
+          ],
+          "在deck中的位置": "第 2 章,紧跟 cover,为后续 NDP 方法章做背景铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.03",
+          "章节序号": 3,
+          "章节角色": "method",
+          "标题": "核心技术方案",
+          "页码范围": [
+            12,
+            19
+          ],
+          "页数": 8,
+          "页ID列表": [
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18",
+            "slide_19"
+          ],
+          "章节叙事": "承接背景挑战,作为 deck 方法核心;先用系统总览把三大挑战映射到三项技术,再以每技术两页(问题→方案)依次破解 DRAM 带宽欠利用、通道负载不均、掩码解析耗时",
+          "页间关系": [
+            "slide 12 → slide 13: 由 agenda 列出三项技术,进入 NDP-GPU 系统总览",
+            "slide 13 → slide 14: 从总览映射聚焦到技术1,抛出稀疏激活下带宽欠利用问题",
+            "slide 14 → slide 15: 技术1由问题过渡到方案——稀疏感知权重映射实现负载均衡",
+            "slide 15 → slide 16: 切入技术2,提出 FFN 激活频率倾斜致通道负载不均",
+            "slide 16 → slide 17: 技术2由问题过渡到方案——离线+在线启发式调度",
+            "slide 17 → slide 18: 切入技术3,提出稀疏模式解析耗时(约 20% 推理)问题",
+            "slide 18 → slide 19: 技术3由问题过渡到方案——请求-权重对解析,压缩掩码达 90%"
+          ],
+          "适合复用场景": [
+            "需按「总览映射+每技术 problem→approach」组织多技术方案的 method 章",
+            "论证 3 项技术分别对应 3 项挑战的一一映射叙事",
+            "硬件/系统类工作需并列展开多模块技术细节",
+            "每项技术都需先立问题图再给方案图的对比式表达"
+          ],
+          "在deck中的位置": "第 3 章 method,紧随背景挑战章,为后续实验结果章提供待验证的技术方案"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.04",
+          "章节序号": 4,
+          "章节角色": "result",
+          "标题": "实验评估结果",
+          "页码范围": [
+            20,
+            23
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23"
+          ],
+          "章节叙事": "result 章的完整评估弧线:由 outline 切入实验,先立评估设置(平台/模型/baseline),再用双组柱状图依次论证 2.17× 加速与 1.53× 能效两大成果。",
+          "页间关系": [
+            "slide 20 → slide 21: 由 outline 高亮 Experiment Results 切入,进入实验评估设置铺陈",
+            "slide 21 → slide 22: 由平台/模型/baseline 设置过渡到 speedup 柱状图对比,给出 2.17×/1.92× 加速",
+            "slide 22 → slide 23: 由性能加速延伸到硬件能效评估,给出 1.53×/1.45× 能效结论"
+          ],
+          "适合复用场景": [
+            "需 setup→性能→能效三段式论证的实验 result 章",
+            "跨多 baseline/多平台柱状图对比的加速评估页",
+            "以红框 takeaway 高亮核心倍数成果的收尾章",
+            "系统/体系结构方向的量化评估章节"
+          ],
+          "在deck中的位置": "第 4 章(末章),紧接技术章,收束全 deck 论证"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpAct-NDP-Efficient-LLM-Inference-via-Sparse.dc8d7274.sec.05",
+          "章节序号": 5,
+          "章节角色": "closing",
+          "标题": "结尾页",
+          "页码范围": [
+            24,
+            24
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_24"
+          ],
+          "章节叙事": "以论文全称+作者署名收束全篇,呼应封面标题形成首尾闭环。不做要点总结,仅作视觉落幕,把注意力重新聚回研究本身。",
+          "页间关系": [],
+          "适合复用场景": [
+            "需要首尾呼应、以标题复现收束的学术汇报结尾",
+            "追求极简留白的封底/致谢替代页",
+            "汇报口头收尾、无需书面总结要点时"
+          ],
+          "在deck中的位置": "全 deck 最后一页(第24页),单页成章,紧接实验/成果章节之后收尾"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "SpAct-NDP:稀疏激活高效 LLM 推理(论文封面)",
+          "核心论断": "SpAct-NDP 借稀疏激活在 NDP-GPU 异构架构上实现高效 LLM 推理",
+          "本页讲什么": "学术论文封面页:居中大标题给出题目「SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture」,下方分行列出作者(Jiaming Xu、Tongxin Xie 等,含 * 共一标注与 1-4 单位上标)、单位(Shanghai 交大、Infinigence-AI、SII)及通讯作者 Guohao Dai 邮箱,建立整篇工作的学术署名与出处。",
+          "关键文字": [
+            "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+            "Jiaming Xu*, Tongxin Xie*, Yongkang Zhou, Jinhao Li, Yao Lian",
+            "Zhenhua Zhu, Yu Wang, Guohao Dai",
+            "Infinigence-AI, SII",
+            "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+          ],
+          "视觉骨架": [
+            "居中大标题块",
+            "多行作者+上标署名",
+            "单位与通讯邮箱脚注"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Outline:背景挑战→技术方法→实验结果",
+          "核心论断": "全 deck 按背景挑战、四项核心技术、实验结果三段主线展开",
+          "本页讲什么": "目录页,蓝色大标题「Outline」下用三段列出全篇结构:一是 Background and Challenge(当前高亮);二是 Techniques,含 Overview、Sparse-aware Weight-Mapping Strategy、Two-level Heuristic Scheduling System、Request-weight Pair Parsing Mechanism 四个子项;三是 Experiment Results。为后续章节建立导航框架。",
+          "关键文字": [
+            "Outline",
+            "Background and Challenge",
+            "Techniques: Overview",
+            "Sparse-aware Weight-Mapping Strategy",
+            "Two-level Heuristic Scheduling System",
+            "Request-weight Pair Parsing Mechanism",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "蓝色居中大标题",
+            "三段式层级目录",
+            "子项 bullet 缩进列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "本章大纲:核心技术三板块",
+          "核心论断": "核心技术章将依次展开权重映射、调度、解析三项技术",
+          "本页讲什么": "这是进入「核心技术方案」章的目录页,高亮 Techniques 分支,下含 Overview、Sparsity-aware Weight Mapping Strategy、Two-level Heuristic Scheduling System、Request-weight Pair Parsing Mechanism 四条,上下灰显 Background and Challenge 与 Experiment Results 两章,标示本章在全 deck 的位置。",
+          "关键文字": [
+            "Background and Challenge",
+            "Techniques: Overview",
+            "Sparsity-aware Weight Mapping Strategy",
+            "Two-level Heuristic Scheduling System",
+            "Request-weight Pair Parsing Mechanism",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "三级大纲缩进列表",
+            "当前章高亮/它章灰显",
+            "bullet 子条目"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "Outline:进入实验评估章节",
+          "核心论断": "讲完背景与技术,演讲正式切入实验评估结果",
+          "本页讲什么": "本页是全篇 Outline 导航页,灰显已讲的 Background and Challenge、Techniques(含 Overview/PQ-based MatMul/Unified Architecture/Extensible GFM-ISA Design)四个子项,用黑色高亮当前进入的 Experiment Results 章节,起承前启后的过渡作用,提示听众后续进入实验数据部分。",
+          "关键文字": [
+            "Background and Challenge",
+            "Techniques:Overview / PQ-based MatMul",
+            "Unified Architecture / Extensible GFM-ISA Design",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "居中大标题 Outline",
+            "灰显已讲条目列表",
+            "黑色高亮当前章节项"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "ending_candidate",
+          "标题": "论文全称 + 作者署名结尾页",
+          "核心论断": "以论文全称与作者署名收束全篇，呼应封面",
+          "本页讲什么": "整页仅居中呈现论文完整标题「SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture」，其下附作者与导师署名「Jiaming Xu, supervised by Prof. Guohao Dai」。无任何要点总结或图表，作为纯视觉落幕页，把注意力重新聚回研究主题本身，与封面形成首尾闭环。",
+          "关键文字": [
+            "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+            "Jiaming Xu, supervised by Prof. Guohao Dai"
+          ],
+          "视觉骨架": [
+            "居中大号标题文字块",
+            "标题下方作者署名行",
+            "整体大量留白无图表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+      "目录名": "SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+      "标题": "SpeContext: 高效长上下文推理",
+      "总页数": 34,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_长上下文推理背景",
+        "section_03_相关工作",
+        "section_04_挑战与核心技术",
+        "section_05_实验结果",
+        "section_06_推理扩展与展望",
+        "section_07_总结页"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "长上下文",
+        "投机稀疏",
+        "KV Cache",
+        "稀疏注意力",
+        "检索头",
+        "推理加速",
+        "内存管理"
+      ],
+      "目标受众": "学术同行、系统方向研究者",
+      "报告类型": "paper_share",
+      "适用场景": "顶会/组会分享大模型长上下文推理加速工作",
+      "论述总结": "面向长上下文推理的显存与算力瓶颈,提出 SpeContext:用蒸馏小模型(DLM)作轻量检索头识别重要 KV,结合异步预取数据流与自适应内存管理实现投机式上下文稀疏,在云端多请求达 24.89x 吞吐提升、边缘端 10.06x 加速。",
+      "论述弧线": [
+        "背景",
+        "相关工作",
+        "洞察",
+        "方法",
+        "实验",
+        "扩展"
+      ],
+      "适合复用场景": [
+        "大模型长上下文推理加速主题的论文分享",
+        "KV Cache 稀疏/检索类系统工作汇报",
+        "学术报告型 背景+挑战+方法 叙事",
+        "带 outline 分章导航的研究报告",
+        "含实验加速比 evaluation 章节"
+      ],
+      "不适合复用场景": [
+        "Mamba/SSM 等非注意力架构(话题偏离)",
+        "纯算法理论无系统实现的汇报",
+        "面向投资方的商业路演",
+        "工业产品 demo(叙事节奏不同)",
+        "非推理的训练/预训练主题"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "全 deck 开场:slide 1 亮出论文标题与作者机构建立学术权威,slide 2 用 Outline 铺开 Background→Related Work→Challenges&Techniques(含四项技术)→Experiment→Extension 六段主线,为后续章节定锚",
+          "页间关系": [
+            "slide 1 → slide 2: 由标题/多机构署名封面切入 Outline,把论文题眼展开为六段章节路线图"
+          ],
+          "适合复用场景": [
+            "学术论文/技术汇报的封面+目录开场组合",
+            "需高亮多机构联合署名的 cover 页",
+            "六段式线性技术叙事的 agenda 页",
+            "灰底文字加粗高亮当前章节的目录样式"
+          ],
+          "在deck中的位置": "第 1 章,deck 最前端,cover+agenda 组合,统领全篇"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "长上下文推理背景",
+          "页码范围": [
+            3,
+            8
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07",
+            "slide_08"
+          ],
+          "章节叙事": "背景章:先立『长上下文+多轮交互』趋势与价值(五层次),再抛出 KV Cache 显存爆炸(128K→36GB)这一代价,收束于『如何压缩 KV Cache』,为投机稀疏方法铺垫。",
+          "页间关系": [
+            "slide 3 → slide 4: 由『上下文↑+交互轮次↑』双栏趋势,叠加红框反问『为何执意追求更长上下文』",
+            "slide 4 → slide 5: 反问转入正面回答——『长上下文五层次』论证信息越多能力越强",
+            "slide 5 → slide 6: 由价值面转向代价面,拆解注意力机制引出 KV Cache 来源",
+            "slide 6 → slide 7: 由机制图落到量化——KV Cache 显存公式与 9/36/144GB 表",
+            "slide 7 → slide 8: 由显存爆炸数字过渡到全注意力 vs 选择性 KV,抛出『如何压缩 KV Cache』"
+          ],
+          "适合复用场景": [
+            "任何需论证『长上下文价值 vs KV Cache 代价』矛盾的背景章",
+            "先立趋势再抛问、最后收束到方法的『价值-代价-出路』三段式背景",
+            "需用显存量化表(32/128/256K)制造紧迫感的动机章",
+            "KV Cache / 稀疏注意力类工作的问题定义章"
+          ],
+          "在deck中的位置": "第 2 章,紧接 cover/agenda,为后续 SpeContext 方法章立靶。"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+          "章节序号": 3,
+          "章节角色": "background",
+          "标题": "相关工作",
+          "页码范围": [
+            9,
+            11
+          ],
+          "页数": 3,
+          "页ID列表": [
+            "slide_09",
+            "slide_10",
+            "slide_11"
+          ],
+          "章节叙事": "综述稀疏 KV Cache 现有路线,从永久驱逐(信息丢失)递进到 Quest/ClusterKV 的查询感知动态选择,暴露其检索开销与精度短板,为 SpeContext 的投机式稀疏做对照铺垫。",
+          "页间关系": [
+            "slide 9 → slide 10: 由 outline 定位到 Related Work,切入稀疏 KV Cache 第一类——永久驱逐(滑动窗口/sink token)",
+            "slide 10 → slide 11: 由永久驱逐的信息丢失,过渡到 Quest/ClusterKV 查询感知的动态选择(Max/Select)"
+          ],
+          "适合复用场景": [
+            "需综述稀疏 KV Cache / 长上下文压缩相关工作的 background 章",
+            "按『永久驱逐 vs 动态选择』两类对比铺陈已有方法",
+            "用可视化矩阵直观解释 KV 淘汰/选择机制",
+            "为『查询感知稀疏』类新方法做对照铺垫"
+          ],
+          "在deck中的位置": "第 3 章 Related Work,紧接 Background,先于方法(Challenges & Techniques)章"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "挑战与核心技术",
+          "页码范围": [
+            12,
+            23
+          ],
+          "页数": 12,
+          "页ID列表": [
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23"
+          ],
+          "章节叙事": "deck 的方法核心。先用信息论证明蒸馏小模型可作 KV 检索头(Insight),再以 Challenge→Technique 模式逐项展开轻量检索、异步预取、自适应内存三项技术,支撑后续实验。",
+          "页间关系": [
+            "slide 12 → slide 13: 由列出四技术点的章节 agenda 进入 Insight,抛出检索算法信息论提问",
+            "slide 13 → slide 14: 由第一问『检索本质目标=对齐』引出第二问『为何需昂贵预处理』",
+            "slide 14 → slide 15: 由两个核心问题过渡到马尔可夫链/互信息/数据处理不等式的信息论推导",
+            "slide 15 → slide 16: 由信息论证明落到结论——DLM 信息聚焦相似,可直接当检索算法",
+            "slide 16 → slide 17: 由『用 DLM 做检索』的 insight 进入 Tech1,提出 DLM 耗时挑战",
+            "slide 17 → slide 18: 同一 DLM 架构下,由『~10% 延迟』引出冗余操作、只需注意力结果",
+            "slide 18 → slide 19: 由精简到只取 attention 结果,过渡到 Head/Batch 级检索算法",
+            "slide 19 → slide 20: 由 Tech1 检索算法进入 Tech2,提出重数据传输(内存瓶颈)挑战",
+            "slide 20 → slide 21: 由内存传输瓶颈过渡到多种预取方案对比与相邻 token 上下文相似性",
+            "slide 21 → slide 22: 由 Tech2 预取进入 Tech3,提出序列微增即性能骤降挑战",
+            "slide 22 → slide 23: 由性能退化现象过渡到自适应内存管理系统与理论内存模型预计算"
+          ],
+          "适合复用场景": [
+            "需『先理论洞察后逐项技术』结构的方法章节",
+            "每项技术以 Challenge→Technique 双页展开的系统类工作",
+            "KV cache/长上下文推理优化的方法介绍",
+            "需信息论等理论论证设计合理性的章节",
+            "含架构图/数据流示意的技术拆解章节"
+          ],
+          "在deck中的位置": "第 4 章 method,承接背景/相关工作,为实验结果章铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.05",
+          "章节序号": 5,
+          "章节角色": "result",
+          "标题": "实验结果",
+          "页码范围": [
+            24,
+            28
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_24",
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28"
+          ],
+          "章节叙事": "结果章:先立评测框架(硬件/模型/基线/数据集),再以长输入+长输出双维度证明精度无损,最后甩出 24.89x 云端吞吐、10.06x 边缘加速的核心卖点,论证「稀疏不掉点且更快」。",
+          "页间关系": [
+            "slide 24 → slide 25: 由 outline 分隔页高亮 Experiment Results,切入实验 setup",
+            "slide 25 → slide 26: 由硬件/基线/数据集设定,进入长输入精度评测",
+            "slide 26 → slide 27: 由长输入(不同 KV 选择)转到长输出(完整保留新 KV)精度",
+            "slide 27 → slide 28: 精度证无损后,转向 24.89x/10.06x 的加速比结果"
+          ],
+          "适合复用场景": [
+            "系统方法「精度无损+提速」双证的结果章",
+            "含多硬件平台+多基线的评测 setup 页需求",
+            "先精度后速度的两段式结果叙事",
+            "需 outline 分隔页引出结果章的场合"
+          ],
+          "在deck中的位置": "第5章,四项技术讲完后的验证章,后接 Extension 收尾"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.06",
+          "章节序号": 6,
+          "章节角色": "discussion",
+          "标题": "推理扩展与展望",
+          "页码范围": [
+            29,
+            33
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_29",
+            "slide_30",
+            "slide_31",
+            "slide_32",
+            "slide_33"
+          ],
+          "章节叙事": "全 deck 收尾展望章:把 SpeContext 从单点工作升华为「投机式推理」范式——借 LLM/Diffusion 逐步生成类比引出 System1/System2 双系统认知,再映射到本组 LLM/多模态/VLA 系列工作。",
+          "页间关系": [
+            "slide 29 → slide 30: 由 outline 高亮 Extension 切入,进入展望正文的「逐步生成」类比",
+            "slide 30 → slide 31: 由 LLM/Diffusion 双栏并列类比补全具体问答/绘图实例,坐实「Step by Step」",
+            "slide 31 → slide 32: 由 AI 逐步生成上升到 Kahneman 人类双系统认知理论,给类比找理论根",
+            "slide 32 → slide 33: 由双系统理论映射到本组 LLM/多模态/VLA 系列工作版图,完成升华"
+          ],
+          "适合复用场景": [
+            "需从单点工作升华为研究范式的收尾展望章",
+            "用 System1/System2 双系统框架统一多项工作",
+            "借生活化类比(逐步生成)引出理论的过渡设计",
+            "展示课题组跨模态系列工作版图的收尾页"
+          ],
+          "在deck中的位置": "第 6 章(末章),紧接实验结果之后,收束全 deck 并展望系列工作。"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.07",
+          "章节序号": 7,
+          "章节角色": "closing",
+          "标题": "总结页",
+          "页码范围": [
+            34,
+            34
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_34"
+          ],
+          "章节叙事": "以完整论文标题+作者收尾,回扣全文核心洞见:蒸馏小模型(DLM)与原模型信息聚焦一致,故可复用为轻量检索算法,呼应方法起点。",
+          "页间关系": [],
+          "适合复用场景": [
+            "以核心 insight 图收尾的科研 ending 页",
+            "需回扣论文标题+作者的答辩总结页",
+            "用一句话强调方法直觉的结束页"
+          ],
+          "在deck中的位置": "末章(第7章),单页收尾,置于成果论证之后"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "SpeContext:高效长上下文推理(论文封面)",
+          "核心论断": "SpeContext 由 SJTU 等团队提出,面向高效长上下文推理",
+          "本页讲什么": "学术论文封面页:居中大字标题「SpeContext: Enabling Efficient Long-context Reasoning with...」,下方列出作者 Jiaming Xu、Jiayi Pan、Jiancai Ye、Yu Wang、Guohao Dai 等及所属机构上海交通大学、清华、SII、Infinigence-AI,并附通讯作者邮箱,用于建立论文的学术权威与身份归属。",
+          "关键文字": [
+            "SpeContext: Enabling Efficient Long-context Reasoning with",
+            "Jiaming Xu, Jiayi Pan, Jiancai Ye, Yu Wang, Guohao Dai",
+            "Shanghai Jiao Tong University, Tsinghua, SII, Infinigence-AI",
+            "jiamingxu@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "居中大字论文标题",
+            "作者姓名带机构上标",
+            "机构与邮箱脚注行"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Outline:六段主线目录",
+          "核心论断": "全文沿 Background 到 Extension 六段主线展开,技术含四项",
+          "本页讲什么": "目录页,以「Outline」为标题铺开六段主线:Background、Related Work、Challenges and Techniques(含 Key Insight、Lightweight Retrieval Head、Asynchronous Prefetch Dataflow、Adaptive Memory Management 四项技术子条目)、Experiment Results、Extension,当前 Background 高亮为黑色其余灰化,为后续章节定锚导航。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight",
+            "Lightweight Retrieval Head",
+            "Asynchronous Prefetch Dataflow",
+            "Adaptive Memory Management",
+            "Experiment Results",
+            "Extension"
+          ],
+          "视觉骨架": [
+            "居中蓝色 Outline 标题",
+            "六段目录纵向列表",
+            "当前章高亮其余灰化",
+            "缩进技术子条目 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "Outline:定位到 Related Work 章节",
+          "核心论断": "全篇分五章推进,当前进入 Related Work 相关工作",
+          "本页讲什么": "这是一张目录/导航页,列出全篇五大章节:Background、Related Work、Challenges and Techniques(含 Key Insight/Lightweight Retrieval Head/Asynchronous Prefetch Dataflow/Adaptive Memory Management 四个子点)、Experiment Results、Extension。本页高亮当前章节 Related Work,其余章节灰显,起承上启下的导航作用。",
+          "关键文字": [
+            "Outline",
+            "Background / Related Work / Challenges and Techniques",
+            "Key Insight, Lightweight Retrieval Head",
+            "Asynchronous Prefetch Dataflow",
+            "Adaptive Memory Management",
+            "Experiment Results / Extension"
+          ],
+          "视觉骨架": [
+            "居中大标题 Outline",
+            "章节纵向列表",
+            "当前章节高亮+其余灰显",
+            "子条目缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "本节 Agenda:挑战与核心技术",
+          "核心论断": "本节聚焦三项核心技术:轻量检索、异步预取、自适应内存",
+          "本页讲什么": "这是全 deck 大纲页,高亮当前进入的「Challenges and Techniques」章节。该章展开四个子点:Key Insight、Lightweight Retrieval Head、Asynchronous Prefetch Dataflow、Adaptive Memory Management,其余章节(Backgrounds/Related Works/Experiment/Extension)灰显。用于向听众交代本节的技术路线结构。",
+          "关键文字": [
+            "Challenges and Techniques",
+            "Key Insight",
+            "Lightweight Retrieval Head",
+            "Asynchronous Prefetch Dataflow",
+            "Adaptive Memory Management"
+          ],
+          "视觉骨架": [
+            "章节大纲列表",
+            "当前章节高亮/其余灰显",
+            "多级 bullet 缩进"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "Outline:定位到「实验结果」章节",
+          "核心论断": "全文六大板块中,进度推进到 Experiment Results 章",
+          "本页讲什么": "这是一张导航式 Outline 页,列出全文六大板块:Background、Related Work、Challenges and Techniques(含 Key Insight / Lightweight Retrieval Head / Asynchronous Prefetch Dataflow / Adaptive Memory Management 四个子点)、Experiment Results、Extension。其中「Experiment Results」用黑色高亮,其余为灰色,表示本页在提示听众已进入实验结果章节。",
+          "关键文字": [
+            "Background / Related Work / Challenges and Techniques",
+            "Key Insight、Lightweight Retrieval Head、Adaptive Memory Management",
+            "Experiment Results(高亮)",
+            "Extension"
+          ],
+          "视觉骨架": [
+            "单列纵向目录列表",
+            "当前章节黑色高亮其余灰化",
+            "两级缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "content_candidate",
+          "标题": "Outline:进入 Extension 展望章",
+          "核心论断": "讲解推进到 Extension 章,承接实验结果转向范式展望",
+          "本页讲什么": "全 deck 通用 Outline 导航页,列出 Background / Related Work / Challenges and Techniques(含 Key Insight、Lightweight Retrieval Head、Asynchronous Prefetch Dataflow、Adaptive Memory Management)/ Experiment Results / Extension 六大板块;其余条目置灰,仅 Extension 高亮为黑色,提示演讲已推进到最后的推理扩展与展望章。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Lightweight Retrieval Head",
+            "Experiment Results",
+            "Extension"
+          ],
+          "视觉骨架": [
+            "置灰目录列表",
+            "当前项高亮标黑",
+            "两级缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+      "目录名": "SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+      "标题": "SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation",
+      "总页数": 30,
+      "章节数": 7,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_扩散模型与推理计算成本",
+        "section_03_相关工作-降输入长度与特征缓存",
+        "section_04_关键洞察-相邻步特征可预知",
+        "section_05_特征选择与多级分类算法",
+        "section_06_实验设置与加速评测",
+        "section_07_总结与致谢"
+      ],
+      "主题标签": [
+        "Diffusion",
+        "Inference",
+        "Speculation",
+        "Feature Cache",
+        "Acceleration",
+        "Self-Speculation"
+      ],
+      "目标受众": "AI系统/推理加速方向的学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "学术会议/组会分享扩散模型推理加速论文",
+      "论述总结": "针对扩散模型推理算力开销大的问题,先铺垫扩散模型推理与Attention/FFN成本,再综述Token Merging与Feature Caching等相关工作;基于相邻步特征可复用的关键洞察,提出以少步全推理作投机的自投机方法与特征选择/多级分类算法,并在SD3/3.5、Flux.1上验证2.7-3.17倍加速。",
+      "论述弧线": [
+        "Background",
+        "Related Work",
+        "Motivation",
+        "Techniques",
+        "Evaluation",
+        "Summary"
+      ],
+      "适合复用场景": [
+        "扩散模型推理加速主题的论文分享",
+        "投机式推理/特征缓存方法学术汇报",
+        "带Contents导航的六段式科研报告",
+        "系统方向组会motivation+方法讲解"
+      ],
+      "不适合复用场景": [
+        "LLM文本生成加速(话题偏离)",
+        "工业产品demo(叙事节奏不同)",
+        "面向投资方的商业提案",
+        "扩散模型训练主题(非推理)"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "deck 的开场章：先以极简封面亮出 SpecDiff 标题、作者与 SJTU/SII/Infinigence 机构署名，再用六节目录（Background→Summary）为全篇学术汇报建立骨架，Background 高亮为起点。",
+          "页间关系": [
+            "slide 1 → slide 2: 由封面标题/作者署名过渡到六节内容目录，从『是谁做什么』切换到『怎么讲』"
+          ],
+          "适合复用场景": [
+            "学术论文/技术汇报类 deck 的封面+目录开场",
+            "需展示多机构合作署名与通讯作者的封面",
+            "六节式『背景-相关工作-动机-方法-实验-总结』标准科研叙事骨架",
+            "带当前章节高亮的竖排编号目录页"
+          ],
+          "在deck中的位置": "第 1 章，位于 deck 最前端，是全篇 30 页的开场入口"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.02",
+          "章节序号": 2,
+          "章节角色": "background",
+          "标题": "扩散模型与推理计算成本",
+          "页码范围": [
+            3,
+            7
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05",
+            "slide_06",
+            "slide_07"
+          ],
+          "章节叙事": "背景章,层层递进为方法铺垫:从扩散模型多域普及,到算力需求随参数(6500×)与输入规模(10⁴)爆炸,再拆解多步迭代推理中Attn/FFN随L的成本,最终落到二者compute-bound、降L即加速,锚定全deck核心杠杆。",
+          "页间关系": [
+            "slide 3 → slide 4: 由扩散模型四域普及,过渡到其带来的更高算力需求",
+            "slide 4 → slide 5: 由参数与输入规模两路算力压力,聚焦到推理本身的多步迭代结构",
+            "slide 5 → slide 6: 由每步含Attn/FFN的迭代流程,深入拆解二者随输入长度L的计算成本",
+            "slide 6 → slide 7: 由L=h·w·f+length的成本公式,推出Attn/FFN为compute-bound、降L即加速"
+          ],
+          "适合复用场景": [
+            "任何论证『扩散模型推理算力爆炸』的背景章",
+            "需以Attn∝L²、FFN∝L铺垫降L动机的方法章前置",
+            "面向DiT/视频生成加速主题的问题定义章",
+            "需从领域普及递进到瓶颈定位的技术背景"
+          ],
+          "在deck中的位置": "第2章,紧接cover,为后续相关工作与自投机方法奠定问题前提"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.03",
+          "章节序号": 3,
+          "章节角色": "background",
+          "标题": "相关工作:降输入长度与特征缓存",
+          "页码范围": [
+            8,
+            13
+          ],
+          "页数": 6,
+          "页ID列表": [
+            "slide_08",
+            "slide_09",
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13"
+          ],
+          "章节叙事": "综述两条加速路线：先展示Token Merging机制并揭其缺陷（<70%相似、同质化、<30%加速），再转向Feature Caching跨步复用，最终提炼「预测所用信息量决定性能」的洞见，为自投机方法埋伏笔。",
+          "页间关系": [
+            "slide 8 → slide 9: 由agenda分栏页高亮Related Work，进入第一路线Token Merging机制图",
+            "slide 9 → slide 10: 由token merging正常合并流程，转揭其缺陷—低相似<70%、同质化、<30%加速",
+            "slide 10 → slide 11: 由token merging失败转向第二路线Feature Caching，引出跨步Reuse与「如何预测重要token」",
+            "slide 11 → slide 12: 由caching机制图收敛到核心命题「预测所用信息量至关重要」并列4篇文献",
+            "slide 12 → slide 13: 由文字命题落到FORA/ToCa/RAS/TaylorSeer对比表，量化「信息越多性能越高」"
+          ],
+          "适合复用场景": [
+            "需综述两条技术路线并对比优劣的related work章节",
+            "以「机制图→缺陷→替代方案」推进的问题铺垫叙事",
+            "diffusion/transformer推理加速方向的相关工作梳理",
+            "需用对比表收敛出单一洞见的章节收尾",
+            "为自家方法做「前人不足」铺垫的动机型章节"
+          ],
+          "在deck中的位置": "第2章（deck编号），承Background、启Motivation"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.04",
+          "章节序号": 4,
+          "章节角色": "motivation",
+          "标题": "关键洞察:相邻步特征可预知",
+          "页码范围": [
+            14,
+            17
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17"
+          ],
+          "章节叙事": "承接Related Work的动机核。以三段递进论证:相邻步特征会突变致朴素缓存失效→若能预知突变即可计算特征→少步扩散作投机可提供未来信息,为后续自投机方法奠基。",
+          "页间关系": [
+            "slide 14 → slide 15: 由Contents高亮定位Motivation章,进入关键洞察正文",
+            "slide 15 → slide 16: 由『相邻步特征突变使缓存复用失效』推进到『若能提前预知突变』的设问",
+            "slide 16 → slide 17: 由『预知突变』设问引出『少步扩散作投机提供未来信息』的答案"
+          ],
+          "适合复用场景": [
+            "论证『朴素缓存/复用因特征突变失效』的动机章节",
+            "以『先设问再揭示洞察』递进铺陈方法动机",
+            "用少步/低成本前瞻作投机信号引入方法",
+            "扩散/迭代类模型的加速动机段落"
+          ],
+          "在deck中的位置": "第3章 Motivation,接Background、Related Work,为第4章Techniques铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+          "章节序号": 5,
+          "章节角色": "method",
+          "标题": "特征选择与多级分类算法",
+          "页码范围": [
+            18,
+            24
+          ],
+          "页数": 7,
+          "页ID列表": [
+            "slide_18",
+            "slide_19",
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "本章是方法核心。以投机步 attention 捕获 token 重要性突变为洞察,逐步推导重要性打分公式,加入防饿死的 CF/CR,再过渡到基于 CV 稳定性的多级特征分类算法。",
+          "页间关系": [
+            "slide 18 → slide 19: 由 Techniques 章节导航页进入,提出「少步全推理作投机」",
+            "slide 19 → slide 20: 由投机的开放问题(用何未来信息)转入 token 重要性会突变",
+            "slide 20 → slide 21: 由历史信息无法预知突变,引出投机步 attention 可捕获突变",
+            "slide 21 → slide 22: 由定性说明转为定量,把 Spec. Attn 并入重要性打分公式",
+            "slide 22 → slide 23: 由公式转入永不计算 token 致降质,加 CF/CR 防饿死分层",
+            "slide 23 → slide 24: 由特征选择算法转到第二算法——基于 CV 稳定性的多级分类"
+          ],
+          "适合复用场景": [
+            "需「提问→洞察→公式化」逐步推导的方法章",
+            "讲基于 attention/重要性的 token 选择或缓存复用",
+            "用示意图+公式演进讲两个递进算法",
+            "投机/预测类加速方法的核心机制介绍"
+          ],
+          "在deck中的位置": "第4章 Techniques,方法主体,位于 Motivation 之后、Evaluation 之前"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06",
+          "章节序号": 6,
+          "章节角色": "experiment",
+          "标题": "实验设置与加速评测",
+          "页码范围": [
+            25,
+            29
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_25",
+            "slide_26",
+            "slide_27",
+            "slide_28",
+            "slide_29"
+          ],
+          "章节叙事": "作为方法章之后的验证闭环:先交代硬件/模型/baseline/数据集,再分 SD3+3.5、Flux.1 Dev 两组给出 2.7-3.17× 加速结论,最后汇总为『质量近乎无损、推进精度-速度 Pareto 前沿』。",
+          "页间关系": [
+            "slide 25 → slide 26: agenda 高亮第 4 章 Evaluation,切入实验设置",
+            "slide 26 → slide 27: 由硬件/模型/baseline/数据集设置进入 SD3、SD3.5 加速结果",
+            "slide 27 → slide 28: 由 SD 系列 2.80×/2.74× 延伸到 Flux.1 Dev 3.17× 结果",
+            "slide 28 → slide 29: 由分模型结果收敛为三模型总体加速小结"
+          ],
+          "适合复用场景": [
+            "推理加速类方法的『设置→分模型评测→汇总』实验章",
+            "需按多个 benchmark 模型逐页展示加速倍数的场景",
+            "以速度-质量 Pareto 权衡作结论的评测章"
+          ],
+          "在deck中的位置": "第 4 章 Evaluation,承接 Techniques 方法章,后接 Summary 收尾"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.07",
+          "章节序号": 7,
+          "章节角色": "closing",
+          "标题": "总结与致谢",
+          "页码范围": [
+            30,
+            30
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_30"
+          ],
+          "章节叙事": "全 deck 收尾章,仅一页。左侧回扣 SpecDiff 标题与致谢/联系方式,右下用『Our works on speculation』将本工作延展为课题组投机系列(LLM Early Exit/Sparse Attention/VLA Pruning),把单篇成果升维为研究主线。",
+          "页间关系": [],
+          "适合复用场景": [
+            "需在结尾把单篇工作扩展为课题组系列的 summary 页",
+            "带致谢+联系方式+论文/主页二维码的学术收尾页",
+            "需并列展示多篇相关成果(会议+方向)的收官页"
+          ],
+          "在deck中的位置": "第 7 章,末页,紧跟实验章,作全 deck 收束与致谢"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "SpecDiff：自投机加速扩散模型推理（封面）",
+          "核心论断": "SpecDiff 以自投机机制加速扩散模型推理",
+          "本页讲什么": "全篇学术汇报的封面页。上方居中通栏亮出论文标题 SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation，一条浅粉分隔线下方列出四位作者（Jiayi Pan、Jiaming Xu、Yongkang Zhou、Guohao Dai）及 SJTU/SII/Infinigence AI 三家机构署名，并标注 Equal Contribution 与通讯作者邮箱。整页极简、无正文内容，仅承担开场亮题与署名功能。",
+          "关键文字": [
+            "SpecDiff : Accelerating Diffusion Model Inference with Self-Speculation",
+            "Jiayi Pan, Jiaming Xu, Yongkang Zhou, Guohao Dai",
+            "1Shanghai Jiao Tong University / 2SII / 3Infinigence AI",
+            "Equal Contribution",
+            "*Corresponding to: jiamingxu@sjtu.edu.cn; daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "通栏大标题",
+            "浅粉水平分隔线",
+            "作者与机构署名块",
+            "通讯信息脚注"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "全篇六节目录（Background 高亮）",
+          "核心论断": "全篇按六节展开，从 Background 起步",
+          "本页讲什么": "目录页。蓝色矩形边框内顶部居中标题 Contents，下方以蓝色编号圆点串起六个章节：1 Background、2 Related Work、3 Motivation、4 Techniques、5 Evaluation、6 Summary。当前所在的第一节 Background 加粗高亮，左侧一条蓝色竖条标示进度。整页为全篇学术汇报建立骨架，页脚显示 Page 页码标识。",
+          "关键文字": [
+            "Contents",
+            "1 Background",
+            "2 Related Work",
+            "3 Motivation",
+            "4 Techniques",
+            "5 Evaluation / 6 Summary"
+          ],
+          "视觉骨架": [
+            "矩形外边框",
+            "蓝色编号圆点竖排目录",
+            "左侧蓝色进度竖条",
+            "当前节高亮",
+            "页脚页码"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "目录:进入 Related Work 章节",
+          "核心论断": "演讲推进至第 2 章 Related Work,承上启下",
+          "本页讲什么": "这是六段式目录页,当前高亮第 2 项「Related Work」。整个 deck 分为 Background、Related Work、Motivation、Techniques、Evaluation、Summary 六部分,本页用于标示演讲即将进入相关工作综述,引出后续对 Token Merging 与 Feature Caching 两条加速路线的讨论。",
+          "关键文字": [
+            "Contents",
+            "Background / Related Work / Motivation",
+            "Techniques / Evaluation / Summary"
+          ],
+          "视觉骨架": [
+            "蓝色边框目录卡",
+            "6 项编号圆点列表",
+            "当前项蓝色高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "目录:定位到 Motivation 章节",
+          "核心论断": "演讲进入第 3 部分 Motivation,承接 Related Work 展开动机",
+          "本页讲什么": "这是六段式目录过渡页,列出 Background、Related Work、Motivation、Techniques、Evaluation、Summary 六个部分,并用左侧蓝色竖条与加粗高亮当前进入的第 3 部分 Motivation,起到章节导航与转场作用。",
+          "关键文字": [
+            "Contents",
+            "Background / Related Work / Motivation",
+            "Techniques / Evaluation / Summary"
+          ],
+          "视觉骨架": [
+            "外框标题卡",
+            "6 项编号圆点竖排列表",
+            "左侧当前项高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "目录:进入 Techniques 章节",
+          "核心论断": "演讲进入第 4 部分 Techniques,方法核心即将展开",
+          "本页讲什么": "这是全 deck 六段式目录页,当前高亮第 4 项 Techniques(方法),其余为 Background、Related Work、Motivation、Evaluation、Summary。用蓝色竖条与加粗标记当前所处章节,起承前启后的过渡作用,引出后续特征选择与多级分类算法的技术细节。",
+          "关键文字": [
+            "Background / Related Work / Motivation",
+            "Techniques(当前高亮)",
+            "Evaluation / Summary"
+          ],
+          "视觉骨架": [
+            "外框 Contents 标题",
+            "6 项编号圆点纵向列表",
+            "当前项蓝色竖条高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "目录:定位到第 4 章 Evaluation",
+          "核心论断": "全篇进入第 4 部分 Evaluation,承接 Techniques 转入评测",
+          "本页讲什么": "五项内容目录(Background / Related Work / Techniques / Evaluation / Summary),用蓝色圆圈编号加左侧竖条高亮当前所在的第 4 项『Evaluation』,作为进入实验评测章节的导航分隔页。",
+          "关键文字": [
+            "Contents",
+            "1 Background",
+            "2 Related Work",
+            "3 Techniques",
+            "4 Evaluation",
+            "5 Summary"
+          ],
+          "视觉骨架": [
+            "蓝框标题卡",
+            "5 项编号圆圈列表",
+            "左侧当前项高亮竖条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 30,
+          "页面角色": "ending_candidate",
+          "标题": "总结致谢与课题组投机系列工作",
+          "核心论断": "SpecDiff 是课题组『投机加速』研究主线中的一环",
+          "本页讲什么": "全 deck 收尾页。左上回扣 SpecDiff 完整标题并致谢、留联系邮箱 pan_jiayi@sjtu.edu.cn。右侧用『Our works on speculation』把本工作延展为课题组投机系列:LLM Early Exit(ISCA 2025)、Sparse Attention、VLA Pruning(ASPLOS 2026)三项并列展示,并附 Lab Homepage / Paper Link 二维码,将单篇成果升维为研究脉络。",
+          "关键文字": [
+            "Thanks for your attention !",
+            "Communication email: pan_jiayi@sjtu.edu.cn",
+            "Our works on speculation",
+            "Speculation for LLM Early Exit (ISCA 2025)",
+            "Speculation for Sparse Attention",
+            "Speculation for VLA Pruning (ASPLOS 2026)"
+          ],
+          "视觉骨架": [
+            "SpecDiff 标题框",
+            "致谢+邮箱文字块",
+            "Lab/Paper 二维码",
+            "投机系列 3 卡片并列"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    },
+    {
+      "deck标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+      "目录名": "SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738",
+      "标题": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+      "总页数": 25,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与目录",
+        "section_02_研究背景与推理成本动机",
+        "section_03_相关工作-现有提前退出方法",
+        "section_04_SpecEE-挑战、关键洞察与技术设计",
+        "section_05_实验结果与性能评估",
+        "section_06_论文与代码链接"
+      ],
+      "主题标签": [
+        "LLM inference",
+        "early exit",
+        "speculative",
+        "predictor",
+        "edge",
+        "cloud",
+        "acceleration"
+      ],
+      "目标受众": "学术同行 + 系统/推理加速方向工业落地",
+      "报告类型": "paper_share",
+      "适用场景": "系统/推理加速方向论文分享或组会汇报",
+      "论述总结": "面向 LLM 推理提速,提出 SpecEE:用轻量投机预测器缩小候选词表搜索空间,判定并跳过冗余层实现提前退出。经背景动机、关键洞察、预测器设计与调度、编译优化,最终在 PC 与云端 GPU 上实现约 2.25x 提速且精度几乎无损。",
+      "论述弧线": [
+        "背景",
+        "相关工作",
+        "挑战",
+        "方法",
+        "实验"
+      ],
+      "适合复用场景": [
+        "LLM 推理加速主题论文分享",
+        "学术型 motivation+方法+实验章节",
+        "early-exit/投机解码方法讲解"
+      ],
+      "不适合复用场景": [
+        "非推理加速的算法论文(话题偏离)",
+        "工业产品 demo(叙事节奏不同)",
+        "商业提案/投资路演",
+        "训练方法而非推理优化主题"
+      ],
+      "sections": [
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.01",
+          "章节序号": 1,
+          "章节角色": "opening",
+          "标题": "封面与目录",
+          "页码范围": [
+            1,
+            2
+          ],
+          "页数": 2,
+          "页ID列表": [
+            "slide_01",
+            "slide_02"
+          ],
+          "章节叙事": "deck 开场：封面亮明标题/作者/机构，目录以高亮 Background、灰化后续五章的进度式列表铺陈全篇六段结构，为后文技术章节定锚。",
+          "页间关系": [
+            "slide 1 → slide 2: 由封面标题作者过渡到 Outline，高亮 Background 一项，灰化其余章节，交代全篇脉络"
+          ],
+          "适合复用场景": [
+            "学术论文/技术汇报的封面+目录开场组合",
+            "需进度式高亮当前章节的多段 deck 导航",
+            "含多作者多机构署名的会议报告封面",
+            "章节数 5-6 段的系统/算法类技术分享"
+          ],
+          "在deck中的位置": "第 1 章，位于 deck 最前，封面 + 目录导航"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.02",
+          "章节序号": 2,
+          "章节角色": "motivation",
+          "标题": "研究背景与推理成本动机",
+          "页码范围": [
+            3,
+            5
+          ],
+          "页数": 3,
+          "页ID列表": [
+            "slide_03",
+            "slide_04",
+            "slide_05"
+          ],
+          "章节叙事": "承 cover 之后铺垫全篇：先以 token 需求爆炸与推理延迟需求-现状鸿沟立起加速动机，再点破根因是逐层级联计算，落到「如何减少层计算」引出后文早退方案。",
+          "页间关系": [
+            "slide 3 → slide 4: 由 token 生成量级(Agent/Action)转入真实推理延迟需求与端云现状的差距",
+            "slide 4 → slide 5: 由需求-现状鸿沟下探根因，揭示推理本质是级联逐层计算并抛出「如何减少层计算」"
+          ],
+          "适合复用场景": [
+            "论证 LLM 推理成本/延迟瓶颈的 motivation 章节",
+            "需从需求-现状 gap 引出加速必要性的开场",
+            "以「层计算冗余」为切入点的推理优化选题",
+            "端侧+云侧双场景吞吐对比的动机铺垫"
+          ],
+          "在deck中的位置": "第 2 章 motivation，紧跟 cover，为后续洞察与方法章节做铺垫"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.03",
+          "章节序号": 3,
+          "章节角色": "background",
+          "标题": "相关工作:现有提前退出方法",
+          "页码范围": [
+            6,
+            9
+          ],
+          "页数": 4,
+          "页ID列表": [
+            "slide_06",
+            "slide_07",
+            "slide_08",
+            "slide_09"
+          ],
+          "章节叙事": "承接 background,系统综述现有提前退出方法:先抽象出「每层部署 predictor」通用范式并抛出「如何设计 predictor」核心问题,再横比 RAEE/AdaInfer/MoD 三法,暴露其 predictor 过重、搜索空间过大等短板,为 SpecEE 轻量投机预测器铺垫。",
+          "页间关系": [
+            "slide 6 → slide 7: 由 Outline 高亮 Related Work 切入现有提前退出通用范式(每层部署 predictor)",
+            "slide 7 → slide 8: 由「如何设计 predictor」核心问题落到 RAEE/AdaInfer/MoD 三种具体方法示意",
+            "slide 8 → slide 9: 由三法结构示意过渡到跨方法多维对比表(退出时机/预测器轻重/搜索空间/延迟/训练成本)"
+          ],
+          "适合复用场景": [
+            "需综述某方向现有方法并对比短板的 related work 章节",
+            "先抽象通用范式再抛核心问题引出对比的叙事",
+            "用多维对比表凸显 baseline 缺陷以反衬本方法的场景",
+            "LLM 推理加速 / 提前退出主题的相关工作梳理"
+          ],
+          "在deck中的位置": "第 2 章,紧跟 Background,先于关键洞察与方法章节"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.04",
+          "章节序号": 4,
+          "章节角色": "method",
+          "标题": "SpecEE 挑战、关键洞察与技术设计",
+          "页码范围": [
+            10,
+            19
+          ],
+          "页数": 10,
+          "页ID列表": [
+            "slide_10",
+            "slide_11",
+            "slide_12",
+            "slide_13",
+            "slide_14",
+            "slide_15",
+            "slide_16",
+            "slide_17",
+            "slide_18",
+            "slide_19"
+          ],
+          "章节叙事": "SpecEE 方法主体。先用 Key Insight 三连把推理拆成「缩搜索空间→跳冗余层→设计预测器」三问,再以「痛点→设计图→收益」范式依次给出轻量预测器、启发式调度、合并映射三项技术。",
+          "页间关系": [
+            "slide 10 → slide 11: 由 agenda 列出四项技术,过渡到 Key Insight 把推理抽象为词表搜索过程",
+            "slide 11 → slide 12: 由全词表(~3×10⁴)搜索空间,引入投机模型缩小到 reduced vocab(~3)",
+            "slide 12 → slide 13: 由缩小搜索空间,过渡到每层后部署 predictor 跳冗余层,抛出「如何设计预测器」",
+            "slide 13 → slide 14: 由预测器设计问题,进入 Technique 1,指出 raw 高维特征(>4×10³)预测耗时约 30%",
+            "slide 14 → slide 15: 由高维特征痛点,给出概率偏移特征+纠正算法,降到 ~3 维两步预测",
+            "slide 15 → slide 16: 由单预测器设计,转入 Technique 2,揭示层间激活频率的 skewed 分布",
+            "slide 16 → slide 17: 由 skewed 分布,给出在线+离线两级启发式调度动态部署",
+            "slide 17 → slide 18: 由调度,转入 Technique 3,指出投机解码下映射复杂度指数级 Sⁿ",
+            "slide 18 → slide 19: 由指数复杂度,给出 context-aware 合并映射为 hyper token,降到 S"
+          ],
+          "适合复用场景": [
+            "三项技术逐一「problem→solution」展开的方法章节",
+            "用连环「How to…?」设问驱动推进的系统/架构工作",
+            "先 Key Insight 铺洞察再落技术的推理加速类方法章",
+            "每项技术配「痛点→示意图→收益数字」的展示需求"
+          ],
+          "在deck中的位置": "第 4 章 method,承接背景/相关工作,为后续实验结果铺垫。"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.05",
+          "章节序号": 5,
+          "章节角色": "result",
+          "标题": "实验结果与性能评估",
+          "页码范围": [
+            20,
+            24
+          ],
+          "页数": 5,
+          "页ID列表": [
+            "slide_20",
+            "slide_21",
+            "slide_22",
+            "slide_23",
+            "slide_24"
+          ],
+          "章节叙事": "以「先设定后验证」弧线收束全 deck：由 agenda 高亮切入实验章，先交代软硬件平台，再依「精度几乎无损→PC 提速→云端提速并推进帕累托前沿」逐层放大 SpecEE 的收益。",
+          "页间关系": [
+            "slide 20 → slide 21: 由 agenda 高亮 Experiment Results 切入具体实验平台设定",
+            "slide 21 → slide 22: 由平台/模型/基线交代过渡到首项结论——精度评估",
+            "slide 22 → slide 23: 由「精度无损」前提转向 PC 端提速实测(2.43x)",
+            "slide 23 → slide 24: 由 PC 场景延伸到云端 GPU 场景并推进帕累托前沿"
+          ],
+          "适合复用场景": [
+            "系统/推理加速类工作的实验结果章",
+            "需按「精度→单场景→多场景」逐层展示收益",
+            "含 agenda 高亮页作章节入口的结果章",
+            "需并列 PC 与云端两类硬件评估"
+          ],
+          "在deck中的位置": "第 5 章即末章，紧接方法与编译章之后，用实测数据兑现前文提速承诺。"
+        },
+        {
+          "章节标识": "tpl.本组论文与科研成果.SpecEE-Accelerating-Large-Language-Model-Inference-with-Spec.039d5738.sec.06",
+          "章节序号": 6,
+          "章节角色": "closing",
+          "标题": "论文与代码链接",
+          "页码范围": [
+            25,
+            25
+          ],
+          "页数": 1,
+          "页ID列表": [
+            "slide_25"
+          ],
+          "章节叙事": "全篇收尾页：复述论文标题与作者署名，用 ~2.43x/~2.25x 与推动 speedup-accuracy Pareto 前沿两条结论收束全文，并给出 Paper/Code 二维码入口",
+          "页间关系": [],
+          "适合复用场景": [
+            "论文/科研汇报的收尾致谢页",
+            "需给出 Paper+Code 双二维码入口的结束页",
+            "用一两条核心指标结论收束全文的场景",
+            "含作者署名与导师邮箱的答辩末页"
+          ],
+          "在deck中的位置": "第 6 章，末页，紧接实验结论之后作为 ending 页"
+        }
+      ],
+      "structural_slides_full": [
+        {
+          "页序号": 1,
+          "页面角色": "content_candidate",
+          "标题": "SpecEE: Accelerating LLM Inference with Speculative Early Exiting",
+          "核心论断": "SpecEE 以投机式提前退出加速大模型推理",
+          "本页讲什么": "论文标题封面页,上半区居中大字亮明全称 SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting。下半区列出作者 Jiaming Xu、Yaoxiu Lian、Junyi Wu、Guohao Dai 及带上标机构,机构行为 Shanghai Jiao Tong University、Infinigence-AI、SII,末行给出通讯作者 Guohao Dai 邮箱。",
+          "关键文字": [
+            "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+            "Jiaming Xu, Yaoxiu Lian, Junyi Wu, Guohao Dai",
+            "Shanghai Jiao Tong University, Infinigence-AI, SII",
+            "Correspondence to: Guohao Dai <daiguohao@sjtu.edu.cn>"
+          ],
+          "视觉骨架": [
+            "居中大字论文标题",
+            "作者姓名带机构上标",
+            "机构与通讯作者信息行"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "细分角色": "cover"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Outline:全篇章节进度式目录",
+          "核心论断": "全篇分六段结构,当前高亮定位到 Background",
+          "本页讲什么": "目录页,顶部蓝色大字 Outline。以进度式列表铺陈全篇章节:Background 高亮为黑色当前项,Related Work、Challenges and Techniques(含子项 Key Insight、Attention Operator、Linear Operator、Compilation Tuning)、Experiment Results 灰化表示后续待展开,为全篇技术章节定锚导航。",
+          "关键文字": [
+            "Outline",
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "顶部蓝色 Outline 标题",
+            "高亮/灰化进度式章节列表",
+            "带缩进的子项 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "Outline:进入 Related Work 章节",
+          "核心论断": "演讲进入「Related Work」环节,承接 Background",
+          "本页讲什么": "全局目录页,列出 Background / Related Work / Challenges and Techniques(含 Key Insight、Attention/Linear Operator、Compilation Tuning 四子项)/ Experiment Results 五大板块,当前高亮黑色的「Related Work」表示正进入相关工作章节,其余为灰色未激活项。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "纵向目录列表",
+            "当前项高亮(黑)+ 其余灰",
+            "蓝色大标题 Outline"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "Outline:定位到 Challenges and Techniques",
+          "核心论断": "本章围绕四项技术展开:关键洞察、轻量预测器、启发调度、合并映射",
+          "本页讲什么": "Outline 目录页,高亮当前进入的 Challenges and Techniques 章节并展开其四个子部分:Key Insight、Lightweight Predictor Design、Heuristic Predictor Scheduling、Merged Mapping for Predictors;Backgrounds/Related Works 已讲(置灰),Experiment Results 待讲(置灰)。",
+          "关键文字": [
+            "Backgrounds / Related Works",
+            "Challenges and Techniques",
+            "Key Insight",
+            "Lightweight Predictor Design",
+            "Heuristic Predictor Scheduling",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "多级 agenda 列表",
+            "当前章高亮其余置灰",
+            "子条目缩进 bullet"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "Outline:高亮进入 Experiment Results",
+          "核心论断": "演讲推进至 Experiment Results,正式进入实验章",
+          "本页讲什么": "Outline agenda 页,列出 Background、Related Work、Challenges and Techniques(含 Key Insight/Attention Operator/Linear Operator/Compilation Tuning)、Experiment Results 五大板块;前四项灰显,唯 Experiment Results 以黑色高亮,标示演讲正切入实验结果章节。",
+          "关键文字": [
+            "Background",
+            "Related Work",
+            "Challenges and Techniques",
+            "Key Insight / Attention Operator / Linear Operator / Compilation Tuning",
+            "Experiment Results"
+          ],
+          "视觉骨架": [
+            "Outline 蓝色大标题",
+            "灰显章节列表",
+            "当前章黑色高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "细分角色": "chapter_transition"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "ending_candidate",
+          "标题": "SpecEE 收尾页:标题+作者+核心结论+论文/代码入口",
+          "核心论断": "SpecEE 实现 ~2.43x/~2.25x 加速并推动 speedup-accuracy Pareto 前沿",
+          "本页讲什么": "这是全篇 ending 页:居中复述论文标题「SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting」与作者署名(Jiaming Xu, supervised by Prof. Guohao Dai, 附 SJTU 邮箱),下方用两条蓝字结论收束——PC/云场景分别取得 ~2.43x 与 ~2.25x 更快的 LLM 推理,并成功推动 speedup 与 accuracy 的 Pareto 前沿;右侧配 Paper Link 与 Code Link 两个二维码入口,底部为 Powered by 署名条。",
+          "关键文字": [
+            "SpecEE: Accelerating Large Language Model Inference with Speculative Early Exiting",
+            "Jiaming Xu, supervised by Prof. Guohao Dai",
+            "~2.43x and ~2.25x faster LLM inference on PC and cloud scenarios",
+            "Successfully push the Pareto frontier of speedup and accuracy",
+            "Paper Link / Code Link"
+          ],
+          "视觉骨架": [
+            "居中论文标题+作者署名块",
+            "两条蓝字结论 bullet",
+            "右侧 Paper/Code 二维码入口",
+            "底部 Powered by 署名条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "细分角色": "ending"
+        }
+      ]
+    }
+  ],
+  "previous_batches_patterns": [
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "tutorial",
+          "lab_introduction"
+        ],
+        "scenario_keywords": [
+          "AI基础设施/算力战略汇报",
+          "研究院/实验室建设规划",
+          "本组多成果综述串讲",
+          "学术会议 tutorial",
+          "软硬件协同专题"
+        ],
+        "deck_size_range": [
+          50,
+          100
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队",
+          "政府/产业决策方"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            4,
+            9
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-2",
+          "page_count_range": [
+            10,
+            15
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "3-6",
+          "page_count_per_section_range": [
+            8,
+            16
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "outlook_section",
+          "section_count": "0-1"
+        },
+        {
+          "role": "closing",
+          "count": "0-1",
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "长篇 deck 骨架:cover+agenda 开场,motivation 铺垫,framework_intro 统领,再以 3-6 个 method/case_study 章节平行陈列本组成果,期间以『全 agenda 灰显+当前章高亮』的 section_divider 作章节导航,末尾以团队展望或致谢封底"
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Challenge→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享"
+        ],
+        "deck_size_range": [
+          15,
+          40
+        ],
+        "audience_levels": [
+          "计算机体系结构/系统方向学术同行",
+          "研究组内同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            5,
+            7
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "单篇论文分享 canonical 骨架:短 deck(20-40 页),cover+纵向编号 agenda 开场,再按 Background→Challenge→Solution→Evaluation→Summary 五段推进,每段进入前插一张『竖排编号圆点导航+当前段高亮』的 section_divider,末尾回归目录+一句『We propose X』总结页附实验室主页/邮箱收束"
+    },
+    {
+      "id": "blank_lab_report_template_skeleton",
+      "title": "实验室通用汇报空白模板骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "template"
+        ],
+        "scenario_keywords": [
+          "实验室/研究组通用 PPT 空白模板",
+          "个人介绍/课题汇报占位版式骨架",
+          "留白待填的实验室模板"
+        ],
+        "deck_size_range": [
+          5,
+          15
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队内部"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "method_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            1,
+            6
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "极短 deck(≤10 页)通用空白模板骨架:cover 留白待填标题,中段提供 self_intro 履历+一组左右双栏可编号问题版式作 method 占位区,末尾提供空白 Thanks/Q&A 版式与实验室署名页脚。多数页为占位版式无实质内容,供二次填充课题汇报"
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Challenge/Insight→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享",
+          "AI 加速/检索类论文分享",
+          "软硬件协同加速论文汇报"
+        ],
+        "deck_size_range": [
+          20,
+          45
+        ],
+        "audience_levels": [
+          "计算机体系结构/系统方向学术同行",
+          "研究组内同行",
+          "检索/RAG 方向学术同行",
+          "AI 加速与硬件方向学术同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            4,
+            16
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            6,
+            17
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            1,
+            8
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "applicable_summary": "单篇论文分享的 canonical 骨架: 20-45 页, cover + 纵向编号 agenda(4-5 项)开场, 再按 Background→Insight/Challenge→Solution→Evaluation→Summary 线性推进, 每章切换前插一张『竖排编号目录 + 当前项蓝点高亮 + 其余灰化』的 section_divider 作 mini-agenda 导航, 末尾 Thanks/署名致谢页收束; motivation 常含 background + insight 两段, method 常拆 2-3 项技术并列。允许小变体: 章节数 4 段 vs 5 段(是否单列 Summary/Future Work), closing 页可合并方法示意图 + 联系/开源链接"
+    }
+  ]
+}

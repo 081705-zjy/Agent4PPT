@@ -1,0 +1,628 @@
+{
+  "batch_index": 3,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+      "目录名": "DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f",
+      "标题": "Endor: 挖掘近解码型机会加速大模型推理",
+      "总页数": 24,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面",
+        "section_02_大模型推理背景与解码演进",
+        "section_03_复用NMP近存架构的挑战",
+        "section_04_Endor算法与近存协同设计",
+        "section_05_评测设置与加速结果",
+        "section_06_总结"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "近存计算",
+        "软硬件协同",
+        "KV缓存",
+        "过程奖励模型",
+        "推理加速",
+        "算法优化",
+        "存内架构"
+      ],
+      "目标受众": "计算机体系结构与系统方向学术同行",
+      "报告类型": "paper_share",
+      "适用场景": "会议/组会分享 LLM 推理加速软硬件协同论文",
+      "论述总结": "该 deck 分享 DATE26 论文 Endor。先讲大模型自回归解码从 token 级转向 action 级推理带来的高延迟背景,指出复用 NMP 近存架构时频繁 KV Cache 访存与直接映射的挑战,进而提出计算精简算法与近存硬件协同设计,通过交互缓存复用加速 LLM reasoning,最后用多基线评测证明平均 2.97x/4.54x/2.61x 加速。",
+      "论述弧线": [
+        "背景",
+        "挑战",
+        "方案",
+        "评测",
+        "总结"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "Endor: Exploit Nearly-Decode-Only Opportunities",
+          "核心论断": "Endor 论文正式署名亮相,由五校机构联合出品",
+          "本页讲什么": "全 deck 封面页,居左排布论文标题「Endor: Exploit Nearly-Decode-Only Opportunities」,下方列出以 Jun Liu、Guohao Dai 为通讯的多位作者,再列上海交大、无问芯穹、SII、清华、港科大五家署名机构,为后续背景/方法/评测建立学术身份与主题锚点。",
+          "关键文字": [
+            "Endor: Exploit Nearly-Decode-Only Opportunities",
+            "Jun Liu, Tianlang Zhao, Shiyi Liu, Jiancai Ye 等作者",
+            "Guohao Dai (通讯)",
+            "Shanghai Jiao Tong University, Infinigence AI, SII",
+            "Tsinghua University, Hong Kong University of Science and Technology"
+          ],
+          "视觉骨架": [
+            "左对齐大标题块",
+            "作者姓名多行列表",
+            "机构脚注编号标注"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "全 deck 五段式 agenda(Background 高亮)",
+          "核心论断": "全 deck 分五段推进,当前进入 Background 章",
+          "本页讲什么": "纵向编号导航页,列出全 deck 五个章节:1 Background(当前高亮为黑)、2 Challenge、3 Solution、4 Evaluation、5 Summary,均以蓝色圆圈+序号呈现。作为 Background 章开场,告诉听众整体叙事骨架并定位当前所处位置。",
+          "关键文字": [
+            "1 Background",
+            "2 Challenge",
+            "3 Solution",
+            "4 Evaluation",
+            "5 Summary"
+          ],
+          "视觉骨架": [
+            "纵向编号圆圈导航",
+            "5 项章节列表",
+            "当前项高亮对比"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "LLM reasoning 提升能力成为重要研究方向",
+          "核心论断": "reasoning 相比标准解码显著提升 LLM 能力,成为重要方向",
+          "本页讲什么": "论证 LLM reasoning 的价值:标题断言 reasoning 已成重要研究方向,副标题说明因其相较标准 LLM 提升能力。左侧 panel 展示 OpenAI 通向 AGI 的 roadmap(2022-2024),右侧 panel 用 DeepSeek V3(LLM)准确率柱图对比(97.3 / 96.3 等,标注 Better)佐证 reasoning 带来能力增益。",
+          "关键文字": [
+            "LLM reasoning has become an important research direction",
+            "Because it improves LLM capabilities compared to standard",
+            "OpenAI's roadmap toward AGI (2022-2024)",
+            "Capability improvement: DeepSeek V3 (LLM)",
+            "Accuracy 97.3 / 96.3",
+            "DeepSeek V3 VS DeepSeek R1"
+          ],
+          "视觉骨架": [
+            "左右双 panel 布局",
+            "AGI roadmap 时间线",
+            "准确率对比柱图",
+            "Better 箭头标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "解码由 token 级转向 action 级带来 10× 开销",
+          "核心论断": "自回归解码从 token 级转向 action 级,推理开销激增约 10×",
+          "本页讲什么": "解释解码范式的演进:左侧 token-level(×1)一次生成 \"What/day/is/it\" 等单 token;右侧 action-level(×N Iterations)以完整问答步骤(\"What day is it?\"→\"It's Thursday.\"→\"Go outside.\")经 LLM Reasoning 迭代。中间 Latency(s)柱图对比灰(token)与红(action),红字标注 Inference Cost 10×,承接上页价值论证,揭示 reasoning 的延迟代价,为后续挑战埋伏笔。",
+          "关键文字": [
+            "The autoregressive decoding shifts from token-level to action-level by step-",
+            "Token-level × 1",
+            "Action-level × N Iterations",
+            "Inference Cost 10×",
+            "Latency (s)"
+          ],
+          "视觉骨架": [
+            "左右 token vs action 对比图",
+            "Latency 灰红双柱图",
+            "10× 红字开销标注",
+            "N 次迭代箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "Action 级推理为 MCTS 四步流程",
+          "核心论断": "LLM 生成子答案、PRM 打分作证据扩展子节点,构成 MCTS 四步推理",
+          "本页讲什么": "拆解 action-level 推理的内部机制:标题说明 LLM 生成 subordinate answers、PRM 对其打分作为证据创建子节点。(a) Overview 以 MCTS 树展示四步流程(Expansion、Simulation 等,含 Iter.2/Iter.4、2.1-2.3 节点);(b) Detail 展开单步:SubQuestion 经 Pre-trained LLM 生成 SubAnswer,再由 PRM(LLM)评分并更新下一输入。承接上页 action-level 概念,进一步给出其算法结构。",
+          "关键文字": [
+            "The LLM generates subordinate answers, and the PRM scores them as evidence to create child nodes",
+            "Overview: The four step of Action-level procedure LLM reasoning (MCTS-based)",
+            "Expansion / Simulation",
+            "PRM (LLM) / Pre-trained LLM",
+            "SubQuestion / SubAnswer / Update next input"
+          ],
+          "视觉骨架": [
+            "MCTS 树状节点图",
+            "四步流程标注",
+            "左总览右细节双区",
+            "PRM 打分流程框图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "推理流水线拆为 Prefill/Decode/PRM 三类算子",
+          "核心论断": "推理流水线由 LLM Prefill、LLM Decode、PRM prefill 三类算子组成",
+          "本页讲什么": "将 action-level 推理进一步拆解为三类算子:① LLM Prefill(LLM-P)、② LLM Decode(LLM-D,用于生成 subquestions)、③ PRM prefill(PRM,用于计算 reward score)。左侧以 LLM-P|LLM-D|PRM 分色块图呈现流水线结构,右侧图示 Question/SubQuestion 输入、PRM(LLM)输出 Reward score 并 Update next input。作为 Background 章末页,把算子拆分作为后续 NMP 挑战的切入点。",
+          "关键文字": [
+            "The reasoning pipeline consists of three types of operators (①②③)",
+            "① LLM Prefill (LLM-P)",
+            "② LLM Decode, used to generate subquestions (LLM-D)",
+            "③ PRM prefill, used to compute the reward score (PRM)",
+            "Update next input"
+          ],
+          "视觉骨架": [
+            "LLM-P|LLM-D|PRM 三色块流水线",
+            "编号 ①②③ 算子标注",
+            "Question→Reward score 数据流图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "toc_candidate",
+          "标题": "章节导航:进入 Challenge",
+          "核心论断": "本章由 Background 承接,聚焦 Challenge 挑战环节",
+          "本页讲什么": "竖排四段式目录导航页,依次列出 Background、Challenge、Solution、Evaluation 四个环节,并高亮第 2 项 Challenge,标示演讲进入本章挑战部分,起分隔与定位作用。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点导航",
+            "四段目录列表",
+            "当前项高亮加粗"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "section_role": "problem"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "三类 NMP/SCF 近存工作综述",
+          "核心论断": "现有工作沿三条路线用 NMP 架构做存算融合加速 LLM 推理",
+          "本页讲什么": "综述当前把 NMP 架构当作存算融合(SCF)方案加速 LLM 推理的三类代表工作,横向三列并列铺陈:DRAM banks 内近存(PAISE, HPCA'25)、DIMM buffer 芯片近存(Hermes, HPCA'25)、logic die 内近存(H2-LLM, ISCA'25),为后文拆解共性障碍做铺垫。",
+          "关键文字": [
+            "Current works leverage the NMP architecture as a SCF solution for efficient LLM inference",
+            "NMP in DRAM banks — PAISE [HPCA'25]",
+            "NMP in DIMM buffer chips — Hermes [HPCA'25]",
+            "NMP in logic dies — H2-LLM [ISCA'25]"
+          ],
+          "视觉骨架": [
+            "3 列并列 panel",
+            "各列近存架构示意图",
+            "顶部总述框",
+            "底部参考文献行"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "section_role": "problem"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "挑战一:MPC 算法算力利用率低",
+          "核心论断": "直接套用 MPC 算法导致算力利用率极低,GPU 不足 4%",
+          "本页讲什么": "提出挑战一:简单沿用 MPC(就地访存计算)算法带来低算力利用率。以 NVIDIA A100 为例,KV Cache 用量 >100G 已超过模型权重 80G,频繁的片外 KV Cache 访问使 GPU 算力利用率不足 4%,论证访存瓶颈拖垮算力。",
+          "关键文字": [
+            "Challenge 1: Simply using the MPC algorithms leads to low computational utilization",
+            "KV Cache Usage > 100 G",
+            "Model Weight 80 G (NVIDIA A100)",
+            "Frequent off-chip KV Cache accesses",
+            "< 4% GPU"
+          ],
+          "视觉骨架": [
+            "容量对比示意(>100G vs 80G)",
+            "片外 KV 访问示意图",
+            "红色强调数字标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "section_role": "problem"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "挑战二:SCF 硬件丧失并行性",
+          "核心论断": "直接用 SCF 硬件会丧失 NMP 架构固有的大规模并行性",
+          "本页讲什么": "提出挑战二:直接利用 SCF 硬件无法发挥 NMP 架构固有的大规模并行性。用原始算法执行时间线(LLM-P、LLM-D、PRM 交替串行)圈注各 LLM-P 阶段,箭头指向 NMP 架构框,说明串行执行方式让 NMP 的并行能力被闲置浪费。",
+          "关键文字": [
+            "Challenge 2: Directly leveraging the SCF hardwares fail to ... inherent extensive parallelism",
+            "Original Algorithm: LLM-P / LLM-D / PRM 交替执行",
+            "The inherent extensive parallelism of NMP architectures is (wasted)"
+          ],
+          "视觉骨架": [
+            "原始算法执行时间线",
+            "LLM-P 阶段红圈圈注",
+            "向下箭头指向 NMP 架构框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "section_role": "problem"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "content_candidate",
+          "标题": "提出 Endor:算法-硬件协同设计",
+          "核心论断": "Endor 以算力约减算法与近存硬件协同设计加速 LLM 推理",
+          "本页讲什么": "收束本章两大挑战并过渡到下一章:提出 Endor —— 一种算力约减(computation-reduced)算法与近存硬件协同设计方案,用于加速 LLM 推理,直接为下一章 Endor 算法-硬件协同设计立靶。",
+          "关键文字": [
+            "We propose Endor, a computation-reduced algorithm and memory hardware co-design to accelerate LLM reasoning"
+          ],
+          "视觉骨架": [
+            "单句强调框",
+            "居中大字核心陈述"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.03",
+          "section_role": "problem"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "toc_candidate",
+          "标题": "章节导航:进入 Solution 部分",
+          "核心论断": "四段式汇报推进到第 3 部分 Solution",
+          "本页讲什么": "这是 section 的过渡导航页。竖排 1-4 圆点时间线列出 Background / Challenge / Solution / Evaluation 四个板块,当前高亮加粗第 3 项 Solution,其余灰化,标示汇报正式进入 Endor 算法与硬件的解决方案部分。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排 4 圆点进度时间线",
+            "当前项高亮其余灰化",
+            "右侧板块名文字列"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "交互缓存复用 + 打分算法",
+          "核心论断": "复用父节点 KV 缓存并按打分公式排序以加速推理",
+          "本页讲什么": "介绍 Endor 算法第一支柱——交互缓存复用。存储并管理父节点 KV 缓存以适配缓冲区大小,给出动作打分公式 sᵢ = rewardᵢ + #reuseᵢ/#total;下方甘特时间线对比 Original algorithm 与 Inter-action cache reuse 两行,展示 LLM-P/LLM-D/PRM 各阶段如何通过缓存复用压缩时间,为下页预测流水线铺垫。",
+          "关键文字": [
+            "Storing and managing the KV cache of parent nodes to accommodate the buffer size",
+            "sᵢ = rewardᵢ + #reuseᵢ / #total",
+            "Original algorithm",
+            "Inter-action cache reuse",
+            "LLM-P / LLM-D / PRM"
+          ],
+          "视觉骨架": [
+            "动作打分公式",
+            "上下两行执行甘特时间线",
+            "LLM-P/D、PRM 彩色时序块",
+            "KV 缓存网格示意"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "基于预测的流水线",
+          "核心论断": "先同层打分再预测下一动作,使计算几乎被 decode 完全覆盖",
+          "本页讲什么": "介绍算法第二支柱——预测式流水线,承接上页缓存复用。分两步:1) 同一层并行为多个动作打分;2) 依分数投机预测下一动作(LLM a0→PRM a1,a2 等)。下方三行时序对比 Original algorithm、Inter-action cache reuse、Prediction-based pipeline,绿框标注 'Almost completely covered by decode',说明预测计算被解码阶段掩藏、几乎零额外开销。",
+          "关键文字": [
+            "1. Score multiple actions at the same layer",
+            "2. Speculate the next action from scores",
+            "Almost completely covered by decode",
+            "Prediction-based pipeline",
+            "a3, a4 → r3, r4"
+          ],
+          "视觉骨架": [
+            "两步骤说明块",
+            "LLM/PRM 投机预测色块",
+            "三行执行甘特时序对比",
+            "绿色虚线覆盖标注框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "Endor-NMP 两级近存架构",
+          "核心论断": "Endor-NMP 用两级近存加缓存管理单元高效执行 reasoning 推理",
+          "本页讲什么": "从算法转入硬件,提出 Endor-NMP 两级近存(NMP)架构。上方标题框点明用于高效 LLM reasoning 推理;右侧 bullet 列出三个组成:Rank-NMP 支持 softmax 等非线性运算,Bank-NMP 执行 GeMV 运算,以及 Cache Management Unit (CMU) 处理预测结果,构成算法-硬件协同的硬件骨架,为下页 CMU 细节铺垫。",
+          "关键文字": [
+            "Endor-NMP, a two-level NMP architecture for efficient LLM reasoning inference",
+            "Two levels of NMP design",
+            "Rank-NMP: To support non-linear operations (softmax)",
+            "Bank-NMP: To execute GeMV operations",
+            "A Cache Management Unit (CMU): To process the prediction results"
+          ],
+          "视觉骨架": [
+            "顶部标题强调框",
+            "右侧多级 bullet 列表",
+            "两级 NMP + CMU 分点结构"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "CMU 缓存管理单元构成",
+          "核心论断": "CMU 由树表/信息表/分数表加优先队列组成以决策 KV 换出",
+          "本页讲什么": "承接上页,展开 Cache Management Unit (CMU) 的内部构成。三部分:Tree table 存储推理路径上各动作的 action ID;Info. table 提供每个动作 KV 缓存的位置信息;Score table & Priority queue 计算各动作分数并决定是否 swap 换出,支撑前述缓存复用与预测流水线的落地。",
+          "关键文字": [
+            "The CMU consists of",
+            "Tree table: To store all the action IDs on the reasoning path",
+            "Info. table: position of each action's KV cache",
+            "Score table & Priority queue: compute the score and decide whether to swap"
+          ],
+          "视觉骨架": [
+            "多级 bullet 列表",
+            "CMU 三子模块分点",
+            "右侧偏置文字块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "toc_candidate",
+          "标题": "Content 目录:进入第 4 章 Evaluation",
+          "核心论断": "汇报进入第四部分 Evaluation,前三章已铺垫完毕",
+          "本页讲什么": "章节过渡目录页,竖排编号 1-4 对应 Background / Challenge / Solution / Evaluation,第 4 项 Evaluation 加粗高亮,其余灰显,提示听众演讲进入评测与结果环节。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排 4 个圆点编号",
+            "当前章高亮 tag",
+            "灰显未激活项"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "评测设置:模型与数据集",
+          "核心论断": "评测采用 OpenR/LLM-Reasoner 模型与 MATH/GSM8K 数据集",
+          "本页讲什么": "介绍实验的模型与数据集设置:模型选用 OpenR、LLM-Reasoner 两个推理框架,数据集选用 MATH 与 GSM8K 两个数学推理基准,底部标注四篇引用文献,为后续加速结果建立可比的评测基准。",
+          "关键文字": [
+            "Models: OpenR, LLM-Reasoner",
+            "Datasets: MATH & GSM8K",
+            "for 数学推理评测"
+          ],
+          "视觉骨架": [
+            "两级 bullet 列表",
+            "带 [n] 上标引用",
+            "底部参考文献区"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "评测设置:NMP 架构与对比基线",
+          "核心论断": "以 A100 GPU、DFX、FlightLLM 作为对比基线",
+          "本页讲什么": "承接上页评测设置,列出对比基线:NVIDIA A100 GPU 作为通用硬件基线,DFX(MICRO'22)与 FlightLLM(FPGA'24)作为 ASIC/FPGA 型 LLM 加速器基线,并说明 NMP 架构配置,为下一页抛出加速倍数做铺垫。",
+          "关键文字": [
+            "Baselines: NVIDIA A100 GPU",
+            "DFX [MICRO'22] & FlightLLM [FPGA'24]",
+            "for ASIC-based LLM accelerators"
+          ],
+          "视觉骨架": [
+            "两级 bullet 列表",
+            "带 [n] 上标引用",
+            "底部参考文献区"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "主结果:2.97x/4.54x/2.61x 加速",
+          "核心论断": "相较 A100/DFX/FlightLLM/Hermes 分别取得 2.97x/4.54x/2.61x 加速",
+          "本页讲什么": "抛出全篇核心加速结果:相较 NVIDIA A100 GPU、DFX、FlightLLM 与 Hermes,方案分别取得 2.97x、4.54x、2.61x 等平均加速,加速倍数以蓝框强调,通常配柱状对比图直观呈现相对各基线的优势。",
+          "关键文字": [
+            "We achieve an average acceleration of 2.97x, 4.54x, 2.61x",
+            "compared to NVIDIA A100 GPU, DFX, FlightLLM, and Hermes"
+          ],
+          "视觉骨架": [
+            "加速倍数蓝色高亮框",
+            "多基线加速对比柱图",
+            "结论句突出排版"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "消融:算法优化贡献 2.29x",
+          "核心论断": "算法优化相较无优化平均带来 2.29x 加速",
+          "本页讲什么": "消融实验第一部分,拆解算法层贡献:相较不做任何算法优化,本方案的算法优化平均带来 2.29x 加速,承接主结果、下一页继续拆分近存组件贡献,共同证明协同设计有效。",
+          "关键文字": [
+            "Achieves an average 2.29x speedup compared to no algorithmic optimization"
+          ],
+          "视觉骨架": [
+            "消融加速倍数结论句",
+            "算法开关对比柱图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "各组件性能:算法+近存协同 3.69x",
+          "核心论断": "单用算法或单用 NMP 仅 1.29x/1.89x,协同达 3.69x",
+          "本页讲什么": "消融第二部分,证明协同设计必要性:仅优化算法或仅用 NMP 架构分别只有 1.29x、1.89x 的有限加速,而两者协同可达 3.69x,说明算法与近存计算联合设计带来超越单项之和的收益,收束整个评测章节。",
+          "关键文字": [
+            "Optimizing only the algorithm or using only the NMP architecture achieves limited speedups of 1.29x and 1.89x",
+            "Achieves 3.69x speedup compared to baseline"
+          ],
+          "视觉骨架": [
+            "单项 vs 协同加速对比柱图",
+            "组件贡献分解结论句"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "toc_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.05",
+          "section_role": "experiment"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "toc_candidate",
+          "标题": "回归目录:四段脉络重点亮",
+          "核心论断": "Background/Challenge/Solution/Evaluation 四板块构成全 deck 主线",
+          "本页讲什么": "收尾章的回归目录页,用竖排数字圆点串起 Background、Challenge、Solution、Evaluation 四个板块,把全 deck 走过的四段脉络重新点亮,为下一页的总述做铺垫。仅列框架标题、无正文细节。",
+          "关键文字": [
+            "Background",
+            "Challenge",
+            "Solution",
+            "Evaluation"
+          ],
+          "视觉骨架": [
+            "竖排编号圆点串",
+            "四板块标题右列",
+            "留白极简版式"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.06",
+          "section_role": "closing"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "ending_candidate",
+          "标题": "总述:We propose Endor 并附联系方式",
+          "核心论断": "Endor 以计算精简算法+近存协同加速大模型推理",
+          "本页讲什么": "全 deck 收束页,顶部蓝框一句话总述本文贡献——提出 Endor,一种计算精简算法并结合近存(memory-)协同设计,再于下方给出实验室主页与联系邮箱收尾。典型的论文结论+联系方式 ending 页。",
+          "关键文字": [
+            "We propose Endor, a computation-reduced algorithm and memory-",
+            "Lab homepage",
+            "Email: liu-"
+          ],
+          "视觉骨架": [
+            "顶部蓝框总述句",
+            "下方联系方式双栏",
+            "极简收尾版式"
+          ],
+          "上页角色": "toc_candidate",
+          "下页角色": null,
+          "section_id": "tpl.本组论文与科研成果.DATE26-Endor-Exploit-Nearly-Decode-Only-Opportunities.50cfbf4f.sec.06",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面",
+          "页码范围": [
+            1,
+            1
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "background",
+          "标题": "大模型推理背景与解码演进",
+          "页码范围": [
+            2,
+            6
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "problem",
+          "标题": "复用NMP近存架构的挑战",
+          "页码范围": [
+            7,
+            11
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "method",
+          "标题": "Endor算法与近存协同设计",
+          "页码范围": [
+            12,
+            16
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "experiment",
+          "标题": "评测设置与加速结果",
+          "页码范围": [
+            17,
+            22
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "closing",
+          "标题": "总结",
+          "页码范围": [
+            23,
+            24
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

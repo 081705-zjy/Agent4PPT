@@ -1,0 +1,47 @@
+{
+  "页标识": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58",
+  "所属章节": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.sec.08",
+  "所属deck": "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e",
+  "页序号": 58,
+  "源文件": "templates/主题学术报告/AI Infra与国智院建设思考.pptx",
+  "页面角色": "content_candidate",
+  "标题": "4+2 种芯片异构千卡混合训练",
+  "核心论断": "无问芯穹在 4+2 种芯片上跑通异构千卡混合训练",
+  "本页讲什么": "作为成果章开篇，展示无问芯穹已在 4+2 种（含国产）异构芯片上实现千卡规模混合训练，并支撑文本生成、代码生成、大语言模型等多类真实任务，用实绩落地全篇的异构算力论点。",
+  "关键文字": [
+    "4+2 种芯片上实现异构千卡混合训练",
+    "文本生成",
+    "大语言模型",
+    "代码生成"
+  ],
+  "视觉骨架": [
+    "多芯片 logo 拼图",
+    "应用场景图标阵列"
+  ],
+  "资源ID列表": [
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.01",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.02",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.03",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.04",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.05",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.06",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.07",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.08",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.09",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.10",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.11",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.12",
+    "tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e.slide_58.asset.13"
+  ],
+  "适合复用场景": [
+    "异构算力成果章开篇页",
+    "多芯片混合训练能力展示页"
+  ],
+  "不适合复用场景": [
+    "单一芯片性能对比页",
+    "算法方法细节页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

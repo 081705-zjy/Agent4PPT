@@ -1,0 +1,440 @@
+{
+  "batch_index": 7,
+  "rules": [
+    {
+      "id": "cover_layout_centered_title_with_authors_and_venue",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中大标题+多机构作者+会议署名",
+      "description": "封面页居中放置多行大标题,下方依序排作者(带机构上标)、机构脚注列表、通讯邮箱与会议名+日期。不含 bullet 正文,无图表。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中多行大标题' / '大标题'",
+        "视觉骨架 或 关键文字 含 '作者姓名带机构上标' / '机构脚注列表'",
+        "关键文字 含 会议名(CIKM/NeurIPS 等)或 Corresponding 邮箱",
+        "无 'bullet' / '正文段落' 元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 1,
+          "评价": "居中大标题 + 5 机构作者带上标 + Corresponding 邮箱 + 'CIKM 2025 / 2025.11.13' 会议署名, 标准 paper_share 封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开场瞬间需锁定'谁在讲什么、在哪发表',居中大标题聚焦主题,作者与会议标注建立学术身份可信度",
+      "fix_hint": "cover 主标题居中放大, 作者行加机构上标, 底部或右下加会议+日期与通讯邮箱, 移除 bullet 与内容图",
+      "exceptions": [
+        "空白模板/占位封面(无实际作者与会议)",
+        "商业型 deck(用品牌 logo 替代作者机构)"
+      ]
+    },
+    {
+      "id": "toc_layout_numbered_list_with_current_chapter_highlighted",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录布局·编号纵列+当前章加粗高亮",
+      "description": "目录页以居中小写 'contents' 或类似标题起首,下方 3-5 项编号纵向列表,当前推进到的章节黑色加粗,其余项统一灰化,起章节导航过渡作用。",
+      "evidence_signals": [
+        "标题或关键文字 含 'contents' / '目录'",
+        "视觉骨架 含 '编号列表' / '纵向列表'",
+        "视觉骨架 含 '加粗高亮' / '灰化' / '当前项' 类描述",
+        "关键文字 出现 '1 ... 2 ... 3 ... 4 ...' 编号项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 2,
+          "评价": "'contents' + 4 项编号列表, 第1项 Background 加黑高亮其余灰化"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 7,
+          "评价": "同一目录版式, 高亮第 2 项 Insight"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 13,
+          "评价": "同一目录版式, 高亮第 3 项 Solution"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 19,
+          "评价": "同一目录版式, 高亮第 4 项 Evaluation"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 25,
+          "评价": "收尾目录回扣, 编号列表整体淡灰弱化"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节过渡处需听众瞬间定位'讲到哪一章',统一版式+当前项高亮让 toc 承担导航而非重新介绍全篇",
+      "fix_hint": "toc 页统一为编号纵列,当前章加粗黑体、其余灰显,标题固定为 contents 或目录",
+      "exceptions": [
+        "全篇仅一次总目录(无章节推进,不需当前高亮)"
+      ]
+    },
+    {
+      "id": "method_page_layout_left_question_right_diagram",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页布局·左问题/定义+右流程/图示",
+      "description": "方法与洞察类内容页采用左右两列并列版式:左列放核心问题或定义文字块,右列放流程图/示意图/公式,不用整页纯文字。",
+      "evidence_signals": [
+        "视觉骨架 含 '两列' / '左右' / '并列版式'",
+        "视觉骨架 含 '流程图' / '示意图' / '示意方块' / '节点框图'",
+        "关键文字 常含 'How to' 或 '?' 问题句",
+        "视觉骨架 不出现 '三级缩进 bullet' / '纯文字列表'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 3,
+          "评价": "左召回率柱图 + 右向量检索流程图, 标准两列方法页"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 14,
+          "评价": "左 Q1 右 Q2 两栏问题并列, Tech2+Tech3 红字标注"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 15,
+          "评价": "左侧节点示意方块 + 右侧 LLM 摘要抽取流程"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 20,
+          "原因": "实验设置页用三级缩进 bullet + 引用文献列表, 非左右两列图示"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "方法与洞察需图示化的因果链,单栏文字听众抓不到结构;左问右图让'为什么'与'怎么做'同屏呈现",
+      "fix_hint": "把方法页拆成左右两列, 左列写问题/定义, 右列放流程图或节点图, 删除纯 bullet",
+      "exceptions": [
+        "实验设置/参数表/引用列表(信息密集需线性列举)",
+        "论断收束页(单栏红字数字强调)"
+      ]
+    },
+    {
+      "id": "result_page_uses_red_number_emphasis",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "结果页视觉·红色数字/关键词强调核心指标",
+      "description": "实验结果与延迟评估页用红色对核心数字或关键词(百分比、毫秒、SOTA)做视觉强调,确保听众瞬时抓到主指标。",
+      "evidence_signals": [
+        "视觉骨架 含 '红色数字' / '红色关键词' / '红色强调' / '红色高亮'",
+        "关键文字 含 具体数值(百分比、ms、Recall@k)或 'SOTA'",
+        "section_role = 'result'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 21,
+          "评价": "红色标注 '10.53%—22.92%' 与 'SOTA' 关键词"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 22,
+          "评价": "红色数字 '33.93ms' 强调端到端延迟"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "结果页密度高听众注意力易分散, 红色差异色对指标数字聚焦, 保证 take-away 数字在离场时被记住",
+      "fix_hint": "把结果页的核心指标数字或 'SOTA' 等结论词改成红色, 其余文字保持黑灰",
+      "exceptions": [
+        "全篇 monochrome 品牌规范(禁用红色)",
+        "多数据集 recall 曲线图(数字已在曲线中呈现)"
+      ]
+    },
+    {
+      "id": "ending_page_layout_summary_thanks_contact_code",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "收尾页布局·方法回顾图+致谢+邮箱代码链接",
+      "description": "末页固定四要素:标题 'Summary' 或方法名回顾、'Thank you' 致谢句、通讯邮箱、GitHub/主页链接,并常带方法示意图浓缩全 deck 贡献。",
+      "evidence_signals": [
+        "关键文字 含 'Summary' / 'Thank you' / '致谢'",
+        "关键文字 含 邮箱(@ 符号)或 'github.com' 链接",
+        "视觉骨架 含 '方法示意图' / '致谢文字' / '链接行'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 26,
+          "评价": "顶部 Summary + Thank you + 邮箱 + GitHub 代码链接 + SG-Filter 方法示意图, 标准末页四要素"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "会后需要听众记住方法名并能找到代码/联系人, 一次性给全'方法图+致谢+邮箱+repo'避免会后二次交换信息",
+      "fix_hint": "末页放 Summary/方法图 + Thank you + 邮箱 + GitHub 链接四要素, 缺哪个补哪个",
+      "exceptions": [
+        "内部技术评审(可省 GitHub/邮箱, 仅留 Thank you)",
+        "商业发布(用二维码替代邮箱链接)"
+      ]
+    },
+    {
+      "id": "title_uses_colon_separated_noun_phrase",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题写作·X:Y 冒号分隔的名词短句",
+      "description": "slide.标题 多为 '<主题>:<细化>' 或 '<Tech N>:<内容>' 名词短句, 不用完整动宾句 (如'介绍 XX')和'本节讲…'开头, 便于听众瞬间抓要点.",
+      "evidence_signals": [
+        "标题 含 ':' 或 '·' 分隔符, 分隔前后均为名词短语",
+        "标题 不以 '介绍' / '讲' / '本节' / '我们将' 开头",
+        "标题 无完整谓语动词 + 宾语结构",
+        "标题字符长度多在 8-20 字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 15,
+          "评价": "'Tech1:摘要图节点构建(Step1)' 标准冒号名词短句"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 5,
+          "评价": "'STR 特征一:相似文本表达高度接近' 名词短句 title"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 21,
+          "评价": "'召回结果:SG-Filter 全面达 SOTA' X:Y 结构清晰"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "soft",
+      "rationale": "冒号分隔让 title 同时承担'定位'与'定性', 完整动宾句会把 claim 语义前移, 造成 title 与本页 claim 重叠",
+      "fix_hint": "把 title 里的动词短语抹去, 改成 '<定位>:<结论/细化>' 冒号名词结构",
+      "exceptions": [
+        "章节封面/议程页(可用短纯名词无冒号)",
+        "封面页(用完整论文题目, 不受此规则约束)"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_sentence_with_numbers_or_verdict",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "核心论断·带数字或判断词的完整断言句",
+      "description": "slide.核心论断 必须是可被反驳的判断句 (含'是/达到/提升/优于/无法'等断言动词或具体数值), 不写'介绍 X'/'讨论 Y'这类描述句.",
+      "evidence_signals": [
+        "核心论断 含 '是' / '优于' / '提升' / '达' / '无法' / '不达标' 等判断词",
+        "核心论断 含 具体数字(百分比/毫秒/倍数)",
+        "核心论断 不以 '介绍' / '讨论' / '讲述' 开头",
+        "核心论断 长度 >= 12 字, 有主谓宾"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 21,
+          "评价": "'SG-Filter 在 STR 上 Recall@15 平均提升 10.53%–22.92%, 达 SOTA' 带具体数字的判断句"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 6,
+          "评价": "'受 STR 两大特征影响, 向量检索召回率无法满足 0.72 需求' 反面判断句带阈值"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 22,
+          "评价": "'借 HNSW 等高效索引, 端到端延迟仅 33.93ms 并满足召回要求' 数字断言"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "claim 是全页说服核心, 描述句无信息增量; 判断句 + 数字迫使作者交出立场,让听众能'带走一句话'",
+      "fix_hint": "把 claim 改成 '<主体> <判断动词> <指标/数值/对象>' 结构, 补充具体数字或强/弱定语",
+      "exceptions": [
+        "议程/目录页(claim 是章节导航非命题)",
+        "致谢/末页(claim 是收束语)"
+      ]
+    },
+    {
+      "id": "method_chapter_uses_how_to_question_answer_framing",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页写作·'How to X? — through Y' 问答式框架",
+      "description": "方法/技术章的内容页用 'How to X? — through Y' 的问答句起头, 把每步 Tech 展开为一个明确要解决的问题及其解法.",
+      "evidence_signals": [
+        "关键文字 含 'How to' 或 '如何' 开头的问句",
+        "关键文字 含 '?' 与 '—' / 'through' / '通过' 组合",
+        "section_role = 'method'",
+        "标题常含 'Tech1' / 'Tech2' / 'Tech3' 或 'Step1-3'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 15,
+          "评价": "'How to efficiently obtain summarized information? — through the design of summarized graph'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 17,
+          "评价": "'How to effectively utilize summarized information? — the design of score ranking of important nodes'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 18,
+          "评价": "'How to maximize the utilization of summarized information? — through multi-result fusion'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "方法章逐步展开时听众易迷失步骤动机; 'How to X? — through Y' 每步先立问题再给答案, 强迫每技术点自证必要性",
+      "fix_hint": "把 method 页首行改为 'How to <目标>? — through <解法名>', 后续再落地到 Step/Tech 分解",
+      "exceptions": [
+        "Solution Overview 总览页(可用两问并列而非单问)",
+        "算法伪代码/公式页(用符号定义替代问答句)"
+      ]
+    },
+    {
+      "id": "toc_item_format_number_topic_subtopic",
+      "category": "authoring",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录条目·'N Topic: Subtopic' 编号加冒号结构",
+      "description": "目录每项统一 '<编号> <大主题>: <细化>' 格式(如 '1 Background: Retrieval'), 用冒号把大类与本 deck 特定角度分离, 便于跨 toc 页复用.",
+      "evidence_signals": [
+        "关键文字 含 '1 ...: ...' / '2 ...: ...' 三段式项",
+        "每项以数字开头 + 空格 + 名词短语 + 冒号 + 细化",
+        "项数固定 3-5 项且各 toc 页项文本一致"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 2,
+          "评价": "'1 Background: Retrieval' / '2 Insight: By Summarized Information' 编号+冒号结构"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 13,
+          "评价": "'3 Solution: Index and Search' 同样格式"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 25,
+          "评价": "收尾目录仍保留 '1 ... 2 ... 3 ... 4 ...' 一致格式"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "toc 项要在多次出现中让听众'认得回来', 冒号分隔的固定格式使前后 toc 页视觉与语义对齐, 减少重新阅读成本",
+      "fix_hint": "所有 toc 项统一改为 '<编号> <大类>: <细化>', 各 toc 页文本必须一字不差",
+      "exceptions": [
+        "极简 4 词以内目录(无需冒号细化)"
+      ]
+    },
+    {
+      "id": "content_page_prefers_short_phrase_bullets_not_full_paragraph",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "正文写作·短语式关键文字,不写整段散文",
+      "description": "slide.关键文字 以短语/断句为单位, 每条 <=20 字, 不写完整段落散文; 段落式的完整表述交给讲者口述, 页面只留 anchor 词.",
+      "evidence_signals": [
+        "关键文字 每条 <=20 字",
+        "关键文字 常为不完整句(缺主语或谓语)或术语短语",
+        "关键文字 里 '。' 句号出现频率低",
+        "视觉骨架 不出现 '正文段落' / '大段文字块'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 11,
+          "评价": "'① information source: embedding' / '② information source: co-occurrence' 短语式,不写整句"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 20,
+          "评价": "'Similar Text: Medical-qa, Financial-qa, Qasper' 数据集短语枚举, 无散文说明"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "soft",
+      "rationale": "听众读整段文字会与讲者口述冲突, 短语式 anchor 只当'指路牌', 把叙述权还给讲者, 保听觉主导",
+      "fix_hint": "把关键文字里的整句压成 anchor 短语 (<=20 字), 具体解释挪到 speaker note",
+      "exceptions": [
+        "定义/定理页(需完整句子表述数学或术语)",
+        "封面页(标题为完整论文题目)"
+      ]
+    },
+    {
+      "id": "background_page_uses_comparison_or_gap_framing",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "背景页写作·对比或缺口框架建立痛点",
+      "description": "背景/挑战类内容页用 'X vs Y' 对比或 '现有做法无法 Z' 缺口框架呈现, 直接指向本工作要解决的差距, 而不平铺领域综述.",
+      "evidence_signals": [
+        "关键文字 含 'vs' / 'Non-STR' / 'STR' / 'Non ...' 对比词",
+        "关键文字 含 'cannot' / 'not meet' / '无法' / '难以' 缺口词",
+        "关键文字 含 具体阈值或数值差距 (如 '0.72' / 'Dis.2−Dis.1≈0')",
+        "section_role in ['background', 'motivation']"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 6,
+          "评价": "'Non-STR vs STR 平均召回' + 'cannot meet demands' + 阈值 0.72, 对比+缺口双框架"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "slide_index": 10,
+          "评价": "'existing embedding paradigm cannot effectively extract summarized information' 明确缺口句"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "soft",
+      "rationale": "背景页若只写领域综述听众抓不到本工作动机, 用对比/缺口把'为什么值得做'前置, 后续 method 才有说服链",
+      "fix_hint": "背景页改为 '<现有做法> 无法 <目标>' 或 '<A> vs <B>' 对比句, 补数值差距,直指痛点",
+      "exceptions": [
+        "领域科普 deck(听众完全陌生, 允许先综述再对比)",
+        "开场即定义术语的定义页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 仅 1 deck (SG-Filter, paper_share); visual 5 rules 覆盖 cover/toc/method/result/ending 五种版式; authoring 6 rules 覆盖 title/claim/toc-item/method-framing/bullet-style/background-framing; 未出现 chapter_candidate 无对应视觉规则; 无 previous_batches_rules 冲突.",
+  "coverage": {
+    "rules_count": 11,
+    "by_category": {
+      "visual": 5,
+      "authoring": 6
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_18",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 18,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "列集中处理单元",
+  "核心论断": "列集中处理单元将稀疏计算聚拢以提升硬件利用率",
+  "本页讲什么": "本页介绍第二项技术——列集中处理单元（Column-Concentrated Processing Element），通过将差分计算暴露出的稀疏数据在列方向集中排布，减少无效计算并提升处理单元的硬件利用率，衔接算法稀疏性与硬件执行。",
+  "关键文字": [
+    "Column-Concentrated Processing Element"
+  ],
+  "视觉骨架": [
+    "列集中处理单元结构图",
+    "稀疏数据列向聚拢示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_18.asset.01",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_18.asset.02",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_18.asset.03",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_18.asset.04"
+  ],
+  "适合复用场景": [
+    "稀疏加速的处理单元设计页",
+    "算法稀疏性到硬件映射的介绍"
+  ],
+  "不适合复用场景": [
+    "纯算法概念论证页",
+    "含具体能效数字的结果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

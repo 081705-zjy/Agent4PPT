@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_57",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.07",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 57,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "HyperGef 小结与过渡",
+  "核心论断": "HyperGef 验证稀疏加速可落地超图 GNN 场景",
+  "本页讲什么": "本章收束页，回顾 HyperGef 从问题、融合框架到 GPU 优化与加速效果的完整链路，总结稀疏加速范式在超图 GNN 场景的可行性，并以 Opening 等编号线索过渡到全 deck 的下一部分。",
+  "关键文字": [
+    "Opening"
+  ],
+  "视觉骨架": [
+    "要点编号列表",
+    "章节收束配图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_57.asset.01"
+  ],
+  "适合复用场景": [
+    "应用案例章节小结页",
+    "工作总结过渡页"
+  ],
+  "不适合复用场景": [
+    "含具体数字的结果页",
+    "密集结构示意图页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

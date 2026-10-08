@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_13"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.04"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 13
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "GPU 架构无法利用稀疏性"
+核心论断: "GPU 架构无法有效利用稀疏化带来的加速潜力"
+本页讲什么: "针对上页立起的稀疏特性，指出 Challenge-1：稀疏化后 GPU 架构因固定计算模式无法真正利用不规则稀疏，加速收益受限，从而论证需要 FPGA 等专用硬件。"
+关键文字: "[GPU architecture cannot take advantage of sparsity, \"Challenge-1: Sparsification\"]"
+视觉骨架: "[GPU 计算利用率对比图, 稀疏挑战标注]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_13.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_13.asset.02, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_13.asset.03, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_13.asset.04, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_13.asset.05]"
+适合复用场景: "[GPU 稀疏利用瓶颈论证页, 硬件挑战 challenge 说明页]"
+不适合复用场景: "[视频压缩动机页, 章节目录页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "GPU architecture cannot take advantage of sparsity"}
+  - {"位置": "下方主体", "内容": "GPU 计算利用率对比图与 Challenge-1 稀疏化标注"}
+alternate_claims:
+layout_tag: "mixed"
+---
+# slide 13: GPU 架构无法利用稀疏性
+
+**核心论断**: GPU 架构无法有效利用稀疏化带来的加速潜力
+
+## 本页讲什么
+针对上页立起的稀疏特性，指出 Challenge-1：稀疏化后 GPU 架构因固定计算模式无法真正利用不规则稀疏，加速收益受限，从而论证需要 FPGA 等专用硬件。
+
+## 关键文字片段
+- GPU architecture cannot take advantage of sparsity
+- Challenge-1: Sparsification
+
+## 视觉骨架
+- GPU 计算利用率对比图
+- 稀疏挑战标注
+
+## 可复用到
+- GPU 稀疏利用瓶颈论证页
+- 硬件挑战 challenge 说明页
+
+## 不适合复用的场景
+- 视频压缩动机页
+- 章节目录页

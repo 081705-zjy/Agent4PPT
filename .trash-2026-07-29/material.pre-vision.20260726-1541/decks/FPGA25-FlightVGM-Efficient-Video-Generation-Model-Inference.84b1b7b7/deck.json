@@ -1,0 +1,58 @@
+{
+  "deck标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "目录名": "FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "源哈希": "84b1b7b767bbc812fca73649f6b5ed38ba72e4db",
+  "画布尺寸": [
+    9144000,
+    5143500
+  ],
+  "标题": "FlightVGM：视频生成模型高效推理加速",
+  "总页数": 45,
+  "章节数": 8,
+  "章节列表": [
+    "section_01_封面",
+    "section_02_目录",
+    "section_03_视频生成模型与硬件背景",
+    "section_04_GPU难以利用稀疏与低精度",
+    "section_05_三项加速技术",
+    "section_06_实验设置与性能结果",
+    "section_07_混合精度消融与增益分析",
+    "section_08_致谢"
+  ],
+  "主题标签": [
+    "视频生成",
+    "模型推理",
+    "FPGA",
+    "混合精度",
+    "硬件加速",
+    "稀疏激活",
+    "DSP"
+  ],
+  "目标受众": "学术同行、体系结构与硬件加速研究者",
+  "报告类型": "paper_share",
+  "适用场景": "会议/组会分享 FPGA 视频生成推理加速论文",
+  "论述总结": "本 deck 分享 FPGA25 论文 FlightVGM，围绕视频生成模型（VGM）推理开销大、GPU 难以利用其稀疏与低精度特性的问题，提出在线激活稀疏、可配置 DSP58 混合精度计算与动静结合调度三项技术，最终在 FPGA 上实现相对 GPU 的显著速度与能效提升。",
+  "论述弧线": [
+    "背景",
+    "挑战",
+    "方法",
+    "实验",
+    "总结"
+  ],
+  "适合复用场景": [
+    "大模型/视频生成推理加速论文分享",
+    "FPGA/体系结构硬件加速汇报",
+    "学术报告型 background+motivation 章节",
+    "含混合精度/稀疏技术的方法论展开",
+    "带实验对比的科研成果汇报"
+  ],
+  "不适合复用场景": [
+    "纯软件算法无硬件话题（话题偏离）",
+    "工业产品 demo（叙事节奏不同）",
+    "投资路演（缺商业化叙事）",
+    "面向学生的入门 tutorial",
+    "简历/个人介绍类汇报"
+  ],
+  "分析状态": "claude-opus-4-8"
+}

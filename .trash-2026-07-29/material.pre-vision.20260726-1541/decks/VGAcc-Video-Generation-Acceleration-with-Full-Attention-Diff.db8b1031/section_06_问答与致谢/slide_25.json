@@ -1,0 +1,40 @@
+{
+  "页标识": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_25",
+  "所属章节": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+  "页序号": 25,
+  "源文件": "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx",
+  "页面角色": "content_candidate",
+  "标题": "问题交流页",
+  "核心论断": "加速比与面积效率结论已验证，开放提问承接前文",
+  "本页讲什么": "全 deck 收尾的开放问答页。以「问题」为主视觉，承接前文对视频生成加速比与面积效率的验证结论，邀请听众就 VGAcc 架构、可重构设计、关键帧生成等展开交流，不引入任何新论点。",
+  "关键文字": [
+    "问题",
+    "生成关键帧",
+    "Li Ding @ CCC Lab"
+  ],
+  "视觉骨架": [
+    "大字「问题」标语",
+    "关键帧示意配图",
+    "作者署名条"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_25.asset.01",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_25.asset.02",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_25.asset.03",
+    "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_25.asset.04"
+  ],
+  "适合复用场景": [
+    "硬件加速器答辩问答页",
+    "技术汇报开放交流页",
+    "架构类 deck 收尾提问页"
+  ],
+  "不适合复用场景": [
+    "含新数据的论证页",
+    "方法架构展开页",
+    "benchmark 结果对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "ending_candidate",
+  "分析状态": "claude-opus-4-8"
+}

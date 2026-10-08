@@ -1,0 +1,42 @@
+---
+章节标识: tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06
+所属deck: tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7
+章节序号: 6
+章节角色: experiment
+标题: 实验设置与性能结果
+页码范围: [34, 41]
+页数: 8
+页ID列表: [slide_34, slide_35, slide_36, slide_37, slide_38, slide_39, slide_40, slide_41]
+章节叙事: 承接前三项技术方案，用实测数据兑现「显著加速与能效提升」承诺：先交代模型/数据集与硬件资源占用，再逐项给出相对 GPU 的加速比、能效比与端到端案例。
+页间关系: ["slide 34 → slide 35: 由本章 TOC 目录页切入首个实验设置——模型与数据集", "slide 35 → slide 36: 由实验对象过渡到与 baseline 的整体对比结论", "slide 36 → slide 37: 由总体对比回补实验配置的模型/数据集细节", "slide 37 → slide 38: 由实验设置转入 FPGA 硬件资源占用（LUT 等）表", "slide 38 → slide 39: 由资源开销引出 FlightVGM 1.3× 起的加速结果", "slide 39 → slide 40: 由单点加速比汇总到跨模型平均加速/能效", "slide 40 → slide 41: 由整体均值下沉到 Latte 具体模型的端到端案例"]
+适合复用场景: [FPGA/ASIC 加速器相对 GPU 的加速比+能效对比章节, 含硬件资源占用表（LUT/DSP/BRAM）的实验章, 「设置→对比→资源→逐模型结果」四段式实验叙事, 需要单模型端到端案例收尾的性能验证章]
+不适合复用场景: [纯算法精度实验、无硬件资源维度时, 无 GPU/baseline 对比基线的评测章, 只有单一模型、无跨模型均值的实验, 加速比/能效数据已过时或不可比时]
+在deck中的位置: 第 6 章，紧跟方法章节，为结论前的验证收口
+分析状态: claude-opus-4-8
+---
+
+# section 6: 实验设置与性能结果
+
+## 在 deck 中的位置
+第 6 章，紧跟方法章节，为结论前的验证收口
+
+## 章内 slide 间的关系
+- slide 34 → slide 35: 由本章 TOC 目录页切入首个实验设置——模型与数据集
+- slide 35 → slide 36: 由实验对象过渡到与 baseline 的整体对比结论
+- slide 36 → slide 37: 由总体对比回补实验配置的模型/数据集细节
+- slide 37 → slide 38: 由实验设置转入 FPGA 硬件资源占用（LUT 等）表
+- slide 38 → slide 39: 由资源开销引出 FlightVGM 1.3× 起的加速结果
+- slide 39 → slide 40: 由单点加速比汇总到跨模型平均加速/能效
+- slide 40 → slide 41: 由整体均值下沉到 Latte 具体模型的端到端案例
+
+## 整章可复用的场景
+- FPGA/ASIC 加速器相对 GPU 的加速比+能效对比章节
+- 含硬件资源占用表（LUT/DSP/BRAM）的实验章
+- 「设置→对比→资源→逐模型结果」四段式实验叙事
+- 需要单模型端到端案例收尾的性能验证章
+
+## 不适合复用的场景
+- 纯算法精度实验、无硬件资源维度时
+- 无 GPU/baseline 对比基线的评测章
+- 只有单一模型、无跨模型均值的实验
+- 加速比/能效数据已过时或不可比时

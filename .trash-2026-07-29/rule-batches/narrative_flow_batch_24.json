@@ -1,0 +1,200 @@
+{
+  "batch_index": 24,
+  "rules": [
+    {
+      "rule_id": "nf_b24_r01",
+      "rule_type": "section_transition",
+      "context": "proposal",
+      "from_role": "opening",
+      "to_role": "motivation",
+      "pattern": "封面单页后直接进入背景价值论述,以领域应用+GDP/政策双论证建立选题重要性",
+      "evidence_pages": [
+        1,
+        2
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r02",
+      "rule_type": "intra_section_progression",
+      "context": "proposal.motivation",
+      "pattern": "价值论(为什么重要)→问题定义与传统方法瓶颈(为什么难)→AI路线核心挑战(现有AI局限),三页逐层收敛出方法论空缺",
+      "evidence_pages": [
+        2,
+        3,
+        4
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r03",
+      "rule_type": "section_transition",
+      "context": "proposal",
+      "from_role": "motivation",
+      "to_role": "method",
+      "pattern": "由挑战直接引出并列双路线解决方案页,方案页以左右分栏对偶呈现,分别对应上一节暴露的两大挑战",
+      "evidence_pages": [
+        4,
+        5
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r04",
+      "rule_type": "intra_section_progression",
+      "context": "proposal.method",
+      "pattern": "方案并列展开→研究基础与SOTA佐证可行性→四层总体框架整合→科学问题前沿性/高价值性升华收尾,四页构成方案-能力-框架-意义的递进闭环",
+      "evidence_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r05",
+      "rule_type": "section_transition",
+      "context": "proposal",
+      "from_role": "method",
+      "to_role": "discussion",
+      "pattern": "科学问题升华页收尾后切入团队与执行章节,回答'谁来做/能否交付/做到什么/花多少钱'四问",
+      "evidence_pages": [
+        8,
+        9
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r06",
+      "rule_type": "intra_section_progression",
+      "context": "proposal.discussion",
+      "pattern": "团队组成(角色结构)→既往项目实绩(能否交付)→量化考核指标(做到什么)→经费概算(花多少钱),按承诺链顺序展开",
+      "evidence_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r07",
+      "rule_type": "section_transition",
+      "context": "proposal",
+      "from_role": "discussion",
+      "to_role": "closing",
+      "pattern": "经费页作为正文最后一页后紧接极简致谢页,以答辩礼仪句收束正文",
+      "evidence_pages": [
+        12,
+        13
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r08",
+      "rule_type": "section_transition",
+      "context": "proposal",
+      "from_role": "closing",
+      "to_role": "appendix",
+      "pattern": "致谢页后插入极简「备份」分隔页,以视觉分界将答辩正文与查验支撑材料显式切分",
+      "evidence_pages": [
+        13,
+        14
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r09",
+      "rule_type": "appendix_organization",
+      "context": "proposal.appendix",
+      "pattern": "备份按主题分子章串行组织:先经费成员明细(对应正文经费/团队),再研究基础与大规模能力(对应正文方法),最后自适应优化与集群训练(对应正文能力),备份顺序反向映射正文承诺",
+      "evidence_pages": [
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        27
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r10",
+      "rule_type": "intra_section_progression",
+      "context": "proposal.appendix.technical",
+      "pattern": "技术备份子章内部按'问题对比→量化成果论断→大规模处理策略→算子级加速'四步递进,每步以红色高亮数字承接前页成果",
+      "evidence_pages": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r11",
+      "rule_type": "intra_section_progression",
+      "context": "proposal.appendix.capability",
+      "pattern": "自适应优化子章按'设计思想开篇(M-Loop三维)→机制展开(设计空间表)→端到端成效(多层加速)→切换至大模型子域(时间线)→自研工作实测→集群训练能力→异构混训收尾'的能力堆栈式序列铺陈",
+      "evidence_pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r12",
+      "rule_type": "layout_pairing",
+      "context": "proposal.method",
+      "pattern": "并列双方案/双挑战/双意义类内容页统一采用左右对偶分栏布局,顶部蓝色横幅点题,底部对称收口,强化对比关系",
+      "evidence_pages": [
+        4,
+        5,
+        8
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r13",
+      "rule_type": "evidence_pattern",
+      "context": "proposal",
+      "pattern": "关键论断页配套红色高亮量化数字(31.1%/99%/6.80%/1.54x/46.8%/97.6%等)作为承接下一页的锚点,数字通常出现在页面底部或红框内",
+      "evidence_pages": [
+        6,
+        18,
+        20,
+        23,
+        25,
+        27
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r14",
+      "rule_type": "opening_style",
+      "context": "proposal.opening",
+      "pattern": "封面采用极简式:左上黑色加粗标题+中部浅色分隔横线+线下居中汇报人/单位/日期,无配图,大量留白定调正式答辩场合",
+      "evidence_pages": [
+        1
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    },
+    {
+      "rule_id": "nf_b24_r15",
+      "rule_type": "closing_style",
+      "context": "proposal.closing",
+      "pattern": "致谢页仅两行文字'感谢聆听'+'恳请评审专家提出宝贵意见',配全宽浅色分隔线与大量留白,不承载任何论证内容",
+      "evidence_pages": [
+        13
+      ],
+      "deck_id": "tpl.项目申报.面向大规模与多变场景组合优化问题的AI方法.dc0b91ba"
+    }
+  ]
+}

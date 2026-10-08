@@ -1,0 +1,539 @@
+{
+  "batch_index": 19,
+  "rules": [
+    {
+      "id": "chapter_divider_uses_part_number_with_minimal_layout",
+      "category": "visual",
+      "applicable_role": [
+        "chapter_candidate"
+      ],
+      "title": "章节分隔页·PART 编号+极简留白",
+      "description": "章节分隔页仅含 PART 编号(如 PART 01)与章节大标题, 版式极简, 大面积留白, 不含正文内容或图表, 用于话题切换与演讲停顿。",
+      "evidence_signals": [
+        "关键文字 含 'PART 01/02/03/04' 或 'PART' 编号",
+        "视觉骨架 含 '留白' / '极简' / '章节封面' / '标题占位'",
+        "关键文字 数量 ≤ 3 且无数据/图表元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 4,
+          "评价": "PART 01 章节分隔页, 仅'人工智能与智能终端' + 'PART 01'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 16,
+          "评价": "PART 02 章节分隔, 居中蓝框仅含标题'端侧大模型推理挑战'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 28,
+          "评价": "PART 03 极简蓝框标题+大面积留白"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 42,
+          "评价": "PART 04 章节封面标题框+大面积留白"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 3,
+          "原因": "章节导航页而非分隔页, 同时列出多个 PART, 不是单章分隔"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.8,
+      "enforcement_level": "hard",
+      "rationale": "极简分隔页给听众明确的话题切换信号, 视觉停顿让观众消化上一章并预期下一章; 加入正文会消解'停顿'语义",
+      "fix_hint": "移除分隔页所有正文/图表元素, 仅保留 PART 编号 + 章节标题居中, 保持大面积留白",
+      "exceptions": [
+        "全篇章节导航页(同页列多个 PART)使用列表版式而非单章分隔",
+        "省略章节分隔页的紧凑型 deck"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_with_author_affiliation",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "封面布局·居中主标题+作者机构署名",
+      "description": "封面页以居中大字主标题为主体, 下方一行标注作者与机构(以'·'分隔), 可含 logo/背景装饰, 不含正文或图表元素。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中主标题块' + '作者机构署名行'",
+        "关键文字 含 '姓名·机构' 或 '姓名 · 单位' 格式",
+        "关键文字 无 bullet 列表、无数据指标"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 1,
+          "评价": "'端侧AI大模型开发与应用实践' + '戴国浩·上海交通大学' 标准封面"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "居中大字标题+作者署名是身份识别版式, 让听众开场瞬间锁定主题与讲者, 避免其他元素抢焦点",
+      "fix_hint": "封面主标题居中放大, 作者机构以'·'分隔置于标题下方, 移除或压缩非身份识别元素",
+      "exceptions": [
+        "空白模板/占位版式(无实际身份信息)",
+        "多作者联合汇报(署名行可扩展为多行)"
+      ]
+    },
+    {
+      "id": "problem_section_uses_two_column_contrast",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "问题章节·左右双栏对比矛盾/维度",
+      "description": "problem 章节 slide 大量使用左右双栏(蓝框/虚线框)对比两种对立维度(算力vs功耗、容量vs带宽、云端vs端侧、方法vs成效等), 每栏内含图表+要点列表。",
+      "evidence_signals": [
+        "视觉骨架 含 '左右双栏' / '左右分区' / '左右双版块'",
+        "section_role 为 'problem' 或 'method'",
+        "关键文字 含明显对比结构(A 对 B, 云端 vs 端侧, 挑战 vs 方法)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 17,
+          "评价": "左Roofline+柱图 vs 右功耗散点图, 双栏蓝框对比延时与功耗"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 18,
+          "评价": "LPDDR大容量低带宽 vs 3D堆叠高带宽小容量, 双栏虚线框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 14,
+          "评价": "左侧云端/端侧成本柱图 + 右侧优势要点, 双栏"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 24,
+          "评价": "左芯片实物图 + 右指标要点列表, 具身智能双栏"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 29,
+          "评价": "左GOPs/s + 右Tokens/s, 双框指标对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "双栏对比是呈现'矛盾/对立/权衡'的最直观版式, 让听众瞬间抓到冲突要点, 单栏叙述会让对比关系隐没",
+      "fix_hint": "把对立的两个维度分置左右双栏(蓝框/虚线框), 各栏内配图表+要点, 中间以 vs/→/↔ 强化对比关系",
+      "exceptions": [
+        "单一维度递进论述(无对比)使用上下分层版式",
+        "3+ 维度对比使用表格版式"
+      ]
+    },
+    {
+      "id": "method_slide_uses_formula_or_flow_as_top_banner",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法章节·顶部公式条串起子页",
+      "description": "method 章节 slide 常在顶部放置蓝色公式条(如 'AI应用算力=硬件算力×效率')或流程步骤条作为总纲, 下方展开具体图表/流程/数据, 让多个 slide 通过同一公式串联。",
+      "evidence_signals": [
+        "视觉骨架 含 '顶部公式蓝条' / '顶部公式分解蓝条' / '流程条'",
+        "section_role 为 'method'",
+        "关键文字 含公式(用'='或'×'/'/'连接)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 30,
+          "评价": "顶部'AI应用算力=硬件算力×效率'蓝条, 三列任务panel"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 31,
+          "评价": "同公式蓝条+①②③三条协同路径箭头"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 33,
+          "评价": "顶部公式分解蓝条+矩阵三步转换流程"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "公式条作为总纲让方法章的多个 slide 保持逻辑一致, 听众每翻页都能回到同一坐标系, 避免碎片化",
+      "fix_hint": "方法章 slide 顶部加固定公式蓝条(如'X=Y×Z'), 下方展开具体 Y/Z 的成果, 多页复用同一公式",
+      "exceptions": [
+        "无核心公式抓手的方法章使用流程图/架构图代替",
+        "单一成果展示页可省略公式条"
+      ]
+    },
+    {
+      "id": "achievement_slide_uses_challenge_method_pair_layout",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "成果展示·挑战+方法双页配对",
+      "description": "成果章节采用'挑战页+方法页'双页配对结构: 挑战页红色标题条点问题(精度损失/利用率不足), 方法页展示设计流程+右侧成效数据框(倍数提升+参考文献)。",
+      "evidence_signals": [
+        "标题 含'挑战' / '方法'成对",
+        "视觉骨架 含 '红色挑战标题条' 或 '成效数据框'",
+        "关键文字 含 '× ' 倍数 + '[会议名 年份]' 引用"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 34,
+          "评价": "成果1挑战页, 红条'模型精度损失>10%'+虚线框数据引证"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 35,
+          "评价": "成果1方法页, ①②③流程+精度损失2.7×成效数据框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 36,
+          "评价": "成果2挑战页, 硬件利用率40%-80%问题"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 37,
+          "评价": "成果2方法页, 编译映射流程+3.9×成效框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 39,
+          "评价": "成果3方法页, 可重构流程+1.6× Ours成效框"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "挑战+方法配对让每项成果有'问题→解决'的闭环, 听众能对齐 baseline 与 delta, 单纯罗列成果会缺乏说服锚点",
+      "fix_hint": "每项成果拆为两页: 挑战页顶部红条点问题+文献佐证, 方法页展流程+右侧倍数提升数据框",
+      "exceptions": [
+        "综合系统展示页(如 LLM 推理落地)可合并为单页",
+        "无对标 baseline 的探索型成果可省略挑战页"
+      ]
+    },
+    {
+      "id": "slide_title_uses_noun_phrase_or_colon_subtitle",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题用名词短句或冒号副标题, 不用完整动宾句",
+      "description": "slide 标题倾向于名词短句(如'端侧算力矛盾:延时 vs 功耗') 或'主题:子题'冒号结构, 而非'介绍 XX' / '本节讲 XX' 动宾开头; 章节内不同 slide 可用相同主题词+不同冒号后缀。",
+      "evidence_signals": [
+        "标题 不以 '介绍' / '本节' / '我们讲' 等动词开头",
+        "标题 多含 '·' / ':' / '（）' 结构分隔主题与子题",
+        "标题 长度 ≤ 20 字, 无完整谓语+宾语"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 17,
+          "评价": "'端侧算力矛盾:延时 vs 功耗' 主题+冒号+对比"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 34,
+          "评价": "'成果1：硬件算法协同稀疏（挑战）' 主题+副标注"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 43,
+          "评价": "'研究思路总结：从摩尔定律到缩放定律'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 22,
+          "评价": "'端侧大模型推理芯片能力汇总(应用分类)' 主题+括号说明"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.95,
+      "enforcement_level": "hard",
+      "rationale": "名词短句 title 让听众一眼抓到本页主题定位, 动宾句 title 会让 title 变成'讲什么'描述而非定位, 与 claim 语义重叠",
+      "fix_hint": "去掉 title 里'介绍/讲/分析'类动词, 改为'<主题>:<子题>' 或'<X>·<Y>' 名词短句, 具体讲什么归到 claim",
+      "exceptions": [
+        "章节封面页 title 允许'X 与 Y' 类连词句"
+      ]
+    },
+    {
+      "id": "claim_is_judgment_with_quantified_delta",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断用带量化的判断句, 不用中性描述",
+      "description": "核心论断多为带量化数据的判断句(含倍数/百分比/数量级/绝对值), 明确指出 delta/差距/收益, 而非'介绍了 X' / '讨论了 Y' 的中性描述。",
+      "evidence_signals": [
+        "核心论断 含 '×' / '倍' / '%' / 'tokens/s' / '数量级' 等量化词",
+        "核心论断 含'差' / '提升' / '低于' / '仅' / '超' 等判断动词",
+        "核心论断 不以 '介绍' / '讨论' / '展示' 开头"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 17,
+          "评价": "'o1 推理放大算力需求 20 倍,端侧延时与功耗难两全' 量化+判断"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 27,
+          "评价": "'现有端侧芯片距泛端侧需求差 1-2 数量级'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 40,
+          "评价": "'FPGA稀疏加速器LLM推理较V100S提6倍速1.8倍能效'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 24,
+          "评价": "'具身智能芯片仅 10-40 tokens/s、能效<1'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 21,
+          "原因": "'大模型在端侧落地于具身/自驾/AI PC 三场景' 描述性无量化, 但作为总览页可豁免"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "带量化的判断句 claim 让听众瞬间抓到本页说服力, 中性描述让 claim 沦为标题的重复, 丧失说服锚点",
+      "fix_hint": "把 claim 里的量化 delta(倍数/百分比/数量级)显式写入, 用'仅/超/提/降'等判断动词代替'介绍/展示'",
+      "exceptions": [
+        "总览/导航型 slide(无具体数据可量化)",
+        "定性方法论 slide(核心是范式转变而非数据)"
+      ]
+    },
+    {
+      "id": "reference_uses_bracket_conference_year_format",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "文献引用用[会议名 年份]或[作者, 会议 年份]格式",
+      "description": "成果/数据来源以方括号形式内嵌于 claim/数据框中, 格式为'[会议名 年份]'或'[作者姓名, 会议 年份]', 如'[MICRO20]' / '[Lyu IEEE TNNLS 23]' / '[S Zeng, FPGA 24]', 而非脚注或独立参考文献页。",
+      "evidence_signals": [
+        "关键文字 含 '[XXX YY]' 或 '[Author, Conf YY]' 方括号引用",
+        "视觉骨架 含 '数据引证' / '成效框' / '虚线框'",
+        "关键文字 含会议名(ISCA/FPGA/DAC/ICCAD/MICRO/NeurIPS/PMLR 等)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 34,
+          "评价": "'[MatRaptor, MICRO20]' + '[Lyu, IEEE TNNLS 23]'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 37,
+          "评价": "'[DAC 22/CCF THPC/MLSys 23]'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 38,
+          "评价": "'[S Zeng, FPGA 24]' + '[G Dai, ISCA 22]'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 40,
+          "评价": "'[1] FlightLLM, FPGA'24'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "方括号内嵌引用让数据与来源同框呈现, 听众无需翻页查证, 提升可信度; 独立文献页会打断叙事流",
+      "fix_hint": "在数据框/成效框内, 数字后紧跟'[会议名 年份]'或'[作者, 会议 年份]'方括号引用, 不单独列参考文献页",
+      "exceptions": [
+        "讲者个人介绍/致谢页无需引用",
+        "总览/背景铺垫页可省略引用"
+      ]
+    },
+    {
+      "id": "metric_notation_uses_tokens_per_sec_and_watts",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "端侧性能指标统一用 tokens/s + W + tokens/J",
+      "description": "端侧性能相关 slide 统一使用'tokens/s'(吞吐)、'W'(功耗)、'tokens/J'(能效) 三元组表述, 而非 GOPs/s 或 FLOPS; 且指标常带模型规模@上下文(如'@7B batch=1')。",
+      "evidence_signals": [
+        "关键文字 含 'tokens/s' + 'W' + 'tokens/J' 三元组或其子集",
+        "关键文字 含 '@7B' / 'batch size=1' / 'batch=1' 等条件标注",
+        "关键文字 数值区间用'A-B' 或'~A-B' 表示"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 22,
+          "评价": "'功耗/W  速度 tokens/s @7B' 表头"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 24,
+          "评价": "'功耗:30-70W / 速度:10-40 tokens/s @7B / 能效:<1 tokens/J'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 27,
+          "评价": "'100-1000 tokens/s、<20W、>20 tokens/J' 三元组"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 49,
+          "评价": "'近期目标:10W、200 tokens/s、20 tokens/J'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.7,
+      "enforcement_level": "soft",
+      "rationale": "统一指标口径让不同 slide 的数据可横向对比, GOPs/s 无法反映 LLM 端侧真实吞吐; 统一@模型规模避免 apples-to-oranges",
+      "fix_hint": "端侧性能相关 slide 统一用 tokens/s + W + tokens/J 三元组, 后加'@<模型规模> batch=<N>'条件标注",
+      "exceptions": [
+        "纯算力芯片对比(非 LLM 场景)可用 TOPS/FLOPS",
+        "背景铺垫页(算法演进/云端市场)不必强制"
+      ]
+    },
+    {
+      "id": "timeline_key_moments_marked_with_year_plus_event",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "时间轴节点用'年份+事件'紧凑标注",
+      "description": "时间轴/发展历程类 slide 的节点标注为'年份+事件短语'格式(如'1956 Dartmouth 会议'、'2020 GPT-3 1750 亿参数'), 单节点 ≤ 15 字, 数字与关键名词紧邻。",
+      "evidence_signals": [
+        "关键文字 含 4 位年份 + 短事件名(≤15字)",
+        "视觉骨架 含 '时间轴' / '发展历程' / '演进'",
+        "关键文字 无长句解释, 多个节点并列"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 9,
+          "评价": "'1943 电路模拟神经元' / '1956 Dartmouth 会议' 紧凑标注"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 10,
+          "评价": "'2012 AlexNet 夺冠 ImageNet' / '2020 GPT-3 1750 亿参数'"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 46,
+          "评价": "'FlightLLM 59 tokens/s @ 50W' 代际紧凑标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "'年份+事件' 紧凑标注让时间轴节点视觉密度可控, 长句解释会让节点挤成一片、丧失时间感",
+      "fix_hint": "时间轴节点用'年份 + ≤15字事件短语'格式, 完整解释归到 slide claim 或口播",
+      "exceptions": [
+        "无时间演进要素的 slide 不适用",
+        "代际对比 slide 用代号(v1/v2)代替年份"
+      ]
+    },
+    {
+      "id": "own_contribution_highlighted_as_ours_or_red_frame",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "自研成果用 Ours 标签或红框显式区分",
+      "description": "在成果对比/研究地图 slide 中, 自研工作用'Ours'/'(Ours)' 标签、红色虚线框、紫色高亮或专用标注区分, 与他方文献引用形成视觉对比。",
+      "evidence_signals": [
+        "关键文字 含 'Ours' / '(Ours)' / '本团队' / '无问芯穹' / '自研'",
+        "视觉骨架 含 '红色虚线聚焦框' / '高亮' / '自研项紫色高亮'",
+        "关键文字 同时含他方文献引用(方括号)与自研标签"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 37,
+          "评价": "'计算延迟2.4× FPS+kNN加速71% (Ours)' 右下框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 39,
+          "评价": "'硬件利用率提升1.6× (Ours)' 右上框"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 44,
+          "评价": "研究矩阵中标注'Ours（自研）'位置"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 45,
+          "评价": "红色虚线框+'无问芯穹的技术贡献'+背景灰化"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "显式标注'Ours' 让听众瞬间区分他方工作与本团队贡献, 是学术汇报建立信誉与所有权的关键; 混杂展示会稀释自研亮点",
+      "fix_hint": "自研成果加'(Ours)'/'本团队'标签或红色虚线框, 与他方引用[会议 年份]并列时形成视觉区分",
+      "exceptions": [
+        "无自研内容的综述型 slide 不适用",
+        "封面/致谢/纯背景 slide 不适用"
+      ]
+    },
+    {
+      "id": "ending_uses_thanks_signature_plus_optional_thankyou",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "致谢页·讲者信息+可选极简 Thank You",
+      "description": "deck 结尾使用两页组合: 前一页三列布局(左讲者信息+联系方式, 中主标题呼应, 右合作方 logo), 后一页可选纯白居中'Thank You !'极简收束。",
+      "evidence_signals": [
+        "视觉骨架 含 'Thanks 信息栏' / 'Support logo 墙' / '3 列并列'",
+        "关键文字 含 'Email:' / '@' 邮箱 + 日期(YYYY-MM-DD)",
+        "关键文字 含 'Thank You' / '致谢' / 'Thanks'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 50,
+          "评价": "三列: 左 Thanks 信息(邮箱/日期) + 中主标题+双定律图 + 右 Support logo 墙"
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.机器之心_端侧大模型报告.7ced3852",
+          "slide_index": 51,
+          "评价": "纯白背景居中 'Thank You !' 极简收束"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.6,
+      "enforcement_level": "soft",
+      "rationale": "讲者信息页给听众后续联系锚点+合作方致谢, 是学术/产业汇报礼仪; 单独 Thank You 页是纯粹的情感收束, 两者配对完整",
+      "fix_hint": "结尾用两页: 第一页三列(讲者联系+主标题呼应+合作 logo), 第二页可选极简 Thank You 收束",
+      "exceptions": [
+        "无合作方/无致谢对象的独立汇报可省略 Support 列",
+        "紧凑型 deck 合并为单页致谢"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (51 slides), 抽取 12 条 rule: visual 6 条(封面/章节分隔/双栏对比/公式条/挑战方法配对/致谢), authoring 6 条(名词短句 title/量化 claim/方括号引用/tokens指标/时间轴节点/Ours 标签)",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 6,
+      "authoring": 6
+    }
+  }
+}

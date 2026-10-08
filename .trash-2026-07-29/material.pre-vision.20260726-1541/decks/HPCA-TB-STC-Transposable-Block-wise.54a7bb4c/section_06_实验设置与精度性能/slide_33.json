@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_33",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 33,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "性能加速：平均 Speedup 结果",
+  "核心论断": "TB-STC 平均取得显著加速，性能优于全部 Baseline",
+  "本页讲什么": "从精度切换到性能主张，给出 TB-STC 相对各 Baseline 的平均加速比，用图表量化性能优势。承接前面精度页（证明精度无损），本页兑现性能加速主张，是 section 中的核心结果页。",
+  "关键文字": [
+    "Performance",
+    "TB-STC achieves on average of"
+  ],
+  "视觉骨架": [
+    "加速比对比图",
+    "平均 speedup 标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_33.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_33.asset.02"
+  ],
+  "适合复用场景": [
+    "硬件加速器的 speedup 结果页",
+    "相对多 Baseline 的性能对比页"
+  ],
+  "不适合复用场景": [
+    "实验配置设置页",
+    "概念性目录页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

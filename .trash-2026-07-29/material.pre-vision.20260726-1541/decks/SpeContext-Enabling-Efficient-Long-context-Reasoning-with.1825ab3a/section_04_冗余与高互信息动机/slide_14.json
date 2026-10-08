@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_14",
+  "所属章节": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "页序号": 14,
+  "源文件": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "KV cache 的两个核心问题",
+  "核心论断": "KV 稀疏化归结为保留哪些、如何度量两大问题",
+  "本页讲什么": "本页提出 KV cache 面临的两个核心问题（Two core questions in KV cache），将前面的冗余观察与检索设问收敛为可操作的研究命题，为引入高互信息度量做直接铺垫。",
+  "关键文字": [
+    "Motivation",
+    "Two core questions in KV cache"
+  ],
+  "视觉骨架": [
+    "双核心问题并列框",
+    "motivation 标题块"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_14.asset.01"
+  ],
+  "适合复用场景": [
+    "KV cache 研究命题提出页",
+    "承接冗余观察的 motivation 页"
+  ],
+  "不适合复用场景": [
+    "具体 benchmark 对比页",
+    "方法架构总览图页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

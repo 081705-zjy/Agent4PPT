@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_09",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 9,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "缩短输入长度路线：Token Merging",
+  "核心论断": "Token Merging 通过分类并合并相似 token 缩短输入长度",
+  "本页讲什么": "本页开启第一条加速路线——缩短输入长度(L)，以 Token Merging 为代表：先对 token 分类(Classify)，再把相似 token 合并(Merge)，从而压缩序列长度、降低计算量。为下一页的合并机制细节做铺垫。",
+  "关键文字": [
+    "Related Work: Reduce Input Length (L)",
+    "Token Merging",
+    "Classify",
+    "Merge",
+    "Tokens"
+  ],
+  "视觉骨架": [
+    "Token 分类合并示意图",
+    "token 序列排布图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_09.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_09.asset.02"
+  ],
+  "适合复用场景": [
+    "缩短序列长度类方法的引入页",
+    "Token 合并/剪枝主题综述页"
+  ],
+  "不适合复用场景": [
+    "特征缓存主题的方法页",
+    "含 benchmark 数字的能效对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_08",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 8,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Blackwell 2024 与 FP4 低精度趋势",
+  "核心论断": "Blackwell 新 FP4 格式带来更高 AI 算力",
+  "本页讲什么": "从模型转向硬件，介绍 2024 年 NVIDIA Blackwell 架构引入的新 FP4 数据格式，说明其提供更高 AI TOPS 算力，揭示 GPU 低精度趋势，为后文混合精度加速技术提供硬件依据。",
+  "关键文字": [
+    "Blackwell-2024",
+    "New FP4 format provides more AI TOPS"
+  ],
+  "视觉骨架": [
+    "FP4 算力提升柱图",
+    "Blackwell 架构标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_08.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_08.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_08.asset.03",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_08.asset.04"
+  ],
+  "适合复用场景": [
+    "GPU 低精度硬件趋势页",
+    "FP4 混合精度背景页"
+  ],
+  "不适合复用场景": [
+    "视频生成模型结构页",
+    "纯概念论述页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

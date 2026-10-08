@@ -1,0 +1,52 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_21"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.04"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 21
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "2022-2024 稀疏计算进展总览"
+核心论断: "2022-2024 稀疏算子与应用场景同步扩张"
+本页讲什么: "本页总览 2022 至 2024 年稀疏计算的两条主线：一是稀疏算子本身的持续演进，二是应用面向 GNN、点云等更多场景的扩展，为后续按时间线与方向逐一展开的页面提供框架式导览。"
+关键文字: "[\"Sparse Computing: From 2022 to 2024\", Sparse operators, More Applications, GNN, Point Cloud]"
+视觉骨架: "[双主线分区示意, 应用领域图标组]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_21.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_21.asset.02, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_21.asset.03]"
+适合复用场景: "[稀疏计算进展综述总览页, 算子+应用双线索引页]"
+不适合复用场景: "[单点方法架构展开页, 能效对比数据页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "Sparse Computing: From 2022 to 2024"}
+  - {"位置": "下方左侧", "内容": "Sparse operators 主线"}
+  - {"位置": "下方右侧", "内容": "More Applications: GNN, Point Cloud"}
+alternate_claims:
+  - "应用场景从传统算子扩展到 GNN 与点云"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 21: 2022-2024 稀疏计算进展总览
+
+**核心论断**: 2022-2024 稀疏算子与应用场景同步扩张
+
+## 本页讲什么
+本页总览 2022 至 2024 年稀疏计算的两条主线：一是稀疏算子本身的持续演进，二是应用面向 GNN、点云等更多场景的扩展，为后续按时间线与方向逐一展开的页面提供框架式导览。
+
+## 关键文字片段
+- Sparse Computing: From 2022 to 2024
+- Sparse operators
+- More Applications
+- GNN
+- Point Cloud
+
+## 视觉骨架
+- 双主线分区示意
+- 应用领域图标组
+
+## 可复用到
+- 稀疏计算进展综述总览页
+- 算子+应用双线索引页
+
+## 不适合复用的场景
+- 单点方法架构展开页
+- 能效对比数据页

@@ -1,0 +1,641 @@
+{
+  "schema_version": "3.0",
+  "pipeline": "reuse_first_v3",
+  "notes": "Each new Claude-driven stage points to its own skill file under skills/. Stub stages preserve old artifact names; W6 will unify naming.",
+  "agents": {
+    "IntakeAgent": {
+      "stage": "BRIEF",
+      "skills": [
+        "skills/intake/skill.md"
+      ],
+      "model_route": "intake",
+      "tool_routes": [],
+      "inputs": [
+        "app-state.json",
+        "question-state.json"
+      ],
+      "outputs": [
+        "question-state.json"
+      ],
+      "human_gate": true,
+      "review_gate": false
+    },
+    "BriefAnalysisAgent": {
+      "stage": "IDEA_ANALYSIS",
+      "skills": [
+        "skills/idea/idea_analysis.md"
+      ],
+      "model_route": "idea_analysis",
+      "tool_routes": [],
+      "inputs": [
+        "question-state.json"
+      ],
+      "outputs": [
+        "idea-analysis.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "TemplateLibraryBuildAgent": {
+      "stage": "TEMPLATE_LIBRARY_BUILD",
+      "skills": [
+        "skills/template_library/deck_analysis.md"
+      ],
+      "model_route": null,
+      "tool_routes": [
+        "local_resource_search"
+      ],
+      "inputs": [
+        "templates/"
+      ],
+      "outputs": [
+        "data/resources_library/material/manifest.json",
+        "data/resources_library/material/deck-profiles.json",
+        "data/resources_library/material/section-profiles.json",
+        "data/resources_library/material/slide-profiles.json",
+        "data/resources_library/material/component-profiles.json",
+        "data/resources_library/material/asset-profiles.json",
+        "data/resources_library/material/search-index.json"
+      ],
+      "human_gate": false,
+      "review_gate": false,
+      "idempotent": true
+    },
+    "ProjectSourceScanAgent": {
+      "stage": "PROJECT_SOURCE_SCAN",
+      "skills": [],
+      "model_route": null,
+      "tool_routes": [
+        "local_resource_search"
+      ],
+      "inputs": [
+        "sources/",
+        "assets/"
+      ],
+      "outputs": [
+        "project-source-index.json",
+        "project-source-digest.json",
+        "project-asset-catalog.json"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "ProjectSourceUnderstandingAgent_REMOVED": {
+      "_note": "Stage merged into SOURCE_UNDERSTAND in P16. Master synthesis now lives at data/source-understanding.json."
+    },
+    "LayeredRetrievalAgent": {
+      "stage": "LAYERED_RETRIEVAL",
+      "skills": [],
+      "model_route": null,
+      "tool_routes": [
+        "local_resource_search"
+      ],
+      "inputs": [
+        "idea-analysis.json",
+        "data/source-understanding.json",
+        "outline.json",
+        "project-deck-units.json",
+        "project-section-units.json",
+        "project-slide-units.json",
+        "project-doc-units.json",
+        "project-figure-units.json",
+        "project-sheet-units.json",
+        "data/resources_library/material/deck-profiles.json",
+        "data/resources_library/material/section-profiles.json",
+        "data/resources_library/material/slide-profiles.json",
+        "data/resources_library/material/search-index.json"
+      ],
+      "outputs": [
+        "raw-layered-candidates.json",
+        "raw-library-candidates.json",
+        "template-library-candidates.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "OutlineGenerationAgent": {
+      "stage": "OUTLINE_GENERATION",
+      "skills": [
+        "skills/outline_gen/outline_chapter_stub.md",
+        "skills/outline_gen/outline_slide_detail.md",
+        "skills/outline_gen/outline_review.md",
+        "skills/outline_gen/outline_fix_from_review.md",
+        "skills/outline_gen/outline_human_summary.md"
+      ],
+      "model_route": "outline_generation",
+      "tool_routes": [],
+      "inputs": [
+        "idea-analysis.json",
+        "idea-intake-light.json",
+        "question-state.json",
+        "data/source-understanding.json",
+        "data/resources_library/rule/page_specific/INDEX.json",
+        "data/resources_library/rule/logic_story/INDEX.json",
+        "data/resources_library/logic/section_level/",
+        "data/resources_library/material/decks/"
+      ],
+      "outputs": [
+        "outline.json",
+        "outline.md",
+        "outline-review.json",
+        "outline-user-status.json",
+        "outline-chapter-stubs.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "OutlineRevisionAgent": {
+      "stage": "OUTLINE_REVISION",
+      "skills": [
+        "skills/outline_gen/outline_revision.md",
+        "skills/outline_gen/outline_review.md",
+        "skills/outline_gen/outline_fix_from_review.md",
+        "skills/outline_gen/outline_human_summary.md"
+      ],
+      "model_route": "outline_generation",
+      "tool_routes": [],
+      "inputs": [
+        "outline.json",
+        "outline-user-feedback.json",
+        "idea-analysis.json",
+        "idea-intake-light.json",
+        "data/source-understanding.json"
+      ],
+      "outputs": [
+        "outline.json",
+        "outline.md",
+        "outline-review.json",
+        "outline-user-status.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "DeckMatchingAgent": {
+      "stage": "DECK_MATCHING",
+      "skills": [
+        "skills/matching/deck_matching.md"
+      ],
+      "model_route": "deck_matching",
+      "tool_routes": [],
+      "inputs": [
+        "idea-analysis.json",
+        "data/source-understanding.json",
+        "raw-layered-candidates.json"
+      ],
+      "outputs": [
+        "deck-matches.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "SectionMatchingAgent": {
+      "stage": "SECTION_MATCHING",
+      "skills": [
+        "skills/matching/section_matching.md"
+      ],
+      "model_route": "section_matching",
+      "tool_routes": [],
+      "inputs": [
+        "idea-analysis.json",
+        "deck-matches.json",
+        "raw-layered-candidates.json"
+      ],
+      "outputs": [
+        "section-matches.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "SlideMatchingAgent": {
+      "stage": "SLIDE_MATCHING",
+      "skills": [
+        "skills/matching/slide_matching.md"
+      ],
+      "model_route": "slide_matching",
+      "tool_routes": [],
+      "inputs": [
+        "idea-analysis.json",
+        "outline.json",
+        "deck-matches.json",
+        "section-matches.json",
+        "raw-layered-candidates.json"
+      ],
+      "outputs": [
+        "slide-matches.json",
+        "matched-resource-pack.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "SlideMatchingReviewAgent": {
+      "stage": "SLIDE_MATCHING_REVIEW",
+      "skills": [
+        "skills/matching/slide_matching_review.md",
+        "skills/matching/slide_matching_fix.md"
+      ],
+      "model_route": "slide_matching",
+      "tool_routes": [],
+      "inputs": [
+        "slide-matches.json",
+        "outline.json",
+        "idea-analysis.json",
+        "idea-intake-light.json"
+      ],
+      "outputs": [
+        "slide-matches.json",
+        "slide-matches-review.json",
+        "slide-matches-user-status.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "GapCardGenerationAgent": {
+      "stage": "GAP_CARD_GENERATION",
+      "skills": [
+        "skills/gap_cards/gap_card_generation.md"
+      ],
+      "model_route": "gap_card_generation",
+      "tool_routes": [],
+      "inputs": [
+        "outline.json",
+        "slide-matches.json",
+        "section-matches.json",
+        "data/source-understanding.json",
+        "raw-layered-candidates.json",
+        "project-doc-units.json"
+      ],
+      "outputs": [
+        "gap-cards.json",
+        "chapter-gap-summary.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "SlidePlanAgent": {
+      "stage": "SLIDE_PLAN",
+      "skills": [
+        "skills/slide/slide_plan.md"
+      ],
+      "model_route": "slide_plan",
+      "tool_routes": [],
+      "inputs": [
+        "idea-analysis.json",
+        "slide-matches.json",
+        "section-matches.json",
+        "deck-matches.json",
+        "data/source-understanding.json"
+      ],
+      "outputs": [
+        "slide-plan.json",
+        "reuse-first-outline.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "DraftAssemblyPlanAgent": {
+      "stage": "DRAFT_ASSEMBLY_PLAN",
+      "skills": [
+        "skills/draft/draft_assembly_plan.md"
+      ],
+      "model_route": "draft_assembly_plan",
+      "tool_routes": [],
+      "inputs": [
+        "slide-plan.json",
+        "reuse-decision-audit.json",
+        "matched-resource-pack.json",
+        "project-asset-catalog.json"
+      ],
+      "outputs": [
+        "draft-assembly-plan.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "DraftAssemblyAgent": {
+      "stage": "DRAFT_ASSEMBLY",
+      "skills": [
+        "skills/draft/draft_assembly.md"
+      ],
+      "model_route": null,
+      "tool_routes": [
+        "ppt_render"
+      ],
+      "inputs": [
+        "draft-assembly-plan.json",
+        "project-asset-catalog.json",
+        "data/resources_library/material/imports/"
+      ],
+      "outputs": [
+        "draft-deck.pptx",
+        "draft-manuscript.md",
+        "draft-visual-plan.json",
+        "draft-source-lineage.json"
+      ],
+      "constraints": [
+        "tool-only execution of DRAFT_ASSEMBLY_PLAN; no semantic decisions"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "DraftReviewAgent": {
+      "stage": "DRAFT_REVIEW",
+      "skills": [
+        "skills/draft/draft_review.md"
+      ],
+      "model_route": "draft_review",
+      "tool_routes": [],
+      "inputs": [
+        "draft-assembly-plan.json",
+        "draft-manuscript.md",
+        "draft-visual-plan.json",
+        "slide-plan.json",
+        "reuse-decision-audit.json"
+      ],
+      "outputs": [
+        "draft-review.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "GapAnalysisAgent": {
+      "stage": "GAP_ANALYSIS",
+      "skills": [
+        "skills/draft/gap_analysis.md"
+      ],
+      "model_route": "gap_analysis",
+      "tool_routes": [],
+      "inputs": [
+        "slide-plan.json",
+        "draft-review.json",
+        "draft-source-lineage.json",
+        "data/source-understanding.json"
+      ],
+      "outputs": [
+        "slide-gap-plan.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "GapResearchAgent": {
+      "stage": "GAP_RESEARCH",
+      "skills": [
+        "skills/research/query_generation.md"
+      ],
+      "model_route": "research_query",
+      "tool_routes": [
+        "web_search",
+        "web_fetch",
+        "local_resource_search"
+      ],
+      "inputs": [
+        "slide-gap-plan.json",
+        "project-source-digest.json"
+      ],
+      "outputs": [
+        "research-query-plan.json",
+        "raw-research-results.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "GapSynthesisAgent": {
+      "stage": "GAP_SYNTHESIS",
+      "skills": [
+        "skills/research/synthesis.md",
+        "skills/research/gap_synthesis.md"
+      ],
+      "model_route": "gap_synthesis",
+      "tool_routes": [],
+      "inputs": [
+        "raw-research-results.json",
+        "slide-gap-plan.json",
+        "research-query-plan.json"
+      ],
+      "outputs": [
+        "per-slide-evidence-pack.json",
+        "citations.json",
+        "research.md",
+        "research-audit.json",
+        "gap-research-results.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "SlideRewriteAgent": {
+      "stage": "SLIDE_REWRITE",
+      "skills": [
+        "skills/slide/slide_rewrite.md"
+      ],
+      "model_route": "slide_rewrite",
+      "tool_routes": [],
+      "inputs": [
+        "slide-plan.json",
+        "draft-assembly-plan.json",
+        "reuse-decision-audit.json",
+        "per-slide-evidence-pack.json",
+        "citations.json"
+      ],
+      "outputs": [
+        "manuscript.md",
+        "slide-composition.json",
+        "visual-plan.json",
+        "model-routed-plan.json"
+      ],
+      "constraints": [
+        "claims may only come from slide-plan; evidence only from per-slide-evidence-pack; resource uses only from reuse-decision-audit"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "StyleUnificationAgent": {
+      "stage": "STYLE_UNIFICATION",
+      "skills": [
+        "skills/style/template_binding.md"
+      ],
+      "model_route": "template_style",
+      "tool_routes": [],
+      "inputs": [
+        "templates/basic/",
+        "draft-assembly-plan.json",
+        "visual-plan.json",
+        "manuscript.md"
+      ],
+      "outputs": [
+        "style-unification-plan.json",
+        "template-binding.json",
+        "style-profile.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "RenderPrecheckAgent": {
+      "stage": "RENDER_PRECHECK",
+      "skills": [
+        "skills/render/render_precheck.md"
+      ],
+      "model_route": "render_precheck",
+      "tool_routes": [],
+      "inputs": [
+        "manuscript.md",
+        "visual-plan.json",
+        "template-binding.json",
+        "citations.json"
+      ],
+      "outputs": [
+        "render-precheck.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "RenderAgent": {
+      "stage": "RENDER",
+      "skills": [
+        "skills/render/render_contract.md"
+      ],
+      "model_route": null,
+      "tool_routes": [
+        "ppt_render"
+      ],
+      "inputs": [
+        "manuscript.md",
+        "visual-plan.json",
+        "style-profile.json",
+        "template-binding.json",
+        "render-precheck.json"
+      ],
+      "outputs": [
+        "deck.pptx",
+        "render-log.md",
+        "structural-validation.md",
+        "render-audit.json"
+      ],
+      "human_gate": false,
+      "review_gate": true
+    },
+    "SystemReviewAgent": {
+      "stage": "SYSTEM_REVIEW",
+      "skills": [
+        "skills/review/structural_review.md",
+        "skills/review/logic_review.md",
+        "skills/review/fact_citation_review.md",
+        "skills/review/visual_review.md",
+        "skills/review/duration_density_review.md",
+        "skills/review/audience_fit_review.md"
+      ],
+      "model_route": "review",
+      "tool_routes": [
+        "validation"
+      ],
+      "inputs": [
+        "deck.pptx",
+        "project-source-digest.json",
+        "draft-assembly-plan.json",
+        "slide-plan.json",
+        "slide-gap-plan.json",
+        "per-slide-evidence-pack.json",
+        "structural-validation.md"
+      ],
+      "outputs": [
+        "deck-review.md",
+        "review-report.json",
+        "system-review-report.json"
+      ],
+      "human_gate": true,
+      "review_gate": true
+    },
+    "RevisionDecisionAgent": {
+      "stage": "REVISION_DECISION",
+      "skills": [
+        "skills/review/revision_decision.md"
+      ],
+      "model_route": "review",
+      "tool_routes": [],
+      "inputs": [
+        "system-review-report.json",
+        "review-report.json",
+        "render-audit.json",
+        "revision-state.json"
+      ],
+      "outputs": [
+        "revision-plan.json"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "ExportAgent": {
+      "stage": "FINAL_ACCEPT",
+      "skills": [
+        "skills/export/final_acceptance.md"
+      ],
+      "model_route": null,
+      "tool_routes": [],
+      "inputs": [
+        "deck.pptx",
+        "review-report.json",
+        "system-review-report.json",
+        "structural-validation.md"
+      ],
+      "outputs": [
+        "final-report.json"
+      ],
+      "human_gate": true,
+      "review_gate": false
+    },
+    "CodexDebugAgent": {
+      "stage": "PIPELINE_DEBUG",
+      "skills": [
+        "skills/debug/codex_debug.md"
+      ],
+      "model_route": "pipeline_debug",
+      "tool_routes": [],
+      "inputs": [
+        "app-state.json",
+        "route-log.jsonl",
+        "structural-validation.md"
+      ],
+      "outputs": [
+        "devops/codex-debug-report.md"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "SourceUnderstandAgent": {
+      "stage": "SOURCE_UNDERSTAND",
+      "skills": [
+        "skills/sources/source_understand.md"
+      ],
+      "model_route": "source_understand",
+      "tool_routes": [],
+      "inputs": [
+        "question-state.json",
+        "project-deck-units.json",
+        "project-doc-units.json",
+        "project-figure-units.json",
+        "project-sheet-units.json",
+        "project-source-digest.json",
+        "project-source-index.json"
+      ],
+      "outputs": [
+        "source-understand.json"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    },
+    "BriefIntakeLightAgent": {
+      "stage": "IDEA_INTAKE_LIGHT",
+      "skills": [
+        "skills/idea/idea_intake_light.md"
+      ],
+      "model_route": "idea_intake_light",
+      "tool_routes": [],
+      "inputs": [
+        "question-state.json"
+      ],
+      "outputs": [
+        "idea-intake-light.json"
+      ],
+      "human_gate": false,
+      "review_gate": false
+    }
+  }
+}

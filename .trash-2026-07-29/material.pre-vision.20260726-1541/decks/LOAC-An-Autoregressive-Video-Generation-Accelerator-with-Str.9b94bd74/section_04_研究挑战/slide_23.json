@@ -1,0 +1,33 @@
+{
+  "页标识": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_23",
+  "所属章节": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.sec.04",
+  "所属deck": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+  "页序号": 23,
+  "源文件": "templates/内部组会科研交流/LOAC An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction.pptx",
+  "页面角色": "content_candidate",
+  "标题": "研究挑战：细粒度稀疏架构不适配",
+  "核心论断": "既有细粒度稀疏硬件架构不适配 AR+Diffusion",
+  "本页讲什么": "延续挑战2，指出以往的细粒度稀疏硬件架构无法适配自回归加扩散（AR+Diffusion）的混合计算范式，专用架构设计与该场景的计算特征错配，是硬件侧待解决的核心问题。",
+  "关键文字": [
+    "之前的细粒度稀疏硬件架构不适合 AR+Diffusion"
+  ],
+  "视觉骨架": [
+    "细粒度稀疏架构示意图",
+    "AR+Diffusion 范式标注"
+  ],
+  "资源ID列表": [
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_23.asset.01",
+    "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74.slide_23.asset.02"
+  ],
+  "适合复用场景": [
+    "稀疏硬件架构适配挑战页",
+    "AR+Diffusion硬件论证页"
+  ],
+  "不适合复用场景": [
+    "纯算法motivation页",
+    "总结收尾页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

@@ -1,0 +1,40 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 24,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏进展总览：面向 LLM 的自研方法",
+  "核心论断": "自研稀疏算子方法正拓展至 LLM 等更多应用",
+  "本页讲什么": "本页在前述双主线框架上落到团队自身工作，标出「Our methods for LLM」，说明自研稀疏算子已从传统场景延伸到大模型，同时覆盖更多应用方向，为后文代表性工作的逐一展开定位坐标。",
+  "关键文字": [
+    "Sparse Computing: From 2022 to 2024",
+    "Sparse operators",
+    "Our methods for LLM",
+    "More Applications"
+  ],
+  "视觉骨架": [
+    "双主线分区示意",
+    "自研工作高亮标记"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24.asset.03",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24.asset.04",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24.asset.05",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_24.asset.06"
+  ],
+  "适合复用场景": [
+    "自研方法在总览中定位页",
+    "面向 LLM 的稀疏工作索引页"
+  ],
+  "不适合复用场景": [
+    "单一方法内部架构页",
+    "纯历史类比叙事页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

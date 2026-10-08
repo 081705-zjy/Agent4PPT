@@ -1,0 +1,11 @@
+=== v17 preprocess logic-synthesize ===
+
+
+=== Phase C: per-pattern enrichment (2 workers) ===
+  2 pattern files to enrich
+  [1/2] OK blank_lab_report_template_skeleton (35s)
+  [2/2] OK long_deck_framework_plus_works_panorama_with_agenda_navigation (62s)
+
+  enrichment done in 62s: ok=2 skipped=0 fail=0
+
+  INDEX updated: /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/logic/INDEX.json

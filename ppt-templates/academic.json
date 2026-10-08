@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "template_id": "academic",
+  "name": "Academic Research",
+  "description": "Research seminar style with high contrast, conservative colors, and citation-friendly layouts.",
+  "palette": {
+    "primary": "#243B53",
+    "secondary": "#526D82",
+    "accent": "#9B6A2F",
+    "neutral": "#F8FAFC",
+    "text": "#111827"
+  },
+  "typography": {
+    "heading": "Aptos Display",
+    "body": "Aptos",
+    "heading_size": 30,
+    "body_size": 17
+  },
+  "layouts": {
+    "title-image": "Topic title with research framing and a subdued concept image.",
+    "title-and-body": "Evidence-first layout with compact body copy and clear source space.",
+    "closing": "Conclusion, limitations, and next research questions."
+  },
+  "render": {
+    "accent_bar_height": 0.18,
+    "picture_x": 6.55,
+    "picture_y": 1.35,
+    "picture_w": 2.85,
+    "picture_h": 1.65
+  }
+}

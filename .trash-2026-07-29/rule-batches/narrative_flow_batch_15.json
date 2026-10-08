@@ -1,0 +1,396 @@
+{
+  "batch_index": 15,
+  "rules": [
+    {
+      "id": "main_thesis_formula_repeats_across_chapters",
+      "category": "callback",
+      "applicable_when": "any research/review deck whose core thesis can be expressed as a formula or one-line equation",
+      "title": "主论点公式需在多章节重复出现",
+      "description": "deck 的主论点公式(核心等式)应在 motivation 后至少在 framework、method、trend 三类章节被显式复现,让听众每换一章就重新看到主线锚点。",
+      "what_to_check": [
+        "从 deck.论述总结 / cover 标题 / framework 章首页抽取主公式(含 '=' 或 '×' 的中心等式)",
+        "遍历 slides_in_order,在每个 section_role 分组内查找 slide.关键文字 / 核心论断 是否含该公式或其变体(接受因子扩展如 ×集群)",
+        "统计出现的不同 section_role 数,应 ≥3"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "'AI应用算力=芯片算力×稀疏度' 在 framework(p14) 出现,拆解(p15),TB-STC(p20)、DA-SpMM(p28)、FlightLLM(p36) 各以变体复现,discussion(p47) 扩展 ×集群 — 覆盖 4 类章节"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "多章节技术报告听众换章后注意力重置,主论点若不复现会被视为独立小工作,主线断裂",
+      "fix_hint": "在每章 method 首页或章末结论条上把主公式再打一次,并高亮本章推进的因子",
+      "exceptions": [
+        "极短 deck(<15 页)无需跨章复现",
+        "非论证型 deck(仅数据展示)不适用"
+      ]
+    },
+    {
+      "id": "cover_speaker_identity_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with a distinct cover slide and a closing/thanks slide",
+      "title": "封面讲者身份需在结束页回扣",
+      "description": "cover 上的报告人姓名/单位/邮箱应在 closing 页(致谢/Q&A)verbatim 重现,形成首尾闭环并让听众 Q&A 时能定位联系方式。",
+      "what_to_check": [
+        "从 slide[页序号=1].关键文字 抽取报告人姓名 / 单位 / 邮箱 / 日期",
+        "在 section_role='closing' 的 slide.关键文字 中查找是否含以上任一 verbatim 匹配",
+        "命中 ≥2 项即算合规"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "cover p1: 戴国浩 / 2024.11.11 / daiguohao@sjtu.edu.cn;closing p79 完整复现姓名+日期+邮箱+单位"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾闭环是标准礼仪,也是 Q&A 后听众抓联系方式的唯一入口,缺失让报告缺乏落点",
+      "fix_hint": "在 closing 页左侧独立 Thanks 区块复现讲者姓名/邮箱/日期,允许配 logo 墙",
+      "exceptions": [
+        "多讲者联合汇报可只列牵头讲者",
+        "内部 workshop 分享可省略邮箱"
+      ]
+    },
+    {
+      "id": "framework_step_flow_reused_in_methods",
+      "category": "callback",
+      "applicable_when": "decks whose framework section defines a numbered N-step decomposition and follows with ≥2 method sections",
+      "title": "框架章的分步流程需在方法章逐一复用",
+      "description": "framework 章若给出 ①②③ 分步流程或因子拆解,后续各条 method 路线应各自套用该编号骨架展开,让平行方法看起来是同一框架下的三条线,而非三个不相干工作。",
+      "what_to_check": [
+        "在 section_role='framework' 的 slide.视觉骨架 / 关键文字 中识别 ①②③ 编号 或 '三步/三因子' 关键词",
+        "对每条 method 章的头 2 张 slide,查看 slide.视觉骨架 / 核心论断 是否也用 ①②③ 或对应因子术语",
+        "命中方法条数 ≥ method 章总数 × 0.66"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "framework p15 定义 ①稀疏度②筛选③编码;TB-STC p20 显式 ①稀疏度②精度③硬件利用;DA-SpMM p28 ①理论算力②稀疏③有效利用 — 3/3 method 章套用"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "并列方法若无共同骨架,听众要为每条方法建立独立心智模型,记忆负担加倍",
+      "fix_hint": "在每条方法章的首个方法页顶部,复用 framework 章 ①②③ 蓝条并高亮本方法推进的那一步",
+      "exceptions": [
+        "综述型 deck 无自研框架",
+        "只有单条 method 的 deck 无需复用"
+      ]
+    },
+    {
+      "id": "method_chapter_end_reveals_effect_number",
+      "category": "suspense_reveal",
+      "applicable_when": "any method section with ≥5 pages",
+      "title": "方法章末页需揭示效果数字",
+      "description": "method 章前段做已有工作、挑战、方法设计的 build-up,最有说服力的 speedup / 精度 / 能效数字应放在章末页而非章首,构成 setup→reveal 弧线。",
+      "what_to_check": [
+        "对每个 section_role='method' 章节,取页码范围末页 slide",
+        "查看该 slide.核心论断 / 关键文字 是否含具体数字(× / % / tokens/s / GFLOPS 等)",
+        "章末含关键数字 = 命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "TB-STC 末页 p24 推进能耗-延迟前沿;DA-SpMM 末页 p31 平均加速 3.9 倍;FlightLLM 末页 p43 U280 达 V100 的 1.2× — 3/3 章末均有数字揭示"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章首若直给结论数字,后续实现细节沦为验证脚注,削弱听觉高潮;末页揭示利用了'峰终效应'",
+      "fix_hint": "把最炸的加速比/精度提升移到 method 章倒数第 1-2 页,章首只保留工作定位与挑战",
+      "exceptions": [
+        "章首标题页(工作 introduction slide)可预告数字",
+        "反例研究章(negative result)不适用"
+      ]
+    },
+    {
+      "id": "motivation_gap_setup_method_solution_reveal",
+      "category": "suspense_reveal",
+      "applicable_when": "any deck with distinct motivation + method sections",
+      "title": "motivation 章的量化缺口需在 method 章有对应缓解",
+      "description": "motivation 章以具体缺口数字(供需失衡、精度损失、利用率过低)提出问题后,method 章必须给出至少一次对应量级的缓解数字,让 setup 有 payoff。",
+      "what_to_check": [
+        "在 section_role='motivation' 章中提取带 '缺口 / 差距 / 损失 / 利用率' 关键词的量化数字",
+        "在 section_role='method' 章 slide.关键文字 中查找对应维度的正向数字(加速 / 提升 / 恢复)",
+        "至少 1 个缺口有 method 侧回应即算命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "motivation p11 '缺口>6x/年' + p26 'cuSPARSE 损失 85%' + p34 '利用率<20%',method 章 p31 加速 3.9×、p42 利用率 1.6×、p43 U280 达 V100 的 1.2×,3 个缺口各有回应"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "motivation 抛的数字如 method 不回应,听众会觉得'问题很大但解决很虚',削弱工作价值感",
+      "fix_hint": "遍历 motivation 章每个红色/加粗数字,在对应 method 章确保有一张 slide 明确回应该缺口",
+      "exceptions": [
+        "综述型 deck 只讨论领域缺口不需自证",
+        "外部约束(如政策制裁)只作背景不需 method 缓解"
+      ]
+    },
+    {
+      "id": "contents_divider_between_major_chapters",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥30 pages with ≥4 top-level chapters",
+      "title": "大章之间需用高亮当前章的 Contents 分隔页",
+      "description": "每次跨大章切换应插入 Contents 目录页,把全 deck 板块列出并高亮当前进入的板块,给听众'我们走到哪了'的导航锚。",
+      "what_to_check": [
+        "遍历 slides_in_order,找 slide.标题 含 'Contents / 目录' 或 slide.核心论断 含 '进入第 N 部分' 的页",
+        "统计这些页的位置是否覆盖 ≥60% 的大章切换点(即 section_index 从 N→N+1 且 section_role 变化处附近)",
+        "每个 divider 需在关键文字中高亮当前项"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "p2/p3(cover→motivation)、p13(→framework)、p16(→method)、p44(→discussion) 4 张 Contents 分隔页,均以蓝色竖条高亮当前项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck 听众很容易迷失章节位置,Contents 分隔页兼作导航与预告,是长报告刚需",
+      "fix_hint": "每跨大章插一张统一模板 Contents 页,4 项目录列表加当前项蓝色竖条高亮",
+      "exceptions": [
+        "短 deck(<20 页)可省",
+        "workshop 快闪汇报可只在开头列一次目录"
+      ]
+    },
+    {
+      "id": "method_chapter_opens_with_prior_work_baseline",
+      "category": "chapter_transitions",
+      "applicable_when": "any research method section presenting a novel approach",
+      "title": "方法章开篇需先梳理已有工作/baseline",
+      "description": "每条 method 章第 1-2 页应先列已有工作或工业界 baseline(cuSPARSE / NVIDIA 2:4 等),再引出自己工作,避免上来就讲自家方法让听众失去参照系。",
+      "what_to_check": [
+        "对每个 section_role='method' 章节,查看首 1-2 张 slide.标题 / 核心论断 是否含 '已有工作 / baseline / NVIDIA / 现有方案' 关键词",
+        "含则算命中"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "TB-STC 首页 p17 '稀疏化已有工作';DA-SpMM 首页 p25 'NVIDIA cuSPARSE 稀疏算子库';FlightLLM 首页 p32 'NVIDIA 2:4 Sparse Tensor Core' — 3/3 章开篇均先列 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众若无 baseline 心智锚,方法的贡献差异无从判断,自研工作沦为孤立描述",
+      "fix_hint": "每 method 章新增 1 张页面,顶部列出该子领域现有方案清单或行业标杆",
+      "exceptions": [
+        "开创性方向无 baseline 可列",
+        "章节篇幅极短(<3 页)可合并 baseline 到挑战页"
+      ]
+    },
+    {
+      "id": "chapter_transition_via_role_shift_no_naked_pivot",
+      "category": "chapter_transitions",
+      "applicable_when": "any deck with ≥8 chapters and mixed section_roles",
+      "title": "章末页与下章首页之间不得裸切",
+      "description": "上一章末页与下一章首页之间必须有过渡(Contents 分隔页 / 章末 preview 句 / 首页 recap 句)之一,不能核心论断话题完全断裂。",
+      "what_to_check": [
+        "遍历 sections_outline,对相邻两 section 取上一章末页与下一章首页",
+        "检查两页之间是否插入 Contents 目录页 或 末页含下章 preview 或 首页含上章 recap",
+        "任一命中即算无裸切"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "motivation p12→framework p13 插 Contents;framework p15→method p16 插 Contents;case_study p55→discussion p56 通过'未来趋势 2'标题联动分化图,自然承接"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "裸切让听众瞬间失去因果链,产生'这两页为什么在一起'的困惑",
+      "fix_hint": "在两章交界处插一张 Contents 页,或在末页尾部加一句'接下来我们来看 X'",
+      "exceptions": [
+        "同 section_role 相邻章可弱化过渡",
+        "章末已含反问句自然引出下章可省 Contents"
+      ]
+    },
+    {
+      "id": "main_anchor_present_across_60pct_slides",
+      "category": "repetition_emphasis",
+      "applicable_when": "any thesis-driven deck with a single main anchor concept",
+      "title": "主 anchor 术语应在过半 slide 中出现",
+      "description": "deck 的主 anchor 词(核心概念名词,通常等于 cover 标题主词)应在 ≥60% 的内容 slide 上出现,让每张页面都提醒'我们在讲这个'。",
+      "what_to_check": [
+        "从 slide[页序号=1].关键文字 抽取主 anchor 词(通常是 2-4 字名词短语)",
+        "遍历所有 section_role != 'opening/closing' 的 slide,统计 slide.关键文字 / 核心论断 / 本页讲什么 是否含该词",
+        "命中数 / 内容 slide 总数 ≥ 0.6"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "主 anchor '稀疏' 在 79 页中约 55+ 页 slide.核心论断/关键文字/标题出现(TB-STC/DA-SpMM/FlightLLM 三章几乎每页,motivation 后半、端侧章节均含'稀疏'),覆盖率 >70%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主题词若不高频复现,听众几张 slide 后忘掉主线,产生'这个 deck 到底想说什么'的漂移",
+      "fix_hint": "对未含主 anchor 的 slide,在标题或核心论断句加入该 anchor 词,或删除偏题页",
+      "exceptions": [
+        "背景铺垫章可允许主 anchor 缺席前几页",
+        "跨领域综述 deck 主 anchor 可为多个"
+      ]
+    },
+    {
+      "id": "method_effect_backed_by_multi_baseline_comparison",
+      "category": "comparison_evidence",
+      "applicable_when": "any method section claiming quantitative improvement",
+      "title": "方法效果需配多 baseline 的定量对比",
+      "description": "method 章的效果 slide 必须给出至少一次与 ≥2 个 baseline 对比的表格 / 柱图,而非只列自己数字,避免'自说自话'。",
+      "what_to_check": [
+        "对每个 section_role='method' 章节,查看含 '效果 / 成果 / 加速 / 提升' 关键词的 slide",
+        "检查 slide.视觉骨架 / 关键文字 是否含 'Dense/US/TS/RS-V/TBS 五方案' '×N baseline' '柱状对比' 之类多 baseline 表述",
+        "命中即合规"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "TB-STC p23: Dense/US/TS/RS-V/TBS 五方案×三模型准确率表;DA-SpMM p31: 相较 cuSPARSE 及其他静态方案加速 3.9×;FlightLLM p43: U280 vs V100、V80 vs 3090 两组对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "单列自家数字听众无从判断相对价值,多 baseline 对比是学术/工业受众都习惯的证据密度基线",
+      "fix_hint": "在方法效果页新增一张对比表,列出至少 2 个业界 baseline 与自身方案在同一指标下的数字",
+      "exceptions": [
+        "开创性任务无 baseline 可比时,以消融实验替代",
+        "端侧新硬件对比整机场景可用架构类别汇总代替单点 baseline"
+      ]
+    },
+    {
+      "id": "quantitative_speedup_claim_paired_with_visual_evidence",
+      "category": "comparison_evidence",
+      "applicable_when": "any slide making a quantitative speedup/efficiency claim (×N / N%)",
+      "title": "定量加速主张需配同页可视化证据",
+      "description": "凡 slide.核心论断 含 '× 倍加速 / N% 提升' 类具体数字的页,slide.视觉骨架 必须同时含柱图 / 表格 / 对比图之一,不能只有裸文字。",
+      "what_to_check": [
+        "遍历所有 slide,匹配 slide.核心论断 或 关键文字 含 '×[0-9]+' 或 '[0-9]+%' 或 'N 倍' 模式",
+        "对命中的 slide,查看 slide.视觉骨架 是否含 '柱状 / 表格 / 对比 / 曲线 / 散点' 关键词",
+        "无视觉证据即违反"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "p23 精度表(0.85%~1.03%);p31 特征→提取→选择流程+3.9×;p42 空闲PE前后对比+1.6×;p43 差距/加速/超越三段柱图;p54 Token/s柱状+37%/300%;p55 三组合柱图+97.6%"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "数字若无视觉,听众记不住量级也不信;可视化把抽象数字转为可比较空间关系",
+      "fix_hint": "对每张含数字的效果页,补一张柱图或对比表,把 baseline 与 our 放在同一坐标下",
+      "exceptions": [
+        "综述性总结页可只列汇总数字",
+        "标题过渡页无需自证"
+      ]
+    },
+    {
+      "id": "abbreviation_defined_at_first_use",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck introducing custom acronyms / method names",
+      "title": "自造缩写/方法名首次使用时需给出全称",
+      "description": "TB-STC / DA-SpMM / FlightLLM / EDP 等自造缩写或专业术语,首次出现的 slide 必须在同页给出全称展开,不能后延。",
+      "what_to_check": [
+        "扫描所有 slide,找 slide.标题 / 关键文字 中含 3-8 字全大写或大写-数字混合的自造缩写",
+        "对每个缩写,定位其首次出现的 slide,检查同页 slide.关键文字 是否含全称展开(带 ':' 或 '（xxx）' 分隔)",
+        "首现即定义 = 合规"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "TB-STC 首现 p19 '(Transposable Block-wise N:M Structured Sparse Tensor Core)';FlightLLM 首现 p35 '(Efficient LLM Inference with a Complete Mapping Flow on FPGAs)';EDP 首现 p24 '(Energy-Delay Product 能耗延迟积)';DAI 首现 p1 '(Design Automation Innovation & Domain-specific Artificial Intelligence)'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "陌生缩写不定义就抛出会造成认知阻塞,后续页面听众都在猜含义,信息流断裂",
+      "fix_hint": "遍历自造缩写清单,在其首次出现的 slide.关键文字 中补全称,用括号或冒号分隔",
+      "exceptions": [
+        "通用领域缩写(如 LLM/GPU/CNN)可省全称",
+        "在同一 session 前置报告已定义的缩写可复用"
+      ]
+    },
+    {
+      "id": "agenda_chapter_names_semantically_match_actual_sections",
+      "category": "structural_promise",
+      "applicable_when": "any deck with an explicit Contents/agenda slide listing top-level chapters",
+      "title": "目录承诺的板块名需与实际章节语义对应",
+      "description": "agenda(Contents 页)列出的板块名(通常 4-5 项四字标题),应与 deck.章节列表 / sections_outline.section_role 序列在语义上一一对应,不能承诺后弃兑。",
+      "what_to_check": [
+        "从含 'Contents' 的 slide.关键文字 抽取板块列表(如 '研究背景/研究思路/研究成果/研究计划')",
+        "对每个板块名,在 sections_outline 中查找对应 section_role 或 标题(允许语义映射:'研究背景'→motivation,'研究思路'→framework,'研究成果'→method,'研究计划'→discussion)",
+        "命中率 ≥ 承诺项 × 0.8"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "p2/p13/p16/p44 Contents 承诺 4 板块 '研究背景/研究思路/研究成果/未来趋势',实际映射 section 2(motivation)、3(framework)、4-6(method 三条路线)、7(discussion) — 4/4 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是给听众的心智目录,若承诺 4 项实际只讲 2 项或另加 2 项,信任感崩塌",
+      "fix_hint": "对 Contents 页承诺但实际未出现的板块,或补章节,或删该承诺项",
+      "exceptions": [
+        "无 agenda 页的 deck 不适用",
+        "允许一级板块下再拆多个子章节(如'研究成果'=3 条 method 路线)"
+      ]
+    },
+    {
+      "id": "method_section_pages_bounded_5_to_15",
+      "category": "pacing",
+      "applicable_when": "any deck with dedicated method sections each covering one distinct work/route",
+      "title": "单条方法章页数需落在 5-15 页区间",
+      "description": "每条独立方法路线的章节页数应在 5-15 页之间:少于 5 页难以完成'baseline→挑战→方法→效果'完整弧线,多于 15 页则叙事失控。",
+      "what_to_check": [
+        "遍历 sections_outline 中 section_role='method' 的每章,取 页码范围[1] - 页码范围[0] + 1",
+        "检查是否落在 [5, 15] 区间",
+        "命中章节 / method 章总数 ≥ 0.66"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "evidence": "TB-STC 章 [16,24]=9 页、DA-SpMM 章 [25,31]=7 页、FlightLLM 章 [32,43]=12 页 — 3/3 落在区间内"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "方法弧线需要足够页面 build-up 又不能拖沓,5-15 页是学术/工业受众实测舒适区间",
+      "fix_hint": "章节 <5 页拆细'挑战/方法/效果'各占一页;>15 页拆分为两个子章或合并冗余动画帧",
+      "exceptions": [
+        "综述型 deck 每方法只给概览可 <5 页",
+        "教学型 deck 需详细推导可 >15 页"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 单 deck,rules by category: callback=3, suspense_reveal=2, chapter_transitions=3, repetition_emphasis=1, comparison_evidence=2, anchor_trajectory=1, structural_promise=1, pacing=1. 该 deck 是 79 页课题组全局汇报,主线'AI应用算力=芯片算力×稀疏度'贯穿始终,多条方法路线并列展开且共享统一 framework 骨架,是 narrative_flow 教科书级样本;所有抽出的 rules 都在此 deck 命中率 1.0,但 hit_carriers 只有单 deck 支撑,后续 batch 若出现反例应下调 enforcement_level.",
+  "coverage": {
+    "rules_count": 14,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 3,
+      "repetition_emphasis": 1,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

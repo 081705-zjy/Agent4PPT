@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_06"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.03"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 6
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "主流视频生成模型的结构"
+核心论断: "主流 VGM 普遍采用统一的扩散生成结构"
+本页讲什么: "从 Sora 现象转入技术拆解，说明当前主流视频生成模型的整体结构组成，用示意图呈现其模块与数据流，让读者理解 VGM 的计算骨架，为后文与 LLM 对比及推理开销分析打基础。"
+关键文字: "[The structure of VGMs, At present, most of the mainstream video generation]"
+视觉骨架: "[VGM 结构模块框图, 数据流箭头示意]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_06.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_06.asset.02, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_06.asset.03, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_06.asset.04, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_06.asset.05]"
+适合复用场景: "[视频生成模型结构总览页, VGM 架构背景介绍页]"
+不适合复用场景: "[能效数字对比页, benchmark 结果表页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "The structure of VGMs"}
+  - {"位置": "下方主体", "内容": "VGM 结构模块框图与数据流示意"}
+alternate_claims:
+layout_tag: "block_diagram"
+---
+# slide 6: 主流视频生成模型的结构
+
+**核心论断**: 主流 VGM 普遍采用统一的扩散生成结构
+
+## 本页讲什么
+从 Sora 现象转入技术拆解，说明当前主流视频生成模型的整体结构组成，用示意图呈现其模块与数据流，让读者理解 VGM 的计算骨架，为后文与 LLM 对比及推理开销分析打基础。
+
+## 关键文字片段
+- The structure of VGMs
+- At present, most of the mainstream video generation
+
+## 视觉骨架
+- VGM 结构模块框图
+- 数据流箭头示意
+
+## 可复用到
+- 视频生成模型结构总览页
+- VGM 架构背景介绍页
+
+## 不适合复用的场景
+- 能效数字对比页
+- benchmark 结果表页

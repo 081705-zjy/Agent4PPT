@@ -1,0 +1,979 @@
+{
+  "batch_index": 1,
+  "patterns": [
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Challenge/Insight→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享",
+          "AI 加速/检索类论文分享",
+          "软硬件协同加速论文汇报"
+        ],
+        "deck_size_range": [
+          20,
+          45
+        ],
+        "audience_levels": [
+          "计算机体系结构/系统方向学术同行",
+          "研究组内同行",
+          "检索/RAG 方向学术同行",
+          "AI 加速与硬件方向学术同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            4,
+            16
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            6,
+            17
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            1,
+            8
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "背景铺垫",
+        "洞察/挑战",
+        "方法方案",
+        "实验评估",
+        "总结致谢"
+      ],
+      "applicable_summary": "单篇论文分享的 canonical 骨架: 20-45 页, cover + 纵向编号 agenda(4-5 项)开场, 再按 Background→Insight/Challenge→Solution→Evaluation→Summary 线性推进, 每章切换前插一张『竖排编号目录 + 当前项蓝点高亮 + 其余灰化』的 section_divider 作 mini-agenda 导航, 末尾 Thanks/署名致谢页收束; motivation 常含 background + insight 两段, method 常拆 2-3 项技术并列。允许小变体: 章节数 4 段 vs 5 段(是否单列 Summary/Future Work), closing 页可合并方法示意图 + 联系/开源链接",
+      "anti_patterns": [
+        "长篇 tutorial/多工作平行陈列(用 long_deck_framework_plus_works_panorama_with_agenda_navigation, 有 framework_intro 与多方法章)",
+        "空白模板骨架(用 blank_lab_report_template_skeleton, 无实质内容)",
+        "工业产品 demo/投资路演(叙事节奏不符, 缺 background/insight 深铺垫)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+          "deck_title": "FlightVGM: 视频生成模型 FPGA 高效推理",
+          "deck_topic_tags": [
+            "视频生成",
+            "FPGA",
+            "推理加速",
+            "稀疏化",
+            "混合精度",
+            "量化",
+            "DSP58",
+            "硬件加速"
+          ],
+          "match_evidence": "45 页 paper_share deck: 1 cover + 1 agenda + 7p background(AI/VGM) + 7p insight(压缩→稀疏+混合精度) + 17p method(三技术并列) + 8p experiment(setup→精度→资源→加速→SOTA→demo) + 4p summary/future/thanks, 5 张 section_divider 均为『5 项编号目录 + 当前项蓝点高亮』",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "FlightVGM：FPGA 高效视频生成推理",
+              "slide_claim": "FlightVGM 用在线稀疏化与混合精度实现 FPGA 高效视频生成推理",
+              "slide_key_text": [
+                "FlightVGM: Efficient Video Generation Model Inference",
+                "Online Sparsification and Hybrid Precision on FPGA",
+                "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+                "Co-first author, Corresponding author",
+                "yu-wang@tsinghua.edu.cn, daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中大标题+副标题",
+                "多行作者署名列表",
+                "机构与邮箱脚注"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "目录：五章论证路径预告",
+              "slide_claim": "全篇按背景→洞察→方案→实验→总结五章递进展开",
+              "slide_key_text": [
+                "Contents",
+                "1 Background: AI and Video Generation",
+                "2 Insight: Video Compression and Generation",
+                "3 Solution: Sparsification and Quantization",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框容器",
+                "纵向 5 编号圆点列表",
+                "居中标题"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位 Background 章节",
+              "slide_claim": "全文分五章推进,当前进入 Background: AI 与视频生成",
+              "slide_key_text": [
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点导航",
+                "当前项高亮蓝点",
+                "外框矩形边界"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入 Insight 章节",
+              "slide_claim": "全 deck 分五部分,现进入 Insight(视频压缩与生成)章",
+              "slide_key_text": [
+                "Contents",
+                "Insight: Video Compression and Generation",
+                "Background: AI and Video Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号目录",
+                "当前项高亮圆点",
+                "五段章节标题"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页:高亮 Solution 稀疏化与量化章节",
+              "slide_claim": "本章进入 Solution:稀疏化与量化,承接 Background 与 Insight",
+              "slide_key_text": [
+                "Contents",
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "五章节纵向导航列表",
+                "当前章节高亮圆点标记",
+                "蓝色边框内容区"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录: 定位到第 4 章 Experiment",
+              "slide_claim": "进入实验章, 验证 FlightVGM 的精度与加速能效",
+              "slide_key_text": [
+                "Contents",
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框内五项编号目录",
+                "当前项蓝色实心圆高亮",
+                "其余项灰化"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入 Summary and Future Work 章节",
+              "slide_claim": "五段式目录推进到第 5 章 Summary and Future Work",
+              "slide_key_text": [
+                "Contents",
+                "Background: AI and Video Generation",
+                "Insight: Video Compression and Generation",
+                "Solution: Sparsification and Quantization",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框大标题卡",
+                "5 项编号圆点竖排目录",
+                "当前项蓝色高亮圆点"
+              ]
+            },
+            {
+              "slide_index": 45,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "Thanks for your listening!致谢页",
+              "slide_claim": "致谢并列出全体作者与单位署名",
+              "slide_key_text": [
+                "Thanks for your listening!",
+                "Jun Liu, Shulin Zeng, Li Ding, Widyadewi Soedarmadji",
+                "Zehao Wang, Jinhao Li, Jintao Li, Yadong Dai",
+                "Kairui Wen, Shan He, Yaqi Sun",
+                "Yu Wang, Guohao Dai (通讯)"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字致谢标题",
+                "多行作者署名列表",
+                "通讯作者红色高亮"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与开场目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_AI与视频生成背景",
+              "slide_range": [
+                3,
+                9
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_视频压缩带来的洞见",
+              "slide_range": [
+                10,
+                16
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_在线稀疏化与混合精度量化",
+              "slide_range": [
+                17,
+                33
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_实验与加速能效结果",
+              "slide_range": [
+                34,
+                41
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_06_总结与展望致谢",
+              "slide_range": [
+                42,
+                45
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "match_evidence": "39 页 HPCA paper_share: 1 cover + 1 agenda + 8p background(AI/sparse compute) + 4p insight(训练需转置) + 14p method(TBS+codec+调度三项) + 7p experiment + 3p summary/future + 1p thanks, 5 张 section_divider 均为『5 项编号目录 + 当前项蓝点高亮』",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "TB-STC: Transposable Block-wise N:M 稀疏张量核心",
+              "slide_claim": "本文提出 TB-STC——可转置的块级 N:M 结构化稀疏张量核心",
+              "slide_key_text": [
+                "TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core",
+                "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+                "*Co-first author, +Corresponding author",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中双行大标题",
+                "多机构作者名单",
+                "机构与邮箱脚注块"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "目录:背景→洞察→方案→实验→总结",
+              "slide_claim": "全文按背景、洞察、方案、实验、总结五段主线展开",
+              "slide_key_text": [
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框容器",
+                "编号圆点竖列",
+                "五条目录条目"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents: 5-part agenda, Background highlighted",
+              "slide_claim": "Deck unfolds in 5 parts, starting from the Background section",
+              "slide_key_text": [
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "纵向 5 项 agenda 列表",
+                "编号圆点导航",
+                "当前项蓝色高亮"
+              ]
+            },
+            {
+              "slide_index": 11,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位到 Insight 章节",
+              "slide_claim": "本页进入第 2 章「训练中的转置洞察」",
+              "slide_key_text": [
+                "Contents",
+                "Insight: Transpose Information from Training",
+                "Background: AI and Sparse Computing",
+                "Solution: Transposable Block-wise Sparsity",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "纵向 5 项编号目录列表",
+                "蓝色高亮当前章圆点",
+                "灰显未激活章节"
+              ]
+            },
+            {
+              "slide_index": 15,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入第3章 Solution",
+              "slide_claim": "目录切换到第3章「可转置块状稀疏」解决方案",
+              "slide_key_text": [
+                "Contents",
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号目录列表",
+                "当前章高亮圆点标记"
+              ]
+            },
+            {
+              "slide_index": 29,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入第 4 章 Experiment",
+              "slide_claim": "全篇进入第 4 部分实验验证章节",
+              "slide_key_text": [
+                "Contents",
+                "Background: AI and Sparse Computing",
+                "Insight: Transpose Information from Training",
+                "Solution: Transposable Block-wise Sparsity",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框内 5 项编号列表",
+                "当前项蓝色圆点高亮",
+                "灰显未激活条目"
+              ]
+            },
+            {
+              "slide_index": 36,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页：定位「总结与未来工作」章",
+              "slide_claim": "五段式目录高亮第 5 章，正式进入总结收尾",
+              "slide_key_text": [
+                "Contents",
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点目录",
+                "当前章高亮圆点",
+                "五段章节列表"
+              ]
+            },
+            {
+              "slide_index": 39,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "致谢页:Thanks for your listening",
+              "slide_claim": "以致谢收束全篇并完整列出作者与三家单位署名",
+              "slide_key_text": [
+                "Thanks for your listening!",
+                "Jun Liu*1,3, Shulin Zeng*2,3, Junbo Zhao2 …",
+                "Xuefei Ning2, Chen Zhang1, Yu Wang2, Guohao Dai†1,3",
+                "1Shanghai Jiao Tong University, 2Tsinghua University, 3Infinigence-AI",
+                "*Co-first author, †Corresponding author"
+              ],
+              "slide_visual_skeleton": [
+                "居中致谢大标题",
+                "多行作者署名列表",
+                "机构归属与作者角标图例",
+                "通讯作者紫色高亮"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_AI与稀疏计算背景",
+              "slide_range": [
+                3,
+                10
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_训练需转置的核心洞察",
+              "slide_range": [
+                11,
+                14
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_可转置块状稀疏与编解码架构",
+              "slide_range": [
+                15,
+                28
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_精度性能与消融实验",
+              "slide_range": [
+                29,
+                35
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "section_06_总结与未来工作",
+              "slide_range": [
+                36,
+                38
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_07_致谢",
+              "slide_range": [
+                39,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74",
+          "deck_title": "LOAC 自回归视频生成加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "自回归",
+            "稀疏注意力",
+            "KV压缩",
+            "硬件加速",
+            "扩散模型",
+            "DiT"
+          ],
+          "match_evidence": "34 页 组会 paper_share: 1 cover + 1 agenda(4项) + 16p background(视频生成范式演进串讲) + 6p problem(三大挑战) + 8p method(LOAC 三项设计) + 1p experiment 分隔页 + 1p thanks; 章节切换用『4 项编号列表+左侧竖条+当前项加深高亮』导航, 最后含独立『实验』大字分隔页",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "LOAC: 条纹稀疏注意力与 KV 压缩的自回归视频生成加速器",
+              "slide_claim": "LOAC 提出条纹稀疏注意力与 KV 压缩以加速自回归视频生成",
+              "slide_key_text": [
+                "LOAC: An Autoregressive Video Generation Accelerator with Stripe-Informed Sparse Attention and KV Compaction",
+                "丁立",
+                "DAC 投稿分享",
+                "2025 年 11 月 8 日",
+                "Li Ding @ Shanghai Jiao Tong University"
+              ],
+              "slide_visual_skeleton": [
+                "居中大字论文标题",
+                "细横分隔线",
+                "作者/身份/日期文字块",
+                "底部署名页脚"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "目录: 研究背景 / 研究挑战 / … 四项议程",
+              "slide_claim": "全 deck 分四个编号板块依次展开,由研究背景与研究挑战领起",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3",
+                "4"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色矩形边框",
+                "四行圆形编号 ①-④",
+                "左侧深蓝强调竖条",
+                "编号+条目对齐列表"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：四部分研究框架",
+              "slide_claim": "全篇按研究背景/挑战/内容/总结四部分递进展开",
+              "slide_key_text": [
+                "研究背景",
+                "研究挑战",
+                "研究内容",
+                "研究总结"
+              ],
+              "slide_visual_skeleton": [
+                "4 项编号圆点列表",
+                "左侧进度竖条",
+                "外框边框"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "章节导航：进入第二部分「研究挑战」",
+              "slide_claim": "全篇分四部分，现进入第2部分——研究挑战",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3",
+                "4"
+              ],
+              "slide_visual_skeleton": [
+                "4 项带圈数字纵向导航列表",
+                "左侧蓝色进度竖条",
+                "外框边界线"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "四段式目录导航（定位到研究内容）",
+              "slide_claim": "全篇按四大板块推进，此处切入第三板块研究内容",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3 研究内容",
+                "4 实验结果"
+              ],
+              "slide_visual_skeleton": [
+                "4 项编号圆圈+方框列表",
+                "左侧蓝色进度竖条",
+                "当前项加深高亮"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "四段式目录导航（定位到实验结果）",
+              "slide_claim": "沿四大板块继续推进，此处切入第四板块实验结果",
+              "slide_key_text": [
+                "1 研究背景",
+                "2 研究挑战",
+                "3 研究内容",
+                "4 实验结果"
+              ],
+              "slide_visual_skeleton": [
+                "4 项编号圆圈+方框列表",
+                "左侧蓝色进度竖条",
+                "当前项加深高亮"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_chapter_label",
+              "slide_title": "章节分隔页: 实验",
+              "slide_claim": "论述转入实验验证阶段, 本页仅作章节过渡不含数据",
+              "slide_key_text": [
+                "实验",
+                "Li Ding @ Shanghai Jiao Tong University (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "左上角大字章节标题",
+                "标题下粗蓝色横分隔线",
+                "大面积空白主体",
+                "底部机构/页码页脚"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "感谢聆听（汇报收尾致谢页）",
+              "slide_claim": "以「感谢聆听」+ 署名 + 日期礼节性收束整场技术汇报",
+              "slide_key_text": [
+                "感谢聆听！",
+                "丁立",
+                "2025 年 11 月 8 日",
+                "Li Ding @ Shanghai Jiao Tong University"
+              ],
+              "slide_visual_skeleton": [
+                "左上主标题",
+                "居中淡粉水平分隔线",
+                "中部署名文字",
+                "底部日期与页脚落款"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与开场目录",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_研究背景与视频生成演进",
+              "slide_range": [
+                3,
+                18
+              ]
+            },
+            {
+              "chapter_role": "problem",
+              "section_id": "section_03_三大研究挑战",
+              "slide_range": [
+                19,
+                24
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_LOAC核心设计",
+              "slide_range": [
+                25,
+                32
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_实验验证",
+              "slide_range": [
+                33,
+                33
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_06_致谢",
+              "slide_range": [
+                34,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640",
+          "deck_title": "SG-Filter:相似文本检索的层次摘要语义索引",
+          "deck_topic_tags": [
+            "文本检索",
+            "相似检索",
+            "摘要索引",
+            "语义索引",
+            "自适应过滤",
+            "向量检索",
+            "RAG"
+          ],
+          "match_evidence": "26 页 CIKM paper_share: 1 cover + 1 agenda(4项) + 4p background(检索→STR) + 6p insight(相关工作分类+摘要缺失洞察) + 6p method(三项技术回答 Q1/Q2) + 6p evaluation(设置→主结果→延迟→消融→参数) + 2p summary/thanks; 章节切换用 4 项目录+当前项加黑高亮, 末页合并方法示意图+致谢+代码链接",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "SG-Filter 论文封面:标题/作者/会议",
+              "slide_claim": "SG-Filter 用层次摘要语义索引与自适应过滤增强相似文本检索",
+              "slide_key_text": [
+                "SG-Filter: Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering",
+                "Jiancai Ye, Jun Liu, Haoyu Zhang, Maojia Sheng, Tao Yang 等 (vision)",
+                "Shanghai Jiao Tong University, Tsinghua University, ByteDance, Infinigence AI, Shanghai Innovation Institute",
+                "Corresponding to: daiguohao@sjtu.edu.cn (vision)",
+                "CIKM 2025 / 2025.11.13 (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "居中多行大标题",
+                "作者姓名带机构上标",
+                "机构脚注列表",
+                "会议与日期署名"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "内容大纲:四章路线图(高亮第1章)",
+              "slide_claim": "全篇按 Background→Insight→Solution→Evaluation 四章推进,当前进入第1章",
+              "slide_key_text": [
+                "1 Background: Retrieval",
+                "2 Insight: By Summarized Information (vision)",
+                "3 Solution: Index and Search (vision)",
+                "4 Evaluation (vision)"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色 contents 标题",
+                "编号纵向列表",
+                "当前章加黑高亮/其余灰化"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:定位到「Insight:利用摘要信息」章",
+              "slide_claim": "全篇四段式结构,本页高亮进入第 2 章核心洞察",
+              "slide_key_text": [
+                "contents",
+                "1 Background: Retrieval and AI",
+                "2 Insight: By Summarized Information",
+                "3 Solution: Index and Search",
+                "4 Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "居中标题 contents",
+                "4 行编号目录列表",
+                "当前章高亮/其余灰化"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入第3章 Solution 索引与检索",
+              "slide_claim": "全篇四章推进至第3章 Solution: Index and Search",
+              "slide_key_text": [
+                "contents",
+                "1 Background: Retrieval and AI",
+                "2 Insight: By Summarized Information",
+                "3 Solution: Index and Search",
+                "4 Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "居中标题 contents",
+                "4 项编号目录列表",
+                "当前项加粗高亮/余项灰显"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入第 4 部分 Evaluation",
+              "slide_claim": "全篇进入第 4 部分 Evaluation,前三部分已完成",
+              "slide_key_text": [
+                "Background: Retrieval and AI",
+                "Insight: By Summarized Information",
+                "Solution: Index and Search",
+                "4 Evaluation (高亮)"
+              ],
+              "slide_visual_skeleton": [
+                "居中 contents 标题",
+                "4 行编号目录条",
+                "当前项加粗高亮"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_recap_at_closing",
+              "slide_title": "目录回扣:四段主线总览",
+              "slide_claim": "全文循 Background→Insight→Solution→Evaluation 四段主线展开",
+              "slide_key_text": [
+                "contents",
+                "1 Background: Retrieval and AI",
+                "2 Insight: By Summarized Information",
+                "3 Solution: Index and Search",
+                "4 Evaluation"
+              ],
+              "slide_visual_skeleton": [
+                "居中 contents 标题",
+                "编号 1-4 纵向列表",
+                "淡灰弱化条目文字"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_deck": "closing",
+              "archetype": "closing_summary_with_method_recap_and_contact",
+              "slide_title": "SG-Filter 方法重述与致谢",
+              "slide_claim": "SG-Filter 以摘要语义索引提升语义/结构检索并致谢收尾",
+              "slide_key_text": [
+                "Summary",
+                "Thank you for your attention!",
+                "e-mail: yejiancai@sjtu.edu.cn",
+                "Code: https://github.com/strong-leaf/SG-Filter",
+                "Co-occurrence connection to improve recall rate",
+                "Hybrid retrieval / Label filtering"
+              ],
+              "slide_visual_skeleton": [
+                "顶部 Summary + 致谢文字",
+                "邮箱/代码/主页链接行",
+                "SG-Filter 方法示意图",
+                "增强语义/结构 双输出标注"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "opening",
+              "section_id": "section_01_封面与内容大纲",
+              "slide_range": [
+                1,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_02_检索背景与相似文本检索",
+              "slide_range": [
+                3,
+                6
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "section_03_核心洞察-利用摘要信息",
+              "slide_range": [
+                7,
+                12
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "section_04_层次索引与检索方案",
+              "slide_range": [
+                13,
+                18
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "section_05_数据集与实验评估",
+              "slide_range": [
+                19,
+                24
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "section_06_总结与致谢",
+              "slide_range": [
+                25,
+                26
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 4,
+      "confidence_estimate": "high"
+    }
+  ],
+  "extraction_notes": "本 batch 4 deck 全部命中 previous_batches_patterns 中的 paper_share_bg_challenge_solution_eval_summary_canonical, 复用其 id。4 deck 全为 paper_share 类型, 均以 cover+纵向编号 agenda 开场, 章节切换均用『5(或4)项编号目录 + 当前项高亮圆点』的 section_divider, 收尾均以 Thanks/致谢页收束, 与 canonical 骨架高度重合。FlightVGM 45p 略超原 deck_size_range 上限 40, 建议 driver 合并时把上限放宽到 45; motivation 章节长度上限扩到 16p(LOAC 长背景串讲)。跨 batch dedup 未发现需要拆分子 pattern 的显著差异 — 4 vs 5 段 agenda、method 章内技术数(1-3 项)属于同 pattern 变体。new_archetype: agenda_recap_at_closing — 收尾前重现开场 agenda 的极简 recap 目录页, 无当前项高亮, 用于闭合全文脉络(SG-Filter p25). new_archetype: closing_summary_with_method_recap_and_contact — 尾页合并 Summary + 方法示意图 + 致谢 + 联系邮箱/开源代码链接, 与 closing_summary_and_outlook 区别: 无 outlook 但附联系/开源(SG-Filter p26). new_archetype: agenda_outline_with_section_titles 已在标准表, LOAC p2 的『4 圆圈编号+左侧强调竖条+编号占位』风格属其变体。",
+  "coverage": {
+    "decks_in_batch": 4,
+    "decks_assigned_to_some_pattern": 4,
+    "decks_unassigned_in_this_batch": [],
+    "decks_assigned_to_multiple_patterns": []
+  }
+}

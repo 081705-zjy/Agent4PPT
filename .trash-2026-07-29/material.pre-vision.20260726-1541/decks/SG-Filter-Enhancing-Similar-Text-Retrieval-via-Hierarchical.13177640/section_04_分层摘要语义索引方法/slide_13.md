@@ -1,0 +1,47 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.04"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 13
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "toc_candidate"
+标题: "目录：背景·洞察·方法·实验导航"
+核心论断: "全 deck 沿背景→洞察→方法→实验四步递进展开"
+本页讲什么: "本方法章开篇的目录/章节导航页，用编号列出 Background（检索与 AI）、Insight 等主线板块，帮助听众定位当前处于'分层摘要语义索引方法'章之前的整体脉络，为后续 Q2 方法展开做过渡铺垫。"
+关键文字: "[\"Background: Retrieval and AI\", Insight]"
+视觉骨架: "[编号目录条目列表, 章节配图缩略图组]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_13.asset.08]"
+适合复用场景: "[检索/RAG 主题 deck 章节导航页, 多板块论文汇报的目录页]"
+不适合复用场景: "[单一方法细节展开页, 含具体实验数字的结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "左侧编号列表", "内容": "Background / Insight 等主线板块条目"}
+  - {"位置": "右侧配图区", "内容": "章节配图缩略图组"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 13: 目录：背景·洞察·方法·实验导航
+
+**核心论断**: 全 deck 沿背景→洞察→方法→实验四步递进展开
+
+## 本页讲什么
+本方法章开篇的目录/章节导航页，用编号列出 Background（检索与 AI）、Insight 等主线板块，帮助听众定位当前处于'分层摘要语义索引方法'章之前的整体脉络，为后续 Q2 方法展开做过渡铺垫。
+
+## 关键文字片段
+- Background: Retrieval and AI
+- Insight
+
+## 视觉骨架
+- 编号目录条目列表
+- 章节配图缩略图组
+
+## 可复用到
+- 检索/RAG 主题 deck 章节导航页
+- 多板块论文汇报的目录页
+
+## 不适合复用的场景
+- 单一方法细节展开页
+- 含具体实验数字的结果页

@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_15",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 15,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏计算核心思想：稀疏模式与占比",
+  "核心论断": "不同稀疏模式对应不同的计算量占比",
+  "本页讲什么": "把核心思想具象到稀疏模式层面：以 sparse mode 0、占比 30% 等为例，说明不同稀疏模式 (sparse mode) 会带来不同的计算量占比 (proportion)。讲者可借此把抽象思想落到可量化的稀疏度上，为后续多层次稀疏做准备。",
+  "关键文字": [
+    "The Idea of Sparse Computing",
+    "sparse mode 0",
+    "proportion: 30%"
+  ],
+  "视觉骨架": [
+    "稀疏模式占比示意图",
+    "多模式占比对比"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_15.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_15.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_15.asset.03",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_15.asset.04"
+  ],
+  "适合复用场景": [
+    "稀疏模式与稀疏度讲解页",
+    "计算量占比量化页"
+  ],
+  "不适合复用场景": [
+    "纯概念动机页",
+    "创新思路案例页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

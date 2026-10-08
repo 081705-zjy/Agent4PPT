@@ -1,0 +1,64 @@
+=== v17 preprocess logic-synthesize ===
+
+
+=== Phase C: per-pattern enrichment (4 workers) ===
+  186 pattern files to enrich
+  [20/186] progress ok=0 skipped=20 fail=0
+  [24/186] OK qualifying_exam_defense_with_study_progress_and_appendix (55s)
+  [25/186] OK background_domain_intro_principle_backbone_reveal_to_video_extension (62s)
+  [28/186] OK background_paradigm_evolution_related_works_survey_to_bottleneck (83s)
+  [32/186] OK background_paradigm_to_scenario_narrow_to_feature_to_recall_gap (41s)
+  [34/186] OK background_toc_recall_trend_pillars_evolution_roadmap (50s)
+  [40/186] progress ok=5 skipped=35 fail=0
+  [49/186] OK background_paradigm_shift_dual_era_comparison_table (44s)
+  [52/186] OK closing_formula_summary_multi_work_stack_extension_thanks (56s)
+  [54/186] OK case_study_background_motivation_multi_solution_result (48s)
+  [55/186] OK closing_single_page_paper_summary_with_qrcode_entry (37s)
+  [60/186] OK closing_signature_with_collaboration_funding_logo_wall_single_page (33s)
+  [64/186] OK case_study_challenge_solution_performance_closed_loop (46s)
+  [66/186] OK closing_title_recap_signature_mirror_cover (28s)
+  [68/186] OK discussion_agenda_plus_evolution_chain_recap_with_future_arrow (45s)
+  [70/186] OK closing_single_page_title_plus_key_insight_callback (36s)
+  [72/186] OK closing_toc_recap_plus_summary_contribution_with_contact (33s)
+  [80/186] progress ok=15 skipped=65 fail=0
+  [85/186] OK discussion_scaling_trends_to_jevons_to_energy_paradigm_shift (58s)
+  [90/186] OK discussion_endside_trend_dual_contradiction_scenarios_chips_gap (64s)
+  [91/186] OK discussion_agi_vision_recap_new_paradigm_system_opt_institution_layout (47s)
+  [92/186] OK framework_capability_ladder_cross_layer_loop_challenge_mapping (63s)
+  [94/186] OK framework_overview_tree_plus_per_element_drilldown_to_metric (56s)
+  [95/186] OK framework_progressive_flow_build_plus_formula_unpack (62s)
+  [98/186] OK method_agenda_plus_dual_axis_redundancy_overview (44s)
+  [99/186] OK framework_opensource_ecosystem_plus_representative_work (46s)
+  [100/186] progress ok=23 skipped=77 fail=0
+  [102/186] OK method_algorithm_linearization_to_hardware_pe_gpu_reconfig_stack (60s)
+  [105/186] OK method_capability_driven_architecture_evolution_by_stages (47s)
+  [114/186] OK method_agent_time_decomposition_triple_subproblem_pairs (45s)
+  [118/186] OK method_algorithm_sublines_methodology_typical_scatter_triad (44s)
+  [119/186] OK method_dual_paradigm_tradeoff_to_hybrid_solution_with_experiments (74s)
+  [120/186] OK method_key_insight_triad_then_three_pain_solution_pairs (48s)
+  [121/186] OK method_multi_route_survey_converge_to_ours (62s)
+  [125/186] OK method_multi_parallel_techniques_intro_flow_detail (62s)
+  [127/186] OK method_preliminary_three_technique_dual_platform_verify (45s)
+  [129/186] OK method_pain_critique_design_goals_progressive_mechanism_reveal (72s)
+  [130/186] OK method_need_challenge_analysis_idea_pareto_opensource (55s)
+  [132/186] OK method_three_paper_lineup_challenge_method_result_with_summary (72s)
+  [140/186] OK method_theoretical_insight_prelude_then_challenge_technique_triad (50s)
+  [144/186] OK method_technique_route_full_arc_prior_challenge_paper_method_result (53s)
+  [151/186] OK method_shared_structure_map_progressive_highlight_focus (47s)
+  [160/186] progress ok=38 skipped=122 fail=0
+  [165/186] OK motivation_industrial_analogy_to_layer_stack_mapping (51s)
+  [166/186] OK motivation_cost_formula_layered_decomposition_to_moore_wall (96s)
+  [168/186] OK outlook_life_analogy_build_dual_system_series_works_lift (50s)
+  [169/186] OK motivation_three_step_insight_chain_failure_hypothesis_answer (42s)
+  [171/186] OK problem_dual_bottleneck_paradigm_shift_chip_landscape_scenarios_gap (80s)
+  [172/186] OK references_layered_by_method_chapter_bibliography (40s)
+  [173/186] OK problem_related_works_survey_dual_challenge_to_solution_bridge (42s)
+  [180/186] OK problem_three_challenges_prior_work_flaw_bulletin (41s)
+  [183/186] OK related_work_two_route_taxonomy_survey (53s)
+  [184/186] OK related_work_dual_route_mechanism_flaw_to_insight_table (45s)
+  [185/186] OK result_three_work_overview_drilldown_awards_endorsement (66s)
+  [186/186] OK self_intro_with_toc_transition_dual_timeline (32s)
+
+  enrichment done in 1083s: ok=50 skipped=136 fail=0
+
+  INDEX updated: /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/logic/INDEX.json

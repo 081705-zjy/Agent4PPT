@@ -1,0 +1,12 @@
+=== stage A: svg-to-png (all decks, idempotent) ===
+=== v17 preprocess svg-to-png ===
+
+[svg_to_png] tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4: ok=57 skipped=0 failed=0
+[svg_to_png] tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018: ok=74 skipped=0 failed=0
+[svg_to_png] tpl.主题学术报告.AI-Infra与国智院建设思考.70b8b70e: ok=65 skipped=0 failed=0
+[svg_to_png] tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9: ok=42 skipped=0 failed=0
+[svg_to_png] tpl.主题学术报告.稀疏计算与大模型.0738f023: ok=50 skipped=0 failed=0
+[svg_to_png] tpl.主题学术报告.高效大模型推理技术与应用.8584882c: ok=45 skipped=0 failed=0
+[svg_to_png] tpl.内部组会科研交流.LOAC-An-Autoregressive-Video-Generation-Accelerator-with-Str.9b94bd74: ok=34 skipped=0 failed=0
+[svg_to_png] tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714: ok=33 skipped=0 failed=0
+[svg_to_png] tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716: ok=93 skipped=0 failed=0

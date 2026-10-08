@@ -1,0 +1,1081 @@
+{
+  "batch_index": 14,
+  "decks_in_this_batch": [
+    {
+      "deck标识": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+      "目录名": "从大模型推理优化到昇腾芯片的实践.692aa2f9",
+      "标题": "从大模型推理优化到昇腾芯片的实践",
+      "总页数": 42,
+      "章节数": 6,
+      "章节列表": [
+        "section_01_封面与目录开场",
+        "section_02_分布式集群推理背景与挑战",
+        "section_03_FlashOverlap计算通信重叠",
+        "section_04_Semi-PD资源调度方案",
+        "section_05_昇腾芯片优化与工程实践",
+        "section_06_致谢与联系方式"
+      ],
+      "主题标签": [
+        "大模型推理",
+        "分布式集群",
+        "计算通信重叠",
+        "FlashOverlap",
+        "Semi-PD",
+        "PD分离",
+        "昇腾芯片",
+        "软硬件协同"
+      ],
+      "目标受众": "学术同行与工业推理系统研发人员",
+      "报告类型": "research_report",
+      "适用场景": "大模型推理优化与国产芯片适配的学术报告",
+      "论述总结": "从Scaling Law与推理需求爆发切入，剖析分布式集群推理的背景与挑战；提出FlashOverlap实现GEMM计算与通信重叠、Semi-PD兼顾PD融合与分离的资源调度，并给出实测吞吐延时收益；最后落到昇腾芯片上的软硬件协同优化实践与展望。",
+      "论述弧线": [
+        "背景挑战",
+        "计算通信重叠",
+        "PD调度",
+        "昇腾实践",
+        "总结展望"
+      ],
+      "slides_in_order": [
+        {
+          "页序号": 1,
+          "页面角色": "cover_candidate",
+          "标题": "从大模型推理优化到昇腾芯片的实践（封面）",
+          "核心论断": "报告主线：从大模型推理优化贯通到昇腾芯片工程实践",
+          "本页讲什么": "整场报告的封面页。居中大标题点明主旨「从大模型推理优化到昇腾芯片的实践」，其中末尾以红底色块高亮关键词。下方给出讲者戴国浩及所属机构（上海交通大学 / 无问芯穹）与联系邮箱。整页为极简学术风，蓝色顶栏 + 白底，无正文内容。",
+          "关键文字": [
+            "从大模型推理优化到昇腾芯片的实践",
+            "戴国浩",
+            "上海交通大学 / 无问芯穹",
+            "Email: daiguohao@sjtu.edu.cn"
+          ],
+          "视觉骨架": [
+            "顶部蓝色横条",
+            "居中大标题",
+            "红底高亮色块",
+            "讲者与机构署名区"
+          ],
+          "上页角色": null,
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 2,
+          "页面角色": "content_candidate",
+          "标题": "Contents 目录（四章路线，①高亮）",
+          "核心论断": "全篇按四章展开：背景挑战→FlashOverlap→Semi-PD→昇腾实践",
+          "本页讲什么": "报告目录页，标题「Contents」。用带圈序号①②③④列出四章：①分布式集群推理的背景和挑战（当前高亮为黑色，其余灰化）、②FlashOverlap、③Semi-PD、④昇腾芯片上的优化和工程实践。左侧蓝色竖条为进度标记，当前定位到第一章，为全篇建立导航框架。",
+          "关键文字": [
+            "Contents",
+            "① 分布式集群推理的背景和挑战",
+            "② FlashOverlap",
+            "③ Semi-PD",
+            "④ 昇腾芯片上的优化和工程实践"
+          ],
+          "视觉骨架": [
+            "外框矩形",
+            "带圈序号①-④列表",
+            "当前章高亮/其余灰化",
+            "左侧蓝色进度竖条",
+            "底部机构页脚"
+          ],
+          "上页角色": "cover_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.01",
+          "section_role": "opening"
+        },
+        {
+          "页序号": 3,
+          "页面角色": "content_candidate",
+          "标题": "尺度定律逐步转向推理规模扩展",
+          "核心论断": "大模型沿尺度定律演进，逐步转向推理规模扩展",
+          "本页讲什么": "用国内外双泳道时间轴梳理2016-2025大模型里程碑：从2017 Transformer、T5、GPT-3、InstructGPT、ChatGPT到Llama、OpenAI O1，及国内ERNIE、ChatGLM、DeepSeek R1，展示能力与算力沿尺度定律持续扩展，并自2024起逐步转向推理侧规模扩展。",
+          "关键文字": [
+            "尺度定律(Scaling Law)逐步转向推理规模扩展",
+            "2017年谷歌提出Transformer",
+            "2022 OpenAI InstructGPT/ChatGPT",
+            "2024 OpenAI O1开启Test Time Scaling",
+            "2025 DeepSeek R1对标OpenAI O1"
+          ],
+          "视觉骨架": [
+            "国内外双泳道时间轴",
+            "年份坐标2017-2025",
+            "里程碑事件卡片",
+            "蓝色分区侧标签"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 4,
+          "页面角色": "content_candidate",
+          "标题": "Scaling Law三阶段演进至Reasoning",
+          "核心论断": "算力驱动智能，扩展范式从预训练走向测试时Reasoning",
+          "本页讲什么": "用一条智能-算力上扬曲线刻画三段扩展范式：Pre-Training Scaling→Post-Training Scaling→Test-Time Scaling“Reasoning”，说明随算力投入持续增长，智能提升的主要驱动力正从预训练转向测试时推理，引自黄仁勋CES 2025演讲。",
+          "关键文字": [
+            "Pre-Training Scaling",
+            "Post-Training Scaling",
+            "Test-Time Scaling “Reasoning”",
+            "Ref: NVIDIA CEO Jensen Huang Keynote at CES 2025"
+          ],
+          "视觉骨架": [
+            "智能-算力上扬曲线",
+            "三段扩展范式标注",
+            "趋势箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 5,
+          "页面角色": "content_candidate",
+          "标题": "Reasoning模型带来推理需求爆发",
+          "核心论断": "预训练时代收尾，Reasoning新范式引爆推理算力需求",
+          "本页讲什么": "左右双栏对比两种范式：左侧引Ilya(NeurIPS 2024)指出2025预训练时代即将结束、Pre-Training Scaling触顶；右侧引黄仁勋(GTC 2025)指出Reasoning模型开启“新扩展范式”，推理算力需求增长约100倍；中部以70%、AI原生APP等数据佐证推理需求爆发。",
+          "关键文字": [
+            "预训练时代即将结束",
+            "Reasoning模型开启“新扩展范式”",
+            "Reasoning推理算力需求增长100倍",
+            "70% AI原生APP占比",
+            "QuestMobile 2025年1月"
+          ],
+          "视觉骨架": [
+            "左右双栏对比面板",
+            "蓝色标题条",
+            "100倍/70%强调数字",
+            "引文来源标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 6,
+          "页面角色": "content_candidate",
+          "标题": "LLM推理基础概念：Prefill与Decode",
+          "核心论断": "LLM推理分Prefill处理prompt与Decode逐token生成两阶段",
+          "本页讲什么": "以自回归生成流程图解释LLM推理两个基础阶段：Prefill阶段并行处理输入prompt并生成首个token，随后进入Decode阶段逐个token自回归生成后续输出(如def→def bubble…)，为后续PD分离与并行优化建立概念基础。",
+          "关键文字": [
+            "Prefill和Decode",
+            "自回归生成",
+            "input prompt → Prefill阶段",
+            "Decode阶段逐token生成",
+            "output: def bubble…"
+          ],
+          "视觉骨架": [
+            "自回归生成流程框",
+            "Prefill/Decode阶段箭头",
+            "token序列示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 7,
+          "页面角色": "content_candidate",
+          "标题": "分布式集群推理引擎Overview",
+          "核心论断": "集群推理引擎由API Server调度多推理实例协同完成请求",
+          "本页讲什么": "用分层系统框图概览分布式集群推理引擎架构：API Server接收Multi-requests并下发requests，集群推理引擎调度器分派到推理实例1…n，各实例含调度模块、模型权重与KVCache管理，并配合内存管理与显存Offloading完成推理并回传Results。",
+          "关键文字": [
+            "API Server",
+            "Multi-requests / Results",
+            "集群推理引擎(调度)",
+            "推理实例1…n",
+            "KVCache / 显存Offloading"
+          ],
+          "视觉骨架": [
+            "分层系统架构框图",
+            "顶层API Server",
+            "多推理实例并列panel",
+            "请求/结果箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 8,
+          "页面角色": "content_candidate",
+          "标题": "推理实例：从PD融合到PD分离",
+          "核心论断": "推理架构由PD融合演进为PD分离以规避相互干扰",
+          "本页讲什么": "对比PD融合与PD分离两种部署：左侧回顾自回归Prefill/Decode流程；中间PD融合让Prefill、Decode共享同一GPU SMs/HBM，易相互干扰；右侧PD分离将Prefill与Decode分置不同GPU，Prefill算得KV cache经KV传输给Decode实例，从而减少干扰。",
+          "关键文字": [
+            "从PD融合到PD分离",
+            "PD融合",
+            "PD分离",
+            "GPU SMs / GPU HBM",
+            "Prefill算得KV cache传给Decode"
+          ],
+          "视觉骨架": [
+            "左自回归流程框",
+            "中PD融合框图",
+            "右PD分离框图",
+            "GPU SM/HBM与KV传输箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 9,
+          "页面角色": "content_candidate",
+          "标题": "并行策略：从TP到DP+EP",
+          "核心论断": "并行由TP演进为DP+EP以匹配KVcache与FFN扩展",
+          "本页讲什么": "以DeepSeek-671B为例对比并行策略演进：左侧TP对Attention/FFN做AllReduce；针对Attention KVcache(MLA/MQA)与FFN两点，右侧改用DP+EP——Attention走DP、FFN专家走EP(如扩至256专家)，通过All2All通信，将rank规模从20+进一步扩大以提升效率。",
+          "关键文字": [
+            "从TP到DP+EP",
+            "DeepSeek-671B",
+            "针对Attention KVcache(MLA/MQA)",
+            "针对FFN层",
+            "EP扩展专家至256 / All2All"
+          ],
+          "视觉骨架": [
+            "左TP并行图(AllReduce)",
+            "右DP+EP并行图(All2All)",
+            "Attention/FFN两行对照",
+            "大箭头演进"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 10,
+          "页面角色": "content_candidate",
+          "标题": "分布式集群推理相关工作和SOTA",
+          "核心论断": "主流开源/闭源方案普遍以PD分离+DP+EP达成SOTA吞吐",
+          "本页讲什么": "用对比表格罗列分布式集群推理SOTA方案：闭源DeepSeek(PD分离+DP+EP，Prefill 73.7k、Decode 14.8k tokens/s/Node)、开源SGLang(PD分离+DP+EP，52.3K/22.3K)，以及NVIDIA Dynamo、vLLM等，并给出TTFT≤2s、TPOT≤100ms等SLA约束。",
+          "关键文字": [
+            "开源/闭源相关工作",
+            "DeepSeek PD分离 DP+EP 73.7k/14.8k",
+            "SGLang PD分离 DP+EP 52.3K/22.3K",
+            "NVIDIA Dynamo / vLLM",
+            "TTFT≤2s、TPOT≤100ms SLA"
+          ],
+          "视觉骨架": [
+            "相关工作对比表格",
+            "开源/闭源分组",
+            "Prefill/Decode吞吐列",
+            "SLA约束标注"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 11,
+          "页面角色": "content_candidate",
+          "标题": "分布式集群推理仍存在诸多挑战",
+          "核心论断": "集群推理仍存挑战，引出FlashOverlap/semiPD等后续工作",
+          "本页讲什么": "作为章节收束页，指出分布式集群推理仍存在诸多挑战，并以编号卡片引出后续将展开的工作：②FlashOverlap(计算通信重叠新探索)、③semiPD(PD相关)、④后续研究方向，承接下一章方法介绍。",
+          "关键文字": [
+            "分布式集群推理仍然存在诸多挑战",
+            "②FlashOverlap 计算通信重叠新探索",
+            "③semiPD PD相关",
+            "④后续研究方向"
+          ],
+          "视觉骨架": [
+            "左侧留白示意框(diagram占位)",
+            "右侧②③④编号卡片",
+            "挑战引出列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+          "section_role": "background"
+        },
+        {
+          "页序号": 12,
+          "页面角色": "content_candidate",
+          "标题": "Contents:进入 FlashOverlap 章节",
+          "核心论断": "本 deck 四大工作之第二项 FlashOverlap 正式登场",
+          "本页讲什么": "全 deck 目录页,四项工作依次列出(分布式集群推理背景与挑战、FlashOverlap、Semi-PD、面向国产芯片的优化),当前高亮第 2 项 FlashOverlap——计算通信重叠新探索,标示本 section 在整体叙事中的位置。",
+          "关键文字": [
+            "Contents",
+            "FlashOverlap——计算通信重叠新探索",
+            "分布式集群推理的背景和挑战",
+            "Semi-PD",
+            "面向国产芯片的优化"
+          ],
+          "视觉骨架": [
+            "蓝框目录卡",
+            "四条带序号圆标条目",
+            "当前项左侧蓝色高亮条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 13,
+          "页面角色": "content_candidate",
+          "标题": "大模型推理/训练中通信开销不可忽略",
+          "核心论断": "三类并行模式均引入 10-40% 通信开销,构成推理性能瓶颈",
+          "本页讲什么": "并列呈现三种并行模式(张量并行/张量序列并行/专家并行)各自的通信原语与开销:张量并行 AllReduce 10-30%,张量序列并行 ReduceScatter 10-40%,专家并行(含MoE)All2All 10-40%。三列上方为 Rank 级数据流示意图,下方汇总表强调分布式推理中通信开销普遍不可忽略,为后续重叠优化立痛点。",
+          "关键文字": [
+            "大模型推理/训练中通信开销不可忽略",
+            "张量并行 AllReduce 10-30%",
+            "张量序列并行 ReduceScatter 10-40%",
+            "专家并行/MoE All2All 10-40%",
+            "并行模式 通信模式 典型通信开销"
+          ],
+          "视觉骨架": [
+            "3 列并列并行模式数据流图",
+            "Rank0…Rank n 数据流箭头",
+            "并行模式-通信开销汇总表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 14,
+          "页面角色": "content_candidate",
+          "标题": "GEMM 与通信重叠相关工作(方法一)",
+          "核心论断": "方法一按 Tile 粒度拆分重叠,但引入额外拆分开销",
+          "本页讲什么": "批判第一类现有 GEMM-通信重叠方案(MegaScale)。上方展示 GEMM 计算 kernel(Main loop+Epilogue,G1/G2/G3)与 Inter-GPU 通信的分块时间线;下方指出该方法沿 M 维度将 GEMM 按 Tile 细粒度切分做流水重叠,却带来切分与调度的额外开销,为 FlashOverlap 的动机做铺垫。",
+          "关键文字": [
+            "GEMM 和通信操作重叠——相关工作",
+            "沿着一个维度将GEMM计算切分",
+            "按照更细的 Tile 粒度拆分",
+            "沿 M 维度切分",
+            "引入额外开销",
+            "[1] MegaScale: Scaling LLM training to more than 10,000 GPUs, NSDI"
+          ],
+          "视觉骨架": [
+            "计算/通信/Idle 图例",
+            "GEMM 分块时间线",
+            "A/B/C 矩阵分块示意",
+            "Tile 拆分对比图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 15,
+          "页面角色": "content_candidate",
+          "标题": "GEMM 与通信重叠相关工作(方法二)",
+          "核心论断": "方法二细粒度重叠通信,但需与计算频繁交互干扰计算",
+          "本页讲什么": "批判第二类现有重叠方案(cublasmp)。同样以 GEMM 计算+Inter-GPU 通信时间线呈现,下方指出该方法沿 M 维度细粒度切分并让计算与通信频繁交互,虽实现更细粒度重叠却干扰计算效率、产生同步开销,进一步凸显现有方案的两难。",
+          "关键文字": [
+            "GEMM 和通信操作重叠——相关工作",
+            "沿着一个维度将GEMM计算切分",
+            "沿 M 维度细粒度切分",
+            "计算与通信频繁交互",
+            "干扰计算",
+            "[1] NVIDIA. cublasmp: high-performance cuda library for distributed dense linear algebra, 2025"
+          ],
+          "视觉骨架": [
+            "计算/通信/Idle 图例",
+            "GEMM 分块时间线",
+            "细粒度切分数据流图",
+            "计算-通信交互箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 16,
+          "页面角色": "content_candidate",
+          "标题": "细粒度重叠的三项设计目标",
+          "核心论断": "理想重叠需同时满足计算无干扰、通信无感知、细粒度",
+          "本页讲什么": "承接前两页对相关工作的批判,归纳出细粒度重叠应达成的目标:计算无干扰、通信无感知,并借助张量分解、算子融合实现。上方复用 GEMM 计算+通信时间线,下方以对比表格逐项评估各方案在计算无干扰/通信无感知/细粒度三个维度的达成情况,引出 FlashOverlap 的设计方向。",
+          "关键文字": [
+            "细粒度重叠",
+            "计算无干扰",
+            "通信无感知",
+            "张量分解",
+            "算子融合",
+            "细粒度重叠需同时满足计算无干扰与通信无感知"
+          ],
+          "视觉骨架": [
+            "GEMM 计算-通信时间线",
+            "计算/通信/Idle 图例",
+            "方案-三维度对比表格"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 17,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap:Reorder+Map Table 机制",
+          "核心论断": "以 Map Table 记录 Reorder,让通信无需感知计算分块顺序",
+          "本页讲什么": "揭示 FlashOverlap 核心机制第一步。沿时间线的三个 GEMM 计算阶段(G1/G2/G3)在 Epilogue 处对输出 C 做 Reorder,并用 Map Table 记录原索引到重排索引的映射(如 0→0、5→1),使后续通信按连续块搬运而不必感知 GEMM 的分块顺序,奠定信号触发重叠的基础。",
+          "关键文字": [
+            "FlashOverlap——基于信号的计算通信重叠",
+            "Reorder",
+            "Map Table",
+            "0→0 5→1 2→2 4→3 1→4 3→5",
+            "G1 G2 G3",
+            "Main loop Epilogue"
+          ],
+          "视觉骨架": [
+            "GEMM 三阶段时间线",
+            "Map Table 映射框",
+            "Reorder 重排模块",
+            "A/B/C 矩阵分块图"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 18,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap:信号触发跨卡通信",
+          "核心论断": "计算完成即发信号,通信等信号后启动重叠搬运",
+          "本页讲什么": "在 Reorder 基础上引入基于信号(Signal)的触发机制。GEMM 计算某分块在 Epilogue 完成后发出 Signal,原本 Wait for Computation 的通信 kernel 收到信号即启动 Inter-GPU Comm.,实现计算与通信在时间线上的细粒度重叠,通信无需侵入计算主循环。",
+          "关键文字": [
+            "FlashOverlap——基于信号的计算通信重叠",
+            "Signal",
+            "Wait for Computation",
+            "Inter-GPU Comm.",
+            "Reorder + Map Table",
+            "Timeline"
+          ],
+          "视觉骨架": [
+            "GEMM 三阶段时间线",
+            "Signal 触发标记",
+            "Inter-GPU Comm. 块",
+            "等待计算的通信轨道"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 19,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap:多分块信号流水重叠",
+          "核心论断": "各分块信号依次触发通信,形成计算-通信流水重叠",
+          "本页讲什么": "将信号机制推广到全部分块。G1/G2/G3 每个 Epilogue 完成后各自发出 Signal,依次触发多段 Inter-GPU Comm.,使多次跨卡通信与后续 GEMM 计算在时间线上流水叠加,直观展现 FlashOverlap 逐块重叠、隐藏通信延迟的整体效果。",
+          "关键文字": [
+            "FlashOverlap——基于信号的计算通信重叠",
+            "Signal",
+            "Inter-GPU Comm.",
+            "Wait for Computation",
+            "Reorder",
+            "Timeline"
+          ],
+          "视觉骨架": [
+            "GEMM 三阶段时间线",
+            "多个 Signal 触发点",
+            "多段 Inter-GPU Comm. 流水",
+            "Reorder 模块序列"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 20,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap:算子融合与重映射",
+          "核心论断": "通信后 element-wise 算子融合并重映射,消除重排开销",
+          "本页讲什么": "补齐 FlashOverlap 最后一环:通信完成后,右侧将 element-wise operator 与 remapping 融合(Element-wise operator fused with remapping),在算子内借 Reorder 把重排后的数据还原回原始顺序,避免额外一次重排搬运,使通信对上层计算无感知,整套机制形成闭环。",
+          "关键文字": [
+            "FlashOverlap——基于信号的计算通信重叠",
+            "Element-wise operator fused with remapping",
+            "Reorder",
+            "Signal",
+            "Stall for Communication",
+            "Inter-GPU Comm."
+          ],
+          "视觉骨架": [
+            "GEMM 计算-通信时间线",
+            "Signal 触发点序列",
+            "右侧算子融合重映射框",
+            "Reorder 还原模块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 21,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap:整体机制全景",
+          "核心论断": "Reorder+信号+融合重映射协同实现无感知细粒度重叠",
+          "本页讲什么": "汇总 FlashOverlap 全套机制:Epilogue Reorder 与 Map Table 连续化输出、Signal 触发跨卡通信、通信 Stall 与后续计算重叠、element-wise 算子融合 remapping 还原顺序,配合注释标出各阶段在时间线上的协同关系,完整呈现计算无干扰、通信无感知、细粒度重叠的最终形态。",
+          "关键文字": [
+            "FlashOverlap——基于信号的计算通信重叠",
+            "Signal",
+            "Element-wise operator fused with remapping",
+            "Reorder",
+            "Stall for Communication",
+            "Inter-GPU Comm."
+          ],
+          "视觉骨架": [
+            "GEMM 全阶段时间线",
+            "多 Signal 触发标记",
+            "多段通信流水",
+            "算子融合重映射框",
+            "机制说明注释"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 22,
+          "页面角色": "content_candidate",
+          "标题": "计算通信重叠效果:1.07-1.7x 加速",
+          "核心论断": "FlashOverlap 在多卡多算子上实现 1.07-1.7x 端到端加速",
+          "本页讲什么": "以实测数据收尾。测试配置为 2 卡至 8 卡、A800 与 4090 平台,覆盖 AllReduce/ReduceScatter/All2All 三类通信原语,分通信、性能等维度对比,并给出 Github 开源指引。底部结论条明确 FlashOverlap 相比基线取得 1.07-1.7x 的整体加速,验证前述机制的有效性。",
+          "关键文字": [
+            "计算通信重叠效果",
+            "测试配置 2卡-8卡",
+            "A800 4090",
+            "AllReduce ReduceScatter All2All",
+            "Github",
+            "FlashOverlap 实现 1.07-1.7x 加速"
+          ],
+          "视觉骨架": [
+            "测试配置说明框",
+            "多组性能对比图表",
+            "通信原语分组",
+            "Github 开源标注",
+            "结论加速比条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+          "section_role": "method"
+        },
+        {
+          "页序号": 23,
+          "页面角色": "content_candidate",
+          "标题": "Contents 目录页：定位 Semi-PD 章节",
+          "核心论断": "报告进入第三项工作 Semi-PD 资源调度方案",
+          "本页讲什么": "全篇四项内容的目录页，用圆圈③高亮当前进入的 Semi-PD 主题，其余（集群推理背景与挑战、FlashOverlap、后续实践）以灰字列出，标示汇报进度与章节切换。",
+          "关键文字": [
+            "分布式集群推理的背景和挑战",
+            "FlashOverlap——计算通信重叠新探索",
+            "Semi-PD"
+          ],
+          "视觉骨架": [
+            "蓝框四项编号列表",
+            "③号圆圈高亮标记",
+            "左侧竖向进度条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 24,
+          "页面角色": "content_candidate",
+          "标题": "挑战：大模型集群推理的双重需求",
+          "核心论断": "集群推理须同时满足用户低延时与系统高吞吐率",
+          "本页讲什么": "以云侧集群服务场景切入本章，指出大模型集群推理面临用户侧『低延时』与系统侧『高吞吐率』的双重压力，用集群与请求示意图铺陈 Prefill/Decode 两阶段的服务矛盾，作为后续方案的问题起点。",
+          "关键文字": [
+            "挑战：大模型集群推理",
+            "用户需求：低延时",
+            "系统需求：高吞吐率",
+            "云侧集群"
+          ],
+          "视觉骨架": [
+            "云侧集群服务示意图",
+            "用户需求/系统需求双侧标注",
+            "多面板请求流示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 25,
+          "页面角色": "content_candidate",
+          "标题": "背景：集群推理三大核心技术挑战",
+          "核心论断": "集群推理分别面临计算、调度、存储三大挑战",
+          "本页讲什么": "把上页的服务压力拆解为三列并列的核心技术挑战：计算挑战（提升生成式模型计算利用率）、调度挑战（用户间资源竞争与延时需求）、存储挑战（KV cache 管理），三列结构对称，为下文融合式/分离式实例对比确立评价维度。",
+          "关键文字": [
+            "背景：大模型集群推理核心技术",
+            "计算挑战：提升生成式模型的计算利用率",
+            "调度挑战：不同用户间资源竞争及延时需求",
+            "存储挑战"
+          ],
+          "视觉骨架": [
+            "3 列并列挑战 panel",
+            "计算/调度/存储三分区标题",
+            "各列图标+说明"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 26,
+          "页面角色": "content_candidate",
+          "标题": "背景：融合式与分离式实例两种部署",
+          "核心论断": "推理部署分为 P/D 融合式与 P/D 分离式两条路线",
+          "本页讲什么": "并列引出两种实例部署范式：融合式（统一部署，P/D 计算与存储共享同一份资源）与分离式（分离部署，P/D 计算与存储资源分离），用两侧 GPU SMs/HBM 框图对照，作为后续优缺点分析与 semi-PD 折中方案的对象。",
+          "关键文字": [
+            "背景：融合式与分离式实例",
+            "融合式实例：P/D 计算和存储共享资源",
+            "分离式实例：P/D 计算和存储资源分离"
+          ],
+          "视觉骨架": [
+            "左右双框对照架构图",
+            "GPU SMs / GPU HBM 分层示意",
+            "Prefill/Decode 队列示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 27,
+          "页面角色": "content_candidate",
+          "标题": "思路：融合式实例的优缺点分析",
+          "核心论断": "融合式共享资源利用率高但 P/D 相互干扰",
+          "本页讲什么": "聚焦融合式（统一部署）实例：左侧统一 P/D 的 GPU SMs/HBM 框图，右侧指出其可共享同一份 KV cache、部署简单等优点，但 Prefill 与 Decode 抢占同一计算资源导致相互干扰的缺点，为对比分离式做铺垫。",
+          "关键文字": [
+            "思路：融合式与分离式实例分析",
+            "融合式实例：P/D 计算和存储共享资源",
+            "P/D 共享同一份 KV cache"
+          ],
+          "视觉骨架": [
+            "统一部署 P/D 架构框图",
+            "优点/缺点标注框",
+            "共享 KV cache 指向示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 28,
+          "页面角色": "content_candidate",
+          "标题": "思路：分离式实例的优缺点分析",
+          "核心论断": "分离式可独立控制资源但利用率失衡(P23% vs D72%)",
+          "本页讲什么": "对应上页分析分离式（分离部署）实例：P/D 独立控制各自计算资源、互不干扰是其优点，但两侧无法共享 KV cache、资源利用率失衡（Llama3-70B 下 Prefill 仅 23% 而 Decode 达 72%）是其缺点，暴露分离式的资源浪费。",
+          "关键文字": [
+            "思路：融合式与分离式实例分析",
+            "分离式实例：P/D 计算和存储资源分离",
+            "P: 23% vs D: 72%*",
+            "*Llama3-70B, Prefill实例TP=4, Decode实例TP=4, ShareGPT数据集"
+          ],
+          "视觉骨架": [
+            "分离部署 P/D 双实例框图",
+            "优点/缺点标注框",
+            "P/D 利用率数值对比"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 29,
+          "页面角色": "content_candidate",
+          "标题": "小结：融合式与分离式各有一优一劣",
+          "核心论断": "融合式与分离式在计算与存储上各占一优一劣",
+          "本页讲什么": "以左右两栏、计算/存储两行的对比矩阵收束前两页分析：融合式在存储上✓（共享 KV cache）但计算上✗（P/D 抢资源），分离式在计算上✓（独立控制）但存储上✗（不共享、利用率失衡 P23% vs D72%），二者互补的错位正是导出 semi-PD 的动机。",
+          "关键文字": [
+            "融合式（统一部署）",
+            "分离式（分离部署）",
+            "P/D 共享同一个 KV cache（✓）",
+            "P/D 独立控制计算资源（✓）",
+            "P: 23% vs D: 72%*"
+          ],
+          "视觉骨架": [
+            "2×2 优缺点对比矩阵",
+            "计算/存储双维度分行",
+            "✓/✗ 标记"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 30,
+          "页面角色": "content_candidate",
+          "标题": "方案：semi-PD『计算分离&存储融合』",
+          "核心论断": "semi-PD 取两者之长：计算分离且存储融合",
+          "本页讲什么": "正式提出 semi-PD 方案：在同一 GPU SMs 内为 Prefill/Decode 分区（计算分离，继承分离式独立控制之✓），同时 P/D 共享同一份 KV cache（存储融合，继承融合式之✓），一张图把上页两个✓合并到 semi-PD 实例上。",
+          "关键文字": [
+            "方案：semi-PD 实例",
+            "计算分离 & 存储融合",
+            "P/D 独立控制计算资源",
+            "P/D 共享同一份 KV cache"
+          ],
+          "视觉骨架": [
+            "GPU SMs 蓝黄分区示意",
+            "semi-PD 实例框图",
+            "右侧两个✓能力绿框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 31,
+          "页面角色": "content_candidate",
+          "标题": "方案：semi-PD 技术细节（计算/存储/时序）",
+          "核心论断": "semi-PD 靠 SM 分区与共享存储实现 P/D 并行",
+          "本页讲什么": "展开 semi-PD 技术实现：计算上按 SM 分区让 Prefill/Decode worker 各自独立控制算力；存储上 P/D 共享同一份 KV cache 避免搬运；配合右侧时序图说明多 worker 在同一实例内并行执行、错峰利用计算资源的调度方式。",
+          "关键文字": [
+            "方案：semi-PD 技术细节：计算分离 & 存储融合",
+            "计算：SM 分区，P/D worker 独立控制",
+            "存储：P/D 共享 KV cache 无需搬运",
+            "时序：多 worker 并行执行"
+          ],
+          "视觉骨架": [
+            "GPU SM 分区网格图",
+            "Prefill/Decode worker 时序泳道",
+            "共享 KV cache 存储示意"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 32,
+          "页面角色": "content_candidate",
+          "标题": "方案：semi-PD 应用适配（单实例/集群）",
+          "核心论断": "semi-PD 可适配单实例与集群两类推理场景",
+          "本页讲什么": "讲 semi-PD 的落地适配：左侧单实例场景把单个 GPU 内的 P/D worker 组织为一个 semi-PD 实例（示例 TP=2、PP=2）；右侧集群场景在 API server、调度模块下并存 Prefill/Decode/semi-PD worker，并通过共享池完成 KV cache 传输，说明方案对两种部署规模均可扩展。",
+          "关键文字": [
+            "方案：semi-PD 应用适配",
+            "实例推理场景",
+            "集群推理场景",
+            "API server / 调度模块",
+            "KV cache 传输",
+            "*以TP=2, PP=2为例"
+          ],
+          "视觉骨架": [
+            "左单实例 semi-PD 部署框图",
+            "右集群调度架构图",
+            "Prefill/Decode/semi-PD worker 模块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 33,
+          "页面角色": "content_candidate",
+          "标题": "实例推理结果：吞吐率提升约 10%",
+          "核心论断": "semi-PD+SGLang 较 SGLang 吞吐提升约 10%",
+          "本页讲什么": "单实例实测第一组结果：在 DeepSeek-V3、FP8、TP8、H200、输入 2k/输出 256 配置下，对比 semi-PD+SGLang 与原生 SGLang 的吞吐（token/s），散点显示 semi-PD 在各请求速率下 tps 均更高（如 rr=5.0 时 7276 vs 7024tps），整体吞吐提升约 10%。",
+          "关键文字": [
+            "实例推理结果：更低的延时，更高的吞吐率",
+            "semi-PD+SGLang vs SGLang",
+            "DeepSeek-V3, FP8, TP8, H200",
+            "输入 2k, 输出 256",
+            "吞吐提升约 10%"
+          ],
+          "视觉骨架": [
+            "吞吐-请求速率散点图",
+            "双方案 tps 数值标注",
+            "左侧配置说明框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 34,
+          "页面角色": "content_candidate",
+          "标题": "实例推理效果：首/平均 Token 延时大幅下降",
+          "核心论断": "semi-PD 使 P99 TTFT 降 78%、ITL 降 5.6 倍",
+          "本页讲什么": "单实例延时结果：同配置下用两张曲线对比 P99 首 Token 延时（TTFT）与 P99 Token 平均间隔延时（ITL）随请求速率的变化，semi-PD+SGLang 相比 SGLang 将 P99 TTFT 降低约 78%、P99 ITL 降低约 5.6 倍，佐证延时侧收益。",
+          "关键文字": [
+            "实例推理效果：首 Token 延时和 Token 平均延时",
+            "P99 TTFT：请求 99% 的首 Token 延时上限",
+            "P99 ITL：请求 99% 的 Token 间延时上限",
+            "降低 78%",
+            "降低 5.6 倍"
+          ],
+          "视觉骨架": [
+            "P99 TTFT 曲线图",
+            "P99 ITL 曲线图",
+            "降幅倍数标注箭头"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 35,
+          "页面角色": "content_candidate",
+          "标题": "实例推理效果：请求完成率实时对比",
+          "核心论断": "固定请求速率下 semi-PD 请求完成率持续领先",
+          "本页讲什么": "单实例第三组结果：在 DeepSeek-V3、FP8、TP8、H20、输入 2k/输出 256、请求速率固定为 4 request/s 的负载下，用随时间变化的曲线对比 semi-PD+SGLang 与 SGLang 的请求完成率，semi-PD 完成率随时间持续高于基线。",
+          "关键文字": [
+            "实例推理效果：请求完成率实时对比",
+            "semi-PD+SGLang vs SGLang",
+            "DeepSeek-V3, FP8, TP8, H20",
+            "请求速率 = 4 request/s"
+          ],
+          "视觉骨架": [
+            "请求完成率-时间曲线",
+            "双方案曲线对照",
+            "左侧配置说明框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 36,
+          "页面角色": "content_candidate",
+          "标题": "集群推理效果：请求完成率实时对比并开源",
+          "核心论断": "集群场景 semi-PD+Dynamo 完成率优于原生 Dynamo",
+          "本页讲什么": "本章收尾的集群实测：在 8×A800 上以 DeepSeek-V2-Lite、NVIDIA Dynamo 为基线，对比 2P6D（2 卡 Prefill+6 卡 Decode）与 1P3D4S（1 卡 Prefill+3 卡 Decode+4 卡 semi-PD）配置下的请求完成率实时曲线，semi-PD+Dynamo 表现更优，并说明代码已在 Github 开源。",
+          "关键文字": [
+            "集群推理效果：请求完成率实时对比",
+            "semi-PD+Dynamo vs NVIDIA Dynamo",
+            "DeepSeek-V2-Lite, 8*A800 80GB",
+            "2P6D vs 1P3D4S(含 4 卡 semi-PD)",
+            "代码已 Github 开源"
+          ],
+          "视觉骨架": [
+            "集群请求完成率时序曲线",
+            "2P6D/1P3D4S 配置说明",
+            "左侧 baseline 说明框"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+          "section_role": "method"
+        },
+        {
+          "页序号": 37,
+          "页面角色": "content_candidate",
+          "标题": "目录页:定位第四部分工程实践",
+          "核心论断": "报告进入第四部分——昇腾芯片优化与工程实践",
+          "本页讲什么": "全deck的Contents目录页,列出四个部分:①分布式集群推理的背景和挑战 ②计算通信重叠新探索 ③从PD分离到PD融合 ④昇腾芯片优化与工程实践;第④项被圆圈高亮,表示接下来讲昇腾落地实践,是本收尾章的开场过渡页。",
+          "关键文字": [
+            "Contents",
+            "分布式集群推理的背景和挑战",
+            "计算通信重叠新探索",
+            "从PD分离到PD融合",
+            "昇腾芯片优化与工程实践"
+          ],
+          "视觉骨架": [
+            "蓝色外框Contents标题",
+            "1-4编号圆点列表",
+            "第4项圆圈高亮"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+          "section_role": "case_study"
+        },
+        {
+          "页序号": 38,
+          "页面角色": "content_candidate",
+          "标题": "昇腾与英伟达LLM软件栈对比及工程实践",
+          "核心论断": "对比NV软件栈锁定GEMM/通信重叠/弹性扩缩容三项工程实践",
+          "本页讲什么": "左侧表格从体系结构(SIMT vs SIMD)、编程语言(CUDA+Triton+CUTLASS vs AscendC)、通信(NCCL+NVSHMEM+DeepSeek all2all vs HCCL)、LLM Serving(vLLM/SGLang/Dynamo vs vLLM/MindIE-Ascend)四个维度对比英伟达与昇腾;右侧据此引出三项工程实践:①GEMM算子性能优化 ②FlashOverlap高效适配 ③弹性扩缩容,为后续三页搭好路线图。",
+          "关键文字": [
+            "昇腾和英伟达在LLM相关软件栈上的对比",
+            "体系结构:SIMT vs SIMD",
+            "编程语言:CUDA+Triton+CUTLASS vs AscendC",
+            "通信:NCCL+NVSHMEM vs HCCL",
+            "工程实践:①GEMM算子 ②FlashOverlap ③弹性扩缩容"
+          ],
+          "视觉骨架": [
+            "紫色双列对比表",
+            "四行维度分层",
+            "右侧三项编号实践清单"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+          "section_role": "case_study"
+        },
+        {
+          "页序号": 39,
+          "页面角色": "content_candidate",
+          "标题": "优化LLM推理关键算子:GEMM与groupGEMM",
+          "核心论断": "自研GEMM/groupGEMM相比aclNN分别提速约1.5倍/1.8倍",
+          "本页讲什么": "上下两个面板分别讲GEMM与groupGEMM优化。GEMM:基于CCE指令重排流水、优化L2->L1-L0数据搬运,相比aclNN性能提升约1.5倍;groupGEMM:调整AIC/AIV分核策略、优化数据布局,相比aclNN性能提升约1.8倍。两项算子优化对应实践①的落地收益。",
+          "关键文字": [
+            "基于CCE指令优化流水",
+            "优化L2->L1-L0数据搬运",
+            "GEMM算子相比aclNN性能提升约1.5倍",
+            "调整AIC/AIV分核策略",
+            "groupGEMM相比aclNN性能提升约1.8倍"
+          ],
+          "视觉骨架": [
+            "上下两个蓝色标签面板",
+            "GEMM/groupGEMM分区",
+            "bullet要点列表"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+          "section_role": "case_study"
+        },
+        {
+          "页序号": 40,
+          "页面角色": "content_candidate",
+          "标题": "FlashOverlap在昇腾上的高效优化适配",
+          "核心论断": "FlashOverlap相比aclNN+HCCL计算通信重叠提速约35%",
+          "本页讲什么": "基于AscendC模板库将FlashOverlap适配到昇腾:融合Kernel实现计算与通信重叠、通信调用HCCL接口,并定位社区3处问题、提交5+ bug issue推动模板库完善;最终FlashOverlap相较GEMM+AllReduce(aclNN+HCCL)方案提升约35%。底部用两条Timeline+红色箭头对比重叠前后的时序收益。",
+          "关键文字": [
+            "基于AscendC模板库适配",
+            "融合Kernel实现计算通信重叠",
+            "通信调用HCCL接口",
+            "定位社区3处问题并提交5+ bug issue",
+            "FlashOverlap相比aclNN+HCCL提升约35%"
+          ],
+          "视觉骨架": [
+            "蓝色标签+bullet要点",
+            "红色对比箭头",
+            "两条Timeline时序对比"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "content_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+          "section_role": "case_study"
+        },
+        {
+          "页序号": 41,
+          "页面角色": "content_candidate",
+          "标题": "弹性扩缩容:云原生智能路由与PD分离",
+          "核心论断": "云原生弹性伸缩+智能路由实现PD分离的高效KVCache传输",
+          "本页讲什么": "左侧框图展示用户请求经P-D分离服务(弹性伸缩/智能路由/PD分离)按group dispatch到多组PrefillCluster与DecodeCluster,再经KVCache传输(LLM-DataDist、HCCL)。右侧三块要点:云原生(弹性伸缩、按负载及前缀匹配智能路由)、大模型(DP Attention/EP FFN、all2all通信、KVCache传输)、KVCache(基于LLM-DataDist的高效传输)。是三项工程实践的收尾一项。",
+          "关键文字": [
+            "根据负载及前缀匹配程度智能路由",
+            "P-D分离服务:弹性伸缩/智能路由/PD分离",
+            "大模型:DP Attention、EP FFN、all2all通信",
+            "KVCache基于LLM-DataDist高效传输",
+            "PrefillCluster与DecodeCluster分组调度"
+          ],
+          "视觉骨架": [
+            "用户到集群的分层框图",
+            "PrefillCluster/DecodeCluster多组堆叠",
+            "右侧云原生/大模型/KVCache三标签块"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": "ending_candidate",
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+          "section_role": "case_study"
+        },
+        {
+          "页序号": 42,
+          "页面角色": "ending_candidate",
+          "标题": "致谢与联系方式:讲者信息及招聘合作邀约",
+          "核心论断": "报告落到讲者致谢,并发出招聘与合作邀约触点",
+          "本页讲什么": "deck 收尾页,把技术分享转化为团队招募与合作邀请。页面顶部给出讲者戴国浩(上海交通大学)、日期 2025-5-12 及邮箱 daiguohao@sjtu.edu.cn;中部用青、粉两个彩色按钮分别引出招聘信息与合作邀约两类触点;下方并列两个信息 panel 展示研究组与 NICS-EFC 实验室,底部长条给出招聘方向文字,页脚署名 Guohao Dai @ Shanghai JiaoTong University。",
+          "关键文字": [
+            "戴国浩 / 上海交通大学",
+            "2025-5-12",
+            "Email: daiguohao@sjtu.edu.cn",
+            "NICS-EFC(实验室)",
+            "Guohao Dai @ Shanghai JiaoTong University"
+          ],
+          "视觉骨架": [
+            "顶部蓝色分隔横条",
+            "讲者信息文字块",
+            "青/粉两个 CTA 按钮",
+            "两列信息 panel + 底部长条"
+          ],
+          "上页角色": "content_candidate",
+          "下页角色": null,
+          "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.06",
+          "section_role": "closing"
+        }
+      ],
+      "sections_outline": [
+        {
+          "section_index": 1,
+          "section_role": "opening",
+          "标题": "封面与目录开场",
+          "页码范围": [
+            1,
+            2
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_role": "background",
+          "标题": "分布式集群推理背景与挑战",
+          "页码范围": [
+            3,
+            11
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_role": "method",
+          "标题": "FlashOverlap计算通信重叠",
+          "页码范围": [
+            12,
+            22
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_role": "method",
+          "标题": "Semi-PD资源调度方案",
+          "页码范围": [
+            23,
+            36
+          ]
+        },
+        {
+          "section_index": 5,
+          "section_role": "case_study",
+          "标题": "昇腾芯片优化与工程实践",
+          "页码范围": [
+            37,
+            41
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_role": "closing",
+          "标题": "致谢与联系方式",
+          "页码范围": [
+            42,
+            42
+          ]
+        }
+      ]
+    }
+  ],
+  "previous_batches_rules": []
+}

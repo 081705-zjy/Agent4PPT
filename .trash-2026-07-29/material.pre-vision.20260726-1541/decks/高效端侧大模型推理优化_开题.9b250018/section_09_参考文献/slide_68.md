@@ -1,0 +1,46 @@
+---
+页标识: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_68"
+所属章节: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.sec.09"
+所属deck: "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018"
+页序号: 68
+源文件: "templates/个人学术考核/高效端侧大模型推理优化_开题.pptx"
+页面角色: "content_candidate"
+标题: "参考文献（一）"
+核心论断: "前八章技术论断均有正式学术文献支撑"
+本页讲什么: "参考文献列表第一页，按正文引用出现顺序平铺罗列文献条目，涵盖 ByteTransformer（变长输入高性能 Transformer，IPDPS 2023）等推理加速相关论文，仅承担溯源与合规功能，无内部论证。讲者一般不逐条念，直接说明技术方案均有文献依据即可。"
+关键文字: "[Zhai Y, Jiang C, Wang L, et al., \"Bytetransformer: A high-performance transformer boosted for variable-length inputs\", \"2023 IPDPS\"]"
+视觉骨架: "[文献条目纵向列表, 顶部小节标记]"
+资源ID列表: "[tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_68.asset.01, tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018.slide_68.asset.02]"
+适合复用场景: "[答辩类 deck 参考文献平铺页, 技术报告文末引用清单页]"
+不适合复用场景: "[含论证或数据的正文页, 需要视觉图表的 motivation 页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 68: 参考文献（一）
+
+**核心论断**: 前八章技术论断均有正式学术文献支撑
+
+## 本页讲什么
+参考文献列表第一页，按正文引用出现顺序平铺罗列文献条目，涵盖 ByteTransformer（变长输入高性能 Transformer，IPDPS 2023）等推理加速相关论文，仅承担溯源与合规功能，无内部论证。讲者一般不逐条念，直接说明技术方案均有文献依据即可。
+
+## 关键文字片段
+- Zhai Y, Jiang C, Wang L, et al.
+- Bytetransformer: A high-performance transformer boosted for variable-length inputs
+- 2023 IPDPS
+
+## 视觉骨架
+- 文献条目纵向列表
+- 顶部小节标记
+
+## 可复用到
+- 答辩类 deck 参考文献平铺页
+- 技术报告文末引用清单页
+
+## 不适合复用的场景
+- 含论证或数据的正文页
+- 需要视觉图表的 motivation 页

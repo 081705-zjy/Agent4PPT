@@ -1,0 +1,326 @@
+{
+  "batch_index": 18,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has motivation section listing N features/challenges and method section",
+      "title": "动机章三大特点需在方法章逐一回扣",
+      "description": "motivation末页列出的 N 条特点/问题, method 章必须按序逐条对应展开, 命中率应≥80%.",
+      "what_to_check": [
+        "在motivation章末尾slide (页序号靠近motivation章末) 的slide.关键文字/核心论断中找列出的编号特点或问题",
+        "对每条特点, 在method章各slide.标题/核心论断中找语义匹配 (verbatim或paraphrased)",
+        "算命中率 = 命中数 / 总特点数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "page 9/15 列3特点/问题 (特点1硬件能效低+特点2+特点3), method 章 sec.06 (研究内容1并行可重构架构) / sec.07 (研究内容2空间-谱域轻量化) / sec.08 (研究内容3通专融合) 逐一响应, 命中 3/3"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记不住散列的动机点, 逐条回扣是让 motivation 变成兑现承诺而非空谈的核心机制",
+      "fix_hint": "遍历motivation末页特点列表, 每条在method章追加一个子section或小结页明确回应",
+      "exceptions": [
+        "综述型 deck (motivation 列的是领域挑战, 本工作仅回应一部分)"
+      ]
+    },
+    {
+      "id": "framework_diagram_reuse_across_chapters",
+      "category": "callback",
+      "applicable_when": "deck defines a framework diagram in motivation/framework section",
+      "title": "核心框架图需跨章节反复复现",
+      "description": "deck在motivation或framework章首次给出的核心框架图 (如能量转化链条/整体架构) 应在≥3个后续章节被引用, 用作章节定位与总结.",
+      "what_to_check": [
+        "找motivation/framework章内slide.视觉骨架含链条/框架/流程图关键词的slide",
+        "在method各章首页/末页 及 closing章 slide.视觉骨架中找同名或同结构框架图",
+        "统计复现章节数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "电力→运算→令牌→动作链条在 page 9/15/17/19/24/33/36/37 共7页复现, 覆盖 motivation/background/framework/method1/method2/method3/closing 7章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "复用同一框架图可让听众持续感知'我在整体地图的哪里', 避免章节割裂",
+      "fix_hint": "在每个method章首页/closing章首页复用framework章的整体框架图, 高亮当前位置",
+      "exceptions": [
+        "短deck (<20页) 无需重复"
+      ]
+    },
+    {
+      "id": "cover_title_anchor_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover and closing sections",
+      "title": "封面主标题anchor需在总结章回扣",
+      "description": "cover主标题中的核心anchor (通常为报告主题短语) 需在closing章至少被复现1次, 完成首尾闭环.",
+      "what_to_check": [
+        "取slide 1 (cover)标题中的核心名词短语作为主anchor",
+        "在closing章 (section_role=closing) 所有slide的标题/核心论断/关键文字中grep该anchor"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "cover主anchor '软硬件协同设计' 在closing章 page 36/37 '整体研究思路框架' 中以'研究内容协同优化'形式回扣"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾呼应是让听众记住'这场报告讲了什么'的最简机制, 缺失则报告主题在结尾稀释",
+      "fix_hint": "在closing章首页或末页显式重现cover主标题短语, 或用paraphrase点题",
+      "exceptions": []
+    },
+    {
+      "id": "teaser_at_motivation_end",
+      "category": "suspense_reveal",
+      "applicable_when": "deck has motivation and method sections",
+      "title": "动机章末页需埋方法预告钩子",
+      "description": "motivation末页应含'后续以N项研究内容/方法X解决这些问题'的钩子, 但不透露具体方案细节.",
+      "what_to_check": [
+        "取motivation章 (section_role=motivation) 最后一slide",
+        "检查slide.本页讲什么/核心论断/下页角色是否含'研究内容'、'研究问题'、'后续'、'方法X'等预告词"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "motivation末页 page 9 收束为三大特点框, 埋'后续三条研究内容'钩子; page 15 明确列出'特点→问题'三行, 为后续method章铺垫"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "动机与方法之间无预告钩子, 听众会觉得叙事断裂; 有钩子则形成'问题被认领'的心理承诺",
+      "fix_hint": "在motivation末页加一句'针对以上问题, 我们将从A/B/C三方面展开', 不铺开细节",
+      "exceptions": []
+    },
+    {
+      "id": "toc_reappearance_at_chapter_start",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥30 pages with 4+ sections",
+      "title": "长deck每主章开头需重现目录+高亮当前章",
+      "description": "页数≥30、章节≥4的deck, 应在每个主内容章 (motivation/method/closing) 开头插入toc页并高亮当前章.",
+      "what_to_check": [
+        "找页面角色=toc_candidate的slide",
+        "检查其slide.本页讲什么或标题是否含'定位到X章'、'进入X章节'或'高亮X'类描述",
+        "验证其后紧邻的slide是否属于该章"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "page 2/4/18/35 出现4次toc, 分别在deck开头、进入研究背景、进入研究内容、进入总结章, 且均高亮当前项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长deck中听众容易迷失, 目录复现+高亮提供'你在第几章'的锚定, 是长报告的导航必需",
+      "fix_hint": "在每个主章首slide前插入toc页, 用加粗/加深高亮当前项",
+      "exceptions": [
+        "短deck (<20页) 无需重复目录"
+      ]
+    },
+    {
+      "id": "method_chapter_end_summary_with_paper",
+      "category": "chapter_transitions",
+      "applicable_when": "method chapter in academic deck",
+      "title": "方法章末页需以'创新点+论文'小结收束",
+      "description": "每个method章末页应以创新点纲要+对应发表论文条目形式收束, 完成'挑战→创新→成果→小结'弧线.",
+      "what_to_check": [
+        "找method章 (section_role=method) 最后一slide",
+        "检查slide.关键文字/本页讲什么是否同时含'创新点'和论文引用 (如[ICCAD], [DATE], [ASP-DAC]等会议标签)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "page 23 (研究内容1小结) 含3创新点+[ICCAD 24] MARCA; page 32 (研究内容2小结) 含3创新点+[ICCAD 24] Fast and Efficient 2-bit LLM; page 34 (研究内容3小结) 含3创新点+[ASP-DAC 25] LLSM"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "学术答辩需在每个method章末沉淀'贡献+背书', 让听众留下可记忆的收束点, 缺失则章节'散尾'",
+      "fix_hint": "在每个method章末追加1张小结slide, 纲要列出创新点并挂对应论文引用",
+      "exceptions": [
+        "未发表论文的在研工作 (可只列创新点)"
+      ]
+    },
+    {
+      "id": "main_anchor_chain_high_repetition",
+      "category": "repetition_emphasis",
+      "applicable_when": "deck defines a multi-stage transformation chain as main anchor",
+      "title": "主anchor链条需在deck中高频重复≥5次",
+      "description": "deck若以多阶段转化链 (如'电力→运算→Token→动作') 为主anchor, 该链应在≥5张slide出现, 跨motivation/method/closing 3+章节.",
+      "what_to_check": [
+        "识别主anchor链条 (从deck.论述总结或framework章slide.核心论断抽取)",
+        "在所有slide.关键文字/视觉骨架中grep链条各阶段词",
+        "统计出现slide数和覆盖章节数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "'电力Electricity→运算Operation→Token→动作Action'链条在 page 9/15/17/19/24/33/36/37 共8张slide出现, 跨 motivation/background/framework/method1-3/closing 7个章节"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "跨章反复呈现同一anchor可让听众把独立章节缝合成一个整体故事, 是长报告的黏合剂",
+      "fix_hint": "在每个主章开头或末尾复现主anchor链条, 高亮当前所在阶段",
+      "exceptions": [
+        "非结构化主题deck 无统一转化链"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_count",
+      "category": "repetition_emphasis",
+      "applicable_when": "any research deck with clear thesis",
+      "title": "主thesis短语应在deck中重复8-15次",
+      "description": "主thesis (如'软硬件协同') 在deck.slides中出现次数应在8-15次, <5次=主题不清, >20次=啰嗦.",
+      "what_to_check": [
+        "从deck.标题/论述总结抽取主thesis短语",
+        "在所有slide.标题/核心论断/关键文字中grep该短语 (含verbatim和paraphrase变体)",
+        "统计出现slide数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "主thesis '软硬件协同/软硬协同' 在 page 1/16/17/22/26/32/36/40 等≥10张slide出现, 落在合理区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "重复是记忆的母亲; 主thesis重复不足则听众离场记不住核心论点, 过度重复则显冗余",
+      "fix_hint": "检查thesis短语在deck中出现频次, 不足则在method章成果页/closing章补充点题",
+      "exceptions": [
+        "deck主题即为综述, 无强thesis"
+      ]
+    },
+    {
+      "id": "quantitative_claim_at_method_result",
+      "category": "comparison_evidence",
+      "applicable_when": "method section with performance results",
+      "title": "每个method章成果页必带量化claim+baseline对标",
+      "description": "method章至少1张成果slide需含具体数字 (X倍加速/Y%精度/Z tokens/s) 且注明对标baseline (如'较RTX 3090').",
+      "what_to_check": [
+        "找method章 (section_role=method) 中slide.标题/核心论断含'成果'/'研究成果'的slide",
+        "检查slide.关键文字是否含数字+单位 (× / % / tokens/s / mA 等)",
+        "检查是否注明baseline (GPU型号、既有方法名等)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "page 22 '较RTX 3090提能效35×', page 28 '线性层5.5倍压缩2.53倍加速', page 31 '精度损失约1%', page 57 '3.49%/6.80%提升+1.37倍加速' 均含量化数字+baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "没有量化和baseline的'成果'只是主观宣称, 学术受众会立刻质疑; 数字+对标是可信度基线",
+      "fix_hint": "每个method章至少配一张成果slide, 大字标注核心倍数并注明baseline系统",
+      "exceptions": [
+        "纯理论/概念型工作可用定性成果"
+      ]
+    },
+    {
+      "id": "main_anchor_first_appearance_at_cover",
+      "category": "anchor_trajectory",
+      "applicable_when": "any deck",
+      "title": "主anchor首次出现应在cover或首内容页",
+      "description": "deck主anchor (thesis短语) 应在slide 1 (cover) 或最迟前3张slide首次出现, 立即建立听众预期.",
+      "what_to_check": [
+        "从deck.标题抽取主anchor",
+        "在slides_in_order前3张的标题/关键文字/核心论断中grep该anchor",
+        "验证首次出现页号"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "'软硬件协同设计'在slide 1 cover标题中首次出现"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "cover是听众建立预期的第一个锚点; anchor若拖到后面才现, 前几张slide叙事目的性弱",
+      "fix_hint": "确保cover主标题含thesis短语, 或在第2-3张slide即点题",
+      "exceptions": []
+    },
+    {
+      "id": "method_chapter_uniform_structure",
+      "category": "pacing",
+      "applicable_when": "deck with 2+ method chapters",
+      "title": "多个method章应遵循相同结构模板",
+      "description": "deck若有多个method章 (研究内容一/二/三等), 每章应按'总览→挑战→创新→成果→小结'一致结构展开, 便于听众复用理解模板.",
+      "what_to_check": [
+        "找所有section_role=method的章节",
+        "检查每章内slide.本页讲什么是否含'总览/开篇'、'关键挑战'、'创新'、'研究成果'、'小结' 5类语义标签",
+        "统计每章命中的标签数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "研究内容1 (page 19-23) 命中5/5 (总览→挑战→创新→成果→小结); 研究内容2 (page 24-32) 命中5/5 (总览→2×挑战→创新→成果→小结)"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "reason": "研究内容3 (page 33-34) 仅2页 (定位+小结), 缺挑战/创新/成果三段, 结构不完整"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.67,
+      "enforcement_level": "soft",
+      "rationale": "多method章共享结构可让听众第一章建立心智模板, 后续章节零成本套用; 打破模板则每章都要重新学",
+      "fix_hint": "补齐薄弱method章的'挑战→创新→成果'三张slide, 或在appendix补充详情",
+      "exceptions": [
+        "方法章确为规划中未落地的工作 (可标注为WIP)"
+      ]
+    },
+    {
+      "id": "chapter_first_page_intro_topic",
+      "category": "structural_promise",
+      "applicable_when": "any deck",
+      "title": "每章首页需引入该章主题",
+      "description": "每个非opening/appendix章的首slide应在slide.本页讲什么或核心论断中明确点出章节主题, 不做前置铺垫.",
+      "what_to_check": [
+        "按sections_outline取每章 (section_index≥2且section_role非appendix) 的页码范围[0]所在slide",
+        "检查其slide.标题/核心论断是否含该章的主题关键词 (来自章节标题)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.博士资格考试_高能效大模型推理系统的软硬件协同设计.fc2f91f4",
+          "evidence": "sec.03首页 page 4 'toc定位研究背景'; sec.06首页 page 18 'toc定位研究内容' + page 19 '研究内容一并行可重构架构总览'; sec.09首页 page 35 'toc进入总结章节' — 均在首slide即点题"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "章节首页若不点题, 听众要读几页才知道'在讲什么', 消耗注意力预算",
+      "fix_hint": "每章首slide必须以章节主题短语作为标题或核心论断, 不用前置背景铺陈",
+      "exceptions": [
+        "appendix/backup章节可跳过章名点题"
+      ]
+    }
+  ],
+  "extraction_notes": "batch 18 单deck (博资考软硬协同, 57页10章). 主anchor '电力→运算→令牌→动作'链条 + '软硬件协同' thesis 反复复现, callback/repetition/comparison模式极强. method3(sec.08)仅2页破坏method章结构模板, 触发soft rule.",
+  "coverage": {
+    "rules_count": 13,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 1,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 1,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

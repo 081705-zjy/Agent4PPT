@@ -1,0 +1,208 @@
+{
+  "concrete_patterns": [
+    {
+      "id": "blank_lab_report_template_skeleton",
+      "layer": "deck_level",
+      "title": "实验室通用汇报空白模板骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "template"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "实验室/研究组通用 PPT 空白模板",
+          "个人介绍/课题汇报占位版式骨架",
+          "留白待填的实验室模板"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "method_section",
+        "closing"
+      ],
+      "source_count": 1,
+      "confidence": "low",
+      "applicable_summary": "极短 deck(≤10 页)通用空白模板骨架:cover 留白待填标题,中段提供 self_intro 履历+一组左右双栏可编号问题版式作 method 占位区,末尾提供空白 Thanks/Q&A 版式与实验室署名页脚。多数页为占位版式无实质内容,供二次填充课题汇报",
+      "anti_patterns": [
+        "有实质内容的成品 deck(应归入内容型 pattern)",
+        "长篇多章节报告:用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "单论文分享:用 paper_share_bg_challenge_solution_eval_summary_canonical"
+      ]
+    },
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "layer": "deck_level",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "tutorial",
+          "lab_introduction"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "AI基础设施/算力战略汇报",
+          "研究院/实验室建设规划",
+          "本组多成果综述串讲",
+          "学术会议 tutorial",
+          "软硬件协同专题"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "motivation_section",
+        "framework_intro",
+        "method_works_panorama_section",
+        "discussion_section",
+        "outlook_section",
+        "closing"
+      ],
+      "source_count": 13,
+      "confidence": "high",
+      "applicable_summary": "长篇 deck 骨架:cover+agenda 开场,motivation 铺垫,framework_intro 统领,再以 3-6 个 method/case_study 章节平行陈列本组成果,期间以『全 agenda 灰显+当前章高亮』的 section_divider 作章节导航,末尾以团队展望或致谢封底",
+      "anti_patterns": [
+        "canonical 单论文分享(Background/Challenge/Solution/Evaluation 五段短叙事):用 paper_share_bg_challenge_solution_eval_summary_canonical",
+        "空白模板骨架(无实质内容):用 blank_lab_report_template_skeleton",
+        "商业 BP/投资路演(需财务与市场章节)",
+        "消费级产品 demo(叙事节奏不同)"
+      ]
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "layer": "deck_level",
+      "title": "顶会论文分享·Background→Challenge→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "motivation_section",
+        "problem_section",
+        "method_section",
+        "result_section",
+        "closing"
+      ],
+      "source_count": 10,
+      "confidence": "high",
+      "applicable_summary": "单篇论文分享 canonical 骨架:短 deck(20-40 页),cover+纵向编号 agenda 开场,再按 Background→Challenge→Solution→Evaluation→Summary 五段推进,每段进入前插一张『竖排编号圆点导航+当前段高亮』的 section_divider,末尾回归目录+一句『We propose X』总结页附实验室主页/邮箱收束",
+      "anti_patterns": [
+        "长篇 tutorial/多工作综述(章节数多):用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "空白模板骨架:用 blank_lab_report_template_skeleton",
+        "工业 demo/商业 BP(叙事节奏与结构不同)"
+      ]
+    },
+    {
+      "id": "qualifying_exam_defense_with_study_progress_and_appendix",
+      "layer": "deck_level",
+      "title": "博士资格考试/开题答辩·学习情况+研究内容三段+备份材料",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "博士资格考试",
+          "博士开题答辩",
+          "学术考核汇报",
+          "研究方向汇报答辩"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "self_intro",
+        "motivation_section",
+        "problem_section",
+        "framework_intro",
+        "method_works_panorama_section",
+        "closing",
+        "appendix"
+      ],
+      "source_count": 2,
+      "confidence": "medium",
+      "applicable_summary": "40-80 页博资考/开题 deck 骨架:cover+agenda+一页 self_intro(学习情况/课程进度声明)开场,motivation 立需求-供给矛盾,background 综述现状引出 N 大核心问题,framework 抛出「软硬协同」总思路,再以 2-4 章 method 分述各研究内容(每章遵循『挑战→创新→成果→小结附论文』),末尾 closing 归纳到单张主线图+已发表论文列表,附 appendix 备份池以应答辩追问",
+      "anti_patterns": [
+        "常规研究报告(无学习情况声明+备份材料): 用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "顶会论文分享(单方法+无备份): 用 paper_share_bg_challenge_solution_eval_summary_canonical",
+        "工业产品路演(叙事偏商业, 无核心问题矩阵)"
+      ]
+    },
+    {
+      "id": "research_proposal_defense_with_team_budget_and_backup_stack",
+      "layer": "deck_level",
+      "title": "科研项目立项申报答辩·价值→挑战→方案→团队经费+多章备份",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "AI+组合优化/EDA方向科研立项申报",
+          "科研项目立项答辩",
+          "含团队/经费/指标的完整答辩型 deck",
+          "NP难问题AI求解的价值-挑战-方案论证"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "motivation_section",
+        "method_section",
+        "discussion_section",
+        "closing",
+        "appendix"
+      ],
+      "source_count": 1,
+      "confidence": "low",
+      "applicable_summary": "20-40 页项目立项申报 deck:cover 极简开场,motivation 章立价值+暴露 NP 难/算力/多变场景挑战,method 章抛出两条求解路线+分层框架+研究基础,discussion 章按『团队构成→既往结题→量化指标→经费概算』四步答『谁做/能否交付/花多少钱』,以简短 closing 致谢收尾正文;末尾接 2-4 章 appendix 备份材料(经费成员明细/研究基础/大规模能力/自适应优化等),供评审质询查验,不承载论证。正文短(<15 页)+ 备份长(可达一半篇幅)是该模式突出特征。",
+      "anti_patterns": [
+        "博士开题答辩(用 qualifying_exam_defense_with_study_progress_and_appendix, 含 self_intro/学习进度+研究内容多章)",
+        "工业产品 demo/商业融资路演(缺团队+指标+经费四合一评审支撑)",
+        "长篇综述报告(缺 discussion 团队/经费章)"
+      ]
+    },
+    {
+      "id": "research_report_method_pair_with_engineering_landing",
+      "layer": "deck_level",
+      "title": "研究报告·多方法贡献+工程落地案例(中长篇)",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "大模型推理系统优化学术报告",
+          "国产/异构芯片适配实践汇报",
+          "自研方法+工程落地综述",
+          "PD 分离/计算通信重叠专题"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "motivation_section",
+        "method_section",
+        "engineering_section",
+        "closing"
+      ],
+      "source_count": 1,
+      "confidence": "low",
+      "applicable_summary": "中长篇 deck(30-55 页)骨架: cover+编号 agenda 开场,一章 background/motivation 铺陈技术挑战,再以 2-3 章 method 并列展开自研工作贡献,末以一章 engineering case_study 落地到国产/异构芯片适配或产品化实践,以致谢+招聘/合作 CTA 收束。每章切换前插入 agenda-高亮 section_divider 作导航。相比长篇 panorama 更聚焦、更少 framework_intro/discussion 层。案例中章节角色 case_study 被映射为 engineering 章",
+      "anti_patterns": [
+        "长篇 3-6 方法平行陈列型: 走 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "单篇论文分享(paper_share): 走 paper_share canonical pattern",
+        "纯 tutorial 教学(无自研方法贡献): 叙事节奏不同"
+      ]
+    }
+  ]
+}

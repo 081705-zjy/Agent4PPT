@@ -1,0 +1,38 @@
+{
+  "页标识": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_34",
+  "所属章节": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7",
+  "页序号": 34,
+  "源文件": "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx",
+  "页面角色": "toc_candidate",
+  "标题": "目录：进入实验与性能结果章节",
+  "核心论断": "全篇论证收束到实测数据兑现加速承诺",
+  "本页讲什么": "这是一页导航式目录页，重新列出 Background、Insight 等全篇章节结构，用来标记讲解已推进到「实验设置与性能结果」章节，起承上启下的过渡作用，提示听众接下来看实测数据。",
+  "关键文字": [
+    "Contents",
+    "Background: AI and Video Generation",
+    "Insight"
+  ],
+  "视觉骨架": [
+    "章节目录列表",
+    "分节缩略图缩览",
+    "当前章节高亮标记"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_34.asset.01",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_34.asset.02",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_34.asset.03",
+    "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_34.asset.04"
+  ],
+  "适合复用场景": [
+    "长篇技术报告的章节过渡目录页",
+    "进入实验结果前的导航页"
+  ],
+  "不适合复用场景": [
+    "承载具体数据的结果页",
+    "单一方法细节展开页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

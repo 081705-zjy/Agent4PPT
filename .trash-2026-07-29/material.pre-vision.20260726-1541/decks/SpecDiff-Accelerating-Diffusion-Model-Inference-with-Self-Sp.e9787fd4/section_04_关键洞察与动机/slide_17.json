@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_17",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.04",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 17,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "关键洞察：少步扩散可提供未来信息",
+  "核心论断": "少量迭代的扩散过程即可提供未来特征信息",
+  "本页讲什么": "本页给出前两页设问的答案：只需运行少数几步(few iterations)的扩散过程，就能提前得到未来步骤的特征信息，从而实现对突变的预知。这把'能否预知'落成'如何预知'的可行方案，作为章节收尾，为后续基于该信息的特征选择与分类算法奠定直接前提。",
+  "关键文字": [
+    "A diffusion process with few iterations will provide future information",
+    "Motivation: Key Insight"
+  ],
+  "视觉骨架": [
+    "少步扩散示意",
+    "未来信息提取标注",
+    "去噪迭代时间轴"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_17.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_17.asset.02"
+  ],
+  "适合复用场景": [
+    "自推测/少步预览的动机收尾页",
+    "预知未来特征的可行性论证页"
+  ],
+  "不适合复用场景": [
+    "完整算法架构图页",
+    "benchmark 对比表格页",
+    "背景综述铺垫页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

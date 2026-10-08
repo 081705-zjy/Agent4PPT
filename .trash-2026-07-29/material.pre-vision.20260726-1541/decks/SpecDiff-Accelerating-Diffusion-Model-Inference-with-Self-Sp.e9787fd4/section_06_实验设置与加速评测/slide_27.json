@@ -1,0 +1,36 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_27",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.06",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 27,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "SD3 与 SD3.5 加速评测结果",
+  "核心论断": "SpecDiff 在 SD3、SD3.5 上分别达 2.80×、2.74× 加速",
+  "本页讲什么": "承接实验设置，给出 SpecDiff 在 Stable Diffusion 3 与 3.5 上的加速评测：分别取得 2.80× 与 2.74× 的推理加速，并以配图/样例展示加速同时保持生成质量，实证方法在主流 SD 模型上的有效性。",
+  "关键文字": [
+    "SpecDiff achieved 2.80× and 2.74× speedup on SD3 and SD3.5"
+  ],
+  "视觉骨架": [
+    "加速比数值标注",
+    "生成样例对比图",
+    "SD3/3.5 结果分栏"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_27.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_27.asset.02",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_27.asset.03"
+  ],
+  "适合复用场景": [
+    "扩散模型加速比的评测结果页",
+    "多模型加速对比的实验结果页"
+  ],
+  "不适合复用场景": [
+    "纯文字的实验设置页",
+    "方法原理示意页",
+    "章节导航过渡页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

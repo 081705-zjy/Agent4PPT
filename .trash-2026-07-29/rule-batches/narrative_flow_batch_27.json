@@ -1,0 +1,361 @@
+{
+  "batch_index": 27,
+  "rules": [
+    {
+      "id": "motivation_challenges_callback_in_method",
+      "category": "callback",
+      "applicable_when": "deck has both motivation/framework and method sections",
+      "title": "动机章挑战需在方法章逐一回扣",
+      "description": "framework/motivation 章列出的 N 个挑战/子问题, method 章需逐一回应 (verbatim 或 paraphrased), 命中率应 ≥80%.",
+      "what_to_check": [
+        "找 framework/motivation 章 slide.关键文字 / 核心论断 中含'挑战'/'问题'/'子问题'的列表",
+        "对每条 challenge, 在 method 章所有 slide 中找语义匹配 (方法名/研究内容编号对应)",
+        "算命中率 = 命中数 / 总 challenge 数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "framework 章 slide 12/13/15 列出 3 个挑战(参数爆炸/思维链膨胀/智能体冗余), method 章 sec.04/05/06/07 分别对应研究内容一/二/三/四, 4/3 命中"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "听众记不住动机章罗列的多条挑战 — 方法章逐一回扣是'兑现承诺'的核心机制, 缺失会让动机沦为空谈",
+      "fix_hint": "遍历动机章挑战列表, 每条在方法章追加至少一张 slide 明确对应关系",
+      "exceptions": [
+        "综述型 deck: 动机列领域整体挑战, 本工作只覆盖部分"
+      ]
+    },
+    {
+      "id": "cover_title_callback_in_closing",
+      "category": "callback",
+      "applicable_when": "any deck with cover and closing sections",
+      "title": "封面主标题需在结尾致谢页回扣",
+      "description": "cover 页主标题在 closing 章被 verbatim 或 paraphrased 引用, 呼应开场立起的主题",
+      "what_to_check": [
+        "取 cover slide 的标题/关键文字",
+        "在 closing 章 slide 关键文字/核心论断中匹配主标题关键词",
+        "验证 verbatim 或 paraphrased 出现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "cover slide 1 '面向大模型高效推理的算法与系统协同设计', closing slide 71 verbatim 重申该题目"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "首尾呼应让听众带走的最后一句话跟第一印象锁在同一主题上, 强化记忆",
+      "fix_hint": "closing 页除致谢外, 追加一行重申 cover 主标题或核心 anchor",
+      "exceptions": []
+    },
+    {
+      "id": "framework_diagram_reuse_in_method",
+      "category": "callback",
+      "applicable_when": "decks with a framework section preceding method sections",
+      "title": "框架图/结构图需在方法章复现",
+      "description": "framework 章提出的主结构图 (跨层次框架 / Transformer 结构) 在 method 章被复用 ≥1 次, 作为方法定位锚点",
+      "what_to_check": [
+        "framework 章找主结构图 slide (视觉骨架含'框架图'/'结构示意')",
+        "method 章找视觉骨架同型的 slide, 通常标题带'结构'或复用同一图"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "framework slide 11/14/16 立起三层跨层次框架, method slide 20/26/30 复用 Transformer 单层结构图并高亮不同挑战条"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "方法章多点子, 听众易迷失; 复用同一结构图并高亮当前所在位置能持续给听众定位坐标",
+      "fix_hint": "每个方法子章首页复用 framework 结构图, 高亮当前对应模块",
+      "exceptions": [
+        "方法完全独立于统一结构 (罕见)"
+      ]
+    },
+    {
+      "id": "teaser_at_motivation_end",
+      "category": "suspense_reveal",
+      "applicable_when": "decks with a motivation section preceding method",
+      "title": "动机章末页需埋方法预告钩子",
+      "description": "motivation 章末页应含'本工作方法即将展开'类语义钩子或量化瓶颈数据, 为后续方法留悬念",
+      "what_to_check": [
+        "取 motivation 章末页 (section 末 slide)",
+        "检查核心论断/关键文字是否给出量化瓶颈 (X 倍差距) 或方法预告"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "motivation 章末页 slide 8 亮出'端侧推理比云侧慢1~2个数量级'并给四档设备实测数据, 为方法章铺垫"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "动机→方法之间若无 build-up, 方法章开场就没有'为什么要看'的张力",
+      "fix_hint": "motivation 章末页追加一行'本工作从 X 层入手'或亮出核心瓶颈数据",
+      "exceptions": []
+    },
+    {
+      "id": "result_holdback_at_chapter_end",
+      "category": "suspense_reveal",
+      "applicable_when": "method chapters containing quantitative results",
+      "title": "方法子章最亮数据放在子章末页",
+      "description": "每个方法子章最炸的加速比/收益数字放在该子章末页, 而非首页, 形成'铺垫→揭示'节奏",
+      "what_to_check": [
+        "每个 method 子章找含最大加速比/最大收益数字的 slide",
+        "验证该 slide 位于子章后半段 (末页或倒数第二页)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "研究内容一末 slide 25 '2.5x/1.86x 加速', 研究内容二 slide 43 '10.06倍加速', 研究内容三小结 slide 60 '59.46s→10s' 均置于子章末段"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "最亮数字放章末=听众记忆峰值+章间过渡自然衔接, 违背则子章前重后轻听众走神",
+      "fix_hint": "把子章最大加速比/收益数字迁移到子章末 slide 或加粗高亮",
+      "exceptions": [
+        "纯 setup 章无量化结果"
+      ]
+    },
+    {
+      "id": "chapter_outro_summary_with_publications",
+      "category": "chapter_transitions",
+      "applicable_when": "proposal/thesis-defense decks with multi-work method chapters",
+      "title": "方法子章末页需含小结+发表成果",
+      "description": "每个方法子章末尾追加'性能小结'与'发表成果'两页, 完成本子章闭环并给学术权威背书",
+      "what_to_check": [
+        "每个 method 子章后 1-2 slide 是否含'总结'/'小结'/'发表'关键词",
+        "验证含具体 tokens/s 或 speedup 数字 + 会议/期刊名"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "研究内容一 slide 35 (小结 153/115 tokens/s) + slide 36 (ISCA/TCAD/MLSys 发表); 研究内容三 slide 60 小结+ slide 48 发表"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "开题/答辩类 deck 需向委员会证明工作可信 — 章末的'性能收益+已发表'是最有力的兑现证据",
+      "fix_hint": "每个方法子章末追加两页: 一页数字小结, 一页 CCF 顶会顶刊发表清单",
+      "exceptions": [
+        "非学术型 deck (企业汇报无发表数据)"
+      ]
+    },
+    {
+      "id": "toc_navigation_between_chapters",
+      "category": "chapter_transitions",
+      "applicable_when": "decks ≥30 pages with multi-chapter structure",
+      "title": "章间过渡必须插入导航目录页",
+      "description": "跨大章过渡处插入 toc_candidate 目录页, 高亮当前章节, 起分节导航作用",
+      "what_to_check": [
+        "检查大章切换点 (motivation→framework, framework→method 等) 前一页",
+        "验证是否为 toc_candidate 且'当前章节高亮'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "slide 3 (进入研究背景) / slide 9 (进入研究思路) / slide 18 (进入研究内容) / slide 61 (进入总结章), 每次章切均插目录页高亮当前项"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长 deck (>30 页) 听众易迷失, 章切目录页给出'你在第 N 章'的位置感, 降低认知负担",
+      "fix_hint": "每次跨大章切换前插入 Contents 页, 只高亮当前项, 其余置灰",
+      "exceptions": [
+        "短 deck ≤20 页 (无需分章导航)"
+      ]
+    },
+    {
+      "id": "main_thesis_repeat_across_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "any deck with a clear main thesis",
+      "title": "主 thesis 需跨章多次复述",
+      "description": "主 thesis (e.g. '算法与系统协同设计') 应在 motivation/framework/method/discussion 至少 3 章中出现, 重复 8-15 次为佳",
+      "what_to_check": [
+        "从 deck.标题/论述总结抽主 thesis 关键词",
+        "扫全 deck slide 关键文字, 记录出现页",
+        "验证跨 ≥3 章出现"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "'算法与系统协同' 出现在 cover / framework slide 16 '跨层次协同' / 研究内容一 slide 35 '算法系统协同' / 总结 slide 67 'Co-Design' / 致谢 slide 71, 跨 5 章"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "主 thesis 在多章多次复述让听众记住核心命题, 少于 3 章说明主题不清、超 20 次啰嗦",
+      "fix_hint": "每章至少一页显式使用主 thesis 关键词或其 paraphrase",
+      "exceptions": []
+    },
+    {
+      "id": "key_number_repeat_bridging_chapters",
+      "category": "repetition_emphasis",
+      "applicable_when": "decks with quantitative bottleneck claims",
+      "title": "关键量化数字需跨章复现",
+      "description": "motivation/framework 章亮出的关键量化瓶颈 (如 200 tokens/s 门槛, 6.3s 延迟) 应在 method/discussion 章重复对齐, 建立'瓶颈→解决'的数字对话",
+      "what_to_check": [
+        "motivation/framework 找关键量化数字 (tokens/s / 延迟秒数 / 倍数)",
+        "method/discussion 找同数字或明确对比 (X → Y)"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "'200 tokens/s 门槛' 在 slide 17/62/63 三次出现; '6.3s 延迟' 在 slide 17/47/64 三次出现并给出优化后 4.7s"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "数字比语句更易被听众抓住 — 同一关键数字反复出现让'瓶颈-方案'的对照锁定在具体量级上",
+      "fix_hint": "discussion 章复用 motivation 的关键数字, 给出优化后对照值",
+      "exceptions": []
+    },
+    {
+      "id": "before_after_pair_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "method sections presenting quantitative gains",
+      "title": "方法结果需含 before/after 对照页",
+      "description": "每个方法子章结果部分含至少一张 before/after 对照 slide (表格或双栏), 支撑加速主张",
+      "what_to_check": [
+        "method 子章末段找视觉骨架含'优化前后对比表'/'对比' 或 关键文字含 'X → Y' 的 slide"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "slide 47 (思维链 1276→1000 tokens, 6.3s→4.7s), slide 60 (MemOS 59.46s→10s 逐项), slide 65 (智能体前后对照)"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "孤立说'我方法 X 倍加速'听众无参照; before/after 对照直接可视化收益并防止夸大",
+      "fix_hint": "每个方法子章末补一张对照表, 列出 baseline vs ours 的关键指标",
+      "exceptions": [
+        "纯拟开展/未实验章"
+      ]
+    },
+    {
+      "id": "baseline_comparison_in_result",
+      "category": "comparison_evidence",
+      "applicable_when": "method sections claiming speedup",
+      "title": "方法结果需与多 baseline 对比",
+      "description": "每个方法子章实验结果 slide 需列 ≥2 个 baseline (如 vLLM/HuggingFace/DeepSpeed) 做横向对比",
+      "what_to_check": [
+        "method 子章实验 slide 关键文字是否含 baseline 名 (vLLM/HuggingFace/DeepSpeed/FlashDecoding 等)",
+        "验证 ≥2 个 baseline"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "slide 25 对比 vLLM/FlashDecoding++; slide 29 对比 HuggingFace/HF+EAGLE/Deepspeed/MegaBlocks/MTPMoE 5 个 baseline"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "单基线易被质疑挑软柿子; 多 baseline 显示方法在多种主流实现上都占优, 更有说服力",
+      "fix_hint": "实验 slide 追加 2-3 个主流 baseline 的对比柱",
+      "exceptions": [
+        "拟开展章 (仅有预期收益)"
+      ]
+    },
+    {
+      "id": "jargon_first_definition_distance",
+      "category": "anchor_trajectory",
+      "applicable_when": "decks with heavy technical jargon",
+      "title": "专业术语首次使用需及时定义",
+      "description": "专业术语/缩写 (如 MoE / KV Cache / ReAct) 首次使用时同页给出简要定义或 anchor 展开, 距离 ≤2 页",
+      "what_to_check": [
+        "扫 deck slides 找首次出现的专业缩写/术语",
+        "验证同页或下一页有 anchor/公式/流程图 展开定义"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "'KV Cache' 首出现 slide 40 同页给出预填充/解码阶段流程图; 'ReAct' slide 15 首出并附 LLM→Tool 循环示意; 'MoE 冷热专家' slide 27 首出即给 e1-e7 映射图"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "专业术语不定义直接用, 听众每卡壳一次就丢失后续几分钟内容",
+      "fix_hint": "首次使用术语时同页附一句定义或结构图",
+      "exceptions": [
+        "领域已达成共识的核心术语 (Transformer/GPT)"
+      ]
+    },
+    {
+      "id": "agenda_chapter_match",
+      "category": "structural_promise",
+      "applicable_when": "decks with an explicit agenda/toc",
+      "title": "agenda 列出的章节与实际章节需完全对应",
+      "description": "cover 后目录 slide 承诺的章节列表, 实际 deck 章节应逐一 deliver, 命中率 ≥95%",
+      "what_to_check": [
+        "cover 后 toc slide 取承诺的章节名列表",
+        "跟 sections_outline 实际章节做字符串匹配"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "目录承诺 '研究背景/研究思路/研究内容', sections_outline 完全对应 sec.02 motivation / sec.03 framework / sec.04-07 method"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "agenda 是对听众的显式承诺, 不 deliver 就是'说一套做一套'破坏信任",
+      "fix_hint": "补齐缺失章节, 或修改 agenda 让承诺与实际一致",
+      "exceptions": []
+    },
+    {
+      "id": "structural_to_content_ratio",
+      "category": "pacing",
+      "applicable_when": "decks ≥40 pages",
+      "title": "结构页占比 15-25%",
+      "description": "cover/toc/divider/closing/references 等结构页在 deck 中占 15-25% 为佳; 过低=缺导航, 过高=内容稀薄",
+      "what_to_check": [
+        "统计 section_role 属于 opening/references/closing/appendix 的 slide 数",
+        "算比例 = 结构页 / 总页数"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.个人学术考核.高效端侧大模型推理优化_开题.9b250018",
+          "evidence": "74 页中 opening(2)+references(3)+closing(1)+appendix(3)+toc 中间页(4)=13, 约 17.6% 处于合理区间"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "soft",
+      "rationale": "结构页太少听众迷路, 太多信息密度不足; 15-25% 是长 deck 的经验区间",
+      "fix_hint": "结构页 >25% 精简目录, <15% 补插分章导航",
+      "exceptions": [
+        "特殊格式如纯图册"
+      ]
+    }
+  ],
+  "extraction_notes": "batch 27 只含 1 deck (74 页开题答辩型), 抽出 15 条 rule, 覆盖 8 大类中的 6 类: callback(3)/suspense_reveal(2)/chapter_transitions(2)/repetition_emphasis(2)/comparison_evidence(2)/anchor_trajectory(1)/structural_promise(1)/pacing(1). 因单 deck 样本, 所有 hit_carriers 均来自同一 deck, estimated_hit_rate 记为 1.0 但需后续 batch 交叉验证.",
+  "coverage": {
+    "rules_count": 15,
+    "by_category": {
+      "callback": 3,
+      "suspense_reveal": 2,
+      "chapter_transitions": 2,
+      "repetition_emphasis": 2,
+      "comparison_evidence": 2,
+      "anchor_trajectory": 1,
+      "structural_promise": 1,
+      "pacing": 1
+    }
+  }
+}

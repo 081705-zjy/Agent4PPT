@@ -1,0 +1,1457 @@
+{
+  "batch_index": 5,
+  "patterns": [
+    {
+      "id": "method_multi_parallel_techniques_intro_flow_detail",
+      "title": "方法·多并列技术·意图-流程-硬件细节",
+      "applicable_when": {
+        "chapter_role": [
+          "method"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          12,
+          20
+        ],
+        "must_have_in_chapter_purpose": [
+          "多技术",
+          "算法",
+          "硬件",
+          "调度",
+          "协同"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录高亮当前 Solution 章"
+        },
+        {
+          "archetype": "technique_method_key_idea_intro",
+          "count": 3,
+          "position": "middle",
+          "purpose": "每项技术首页: Method 灰底标签+一句话 key idea+示意图"
+        },
+        {
+          "archetype": "technique_algorithm_flow_stage",
+          "count": "6-8",
+          "position": "middle",
+          "purpose": "算法/流水线细化: 整体处理流程+格式/挑战/调度阶段等"
+        },
+        {
+          "archetype": "technique_hardware_mechanism_drilldown",
+          "count": "3-5",
+          "position": "middle",
+          "purpose": "硬件层细节: 总览架构/编解码单元/DVPE+MBD 等硬件机制"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "technique_method_key_idea_intro",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "technique_method_key_idea_intro",
+          "to_archetype": "technique_algorithm_flow_stage",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "technique_algorithm_flow_stage",
+          "to_archetype": "technique_algorithm_flow_stage",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "technique_algorithm_flow_stage",
+          "to_archetype": "technique_method_key_idea_intro",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "technique_algorithm_flow_stage",
+          "to_archetype": "technique_hardware_mechanism_drilldown",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "technique_method_key_idea_intro",
+          "to_archetype": "technique_hardware_mechanism_drilldown",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型深度方法章: 章首目录锚定, 3 项并列技术(算法稀疏化+硬件混合精度+动静调度或稀疏模式+编解码+调度)各自以 Method key idea 首页起头, 展开若干算法流程与硬件机制细节页, 层层完成软硬协同方案铺陈",
+      "anti_patterns": [
+        "单一 method 深度贯穿(用 method_single_method_deep_dive)",
+        "算法-系统-硬件三层严格递进(用 method_three_sublayer_challenge_innovation_experiment_loop)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.04",
+          "section_title": "可转置块状稀疏与编解码架构",
+          "section_role": "method",
+          "section_narrative": "deck 方法核心(第3章 Solution),承接「训练需转置」洞察,依次提出 TBS 稀疏模式、片上自适应编解码架构、稀疏感知调度三项技术,以挑战+硬件总览串联,论证可转置块状稀疏可实现。",
+          "section_topic_tags": [
+            "可转置块状稀疏 TBS",
+            "自适应片上编解码",
+            "稀疏感知调度",
+            "TB-STC 架构",
+            "DVPE+MBD 硬件"
+          ],
+          "match_evidence": "14 页 method 章: 章首 TOC → Tech.1(TBS 模式) key idea+多页算法细节 → Tech.2(存储格式) key idea+压缩格式细节+Codec 硬件 → Tech.3(调度) key idea+块间/块内思想+I/O-aware 硬件, 3 项并列技术各自 intro→flow→hardware 递进",
+          "slides": [
+            {
+              "slide_index": 15,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents:进入第3章 Solution",
+              "slide_claim": "目录切换到第3章「可转置块状稀疏」解决方案",
+              "slide_key_text": [
+                "Contents",
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "五项编号目录列表",
+                "当前章高亮圆点标记"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_pattern": "technique_method_key_idea_intro",
+              "archetype": "single_method_name_with_matrix_grid_examples",
+              "slide_title": "Tech.1:TBS 稀疏模式定义",
+              "slide_claim": "TBS 通过维度×比例双重灵活性探索稀疏空间",
+              "slide_key_text": [
+                "The novel sparsity pattern (TBS) explores the sparsity flexibility",
+                "Diverse dimension × Diverse proportion",
+                "block0~block3: 2:4 / 0:4 / 1:4",
+                "TBS (N={1,2,4}, M=4)",
+                "Transposable Block-wise Structured Sparsity"
+              ],
+              "slide_visual_skeleton": [
+                "维度×比例组合示意框",
+                "四块矩阵稀疏示例网格",
+                "双向红色箭头标注"
+              ]
+            },
+            {
+              "slide_index": 17,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "comparison_three_pattern_matrix_grid",
+              "slide_title": "Tech.1:Mask-Space 与稀疏模式对比",
+              "slide_claim": "以 Mask-Space 度量,TBS 表示空间大于现有模式",
+              "slide_key_text": [
+                "Mask-Space (MS), the concept of the representation space[1]",
+                "Definition of MS: the number of possible mask granularity",
+                "(a) Tile-wise N:M sparsity",
+                "(b) Row-wise N:M sparsity (VEGETA: RS-V, HighLight: RS-H)",
+                "(c) Transposable (N={1,2,4}, M=4)"
+              ],
+              "slide_visual_skeleton": [
+                "3 列稀疏模式并列对比",
+                "Mask-Space 概念图例"
+              ]
+            },
+            {
+              "slide_index": 18,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "single_text_centric_argument_statement",
+              "slide_title": "Tech.1:TBS 逼近非结构化稀疏",
+              "slide_claim": "更大表示空间使 TBS 更接近非结构化稀疏",
+              "slide_key_text": [
+                "Compared with other N:M sparsity patterns, TBS is much similar to the unstructured sparsity",
+                "due to its larger representation space"
+              ],
+              "slide_visual_skeleton": [
+                "单条蓝框强调论断"
+              ]
+            },
+            {
+              "slide_index": 19,
+              "role_in_pattern": "technique_method_key_idea_intro",
+              "archetype": "single_method_problem_annotated_matrix",
+              "slide_title": "Tech.2:现有存储格式的缺陷",
+              "slide_claim": "现有存储格式非连续且只压缩行,存在冗余",
+              "slide_key_text": [
+                "Existing storage format",
+                "Non-contiguous",
+                "Only compress rows",
+                "Redundant"
+              ],
+              "slide_visual_skeleton": [
+                "稀疏矩阵与索引存储示意",
+                "行压缩布局对比图"
+              ]
+            },
+            {
+              "slide_index": 20,
+              "role_in_pattern": "technique_hardware_mechanism_drilldown",
+              "archetype": "architecture_overview_dense_diagram",
+              "slide_title": "Hardware Overview:TB-STC 硬件总览",
+              "slide_claim": "TB-STC 在原 Tensor Core 上加轻量硬件单元",
+              "slide_key_text": [
+                "TB-STC is based on the original Tensor Core architecture with lightweight hardware units",
+                "(a) GPU architecture with Tensor Core",
+                "(b) TB-STC Architecture",
+                "Codec Unit / MBD",
+                "Dual-side sparse tensor core, ISCA 2021"
+              ],
+              "slide_visual_skeleton": [
+                "GPU 与 TB-STC 双架构对比框图",
+                "SM 内部单元标注"
+              ]
+            },
+            {
+              "slide_index": 21,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "problem_solution_dual_panel",
+              "slide_title": "Challenges of TBS:三大挑战",
+              "slide_claim": "TBS 面临存储、带宽、算力三方面挑战",
+              "slide_key_text": [
+                "Challenges of TBS",
+                "Challenge-2: The rigid storage format leads to low bandwidth utilization",
+                "Challenge-3: The varying sparsity leads to low computational",
+                "Non-contiguous / Redundant / Large gap",
+                "I/O-aware configurable architecture"
+              ],
+              "slide_visual_skeleton": [
+                "2×2 挑战-方案对照面板",
+                "红框问题标注 + 箭头指向方案"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "pipeline_step_by_step_diagram",
+              "slide_title": "Tech.2:片上自适应格式转换",
+              "slide_claim": "沿各稀疏维压缩以消除非连续内存访问",
+              "slide_key_text": [
+                "Challenge: Existing storage formats face non-contiguous, redundant memory accesses for TBS pattern",
+                "Single-dimensional Compression (SDC)[1]",
+                "Compressed Sparse Row (CSR)",
+                "Compress along the rows",
+                "Non-contiguous memory access!"
+              ],
+              "slide_visual_skeleton": [
+                "SDC 与 CSR 压缩流程对比",
+                "PE/Cycle 内存访问时序示意"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "single_method_encoding_bit_field_diagram",
+              "slide_title": "Tech.2:双维压缩格式设计",
+              "slide_claim": "按各自稀疏维压缩,得双维紧凑存储格式",
+              "slide_key_text": [
+                "Compressed format according to their respective sparsity dimension",
+                "Sparsity dim. (1b)",
+                "Sparsity ratio (3b)",
+                "Element offset (12b)",
+                "Elements"
+              ],
+              "slide_visual_skeleton": [
+                "位域编码字段拆解图",
+                "稀疏矩阵到元素表映射"
+              ]
+            },
+            {
+              "slide_index": 24,
+              "role_in_pattern": "technique_hardware_mechanism_drilldown",
+              "archetype": "algorithm_block_diagram",
+              "slide_title": "Tech.2:Adaptive Codec 编解码单元",
+              "slide_claim": "Codec 单元经队列与合并实现片上格式转换",
+              "slide_key_text": [
+                "Values 2×16b / 2×3b",
+                "Rids, Iids/Sids 2×3b",
+                "Threshold, Queue group (Queue 0 / Queue 2)",
+                "Merge M, MUX",
+                "[flag, element] * 4, 20b / 19b / 38b"
+              ],
+              "slide_visual_skeleton": [
+                "Codec 数据通路框图",
+                "队列组 + 合并单元 + MUX 位宽标注"
+              ]
+            },
+            {
+              "slide_index": 25,
+              "role_in_pattern": "technique_method_key_idea_intro",
+              "archetype": "before_after_optimization_compare",
+              "slide_title": "Tech.3:稀疏感知调度总览",
+              "slide_claim": "块内外稀疏度差异致负载不均,压低算力利用",
+              "slide_key_text": [
+                "Challenge: The sparsity degree differences within/between the blocks cause workload imbalance, leading to low utilization",
+                "High utilization",
+                "I/O-aware configurable architecture with sparsity-aware scheduling",
+                "#PE / #cycle"
+              ],
+              "slide_visual_skeleton": [
+                "低利用 vs 高利用时序对比",
+                "#PE-#cycle 负载分布示意"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "single_text_centric_key_idea_bullet",
+              "slide_title": "Tech.3:块间调度(Inter-block)",
+              "slide_claim": "利用局部性均衡相邻块算力以降总开销",
+              "slide_key_text": [
+                "Inter-block scheduling",
+                "Key idea is to use locality to balance the computational cost between consecutive matrix blocks",
+                "to reduce the overall computational cost"
+              ],
+              "slide_visual_skeleton": [
+                "两级 bullet key idea 文字"
+              ]
+            },
+            {
+              "slide_index": 27,
+              "role_in_pattern": "technique_algorithm_flow_stage",
+              "archetype": "single_text_centric_key_idea_bullet",
+              "slide_title": "Tech.3:块内调度(Intra-block)思想",
+              "slide_claim": "利用非零元总数为 M 整数倍的平衡性质",
+              "slide_key_text": [
+                "Intra-block scheduling",
+                "Key idea is to exploit the balance property for the total number of non-zero elements in the matrix block",
+                "i.e., The total number is always an integer multiple of M"
+              ],
+              "slide_visual_skeleton": [
+                "两级 bullet key idea 文字"
+              ]
+            },
+            {
+              "slide_index": 28,
+              "role_in_pattern": "technique_hardware_mechanism_drilldown",
+              "archetype": "algorithm_block_diagram",
+              "slide_title": "Tech.3:I/O-aware 可配置调度架构",
+              "slide_claim": "DVPE 与 MBD 单元支撑块内调度与双向存储",
+              "slide_key_text": [
+                "Intra-block scheduling",
+                "(a) Diverse VPE",
+                "(b) MBD unit",
+                "DVPE buffers the remaining elements and then merges",
+                "MBD unit supports both row-major and column-major storage"
+              ],
+              "slide_visual_skeleton": [
+                "DVPE 与 MBD 两单元框图",
+                "Sparse Indices + MUX 通路 + reorganizing 标注"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "background_gap_to_sparsity_family_taxonomy_dual_flaw",
+      "title": "背景·算力鸿沟→稀疏方向→硬件演进→分类立双靶",
+      "applicable_when": {
+        "chapter_role": [
+          "background"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          10
+        ],
+        "must_have_in_chapter_purpose": [
+          "背景",
+          "算力鸿沟",
+          "稀疏",
+          "分类",
+          "现有方案缺陷"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Background 章"
+        },
+        {
+          "archetype": "quantitative_gap_chart",
+          "count": 1,
+          "position": "start",
+          "purpose": "用算力供需 240× vs 2× 散点图立宏观 gap"
+        },
+        {
+          "archetype": "solution_family_intro_dual_panel",
+          "count": 1,
+          "position": "middle",
+          "purpose": "引出稀疏化作为压缩方向, 并列展示两类思路"
+        },
+        {
+          "archetype": "hardware_evolution_timeline",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以 GPU 代际时间线论证专用硬件持续支持稀疏"
+        },
+        {
+          "archetype": "dense_vs_sparse_mac_illustration",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以矩阵×向量 16 vs 6 MACs 例子解释稀疏机理"
+        },
+        {
+          "archetype": "sparsity_pattern_taxonomy_dual_compare",
+          "count": 1,
+          "position": "middle",
+          "purpose": "将稀疏模式二分为结构化/非结构化两类, 建立对照坐标"
+        },
+        {
+          "archetype": "pattern_flaw_accuracy_drop",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "揭示结构化稀疏的精度硬伤 (>6% drop)"
+        },
+        {
+          "archetype": "pattern_flaw_hardware_overhead",
+          "count": 1,
+          "position": "end",
+          "purpose": "揭示非结构化稀疏的硬件开销硬伤 (>80% logic)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "quantitative_gap_chart",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "quantitative_gap_chart",
+          "to_archetype": "solution_family_intro_dual_panel",
+          "hook_type": "problem_to_solution"
+        },
+        {
+          "from_archetype": "solution_family_intro_dual_panel",
+          "to_archetype": "hardware_evolution_timeline",
+          "hook_type": "from_general_to_specific"
+        },
+        {
+          "from_archetype": "hardware_evolution_timeline",
+          "to_archetype": "dense_vs_sparse_mac_illustration",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "dense_vs_sparse_mac_illustration",
+          "to_archetype": "sparsity_pattern_taxonomy_dual_compare",
+          "hook_type": "data_then_implication"
+        },
+        {
+          "from_archetype": "sparsity_pattern_taxonomy_dual_compare",
+          "to_archetype": "pattern_flaw_accuracy_drop",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "pattern_flaw_accuracy_drop",
+          "to_archetype": "pattern_flaw_hardware_overhead",
+          "hook_type": "parallel_continuation"
+        }
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 目录切入 → 算力供需鸿沟 → 稀疏方向引入 → GPU 稀疏支持代际演进 → 稀疏机理小例 → 稀疏模式二分类 → 分别揭示结构化(掉精度)与非结构化(硬件开销)两类硬伤, 为后续新方案精准立靶",
+      "anti_patterns": [
+        "只讲历史无痛点(用 background_only_chronology)",
+        "只讲宏观 gap 无分类立靶(用 motivation_funnel_macro_to_pain)",
+        "背景→模型内部结构→算子拆解漏斗(用 background_ai_to_domain_to_hardware_evolution_funnel)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02",
+          "section_title": "AI与稀疏计算背景",
+          "section_role": "background",
+          "section_narrative": "为全 deck 立靶的 background 章：先证 AI 算力鸿沟(需求 240×/年 vs 硬件 2×/年),引出稀疏化,再层层揭示结构化(掉精度)与非结构化(硬件开销大)两类现有方案的硬伤,为后续 TBS 铺垫。",
+          "section_topic_tags": [
+            "AI 算力鸿沟",
+            "稀疏化压缩",
+            "Tensor Core 演进",
+            "结构化 vs 非结构化稀疏",
+            "现有方案硬伤"
+          ],
+          "match_evidence": "8 页 background: TOC → 240×/2× 供需散点图 → 稀疏化双 panel 引入 → GPU 代际时间线 → 16 vs 6 MACs 稀疏机理 → 结构化/非结构化二分类 → 结构化 >6% 精度掉点 → 非结构化 >80% 逻辑开销, 严格对照分类立双靶",
+          "slides": [
+            {
+              "slide_index": 3,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents: 5-part agenda, Background highlighted",
+              "slide_claim": "Deck unfolds in 5 parts, starting from the Background section",
+              "slide_key_text": [
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "纵向 5 项 agenda 列表",
+                "编号圆点导航",
+                "当前项蓝色高亮"
+              ]
+            },
+            {
+              "slide_index": 4,
+              "role_in_pattern": "quantitative_gap_chart",
+              "archetype": "supply_demand_gap_chart",
+              "slide_title": "AI 算力需求 240×/年 vs 硬件 2×/年",
+              "slide_claim": "AI 模型算力需求(240×/年)远超硬件供给(2×/年),形成巨大鸿沟",
+              "slide_key_text": [
+                "There is a huge gap between the computing performance requirements of AI models and the computing performance provided by hardware",
+                "Model: 240x/year",
+                "Hardware: 2x/year",
+                "Nvidia H200 (141GB)",
+                "Generative AI (e.g., large language models, LLM)"
+              ],
+              "slide_visual_skeleton": [
+                "参数量-年份对数散点图",
+                "模型/硬件节点标注",
+                "240×/年 与 2×/年 对比标签"
+              ]
+            },
+            {
+              "slide_index": 5,
+              "role_in_pattern": "solution_family_intro_dual_panel",
+              "archetype": "single_method_dual_route_panel",
+              "slide_title": "稀疏化:重要的模型压缩方法",
+              "slide_claim": "稀疏化是重要的模型压缩手段,含组内 top-k 与块稀疏软硬协同两类思路",
+              "slide_key_text": [
+                "The sparsification method is one of the important model compression",
+                "Group sparsity and top-k sparsity within the group",
+                "Based on block sparsity and software-hardware co-optimization"
+              ],
+              "slide_visual_skeleton": [
+                "左右 2 列红框 panel",
+                "上方蓝框主论断",
+                "组稀疏/块稀疏并列对照"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_pattern": "hardware_evolution_timeline",
+              "archetype": "hardware_evolution_timeline",
+              "slide_title": "稀疏+专用硬件架构:GPU 代际演进带来 2× 提升",
+              "slide_claim": "稀疏与专用硬件架构结合,历代 GPU 演进带来约 2× 性能提升",
+              "slide_key_text": [
+                "The combination of sparsity and dedicated hardware architecture has",
+                "Volta-2017 / Turing-2018 / Ampere-2020 / Hopper-2022 / Blackwell-2024",
+                "Tensor Core",
+                "New FP4 format",
+                "2× performance improvement"
+              ],
+              "slide_visual_skeleton": [
+                "GPU 代际横向时间线",
+                "各代架构特性标注",
+                "2× 性能提升红色高亮"
+              ]
+            },
+            {
+              "slide_index": 7,
+              "role_in_pattern": "dense_vs_sparse_mac_illustration",
+              "archetype": "before_after_optimization_compare",
+              "slide_title": "稀疏计算:16 MACs 降到 6 MACs",
+              "slide_claim": "稀疏化跳过零值 MAC,把 16 次乘加降到 6 次,削减计算与访存开销",
+              "slide_key_text": [
+                "Sparsification can reduce the computational and memory overhead of the model, thereby improving the computing",
+                "Dense manner",
+                "Sparse manner",
+                "10 zero MACs + 6 non-zero MACs",
+                "16 MACs",
+                "6 MACs"
+              ],
+              "slide_visual_skeleton": [
+                "Dense/Sparse 左右对照",
+                "矩阵×向量数值示例",
+                "16 vs 6 MACs 对比标注"
+              ]
+            },
+            {
+              "slide_index": 8,
+              "role_in_pattern": "sparsity_pattern_taxonomy_dual_compare",
+              "archetype": "taxonomy_dual_class_matrix_grid",
+              "slide_title": "稀疏模式分两类:结构化 vs 非结构化",
+              "slide_claim": "现有稀疏模式大致分为结构化(粗粒度规则)与非结构化(细粒度不规则)两类",
+              "slide_key_text": [
+                "Existing sparsity patterns can be roughly classified into two categories: structured sparsity and unstructured sparsity",
+                "Structured sparsity: Coarse-grained, Regular",
+                "Unstructured sparsity: Fine-grained, Irregular"
+              ],
+              "slide_visual_skeleton": [
+                "左右 2 列稀疏矩阵可视化",
+                "VS. 对照分隔",
+                "结构化/非结构化标签"
+              ]
+            },
+            {
+              "slide_index": 9,
+              "role_in_pattern": "pattern_flaw_accuracy_drop",
+              "archetype": "single_text_centric_pain_statement",
+              "slide_title": "结构化稀疏的硬伤:掉精度",
+              "slide_claim": "结构化稀疏限制模型精度,LLM 上精度掉点超 6%",
+              "slide_key_text": [
+                "Structured sparsity limits the accuracy of the model, especially in the large language models (LLMs)",
+                "Accuracy loss![1]",
+                "NVIDIA Sparse Tensor",
+                ">6% accuracy drop on OPT-6.7B and Llama"
+              ],
+              "slide_visual_skeleton": [
+                "上方蓝框主论断",
+                "Accuracy loss 红色警示标注",
+                ">6% 掉点数值高亮"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_pattern": "pattern_flaw_hardware_overhead",
+              "archetype": "problem_breakdown_three_pillars",
+              "slide_title": "非结构化稀疏的硬伤:硬件开销大",
+              "slide_claim": "非结构化稀疏带来巨大额外硬件开销,如 MatRaptor 额外逻辑超 80%",
+              "slide_key_text": [
+                "Unstructured sparsity leads to large additional hardware overhead",
+                "MatRaptor [3]: Extra logic units overhead of over 80%",
+                "Sextans [2]: Larger on-chip buffer",
+                "DSTC [1]"
+              ],
+              "slide_visual_skeleton": [
+                "三个代表工作分点罗列",
+                "上方蓝框主论断",
+                "80% 额外开销红色高亮"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "motivation_paradigm_compare_then_transpose_key_idea",
+      "title": "动机·两条路线对比→机制揭示→转置关键思路",
+      "applicable_when": {
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          3,
+          5
+        ],
+        "must_have_in_chapter_purpose": [
+          "洞察",
+          "训练",
+          "转置",
+          "关键思路",
+          "对比"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Insight 章"
+        },
+        {
+          "archetype": "paradigm_compare_dual_route",
+          "count": 1,
+          "position": "start",
+          "purpose": "对比 post-training vs 原生稀疏训练两条路线, 用图表证明后者更优"
+        },
+        {
+          "archetype": "mechanism_reveal_intro",
+          "count": 1,
+          "position": "middle",
+          "purpose": "初次揭示前向/反向权重关系(不含公式)"
+        },
+        {
+          "archetype": "key_idea_bridge_annotation",
+          "count": 1,
+          "position": "end",
+          "purpose": "补全 W↔Wᵀ 转置公式并以底部 Key idea 收束, 桥接下一章方法"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "paradigm_compare_dual_route",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "paradigm_compare_dual_route",
+          "to_archetype": "mechanism_reveal_intro",
+          "hook_type": "cause_to_effect"
+        },
+        {
+          "from_archetype": "mechanism_reveal_intro",
+          "to_archetype": "key_idea_bridge_annotation",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型 insight 章的短漏斗式论证: 目录 → 两条路线对比证明训练时约束合理 → 揭示前向/反向机制 → 补全转置公式并给出 Key idea 桥接方法章, 短短 3-4 页递进出核心洞见",
+      "anti_patterns": [
+        "insight 章依赖多列相关工作综述(用 problem_related_works_survey_dual_challenge_to_solution_bridge)",
+        "洞察章借类比源头引出双挑战(用 motivation_domain_analogy_dual_challenge_related_work_gap)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.03",
+          "section_title": "训练需转置的核心洞察",
+          "section_role": "motivation",
+          "section_narrative": "承接背景章,论证「训练即转置」这一核心洞察为 TBS 方案铺垫:先证原生稀疏训练优于后训练微调,再揭示前向/反向权重互为转置,推出 W 与 Wᵀ 须同时结构化稀疏。",
+          "section_topic_tags": [
+            "原生稀疏训练",
+            "前向反向权重转置",
+            "结构化稀疏 Key idea",
+            "TBS 铺垫",
+            "训练时约束"
+          ],
+          "match_evidence": "4 页 insight: TOC → 原生稀疏训练 vs 后训练微调柱状图对比 → 前向/反向乘法示意引入 → 补全 Wᵀ 公式并给 Key idea 桥接下一章 Solution",
+          "slides": [
+            {
+              "slide_index": 11,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:定位到 Insight 章节",
+              "slide_claim": "本页进入第 2 章「训练中的转置洞察」",
+              "slide_key_text": [
+                "Contents",
+                "Insight: Transpose Information from Training",
+                "Background: AI and Sparse Computing",
+                "Solution: Transposable Block-wise Sparsity",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "纵向 5 项编号目录列表",
+                "蓝色高亮当前章圆点",
+                "灰显未激活章节"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_pattern": "paradigm_compare_dual_route",
+              "archetype": "paradigm_shift_dual_column_compare",
+              "slide_title": "原生稀疏训练优于后训练微调",
+              "slide_claim": "原生稀疏训练比后训练微调获得更优精度",
+              "slide_key_text": [
+                "Compared with the method of post-training fine-tuning, the native sparse training method can obtain a better result",
+                "Sparse training is superior to post-training",
+                "Baseline (dense)",
+                "Fine-tuning, sp=50%",
+                "Fine-tuning, sp=70%",
+                "Post-training fine-tuning"
+              ],
+              "slide_visual_skeleton": [
+                "两组 4×4 稀疏掩码矩阵示意",
+                "多任务精度柱状图",
+                "左图右表双栏布局"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_pattern": "mechanism_reveal_intro",
+              "archetype": "single_method_problem_then_solution_pair",
+              "slide_title": "前向反向权重互为转置(引入)",
+              "slide_claim": "前向与反向传播的权重矩阵互为转置",
+              "slide_key_text": [
+                "Inspired by the model training process, the weight matrices of the forward and backward propagation are transpose of each other",
+                "Forward",
+                "Backward"
+              ],
+              "slide_visual_skeleton": [
+                "Forward/Backward 双栏乘法示意框",
+                "虚线分隔的前向区块",
+                "矩阵乘法 × = 符号"
+              ]
+            },
+            {
+              "slide_index": 14,
+              "role_in_pattern": "key_idea_bridge_annotation",
+              "archetype": "equation_centric_derivation",
+              "slide_title": "转置性质推出结构化稀疏关键思路",
+              "slide_claim": "利用转置性质可同时获得结构化稀疏的 W 与 Wᵀ",
+              "slide_key_text": [
+                "Inspired by the model training process, the weight matrices of the forward and backward propagation are transpose of each other",
+                "Forward",
+                "Backward",
+                "Wᵀ × Output gradient = Input gradient",
+                "Transposition: Weight ↔ WeightT",
+                "Key idea: Utilizing this transpose property helps to obtain a structured"
+              ],
+              "slide_visual_skeleton": [
+                "Forward/Backward 乘法示意",
+                "Weight↔WeightT 转置标注",
+                "底部 Key idea 结论条"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+      "title": "实验·设置→精度→面积→加速比→消融→EDP 总账",
+      "applicable_when": {
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          6,
+          9
+        ],
+        "must_have_in_chapter_purpose": [
+          "实验设置",
+          "精度评测",
+          "面积开销",
+          "加速比",
+          "消融",
+          "EDP"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首进度目录切入 Experiment 章"
+        },
+        {
+          "archetype": "eval_setup_bulleted_with_refs",
+          "count": 1,
+          "position": "start",
+          "purpose": "单页列出 baselines/模型/数据集"
+        },
+        {
+          "archetype": "accuracy_result_dual_table",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以左右并列双表分别给 retrained 与 one-shot 精度结果"
+        },
+        {
+          "archetype": "hardware_area_methodology_result",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以硬件方法学+面积占比(%A100)佐证开销极小"
+        },
+        {
+          "archetype": "single_experiment_result_speedup_callout",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以柱状图+平均加速比头条给主性能结果"
+        },
+        {
+          "archetype": "ablation_single_component",
+          "count": 1,
+          "position": "before_end",
+          "purpose": "针对某一关键组件(如 Adaptive Codec)的独立消融"
+        },
+        {
+          "archetype": "overall_edp_pareto_summary",
+          "count": 1,
+          "position": "end",
+          "purpose": "以顶部蓝框大数字+Pareto 前沿散点收束整个实验章"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "eval_setup_bulleted_with_refs",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "eval_setup_bulleted_with_refs",
+          "to_archetype": "accuracy_result_dual_table",
+          "hook_type": "method_then_result"
+        },
+        {
+          "from_archetype": "accuracy_result_dual_table",
+          "to_archetype": "hardware_area_methodology_result",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "hardware_area_methodology_result",
+          "to_archetype": "single_experiment_result_speedup_callout",
+          "hook_type": "parallel_continuation"
+        },
+        {
+          "from_archetype": "single_experiment_result_speedup_callout",
+          "to_archetype": "ablation_single_component",
+          "hook_type": "overview_to_detail"
+        },
+        {
+          "from_archetype": "ablation_single_component",
+          "to_archetype": "overall_edp_pareto_summary",
+          "hook_type": "detail_to_overview"
+        }
+      ],
+      "applicable_summary": "硬件加速器论文分享的实验章标准弧线: 目录→设置(baselines/模型/数据)→精度双表→面积占比小→平均加速比头条→单组件消融→EDP+Pareto 前沿收束, 一次覆盖精度/面积/性能/能效四维证据",
+      "anti_patterns": [
+        "以视频/demo 收尾佐证生成质量(用 experiment_layered_setup_accuracy_hardware_speedup_demo)",
+        "只跑多平台基准无消融(用 case_study_agenda_paper_multi_platform_benchmark)",
+        "双 setup+主结果+多消融(用 experiment_setup_dual_main_headline_ablation_pair)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+          "section_title": "精度性能与消融实验",
+          "section_role": "experiment",
+          "section_narrative": "deck 的实验验证章,承接 TBS 模式与自适应编解码两项技术,依次用精度、硬件面积、性能加速、消融四组实验证明其精度不掉、开销小(仅 A100 的 1.57%)、平均 1.27× 加速与 3.82× EDP 提升。",
+          "section_topic_tags": [
+            "三类基线对比",
+            "CNN/Transformer/LLM 精度",
+            "面积仅 A100 1.57%",
+            "1.27× 加速",
+            "3.82× EDP + Pareto"
+          ],
+          "match_evidence": "7 页 experiment: TOC → 单页 baselines+模型+数据集 → 双表精度(retrained/one-shot)→ RTL+面积占比 → 柱状图+1.27× 平均加速 → 自适应编解码消融 → EDP 3.82×+Pareto 前沿收束",
+          "slides": [
+            {
+              "slide_index": 29,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "Contents:进入第 4 章 Experiment",
+              "slide_claim": "全篇进入第 4 部分实验验证章节",
+              "slide_key_text": [
+                "Contents",
+                "Background: AI and Sparse Computing",
+                "Insight: Transpose Information from Training",
+                "Solution: Transposable Block-wise Sparsity",
+                "Experiment",
+                "Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框内 5 项编号列表",
+                "当前项蓝色圆点高亮",
+                "灰显未激活条目"
+              ]
+            },
+            {
+              "slide_index": 30,
+              "role_in_pattern": "eval_setup_bulleted_with_refs",
+              "archetype": "eval_setup_bulleted_with_refs",
+              "slide_title": "实验设置:Baselines、模型与数据集",
+              "slide_claim": "实验覆盖三类基线与 CNN/Transformer/LLM 全谱模型",
+              "slide_key_text": [
+                "Baselines: TS(STC), RS(VEGETA, HighLight), US(RM-STC)",
+                "CNN: ResNet50 on Cifar10, ResNet18 on ImageNet",
+                "Transformer: BERT-base on GLUE (MRPC, SST-2)",
+                "LLM: OPT-6.7B/Llama2-7B on PIQA, ARC-e, WinoGrande, HellaSwag (ZeroShot accuracy)"
+              ],
+              "slide_visual_skeleton": [
+                "两级缩进 bullet 列表",
+                "Baselines 与 Models 分组"
+              ]
+            },
+            {
+              "slide_index": 31,
+              "role_in_pattern": "accuracy_result_dual_table",
+              "archetype": "result_table_systematic",
+              "slide_title": "精度评测:TB-STC 精度不掉反升",
+              "slide_claim": "TB-STC 精度较基线高 0.85%~1.03% 且缩小 US 精度差",
+              "slide_key_text": [
+                "For retrained models (left table): TB-STC achieves 0.85%~1.03% higher accuracy",
+                "For one-shot pruning models (right table): TBS narrows the accuracy gap between the SS and US pattern from 2.58%-3.24% down to 0.66%"
+              ],
+              "slide_visual_skeleton": [
+                "左右并列两张精度表",
+                "红色高亮关键百分比"
+              ]
+            },
+            {
+              "slide_index": 32,
+              "role_in_pattern": "hardware_area_methodology_result",
+              "archetype": "hardware_resource_table_with_layout",
+              "slide_title": "硬件评测:面积开销仅 A100 的 1.57%",
+              "slide_claim": "TB-STC 硬件开销极小,仅占 A100 面积 1.57%",
+              "slide_key_text": [
+                "RTL implementation + cycle-level performance simulator",
+                "Sparseloop for DVPE arrays, Design Compiler for codec unit, Ramulator/DRAMPower",
+                "DVPE array is main hardware overhead (1GHz, 7nm)",
+                "Only 1.57% for the 826mm² die area of NVIDIA A100 GPU"
+              ],
+              "slide_visual_skeleton": [
+                "方法学 bullet 列表",
+                "面积对比数字标注",
+                "底部来源引用"
+              ]
+            },
+            {
+              "slide_index": 33,
+              "role_in_pattern": "single_experiment_result_speedup_callout",
+              "archetype": "single_experiment_result_speedup_callout",
+              "slide_title": "性能评测:平均 1.27× 加速",
+              "slide_claim": "TB-STC 较四基线平均获 1.27× 推理加速",
+              "slide_key_text": [
+                "TB-STC achieves on average of 1.27x speedup",
+                "1.55x, 1.29x, 1.21x, 1.06x speedup compared with STC, VEGETA, HighLight, and RM-STC"
+              ],
+              "slide_visual_skeleton": [
+                "加速比柱状图",
+                "红色高亮平均加速数值"
+              ]
+            },
+            {
+              "slide_index": 34,
+              "role_in_pattern": "ablation_single_component",
+              "archetype": "ablation_grid_systematic",
+              "slide_title": "消融实验:自适应编解码架构",
+              "slide_claim": "消融验证自适应编解码架构对性能的贡献",
+              "slide_key_text": [
+                "Ablation Studies",
+                "Adaptive Codec Architecture",
+                "TBS pattern"
+              ],
+              "slide_visual_skeleton": [
+                "消融对比表格",
+                "自适应编解码架构分组"
+              ]
+            },
+            {
+              "slide_index": 35,
+              "role_in_pattern": "overall_edp_pareto_summary",
+              "archetype": "accuracy_speed_pareto_positioning",
+              "slide_title": "整体评测:EDP 平均提升 3.82×",
+              "slide_claim": "TB-STC 平均提升 EDP 3.82× 并优化精度-EDP 前沿",
+              "slide_key_text": [
+                "EDP: Energy-Delay Product",
+                "TB-STC improves the EDP by an average of 3.82x",
+                "offers enhanced accuracy-EDP Pareto frontier for various DL models"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝框结论横幅",
+                "accuracy-EDP Pareto 散点图",
+                "EDP 名词注释"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "discussion_toc_three_pillar_recap_plus_future_extension",
+      "title": "讨论·目录→目标/洞察/方案三线闭环→未来扩展",
+      "applicable_when": {
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          4
+        ],
+        "must_have_in_chapter_purpose": [
+          "总结",
+          "未来工作",
+          "回收",
+          "初步验证"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "toc_chapter_marker",
+          "count": 1,
+          "position": "start",
+          "purpose": "章首目录切入 Summary and Future Work"
+        },
+        {
+          "archetype": "three_column_recap_goal_insight_solution",
+          "count": 1,
+          "position": "middle",
+          "purpose": "以横向三栏 Goals / Insight / Solution 一页回收全篇论证闭环"
+        },
+        {
+          "archetype": "future_work_preliminary_result_table",
+          "count": 1,
+          "position": "end",
+          "purpose": "以未来场景(LLM 稀疏训练)+初步实验对比表证扩展性"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "toc_chapter_marker",
+          "to_archetype": "three_column_recap_goal_insight_solution",
+          "hook_type": "chapter_handoff"
+        },
+        {
+          "from_archetype": "three_column_recap_goal_insight_solution",
+          "to_archetype": "future_work_preliminary_result_table",
+          "hook_type": "method_then_result"
+        }
+      ],
+      "applicable_summary": "论文分享型 discussion 章短闭环: 目录切入→一页三栏 (Goals/Insight/Solution) 回收全 deck 主线→一页 Future Work 用初步扩展实验表证明可延展, 不含 thanks(致谢由独立收尾章承担)",
+      "anti_patterns": [
+        "把 thanks/authors 也放在同章一并收束(用 closing_toc_recap_tech_summary_future_thanks_authors)",
+        "只以文字愿景收尾无扩展实验(用 discussion_agenda_vision_topics_team_close)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.06",
+          "section_title": "总结与未来工作",
+          "section_role": "discussion",
+          "section_narrative": "deck 收尾章。先用 TOC 页定位，再以 Summary 页回收「目标—洞察—两项技术」三线闭环，最后用 LLM 稀疏训练初步结果把 TBS 推向未来扩展。",
+          "section_topic_tags": [
+            "目标-洞察-方案三线回收",
+            "TBS 总结",
+            "LLM 稀疏训练扩展",
+            "MAB-πNEO 460M 初步验证"
+          ],
+          "match_evidence": "3 页 discussion: TOC 高亮 Summary 章 → 横向三栏 Goals(accuracy-EDP Pareto)/Insight(前向反向转置)/Solution(TBS+自适应 codec) → Future Work 用 MAB-πNEO 460M 在 PIQA/ARC/Lambada 的初步表",
+          "slides": [
+            {
+              "slide_index": 36,
+              "role_in_pattern": "toc_chapter_marker",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录页：定位「总结与未来工作」章",
+              "slide_claim": "五段式目录高亮第 5 章，正式进入总结收尾",
+              "slide_key_text": [
+                "Contents",
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "竖排编号圆点目录",
+                "当前章高亮圆点",
+                "五段章节列表"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_pattern": "three_column_recap_goal_insight_solution",
+              "archetype": "three_column_summary_panel",
+              "slide_title": "Summary：目标—洞察—方案三线闭环",
+              "slide_claim": "TB-STC 以「目标—洞察—两项技术」三线回收全篇论证闭环",
+              "slide_key_text": [
+                "Our goal is to offer an enhanced accuracy-EDP Pareto frontier for various DL models",
+                "Key insight: The weight matrices of forward and backward pass are transposed",
+                "Transposable block-wise structure of sparsity",
+                "Adaptive codec architecture",
+                "I/O-aware configurable architecture"
+              ],
+              "slide_visual_skeleton": [
+                "三列并列 panel",
+                "前向反向传播示意图",
+                "accuracy-EDP 散点对比",
+                "codec 架构框图"
+              ]
+            },
+            {
+              "slide_index": 38,
+              "role_in_pattern": "future_work_preliminary_result_table",
+              "archetype": "future_work_preliminary_result_table",
+              "slide_title": "Future Work：TBS 在 LLM 稀疏训练的初步验证",
+              "slide_claim": "TBS 稀疏训练在多项 LLM benchmark 上初步验证其可扩展性",
+              "slide_key_text": [
+                "We have also conducted TBS-based sparse training on LLM, preliminarily verifying the scalability of TBS",
+                "Model Arch：MAB-πNEO1 460M, intermediate size 16384",
+                "Sparsity: 50%, Dataset：Fineweb-edu2 350B tokens",
+                "Benchmarks：PIQA, ARC-e/c, Lambada",
+                "The accuracy of TBS"
+              ],
+              "slide_visual_skeleton": [
+                "Dense/2:4/US/TBS 精度对比表",
+                "TBS 行高亮红框",
+                "左侧实验配置文字块"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "chapter_role": [
+          "opening"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          2,
+          3
+        ],
+        "must_have_in_chapter_purpose": [
+          "封面",
+          "目录",
+          "论文",
+          "机构",
+          "作者"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "single_paper_title_authors_only",
+          "count": 1,
+          "position": "start",
+          "purpose": "居中大字论文标题+多机构作者名单+共一/通讯标注"
+        },
+        {
+          "archetype": "toc_progress_highlight",
+          "count": 1,
+          "position": "end",
+          "purpose": "编号目录列出全 deck 章节骨架 (背景/洞察/方案/实验/总结)"
+        }
+      ],
+      "page_transitions_pattern": [
+        {
+          "from_archetype": "single_paper_title_authors_only",
+          "to_archetype": "toc_progress_highlight",
+          "hook_type": "overview_to_detail"
+        }
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多家机构作者+共一/通讯标注)接一页编号进度式目录, 为后续 background→insight→solution→experiment→summary 五段主线定调",
+      "anti_patterns": [
+        "单页承担封面+目录(用 opening_paper_cover_multi_author_multi_institution 独页版)",
+        "封面-作者页-agenda 三页开场(用 opening_cover_plus_progress_highlighted_toc 更通用版)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.01",
+          "section_title": "封面与目录",
+          "section_role": "opening",
+          "section_narrative": "全 deck 的开场章：封面亮出 TB-STC 主标题与多机构作者，目录列出「背景→洞察→方案→实验→总结」五段主线，为学术汇报锚定阅读路径。",
+          "section_topic_tags": [
+            "TB-STC 论文封面",
+            "上交/清华/无穹三机构",
+            "五段主线目录",
+            "HPCA 学术汇报"
+          ],
+          "match_evidence": "2 页 opening: 居中大字论文标题+三机构 (上交/清华/无穹) 多作者+共一/通讯标注 → 蓝框编号目录 (1 背景/2 洞察/3 方案/4 实验/5 总结)",
+          "slides": [
+            {
+              "slide_index": 1,
+              "role_in_pattern": "single_paper_title_authors_only",
+              "archetype": "single_paper_title_authors_only",
+              "slide_title": "TB-STC: Transposable Block-wise N:M 稀疏张量核心",
+              "slide_claim": "本文提出 TB-STC——可转置的块级 N:M 结构化稀疏张量核心",
+              "slide_key_text": [
+                "TB-STC: Transposable Block-wise N:M Structured Sparse Tensor Core",
+                "Shanghai Jiao Tong University, Tsinghua University, Infinigence-AI",
+                "*Co-first author, +Corresponding author",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中双行大标题",
+                "多机构作者名单",
+                "机构与邮箱脚注块"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_pattern": "toc_progress_highlight",
+              "archetype": "toc_progress_highlight",
+              "slide_title": "目录:背景→洞察→方案→实验→总结",
+              "slide_claim": "全文按背景、洞察、方案、实验、总结五段主线展开",
+              "slide_key_text": [
+                "1 Background: AI and Sparse Computing",
+                "2 Insight: Transpose Information from Training",
+                "3 Solution: Transposable Block-wise Sparsity",
+                "4 Experiment",
+                "5 Summary and Future Work"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色边框容器",
+                "编号圆点竖列",
+                "五条目录条目"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "closing_thanks_single_page_with_full_author_institution_footer",
+      "title": "收尾·单页 Thanks+全作者多机构署名",
+      "applicable_when": {
+        "chapter_role": [
+          "closing"
+        ],
+        "report_type": [
+          "paper_share"
+        ],
+        "page_count_range": [
+          1,
+          1
+        ],
+        "must_have_in_chapter_purpose": [
+          "致谢",
+          "作者名单",
+          "机构",
+          "Thanks"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "archetype": "thanks_with_full_author_list",
+          "count": 1,
+          "position": "start",
+          "purpose": "顶部大字 Thanks for your listening + 下方完整作者名单 + 机构脚注 + 共一/通讯高亮"
+        }
+      ],
+      "page_transitions_pattern": [],
+      "applicable_summary": "论文分享型极简单页收尾: 顶部居中 Thanks 大标题, 下方多行作者名单以角标标注归属机构(1 上交/2 清华/3 无穹), 用符号区分共一(*)与通讯(†)并对通讯作者做视觉高亮; 一页完成致谢+完整署名双重功能",
+      "anti_patterns": [
+        "多页 recap+summary+authors 复合收尾(用 closing_toc_recap_tech_summary_future_thanks_authors)",
+        "机构墙+Thanks 双页收尾(用 closing_collaboration_wall_plus_thanks_backpanel)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "deck_title": "TB-STC: Transposable Block-wise N:M Sparse Tensor Core",
+          "deck_topic_tags": [
+            "N:M sparsity",
+            "sparse tensor core",
+            "GPU",
+            "DNN training",
+            "hardware accel",
+            "structured sparsity",
+            "codec",
+            "TBS pattern"
+          ],
+          "section_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.07",
+          "section_title": "致谢",
+          "section_role": "closing",
+          "section_narrative": "作为 deck 结尾致谢页,以「Thanks for your listening!」收束全篇,并完整列出作者署名与三家单位归属,标注共一与通讯作者",
+          "section_topic_tags": [
+            "Thanks for your listening",
+            "多机构合作",
+            "共一/通讯作者标注",
+            "上交-清华-无穹"
+          ],
+          "match_evidence": "单页 closing: 居中大字 Thanks for your listening + 10 余位作者角标+3 家机构脚注 + 通讯作者 Guohao Dai 紫色高亮",
+          "slides": [
+            {
+              "slide_index": 39,
+              "role_in_pattern": "thanks_with_full_author_list",
+              "archetype": "thanks_with_full_author_list",
+              "slide_title": "致谢页:Thanks for your listening",
+              "slide_claim": "以致谢收束全篇并完整列出作者与三家单位署名",
+              "slide_key_text": [
+                "Thanks for your listening!",
+                "Jun Liu*1,3, Shulin Zeng*2,3, Junbo Zhao2 …",
+                "Xuefei Ning2, Chen Zhang1, Yu Wang2, Guohao Dai†1,3",
+                "1Shanghai Jiao Tong University, 2Tsinghua University, 3Infinigence-AI",
+                "*Co-first author, †Corresponding author"
+              ],
+              "slide_visual_skeleton": [
+                "居中致谢大标题",
+                "多行作者署名列表",
+                "机构归属与作者角标图例",
+                "通讯作者紫色高亮"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "medium"
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (HPCA TB-STC paper_share) 共 7 section, 抽出 7 patterns 一一映射。跨 batch dedup: sec 01 → 存量 opening 现有版皆是「cover_title_signature + toc」通用组合, 本例封面本身即多机构论文封面(single_paper_title_authors_only)+ TOC, 故新建 opening_paper_cover_multi_author_multi_institution_plus_toc 与存量 opening_paper_cover_multi_author_multi_institution 区分(后者单页无 TOC); sec 04 → 直接命中存量 method_multi_parallel_techniques_intro_flow_detail(3 项并列技术+算法流+硬件细节, HPCA TB-STC 完美匹配)。sec 02/03/05/06/07 均为该 batch 新出、与已有 pattern 组合弧线不完全等价, 新起 id。new_archetype: solution_family_intro_dual_panel — 上蓝框主论断下方左右两 panel 并列展示同一方向的两条子路线; new_archetype: dense_vs_sparse_mac_illustration — 左右稠密 vs 稀疏矩阵×向量数值对照的 MAC 计数图; new_archetype: sparsity_pattern_taxonomy_dual_compare — 用 VS. 分隔的两类稀疏模式矩阵可视化对照; new_archetype: pattern_flaw_accuracy_drop — 顶部蓝框主论断+精度掉点数值高亮的类型缺陷指认页; new_archetype: pattern_flaw_hardware_overhead — 顶部蓝框主论断+三代表工作 bullet+额外开销红色高亮的另一类型缺陷指认页; new_archetype: paradigm_compare_dual_route — 双路线权重矩阵示意+多任务柱状图的路线优劣对比页; new_archetype: mechanism_reveal_intro — Forward/Backward 双栏乘法示意但暂不含转置公式的机制引入页; new_archetype: key_idea_bridge_annotation — 在机制图上补全公式并以底部 Key idea 结论条桥接下章的方法; new_archetype: accuracy_result_dual_table — 左右并列两张精度表(retrained/one-shot)+红色高亮关键百分比; new_archetype: hardware_area_methodology_result — 硬件方法学 bullet 列表+面积占大厂 GPU 百分比标注; new_archetype: ablation_single_component — 针对单一关键组件(如 Adaptive Codec)的独立消融表; new_archetype: overall_edp_pareto_summary — 顶部蓝框结论横幅+accuracy-EDP Pareto 散点+名词注释的能效综合收束页; new_archetype: three_column_recap_goal_insight_solution — 横向三栏 Goals/Insight/Solution 并列回收全篇论证闭环; new_archetype: future_work_preliminary_result_table — 左侧实验配置文字+右侧多方案精度对比表+目标行红框高亮的未来工作扩展页; new_archetype: single_method_dual_route_panel — solution_family_intro_dual_panel 的同义登记; new_archetype: taxonomy_dual_class_matrix_grid — 用 VS. 分隔的双类目录矩阵可视化; new_archetype: single_method_name_with_matrix_grid_examples — 方法名+维度×比例配置示意+多块矩阵实例网格; new_archetype: comparison_three_pattern_matrix_grid — 3 列并列稀疏模式矩阵对照; new_archetype: single_text_centric_argument_statement — 单条蓝框强调论断的纯文字论断页; new_archetype: single_method_problem_annotated_matrix — 稀疏矩阵+索引存储示意+多点标注问题的方法缺陷页; new_archetype: problem_solution_dual_panel — 2×2 挑战-方案对照面板配红框问题+箭头指向方案; new_archetype: single_method_encoding_bit_field_diagram — 位域编码字段拆解+稀疏矩阵到元素表的映射; new_archetype: single_text_centric_key_idea_bullet — 两级 bullet 承载 key idea 的纯文字说明页; new_archetype: three_column_summary_panel — three_column_recap_goal_insight_solution 的同义登记; new_archetype: hardware_resource_table_with_layout — 硬件资源表+分区示意联合; new_archetype: eval_setup_bulleted_with_refs — 已在既有 pattern 中登记, 复用即可。",
+  "coverage": {
+    "sections_assigned_to_some_pattern": 7,
+    "sections_unassigned_in_this_batch": []
+  }
+}

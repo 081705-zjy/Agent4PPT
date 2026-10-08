@@ -1,0 +1,56 @@
+{
+  "deck标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "目录名": "SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "源哈希": "e9787fd4c0d56b18c5655948d0ba6c96bef941ae",
+  "画布尺寸": [
+    9144000,
+    5143500
+  ],
+  "标题": "SpecDiff：自推测加速扩散模型推理",
+  "总页数": 30,
+  "章节数": 7,
+  "章节列表": [
+    "section_01_封面",
+    "section_02_扩散模型推理背景",
+    "section_03_相关工作综述",
+    "section_04_关键洞察与动机",
+    "section_05_特征选择与分类算法",
+    "section_06_实验设置与加速评测",
+    "section_07_总结"
+  ],
+  "主题标签": [
+    "扩散模型",
+    "推理加速",
+    "自推测",
+    "特征缓存",
+    "特征选择",
+    "投机解码"
+  ],
+  "目标受众": "学术同行与工业推理优化研究者",
+  "报告类型": "paper_share",
+  "适用场景": "扩散模型推理加速方向的组会或论文分享汇报",
+  "论述总结": "本 deck 分享 SpecDiff 工作：先讲扩散模型推理的高计算开销与 Attention/FFN 成本来源，综述缩短输入长度与特征缓存等相关工作，提出以自推测预知特征变化的关键洞察，给出特征选择与多级特征分类算法，最后在 SD3/3.5 与 Flux.1 上实测 2.7–3.17× 加速。",
+  "论述弧线": [
+    "背景",
+    "相关工作",
+    "动机",
+    "方法",
+    "实验",
+    "总结"
+  ],
+  "适合复用场景": [
+    "扩散模型推理加速主题汇报",
+    "学术型 background+motivation 章节复用",
+    "算法方法逐层展开的技术章节",
+    "带加速比结果的实验评测章节"
+  ],
+  "不适合复用场景": [
+    "大语言模型推理主题（话题偏离）",
+    "训练侧优化汇报（关注点不同）",
+    "工业 demo 路演（叙事节奏不同）",
+    "投资/商业提案（缺商业论证）",
+    "简历或个人介绍类"
+  ],
+  "分析状态": "claude-opus-4-8"
+}

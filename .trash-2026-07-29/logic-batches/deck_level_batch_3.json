@@ -1,0 +1,1107 @@
+{
+  "batch_index": 3,
+  "patterns": [
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "lab_introduction",
+          "tutorial"
+        ],
+        "scenario_keywords": [
+          "软硬件协同优化课题综述",
+          "大模型推理/高效计算主题报告",
+          "本组多技术路线成果综述",
+          "AI 基础设施/算力平台研究汇报",
+          "学术研讨会综述型主题报告"
+        ],
+        "deck_size_range": [
+          40,
+          100
+        ],
+        "audience_levels": [
+          "学术同行",
+          "科研团队",
+          "工业落地研发者",
+          "政府/产业决策方"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": "0-1",
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": "1-2",
+          "page_count_range": [
+            6,
+            10
+          ]
+        },
+        {
+          "role": "framework_intro",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            5
+          ]
+        },
+        {
+          "role": "method_works_panorama_section",
+          "section_count": "3-6",
+          "page_count_per_section_range": [
+            6,
+            14
+          ]
+        },
+        {
+          "role": "discussion_section",
+          "section_count": "1-3",
+          "page_count_range": [
+            5,
+            13
+          ]
+        },
+        {
+          "role": "engineering_section",
+          "section_count": "0-2",
+          "page_count_range": [
+            4,
+            6
+          ]
+        },
+        {
+          "role": "references",
+          "section_count": "0-1",
+          "page_count_range": [
+            3,
+            4
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "背景动机",
+        "框架统领",
+        "方法/工作 1",
+        "方法/工作 2",
+        "方法/工作 3",
+        "趋势展望或产业化案例",
+        "致谢"
+      ],
+      "applicable_summary": "长篇 deck 骨架:cover(+可选 agenda)开场,motivation 用类比/时代脉络铺垫,可选 framework_intro 抛出统领公式或分层图,再以 3-6 个 method/case_study 章节沿框架平行陈列本组成果,中途以『全 agenda 灰显+当前章高亮』的 section_divider 作章节导航,末尾以 discussion/趋势展望+产业化 case_study+references 铺陈,以致谢+logo 墙封底",
+      "anti_patterns": [
+        "单篇论文分享(paper_share): 用 paper_share canonical pattern, 不要套此长篇框架",
+        "短篇 method_pair + engineering 结构(30-45 页, 只 2 方法+1 工程实践): 走 research_report_method_pair_with_engineering_landing",
+        "工业产品 demo(节奏偏演示不偏综述)"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178",
+          "deck_title": "稀疏计算助力人工智能算力平台构建",
+          "deck_topic_tags": [
+            "稀疏计算",
+            "大模型推理",
+            "软硬件协同",
+            "AI芯片",
+            "算力平台",
+            "端侧部署",
+            "模型剪枝",
+            "编译优化"
+          ],
+          "match_evidence": "79 页课题组综述: 1 cover + 1 agenda + 10p motivation(AI 三次浪潮+算力供需) + 3p framework(『AI应用算力=芯片算力×稀疏度』) + 3×method(TB-STC/DA-SpMM/FlightLLM) + 2×discussion(趋势/端侧) + 2×case_study(无问芯穹产业化+端侧方案) + 1p closing,每个新章前插入 agenda-高亮 section_divider",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "稀疏计算助力人工智能算力平台构建",
+              "slide_claim": "以稀疏计算为主线构建人工智能算力平台(报告封面)",
+              "slide_key_text": [
+                "稀疏计算助力人工智能算力平台构建",
+                "报告人：戴国浩 副教授",
+                "Design Automation Innovation & Domain-specific Artificial Intelligence",
+                "2024.11.11",
+                "daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "居中主标题",
+                "横向分隔细线",
+                "报告人/日期/邮箱信息块",
+                "DAI 实验室字母标识"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "Contents 目录:四大研究板块",
+              "slide_claim": "全篇分研究背景/思路/成果等四大板块递进展开",
+              "slide_key_text": [
+                "Contents",
+                "1 研究背景",
+                "2 研究思路",
+                "3 研究成果",
+                "4 (第四板块)",
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外边框",
+                "Contents 居中标题",
+                "1-4 圆圈编号条目列表",
+                "左侧蓝色竖条导航",
+                "底部页脚署名栏"
+              ]
+            },
+            {
+              "slide_index": 3,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录：研究背景/思路/成果",
+              "slide_claim": "全局汇报分研究背景、思路、成果等板块展开",
+              "slide_key_text": [
+                "研究背景",
+                "研究思路",
+                "研究成果"
+              ],
+              "slide_visual_skeleton": [
+                "4项编号目录列表",
+                "当前项高亮标注",
+                "左侧蓝色竖条装饰"
+              ]
+            },
+            {
+              "slide_index": 13,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页：进入「研究思路」章节",
+              "slide_claim": "全篇分背景/思路/成果/计划四部分，现进入第2部分研究思路",
+              "slide_key_text": [
+                "Contents",
+                "研究背景",
+                "研究思路",
+                "研究成果",
+                "研究计划"
+              ],
+              "slide_visual_skeleton": [
+                "四项带圈编号目录列表",
+                "当前项蓝色竖条高亮",
+                "非当前项灰显",
+                "外框蓝色矩形边"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入第三部分研究成果",
+              "slide_claim": "汇报进入第三板块——稀疏化路线的研究成果展开",
+              "slide_key_text": [
+                "Contents",
+                "研究背景 / 研究思路 / 研究成果 / 研究展望",
+                "当前高亮第 3 项"
+              ],
+              "slide_visual_skeleton": [
+                "Contents 蓝色标题框",
+                "四项圆圈编号导航",
+                "左侧蓝色高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 44,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页：进入第 4 部分未来趋势",
+              "slide_claim": "前三部分收束,报告转入第 4 部分未来趋势",
+              "slide_key_text": [
+                "Contents",
+                "1 研究背景",
+                "2 研究思路",
+                "3 研究成果",
+                "4 未来趋势"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框四项目录列表",
+                "圆圈编号 1-4",
+                "第 4 项高亮标记"
+              ]
+            },
+            {
+              "slide_index": 54,
+              "role_in_deck": "off_pattern",
+              "archetype": "result_metric_showcase_with_comparison_chart",
+              "slide_title": "部分成果:推理加速",
+              "slide_claim": "FlashDecoding++在A100提速37%、MI210提速300%+",
+              "slide_key_text": [
+                "自研FlashDecoding++",
+                "NVIDIA A100相较基线提升37%",
+                "AMD MI210提升300%+",
+                "指标:Token/s吞吐",
+                "测试基于Hugging face"
+              ],
+              "slide_visual_skeleton": [
+                "Token/s柱状对比图",
+                "37%/300%提升高亮标注",
+                "顶部结论横幅",
+                "arXiv扫码链接"
+              ]
+            },
+            {
+              "slide_index": 55,
+              "role_in_deck": "off_pattern",
+              "archetype": "result_metric_showcase_with_comparison_chart",
+              "slide_title": "部分成果:异构混训",
+              "slide_claim": "异构千卡混训算力利用效率最高可达97.6%",
+              "slide_key_text": [
+                "无问芯穹异构千卡混合训练",
+                "相比同构训练",
+                "集群算力利用效率最高可达97.6%",
+                "NVIDIA+/AMD+多芯片组合对比"
+              ],
+              "slide_visual_skeleton": [
+                "97.6%结论高亮条",
+                "三组合柱状对比图",
+                "Baseline对照标注",
+                "arXiv扫码链接"
+              ]
+            },
+            {
+              "slide_index": 79,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_with_contact_and_team_logos",
+              "slide_title": "致谢与联系方式(Thanks & Support)",
+              "slide_claim": "汇报落到讲者身份并致谢团队与资助机构",
+              "slide_key_text": [
+                "Thanks / Support 双分区",
+                "戴国浩,上海交通大学",
+                "2024-11-11",
+                "Email: daiguohao@sjtu.edu.cn",
+                "致谢 DAI lab 团队与合作者(vision)"
+              ],
+              "slide_visual_skeleton": [
+                "左青色 Thanks tag",
+                "右粉色 Support tag",
+                "讲者信息文本块",
+                "右侧多行两列 logo 墙"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.01_cover",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "agenda",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.01_agenda",
+              "slide_range": [
+                2,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.02",
+              "slide_range": [
+                3,
+                12
+              ]
+            },
+            {
+              "chapter_role": "framework",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.03",
+              "slide_range": [
+                13,
+                15
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.04",
+              "slide_range": [
+                16,
+                24
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.05",
+              "slide_range": [
+                25,
+                31
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.06",
+              "slide_range": [
+                32,
+                43
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.07",
+              "slide_range": [
+                44,
+                49
+              ]
+            },
+            {
+              "chapter_role": "engineering",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.08",
+              "slide_range": [
+                50,
+                55
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.09",
+              "slide_range": [
+                56,
+                68
+              ]
+            },
+            {
+              "chapter_role": "engineering",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.10",
+              "slide_range": [
+                69,
+                72
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.11",
+              "slide_range": [
+                73,
+                78
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "tpl.课题组全局汇报.创智-稀疏计算助力人工智能算力平台构建.a78d4178.sec.12",
+              "slide_range": [
+                79,
+                79
+              ]
+            }
+          ]
+        },
+        {
+          "deck_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8",
+          "deck_title": "大模型高效计算与推理",
+          "deck_topic_tags": [
+            "大模型推理",
+            "高效计算",
+            "投机计算",
+            "投机解码",
+            "系统优化",
+            "硬件架构",
+            "软硬件协同",
+            "量化"
+          ],
+          "match_evidence": "42 页 VALSE 综述: 1 cover + 6p motivation(产业革命类比→黄仁勋 5 层蛋糕→算法/系统/硬件三层框架) + 3×method(算法投机 12p/系统调度 7p/硬件受限 6p) + 5p discussion(趋势与成本) + 4p references + 1 closing,以类比→框架→三层并列成果收尾。无独立 agenda 页(motivation 尾页承担框架统领功能)",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "大模型高效计算与推理",
+              "slide_claim": "围绕大模型高效计算与推理展开的学术汇报定调",
+              "slide_key_text": [
+                "大模型高效计算与推理",
+                "戴国浩",
+                "上海交通大学",
+                "VALSE 2026 @",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "左对齐大标题",
+                "淡粉色横向分隔线",
+                "讲者信息文本块"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_with_contact_and_team_logos",
+              "slide_title": "致谢与联系方式(汇报人戴国浩)",
+              "slide_claim": "汇报以致谢收尾,亮明汇报人身份与课题组归属",
+              "slide_key_text": [
+                "戴国浩",
+                "2026-05-08",
+                "Email: daiguohao@sjtu.edu.cn",
+                "NICS-EFC(实验室,vision)",
+                "合作单位 / 团队成员(vision)",
+                "Guohao Dai @ Shanghai JiaoTong University(vision)"
+              ],
+              "slide_visual_skeleton": [
+                "汇报人信息文本块",
+                "青/粉双色圆角标签",
+                "合作单位 logo 墙",
+                "团队成员头像占位排"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.01",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.02",
+              "slide_range": [
+                2,
+                7
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.03",
+              "slide_range": [
+                8,
+                19
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.04",
+              "slide_range": [
+                20,
+                26
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.05",
+              "slide_range": [
+                27,
+                32
+              ]
+            },
+            {
+              "chapter_role": "discussion",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.06",
+              "slide_range": [
+                33,
+                37
+              ]
+            },
+            {
+              "chapter_role": "references",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.07",
+              "slide_range": [
+                38,
+                41
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "tpl.课题组全局汇报.VALSE-大模型高效计算与推理.6c296eb8.sec.08",
+              "slide_range": [
+                42,
+                42
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 2,
+      "confidence_estimate": "medium"
+    },
+    {
+      "id": "research_report_method_pair_with_engineering_landing",
+      "title": "研究报告·多方法贡献+工程落地案例(中长篇)",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "scenario_keywords": [
+          "大模型推理系统优化学术报告",
+          "国产/异构芯片适配实践汇报",
+          "自研方法+工程落地综述",
+          "PD 分离/计算通信重叠专题"
+        ],
+        "deck_size_range": [
+          30,
+          55
+        ],
+        "audience_levels": [
+          "学术同行",
+          "工业推理系统研发人员"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": 1,
+          "page_count_range": [
+            7,
+            12
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": "2-3",
+          "page_count_per_section_range": [
+            8,
+            15
+          ]
+        },
+        {
+          "role": "engineering_section",
+          "section_count": 1,
+          "page_count_range": [
+            4,
+            8
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "技术背景挑战",
+        "自研方法 1",
+        "自研方法 2",
+        "工程落地/异构芯片实践",
+        "致谢与招聘/合作"
+      ],
+      "applicable_summary": "中长篇 deck(30-55 页)骨架: cover+编号 agenda 开场,一章 background/motivation 铺陈技术挑战,再以 2-3 章 method 并列展开自研工作贡献,末以一章 engineering case_study 落地到国产/异构芯片适配或产品化实践,以致谢+招聘/合作 CTA 收束。每章切换前插入 agenda-高亮 section_divider 作导航。相比长篇 panorama 更聚焦、更少 framework_intro/discussion 层。案例中章节角色 case_study 被映射为 engineering 章",
+      "anti_patterns": [
+        "长篇 3-6 方法平行陈列型: 走 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "单篇论文分享(paper_share): 走 paper_share canonical pattern",
+        "纯 tutorial 教学(无自研方法贡献): 叙事节奏不同"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9",
+          "deck_title": "从大模型推理优化到昇腾芯片的实践",
+          "deck_topic_tags": [
+            "大模型推理",
+            "分布式集群",
+            "计算通信重叠",
+            "FlashOverlap",
+            "Semi-PD",
+            "PD分离",
+            "昇腾芯片",
+            "软硬件协同"
+          ],
+          "match_evidence": "42 页学术报告: 1 cover + 1 agenda + 9p background(Scaling Law→集群推理挑战) + 2×method(FlashOverlap 11p + Semi-PD 14p 双自研方案) + 5p engineering(昇腾芯片 GEMM/通信/扩缩容落地) + 1 closing,每章前一张 agenda-高亮 section_divider(p12/p23/p37)导航",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "从大模型推理优化到昇腾芯片的实践（封面）",
+              "slide_claim": "报告主线：从大模型推理优化贯通到昇腾芯片工程实践",
+              "slide_key_text": [
+                "从大模型推理优化到昇腾芯片的实践",
+                "戴国浩",
+                "上海交通大学 / 无问芯穹",
+                "Email: daiguohao@sjtu.edu.cn"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色横条",
+                "居中大标题",
+                "红底高亮色块",
+                "讲者与机构署名区"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "Contents 目录（四章路线，①高亮）",
+              "slide_claim": "全篇按四章展开：背景挑战→FlashOverlap→Semi-PD→昇腾实践",
+              "slide_key_text": [
+                "Contents",
+                "① 分布式集群推理的背景和挑战",
+                "② FlashOverlap",
+                "③ Semi-PD",
+                "④ 昇腾芯片上的优化和工程实践"
+              ],
+              "slide_visual_skeleton": [
+                "外框矩形",
+                "带圈序号①-④列表",
+                "当前章高亮/其余灰化",
+                "左侧蓝色进度竖条",
+                "底部机构页脚"
+              ]
+            },
+            {
+              "slide_index": 12,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents:进入 FlashOverlap 章节",
+              "slide_claim": "本 deck 四大工作之第二项 FlashOverlap 正式登场",
+              "slide_key_text": [
+                "Contents",
+                "FlashOverlap——计算通信重叠新探索",
+                "分布式集群推理的背景和挑战",
+                "Semi-PD",
+                "面向国产芯片的优化"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框目录卡",
+                "四条带序号圆标条目",
+                "当前项左侧蓝色高亮条"
+              ]
+            },
+            {
+              "slide_index": 23,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "Contents 目录页：定位 Semi-PD 章节",
+              "slide_claim": "报告进入第三项工作 Semi-PD 资源调度方案",
+              "slide_key_text": [
+                "分布式集群推理的背景和挑战",
+                "FlashOverlap——计算通信重叠新探索",
+                "Semi-PD"
+              ],
+              "slide_visual_skeleton": [
+                "蓝框四项编号列表",
+                "③号圆圈高亮标记",
+                "左侧竖向进度条"
+              ]
+            },
+            {
+              "slide_index": 37,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页:定位第四部分工程实践",
+              "slide_claim": "报告进入第四部分——昇腾芯片优化与工程实践",
+              "slide_key_text": [
+                "Contents",
+                "分布式集群推理的背景和挑战",
+                "计算通信重叠新探索",
+                "从PD分离到PD融合",
+                "昇腾芯片优化与工程实践"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外框Contents标题",
+                "1-4编号圆点列表",
+                "第4项圆圈高亮"
+              ]
+            },
+            {
+              "slide_index": 42,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_with_contact_and_team_logos",
+              "slide_title": "致谢与联系方式:讲者信息及招聘合作邀约",
+              "slide_claim": "报告落到讲者致谢,并发出招聘与合作邀约触点",
+              "slide_key_text": [
+                "戴国浩 / 上海交通大学",
+                "2025-5-12",
+                "Email: daiguohao@sjtu.edu.cn",
+                "NICS-EFC(实验室)",
+                "Guohao Dai @ Shanghai JiaoTong University"
+              ],
+              "slide_visual_skeleton": [
+                "顶部蓝色分隔横条",
+                "讲者信息文字块",
+                "青/粉两个 CTA 按钮",
+                "两列信息 panel + 底部长条"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.01_cover",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "agenda",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.01_agenda",
+              "slide_range": [
+                2,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.02",
+              "slide_range": [
+                3,
+                11
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.03",
+              "slide_range": [
+                12,
+                22
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.04",
+              "slide_range": [
+                23,
+                36
+              ]
+            },
+            {
+              "chapter_role": "engineering",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.05",
+              "slide_range": [
+                37,
+                41
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "tpl.主题学术报告.从大模型推理优化到昇腾芯片的实践.692aa2f9.sec.06",
+              "slide_range": [
+                42,
+                42
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "title": "顶会论文分享·Background→Problem→Method→Evaluation→Summary 五段式(mini-agenda 导航)",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "AI 加速/芯片方向论文",
+          "扩散模型/视频生成加速论文",
+          "软硬件协同设计方案讲解"
+        ],
+        "deck_size_range": [
+          20,
+          45
+        ],
+        "audience_levels": [
+          "计算机体系结构/AI 加速方向学术同行",
+          "研究组内同行"
+        ]
+      },
+      "abstract_node_sequence": [
+        {
+          "role": "cover",
+          "count": 1,
+          "position": "fixed_1"
+        },
+        {
+          "role": "agenda",
+          "count": 1,
+          "position": "fixed_2"
+        },
+        {
+          "role": "motivation_section",
+          "section_count": 1,
+          "page_count_range": [
+            5,
+            12
+          ]
+        },
+        {
+          "role": "problem_section",
+          "section_count": "0-1",
+          "page_count_range": [
+            4,
+            7
+          ]
+        },
+        {
+          "role": "method_section",
+          "section_count": 1,
+          "page_count_range": [
+            5,
+            12
+          ]
+        },
+        {
+          "role": "result_section",
+          "section_count": 1,
+          "page_count_range": [
+            3,
+            6
+          ]
+        },
+        {
+          "role": "closing",
+          "count": 1,
+          "position": "last"
+        }
+      ],
+      "narrative_arc": [
+        "背景铺垫",
+        "问题/冗余立靶",
+        "算法-硬件协同方案",
+        "实验加速比结果",
+        "致谢"
+      ],
+      "applicable_summary": "单篇论文分享的 canonical 骨架: 20-45 页, cover + 4-段式编号 agenda 开场,再按 Background→Problem→Method(Algorithm-Hardware Co-Design)→Result→Closing 线性推进; 每章切换前插入一张『整张 outline 灰显+当前章节高亮』的 mini-agenda section_divider 作导航; 末尾以大字『Thanks for your attention』+ 讲者/日期/实验室署名收束",
+      "anti_patterns": [
+        "长篇课题组综述(3+ 方法平行): 走 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "以工程落地/case_study 收尾的报告: 走 research_report_method_pair_with_engineering_landing"
+      ],
+      "carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031",
+          "deck_title": "VGAcc:面向视频生成的注意力差分计算与可重构加速器",
+          "deck_topic_tags": [
+            "视频生成",
+            "扩散模型",
+            "DiT",
+            "注意力",
+            "稀疏计算",
+            "硬件加速",
+            "软硬协同",
+            "可重构架构"
+          ],
+          "match_evidence": "26 页 ICCAD 论文分享: 1 cover + 1 agenda(四项①背景②问题③方法④未来) + 7p background(Image DiT→Video DiT) + 6p problem(200×计算+90%冗余+OI 差异) + 6p method(算法-硬件协同) + 4p result(vs A100 加速比+未来) + 1p closing(Thanks),每章前有 agenda-高亮 section_divider(p10/p16/p22)",
+          "structural_slides": [
+            {
+              "slide_index": 1,
+              "role_in_deck": "cover",
+              "archetype": "cover_method_name_with_authors",
+              "slide_title": "VGAcc:视频生成注意力差分计算与可重构加速",
+              "slide_claim": "VGAcc 以全注意力差分计算+可重构架构加速视频生成",
+              "slide_key_text": [
+                "VGAcc: Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture",
+                "2024.5.16",
+                "* This work was submitted to ICCAD'24",
+                "Authors: Li Ding, Jun Liu, Shan Huang, Guohao Dai."
+              ],
+              "slide_visual_skeleton": [
+                "居中长标题块",
+                "细横分隔线",
+                "作者/日期信息行",
+                "底部落款条"
+              ]
+            },
+            {
+              "slide_index": 2,
+              "role_in_deck": "agenda",
+              "archetype": "agenda_outline_with_section_titles",
+              "slide_title": "目录:背景→问题→方法→未来四段主线",
+              "slide_claim": "全篇按背景、问题、方法、未来工作四段递进展开",
+              "slide_key_text": [
+                "Contents",
+                "背景:Image DiT & Video DiT",
+                "问题:Large & Redundant Computation",
+                "方法:Algorithm-Hardware Co-Design",
+                "未来工作"
+              ],
+              "slide_visual_skeleton": [
+                "蓝色外边框容器",
+                "编号圆标 1-4 竖列",
+                "当前项高亮+后续项灰化",
+                "左侧竖向进度条"
+              ]
+            },
+            {
+              "slide_index": 6,
+              "role_in_deck": "off_pattern",
+              "archetype": "content_transition_animation_frame",
+              "slide_title": "Backbone model:DiT 结构位置示意(过渡页)",
+              "slide_claim": "DiT 三要素①②③在结构图中对应不同模块位置",
+              "slide_key_text": [
+                "①/②/③ 结构位置锚点"
+              ],
+              "slide_visual_skeleton": [
+                "红色虚线框结构示意",
+                "①/②/③ 编号锚点",
+                "大面积留白画布"
+              ]
+            },
+            {
+              "slide_index": 10,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "章节导航：进入 Large & Redundant Computation",
+              "slide_claim": "报告推进至第 2 部分——视频生成的计算量大与冗余问题",
+              "slide_key_text": [
+                "Contents",
+                "① Image DiT & Video DiT",
+                "② Large & Redundant Computation",
+                "③ Algorithm-Hardware Co-Design",
+                "④ 总结展望"
+              ],
+              "slide_visual_skeleton": [
+                "四行编号目录框",
+                "当前项蓝色竖条高亮",
+                "圆圈编号 ①②③④"
+              ]
+            },
+            {
+              "slide_index": 16,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录页:高亮进入算法-硬件协同设计",
+              "slide_claim": "全篇进入第三部分 Algorithm-Hardware Co-Design",
+              "slide_key_text": [
+                "Contents",
+                "Algorithm-Hardware Co-Design",
+                "Image DiT & Video DiT",
+                "Large & Redundant Computation"
+              ],
+              "slide_visual_skeleton": [
+                "四项编号目录列表",
+                "当前项蓝色高亮标记",
+                "左侧竖条进度指示"
+              ]
+            },
+            {
+              "slide_index": 22,
+              "role_in_deck": "section_divider",
+              "archetype": "section_divider_mini_agenda_highlight",
+              "slide_title": "目录:进入「加速效果&未来工作」",
+              "slide_claim": "全篇进入第 4 章,收束于加速效果与未来工作",
+              "slide_key_text": [
+                "Contents",
+                "Image DiT & Video DiT",
+                "Large & Redundant Computation",
+                "Algorithm-Hardware Co-Design",
+                "加速效果&未来工作"
+              ],
+              "slide_visual_skeleton": [
+                "带框目录标题区",
+                "4 条编号圆点列表",
+                "第 4 项高亮竖条"
+              ]
+            },
+            {
+              "slide_index": 26,
+              "role_in_deck": "closing",
+              "archetype": "closing_thanks_and_qa",
+              "slide_title": "致谢页:Thanks for your attention",
+              "slide_claim": "汇报结束,礼节性致谢并留出提问余白",
+              "slide_key_text": [
+                "Thanks for your attention!",
+                "丁立",
+                "2024.5.16",
+                "Li Ding @ CCC Lab"
+              ],
+              "slide_visual_skeleton": [
+                "大字号感谢标语",
+                "浅色横向分隔线",
+                "汇报人+日期落款",
+                "底部实验室署名"
+              ]
+            }
+          ],
+          "chapter_outline": [
+            {
+              "chapter_role": "cover",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.01_cover",
+              "slide_range": [
+                1,
+                1
+              ]
+            },
+            {
+              "chapter_role": "agenda",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.01_agenda",
+              "slide_range": [
+                2,
+                2
+              ]
+            },
+            {
+              "chapter_role": "motivation",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.02",
+              "slide_range": [
+                3,
+                9
+              ]
+            },
+            {
+              "chapter_role": "problem",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.03",
+              "slide_range": [
+                10,
+                15
+              ]
+            },
+            {
+              "chapter_role": "method",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.04",
+              "slide_range": [
+                16,
+                21
+              ]
+            },
+            {
+              "chapter_role": "result",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.05",
+              "slide_range": [
+                22,
+                25
+              ]
+            },
+            {
+              "chapter_role": "closing",
+              "section_id": "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.06",
+              "slide_range": [
+                26,
+                26
+              ]
+            }
+          ]
+        }
+      ],
+      "source_count_in_this_batch": 1,
+      "confidence_estimate": "low"
+    }
+  ],
+  "extraction_notes": "本 batch 4 deck 抽出 3 条 pattern。VALSE(42p)+创智(79p)复用 long_deck_framework_plus_works_panorama pattern(deck_size_range 从 [50,100] 下探到 [40,100] 以纳入 VALSE); VGAcc(26p) 复用 paper_share canonical pattern; 昇腾(42p) 新起 research_report_method_pair_with_engineering_landing pattern —— 与长篇 panorama 的区别是: 仅 2 method + 1 engineering case_study 收尾、无 framework_intro/discussion 层, 篇幅中长(30-55p)。case_study 章节角色统一映射为 chapter_role=engineering (枚举内最近义)。new_archetype: closing_thanks_with_contact_and_team_logos — 讲者信息文本块+青/粉圆角标签+多列 logo 墙(合作/团队/资助)+可选 CTA 按钮的复合致谢页,常见于国内课题组长汇报收尾. new_archetype: result_metric_showcase_with_comparison_chart — 大字号百分比结论横幅+多组柱状对比图+arXiv 链接的成果佐证页. new_archetype: content_transition_animation_frame — 大面积留白+仅保留结构锚点(编号/虚线框)的正文动画中间帧,用于逐步揭示模型结构.",
+  "coverage": {
+    "decks_in_batch": 4,
+    "decks_assigned_to_some_pattern": 4,
+    "decks_unassigned_in_this_batch": [],
+    "decks_assigned_to_multiple_patterns": []
+  }
+}

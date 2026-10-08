@@ -1,0 +1,38 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_21",
+  "所属章节": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4",
+  "页序号": 21,
+  "源文件": "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx",
+  "页面角色": "content_candidate",
+  "标题": "特征选择算法：基于注意力的重要性",
+  "核心论断": "注意力可作为衡量特征重要性的有效信号",
+  "本页讲什么": "本页进一步说明如何用「注意力（Attention from …）」来刻画特征重要性，借助多幅注意力可视化图展示注意力分布与特征重要性的关联，论证以注意力为依据筛选关键特征的合理性。",
+  "关键文字": [
+    "Feature Selection Algorithm",
+    "Attention from"
+  ],
+  "视觉骨架": [
+    "注意力分布可视化",
+    "注意力热力图",
+    "特征-注意力关联示意"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_21.asset.01",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_21.asset.02",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_21.asset.03",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_21.asset.04",
+    "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_21.asset.05"
+  ],
+  "适合复用场景": [
+    "基于注意力的特征重要性分析页",
+    "Transformer 注意力可视化说明"
+  ],
+  "不适合复用场景": [
+    "benchmark 数值表格页",
+    "章节目录页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

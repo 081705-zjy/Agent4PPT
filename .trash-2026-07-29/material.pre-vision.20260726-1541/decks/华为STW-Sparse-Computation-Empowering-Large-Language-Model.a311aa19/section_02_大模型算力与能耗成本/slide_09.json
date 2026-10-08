@@ -1,0 +1,32 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_09",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.02",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 9,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "A100 硬件成本测算",
+  "核心论断": "单卡 A100 五年运行摊出高昂硬件成本",
+  "本页讲什么": "本页代入具体参数 NVIDIA A100 SXM 80GB 售价 $17900, 结合 Active Time 与 5 年寿命, 测算单卡硬件的实际成本, 把前面的能耗公式落到真实数字上, 用具体报价坐实 LLM 部署代价高昂的论断。",
+  "关键文字": [
+    "NVIDIA A100 SXM 80GB",
+    "$17900",
+    "Active Time 5 years"
+  ],
+  "视觉骨架": [
+    "硬件成本测算表",
+    "A100 参数标注"
+  ],
+  "资源ID列表": [],
+  "适合复用场景": [
+    "GPU 硬件成本测算页",
+    "部署代价量化举例页"
+  ],
+  "不适合复用场景": [
+    "概念性 bullet 铺垫页",
+    "架构框图总览页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

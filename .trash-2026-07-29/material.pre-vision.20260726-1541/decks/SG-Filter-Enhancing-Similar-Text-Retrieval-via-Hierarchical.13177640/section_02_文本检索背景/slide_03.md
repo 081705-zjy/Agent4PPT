@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.02"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 3
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "content_candidate"
+标题: "主流文本检索范式：向量检索"
+核心论断: "向量检索已成为当今主流文本检索范式"
+本页讲什么: "确立本节起点：当今主流文本检索范式是向量检索，并给出其之所以成为主流的原因（due to…）。为后文收敛到 STR 子问题、暴露范式局限做铺垫。"
+关键文字: "[The mainstream text retrieval paradigm today is vector retrieval, due to]"
+视觉骨架: "[向量检索流程示意图, query-embedding-corpus 管线, 配图矩阵]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.08, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.09, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.10, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.11, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.12, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.13, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.14, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.15, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.16, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.17, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.18, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.19, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.20, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.21, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.22, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.23, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.24, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_03.asset.25]"
+适合复用场景: "[文本检索背景章开篇, 向量检索范式综述页]"
+不适合复用场景: "[单一模型能效对比页, 方法内部结构细节页]"
+上页角色: "toc_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "主流文本检索范式：向量检索"}
+  - {"位置": "下方主体", "内容": "向量检索流程示意图 (query-embedding-corpus 管线)"}
+alternate_claims:
+layout_tag: "flowchart"
+---
+# slide 3: 主流文本检索范式：向量检索
+
+**核心论断**: 向量检索已成为当今主流文本检索范式
+
+## 本页讲什么
+确立本节起点：当今主流文本检索范式是向量检索，并给出其之所以成为主流的原因（due to…）。为后文收敛到 STR 子问题、暴露范式局限做铺垫。
+
+## 关键文字片段
+- The mainstream text retrieval paradigm today is vector retrieval
+- due to
+
+## 视觉骨架
+- 向量检索流程示意图
+- query-embedding-corpus 管线
+- 配图矩阵
+
+## 可复用到
+- 文本检索背景章开篇
+- 向量检索范式综述页
+
+## 不适合复用的场景
+- 单一模型能效对比页
+- 方法内部结构细节页

@@ -1,0 +1,575 @@
+{
+  "batch_index": 5,
+  "rules": [
+    {
+      "id": "toc_layout_numbered_list_with_current_highlight",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "目录布局·编号列表+当前章高亮",
+      "description": "目录页竖排编号(1~N)列出全部章节,当前进入的章以蓝色圆点/加粗高亮,其余章置灰,让听众明确所处位置。",
+      "evidence_signals": [
+        "视觉骨架 含 '编号目录列表' / '蓝色高亮当前章圆点' / '灰显未激活章节'",
+        "关键文字 前缀 '1' '2' '3' 等编号 + 章节名",
+        "标题 含 'Contents' 或 '目录'"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 2,
+          "评价": "五项编号目录,蓝框容器,首次呈现全 agenda"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 3,
+          "评价": "同款五项目录,part 1 Background 蓝色高亮为当前章"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 11,
+          "评价": "第 2 章 Insight 高亮,其他四章灰显"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 15,
+          "评价": "第 3 章 Solution 高亮"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 29,
+          "评价": "第 4 章 Experiment 高亮"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "编号列表让听众瞬间掌握全篇结构,高亮当前章提供导航反馈,减少'现在讲到哪'的认知负担",
+      "fix_hint": "toc 页竖排编号 1~N 列全章,当前章加蓝色圆点或加粗,其余章置灰",
+      "exceptions": [
+        "单章不足 3 页的极短 deck 可省 toc"
+      ]
+    },
+    {
+      "id": "toc_reappears_between_sections_as_transition",
+      "category": "visual",
+      "applicable_role": [
+        "toc_candidate"
+      ],
+      "title": "章间过渡·目录页反复出现",
+      "description": "目录页不止出现一次,而是在每个主要章节开始前重新插入一次,并高亮即将进入的章,承担章间过渡与进度提示。",
+      "evidence_signals": [
+        "同一 deck 中 toc_candidate 出现 ≥3 次",
+        "相邻 toc 页高亮的章不同",
+        "toc 之间是 content_candidate 集群"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 3,
+          "评价": "开场 toc,高亮 Background"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 11,
+          "评价": "Background 后插入,高亮 Insight"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 15,
+          "评价": "Insight 后插入,高亮 Solution"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 29,
+          "评价": "Solution 后插入,高亮 Experiment"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 36,
+          "评价": "Experiment 后插入,高亮 Summary"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "长汇报中听众极易迷失,反复的目录页作为章间'路标',低成本让听众重建全局定位,是学术长报告的通用技法",
+      "fix_hint": "每章 content 结束、下章开始前插入一张相同版式 toc 页,把即将展开的章标为高亮",
+      "exceptions": [
+        "总页数 <15 的短 deck 可省章间 toc",
+        "非学术/纯宣讲型 deck"
+      ]
+    },
+    {
+      "id": "cover_layout_centered_title_with_authors_and_institutions",
+      "category": "visual",
+      "applicable_role": [
+        "cover_candidate"
+      ],
+      "title": "封面布局·居中大标题+作者机构署名",
+      "description": "封面居中大字放主标题(常为论文全称),下方列出所有作者(可含共同一作/通讯作者角标),再下方标注所属机构名单与邮箱,不含正文段落或图表。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中大标题' / '多机构作者名单'",
+        "关键文字 含 大学/机构名 + '*Co-first author' 或 'Corresponding author'",
+        "无 bullet 列表 / 无图表元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 1,
+          "评价": "'TB-STC: Transposable Block-wise...' 居中大标题 + SJTU/THU/Infinigence-AI 三家 + 共同一作/通讯作者标注"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "封面承担'谁在讲什么'的身份识别,居中大标题让论文名成为焦点,机构+作者角标显示学术合作规模,建立可信度",
+      "fix_hint": "cover 用双行居中大字放论文全称,作者名后加 * / † 角标区分共同一作与通讯,机构名单+邮箱压底部",
+      "exceptions": [
+        "纯品牌宣传 deck(logo 优先于标题)",
+        "空白模板/占位版式"
+      ]
+    },
+    {
+      "id": "ending_layout_big_thanks_with_full_author_credit",
+      "category": "visual",
+      "applicable_role": [
+        "ending_candidate"
+      ],
+      "title": "结尾布局·大字致谢+完整作者署名",
+      "description": "结束页居中大字 'Thanks for your listening',下方复列完整作者名单与所属机构角标,通讯作者高亮,底部附角标图例,收束全篇。",
+      "evidence_signals": [
+        "视觉骨架 含 '居中致谢大标题'",
+        "关键文字 含 'Thanks' / '致谢' + 作者列表 + 机构角标",
+        "底部含 '*Co-first author' / 'Corresponding author' 图例"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 39,
+          "评价": "居中 'Thanks for your listening!' + 十余位作者 + 三家机构角标 + 通讯作者紫色高亮 + 底部图例"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 1.0,
+      "enforcement_level": "hard",
+      "rationale": "结尾页与封面呼应,大字致谢给听众明确'讲完了'信号,完整署名让观众记得功劳归属并方便会后联系",
+      "fix_hint": "ending 用居中大字 'Thanks / 谢谢',下方复列封面同一份作者+机构角标,通讯作者视觉高亮",
+      "exceptions": [
+        "非答辩/汇报型 deck(如产品发布) 可能用不同结尾",
+        "极短汇报可省单独 ending"
+      ]
+    },
+    {
+      "id": "content_page_top_claim_bar_visual_below",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "内容页布局·顶部结论条+下方图证",
+      "description": "内容页顶部以蓝框/横幅放一句核心结论(claim),其下放置支撑图表/示意/对比,视觉焦点先落到结论,再由观众自选读图证。",
+      "evidence_signals": [
+        "视觉骨架 含 '上方蓝框主论断' 或 '顶部蓝框结论横幅'",
+        "关键文字 首条为完整判断句(含谓语)",
+        "下方存在 '示意图' / '对比图' / '柱状图' 等视觉元素"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 9,
+          "评价": "上蓝框放 '结构化稀疏限制精度',下面 accuracy loss 图佐证"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 10,
+          "评价": "上方蓝框论断 + 三个代表工作分点罗列 80% 开销"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 35,
+          "评价": "顶部蓝框 EDP 3.82× 结论 + 下方 accuracy-EDP Pareto 散点"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 4,
+          "评价": "顶部 huge gap 论断 + 参数量对年份散点图"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 18,
+          "原因": "纯文字论断页,无下方图证元素"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.75,
+      "enforcement_level": "soft",
+      "rationale": "先给结论再给证据符合演讲的'topic sentence 优先'原则,让听众带着预设看图,理解速度快过'看图猜结论'",
+      "fix_hint": "content 页顶部用蓝色横幅放一句 claim 判断句,下方 60~70% 空间给图证/示意/对比",
+      "exceptions": [
+        "纯 key idea 陈述页(无需图)",
+        "对比矩阵/时序图撑满页面时可省顶部横幅"
+      ]
+    },
+    {
+      "id": "method_page_uses_left_right_or_before_after_comparison",
+      "category": "visual",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页布局·左右对比或前后对照",
+      "description": "方法/背景页大量使用左右并列对比:结构化 vs 非结构化、Dense vs Sparse、原架构 vs 新架构、低利用 vs 高利用,用视觉分栏强化'差异'与'改进'。",
+      "evidence_signals": [
+        "视觉骨架 含 '左右 2 列' / 'VS.' / '双栏' / '双架构对比' / '低... vs 高...'",
+        "关键文字 含 vs / 'compared with' / '(a)... (b)...'",
+        "两侧视觉元素同类型但状态相异"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 7,
+          "评价": "Dense manner 16 MACs 对 Sparse manner 6 MACs"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 8,
+          "评价": "结构化 vs 非结构化稀疏矩阵可视化, VS. 分隔"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 20,
+          "评价": "(a) 原 GPU 架构 vs (b) TB-STC 架构双框图"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 22,
+          "评价": "SDC 与 CSR 压缩流程左右对比"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 25,
+          "评价": "低利用 vs 高利用时序对比"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.5,
+      "enforcement_level": "soft",
+      "rationale": "改进型方法必须让听众看到 delta,左右对照把'旧'与'新'放同一视野内直接对比,视觉冲击强于纯文字描述",
+      "fix_hint": "method 页把 baseline / 现状放左,提出方案 / 新架构放右,顶部或中间加 vs / (a)(b) 标签",
+      "exceptions": [
+        "纯 key idea 陈述页",
+        "总览架构图撑满单幅版面"
+      ]
+    },
+    {
+      "id": "title_uses_key_number_or_delta_when_available",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "标题·关键数字前置",
+      "description": "内容页标题常直接嵌入关键量化结果(算力比 240×/2×、掉点 >6%、加速 1.27×、面积 1.57%、EDP 3.82×),把最能立靶或最能说服的数字放进标题,提升可扫描性。",
+      "evidence_signals": [
+        "标题 含 数字 + '×' / '%' / 'x'",
+        "标题 含 '掉点' / '提升' / '加速' / '开销' 等量化动作词",
+        "对应 slide 的图/表存在与之匹配的量化标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 4,
+          "评价": "标题 'AI 算力需求 240×/年 vs 硬件 2×/年' 直接嵌入两个增长率"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 7,
+          "评价": "标题 '16 MACs 降到 6 MACs' 前置具体降幅"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 32,
+          "评价": "标题 '面积开销仅 A100 的 1.57%'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 33,
+          "评价": "标题 '平均 1.27× 加速'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 35,
+          "评价": "标题 'EDP 平均提升 3.82×'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 13,
+          "原因": "标题 '前向反向权重互为转置(引入)' 为概念题目,无数字"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.4,
+      "enforcement_level": "soft",
+      "rationale": "学术汇报的实验/背景页,数字就是最强 claim,把关键数字前置到 title 让听众一眼锁定'这页要证的量化事实',提高扫读效率",
+      "fix_hint": "凡有量化结论的 content 页,把结论数字(比例/倍数/百分比/差值)直接写进 title,格式 '<主体> <数字><单位>'",
+      "exceptions": [
+        "方法/机制/概念页(无量化结果可提)",
+        "总结/致谢/纯 key idea 页"
+      ]
+    },
+    {
+      "id": "method_tech_pages_prefixed_with_numbered_tech_label",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法页·Tech.N/Challenge-N 编号前缀",
+      "description": "方法章内技术点与挑战点用 'Tech.1/2/3' 或 'Challenge-1/2/3' 编号前缀成串标题,让并列的技术/挑战之间有清晰的编号锚点,便于听众数着听。",
+      "evidence_signals": [
+        "标题 以 'Tech.' 或 'Challenge-' 开头 + 数字",
+        "同一 deck 内 Tech.N 序号连续出现",
+        "关键文字 含 'Tech.1' / 'Tech.2' / 'Challenge-2' 等"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 16,
+          "评价": "标题 'Tech.1:TBS 稀疏模式定义'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 21,
+          "评价": "标题 'Challenges of TBS' 展开 Challenge-2/3"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 22,
+          "评价": "标题 'Tech.2:片上自适应格式转换'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 25,
+          "评价": "标题 'Tech.3:稀疏感知调度总览'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 28,
+          "评价": "标题 'Tech.3:I/O-aware 可配置调度架构' 延续第 3 技术"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.35,
+      "enforcement_level": "soft",
+      "rationale": "并列的技术/挑战没有编号时听众会数不清'讲了几点',加 Tech.N/Challenge-N 编号相当于给认知装了进度条,回答完这一点就切下一点",
+      "fix_hint": "方法章 slide 标题前加 'Tech.<N>:' 或 'Challenge-<N>:',同一并列组保持编号连续",
+      "exceptions": [
+        "非并列技术(总览/闭环页)",
+        "单项技术贯穿全章无并列"
+      ]
+    },
+    {
+      "id": "key_idea_declared_with_explicit_marker",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "方法核心·Key idea 显式标记",
+      "description": "方法/洞察页把核心思想用 'Key idea:' / '关键思路:' 显式标注,后接一句判断句表述,以标签化文本告诉听众'这是要点'。",
+      "evidence_signals": [
+        "关键文字 含 'Key idea' 或 'Key insight' 或 '关键思路' 或 'Our goal'",
+        "该短语后紧跟完整判断句",
+        "视觉骨架 常含 '底部 key idea 结论条' 或类似强调"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 14,
+          "评价": "'Key idea: Utilizing this transpose property helps to obtain a structured' 底部结论条"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 26,
+          "评价": "'Key idea is to use locality to balance...' 显式 key idea 说明页"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 27,
+          "评价": "'Key idea is to exploit the balance property...' 同款 key idea 标签"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 37,
+          "评价": "'Key insight: The weight matrices of forward and backward pass are transposed'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.15,
+      "enforcement_level": "soft",
+      "rationale": "论文中的方法密度高,不加 Key idea 标签容易被支撑细节淹没,显式标签让听众在'看不懂时'至少知道要抓这一句",
+      "fix_hint": "方法页在核心思想句前加 'Key idea:' / 'Key insight:' 前缀,该句用完整判断句表述,视觉上放底部条或加粗",
+      "exceptions": [
+        "纯支撑/细节页(不承担 key idea 的地位)",
+        "已在标题内表达核心思想的页"
+      ]
+    },
+    {
+      "id": "claim_uses_judgment_sentence_not_topic_phrase",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "核心论断·判断句而非主题短语",
+      "description": "slide.核心论断 字段以完整判断句表达'谁做了什么/结果如何',含主谓宾,不是主题短语('TBS 稀疏模式')也不是问题短语('如何做转置')。",
+      "evidence_signals": [
+        "核心论断 含 完整谓语动词 + 宾语",
+        "核心论断 常含数字 / '优于' / '证明' / '带来' / '实现' 等结论词",
+        "核心论断 长度 15~30 字,能独立成句成立"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 4,
+          "评价": "'AI 模型算力需求(240×/年)远超硬件供给(2×/年),形成巨大鸿沟' 完整判断"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 9,
+          "评价": "'结构化稀疏限制模型精度,LLM 上精度掉点超 6%'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 12,
+          "评价": "'原生稀疏训练比后训练微调获得更优精度'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 33,
+          "评价": "'TB-STC 较四基线平均获 1.27× 推理加速'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 35,
+          "评价": "'TB-STC 平均提升 EDP 3.82× 并优化精度-EDP 前沿'"
+        }
+      ],
+      "miss_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 34,
+          "原因": "核心论断 '消融验证自适应编解码架构对性能的贡献' 偏描述性,未给具体判断"
+        }
+      ],
+      "estimated_hit_rate_in_batch": 0.9,
+      "enforcement_level": "hard",
+      "rationale": "claim 是每页的'能带走的一句话',判断句可被记忆和转述,主题短语只是标签、无法转述,直接决定听众'听懂了什么'",
+      "fix_hint": "把核心论断字段改为主谓宾完整句,含'谁 + 做了/证明了/带来了 + 什么',挂上量化数字或对比词",
+      "exceptions": [
+        "纯定义/概念引入页(可用主题短语)",
+        "章节标题页/toc/cover 等结构页"
+      ]
+    },
+    {
+      "id": "title_uses_noun_phrase_or_topic_colon_data",
+      "category": "authoring",
+      "applicable_role": [
+        "all"
+      ],
+      "title": "标题·名词短语或 主题:数据 结构",
+      "description": "所有 slide 的标题多用名词短句或 '主题:数据' 冒号结构(Tech.2:双维压缩格式设计 / 目录:定位到 Insight 章节),不用完整动宾长句,不用第一人称'我们介绍'开头。",
+      "evidence_signals": [
+        "标题 不以 '我们' / '本节' / '介绍' 开头",
+        "标题 含 ':' 或 '·' 分隔主题与副标",
+        "标题 长度 8~18 字"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 2,
+          "评价": "'目录:背景→洞察→方案→实验→总结' 冒号+箭头串主题"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 16,
+          "评价": "'Tech.1:TBS 稀疏模式定义' 冒号型"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 22,
+          "评价": "'Tech.2:片上自适应格式转换' 冒号型"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 33,
+          "评价": "'性能评测:平均 1.27× 加速' 主题:数据 型"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 35,
+          "评价": "'整体评测:EDP 平均提升 3.82×' 主题:数据 型"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.85,
+      "enforcement_level": "hard",
+      "rationale": "标题的定位职能是'我在讲哪一块',名词短语或 主题:副标 结构简短且信息密度高,动宾句长且与 claim 语义重叠,浪费视觉带宽",
+      "fix_hint": "把标题改为 '<主题> · <关键点>' 或 '<主题>:<数据/结论>',移除 '介绍' / '本节将' 等赘语",
+      "exceptions": [
+        "章节封面页可用完整章名",
+        "cover/ending 用长论文全称或致谢语"
+      ]
+    },
+    {
+      "id": "reference_citation_uses_bracketed_footnote_marks",
+      "category": "authoring",
+      "applicable_role": [
+        "content_candidate"
+      ],
+      "title": "引用·上标方括号编号",
+      "description": "对比工作/存储格式/精度基准等引用外部工作时,在关键词后加 [1] [2] [3] 上标或方括号编号,底部或右下引用来源,不用完整参考文献格式打断正文。",
+      "evidence_signals": [
+        "关键文字 含 '[1]' / '[2]' 或类似方括号编号",
+        "编号紧跟工作名 (如 'MatRaptor [3]', 'DSTC [1]', 'SDC[1]')",
+        "视觉骨架 或页面存在 '底部来源引用' 等标注"
+      ],
+      "hit_carriers": [
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 9,
+          "评价": "'Accuracy loss![1]' 上标编号"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 10,
+          "评价": "'MatRaptor [3]', 'Sextans [2]', 'DSTC [1]' 三处上标编号"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 17,
+          "评价": "'Mask-Space (MS), the concept of the representation space[1]'"
+        },
+        {
+          "deck_id": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+          "slide_index": 22,
+          "评价": "'Single-dimensional Compression (SDC)[1]'"
+        }
+      ],
+      "miss_carriers": [],
+      "estimated_hit_rate_in_batch": 0.2,
+      "enforcement_level": "soft",
+      "rationale": "学术汇报必须给来源以证据可信,但完整 bib 会淹没版面,方括号编号+底部脚注在'可核查'与'不干扰'之间取得平衡",
+      "fix_hint": "外部工作/概念/数据首次出现后加 [<N>] 上标,底部用小字统一列 '[N] 作者-会议-年份'",
+      "exceptions": [
+        "自研工作/概念(不需引用)",
+        "非学术型 deck(可省编号)"
+      ]
+    }
+  ],
+  "extraction_notes": "本 batch 1 deck (HPCA TB-STC paper share, 39 slides),visual 6 rules(cover/toc/toc-transition/ending/content-top-claim/method-comparison),authoring 6 rules(title 数字前置 / Tech.N 编号 / Key idea 标记 / claim 判断句 / title 名词短语 / 上标引用)。样本量小,rate 估值仅对本 batch,driver 需跨 batch 合并再定 hard/soft。",
+  "coverage": {
+    "rules_count": 12,
+    "by_category": {
+      "visual": 6,
+      "authoring": 6
+    }
+  }
+}

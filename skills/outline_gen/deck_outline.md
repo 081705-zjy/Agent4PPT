@@ -1,0 +1,213 @@
+# Outline Generation Skill (DEPRECATED — kept as single-shot fallback)
+
+**⚠️ 2026-06-27 Phase O 之后, OUTLINE 改为两阶段:**
+- Stage 1: `skills/outline_gen/section_outline.md` (章级 stub)
+- Stage 2: `skills/outline_gen/slide_detail.md` (页级 detail)
+- Review: `skills/outline_gen/outline_review.md` (codex fix-loop)
+
+本 skill 保留作 fallback / 对比, 不再是主路径。`_run_outline_generation` 默认走两阶段。
+
+---
+
+Generate the **detailed N-page outline** for the deck. This is the
+*ground truth* the matching cascade uses — every later stage (DECK_MATCHING,
+SECTION_MATCHING, SLIDE_MATCHING, SLIDE_PLAN, DRAFT) operates on the pages
+you define here.
+
+This stage runs AFTER SOURCE_UNDERSTAND/IDEA_ANALYSIS and BEFORE LAYERED_RETRIEVAL.
+You know exactly what materials the user has on hand (from
+data/source-understanding.json) and what they want to convey (from
+idea-analysis.json). Use both to construct an outline that:
+
+1. Outputs slide_count in the **±20% elasticity band** `[int(0.8*N), int(1.2*N)]`.
+   Do NOT pin to brief.slide_count. **Actively use elasticity** when:
+     - any chapter has key_points / archetypes that won't fit its expected_pages
+       (split the chapter into more pages rather than cramming 3+ topics on one page)
+     - the deck needs an extra closing/recap page or an extra problem-statement page
+   Pinning to exactly N is a failure mode — it leads to "3 topics crammed on
+   one page". When in doubt, prefer expanding (toward `high`) over crowding.
+2. Follows brief.narrative_blueprint.arc chapter-by-chapter
+3. Honors `user_outline` verbatim when it's non-empty (highest priority)
+4. Lets the reuse cascade hit brief.reuse_strategy.target_reuse_rate (typically
+   0.9). **EVERY page including cover/agenda/section_divider/closing must have a
+   reusable archetype** — these are NOT exempt from reuse. The library provides
+   cover_candidate / agenda_candidate / closing_candidate / divider_candidate
+   templates; tag those rows with `expected_resource_kind=slide_paste` so the
+   matching cascade can find them.
+
+## Inputs
+
+- `idea_analysis` — schema 2.1 with:
+  - `narrative_blueprint.arc` — chapter 列表 (chapter / purpose / expected_pages / key_points)
+  - `expected_sections` — 富对象 [{section_index, chapter, purpose, expected_pages}]
+  - **`chapter_page_archetype_plan`** — 每章预设的 page archetype 节奏:
+    `[{chapter, expected_pages, page_archetypes:[{archetype, count, placement, purpose,
+    key_question, expected_visual_form}]}]`
+  - `must_have_pages` — 项目必备页 (cover/agenda/closing/references etc.)
+  - `topic_tags` / `anchor_terms` — 主题关键词
+  - `reuse_strategy` (含 target_reuse_rate)
+  - `slide_writing_rules` — 标题/claim/body 写作硬规则 (本阶段仅参考, SLIDE_REWRITE 阶段强制)
+- `project_resource_understanding` — schema 2.0 with coverage_assessment per
+  chapter, deck_summary_by_theme, doc_summary_by_theme, figure_pool,
+  topic_to_project_sources.
+- `user_outline` — string. If non-empty, this OVERRIDES Claude's chapter
+  organization; you must follow it page-by-page.
+
+## Output: `outline.json` (strict JSON)
+
+```json
+{
+  "schema_version": "1.0",
+  "topic": "原文照抄 brief.topic",
+  "language": "zh|en|mixed",
+  "slide_count": 50,
+  "user_outline_applied": false,
+  "slides": [
+    {
+      "slide_index": 1,
+      "target_role": "opening|cover|agenda|self_intro|motivation|problem|method|comparison|result|risk|engineering|future|closing|references|appendix|content",
+      "target_title": "短功能标题 (≤14 字 zh / ≤7 words en)",
+      "target_claim": "本页要论证的判断句 (cover/agenda/closing/references 可为空字符串)",
+      "page_purpose": "本页在叙事弧中承担的具体角色 (≤60 字)",
+      "key_points": [
+        "本页需要传达的关键点 1 (具体到能写成 bullet)",
+        "本页需要传达的关键点 2",
+        "..."
+      ],
+      "needed_evidence": [
+        "本页需要的证据/数据/图 (例如: GPU 算力增速曲线, FlashOverlap 性能图)",
+        "..."
+      ],
+      "expected_resource_kind": "slide_paste|slide_paste_or_figure|new|cover_template",
+      "anchor_terms": [
+        "本页相关的关键术语 (FlashOverlap | KV Cache | semi-PD 等, ≤6 条)"
+      ],
+      "section_index": 2
+    }
+  ],
+  "section_breakdown": [
+    {
+      "section_index": 1,
+      "chapter": "开场与议程",
+      "slide_indices": [1, 2],
+      "expected_reuse_rate": 0.0
+    },
+    {
+      "section_index": 2,
+      "chapter": "背景动机",
+      "slide_indices": [3, 4, 5, 6, 7, 8, 9],
+      "expected_reuse_rate": 0.95
+    }
+  ]
+}
+```
+
+## Field semantics
+
+- `slide_count` 是**目标值**，允许范围 **±20%**（`low = int(0.8*N)`, `high = int(1.2*N)`）。
+  当某 chapter 的 expected_pages 装不下 key_points / archetypes 时, **拆页**而不是挤一页:
+  - **一页只承担 1 个 archetype 的 key_question + ≤3 key_points**
+  - **禁止单页堆 3+ 个独立 topic**（典型反例: "通信开销+异构差异+国产芯片栈" 应拆 3 页;
+    "云侧集群+端云协同+部署实战" 应拆 2 页）
+  - 当原 brief 的 chapter expected_pages = 5 但 archetype/key_question 数量明显需要 7 页,
+    可以把这 chapter 扩到 7 页 (前提是总 slide_count 仍在 ±20% 区间)
+- `slides[]` 长度 = 实际 slide_count（可不等于 brief.slide_count，但必须 ∈ [low, high]）。
+  slide_index 从 1 开始连续递增。
+- `section_breakdown[].slide_indices` 之和覆盖 1..slide_count，无重复无遗漏。
+
+- `target_role`:
+  - cover — 封面
+  - agenda — 目录
+  - section_divider — 章节切换页
+  - motivation / background — 背景动机页
+  - problem / challenge — 挑战页
+  - method / architecture — 方法/架构页
+  - comparison — 对比页
+  - result — 结果/性能页
+  - engineering — 工程实践页
+  - future — 未来规划页
+  - closing — 结尾/总结
+  - references — 参考文献
+  - content — 通用内容页
+
+**目录式 role 的位置硬约束**（防止 SLIDE_MATCHING 把内容页误克隆成"大字标题封面"导致『连续两页目录页』视觉伪影）:
+- `target_role="cover"` —— **仅** slide_index=1
+- `target_role="agenda"` —— **仅** slide_index=2 (即封面后紧跟的那一页),整个 deck 只能有 1 张
+- `target_role="section_divider"` —— **仅** 每章首页(从 sec_index=2 起,即 section_breakdown[i].slide_indices[0] for i ≥ 1)
+- `target_role="closing"` —— **仅** 末尾 1-2 页(deck 倒数第 1 或第 2 页)
+- `target_role="references"` —— **仅** 末尾(通常 deck 最后一页)
+- 其它所有位置都必须是 motivation / problem / method / comparison / result / engineering / future / content 之一,**不允许**标 agenda / section_divider / cover / closing / references。
+- 不要因为某页"看起来像导览"或"承担过渡作用"就标 agenda/section_divider —— 那种页应当标 content 或对应内容 role,文字承担过渡职能即可。
+
+- `target_title` **必须是短功能标题**, 不能是 claim:
+  - ✅ "推理时代算力剪刀差", "semi-PD 实测收益"
+  - ❌ "推理 token 量级与 GPU 算力增速形成剪刀差", "semi-PD 在 A100 上提升 2 倍吞吐"
+
+- `target_claim` 必须是判断句 (≤45 字):
+  - ✅ "推理 token 量级指数增长与 GPU 增速放缓形成剪刀差, 必须软硬件协同"
+  - ❌ "讲剪刀差现象"
+
+- `key_points` 至少 1 条 (cover/agenda/closing/references 可空):
+  - ✅ "GPT/Claude/Agent 推理 token 量级从 1k 增至 100k"
+  - ✅ "GPU 算力增速从 1.5×/年降至 1.1×/年"
+  - ❌ "讲一下背景"
+
+- `needed_evidence` 描述具体证据:
+  - ✅ "近 3 年主流大模型 token 量级统计"
+  - ✅ "GPU TFLOPS 增速曲线"
+  - ❌ "数据"
+
+- `expected_resource_kind`:
+  - **slide_paste** — 该页期望整页粘贴已有 slide。**这是绝大多数页的默认值**,
+    包括 cover / agenda / section_divider / closing / references — 库里有
+    cover_candidate / agenda_candidate / closing_candidate / divider_candidate
+    模板,SLIDE_MATCHING 会从中匹配。**不要因为是结构性页就标 new。**
+  - slide_paste_or_figure — 整页或单图都可以
+  - new — 仅当本页确实没有任何可复用模板时才标 new(极少使用)
+  - ~~cover_template~~ — 已废弃,统一用 slide_paste
+
+- 每个 section 第一页应当是 `target_role="section_divider"`(章节切换页),
+  `expected_resource_kind="slide_paste"`,等待匹配 divider_candidate 模板。
+
+- `anchor_terms` 是该页关键词, 用于后续 SLIDE_MATCHING 做关键词重叠判断。
+
+- `section_index` 应该对应 brief.narrative_blueprint.arc 的章节序号。
+
+## Hard rules
+
+### 当 user_outline 非空时 (highest priority):
+- 你必须**严格按用户大纲的页数顺序输出**, 用户列了几页你就生成几页。
+- 用户已经写好 target_title 的, 不要改, 只补 target_claim/key_points/needed_evidence。
+- `user_outline_applied=true`。
+- 如果用户大纲的总页数与 brief.slide_count 不一致, 以**用户大纲为准**, 把
+  slide_count 改为用户大纲的页数。
+
+### 当 user_outline 为空时:
+- 按 brief.narrative_blueprint.arc 的 expected_pages 分布生成。
+- `user_outline_applied=false`。
+- **`brief.chapter_page_archetype_plan` 是每章 page 节奏的源头真相**:
+  - 每个 chapter 的 `page_archetypes[]` 列出了该章 N 页应该是什么 archetype
+    (例: 1 张 motivation_intro + 2 张 trend_data + 1 张 problem_statement)
+  - **outline.slides 的 target_role / target_title / page_purpose / key_points
+    必须从对应 archetype 的 purpose / key_question / expected_visual_form 派生**,
+    不要瞎编一个新方向
+  - 例如某 archetype 的 `key_question = "推理算力需求增长曲线为何陡峭"`, 那对应
+    outline slide 的 page_purpose 必须呼应这个问题
+  - 当 chapter_page_archetype_plan 中某 chapter 的 page_archetypes[].count 总和
+    与该 chapter expected_pages 不一致时, 以 expected_pages 为准, 适当合并/拆分
+
+### 公共规则:
+- 不要为了凑 90% 复用率而扭曲叙事——叙事顺序优先, 复用率第二。
+- `needed_evidence` 里如果项目自有资源能覆盖, 标注资源 id; 否则写明"待外部检索"。
+  这帮助后续 SLIDE_MATCHING 一眼能看出该页是不是有源可复用。
+- 不要虚构: 不写 brief / understanding 里没有的数据 / 年份 / 人名 / 机构。
+- 中文项目用中文, 英文项目用英文。
+- Output strict JSON only — no markdown fences, no prose.
+
+## Quality bar
+
+- 这份 outline 是后续所有 matching/draft 阶段的 ground truth。请按"汇报设计师
+  在白板上画 50 页大纲"的状态写, 不要随便填字段。
+- 每一页都应该有清晰的"该页讲什么 + 用什么证据 + 在哪个章节"。
+- 如果 understanding.coverage_assessment.per_chapter 某章节是 "thin/none",
+  那该章节的页应当用 `expected_resource_kind=new`, 提示后续要重新生成。

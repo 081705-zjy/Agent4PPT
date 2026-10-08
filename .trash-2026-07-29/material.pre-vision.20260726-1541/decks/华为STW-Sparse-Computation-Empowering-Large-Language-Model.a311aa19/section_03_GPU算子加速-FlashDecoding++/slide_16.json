@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_16",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.03",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 16,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "FlashDecoding++ 在 AMD GPU 上的加速结果",
+  "核心论断": "FlashDecoding++ 在 AMD GPU 上同样取得实测加速",
+  "本页讲什么": "本页延续实验结果,展示 FlashDecoding++ 在 AMD 平台(MI210 64GB、RX7900XTX 24GB)上的 Llama2-7B demo 加速表现。承接 slide 15 的 NVIDIA 结果,补充跨厂商 GPU 验证,构成算子优化收益的双重验证第二重,证明方案不局限于单一硬件。",
+  "关键文字": [
+    "Experimental Results: FlashDecoding++",
+    "Llama2-7B demo on AMD MI210",
+    "AMD MI210 (64GB)",
+    "AMD RX7900XTX (24GB)"
+  ],
+  "视觉骨架": [
+    "AMD 平台加速比图",
+    "Llama2-7B demo 截图"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_16.asset.01",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_16.asset.02",
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_16.asset.03"
+  ],
+  "适合复用场景": [
+    "跨平台 GPU 加速验证页",
+    "AMD GPU 推理 demo 展示"
+  ],
+  "不适合复用场景": [
+    "方法原理展开页",
+    "背景动机铺垫页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

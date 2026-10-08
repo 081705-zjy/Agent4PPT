@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_06"
+所属章节: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03"
+所属deck: "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a"
+页序号: 6
+源文件: "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx"
+页面角色: "content_candidate"
+标题: "注意力开销：QKᵀ 与 FFN 剖析"
+核心论断: "注意力 QKᵀ 计算随序列长度平方增长成为主要开销"
+本页讲什么: "拆解单层 Transformer 的计算构成，对比 Attention 与 FFN：重点说明注意力权重 QKᵀ 的计算量随序列长度呈二次增长，是长上下文推理的核心算力瓶颈，承接上页应用需求给出\"开销从何而来\"的答案。"
+关键文字: "[Attention, FFN, Attn weight, QK^T]"
+视觉骨架: "[注意力计算流程框图, Attention/FFN 结构对比示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_06.asset.01, tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_06.asset.02]"
+适合复用场景: "[注意力计算开销剖析页, 长上下文瓶颈机理页]"
+不适合复用场景: "[应用场景铺陈页, 最终结果总结页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "method_detail"
+视觉文本层次:
+  - {"位置": "左侧", "内容": "Attention 计算流程框图 (Q/K/V → QKᵀ → Softmax)"}
+  - {"位置": "右侧", "内容": "FFN 结构对比示意"}
+alternate_claims:
+  - "FFN 计算量随隐藏维度线性增长，长上下文下占比下降"
+layout_tag: "block_diagram"
+---
+# slide 6: 注意力开销：QKᵀ 与 FFN 剖析
+
+**核心论断**: 注意力 QKᵀ 计算随序列长度平方增长成为主要开销
+
+## 本页讲什么
+拆解单层 Transformer 的计算构成，对比 Attention 与 FFN：重点说明注意力权重 QKᵀ 的计算量随序列长度呈二次增长，是长上下文推理的核心算力瓶颈，承接上页应用需求给出"开销从何而来"的答案。
+
+## 关键文字片段
+- Attention
+- FFN
+- Attn weight
+- QK^T
+
+## 视觉骨架
+- 注意力计算流程框图
+- Attention/FFN 结构对比示意
+
+## 可复用到
+- 注意力计算开销剖析页
+- 长上下文瓶颈机理页
+
+## 不适合复用的场景
+- 应用场景铺陈页
+- 最终结果总结页

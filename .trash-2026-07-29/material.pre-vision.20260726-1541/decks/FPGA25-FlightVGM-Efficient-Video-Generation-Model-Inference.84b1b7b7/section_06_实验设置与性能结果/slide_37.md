@@ -1,0 +1,45 @@
+---
+页标识: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_37"
+所属章节: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.sec.06"
+所属deck: "tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7"
+页序号: 37
+源文件: "templates/本组论文与科研成果/FPGA25  FlightVGM Efficient Video Generation Model Inference with.pptx"
+页面角色: "content_candidate"
+标题: "实验模型与数据集（补充）"
+核心论断: "覆盖多类模型与任务保证结论普适性"
+本页讲什么: "本页延续实验设置说明，补充列出参与评测的模型与数据集配置，进一步交代评测覆盖面，为后续硬件资源占用与加速结果提供完整的实验对象背景。"
+关键文字: "[Models and datasets, Models]"
+视觉骨架: "[模型与数据集清单, 配置示意图]"
+资源ID列表: "[tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_37.asset.01, tpl.本组论文与科研成果.FPGA25-FlightVGM-Efficient-Video-Generation-Model-Inference.84b1b7b7.slide_37.asset.02]"
+适合复用场景: "[实验设置的模型/数据集补充页, 评测覆盖面说明页]"
+不适合复用场景: "[加速比曲线结果页, 端到端案例展示页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 37: 实验模型与数据集（补充）
+
+**核心论断**: 覆盖多类模型与任务保证结论普适性
+
+## 本页讲什么
+本页延续实验设置说明，补充列出参与评测的模型与数据集配置，进一步交代评测覆盖面，为后续硬件资源占用与加速结果提供完整的实验对象背景。
+
+## 关键文字片段
+- Models and datasets
+- Models
+
+## 视觉骨架
+- 模型与数据集清单
+- 配置示意图
+
+## 可复用到
+- 实验设置的模型/数据集补充页
+- 评测覆盖面说明页
+
+## 不适合复用的场景
+- 加速比曲线结果页
+- 端到端案例展示页

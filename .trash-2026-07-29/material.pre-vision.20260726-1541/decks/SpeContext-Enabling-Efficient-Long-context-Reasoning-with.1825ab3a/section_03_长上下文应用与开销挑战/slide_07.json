@@ -1,0 +1,37 @@
+{
+  "页标识": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_07",
+  "所属章节": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.sec.03",
+  "所属deck": "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a",
+  "页序号": 7,
+  "源文件": "templates/本组论文与科研成果/SpeContext Enabling Efficient Long-context Reasoning with.pptx",
+  "页面角色": "content_candidate",
+  "标题": "KV 缓存随序列长度线性膨胀",
+  "核心论断": "KV Cache 内存随序列长度线性增长成为显存瓶颈",
+  "本页讲什么": "紧接注意力计算开销，转向存储侧：说明 K/V Cache 大小随序列长度（Len）与维度（D）线性增长，长上下文下显存占用急剧膨胀，与上页计算开销共同构成 SpeContext 要解决的双重挑战。",
+  "关键文字": [
+    "Len",
+    "K",
+    "V",
+    "Cache",
+    "Cache D"
+  ],
+  "视觉骨架": [
+    "KV 缓存随长度增长示意",
+    "K/V 张量维度标注"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_07.asset.01",
+    "tpl.本组论文与科研成果.SpeContext-Enabling-Efficient-Long-context-Reasoning-with.1825ab3a.slide_07.asset.02"
+  ],
+  "适合复用场景": [
+    "KV 缓存显存开销剖析页",
+    "长上下文存储瓶颈机理页"
+  ],
+  "不适合复用场景": [
+    "应用趋势引入页",
+    "能效对比结果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

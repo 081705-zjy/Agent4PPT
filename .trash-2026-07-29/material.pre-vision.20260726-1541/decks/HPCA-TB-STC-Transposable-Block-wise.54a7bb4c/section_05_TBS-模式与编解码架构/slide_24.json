@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_24",
+  "所属章节": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c",
+  "页序号": 24,
+  "源文件": "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx",
+  "页面角色": "content_candidate",
+  "标题": "编码格式细节：[flag, element] 结构",
+  "核心论断": "编码采用 [flag, element] 分组四元结构表示稀疏块",
+  "本页讲什么": "本页展开编解码格式的内部表示，用 [flag, element] × 4 的分组结构编码稀疏块的位置标志与元素值，说明该格式如何在紧凑存储下同时支持行列两个方向的解析，是编解码架构的实现细节。",
+  "关键文字": [
+    "[flag, element] * 4"
+  ],
+  "视觉骨架": [
+    "编码字段结构示意图",
+    "flag/element 分组排布"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_24.asset.01",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_24.asset.02",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_24.asset.03",
+    "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_24.asset.04"
+  ],
+  "适合复用场景": [
+    "压缩编码格式的字段级图解页",
+    "稀疏数据表示细节页"
+  ],
+  "不适合复用场景": [
+    "宏观架构总览页",
+    "结果对比页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

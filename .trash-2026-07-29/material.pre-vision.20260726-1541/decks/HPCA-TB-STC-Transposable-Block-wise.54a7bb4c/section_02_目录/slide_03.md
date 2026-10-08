@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_03"
+所属章节: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.sec.02"
+所属deck: "tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c"
+页序号: 3
+源文件: "templates/本组论文与科研成果/HPCA  TB-STC Transposable Block-wise.pptx"
+页面角色: "toc_candidate"
+标题: "目录 Contents（图文版）"
+核心论断: "编号目录以图文并置强化四段路线导航"
+本页讲什么: "本页是目录的图文强化版，沿用「1 Background: AI 与稀疏计算」等编号章节结构，但以更多配图与视觉元素并置排布，把全篇路线图以图文形式呈现，承接上一版纯文字目录并过渡到正文首章。"
+关键文字: "[contents, \"1 Background: AI and Sparse Computing\"]"
+视觉骨架: "[编号目录列表, 多配图并置, 章节标题与图标对应]"
+资源ID列表: "[tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_03.asset.01, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_03.asset.02, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_03.asset.03, tpl.本组论文与科研成果.HPCA-TB-STC-Transposable-Block-wise.54a7bb4c.slide_03.asset.04]"
+适合复用场景: "[稀疏计算报告图文目录页, 带章节配图的路线图导航, 硬件研究图文式目录]"
+不适合复用场景: "[纯数据结果对比页, 单一大图的方法示意页, 封面页]"
+上页角色: "toc_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "左侧", "内容": "编号目录列表(1 Background / 2 ... / 3 ... / 4 ...)"}
+  - {"位置": "右侧", "内容": "与各章节对应的配图并置"}
+alternate_claims:
+layout_tag: "mixed"
+---
+# slide 3: 目录 Contents（图文版）
+
+**核心论断**: 编号目录以图文并置强化四段路线导航
+
+## 本页讲什么
+本页是目录的图文强化版，沿用「1 Background: AI 与稀疏计算」等编号章节结构，但以更多配图与视觉元素并置排布，把全篇路线图以图文形式呈现，承接上一版纯文字目录并过渡到正文首章。
+
+## 关键文字片段
+- contents
+- 1 Background: AI and Sparse Computing
+
+## 视觉骨架
+- 编号目录列表
+- 多配图并置
+- 章节标题与图标对应
+
+## 可复用到
+- 稀疏计算报告图文目录页
+- 带章节配图的路线图导航
+- 硬件研究图文式目录
+
+## 不适合复用的场景
+- 纯数据结果对比页
+- 单一大图的方法示意页
+- 封面页

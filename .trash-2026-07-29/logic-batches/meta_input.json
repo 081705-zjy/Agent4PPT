@@ -1,0 +1,5446 @@
+{
+  "concrete_patterns": [
+    {
+      "id": "blank_lab_report_template_skeleton",
+      "layer": "deck_level",
+      "title": "实验室通用汇报空白模板骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "template"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "实验室/研究组通用 PPT 空白模板",
+          "个人介绍/课题汇报占位版式骨架",
+          "留白待填的实验室模板"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "method_section",
+        "closing"
+      ],
+      "applicable_summary": "极短 deck(≤10 页)通用空白模板骨架:cover 留白待填标题,中段提供 self_intro 履历+一组左右双栏可编号问题版式作 method 占位区,末尾提供空白 Thanks/Q&A 版式与实验室署名页脚。多数页为占位版式无实质内容,供二次填充课题汇报",
+      "anti_patterns": [
+        "有实质内容的成品 deck(应归入内容型 pattern)",
+        "长篇多章节报告:用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "单论文分享:用 paper_share_bg_challenge_solution_eval_summary_canonical"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "long_deck_framework_plus_works_panorama_with_agenda_navigation",
+      "layer": "deck_level",
+      "title": "长篇 deck·框架统领+多工作/多案例平行陈列(agenda 高亮导航)",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "tutorial",
+          "lab_introduction"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "AI基础设施/算力战略汇报",
+          "研究院/实验室建设规划",
+          "本组多成果综述串讲",
+          "学术会议 tutorial",
+          "软硬件协同专题"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "motivation_section",
+        "framework_intro",
+        "method_works_panorama_section",
+        "discussion_section",
+        "outlook_section",
+        "closing"
+      ],
+      "applicable_summary": "长篇 deck 骨架:cover+agenda 开场,motivation 铺垫,framework_intro 统领,再以 3-6 个 method/case_study 章节平行陈列本组成果,期间以『全 agenda 灰显+当前章高亮』的 section_divider 作章节导航,末尾以团队展望或致谢封底",
+      "anti_patterns": [
+        "canonical 单论文分享(Background/Challenge/Solution/Evaluation 五段短叙事):用 paper_share_bg_challenge_solution_eval_summary_canonical",
+        "空白模板骨架(无实质内容):用 blank_lab_report_template_skeleton",
+        "商业 BP/投资路演(需财务与市场章节)",
+        "消费级产品 demo(叙事节奏不同)"
+      ],
+      "source_count": 13,
+      "confidence": "high"
+    },
+    {
+      "id": "paper_share_bg_challenge_solution_eval_summary_canonical",
+      "layer": "deck_level",
+      "title": "顶会论文分享·Background→Challenge→Solution→Evaluation→Summary 五段式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "顶会/期刊论文分享",
+          "组会论文汇报",
+          "系统/体系结构论文分享"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "motivation_section",
+        "problem_section",
+        "method_section",
+        "result_section",
+        "closing"
+      ],
+      "applicable_summary": "单篇论文分享 canonical 骨架:短 deck(20-40 页),cover+纵向编号 agenda 开场,再按 Background→Challenge→Solution→Evaluation→Summary 五段推进,每段进入前插一张『竖排编号圆点导航+当前段高亮』的 section_divider,末尾回归目录+一句『We propose X』总结页附实验室主页/邮箱收束",
+      "anti_patterns": [
+        "长篇 tutorial/多工作综述(章节数多):用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "空白模板骨架:用 blank_lab_report_template_skeleton",
+        "工业 demo/商业 BP(叙事节奏与结构不同)"
+      ],
+      "source_count": 10,
+      "confidence": "high"
+    },
+    {
+      "id": "qualifying_exam_defense_with_study_progress_and_appendix",
+      "layer": "deck_level",
+      "title": "博士资格考试/开题答辩·学习情况+研究内容三段+备份材料",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "博士资格考试",
+          "博士开题答辩",
+          "学术考核汇报",
+          "研究方向汇报答辩"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "self_intro",
+        "motivation_section",
+        "problem_section",
+        "framework_intro",
+        "method_works_panorama_section",
+        "closing",
+        "appendix"
+      ],
+      "applicable_summary": "40-80 页博资考/开题 deck 骨架:cover+agenda+一页 self_intro(学习情况/课程进度声明)开场,motivation 立需求-供给矛盾,background 综述现状引出 N 大核心问题,framework 抛出「软硬协同」总思路,再以 2-4 章 method 分述各研究内容(每章遵循『挑战→创新→成果→小结附论文』),末尾 closing 归纳到单张主线图+已发表论文列表,附 appendix 备份池以应答辩追问",
+      "anti_patterns": [
+        "常规研究报告(无学习情况声明+备份材料): 用 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "顶会论文分享(单方法+无备份): 用 paper_share_bg_challenge_solution_eval_summary_canonical",
+        "工业产品路演(叙事偏商业, 无核心问题矩阵)"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "research_proposal_defense_with_team_budget_and_backup_stack",
+      "layer": "deck_level",
+      "title": "科研项目立项申报答辩·价值→挑战→方案→团队经费+多章备份",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "AI+组合优化/EDA方向科研立项申报",
+          "科研项目立项答辩",
+          "含团队/经费/指标的完整答辩型 deck",
+          "NP难问题AI求解的价值-挑战-方案论证"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "motivation_section",
+        "method_section",
+        "discussion_section",
+        "closing",
+        "appendix"
+      ],
+      "applicable_summary": "20-40 页项目立项申报 deck:cover 极简开场,motivation 章立价值+暴露 NP 难/算力/多变场景挑战,method 章抛出两条求解路线+分层框架+研究基础,discussion 章按『团队构成→既往结题→量化指标→经费概算』四步答『谁做/能否交付/花多少钱』,以简短 closing 致谢收尾正文;末尾接 2-4 章 appendix 备份材料(经费成员明细/研究基础/大规模能力/自适应优化等),供评审质询查验,不承载论证。正文短(<15 页)+ 备份长(可达一半篇幅)是该模式突出特征。",
+      "anti_patterns": [
+        "博士开题答辩(用 qualifying_exam_defense_with_study_progress_and_appendix, 含 self_intro/学习进度+研究内容多章)",
+        "工业产品 demo/商业融资路演(缺团队+指标+经费四合一评审支撑)",
+        "长篇综述报告(缺 discussion 团队/经费章)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "research_report_method_pair_with_engineering_landing",
+      "layer": "deck_level",
+      "title": "研究报告·多方法贡献+工程落地案例(中长篇)",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": null,
+        "scenario_keywords": [
+          "大模型推理系统优化学术报告",
+          "国产/异构芯片适配实践汇报",
+          "自研方法+工程落地综述",
+          "PD 分离/计算通信重叠专题"
+        ]
+      },
+      "archetype_sequence": [
+        "cover",
+        "agenda",
+        "motivation_section",
+        "method_section",
+        "engineering_section",
+        "closing"
+      ],
+      "applicable_summary": "中长篇 deck(30-55 页)骨架: cover+编号 agenda 开场,一章 background/motivation 铺陈技术挑战,再以 2-3 章 method 并列展开自研工作贡献,末以一章 engineering case_study 落地到国产/异构芯片适配或产品化实践,以致谢+招聘/合作 CTA 收束。每章切换前插入 agenda-高亮 section_divider 作导航。相比长篇 panorama 更聚焦、更少 framework_intro/discussion 层。案例中章节角色 case_study 被映射为 engineering 章",
+      "anti_patterns": [
+        "长篇 3-6 方法平行陈列型: 走 long_deck_framework_plus_works_panorama_with_agenda_navigation",
+        "单篇论文分享(paper_share): 走 paper_share canonical pattern",
+        "纯 tutorial 教学(无自研方法贡献): 叙事节奏不同"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_backup_materials_nonlinear_pool_for_qa",
+      "layer": "section_level",
+      "title": "附录·答辩备份材料非线性池",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "backup_alternative_cover",
+        "backup_codesign_case_example",
+        "backup_roadmap_draft_iteration",
+        "backup_content_deep_dive_method",
+        "backup_outline_page",
+        "backup_core_problem_matrix",
+        "backup_progress_completion_status",
+        "backup_subcontent_detail_challenge",
+        "backup_subcontent_detail_innovation",
+        "backup_subcontent_detail_result"
+      ],
+      "applicable_summary": "学术答辩收官后的备份材料池: 保留旧版封面/案例/多版路线图草稿/详细提纲/核心问题矩阵/研究内容与子内容深化细节等异质页, 供 Q&A 追问时调取, 非线性冗余而非连贯叙事",
+      "anti_patterns": [
+        "无 appendix (仅正文+收尾) — 不适用",
+        "连贯线性叙事的正文章 — 用对应 method/background pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_challenge_approach_multi_operator_and_paradigm_backup",
+      "layer": "section_level",
+      "title": "附录·多算子挑战-方案-结果+范式论据备份",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "external_theory_intro_holder",
+        "dataflow_operator_breakdown_headline",
+        "operator_challenge_statement",
+        "operator_approach_with_result_number",
+        "sparsity_dual_flaw_background",
+        "moe_representative_work_with_result",
+        "mod_dual_method_side_by_side",
+        "mode_combination_summary"
+      ],
+      "applicable_summary": "作为备份附录 pattern: 挂两大类技术细节 —— (a) 正文算子加速的 3 组 Challenge/Approach 三段闭环 + (b) 稀疏范式论据(双困境+MoE/MoD/MoDE 代表工作对比), 供讲者按需下钻不参与主线宣讲",
+      "anti_patterns": [
+        "纯 case_study 不属于附录 — 用 case_study 类 pattern",
+        "仅补充结果无技术细节 — 用 result 类 pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_cognitive_analogy_plus_paradigm_timeline_backup",
+      "layer": "section_level",
+      "title": "备份·认知类比铺垫+范式演变时间线",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cognitive_analogy_dual_node",
+        "paradigm_evolution_timeline"
+      ],
+      "applicable_summary": "汇报末尾的 backup 双页: 一页借认知/理论类比为核心技术做直觉铺垫, 另一页以时间线梳理该技术的范式演变+未来延展, 两页互为技术补充论据, 供答辩追问时调用",
+      "anti_patterns": [
+        "带 recap 与主张回收的正文式收束 → 用 closing_toc_recap_framework_summary_thanks_with_logos",
+        "论文型 future work 初步实验表 → 用 discussion_toc_three_pillar_recap_plus_future_extension",
+        "多子领域展开的展望章 → 用 discussion_agenda_vision_topics_team_close"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_divider_then_budget_and_member_detail_tables",
+      "layer": "section_level",
+      "title": "备份·分隔页→经费明细→成员花名册",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "appendix_divider_panel",
+        "budget_detail_itemized_tables",
+        "team_roster_full_table"
+      ],
+      "applicable_summary": "科研答辩后附的备份章: 用『备份』分隔页开场, 再依次给经费预算明细分类表+项目成员花名册长表, 供评审质询查验, 不承载论证",
+      "anti_patterns": [
+        "带研究基础+成果图表的支撑备份 → 用 appendix_dual_pillar_compare_then_scaling_result",
+        "多子主题深度技术备份 → 用 appendix_multi_subtheme_adaptive_and_cluster_capability"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_dual_pillar_compare_then_scaling_result",
+      "layer": "section_level",
+      "title": "备份·传统vs AI对比→成果+大规模处理→加速",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "traditional_vs_ai_flow_compare",
+        "method_result_headline_boxed",
+        "large_scale_processing_diagram",
+        "custom_kernel_speedup_result"
+      ],
+      "applicable_summary": "科研申报备份章: 双支柱依次论证研究基础—先『传统 vs AI 流程对比+方法成果』一对, 再『大规模处理策略+定制 kernel 加速成果』一对, 每对遵循方法示意→量化数字节奏",
+      "anti_patterns": [
+        "只有经费/名单类查验备份 → 用 appendix_divider_then_budget_and_member_detail_tables",
+        "多子主题技术备份 → 用 appendix_multi_subtheme_adaptive_and_cluster_capability"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_format_template_backup_pages_plus_product_thanks",
+      "layer": "section_level",
+      "title": "附录·格式模板+留白备份页+产品介绍+致谢",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "format_reference_placeholder_template",
+        "blank_backup_page_with_date_header",
+        "product_platform_ecosystem_diagram",
+        "thanks_with_speaker_and_support_qr"
+      ],
+      "applicable_summary": "含创业公司的学术报告末尾附录: 一页版式参考模板 → 若干张同版式留白备份页(仅日期抬头) → 一页产品/平台生态架构图 → 一页 Thanks+Support 致谢联系页, 非论证链条, 供演讲者临场按需插图并集中致谢",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底致谢 → 用 closing_collaboration_wall_plus_thanks_backpanel pattern",
+        "极简空白结尾骨架 → 用 closing_blank_thanks_backpanel_with_signature pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_method_supplement_detail_with_blank_transition",
+      "layer": "section_level",
+      "title": "附录·方法细节补充+空白过渡页",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "predictor_mechanism_with_decision_flow",
+        "blank_transition_page_with_footer_only",
+        "offline_online_scheduling_dual_stage_diagram"
+      ],
+      "applicable_summary": "开题/答辩类deck的附录章: 补充某核心研究内容(如级联层提前退出)的方法与数据细节, 用判决流程图+离线/在线双阶段调度图佐证正文加速结论, 中间可含空白过渡页",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_multi_subtheme_adaptive_and_cluster_capability",
+      "layer": "section_level",
+      "title": "备份·多子主题自适应算子+集群训练能力",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "appendix"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "adaptive_operator_multi_axis_intro",
+        "design_space_coverage_table",
+        "layered_speedup_result_multi_chart",
+        "subtheme_switch_timeline_evolution",
+        "throughput_benchmark_headline",
+        "cross_datacenter_capability_card",
+        "heterogeneous_cluster_result_headline"
+      ],
+      "applicable_summary": "科研申报深度技术备份章: 三子主题串起(自适应 GNN 算子: 思想→设计空间→分层成效; 大模型推理内核: 时间线演进→吞吐对标; 集群训练: 跨机房拓扑→异构千卡混训), 每子主题按方法→结果推进, 供答辩按需调取深度技术材料",
+      "anti_patterns": [
+        "只有经费/成员查验备份 → 用 appendix_divider_then_budget_and_member_detail_tables",
+        "只对比两块研究基础 → 用 appendix_dual_pillar_compare_then_scaling_result"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "appendix_single_page_industrial_architecture_showcase",
+      "layer": "section_level",
+      "title": "附录·单页产业化全景架构收束",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "appendix",
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "single_page_industrial_architecture_with_bullets"
+      ],
+      "applicable_summary": "以单页收束型附录展示产业化系统全景: 左侧文字标签列关键突破亮点+右侧自底向上分层架构图(底层区域异构算力→中间协同层→顶层应用场景)一次完成产业化收尾",
+      "anti_patterns": [
+        "多页展开的产业化章 — 用 case_study_academic_to_industry_closed_loop_with_venture_history pattern",
+        "无架构图的纯文字总结 — 用 closing_bullet_summary pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_ai_to_domain_to_hardware_evolution_funnel",
+      "layer": "section_level",
+      "title": "背景·生成式 AI 概览→领域收窄→模型结构→计算受限→硬件演进",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "macro_generative_ai_intro",
+        "domain_narrowing_dual_panel",
+        "model_structure_dual_panel",
+        "bottleneck_comparison_quantitative_table",
+        "hardware_evolution_timeline",
+        "hardware_driver_dual_frame_summary"
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 由生成式 AI 概览→领域收窄(视频生成)→模型结构剖析(扩散 transformer)→算力/访存/强度对比表证瓶颈→GPU 架构演进时间线→两大驱动力提炼, 层层漏斗完成软硬件双视角背景",
+      "anti_patterns": [
+        "单聚焦范式转变代价证明的 background(agenda→价值→代价→机制→算子拆解) — 用 background_paper_share_agenda_to_value_to_paradigm_shift_to_operators pattern",
+        "问题优先直接切入无宏观 AI 铺垫的 motivation — 用 motivation_problem_only_direct pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_app_paradigm_essence_metric_gap_funnel",
+      "layer": "section_level",
+      "title": "背景·应用赋能→范式转变→本质定义→度量单位→供需差距漏斗",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "domain_application_landscape",
+        "paradigm_shift_with_quote_backing",
+        "essence_definition_with_quote_backing",
+        "metric_unit_analogy_bridge",
+        "supply_demand_gap_multi_tier_devices"
+      ],
+      "applicable_summary": "开题/学术汇报型背景章的漏斗式论证: 目录→应用赋能场景→范式转变(配权威引言)→技术本质定义(配权威引言)→跨领域类比引出度量单位(配权威引言)→多档设备供需对比坐实瓶颈, 五步层层压强",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "background_bottleneck_taxonomy_compare_pain_insight",
+      "layer": "section_level",
+      "title": "背景·瓶颈锁定→技术分类学→四象限对比→痛点暴露→洞见桥接",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "era_opener_headline",
+        "bottleneck_breakdown_pipeline_pie",
+        "optimization_cost_formula_three_column",
+        "sub_taxonomy_dual_panel_compare",
+        "four_way_comparison_table_winner_highlight",
+        "chosen_technique_mechanism_two_step",
+        "pain_point_pipeline_stall_diagram",
+        "insight_solution_bridge_dual_pipeline"
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的中长 background 章: 时代开场→FFN 等具体瓶颈锁定→总代价公式+三列优化空间→剪枝/量化两页分别静态-动态子类比→四象限对比表选优→胜出技术两步机理→流水线痛点→双流水线利用率桥接新架构",
+      "anti_patterns": [
+        "缺失技术分类学的直接瓶颈→洞见 (页数<6, 用 background_gap_to_sparsity_family_taxonomy_dual_flaw 类似 pattern)",
+        "无对比表直接给方案的 problem→solution 短漏斗"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_domain_intro_principle_backbone_reveal_to_video_extension",
+      "layer": "section_level",
+      "title": "背景·域引入→原理→骨干渐进揭示→视频扩展",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "domain_intro_with_examples",
+        "foundational_principle_arrows",
+        "backbone_element_progressive_reveal",
+        "extension_change_key_diffs",
+        "extension_variants_dual_display"
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 由领域应用样例引入→底层原理→骨干模型要素连续 3 帧渐进揭示(聚焦要素①→过渡帧→全貌+痛点)→扩展到目标场景的关键改动→并列双变体架构图收束, 层层建立算法共识后为下章问题立靶",
+      "anti_patterns": [
+        "纯宏观趋势无骨干拆解 (用 background_ai_to_domain_to_hardware_evolution_funnel)",
+        "从范式对照切入无原理铺陈 (用 background_paradigm_evolution_related_works_survey_to_bottleneck)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_domain_landscape_to_operator_bottleneck_funnel",
+      "layer": "section_level",
+      "title": "背景·多域普及→双轴算力爆炸→推理机制→算子成本→bottleneck定位",
+      "applicable_when": {
+        "report_type": [
+          "paper_share",
+          "research_report"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "domain_landscape_multi_field_intro",
+        "dual_axis_growth_scaling_compare",
+        "inference_pipeline_multi_step_diagram",
+        "operator_cost_formula_derivation",
+        "bottleneck_conclusion_speedup_direction"
+      ],
+      "applicable_summary": "论文分享型硬件加速背景章: 由模型多域普及 → 参数×输入双轴增长 → 多步推理机制 → 算子成本随 L 公式 → compute-bound + 降 L 加速结论, 层层漏斗把宏观趋势落到可操作的加速杠杆",
+      "anti_patterns": [
+        "含 GPU 代际演进时间线 — 用 background_ai_to_domain_to_hardware_evolution_funnel",
+        "以稀疏化分类立双靶 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_gap_to_sparsity_family_taxonomy_dual_flaw",
+      "layer": "section_level",
+      "title": "背景·算力鸿沟→稀疏方向→硬件演进→分类立双靶",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "quantitative_gap_chart",
+        "solution_family_intro_dual_panel",
+        "hardware_evolution_timeline",
+        "dense_vs_sparse_mac_illustration",
+        "sparsity_pattern_taxonomy_dual_compare",
+        "pattern_flaw_accuracy_drop",
+        "pattern_flaw_hardware_overhead"
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 background 章: 目录切入 → 算力供需鸿沟 → 稀疏方向引入 → GPU 稀疏支持代际演进 → 稀疏机理小例 → 稀疏模式二分类 → 分别揭示结构化(掉精度)与非结构化(硬件开销)两类硬伤, 为后续新方案精准立靶",
+      "anti_patterns": [
+        "只讲历史无痛点(用 background_only_chronology)",
+        "只讲宏观 gap 无分类立靶(用 motivation_funnel_macro_to_pain)",
+        "背景→模型内部结构→算子拆解漏斗(用 background_ai_to_domain_to_hardware_evolution_funnel)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_history_dual_system_to_paradigm_shift_to_edge_demand",
+      "layer": "section_level",
+      "title": "背景·科技史→双系统→范式演进→云到端漏斗",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_main",
+        "chapter_transition",
+        "macro_science_revolution_timeline",
+        "human_dual_system_theory",
+        "ai_demand_perception_to_cognition",
+        "ai_three_elements_root_diagram",
+        "ai_history_timeline_early_era",
+        "ai_history_timeline_deep_learning_era",
+        "paradigm_shift_dual_column_compare",
+        "parameter_growth_mountain_chart",
+        "cloud_to_edge_migration_diagram",
+        "edge_advantage_cost_privacy_compare",
+        "hundred_models_to_hundred_devices_headline"
+      ],
+      "applicable_summary": "端侧AI背景章长漏斗: 目录→分隔→科技革命史→人类双系统→AI感知/认知需求→AI三要素→AI早期史→深度学习史→AI1.0/2.0对照→参数量爆炸→云到端迁移→端侧优势→百模到百端收束",
+      "anti_patterns": [
+        "直入云到端趋势无历史铺垫 — 用其他 background 变体",
+        "无双系统/AI三要素展开的纯趋势图集 — 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_macro_gap_to_policy_to_method_bridge",
+      "layer": "section_level",
+      "title": "背景·宏观供需→外部约束→政策背书→方法总纲",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "macro_framework_three_pillars",
+        "quantitative_gap_chart",
+        "external_constraint_timeline",
+        "policy_backing_quote_montage",
+        "method_overview_formula_bridge"
+      ],
+      "applicable_summary": "研究报告类背景章: 由宏观三要素→供需缺口量级→外部禁令时间线→政策讲话背书→N 途径公式总纲, 层层压强度后桥接到方法章",
+      "anti_patterns": [
+        "纯 problem-only 无政策背书 → 用其它 background pattern",
+        "只有政策背书无量化差距 → 另立 political_backing_only pattern",
+        "缺失方法桥接页 → 属于 background_without_transition pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_multi_dimension_survey_to_efficiency_gap_to_research_questions",
+      "layer": "section_level",
+      "title": "现状·多维综述→跨硬件能效汇总→研究问题拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "hardware_architecture_survey_dual_panel",
+        "lightweight_methods_taxonomy_with_table",
+        "domain_models_generalization_compare",
+        "cross_hardware_efficiency_scatter_and_table",
+        "efficiency_gap_target_positioning",
+        "features_to_research_questions_mapping"
+      ],
+      "applicable_summary": "研究报告型现状章: 三视角综述(硬件架构/轻量化算法/专业领域模型)→跨硬件能效数据汇总→揭示云端-端侧差 1-2 数量级→将痛点映射为三大研究问题, 为后续研究内容一一映射铺路",
+      "anti_patterns": [
+        "只做算力鸿沟+稀疏方向立靶 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw",
+        "只做单代范式对比+同构表格递进 — 用 background_paradigm_shift_dual_era_comparison_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+      "layer": "section_level",
+      "title": "背景·agenda→价值→范式代价→机制→算子拆解",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "value_argument_dual_panel_evidence",
+        "paradigm_shift_cost_compare_chart",
+        "mechanism_overview_plus_detail_dual",
+        "operator_pipeline_breakdown"
+      ],
+      "applicable_summary": "论文分享型 background 章: 五段 agenda → 论证目标技术价值 → 抛出范式转变的成本代价 → 展开内部机制(MCTS) → 拆为算子流水线, 为后续硬件挑战建靶",
+      "anti_patterns": [
+        "宏观→痛点漏斗式 background(无算子级下钻) — 用 [[background_macro_gap_to_policy_to_method_bridge]]",
+        "1.0→2.0 范式对照式 background(仅表格递进) — 用 [[background_paradigm_shift_dual_era_comparison_table]]"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paradigm_evolution_related_works_survey_to_bottleneck",
+      "layer": "section_level",
+      "title": "背景·范式演进逐篇串讲→瓶颈立靶",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "domain_hype_opening_showcase",
+        "paradigm_evolution_roadmap",
+        "paradigm_flaw_quantitative_evidence",
+        "paradigm_pivot_introduction",
+        "related_work_progressive_reveal",
+        "residual_bottleneck_summary_headline"
+      ],
+      "applicable_summary": "论文分享型硬件加速的长背景章: 章首目录→领域明星作品开场→范式演进总览图→旧范式算力痛点→转向新方向(AR)→逐篇串讲 3-4 篇代表工作(每篇按方案-缺陷-根因-改进四拍)→末页核心痛点断言立靶",
+      "anti_patterns": [
+        "短背景仅 3-5 页 — 用 background_paper_share_agenda_to_value_to_paradigm_shift_to_operators",
+        "由生成式 AI 概览→领域收窄→模型结构→硬件演进的漏斗 — 用 background_ai_to_domain_to_hardware_evolution_funnel",
+        "算力鸿沟→稀疏分类→双硬件缺陷 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paradigm_shift_dual_era_comparison_table",
+      "layer": "section_level",
+      "title": "背景·1.0→2.0 范式对照+同构表格递进",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_shift_dual_column",
+        "era_sparsity_taxonomy_table",
+        "progress_roadmap_handoff"
+      ],
+      "applicable_summary": "从上一代过渡到新场景的背景章: 目录→双栏范式对照→同构表格逐行递进(1.0→2.0 新增维度)→路线图收束",
+      "anti_patterns": [
+        "无范式对照, 只讲一个时代 — 用 background_single_era_taxonomy pattern",
+        "表格不同构无递进 — 用 background_multi_table_listing pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_paradigm_to_scenario_narrow_to_feature_to_recall_gap",
+      "layer": "section_level",
+      "title": "背景·主流范式→场景收窄→特征剖析→召回鸿沟",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "mainstream_paradigm_flow_intro",
+        "target_scenario_importance_dual_panel",
+        "scenario_feature_embedding_illustration",
+        "recall_gap_quantitative_headline"
+      ],
+      "applicable_summary": "论文分享型 background 章: 由通用检索范式(向量检索)收窄到 STR 这一高占比场景, 剖析其相似表达特征, 最终用嵌入距离几乎相同+召回柱图论证向量检索召回不达标, 为后续 SG-Filter 立靶",
+      "anti_patterns": [
+        "纯 macro 铺陈无场景收窄 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw",
+        "范式演进逐篇串讲代表工作 — 用 background_paradigm_evolution_related_works_survey_to_bottleneck"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_related_work_paradigm_abstract_three_methods_compare_table",
+      "layer": "section_level",
+      "title": "背景·相关工作·通用范式→三方法并列→多维对比表",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "problem"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_abstract_with_key_problem",
+        "three_methods_architecture_parallel",
+        "multi_dimension_compare_table"
+      ],
+      "applicable_summary": "论文分享型 related work 章:目录切入→抽象通用范式并抛出核心问题→三列并排代表方法架构→多维对比表暴露短板,为本文方案立反衬靶",
+      "anti_patterns": [
+        "纯 N 列并列综述无对比表 — 用 related_works_survey_three_pillars",
+        "related work 混入本文动机 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_scaling_law_concept_ladder_to_sota_challenge_bridge",
+      "layer": "section_level",
+      "title": "背景·尺度律→概念阶梯→SOTA差距→挑战桥接",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "macro_trend_timeline_dual_lane",
+        "scaling_law_stage_curve",
+        "domain_demand_burst_dual_column",
+        "concept_primer_pipeline_diagram",
+        "system_architecture_overview_diagram",
+        "variant_evolution_dual_compare",
+        "related_work_sota_table",
+        "challenge_handoff_numbered_cards"
+      ],
+      "applicable_summary": "研究报告型 background 章: 双泳道时间线→尺度律曲线→需求爆发论断→领域基础概念→系统架构→2 轮部署/并行策略演进对比→SOTA 表格→编号挑战卡片桥接方法章, 层层完成概念阶梯搭建",
+      "anti_patterns": [
+        "以宏观供需→政策背书→公式总纲为主 → 用 background_macro_gap_to_policy_to_method_bridge",
+        "以范式对照+同构表格为主 → 用 background_paradigm_shift_dual_era_comparison_table"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_toc_recall_trend_pillars_evolution_roadmap",
+      "layer": "section_level",
+      "title": "背景·目录回锚→三趋势立柱→范式演进路线图",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "three_trend_pillars_with_hero_cases",
+        "paradigm_evolution_horizontal_roadmap"
+      ],
+      "applicable_summary": "组会/科研交流型综述背景章: 章首目录回锚→三条趋势编号立柱(每条配代表作)→横向演进路线图串起技术地图, 为后续方法章定坐标",
+      "anti_patterns": [
+        "宏观供需→政策背书→方法总纲 — 用 background_macro_gap_to_policy_to_method_bridge",
+        "算力鸿沟→稀疏方向→分类立靶 — 用 background_gap_to_sparsity_family_taxonomy_dual_flaw"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "background_value_vs_cost_dilemma_funnel_to_solution_call",
+      "layer": "section_level",
+      "title": "背景·价值-代价矛盾漏斗至方案追问",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "macro_dual_trend_panel",
+        "rhetorical_question_banner_overlay",
+        "value_multi_level_argument",
+        "mechanism_diagram_intro",
+        "quantitative_cost_explosion_table",
+        "collapse_question_bridge"
+      ],
+      "applicable_summary": "论文分享型背景章: 以『双趋势→反问→价值层次→机制→量化代价→追问收束』的价值-代价漏斗组织, 常见于 KV Cache/长上下文压缩类工作的动机章",
+      "anti_patterns": [
+        "无 rhetorical question 直接堆价值+代价 — 缺承上启下, 用 background_ai_to_domain_to_hardware_evolution_funnel",
+        "只讲代价不论价值 — 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_academic_to_industry_closed_loop_with_venture_history",
+      "layer": "section_level",
+      "title": "案例·学术到产业闭环+创业史+当下缺口+分层方案+融资背书",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "effective_compute_formula_expansion",
+        "idea_to_industry_pipeline_ecosystem",
+        "venture_history_timeline",
+        "current_compute_gap_bubble_and_chip_compare",
+        "layered_solution_architecture_overview",
+        "layered_solution_technical_advantages",
+        "venture_capital_backing_wall",
+        "academic_industry_closed_loop_summary"
+      ],
+      "applicable_summary": "科研个人述职中把学术成果落地产业化的完整闭环章: 目录→有效算力公式扩容→产学研闭环生态→过往创业史时间线→当下算力缺口→分层解决方案总览→三层技术优势→融资背书墙→学术产业闭环收束",
+      "anti_patterns": [
+        "纯技术产品介绍无学术闭环 — 用普通 product_intro pattern",
+        "只讲一次创业无当下项目对照 — 用 venture_timeline_only pattern",
+        "无融资背书的技术介绍 — 用 method_only pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_agenda_paper_multi_platform_benchmark",
+      "layer": "section_level",
+      "title": "案例·目录切入→论文封面→多平台基准",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paper_title_authors_only",
+        "platform_benchmark_speedup"
+      ],
+      "applicable_summary": "补充成果紧凑章: agenda→论文封面→2 组跨平台(NVIDIA/AMD 等)加速比基准对比, 用于收尾多个 case study",
+      "anti_patterns": [
+        "单平台+多角度分析 — 用 case_study_deep_dive pattern",
+        "无 agenda 直接铺结果 — 用 result_only_benchmark pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_background_motivation_multi_solution_result",
+      "layer": "section_level",
+      "title": "案例·背景动机→章节分隔→多解法→双视角结果",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "paper_title_authors_only",
+        "background_tradeoff_spectrum",
+        "motivation_platform_advantage",
+        "chapter_transition_divider",
+        "solution_answer",
+        "performance_result_platform",
+        "performance_result_cross_platform"
+      ],
+      "applicable_summary": "硬件加速案例章: 论文封面+背景折衷+平台动机→章节分隔→多个 Solution 并列展开→结果先给单平台指标再给跨平台总账",
+      "anti_patterns": [
+        "无平台对比/纯单平台方法论 — 用 method_deep_dive pattern",
+        "challenge/solution 严格一一对应 — 用 challenge_solution_performance_closed_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_capability_stack_codesign_efficiency_roadmap_vision",
+      "layer": "section_level",
+      "title": "案例·端侧能力栈→软硬协同加速→能效路线→泛端愿景",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "capability_stack_layered_overview",
+        "codesign_multiplicative_acceleration_flow",
+        "efficiency_evolution_matrix",
+        "deployment_target_dual_tier_card"
+      ],
+      "applicable_summary": "端侧产品落地案例: 从七层能力栈总览→四层软硬协同加速方案(倍数标注)→能效逐代演进矩阵→泛端部署愿景四档目标, 四段递进展示端侧全栈自研能力",
+      "anti_patterns": [
+        "无能效路线只讲能力栈 → 用 case_study_paradigm_bridge_company_profile_ecosystem_products_results"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_challenge_solution_performance_closed_loop",
+      "layer": "section_level",
+      "title": "案例·多挑战多解法一一配对+消融闭环",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "paper_title_authors_only",
+        "challenge_statement",
+        "solution_answer",
+        "performance_headline",
+        "ablation_supplement"
+      ],
+      "applicable_summary": "紧凑型系统/算子案例章: 论文封面→N 个 challenge 并列→N 个 solution 一一配对→主性能加速比→消融补充实验收束",
+      "anti_patterns": [
+        "challenge 分多轮+每轮内部延伸 — 用 multi_observation_solution_pairs pattern",
+        "不含 challenge-solution 配对, 只讲方法 — 用 method_component_listing pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_domain_challenge_key_idea_dual_tech_result",
+      "layer": "section_level",
+      "title": "案例·背景→挑战→思路→算法硬件双技术→实测",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "paper_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "domain_background_showcase_examples",
+        "domain_challenge_dual_evidence",
+        "key_idea_dual_technique_overview",
+        "algorithm_innovation_before_after_compare",
+        "hardware_innovation_efficiency_bar",
+        "result_speedup_and_area_efficiency_dual_bar"
+      ],
+      "applicable_summary": "domain-specific 加速案例章 pattern: 背景引入→双维度挑战(大且冗余)→Key idea+双技术总览→算法层创新→硬件层创新→端到端 speedup+面积效率双柱收束, 全章 6 页展开",
+      "anti_patterns": [
+        "无双技术分离仅单方法 — 用 method_single_method_deep_dive",
+        "算法与硬件混杂无 dual 分离 — 用 case_study_challenge_solution_performance_closed_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_dual_side_recap_to_ecosystem_landing_to_vision",
+      "layer": "section_level",
+      "title": "案例·双侧挑战回顾→双侧生态落地→协同架构→普惠愿景",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_divider",
+        "dual_side_challenge_recap",
+        "cloud_ecosystem_platform_landing",
+        "edge_ecosystem_terminal_landing",
+        "coordination_architecture_dual_panel",
+        "cost_reduction_pipeline_value",
+        "universal_access_analogy_vision"
+      ],
+      "applicable_summary": "产业化案例章: 章节过渡→双侧挑战回顾→云侧平台生态落地→端侧终端设备落地→端云协同架构→联合推理流水线降本→历史类比+普惠愿景收尾, 把前文两项独立技术升维为统一端云协同生态",
+      "anti_patterns": [
+        "无历史类比直接结束(缺升华)——用 case_study_landing_only_no_vision",
+        "只展示单侧落地无协同(缺整合)——用 case_study_single_side_landing"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_framework_definition_multi_instance_bg_method_result",
+      "layer": "section_level",
+      "title": "案例·瓶颈-框架定义-多实例分别背景-方法-结果",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "bottleneck_dual_column_setup",
+        "codesign_framework_definition",
+        "instance_overview_navigator",
+        "instance_entry_transition",
+        "instance_background_reference",
+        "instance_algo_hw_loop",
+        "paper_title_authors_only",
+        "instance_hardware_design_drilldown",
+        "instance_speedup_result"
+      ],
+      "applicable_summary": "以框架总纲统领多个自研实例的案例章: 瓶颈-框架-实例总览铺垫, 后两个实例各以入场→背景→算法-硬件方法→(第二个额外含论文+双硬件细节)→加速结果闭环, 支撑同一协同框架价值",
+      "anti_patterns": [
+        "单实例观察-解法反复对+消融 (case_study_multi_observation_solution_pairs_with_end_to_end)",
+        "论文分享型多技术并列意图-流程-硬件三层 (method_multi_parallel_techniques_intro_flow_detail)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_multi_observation_solution_pairs_with_end_to_end",
+      "layer": "section_level",
+      "title": "案例·多轮观察-解法对+端到端消融",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "paper_title_authors_only",
+        "realtime_need_vs_sota_gap",
+        "computation_pipeline_overview",
+        "observation_initial",
+        "observation_extension",
+        "solution_answer",
+        "end_to_end_performance",
+        "ablation_grid"
+      ],
+      "applicable_summary": "系统/加速器论文的深度案例章: 论文封面→需求缺口→流程图→3 轮 Observation(每轮 initial+extension)→Solution 一一对应→端到端加速+消融收尾",
+      "anti_patterns": [
+        "单挑战单解法一次性给出 — 用 challenge_solution_performance_closed_loop pattern",
+        "无 Observation→Solution 一一对应, 只讲方法罗列 — 用 method_component_listing pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_paradigm_bridge_company_profile_ecosystem_products_results",
+      "layer": "section_level",
+      "title": "案例·科研范式桥→公司画像→生态统一→产品栈→成果数据",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "research_to_industry_pipeline_chain",
+        "company_profile_key_numbers_grid",
+        "ecosystem_layered_unification_diagram",
+        "product_stack_matrix_full",
+        "result_speedup_bar_chart",
+        "result_utilization_bar_chart"
+      ],
+      "applicable_summary": "研究成果→产业化案例章: 先立「科研→产业」范式链, 再落到具体公司画像+生态统一+产品栈, 末以推理加速与异构混训两组数据佐证落地实力",
+      "anti_patterns": [
+        "无公司画像纯研究方向 → 用 case_study_platform_overview_evidence_direction_pairs"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_platform_overview_evidence_direction_pairs",
+      "layer": "section_level",
+      "title": "案例·平台总览→工程佐证→科研方向框架+代表作对",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "three_platform_overview_panels",
+        "engineering_scale_chip_row_diagram",
+        "scheduling_advantage_metrics_capsule",
+        "roadmap_puzzle_flow_chart",
+        "research_direction_codesign_frame",
+        "representative_works_quad_panel",
+        "sota_compare_timeline_with_bullets"
+      ],
+      "applicable_summary": "机构/团队末章案例: 三大平台总览→异构千卡工程佐证→调度优势数字→十万卡路线→科研方向 1 框架+代表作→科研方向 2 框架+代表作→SOTA 对标收尾",
+      "anti_patterns": [
+        "单一代表作深挖(无平台总览铺垫)→用 case_single_deep_dive pattern",
+        "只列成果矩阵无 SOTA 收尾→用 works_matrix_only pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_stack_compare_engineering_practices_drilldown",
+      "layer": "section_level",
+      "title": "案例·软件栈对比→三项工程实践逐层加速",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "stack_comparison_practices_roadmap",
+        "practice_operator_optimization_speedup",
+        "practice_communication_overlap_port",
+        "practice_elastic_scheduling_arch"
+      ],
+      "applicable_summary": "国产/异构芯片落地类案例章: 目录→NV vs 国产芯片软件栈横向对比(锁定三项工程实践)→算子级优化+加速比→系统级通信重叠移植+加速比→集群级弹性调度架构收束, 遵循『算子→系统→集群』逐级递进",
+      "anti_patterns": [
+        "三大平台总览+代表作四象限 → 用 case_study_platform_overview_evidence_direction_pairs",
+        "多轮 Observation-Solution + 端到端消融 → 用 case_study_multi_observation_solution_pairs_with_end_to_end"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "case_study_traditional_analog_to_new_domain_paper_algo_hw_result_paradigm_lift",
+      "layer": "section_level",
+      "title": "案例·传统方法类比→新域→核心思想→论文→算法/硬件双创新→结果→范式升华",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "case_study",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "instance_entry_transition",
+        "traditional_method_bridge",
+        "domain_transition_flow",
+        "core_idea_analog_bridge",
+        "paper_title_authors_only",
+        "algorithm_innovation_dual_panel",
+        "hardware_innovation_dual_panel",
+        "experiment_result_gpu_compare",
+        "case_summary_dual_work_compare",
+        "paradigm_thinking_stage_timeline"
+      ],
+      "applicable_summary": "系列案例末位含范式收尾: 入场→传统方法→新域切换→类比核心思想→论文→算法/硬件双创新→GPU 对比结果→双工作小结→范式思考(现状/趋势/未来)分页升华, 完成案例到范式的一体化收束",
+      "anti_patterns": [
+        "多实例 background-method-result 循环 (case_study_framework_definition_multi_instance_bg_method_result)",
+        "问题-解法一一配对 (case_study_challenge_solution_performance_closed_loop)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_agenda_industry_gap_to_full_stack_solution",
+      "layer": "section_level",
+      "title": "收尾·目录→行业格局困境→全栈解决方案图",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "industry_landscape_dual_row_gap",
+        "full_stack_solution_mapping_diagram"
+      ],
+      "applicable_summary": "研究报告末章的『行业格局困境→自研全栈方案』收尾: 目录锚定→用中美生态双栏对比揭示 m*n 适配困境→用完整软硬件分层全栈映射图化解困境, 兼具行业洞察与自研平台曝光双重功能",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底致谢 → 用 closing_collaboration_wall_plus_thanks_backpanel pattern",
+        "目录回顾+一句话贡献总述 → 用 closing_toc_recap_plus_summary_contribution_with_contact pattern",
+        "极简致谢+讲者署名 → 用 closing_minimal_thanks_with_speaker_signature pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_blank_thanks_backpanel_with_signature",
+      "layer": "section_level",
+      "title": "收尾·空白 Thanks 版式+署名页脚",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "blank_ending_placeholder_with_footer_signature"
+      ],
+      "applicable_summary": "模板类 deck 的极简收尾: 单页空白结尾骨架, 顶部蓝色横条视觉封口, 主体全空供填 Thanks/Q&A, 底部固定署名页脚",
+      "anti_patterns": [
+        "合作机构墙+THANKS 双页收尾 — 用 closing_collaboration_wall_plus_thanks_backpanel pattern",
+        "实体致谢文字+联系方式实体页 — 无留白骨架属性"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_blank_transition_plus_pillar_vision",
+      "layer": "section_level",
+      "title": "收尾·空白过渡+三支柱愿景升华",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "blank_transition_placeholder_page",
+        "central_symbol_three_pillar_vision"
+      ],
+      "applicable_summary": "企业展望型收尾章: 空白过渡页+中央大字符号(如 MxN)+三列支柱(算力/统一部署/端云)+底部标签收束愿景, 用于把前文多方案升维到统一生态愿景收尾",
+      "anti_patterns": [
+        "无过渡直接给愿景——用 closing_direct_vision_single_page",
+        "以致谢/Thanks 收尾而非愿景——用 closing_minimal_thanks_with_speaker_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_collaboration_wall_plus_thanks_backpanel",
+      "layer": "section_level",
+      "title": "收尾·合作机构墙+THANKS 封底",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "collaboration_institution_wall",
+        "thanks_backpanel"
+      ],
+      "applicable_summary": "学术 tutorial/report 双页收尾: 合作机构墙致谢学术伙伴, 再封底集中致谢团队+赞助+联系方式",
+      "anti_patterns": [
+        "单页 THANKS 无合作机构墙 — 用 closing_simple_thanks pattern",
+        "无 THANKS 主题的机构 logo 页 — 用 sponsor_logo_grid pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_contact_with_lab_recruitment",
+      "layer": "section_level",
+      "title": "收尾·联系方式+课题组招募",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "closing_contact_plus_recruitment"
+      ],
+      "applicable_summary": "学术/研究报告的极简收尾: 单页结合讲者联系方式+课题组招募信息+算力资源背书+合作单位 logo, 把技术汇报导向人才招募, 不含独立 Thanks 大标题",
+      "anti_patterns": [
+        "极简 Thanks 大标题+讲者签名 用 closing_minimal_thanks_with_speaker_signature",
+        "多机构 logo 墙+Thanks 收尾双页 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_defense_thanks_review_invitation_single_page",
+      "layer": "section_level",
+      "title": "收尾·答辩致谢+邀评审提意见单页",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "thanks_plus_review_invitation_line"
+      ],
+      "applicable_summary": "科研申报答辩的极简单页收尾: 左对齐两行答辩礼仪句(感谢聆听+恳请评审指正)+一条贯穿分隔线, 无讲者署名与联系方式, 承担答辩结束礼节收束",
+      "anti_patterns": [
+        "带完整讲者签名/日期 → 用 closing_minimal_thanks_with_speaker_signature",
+        "含合作机构墙的学术致谢 → 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_formula_summary_multi_work_stack_extension_thanks",
+      "layer": "section_level",
+      "title": "收尾·公式串联多工作→技术栈扩展→致谢",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "formula_summary_multi_work_speedup",
+        "technique_stack_extension_grid",
+        "thanks_with_speaker_signature_and_support"
+      ],
+      "applicable_summary": "多项子工作需用统一公式/指标汇总收益的 closing 章: 目录切入→公式串联四项工作累计降本→技术栈五层扩展定位→致谢+联系方式收束",
+      "anti_patterns": [
+        "无公式串联仅单页 recap — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "无致谢仅结论 — 用 discussion 类 pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_info_page_plus_minimal_thanks_two_page",
+      "layer": "section_level",
+      "title": "收尾·信息致谢页+极简 Thank You 双页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "info_thanks_with_topic_recap",
+        "minimal_thank_you_backpanel"
+      ],
+      "applicable_summary": "两段式收尾: 前页承载讲者信息+邮箱+致谢并复用核心论点图呼应主线, 后页以极简 Thank You 谢幕",
+      "anti_patterns": [
+        "单页极简致谢 — 用 closing_minimal_thanks_with_speaker_signature",
+        "无 Thank You 谢幕只有信息页 — 用其他 closing 变体"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_minimal_thanks_with_speaker_signature",
+      "layer": "section_level",
+      "title": "收尾·极简致谢+讲者署名单页",
+      "applicable_when": {
+        "report_type": [
+          "paper_share",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "minimal_thanks_with_signature_only"
+      ],
+      "applicable_summary": "组会/科研汇报的极简单页致谢: 左上『感谢聆听！』主标题+淡粉分隔线+中部讲者姓名+日期+底部机构落款, 无 recap 无联系方式, 只承担礼节性收尾",
+      "anti_patterns": [
+        "目录回顾+一句话贡献+联系方式 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "顶部 Thanks+全体作者名单+机构脚注 — 用 thanks_with_full_author_list / closing_thanks_single_page_with_full_author_institution_footer",
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "source_count": 4,
+      "confidence": "high"
+    },
+    {
+      "id": "closing_signature_with_collaboration_funding_logo_wall_single_page",
+      "layer": "section_level",
+      "title": "收尾·讲者署名+合作/资助单位 logo 墙单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "signature_with_collaboration_funding_wall"
+      ],
+      "applicable_summary": "科研汇报单页收尾: 讲者信息+合作/资助单位 logo 墙一次性给出致谢+联络入口, 无独立 THANKS 大字页",
+      "anti_patterns": [
+        "合作机构墙+THANKS 双页 (closing_collaboration_wall_plus_thanks_backpanel)",
+        "极简 Thanks 单页无 logo (closing_minimal_thanks_with_speaker_signature)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_signature_with_team_and_collab_logo_wall_single_page",
+      "layer": "section_level",
+      "title": "收尾·汇报人署名+合作/团队logo墙单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "signature_with_dual_tag_team_logo_wall"
+      ],
+      "applicable_summary": "学术汇报收尾单页:中部汇报人姓名+汇报日期+联系邮箱,左侧青/粉双色圆角标签「合作单位」「团队成员」引出右侧上下两组logo墙(机构logo+成员头像占位),底部课题组署名页脚,礼节性收束整场技术汇报",
+      "anti_patterns": [
+        "双页合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "仅讲者署名极简 Thanks — 用 closing_minimal_thanks_with_speaker_signature",
+        "模板空白结尾骨架 — 用 closing_blank_thanks_backpanel_with_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_single_page_paper_summary_with_qrcode_entry",
+      "layer": "section_level",
+      "title": "收尾·单页论文标题+核心结论+双二维码入口",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "paper_recap_conclusions_with_qrcode_entry"
+      ],
+      "applicable_summary": "论文分享型极简单页收尾:居中论文标题+作者署名+2 条蓝字核心指标结论(如加速比+Pareto 前沿)+右侧 Paper/Code 二维码,一页完成 recap/署名/资源入口三重功能",
+      "anti_patterns": [
+        "纯 Thanks 大字无结论回收 — 用 closing_thanks_single_page_with_full_author_institution_footer",
+        "含目录回顾+一句话贡献 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "极简 Thanks+讲者署名 — 用 closing_minimal_thanks_with_speaker_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_single_page_title_plus_key_insight_callback",
+      "layer": "section_level",
+      "title": "收尾·单页论文标题+核心洞见回扣",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "title_plus_key_insight_callback"
+      ],
+      "applicable_summary": "论文分享型极简单页收尾: 顶部大字重亮完整论文标题+作者/通讯署名, 下方以 Original vs Distilled 对照回扣全 deck 的 Key Insight, 用一句话论断呼应方法起点, 兼具答辩总结与核心记忆点强化",
+      "anti_patterns": [
+        "含 THANKS 大标题 — 用 closing_minimal_thanks_with_speaker_signature",
+        "含全作者名单 — 用 closing_thanks_single_page_with_full_author_institution_footer"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_speaker_thanks_with_recruitment_collaboration_cta",
+      "layer": "section_level",
+      "title": "收尾·讲者致谢+招聘/合作邀约触点",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "thanks_with_recruitment_collaboration_panels"
+      ],
+      "applicable_summary": "学术报告收尾页把技术分享转化为团队招募/合作邀请: 一页集中讲者姓名+日期+邮箱+青粉双 CTA 按钮+研究组与实验室介绍双栏+底部招聘方向, 兼具致谢与信息接口三重功能",
+      "anti_patterns": [
+        "纯 Thanks+作者名单署名 → 用 closing_thanks_single_page_with_full_author_institution_footer",
+        "极简 Thanks 单页 → 用 closing_minimal_thanks_with_speaker_signature",
+        "目录回顾+一句话贡献 → 用 closing_toc_recap_plus_summary_contribution_with_contact"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_thanks_plus_lab_speculation_series_showcase",
+      "layer": "section_level",
+      "title": "收尾·致谢+课题组研究主线系列工作展台",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "thanks_with_lab_series_showcase"
+      ],
+      "applicable_summary": "论文分享型单页收尾: 左侧回扣本文标题与致谢/联系方式, 右侧以『Our works on X』标题串起课题组同主线多篇代表作(会议+方向)并列展示, 附实验室主页/论文二维码, 一页同时完成 recap/致谢/成果扩展三重功能",
+      "anti_patterns": [
+        "纯极简 Thanks+签名 — 用 closing_minimal_thanks_with_speaker_signature",
+        "纯致谢+全作者名单 — 用 closing_thanks_single_page_with_full_author_institution_footer"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_thanks_single_page_with_full_author_institution_footer",
+      "layer": "section_level",
+      "title": "收尾·单页 Thanks+全作者多机构署名",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "thanks_with_full_author_list"
+      ],
+      "applicable_summary": "论文分享型极简单页收尾: 顶部居中 Thanks 大标题, 下方多行作者名单以角标标注归属机构(1 上交/2 清华/3 无穹), 用符号区分共一(*)与通讯(†)并对通讯作者做视觉高亮; 一页完成致谢+完整署名双重功能",
+      "anti_patterns": [
+        "多页 recap+summary+authors 复合收尾(用 closing_toc_recap_tech_summary_future_thanks_authors)",
+        "机构墙+Thanks 双页收尾(用 closing_collaboration_wall_plus_thanks_backpanel)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_thanks_support_dual_zone_speaker_and_logo_wall",
+      "layer": "section_level",
+      "title": "收尾·Thanks致谢+Support机构 logo 墙双分区",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "thanks_support_dual_zone_page"
+      ],
+      "applicable_summary": "研究报告类单页收尾: 左侧 Thanks tag 给讲者身份与致谢, 右侧 Support tag 陈列资助/合作机构 logo 墙, 一页承担致谢+联系方式+资助鸣谢三重功能",
+      "anti_patterns": [
+        "双页收尾(合作机构墙+封底) → 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "极简署名单页 → 用 closing_minimal_thanks_with_speaker_signature"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_title_recap_signature_mirror_cover",
+      "layer": "section_level",
+      "title": "收尾·标题复现+作者署名首尾闭环",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "title_recap_with_author_supervisor"
+      ],
+      "applicable_summary": "论文分享型极简单页收尾: 大量留白, 居中大号论文完整标题+下方一行作者+导师署名(如 supervised by Prof. X), 不做要点总结/致谢, 只做视觉落幕, 与封面标题呼应形成首尾闭环",
+      "anti_patterns": [
+        "含 Thanks for your listening 主标题 (用 closing_minimal_thanks_with_speaker_signature)",
+        "含全体作者名单+机构角标高亮通讯 (用 closing_thanks_single_page_with_full_author_institution_footer)",
+        "含目录 recap+一句话贡献+联系方式的双页收尾 (用 closing_toc_recap_plus_summary_contribution_with_contact)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_framework_recap_progressive_plus_paper_list",
+      "layer": "section_level",
+      "title": "收尾·目录→整体框架递进回收→论文列表",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "overall_framework_recap_energy_chain",
+        "publications_list_bulleted"
+      ],
+      "applicable_summary": "博资考/开题的学术收尾章: 目录高亮总结→复用 framework 章的能量链条+三项研究内容框架图逐层动画回收全局脉络→末页一作/共一论文列表做成果背书",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel",
+        "目录 recap+一句话贡献+联系方式 — 用 closing_toc_recap_plus_summary_contribution_with_contact"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_framework_summary_thanks_with_logos",
+      "layer": "section_level",
+      "title": "收尾·目录转场→框架三层回收→致谢与合作 logo 墙",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "framework_summary_with_output_lineup",
+        "thanks_with_logo_wall_and_contact"
+      ],
+      "applicable_summary": "科研汇报的三页收官: agenda 转场→整幅 N 层协同框架图收束(左侧主线竖条+右侧对应论文/产出卡)→末页致谢与合作 logo 墙, 承担收束/回顾/致谢三重功能",
+      "anti_patterns": [
+        "无框架回收的极简致谢单页 → 用 closing_minimal_thanks_with_speaker_signature",
+        "多分支愿景+课题清单+团队组成的展望型 → 用 discussion_agenda_vision_topics_team_close",
+        "论文分享型 recap 三栏(Goals/Insight/Solution) → 用 discussion_toc_three_pillar_recap_plus_future_extension"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_plus_method_diagram_and_thanks_contact",
+      "layer": "section_level",
+      "title": "收尾·目录回扣+方法示意图重述与致谢联系方式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_recap_all_chapters",
+        "summary_method_diagram_with_thanks_contact"
+      ],
+      "applicable_summary": "论文分享型极简收尾双页: 先回归目录把四段主线重新点亮, 再一页以顶部标题重述工作+致谢+联系方式(邮箱/开源代码/主页)+下半区方法示意图浓缩 SG-Filter 核心贡献, 承担 recap/贡献/致谢/信息接口四重功能",
+      "anti_patterns": [
+        "顶部蓝框一句话贡献+纯联系方式无方法图 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "极简单页致谢无 recap — 用 closing_minimal_thanks_with_speaker_signature",
+        "合作机构墙+THANKS 封底 — 用 closing_collaboration_wall_plus_thanks_backpanel"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_plus_summary_contribution_with_contact",
+      "layer": "section_level",
+      "title": "收尾·目录回顾+一句话贡献总述附联系方式",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_recap_all_chapters",
+        "summary_contribution_boxed_with_contact"
+      ],
+      "applicable_summary": "论文分享型极简收尾双页: 先回归目录把四段脉络重新点亮, 再一页顶部蓝框一句话总述贡献+下方联系方式, 兼具回顾/致谢/信息接口三重功能",
+      "anti_patterns": [
+        "合作机构墙+THANKS 封底(学术 tutorial 大合影式) — 用 [[closing_collaboration_wall_plus_thanks_backpanel]]",
+        "空白 Thanks 骨架页(纯模板) — 用 [[closing_blank_thanks_backpanel_with_signature]]"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "closing_toc_recap_tech_summary_future_thanks_authors",
+      "layer": "section_level",
+      "title": "收尾·目录回顾→技术回收→未来展望→致谢名单",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "closing"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "summary_first_contribution_with_dual_tech_recap",
+        "future_work_gain_projection",
+        "thanks_with_full_author_list"
+      ],
+      "applicable_summary": "论文分享型学术收尾章: 目录回顾进入末章→一句话贡献+双技术回收→未来架构提升展望→大字致谢附作者与通讯名单, 承担 recap/outlook/致谢三重功能",
+      "anti_patterns": [
+        "目录回顾+一句话贡献总述附联系方式(无未来展望) — 用 closing_toc_recap_plus_summary_contribution_with_contact pattern",
+        "机构墙+THANKS 封底(合作学术伙伴呈现) — 用 closing_collaboration_wall_plus_thanks_backpanel pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_agenda_plus_evolution_chain_recap_with_future_arrow",
+      "layer": "section_level",
+      "title": "讨论·目录切入+演进链回收+算法到系统未来箭头",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "evolution_chain_recap_with_future_direction"
+      ],
+      "applicable_summary": "组会/科研末章的短闭环: 目录切入总结→一页三段 bullet(演进链回收+训推双主线+算法→系统未来箭头)收束全篇, 呼应背景章的技术路线并给出未来方向",
+      "anti_patterns": [
+        "目录→愿景架构→课题→团队 — 用 discussion_agenda_vision_topics_team_close",
+        "目录→三栏 Goals/Insight/Solution 回收 — 用 discussion_toc_three_pillar_recap_plus_future_extension"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_agenda_vision_topics_team_close",
+      "layer": "section_level",
+      "title": "展望·目录→愿景架构→课题清单→团队组成",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "vision_forking_panorama_diagram",
+        "topic_bulleted_research_list",
+        "team_block_composition_grid"
+      ],
+      "applicable_summary": "研究院/实验室末章展望: agenda 分隔切入→愿景分叉全景图→文字课题清单→多方联合团队色块收束",
+      "anti_patterns": [
+        "纯团队+联系方式(无研究方向铺陈)→用 closing_team_contact pattern",
+        "只有课题清单无愿景图→用 outlook_topic_list_only pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_agi_vision_recap_new_paradigm_system_opt_institution_layout",
+      "layer": "section_level",
+      "title": "展望·AGI 愿景→成果回收→新范式+系统优化→机构布局",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "vision_dual_law_formula_headline",
+        "research_summary_paper_list",
+        "new_paradigm_case_dual_stage_compare",
+        "paradigm_evolution_with_work_mapping",
+        "system_optimization_speedup_timeline",
+        "institution_direction_tri_column"
+      ],
+      "applicable_summary": "研究报告末章 discussion: AGI 双定律愿景开场→成果+文献回收→新计算范式(如 o1)双列对比→范式三阶段与团队工作映射→系统优化倍数时间线→机构方向布局三栏收束",
+      "anti_patterns": [
+        "无机构布局收束 → 用 discussion_trend_extension_of_master_formula_with_open_problems"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_dual_law_matrix_tech_path_capability_stack_targets",
+      "layer": "section_level",
+      "title": "展望·双定律矩阵→自研聚焦→技术路径→能力栈→量化目标",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition",
+        "dual_law_agi_framework",
+        "algorithm_circuit_matrix_landscape",
+        "algorithm_circuit_matrix_ours_focus",
+        "tech_path_generation_timeline",
+        "capability_stack_overview",
+        "capability_stack_gain_layered",
+        "pan_edge_deployment_targets"
+      ],
+      "applicable_summary": "端侧研究展望章: 分隔→双定律AGI框架→算法×电路研究矩阵(全景+自研聚焦)→三代技术路径→能力栈全景+关键增益→泛端侧近远期量化目标收束",
+      "anti_patterns": [
+        "无量化路线图的纯团队愿景 — 用 discussion_agenda_vision_topics_team_close",
+        "缺少能力栈或技术路径的收尾 — 用其他 discussion 变体"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_endside_trend_dual_contradiction_scenarios_chips_gap",
+      "layer": "section_level",
+      "title": "展望·端侧化必然→双矛盾→三场景芯片→与需求差距",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "trend_shift_curve_to_endside",
+        "market_demand_bilateral_arrow_panel",
+        "endside_advantage_bullet_panel",
+        "small_model_bubble_plus_chip_scatter",
+        "compute_contradiction_bar",
+        "memory_contradiction_dual_column",
+        "scenario_trilogy_overview",
+        "scenario_chip_capability_table",
+        "scenario_chip_example_dual_column",
+        "need_vs_reality_gap_summary"
+      ],
+      "applicable_summary": "端侧大模型趋势的深展望章: 从模型规模转向→市场空间→端侧优势→双矛盾(算力/存储)→三场景总览+两页芯片汇总→三场景各一页实例→与需求差距 1-2 数量级收尾, 反哺稀疏计算主线",
+      "anti_patterns": [
+        "无场景横向对比 → 用 method_landscape_then_need_vs_reality_gap_platforms"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_industry_bench_vision_recap_multi_outlook_landing_cases",
+      "layer": "section_level",
+      "title": "总结·工业界对标→AGI 愿景→公式回收→多路展望+落地案例",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "industry_benchmark_compare_panel",
+        "agi_vision_dual_curve",
+        "reference_holder_page",
+        "core_formula_recap_headline",
+        "outlook_multi_chip_heterogeneous",
+        "outlook_domestic_gpu_mfu_dual_panel",
+        "outlook_dual_direction_infra",
+        "landing_case_three_platforms",
+        "outlook_cross_domain_network_verify"
+      ],
+      "applicable_summary": "研究报告末章总结+展望: 目录→工业界对标→AGI 愿景→公式回收→异构千卡/国产 GPU/双方向布局/落地案例/跨域网络五路展望, 呼应开篇算力矛盾并全面收尾",
+      "anti_patterns": [
+        "纯 agenda→愿景→课题清单→团队组成 (discussion_agenda_vision_topics_team_close)",
+        "论文分享型三栏 goal-insight-solution 回收+初步扩展 (discussion_toc_three_pillar_recap_plus_future_extension)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_scaling_trends_to_jevons_to_energy_paradigm_shift",
+      "layer": "section_level",
+      "title": "展望·规模化趋势→杰文斯悖论→成本演进→能效范式",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "multi_axis_scaling_trends_table",
+        "codesign_necessity_headline",
+        "jevons_paradox_argument",
+        "cost_evolution_multi_metric_headline",
+        "energy_efficiency_paradigm_shift"
+      ],
+      "applicable_summary": "综述型报告收尾展望章:先铺规模化多轴趋势→抛协同降本论点→借经济学悖论论证需求爆炸→给出具体成本演进倍数→以能效范式切换(TOPS/W→Tokens/J)收束全篇",
+      "anti_patterns": [
+        "纯团队愿景/研究方向清单 — 用 discussion_agenda_vision_topics_team_close",
+        "缺乏跨代对比数据 — 用 discussion_open_challenges_bulleted"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_team_record_kpi_budget_defense",
+      "layer": "section_level",
+      "title": "评审支撑·团队→实绩→指标→经费四拍收尾",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "discussion"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "team_role_composition_diagram",
+        "prior_project_track_record_metrics",
+        "quantitative_kpi_commitment_table",
+        "budget_allocation_multi_category_table"
+      ],
+      "applicable_summary": "科研申报答辩的评审支撑收尾章: 团队构成→既往结题实绩→量化考核指标→经费概算四拍, 回答'谁做/能否交付/做到什么/花多少钱'",
+      "anti_patterns": [
+        "纯学术展望无经费/团队 → 用 discussion_agenda_vision_topics_team_close",
+        "只讲结果不讲团队/经费 → 用 result_callout_then_compare"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_three_keyword_trend_practice_challenges_methodology",
+      "layer": "section_level",
+      "title": "讨论·三关键词趋势-实践+挑战-方法论综合",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "three_keyword_trend_overview",
+        "trend_page",
+        "industry_practice_benchmark",
+        "challenge_breakdown_three_pillars",
+        "foundation_software_stack_capability",
+        "system_methodology_funnel",
+        "comprehensive_thinking_layout"
+      ],
+      "applicable_summary": "研究报告收尾工业实践章: 目录切入→三行『趋势-举例-指向』总纲提出三大关键词→每关键词一页趋势+对前两个给厂商 benchmark, 对第三个 (最难) 展开 3 项挑战→底层软件栈承接→输入-建模-输出漏斗方法论→综合思考图整合三主线",
+      "anti_patterns": [
+        "单一挑战深入 (只讲长文本 KV cache) 用 discussion_single_challenge_deep_dive",
+        "纯技术盘点无 benchmark 落地 (只讲趋势不给数字) 用 outlook_pure_forecast"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_toc_recap_bottleneck_replay_plan_results_publications",
+      "layer": "section_level",
+      "title": "总结·目录回顾→瓶颈复现→拟开展研究逐项加速结果→论文/专利收束",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_recap_all_chapters",
+        "three_bottleneck_replay_parallel_panels",
+        "planned_research_before_after_result",
+        "publication_list_categorized_by_venue",
+        "patents_projects_outlook_multilevel_bullet"
+      ],
+      "applicable_summary": "开题/中期收尾章标准弧线: 目录回归→3列并列复现全deck瓶颈→3项拟开展研究各以「优化前后」数字给初步结果→论文清单页→专利+项目+展望页, 兼具recap/加速证据/成果盘点/展望四重功能",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_toc_three_pillar_recap_plus_future_extension",
+      "layer": "section_level",
+      "title": "讨论·目录→目标/洞察/方案三线闭环→未来扩展",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "three_column_recap_goal_insight_solution",
+        "future_work_preliminary_result_table"
+      ],
+      "applicable_summary": "论文分享型 discussion 章短闭环: 目录切入→一页三栏 (Goals/Insight/Solution) 回收全 deck 主线→一页 Future Work 用初步扩展实验表证明可延展, 不含 thanks(致谢由独立收尾章承担)",
+      "anti_patterns": [
+        "把 thanks/authors 也放在同章一并收束(用 closing_toc_recap_tech_summary_future_thanks_authors)",
+        "只以文字愿景收尾无扩展实验(用 discussion_agenda_vision_topics_team_close)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "discussion_trend_extension_of_master_formula_with_open_problems",
+      "layer": "section_level",
+      "title": "展望·主线公式扩展维度+开放问题",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "trend_bifurcation_curve",
+        "trend_single_branch_zoomin",
+        "formula_dimension_extension",
+        "open_problem_scale_timeline",
+        "open_problem_ecosystem_compare"
+      ],
+      "applicable_summary": "在方法成果后, 把主线算力公式再扩展一维(×集群/×端侧), 用趋势分化曲线+两个开放问题(万卡纳管+中美生态)承接技术成果收尾",
+      "anti_patterns": [
+        "未附带主线公式扩展 → 用 discussion_agenda_vision_topics_team_close"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_agenda_setup_accuracy_dual_platform_speedup_pareto",
+      "layer": "section_level",
+      "title": "实验·目录→设置→精度→双平台加速→帕累托收束",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "eval_setup_bulleted_platform_model_baseline",
+        "accuracy_lossless_headline",
+        "platform_speedup_headline"
+      ],
+      "applicable_summary": "论文分享型实验章:章首目录→设置(平台/模型/基线/数据集)→精度无损→PC 加速→云端加速+Pareto 前沿收束,按『精度→单场景→多场景』逐层放大收益",
+      "anti_patterns": [
+        "实验章含消融拆解 — 用 experiment_setup_dual_main_headline_ablation_pair",
+        "实验章分层揭示 setup+demo — 用 experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "含 EDP 总账收尾 — 用 experiment_setup_accuracy_area_speedup_ablation_edp_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_layered_setup_accuracy_hardware_speedup_demo",
+      "layer": "section_level",
+      "title": "实验·分层揭示 setup→精度→资源→双 speedup→demo",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_progressive_reveal",
+        "accuracy_lossless_result_with_frame_compare",
+        "hardware_resource_table_with_layout",
+        "speedup_headline_boxed_with_attribution",
+        "demo_video_artifact_showcase"
+      ],
+      "applicable_summary": "论文分享型硬件加速实验章: 章首目录→setup 逐帧揭示→精度近乎无损+视觉对比→硬件资源占用表→分别对 GPU 与 SOTA 加速器两页大字加速比+归因→末页视频 demo 徽章收尾",
+      "anti_patterns": [
+        "setup 双页+主结果 headline+消融拆解双页(无 demo, 有消融) — 用 experiment_setup_dual_main_headline_ablation_pair pattern",
+        "多平台家族基准对比横向铺开(无逐层评估分区) — 用 case_study_agenda_paper_multi_platform_benchmark pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+      "layer": "section_level",
+      "title": "实验·设置→精度→面积→加速比→消融→EDP 总账",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_bulleted_with_refs",
+        "accuracy_result_dual_table",
+        "hardware_area_methodology_result",
+        "single_experiment_result_speedup_callout",
+        "ablation_single_component",
+        "overall_edp_pareto_summary"
+      ],
+      "applicable_summary": "硬件加速器论文分享的实验章标准弧线: 目录→设置(baselines/模型/数据)→精度双表→面积占比小→平均加速比头条→单组件消融→EDP+Pareto 前沿收束, 一次覆盖精度/面积/性能/能效四维证据",
+      "anti_patterns": [
+        "以视频/demo 收尾佐证生成质量(用 experiment_layered_setup_accuracy_hardware_speedup_demo)",
+        "只跑多平台基准无消融(用 case_study_agenda_paper_multi_platform_benchmark)",
+        "双 setup+主结果+多消融(用 experiment_setup_dual_main_headline_ablation_pair)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_setup_dual_main_headline_ablation_pair",
+      "layer": "section_level",
+      "title": "实验·设置双页→主结果头条→消融拆解双页",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "eval_setup_bulleted_with_refs",
+        "main_result_speedup_headline_boxed",
+        "ablation_single_axis_speedup",
+        "ablation_combined_vs_individual"
+      ],
+      "applicable_summary": "论文分享型实验章标配三段式: agenda → 评测设置两页(模型/数据集 + 基线/硬件) → 主结果多倍加速蓝框头条 → 两页消融(单轴+协同拆解)证协同设计必要性",
+      "anti_patterns": [
+        "单一结果表格(无消融拆解) — 用 [[result_table_systematic]] 类模式",
+        "结果先给头条再前后对比(非消融) — 用 [[result_callout_then_compare]] 类模式"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_setup_per_model_speedup_pareto_summary",
+      "layer": "section_level",
+      "title": "实验·设置→分模型加速比→Pareto总结",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_bulleted_with_refs",
+        "per_model_speedup_result",
+        "pareto_frontier_summary_line"
+      ],
+      "applicable_summary": "论文分享型轻量实验章: 目录 → 单页设置(硬件/模型/baseline/数据) → 按模型家族逐页给加速比结果+红色结论框 → 一句话 Pareto 前沿总结收束; 与含消融/资源/demo 的重实验章形成对照, 适用于精度-速度定位为主论点的加速类工作",
+      "anti_patterns": [
+        "含消融+EDP Pareto 收束 — 用 experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+        "含视频 demo 徽章收尾 — 用 experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "含设置双页+主结果+两页消融 — 用 experiment_setup_dual_main_headline_ablation_pair"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_single_page_chapter_divider_placeholder",
+      "layer": "section_level",
+      "title": "实验·单页极简章节分隔留白占位",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "single_section_intro_panel"
+      ],
+      "applicable_summary": "论文分享型 deck 的极简实验章占位: 仅一页大字『实验』标题+粗蓝色横分隔线+大面积留白, 作为方法章切换到实验章的分幕过渡, 具体实验数据未在本 section 展开",
+      "anti_patterns": [
+        "完整实验章含 setup/主结果/消融多页 — 用 experiment_setup_dual_main_headline_ablation_pair 或 experiment_layered_setup_accuracy_hardware_speedup_demo",
+        "多平台加速比对比页 — 用 case_study_agenda_paper_multi_platform_benchmark"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "experiment_two_parallel_works_motivation_method_result_triad",
+      "layer": "section_level",
+      "title": "实证·两并列成果·各以动机-方法-结果三拍展开",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "experiment",
+          "result",
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "work_research_motivation_placeholder",
+        "work_research_method_diagram",
+        "work_research_method_extension",
+        "work_experiment_result_setup",
+        "work_ip_positioning_dual_metric",
+        "work_compression_speedup_result_headline"
+      ],
+      "applicable_summary": "两项并列成果的实证核心章: 章首 agenda → 成果 A(FlightLLM) 以研究动机/研究方法/实验/IP 定位四拍展开 → 无缝切换成果 B(稀疏量化) 以研究动机/研究方法/离群点保准确/异步反量化 overlap/压缩+加速结果四五拍展开; 两项成果均用紫色「研究动机」「研究方法」标签统一视觉锚点",
+      "anti_patterns": [
+        "单项成果的深度案例章(challenge-solution-end2end-ablation) → 用 case_study_multi_observation_solution_pairs_with_end_to_end pattern",
+        "论文分享型主结果+双消融格式 → 用 experiment_setup_dual_main_headline_ablation_pair pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_capability_ladder_cross_layer_loop_challenge_mapping",
+      "layer": "section_level",
+      "title": "框架·能力阶梯→跨层次循环框图→三挑战映射研究方向",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "capability_evolution_ladder",
+        "cross_layer_loop_framework_diagram",
+        "challenge_evidence_with_research_tag",
+        "cross_layer_thesis_statement",
+        "next_chapter_motivation_three_panel"
+      ],
+      "applicable_summary": "开题/科研汇报框架章: 目录→能力演进阶梯→跨层次循环框架图(同模板切换度量指标)→3个挑战逐一以量化证据映射到研究1/2/3→跨层次协同论断→下章动机三栏, 把方法章的多个研究内容统一到一个协同框架下",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_codesign_core_idea_plus_energy_chain_content_map",
+      "layer": "section_level",
+      "title": "框架·软硬协同核心思想+能量链条研究内容映射",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "codesign_core_idea_with_case_example",
+        "energy_chain_research_content_map"
+      ],
+      "applicable_summary": "研究报告型 framework 总纲: 一页亮出软硬协同核心思想(以 FP8 量化案例贯通), 一页把三条研究内容并列挂到电力→行动能量链条, 为后续三个方法章立总框架",
+      "anti_patterns": [
+        "多幕流程构建+公式因子高亮(tutorial 深度型) — 用 framework_progressive_flow_build_plus_formula_unpack",
+        "开源生态+代表算子闭环 — 用 framework_opensource_ecosystem_plus_representative_work"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_codesign_grand_narrative_to_layered_scientific_problem",
+      "layer": "section_level",
+      "title": "框架·软硬协同总纲→稀疏抓手→案例验证→开源库→科学问题分层",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "codesign_grand_narrative_scaling_law",
+        "sparse_mechanism_speedup_intro",
+        "case_study_three_layer_optimization",
+        "opensource_library_benchmark_validation",
+        "scientific_problem_three_layer_taxonomy"
+      ],
+      "applicable_summary": "把软硬协同+稀疏计算作为总方法论的 framework 章: Scaling Law 立总纲→稀疏机理具体抓手→图计算三层案例→dgSPARSE benchmark 验证→科学问题三层拆解, 为后续多项成果分层铺纲",
+      "anti_patterns": [
+        "无科学问题拆解的纯方法介绍 — 用 method_intro_only pattern",
+        "只讲开源库无思路总纲 — 用 opensource_showcase pattern",
+        "无案例佐证的纯理论 — 用 theoretical_only pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_core_formula_with_factor_decomposition",
+      "layer": "section_level",
+      "title": "框架·核心公式统领+多因子拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "master_formula_multi_task_panel",
+        "formula_factor_decomposition_flow"
+      ],
+      "applicable_summary": "以一条核心公式(如AI应用算力=芯片算力×稀疏度)统领, 先给等式+多任务并列, 再把关键项拆成置零/筛选/编码等因子流程, 为后续多路成果搭方法骨架",
+      "anti_patterns": [
+        "以四象限二维框架统领 → 用 method_framework_dual_law_matrix_direction_platform"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_new_paradigms_stacking_to_codesign_evolution_to_hardware",
+      "layer": "section_level",
+      "title": "框架·新范式叠加→协同演进→专用硬件加速器",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework",
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "structure_rethink_intro",
+        "paradigm_variant_moe_intro",
+        "paradigm_variant_mod_intro",
+        "unified_sparsity_synthesis_grid",
+        "codesign_paradigm_shift_dual_frame",
+        "compute_paradigm_stage_build",
+        "custom_hardware_accelerator_overview",
+        "custom_hardware_key_techniques_annotation",
+        "acceleration_result_bullet_summary"
+      ],
+      "applicable_summary": "『新范式叠加→软硬件协同演进→专用硬件加速器』的整段框架章: 目录→Transformer 结构重审→MoE/MoD 两条稀疏范式并列→三类范式统一为联合稀疏度→单向 vs 双向协同对照→算法/算子/硬件三层坐标下 build 两阶段/三阶段范式演进→自研加速器总览+三项关键技术→加速比数字收尾, 一次覆盖模型-协同-硬件全栈演进闭环",
+      "anti_patterns": [
+        "以自研开源框架+代表工作论文闭环 → 用 framework_opensource_ecosystem_plus_representative_work pattern",
+        "以分幕流程 build+公式因子高亮 → 用 framework_progressive_flow_build_plus_formula_unpack pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_opensource_ecosystem_plus_representative_work",
+      "layer": "section_level",
+      "title": "框架·开源生态总览+代表算子闭环",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "topic_share",
+          "research_report"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "framework_definition_intro",
+        "framework_performance_headline",
+        "framework_integration_ecosystem",
+        "progress_roadmap_bridge",
+        "paper_title_authors_only",
+        "challenge_statement",
+        "solution_formulation",
+        "solution_mechanism",
+        "performance_result"
+      ],
+      "applicable_summary": "开源框架章: 目录→定义→性能数字→生态集成→路线图承接→代表工作论文『挑战-方案-机制-性能』闭环",
+      "anti_patterns": [
+        "无开源框架, 只讲一篇代表作 — 用 case_study_challenge_solution_performance_closed_loop",
+        "无代表作深入, 只讲框架能力 — 用 framework_capability_overview pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_overview_tree_plus_per_element_drilldown_to_metric",
+      "layer": "section_level",
+      "title": "框架·总览树分四要素→逐要素深入→评测收束",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "framework_tree_four_elements_overview",
+        "element_deep_dive_dense_text",
+        "element_structure_diagram_with_text",
+        "evaluation_metric_benchmark_recap"
+      ],
+      "applicable_summary": "训练框架章的『总览树+逐要素深入』结构: 目录锚定→四要素总览树→按要素(策略/稀疏 Attention/3D-VAE/Loss)逐页深入(密集文字+对比+机制图)→VBench 评测收束",
+      "anti_patterns": [
+        "分幕流程 build+公式因子高亮 — 用 framework_progressive_flow_build_plus_formula_unpack",
+        "开源生态总览+代表算子闭环 — 用 framework_opensource_ecosystem_plus_representative_work"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "framework_progressive_flow_build_plus_formula_unpack",
+      "layer": "section_level",
+      "title": "框架·分幕流程构建+公式因子逐层高亮",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "progressive_flow_stage_build",
+        "formula_factor_highlight",
+        "three_layer_design_summary",
+        "trend_lead_in_new_scenario",
+        "innovation_novel_paradigm_pair",
+        "review_previous_tutorial_holder",
+        "progress_map_operators",
+        "industry_revolution_positioning",
+        "handoff_to_our_methods_roadmap"
+      ],
+      "applicable_summary": "tutorial 方法论内核章: 用分幕 build 的流程图+公式因子高亮拆解原理, 再用新场景+创新点承接, 末尾用回顾/时代升华+本组方法路线图收束",
+      "anti_patterns": [
+        "单页塞完整流程图无逐帧 build — 用 single_dense_diagram pattern",
+        "公式一次性给出无因子拆解 — 用 formula_all_at_once pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "insight_formula_contradiction_three_paths_examples",
+      "layer": "section_level",
+      "title": "洞见·公式揭示矛盾→三条路径→逐一举例",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "framework",
+          "insight"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "formula_contradiction_goal_logic",
+        "three_paths_dual_curve_overview",
+        "path_example_wedge_or_score_chart",
+        "path_example_efficient_method_result",
+        "path_example_domain_specific_dual_case",
+        "path_example_new_foundation_arch_compare"
+      ],
+      "applicable_summary": "洞见章 pattern: 用公式揭示『规模增长与延迟矛盾』, 抛出三条并列破局路径(缩小/高效/新基础), 逐一以代表实例举证, 从 Moore's Law 转向 Scaling Law 范式",
+      "anti_patterns": [
+        "无路径总览直接举例 — 用 case_study 类 pattern",
+        "单路径深挖 — 用 method_single_method_deep_dive"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_agenda_plus_dual_axis_redundancy_overview",
+      "layer": "section_level",
+      "title": "方法·目录切入+双维度冗余分支总览",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "dual_axis_redundancy_branch_overview"
+      ],
+      "applicable_summary": "极短加速主题引入章: 章首目录锚定, 再用一页 overview 把加速拆为空间/时间两条并列冗余主线, 作为后续具体方法的分发页",
+      "anti_patterns": [
+        "单页 overview 无 TOC 引入 — 直接进方法, 无引导",
+        "多子技术并列引入 — 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_agent_time_decomposition_triple_subproblem_pairs",
+      "layer": "section_level",
+      "title": "方法·公式驱动的三子问题拆解+问题/拟开展双页对",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "workflow_redundancy_overview_with_paradigm_table",
+        "time_decomposition_formula_with_timing_diagram",
+        "subproblem_thought_highlight_switch",
+        "subproblem_key_question_with_quantified_waste",
+        "subproblem_planned_research_with_layered_design",
+        "triple_synergy_metric_recap_headline"
+      ],
+      "applicable_summary": "智能体/多环节系统优化方法章: 冗余总览+范式表→耗时公式拆解→3子问题各走「时序高亮+关键问题+拟开展研究」三页组合(共9页)→末页量化对比表收束三线协同, 用公式驱动叙事,子问题严格并列",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algo_layer_paper_backed_two_gen_model_lineup",
+      "layer": "section_level",
+      "title": "方法·算法层·论文背书+两代自研模型分代经验",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "three_layer_framework_recall_with_model_branch",
+        "single_paper_title_authors_only",
+        "model_pain_point_statement",
+        "model_result_headline",
+        "model_motivation_scenario_tradeoff",
+        "model_design_experience_dual_panel"
+      ],
+      "applicable_summary": "算法模型层的分代自研成果汇报章: 章首框架层锁定→技术报告封面统一背书→第一代模型痛点+成果双页→第二代模型场景动因+两页双栏设计经验(Dense/数据、MoE/参数量), 强调两代模型作为同一算法层的分阶段沉淀",
+      "anti_patterns": [
+        "单代模型深度剖析(挑战-方案-实验闭环) → 用 case_study_challenge_solution_performance_closed_loop",
+        "多个不同定位模型并列(非同系分代) → 用 method_multi_parallel_techniques_intro_flow_detail",
+        "无自研模型的算法路线综述 → 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+      "layer": "section_level",
+      "title": "方法·算法层双支柱→硬件层总览与细节下钻",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "algorithm_pillar_one_formula_plus_timeline",
+        "algorithm_pillar_two_steps_plus_covered_timeline",
+        "hardware_architecture_bullet_overview",
+        "hardware_submodule_detail_bullet"
+      ],
+      "applicable_summary": "论文分享型 method 章: agenda → 算法层两支柱(公式+甘特对比、分步+覆盖标注) → 硬件层总览(bullet 分模块) → 单模块内部细节, 算法与硬件对半分, 算法在前硬件在后",
+      "anti_patterns": [
+        "全栈分层型方法章(算法/系统/硬件三层递进多页) — 用 [[method_three_sublayer_challenge_innovation_experiment_loop]]",
+        "范式对比+架构总图型方法章(大而全) — 用 [[method_plateau_argument_to_full_stack_co_design]]"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algorithm_linearization_to_hardware_pe_gpu_reconfig_stack",
+      "layer": "section_level",
+      "title": "方法·算法线性化→PE→GPU 验证→稀疏感知 PE→可重构架构叠加",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "algorithm_linearization_dual_compare",
+        "hardware_pe_with_energy_bar",
+        "gpu_implementation_dual_core_speedup",
+        "sparsity_aware_pe_format_conversion",
+        "reconfigurable_dataflow_routing"
+      ],
+      "applicable_summary": "论文分享型硬件加速的方法主体章: 目录切入→算法层双图对比证明非线性→线性近似降三次稀疏为一次→列集中 PE 给 1.73-3.18× 能效→GPU Tensor+Cuda 双核并行的落地验证→稀疏感知 PE 与 CSC→Reduced CSC 格式转换→路由控制器可重构架构 1.56× 收束, 每页都给量化收益, 算法与硬件层交替叠加",
+      "anti_patterns": [
+        "方法层只做算法不下硬件 (用 method_algorithm_layer_then_hardware_layer_codesign_drilldown 前半)",
+        "三项并列技术 key idea 首页起头 (用 method_multi_parallel_techniques_intro_flow_detail)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_algorithm_sublines_methodology_typical_scatter_triad",
+      "layer": "section_level",
+      "title": "方法·算法层多子线·方法论-典型方法-效果散点三段式",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "tutorial"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_layer_relocation",
+        "algorithm_taxonomy_three_categories",
+        "sublines_navigation_three_columns",
+        "subline_methodology_headline",
+        "subline_typical_methods_dual_panel",
+        "subline_effect_scatter_overview",
+        "chapter_summary_practice_flow"
+      ],
+      "applicable_summary": "综述型算法层方法章:章首层次下沉+类别锁定+子主线导航,每条子线以「方法论→典型方法→效果散点」三拍展开,末页流程条+团队成果收束,专用于系统综述含多子方向的技术族",
+      "anti_patterns": [
+        "单一方法深挖(无多子线并列) — 用 method_single_method_deep_dive",
+        "子线数>4且缺失效果散点 — 用 method_landscape_survey_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_bipartite_frontend_backend_environment_sweep",
+      "layer": "section_level",
+      "title": "方法·系统层前后端二分逐环拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_layer_relocation",
+        "frontend_backend_bipartite_framework",
+        "sub_environment_methodology_panel"
+      ],
+      "applicable_summary": "服务系统方法章:章首层次下沉→前后端二分总纲→逐环(请求调度/资源分配/多卡并行/通信/算子)各一页方法论+双面板+挑战标签+代表系统引用,沿前端→后端顺序线性铺陈",
+      "anti_patterns": [
+        "单一系统深挖(仅一款系统全景) — 用 case_study_single_system_deep",
+        "不区分前后端仅铺技术清单 — 用 method_landscape_survey_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_bottleneck_framework_solve_each_with_gpu_speedup",
+      "layer": "section_level",
+      "title": "方法·硬件层N类受限框架逐类求解对标GPU",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_layer_relocation",
+        "multi_bottleneck_framework_overview",
+        "bottleneck_solution_with_speedup_ratio"
+      ],
+      "applicable_summary": "硬件层方法章:章首层次下沉→N类瓶颈(计算/存储/带宽/通信)总框架→每类瓶颈单独一页给出2条专用硬件路线并附加速比数字,单点方案对标GPU",
+      "anti_patterns": [
+        "硬件方案单一深挖(仅一款芯片全流程) — 用 case_study_single_chip",
+        "N类瓶颈但不给加速比数字 — 用 method_hardware_taxonomy_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_capability_driven_architecture_evolution_by_stages",
+      "layer": "section_level",
+      "title": "方法·能力目标驱动架构分阶段演进",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "capability_goal_headline_with_intro",
+        "architecture_paper_example_embed",
+        "internal_mechanism_structure_diagram",
+        "paradigm_shift_dual_column_compare",
+        "highlight_bullet_route_selection"
+      ],
+      "applicable_summary": "综述型技术演进方法章: 以『能力目标→架构方案』为轴, 每个能力(分辨率/时空一致/时长)开一断言页+代表作图+内部机制+新旧对比, 最后并列多条路线, 层层递进梳理",
+      "anti_patterns": [
+        "单层优化见顶→全栈协同 — 用 method_plateau_argument_to_full_stack_co_design",
+        "多挑战多解法一一配对 — 用 case_study_challenge_solution_performance_closed_loop",
+        "三子层挑战-创新-实验闭环 — 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_challenge_mapping_overview_plus_problem_approach_pairs",
+      "layer": "section_level",
+      "title": "方法·总览挑战映射+每技术 problem→approach 双页对",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "system_overview_challenge_to_technique_mapping",
+        "technique_problem_page",
+        "technique_approach_page"
+      ],
+      "applicable_summary": "软硬件协同 method 章的固定套式: 章首目录→系统总览页把 N 挑战一一映射到 N 项技术→每项技术两页(problem 立痛点 → approach 给方案+before/after 数字), 三项技术并列成对推进",
+      "anti_patterns": [
+        "无 problem→approach 明显对页, 单页展开多技术 (用 method_multi_parallel_techniques_intro_flow_detail)",
+        "三设计各以 intro-mechanism-result 三拍展开 (用 method_three_design_intro_mechanism_result_triad)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_column_skeleton_progressive_stripping",
+      "layer": "section_level",
+      "title": "方法·左右双栏版式逐步剥离骨架",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "innovation_tagged_dual_column_overview",
+        "numbered_problem_tagged_dual_column",
+        "colored_dual_column_no_label",
+        "minimal_bare_dual_column_skeleton"
+      ],
+      "applicable_summary": "模板类方法章的空白骨架递进: 从带「创新思路」标签双栏 → 带「问题N」编号双栏 → 无标签配色双栏 → 极简纯结构双栏, 逐步剥离标签/配色, 供讲者按需选版填充",
+      "anti_patterns": [
+        "带实体内容的方法章双栏 — 用带具体方案的 method pattern",
+        "单栏罗列式方法章 — 无左右对比结构"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_paradigm_tradeoff_to_hybrid_solution_with_experiments",
+      "layer": "section_level",
+      "title": "方法·双范式权衡→混合方案→三组实测→开源计划",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_divider",
+        "problem_definition_dual_need",
+        "tech_milestone_timeline_with_challenge_map",
+        "dual_paradigm_baseline_compare",
+        "paradigm_a_pros_cons_analysis",
+        "paradigm_b_pros_cons_analysis",
+        "paradigm_tradeoff_summary_table",
+        "hybrid_solution_concept_intro",
+        "solution_technical_detail_dual_panel",
+        "solution_deployment_scenarios",
+        "experiment_throughput_scatter",
+        "experiment_latency_dual_curve",
+        "experiment_completion_realtime",
+        "opensource_three_stage_timeline"
+      ],
+      "applicable_summary": "云侧系统类方法章: 章节过渡→双需求定义→技术脉络→融合/分离双范式对比→各自剖析→权衡表→半分离混合方案→技术细节→部署适配→三组实测(吞吐/延时/完成率)→三阶段开源计划, 完整闭环论证兼取两式之长的折中方案",
+      "anti_patterns": [
+        "单方案深入无权衡对比(直接给方案跳过 baseline 分析)——用 method_single_method_deep_dive",
+        "只对比范式无实测(缺乏效果论证)——不适合作为完整方法章"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_route_foundation_framework_elevation",
+      "layer": "section_level",
+      "title": "方法·双路线并列→研究基础→四层框架→价值升华",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "dual_route_solution_panel",
+        "research_foundation_sota_showcase",
+        "four_layer_project_framework_stack",
+        "scientific_value_dual_card_elevation"
+      ],
+      "applicable_summary": "科研申报型 method 章: 用双路线技术方案+分层研究基础+四层总体框架+末尾双卡价值升华四拍构成核心论证, 兼具方案可行性论证与科学意义升华",
+      "anti_patterns": [
+        "只列单一方法深挖 → 用 method_single_method_deep_dive",
+        "论文型多技术组织 → 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_subline_each_challenge_innovation_result_plus_summary",
+      "layer": "section_level",
+      "title": "方法·两条子线各走挑战-创新-成果+小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "research_content_overview_dual_subline_preview",
+        "subline_challenge_prior_work_flaw",
+        "subline_innovation_algorithm_sensitivity",
+        "subline_innovation_hardware_mechanism",
+        "subline_result_metric_headline",
+        "summary_innovations_with_paper_citation"
+      ],
+      "applicable_summary": "同章内两条并列子技术线(如线性层/非线性层量化)各走『挑战→算法创新→(可选硬件创新)→成果』三段式, 末页统一小结+论文收束, 常见于混合精度/近似类方法章",
+      "anti_patterns": [
+        "单条主线走挑战-创新-成果 — 用 method_toc_overview_challenge_innovation_result_summary_with_paper",
+        "三子层递进(算法→编译→硬件) — 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_dual_subproblem_template_reuse_transition",
+      "layer": "section_level",
+      "title": "方法·双子问题递进+瓶颈模板复用过渡",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "long_output_token_scale_intro",
+        "dual_bottleneck_complexity_split",
+        "subproblem_background_hardware_evidence",
+        "innovation_method_flow_with_key_insight",
+        "experiment_result_scenario_targeted",
+        "bottleneck_template_reuse_switch_subproblem",
+        "subproblem_key_question_short_bullet",
+        "planned_method_diagram_with_adaptive_logic",
+        "before_after_end_to_end_metric_table",
+        "publication_list_with_venue_ccf_tag"
+      ],
+      "applicable_summary": "含「已完成+拟开展」两条子线的研究内容章: 长输出问题引入→双瓶颈拆解模板→子问题1完整闭环(背景/方法/实验)→模板复用切换过渡→子问题2「关键问题+拟开展方法」双页→端到端小结→发表清单收尾",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "method_formula_framework_three_result_challenge_solution_plus_real_system",
+      "layer": "section_level",
+      "title": "方法·公式框架→三成果挑战-方案对→真实系统对标",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition",
+        "metric_shift_headline",
+        "top_formula_with_task_panels",
+        "codesign_three_path_framework",
+        "sparse_computing_key_lever",
+        "formula_factor_decomposition",
+        "result_layer_challenge",
+        "result_layer_method",
+        "real_system_gpu_compare"
+      ],
+      "applicable_summary": "端侧软硬协同方法章: 分隔→指标重定义→总纲公式→三路径框架→稀疏抓手→公式分解→3 项成果各以挑战+方法双页展开→末以 LLM 与视频生成两真实系统对标 GPU 收束",
+      "anti_patterns": [
+        "无统一公式贯穿的多方法罗列 — 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "缺少真实系统对标的方法章 — 用其他 method 变体"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_framework_dual_law_matrix_direction_platform",
+      "layer": "section_level",
+      "title": "方法·二维框架→双定律矩阵→方向成果→平台底座",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "two_axis_quadrant_framework_diagram",
+        "formula_plus_dual_law_curve",
+        "route_by_layer_content_matrix",
+        "efficiency_scaling_curve_multi_route",
+        "direction_target_arch_intro",
+        "paper_matrix_by_target_column",
+        "coordination_direction_dual_frame",
+        "platform_base_capability_grid"
+      ],
+      "applicable_summary": "科研团队研究方向章: 用二维四象限框架+双定律奠基→AI1.0/2.0 两页路线矩阵→单体能效曲线→单个方向的论文矩阵→协同方向框图→实验测试场收束",
+      "anti_patterns": [
+        "纯论文列表(无框架/定律铺垫)→用 paper_list_only pattern",
+        "单方向深挖(无 1.0/2.0 对照矩阵)→用 single_direction_deep_dive pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_framework_positioning_dual_scenario_paper_lineup_with_summary",
+      "layer": "section_level",
+      "title": "方法·框架定位+双场景论文串讲+能效小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "framework_layer_positioning",
+        "scenario_split_intro",
+        "scenario_paper_lineup",
+        "energy_efficiency_before_after_summary"
+      ],
+      "applicable_summary": "五层框架方法章的双场景变体: 章首用总框架图定位当前层, 用一页把层内内容切成两大场景(云/端 或 LLM/视频), 每场景串讲 1-3 篇代表论文按 (封面/挑战/方案/结果) 展开, 末页用能效前后对比+按场景细分倍率表收束整章",
+      "anti_patterns": [
+        "单场景多方法主线 (量化/稀疏/结构) 用 method_three_paper_lineup_challenge_method_result_with_summary",
+        "单一自研模型深入 (无外部对比论文) 用 method_single_method_deep_dive"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_hardware_integration_evolution_bottleneck_summary",
+      "layer": "section_level",
+      "title": "方法·芯片集成演进→访存瓶颈→3D IC技术→倍率小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "framework_layer_positioning",
+        "application_need_dual_axis",
+        "integration_evolution_timeline",
+        "bandwidth_bottleneck_roofline_evidence",
+        "key_technique_three_pillars",
+        "integration_gain_before_after_table"
+      ],
+      "applicable_summary": "五层框架的芯片/硬件封装章节: 章首用总框架定位当前层, 用应用性能+能效双栏牵引需求, 用 2.5D→3D 时间轴+roofline 访存瓶颈论证 3D 堆叠必要性, 用三关键技术图 (键合/SoIC/TSV) 展开方案, 末页用 2.5D→3D SoIC 倍率表收束",
+      "anti_patterns": [
+        "单点封装技术深挖 (Chiplet 一家) 用 method_single_technique_deep_dive",
+        "不涉及硬件集成演进而只讲芯片型号 用 method_chip_positioning_by_class"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_hardware_limit_roadmap_then_single_work_full_arc",
+      "layer": "section_level",
+      "title": "方法·硬件极限论证→路线锚定→单工作四段展开",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "hardware_ultimate_limit_assertion",
+        "moore_slowdown_dense_bottleneck_evidence",
+        "sparse_paradigm_dense_vs_sparse_cycle",
+        "three_route_work_scaling_law_map",
+        "key_idea_algo_accuracy_hw_efficiency_pair",
+        "architecture_innovation_dense_diagram",
+        "hardware_speedup_result_assertion",
+        "demo_video_single_page_showcase"
+      ],
+      "applicable_summary": "解法主线首章: 以密集硬件极限论证+摩尔定律放缓引入稀疏计算, 用 Scaling Law 坐标+三路线图锚定全线工作, 再对单个代表工作(FlightLLM)按 key idea→架构→实测→demo 四段展开",
+      "anti_patterns": [
+        "无极限论证直接给方法 — 用 case_study_challenge_solution_performance_closed_loop",
+        "多论文并列非单一工作 — 用 case_study 多元 pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_key_insight_triad_then_three_pain_solution_pairs",
+      "layer": "section_level",
+      "title": "方法·Key Insight 三连+三项技术痛点-方案对",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "key_insight_progressive_search_reduction",
+        "technique_pain_point_statement",
+        "technique_solution_design"
+      ],
+      "applicable_summary": "论文分享型方法章:章首目录→3 页 Key Insight 漏斗式推进(把推理抽象为搜索过程并逐步缩空间)→3 项技术各自以『痛点(数据/结构证据+设问)→设计(方案图+量化收益)』成对展开,3 挑战与 3 技术一一对应",
+      "anti_patterns": [
+        "纯 3-4 页多解法一一配对无 Key Insight 铺垫 — 用 case_study_challenge_solution_performance_closed_loop",
+        "方法章含消融/实验结果混杂 — 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "单一 method 深钻缺多技术并列 — 用 method_single_method_deep_dive"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_landscape_then_need_vs_reality_gap_platforms",
+      "layer": "section_level",
+      "title": "方法·芯片全景→需求锚定→四平台差距→路径收束",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_shift_dual_column_compare",
+        "chip_class_spectrum_table",
+        "top_formula_with_efficiency_table",
+        "panorama_scatter_capability_table",
+        "concrete_example_metrics_line",
+        "need_target_green_spec_box",
+        "need_vs_platform_gap_ellipse",
+        "path_stacked_efficiency_multiplier"
+      ],
+      "applicable_summary": "算力/芯片类方法章: 从范式变化引出算力需求, 铺开芯片谱系与能效汇总, 定义需求指标后对标 CPU/GPU/FPGA/ASIC 逐一给差距, 以系统+定制化路径收束",
+      "anti_patterns": [
+        "单芯片深挖案例(无横向对比)→用 method_single_chip_deep_dive pattern",
+        "只做能效榜单无需求-差距对标→属 chip_ranking_only pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_layer_two_parallel_works_lineup_full_arc",
+      "layer": "section_level",
+      "title": "方法·层内两项并列工作各自完整弧线",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "three_layer_framework_recall_current_layer_expand",
+        "shared_concept_intro_or_paper_cover",
+        "single_paper_title_authors_only",
+        "work_background_or_scenario_context",
+        "work_prior_work_or_challenge_survey",
+        "work_key_observation_or_insight",
+        "work_method_mechanism_detail",
+        "work_experiment_setup",
+        "work_result_speedup_headline"
+      ],
+      "applicable_summary": "方法框架下某一层落地两项并列的独立工作(如 SpecEE/SpecDiff 或 FlightLLM/FlightVGM), 每项工作以 论文封面→背景/场景→挑战/已有工作→方法机制→加速比结果 的完整弧线展开; 两项工作可能有共享背景或独立背景, 层级复盘置于章首",
+      "anti_patterns": [
+        "单项工作深度剖析的 method 章 → 用 case_study_multi_observation_solution_pairs_with_end_to_end",
+        "同层三项以上工作平铺 → 用 method_multi_parallel_techniques_intro_flow_detail",
+        "两项工作各只有 1-2 页 (未展开完整弧线) → 用 case_study_agenda_paper_multi_platform_benchmark"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_motivation_cases_problems_practices_outlook",
+      "layer": "section_level",
+      "title": "方法·动机→标杆案例→关键问题→行业实践→展望",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "quadrant_relation_motivation_diagram",
+        "flagship_case_metric_column_list",
+        "scaling_law_timeline_milestones",
+        "key_problem_data_with_metrics",
+        "industry_practice_bullet_case",
+        "dual_column_outlook_capability_summary"
+      ],
+      "applicable_summary": "工程系统方法章: 由象限关系立动机→2 个标杆案例证规模→时间线证需求→3 个关键问题→2 个业界工程实践→双栏展望收束",
+      "anti_patterns": [
+        "纯技术方案(无案例支撑)→用 method_pure_technique pattern",
+        "只列问题不给实践→用 problem_only_direct pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_multi_parallel_techniques_intro_flow_detail",
+      "layer": "section_level",
+      "title": "方法·多并列技术·意图-流程-硬件细节",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "technique_method_key_idea_intro",
+        "technique_algorithm_flow_stage",
+        "technique_hardware_mechanism_drilldown"
+      ],
+      "applicable_summary": "论文分享型深度方法章: 章首目录锚定, 3 项并列技术(算法稀疏化+硬件混合精度+动静调度)各自以 Method key idea 首页起头, 展开若干算法流程与硬件机制细节页, 层层完成软硬协同方案铺陈",
+      "anti_patterns": [
+        "单一方法主线深挖到底(无并列技术分区) — 用 method_single_method_deep_dive pattern",
+        "三子层挑战-创新-实验闭环(强断言标题结构) — 用 method_three_sublayer_challenge_innovation_experiment_loop pattern"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_multi_route_survey_converge_to_ours",
+      "layer": "section_level",
+      "title": "方法·三路线综述→收束到本组稀疏计算",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "three_route_overview_framework",
+        "route_example_dual_column_compare",
+        "route_example_method_grid",
+        "route_example_new_architecture_compare",
+        "converge_to_own_method_formula",
+        "own_method_effective_compute_evidence",
+        "own_method_definition_dense_vs_sparse",
+        "chapter_close_map_to_research_content"
+      ],
+      "applicable_summary": "『多路线综述→收束到自研主线』的方法原理章: 章首进度目录 → 三色路线总览 → 分别举例路线 1(小模型)/路线 2(量化剪枝+RAG)/路线 3(Mamba+TTT) → 用等效算力公式和散点图收束到软硬件协同稀疏计算 → 定义稀疏计算 → 挂钩后续两大研究内容, 综述性铺垫最终转轨到本组研究框架",
+      "anti_patterns": [
+        "单层优化平缓→全栈协同的深度方法章 → 用 method_plateau_argument_to_full_stack_co_design pattern",
+        "以工程标杆+关键问题结构的方法章 → 用 method_motivation_cases_problems_practices_outlook pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_need_challenge_analysis_idea_pareto_opensource",
+      "layer": "section_level",
+      "title": "方法·需求-挑战-分析-核心思想-细节-帕累托-开源",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_divider",
+        "application_need_pyramid_evidence",
+        "efficiency_challenge_three_pillars",
+        "tech_milestone_landscape_timeline",
+        "key_analysis_problem_reframe",
+        "core_idea_bridge_headline",
+        "tech_core_mechanism_reveal",
+        "tech_detail_algo_system_dual",
+        "pareto_frontier_result",
+        "opensource_three_stage_timeline"
+      ],
+      "applicable_summary": "端侧引擎类方法章: 章节过渡→应用需求→效率挑战→技术全景→关键分析(问题重构)→核心思想→技术核心→算法+系统双栏细节→帕累托前沿实测→三阶段开源计划, 单方法深度展开且以问题重构视角开路",
+      "anti_patterns": [
+        "无关键分析直接给方法(缺思想桥梁)——用 method_direct_solution_without_reframe",
+        "多方案对比而非单方法深入——用 method_dual_paradigm_tradeoff_to_hybrid_solution_with_experiments"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_pain_critique_design_goals_progressive_mechanism_reveal",
+      "layer": "section_level",
+      "title": "方法·痛点→批相关工作→设计目标→机制多帧递推→加速比",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "pain_point_multi_mode_table",
+        "prior_work_critique_with_timeline",
+        "design_goals_criteria_table",
+        "mechanism_progressive_build_stage",
+        "single_experiment_result_speedup_callout"
+      ],
+      "applicable_summary": "系统优化型方法章: 章首目录→定量痛点→批 2 类现有方案→设计目标→在同张机制图上逐帧叠加(Reorder→Signal→流水→融合)→实测加速比收尾, 强调「批判-立靶-递进构建-数字收束」闭环",
+      "anti_patterns": [
+        "单层见顶→全栈协同→架构+叠乘 → 用 method_plateau_argument_to_full_stack_co_design",
+        "对比方案矩阵后合成 → 用 method_tradeoff_synthesis_paradigm_matrix_to_solution",
+        "多并列技术意图-流程-硬件三段 → 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_paired_problem_solution_triad_with_aggregation",
+      "layer": "section_level",
+      "title": "方法·三层问题-解法成对展开+叠乘汇总",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "layered_problem_analysis",
+        "layered_design_method_with_gain",
+        "aggregated_gain_multiplicative_flow"
+      ],
+      "applicable_summary": "沿算法/编译/硬件三层成果、每层严格『问题分析→设计方法』成对展开的深度方法章, 每层配公式因子高亮 + baseline 对比柱图 + 顶会引用, 末页六边形箭头叠乘汇总为一个数量级",
+      "anti_patterns": [
+        "三子层各含挑战-创新-实验三拍闭环 (method_three_sublayer_challenge_innovation_experiment_loop)",
+        "统一公式因子高亮拆解型 (framework_progressive_flow_build_plus_formula_unpack)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_paradigm_reconstruction_expert_view_to_dedicated_hardware",
+      "layer": "section_level",
+      "title": "方法·专家视角三级稀疏→技术栈演进→专用硬件三算子",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "transformer_rethink_expert_view",
+        "moe_parallel_expert_paradigm",
+        "mod_skippable_expert_paradigm",
+        "sparse_paradigm_multi_level_synthesis",
+        "sparse_stack_tradition_to_now",
+        "sparse_stack_tradition_to_future",
+        "sparsity_pattern_background_introduction",
+        "challenge_no_unified_architecture_three_operator",
+        "key_idea_transposable_block_sparsity",
+        "tech_adaptive_format_conversion",
+        "tech_datapath_sharing_area_efficiency",
+        "end_to_end_training_speedup_dual_metric"
+      ],
+      "applicable_summary": "前沿方法章 pattern: 先把 Transformer 重构为专家视角(cascaded→parallel→skippable), 统一 MoE/MoD/稀疏专家为多级降载合流, 演进到稀疏应用/算子/硬件三层栈, 再从 N:M 稀疏背景/挑战/key idea 收窄到自研专用架构(TB-STC)双技术+端到端加速",
+      "anti_patterns": [
+        "无范式统一直接单硬件工作 — 用 method_single_method_deep_dive",
+        "缺硬件落地纯范式讨论 — 用 discussion 类 pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_plateau_argument_to_full_stack_co_design",
+      "layer": "section_level",
+      "title": "方法·单层见顶→全栈协同→架构与收益定位",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "paradigm_shift_dual_column_compare",
+        "plateau_evidence_time_series_chart",
+        "typical_techniques_three_panel",
+        "single_arrow_big_number_headline",
+        "co_design_method_layered_formula",
+        "single_instance_intro_line",
+        "three_layer_method_algo_sys_hw",
+        "instance_speedup_result_line",
+        "full_stack_architecture_dense_diagram",
+        "aggregated_gain_multiplicative_flow",
+        "accuracy_speed_pareto_positioning"
+      ],
+      "applicable_summary": "以「单层优化见顶→全栈软硬件协同→架构总图→叠乘收益→精度速度定位」组织的深度方法章, 常用两代范式与单点实例交替支撑",
+      "anti_patterns": [
+        "单点方法深挖(无 paradigm+plateau 铺垫)→用 method_single_deep_dive pattern",
+        "纯 pipeline 分步流水线(无叠乘收益页)→用 method_pipeline_step_by_step pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_preliminary_three_technique_dual_platform_verify",
+      "layer": "section_level",
+      "title": "方法·预备三技术总览+双平台实测",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method",
+          "preliminary"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "three_technique_parallel_panels",
+        "platform_benchmark_speedup_with_demo"
+      ],
+      "applicable_summary": "作为主线解法前的 preliminary 基线回顾章: 三技术并列总览+两页不同 GPU 平台(NVIDIA/AMD)实测加速比与实机 demo, 论证方案硬件通用性",
+      "anti_patterns": [
+        "单平台无跨平台验证 — 用 case_study_challenge_solution_performance_closed_loop",
+        "多论文并列非单一工作 — 用 case_study_agenda_paper_multi_platform_benchmark"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_progressive_score_formula_derivation_plus_stability_taxonomy",
+      "layer": "section_level",
+      "title": "方法·核心思路+现象洞察对+打分公式逐级演进+稳定性分类",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "method_core_idea_with_open_question",
+        "phenomenon_insight_page",
+        "formula_upgrade_add_new_term",
+        "side_effect_patch_with_new_factors",
+        "taxonomy_extension_by_stability"
+      ],
+      "applicable_summary": "论文分享方法章: 目录 → 抛核心思路+开放问题 → 现象洞察对(揭示问题-证明可解) → 公式升级加新项 → 副作用补丁加因子 → 稳定性/CV 分级扩展多级分类; 全章以同一打分公式为主线, 每页加/改一个项, 视觉上形成递进演化",
+      "anti_patterns": [
+        "以算法/编译/硬件三子层挑战-创新-实验闭环 — 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "以三项并列技术意图-流程-硬件细节 — 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_shared_structure_map_progressive_highlight_focus",
+      "layer": "section_level",
+      "title": "方法·共享结构总览图+逐页高亮聚焦子挑战",
+      "applicable_when": {
+        "report_type": [
+          "proposal",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "field_scale_explosion_timeline",
+        "structural_overview_with_challenge_list",
+        "operator_state_of_art_table",
+        "core_problem_side_by_side_comparison",
+        "dual_method_side_by_side_with_validation",
+        "speedup_stacked_bar_experiment"
+      ],
+      "applicable_summary": "系统/算子层优化方法章: 目录→规模爆炸背景→共享结构总览图逐页高亮不同挑战→算子现状表→核心问题左右对照→双方法并列+精度验证→加速比柱状图,以结构图复用+高亮切换承载多挑战叙事",
+      "anti_patterns": [],
+      "source_count": 0,
+      "confidence": "low"
+    },
+    {
+      "id": "method_short_positioning_plus_summary_with_paper",
+      "layer": "section_level",
+      "title": "方法·短章·定位框+小结附论文",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "research_content_positioning_with_challenge_frame",
+        "summary_innovations_with_paper_citation"
+      ],
+      "applicable_summary": "作为多项研究内容中的收官短章: 一页定位框图(能效栈+通专融合等系统协作图+红框挑战), 一页创新点列表+代表工作论文, 快速收拢方法线到 discussion 章",
+      "anti_patterns": [
+        "6-9 页完整挑战-创新-成果闭环 — 用 method_toc_overview_challenge_innovation_result_summary_with_paper 或 method_dual_subline_each_challenge_innovation_result_plus_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_technique_route_full_arc_prior_challenge_paper_method_result",
+      "layer": "section_level",
+      "title": "方法·单条技术路线全弧线·已有→挑战→论文→方法→实现→成果",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "prior_works_taxonomy_table",
+        "challenge_key_contradiction_statement",
+        "paper_title_authors_only",
+        "method_formula_overview_with_positioning",
+        "method_implementation_progressive_build",
+        "result_accuracy_or_utilization_table",
+        "result_efficiency_or_deployment_headline"
+      ],
+      "applicable_summary": "单条技术路线(稀疏化/编译/架构)以「已有工作→关键矛盾→论文封面→算力公式定位→实现细节多页→精度/利用率结果→能效/换道超车头条」完整弧线论证, 是研究报告多路线并列时的标准范式",
+      "anti_patterns": [
+        "三层递进闭环 → 用 method_three_sublayer_challenge_innovation_experiment_loop",
+        "多观察-解法对 → 用 case_study_multi_observation_solution_pairs_with_end_to_end"
+      ],
+      "source_count": 3,
+      "confidence": "high"
+    },
+    {
+      "id": "method_theoretical_insight_prelude_then_challenge_technique_triad",
+      "layer": "section_level",
+      "title": "方法·理论洞察前奏+三项挑战-技术闭环",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "insight_question_qa_intro",
+        "insight_information_theory_proof",
+        "insight_conclusion_headline",
+        "technique_challenge_statement_with_architecture",
+        "technique_solution_mechanism_or_optimization"
+      ],
+      "applicable_summary": "论文分享型方法章: 目录锚定后先用 Q&A + 信息论 4 页建立可复用理论洞察, 再以『Challenge → Technique』模式串接 3 项技术(每项包含挑战陈述+解法机制), 完成从理论根到工程细节的闭环",
+      "anti_patterns": [
+        "无理论洞察直接展开多技术 — 用 method_multi_parallel_techniques_intro_flow_detail",
+        "只有 Challenge-Solution 单对没有多项技术 — 用 case_study_challenge_solution_performance_closed_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_three_design_intro_mechanism_result_triad",
+      "layer": "section_level",
+      "title": "方法·三设计各以引入-机制-结果三拍展开",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "design_intro_placeholder_headline",
+        "design_mechanism_with_mapping_diagram",
+        "design_result_number_headline",
+        "design_full_dataflow_dense_diagram",
+        "hardware_hierarchy_pyramid_summary"
+      ],
+      "applicable_summary": "论文分享型硬件加速方法章: 章首目录(可双页导航)→每项设计以『引入占位页+机制映射图+数值结论』三拍推进(复杂设计追加完整数据流全图), 末页以硬件存储金字塔收束; 与 problem 章的三挑战一一对应, 每项设计对应一挑战",
+      "anti_patterns": [
+        "以观察-解法配对展开(observation+solution) — 用 case_study_multi_observation_solution_pairs_with_end_to_end",
+        "算法层双支柱+硬件层总览与细节 — 用 method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+        "沿三子层(算法/编译/硬件)递进闭环 — 用 method_three_sublayer_challenge_innovation_experiment_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_three_paper_lineup_challenge_method_result_with_summary",
+      "layer": "section_level",
+      "title": "方法·三论文串讲·挑战-方法-效果+能效小结",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "sublayer_technique_overview",
+        "domain_background_timeline",
+        "single_paper_title_authors_only",
+        "challenge_statement",
+        "solution_mechanism_detail",
+        "single_experiment_result_speedup_callout",
+        "energy_efficiency_before_after_summary"
+      ],
+      "applicable_summary": "五层框架方法章的深度子层: 章首用总框架图定位当前层, 用一页 3 方法总览+一页发展时间线铺陈, 然后并列串讲 3 篇代表论文, 每篇按『论文封面→挑战(1-2页)→方法细节(2-6页)→效果加速比头条』展开, 末页用 tokens/J 前后能效对比收束整章",
+      "anti_patterns": [
+        "方法与论文非串讲式 (整章围绕单一方法深入) 用 method_single_method_deep_dive",
+        "方法层非多论文而是场景切分 (云/端/LLM/视频) 用 method_dual_scenario_paper_lineup"
+      ],
+      "source_count": 2,
+      "confidence": "medium"
+    },
+    {
+      "id": "method_three_sublayer_challenge_innovation_experiment_loop",
+      "layer": "section_level",
+      "title": "方法·三子层挑战-创新-实验递进闭环",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "structure_intro_computation_flow",
+        "sublayer_challenge_statement",
+        "sublayer_innovation_answer",
+        "sublayer_experiment_result",
+        "three_layer_summary_flow"
+      ],
+      "applicable_summary": "沿『算法/稀疏化→编译/映射→硬件/架构』三层递进的深度方法章, 每子层以断言标题(Challenge/Key Ideas/Innovation/Experiment)组织挑战-创新-实验闭环, 末页三框流程图收束",
+      "anti_patterns": [
+        "单层深挖无三层结构 (只讲算法或只讲硬件) — 用 single_method_deep_dive pattern",
+        "challenge/solution 一一对应无子层分组 — 用 case_study_challenge_solution_performance_closed_loop"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_toc_overview_challenge_innovation_result_summary_with_paper",
+      "layer": "section_level",
+      "title": "方法·目录→总览→挑战→创新→成果→小结+论文",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "research_content_overview_energy_chain",
+        "key_challenge_hardware_utilization_compare",
+        "innovation_reconfigurable_architecture_diagram",
+        "result_speedup_multi_scale_comparison",
+        "summary_innovations_with_paper_citation"
+      ],
+      "applicable_summary": "研究内容 method 章的经典弧线: 目录→总览→挑战→创新→成果→小结(附论文), 每章一条主线, 常用于博资考/开题的单项研究内容展开",
+      "anti_patterns": [
+        "多并列子技术(如软硬两类)交错展开 — 用 method_multi_parallel_techniques_intro_flow_detail",
+        "两条子线各走三段式 — 用 method_dual_subline_each_challenge_innovation_result_plus_summary"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_tradeoff_synthesis_paradigm_matrix_to_solution",
+      "layer": "section_level",
+      "title": "方法·双范式对比矩阵→取长合成→细节适配→多组实测",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "dual_demand_challenge_scene",
+        "core_challenge_three_pillars",
+        "paradigm_dual_intro_architecture",
+        "paradigm_pros_cons_single_analysis",
+        "tradeoff_synthesis_matrix",
+        "synthesized_solution_headline_diagram",
+        "solution_technical_details_diagram",
+        "solution_deployment_adaptation",
+        "measured_throughput_or_latency_curve"
+      ],
+      "applicable_summary": "以「双范式对比→2×2 优缺矩阵→取长合成新方案→技术细节+部署适配→多组实测」组织的方法章, 强调用互补矩阵合法化『鱼与熊掌兼得』的新方案",
+      "anti_patterns": [
+        "先立痛点批相关工作再逐帧递推机制 → 用 method_pain_critique_design_goals_progressive_mechanism_reveal",
+        "单层见顶+全栈架构+叠乘收益 → 用 method_plateau_argument_to_full_stack_co_design",
+        "多并列技术各出意图-流程-硬件 → 用 method_multi_parallel_techniques_intro_flow_detail"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "method_two_question_frame_three_technique_sequence",
+      "layer": "section_level",
+      "title": "方法·两问框架驱动三技术顺序展开",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "method"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "solution_overview_two_question_frame",
+        "tech1_index_node_construction",
+        "tech1_index_edge_hierarchy",
+        "tech2_adaptive_score_filter",
+        "tech3_multi_ratio_fusion_recall"
+      ],
+      "applicable_summary": "论文分享型 method 章: 章首目录→Solution Overview 抛出 Q1获取/Q2利用两问→Tech1 分两页(节点+边/层次)构建层次摘要语义索引→Tech2 评分排序自适应过滤→Tech3 多过滤率融合召回, 用两问统领三技术顺序化展开",
+      "anti_patterns": [
+        "多并列技术每项独立三拍(意图-流程-硬件) — 用 method_multi_parallel_techniques_intro_flow_detail",
+        "算法层+硬件层双支柱下钻 — 用 method_algorithm_layer_then_hardware_layer_codesign_drilldown",
+        "三设计各以引入-机制-结果三拍 — 用 method_three_design_intro_mechanism_result_triad"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_agenda_transition_paradigm_evolution_token_pivot",
+      "layer": "section_level",
+      "title": "动机·目录过渡→系统I/II范式演进→Token核心",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "paradigm_evolution_authority_backed",
+        "paradigm_shift_dual_column"
+      ],
+      "applicable_summary": "研究报告开篇动机章: 章首以 Contents 双页 (全目录→首议题高亮) 做过渡, 借 Kahneman 系统 I/II + Hinton 学习课程做权威背书论证 AI 范式演进, 收束到 AI1.0/2.0 双栏对比点出 Token 作为新时代核心生产要素",
+      "anti_patterns": [
+        "纯宏观数据漏斗 (无认知框架背书) 用 motivation_funnel_macro_to_pain",
+        "纯 problem-only 无认知升华 (直接痛点) 用 motivation_problem_only_direct"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_ai_wave_history_sparsity_through_line_to_gap_sanction",
+      "layer": "section_level",
+      "title": "动机·AI三次浪潮稀疏主线+算力鸿沟+制裁",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "basic_structures_three_panel",
+        "structure_vs_weight_essence",
+        "ai_history_timeline",
+        "cognitive_need_scholar_quotes",
+        "wave_sparsity_evidence",
+        "quantitative_gap_chart",
+        "external_constraint_timeline"
+      ],
+      "applicable_summary": "以「稀疏化贯穿AI三次浪潮」为主线, 从基础网络结构→稀疏本质→三次浪潮时间线→浪潮内稀疏证据→算力鸿沟→美国制裁的漏斗式长背景章",
+      "anti_patterns": [
+        "纯数据缺口无历史铺陈 → 用 background_macro_gap_to_policy_to_method_bridge",
+        "无外部制裁维度 → 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_analogy_codesign_demand_supply_gap",
+      "layer": "section_level",
+      "title": "动机·历史类比→软硬协同定位→算力需求暴涨→硬件供给放缓",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "historical_revolution_analogy_matrix",
+        "algorithm_hardware_dual_panel_codesign",
+        "quantitative_gap_chart",
+        "hardware_slowdown_moore_law_curve"
+      ],
+      "applicable_summary": "以历史革命类比开场, 定位软硬协同, 再用『AI 算力需求暴涨 vs 硬件性能增速放缓』双曲线立供需矛盾的 motivation 章, 为后续软硬协同方法与成果建靶",
+      "anti_patterns": [
+        "纯数据 gap 无历史类比 — 用 motivation_data_only pattern",
+        "只讲算力无硬件放缓 — 用 motivation_demand_only pattern",
+        "无软硬协同定位 — 用 motivation_generic_gap pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_cost_formula_layered_decomposition_to_moore_wall",
+      "layer": "section_level",
+      "title": "动机·成本公式逐层拆解直至摩尔定律墙",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition_toc_highlight",
+        "domain_application_landscape_logos",
+        "cost_share_two_bar_headline",
+        "dual_column_compute_energy_gap",
+        "formula_top_with_dual_scatter_evidence",
+        "summary_headline_overlay_previous_diagram",
+        "total_cost_formula_with_hardware_curve",
+        "latency_formula_two_factor_breakdown",
+        "two_path_choice_with_moore_wall"
+      ],
+      "applicable_summary": "把成本层层拆解为公式因子(Energy Cost = P·L·Price → Total Cost = Energy+Hardware → Latency = Workload/Multipliers)最终撞上摩尔定律墙的深度动机章 pattern",
+      "anti_patterns": [
+        "纯 problem-only 无 macro 铺垫 — 用 motivation_problem_only_direct",
+        "纯 background 无 pain — 用 background_only_chronology",
+        "简短 5-7 页无公式拆解 — 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_domain_analogy_dual_challenge_related_work_gap",
+      "layer": "section_level",
+      "title": "动机·领域类比→双硬件挑战→相关工作缺口",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "domain_history_timeline",
+        "cross_domain_analogy_dual_row",
+        "hardware_challenge_statement",
+        "related_work_multi_panel_survey",
+        "related_work_gap_dual_frame_summary"
+      ],
+      "applicable_summary": "论文分享 insight/motivation 章: 借成熟领域(视频编解码)发展史铺陈, 类比抽出双洞见, 分别引出双硬件挑战(GPU 无稀疏/FPGA 混合精度限), 再综述相关工作后以双框收束缺口",
+      "anti_patterns": [
+        "直接综述相关工作+双挑战无跨领域类比源头 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge pattern",
+        "宏观 AI 到硬件的漏斗式背景章(无跨领域类比) — 用 background_ai_to_domain_to_hardware_evolution_funnel pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_dual_side_gap_plus_specialization_to_features_extraction",
+      "layer": "section_level",
+      "title": "动机·需求↑供给↓+专用性差→三大特点提炼",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "macro_capability_and_apps_dual_panel",
+        "demand_side_quantitative_explosion",
+        "supply_side_slowdown_chart",
+        "domain_specialization_gap_statement",
+        "features_extraction_chain_to_method"
+      ],
+      "applicable_summary": "研究报告型 motivation 章: 目录→AI 能力/应用铺陈→需求侧算力暴涨(耗电量化)→供给侧摩尔定律放缓→通用模型专用性弱→末页能量链条右侧提炼推理三大特点, 三重背景漏斗后引出研究内容",
+      "anti_patterns": [
+        "纯 AI 路标→供需鸿沟→稀疏解法 — 用 motivation_trend_landscape_to_gap_to_solution_bridge",
+        "宏观三支柱→政策讲话→N 途径公式 — 用 background_macro_gap_to_policy_to_method_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_gap_measurement_formula_to_tripartite_problems",
+      "layer": "section_level",
+      "title": "动机·供需鸿沟→度量定义→公式拆解→三大子问题",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "quantitative_gap_chart",
+        "measurement_definition_multi_scene",
+        "codesign_approach_three_domain",
+        "formula_factor_decomposition",
+        "tripartite_core_problem_panel"
+      ],
+      "applicable_summary": "研究报告型 motivation 章: 目录切入→供需鸿沟→单位资源算力度量→三领域协同实例→公式因子拆解→三大子问题立靶, 层层从矛盾收敛到子问题, 与后续方法章一一映射",
+      "anti_patterns": [
+        "纯宏观趋势铺陈无度量定义 (motivation_trend_landscape_to_gap_to_solution_bridge)",
+        "政策背书驱动型背景 (background_macro_gap_to_policy_to_method_bridge)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_industrial_analogy_to_layer_stack_mapping",
+      "layer": "section_level",
+      "title": "动机·产业革命类比→成本公式→蛋糕分层→三层映射",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "industrial_revolution_comparison_table",
+        "value_chain_flow_diagram",
+        "cost_formula_decomposition",
+        "authority_figure_layer_cake_intro",
+        "layer_cake_middle_focus_callout",
+        "three_layer_method_mapping"
+      ],
+      "applicable_summary": "综述型报告的宏观类比 motivation 章:借产业革命类比确立目标要素→用流程链+成本公式落地→引入权威分层理论→红框锁定中间层→映射到方法章三层框架,漏斗式桥接后续技术章",
+      "anti_patterns": [
+        "纯数据论证型 motivation(无宏观类比) — 用 motivation_trend_landscape_to_gap",
+        "缺失最终三层映射(未桥接方法章) — 用 background_general_survey_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_industrial_revolution_to_paradigm_shift_to_ignition",
+      "layer": "section_level",
+      "title": "动机·工业革命宏观→技术定位→范式转变→需求爆发",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "macro_industrial_revolution_timeline",
+        "tool_driver_evolution_horizontal",
+        "tech_positioning_hub_diagram",
+        "tech_history_dual_timeline",
+        "scaling_law_three_stage_curve",
+        "paradigm_compute_shift_multiplier",
+        "industry_ignition_evidence_dual_frame"
+      ],
+      "applicable_summary": "宏观漏斗式 motivation 章: 工业革命时间轴→生产工具演进→技术协同中枢→国内外双时间轴→Scaling Law 三段曲线→范式转变百倍算力→行业爆发双框佐证, 从最宏观视角逐步收敛到「推理算力爆发」立论前提",
+      "anti_patterns": [
+        "直接给痛点无宏观铺垫——用 motivation_problem_only_direct",
+        "以领域时间线开局而非工业革命宏观——用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_metric_redefinition_supply_gap_two_paths_codesign",
+      "layer": "section_level",
+      "title": "动机·指标重定义→现状/需求供需→两条路径→协同设计",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_section",
+        "metric_redefinition_dual_column",
+        "metric_definition_with_constraint",
+        "current_state_multi_tier_panel",
+        "demand_gap_multi_tier_panel",
+        "optimization_path_one",
+        "optimization_path_two",
+        "dual_axis_evolution_chart",
+        "paradigm_shift_dual_column"
+      ],
+      "applicable_summary": "研究报告 motivation 章的定义-供需-路径-协同递进: 从旧→新指标双栏对比引入指标重定义, 用带约束公式严格化, 分现状/需求两页展示分档供需缺口, 用两条正交路径 (提智能 / 提能效) 组织方法方向, 以双轴演进图整合, 最后以传统被动 vs 新协同双栏收束到软硬件协同设计",
+      "anti_patterns": [
+        "纯宏观漏斗到痛点无路径分解 (只讲趋势不讲路径) 用 motivation_funnel_macro_to_pain",
+        "指标不重定义只给现有指标 tuning 用 motivation_metric_tuning_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_paradigm_compare_then_transpose_key_idea",
+      "layer": "section_level",
+      "title": "动机·两条路线对比→机制揭示→转置关键思路",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "paradigm_compare_dual_route",
+        "mechanism_reveal_intro",
+        "key_idea_bridge_annotation"
+      ],
+      "applicable_summary": "论文分享型 insight 章的短漏斗式论证: 目录 → 两条路线对比证明训练时约束合理 → 揭示前向/反向机制 → 补全转置公式并给出 Key idea 桥接方法章, 短短 3-4 页递进出核心洞见",
+      "anti_patterns": [
+        "insight 章依赖多列相关工作综述(用 problem_related_works_survey_dual_challenge_to_solution_bridge)",
+        "洞察章借类比源头引出双挑战(用 motivation_domain_analogy_dual_challenge_related_work_gap)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_paradigm_shift_metric_shift_goal_gap_framework_split",
+      "layer": "section_level",
+      "title": "动机·范式换代→指标换代→目标定义→思路割裂→框架拆解",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "paradigm_shift_dual_column_compare",
+        "metric_shift_headline_with_hardware_evidence",
+        "objective_2d_chart_with_levels",
+        "traditional_silo_gap_statement",
+        "framework_decomposition_intro"
+      ],
+      "applicable_summary": "汇报型动机章: 从范式(AI 1.0→2.0)代际切换到能效指标(TOPs/J→Tokens/J)代际切换, 定义 tokens/J vs IQ 目标, 再点出传统算法-硬件割裂思路的局限, 收束到 N 层设计框架拆解, 为后续方法章立框",
+      "anti_patterns": [
+        "纯宏观供需→政策→方法总纲(不涉及范式切换) → 用 background_macro_gap_to_policy_to_method_bridge",
+        "无指标换代的算力鸿沟型 → 用 motivation_trend_landscape_to_gap_to_solution_bridge",
+        "长范式演进逐篇串讲型 → 用 background_paradigm_evolution_related_works_survey_to_bottleneck"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_related_work_taxonomy_paradigm_flaw_to_key_insight",
+      "layer": "section_level",
+      "title": "动机·相关工作分类→范式痛点→双源核心洞察",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "related_work_two_type_taxonomy",
+        "two_type_recall_qualitative_compare",
+        "existing_paradigm_flaw_illustration",
+        "key_insight_dual_source_supplement",
+        "insight_feasibility_quantitative_evidence"
+      ],
+      "applicable_summary": "论文分享型 insight 章: 目录切入→相关工作二分类(语义/结构)→定性召回对照→点破 embedding 范式无法抽取摘要信息的共性痛点→给出补充粗粒度摘要信息的双源洞察(embedding+共现)→以 M<<N 论证可行性收束",
+      "anti_patterns": [
+        "两路线对比+机制揭示三拍收束 — 用 motivation_paradigm_compare_then_transpose_key_idea",
+        "领域类比→双硬件挑战→相关工作缺口 — 用 motivation_domain_analogy_dual_challenge_related_work_gap"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_supply_demand_contradiction_expose",
+      "layer": "section_level",
+      "title": "动机·趋势→定义→悖论→供需鸿沟层层压强度",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "macro_trend_wave_timeline",
+        "application_landscape_four_corner",
+        "compute_vs_supply_contradiction_compare",
+        "metric_definition_placeholder",
+        "paradox_scaling_vs_goal_frame",
+        "quantitative_gap_growth_chart",
+        "supply_side_bottleneck_illustration"
+      ],
+      "applicable_summary": "『需求爆炸 vs 供给放缓』双侧递进 motivation 章: agenda → 时代机遇时间轴 → 应用广度 → 算力/能源矛盾 → 「降本增效」概念定义 → Scaling Law 悖论 → 5 万倍量化 → 摩尔定律放缓, 供需两侧同步压强度后收束到硬件瓶颈, 为后续稀疏计算方案立靶",
+      "anti_patterns": [
+        "无供给侧论证仅堆需求痛点 → 用 background_paradigm_evolution_related_works_survey_to_bottleneck pattern",
+        "无「降本增效」定义框只谈数字 → 用 background_macro_gap_to_policy_to_method_bridge pattern",
+        "以 AI 三时代路标+三轴 panel 漏斗 → 用 motivation_trend_landscape_to_gap_to_solution_bridge pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_three_step_insight_chain_failure_hypothesis_answer",
+      "layer": "section_level",
+      "title": "动机·三步洞察链·失效→设问→新信号解答",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "insight"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "insight_one_current_failure",
+        "insight_two_conditional_setup",
+        "insight_three_new_signal_answer"
+      ],
+      "applicable_summary": "论文分享型动机章: 章首目录后, 用三张相互复用的时间线示意图递进三段洞察 (现象失效 → 条件设问 → 引入新信号作答), 每页在同一骨架上叠加红色标注, 末页抛开放问题桥接方法章",
+      "anti_patterns": [
+        "以后训练 vs 原生训练两条路线对比+转置公式 — 用 motivation_paradigm_compare_then_transpose_key_idea",
+        "以宏观 AI 路标→三轴增长→供需鸿沟漏斗 — 用 motivation_trend_landscape_to_gap_to_solution_bridge"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_token_scale_demand_gap_layer_cascade",
+      "layer": "section_level",
+      "title": "动机·token量级爆炸→需求现状鸿沟→层计算冗余设问",
+      "applicable_when": {
+        "report_type": [
+          "paper_share",
+          "research_report"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "macro_scale_growth_dual_stage",
+        "need_vs_reality_gap_multi_scenario",
+        "root_cause_question_bridge"
+      ],
+      "applicable_summary": "论文分享型 motivation 短章:大字量级对比→多场景需求-现状鸿沟→根因设问,3 页递进立起 LLM 推理加速动机",
+      "anti_patterns": [
+        "纯宏观供需鸿沟无设问收束 — 用 motivation_trend_landscape_to_gap_to_solution_bridge",
+        "含 agenda+价值论证+算子拆解 — 用 background_paper_share_agenda_to_value_to_paradigm_shift_to_operators"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_trend_landscape_to_gap_to_solution_bridge",
+      "layer": "section_level",
+      "title": "动机·趋势路标→三轴增长→供需鸿沟→解法引入",
+      "applicable_when": {
+        "report_type": [
+          "tutorial",
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "motivation",
+          "background"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "macro_ai_roadmap",
+        "three_axis_trend_panel",
+        "model_moore_law_growth_chart",
+        "supply_demand_gap_chart",
+        "solution_introduction_bridge",
+        "definition_benefit_summary"
+      ],
+      "applicable_summary": "tutorial 动机章: 从 AI 三时代路标→三轴 panel(抽象+实证)→模型摩尔定律→供需鸿沟→稀疏计算引入→定义收束的漏斗式论证",
+      "anti_patterns": [
+        "纯痛点无 macro 铺陈 — 用 motivation_problem_only_direct pattern",
+        "无解法引入桥接, 只讲问题 — 用 background_only_chronology pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "motivation_value_first_then_problem_then_challenges_funnel",
+      "layer": "section_level",
+      "title": "动机·价值先立→问题定义→AI 双挑战暴露",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "value_argument_dual_panel_evidence",
+        "problem_definition_with_method_compare",
+        "dual_challenge_panel_with_evidence"
+      ],
+      "applicable_summary": "科研申报型 motivation 章: 先以 GDP/政策双维度立技术价值→再以经典问题(SAT/NP 难)定义并对比传统与 AI 方法→末页并列抛出 AI 落地的两大挑战, 为方法章立靶",
+      "anti_patterns": [
+        "只讲宏观趋势不立价值 → 用 motivation_funnel_macro_to_pain",
+        "只谈问题不铺价值 → 用 motivation_problem_only_direct"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_academic_minimalist_cover_single_page",
+      "layer": "section_level",
+      "title": "开场·学术极简封面单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "academic_minimalist_cover_signature"
+      ],
+      "applicable_summary": "学术会议报告类 deck 的极简单页封面:主标题左对齐居中偏上+淡粉色横向分隔线+讲者姓名/机构/汇报场合/联系邮箱依次列出,纯白大留白,无 TOC 页,直接接后续正文章",
+      "anti_patterns": [
+        "带 TOC 页的双页开场 — 用 opening_cover_plus_progress_highlighted_toc",
+        "模板留白骨架单页 — 用 opening_blank_cover_skeleton_single_page",
+        "论文封面多机构署名 — 用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_blank_cover_skeleton_single_page",
+      "layer": "section_level",
+      "title": "开场·空白封面骨架单页",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "blank_cover_placeholder_skeleton"
+      ],
+      "applicable_summary": "模板类 deck 的极简开场: 单页空白封面骨架, 仅提供标题/作者占位与配色分隔线, 供讲者自行填入课题名与署名",
+      "anti_patterns": [
+        "实心大字标题+讲者署名的实体开场 — 用 opening_cover_plus_progress_highlighted_toc pattern",
+        "封面+目录双页开场 — 用 opening_cover_plus_progress_highlighted_toc pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_cover_bio_toc_triad",
+      "layer": "section_level",
+      "title": "开场·封面+讲者履历+目录三件套",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cover_title_signature",
+        "self_intro_timeline_bio",
+        "toc_master_numbered_five_chapter"
+      ],
+      "applicable_summary": "学术主讲型开场三件套: 封面署名 → 讲者履历时间线 → 编号主目录, 通过讲者履历为主讲人建立可信度, 与仅『封面+目录』的极简开场形成差异",
+      "anti_patterns": [
+        "无履历页仅封面+目录 (2 页) → 用 opening_cover_plus_progress_highlighted_toc pattern",
+        "论文分享型封面(多机构署名+目录) → 用 opening_paper_cover_multi_author_multi_institution_plus_toc pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_cover_plus_progress_highlighted_toc",
+      "layer": "section_level",
+      "title": "开场·封面+进度式高亮目录",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cover_title_signature",
+        "toc_progress_highlight"
+      ],
+      "applicable_summary": "线性论述型 deck 的极简开场: 一张大字封面接一张 00-N 编号进度式高亮目录, 为后续多章展开定调",
+      "anti_patterns": [
+        "封面+摘要页(不列章节骨架)不属于此 pattern",
+        "封面+全景图导览(非编号目录)另立 pattern",
+        "多张封面/多张目录堆叠属于扩展开场"
+      ],
+      "source_count": 14,
+      "confidence": "high"
+    },
+    {
+      "id": "opening_minimal_cover_only_no_toc",
+      "layer": "section_level",
+      "title": "开场·极简单页封面无目录",
+      "applicable_when": {
+        "report_type": [
+          "proposal"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cover_title_signature"
+      ],
+      "applicable_summary": "科研申报答辩型 deck 的极简单页开场: 左上大字主题+一条中部分隔横线, 线下居中排列汇报人/单位/日期, 全 deck 无 TOC 页, 从封面直接切入 motivation 章",
+      "anti_patterns": [
+        "多页开场(封面+目录) → 用 opening_cover_plus_progress_highlighted_toc",
+        "论文标题+多机构署名 → 用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution",
+      "layer": "section_level",
+      "title": "开场·论文封面+多作者多机构署名",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "single_paper_title_authors_only"
+      ],
+      "applicable_summary": "论文分享类 deck 的极简单页开场: 一页承担论文封面, 左对齐大标题+多行作者+多家合作机构署名, 无 TOC/agenda 页, 直接接背景章",
+      "anti_patterns": [
+        "封面+高亮 TOC 二连页(2 页开场) — 用 [[opening_cover_plus_progress_highlighted_toc]]",
+        "空白模板占位封面(无真实论文名/作者) — 用 [[opening_blank_cover_skeleton_single_page]]"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_paper_cover_multi_author_multi_institution_plus_toc",
+      "layer": "section_level",
+      "title": "开场·论文封面多机构署名+编号目录",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "single_paper_title_authors_only",
+        "toc_progress_highlight"
+      ],
+      "applicable_summary": "论文分享型 deck 的极简双页开场: 一页居中大字封面(论文标题+多家机构作者+共一/通讯标注)接一页编号进度式目录, 为后续 background→insight→solution→experiment→summary 五段主线定调",
+      "anti_patterns": [
+        "单页承担封面+目录(用 opening_paper_cover_multi_author_multi_institution 独页版)",
+        "封面-作者页-agenda 三页开场(用 opening_cover_plus_progress_highlighted_toc 更通用版)"
+      ],
+      "source_count": 5,
+      "confidence": "high"
+    },
+    {
+      "id": "opening_single_cover_signature_only",
+      "layer": "section_level",
+      "title": "开场·单页封面无目录",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cover_title_signature"
+      ],
+      "applicable_summary": "研究报告的最简开场: 一张封面页承载报告主标题+讲者+机构+邮箱, 无独立目录页, 目录后置到后续 motivation 章的 Contents 页",
+      "anti_patterns": [
+        "封面+目录双页组合 用 opening_cover_plus_progress_highlighted_toc",
+        "论文封面多机构署名 用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_single_page_cover_signature",
+      "layer": "section_level",
+      "title": "开场·单页封面+讲者机构署名",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "all"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cover_title_signature"
+      ],
+      "applicable_summary": "极简单页开场: 仅一张大字封面, 无独立目录页, 目录留待后续背景章内展开",
+      "anti_patterns": [
+        "含独立目录页 — 用 opening_cover_plus_progress_highlighted_toc",
+        "留白骨架无内容 — 用 opening_blank_cover_skeleton_single_page"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "opening_single_page_speaker_cover_no_toc",
+      "layer": "section_level",
+      "title": "开场·单页讲者身份封面无目录",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "opening"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "cover_title_with_speaker_identity"
+      ],
+      "applicable_summary": "研究报告/主题汇报的极简单页开场: 无 TOC/agenda 页, 仅一页承载左对齐两行大标题+顶部机构名+讲者姓名与身份, 直接接背景/motivation 章",
+      "anti_patterns": [
+        "含 TOC 目录页——用 opening_cover_plus_progress_highlighted_toc",
+        "多作者多机构论文封面——用 opening_paper_cover_multi_author_multi_institution"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "outlook_life_analogy_build_dual_system_series_works_lift",
+      "layer": "section_level",
+      "title": "展望·生活类比铺陈→双系统理论→系列工作升华",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "discussion",
+          "outlook"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "analogy_dual_paradigm_intro_frame",
+        "analogy_dual_paradigm_answer_reveal",
+        "dual_system_cognitive_theory_mapping",
+        "series_works_dual_system_landscape_map"
+      ],
+      "applicable_summary": "论文分享型收尾展望章: 从生活化类比(LLM/Diffusion 都是 Step by Step)分两帧递进→引入 Kahneman 双系统理论→映射到本组 LLM/多模态/VLA 系列工作, 把单点工作升华为投机式推理范式",
+      "anti_patterns": [
+        "纯目录+一句话贡献总述 — 用 closing_toc_recap_plus_summary_contribution_with_contact",
+        "含团队组成栏 — 用 discussion_agenda_vision_topics_team_close"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_dual_bottleneck_paradigm_shift_chip_landscape_scenarios_gap",
+      "layer": "section_level",
+      "title": "问题·双硬件矛盾→范式放大→芯片全景→场景举例→数量级差距",
+      "applicable_when": {
+        "report_type": [
+          "research_report"
+        ],
+        "chapter_role": [
+          "problem",
+          "motivation"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "chapter_transition",
+        "compute_latency_power_tradeoff",
+        "storage_capacity_bandwidth_tradeoff",
+        "new_paradigm_compute_amplification",
+        "chip_class_spectrum_table",
+        "three_scenario_forking_diagram",
+        "chip_capability_aggregate_table",
+        "chip_capability_scatter_efficiency",
+        "concrete_scenario_chip_example",
+        "need_vs_reality_gap_headline"
+      ],
+      "applicable_summary": "端侧推理问题章: 分隔→算力/存储两大硬件矛盾→o1 范式放大→芯片谱系→三场景总览→汇总表→散点→逐场景举例→需求 vs 现状差距 1-2 数量级收束",
+      "anti_patterns": [
+        "纯芯片能效对比无场景细化 — 用 method_landscape_then_need_vs_reality_gap_platforms",
+        "只讲一种硬件瓶颈无双矛盾展开 — 用其他 problem 变体"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_landscape_focus_parallel_dual_bottleneck",
+      "layer": "section_level",
+      "title": "问题·多形态全景→单侧聚焦→并列对照→双侧瓶颈",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "system_form_landscape_overview",
+        "single_side_focus_highlight",
+        "dual_side_parallel_target_compare",
+        "dual_side_bottleneck_quantitative"
+      ],
+      "applicable_summary": "端云类问题定义章: 由多形态全景→聚焦单侧提炼特点→双侧目标并列对比→双侧瓶颈量化下沉, 层层递进定义问题, 为后续每侧一套方案铺垫",
+      "anti_patterns": [
+        "无形态全景直接谈瓶颈——用 problem_direct_bottleneck",
+        "单侧问题定义无对照——用 problem_single_side_only"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_related_works_survey_dual_challenge_to_solution_bridge",
+      "layer": "section_level",
+      "title": "问题·相关工作综述→双挑战并列→方案桥接",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "related_works_survey_three_pillars",
+        "first_challenge_data_backed_pain",
+        "second_challenge_data_backed_pain",
+        "proposal_solution_bridge_headline"
+      ],
+      "applicable_summary": "论文分享型 problem 章: agenda → 综述现有工作 N 条路线 → 挑战1(数据佐证) → 挑战2(结构佐证) → 单句提出本文方案, 立靶后收束到下章方法",
+      "anti_patterns": [
+        "宏观→痛点漏斗(先趋势后落到本领域痛点) — 用 [[motivation_funnel_macro_to_pain]] 类模式",
+        "单挑战直接展开(无相关工作综述、无双挑战对照) — 用其他 problem_only 类模式"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_three_challenges_prior_work_flaw_bulletin",
+      "layer": "section_level",
+      "title": "问题·三挑战按现有工作缺陷逐条抛出",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "challenge_assertion_with_prior_work_evidence",
+        "challenge_assertion_extension"
+      ],
+      "applicable_summary": "论文分享型 problem 章: 章首目录→逐条抛出 3 个挑战(每条以顶部红色断言框指出现有工作的失效, 配对应代表工作示意图与 source 引用条), 复杂挑战可追加一页多图实证, 与方法章的三项设计一一映射",
+      "anti_patterns": [
+        "综述现有工作 N 条路线再抛双挑战 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge",
+        "以数字对比证痛点 — 用 first/second_challenge_data_backed_pain"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "problem_three_layered_bottlenecks_gap_redundancy_operator_heterogeneity",
+      "layer": "section_level",
+      "title": "问题·三层瓶颈(算力大+冗余高+算子异构)递进立靶",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "problem"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "quantitative_gap_chart",
+        "continued_chart_alternative_angle",
+        "redundancy_opportunity_intro",
+        "prior_work_limitation_dataflow",
+        "operator_heterogeneity_oi_compare"
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的 problem 章: 章首目录切入→归一化算力柱图证瓶颈一(200× 差距)→沿用同图剖析另一柱证瓶颈来源(Attention 堆叠)→冗余机会引出瓶颈二(90%+ 帧间相似)→已有方法仅限 Act-W 的局限暴露→算子 OI 差异 10× 引出瓶颈三, 三层递进为可重构架构立靶",
+      "anti_patterns": [
+        "顶部红色断言框+现有工作配图的挑战列表 (用 problem_three_challenges_prior_work_flaw_bulletin)",
+        "单页综述现有工作+两大数据挑战 (用 problem_related_works_survey_dual_challenge_to_solution_bridge)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "references_layered_by_method_chapter_bibliography",
+      "layer": "section_level",
+      "title": "参考文献·按方法章分层罗列",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share",
+          "paper_share"
+        ],
+        "chapter_role": [
+          "references"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "references_layered_bibliography_page"
+      ],
+      "applicable_summary": "综述型报告的文献支撑收尾章:按正文「算法/系统/硬件」分层顺序,每页罗列该层引用,顶部统一「参考文献」蓝色分隔线+左侧分类标签,纯列表无新论点",
+      "anti_patterns": [
+        "无分层混合罗列 — 用 references_flat_list",
+        "单页压缩全部文献 — 用 references_single_page"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "related_work_dual_route_mechanism_flaw_to_insight_table",
+      "layer": "section_level",
+      "title": "相关工作·双路线机制-缺陷→洞见→对比表引方案",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "related_work"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "route_one_mechanism_diagram",
+        "route_one_flaw_annotation",
+        "route_two_mechanism_diagram",
+        "insight_headline_with_references",
+        "comparison_table_with_placeholder_row"
+      ],
+      "applicable_summary": "论文分享型相关工作章: 目录 → 第一路线机制 → 揭其缺陷 → 转向第二路线机制并抛开放问题 → 一句金句凝练核心洞见 → 指标对比表带?行引出本文方案, 双路线对照+洞见收束",
+      "anti_patterns": [
+        "以并列三条路线综述且不做单路线机制-缺陷对 — 用 problem_related_works_survey_dual_challenge_to_solution_bridge",
+        "以断言+现有工作图逐条抛挑战 — 用 problem_three_challenges_prior_work_flaw_bulletin"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "related_work_two_route_taxonomy_survey",
+      "layer": "section_level",
+      "title": "相关工作·两路线分类综述",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "background",
+          "related_work"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "related_work_route_static_baseline",
+        "related_work_route_dynamic_advanced"
+      ],
+      "applicable_summary": "论文分享型 related work 章: 目录切入→分类展开两条主流路线(静态基线 vs 动态进阶), 每条路线用可视化矩阵解释机制并暴露缺陷, 为本文方法立对照",
+      "anti_patterns": [
+        "三路线以上并列综述 — 用 related_works_survey_three_pillars",
+        "只讲单一路线无对照 — 属方法综述而非 related work"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_agenda_main_speedup_future_open_questions_close",
+      "layer": "section_level",
+      "title": "结果·agenda→主加速头条→未来工作→开放问题收尾",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "main_result_speedup_dual_bar_headline",
+        "future_work_bulleted_with_metric_table",
+        "open_questions_numbered_list"
+      ],
+      "applicable_summary": "论文分享型硬件加速工作的收尾结果章: agenda 目录切入→双柱图 vs A100 主加速头条(如 2.74× / 2.29×)→带框列表未来工作+稀疏度-加速比表→开放问题编号列表, 完成实测收益+落地路线+开放讨论三重收尾, 独立留出致谢页",
+      "anti_patterns": [
+        "主结果+两页消融+EDP 收束的完整实验章 (用 experiment_setup_accuracy_area_speedup_ablation_edp_summary)",
+        "仅一页 divider 无内容 (用 experiment_single_page_chapter_divider_placeholder)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_agenda_setup_speedup_efficiency_dual_headline",
+      "layer": "section_level",
+      "title": "结果·目录→评估设置→加速头条+能效头条对称",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_bulleted_with_refs",
+        "speedup_headline_multi_platform_bar",
+        "energy_efficiency_headline_multi_platform_bar"
+      ],
+      "applicable_summary": "论文分享型极简 result 章: 章首目录→单页评估设置(工具/模型/多类 baseline/数据集)→多平台加速柱状图+红框倍数头条→能效柱状图+红框倍数头条, 加速与能效对称收束成果",
+      "anti_patterns": [
+        "含消融拆解的完整实验章 (用 experiment_setup_dual_main_headline_ablation_pair)",
+        "含精度+面积+加速+消融+EDP 多维度证据的长实验章 (用 experiment_setup_accuracy_area_speedup_ablation_edp_summary)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_field_roadmap_gap_operator_decompose_existing_paper_result",
+      "layer": "section_level",
+      "title": "成果·领域 RoadMap→痛点→双算子拆解→现有优化→论文→核心思想→结果",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "result",
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "field_roadmap_timeline",
+        "roadmap_gap_conclusion",
+        "operator_pipeline_decomposition",
+        "existing_optimization_survey",
+        "paper_title_authors_only",
+        "core_idea_dual_operator",
+        "single_experiment_result_speedup_callout"
+      ],
+      "applicable_summary": "系统优化成果章: 目录→领域 RoadMap(明→暗)→设问拆解主算子→2 页并列现有优化痛点→论文封面→左右双 panel 核心思想→加速比双图收束, 完成动机-方法-结果闭环",
+      "anti_patterns": [
+        "观察-解法对多轮循环+消融 (case_study_multi_observation_solution_pairs_with_end_to_end)",
+        "挑战-解法一一配对+消融 (case_study_challenge_solution_performance_closed_loop)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_instance_key_idea_paper_dual_innovation_experiment",
+      "layer": "section_level",
+      "title": "成果单元·入场→核心思想→论文→双核心创新→实验结果",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "topic_share"
+        ],
+        "chapter_role": [
+          "result",
+          "case_study"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "instance_entry_transition",
+        "core_idea_dual_view_bridge",
+        "paper_title_authors_only",
+        "core_innovation_paired_frame",
+        "experiment_result_headline_with_metric"
+      ],
+      "applicable_summary": "系列成果并列汇报中的紧凑成果单元: 入场→核心思想(前向/反向双视角)→论文→2 页并列核心创新→实验结果头条, 每步都带紫色标签+顶部论点方框视觉锚点",
+      "anti_patterns": [
+        "多实例背景-方法-结果反复循环 (case_study_framework_definition_multi_instance_bg_method_result)",
+        "问题-解法一一配对+消融 (case_study_challenge_solution_performance_closed_loop)"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_setup_accuracy_dual_lens_speedup_headline",
+      "layer": "section_level",
+      "title": "结果·设置→精度双视角→加速比头条",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_chapter_marker",
+        "eval_setup_four_dimensions",
+        "accuracy_result_scenario_one_compare",
+        "accuracy_result_scenario_two_retention",
+        "speedup_headline_dual_platform"
+      ],
+      "applicable_summary": "论文分享型系统方法结果章: 目录→四维评测框架→精度双视角(长输入+长输出)证无损→云端/边缘双平台加速比头条收束, 完成『精度不损+速度更快』双证",
+      "anti_patterns": [
+        "含消融拆解 — 用 experiment_setup_dual_main_headline_ablation_pair",
+        "包含 demo 展示 — 用 experiment_layered_setup_accuracy_hardware_speedup_demo"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_setup_main_latency_ablation_param_robust_five_step",
+      "layer": "section_level",
+      "title": "结果·设置→主结果→延迟→消融→参数鲁棒五步",
+      "applicable_when": {
+        "report_type": [
+          "paper_share"
+        ],
+        "chapter_role": [
+          "result",
+          "experiment"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "eval_setup_bulleted_with_refs",
+        "main_recall_sota_dual_claim",
+        "latency_headline_single_number",
+        "ablation_component_dual_group",
+        "parameter_robustness_multi_curve_grid"
+      ],
+      "applicable_summary": "论文分享型 evaluation 章五步弧线: 目录→数据集/指标/基线设置→主召回 SOTA 双栏论断→端到端延迟大数字→双组件消融曲线→2×2 参数鲁棒性网格, 一次覆盖精度/延迟/组件/参数四维证据",
+      "anti_patterns": [
+        "设置→精度→面积→加速比→消融→EDP 六步(硬件加速)— 用 experiment_setup_accuracy_area_speedup_ablation_edp_summary",
+        "设置双页→主结果头条→消融拆解双页 — 用 experiment_setup_dual_main_headline_ablation_pair",
+        "分层揭示 setup→精度→资源→双 speedup→demo — 用 experiment_layered_setup_accuracy_hardware_speedup_demo"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "result_three_work_overview_drilldown_awards_endorsement",
+      "layer": "section_level",
+      "title": "成果·三工作总览→分层下钻→整体收益→获奖→专家背书",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report"
+        ],
+        "chapter_role": [
+          "result"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "three_work_parallel_overview",
+        "work_layered_drilldown",
+        "aggregated_gain_industrial_metrics",
+        "best_paper_awards_montage",
+        "expert_endorsement_trio_quotes"
+      ],
+      "applicable_summary": "个人学术述职/答辩型成果章: 总览→分层下钻(算法/编译/架构三项对应三页)→整体收益汇总→顶会获奖清单→三位国际专家评价形成外部背书闭环",
+      "anti_patterns": [
+        "无外部背书的纯技术成果章 — 用 result_technical_only pattern",
+        "只有单项成果无并列 — 用 result_single_work_deep_dive pattern",
+        "有获奖但无逐项下钻 — 用 result_awards_showcase pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "self_intro_course_completion_single_page",
+      "layer": "section_level",
+      "title": "自我介绍·课程完成情况单页声明",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "self_intro"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "course_completion_single_statement"
+      ],
+      "applicable_summary": "博士资格考试固定环节: 一页居中描边文本框声明「已完成博士阶段全部公共基础课与专业基础课」, 声明进度门槛后过渡到研究正文",
+      "anti_patterns": [
+        "含研究方向+工作/教育双时间线的详细履历页 — 用 self_intro_research_plus_dual_timeline"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    },
+    {
+      "id": "self_intro_dual_timeline_research_work_edu",
+      "layer": "section_level",
+      "title": "自我介绍·研究领域+工作/教育双时间线",
+      "applicable_when": {
+        "report_type": [
+          "research_report",
+          "all"
+        ],
+        "chapter_role": [
+          "self_intro"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "self_intro_research_plus_dual_timeline"
+      ],
+      "applicable_summary": "学术汇报开场后的自我介绍单页: 顶部研究方向标签框+工作经历时间线+教育经历时间线双栏并列, 一页收全个人学术履历全貌",
+      "anti_patterns": [
+        "纯文字段落式自我介绍 — 无时间线结构",
+        "单一时间线仅列教育或工作 — 缺双栏对照"
+      ],
+      "source_count": 3,
+      "confidence": "high"
+    },
+    {
+      "id": "self_intro_with_toc_transition_dual_timeline",
+      "layer": "section_level",
+      "title": "自我介绍·目录切入+研究领域标签+双时间线单页",
+      "applicable_when": {
+        "report_type": [
+          "简历",
+          "research_report"
+        ],
+        "chapter_role": [
+          "self_intro"
+        ],
+        "scenario_keywords": null
+      },
+      "archetype_sequence": [
+        "toc_progress_highlight",
+        "self_intro_research_plus_dual_timeline"
+      ],
+      "applicable_summary": "个人述职/答辩型 self_intro 章的两页版本: 目录页高亮当前章切入, 再以研究方向标签+教育/工作双时间线单页收全个人履历",
+      "anti_patterns": [
+        "纯个人介绍无目录切入 — 用 self_intro_dual_timeline_research_work_edu pattern",
+        "无双时间线只有单栏履历 — 用 self_intro_single_timeline pattern"
+      ],
+      "source_count": 1,
+      "confidence": "low"
+    }
+  ]
+}

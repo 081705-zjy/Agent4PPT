@@ -1,0 +1,52 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.05"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 29
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "稀疏计算 2022→2024 进展全景"
+核心论断: "稀疏计算三年沿算子、LLM、更多应用三线持续演进"
+本页讲什么: "作为本章开篇的路线图页，用时间轴/版图形式铺陈 2022-2024 稀疏计算的整体进展，划分出 Sparse operators、Our methods for LLM、More Applications 三条主线，为后续逐个工作的展开定位坐标，本页聚焦稀疏算子这一站。"
+关键文字: "[\"Sparse Computing: From 2022 to 2024\", Sparse operators, Our methods for LLM, More Applications]"
+视觉骨架: "[三线进展时间轴, 多主题版图分区, 多图标示意]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29.asset.02, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29.asset.03, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29.asset.04, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29.asset.05, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_29.asset.06]"
+适合复用场景: "[某研究方向多年进展全景开篇, 多工作路线图导览页]"
+不适合复用场景: "[单一算子性能对比页, 具体方法架构展开页, 含 benchmark 数字页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "顶部标题带", "内容": "Sparse Computing: From 2022 to 2024"}
+  - {"位置": "主体版图", "内容": "三线分区: Sparse operators / Our methods for LLM / More Applications"}
+alternate_claims:
+  - "本页聚焦稀疏算子主线，为后续工作定位坐标"
+layout_tag: "mixed"
+---
+# slide 29: 稀疏计算 2022→2024 进展全景
+
+**核心论断**: 稀疏计算三年沿算子、LLM、更多应用三线持续演进
+
+## 本页讲什么
+作为本章开篇的路线图页，用时间轴/版图形式铺陈 2022-2024 稀疏计算的整体进展，划分出 Sparse operators、Our methods for LLM、More Applications 三条主线，为后续逐个工作的展开定位坐标，本页聚焦稀疏算子这一站。
+
+## 关键文字片段
+- Sparse Computing: From 2022 to 2024
+- Sparse operators
+- Our methods for LLM
+- More Applications
+
+## 视觉骨架
+- 三线进展时间轴
+- 多主题版图分区
+- 多图标示意
+
+## 可复用到
+- 某研究方向多年进展全景开篇
+- 多工作路线图导览页
+
+## 不适合复用的场景
+- 单一算子性能对比页
+- 具体方法架构展开页
+- 含 benchmark 数字页

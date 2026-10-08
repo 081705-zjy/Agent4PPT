@@ -1,0 +1,48 @@
+---
+页标识: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25"
+所属章节: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.06"
+所属deck: "tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640"
+页序号: 25
+源文件: "templates/本组论文与科研成果/SG-Filter Enhancing Similar Text Retrieval via Hierarchical Summarized-Semantic Index and Adaptive Filtering.pptx"
+页面角色: "toc_candidate"
+标题: "目录回顾：从背景到洞察"
+核心论断: "全文结构收束于检索与AI两大主线"
+本页讲什么: "作为结尾章的第一页，用目录形式回顾全文脉络：Background（检索与AI）、Insight（核心洞察）等编号条目，把观众带回整体框架，为最后的示例落点做铺垫。"
+关键文字: "[contents, \"Background: Retrieval and AI\", Insight]"
+视觉骨架: "[编号目录条目列表, 多缩略图配图排布]"
+资源ID列表: "[tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.01, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.02, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.03, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.04, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.05, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.06, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.07, tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.slide_25.asset.08]"
+适合复用场景: "[技术报告结尾目录回顾页, 检索主题deck章节导航页]"
+不适合复用场景: "[含具体数据的结果对比页, 单一方法架构展开页]"
+上页角色: "content_candidate"
+下页角色: "ending_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "closer"
+视觉文本层次:
+  - {"位置": "上方", "内容": "contents 标题"}
+  - {"位置": "下方主体", "内容": "编号目录条目 + 缩略图排布"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 25: 目录回顾：从背景到洞察
+
+**核心论断**: 全文结构收束于检索与AI两大主线
+
+## 本页讲什么
+作为结尾章的第一页，用目录形式回顾全文脉络：Background（检索与AI）、Insight（核心洞察）等编号条目，把观众带回整体框架，为最后的示例落点做铺垫。
+
+## 关键文字片段
+- contents
+- Background: Retrieval and AI
+- Insight
+
+## 视觉骨架
+- 编号目录条目列表
+- 多缩略图配图排布
+
+## 可复用到
+- 技术报告结尾目录回顾页
+- 检索主题deck章节导航页
+
+## 不适合复用的场景
+- 含具体数据的结果对比页
+- 单一方法架构展开页

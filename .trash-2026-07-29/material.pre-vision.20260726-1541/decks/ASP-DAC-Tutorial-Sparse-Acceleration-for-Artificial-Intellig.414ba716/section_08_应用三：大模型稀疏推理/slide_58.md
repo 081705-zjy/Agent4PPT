@@ -1,0 +1,46 @@
+---
+页标识: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58"
+所属章节: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.08"
+所属deck: "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716"
+页序号: 58
+源文件: "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx"
+页面角色: "content_candidate"
+标题: "从 AI 1.0 到 AI 2.0 的时代跃迁"
+核心论断: "AI 从 1.0 迈入 2.0 时代，大模型成为算力新主战场"
+本页讲什么: "作为本章开篇，用「From AI 1.0 to AI 2.0」的时代叙事引出大模型稀疏推理话题：说明 AI 已从传统深度学习（1.0）演进到以大模型为核心的 2.0 时代，为后续把稀疏加速思想迁移到 LLM 推理铺垫背景。"
+关键文字: "[From AI 1.0 to AI 2.0]"
+视觉骨架: "[时代跃迁左右对比图, 多图标概念拼贴]"
+资源ID列表: "[tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58.asset.01, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58.asset.02, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58.asset.03, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58.asset.04, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58.asset.05, tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_58.asset.06]"
+适合复用场景: "[大模型章节的时代背景开篇页, AI 范式演进对比引入页]"
+不适合复用场景: "[具体算法方法细节页, 含 benchmark 数据的结果页]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "From AI 1.0 to AI 2.0"}
+  - {"位置": "下方主体", "内容": "左右对比的时代跃迁概念拼贴图"}
+alternate_claims:
+layout_tag: "bullet_list_conceptual"
+---
+# slide 58: 从 AI 1.0 到 AI 2.0 的时代跃迁
+
+**核心论断**: AI 从 1.0 迈入 2.0 时代，大模型成为算力新主战场
+
+## 本页讲什么
+作为本章开篇，用「From AI 1.0 to AI 2.0」的时代叙事引出大模型稀疏推理话题：说明 AI 已从传统深度学习（1.0）演进到以大模型为核心的 2.0 时代，为后续把稀疏加速思想迁移到 LLM 推理铺垫背景。
+
+## 关键文字片段
+- From AI 1.0 to AI 2.0
+
+## 视觉骨架
+- 时代跃迁左右对比图
+- 多图标概念拼贴
+
+## 可复用到
+- 大模型章节的时代背景开篇页
+- AI 范式演进对比引入页
+
+## 不适合复用的场景
+- 具体算法方法细节页
+- 含 benchmark 数据的结果页

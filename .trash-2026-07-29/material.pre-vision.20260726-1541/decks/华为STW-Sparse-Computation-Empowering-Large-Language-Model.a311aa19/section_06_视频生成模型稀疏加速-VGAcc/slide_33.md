@@ -1,0 +1,49 @@
+---
+页标识: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_33"
+所属章节: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.06"
+所属deck: "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19"
+页序号: 33
+源文件: "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx"
+页面角色: "content_candidate"
+标题: "视频生成:又一个稀疏加速的垂域目标"
+核心论断: "视频生成模型能力突出,正成为稀疏加速的新落点"
+本页讲什么: "本页把稀疏计算从算子/硬件层下沉到视频生成垂域,作为本章开场。指出除大语言模型外,视频生成模型因其出色能力也获得大量关注,并用两个典型视频生成模型作为示例,引出后续对其算力痛点和稀疏加速方案的展开。"
+关键文字: "[视频生成模型因出色能力获得大量关注, The examples of two video generation models, 除大语言模型外的又一垂域目标]"
+视觉骨架: "[两个视频生成模型示意图, Background 主题标签]"
+资源ID列表: "[tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_33.asset.01, tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_33.asset.02]"
+适合复用场景: "[视频生成主题的章节开场页, 稀疏加速新垂域引入页]"
+不适合复用场景: "[含具体数字的结果对比页, 算法方法细节展开页]"
+上页角色: "chapter_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "opener"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "视频生成:又一个稀疏加速的垂域目标"}
+  - {"位置": "下方主体", "内容": "两个视频生成模型示意图"}
+alternate_claims:
+  - "视频生成模型是除大语言模型外又一稀疏加速垂域目标"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 33: 视频生成:又一个稀疏加速的垂域目标
+
+**核心论断**: 视频生成模型能力突出,正成为稀疏加速的新落点
+
+## 本页讲什么
+本页把稀疏计算从算子/硬件层下沉到视频生成垂域,作为本章开场。指出除大语言模型外,视频生成模型因其出色能力也获得大量关注,并用两个典型视频生成模型作为示例,引出后续对其算力痛点和稀疏加速方案的展开。
+
+## 关键文字片段
+- 视频生成模型因出色能力获得大量关注
+- The examples of two video generation models
+- 除大语言模型外的又一垂域目标
+
+## 视觉骨架
+- 两个视频生成模型示意图
+- Background 主题标签
+
+## 可复用到
+- 视频生成主题的章节开场页
+- 稀疏加速新垂域引入页
+
+## 不适合复用的场景
+- 含具体数字的结果对比页
+- 算法方法细节展开页

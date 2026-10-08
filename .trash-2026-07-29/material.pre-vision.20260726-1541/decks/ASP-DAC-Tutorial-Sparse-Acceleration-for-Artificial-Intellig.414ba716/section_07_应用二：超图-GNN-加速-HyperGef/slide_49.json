@@ -1,0 +1,38 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_49",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.07",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 49,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "HyperGef：GPU 上超图 GNN 高效融合框架",
+  "核心论断": "HyperGef 为超图神经网络提供 GPU 上的高效融合加速",
+  "本页讲什么": "本章第二个应用案例的引入页，抛出 HyperGef 这项工作：一个面向超图神经网络（HyperGNN）、在 GPU 上实现高效算子融合的框架。页面以论文标题和作者署名（Zhongming Yu 等）呈现，为后续问题分析、融合框架、GPU 优化与加速效果的展开做铺垫。",
+  "关键文字": [
+    "HyperGef: A Framework Enabling Efficient Fusion For Hypergraph Neural Network on GPU",
+    "Zhongming Yu 等"
+  ],
+  "视觉骨架": [
+    "论文标题主视觉",
+    "作者与机构署名条",
+    "配图缩略图组"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_49.asset.01",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_49.asset.02",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_49.asset.03",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_49.asset.04",
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_49.asset.05"
+  ],
+  "适合复用场景": [
+    "超图 GNN 加速工作的引入页",
+    "GPU 融合框架论文开题页"
+  ],
+  "不适合复用场景": [
+    "含具体数字的结果页",
+    "多方法对比表格页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

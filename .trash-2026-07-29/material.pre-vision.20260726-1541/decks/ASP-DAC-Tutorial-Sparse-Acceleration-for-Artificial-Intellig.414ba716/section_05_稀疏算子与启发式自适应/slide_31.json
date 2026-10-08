@@ -1,0 +1,35 @@
+{
+  "页标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_31",
+  "所属章节": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.sec.05",
+  "所属deck": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "页序号": 31,
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "页面角色": "content_candidate",
+  "标题": "稀疏算子: cuSPARSE 的固定算法困境",
+  "核心论断": "cuSPARSE 固定 SpMM 算法难适配多样输入而受限",
+  "本页讲什么": "剖析问题所在——现有 cuSPARSE 库对 SpMM 采用固定算法，面对多样稀疏输入无法自适应，导致性能受限，引出后续以启发式自适应破题的动机。",
+  "关键文字": [
+    "Sparse Operators",
+    "cuSPARSE",
+    "SpMM algorithms"
+  ],
+  "视觉骨架": [
+    "cuSPARSE 算法示意图",
+    "问题剖析配图"
+  ],
+  "资源ID列表": [
+    "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716.slide_31.asset.01"
+  ],
+  "适合复用场景": [
+    "稀疏算子现状/痛点剖析页",
+    "现有库局限论证页"
+  ],
+  "不适合复用场景": [
+    "性能加速比结果页",
+    "多主线路线图页",
+    "方案架构展开页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

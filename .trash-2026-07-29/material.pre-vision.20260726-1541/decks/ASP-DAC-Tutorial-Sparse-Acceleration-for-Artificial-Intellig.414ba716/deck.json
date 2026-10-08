@@ -1,0 +1,63 @@
+{
+  "deck标识": "tpl.本组论文与科研成果.ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "目录名": "ASP-DAC-Tutorial-Sparse-Acceleration-for-Artificial-Intellig.414ba716",
+  "源文件": "templates/本组论文与科研成果/ASP-DAC Tutorial   Sparse Acceleration for Artificial Intelligence Progress and Trends.pptx",
+  "源哈希": "414ba716d1bb1cc5974a5bd4af3d57774e238492",
+  "画布尺寸": [
+    9144000,
+    5143500
+  ],
+  "标题": "Sparse Acceleration for AI: Progress and Trends",
+  "总页数": 93,
+  "章节数": 11,
+  "章节列表": [
+    "section_01_封面",
+    "section_02_AI-趋势与稀疏计算动机",
+    "section_03_稀疏计算流与核心思想",
+    "section_04_2022-2024-进展与开源框架",
+    "section_05_稀疏算子与启发式自适应",
+    "section_06_应用一：3D-点云稀疏卷积",
+    "section_07_应用二：超图-GNN-加速-HyperGef",
+    "section_08_应用三：大模型稀疏推理",
+    "section_09_应用四：FPGA-加速器-FlightLLM",
+    "section_10_应用五：FlashDecoding++",
+    "section_11_合作与展望"
+  ],
+  "主题标签": [
+    "稀疏计算",
+    "AI加速",
+    "大模型推理",
+    "稀疏算子",
+    "GNN",
+    "硬件架构",
+    "FPGA",
+    "点云"
+  ],
+  "目标受众": "学术同行与体系结构/AI加速研究者",
+  "报告类型": "tutorial",
+  "适用场景": "顶会 tutorial，系统综述稀疏加速研究进展",
+  "论述总结": "从 AI 发展趋势切入，论证稀疏计算可提升等效算力，系统梳理稀疏计算流与思想，回顾 2022-2024 进展与开源框架，逐一展开稀疏算子、点云、超图 GNN、大模型稀疏推理、FPGA 加速器 FlightLLM 与 FlashDecoding++ 等代表性工作，最后落到合作与展望。",
+  "论述弧线": [
+    "趋势",
+    "稀疏思想",
+    "进展",
+    "代表工作",
+    "大模型",
+    "展望"
+  ],
+  "适合复用场景": [
+    "稀疏计算/AI加速主题 tutorial",
+    "多篇成果串联的科研综述报告",
+    "学术型 motivation+方法+实验叙事",
+    "体系结构方向组内进展汇报",
+    "大模型高效推理专题分享"
+  ],
+  "不适合复用场景": [
+    "非稀疏方向 AI 汇报（话题偏离）",
+    "工业产品 demo（叙事节奏不符）",
+    "投资/商业路演（缺商业逻辑）",
+    "短篇单一成果快讲（体量过大）",
+    "面向学生的入门教学（深度过高）"
+  ],
+  "分析状态": "claude-opus-4-8"
+}

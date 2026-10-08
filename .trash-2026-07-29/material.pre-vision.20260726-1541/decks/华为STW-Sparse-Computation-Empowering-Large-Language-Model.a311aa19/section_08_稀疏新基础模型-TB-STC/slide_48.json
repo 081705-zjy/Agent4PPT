@@ -1,0 +1,34 @@
+{
+  "页标识": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_48",
+  "所属章节": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.sec.08",
+  "所属deck": "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19",
+  "页序号": 48,
+  "源文件": "templates/课题组全局汇报/华为STW-Sparse Computation Empowering Large Language Model.pptx",
+  "页面角色": "content_candidate",
+  "标题": "Tech.1:SpMM 与 SpMM-T 算子",
+  "核心论断": "自适应格式转换低开销支撑 SpMM 与 SpMM-T",
+  "本页讲什么": "本页展开第一项支撑技术:采用自适应格式转换方法,以低开销的格式转换同时支持前向 SpMM 与转置反向 SpMM-T 两个算子,解决 TB-STC 可转置稀疏在前反向复用中的算子实现难题。",
+  "关键文字": [
+    "Tech.1: SpMM and SpMM-T Operators",
+    "自适应格式转换方法",
+    "低开销格式转换支持 SpMM 与 SpMM-T"
+  ],
+  "视觉骨架": [
+    "自适应格式转换数据通路图",
+    "SpMM/SpMM-T 算子结构块"
+  ],
+  "资源ID列表": [
+    "tpl.课题组全局汇报.华为STW-Sparse-Computation-Empowering-Large-Language-Model.a311aa19.slide_48.asset.01"
+  ],
+  "适合复用场景": [
+    "稀疏算子实现技术页",
+    "格式转换支撑前反向算子"
+  ],
+  "不适合复用场景": [
+    "概念愿景 opener 页",
+    "综合实验结果页"
+  ],
+  "上页角色": "content_candidate",
+  "下页角色": "content_candidate",
+  "分析状态": "claude-opus-4-8"
+}

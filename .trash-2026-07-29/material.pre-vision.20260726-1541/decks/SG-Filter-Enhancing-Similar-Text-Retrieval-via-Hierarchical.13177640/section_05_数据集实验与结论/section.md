@@ -1,0 +1,38 @@
+---
+章节标识: tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640.sec.05
+所属deck: tpl.本组论文与科研成果.SG-Filter-Enhancing-Similar-Text-Retrieval-via-Hierarchical.13177640
+章节序号: 5
+章节角色: experiment
+标题: 数据集实验与结论
+页码范围: [19, 24]
+页数: 6
+页ID列表: [slide_19, slide_20, slide_21, slide_22, slide_23, slide_24]
+章节叙事: Deck 的验证收尾章：先给出数据集与指标口径，再抛出「有效性得证」结论，最后用逐页表格/图表数据支撑，为方法章节补上实证背书。
+页间关系: ["slide 19 → slide 20: 由章节分隔/agenda 页切入实验设置，交代 datasets 与 metrics", "slide 20 → slide 21: 由实验口径直接抛出「有效性得证」总结结论", "slide 21 → slide 22: 由结论断言下沉到支撑数据，引出 lowest 指标", "slide 22 → slide 23: 由单点指标扩展到 K 值/召回的对比数据", "slide 23 → slide 24: 由数值表格转为图表可视化呈现结果"]
+适合复用场景: [需要「先结论后数据」的实证收尾章节, 检索/召回方法的 datasets+metrics 验证章, 以表格加图表堆叠证明有效性的章节]
+不适合复用场景: [无量化实验、仅定性论证的主题, 指标口径与检索/召回无关时, 需先铺垫方法而非直接给结论的章节]
+在deck中的位置: 第 5 章（末尾实证章），紧跟方法章，收束全 deck
+分析状态: claude-opus-4-8
+---
+
+# section 5: 数据集实验与结论
+
+## 在 deck 中的位置
+第 5 章（末尾实证章），紧跟方法章，收束全 deck
+
+## 章内 slide 间的关系
+- slide 19 → slide 20: 由章节分隔/agenda 页切入实验设置，交代 datasets 与 metrics
+- slide 20 → slide 21: 由实验口径直接抛出「有效性得证」总结结论
+- slide 21 → slide 22: 由结论断言下沉到支撑数据，引出 lowest 指标
+- slide 22 → slide 23: 由单点指标扩展到 K 值/召回的对比数据
+- slide 23 → slide 24: 由数值表格转为图表可视化呈现结果
+
+## 整章可复用的场景
+- 需要「先结论后数据」的实证收尾章节
+- 检索/召回方法的 datasets+metrics 验证章
+- 以表格加图表堆叠证明有效性的章节
+
+## 不适合复用的场景
+- 无量化实验、仅定性论证的主题
+- 指标口径与检索/召回无关时
+- 需先铺垫方法而非直接给结论的章节

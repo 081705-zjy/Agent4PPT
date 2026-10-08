@@ -1,0 +1,24 @@
+=== v17 preprocess build-all ===
+
+logic/ + rule/ are hand-curated + static, no rebuild.
+Building material/ via template_library...
+
+[brief] starting batch: 1 decks, concurrency=6, model=claude-opus-4-8
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 1/4: deck_brief
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 2/4: section_split
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 3/4: section_briefs (7 sections)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.1 (1 slides)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.2 (3 slides)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.3 (9 slides)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.4 (5 slides)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.5 (2 slides)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.6 (10 slides)
+[brief/tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714] step 4/4: slide_brief sec.7 (3 slides)
+[brief/OK] tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714: tree → /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks/视频生成模型(VGM)技术路径及高效训推.4d4a7714 (7 sec, 33 slides)
+[brief/progress] 1/1 done (ok=1, failed=0)
+[brief] batch done in 557.4s: ok=1 failed=0
+
+summary: ok=1 failed=0 elapsed=557.4s
+  ✅ tpl.内部组会科研交流.视频生成模型(VGM)技术路径及高效训推.4d4a7714
+
+✅ material/ done. Run 'status' to verify.

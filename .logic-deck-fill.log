@@ -1,0 +1,21 @@
+>>> logic_extract start at 16:37:57
+  args: layer=deck_level deck_batch_size=4 section_batch_size=1
+  loaded 28 deck dirs from /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/material/decks
+  deck_level: 7 batches (size=4): [4, 4, 4, 4, 4, 4, 4]
+  section_level: 28 batches (size=1): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+=== Phase 1: deck_level layer (7 batches) ===
+  [deck_level] found 6 existing outputs, reusing
+  [deck_level] batch 5/6 (4 decks)
+    input: deck_level_batch_5_input.json (55 KB)
+    attempt 1: done in 205s, ok=True
+    +1 patterns this batch (total in dedup pool: 14)
+  deck_level phase done in 205s
+
+=== Phase 3: cross-batch carrier merge ===
+  deck_level: 6 unique patterns
+  section_level: 0 unique patterns
+
+=== Phase 4: write per-pattern .md + .json ===
+  wrote 6 pattern files
+  INDEX: /home/zjy/agent-application/ppt-agent/ppt-agent-v1/data/resources_library/logic/INDEX.json

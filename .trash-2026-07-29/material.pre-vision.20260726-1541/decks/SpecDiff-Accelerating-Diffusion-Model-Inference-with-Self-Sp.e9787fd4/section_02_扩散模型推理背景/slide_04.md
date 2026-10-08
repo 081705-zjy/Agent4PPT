@@ -1,0 +1,50 @@
+---
+页标识: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_04"
+所属章节: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.sec.02"
+所属deck: "tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4"
+页序号: 4
+源文件: "templates/本组论文与科研成果/SpecDiff  Accelerating Diffusion Model Inference with Self-Speculation.pptx"
+页面角色: "content_candidate"
+标题: "扩散模型推理算力开销更高"
+核心论断: "DDPM/DDIM/DiT 等扩散模型带来更高的推理算力需求"
+本页讲什么: "承接上页，指出扩散模型相比其他生成范式有更高的计算需求。通过 DDPM、DDIM、DiT 等代表性模型的演进对比，说明扩散模型推理成本高，引出为何需要加速。"
+关键文字: "[Higher Computational Demand, DDPM, DDIM, DiT]"
+视觉骨架: "[模型演进对比图, 算力需求示意]"
+资源ID列表: "[tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_04.asset.01, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_04.asset.02, tpl.本组论文与科研成果.SpecDiff-Accelerating-Diffusion-Model-Inference-with-Self-Sp.e9787fd4.slide_04.asset.03]"
+适合复用场景: "[扩散模型推理成本 motivation 页, DDPM/DiT 模型演进对比]"
+不适合复用场景: "[纯目录导航页, 无算力主题的通用概述]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "扩散模型推理算力开销更高"}
+  - {"位置": "下方主体", "内容": "DDPM/DDIM/DiT 模型演进对比图"}
+alternate_claims:
+  - "DDPM→DDIM→DiT 的演进伴随算力需求持续增长"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 4: 扩散模型推理算力开销更高
+
+**核心论断**: DDPM/DDIM/DiT 等扩散模型带来更高的推理算力需求
+
+## 本页讲什么
+承接上页，指出扩散模型相比其他生成范式有更高的计算需求。通过 DDPM、DDIM、DiT 等代表性模型的演进对比，说明扩散模型推理成本高，引出为何需要加速。
+
+## 关键文字片段
+- Higher Computational Demand
+- DDPM
+- DDIM
+- DiT
+
+## 视觉骨架
+- 模型演进对比图
+- 算力需求示意
+
+## 可复用到
+- 扩散模型推理成本 motivation 页
+- DDPM/DiT 模型演进对比
+
+## 不适合复用的场景
+- 纯目录导航页
+- 无算力主题的通用概述

@@ -1,0 +1,49 @@
+---
+页标识: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08"
+所属章节: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.sec.02"
+所属deck: "tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031"
+页序号: 8
+源文件: "templates/本组论文与科研成果/VGAcc Video Generation Acceleration with Full Attention Differential Computing and Reconfigurable Architecture.pptx"
+页面角色: "content_candidate"
+标题: "DiT 驱动的文本到视频"
+核心论断: "文生视频较文生图像多出时间维带来更高算力开销"
+本页讲什么: "本页把 DiT 从图像生成扩展到视频生成，用多组示例对比文本生成视频与文本生成图像的差异，强调视频多出的时间维度显著放大注意力与算力负担，承接前页全注意力，点明加速的必要性。"
+关键文字: "[DiT-based Text-to-Video, 文本生成视频与文本生成图像]"
+视觉骨架: "[文生视频/文生图像对比图组, 时序帧示意]"
+资源ID列表: "[tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.01, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.02, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.03, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.04, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.05, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.06, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.07, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.08, tpl.本组论文与科研成果.VGAcc-Video-Generation-Acceleration-with-Full-Attention-Diff.db8b1031.slide_08.asset.09]"
+适合复用场景: "[视频 vs 图像生成对比页, 视频算力开销 motivation 页]"
+不适合复用场景: "[单一 DiT 结构图页, 纯 benchmark 表格页, 非视频生成主题]"
+上页角色: "content_candidate"
+下页角色: "content_candidate"
+分析状态: "claude-opus-4-8"
+页在section中的作用: "worker_intro"
+视觉文本层次:
+  - {"位置": "上方标题", "内容": "DiT-based Text-to-Video"}
+  - {"位置": "下方主体", "内容": "文生视频/文生图像对比示例图组"}
+alternate_claims:
+  - "视频生成引入时间维度显著放大注意力算力负担"
+layout_tag: "bullet_list_conceptual"
+---
+# slide 8: DiT 驱动的文本到视频
+
+**核心论断**: 文生视频较文生图像多出时间维带来更高算力开销
+
+## 本页讲什么
+本页把 DiT 从图像生成扩展到视频生成，用多组示例对比文本生成视频与文本生成图像的差异，强调视频多出的时间维度显著放大注意力与算力负担，承接前页全注意力，点明加速的必要性。
+
+## 关键文字片段
+- DiT-based Text-to-Video
+- 文本生成视频与文本生成图像
+
+## 视觉骨架
+- 文生视频/文生图像对比图组
+- 时序帧示意
+
+## 可复用到
+- 视频 vs 图像生成对比页
+- 视频算力开销 motivation 页
+
+## 不适合复用的场景
+- 单一 DiT 结构图页
+- 纯 benchmark 表格页
+- 非视频生成主题
